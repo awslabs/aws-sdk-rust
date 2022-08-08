@@ -11,5 +11,5 @@ set -e
 echo "### Checking for duplicate dependency versions in the normal dependency graph with all features enabled"
 cargo tree -d --edges normal --all-features
 
-echo "### Checking each feature"
-cargo hack test --feature-powerset
+echo "### Testing every combination of features (excluding --all-features)"
+cargo hack test --feature-powerset --exclude-all-features

@@ -8,5 +8,5 @@
 
 set -e
 
-echo "### Testing feature powerset"
-cargo hack test --feature-powerset
+echo "### Testing every combination of features (excluding --all-features)"
+cargo hack test --feature-powerset --exclude-all-features
