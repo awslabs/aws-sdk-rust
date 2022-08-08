@@ -21,6 +21,25 @@ aws-sdk-kinesis = "0.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
+Then in code, a client can be created with the following:
+
+```rust
+use aws_sdk_kinesis as kinesis;
+
+#[tokio::main]
+async fn main() -> Result<(), kinesis::Error> {
+    let config = aws_config::load_from_env().await;
+    let client = kinesis::Client::new(&config);
+
+    // ... make some calls with the client
+
+    Ok(())
+}
+```
+
+See the [client documentation](https://docs.rs/aws-sdk-kinesis/latest/aws_sdk_kinesis/client/struct.Client.html)
+for information on what calls can be made, and the inputs and outputs for each of those calls.
+
 ## Using the SDK
 
 Until the SDK is released, we will be adding information about using the SDK to the
