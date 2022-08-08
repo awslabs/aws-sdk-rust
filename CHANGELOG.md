@@ -1,4 +1,104 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+August 8th, 2022
+================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1157](https://github.com/awslabs/smithy-rs/issues/1157)) Rename EventStreamInput to EventStreamSender
+- ⚠ ([smithy-rs#1157](https://github.com/awslabs/smithy-rs/issues/1157)) The type of streaming unions that contain errors is generated without those errors.
+    Errors in a streaming union `Union` are generated as members of the type `UnionError`.
+    Taking Transcribe as an example, the `AudioStream` streaming union generates, in the client, both the `AudioStream` type:
+    ```rust
+    pub enum AudioStream {
+        AudioEvent(crate::model::AudioEvent),
+        Unknown,
+    }
+    ```
+    and its error type,
+    ```rust
+    pub struct AudioStreamError {
+        /// Kind of error that occurred.
+        pub kind: AudioStreamErrorKind,
+        /// Additional metadata about the error, including error code, message, and request ID.
+        pub(crate) meta: aws_smithy_types::Error,
+    }
+    ```
+    `AudioStreamErrorKind` contains all error variants for the union.
+    Before, the generated code looked as:
+    ```rust
+    pub enum AudioStream {
+        AudioEvent(crate::model::AudioEvent),
+        ... all error variants,
+        Unknown,
+    }
+    ```
+- ⚠ ([smithy-rs#1157](https://github.com/awslabs/smithy-rs/issues/1157)) `aws_smithy_http::event_stream::EventStreamSender` and `aws_smithy_http::event_stream::Receiver` are now generic over `<T, E>`,
+    where `T` is a streaming union and `E` the union's errors.
+    This means that event stream errors are now sent as `Err` of the union's error type.
+    With this example model:
+    ```smithy
+    @streaming union Event {
+        throttlingError: ThrottlingError
+    }
+    @error("client") structure ThrottlingError {}
+    ```
+    Before:
+    ```rust
+    stream! { yield Ok(Event::ThrottlingError ...) }
+    ```
+    After:
+    ```rust
+    stream! { yield Err(EventError::ThrottlingError ...) }
+    ```
+    An example from the SDK is in [transcribe streaming](https://github.com/awslabs/smithy-rs/blob/4f51dd450ea3234a7faf481c6025597f22f03805/aws/sdk/integration-tests/transcribestreaming/tests/test.rs#L80).
+
+**New this release:**
+- 🎉 ([smithy-rs#1482](https://github.com/awslabs/smithy-rs/issues/1482)) The AWS SDK for Rust now supports [additional checksum algorithms for Amazon S3](https://aws.amazon.com/blogs/aws/new-additional-checksum-algorithms-for-amazon-s3/).
+    When getting and putting objects, you may now request that the request body be validated with a checksum. The supported
+    algorithms are SHA-1, SHA-256, CRC-32, and CRC-32C.
+
+    ```rust
+    #[tokio::main]
+    async fn main() -> Result<(), Box<dyn std::error::Error>> {
+        let sdk_config = aws_config::load_from_env().await;
+        let s3_client = aws_sdk_s3::Client::new(&sdk_config);
+        let body = aws_sdk_s3::types::ByteStream::read_from()
+            .path(std::path::Path::new("./path/to/your/file.txt"))
+            .build()
+            .await
+            .unwrap();
+
+        let _ = s3_client
+            .put_object()
+            .bucket("your-bucket")
+            .key("file.txt")
+            .body(body)
+            // When using this field, the checksum will be calculated for you
+            .checksum_algorithm(aws_sdk_s3::model::ChecksumAlgorithm::Crc32C)
+            .send()
+            .await?;
+
+        let body = aws_sdk_s3::types::ByteStream::read_from()
+            .path(std::path::Path::new("./path/to/your/other-file.txt"))
+            .build()
+            .await
+            .unwrap();
+
+        let _ = s3_client
+            .put_object()
+            .bucket("your-bucket")
+            .key("other-file.txt")
+            .body(body)
+            // Alternatively, you can pass a checksum that you've calculated yourself. It must be base64
+            // encoded. Also, make sure that you're base64 encoding the bytes of the checksum, not its
+            // string representation.
+            .checksum_crc32_c(aws_smithy_types::base64::encode(&A_PRECALCULATED_CRC_32_C_CHECKSUM[..]))
+            .send()
+            .await?;
+    }
+    ```
+- 🎉 ([smithy-rs#1571](https://github.com/awslabs/smithy-rs/issues/1571), [smithy-rs#1385](https://github.com/awslabs/smithy-rs/issues/1385)) SDK crate READMEs now include an example of creating a client
+- ([smithy-rs#1573](https://github.com/awslabs/smithy-rs/issues/1573), [smithy-rs#1569](https://github.com/awslabs/smithy-rs/issues/1569)) Non-streaming struct members are now marked `#[doc(hidden)]` since they will be removed in the future
+
+
 July 21st, 2022
 ===============
 **New this release:**
