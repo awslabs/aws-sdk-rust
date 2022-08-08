@@ -19,7 +19,7 @@ use aws_smithy_types::tristate::TriState;
 use std::sync::Arc;
 use std::time::Duration;
 
-#[tokio::test]
+#[tokio::test(start_paused = true)]
 async fn test_timeout_service_ends_request_that_never_completes() {
     let conn: NeverService<http::Request<SdkBody>, http::Response<SdkBody>, ConnectorError> =
         NeverService::new();
@@ -38,7 +38,6 @@ async fn test_timeout_service_ends_request_that_never_completes() {
     let client = Client::from_conf_conn(config, conn.clone());
 
     let now = tokio::time::Instant::now();
-    tokio::time::pause();
 
     let err = client
         .select_object_content()

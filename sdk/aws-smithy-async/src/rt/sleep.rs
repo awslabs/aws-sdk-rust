@@ -14,7 +14,7 @@ use std::task::{Context, Poll};
 use std::time::Duration;
 
 /// Async trait with a `sleep` function.
-pub trait AsyncSleep: std::fmt::Debug + Send + Sync {
+pub trait AsyncSleep: Debug + Send + Sync {
     /// Returns a future that sleeps for the given `duration` of time.
     fn sleep(&self, duration: Duration) -> Sleep;
 }
