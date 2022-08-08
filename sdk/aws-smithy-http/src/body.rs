@@ -55,13 +55,16 @@ pub type BoxBody = http_body::combinators::BoxBody<Bytes, Error>;
 pin_project! {
     #[project = InnerProj]
     enum Inner {
+        // An in-memory body
         Once {
             inner: Option<Bytes>
         },
+        // A streaming body
         Streaming {
             #[pin]
             inner: hyper::Body
         },
+        // Also a streaming body
         Dyn {
             #[pin]
             inner: BoxBody
