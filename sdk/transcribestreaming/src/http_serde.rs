@@ -720,7 +720,7 @@ pub fn deser_payload_start_medical_stream_transcription_start_medical_stream_tra
 ) -> std::result::Result<
     aws_smithy_http::event_stream::Receiver<
         crate::model::MedicalTranscriptResultStream,
-        crate::error::StartMedicalStreamTranscriptionError,
+        crate::error::MedicalTranscriptResultStreamError,
     >,
     crate::error::StartMedicalStreamTranscriptionError,
 > {
@@ -983,7 +983,7 @@ pub fn deser_payload_start_stream_transcription_start_stream_transcription_outpu
 ) -> std::result::Result<
     aws_smithy_http::event_stream::Receiver<
         crate::model::TranscriptResultStream,
-        crate::error::StartStreamTranscriptionError,
+        crate::error::TranscriptResultStreamError,
     >,
     crate::error::StartStreamTranscriptionError,
 > {

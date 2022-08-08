@@ -1700,4 +1700,26 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::SelectObjectContentEventStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::SelectObjectContentEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SelectObjectContentEventStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

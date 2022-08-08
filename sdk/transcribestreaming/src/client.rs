@@ -102,7 +102,7 @@ impl Client {
     ///   - [`r#type(Type)`](crate::client::fluent_builders::StartMedicalStreamTranscription::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_type): <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>
     ///   - [`show_speaker_label(bool)`](crate::client::fluent_builders::StartMedicalStreamTranscription::show_speaker_label) / [`set_show_speaker_label(bool)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_show_speaker_label): <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_session_id): <p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>
-    ///   - [`audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::audio_stream) / [`set_audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_audio_stream): <p>Represents the audio stream from your application to Amazon Transcribe.</p>
+    ///   - [`audio_stream(EventStreamSender<crate::model::AudioStream, crate::error::AudioStreamError>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::audio_stream) / [`set_audio_stream(EventStreamSender<crate::model::AudioStream, crate::error::AudioStreamError>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_audio_stream): <p>Represents the audio stream from your application to Amazon Transcribe.</p>
     ///   - [`enable_channel_identification(bool)`](crate::client::fluent_builders::StartMedicalStreamTranscription::enable_channel_identification) / [`set_enable_channel_identification(bool)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_enable_channel_identification): <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p>  <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>  <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     ///   - [`number_of_channels(i32)`](crate::client::fluent_builders::StartMedicalStreamTranscription::number_of_channels) / [`set_number_of_channels(Option<i32>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_number_of_channels): <p>The number of channels that are in your audio stream.</p>
     ///   - [`content_identification_type(MedicalContentIdentificationType)`](crate::client::fluent_builders::StartMedicalStreamTranscription::content_identification_type) / [`set_content_identification_type(Option<MedicalContentIdentificationType>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_content_identification_type): <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
@@ -116,7 +116,7 @@ impl Client {
     ///   - [`r#type(Option<Type>)`](crate::output::StartMedicalStreamTranscriptionOutput::type): <p>The type of audio that was transcribed. </p>
     ///   - [`show_speaker_label(bool)`](crate::output::StartMedicalStreamTranscriptionOutput::show_speaker_label): <p>Shows whether speaker identification was enabled in the stream.</p>
     ///   - [`session_id(Option<String>)`](crate::output::StartMedicalStreamTranscriptionOutput::session_id): <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
-    ///   - [`transcript_result_stream(Receiver<crate::model::MedicalTranscriptResultStream, crate::error::StartMedicalStreamTranscriptionError>)`](crate::output::StartMedicalStreamTranscriptionOutput::transcript_result_stream): <p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>
+    ///   - [`transcript_result_stream(Receiver<crate::model::MedicalTranscriptResultStream, crate::error::MedicalTranscriptResultStreamError>)`](crate::output::StartMedicalStreamTranscriptionOutput::transcript_result_stream): <p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>
     ///   - [`enable_channel_identification(bool)`](crate::output::StartMedicalStreamTranscriptionOutput::enable_channel_identification): <p>Shows whether channel identification has been enabled in the stream.</p>
     ///   - [`number_of_channels(Option<i32>)`](crate::output::StartMedicalStreamTranscriptionOutput::number_of_channels): <p>The number of channels identified in the stream.</p>
     ///   - [`content_identification_type(Option<MedicalContentIdentificationType>)`](crate::output::StartMedicalStreamTranscriptionOutput::content_identification_type): <p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>
@@ -134,7 +134,7 @@ impl Client {
     ///   - [`media_encoding(MediaEncoding)`](crate::client::fluent_builders::StartStreamTranscription::media_encoding) / [`set_media_encoding(Option<MediaEncoding>)`](crate::client::fluent_builders::StartStreamTranscription::set_media_encoding): <p>The encoding used for the input audio.</p>
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_name): <p>The name of the custom vocabulary you want to use with your transcription.</p>  <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_session_id): <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
-    ///   - [`audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::client::fluent_builders::StartStreamTranscription::audio_stream) / [`set_audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::client::fluent_builders::StartStreamTranscription::set_audio_stream): <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
+    ///   - [`audio_stream(EventStreamSender<crate::model::AudioStream, crate::error::AudioStreamError>)`](crate::client::fluent_builders::StartStreamTranscription::audio_stream) / [`set_audio_stream(EventStreamSender<crate::model::AudioStream, crate::error::AudioStreamError>)`](crate::client::fluent_builders::StartStreamTranscription::set_audio_stream): <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
     ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_filter_name): <p>The name of the vocabulary filter you want to use with your transcription.</p>  <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
     ///   - [`vocabulary_filter_method(VocabularyFilterMethod)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_filter_method) / [`set_vocabulary_filter_method(Option<VocabularyFilterMethod>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_filter_method): <p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
     ///   - [`show_speaker_label(bool)`](crate::client::fluent_builders::StartStreamTranscription::show_speaker_label) / [`set_show_speaker_label(bool)`](crate::client::fluent_builders::StartStreamTranscription::set_show_speaker_label): <p>When <code>true</code>, enables speaker identification in your media stream.</p>
@@ -158,7 +158,7 @@ impl Client {
     ///   - [`media_encoding(Option<MediaEncoding>)`](crate::output::StartStreamTranscriptionOutput::media_encoding): <p>The encoding used for the input audio stream.</p>
     ///   - [`vocabulary_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_name): <p>The name of the custom vocabulary used when processing the stream.</p>
     ///   - [`session_id(Option<String>)`](crate::output::StartStreamTranscriptionOutput::session_id): <p>An identifier for a specific transcription session.</p>
-    ///   - [`transcript_result_stream(Receiver<crate::model::TranscriptResultStream, crate::error::StartStreamTranscriptionError>)`](crate::output::StartStreamTranscriptionOutput::transcript_result_stream): <p>Represents the stream of transcription events from Amazon Transcribe to your application.</p>
+    ///   - [`transcript_result_stream(Receiver<crate::model::TranscriptResultStream, crate::error::TranscriptResultStreamError>)`](crate::output::StartStreamTranscriptionOutput::transcript_result_stream): <p>Represents the stream of transcription events from Amazon Transcribe to your application.</p>
     ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_name): <p>The name of the vocabulary filter used when processing the stream.</p>
     ///   - [`vocabulary_filter_method(Option<VocabularyFilterMethod>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_method): <p>The vocabulary filtering method used when processing the stream.</p>
     ///   - [`show_speaker_label(bool)`](crate::output::StartStreamTranscriptionOutput::show_speaker_label): <p>Shows whether speaker identification was enabled in the transcription.</p>
@@ -324,7 +324,10 @@ pub mod fluent_builders {
         /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
         pub fn audio_stream(
             mut self,
-            input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            input: aws_smithy_http::event_stream::EventStreamSender<
+                crate::model::AudioStream,
+                crate::error::AudioStreamError,
+            >,
         ) -> Self {
             self.inner = self.inner.audio_stream(input);
             self
@@ -333,7 +336,10 @@ pub mod fluent_builders {
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
-                aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+                aws_smithy_http::event_stream::EventStreamSender<
+                    crate::model::AudioStream,
+                    crate::error::AudioStreamError,
+                >,
             >,
         ) -> Self {
             self.inner = self.inner.set_audio_stream(input);
@@ -497,7 +503,10 @@ pub mod fluent_builders {
         /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
         pub fn audio_stream(
             mut self,
-            input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            input: aws_smithy_http::event_stream::EventStreamSender<
+                crate::model::AudioStream,
+                crate::error::AudioStreamError,
+            >,
         ) -> Self {
             self.inner = self.inner.audio_stream(input);
             self
@@ -506,7 +515,10 @@ pub mod fluent_builders {
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
-                aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+                aws_smithy_http::event_stream::EventStreamSender<
+                    crate::model::AudioStream,
+                    crate::error::AudioStreamError,
+                >,
             >,
         ) -> Self {
             self.inner = self.inner.set_audio_stream(input);

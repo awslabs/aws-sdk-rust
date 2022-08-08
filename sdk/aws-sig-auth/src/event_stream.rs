@@ -72,7 +72,7 @@ impl SignMessage for SigV4Signer {
         Ok(signed_message)
     }
 
-    fn sign_empty(&mut self) -> Result<Message, SignMessageError> {
+    fn sign_empty(&mut self) -> Option<Result<Message, SignMessageError>> {
         let properties = self.properties.acquire();
         if self.last_signature.is_none() {
             // The Signature property should exist in the property bag for all Event Stream requests.
@@ -83,7 +83,7 @@ impl SignMessage for SigV4Signer {
             sign_empty_message(self.last_signature.as_ref().unwrap(), &params).into_parts()
         };
         self.last_signature = Some(signature);
-        Ok(signed_message)
+        Some(Ok(signed_message))
     }
 }
 

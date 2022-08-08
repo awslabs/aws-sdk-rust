@@ -17,7 +17,7 @@ pub struct StartStreamTranscriptionOutput {
     /// <p>Represents the stream of transcription events from Amazon Transcribe to your application.</p>
     pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
         crate::model::TranscriptResultStream,
-        crate::error::StartStreamTranscriptionError,
+        crate::error::TranscriptResultStreamError,
     >,
     /// <p>The name of the vocabulary filter used when processing the stream.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -82,7 +82,7 @@ impl StartStreamTranscriptionOutput {
         &self,
     ) -> &aws_smithy_http::event_stream::Receiver<
         crate::model::TranscriptResultStream,
-        crate::error::StartStreamTranscriptionError,
+        crate::error::TranscriptResultStreamError,
     > {
         &self.transcript_result_stream
     }
@@ -212,7 +212,7 @@ pub mod start_stream_transcription_output {
         pub(crate) transcript_result_stream: std::option::Option<
             aws_smithy_http::event_stream::Receiver<
                 crate::model::TranscriptResultStream,
-                crate::error::StartStreamTranscriptionError,
+                crate::error::TranscriptResultStreamError,
             >,
         >,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -310,7 +310,7 @@ pub mod start_stream_transcription_output {
             mut self,
             input: aws_smithy_http::event_stream::Receiver<
                 crate::model::TranscriptResultStream,
-                crate::error::StartStreamTranscriptionError,
+                crate::error::TranscriptResultStreamError,
             >,
         ) -> Self {
             self.transcript_result_stream = Some(input);
@@ -322,7 +322,7 @@ pub mod start_stream_transcription_output {
             input: std::option::Option<
                 aws_smithy_http::event_stream::Receiver<
                     crate::model::TranscriptResultStream,
-                    crate::error::StartStreamTranscriptionError,
+                    crate::error::TranscriptResultStreamError,
                 >,
             >,
         ) -> Self {
@@ -635,7 +635,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     /// <p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>
     pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
         crate::model::MedicalTranscriptResultStream,
-        crate::error::StartMedicalStreamTranscriptionError,
+        crate::error::MedicalTranscriptResultStreamError,
     >,
     /// <p>Shows whether channel identification has been enabled in the stream.</p>
     pub enable_channel_identification: bool,
@@ -687,7 +687,7 @@ impl StartMedicalStreamTranscriptionOutput {
         &self,
     ) -> &aws_smithy_http::event_stream::Receiver<
         crate::model::MedicalTranscriptResultStream,
-        crate::error::StartMedicalStreamTranscriptionError,
+        crate::error::MedicalTranscriptResultStreamError,
     > {
         &self.transcript_result_stream
     }
@@ -749,7 +749,7 @@ pub mod start_medical_stream_transcription_output {
         pub(crate) transcript_result_stream: std::option::Option<
             aws_smithy_http::event_stream::Receiver<
                 crate::model::MedicalTranscriptResultStream,
-                crate::error::StartMedicalStreamTranscriptionError,
+                crate::error::MedicalTranscriptResultStreamError,
             >,
         >,
         pub(crate) enable_channel_identification: std::option::Option<bool>,
@@ -865,7 +865,7 @@ pub mod start_medical_stream_transcription_output {
             mut self,
             input: aws_smithy_http::event_stream::Receiver<
                 crate::model::MedicalTranscriptResultStream,
-                crate::error::StartMedicalStreamTranscriptionError,
+                crate::error::MedicalTranscriptResultStreamError,
             >,
         ) -> Self {
             self.transcript_result_stream = Some(input);
@@ -877,7 +877,7 @@ pub mod start_medical_stream_transcription_output {
             input: std::option::Option<
                 aws_smithy_http::event_stream::Receiver<
                     crate::model::MedicalTranscriptResultStream,
-                    crate::error::StartMedicalStreamTranscriptionError,
+                    crate::error::MedicalTranscriptResultStreamError,
                 >,
             >,
         ) -> Self {

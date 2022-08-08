@@ -518,7 +518,7 @@ pub struct SelectObjectContentOutput {
     /// <p>The array of results.</p>
     pub payload: aws_smithy_http::event_stream::Receiver<
         crate::model::SelectObjectContentEventStream,
-        crate::error::SelectObjectContentError,
+        crate::error::SelectObjectContentEventStreamError,
     >,
 }
 impl SelectObjectContentOutput {
@@ -527,7 +527,7 @@ impl SelectObjectContentOutput {
         &self,
     ) -> &aws_smithy_http::event_stream::Receiver<
         crate::model::SelectObjectContentEventStream,
-        crate::error::SelectObjectContentError,
+        crate::error::SelectObjectContentEventStreamError,
     > {
         &self.payload
     }
@@ -548,7 +548,7 @@ pub mod select_object_content_output {
         pub(crate) payload: std::option::Option<
             aws_smithy_http::event_stream::Receiver<
                 crate::model::SelectObjectContentEventStream,
-                crate::error::SelectObjectContentError,
+                crate::error::SelectObjectContentEventStreamError,
             >,
         >,
     }
@@ -558,7 +558,7 @@ pub mod select_object_content_output {
             mut self,
             input: aws_smithy_http::event_stream::Receiver<
                 crate::model::SelectObjectContentEventStream,
-                crate::error::SelectObjectContentError,
+                crate::error::SelectObjectContentEventStreamError,
             >,
         ) -> Self {
             self.payload = Some(input);
@@ -570,7 +570,7 @@ pub mod select_object_content_output {
             input: std::option::Option<
                 aws_smithy_http::event_stream::Receiver<
                     crate::model::SelectObjectContentEventStream,
-                    crate::error::SelectObjectContentError,
+                    crate::error::SelectObjectContentEventStreamError,
                 >,
             >,
         ) -> Self {

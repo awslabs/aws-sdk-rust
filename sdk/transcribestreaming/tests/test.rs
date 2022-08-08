@@ -5,7 +5,7 @@
 
 use async_stream::stream;
 use aws_sdk_transcribestreaming::error::{
-    StartStreamTranscriptionError, StartStreamTranscriptionErrorKind,
+    AudioStreamError, TranscriptResultStreamError, TranscriptResultStreamErrorKind,
 };
 use aws_sdk_transcribestreaming::model::{
     AudioEvent, AudioStream, LanguageCode, MediaEncoding, TranscriptResultStream,
@@ -15,7 +15,6 @@ use aws_sdk_transcribestreaming::types::{Blob, SdkError};
 use aws_sdk_transcribestreaming::{Client, Config, Credentials, Region};
 use aws_smithy_client::dvr::{Event, ReplayingConnection};
 use aws_smithy_eventstream::frame::{DecodedFrame, HeaderValue, Message, MessageFrameDecoder};
-use aws_smithy_http::event_stream::BoxError;
 use bytes::BufMut;
 use futures_core::Stream;
 use std::collections::{BTreeMap, BTreeSet};
@@ -78,8 +77,8 @@ async fn test_error() {
     match output.transcript_result_stream.recv().await {
         Err(SdkError::ServiceError {
             err:
-                StartStreamTranscriptionError {
-                    kind: StartStreamTranscriptionErrorKind::BadRequestException(err),
+                TranscriptResultStreamError {
+                    kind: TranscriptResultStreamErrorKind::BadRequestException(err),
                     ..
                 },
             ..
@@ -102,7 +101,7 @@ async fn test_error() {
 async fn start_request(
     region: &'static str,
     events_json: &str,
-    input_stream: impl Stream<Item = Result<AudioStream, BoxError>> + Send + Sync + 'static,
+    input_stream: impl Stream<Item = Result<AudioStream, AudioStreamError>> + Send + Sync + 'static,
 ) -> (ReplayingConnection, StartStreamTranscriptionOutput) {
     let events: Vec<Event> = serde_json::from_str(events_json).unwrap();
     let replayer = ReplayingConnection::new(events);

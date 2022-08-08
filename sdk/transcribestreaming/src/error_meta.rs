@@ -86,4 +86,71 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AudioStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AudioStreamError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AudioStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::MedicalTranscriptResultStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::MedicalTranscriptResultStreamError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::MedicalTranscriptResultStreamErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::MedicalTranscriptResultStreamErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::MedicalTranscriptResultStreamErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::MedicalTranscriptResultStreamErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::MedicalTranscriptResultStreamErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::MedicalTranscriptResultStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TranscriptResultStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::TranscriptResultStreamError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TranscriptResultStreamErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::TranscriptResultStreamErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::TranscriptResultStreamErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::TranscriptResultStreamErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::TranscriptResultStreamErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::TranscriptResultStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

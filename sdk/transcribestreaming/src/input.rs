@@ -16,7 +16,10 @@ pub mod start_medical_stream_transcription_input {
         pub(crate) show_speaker_label: std::option::Option<bool>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) audio_stream: std::option::Option<
-            aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            aws_smithy_http::event_stream::EventStreamSender<
+                crate::model::AudioStream,
+                crate::error::AudioStreamError,
+            >,
         >,
         pub(crate) enable_channel_identification: std::option::Option<bool>,
         pub(crate) number_of_channels: std::option::Option<i32>,
@@ -119,7 +122,10 @@ pub mod start_medical_stream_transcription_input {
         /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
         pub fn audio_stream(
             mut self,
-            input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            input: aws_smithy_http::event_stream::EventStreamSender<
+                crate::model::AudioStream,
+                crate::error::AudioStreamError,
+            >,
         ) -> Self {
             self.audio_stream = Some(input);
             self
@@ -128,7 +134,10 @@ pub mod start_medical_stream_transcription_input {
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
-                aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+                aws_smithy_http::event_stream::EventStreamSender<
+                    crate::model::AudioStream,
+                    crate::error::AudioStreamError,
+                >,
             >,
         ) -> Self {
             self.audio_stream = input;
@@ -266,19 +275,19 @@ impl StartMedicalStreamTranscriptionInput {
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_TYPE,
-                "application/json",
+                "application/vnd.amazon.eventstream",
             );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from({
+            let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new();
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let signer = _config.new_event_stream_signer(properties.clone());
-            let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<
-                _,
-                crate::error::StartMedicalStreamTranscriptionError,
-            > = self.audio_stream.into_body_stream(marshaller, signer);
+            let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<_, _> = self
+                .audio_stream
+                .into_body_stream(marshaller, error_marshaller, signer);
             let body: aws_smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
             body
         });
@@ -350,7 +359,10 @@ pub mod start_stream_transcription_input {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) audio_stream: std::option::Option<
-            aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            aws_smithy_http::event_stream::EventStreamSender<
+                crate::model::AudioStream,
+                crate::error::AudioStreamError,
+            >,
         >,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) vocabulary_filter_method:
@@ -437,7 +449,10 @@ pub mod start_stream_transcription_input {
         /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
         pub fn audio_stream(
             mut self,
-            input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            input: aws_smithy_http::event_stream::EventStreamSender<
+                crate::model::AudioStream,
+                crate::error::AudioStreamError,
+            >,
         ) -> Self {
             self.audio_stream = Some(input);
             self
@@ -446,7 +461,10 @@ pub mod start_stream_transcription_input {
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
-                aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+                aws_smithy_http::event_stream::EventStreamSender<
+                    crate::model::AudioStream,
+                    crate::error::AudioStreamError,
+                >,
             >,
         ) -> Self {
             self.audio_stream = input;
@@ -795,19 +813,19 @@ impl StartStreamTranscriptionInput {
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_TYPE,
-                "application/json",
+                "application/vnd.amazon.eventstream",
             );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from({
+            let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new();
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let signer = _config.new_event_stream_signer(properties.clone());
-            let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<
-                _,
-                crate::error::StartStreamTranscriptionError,
-            > = self.audio_stream.into_body_stream(marshaller, signer);
+            let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<_, _> = self
+                .audio_stream
+                .into_body_stream(marshaller, error_marshaller, signer);
             let body: aws_smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
             body
         });
@@ -882,7 +900,10 @@ pub struct StartStreamTranscriptionInput {
     /// <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
-    pub audio_stream: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+    pub audio_stream: aws_smithy_http::event_stream::EventStreamSender<
+        crate::model::AudioStream,
+        crate::error::AudioStreamError,
+    >,
     /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
     /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -954,7 +975,10 @@ impl StartStreamTranscriptionInput {
     /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
     pub fn audio_stream(
         &self,
-    ) -> &aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream> {
+    ) -> &aws_smithy_http::event_stream::EventStreamSender<
+        crate::model::AudioStream,
+        crate::error::AudioStreamError,
+    > {
         &self.audio_stream
     }
     /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
@@ -1101,7 +1125,10 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
-    pub audio_stream: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+    pub audio_stream: aws_smithy_http::event_stream::EventStreamSender<
+        crate::model::AudioStream,
+        crate::error::AudioStreamError,
+    >,
     /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p>
     /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
     /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
@@ -1148,7 +1175,10 @@ impl StartMedicalStreamTranscriptionInput {
     /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
     pub fn audio_stream(
         &self,
-    ) -> &aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream> {
+    ) -> &aws_smithy_http::event_stream::EventStreamSender<
+        crate::model::AudioStream,
+        crate::error::AudioStreamError,
+    > {
         &self.audio_stream
     }
     /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p>

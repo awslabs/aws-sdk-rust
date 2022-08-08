@@ -13,7 +13,7 @@
               "AWS4-HMAC-SHA256 Credential=test/test/us-west-2/transcribe/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-user-agent;x-amzn-transcribe-language-code;x-amzn-transcribe-media-encoding;x-amzn-transcribe-sample-rate, Signature=test"
             ],
             "content-type": [
-              "application/json"
+              "application/vnd.amazon.eventstream"
             ],
             "x-amzn-transcribe-language-code": [
               "en-GB"

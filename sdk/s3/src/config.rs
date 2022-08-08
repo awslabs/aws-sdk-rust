@@ -57,9 +57,9 @@ impl Config {
     /// Creates a new Event Stream `SignMessage` implementor.
     pub fn new_event_stream_signer(
         &self,
-        properties: aws_smithy_http::property_bag::SharedPropertyBag,
-    ) -> aws_sig_auth::event_stream::SigV4Signer {
-        aws_sig_auth::event_stream::SigV4Signer::new(properties)
+        _properties: aws_smithy_http::property_bag::SharedPropertyBag,
+    ) -> impl aws_smithy_eventstream::frame::SignMessage {
+        aws_sig_auth::event_stream::SigV4Signer::new(_properties)
     }
 }
 /// Builder for creating a `Config`.

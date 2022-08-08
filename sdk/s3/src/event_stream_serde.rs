@@ -12,7 +12,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
     for SelectObjectContentEventStreamUnmarshaller
 {
     type Output = crate::model::SelectObjectContentEventStream;
-    type Error = crate::error::SelectObjectContentError;
+    type Error = crate::error::SelectObjectContentEventStreamError;
     fn unmarshall(
         &self,
         message: &aws_smithy_eventstream::frame::Message,
@@ -92,12 +92,12 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                         Ok(generic) => generic,
                         Err(err) => {
                             return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
-                                crate::error::SelectObjectContentError::unhandled(err),
+                                crate::error::SelectObjectContentEventStreamError::unhandled(err),
                             ))
                         }
                     };
                 Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
-                    crate::error::SelectObjectContentError::generic(generic),
+                    crate::error::SelectObjectContentEventStreamError::generic(generic),
                 ))
             }
             value => {

@@ -23,24 +23,26 @@ enum RecvBuf {
     /// Nothing has been buffered yet.
     Empty,
     /// Some data has been buffered.
-    /// The SegmentedBuf will automatically purge when it reads off the end of a chunk boundary
+    /// The SegmentedBuf will automatically purge when it reads off the end of a chunk boundary.
     Partial(SegmentedBuf<Bytes>),
     /// The end of the stream has been reached, but there may still be some buffered data.
     EosPartial(SegmentedBuf<Bytes>),
+    /// An exception terminated this stream.
+    Terminated,
 }
 
 impl RecvBuf {
     /// Returns true if there's more buffered data.
     fn has_data(&self) -> bool {
         match self {
-            RecvBuf::Empty => false,
+            RecvBuf::Empty | RecvBuf::Terminated => false,
             RecvBuf::Partial(segments) | RecvBuf::EosPartial(segments) => segments.remaining() > 0,
         }
     }
 
     /// Returns true if the stream has ended.
     fn is_eos(&self) -> bool {
-        matches!(self, RecvBuf::EosPartial(_))
+        matches!(self, RecvBuf::EosPartial(_) | RecvBuf::Terminated)
     }
 
     /// Returns a mutable reference to the underlying buffered data.
@@ -49,6 +51,7 @@ impl RecvBuf {
             RecvBuf::Empty => panic!("buffer must be populated before reading; this is a bug"),
             RecvBuf::Partial(segmented) => segmented,
             RecvBuf::EosPartial(segmented) => segmented,
+            RecvBuf::Terminated => panic!("buffer has been terminated; this is a bug"),
         }
     }
 
@@ -65,8 +68,8 @@ impl RecvBuf {
                 segmented.push(partial);
                 RecvBuf::Partial(segmented)
             }
-            RecvBuf::EosPartial(_) => {
-                panic!("cannot buffer more data after the stream has ended; this is a bug")
+            RecvBuf::EosPartial(_) | RecvBuf::Terminated => {
+                panic!("cannot buffer more data after the stream has ended or been terminated; this is a bug")
             }
         }
     }
@@ -77,6 +80,7 @@ impl RecvBuf {
             RecvBuf::Empty => RecvBuf::EosPartial(SegmentedBuf::new()),
             RecvBuf::Partial(segmented) => RecvBuf::EosPartial(segmented),
             RecvBuf::EosPartial(_) => panic!("already end of stream; this is a bug"),
+            RecvBuf::Terminated => panic!("stream terminated; this is a bug"),
         }
     }
 }
@@ -239,10 +243,22 @@ impl<T, E> Receiver<T, E> {
     /// messages.
     pub async fn recv(&mut self) -> Result<Option<T>, SdkError<E, RawMessage>> {
         if let Some(buffered) = self.buffered_message.take() {
-            return self.unmarshall(buffered);
+            return match self.unmarshall(buffered) {
+                Ok(message) => Ok(message),
+                Err(error) => {
+                    self.buffer = RecvBuf::Terminated;
+                    Err(error)
+                }
+            };
         }
         if let Some(message) = self.next_message().await? {
-            self.unmarshall(message)
+            match self.unmarshall(message) {
+                Ok(message) => Ok(message),
+                Err(error) => {
+                    self.buffer = RecvBuf::Terminated;
+                    Err(error)
+                }
+            }
         } else {
             Ok(None)
         }

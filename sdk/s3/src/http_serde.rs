@@ -8874,7 +8874,7 @@ pub fn deser_payload_select_object_content_select_object_content_output_payload(
 ) -> std::result::Result<
     aws_smithy_http::event_stream::Receiver<
         crate::model::SelectObjectContentEventStream,
-        crate::error::SelectObjectContentError,
+        crate::error::SelectObjectContentEventStreamError,
     >,
     crate::error::SelectObjectContentError,
 > {
