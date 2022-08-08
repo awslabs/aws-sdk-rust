@@ -10333,7 +10333,7 @@
                 "TableState": {
                     "target": "com.amazonaws.databasemigrationservice#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The state of the tables described.</p>\n         <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table\n         cancelled | Table error | Table all | Table updates | Table is being reloaded</p>"
+                        "smithy.api#documentation": "<p>The state of the tables described.</p>\n         <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table\n         cancelled | Table error | Table is being reloaded</p>"
                     }
                 },
                 "ValidationPendingRecords": {
