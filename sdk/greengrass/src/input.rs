@@ -15695,8 +15695,10 @@ impl UpdateThingRuntimeConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThingRuntimeConfigurationInput {
     /// Configuration for telemetry service.
+    #[doc(hidden)]
     pub telemetry_configuration: std::option::Option<crate::model::TelemetryConfigurationUpdate>,
     /// The thing name.
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl UpdateThingRuntimeConfigurationInput {
@@ -15725,8 +15727,10 @@ impl std::fmt::Debug for UpdateThingRuntimeConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubscriptionDefinitionInput {
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The ID of the subscription definition.
+    #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
 }
 impl UpdateSubscriptionDefinitionInput {
@@ -15756,8 +15760,10 @@ impl std::fmt::Debug for UpdateSubscriptionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceDefinitionInput {
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The ID of the resource definition.
+    #[doc(hidden)]
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
 impl UpdateResourceDefinitionInput {
@@ -15784,8 +15790,10 @@ impl std::fmt::Debug for UpdateResourceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLoggerDefinitionInput {
     /// The ID of the logger definition.
+    #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateLoggerDefinitionInput {
@@ -15812,8 +15820,10 @@ impl std::fmt::Debug for UpdateLoggerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupCertificateConfigurationInput {
     /// The amount of time remaining before the certificate expires, in milliseconds.
+    #[doc(hidden)]
     pub certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl UpdateGroupCertificateConfigurationInput {
@@ -15843,8 +15853,10 @@ impl std::fmt::Debug for UpdateGroupCertificateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateGroupInput {
@@ -15871,8 +15883,10 @@ impl std::fmt::Debug for UpdateGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
+    #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateFunctionDefinitionInput {
@@ -15899,8 +15913,10 @@ impl std::fmt::Debug for UpdateFunctionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceDefinitionInput {
     /// The ID of the device definition.
+    #[doc(hidden)]
     pub device_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateDeviceDefinitionInput {
@@ -15927,8 +15943,10 @@ impl std::fmt::Debug for UpdateDeviceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCoreDefinitionInput {
     /// The ID of the core definition.
+    #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateCoreDefinitionInput {
@@ -15955,8 +15973,10 @@ impl std::fmt::Debug for UpdateCoreDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorDefinitionInput {
     /// The ID of the connector definition.
+    #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorDefinitionInput {
@@ -15983,8 +16003,10 @@ impl std::fmt::Debug for UpdateConnectorDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectivityInfoInput {
     /// A list of connectivity info.
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
     /// The thing name.
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl UpdateConnectivityInfoInput {
@@ -16011,8 +16033,10 @@ impl std::fmt::Debug for UpdateConnectivityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// An array of tag keys to delete
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -16039,8 +16063,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// The key-value pair for the resource tag.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16071,6 +16097,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBulkDeploymentInput {
     /// The ID of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_id: std::option::Option<std::string::String>,
 }
 impl StopBulkDeploymentInput {
@@ -16092,12 +16119,16 @@ impl std::fmt::Debug for StopBulkDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBulkDeploymentInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
+    #[doc(hidden)]
     pub input_file_uri: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16138,10 +16169,13 @@ impl std::fmt::Debug for StartBulkDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetDeploymentsInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// If true, performs a best-effort only core reset.
+    #[doc(hidden)]
     pub force: bool,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl ResetDeploymentsInput {
@@ -16173,6 +16207,7 @@ impl std::fmt::Debug for ResetDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -16194,10 +16229,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionDefinitionVersionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The ID of the subscription definition.
+    #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionDefinitionVersionsInput {
@@ -16232,8 +16270,10 @@ impl std::fmt::Debug for ListSubscriptionDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscriptionDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSubscriptionDefinitionsInput {
@@ -16260,10 +16300,13 @@ impl std::fmt::Debug for ListSubscriptionDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDefinitionVersionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The ID of the resource definition.
+    #[doc(hidden)]
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
 impl ListResourceDefinitionVersionsInput {
@@ -16295,8 +16338,10 @@ impl std::fmt::Debug for ListResourceDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDefinitionsInput {
@@ -16323,10 +16368,13 @@ impl std::fmt::Debug for ListResourceDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggerDefinitionVersionsInput {
     /// The ID of the logger definition.
+    #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLoggerDefinitionVersionsInput {
@@ -16358,8 +16406,10 @@ impl std::fmt::Debug for ListLoggerDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggerDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLoggerDefinitionsInput {
@@ -16386,10 +16436,13 @@ impl std::fmt::Debug for ListLoggerDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupVersionsInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupVersionsInput {
@@ -16421,8 +16474,10 @@ impl std::fmt::Debug for ListGroupVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsInput {
@@ -16449,6 +16504,7 @@ impl std::fmt::Debug for ListGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupCertificateAuthoritiesInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl ListGroupCertificateAuthoritiesInput {
@@ -16470,10 +16526,13 @@ impl std::fmt::Debug for ListGroupCertificateAuthoritiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionDefinitionVersionsInput {
     /// The ID of the Lambda function definition.
+    #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFunctionDefinitionVersionsInput {
@@ -16505,8 +16564,10 @@ impl std::fmt::Debug for ListFunctionDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFunctionDefinitionsInput {
@@ -16533,10 +16594,13 @@ impl std::fmt::Debug for ListFunctionDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceDefinitionVersionsInput {
     /// The ID of the device definition.
+    #[doc(hidden)]
     pub device_definition_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceDefinitionVersionsInput {
@@ -16568,8 +16632,10 @@ impl std::fmt::Debug for ListDeviceDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceDefinitionsInput {
@@ -16596,10 +16662,13 @@ impl std::fmt::Debug for ListDeviceDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsInput {
@@ -16631,10 +16700,13 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDefinitionVersionsInput {
     /// The ID of the core definition.
+    #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDefinitionVersionsInput {
@@ -16666,8 +16738,10 @@ impl std::fmt::Debug for ListCoreDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDefinitionsInput {
@@ -16694,10 +16768,13 @@ impl std::fmt::Debug for ListCoreDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorDefinitionVersionsInput {
     /// The ID of the connector definition.
+    #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorDefinitionVersionsInput {
@@ -16729,8 +16806,10 @@ impl std::fmt::Debug for ListConnectorDefinitionVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorDefinitionsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorDefinitionsInput {
@@ -16757,8 +16836,10 @@ impl std::fmt::Debug for ListConnectorDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBulkDeploymentsInput {
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBulkDeploymentsInput {
@@ -16785,10 +16866,13 @@ impl std::fmt::Debug for ListBulkDeploymentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBulkDeploymentDetailedReportsInput {
     /// The ID of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_id: std::option::Option<std::string::String>,
     /// The maximum number of results to be returned per request.
+    #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBulkDeploymentDetailedReportsInput {
@@ -16820,6 +16904,7 @@ impl std::fmt::Debug for ListBulkDeploymentDetailedReportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThingRuntimeConfigurationInput {
     /// The thing name.
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl GetThingRuntimeConfigurationInput {
@@ -16841,10 +16926,13 @@ impl std::fmt::Debug for GetThingRuntimeConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubscriptionDefinitionVersionInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// The ID of the subscription definition.
+    #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
     /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub subscription_definition_version_id: std::option::Option<std::string::String>,
 }
 impl GetSubscriptionDefinitionVersionInput {
@@ -16882,6 +16970,7 @@ impl std::fmt::Debug for GetSubscriptionDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
+    #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
 }
 impl GetSubscriptionDefinitionInput {
@@ -16917,8 +17006,10 @@ impl std::fmt::Debug for GetServiceRoleForAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceDefinitionVersionInput {
     /// The ID of the resource definition.
+    #[doc(hidden)]
     pub resource_definition_id: std::option::Option<std::string::String>,
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub resource_definition_version_id: std::option::Option<std::string::String>,
 }
 impl GetResourceDefinitionVersionInput {
@@ -16948,6 +17039,7 @@ impl std::fmt::Debug for GetResourceDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceDefinitionInput {
     /// The ID of the resource definition.
+    #[doc(hidden)]
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
 impl GetResourceDefinitionInput {
@@ -16969,10 +17061,13 @@ impl std::fmt::Debug for GetResourceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggerDefinitionVersionInput {
     /// The ID of the logger definition.
+    #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub logger_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetLoggerDefinitionVersionInput {
@@ -17007,6 +17102,7 @@ impl std::fmt::Debug for GetLoggerDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggerDefinitionInput {
     /// The ID of the logger definition.
+    #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
 }
 impl GetLoggerDefinitionInput {
@@ -17028,8 +17124,10 @@ impl std::fmt::Debug for GetLoggerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupVersionInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
+    #[doc(hidden)]
     pub group_version_id: std::option::Option<std::string::String>,
 }
 impl GetGroupVersionInput {
@@ -17056,6 +17154,7 @@ impl std::fmt::Debug for GetGroupVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupCertificateConfigurationInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetGroupCertificateConfigurationInput {
@@ -17077,8 +17176,10 @@ impl std::fmt::Debug for GetGroupCertificateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupCertificateAuthorityInput {
     /// The ID of the certificate authority.
+    #[doc(hidden)]
     pub certificate_authority_id: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetGroupCertificateAuthorityInput {
@@ -17105,6 +17206,7 @@ impl std::fmt::Debug for GetGroupCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetGroupInput {
@@ -17126,10 +17228,13 @@ impl std::fmt::Debug for GetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionDefinitionVersionInput {
     /// The ID of the Lambda function definition.
+    #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
     /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub function_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFunctionDefinitionVersionInput {
@@ -17164,6 +17269,7 @@ impl std::fmt::Debug for GetFunctionDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
+    #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
 }
 impl GetFunctionDefinitionInput {
@@ -17185,10 +17291,13 @@ impl std::fmt::Debug for GetFunctionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceDefinitionVersionInput {
     /// The ID of the device definition.
+    #[doc(hidden)]
     pub device_definition_id: std::option::Option<std::string::String>,
     /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub device_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDeviceDefinitionVersionInput {
@@ -17223,6 +17332,7 @@ impl std::fmt::Debug for GetDeviceDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceDefinitionInput {
     /// The ID of the device definition.
+    #[doc(hidden)]
     pub device_definition_id: std::option::Option<std::string::String>,
 }
 impl GetDeviceDefinitionInput {
@@ -17244,8 +17354,10 @@ impl std::fmt::Debug for GetDeviceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentStatusInput {
     /// The ID of the deployment.
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentStatusInput {
@@ -17272,8 +17384,10 @@ impl std::fmt::Debug for GetDeploymentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDefinitionVersionInput {
     /// The ID of the core definition.
+    #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub core_definition_version_id: std::option::Option<std::string::String>,
 }
 impl GetCoreDefinitionVersionInput {
@@ -17303,6 +17417,7 @@ impl std::fmt::Debug for GetCoreDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDefinitionInput {
     /// The ID of the core definition.
+    #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
 }
 impl GetCoreDefinitionInput {
@@ -17324,10 +17439,13 @@ impl std::fmt::Debug for GetCoreDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectorDefinitionVersionInput {
     /// The ID of the connector definition.
+    #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
     /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    #[doc(hidden)]
     pub connector_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectorDefinitionVersionInput {
@@ -17362,6 +17480,7 @@ impl std::fmt::Debug for GetConnectorDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectorDefinitionInput {
     /// The ID of the connector definition.
+    #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
 }
 impl GetConnectorDefinitionInput {
@@ -17383,6 +17502,7 @@ impl std::fmt::Debug for GetConnectorDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectivityInfoInput {
     /// The thing name.
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl GetConnectivityInfoInput {
@@ -17404,6 +17524,7 @@ impl std::fmt::Debug for GetConnectivityInfoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBulkDeploymentStatusInput {
     /// The ID of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_id: std::option::Option<std::string::String>,
 }
 impl GetBulkDeploymentStatusInput {
@@ -17425,6 +17546,7 @@ impl std::fmt::Debug for GetBulkDeploymentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociatedRoleInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetAssociatedRoleInput {
@@ -17457,6 +17579,7 @@ impl std::fmt::Debug for DisassociateServiceRoleFromAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRoleFromGroupInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DisassociateRoleFromGroupInput {
@@ -17478,6 +17601,7 @@ impl std::fmt::Debug for DisassociateRoleFromGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
+    #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteSubscriptionDefinitionInput {
@@ -17502,6 +17626,7 @@ impl std::fmt::Debug for DeleteSubscriptionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceDefinitionInput {
     /// The ID of the resource definition.
+    #[doc(hidden)]
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceDefinitionInput {
@@ -17523,6 +17648,7 @@ impl std::fmt::Debug for DeleteResourceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoggerDefinitionInput {
     /// The ID of the logger definition.
+    #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteLoggerDefinitionInput {
@@ -17544,6 +17670,7 @@ impl std::fmt::Debug for DeleteLoggerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DeleteGroupInput {
@@ -17565,6 +17692,7 @@ impl std::fmt::Debug for DeleteGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
+    #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionDefinitionInput {
@@ -17586,6 +17714,7 @@ impl std::fmt::Debug for DeleteFunctionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceDefinitionInput {
     /// The ID of the device definition.
+    #[doc(hidden)]
     pub device_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceDefinitionInput {
@@ -17607,6 +17736,7 @@ impl std::fmt::Debug for DeleteDeviceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreDefinitionInput {
     /// The ID of the core definition.
+    #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteCoreDefinitionInput {
@@ -17628,6 +17758,7 @@ impl std::fmt::Debug for DeleteCoreDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectorDefinitionInput {
     /// The ID of the connector definition.
+    #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectorDefinitionInput {
@@ -17649,10 +17780,13 @@ impl std::fmt::Debug for DeleteConnectorDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubscriptionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the subscription definition.
+    #[doc(hidden)]
     pub subscription_definition_id: std::option::Option<std::string::String>,
     /// A list of subscriptions.
+    #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
 }
 impl CreateSubscriptionDefinitionVersionInput {
@@ -17687,12 +17821,16 @@ impl std::fmt::Debug for CreateSubscriptionDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubscriptionDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the subscription definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::SubscriptionDefinitionVersion>,
     /// The name of the subscription definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -17735,18 +17873,25 @@ impl std::fmt::Debug for CreateSubscriptionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSoftwareUpdateJobInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+    #[doc(hidden)]
     pub s3_url_signer_role: std::option::Option<std::string::String>,
     /// The piece of software on the Greengrass core that will be updated.
+    #[doc(hidden)]
     pub software_to_update: std::option::Option<crate::model::SoftwareToUpdate>,
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
+    #[doc(hidden)]
     pub update_agent_log_level: std::option::Option<crate::model::UpdateAgentLogLevel>,
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+    #[doc(hidden)]
     pub update_targets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The architecture of the cores which are the targets of an update.
+    #[doc(hidden)]
     pub update_targets_architecture: std::option::Option<crate::model::UpdateTargetsArchitecture>,
     /// The operating system of the cores which are the targets of an update.
+    #[doc(hidden)]
     pub update_targets_operating_system:
         std::option::Option<crate::model::UpdateTargetsOperatingSystem>,
 }
@@ -17811,10 +17956,13 @@ impl std::fmt::Debug for CreateSoftwareUpdateJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the resource definition.
+    #[doc(hidden)]
     pub resource_definition_id: std::option::Option<std::string::String>,
     /// A list of resources.
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl CreateResourceDefinitionVersionInput {
@@ -17846,12 +17994,16 @@ impl std::fmt::Debug for CreateResourceDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the resource definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::ResourceDefinitionVersion>,
     /// The name of the resource definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -17892,10 +18044,13 @@ impl std::fmt::Debug for CreateResourceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoggerDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the logger definition.
+    #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
     /// A list of loggers.
+    #[doc(hidden)]
     pub loggers: std::option::Option<std::vec::Vec<crate::model::Logger>>,
 }
 impl CreateLoggerDefinitionVersionInput {
@@ -17927,12 +18082,16 @@ impl std::fmt::Debug for CreateLoggerDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoggerDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the logger definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::LoggerDefinitionVersion>,
     /// The name of the logger definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -17973,22 +18132,31 @@ impl std::fmt::Debug for CreateLoggerDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ARN of the connector definition version for this group.
+    #[doc(hidden)]
     pub connector_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the core definition version for this group.
+    #[doc(hidden)]
     pub core_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the device definition version for this group.
+    #[doc(hidden)]
     pub device_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the function definition version for this group.
+    #[doc(hidden)]
     pub function_definition_version_arn: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The ARN of the logger definition version for this group.
+    #[doc(hidden)]
     pub logger_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the resource definition version for this group.
+    #[doc(hidden)]
     pub resource_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the subscription definition version for this group.
+    #[doc(hidden)]
     pub subscription_definition_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateGroupVersionInput {
@@ -18071,8 +18239,10 @@ impl std::fmt::Debug for CreateGroupVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupCertificateAuthorityInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl CreateGroupCertificateAuthorityInput {
@@ -18099,12 +18269,16 @@ impl std::fmt::Debug for CreateGroupCertificateAuthorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the group.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::GroupVersion>,
     /// The name of the group.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18145,12 +18319,16 @@ impl std::fmt::Debug for CreateGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    #[doc(hidden)]
     pub default_config: std::option::Option<crate::model::FunctionDefaultConfig>,
     /// The ID of the Lambda function definition.
+    #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
     /// A list of Lambda functions in this function definition version.
+    #[doc(hidden)]
     pub functions: std::option::Option<std::vec::Vec<crate::model::Function>>,
 }
 impl CreateFunctionDefinitionVersionInput {
@@ -18187,12 +18365,16 @@ impl std::fmt::Debug for CreateFunctionDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the function definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::FunctionDefinitionVersion>,
     /// The name of the function definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18233,10 +18415,13 @@ impl std::fmt::Debug for CreateFunctionDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the device definition.
+    #[doc(hidden)]
     pub device_definition_id: std::option::Option<std::string::String>,
     /// A list of devices in the definition version.
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
 }
 impl CreateDeviceDefinitionVersionInput {
@@ -18268,12 +18453,16 @@ impl std::fmt::Debug for CreateDeviceDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the device definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::DeviceDefinitionVersion>,
     /// The name of the device definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18314,14 +18503,19 @@ impl std::fmt::Debug for CreateDeviceDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the deployment if you wish to redeploy a previous deployment.
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The ID of the group version to be deployed.
+    #[doc(hidden)]
     pub group_version_id: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
@@ -18363,10 +18557,13 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCoreDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the core definition.
+    #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
     /// A list of cores in the core definition version.
+    #[doc(hidden)]
     pub cores: std::option::Option<std::vec::Vec<crate::model::Core>>,
 }
 impl CreateCoreDefinitionVersionInput {
@@ -18398,12 +18595,16 @@ impl std::fmt::Debug for CreateCoreDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCoreDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the core definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::CoreDefinitionVersion>,
     /// The name of the core definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18444,10 +18645,13 @@ impl std::fmt::Debug for CreateCoreDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// The ID of the connector definition.
+    #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
     /// A list of references to connectors in this version, with their corresponding configuration settings.
+    #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::Connector>>,
 }
 impl CreateConnectorDefinitionVersionInput {
@@ -18479,12 +18683,16 @@ impl std::fmt::Debug for CreateConnectorDefinitionVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorDefinitionInput {
     /// A client token used to correlate requests and responses.
+    #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
     /// Information about the initial version of the connector definition.
+    #[doc(hidden)]
     pub initial_version: std::option::Option<crate::model::ConnectorDefinitionVersion>,
     /// The name of the connector definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18527,6 +18735,7 @@ impl std::fmt::Debug for CreateConnectorDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateServiceRoleToAccountInput {
     /// The ARN of the service role you wish to associate with your account.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AssociateServiceRoleToAccountInput {
@@ -18548,8 +18757,10 @@ impl std::fmt::Debug for AssociateServiceRoleToAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRoleToGroupInput {
     /// The ID of the Greengrass group.
+    #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AssociateRoleToGroupInput {

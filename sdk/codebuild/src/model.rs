@@ -5,24 +5,31 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Webhook {
     /// <p>The URL to the webhook.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The CodeBuild endpoint where webhook events are sent.</p>
+    #[doc(hidden)]
     pub payload_url: std::option::Option<std::string::String>,
     /// <p>The secret token of the associated repository. </p> <note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub secret: std::option::Option<std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
+    #[doc(hidden)]
     pub branch_filter: std::option::Option<std::string::String>,
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
+    #[doc(hidden)]
     pub filter_groups:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
+    #[doc(hidden)]
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
     /// <p>A timestamp that indicates the last time a repository's secret token was modified. </p>
+    #[doc(hidden)]
     pub last_modified_secret: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Webhook {
@@ -317,11 +324,14 @@ pub struct WebhookFilter {
     /// </note>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WebhookFilterType>,
     /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated string that specifies one or more events. For example, the webhook filter <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created, and pull request updated events to trigger a build. </p>
     /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code> for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>. </p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
+    #[doc(hidden)]
     pub exclude_matched_pattern: std::option::Option<bool>,
 }
 impl WebhookFilter {
@@ -635,8 +645,10 @@ impl AsRef<str> for WebhookFilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportGroup {
     /// <p>The ARN of the <code>ReportGroup</code>. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>ReportGroup</code>. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
     /// <dl>
@@ -653,15 +665,20 @@ pub struct ReportGroup {
     /// <p>The report group contains test reports.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReportType>,
     /// <p>Information about the destination where the raw data of this <code>ReportGroup</code> is exported. </p>
+    #[doc(hidden)]
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The status of the report group. This property is read-only.</p>
     /// <p>This can be one of the following values:</p>
@@ -679,6 +696,7 @@ pub struct ReportGroup {
     /// <p>The report group is in the process of being deleted.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReportGroupStatusType>,
 }
 impl ReportGroup {
@@ -1019,8 +1037,10 @@ impl AsRef<str> for ReportGroupStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1096,8 +1116,10 @@ pub struct ReportExportConfig {
     /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
     /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub export_config_type: std::option::Option<crate::model::ReportExportConfigType>,
     /// <p> A <code>S3ReportExportConfig</code> object that contains information about the S3 bucket where the run of a report is exported. </p>
+    #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3ReportExportConfig>,
 }
 impl ReportExportConfig {
@@ -1187,20 +1209,26 @@ impl ReportExportConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ReportExportConfig {
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket that is owned by an account other than the account running the build.</p>
+    #[doc(hidden)]
     pub bucket_owner: std::option::Option<std::string::String>,
     /// <p> The path to the exported report's raw data results. </p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p> The type of build output artifact to create. Valid values include: </p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified. </p> </li>
     /// <li> <p> <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub packaging: std::option::Option<crate::model::ReportPackagingType>,
     /// <p> The encryption key for the report's encrypted raw data. </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
+    #[doc(hidden)]
     pub encryption_disabled: std::option::Option<bool>,
 }
 impl S3ReportExportConfig {
@@ -1589,14 +1617,19 @@ impl AsRef<str> for ProjectVisibilityType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Project {
     /// <p>The name of the build project.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A description that makes the build project easy to identify.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the build input source code for this build project.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
@@ -1607,52 +1640,72 @@ pub struct Project {
     /// </ul>
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
+    #[doc(hidden)]
     pub secondary_source_versions:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>Information about the build output artifacts for the build project.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<crate::model::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
     /// <p>Information about the cache for the build project.</p>
+    #[doc(hidden)]
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information about the build environment for this build project.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed. The default is 60 minutes.</p>
+    #[doc(hidden)]
     pub timeout_in_minutes: std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes: std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). If you don't specify a value, CodeBuild uses the managed CMK for Amazon Simple Storage Service (Amazon S3). </p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When the build project was created, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the build project's settings were last modified, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Information about the build badge for the build project.</p>
+    #[doc(hidden)]
     pub badge: std::option::Option<crate::model::ProjectBadge>,
     /// <p>Information about logs for the build project. A project can create logs in CloudWatch Logs, an S3 bucket, or both. </p>
+    #[doc(hidden)]
     pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    #[doc(hidden)]
     pub file_system_locations:
         std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
+    #[doc(hidden)]
     pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    #[doc(hidden)]
     pub concurrent_build_limit: std::option::Option<i32>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -1669,10 +1722,13 @@ pub struct Project {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
     /// <p>Contains the project identifier used with the public build APIs. </p>
+    #[doc(hidden)]
     pub public_project_alias: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
+    #[doc(hidden)]
     pub resource_access_role: std::option::Option<std::string::String>,
 }
 impl Project {
@@ -2370,12 +2426,16 @@ impl Project {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectBuildBatchConfig {
     /// <p>Specifies the service role ARN for the batch build project.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Specifies if the build artifacts for the batch build should be combined into a single artifact location.</p>
+    #[doc(hidden)]
     pub combine_artifacts: std::option::Option<bool>,
     /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch build.</p>
+    #[doc(hidden)]
     pub restrictions: std::option::Option<crate::model::BatchRestrictions>,
     /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
+    #[doc(hidden)]
     pub timeout_in_mins: std::option::Option<i32>,
     /// <p>Specifies how build status reports are sent to the source provider for the batch build. This property is only used when the source provider for your project is Bitbucket, GitHub, or GitHub Enterprise, and your project is configured to report build statuses to the source provider.</p>
     /// <dl>
@@ -2392,6 +2452,7 @@ pub struct ProjectBuildBatchConfig {
     /// <p>Send a separate status report for each individual build.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub batch_report_mode: std::option::Option<crate::model::BatchReportModeType>,
 }
 impl ProjectBuildBatchConfig {
@@ -2617,8 +2678,10 @@ impl AsRef<str> for BatchReportModeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRestrictions {
     /// <p>Specifies the maximum number of builds allowed.</p>
+    #[doc(hidden)]
     pub maximum_builds_allowed: std::option::Option<i32>,
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
+    #[doc(hidden)]
     pub compute_types_allowed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchRestrictions {
@@ -2699,16 +2762,21 @@ impl BatchRestrictions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectFileSystemLocation {
     /// <p> The type of the file system. The one supported type is <code>EFS</code>. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FileSystemType>,
     /// <p>A string that specifies the location of the file system created by Amazon EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the DNS name of file system when you view it in the Amazon EFS console. The directory path is a path to a directory in the file system that CodeBuild mounts. For example, if the DNS name of a file system is <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is <code>my-efs-mount-directory</code>, then the <code>location</code> is <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>. </p>
     /// <p>The directory path in the format <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a directory path, the location is only the DNS name and CodeBuild mounts the entire file system. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The location in the container where you mount the file system. </p>
+    #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
     /// <p>The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if you specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named <code>CODEBUILD_MY_EFS</code>. </p>
     /// <p> The <code>identifier</code> is used to mount your file system. </p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p> The mount options for a file system created by Amazon EFS. The default mount options used by CodeBuild are <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended NFS Mount Options</a>. </p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<std::string::String>,
 }
 impl ProjectFileSystemLocation {
@@ -2894,8 +2962,10 @@ impl AsRef<str> for FileSystemType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogsConfig {
     /// <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default. </p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsConfig>,
     /// <p> Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. </p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::S3LogsConfig>,
 }
 impl LogsConfig {
@@ -2977,10 +3047,13 @@ pub struct S3LogsConfig {
     /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LogsConfigStatusType>,
     /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p> Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted. </p>
+    #[doc(hidden)]
     pub encryption_disabled: std::option::Option<bool>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -3011,6 +3084,7 @@ pub struct S3LogsConfig {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub bucket_owner_access: std::option::Option<crate::model::BucketOwnerAccess>,
 }
 impl S3LogsConfig {
@@ -3377,10 +3451,13 @@ pub struct CloudWatchLogsConfig {
     /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::LogsConfigStatusType>,
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsConfig {
@@ -3484,8 +3561,10 @@ impl CloudWatchLogsConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectBadge {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    #[doc(hidden)]
     pub badge_enabled: bool,
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    #[doc(hidden)]
     pub badge_request_url: std::option::Option<std::string::String>,
 }
 impl ProjectBadge {
@@ -3560,10 +3639,13 @@ impl ProjectBadge {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfig {
     /// <p>The ID of the Amazon VPC.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of one or more subnet IDs in your Amazon VPC.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of one or more security groups IDs in your Amazon VPC.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VpcConfig {
@@ -3679,6 +3761,7 @@ pub struct ProjectEnvironment {
     /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EnvironmentType>,
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
@@ -3706,6 +3789,7 @@ pub struct ProjectEnvironment {
     /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
@@ -3721,8 +3805,10 @@ pub struct ProjectEnvironment {
     /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+    #[doc(hidden)]
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
+    #[doc(hidden)]
     pub environment_variables:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
@@ -3733,10 +3819,13 @@ pub struct ProjectEnvironment {
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
     /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
     /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
+    #[doc(hidden)]
     pub privileged_mode: std::option::Option<bool>,
     /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the <i>CodeBuild User Guide</i>.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p> The credentials for access to a private registry.</p>
+    #[doc(hidden)]
     pub registry_credential: std::option::Option<crate::model::RegistryCredential>,
     /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
@@ -3744,6 +3833,7 @@ pub struct ProjectEnvironment {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
     /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
+    #[doc(hidden)]
     pub image_pull_credentials_type: std::option::Option<crate::model::ImagePullCredentialsType>,
 }
 impl ProjectEnvironment {
@@ -4189,8 +4279,10 @@ pub struct RegistryCredential {
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
+    #[doc(hidden)]
     pub credential: std::option::Option<std::string::String>,
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
+    #[doc(hidden)]
     pub credential_provider: std::option::Option<crate::model::CredentialProviderType>,
 }
 impl RegistryCredential {
@@ -4324,10 +4416,12 @@ impl AsRef<str> for CredentialProviderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentVariable {
     /// <p>The name or key of the environment variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the environment variable.</p> <important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
@@ -4335,6 +4429,7 @@ pub struct EnvironmentVariable {
     /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
     /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a secrets manager environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EnvironmentVariableType>,
 }
 impl EnvironmentVariable {
@@ -4652,12 +4747,14 @@ pub struct ProjectCache {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CacheType>,
     /// <p>Information about the cache location: </p>
     /// <ul>
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
     /// <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
     /// <p>Possible values are:</p>
@@ -4692,6 +4789,7 @@ pub struct ProjectCache {
     /// </ul>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub modes: std::option::Option<std::vec::Vec<crate::model::CacheMode>>,
 }
 impl ProjectCache {
@@ -5041,6 +5139,7 @@ pub struct ProjectArtifacts {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactsType>,
     /// <p>Information about the build output artifact location:</p>
     /// <ul>
@@ -5048,6 +5147,7 @@ pub struct ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
     /// <ul>
@@ -5056,6 +5156,7 @@ pub struct ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
     /// </ul>
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
     /// <ul>
@@ -5071,6 +5172,7 @@ pub struct ProjectArtifacts {
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
+    #[doc(hidden)]
     pub namespace_type: std::option::Option<crate::model::ArtifactNamespace>,
     /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
     /// <ul>
@@ -5088,6 +5190,7 @@ pub struct ProjectArtifacts {
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
     /// <build-id></build-id></code>. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of build output artifact to create:</p>
     /// <ul>
@@ -5099,12 +5202,16 @@ pub struct ProjectArtifacts {
     /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
     /// </ul> </li>
     /// </ul>
+    #[doc(hidden)]
     pub packaging: std::option::Option<crate::model::ArtifactPackaging>,
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    #[doc(hidden)]
     pub override_artifact_name: std::option::Option<bool>,
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
+    #[doc(hidden)]
     pub encryption_disabled: std::option::Option<bool>,
     /// <p> An identifier for this artifact definition. </p>
+    #[doc(hidden)]
     pub artifact_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -5135,6 +5242,7 @@ pub struct ProjectArtifacts {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub bucket_owner_access: std::option::Option<crate::model::BucketOwnerAccess>,
 }
 impl ProjectArtifacts {
@@ -5772,6 +5880,7 @@ impl AsRef<str> for ArtifactsType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
     /// <ul>
@@ -5781,6 +5890,7 @@ pub struct ProjectSourceVersion {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
 }
 impl ProjectSourceVersion {
@@ -5888,6 +5998,7 @@ pub struct ProjectSource {
     /// <li> <p> <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SourceType>,
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
@@ -5924,27 +6035,36 @@ pub struct ProjectSource {
     /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p> </li>
     /// </ul>
     /// <p> If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>. </p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>Information about the Git clone depth for the build project.</p>
+    #[doc(hidden)]
     pub git_clone_depth: std::option::Option<i32>,
     /// <p> Information about the Git submodules configuration for the build project. </p>
+    #[doc(hidden)]
     pub git_submodules_config: std::option::Option<crate::model::GitSubmodulesConfig>,
     /// <p>The buildspec file declaration to use for the builds in this build project.</p>
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    #[doc(hidden)]
     pub buildspec: std::option::Option<std::string::String>,
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
     /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
+    #[doc(hidden)]
     pub auth: std::option::Option<crate::model::SourceAuth>,
     /// <p> Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown. </p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
+    #[doc(hidden)]
     pub report_build_status: std::option::Option<bool>,
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
+    #[doc(hidden)]
     pub build_status_config: std::option::Option<crate::model::BuildStatusConfig>,
     /// <p>Enable this flag to ignore SSL warnings while connecting to the project source code.</p>
+    #[doc(hidden)]
     pub insecure_ssl: std::option::Option<bool>,
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
+    #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
 }
 impl ProjectSource {
@@ -6319,6 +6439,7 @@ pub struct BuildStatusConfig {
     /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub context: std::option::Option<std::string::String>,
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
@@ -6335,6 +6456,7 @@ pub struct BuildStatusConfig {
     /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub target_url: std::option::Option<std::string::String>,
 }
 impl BuildStatusConfig {
@@ -6494,8 +6616,10 @@ pub struct SourceAuth {
     /// <p> This data type is deprecated and is no longer accurate or used. </p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SourceAuthType>,
     /// <p>The resource value that applies to the specified authorization type.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl SourceAuth {
@@ -6630,6 +6754,7 @@ impl AsRef<str> for SourceAuthType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitSubmodulesConfig {
     /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
+    #[doc(hidden)]
     pub fetch_submodules: std::option::Option<bool>,
 }
 impl GitSubmodulesConfig {
@@ -6767,18 +6892,25 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildBatch {
     /// <p>The identifier of the batch build.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the batch build.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the batch build started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the batch build ended.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current phase of the batch build.</p>
+    #[doc(hidden)]
     pub current_phase: std::option::Option<std::string::String>,
     /// <p>The status of the batch build.</p>
+    #[doc(hidden)]
     pub build_batch_status: std::option::Option<crate::model::StatusType>,
     /// <p>The identifier of the version of the source code to be built.</p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
@@ -6786,14 +6918,19 @@ pub struct BuildBatch {
     /// <li> <p>For CodePipeline, the source revision provided by CodePipeline.</p> </li>
     /// <li> <p>For Amazon S3, this does not apply.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resolved_source_version: std::option::Option<std::string::String>,
     /// <p>The name of the batch build project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the batch build.</p>
+    #[doc(hidden)]
     pub phases: std::option::Option<std::vec::Vec<crate::model::BuildBatchPhase>>,
     /// <p>Information about the build input source code for the build project.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch build.</p>
+    #[doc(hidden)]
     pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of: </p>
     /// <ul>
@@ -6802,25 +6939,35 @@ pub struct BuildBatch {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secondary_source_versions:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<crate::model::BuildArtifacts>,
     /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts for this batch build.</p>
+    #[doc(hidden)]
     pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::BuildArtifacts>>,
     /// <p>Information about the cache for the build project.</p>
+    #[doc(hidden)]
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information about the build environment of the build project.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The name of a service role used for builds in the batch.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p> Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or both. </p>
+    #[doc(hidden)]
     pub log_config: std::option::Option<crate::model::LogsConfig>,
     /// <p>Specifies the maximum amount of time, in minutes, that the build in a batch must be completed in.</p>
+    #[doc(hidden)]
     pub build_timeout_in_minutes: std::option::Option<i32>,
     /// <p>Specifies the amount of time, in minutes, that the batch build is allowed to be queued before it times out.</p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes: std::option::Option<i32>,
     /// <p>Indicates if the batch build is complete.</p>
+    #[doc(hidden)]
     pub complete: bool,
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
@@ -6828,25 +6975,33 @@ pub struct BuildBatch {
     /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub initiator: std::option::Option<std::string::String>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>The number of the batch build. For each project, the <code>buildBatchNumber</code> of its first batch build is <code>1</code>. The <code>buildBatchNumber</code> of each subsequent batch build is incremented by <code>1</code>. If a batch build is deleted, the <code>buildBatchNumber</code> of other batch builds does not change.</p>
+    #[doc(hidden)]
     pub build_batch_number: std::option::Option<i64>,
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    #[doc(hidden)]
     pub file_system_locations:
         std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>Contains configuration information about a batch build project.</p>
+    #[doc(hidden)]
     pub build_batch_config: std::option::Option<crate::model::ProjectBuildBatchConfig>,
     /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the batch build.</p>
+    #[doc(hidden)]
     pub build_groups: std::option::Option<std::vec::Vec<crate::model::BuildGroup>>,
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+    #[doc(hidden)]
     pub debug_session_enabled: std::option::Option<bool>,
 }
 impl BuildBatch {
@@ -7563,14 +7718,19 @@ impl BuildBatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildGroup {
     /// <p>Contains the identifier of the build group.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
     /// <p>An array of strings that contain the identifiers of the build groups that this build group depends on.</p>
+    #[doc(hidden)]
     pub depends_on: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies if failures in this build group can be ignored.</p>
+    #[doc(hidden)]
     pub ignore_failure: bool,
     /// <p>A <code>BuildSummary</code> object that contains a summary of the current build group.</p>
+    #[doc(hidden)]
     pub current_build_summary: std::option::Option<crate::model::BuildSummary>,
     /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous build groups.</p>
+    #[doc(hidden)]
     pub prior_build_summary_list: std::option::Option<std::vec::Vec<crate::model::BuildSummary>>,
 }
 impl BuildGroup {
@@ -7715,8 +7875,10 @@ impl BuildGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildSummary {
     /// <p>The batch build ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>When the build was started, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub requested_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the build group.</p>
     /// <dl>
@@ -7757,10 +7919,13 @@ pub struct BuildSummary {
     /// <p>The build group timed out.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub build_status: std::option::Option<crate::model::StatusType>,
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
+    #[doc(hidden)]
     pub primary_artifact: std::option::Option<crate::model::ResolvedArtifact>,
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
+    #[doc(hidden)]
     pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::ResolvedArtifact>>,
 }
 impl BuildSummary {
@@ -8016,10 +8181,13 @@ impl BuildSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolvedArtifact {
     /// <p>Specifies the type of artifact.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactsType>,
     /// <p>The location of the artifact.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The identifier of the artifact.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl ResolvedArtifact {
@@ -8186,22 +8354,28 @@ impl AsRef<str> for StatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildArtifacts {
     /// <p>Information about the location of the build artifacts.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub sha256sum: std::option::Option<std::string::String>,
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub md5sum: std::option::Option<std::string::String>,
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
+    #[doc(hidden)]
     pub override_artifact_name: std::option::Option<bool>,
     /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
+    #[doc(hidden)]
     pub encryption_disabled: std::option::Option<bool>,
     /// <p> An identifier for this artifact definition. </p>
+    #[doc(hidden)]
     pub artifact_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -8232,6 +8406,7 @@ pub struct BuildArtifacts {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub bucket_owner_access: std::option::Option<crate::model::BucketOwnerAccess>,
 }
 impl BuildArtifacts {
@@ -8540,6 +8715,7 @@ pub struct BuildBatchPhase {
     /// <p>The batch build succeeded.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub phase_type: std::option::Option<crate::model::BuildBatchPhaseType>,
     /// <p>The current status of the batch build phase. Valid values include:</p>
     /// <dl>
@@ -8580,14 +8756,19 @@ pub struct BuildBatchPhase {
     /// <p>The build phase timed out.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub phase_status: std::option::Option<crate::model::StatusType>,
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i64>,
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
+    #[doc(hidden)]
     pub contexts: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
 }
 impl BuildBatchPhase {
@@ -8994,8 +9175,10 @@ impl BuildBatchPhase {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PhaseContext {
@@ -9150,16 +9333,22 @@ impl AsRef<str> for BuildBatchPhaseType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Build {
     /// <p>The unique ID for the build.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the build.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the <code>buildNumber</code> of other builds does not change.</p>
+    #[doc(hidden)]
     pub build_number: std::option::Option<i64>,
     /// <p>When the build process started, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the build process ended, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current build phase.</p>
+    #[doc(hidden)]
     pub current_phase: std::option::Option<std::string::String>,
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
@@ -9170,9 +9359,11 @@ pub struct Build {
     /// <li> <p> <code>SUCCEEDED</code>: The build succeeded.</p> </li>
     /// <li> <p> <code>TIMED_OUT</code>: The build timed out.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub build_status: std::option::Option<crate::model::StatusType>,
     /// <p>Any version identifier for the version of the source code to be built. If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    #[doc(hidden)]
     pub source_version: std::option::Option<std::string::String>,
     /// <p> An identifier for the version of this build's source code. </p>
     /// <ul>
@@ -9180,14 +9371,19 @@ pub struct Build {
     /// <li> <p> For CodePipeline, the source revision provided by CodePipeline. </p> </li>
     /// <li> <p> For Amazon S3, this does not apply. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resolved_source_version: std::option::Option<std::string::String>,
     /// <p>The name of the CodeBuild project.</p>
+    #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
     /// <p>Information about all previous build phases that are complete and information about any current build phase that is not yet complete.</p>
+    #[doc(hidden)]
     pub phases: std::option::Option<std::vec::Vec<crate::model::BuildPhase>>,
     /// <p>Information about the source code to be built.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::ProjectSource>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_sources: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of: </p>
     /// <ul>
@@ -9196,25 +9392,35 @@ pub struct Build {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub secondary_source_versions:
         std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
     /// <p>Information about the output artifacts for the build.</p>
+    #[doc(hidden)]
     pub artifacts: std::option::Option<crate::model::BuildArtifacts>,
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
+    #[doc(hidden)]
     pub secondary_artifacts: std::option::Option<std::vec::Vec<crate::model::BuildArtifacts>>,
     /// <p>Information about the cache for the build.</p>
+    #[doc(hidden)]
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information about the build environment for this build.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
     /// <p>The name of a service role used for this build.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Information about the build's logs in CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub logs: std::option::Option<crate::model::LogsLocation>,
     /// <p>How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    #[doc(hidden)]
     pub timeout_in_minutes: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    #[doc(hidden)]
     pub queued_timeout_in_minutes: std::option::Option<i32>,
     /// <p>Whether the build is complete. True if complete; otherwise, false.</p>
+    #[doc(hidden)]
     pub build_complete: bool,
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
@@ -9222,29 +9428,38 @@ pub struct Build {
     /// <li> <p>If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub initiator: std::option::Option<std::string::String>,
     /// <p>If your CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Describes a network interface.</p>
+    #[doc(hidden)]
     pub network_interface: std::option::Option<crate::model::NetworkInterface>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>A list of exported environment variables for this build.</p>
     /// <p>Exported environment variables are used in conjunction with CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
+    #[doc(hidden)]
     pub exported_environment_variables:
         std::option::Option<std::vec::Vec<crate::model::ExportedEnvironmentVariable>>,
     /// <p> An array of the ARNs associated with this build's reports. </p>
+    #[doc(hidden)]
     pub report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    #[doc(hidden)]
     pub file_system_locations:
         std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
     /// <p>Contains information about the debug session for this build.</p>
+    #[doc(hidden)]
     pub debug_session: std::option::Option<crate::model::DebugSession>,
     /// <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+    #[doc(hidden)]
     pub build_batch_arn: std::option::Option<std::string::String>,
 }
 impl Build {
@@ -10044,8 +10259,10 @@ impl Build {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DebugSession {
     /// <p>Specifies if session debugging is enabled for this build.</p>
+    #[doc(hidden)]
     pub session_enabled: std::option::Option<bool>,
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
+    #[doc(hidden)]
     pub session_target: std::option::Option<std::string::String>,
 }
 impl DebugSession {
@@ -10123,8 +10340,10 @@ impl DebugSession {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportedEnvironmentVariable {
     /// <p>The name of the exported environment variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value assigned to the exported environment variable.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ExportedEnvironmentVariable {
@@ -10196,8 +10415,10 @@ impl ExportedEnvironmentVariable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>The ID of the subnet.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The ID of the network interface.</p>
+    #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
 }
 impl NetworkInterface {
@@ -10272,20 +10493,28 @@ impl NetworkInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogsLocation {
     /// <p>The name of the CloudWatch Logs group for the build logs.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name of the CloudWatch Logs stream for the build logs.</p>
+    #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The URL to an individual build log in CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub deep_link: std::option::Option<std::string::String>,
     /// <p> The URL to a build log in an S3 bucket. </p>
+    #[doc(hidden)]
     pub s3_deep_link: std::option::Option<std::string::String>,
     /// <p> The ARN of CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources Defined by CloudWatch Logs</a>. </p>
+    #[doc(hidden)]
     pub cloud_watch_logs_arn: std::option::Option<std::string::String>,
     /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
+    #[doc(hidden)]
     pub s3_logs_arn: std::option::Option<std::string::String>,
     /// <p> Information about CloudWatch Logs for a build project. </p>
+    #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsConfig>,
     /// <p> Information about S3 logs for a build project. </p>
+    #[doc(hidden)]
     pub s3_logs: std::option::Option<crate::model::S3LogsConfig>,
 }
 impl LogsLocation {
@@ -10536,6 +10765,7 @@ pub struct BuildPhase {
     /// <p>Build output artifacts are being uploaded to the output location.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub phase_type: std::option::Option<crate::model::BuildPhaseType>,
     /// <p>The current status of the build phase. Valid values include:</p>
     /// <dl>
@@ -10576,14 +10806,19 @@ pub struct BuildPhase {
     /// <p>The build phase timed out.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub phase_status: std::option::Option<crate::model::StatusType>,
     /// <p>When the build phase started, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the build phase ended, expressed in Unix time format.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>How long, in seconds, between the starting and ending times of the build's phase.</p>
+    #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i64>,
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
+    #[doc(hidden)]
     pub contexts: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
 }
 impl BuildPhase {
@@ -11220,10 +11455,13 @@ impl AsRef<str> for RetryBuildBatchType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceCredentialsInfo {
     /// <p> The Amazon Resource Name (ARN) of the token. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET. </p>
+    #[doc(hidden)]
     pub server_type: std::option::Option<crate::model::ServerType>,
     /// <p> The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
+    #[doc(hidden)]
     pub auth_type: std::option::Option<crate::model::AuthType>,
 }
 impl SourceCredentialsInfo {
@@ -11543,6 +11781,7 @@ impl AsRef<str> for SortOrderType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportFilter {
     /// <p> The status used to filter reports. You can filter using one status only. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReportStatusType>,
 }
 impl ReportFilter {
@@ -11791,8 +12030,10 @@ impl AsRef<str> for ProjectSortByType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentPlatform {
     /// <p>The platform's name.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The list of programming languages that are available for the specified platform.</p>
+    #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::model::EnvironmentLanguage>>,
 }
 impl EnvironmentPlatform {
@@ -11876,8 +12117,10 @@ impl EnvironmentPlatform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentLanguage {
     /// <p>The programming language for the Docker images.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<crate::model::LanguageType>,
     /// <p>The list of Docker images that are related by the specified programming language.</p>
+    #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::model::EnvironmentImage>>,
 }
 impl EnvironmentLanguage {
@@ -11961,10 +12204,13 @@ impl EnvironmentLanguage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentImage {
     /// <p>The name of the Docker image.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Docker image.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of environment image versions.</p>
+    #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnvironmentImage {
@@ -12215,6 +12461,7 @@ impl AsRef<str> for PlatformType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildBatchFilter {
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusType>,
 }
 impl BuildBatchFilter {
@@ -12269,8 +12516,10 @@ impl BuildBatchFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportWithRawData {
     /// <p>The ARN of the report.</p>
+    #[doc(hidden)]
     pub report_arn: std::option::Option<std::string::String>,
     /// <p>The value of the requested data field from the report.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
 }
 impl ReportWithRawData {
@@ -12342,10 +12591,13 @@ impl ReportWithRawData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportGroupTrendStats {
     /// <p>Contains the average of all values analyzed.</p>
+    #[doc(hidden)]
     pub average: std::option::Option<std::string::String>,
     /// <p>Contains the maximum value analyzed.</p>
+    #[doc(hidden)]
     pub max: std::option::Option<std::string::String>,
     /// <p>Contains the minimum value analyzed.</p>
+    #[doc(hidden)]
     pub min: std::option::Option<std::string::String>,
 }
 impl ReportGroupTrendStats {
@@ -12527,20 +12779,28 @@ impl AsRef<str> for ReportGroupTrendFieldType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCase {
     /// <p> The ARN of the report to which the test case belongs. </p>
+    #[doc(hidden)]
     pub report_arn: std::option::Option<std::string::String>,
     /// <p> The path to the raw data file that contains the test result. </p>
+    #[doc(hidden)]
     pub test_raw_data_path: std::option::Option<std::string::String>,
     /// <p> A string that is applied to a series of related test cases. CodeBuild generates the prefix. The prefix depends on the framework used to generate the tests. </p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p> The name of the test case. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The status returned by the test case after it was run. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p> The number of nanoseconds it took to run this test case. </p>
+    #[doc(hidden)]
     pub duration_in_nano_seconds: std::option::Option<i64>,
     /// <p> A message associated with a test case. For example, an error message or stack trace. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
+    #[doc(hidden)]
     pub expired: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TestCase {
@@ -12727,8 +12987,10 @@ pub struct TestCaseFilter {
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// <li> <p> <code>UNKNOWN</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.</p>
+    #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
 }
 impl TestCaseFilter {
@@ -12823,24 +13085,34 @@ impl TestCaseFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeCoverage {
     /// <p>The identifier of the code coverage report.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN of the report.</p>
+    #[doc(hidden)]
     pub report_arn: std::option::Option<std::string::String>,
     /// <p>The path of the test report file.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The percentage of lines that are covered by your tests.</p>
+    #[doc(hidden)]
     pub line_coverage_percentage: std::option::Option<f64>,
     /// <p>The number of lines that are covered by your tests.</p>
+    #[doc(hidden)]
     pub lines_covered: std::option::Option<i32>,
     /// <p>The number of lines that are not covered by your tests.</p>
+    #[doc(hidden)]
     pub lines_missed: std::option::Option<i32>,
     /// <p>The percentage of branches that are covered by your tests.</p>
+    #[doc(hidden)]
     pub branch_coverage_percentage: std::option::Option<f64>,
     /// <p>The number of conditional branches that are covered by your tests.</p>
+    #[doc(hidden)]
     pub branches_covered: std::option::Option<i32>,
     /// <p>The number of conditional branches that are not covered by your tests.</p>
+    #[doc(hidden)]
     pub branches_missed: std::option::Option<i32>,
     /// <p>The date and time that the tests were run.</p>
+    #[doc(hidden)]
     pub expired: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CodeCoverage {
@@ -13109,8 +13381,10 @@ impl AsRef<str> for ReportCodeCoverageSortByType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildNotDeleted {
     /// <p>The ID of the build that could not be successfully deleted.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Additional information about the build that could not be successfully deleted.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
 }
 impl BuildNotDeleted {
@@ -13182,6 +13456,7 @@ impl BuildNotDeleted {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Report {
     /// <p> The ARN of the report run. </p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the report that was run.</p>
     /// <dl>
@@ -13198,26 +13473,37 @@ pub struct Report {
     /// <p>A test report.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReportType>,
     /// <p> The name of the report that was run. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> The ARN of the report group associated with this report. </p>
+    #[doc(hidden)]
     pub report_group_arn: std::option::Option<std::string::String>,
     /// <p> The ARN of the build run that generated this report. </p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p> The status of this report. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReportStatusType>,
     /// <p> The date and time this report run occurred. </p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
+    #[doc(hidden)]
     pub expired: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Information about where the raw data used to generate this report was exported. </p>
+    #[doc(hidden)]
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
     /// <p> A boolean that specifies if this report run is truncated. The list of test cases is truncated after the maximum number of test cases is reached. </p>
+    #[doc(hidden)]
     pub truncated: std::option::Option<bool>,
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
+    #[doc(hidden)]
     pub test_summary: std::option::Option<crate::model::TestReportSummary>,
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
+    #[doc(hidden)]
     pub code_coverage_summary: std::option::Option<crate::model::CodeCoverageReportSummary>,
 }
 impl Report {
@@ -13530,16 +13816,22 @@ impl Report {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeCoverageReportSummary {
     /// <p>The percentage of lines that are covered by your tests.</p>
+    #[doc(hidden)]
     pub line_coverage_percentage: std::option::Option<f64>,
     /// <p>The number of lines that are covered by your tests.</p>
+    #[doc(hidden)]
     pub lines_covered: std::option::Option<i32>,
     /// <p>The number of lines that are not covered by your tests.</p>
+    #[doc(hidden)]
     pub lines_missed: std::option::Option<i32>,
     /// <p>The percentage of branches that are covered by your tests.</p>
+    #[doc(hidden)]
     pub branch_coverage_percentage: std::option::Option<f64>,
     /// <p>The number of conditional branches that are covered by your tests.</p>
+    #[doc(hidden)]
     pub branches_covered: std::option::Option<i32>,
     /// <p>The number of conditional branches that are not covered by your tests.</p>
+    #[doc(hidden)]
     pub branches_missed: std::option::Option<i32>,
 }
 impl CodeCoverageReportSummary {
@@ -13682,10 +13974,13 @@ impl CodeCoverageReportSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestReportSummary {
     /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes truncated test cases. </p>
+    #[doc(hidden)]
     pub total: std::option::Option<i32>,
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
+    #[doc(hidden)]
     pub status_counts: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
+    #[doc(hidden)]
     pub duration_in_nano_seconds: std::option::Option<i64>,
 }
 impl TestReportSummary {

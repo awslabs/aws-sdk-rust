@@ -605,6 +605,7 @@ impl PutReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReportDefinitionInput {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+    #[doc(hidden)]
     pub report_definition: std::option::Option<crate::model::ReportDefinition>,
 }
 impl PutReportDefinitionInput {
@@ -626,8 +627,10 @@ impl std::fmt::Debug for PutReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReportDefinitionInput {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    #[doc(hidden)]
     pub report_name: std::option::Option<std::string::String>,
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    #[doc(hidden)]
     pub report_definition: std::option::Option<crate::model::ReportDefinition>,
 }
 impl ModifyReportDefinitionInput {
@@ -654,8 +657,10 @@ impl std::fmt::Debug for ModifyReportDefinitionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportDefinitionsInput {
     /// <p>The maximum number of results that AWS returns for the operation.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReportDefinitionsInput {
@@ -682,6 +687,7 @@ impl std::fmt::Debug for DescribeReportDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportDefinitionInput {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
+    #[doc(hidden)]
     pub report_name: std::option::Option<std::string::String>,
 }
 impl DeleteReportDefinitionInput {

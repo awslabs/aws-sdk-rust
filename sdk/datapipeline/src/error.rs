@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineNotFoundException {
     /// <p>Description of the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineNotFoundException {
@@ -69,6 +70,7 @@ impl PipelineNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineDeletedException {
     /// <p>Description of the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PipelineDeletedException {
@@ -133,6 +135,7 @@ impl PipelineDeletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>Description of the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRequestException {
@@ -197,6 +200,7 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceError {
     /// <p>Description of the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServiceError {
@@ -261,6 +265,7 @@ impl InternalServiceError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskNotFoundException {
     /// <p>Description of the error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TaskNotFoundException {

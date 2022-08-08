@@ -34,8 +34,10 @@ impl UpdateSchedulingPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobQueueOutput {
     /// <p>The name of the job queue.</p>
+    #[doc(hidden)]
     pub job_queue_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    #[doc(hidden)]
     pub job_queue_arn: std::option::Option<std::string::String>,
 }
 impl UpdateJobQueueOutput {
@@ -113,8 +115,10 @@ impl UpdateJobQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComputeEnvironmentOutput {
     /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    #[doc(hidden)]
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    #[doc(hidden)]
     pub compute_environment_arn: std::option::Option<std::string::String>,
 }
 impl UpdateComputeEnvironmentOutput {
@@ -282,10 +286,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitJobOutput {
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
+    #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl SubmitJobOutput {
@@ -374,10 +381,13 @@ impl SubmitJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterJobDefinitionOutput {
     /// <p>The name of the job definition.</p>
+    #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    #[doc(hidden)]
     pub job_definition_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the job definition.</p>
+    #[doc(hidden)]
     pub revision: std::option::Option<i32>,
 }
 impl RegisterJobDefinitionOutput {
@@ -472,6 +482,7 @@ impl RegisterJobDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -545,9 +556,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchedulingPoliciesOutput {
     /// <p>A list of scheduling policies that match the request.</p>
+    #[doc(hidden)]
     pub scheduling_policies:
         std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulingPoliciesOutput {
@@ -634,8 +647,10 @@ impl ListSchedulingPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>A list of job summaries that match the request.</p>
+    #[doc(hidden)]
     pub job_summary_list: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -716,6 +731,7 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchedulingPoliciesOutput {
     /// <p>The list of scheduling policies.</p>
+    #[doc(hidden)]
     pub scheduling_policies:
         std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
 }
@@ -783,6 +799,7 @@ impl DescribeSchedulingPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobsOutput {
     /// <p>The list of jobs.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobDetail>>,
 }
 impl DescribeJobsOutput {
@@ -844,8 +861,10 @@ impl DescribeJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobQueuesOutput {
     /// <p>The list of job queues.</p>
+    #[doc(hidden)]
     pub job_queues: std::option::Option<std::vec::Vec<crate::model::JobQueueDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobQueuesOutput {
@@ -926,8 +945,10 @@ impl DescribeJobQueuesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobDefinitionsOutput {
     /// <p>The list of job definitions.</p>
+    #[doc(hidden)]
     pub job_definitions: std::option::Option<std::vec::Vec<crate::model::JobDefinition>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobDefinitionsOutput {
@@ -1008,9 +1029,11 @@ impl DescribeJobDefinitionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComputeEnvironmentsOutput {
     /// <p>The list of compute environments.</p>
+    #[doc(hidden)]
     pub compute_environments:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComputeEnvironmentsOutput {
@@ -1217,8 +1240,10 @@ impl DeleteComputeEnvironmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchedulingPolicyOutput {
     /// <p>The name of the scheduling policy.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateSchedulingPolicyOutput {
@@ -1290,8 +1315,10 @@ impl CreateSchedulingPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobQueueOutput {
     /// <p>The name of the job queue.</p>
+    #[doc(hidden)]
     pub job_queue_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    #[doc(hidden)]
     pub job_queue_arn: std::option::Option<std::string::String>,
 }
 impl CreateJobQueueOutput {
@@ -1369,8 +1396,10 @@ impl CreateJobQueueOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputeEnvironmentOutput {
     /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    #[doc(hidden)]
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    #[doc(hidden)]
     pub compute_environment_arn: std::option::Option<std::string::String>,
 }
 impl CreateComputeEnvironmentOutput {

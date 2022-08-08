@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StateMachineDoesNotExist {
@@ -69,6 +70,7 @@ impl StateMachineDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineDeleting {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StateMachineDeleting {
@@ -133,6 +135,7 @@ impl StateMachineDeleting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingRequiredParameter {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingRequiredParameter {
@@ -197,6 +200,7 @@ impl MissingRequiredParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTracingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTracingConfiguration {
@@ -261,6 +265,7 @@ impl InvalidTracingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLoggingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLoggingConfiguration {
@@ -325,6 +330,7 @@ impl InvalidLoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDefinition {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDefinition {
@@ -389,6 +395,7 @@ impl InvalidDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArn {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArn {
@@ -453,8 +460,10 @@ impl InvalidArn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl ResourceNotFound {
@@ -541,8 +550,10 @@ impl ResourceNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTags {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl TooManyTags {
@@ -629,6 +640,7 @@ impl TooManyTags {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExecutionDoesNotExist {
@@ -693,6 +705,7 @@ impl ExecutionDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineTypeNotSupported {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StateMachineTypeNotSupported {
@@ -757,6 +770,7 @@ impl StateMachineTypeNotSupported {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidName {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidName {
@@ -821,6 +835,7 @@ impl InvalidName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExecutionInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidExecutionInput {
@@ -885,6 +900,7 @@ impl InvalidExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExecutionLimitExceeded {
@@ -951,6 +967,7 @@ impl ExecutionLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExecutionAlreadyExists {
@@ -1015,6 +1032,7 @@ impl ExecutionAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskTimedOut {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TaskTimedOut {
@@ -1079,6 +1097,7 @@ impl TaskTimedOut {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TaskDoesNotExist {
@@ -1143,6 +1162,7 @@ impl TaskDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidToken {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidToken {
@@ -1207,6 +1227,7 @@ impl InvalidToken {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOutput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOutput {
@@ -1271,6 +1292,7 @@ impl InvalidOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityWorkerLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActivityWorkerLimitExceeded {
@@ -1335,6 +1357,7 @@ impl ActivityWorkerLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActivityDoesNotExist {
@@ -1399,6 +1422,7 @@ impl ActivityDoesNotExist {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StateMachineLimitExceeded {
@@ -1463,6 +1487,7 @@ impl StateMachineLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StateMachineAlreadyExists {
@@ -1527,6 +1552,7 @@ impl StateMachineAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActivityLimitExceeded {

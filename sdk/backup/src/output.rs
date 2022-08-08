@@ -4,10 +4,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportPlanOutput {
     /// <p>The unique name of the report plan.</p>
+    #[doc(hidden)]
     pub report_plan_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub report_plan_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateReportPlanOutput {
@@ -135,14 +138,18 @@ impl UpdateRegionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecoveryPointLifecycleOutput {
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
+    #[doc(hidden)]
     pub calculated_lifecycle: std::option::Option<crate::model::CalculatedLifecycle>,
 }
 impl UpdateRecoveryPointLifecycleOutput {
@@ -296,10 +303,13 @@ impl UpdateGlobalSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFrameworkOutput {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    #[doc(hidden)]
     pub framework_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub framework_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateFrameworkOutput {
@@ -397,14 +407,19 @@ impl UpdateFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackupPlanOutput {
     /// <p>Uniquely identifies a backup plan.</p>
+    #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    #[doc(hidden)]
     pub backup_plan_arn: std::option::Option<std::string::String>,
     /// <p>The date and time a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot be edited.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+    #[doc(hidden)]
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
 }
@@ -642,6 +657,7 @@ impl StopBackupJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRestoreJobOutput {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
+    #[doc(hidden)]
     pub restore_job_id: std::option::Option<std::string::String>,
 }
 impl StartRestoreJobOutput {
@@ -699,6 +715,7 @@ impl StartRestoreJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReportJobOutput {
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    #[doc(hidden)]
     pub report_job_id: std::option::Option<std::string::String>,
 }
 impl StartReportJobOutput {
@@ -756,8 +773,10 @@ impl StartReportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCopyJobOutput {
     /// <p>Uniquely identifies a copy job.</p>
+    #[doc(hidden)]
     pub copy_job_id: std::option::Option<std::string::String>,
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartCopyJobOutput {
@@ -832,10 +851,13 @@ impl StartCopyJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBackupJobOutput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    #[doc(hidden)]
     pub backup_job_id: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartBackupJobOutput {
@@ -1023,8 +1045,10 @@ impl PutBackupVaultAccessPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources you create. Each tag is a key-value pair.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1117,8 +1141,10 @@ impl ListTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRestoreJobsOutput {
     /// <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
+    #[doc(hidden)]
     pub restore_jobs: std::option::Option<std::vec::Vec<crate::model::RestoreJobsListMember>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRestoreJobsOutput {
@@ -1200,8 +1226,10 @@ impl ListRestoreJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportPlansOutput {
     /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    #[doc(hidden)]
     pub report_plans: std::option::Option<std::vec::Vec<crate::model::ReportPlan>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReportPlansOutput {
@@ -1282,8 +1310,10 @@ impl ListReportPlansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportJobsOutput {
     /// <p>Details about your report jobs in JSON format.</p>
+    #[doc(hidden)]
     pub report_jobs: std::option::Option<std::vec::Vec<crate::model::ReportJob>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReportJobsOutput {
@@ -1364,10 +1394,12 @@ impl ListReportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsByResourceOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
+    #[doc(hidden)]
     pub recovery_points: std::option::Option<std::vec::Vec<crate::model::RecoveryPointByResource>>,
 }
 impl ListRecoveryPointsByResourceOutput {
@@ -1455,8 +1487,10 @@ impl ListRecoveryPointsByResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsByBackupVaultOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
+    #[doc(hidden)]
     pub recovery_points:
         std::option::Option<std::vec::Vec<crate::model::RecoveryPointByBackupVault>>,
 }
@@ -1541,8 +1575,10 @@ impl ListRecoveryPointsByBackupVaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectedResourcesOutput {
     /// <p>An array of resources successfully backed up by Backup including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::ProtectedResource>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectedResourcesOutput {
@@ -1623,8 +1659,10 @@ impl ListProtectedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFrameworksOutput {
     /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    #[doc(hidden)]
     pub frameworks: std::option::Option<std::vec::Vec<crate::model::Framework>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFrameworksOutput {
@@ -1705,8 +1743,10 @@ impl ListFrameworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCopyJobsOutput {
     /// <p>An array of structures containing metadata about your copy jobs returned in JSON format. </p>
+    #[doc(hidden)]
     pub copy_jobs: std::option::Option<std::vec::Vec<crate::model::CopyJob>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCopyJobsOutput {
@@ -1787,8 +1827,10 @@ impl ListCopyJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupVaultsOutput {
     /// <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
+    #[doc(hidden)]
     pub backup_vault_list: std::option::Option<std::vec::Vec<crate::model::BackupVaultListMember>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBackupVaultsOutput {
@@ -1870,8 +1912,10 @@ impl ListBackupVaultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupSelectionsOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of backup selection list items containing metadata about each resource in the list.</p>
+    #[doc(hidden)]
     pub backup_selections_list:
         std::option::Option<std::vec::Vec<crate::model::BackupSelectionsListMember>>,
 }
@@ -1959,8 +2003,10 @@ impl ListBackupSelectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlanVersionsOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of version list items containing metadata about your backup plans.</p>
+    #[doc(hidden)]
     pub backup_plan_versions_list:
         std::option::Option<std::vec::Vec<crate::model::BackupPlansListMember>>,
 }
@@ -2048,8 +2094,10 @@ impl ListBackupPlanVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlanTemplatesOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of template list items containing metadata about your saved templates.</p>
+    #[doc(hidden)]
     pub backup_plan_templates_list:
         std::option::Option<std::vec::Vec<crate::model::BackupPlanTemplatesListMember>>,
 }
@@ -2140,8 +2188,10 @@ impl ListBackupPlanTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlansOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    #[doc(hidden)]
     pub backup_plans_list: std::option::Option<std::vec::Vec<crate::model::BackupPlansListMember>>,
 }
 impl ListBackupPlansOutput {
@@ -2223,8 +2273,10 @@ impl ListBackupPlansOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupJobsOutput {
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
+    #[doc(hidden)]
     pub backup_jobs: std::option::Option<std::vec::Vec<crate::model::BackupJob>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBackupJobsOutput {
@@ -2317,6 +2369,7 @@ pub struct GetSupportedResourceTypesOutput {
     /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetSupportedResourceTypesOutput {
@@ -2416,10 +2469,13 @@ impl GetSupportedResourceTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryPointRestoreMetadataOutput {
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
+    #[doc(hidden)]
     pub restore_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2535,12 +2591,16 @@ impl GetRecoveryPointRestoreMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupVaultNotificationsOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
+    #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+    #[doc(hidden)]
     pub backup_vault_events: std::option::Option<std::vec::Vec<crate::model::BackupVaultEvent>>,
 }
 impl GetBackupVaultNotificationsOutput {
@@ -2665,10 +2725,13 @@ impl GetBackupVaultNotificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupVaultAccessPolicyOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>The backup vault access policy document in JSON format.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetBackupVaultAccessPolicyOutput {
@@ -2763,14 +2826,19 @@ impl GetBackupVaultAccessPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupSelectionOutput {
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    #[doc(hidden)]
     pub backup_selection: std::option::Option<crate::model::BackupSelection>,
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    #[doc(hidden)]
     pub selection_id: std::option::Option<std::string::String>,
     /// <p>Uniquely identifies a backup plan.</p>
+    #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl GetBackupSelectionOutput {
@@ -2905,6 +2973,7 @@ impl GetBackupSelectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupPlanFromTemplateOutput {
     /// <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
+    #[doc(hidden)]
     pub backup_plan_document: std::option::Option<crate::model::BackupPlan>,
 }
 impl GetBackupPlanFromTemplateOutput {
@@ -2962,6 +3031,7 @@ impl GetBackupPlanFromTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupPlanFromJsonOutput {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub backup_plan: std::option::Option<crate::model::BackupPlan>,
 }
 impl GetBackupPlanFromJsonOutput {
@@ -3019,22 +3089,31 @@ impl GetBackupPlanFromJsonOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupPlanOutput {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    #[doc(hidden)]
     pub backup_plan: std::option::Option<crate::model::BackupPlan>,
     /// <p>Uniquely identifies a backup plan.</p>
+    #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    #[doc(hidden)]
     pub backup_plan_arn: std::option::Option<std::string::String>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time a job to back up resources was run with this backup plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub last_execution_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
+    #[doc(hidden)]
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
 }
@@ -3264,6 +3343,7 @@ pub struct ExportBackupPlanTemplateOutput {
     /// <p>The body of a backup plan template in JSON format.</p> <note>
     /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
+    #[doc(hidden)]
     pub backup_plan_template_json: std::option::Option<std::string::String>,
 }
 impl ExportBackupPlanTemplateOutput {
@@ -3357,30 +3437,43 @@ impl DisassociateRecoveryPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRestoreJobOutput {
     /// <p>Returns the account ID that owns the restore job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
+    #[doc(hidden)]
     pub restore_job_id: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Status code specifying the state of the job that is initiated by Backup to restore a recovery point.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RestoreJobStatus>,
     /// <p>A message showing the status of a job to restore a recovery point.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Contains an estimated percentage that is complete of a job at the time the job status was queried.</p>
+    #[doc(hidden)]
     pub percent_done: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the restored resource.</p>
+    #[doc(hidden)]
     pub backup_size_in_bytes: std::option::Option<i64>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
+    #[doc(hidden)]
     pub expected_completion_time_minutes: std::option::Option<i64>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource whose recovery point is being restored. The format of the ARN depends on the resource type of the backed-up resource.</p>
+    #[doc(hidden)]
     pub created_resource_arn: std::option::Option<std::string::String>,
     /// <p>Returns metadata associated with a restore job listed by resource type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl DescribeRestoreJobOutput {
@@ -3669,6 +3762,7 @@ impl DescribeRestoreJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportPlanOutput {
     /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
+    #[doc(hidden)]
     pub report_plan: std::option::Option<crate::model::ReportPlan>,
 }
 impl DescribeReportPlanOutput {
@@ -3726,6 +3820,7 @@ impl DescribeReportPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportJobOutput {
     /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    #[doc(hidden)]
     pub report_job: std::option::Option<crate::model::ReportJob>,
 }
 impl DescribeReportJobOutput {
@@ -3783,12 +3878,14 @@ impl DescribeReportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegionSettingsOutput {
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
+    #[doc(hidden)]
     pub resource_type_opt_in_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>Returns whether Backup fully manages the backups for a resource type.</p>
     /// <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>
     /// <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     /// <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
+    #[doc(hidden)]
     pub resource_type_management_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
 }
@@ -3908,46 +4005,65 @@ impl DescribeRegionSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoveryPointOutput {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is restored to the same Amazon Web Services account or Region, this value will be <code>null</code>.</p>
+    #[doc(hidden)]
     pub source_backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a saved resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The type of Amazon Web Services resource to save as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::RecoveryPointCreator>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>A status code specifying the state of the recovery point.</p>
     /// <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
     /// <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecoveryPointStatus>,
     /// <p>A status message explaining the reason for the recovery point deletion failure.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date and time that a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of a backup.</p>
+    #[doc(hidden)]
     pub backup_size_in_bytes: std::option::Option<i64>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
+    #[doc(hidden)]
     pub calculated_lifecycle: std::option::Option<crate::model::CalculatedLifecycle>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
     /// <p>Backups that are transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>The server-side encryption key used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
+    #[doc(hidden)]
     pub is_encrypted: bool,
     /// <p>Specifies the storage class of the recovery point. Valid values are <code>WARM</code> or <code>COLD</code>.</p>
+    #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>The date and time that a recovery point was last restored, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub last_restore_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeRecoveryPointOutput {
@@ -4365,10 +4481,13 @@ impl DescribeRecoveryPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectedResourceOutput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub last_backup_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeProtectedResourceOutput {
@@ -4463,9 +4582,11 @@ impl DescribeProtectedResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalSettingsOutput {
     /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    #[doc(hidden)]
     pub global_settings:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGlobalSettingsOutput {
@@ -4560,17 +4681,23 @@ impl DescribeGlobalSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFrameworkOutput {
     /// <p>The unique name of a framework.</p>
+    #[doc(hidden)]
     pub framework_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub framework_arn: std::option::Option<std::string::String>,
     /// <p>An optional description of the framework.</p>
+    #[doc(hidden)]
     pub framework_description: std::option::Option<std::string::String>,
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    #[doc(hidden)]
     pub framework_controls: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
     /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
@@ -4579,8 +4706,10 @@ pub struct DescribeFrameworkOutput {
     /// <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub framework_status: std::option::Option<std::string::String>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl DescribeFrameworkOutput {
@@ -4806,6 +4935,7 @@ impl DescribeFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCopyJobOutput {
     /// <p>Contains detailed information about a copy job.</p>
+    #[doc(hidden)]
     pub copy_job: std::option::Option<crate::model::CopyJob>,
 }
 impl DescribeCopyJobOutput {
@@ -4860,28 +4990,38 @@ impl DescribeCopyJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupVaultOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The number of recovery points that are stored in a backup vault.</p>
+    #[doc(hidden)]
     pub number_of_recovery_points: i64,
     /// <p>A Boolean that indicates whether Backup Vault Lock is currently protecting the backup vault. <code>True</code> means that Vault Lock causes delete or update operations on the recovery points stored in the vault to fail.</p>
+    #[doc(hidden)]
     pub locked: std::option::Option<bool>,
     /// <p>The Backup Vault Lock setting that specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a minimum retention period.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
+    #[doc(hidden)]
     pub min_retention_days: std::option::Option<i64>,
     /// <p>The Backup Vault Lock setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
+    #[doc(hidden)]
     pub max_retention_days: std::option::Option<i64>,
     /// <p>The date and time when Backup Vault Lock configuration cannot be changed or deleted.</p>
     /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub lock_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeBackupVaultOutput {
@@ -5119,45 +5259,65 @@ impl DescribeBackupVaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupJobOutput {
     /// <p>Returns the account ID that owns the backup job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    #[doc(hidden)]
     pub backup_job_id: std::option::Option<std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>An ARN that uniquely identifies a saved resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of a resource recovery point.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::BackupJobState>,
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Contains an estimated percentage that is complete of a job at the time the job status was queried.</p>
+    #[doc(hidden)]
     pub percent_done: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of a backup.</p>
+    #[doc(hidden)]
     pub backup_size_in_bytes: std::option::Option<i64>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>Contains identifying information about the creation of a backup job, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::RecoveryPointCreator>,
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The size in bytes transferred to a backup vault at the time that the job status was queried.</p>
+    #[doc(hidden)]
     pub bytes_transferred: std::option::Option<i64>,
     /// <p>The date and time that a job to back up resources is expected to be completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub expected_completion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub start_by: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Represents the options specified as part of backup plan or on-demand backup job.</p>
+    #[doc(hidden)]
     pub backup_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents the actual backup type selected for a backup job. For example, if a successful Windows Volume Shadow Copy Service (VSS) backup was taken, <code>BackupType</code> returns <code>"WindowsVSS"</code>. If <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
+    #[doc(hidden)]
     pub backup_type: std::option::Option<std::string::String>,
 }
 impl DescribeBackupJobOutput {
@@ -5831,12 +5991,16 @@ impl DeleteBackupSelectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupPlanOutput {
     /// <p>Uniquely identifies a backup plan.</p>
+    #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    #[doc(hidden)]
     pub backup_plan_arn: std::option::Option<std::string::String>,
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
 }
 impl DeleteBackupPlanOutput {
@@ -5951,10 +6115,13 @@ impl DeleteBackupPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReportPlanOutput {
     /// <p>The unique name of the report plan.</p>
+    #[doc(hidden)]
     pub report_plan_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub report_plan_arn: std::option::Option<std::string::String>,
     /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateReportPlanOutput {
@@ -6052,8 +6219,10 @@ impl CreateReportPlanOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFrameworkOutput {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    #[doc(hidden)]
     pub framework_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    #[doc(hidden)]
     pub framework_arn: std::option::Option<std::string::String>,
 }
 impl CreateFrameworkOutput {
@@ -6131,10 +6300,13 @@ impl CreateFrameworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupVaultOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    #[doc(hidden)]
     pub backup_vault_arn: std::option::Option<std::string::String>,
     /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateBackupVaultOutput {
@@ -6232,10 +6404,13 @@ impl CreateBackupVaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupSelectionOutput {
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    #[doc(hidden)]
     pub selection_id: std::option::Option<std::string::String>,
     /// <p>Uniquely identifies a backup plan.</p>
+    #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateBackupSelectionOutput {
@@ -6330,14 +6505,19 @@ impl CreateBackupSelectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupPlanOutput {
     /// <p>Uniquely identifies a backup plan.</p>
+    #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    #[doc(hidden)]
     pub backup_plan_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    #[doc(hidden)]
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
 }

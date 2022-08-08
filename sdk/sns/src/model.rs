@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The required key portion of the tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional value portion of the tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,12 +80,16 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>An error code representing why the action failed on this entry.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>A message explaining why the action failed on this entry.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+    #[doc(hidden)]
     pub sender_fault: bool,
 }
 impl BatchResultErrorEntry {
@@ -189,12 +195,15 @@ impl BatchResultErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishBatchResultEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>An identifier for the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+    #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl PublishBatchResultEntry {
@@ -295,10 +304,13 @@ pub struct PublishBatchRequestEntry {
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The body of the message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The subject of the batch message.</p>
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
     /// <ul>
@@ -306,8 +318,10 @@ pub struct PublishBatchRequestEntry {
     /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http). </p>
+    #[doc(hidden)]
     pub message_structure: std::option::Option<std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -330,6 +344,7 @@ pub struct PublishBatchRequestEntry {
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
     /// <p> <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    #[doc(hidden)]
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
@@ -338,6 +353,7 @@ pub struct PublishBatchRequestEntry {
     /// <p> <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <important>
     /// <p> <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
     /// </important>
+    #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl PublishBatchRequestEntry {
@@ -621,10 +637,13 @@ impl PublishBatchRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageAttributeValue {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<std::string::String>,
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
+    #[doc(hidden)]
     pub binary_value: std::option::Option<aws_smithy_types::Blob>,
 }
 impl MessageAttributeValue {
@@ -716,6 +735,7 @@ impl MessageAttributeValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Topic {
     /// <p>The topic's ARN.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl Topic {
@@ -770,14 +790,19 @@ impl Topic {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
     /// <p>The subscription's ARN.</p>
+    #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
     /// <p>The subscription's owner.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The subscription's protocol.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The ARN of the subscription's topic.</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl Subscription {
@@ -904,8 +929,10 @@ impl Subscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmsSandboxPhoneNumber {
     /// <p>The destination phone number.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The destination phone number's verification status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
 }
 impl SmsSandboxPhoneNumber {
@@ -1044,8 +1071,10 @@ impl AsRef<str> for SmsSandboxPhoneNumberVerificationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformApplication {
     /// <p>PlatformApplicationArn for platform application object.</p>
+    #[doc(hidden)]
     pub platform_application_arn: std::option::Option<std::string::String>,
     /// <p>Attributes for platform application object.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1141,16 +1170,22 @@ impl PlatformApplication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The phone number.</p>
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The status of the phone number.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
+    #[doc(hidden)]
     pub iso2_country_code: std::option::Option<std::string::String>,
     /// <p>The list of supported routes.</p>
+    #[doc(hidden)]
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The capabilities of each phone number.</p>
+    #[doc(hidden)]
     pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
 }
 impl PhoneNumberInformation {
@@ -1430,8 +1465,10 @@ impl AsRef<str> for RouteType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
+    #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>Attributes for endpoint.</p>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

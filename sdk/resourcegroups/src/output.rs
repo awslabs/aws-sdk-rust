@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupQueryOutput {
     /// <p>The updated resource query associated with the resource group after the update.</p>
+    #[doc(hidden)]
     pub group_query: std::option::Option<crate::model::GroupQuery>,
 }
 impl UpdateGroupQueryOutput {
@@ -61,6 +62,7 @@ impl UpdateGroupQueryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {
     /// <p>The update description of the resource group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl UpdateGroupOutput {
@@ -113,8 +115,10 @@ impl UpdateGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagOutput {
     /// <p>The ARN of the resource group from which tags have been removed.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags that were removed.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagOutput {
@@ -195,10 +199,13 @@ impl UntagOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UngroupResourcesOutput {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
+    #[doc(hidden)]
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
+    #[doc(hidden)]
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
 }
 impl UngroupResourcesOutput {
@@ -314,8 +321,10 @@ impl UngroupResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOutput {
     /// <p>The ARN of the tagged resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags that have been added to the specified resource group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -408,10 +417,13 @@ impl TagOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesOutput {
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
+    #[doc(hidden)]
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    #[doc(hidden)]
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
 }
 impl SearchResourcesOutput {
@@ -549,13 +561,16 @@ impl PutGroupConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
     /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+    #[doc(hidden)]
     pub group_identifiers: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -672,15 +687,19 @@ impl ListGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupResourcesOutput {
     /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::ListGroupResourcesItem>>,
     /// <important>
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
+    #[doc(hidden)]
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    #[doc(hidden)]
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
 }
 impl ListGroupResourcesOutput {
@@ -824,10 +843,13 @@ impl ListGroupResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupResourcesOutput {
     /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
+    #[doc(hidden)]
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
     /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    #[doc(hidden)]
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
 }
 impl GroupResourcesOutput {
@@ -943,8 +965,10 @@ impl GroupResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsOutput {
     /// <p>The ARN of the tagged resource group.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags associated with the specified resource group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1037,6 +1061,7 @@ impl GetTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupQueryOutput {
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
+    #[doc(hidden)]
     pub group_query: std::option::Option<crate::model::GroupQuery>,
 }
 impl GetGroupQueryOutput {
@@ -1094,6 +1119,7 @@ impl GetGroupQueryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupConfigurationOutput {
     /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    #[doc(hidden)]
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
 impl GetGroupConfigurationOutput {
@@ -1151,6 +1177,7 @@ impl GetGroupConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
     /// <p>A full description of the resource group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
@@ -1203,6 +1230,7 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupOutput {
     /// <p>A full description of the deleted resource group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl DeleteGroupOutput {
@@ -1255,13 +1283,17 @@ impl DeleteGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
     /// <p>The description of the resource group.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
     /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
+    #[doc(hidden)]
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
     /// <p>The tags associated with the group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    #[doc(hidden)]
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
 impl CreateGroupOutput {

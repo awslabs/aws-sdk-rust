@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecommenderOutput {
     /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl UpdateRecommenderOutput {
@@ -61,6 +62,7 @@ impl UpdateRecommenderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignOutput {
     /// <p>The same campaign ARN as given in the request.</p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
 }
 impl UpdateCampaignOutput {
@@ -205,6 +207,7 @@ impl StopSolutionVersionCreationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRecommenderOutput {
     /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl StopRecommenderOutput {
@@ -262,6 +265,7 @@ impl StopRecommenderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRecommenderOutput {
     /// <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl StartRecommenderOutput {
@@ -319,6 +323,7 @@ impl StartRecommenderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -380,8 +385,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSolutionVersionsOutput {
     /// <p>A list of solution versions describing the version properties.</p>
+    #[doc(hidden)]
     pub solution_versions: std::option::Option<std::vec::Vec<crate::model::SolutionVersionSummary>>,
     /// <p>A token for getting the next set of solution versions (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSolutionVersionsOutput {
@@ -465,8 +472,10 @@ impl ListSolutionVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSolutionsOutput {
     /// <p>A list of the current solutions.</p>
+    #[doc(hidden)]
     pub solutions: std::option::Option<std::vec::Vec<crate::model::SolutionSummary>>,
     /// <p>A token for getting the next set of solutions (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSolutionsOutput {
@@ -547,8 +556,10 @@ impl ListSolutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasOutput {
     /// <p>A list of schemas.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::DatasetSchemaSummary>>,
     /// <p>A token used to get the next set of schemas (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchemasOutput {
@@ -629,8 +640,10 @@ impl ListSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendersOutput {
     /// <p>A list of the recommenders.</p>
+    #[doc(hidden)]
     pub recommenders: std::option::Option<std::vec::Vec<crate::model::RecommenderSummary>>,
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendersOutput {
@@ -712,8 +725,10 @@ impl ListRecommendersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipesOutput {
     /// <p>The list of available recipes.</p>
+    #[doc(hidden)]
     pub recipes: std::option::Option<std::vec::Vec<crate::model::RecipeSummary>>,
     /// <p>A token for getting the next set of recipes.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecipesOutput {
@@ -794,8 +809,10 @@ impl ListRecipesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFiltersOutput {
     /// <p>A list of returned filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::FilterSummary>>,
     /// <p>A token for getting the next set of filters (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFiltersOutput {
@@ -876,8 +893,10 @@ impl ListFiltersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventTrackersOutput {
     /// <p>A list of event trackers.</p>
+    #[doc(hidden)]
     pub event_trackers: std::option::Option<std::vec::Vec<crate::model::EventTrackerSummary>>,
     /// <p>A token for getting the next set of event trackers (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventTrackersOutput {
@@ -959,8 +978,10 @@ impl ListEventTrackersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
+    #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
     /// <p>A token for getting the next set of datasets (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -1041,9 +1062,11 @@ impl ListDatasetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetImportJobsOutput {
     /// <p>The list of dataset import jobs.</p>
+    #[doc(hidden)]
     pub dataset_import_jobs:
         std::option::Option<std::vec::Vec<crate::model::DatasetImportJobSummary>>,
     /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetImportJobsOutput {
@@ -1127,8 +1150,10 @@ impl ListDatasetImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsOutput {
     /// <p>The list of your dataset groups.</p>
+    #[doc(hidden)]
     pub dataset_groups: std::option::Option<std::vec::Vec<crate::model::DatasetGroupSummary>>,
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetGroupsOutput {
@@ -1210,9 +1235,11 @@ impl ListDatasetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetExportJobsOutput {
     /// <p>The list of dataset export jobs.</p>
+    #[doc(hidden)]
     pub dataset_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::DatasetExportJobSummary>>,
     /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetExportJobsOutput {
@@ -1296,8 +1323,10 @@ impl ListDatasetExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCampaignsOutput {
     /// <p>A list of the campaigns.</p>
+    #[doc(hidden)]
     pub campaigns: std::option::Option<std::vec::Vec<crate::model::CampaignSummary>>,
     /// <p>A token for getting the next set of campaigns (if they exist).</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCampaignsOutput {
@@ -1378,9 +1407,11 @@ impl ListCampaignsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchSegmentJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
+    #[doc(hidden)]
     pub batch_segment_jobs:
         std::option::Option<std::vec::Vec<crate::model::BatchSegmentJobSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBatchSegmentJobsOutput {
@@ -1464,9 +1495,11 @@ impl ListBatchSegmentJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchInferenceJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
+    #[doc(hidden)]
     pub batch_inference_jobs:
         std::option::Option<std::vec::Vec<crate::model::BatchInferenceJobSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBatchInferenceJobsOutput {
@@ -1553,8 +1586,10 @@ impl ListBatchInferenceJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSolutionMetricsOutput {
     /// <p>The same solution version ARN as specified in the request.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
+    #[doc(hidden)]
     pub metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
 impl GetSolutionMetricsOutput {
@@ -1641,6 +1676,7 @@ impl GetSolutionMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSolutionVersionOutput {
     /// <p>The solution version.</p>
+    #[doc(hidden)]
     pub solution_version: std::option::Option<crate::model::SolutionVersion>,
 }
 impl DescribeSolutionVersionOutput {
@@ -1698,6 +1734,7 @@ impl DescribeSolutionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSolutionOutput {
     /// <p>An object that describes the solution.</p>
+    #[doc(hidden)]
     pub solution: std::option::Option<crate::model::Solution>,
 }
 impl DescribeSolutionOutput {
@@ -1752,6 +1789,7 @@ impl DescribeSolutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemaOutput {
     /// <p>The requested schema.</p>
+    #[doc(hidden)]
     pub schema: std::option::Option<crate::model::DatasetSchema>,
 }
 impl DescribeSchemaOutput {
@@ -1809,6 +1847,7 @@ impl DescribeSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommenderOutput {
     /// <p>The properties of the recommender.</p>
+    #[doc(hidden)]
     pub recommender: std::option::Option<crate::model::Recommender>,
 }
 impl DescribeRecommenderOutput {
@@ -1866,6 +1905,7 @@ impl DescribeRecommenderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecipeOutput {
     /// <p>An object that describes the recipe.</p>
+    #[doc(hidden)]
     pub recipe: std::option::Option<crate::model::Recipe>,
 }
 impl DescribeRecipeOutput {
@@ -1920,6 +1960,7 @@ impl DescribeRecipeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFilterOutput {
     /// <p>The filter's details.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Filter>,
 }
 impl DescribeFilterOutput {
@@ -1974,6 +2015,7 @@ impl DescribeFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeatureTransformationOutput {
     /// <p>A listing of the FeatureTransformation properties.</p>
+    #[doc(hidden)]
     pub feature_transformation: std::option::Option<crate::model::FeatureTransformation>,
 }
 impl DescribeFeatureTransformationOutput {
@@ -2036,6 +2078,7 @@ impl DescribeFeatureTransformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTrackerOutput {
     /// <p>An object that describes the event tracker.</p>
+    #[doc(hidden)]
     pub event_tracker: std::option::Option<crate::model::EventTracker>,
 }
 impl DescribeEventTrackerOutput {
@@ -2100,6 +2143,7 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dataset_import_job: std::option::Option<crate::model::DatasetImportJob>,
 }
 impl DescribeDatasetImportJobOutput {
@@ -2178,6 +2222,7 @@ impl DescribeDatasetImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetGroupOutput {
     /// <p>A listing of the dataset group's properties.</p>
+    #[doc(hidden)]
     pub dataset_group: std::option::Option<crate::model::DatasetGroup>,
 }
 impl DescribeDatasetGroupOutput {
@@ -2242,6 +2287,7 @@ pub struct DescribeDatasetExportJobOutput {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub dataset_export_job: std::option::Option<crate::model::DatasetExportJob>,
 }
 impl DescribeDatasetExportJobOutput {
@@ -2320,6 +2366,7 @@ impl DescribeDatasetExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
     /// <p>A listing of the dataset's properties.</p>
+    #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
 impl DescribeDatasetOutput {
@@ -2374,6 +2421,7 @@ impl DescribeDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCampaignOutput {
     /// <p>The properties of the campaign.</p>
+    #[doc(hidden)]
     pub campaign: std::option::Option<crate::model::Campaign>,
 }
 impl DescribeCampaignOutput {
@@ -2428,6 +2476,7 @@ impl DescribeCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBatchSegmentJobOutput {
     /// <p>Information on the specified batch segment job.</p>
+    #[doc(hidden)]
     pub batch_segment_job: std::option::Option<crate::model::BatchSegmentJob>,
 }
 impl DescribeBatchSegmentJobOutput {
@@ -2485,6 +2534,7 @@ impl DescribeBatchSegmentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBatchInferenceJobOutput {
     /// <p>Information on the specified batch inference job.</p>
+    #[doc(hidden)]
     pub batch_inference_job: std::option::Option<crate::model::BatchInferenceJob>,
 }
 impl DescribeBatchInferenceJobOutput {
@@ -2542,6 +2592,7 @@ impl DescribeBatchInferenceJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlgorithmOutput {
     /// <p>A listing of the properties of the algorithm.</p>
+    #[doc(hidden)]
     pub algorithm: std::option::Option<crate::model::Algorithm>,
 }
 impl DescribeAlgorithmOutput {
@@ -2839,6 +2890,7 @@ impl DeleteCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSolutionVersionOutput {
     /// <p>The ARN of the new solution version.</p>
+    #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateSolutionVersionOutput {
@@ -2896,6 +2948,7 @@ impl CreateSolutionVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSolutionOutput {
     /// <p>The ARN of the solution.</p>
+    #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
 }
 impl CreateSolutionOutput {
@@ -2950,6 +3003,7 @@ impl CreateSolutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the created schema.</p>
+    #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateSchemaOutput {
@@ -3004,6 +3058,7 @@ impl CreateSchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecommenderOutput {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+    #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl CreateRecommenderOutput {
@@ -3061,6 +3116,7 @@ impl CreateRecommenderOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterOutput {
     /// <p>The ARN of the new filter.</p>
+    #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
 }
 impl CreateFilterOutput {
@@ -3115,8 +3171,10 @@ impl CreateFilterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventTrackerOutput {
     /// <p>The ARN of the event tracker.</p>
+    #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    #[doc(hidden)]
     pub tracking_id: std::option::Option<std::string::String>,
 }
 impl CreateEventTrackerOutput {
@@ -3191,6 +3249,7 @@ impl CreateEventTrackerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetImportJobOutput {
     /// <p>The ARN of the dataset import job.</p>
+    #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetImportJobOutput {
@@ -3248,8 +3307,10 @@ impl CreateDatasetImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
+    #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The domain for the new Domain dataset group.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateDatasetGroupOutput {
@@ -3324,6 +3385,7 @@ impl CreateDatasetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    #[doc(hidden)]
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetExportJobOutput {
@@ -3381,6 +3443,7 @@ impl CreateDatasetExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
@@ -3435,6 +3498,7 @@ impl CreateDatasetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCampaignOutput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
 }
 impl CreateCampaignOutput {
@@ -3489,6 +3553,7 @@ impl CreateCampaignOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchSegmentJobOutput {
     /// <p>The ARN of the batch segment job.</p>
+    #[doc(hidden)]
     pub batch_segment_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateBatchSegmentJobOutput {
@@ -3546,6 +3611,7 @@ impl CreateBatchSegmentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBatchInferenceJobOutput {
     /// <p>The ARN of the batch inference job.</p>
+    #[doc(hidden)]
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateBatchInferenceJobOutput {

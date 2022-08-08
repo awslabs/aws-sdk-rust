@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>404</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The requested device could not be found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -89,8 +91,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
     /// <p>400</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The 400 error message returned by the web server.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
@@ -174,8 +178,10 @@ impl InvalidRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
     /// <p>500</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The 500 error message returned by the web server.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalFailureException {
@@ -259,8 +265,10 @@ impl InternalFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RangeNotSatisfiableException {
     /// <p>416</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The requested number of results specified by nextToken cannot be satisfied.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RangeNotSatisfiableException {
@@ -344,8 +352,10 @@ impl RangeNotSatisfiableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
     /// <p>409</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>An error message explaining the error or its remedy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceConflictException {
@@ -429,8 +439,10 @@ impl ResourceConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
     /// <p>412</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>An error message explaining the error or its remedy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PreconditionFailedException {
@@ -514,8 +526,10 @@ impl PreconditionFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
     /// <p>403</p>
+    #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
     /// <p>The 403 error message returned by the web server.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ForbiddenException {

@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerificationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     /// <p>The status of the verification error.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl VerificationException {
@@ -90,6 +92,7 @@ impl VerificationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottledException {
     /// <p>Throttled request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottledException {
@@ -154,6 +157,7 @@ impl ThrottledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -218,6 +222,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -282,6 +287,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalErrorException {
@@ -346,6 +352,7 @@ impl InternalErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizationErrorException {
@@ -410,6 +417,7 @@ impl AuthorizationErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagPolicyException {
@@ -474,6 +482,7 @@ impl TagPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagLimitExceededException {
@@ -538,6 +547,7 @@ impl TagLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaleTagException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StaleTagException {
@@ -602,6 +612,7 @@ impl StaleTagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentAccessException {
@@ -666,6 +677,7 @@ impl ConcurrentAccessException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -730,6 +742,7 @@ impl NotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSecurityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSecurityException {
@@ -794,6 +807,7 @@ impl InvalidSecurityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SubscriptionLimitExceededException {
@@ -858,6 +872,7 @@ impl SubscriptionLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterPolicyLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FilterPolicyLimitExceededException {
@@ -922,6 +937,7 @@ impl FilterPolicyLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyEntriesInBatchRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyEntriesInBatchRequestException {
@@ -986,6 +1002,7 @@ impl TooManyEntriesInBatchRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformApplicationDisabledException {
     /// <p>Message for platform application disabled.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlatformApplicationDisabledException {
@@ -1050,6 +1067,7 @@ impl PlatformApplicationDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsThrottlingException {
@@ -1114,6 +1132,7 @@ impl KmsThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsOptInRequired {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsOptInRequired {
@@ -1178,6 +1197,7 @@ impl KmsOptInRequired {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsNotFoundException {
@@ -1242,6 +1262,7 @@ impl KmsNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsInvalidStateException {
@@ -1306,6 +1327,7 @@ impl KmsInvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsDisabledException {
@@ -1370,6 +1392,7 @@ impl KmsDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsAccessDeniedException {
@@ -1434,6 +1457,7 @@ impl KmsAccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterValueException {
@@ -1498,6 +1522,7 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBatchEntryIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBatchEntryIdException {
@@ -1562,6 +1587,7 @@ impl InvalidBatchEntryIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointDisabledException {
     /// <p>Message for endpoint disabled.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EndpointDisabledException {
@@ -1626,6 +1652,7 @@ impl EndpointDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmptyBatchRequestException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EmptyBatchRequestException {
@@ -1690,6 +1717,7 @@ impl EmptyBatchRequestException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRequestTooLongException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchRequestTooLongException {
@@ -1754,6 +1782,7 @@ impl BatchRequestTooLongException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEntryIdsNotDistinctException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchEntryIdsNotDistinctException {
@@ -1818,6 +1847,7 @@ impl BatchEntryIdsNotDistinctException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -1882,6 +1912,7 @@ impl ValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserErrorException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserErrorException {
@@ -1946,6 +1977,7 @@ impl UserErrorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TopicLimitExceededException {
@@ -2010,6 +2042,7 @@ impl TopicLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptedOutException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OptedOutException {

@@ -67,6 +67,7 @@ impl DisableHealthServiceAccessForOrganizationOutput {
 pub struct DescribeHealthServiceStatusForOrganizationOutput {
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    #[doc(hidden)]
     pub health_service_access_status_for_organization: std::option::Option<std::string::String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
@@ -137,8 +138,10 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTypesOutput {
     /// <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+    #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventTypesOutput {
@@ -219,8 +222,10 @@ impl DescribeEventTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsForOrganizationOutput {
     /// <p>The events that match the specified filter criteria.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::OrganizationEvent>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsForOrganizationOutput {
@@ -301,8 +306,10 @@ impl DescribeEventsForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p>The events that match the specified filter criteria.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsOutput {
@@ -383,8 +390,10 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventDetailsForOrganizationOutput {
     /// <p>Information about the events that could be retrieved.</p>
+    #[doc(hidden)]
     pub successful_set: std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetails>>,
     /// <p>Error messages for any events that could not be retrieved.</p>
+    #[doc(hidden)]
     pub failed_set:
         std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>,
 }
@@ -484,8 +493,10 @@ impl DescribeEventDetailsForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventDetailsOutput {
     /// <p>Information about the events that could be retrieved.</p>
+    #[doc(hidden)]
     pub successful_set: std::option::Option<std::vec::Vec<crate::model::EventDetails>>,
     /// <p>Error messages for any events that could not be retrieved.</p>
+    #[doc(hidden)]
     pub failed_set: std::option::Option<std::vec::Vec<crate::model::EventDetailsErrorItem>>,
 }
 impl DescribeEventDetailsOutput {
@@ -576,8 +587,10 @@ impl DescribeEventDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventAggregatesOutput {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
+    #[doc(hidden)]
     pub event_aggregates: std::option::Option<std::vec::Vec<crate::model::EventAggregate>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventAggregatesOutput {
@@ -659,6 +672,7 @@ impl DescribeEventAggregatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
+    #[doc(hidden)]
     pub entity_aggregates: std::option::Option<std::vec::Vec<crate::model::EntityAggregate>>,
 }
 impl DescribeEntityAggregatesOutput {
@@ -723,11 +737,14 @@ impl DescribeEntityAggregatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedEntitiesForOrganizationOutput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+    #[doc(hidden)]
     pub failed_set:
         std::option::Option<std::vec::Vec<crate::model::OrganizationAffectedEntitiesErrorItem>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAffectedEntitiesForOrganizationOutput {
@@ -842,8 +859,10 @@ impl DescribeAffectedEntitiesForOrganizationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedEntitiesOutput {
     /// <p>The entities that match the filter criteria.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAffectedEntitiesOutput {
@@ -924,6 +943,7 @@ impl DescribeAffectedEntitiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
+    #[doc(hidden)]
     pub affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
@@ -931,8 +951,10 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub event_scope_code: std::option::Option<crate::model::EventScopeCode>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAffectedAccountsForOrganizationOutput {

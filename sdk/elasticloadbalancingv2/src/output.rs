@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSubnetsOutput {
     /// <p>Information about the subnets.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
     /// <p>[Network Load Balancers] The IP address type.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetSubnetsOutput {
@@ -90,6 +92,7 @@ impl SetSubnetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSecurityGroupsOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SetSecurityGroupsOutput {
@@ -153,6 +156,7 @@ impl SetSecurityGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRulePrioritiesOutput {
     /// <p>Information about the rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl SetRulePrioritiesOutput {
@@ -214,6 +218,7 @@ impl SetRulePrioritiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIpAddressTypeOutput {
     /// <p>The IP address type.</p>
+    #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetIpAddressTypeOutput {
@@ -361,6 +366,7 @@ impl RegisterTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTargetGroupAttributesOutput {
     /// <p>Information about the attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
 }
 impl ModifyTargetGroupAttributesOutput {
@@ -425,6 +431,7 @@ impl ModifyTargetGroupAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyTargetGroupOutput {
     /// <p>Information about the modified target group.</p>
+    #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroup>>,
 }
 impl ModifyTargetGroupOutput {
@@ -488,6 +495,7 @@ impl ModifyTargetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyRuleOutput {
     /// <p>Information about the modified rule.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl ModifyRuleOutput {
@@ -549,6 +557,7 @@ impl ModifyRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
 }
 impl ModifyLoadBalancerAttributesOutput {
@@ -613,6 +622,7 @@ impl ModifyLoadBalancerAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyListenerOutput {
     /// <p>Information about the modified listener.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
 }
 impl ModifyListenerOutput {
@@ -676,6 +686,7 @@ impl ModifyListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetHealthOutput {
     /// <p>Information about the health of the targets.</p>
+    #[doc(hidden)]
     pub target_health_descriptions:
         std::option::Option<std::vec::Vec<crate::model::TargetHealthDescription>>,
 }
@@ -749,8 +760,10 @@ impl DescribeTargetHealthOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
+    #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroup>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeTargetGroupsOutput {
@@ -831,6 +844,7 @@ impl DescribeTargetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTargetGroupAttributesOutput {
     /// <p>Information about the target group attributes</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
 }
 impl DescribeTargetGroupAttributesOutput {
@@ -895,6 +909,7 @@ impl DescribeTargetGroupAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
+    #[doc(hidden)]
     pub tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
 impl DescribeTagsOutput {
@@ -959,8 +974,10 @@ impl DescribeTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSslPoliciesOutput {
     /// <p>Information about the security policies.</p>
+    #[doc(hidden)]
     pub ssl_policies: std::option::Option<std::vec::Vec<crate::model::SslPolicy>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeSslPoliciesOutput {
@@ -1041,8 +1058,10 @@ impl DescribeSslPoliciesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRulesOutput {
     /// <p>Information about the rules.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeRulesOutput {
@@ -1123,8 +1142,10 @@ impl DescribeRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
+    #[doc(hidden)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancersOutput {
@@ -1205,6 +1226,7 @@ impl DescribeLoadBalancersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
 }
 impl DescribeLoadBalancerAttributesOutput {
@@ -1269,8 +1291,10 @@ impl DescribeLoadBalancerAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeListenersOutput {
     /// <p>Information about the listeners.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeListenersOutput {
@@ -1351,8 +1375,10 @@ impl DescribeListenersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeListenerCertificatesOutput {
     /// <p>Information about the certificates.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeListenerCertificatesOutput {
@@ -1433,8 +1459,10 @@ impl DescribeListenerCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
+    #[doc(hidden)]
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeAccountLimitsOutput {
@@ -1665,6 +1693,7 @@ impl DeleteListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTargetGroupOutput {
     /// <p>Information about the target group.</p>
+    #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroup>>,
 }
 impl CreateTargetGroupOutput {
@@ -1728,6 +1757,7 @@ impl CreateTargetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleOutput {
     /// <p>Information about the rule.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl CreateRuleOutput {
@@ -1789,6 +1819,7 @@ impl CreateRuleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerOutput {
     /// <p>Information about the load balancer.</p>
+    #[doc(hidden)]
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
 }
 impl CreateLoadBalancerOutput {
@@ -1852,6 +1883,7 @@ impl CreateLoadBalancerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateListenerOutput {
     /// <p>Information about the listener.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
 }
 impl CreateListenerOutput {
@@ -1945,6 +1977,7 @@ impl AddTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddListenerCertificatesOutput {
     /// <p>Information about the certificates in the certificate list.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl AddListenerCertificatesOutput {

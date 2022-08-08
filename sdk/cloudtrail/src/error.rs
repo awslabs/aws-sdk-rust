@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperationException {
@@ -69,6 +70,7 @@ impl UnsupportedOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrailNotProvidedException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrailNotProvidedException {
@@ -133,6 +135,7 @@ impl TrailNotProvidedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrailNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrailNotFoundException {
@@ -197,6 +200,7 @@ impl TrailNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketDoesNotExistException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3BucketDoesNotExistException {
@@ -261,6 +265,7 @@ impl S3BucketDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationsNotInUseException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationsNotInUseException {
@@ -325,6 +330,7 @@ impl OrganizationsNotInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotInAllFeaturesModeException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationNotInAllFeaturesModeException {
@@ -389,6 +395,7 @@ impl OrganizationNotInAllFeaturesModeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotPermittedException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotPermittedException {
@@ -453,6 +460,7 @@ impl OperationNotPermittedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotOrganizationMasterAccountException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotOrganizationMasterAccountException {
@@ -517,6 +525,7 @@ impl NotOrganizationMasterAccountException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsKeyNotFoundException {
@@ -582,6 +591,7 @@ impl KmsKeyNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyDisabledException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsKeyDisabledException {
@@ -646,6 +656,7 @@ impl KmsKeyDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsException {
@@ -717,6 +728,7 @@ impl KmsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTrailNameException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTrailNameException {
@@ -781,6 +793,7 @@ impl InvalidTrailNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicNameException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSnsTopicNameException {
@@ -845,6 +858,7 @@ impl InvalidSnsTopicNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3PrefixException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidS3PrefixException {
@@ -909,6 +923,7 @@ impl InvalidS3PrefixException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3BucketNameException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidS3BucketNameException {
@@ -973,6 +988,7 @@ impl InvalidS3BucketNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterCombinationException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterCombinationException {
@@ -1037,6 +1053,7 @@ impl InvalidParameterCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKmsKeyIdException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKmsKeyIdException {
@@ -1101,6 +1118,7 @@ impl InvalidKmsKeyIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidHomeRegionException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidHomeRegionException {
@@ -1172,6 +1190,7 @@ impl InvalidHomeRegionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEventSelectorsException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEventSelectorsException {
@@ -1236,6 +1255,7 @@ impl InvalidEventSelectorsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCloudWatchLogsRoleArnException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCloudWatchLogsRoleArnException {
@@ -1300,6 +1320,7 @@ impl InvalidCloudWatchLogsRoleArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCloudWatchLogsLogGroupArnException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCloudWatchLogsLogGroupArnException {
@@ -1364,6 +1385,7 @@ impl InvalidCloudWatchLogsLogGroupArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientSnsTopicPolicyException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientSnsTopicPolicyException {
@@ -1428,6 +1450,7 @@ impl InsufficientSnsTopicPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientS3BucketPolicyException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientS3BucketPolicyException {
@@ -1492,6 +1515,7 @@ impl InsufficientS3BucketPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientEncryptionPolicyException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientEncryptionPolicyException {
@@ -1556,6 +1580,7 @@ impl InsufficientEncryptionPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDependencyServiceAccessPermissionException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientDependencyServiceAccessPermissionException {
@@ -1623,6 +1648,7 @@ impl InsufficientDependencyServiceAccessPermissionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDeliveryUnavailableException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudWatchLogsDeliveryUnavailableException {
@@ -1687,6 +1713,7 @@ impl CloudWatchLogsDeliveryUnavailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailInvalidClientTokenIdException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudTrailInvalidClientTokenIdException {
@@ -1751,6 +1778,7 @@ impl CloudTrailInvalidClientTokenIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailAccessNotEnabledException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudTrailAccessNotEnabledException {
@@ -1815,6 +1843,7 @@ impl CloudTrailAccessNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -1879,6 +1908,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InactiveEventDataStoreException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InactiveEventDataStoreException {
@@ -1943,6 +1973,7 @@ impl InactiveEventDataStoreException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDataStoreNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventDataStoreNotFoundException {
@@ -2007,6 +2038,7 @@ impl EventDataStoreNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDataStoreArnInvalidException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventDataStoreArnInvalidException {
@@ -2074,6 +2106,7 @@ impl EventDataStoreArnInvalidException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxConcurrentQueriesException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaxConcurrentQueriesException {
@@ -2138,6 +2171,7 @@ impl MaxConcurrentQueriesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidQueryStatementException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidQueryStatementException {
@@ -2202,6 +2236,7 @@ impl InvalidQueryStatementException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEventDataStoreStatusException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEventDataStoreStatusException {
@@ -2266,6 +2301,7 @@ impl InvalidEventDataStoreStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDataStoreMaxLimitExceededException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventDataStoreMaxLimitExceededException {
@@ -2330,6 +2366,7 @@ impl EventDataStoreMaxLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTypeNotSupportedException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceTypeNotSupportedException {
@@ -2394,6 +2431,7 @@ impl ResourceTypeNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -2458,6 +2496,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagParameterException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagParameterException {
@@ -2523,6 +2562,7 @@ impl InvalidTagParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailArnInvalidException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudTrailArnInvalidException {
@@ -2590,6 +2630,7 @@ impl CloudTrailArnInvalidException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInsightSelectorsException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInsightSelectorsException {
@@ -2654,6 +2695,7 @@ impl InvalidInsightSelectorsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTimeRangeException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTimeRangeException {
@@ -2718,6 +2760,7 @@ impl InvalidTimeRangeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -2782,6 +2825,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMaxResultsException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMaxResultsException {
@@ -2846,6 +2890,7 @@ impl InvalidMaxResultsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLookupAttributesException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLookupAttributesException {
@@ -2910,6 +2955,7 @@ impl InvalidLookupAttributesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEventCategoryException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEventCategoryException {
@@ -2974,6 +3020,7 @@ impl InvalidEventCategoryException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTokenException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTokenException {
@@ -3038,6 +3085,7 @@ impl InvalidTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidQueryStatusException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidQueryStatusException {
@@ -3102,6 +3150,7 @@ impl InvalidQueryStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDateRangeException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDateRangeException {
@@ -3166,6 +3215,7 @@ impl InvalidDateRangeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryIdNotFoundException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QueryIdNotFoundException {
@@ -3230,6 +3280,7 @@ impl QueryIdNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightNotEnabledException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsightNotEnabledException {
@@ -3294,6 +3345,7 @@ impl InsightNotEnabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -3358,6 +3410,7 @@ impl ConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDataStoreTerminationProtectedException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventDataStoreTerminationProtectedException {
@@ -3422,6 +3475,7 @@ impl EventDataStoreTerminationProtectedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrailAlreadyExistsException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrailAlreadyExistsException {
@@ -3486,6 +3540,7 @@ impl TrailAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumNumberOfTrailsExceededException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaximumNumberOfTrailsExceededException {
@@ -3550,6 +3605,7 @@ impl MaximumNumberOfTrailsExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDataStoreAlreadyExistsException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventDataStoreAlreadyExistsException {
@@ -3614,6 +3670,7 @@ impl EventDataStoreAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InactiveQueryException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InactiveQueryException {
@@ -3678,6 +3735,7 @@ impl InactiveQueryException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagsLimitExceededException {
     /// <p>Brief description of the exception returned by the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagsLimitExceededException {

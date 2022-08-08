@@ -64,10 +64,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFhirImportJobOutput {
     /// <p>The AWS-generated job ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of an import job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The AWS-generated Data Store ID.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
 }
 impl StartFhirImportJobOutput {
@@ -159,10 +162,13 @@ impl StartFhirImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFhirExportJobOutput {
     /// <p>The AWS generated ID for an export job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
 }
 impl StartFhirExportJobOutput {
@@ -254,6 +260,7 @@ impl StartFhirExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> Returns a list of tags associated with a Data Store. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -315,9 +322,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
+    #[doc(hidden)]
     pub import_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirImportJobsOutput {
@@ -407,9 +416,11 @@ impl ListFhirImportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirExportJobsOutput {
     /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
+    #[doc(hidden)]
     pub export_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirExportJobsOutput {
@@ -499,9 +510,11 @@ impl ListFhirExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed Data Stores.</p>
+    #[doc(hidden)]
     pub datastore_properties_list:
         std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirDatastoresOutput {
@@ -588,6 +601,7 @@ impl ListFhirDatastoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    #[doc(hidden)]
     pub import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
 }
 impl DescribeFhirImportJobOutput {
@@ -645,6 +659,7 @@ impl DescribeFhirImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
+    #[doc(hidden)]
     pub export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
 }
 impl DescribeFhirExportJobOutput {
@@ -702,6 +717,7 @@ impl DescribeFhirExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
+    #[doc(hidden)]
     pub datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
 }
 impl DescribeFhirDatastoreOutput {
@@ -759,12 +775,16 @@ impl DescribeFhirDatastoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFhirDatastoreOutput {
     /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    #[doc(hidden)]
     pub datastore_arn: std::option::Option<std::string::String>,
     /// <p>The status of the Data Store that the user has requested to be deleted. </p>
+    #[doc(hidden)]
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    #[doc(hidden)]
     pub datastore_endpoint: std::option::Option<std::string::String>,
 }
 impl DeleteFhirDatastoreOutput {
@@ -879,12 +899,16 @@ impl DeleteFhirDatastoreOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFhirDatastoreOutput {
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
+    #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
+    #[doc(hidden)]
     pub datastore_arn: std::option::Option<std::string::String>,
     /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
+    #[doc(hidden)]
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
+    #[doc(hidden)]
     pub datastore_endpoint: std::option::Option<std::string::String>,
 }
 impl CreateFhirDatastoreOutput {

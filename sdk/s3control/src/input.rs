@@ -10957,12 +10957,16 @@ impl UpdateJobStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobStatusInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the job whose status you want to update.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status that you want to move the specified job to.</p>
+    #[doc(hidden)]
     pub requested_job_status: std::option::Option<crate::model::RequestedJobStatus>,
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
+    #[doc(hidden)]
     pub status_update_reason: std::option::Option<std::string::String>,
 }
 impl UpdateJobStatusInput {
@@ -10999,10 +11003,13 @@ impl std::fmt::Debug for UpdateJobStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobPriorityInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the job whose priority you want to update.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The priority you want to assign to this job.</p>
+    #[doc(hidden)]
     pub priority: i32,
 }
 impl UpdateJobPriorityInput {
@@ -11034,12 +11041,15 @@ impl std::fmt::Debug for UpdateJobPriorityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
 }
 impl PutStorageLensConfigurationTaggingInput {
@@ -11073,14 +11083,18 @@ impl std::fmt::Debug for PutStorageLensConfigurationTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub storage_lens_configuration: std::option::Option<crate::model::StorageLensConfiguration>,
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
 }
 impl PutStorageLensConfigurationInput {
@@ -11124,9 +11138,11 @@ impl std::fmt::Debug for PutStorageLensConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPublicAccessBlockInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl PutPublicAccessBlockInput {
@@ -11158,10 +11174,13 @@ impl std::fmt::Debug for PutPublicAccessBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
 }
 impl PutMultiRegionAccessPointPolicyInput {
@@ -11195,10 +11214,13 @@ impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl PutJobTaggingInput {
@@ -11230,6 +11252,7 @@ impl std::fmt::Debug for PutJobTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11244,8 +11267,10 @@ pub struct PutBucketTaggingInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub tagging: std::option::Option<crate::model::Tagging>,
 }
 impl PutBucketTaggingInput {
@@ -11289,6 +11314,7 @@ impl std::fmt::Debug for PutBucketTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketPolicyInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11303,12 +11329,15 @@ pub struct PutBucketPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub confirm_remove_self_bucket_access: bool,
     /// <p>The bucket policy as a JSON document.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutBucketPolicyInput {
@@ -11362,10 +11391,13 @@ impl std::fmt::Debug for PutBucketPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket for which to set the configuration.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
+    #[doc(hidden)]
     pub lifecycle_configuration: std::option::Option<crate::model::LifecycleConfiguration>,
 }
 impl PutBucketLifecycleConfigurationInput {
@@ -11399,10 +11431,13 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Object Lambda Access Point resource policy document.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutAccessPointPolicyForObjectLambdaInput {
@@ -11434,6 +11469,7 @@ impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point that you want to associate with the specified policy.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11448,8 +11484,10 @@ pub struct PutAccessPointPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutAccessPointPolicyInput {
@@ -11493,10 +11531,13 @@ impl std::fmt::Debug for PutAccessPointPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Object Lambda Access Point configuration document.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
 impl PutAccessPointConfigurationForObjectLambdaInput {
@@ -11528,8 +11569,10 @@ impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStorageLensConfigurationsInput {
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token to request the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStorageLensConfigurationsInput {
@@ -11556,14 +11599,18 @@ impl std::fmt::Debug for ListStorageLensConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegionalBucketsInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The ID of the Outposts.</p> <note>
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl ListRegionalBucketsInput {
@@ -11602,10 +11649,13 @@ impl std::fmt::Debug for ListRegionalBucketsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiRegionAccessPointsInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListMultiRegionAccessPointsInput {
@@ -11637,12 +11687,16 @@ impl std::fmt::Debug for ListMultiRegionAccessPointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
+    #[doc(hidden)]
     pub job_statuses: std::option::Option<std::vec::Vec<crate::model::JobStatus>>,
     /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListJobsInput {
@@ -11679,10 +11733,13 @@ impl std::fmt::Debug for ListJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListAccessPointsForObjectLambdaInput {
@@ -11714,6 +11771,7 @@ impl std::fmt::Debug for ListAccessPointsForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket whose associated access points you want to list.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11728,10 +11786,13 @@ pub struct ListAccessPointsInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListAccessPointsInput {
@@ -11780,8 +11841,10 @@ impl std::fmt::Debug for ListAccessPointsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStorageLensConfigurationTaggingInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetStorageLensConfigurationTaggingInput {
@@ -11808,8 +11871,10 @@ impl std::fmt::Debug for GetStorageLensConfigurationTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStorageLensConfigurationInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetStorageLensConfigurationInput {
@@ -11836,6 +11901,7 @@ impl std::fmt::Debug for GetStorageLensConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetPublicAccessBlockInput {
@@ -11857,8 +11923,10 @@ impl std::fmt::Debug for GetPublicAccessBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyStatusInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMultiRegionAccessPointPolicyStatusInput {
@@ -11885,8 +11953,10 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMultiRegionAccessPointPolicyInput {
@@ -11913,8 +11983,10 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMultiRegionAccessPointInput {
@@ -11941,8 +12013,10 @@ impl std::fmt::Debug for GetMultiRegionAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobTaggingInput {
@@ -11969,6 +12043,7 @@ impl std::fmt::Debug for GetJobTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -11983,6 +12058,7 @@ pub struct GetBucketTaggingInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketTaggingInput {
@@ -12021,6 +12097,7 @@ impl std::fmt::Debug for GetBucketTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketPolicyInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12035,6 +12112,7 @@ pub struct GetBucketPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketPolicyInput {
@@ -12073,6 +12151,7 @@ impl std::fmt::Debug for GetBucketPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12087,6 +12166,7 @@ pub struct GetBucketLifecycleConfigurationInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketLifecycleConfigurationInput {
@@ -12125,6 +12205,7 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12139,6 +12220,7 @@ pub struct GetBucketInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl GetBucketInput {
@@ -12177,8 +12259,10 @@ impl std::fmt::Debug for GetBucketInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyStatusForObjectLambdaInput {
@@ -12205,8 +12289,10 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyStatusInput {
@@ -12233,8 +12319,10 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyForObjectLambdaInput {
@@ -12261,6 +12349,7 @@ impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose policy you want to retrieve.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12275,6 +12364,7 @@ pub struct GetAccessPointPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyInput {
@@ -12313,8 +12403,10 @@ impl std::fmt::Debug for GetAccessPointPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointForObjectLambdaInput {
@@ -12341,8 +12433,10 @@ impl std::fmt::Debug for GetAccessPointForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointConfigurationForObjectLambdaInput {
@@ -12369,6 +12463,7 @@ impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose configuration information you want to retrieve.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12383,6 +12478,7 @@ pub struct GetAccessPointInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAccessPointInput {
@@ -12421,8 +12517,10 @@ impl std::fmt::Debug for GetAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiRegionAccessPointOperationInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
+    #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMultiRegionAccessPointOperationInput {
@@ -12449,8 +12547,10 @@ impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the job whose information you want to retrieve.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobInput {
@@ -12477,8 +12577,10 @@ impl std::fmt::Debug for DescribeJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DeleteStorageLensConfigurationTaggingInput {
@@ -12505,8 +12607,10 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
+    #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the requester.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DeleteStorageLensConfigurationInput {
@@ -12533,6 +12637,7 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DeletePublicAccessBlockInput {
@@ -12554,10 +12659,13 @@ impl std::fmt::Debug for DeletePublicAccessBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
 }
 impl DeleteMultiRegionAccessPointInput {
@@ -12589,8 +12697,10 @@ impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DeleteJobTaggingInput {
@@ -12617,6 +12727,7 @@ impl std::fmt::Debug for DeleteJobTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The bucket ARN that has the tag set to be removed.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12631,6 +12742,7 @@ pub struct DeleteBucketTaggingInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketTaggingInput {
@@ -12669,6 +12781,7 @@ impl std::fmt::Debug for DeleteBucketTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketPolicyInput {
     /// <p>The account ID of the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12683,6 +12796,7 @@ pub struct DeleteBucketPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketPolicyInput {
@@ -12721,6 +12835,7 @@ impl std::fmt::Debug for DeleteBucketPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketLifecycleConfigurationInput {
     /// <p>The account ID of the lifecycle configuration to delete.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12735,6 +12850,7 @@ pub struct DeleteBucketLifecycleConfigurationInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketLifecycleConfigurationInput {
@@ -12773,6 +12889,7 @@ impl std::fmt::Debug for DeleteBucketLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketInput {
     /// <p>The account ID that owns the Outposts bucket.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies the bucket being deleted.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12787,6 +12904,7 @@ pub struct DeleteBucketInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
 }
 impl DeleteBucketInput {
@@ -12825,8 +12943,10 @@ impl std::fmt::Debug for DeleteBucketInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointPolicyForObjectLambdaInput {
@@ -12853,6 +12973,7 @@ impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointPolicyInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point whose policy you want to delete.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12867,6 +12988,7 @@ pub struct DeleteAccessPointPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointPolicyInput {
@@ -12905,8 +13027,10 @@ impl std::fmt::Debug for DeleteAccessPointPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point you want to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointForObjectLambdaInput {
@@ -12933,6 +13057,7 @@ impl std::fmt::Debug for DeleteAccessPointForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the access point you want to delete.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -12947,6 +13072,7 @@ pub struct DeleteAccessPointInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAccessPointInput {
@@ -12985,10 +13111,13 @@ impl std::fmt::Debug for DeleteAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
 }
 impl CreateMultiRegionAccessPointInput {
@@ -13020,26 +13149,37 @@ impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
+    #[doc(hidden)]
     pub confirmation_required: std::option::Option<bool>,
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::JobOperation>,
     /// <p>Configuration parameters for the optional job-completion report.</p>
+    #[doc(hidden)]
     pub report: std::option::Option<crate::model::JobReport>,
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Configuration parameters for the manifest.</p>
+    #[doc(hidden)]
     pub manifest: std::option::Option<crate::model::JobManifest>,
     /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+    #[doc(hidden)]
     pub manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
 }
 impl CreateJobInput {
@@ -13113,40 +13253,50 @@ pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The name of the bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The configuration information for the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub create_bucket_configuration: std::option::Option<crate::model::CreateBucketConfiguration>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub grant_full_control: std::option::Option<std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub grant_read: std::option::Option<std::string::String>,
     /// <p>Allows grantee to read the bucket ACL.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub grant_read_acp: std::option::Option<std::string::String>,
     /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub grant_write: std::option::Option<std::string::String>,
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub object_lock_enabled_for_bucket: bool,
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl CreateBucketInput {
@@ -13239,10 +13389,13 @@ impl std::fmt::Debug for CreateBucketInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointForObjectLambdaInput {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
 impl CreateAccessPointForObjectLambdaInput {
@@ -13274,8 +13427,10 @@ impl std::fmt::Debug for CreateAccessPointForObjectLambdaInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name you want to assign to this access point.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -13290,12 +13445,15 @@ pub struct CreateAccessPointInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    #[doc(hidden)]
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }

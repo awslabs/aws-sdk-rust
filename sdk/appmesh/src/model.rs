@@ -5,18 +5,25 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeshRef {
     /// <p>The name of the service mesh.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MeshRef {
@@ -182,12 +189,16 @@ impl MeshRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeshData {
     /// <p>The name of the service mesh.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The associated specification for the service mesh.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::MeshSpec>,
     /// <p>The associated metadata for the service mesh.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The status of the service mesh.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MeshStatus>,
 }
 impl MeshData {
@@ -296,6 +307,7 @@ impl MeshData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeshStatus {
     /// <p>The current mesh status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MeshStatusCode>,
 }
 impl MeshStatus {
@@ -412,18 +424,25 @@ impl AsRef<str> for MeshStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceMetadata {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The unique identifier for the resource.</p>
+    #[doc(hidden)]
     pub uid: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
 }
 impl ResourceMetadata {
@@ -589,8 +608,10 @@ impl ResourceMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
+    #[doc(hidden)]
     pub egress_filter: std::option::Option<crate::model::EgressFilter>,
     /// <p>An object that represents the service discovery information for a service mesh.</p>
+    #[doc(hidden)]
     pub service_discovery: std::option::Option<crate::model::MeshServiceDiscovery>,
 }
 impl MeshSpec {
@@ -668,6 +689,7 @@ impl MeshSpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
+    #[doc(hidden)]
     pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
 impl MeshServiceDiscovery {
@@ -788,6 +810,7 @@ impl AsRef<str> for IpPreference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EgressFilterType>,
 }
 impl EgressFilter {
@@ -900,8 +923,10 @@ impl AsRef<str> for EgressFilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagRef {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl TagRef {
@@ -973,20 +998,28 @@ impl TagRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualServiceRef {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual service.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualServiceRef {
@@ -1172,14 +1205,19 @@ impl VirtualServiceRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual service.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The specifications of the virtual service.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualServiceSpec>,
     /// <p>An object that represents metadata for a resource.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The current status of the virtual service.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualServiceStatus>,
 }
 impl VirtualServiceData {
@@ -1314,6 +1352,7 @@ impl VirtualServiceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualServiceStatusCode>,
 }
 impl VirtualServiceStatus {
@@ -1430,6 +1469,7 @@ impl AsRef<str> for VirtualServiceStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::VirtualServiceProvider>,
 }
 impl VirtualServiceSpec {
@@ -1542,6 +1582,7 @@ impl VirtualServiceProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
 }
 impl VirtualRouterServiceProvider {
@@ -1599,6 +1640,7 @@ impl VirtualRouterServiceProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
 }
 impl VirtualNodeServiceProvider {
@@ -1656,20 +1698,28 @@ impl VirtualNodeServiceProvider {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterRef {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualRouterRef {
@@ -1855,14 +1905,19 @@ impl VirtualRouterRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The specifications of the virtual router.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualRouterSpec>,
     /// <p>The associated metadata for the virtual router.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The current status of the virtual router.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualRouterStatus>,
 }
 impl VirtualRouterData {
@@ -1997,6 +2052,7 @@ impl VirtualRouterData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualRouterStatusCode>,
 }
 impl VirtualRouterStatus {
@@ -2113,6 +2169,7 @@ impl AsRef<str> for VirtualRouterStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
 }
 impl VirtualRouterSpec {
@@ -2177,6 +2234,7 @@ impl VirtualRouterSpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
+    #[doc(hidden)]
     pub port_mapping: std::option::Option<crate::model::PortMapping>,
 }
 impl VirtualRouterListener {
@@ -2234,8 +2292,10 @@ impl VirtualRouterListener {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::PortProtocol>,
 }
 impl PortMapping {
@@ -2373,22 +2433,31 @@ impl AsRef<str> for PortProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteRef {
     /// <p>The name of the service mesh that the route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual router that the route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the route.</p>
+    #[doc(hidden)]
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the route.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RouteRef {
@@ -2591,16 +2660,22 @@ impl RouteRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteData {
     /// <p>The name of the service mesh that the route resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual router that the route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the route.</p>
+    #[doc(hidden)]
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The specifications of the route.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::RouteSpec>,
     /// <p>The associated metadata for the route.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The status of the route.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RouteStatus>,
 }
 impl RouteData {
@@ -2746,6 +2821,7 @@ impl RouteData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteStatus {
     /// <p>The current status for the route.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RouteStatusCode>,
 }
 impl RouteStatus {
@@ -2862,14 +2938,19 @@ impl AsRef<str> for RouteStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteSpec {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP route.</p>
+    #[doc(hidden)]
     pub http_route: std::option::Option<crate::model::HttpRoute>,
     /// <p>An object that represents the specification of a TCP route.</p>
+    #[doc(hidden)]
     pub tcp_route: std::option::Option<crate::model::TcpRoute>,
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
+    #[doc(hidden)]
     pub http2_route: std::option::Option<crate::model::HttpRoute>,
     /// <p>An object that represents the specification of a gRPC route.</p>
+    #[doc(hidden)]
     pub grpc_route: std::option::Option<crate::model::GrpcRoute>,
 }
 impl RouteSpec {
@@ -3001,12 +3082,16 @@ impl RouteSpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::GrpcRouteAction>,
     /// <p>An object that represents the criteria for determining a request match.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::GrpcRouteMatch>,
     /// <p>An object that represents a retry policy.</p>
+    #[doc(hidden)]
     pub retry_policy: std::option::Option<crate::model::GrpcRetryPolicy>,
     /// <p>An object that represents types of timeouts. </p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::GrpcTimeout>,
 }
 impl GrpcRoute {
@@ -3124,8 +3209,10 @@ impl GrpcRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
+    #[doc(hidden)]
     pub per_request: std::option::Option<crate::model::Duration>,
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    #[doc(hidden)]
     pub idle: std::option::Option<crate::model::Duration>,
 }
 impl GrpcTimeout {
@@ -3200,8 +3287,10 @@ impl GrpcTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Duration {
     /// <p>A number of time units.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<i64>,
     /// <p>A unit of time.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::DurationUnit>,
 }
 impl Duration {
@@ -3328,8 +3417,10 @@ impl AsRef<str> for DurationUnit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
+    #[doc(hidden)]
     pub per_retry_timeout: std::option::Option<crate::model::Duration>,
     /// <p>The maximum number of retry attempts.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i64>,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
@@ -3338,10 +3429,13 @@ pub struct GrpcRetryPolicy {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
+    #[doc(hidden)]
     pub tcp_retry_events: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
     /// <p>Specify at least one of the valid values.</p>
+    #[doc(hidden)]
     pub grpc_retry_events: std::option::Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>,
 }
 impl GrpcRetryPolicy {
@@ -3638,10 +3732,13 @@ impl AsRef<str> for TcpRetryPolicyEvent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
+    #[doc(hidden)]
     pub method_name: std::option::Option<std::string::String>,
     /// <p>An object that represents the data to match from the request.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>,
 }
 impl GrpcRouteMatch {
@@ -3739,10 +3836,13 @@ impl GrpcRouteMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcRouteMetadata {
     /// <p>The name of the route.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    #[doc(hidden)]
     pub invert: std::option::Option<bool>,
     /// <p>An object that represents the data to match from the request.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::GrpcRouteMetadataMatchMethod>,
 }
 impl GrpcRouteMetadata {
@@ -3930,8 +4030,10 @@ impl GrpcRouteMetadataMatchMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchRange {
     /// <p>The start of the range.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<i64>,
     /// <p>The end of the range.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<i64>,
 }
 impl MatchRange {
@@ -4003,6 +4105,7 @@ impl MatchRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    #[doc(hidden)]
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
 impl GrpcRouteAction {
@@ -4067,8 +4170,10 @@ impl GrpcRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
+    #[doc(hidden)]
     pub virtual_node: std::option::Option<std::string::String>,
     /// <p>The relative weight of the weighted target.</p>
+    #[doc(hidden)]
     pub weight: i32,
 }
 impl WeightedTarget {
@@ -4140,12 +4245,16 @@ impl WeightedTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::HttpRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::HttpRouteAction>,
     /// <p>An object that represents a retry policy.</p>
+    #[doc(hidden)]
     pub retry_policy: std::option::Option<crate::model::HttpRetryPolicy>,
     /// <p>An object that represents types of timeouts. </p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::HttpTimeout>,
 }
 impl HttpRoute {
@@ -4263,8 +4372,10 @@ impl HttpRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
+    #[doc(hidden)]
     pub per_request: std::option::Option<crate::model::Duration>,
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    #[doc(hidden)]
     pub idle: std::option::Option<crate::model::Duration>,
 }
 impl HttpTimeout {
@@ -4339,8 +4450,10 @@ impl HttpTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
+    #[doc(hidden)]
     pub per_retry_timeout: std::option::Option<crate::model::Duration>,
     /// <p>The maximum number of retry attempts.</p>
+    #[doc(hidden)]
     pub max_retries: std::option::Option<i64>,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
@@ -4349,8 +4462,10 @@ pub struct HttpRetryPolicy {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
+    #[doc(hidden)]
     pub tcp_retry_events: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
 }
 impl HttpRetryPolicy {
@@ -4496,6 +4611,7 @@ impl HttpRetryPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    #[doc(hidden)]
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
 impl HttpRouteAction {
@@ -4560,16 +4676,22 @@ impl HttpRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The client request path to match on.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<crate::model::HttpPathMatch>,
     /// <p>The client request query parameters to match on.</p>
+    #[doc(hidden)]
     pub query_parameters: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
     /// <p>The client request method to match on. Specify only one.</p>
+    #[doc(hidden)]
     pub method: std::option::Option<crate::model::HttpMethod>,
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
+    #[doc(hidden)]
     pub scheme: std::option::Option<crate::model::HttpScheme>,
     /// <p>The client request headers to match on.</p>
+    #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
 }
 impl HttpRouteMatch {
@@ -4728,10 +4850,13 @@ impl HttpRouteMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    #[doc(hidden)]
     pub invert: std::option::Option<bool>,
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::HeaderMatchMethod>,
 }
 impl HttpRouteHeader {
@@ -5059,8 +5184,10 @@ impl AsRef<str> for HttpMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The query parameter to match on.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::QueryParameterMatch>,
 }
 impl HttpQueryParameter {
@@ -5135,6 +5262,7 @@ impl HttpQueryParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
+    #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
 }
 impl QueryParameterMatch {
@@ -5187,8 +5315,10 @@ impl QueryParameterMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpPathMatch {
     /// <p>The exact path to match on.</p>
+    #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
     /// <p>The regex used to match the path.</p>
+    #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
 }
 impl HttpPathMatch {
@@ -5260,8 +5390,10 @@ impl HttpPathMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TcpRoute {
     /// <p>The action to take if a match is determined.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::TcpRouteAction>,
     /// <p>An object that represents types of timeouts. </p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::TcpTimeout>,
 }
 impl TcpRoute {
@@ -5336,6 +5468,7 @@ impl TcpRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
+    #[doc(hidden)]
     pub idle: std::option::Option<crate::model::Duration>,
 }
 impl TcpTimeout {
@@ -5388,6 +5521,7 @@ impl TcpTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TcpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
+    #[doc(hidden)]
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
 impl TcpRouteAction {
@@ -5452,20 +5586,28 @@ impl TcpRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeRef {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual node.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualNodeRef {
@@ -5651,14 +5793,19 @@ impl VirtualNodeRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeData {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual node.</p>
+    #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The specifications of the virtual node.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualNodeSpec>,
     /// <p>The associated metadata for the virtual node.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The current status for the virtual node.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualNodeStatus>,
 }
 impl VirtualNodeData {
@@ -5793,6 +5940,7 @@ impl VirtualNodeData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualNodeStatusCode>,
 }
 impl VirtualNodeStatus {
@@ -5909,14 +6057,19 @@ impl AsRef<str> for VirtualNodeStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeSpec {
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
+    #[doc(hidden)]
     pub service_discovery: std::option::Option<crate::model::ServiceDiscovery>,
     /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
+    #[doc(hidden)]
     pub backends: std::option::Option<std::vec::Vec<crate::model::Backend>>,
     /// <p>A reference to an object that represents the defaults for backends.</p>
+    #[doc(hidden)]
     pub backend_defaults: std::option::Option<crate::model::BackendDefaults>,
     /// <p>The inbound and outbound access logging information for the virtual node.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::Logging>,
 }
 impl VirtualNodeSpec {
@@ -6063,6 +6216,7 @@ impl VirtualNodeSpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Logging {
     /// <p>The access log configuration for a virtual node.</p>
+    #[doc(hidden)]
     pub access_log: std::option::Option<crate::model::AccessLog>,
 }
 impl Logging {
@@ -6159,6 +6313,7 @@ pub struct FileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl FileAccessLog {
@@ -6217,6 +6372,7 @@ impl FileAccessLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
+    #[doc(hidden)]
     pub client_policy: std::option::Option<crate::model::ClientPolicy>,
 }
 impl BackendDefaults {
@@ -6274,6 +6430,7 @@ impl BackendDefaults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
+    #[doc(hidden)]
     pub tls: std::option::Option<crate::model::ClientPolicyTls>,
 }
 impl ClientPolicy {
@@ -6329,12 +6486,16 @@ impl ClientPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
+    #[doc(hidden)]
     pub enforce: std::option::Option<bool>,
     /// <p>One or more ports that the policy is enforced for.</p>
+    #[doc(hidden)]
     pub ports: std::option::Option<std::vec::Vec<i32>>,
     /// <p>A reference to an object that represents a client's TLS certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::ClientTlsCertificate>,
     /// <p>A reference to an object that represents a TLS validation context.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::TlsValidationContext>,
 }
 impl ClientPolicyTls {
@@ -6452,8 +6613,10 @@ impl ClientPolicyTls {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub trust: std::option::Option<crate::model::TlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl TlsValidationContext {
@@ -6537,6 +6700,7 @@ impl TlsValidationContext {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::SubjectAlternativeNameMatchers>,
 }
 impl SubjectAlternativeNames {
@@ -6594,6 +6758,7 @@ impl SubjectAlternativeNames {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
+    #[doc(hidden)]
     pub exact: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SubjectAlternativeNameMatchers {
@@ -6727,6 +6892,7 @@ impl TlsValidationContextTrust {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl TlsValidationContextSdsTrust {
@@ -6781,6 +6947,7 @@ impl TlsValidationContextSdsTrust {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl TlsValidationContextFileTrust {
@@ -6838,6 +7005,7 @@ impl TlsValidationContextFileTrust {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+    #[doc(hidden)]
     pub certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TlsValidationContextAcmTrust {
@@ -6956,6 +7124,7 @@ impl ClientTlsCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
+    #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl ListenerTlsSdsCertificate {
@@ -7010,8 +7179,10 @@ impl ListenerTlsSdsCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
+    #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
 }
 impl ListenerTlsFileCertificate {
@@ -7125,8 +7296,10 @@ impl Backend {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>A reference to an object that represents the client policy for a backend.</p>
+    #[doc(hidden)]
     pub client_policy: std::option::Option<crate::model::ClientPolicy>,
 }
 impl VirtualServiceBackend {
@@ -7204,16 +7377,22 @@ impl VirtualServiceBackend {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Listener {
     /// <p>The port mapping information for the listener.</p>
+    #[doc(hidden)]
     pub port_mapping: std::option::Option<crate::model::PortMapping>,
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
+    #[doc(hidden)]
     pub tls: std::option::Option<crate::model::ListenerTls>,
     /// <p>The health check information for the listener.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheckPolicy>,
     /// <p>An object that represents timeouts for different protocols.</p>
+    #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::ListenerTimeout>,
     /// <p>The outlier detection information for the listener.</p>
+    #[doc(hidden)]
     pub outlier_detection: std::option::Option<crate::model::OutlierDetection>,
     /// <p>The connection pool information for the listener.</p>
+    #[doc(hidden)]
     pub connection_pool: std::option::Option<crate::model::VirtualNodeConnectionPool>,
 }
 impl Listener {
@@ -7460,6 +7639,7 @@ impl VirtualNodeConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_requests: i32,
 }
 impl VirtualNodeGrpcConnectionPool {
@@ -7514,6 +7694,7 @@ impl VirtualNodeGrpcConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_requests: i32,
 }
 impl VirtualNodeHttp2ConnectionPool {
@@ -7568,8 +7749,10 @@ impl VirtualNodeHttp2ConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_connections: i32,
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
+    #[doc(hidden)]
     pub max_pending_requests: std::option::Option<i32>,
 }
 impl VirtualNodeHttpConnectionPool {
@@ -7641,6 +7824,7 @@ impl VirtualNodeHttpConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeTcpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_connections: i32,
 }
 impl VirtualNodeTcpConnectionPool {
@@ -7695,12 +7879,16 @@ impl VirtualNodeTcpConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
+    #[doc(hidden)]
     pub max_server_errors: std::option::Option<i64>,
     /// <p>The time interval between ejection sweep analysis.</p>
+    #[doc(hidden)]
     pub interval: std::option::Option<crate::model::Duration>,
     /// <p>The base amount of time for which a host is ejected.</p>
+    #[doc(hidden)]
     pub base_ejection_duration: std::option::Option<crate::model::Duration>,
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
+    #[doc(hidden)]
     pub max_ejection_percent: std::option::Option<i32>,
 }
 impl OutlierDetection {
@@ -7890,18 +8078,25 @@ impl ListenerTimeout {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
+    #[doc(hidden)]
     pub timeout_millis: std::option::Option<i64>,
     /// <p>The time period in milliseconds between each health check execution.</p>
+    #[doc(hidden)]
     pub interval_millis: std::option::Option<i64>,
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::PortProtocol>,
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
+    #[doc(hidden)]
     pub healthy_threshold: i32,
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
+    #[doc(hidden)]
     pub unhealthy_threshold: i32,
 }
 impl HealthCheckPolicy {
@@ -8066,10 +8261,13 @@ pub struct ListenerTls {
     /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
     /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ListenerTlsMode>,
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::ListenerTlsCertificate>,
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::ListenerTlsValidationContext>,
 }
 impl ListenerTls {
@@ -8182,8 +8380,10 @@ impl ListenerTls {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub trust: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl ListenerTlsValidationContext {
@@ -8388,6 +8588,7 @@ impl ListenerTlsCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl ListenerTlsAcmCertificate {
@@ -8559,12 +8760,16 @@ impl ServiceDiscovery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCloudMapServiceDiscovery {
     /// <p>The name of the Cloud Map namespace to use.</p>
+    #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the Cloud Map service to use.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
     /// <p>The IP version to use to control traffic within the mesh.</p>
+    #[doc(hidden)]
     pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
 impl AwsCloudMapServiceDiscovery {
@@ -8688,8 +8893,10 @@ impl AwsCloudMapServiceDiscovery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCloudMapInstanceAttribute {
     /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AwsCloudMapInstanceAttribute {
@@ -8761,10 +8968,13 @@ impl AwsCloudMapInstanceAttribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p>Specifies the DNS response type for the virtual node.</p>
+    #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::DnsResponseType>,
     /// <p>The IP version to use to control traffic within the mesh.</p>
+    #[doc(hidden)]
     pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
 impl DnsServiceDiscovery {
@@ -8914,20 +9124,28 @@ impl AsRef<str> for DnsResponseType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VirtualGatewayRef {
@@ -9113,14 +9331,19 @@ impl VirtualGatewayRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayData {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The specifications of the virtual gateway.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::VirtualGatewaySpec>,
     /// <p>An object that represents metadata for a resource.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The current status of the virtual gateway.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualGatewayStatus>,
 }
 impl VirtualGatewayData {
@@ -9255,6 +9478,7 @@ impl VirtualGatewayData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualGatewayStatusCode>,
 }
 impl VirtualGatewayStatus {
@@ -9371,10 +9595,13 @@ impl AsRef<str> for VirtualGatewayStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
+    #[doc(hidden)]
     pub backend_defaults: std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>,
     /// <p>An object that represents logging information.</p>
+    #[doc(hidden)]
     pub logging: std::option::Option<crate::model::VirtualGatewayLogging>,
 }
 impl VirtualGatewaySpec {
@@ -9485,6 +9712,7 @@ impl VirtualGatewaySpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
+    #[doc(hidden)]
     pub access_log: std::option::Option<crate::model::VirtualGatewayAccessLog>,
 }
 impl VirtualGatewayLogging {
@@ -9581,6 +9809,7 @@ impl VirtualGatewayAccessLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayFileAccessLog {
@@ -9633,12 +9862,16 @@ impl VirtualGatewayFileAccessLog {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListener {
     /// <p>The health check information for the listener.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::VirtualGatewayHealthCheckPolicy>,
     /// <p>The port mapping information for the listener.</p>
+    #[doc(hidden)]
     pub port_mapping: std::option::Option<crate::model::VirtualGatewayPortMapping>,
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
+    #[doc(hidden)]
     pub tls: std::option::Option<crate::model::VirtualGatewayListenerTls>,
     /// <p>The connection pool information for the virtual gateway listener.</p>
+    #[doc(hidden)]
     pub connection_pool: std::option::Option<crate::model::VirtualGatewayConnectionPool>,
 }
 impl VirtualGatewayListener {
@@ -9840,6 +10073,7 @@ impl VirtualGatewayConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_requests: i32,
 }
 impl VirtualGatewayGrpcConnectionPool {
@@ -9894,6 +10128,7 @@ impl VirtualGatewayGrpcConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_requests: i32,
 }
 impl VirtualGatewayHttp2ConnectionPool {
@@ -9948,8 +10183,10 @@ impl VirtualGatewayHttp2ConnectionPool {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
+    #[doc(hidden)]
     pub max_connections: i32,
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
+    #[doc(hidden)]
     pub max_pending_requests: std::option::Option<i32>,
 }
 impl VirtualGatewayHttpConnectionPool {
@@ -10026,10 +10263,13 @@ pub struct VirtualGatewayListenerTls {
     /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
     /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
 }
 impl VirtualGatewayListenerTls {
@@ -10226,6 +10466,7 @@ impl VirtualGatewayListenerTlsCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
+    #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificate {
@@ -10280,8 +10521,10 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
+    #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsFileCertificate {
@@ -10356,6 +10599,7 @@ impl VirtualGatewayListenerTlsFileCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsAcmCertificate {
@@ -10413,8 +10657,10 @@ impl VirtualGatewayListenerTlsAcmCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub trust: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl VirtualGatewayListenerTlsValidationContext {
@@ -10562,6 +10808,7 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextSdsTrust {
@@ -10616,6 +10863,7 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
@@ -10732,8 +10980,10 @@ impl AsRef<str> for VirtualGatewayListenerTlsMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayPortMapping {
     /// <p>The port used for the port mapping. Specify one protocol.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The protocol used for the port mapping.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
 }
 impl VirtualGatewayPortMapping {
@@ -10867,18 +11117,25 @@ impl AsRef<str> for VirtualGatewayPortProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayHealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
+    #[doc(hidden)]
     pub timeout_millis: std::option::Option<i64>,
     /// <p>The time period in milliseconds between each health check execution.</p>
+    #[doc(hidden)]
     pub interval_millis: std::option::Option<i64>,
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
+    #[doc(hidden)]
     pub port: i32,
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
+    #[doc(hidden)]
     pub healthy_threshold: i32,
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
+    #[doc(hidden)]
     pub unhealthy_threshold: i32,
 }
 impl VirtualGatewayHealthCheckPolicy {
@@ -11038,6 +11295,7 @@ impl VirtualGatewayHealthCheckPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
+    #[doc(hidden)]
     pub client_policy: std::option::Option<crate::model::VirtualGatewayClientPolicy>,
 }
 impl VirtualGatewayBackendDefaults {
@@ -11095,6 +11353,7 @@ impl VirtualGatewayBackendDefaults {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
+    #[doc(hidden)]
     pub tls: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>,
 }
 impl VirtualGatewayClientPolicy {
@@ -11150,12 +11409,16 @@ impl VirtualGatewayClientPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
+    #[doc(hidden)]
     pub enforce: std::option::Option<bool>,
     /// <p>One or more ports that the policy is enforced for.</p>
+    #[doc(hidden)]
     pub ports: std::option::Option<std::vec::Vec<i32>>,
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub validation: std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
 }
 impl VirtualGatewayClientPolicyTls {
@@ -11285,8 +11548,10 @@ impl VirtualGatewayClientPolicyTls {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
+    #[doc(hidden)]
     pub trust: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
+    #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl VirtualGatewayTlsValidationContext {
@@ -11449,6 +11714,7 @@ impl VirtualGatewayTlsValidationContextTrust {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+    #[doc(hidden)]
     pub certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {
@@ -11571,22 +11837,31 @@ impl VirtualGatewayClientTlsCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the gateway route.</p>
+    #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    #[doc(hidden)]
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GatewayRouteRef {
@@ -11792,16 +12067,22 @@ impl GatewayRouteRef {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
+    #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the gateway route.</p>
+    #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
+    #[doc(hidden)]
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The specifications of the gateway route.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<crate::model::GatewayRouteSpec>,
     /// <p>An object that represents metadata for a resource.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ResourceMetadata>,
     /// <p>The status of the gateway route.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GatewayRouteStatus>,
 }
 impl GatewayRouteData {
@@ -11956,6 +12237,7 @@ impl GatewayRouteData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::GatewayRouteStatusCode>,
 }
 impl GatewayRouteStatus {
@@ -12072,12 +12354,16 @@ impl AsRef<str> for GatewayRouteStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteSpec {
     /// <p>The ordering of the gateway routes spec.</p>
+    #[doc(hidden)]
     pub priority: std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
+    #[doc(hidden)]
     pub http_route: std::option::Option<crate::model::HttpGatewayRoute>,
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
+    #[doc(hidden)]
     pub http2_route: std::option::Option<crate::model::HttpGatewayRoute>,
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
+    #[doc(hidden)]
     pub grpc_route: std::option::Option<crate::model::GrpcGatewayRoute>,
 }
 impl GatewayRouteSpec {
@@ -12192,8 +12478,10 @@ impl GatewayRouteSpec {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::GrpcGatewayRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::GrpcGatewayRouteAction>,
 }
 impl GrpcGatewayRoute {
@@ -12271,8 +12559,10 @@ impl GrpcGatewayRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::GatewayRouteTarget>,
     /// <p>The gateway route action to rewrite.</p>
+    #[doc(hidden)]
     pub rewrite: std::option::Option<crate::model::GrpcGatewayRouteRewrite>,
 }
 impl GrpcGatewayRouteAction {
@@ -12350,6 +12640,7 @@ impl GrpcGatewayRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
 }
 impl GrpcGatewayRouteRewrite {
@@ -12407,6 +12698,7 @@ impl GrpcGatewayRouteRewrite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
+    #[doc(hidden)]
     pub default_target_hostname: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
 }
 impl GatewayRouteHostnameRewrite {
@@ -12525,6 +12817,7 @@ impl AsRef<str> for DefaultGatewayRouteRewrite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
+    #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
 }
 impl GatewayRouteTarget {
@@ -12584,6 +12877,7 @@ impl GatewayRouteTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
+    #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
 }
 impl GatewayRouteVirtualService {
@@ -12641,10 +12935,13 @@ impl GatewayRouteVirtualService {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The gateway route host name to be matched on.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
     /// <p>The gateway route metadata to be matched on.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
 }
 impl GrpcGatewayRouteMatch {
@@ -12746,10 +13043,13 @@ impl GrpcGatewayRouteMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcGatewayRouteMetadata {
     /// <p>A name for the gateway route metadata.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    #[doc(hidden)]
     pub invert: std::option::Option<bool>,
     /// <p>The criteria for determining a metadata match.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::GrpcMetadataMatchMethod>,
 }
 impl GrpcGatewayRouteMetadata {
@@ -12937,8 +13237,10 @@ impl GrpcMetadataMatchMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
+    #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
     /// <p>The specified ending characters of the host name to match on.</p>
+    #[doc(hidden)]
     pub suffix: std::option::Option<std::string::String>,
 }
 impl GatewayRouteHostnameMatch {
@@ -13010,8 +13312,10 @@ impl GatewayRouteHostnameMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::HttpGatewayRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::HttpGatewayRouteAction>,
 }
 impl HttpGatewayRoute {
@@ -13089,8 +13393,10 @@ impl HttpGatewayRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<crate::model::GatewayRouteTarget>,
     /// <p>The gateway route action to rewrite.</p>
+    #[doc(hidden)]
     pub rewrite: std::option::Option<crate::model::HttpGatewayRouteRewrite>,
 }
 impl HttpGatewayRouteAction {
@@ -13168,10 +13474,13 @@ impl HttpGatewayRouteAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRouteRewrite {
     /// <p>The specified beginning characters to rewrite.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<crate::model::HttpGatewayRoutePrefixRewrite>,
     /// <p>The path to rewrite.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<crate::model::HttpGatewayRoutePathRewrite>,
     /// <p>The host name to rewrite.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
 }
 impl HttpGatewayRouteRewrite {
@@ -13269,6 +13578,7 @@ impl HttpGatewayRouteRewrite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
+    #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
 }
 impl HttpGatewayRoutePathRewrite {
@@ -13321,8 +13631,10 @@ impl HttpGatewayRoutePathRewrite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRoutePrefixRewrite {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
+    #[doc(hidden)]
     pub default_prefix: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl HttpGatewayRoutePrefixRewrite {
@@ -13397,16 +13709,22 @@ impl HttpGatewayRoutePrefixRewrite {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
+    #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The path to match on.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<crate::model::HttpPathMatch>,
     /// <p>The query parameter to match on.</p>
+    #[doc(hidden)]
     pub query_parameters: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
     /// <p>The method to match on.</p>
+    #[doc(hidden)]
     pub method: std::option::Option<crate::model::HttpMethod>,
     /// <p>The host name to match on.</p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
     /// <p>The client request headers to match on.</p>
+    #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
 }
 impl HttpGatewayRouteMatch {
@@ -13569,10 +13887,13 @@ impl HttpGatewayRouteMatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    #[doc(hidden)]
     pub invert: std::option::Option<bool>,
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
+    #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::HeaderMatchMethod>,
 }
 impl HttpGatewayRouteHeader {

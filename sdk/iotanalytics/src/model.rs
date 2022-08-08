@@ -5,24 +5,34 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineActivity {
     /// <p>Determines the source of the messages to be processed.</p>
+    #[doc(hidden)]
     pub channel: std::option::Option<crate::model::ChannelActivity>,
     /// <p>Runs a Lambda function to modify the message.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaActivity>,
     /// <p>Specifies where to store the processed message data.</p>
+    #[doc(hidden)]
     pub datastore: std::option::Option<crate::model::DatastoreActivity>,
     /// <p>Adds other attributes based on existing attributes in the message.</p>
+    #[doc(hidden)]
     pub add_attributes: std::option::Option<crate::model::AddAttributesActivity>,
     /// <p>Removes attributes from a message.</p>
+    #[doc(hidden)]
     pub remove_attributes: std::option::Option<crate::model::RemoveAttributesActivity>,
     /// <p>Used to create a new message using only the specified attributes from the original message. </p>
+    #[doc(hidden)]
     pub select_attributes: std::option::Option<crate::model::SelectAttributesActivity>,
     /// <p>Filters a message based on its attributes.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::FilterActivity>,
     /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
+    #[doc(hidden)]
     pub math: std::option::Option<crate::model::MathActivity>,
     /// <p>Adds data from the IoT device registry to your message.</p>
+    #[doc(hidden)]
     pub device_registry_enrich: std::option::Option<crate::model::DeviceRegistryEnrichActivity>,
     /// <p>Adds information from the IoT Device Shadow service to a message.</p>
+    #[doc(hidden)]
     pub device_shadow_enrich: std::option::Option<crate::model::DeviceShadowEnrichActivity>,
 }
 impl PipelineActivity {
@@ -273,14 +283,19 @@ impl PipelineActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the attribute that is added to the message.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl DeviceShadowEnrichActivity {
@@ -403,14 +418,19 @@ impl DeviceShadowEnrichActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceRegistryEnrichActivity {
     /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the attribute that is added to the message.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
     /// <p>The name of the IoT device whose registry information is added to the message.</p>
+    #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that allows access to the device's registry information.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl DeviceRegistryEnrichActivity {
@@ -533,12 +553,16 @@ impl DeviceRegistryEnrichActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MathActivity {
     /// <p>The name of the math activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the attribute that contains the result of the math operation.</p>
+    #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
+    #[doc(hidden)]
     pub math: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl MathActivity {
@@ -644,10 +668,13 @@ impl MathActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    #[doc(hidden)]
     pub filter: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl FilterActivity {
@@ -736,10 +763,13 @@ impl FilterActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the attributes to select from the message.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl SelectAttributesActivity {
@@ -837,10 +867,13 @@ impl SelectAttributesActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of 1-50 attributes to remove from the message.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl RemoveAttributesActivity {
@@ -938,13 +971,16 @@ impl RemoveAttributesActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl AddAttributesActivity {
@@ -1059,8 +1095,10 @@ impl AddAttributesActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the data store where processed messages are stored.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
 }
 impl DatastoreActivity {
@@ -1135,13 +1173,17 @@ impl DatastoreActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaActivity {
     /// <p>The name of the lambda activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function that is run on the message.</p>
+    #[doc(hidden)]
     pub lambda_name: std::option::Option<std::string::String>,
     /// <p>The number of messages passed to the Lambda function for processing.</p>
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
+    #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl LambdaActivity {
@@ -1250,10 +1292,13 @@ impl LambdaActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelActivity {
     /// <p>The name of the channel activity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the channel from which the messages are processed.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The next activity in the pipeline.</p>
+    #[doc(hidden)]
     pub next: std::option::Option<std::string::String>,
 }
 impl ChannelActivity {
@@ -1344,8 +1389,10 @@ impl ChannelActivity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileFormatConfiguration {
     /// <p>Contains the configuration information of the JSON format.</p>
+    #[doc(hidden)]
     pub json_configuration: std::option::Option<crate::model::JsonConfiguration>,
     /// <p>Contains the configuration information of the Parquet format.</p>
+    #[doc(hidden)]
     pub parquet_configuration: std::option::Option<crate::model::ParquetConfiguration>,
 }
 impl FileFormatConfiguration {
@@ -1425,6 +1472,7 @@ impl FileFormatConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaDefinition>,
 }
 impl ParquetConfiguration {
@@ -1483,6 +1531,7 @@ impl ParquetConfiguration {
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
+    #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
 }
 impl SchemaDefinition {
@@ -1549,8 +1598,10 @@ impl SchemaDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Column {
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Column {
@@ -1724,6 +1775,7 @@ impl DatastoreStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreIotSiteWiseMultiLayerStorage {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    #[doc(hidden)]
     pub customer_managed_s3_storage:
         std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
 }
@@ -1791,8 +1843,10 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
 }
 impl IotSiteWiseCustomerManagedDatastoreS3Storage {
@@ -1864,10 +1918,13 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedDatastoreS3Storage {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedDatastoreS3Storage {
@@ -1986,8 +2043,10 @@ impl ServiceManagedDatastoreS3Storage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
+    #[doc(hidden)]
     pub unlimited: bool,
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
+    #[doc(hidden)]
     pub number_of_days: std::option::Option<i32>,
 }
 impl RetentionPeriod {
@@ -2059,8 +2118,10 @@ impl RetentionPeriod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LateDataRule {
     /// <p>The name of the late data rule.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The information needed to configure the late data rule.</p>
+    #[doc(hidden)]
     pub rule_configuration: std::option::Option<crate::model::LateDataRuleConfiguration>,
 }
 impl LateDataRule {
@@ -2140,6 +2201,7 @@ impl LateDataRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
+    #[doc(hidden)]
     pub delta_time_session_window_configuration:
         std::option::Option<crate::model::DeltaTimeSessionWindowConfiguration>,
 }
@@ -2210,6 +2272,7 @@ impl LateDataRuleConfiguration {
 pub struct DeltaTimeSessionWindowConfiguration {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+    #[doc(hidden)]
     pub timeout_in_minutes: std::option::Option<i32>,
 }
 impl DeltaTimeSessionWindowConfiguration {
@@ -2267,8 +2330,10 @@ impl DeltaTimeSessionWindowConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
+    #[doc(hidden)]
     pub unlimited: bool,
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
+    #[doc(hidden)]
     pub max_versions: std::option::Option<i32>,
 }
 impl VersioningConfiguration {
@@ -2340,8 +2405,10 @@ impl VersioningConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentDeliveryRule {
     /// <p>The name of the dataset content delivery rules entry.</p>
+    #[doc(hidden)]
     pub entry_name: std::option::Option<std::string::String>,
     /// <p>The destination to which dataset contents are delivered.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::DatasetContentDeliveryDestination>,
 }
 impl DatasetContentDeliveryRule {
@@ -2422,9 +2489,11 @@ impl DatasetContentDeliveryRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentDeliveryDestination {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
+    #[doc(hidden)]
     pub iot_events_destination_configuration:
         std::option::Option<crate::model::IotEventsDestinationConfiguration>,
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
 }
 impl DatasetContentDeliveryDestination {
@@ -2520,6 +2589,7 @@ impl DatasetContentDeliveryDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
@@ -2531,10 +2601,13 @@ pub struct S3DestinationConfiguration {
     /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
     /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
+    #[doc(hidden)]
     pub glue_configuration: std::option::Option<crate::model::GlueConfiguration>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfiguration {
@@ -2670,8 +2743,10 @@ impl S3DestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueConfiguration {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
+    #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
 }
 impl GlueConfiguration {
@@ -2746,8 +2821,10 @@ impl GlueConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
+    #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotEventsDestinationConfiguration {
@@ -2819,8 +2896,10 @@ impl IotEventsDestinationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::Schedule>,
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
+    #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::TriggeringDataset>,
 }
 impl DatasetTrigger {
@@ -2895,6 +2974,7 @@ impl DatasetTrigger {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggeringDataset {
     /// <p>The name of the dataset whose content generation triggers the new dataset content generation.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TriggeringDataset {
@@ -2947,6 +3027,7 @@ impl TriggeringDataset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schedule {
     /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl Schedule {
@@ -3001,10 +3082,13 @@ impl Schedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetAction {
     /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
+    #[doc(hidden)]
     pub query_action: std::option::Option<crate::model::SqlQueryDatasetAction>,
     /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
+    #[doc(hidden)]
     pub container_action: std::option::Option<crate::model::ContainerDatasetAction>,
 }
 impl DatasetAction {
@@ -3099,12 +3183,16 @@ impl DatasetAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerDatasetAction {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
+    #[doc(hidden)]
     pub resource_configuration: std::option::Option<crate::model::ResourceConfiguration>,
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
+    #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
 }
 impl ContainerDatasetAction {
@@ -3230,15 +3318,20 @@ impl ContainerDatasetAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the variable as a string.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>The value of the variable as a double (numeric).</p>
+    #[doc(hidden)]
     pub double_value: std::option::Option<f64>,
     /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
+    #[doc(hidden)]
     pub dataset_content_version_value:
         std::option::Option<crate::model::DatasetContentVersionValue>,
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
+    #[doc(hidden)]
     pub output_file_uri_value: std::option::Option<crate::model::OutputFileUriValue>,
 }
 impl Variable {
@@ -3376,6 +3469,7 @@ impl Variable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
+    #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
 }
 impl OutputFileUriValue {
@@ -3430,6 +3524,7 @@ impl OutputFileUriValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DatasetContentVersionValue {
@@ -3484,8 +3579,10 @@ impl DatasetContentVersionValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
+    #[doc(hidden)]
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
+    #[doc(hidden)]
     pub volume_size_in_gb: i32,
 }
 impl ResourceConfiguration {
@@ -3615,8 +3712,10 @@ impl AsRef<str> for ComputeType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
+    #[doc(hidden)]
     pub sql_query: std::option::Option<std::string::String>,
     /// <p>Prefilters applied to message data.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
 }
 impl SqlQueryDatasetAction {
@@ -3697,6 +3796,7 @@ impl SqlQueryDatasetAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
+    #[doc(hidden)]
     pub delta_time: std::option::Option<crate::model::DeltaTime>,
 }
 impl QueryFilter {
@@ -3754,8 +3854,10 @@ impl QueryFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeltaTime {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
+    #[doc(hidden)]
     pub offset_seconds: std::option::Option<i32>,
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
+    #[doc(hidden)]
     pub time_expression: std::option::Option<std::string::String>,
 }
 impl DeltaTime {
@@ -3830,8 +3932,10 @@ impl DeltaTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelStorage {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
+    #[doc(hidden)]
     pub service_managed_s3: std::option::Option<crate::model::ServiceManagedChannelS3Storage>,
     /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
+    #[doc(hidden)]
     pub customer_managed_s3: std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
 }
 impl ChannelStorage {
@@ -3921,10 +4025,13 @@ impl ChannelStorage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedChannelS3Storage {
@@ -4043,8 +4150,10 @@ impl ServiceManagedChannelS3Storage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag's key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -4118,6 +4227,7 @@ pub struct ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
     /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
+    #[doc(hidden)]
     pub s3_paths: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ChannelMessages {
@@ -4187,10 +4297,13 @@ impl ChannelMessages {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The logging level. Currently, only ERROR is supported.</p>
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::LoggingLevel>,
     /// <p>If true, logging is enabled for IoT Analytics.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl LoggingOptions {
@@ -4330,13 +4443,17 @@ impl AsRef<str> for LoggingLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineSummary {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>A summary of information about the pipeline reprocessing.</p>
+    #[doc(hidden)]
     pub reprocessing_summaries:
         std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the pipeline was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {
@@ -4463,10 +4580,13 @@ impl PipelineSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReprocessingSummary {
     /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The status of the pipeline reprocessing.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReprocessingStatus>,
     /// <p>The time the pipeline reprocessing was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ReprocessingSummary {
@@ -4624,22 +4744,30 @@ impl AsRef<str> for ReprocessingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreSummary {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>Where data in a data store is stored.</p>
+    #[doc(hidden)]
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorageSummary>,
     /// <p>The status of the data store.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>When the data store was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data store was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    #[doc(hidden)]
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The file format of the data in the data store.</p>
+    #[doc(hidden)]
     pub file_format_type: std::option::Option<crate::model::FileFormatType>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
+    #[doc(hidden)]
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
 impl DatastoreSummary {
@@ -4843,6 +4971,7 @@ impl DatastoreSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastorePartitions {
     /// <p> A list of partition dimensions in a data store. </p>
+    #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<crate::model::DatastorePartition>>,
 }
 impl DatastorePartitions {
@@ -4906,8 +5035,10 @@ impl DatastorePartitions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastorePartition {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
+    #[doc(hidden)]
     pub attribute_partition: std::option::Option<crate::model::Partition>,
     /// <p> A partition dimension defined by a timestamp attribute. </p>
+    #[doc(hidden)]
     pub timestamp_partition: std::option::Option<crate::model::TimestampPartition>,
 }
 impl DatastorePartition {
@@ -4985,8 +5116,10 @@ impl DatastorePartition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    #[doc(hidden)]
     pub timestamp_format: std::option::Option<std::string::String>,
 }
 impl TimestampPartition {
@@ -5064,6 +5197,7 @@ impl TimestampPartition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
+    #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
 }
 impl Partition {
@@ -5235,12 +5369,15 @@ impl AsRef<str> for DatastoreStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreStorageSummary {
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
+    #[doc(hidden)]
     pub service_managed_s3:
         std::option::Option<crate::model::ServiceManagedDatastoreS3StorageSummary>,
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
+    #[doc(hidden)]
     pub customer_managed_s3:
         std::option::Option<crate::model::CustomerManagedDatastoreS3StorageSummary>,
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    #[doc(hidden)]
     pub iot_site_wise_multi_layer_storage:
         std::option::Option<crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary>,
 }
@@ -5360,6 +5497,7 @@ impl DatastoreStorageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
+    #[doc(hidden)]
     pub customer_managed_s3_storage:
         std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
 }
@@ -5430,8 +5568,10 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
 }
 impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
@@ -5505,10 +5645,13 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedDatastoreS3StorageSummary {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedDatastoreS3StorageSummary {
@@ -5627,16 +5770,22 @@ impl ServiceManagedDatastoreS3StorageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The status of the dataset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The time the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
 }
 impl DatasetSummary {
@@ -5803,8 +5952,10 @@ impl DatasetSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetActionSummary {
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
+    #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::DatasetActionType>,
 }
 impl DatasetActionSummary {
@@ -5993,14 +6144,19 @@ impl AsRef<str> for DatasetStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentSummary {
     /// <p>The version of the dataset contents.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The status of the dataset contents.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
     /// <p>The actual time the creation of the dataset contents was started.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
+    #[doc(hidden)]
     pub schedule_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+    #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetContentSummary {
@@ -6135,8 +6291,10 @@ impl DatasetContentSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentStatus {
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::DatasetContentState>,
     /// <p>The reason the dataset contents are in this state.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl DatasetContentStatus {
@@ -6270,18 +6428,24 @@ impl AsRef<str> for DatasetContentState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored.</p>
+    #[doc(hidden)]
     pub channel_storage: std::option::Option<crate::model::ChannelStorageSummary>,
     /// <p>The status of the channel.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelStatus>,
     /// <p>When the channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the channel was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    #[doc(hidden)]
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {
@@ -6501,9 +6665,11 @@ impl AsRef<str> for ChannelStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelStorageSummary {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
+    #[doc(hidden)]
     pub service_managed_s3:
         std::option::Option<crate::model::ServiceManagedChannelS3StorageSummary>,
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
+    #[doc(hidden)]
     pub customer_managed_s3:
         std::option::Option<crate::model::CustomerManagedChannelS3StorageSummary>,
 }
@@ -6594,10 +6760,13 @@ impl ChannelStorageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedChannelS3StorageSummary {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must end with a forward slash (/).</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedChannelS3StorageSummary {
@@ -6716,8 +6885,10 @@ impl ServiceManagedChannelS3StorageSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetEntry {
     /// <p>The name of the dataset item.</p>
+    #[doc(hidden)]
     pub entry_name: std::option::Option<std::string::String>,
     /// <p>The presigned URI of the dataset item.</p>
+    #[doc(hidden)]
     pub data_uri: std::option::Option<std::string::String>,
 }
 impl DatasetEntry {
@@ -6789,17 +6960,23 @@ impl DatasetEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Pipeline {
     /// <p>The name of the pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the pipeline.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The activities that perform transformations on the messages.</p>
+    #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
     /// <p>A summary of information about the pipeline reprocessing.</p>
+    #[doc(hidden)]
     pub reprocessing_summaries:
         std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the pipeline was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Pipeline {
@@ -6966,6 +7143,7 @@ impl Pipeline {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<crate::model::EstimatedResourceSize>,
 }
 impl DatastoreStatistics {
@@ -7021,8 +7199,10 @@ impl DatastoreStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
+    #[doc(hidden)]
     pub estimated_size_in_bytes: std::option::Option<f64>,
     /// <p>The time when the estimate of the size of the resource was made.</p>
+    #[doc(hidden)]
     pub estimated_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EstimatedResourceSize {
@@ -7097,10 +7277,13 @@ impl EstimatedResourceSize {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datastore {
     /// <p>The name of the data store.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    #[doc(hidden)]
     pub storage: std::option::Option<crate::model::DatastoreStorage>,
     /// <p>The ARN of the data store.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of a data store:</p>
     /// <dl>
@@ -7123,22 +7306,29 @@ pub struct Datastore {
     /// <p>The data store is being deleted.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the data store was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the data store was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    #[doc(hidden)]
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
+    #[doc(hidden)]
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
+    #[doc(hidden)]
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
 impl Datastore {
@@ -7448,27 +7638,38 @@ impl Datastore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
     /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
+    #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
+    #[doc(hidden)]
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
     /// <p>The status of the dataset.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>When the dataset was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    #[doc(hidden)]
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    #[doc(hidden)]
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
 impl Dataset {
@@ -7756,6 +7957,7 @@ impl Dataset {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelStatistics {
     /// <p>The estimated size of the channel.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<crate::model::EstimatedResourceSize>,
 }
 impl ChannelStatistics {
@@ -7811,22 +8013,30 @@ impl ChannelStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    #[doc(hidden)]
     pub storage: std::option::Option<crate::model::ChannelStorage>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the channel.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelStatus>,
     /// <p>How long, in days, message data is kept for the channel.</p>
+    #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the channel was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    #[doc(hidden)]
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Channel {
@@ -8024,10 +8234,13 @@ impl Channel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageErrorEntry {
     /// <p>The ID of the message that caused the error. See the value corresponding to the <code>messageId</code> key in the message object.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The code associated with the error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message associated with the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchPutMessageErrorEntry {
@@ -8119,8 +8332,10 @@ impl BatchPutMessageErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
+    #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl Message {

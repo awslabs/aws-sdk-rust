@@ -8273,9 +8273,11 @@ impl UpdateTaskExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
+    #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
     /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
 }
 impl UpdateTaskExecutionInput {
@@ -8303,20 +8305,27 @@ impl std::fmt::Debug for UpdateTaskExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     /// <p> </p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::TaskSchedule>,
     /// <p>The name of the task to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl UpdateTaskInput {
@@ -8370,6 +8379,7 @@ impl std::fmt::Debug for UpdateTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
     /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
@@ -8380,16 +8390,22 @@ pub struct UpdateLocationSmbInput {
     /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
     /// </ul>
     /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
 }
 impl UpdateLocationSmbInput {
@@ -8449,18 +8465,25 @@ impl std::fmt::Debug for UpdateLocationSmbInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
+    #[doc(hidden)]
     pub server_port: std::option::Option<i32>,
     /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
+    #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
     /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    #[doc(hidden)]
     pub access_key: std::option::Option<std::string::String>,
     /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    #[doc(hidden)]
     pub secret_key: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLocationObjectStorageInput {
@@ -8514,16 +8537,20 @@ impl std::fmt::Debug for UpdateLocationObjectStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
     /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
     /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    #[doc(hidden)]
     pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
 }
 impl UpdateLocationNfsInput {
@@ -8564,30 +8591,43 @@ impl std::fmt::Debug for UpdateLocationNfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    #[doc(hidden)]
     pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
+    #[doc(hidden)]
     pub block_size: std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
+    #[doc(hidden)]
     pub replication_factor: std::option::Option<i32>,
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    #[doc(hidden)]
     pub kms_key_provider_uri: std::option::Option<std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
+    #[doc(hidden)]
     pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system.</p>
+    #[doc(hidden)]
     pub simple_user: std::option::Option<std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
+    #[doc(hidden)]
     pub kerberos_principal: std::option::Option<std::string::String>,
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    #[doc(hidden)]
     pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    #[doc(hidden)]
     pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLocationHdfsInput {
@@ -8671,8 +8711,10 @@ impl std::fmt::Debug for UpdateLocationHdfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+    #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
     /// <p>The name that you want to use to configure the agent.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateAgentInput {
@@ -8699,8 +8741,10 @@ impl std::fmt::Debug for UpdateAgentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys in the key-value pair in the tag to remove.</p>
+    #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -8727,8 +8771,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl TagResourceInput {
@@ -8755,14 +8801,18 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
     /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    #[doc(hidden)]
     pub override_options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl StartTaskExecutionInput {
@@ -8801,10 +8851,13 @@ impl std::fmt::Debug for StartTaskExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTasksInput {
     /// <p>The maximum number of tasks to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>,
 }
 impl ListTasksInput {
@@ -8836,10 +8889,13 @@ impl std::fmt::Debug for ListTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of executed tasks to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskExecutionsInput {
@@ -8871,10 +8927,13 @@ impl std::fmt::Debug for ListTaskExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of locations to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -8906,10 +8965,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLocationsInput {
     /// <p>The maximum number of locations to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>,
 }
 impl ListLocationsInput {
@@ -8941,8 +9003,10 @@ impl std::fmt::Debug for ListLocationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAgentsInput {
     /// <p>The maximum number of agents to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAgentsInput {
@@ -8969,6 +9033,7 @@ impl std::fmt::Debug for ListAgentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTaskExecutionInput {
@@ -8990,6 +9055,7 @@ impl std::fmt::Debug for DescribeTaskExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTaskInput {
@@ -9011,6 +9077,7 @@ impl std::fmt::Debug for DescribeTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationSmbInput {
@@ -9032,6 +9099,7 @@ impl std::fmt::Debug for DescribeLocationSmbInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationS3Input {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationS3Input {
@@ -9053,6 +9121,7 @@ impl std::fmt::Debug for DescribeLocationS3Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationObjectStorageInput {
@@ -9074,6 +9143,7 @@ impl std::fmt::Debug for DescribeLocationObjectStorageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationNfsInput {
@@ -9095,6 +9165,7 @@ impl std::fmt::Debug for DescribeLocationNfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationHdfsInput {
@@ -9116,6 +9187,7 @@ impl std::fmt::Debug for DescribeLocationHdfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxWindowsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxWindowsInput {
@@ -9137,6 +9209,7 @@ impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxOpenZfsInput {
@@ -9158,6 +9231,7 @@ impl std::fmt::Debug for DescribeLocationFsxOpenZfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxOntapInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxOntapInput {
@@ -9179,6 +9253,7 @@ impl std::fmt::Debug for DescribeLocationFsxOntapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxLustreInput {
@@ -9200,6 +9275,7 @@ impl std::fmt::Debug for DescribeLocationFsxLustreInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationEfsInput {
@@ -9221,6 +9297,7 @@ impl std::fmt::Debug for DescribeLocationEfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAgentInput {
@@ -9242,6 +9319,7 @@ impl std::fmt::Debug for DescribeAgentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTaskInput {
@@ -9263,6 +9341,7 @@ impl std::fmt::Debug for DeleteTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLocationInput {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
+    #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLocationInput {
@@ -9284,6 +9363,7 @@ impl std::fmt::Debug for DeleteLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAgentInput {
@@ -9305,24 +9385,33 @@ impl std::fmt::Debug for DeleteAgentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
+    #[doc(hidden)]
     pub source_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    #[doc(hidden)]
     pub destination_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
     /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
     /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     /// <p> </p>
+    #[doc(hidden)]
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<crate::model::TaskSchedule>,
     /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+    #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl CreateTaskInput {
@@ -9389,23 +9478,31 @@ pub struct CreateLocationSmbInput {
     /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
     /// </note>
     /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
     /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
     /// </note>
+    #[doc(hidden)]
     pub server_hostname: std::option::Option<std::string::String>,
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The mount options used by DataSync to access the SMB server.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationSmbInput {
@@ -9468,18 +9565,24 @@ impl std::fmt::Debug for CreateLocationSmbInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationS3Input {
     /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
+    #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+    #[doc(hidden)]
     pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_config: std::option::Option<crate::model::S3Config>,
     /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationS3Input {
@@ -9528,22 +9631,31 @@ impl std::fmt::Debug for CreateLocationS3Input {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageInput {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    #[doc(hidden)]
     pub server_hostname: std::option::Option<std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
+    #[doc(hidden)]
     pub server_port: std::option::Option<i32>,
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
+    #[doc(hidden)]
     pub access_key: std::option::Option<std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    #[doc(hidden)]
     pub secret_key: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationObjectStorageInput {
@@ -9611,18 +9723,23 @@ pub struct CreateLocationNfsInput {
     /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
     /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
     /// </note>
+    #[doc(hidden)]
     pub server_hostname: std::option::Option<std::string::String>,
     /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    #[doc(hidden)]
     pub on_prem_config: std::option::Option<crate::model::OnPremConfig>,
     /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+    #[doc(hidden)]
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationNfsInput {
@@ -9672,38 +9789,51 @@ impl std::fmt::Debug for CreateLocationNfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationHdfsInput {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    #[doc(hidden)]
     pub name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+    #[doc(hidden)]
     pub block_size: std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
+    #[doc(hidden)]
     pub replication_factor: std::option::Option<i32>,
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
+    #[doc(hidden)]
     pub kms_key_provider_uri: std::option::Option<std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
+    #[doc(hidden)]
     pub qop_configuration: std::option::Option<crate::model::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
+    #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
     /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
+    #[doc(hidden)]
     pub simple_user: std::option::Option<std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
+    #[doc(hidden)]
     pub kerberos_principal: std::option::Option<std::string::String>,
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
+    #[doc(hidden)]
     pub kerberos_keytab: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
+    #[doc(hidden)]
     pub kerberos_krb5_conf: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
+    #[doc(hidden)]
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationHdfsInput {
@@ -9795,8 +9925,10 @@ impl std::fmt::Debug for CreateLocationHdfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxWindowsInput {
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
+    #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
@@ -9805,15 +9937,20 @@ pub struct CreateLocationFsxWindowsInput {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
     /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxWindowsInput {
@@ -9872,14 +10009,19 @@ impl std::fmt::Debug for CreateLocationFsxWindowsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+    #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::FsxProtocol>,
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationFsxOpenZfsInput {
@@ -9921,6 +10063,7 @@ impl std::fmt::Debug for CreateLocationFsxOpenZfsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxOntapInput {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::FsxProtocol>,
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
@@ -9929,14 +10072,18 @@ pub struct CreateLocationFsxOntapInput {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
+    #[doc(hidden)]
     pub storage_virtual_machine_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationFsxOntapInput {
@@ -9989,12 +10136,16 @@ impl std::fmt::Debug for CreateLocationFsxOntapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
+    #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
 impl CreateLocationFsxLustreInput {
@@ -10033,19 +10184,26 @@ pub struct CreateLocationEfsInput {
     /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
     /// </note>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub efs_filesystem_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub ec2_config: std::option::Option<crate::model::Ec2Config>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    #[doc(hidden)]
     pub file_system_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
+    #[doc(hidden)]
     pub in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
 }
 impl CreateLocationEfsInput {
@@ -10107,19 +10265,25 @@ pub struct CreateAgentInput {
     /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
     /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
     /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
+    #[doc(hidden)]
     pub activation_key: std::option::Option<std::string::String>,
     /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
+    #[doc(hidden)]
     pub agent_name: std::option::Option<std::string::String>,
     /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
     /// </note>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
     /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
     /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+    #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
+    #[doc(hidden)]
     pub subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
+    #[doc(hidden)]
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateAgentInput {
@@ -10171,6 +10335,7 @@ impl std::fmt::Debug for CreateAgentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+    #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl CancelTaskExecutionInput {

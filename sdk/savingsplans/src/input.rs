@@ -1961,8 +1961,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -1989,8 +1991,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2021,6 +2025,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -2042,30 +2047,43 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOfferingsInput {
     /// <p>The IDs of the offerings.</p>
+    #[doc(hidden)]
     pub offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The payment options.</p>
+    #[doc(hidden)]
     pub payment_options: std::option::Option<std::vec::Vec<crate::model::SavingsPlanPaymentOption>>,
     /// <p>The product type.</p>
+    #[doc(hidden)]
     pub product_type: std::option::Option<crate::model::SavingsPlanProductType>,
     /// <p>The plan type.</p>
+    #[doc(hidden)]
     pub plan_types: std::option::Option<std::vec::Vec<crate::model::SavingsPlanType>>,
     /// <p>The durations, in seconds.</p>
+    #[doc(hidden)]
     pub durations: std::option::Option<std::vec::Vec<i64>>,
     /// <p>The currencies.</p>
+    #[doc(hidden)]
     pub currencies: std::option::Option<std::vec::Vec<crate::model::CurrencyCode>>,
     /// <p>The descriptions.</p>
+    #[doc(hidden)]
     pub descriptions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The services.</p>
+    #[doc(hidden)]
     pub service_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The usage details of the line item in the billing report.</p>
+    #[doc(hidden)]
     pub usage_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingFilterElement>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl DescribeSavingsPlansOfferingsInput {
@@ -2151,26 +2169,36 @@ impl std::fmt::Debug for DescribeSavingsPlansOfferingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOfferingRatesInput {
     /// <p>The IDs of the offerings.</p>
+    #[doc(hidden)]
     pub savings_plan_offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The payment options.</p>
+    #[doc(hidden)]
     pub savings_plan_payment_options:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlanPaymentOption>>,
     /// <p>The plan types.</p>
+    #[doc(hidden)]
     pub savings_plan_types: std::option::Option<std::vec::Vec<crate::model::SavingsPlanType>>,
     /// <p>The AWS products.</p>
+    #[doc(hidden)]
     pub products: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
     /// <p>The services.</p>
+    #[doc(hidden)]
     pub service_codes: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateServiceCode>>,
     /// <p>The usage details of the line item in the billing report.</p>
+    #[doc(hidden)]
     pub usage_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
+    #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The filters.</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateFilterElement>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl DescribeSavingsPlansOfferingRatesInput {
@@ -2246,16 +2274,22 @@ impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansInput {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
+    #[doc(hidden)]
     pub savings_plan_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the Savings Plans.</p>
+    #[doc(hidden)]
     pub savings_plan_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The states.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::SavingsPlanState>>,
     /// <p>The filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanFilter>>,
 }
 impl DescribeSavingsPlansInput {
@@ -2302,12 +2336,16 @@ impl std::fmt::Debug for DescribeSavingsPlansInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlanRatesInput {
     /// <p>The ID of the Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
     /// <p>The filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateFilter>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeSavingsPlanRatesInput {
@@ -2344,6 +2382,7 @@ impl std::fmt::Debug for DescribeSavingsPlanRatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueuedSavingsPlanInput {
     /// <p>The ID of the Savings Plan.</p>
+    #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
 }
 impl DeleteQueuedSavingsPlanInput {
@@ -2365,16 +2404,22 @@ impl std::fmt::Debug for DeleteQueuedSavingsPlanInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
+    #[doc(hidden)]
     pub savings_plan_offering_id: std::option::Option<std::string::String>,
     /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    #[doc(hidden)]
     pub commitment: std::option::Option<std::string::String>,
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    #[doc(hidden)]
     pub upfront_payment_amount: std::option::Option<std::string::String>,
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    #[doc(hidden)]
     pub purchase_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
     /// <p>The number of seconds the caller should wait before retrying.</p>
+    #[doc(hidden)]
     pub retry_after_seconds: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ThrottleReason>,
 }
 impl TooManyRequestsException {
@@ -134,8 +138,10 @@ impl TooManyRequestsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceException {
@@ -219,8 +225,10 @@ impl ServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
@@ -304,8 +312,10 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
     /// <p>The exception type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceConflictException {
@@ -389,8 +399,10 @@ impl ResourceConflictException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
     /// <p>The exception type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
@@ -474,8 +486,10 @@ impl InvalidParameterValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
     /// <p>The exception type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PreconditionFailedException {
@@ -559,8 +573,10 @@ impl PreconditionFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCodeSignatureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCodeSignatureException {
@@ -644,8 +660,10 @@ impl InvalidCodeSignatureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeVerificationFailedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CodeVerificationFailedException {
@@ -729,8 +747,10 @@ impl CodeVerificationFailedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigningConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CodeSigningConfigNotFoundException {
@@ -814,8 +834,10 @@ impl CodeSigningConfigNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeStorageExceededException {
     /// <p>The exception type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CodeStorageExceededException {
@@ -899,8 +921,10 @@ impl CodeStorageExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
@@ -984,8 +1008,10 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRuntimeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRuntimeException {
@@ -1069,8 +1095,10 @@ impl InvalidRuntimeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestContentException {
     /// <p>The exception type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestContentException {
@@ -1154,8 +1182,10 @@ impl InvalidRequestContentException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedMediaTypeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedMediaTypeException {
@@ -1239,8 +1269,10 @@ impl UnsupportedMediaTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetIpAddressLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SubnetIpAddressLimitReachedException {
@@ -1327,8 +1359,10 @@ impl SubnetIpAddressLimitReachedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {
     /// <p>The exception type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotReadyException {
@@ -1412,8 +1446,10 @@ impl ResourceNotReadyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestTooLargeException {
@@ -1497,8 +1533,10 @@ impl RequestTooLargeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsNotFoundException {
@@ -1582,8 +1620,10 @@ impl KmsNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsInvalidStateException {
@@ -1667,8 +1707,10 @@ impl KmsInvalidStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsDisabledException {
@@ -1752,8 +1794,10 @@ impl KmsDisabledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsAccessDeniedException {
@@ -1837,8 +1881,10 @@ impl KmsAccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidZipFileException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidZipFileException {
@@ -1922,8 +1968,10 @@ impl InvalidZipFileException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnetIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSubnetIdException {
@@ -2007,8 +2055,10 @@ impl InvalidSubnetIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSecurityGroupIdException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSecurityGroupIdException {
@@ -2095,8 +2145,10 @@ impl InvalidSecurityGroupIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EniLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EniLimitReachedException {
@@ -2180,8 +2232,10 @@ impl EniLimitReachedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsMountTimeoutException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EfsMountTimeoutException {
@@ -2265,8 +2319,10 @@ impl EfsMountTimeoutException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsMountFailureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EfsMountFailureException {
@@ -2350,8 +2406,10 @@ impl EfsMountFailureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsMountConnectivityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EfsMountConnectivityException {
@@ -2438,8 +2496,10 @@ impl EfsMountConnectivityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsioException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EfsioException {
@@ -2523,10 +2583,13 @@ impl EfsioException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2UnexpectedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub ec2_error_code: std::option::Option<std::string::String>,
 }
 impl Ec2UnexpectedException {
@@ -2630,8 +2693,10 @@ impl Ec2UnexpectedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ThrottledException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Ec2ThrottledException {
@@ -2715,8 +2780,10 @@ impl Ec2ThrottledException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Ec2AccessDeniedException {
@@ -2800,8 +2867,10 @@ impl Ec2AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedConcurrencyConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ProvisionedConcurrencyConfigNotFoundException {
@@ -2885,8 +2954,10 @@ impl ProvisionedConcurrencyConfigNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyLengthExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PolicyLengthExceededException {

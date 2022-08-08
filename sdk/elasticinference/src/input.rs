@@ -953,8 +953,10 @@ impl UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -981,8 +983,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags to add to the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1013,6 +1017,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -1045,12 +1050,16 @@ impl std::fmt::Debug for DescribeAcceleratorTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorsInput {
     /// <p> The IDs of the accelerators to describe. </p>
+    #[doc(hidden)]
     pub accelerator_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAcceleratorsInput {
@@ -1087,8 +1096,10 @@ impl std::fmt::Debug for DescribeAcceleratorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorOfferingsInput {
     /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    #[doc(hidden)]
     pub location_type: std::option::Option<crate::model::LocationType>,
     /// <p> The list of accelerator types to describe. </p>
+    #[doc(hidden)]
     pub accelerator_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAcceleratorOfferingsInput {

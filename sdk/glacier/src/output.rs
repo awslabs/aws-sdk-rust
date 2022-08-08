@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
 }
 impl UploadMultipartPartOutput {
@@ -60,10 +61,13 @@ impl UploadMultipartPartOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadArchiveOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
+    #[doc(hidden)]
     pub archive_id: std::option::Option<std::string::String>,
 }
 impl UploadArchiveOutput {
@@ -272,6 +276,7 @@ impl RemoveTagsFromVaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseProvisionedCapacityOutput {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
+    #[doc(hidden)]
     pub capacity_id: std::option::Option<std::string::String>,
 }
 impl PurchaseProvisionedCapacityOutput {
@@ -326,8 +331,10 @@ impl PurchaseProvisionedCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVaultsOutput {
     /// <p>List of vaults.</p>
+    #[doc(hidden)]
     pub vault_list: std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListVaultsOutput {
@@ -409,6 +416,7 @@ impl ListVaultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForVaultOutput {
     /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -482,6 +490,7 @@ impl ListTagsForVaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
+    #[doc(hidden)]
     pub provisioned_capacity_list:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
 }
@@ -552,18 +561,25 @@ impl ListProvisionedCapacityOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
+    #[doc(hidden)]
     pub multipart_upload_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
+    #[doc(hidden)]
     pub vault_arn: std::option::Option<std::string::String>,
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    #[doc(hidden)]
     pub archive_description: std::option::Option<std::string::String>,
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
+    #[doc(hidden)]
     pub part_size_in_bytes: i64,
     /// <p>The UTC time at which the multipart upload was initiated.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
+    #[doc(hidden)]
     pub parts: std::option::Option<std::vec::Vec<crate::model::PartListElement>>,
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListPartsOutput {
@@ -738,8 +754,10 @@ impl ListPartsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultipartUploadsOutput {
     /// <p>A list of in-progress multipart uploads.</p>
+    #[doc(hidden)]
     pub uploads_list: std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListMultipartUploadsOutput {
@@ -821,8 +839,10 @@ impl ListMultipartUploadsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
+    #[doc(hidden)]
     pub job_list: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -904,6 +924,7 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
+    #[doc(hidden)]
     pub lock_id: std::option::Option<std::string::String>,
 }
 impl InitiateVaultLockOutput {
@@ -958,8 +979,10 @@ impl InitiateVaultLockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl InitiateMultipartUploadOutput {
@@ -1031,10 +1054,13 @@ impl InitiateMultipartUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateJobOutput {
     /// <p>The relative URI path of the job.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The ID of the job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The path to the location of where the select results are stored.</p>
+    #[doc(hidden)]
     pub job_output_path: std::option::Option<std::string::String>,
 }
 impl InitiateJobOutput {
@@ -1126,6 +1152,7 @@ impl InitiateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultNotificationsOutput {
     /// <p>Returns the notification configuration set on the vault.</p>
+    #[doc(hidden)]
     pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
 }
 impl GetVaultNotificationsOutput {
@@ -1189,12 +1216,16 @@ impl GetVaultNotificationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+    #[doc(hidden)]
     pub expiration_date: std::option::Option<std::string::String>,
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<std::string::String>,
 }
 impl GetVaultLockOutput {
@@ -1306,6 +1337,7 @@ impl GetVaultLockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
 }
 impl GetVaultAccessPolicyOutput {
@@ -1369,16 +1401,22 @@ pub struct GetJobOutputOutput {
     /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
+    #[doc(hidden)]
     pub status: i32,
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
+    #[doc(hidden)]
     pub content_range: std::option::Option<std::string::String>,
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
+    #[doc(hidden)]
     pub accept_ranges: std::option::Option<std::string::String>,
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
+    #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The description of an archive.</p>
+    #[doc(hidden)]
     pub archive_description: std::option::Option<std::string::String>,
 }
 impl GetJobOutputOutput {
@@ -1562,6 +1600,7 @@ impl GetJobOutputOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
 }
 impl GetDataRetrievalPolicyOutput {
@@ -1619,16 +1658,22 @@ impl GetDataRetrievalPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
+    #[doc(hidden)]
     pub vault_arn: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
+    #[doc(hidden)]
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
+    #[doc(hidden)]
     pub last_inventory_date: std::option::Option<std::string::String>,
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
+    #[doc(hidden)]
     pub number_of_archives: i64,
     /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
+    #[doc(hidden)]
     pub size_in_bytes: i64,
 }
 impl DescribeVaultOutput {
@@ -1774,30 +1819,43 @@ impl DescribeVaultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job description provided when initiating the job.</p>
+    #[doc(hidden)]
     pub job_description: std::option::Option<std::string::String>,
     /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::ActionCode>,
     /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
+    #[doc(hidden)]
     pub archive_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
+    #[doc(hidden)]
     pub vault_arn: std::option::Option<std::string::String>,
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+    #[doc(hidden)]
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
+    #[doc(hidden)]
     pub completed: bool,
     /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::StatusCode>,
     /// <p>A friendly message that describes the job status.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
+    #[doc(hidden)]
     pub archive_size_in_bytes: std::option::Option<i64>,
     /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
+    #[doc(hidden)]
     pub inventory_size_in_bytes: std::option::Option<i64>,
     /// <p>An Amazon SNS topic that receives notification.</p>
+    #[doc(hidden)]
     pub sns_topic: std::option::Option<std::string::String>,
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
+    #[doc(hidden)]
     pub completion_date: std::option::Option<std::string::String>,
     /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
     /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
@@ -1813,21 +1871,29 @@ pub struct DescribeJobOutput {
     /// <li> <p>Inventory jobs</p> </li>
     /// <li> <p>Select jobs</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub sha256_tree_hash: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
+    #[doc(hidden)]
     pub archive_sha256_tree_hash: std::option::Option<std::string::String>,
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    #[doc(hidden)]
     pub retrieval_byte_range: std::option::Option<std::string::String>,
     /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
     /// <p>Parameters used for range inventory retrieval.</p>
+    #[doc(hidden)]
     pub inventory_retrieval_parameters:
         std::option::Option<crate::model::InventoryRetrievalJobDescription>,
     /// <p>Contains the job output location.</p>
+    #[doc(hidden)]
     pub job_output_path: std::option::Option<std::string::String>,
     /// <p>Contains the parameters used for a select.</p>
+    #[doc(hidden)]
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
     /// <p>Contains the location where the data from the select job is stored.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
 }
 impl DescribeJobOutput {
@@ -2426,6 +2492,7 @@ impl DeleteArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVaultOutput {
     /// <p>The URI of the vault that was created.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateVaultOutput {
@@ -2511,10 +2578,13 @@ impl CompleteVaultLockOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteMultipartUploadOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
+    #[doc(hidden)]
     pub archive_id: std::option::Option<std::string::String>,
 }
 impl CompleteMultipartUploadOutput {

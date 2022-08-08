@@ -2329,28 +2329,38 @@ impl UpdateDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
+    #[doc(hidden)]
     pub current_delivery_stream_version_id: std::option::Option<std::string::String>,
     /// <p>The ID of the destination.</p>
+    #[doc(hidden)]
     pub destination_id: std::option::Option<std::string::String>,
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub s3_destination_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
+    #[doc(hidden)]
     pub extended_s3_destination_update:
         std::option::Option<crate::model::ExtendedS3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
+    #[doc(hidden)]
     pub redshift_destination_update: std::option::Option<crate::model::RedshiftDestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon ES.</p>
+    #[doc(hidden)]
     pub elasticsearch_destination_update:
         std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub amazonopensearchservice_destination_update:
         std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
     /// <p>Describes an update for a destination in Splunk.</p>
+    #[doc(hidden)]
     pub splunk_destination_update: std::option::Option<crate::model::SplunkDestinationUpdate>,
     /// <p>Describes an update to the specified HTTP endpoint destination.</p>
+    #[doc(hidden)]
     pub http_endpoint_destination_update:
         std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
 }
@@ -2449,8 +2459,10 @@ impl std::fmt::Debug for UpdateDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagDeliveryStreamInput {
@@ -2477,8 +2489,10 @@ impl std::fmt::Debug for UntagDeliveryStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagDeliveryStreamInput {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>A set of key-value pairs to use to create the tags.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagDeliveryStreamInput {
@@ -2505,6 +2519,7 @@ impl std::fmt::Debug for TagDeliveryStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl StopDeliveryStreamEncryptionInput {
@@ -2526,8 +2541,10 @@ impl std::fmt::Debug for StopDeliveryStreamEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
+    #[doc(hidden)]
     pub delivery_stream_encryption_configuration_input:
         std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
 }
@@ -2560,8 +2577,10 @@ impl std::fmt::Debug for StartDeliveryStreamEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>One or more records.</p>
+    #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
 impl PutRecordBatchInput {
@@ -2588,8 +2607,10 @@ impl std::fmt::Debug for PutRecordBatchInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordInput {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The record.</p>
+    #[doc(hidden)]
     pub record: std::option::Option<crate::model::Record>,
 }
 impl PutRecordInput {
@@ -2616,10 +2637,13 @@ impl std::fmt::Debug for PutRecordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForDeliveryStreamInput {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
+    #[doc(hidden)]
     pub exclusive_start_tag_key: std::option::Option<std::string::String>,
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTagsForDeliveryStreamInput {
@@ -2651,6 +2675,7 @@ impl std::fmt::Debug for ListTagsForDeliveryStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeliveryStreamsInput {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The delivery stream type. This can be one of the following values:</p>
     /// <ul>
@@ -2658,8 +2683,10 @@ pub struct ListDeliveryStreamsInput {
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+    #[doc(hidden)]
     pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    #[doc(hidden)]
     pub exclusive_start_delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl ListDeliveryStreamsInput {
@@ -2699,10 +2726,13 @@ impl std::fmt::Debug for ListDeliveryStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    #[doc(hidden)]
     pub exclusive_start_destination_id: std::option::Option<std::string::String>,
 }
 impl DescribeDeliveryStreamInput {
@@ -2737,9 +2767,11 @@ impl std::fmt::Debug for DescribeDeliveryStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
     /// <p>The default value is false.</p>
+    #[doc(hidden)]
     pub allow_force_delete: std::option::Option<bool>,
 }
 impl DeleteDeliveryStreamInput {
@@ -2767,42 +2799,54 @@ impl std::fmt::Debug for DeleteDeliveryStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+    #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
+    #[doc(hidden)]
     pub kinesis_stream_source_configuration:
         std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
+    #[doc(hidden)]
     pub delivery_stream_encryption_configuration_input:
         std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
+    #[doc(hidden)]
     pub s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
+    #[doc(hidden)]
     pub extended_s3_destination_configuration:
         std::option::Option<crate::model::ExtendedS3DestinationConfiguration>,
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
+    #[doc(hidden)]
     pub redshift_destination_configuration:
         std::option::Option<crate::model::RedshiftDestinationConfiguration>,
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
+    #[doc(hidden)]
     pub elasticsearch_destination_configuration:
         std::option::Option<crate::model::ElasticsearchDestinationConfiguration>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub amazonopensearchservice_destination_configuration:
         std::option::Option<crate::model::AmazonopensearchserviceDestinationConfiguration>,
     /// <p>The destination in Splunk. You can specify only one destination.</p>
+    #[doc(hidden)]
     pub splunk_destination_configuration:
         std::option::Option<crate::model::SplunkDestinationConfiguration>,
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
+    #[doc(hidden)]
     pub http_endpoint_destination_configuration:
         std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
     /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeliveryStreamInput {

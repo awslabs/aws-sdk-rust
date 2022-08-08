@@ -4432,12 +4432,16 @@ impl VoteOnProposalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoteOnProposalInput {
     /// <p> The unique identifier of the network. </p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the proposal. </p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member casting the vote. </p>
+    #[doc(hidden)]
     pub voter_member_id: std::option::Option<std::string::String>,
     /// <p> The value of the vote. </p>
+    #[doc(hidden)]
     pub vote: std::option::Option<crate::model::VoteValue>,
 }
 impl VoteOnProposalInput {
@@ -4474,13 +4478,17 @@ impl std::fmt::Debug for VoteOnProposalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the node.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_publishing_configuration:
         std::option::Option<crate::model::NodeLogPublishingConfiguration>,
 }
@@ -4524,10 +4532,13 @@ impl std::fmt::Debug for UpdateNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberInput {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_publishing_configuration:
         std::option::Option<crate::model::MemberLogPublishingConfiguration>,
 }
@@ -4565,8 +4576,10 @@ impl std::fmt::Debug for UpdateMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4593,8 +4606,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4625,6 +4640,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInvitationInput {
     /// <p>The unique identifier of the invitation to reject.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
 }
 impl RejectInvitationInput {
@@ -4646,6 +4662,7 @@ impl std::fmt::Debug for RejectInvitationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4667,12 +4684,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalVotesInput {
     /// <p> The unique identifier of the network. </p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the proposal. </p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p> The maximum number of votes to return. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalVotesInput {
@@ -4709,10 +4730,13 @@ impl std::fmt::Debug for ListProposalVotesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalsInput {
     /// <p> The unique identifier of the network. </p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p> The maximum number of proposals to return. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalsInput {
@@ -4744,15 +4768,20 @@ impl std::fmt::Debug for ListProposalsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesInput {
     /// <p>The unique identifier of the network for which to list nodes.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member who owns the nodes to list.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The maximum number of nodes to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodesInput {
@@ -4795,15 +4824,20 @@ impl std::fmt::Debug for ListNodesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworksInput {
     /// <p>The name of the network.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
     /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The maximum number of networks to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworksInput {
@@ -4846,16 +4880,22 @@ impl std::fmt::Debug for ListNetworksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
     /// <p>The unique identifier of the network for which to list members.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The optional name of the member to list.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
     /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
+    #[doc(hidden)]
     pub is_owned: std::option::Option<bool>,
     /// <p>The maximum number of members to return in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
@@ -4902,8 +4942,10 @@ impl std::fmt::Debug for ListMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
     /// <p>The maximum number of invitations to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
@@ -4930,8 +4972,10 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProposalInput {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
 }
 impl GetProposalInput {
@@ -4958,11 +5002,14 @@ impl std::fmt::Debug for GetProposalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the node.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
 }
 impl GetNodeInput {
@@ -4995,6 +5042,7 @@ impl std::fmt::Debug for GetNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkInput {
     /// <p>The unique identifier of the network to get information about.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
 }
 impl GetNetworkInput {
@@ -5016,8 +5064,10 @@ impl std::fmt::Debug for GetNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberInput {
     /// <p>The unique identifier of the network to which the member belongs.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl GetMemberInput {
@@ -5050,11 +5100,14 @@ pub struct DeleteNodeInput {
     /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the node.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
 }
 impl DeleteNodeInput {
@@ -5093,8 +5146,10 @@ impl std::fmt::Debug for DeleteNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMemberInput {
     /// <p>The unique identifier of the network from which the member is removed.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member to remove.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl DeleteMemberInput {
@@ -5121,18 +5176,24 @@ impl std::fmt::Debug for DeleteMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProposalInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p> The unique identifier of the network for which the proposal is made.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<crate::model::ProposalActions>,
     /// <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation inherits the tags added to the proposal.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5185,6 +5246,7 @@ impl std::fmt::Debug for CreateProposalInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNodeInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
@@ -5193,15 +5255,19 @@ pub struct CreateNodeInput {
     /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The properties of a node configuration.</p>
+    #[doc(hidden)]
     pub node_configuration: std::option::Option<crate::model::NodeConfiguration>,
     /// <p>Tags to assign to the node. Each tag consists of a key and optional value.</p>
     /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5256,24 +5322,33 @@ impl std::fmt::Debug for CreateNodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the network.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework: std::option::Option<crate::model::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
+    #[doc(hidden)]
     pub framework_version: std::option::Option<std::string::String>,
     /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
+    #[doc(hidden)]
     pub framework_configuration: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
     /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
+    #[doc(hidden)]
     pub voting_policy: std::option::Option<crate::model::VotingPolicy>,
     /// <p>Configuration properties for the first member within the network.</p>
+    #[doc(hidden)]
     pub member_configuration: std::option::Option<crate::model::MemberConfiguration>,
     /// <p>Tags to assign to the network. Each tag consists of a key and optional value.</p>
     /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5343,12 +5418,16 @@ impl std::fmt::Debug for CreateNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMemberInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
+    #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the network in which the member is created.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>Member configuration parameters.</p>
+    #[doc(hidden)]
     pub member_configuration: std::option::Option<crate::model::MemberConfiguration>,
 }
 impl CreateMemberInput {

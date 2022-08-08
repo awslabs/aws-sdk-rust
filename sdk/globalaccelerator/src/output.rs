@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl WithdrawByoipCidrOutput {
@@ -61,6 +62,7 @@ impl WithdrawByoipCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateListenerOutput {
     /// <p>Information for the updated listener.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
 }
 impl UpdateListenerOutput {
@@ -115,6 +117,7 @@ impl UpdateListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was updated.</p>
+    #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
 }
 impl UpdateEndpointGroupOutput {
@@ -172,6 +175,7 @@ impl UpdateEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomRoutingListenerOutput {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
 impl UpdateCustomRoutingListenerOutput {
@@ -229,6 +233,7 @@ impl UpdateCustomRoutingListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomRoutingAcceleratorAttributesOutput {
     /// <p>Updated custom routing accelerator.</p>
+    #[doc(hidden)]
     pub accelerator_attributes:
         std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
 }
@@ -294,6 +299,7 @@ impl UpdateCustomRoutingAcceleratorAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomRoutingAcceleratorOutput {
     /// <p>Information about the updated custom routing accelerator.</p>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
 impl UpdateCustomRoutingAcceleratorOutput {
@@ -351,6 +357,7 @@ impl UpdateCustomRoutingAcceleratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAcceleratorAttributesOutput {
     /// <p>Updated attributes for the accelerator.</p>
+    #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
 }
 impl UpdateAcceleratorAttributesOutput {
@@ -413,6 +420,7 @@ impl UpdateAcceleratorAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAcceleratorOutput {
     /// <p>Information about the updated accelerator.</p>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
 impl UpdateAcceleratorOutput {
@@ -560,6 +568,7 @@ impl RemoveCustomRoutingEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl ProvisionByoipCidrOutput {
@@ -617,6 +626,7 @@ impl ProvisionByoipCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>Root level tag for the Tags parameters.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -678,8 +688,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListListenersOutput {
     /// <p>The list of listeners for an accelerator.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListListenersOutput {
@@ -760,8 +772,10 @@ impl ListListenersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener.</p>
+    #[doc(hidden)]
     pub endpoint_groups: std::option::Option<std::vec::Vec<crate::model::EndpointGroup>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointGroupsOutput {
@@ -842,9 +856,11 @@ impl ListEndpointGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingPortMappingsByDestinationOutput {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
+    #[doc(hidden)]
     pub destination_port_mappings:
         std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
@@ -932,8 +948,10 @@ impl ListCustomRoutingPortMappingsByDestinationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingPortMappingsOutput {
     /// <p>The port mappings for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingPortMappingsOutput {
@@ -1014,8 +1032,10 @@ impl ListCustomRoutingPortMappingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingListenersOutput {
     /// <p>The list of listeners for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingListenersOutput {
@@ -1097,9 +1117,11 @@ impl ListCustomRoutingListenersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub endpoint_groups:
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingEndpointGroupsOutput {
@@ -1183,8 +1205,10 @@ impl ListCustomRoutingEndpointGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingAcceleratorsOutput {
     /// <p>The list of custom routing accelerators for a customer account.</p>
+    #[doc(hidden)]
     pub accelerators: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingAcceleratorsOutput {
@@ -1266,8 +1290,10 @@ impl ListCustomRoutingAcceleratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByoipCidrsOutput {
     /// <p>Information about your address ranges.</p>
+    #[doc(hidden)]
     pub byoip_cidrs: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListByoipCidrsOutput {
@@ -1348,8 +1374,10 @@ impl ListByoipCidrsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAcceleratorsOutput {
     /// <p>The list of accelerators for a customer account.</p>
+    #[doc(hidden)]
     pub accelerators: std::option::Option<std::vec::Vec<crate::model::Accelerator>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAcceleratorsOutput {
@@ -1430,6 +1458,7 @@ impl ListAcceleratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeListenerOutput {
     /// <p>The description of a listener.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
 }
 impl DescribeListenerOutput {
@@ -1484,6 +1513,7 @@ impl DescribeListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointGroupOutput {
     /// <p>The description of an endpoint group.</p>
+    #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
 }
 impl DescribeEndpointGroupOutput {
@@ -1541,6 +1571,7 @@ impl DescribeEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingListenerOutput {
     /// <p>The description of a listener for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
 impl DescribeCustomRoutingListenerOutput {
@@ -1598,6 +1629,7 @@ impl DescribeCustomRoutingListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingEndpointGroupOutput {
     /// <p>The description of an endpoint group for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
 }
 impl DescribeCustomRoutingEndpointGroupOutput {
@@ -1655,6 +1687,7 @@ impl DescribeCustomRoutingEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingAcceleratorAttributesOutput {
     /// <p>The attributes of the custom routing accelerator.</p>
+    #[doc(hidden)]
     pub accelerator_attributes:
         std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
 }
@@ -1720,6 +1753,7 @@ impl DescribeCustomRoutingAcceleratorAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingAcceleratorOutput {
     /// <p>The description of the custom routing accelerator.</p>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
 impl DescribeCustomRoutingAcceleratorOutput {
@@ -1777,6 +1811,7 @@ impl DescribeCustomRoutingAcceleratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorAttributesOutput {
     /// <p>The attributes of the accelerator.</p>
+    #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
 }
 impl DescribeAcceleratorAttributesOutput {
@@ -1839,6 +1874,7 @@ impl DescribeAcceleratorAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorOutput {
     /// <p>The description of the accelerator.</p>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
 impl DescribeAcceleratorOutput {
@@ -1896,6 +1932,7 @@ impl DescribeAcceleratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl DeprovisionByoipCidrOutput {
@@ -2163,6 +2200,7 @@ impl DeleteAcceleratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateListenerOutput {
     /// <p>The listener that you've created.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
 }
 impl CreateListenerOutput {
@@ -2217,6 +2255,7 @@ impl CreateListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was created.</p>
+    #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
 }
 impl CreateEndpointGroupOutput {
@@ -2274,6 +2313,7 @@ impl CreateEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingListenerOutput {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
 impl CreateCustomRoutingListenerOutput {
@@ -2331,6 +2371,7 @@ impl CreateCustomRoutingListenerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingEndpointGroupOutput {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
+    #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
 }
 impl CreateCustomRoutingEndpointGroupOutput {
@@ -2388,6 +2429,7 @@ impl CreateCustomRoutingEndpointGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingAcceleratorOutput {
     /// <p>The accelerator that is created.</p>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
 impl CreateCustomRoutingAcceleratorOutput {
@@ -2445,6 +2487,7 @@ impl CreateCustomRoutingAcceleratorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAcceleratorOutput {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
+    #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
 impl CreateAcceleratorOutput {
@@ -2532,6 +2575,7 @@ impl AllowCustomRoutingTrafficOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvertiseByoipCidrOutput {
     /// <p>Information about the address range.</p>
+    #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl AdvertiseByoipCidrOutput {
@@ -2589,9 +2633,11 @@ impl AdvertiseByoipCidrOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCustomRoutingEndpointsOutput {
     /// <p>The endpoint objects added to the custom routing accelerator.</p>
+    #[doc(hidden)]
     pub endpoint_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl AddCustomRoutingEndpointsOutput {

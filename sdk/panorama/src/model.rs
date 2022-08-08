@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The field's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The field's message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -78,8 +80,10 @@ impl ValidationExceptionField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionErrorArgument {
     /// <p>The argument's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The argument's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionErrorArgument {
@@ -219,8 +223,10 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictExceptionErrorArgument {
     /// <p>The error argument's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The error argument's value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ConflictExceptionErrorArgument {
@@ -370,10 +376,13 @@ impl AsRef<str> for DeviceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
+    #[doc(hidden)]
     pub ethernet0: std::option::Option<crate::model::EthernetPayload>,
     /// <p>Settings for Ethernet port 1.</p>
+    #[doc(hidden)]
     pub ethernet1: std::option::Option<crate::model::EthernetPayload>,
     /// <p>Network time protocol (NTP) server settings.</p>
+    #[doc(hidden)]
     pub ntp: std::option::Option<crate::model::NtpPayload>,
 }
 impl NetworkPayload {
@@ -468,6 +477,7 @@ impl NetworkPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NtpPayload {
     /// <p>NTP servers to use, in order of preference.</p>
+    #[doc(hidden)]
     pub ntp_servers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NtpPayload {
@@ -531,8 +541,10 @@ impl NtpPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EthernetPayload {
     /// <p>How the device gets an IP address.</p>
+    #[doc(hidden)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Network configuration for a static IP connection.</p>
+    #[doc(hidden)]
     pub static_ip_connection_info: std::option::Option<crate::model::StaticIpConnectionInfo>,
 }
 impl EthernetPayload {
@@ -616,12 +628,16 @@ impl EthernetPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaticIpConnectionInfo {
     /// <p>The connection's IP address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The connection's DNS mask.</p>
+    #[doc(hidden)]
     pub mask: std::option::Option<std::string::String>,
     /// <p>The connection's DNS address.</p>
+    #[doc(hidden)]
     pub dns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The connection's default gateway.</p>
+    #[doc(hidden)]
     pub default_gateway: std::option::Option<std::string::String>,
 }
 impl StaticIpConnectionInfo {
@@ -794,14 +810,19 @@ impl AsRef<str> for ConnectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageListItem {
     /// <p>The package's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The package's name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The package's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>When the package was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The package's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -948,16 +969,22 @@ impl PackageListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageImportJob {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job's type.</p>
+    #[doc(hidden)]
     pub job_type: std::option::Option<crate::model::PackageImportJobType>,
     /// <p>The job's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::PackageImportJobStatus>,
     /// <p>The job's status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PackageImportJob {
@@ -1230,26 +1257,37 @@ impl AsRef<str> for PackageImportJobType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
     /// <p>The node's ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>The node's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The node's category.</p>
+    #[doc(hidden)]
     pub category: std::option::Option<crate::model::NodeCategory>,
     /// <p>The account ID of the node's owner.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The node's package name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The node's package ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The node's ARN.</p>
+    #[doc(hidden)]
     pub package_arn: std::option::Option<std::string::String>,
     /// <p>The node's package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The node's patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>The node's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>When the node was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Node {
@@ -1552,16 +1590,22 @@ impl AsRef<str> for NodeCategory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeFromTemplateJob {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The job's template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The job's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodeFromTemplateJobStatus>,
     /// <p>The job's status message.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The node's name.</p>
+    #[doc(hidden)]
     pub node_name: std::option::Option<std::string::String>,
 }
 impl NodeFromTemplateJob {
@@ -1823,12 +1867,16 @@ impl AsRef<str> for TemplateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceJob {
     /// <p>The name of the target device</p>
+    #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The ID of the target device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>When the job was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeviceJob {
@@ -1937,18 +1985,25 @@ impl DeviceJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>When the device was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device's provisioning status.</p>
+    #[doc(hidden)]
     pub provisioning_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>When the device was updated.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device's lease expiration time.</p>
+    #[doc(hidden)]
     pub lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The device's maker.</p>
+    #[doc(hidden)]
     pub brand: std::option::Option<crate::model::DeviceBrand>,
 }
 impl Device {
@@ -2172,26 +2227,37 @@ impl AsRef<str> for DeviceBrand {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationInstance {
     /// <p>The application instance's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The application instance's ID.</p>
+    #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
     /// <p>The device's ID.</p>
+    #[doc(hidden)]
     pub default_runtime_context_device: std::option::Option<std::string::String>,
     /// <p>The device's name.</p>
+    #[doc(hidden)]
     pub default_runtime_context_device_name: std::option::Option<std::string::String>,
     /// <p>The application instance's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The application instance's status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationInstanceStatus>,
     /// <p>The application instance's health status.</p>
+    #[doc(hidden)]
     pub health_status: std::option::Option<crate::model::ApplicationInstanceHealthStatus>,
     /// <p>The application instance's status description.</p>
+    #[doc(hidden)]
     pub status_description: std::option::Option<std::string::String>,
     /// <p>When the application instance was created.</p>
+    #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The application instance's ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The application instance's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2721,18 +2787,25 @@ impl AsRef<str> for StatusFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeInstance {
     /// <p>The instance's ID.</p>
+    #[doc(hidden)]
     pub node_instance_id: std::option::Option<std::string::String>,
     /// <p>The node's ID.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
     /// <p>The instance's package name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The instance's package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The instance's package patch version.</p>
+    #[doc(hidden)]
     pub package_patch_version: std::option::Option<std::string::String>,
     /// <p>The instance's name.</p>
+    #[doc(hidden)]
     pub node_name: std::option::Option<std::string::String>,
     /// <p>The instance's current status.</p>
+    #[doc(hidden)]
     pub current_status: std::option::Option<crate::model::NodeInstanceStatus>,
 }
 impl NodeInstance {
@@ -2960,10 +3033,13 @@ impl AsRef<str> for NodeInstanceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageObject {
     /// <p>The object's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The object's package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The object's patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
 }
 impl PackageObject {
@@ -3126,8 +3202,10 @@ impl AsRef<str> for PackageVersionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobResourceTags {
     /// <p>The job's type.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::JobResourceType>,
     /// <p>The job's tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3274,12 +3352,16 @@ impl AsRef<str> for JobResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageImportJobOutput {
     /// <p>The package's ID.</p>
+    #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The package's version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>The package's patch version.</p>
+    #[doc(hidden)]
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>The package's output location.</p>
+    #[doc(hidden)]
     pub output_s3_location: std::option::Option<crate::model::OutPutS3Location>,
 }
 impl PackageImportJobOutput {
@@ -3394,8 +3476,10 @@ impl PackageImportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutPutS3Location {
     /// <p>The object's bucket.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The object's key.</p>
+    #[doc(hidden)]
     pub object_key: std::option::Option<std::string::String>,
 }
 impl OutPutS3Location {
@@ -3467,6 +3551,7 @@ impl OutPutS3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageImportJobOutputConfig {
     /// <p>The package version's output configuration.</p>
+    #[doc(hidden)]
     pub package_version_output_config:
         std::option::Option<crate::model::PackageVersionOutputConfig>,
 }
@@ -3534,10 +3619,13 @@ impl PackageImportJobOutputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The output's package version.</p>
+    #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
     /// <p>Indicates that the version is recommended for all users.</p>
+    #[doc(hidden)]
     pub mark_latest: bool,
 }
 impl PackageVersionOutputConfig {
@@ -3629,6 +3717,7 @@ impl PackageVersionOutputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageImportJobInputConfig {
     /// <p>The package version's input configuration.</p>
+    #[doc(hidden)]
     pub package_version_input_config: std::option::Option<crate::model::PackageVersionInputConfig>,
 }
 impl PackageImportJobInputConfig {
@@ -3695,6 +3784,7 @@ impl PackageImportJobInputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionInputConfig {
     /// <p>A location in Amazon S3.</p>
+    #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl PackageVersionInputConfig {
@@ -3752,10 +3842,13 @@ impl PackageVersionInputConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
     /// <p>The bucket's Region.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>A bucket name.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>An object key.</p>
+    #[doc(hidden)]
     pub object_key: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -3844,14 +3937,19 @@ impl S3Location {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageLocation {
     /// <p>The location's bucket.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The location's repo prefix.</p>
+    #[doc(hidden)]
     pub repo_prefix_location: std::option::Option<std::string::String>,
     /// <p>The location's generated prefix.</p>
+    #[doc(hidden)]
     pub generated_prefix_location: std::option::Option<std::string::String>,
     /// <p>The location's binary prefix.</p>
+    #[doc(hidden)]
     pub binary_prefix_location: std::option::Option<std::string::String>,
     /// <p>The location's manifest prefix.</p>
+    #[doc(hidden)]
     pub manifest_prefix_location: std::option::Option<std::string::String>,
 }
 impl StorageLocation {
@@ -3986,8 +4084,10 @@ impl StorageLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeInterface {
     /// <p>The node interface's inputs.</p>
+    #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<crate::model::NodeInputPort>>,
     /// <p>The node interface's outputs.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::NodeOutputPort>>,
 }
 impl NodeInterface {
@@ -4077,10 +4177,13 @@ impl NodeInterface {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeOutputPort {
     /// <p>The output port's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The output port's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The output port's type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PortType>,
 }
 impl NodeOutputPort {
@@ -4236,14 +4339,19 @@ impl AsRef<str> for PortType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeInputPort {
     /// <p>The input port's name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The input port's description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The input port's type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PortType>,
     /// <p>The input port's default value.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The input port's max connections.</p>
+    #[doc(hidden)]
     pub max_connections: i32,
 }
 impl NodeInputPort {
@@ -4507,6 +4615,7 @@ impl AsRef<str> for DeviceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlternateSoftwareMetadata {
     /// <p>The appliance software version.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl AlternateSoftwareMetadata {
@@ -4561,12 +4670,16 @@ impl AlternateSoftwareMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkStatus {
     /// <p>The status of Ethernet port 0.</p>
+    #[doc(hidden)]
     pub ethernet0_status: std::option::Option<crate::model::EthernetStatus>,
     /// <p>The status of Ethernet port 1.</p>
+    #[doc(hidden)]
     pub ethernet1_status: std::option::Option<crate::model::EthernetStatus>,
     /// <p>Details about a network time protocol (NTP) server connection.</p>
+    #[doc(hidden)]
     pub ntp_status: std::option::Option<crate::model::NtpStatus>,
     /// <p>When the network status changed.</p>
+    #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NetworkStatus {
@@ -4684,10 +4797,13 @@ impl NetworkStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NtpStatus {
     /// <p>The connection's status.</p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::NetworkConnectionStatus>,
     /// <p>The IP address of the server.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The domain name of the server.</p>
+    #[doc(hidden)]
     pub ntp_server_name: std::option::Option<std::string::String>,
 }
 impl NtpStatus {
@@ -4841,10 +4957,13 @@ impl AsRef<str> for NetworkConnectionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EthernetStatus {
     /// <p>The device's IP address.</p>
+    #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The device's connection status.</p>
+    #[doc(hidden)]
     pub connection_status: std::option::Option<crate::model::NetworkConnectionStatus>,
     /// <p>The device's physical address.</p>
+    #[doc(hidden)]
     pub hw_address: std::option::Option<std::string::String>,
 }
 impl EthernetStatus {
@@ -5083,8 +5202,10 @@ impl ManifestPayload {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The job's ID.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The target device's ID.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl Job {
@@ -5207,6 +5328,7 @@ impl AsRef<str> for JobType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
+    #[doc(hidden)]
     pub ota_job_config: std::option::Option<crate::model::OtaJobConfig>,
 }
 impl DeviceJobConfig {
@@ -5264,6 +5386,7 @@ impl DeviceJobConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
+    #[doc(hidden)]
     pub image_version: std::option::Option<std::string::String>,
 }
 impl OtaJobConfig {

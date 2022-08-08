@@ -6,6 +6,7 @@
 pub struct HumanLoopDataAttributes {
     /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
     /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
+    #[doc(hidden)]
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {
@@ -135,6 +136,7 @@ impl AsRef<str> for ContentClassifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopInput {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
+    #[doc(hidden)]
     pub input_content: std::option::Option<std::string::String>,
 }
 impl HumanLoopInput {
@@ -192,14 +194,19 @@ impl HumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopSummary {
     /// <p>The name of the human loop.</p>
+    #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
     /// <p>The status of the human loop. </p>
+    #[doc(hidden)]
     pub human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
     /// <p>When Amazon Augmented AI created the human loop.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
+    #[doc(hidden)]
     pub flow_definition_arn: std::option::Option<std::string::String>,
 }
 impl HumanLoopSummary {
@@ -459,6 +466,7 @@ impl AsRef<str> for SortOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HumanLoopOutput {
     /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
+    #[doc(hidden)]
     pub output_s3_uri: std::option::Option<std::string::String>,
 }
 impl HumanLoopOutput {

@@ -59,14 +59,19 @@ impl AsRef<str> for WebserverAccessMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfigurationInput {
     /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub dag_processing_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
     /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub scheduler_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
     /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub webserver_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
     /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub worker_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
     /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub task_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
 }
 impl LoggingConfigurationInput {
@@ -224,8 +229,10 @@ impl LoggingConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModuleLoggingConfigurationInput {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LoggingLevel>,
 }
 impl ModuleLoggingConfigurationInput {
@@ -367,6 +374,7 @@ impl AsRef<str> for LoggingLevel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkConfigurationInput {
     /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateNetworkConfigurationInput {
@@ -430,16 +438,22 @@ impl UpdateNetworkConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDatum {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p> <b>Internal only</b>. The value for the metric.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<f64>,
     /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::Unit>,
     /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
+    #[doc(hidden)]
     pub statistic_values: std::option::Option<crate::model::StatisticSet>,
 }
 impl MetricDatum {
@@ -594,12 +608,16 @@ impl MetricDatum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatisticSet {
     /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
+    #[doc(hidden)]
     pub sample_count: std::option::Option<i32>,
     /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<f64>,
     /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
+    #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
+    #[doc(hidden)]
     pub maximum: std::option::Option<f64>,
 }
 impl StatisticSet {
@@ -888,8 +906,10 @@ impl AsRef<str> for Unit {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
     /// <p> <b>Internal only</b>. The name of the dimension.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> <b>Internal only</b>. The value of the dimension.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Dimension {
@@ -961,6 +981,7 @@ impl Dimension {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
@@ -974,56 +995,81 @@ pub struct Environment {
     /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The day and time the environment was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    #[doc(hidden)]
     pub webserver_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
+    #[doc(hidden)]
     pub airflow_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    #[doc(hidden)]
     pub source_bucket_arn: std::option::Option<std::string::String>,
     /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    #[doc(hidden)]
     pub dag_s3_path: std::option::Option<std::string::String>,
     /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    #[doc(hidden)]
     pub plugins_s3_path: std::option::Option<std::string::String>,
     /// <p>The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    #[doc(hidden)]
     pub plugins_s3_object_version: std::option::Option<std::string::String>,
     /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    #[doc(hidden)]
     pub requirements_s3_path: std::option::Option<std::string::String>,
     /// <p>The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    #[doc(hidden)]
     pub requirements_s3_object_version: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    #[doc(hidden)]
     pub airflow_configuration_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    #[doc(hidden)]
     pub environment_class: std::option::Option<std::string::String>,
     /// <p>The maximum number of workers that run in your environment. For example, <code>20</code>.</p>
+    #[doc(hidden)]
     pub max_workers: std::option::Option<i32>,
     /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>The status of the last update on the environment.</p>
+    #[doc(hidden)]
     pub last_update: std::option::Option<crate::model::LastUpdate>,
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
+    #[doc(hidden)]
     pub weekly_maintenance_window_start: std::option::Option<std::string::String>,
     /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    #[doc(hidden)]
     pub webserver_access_mode: std::option::Option<crate::model::WebserverAccessMode>,
     /// <p>The minimum number of workers that run in your environment. For example, <code>2</code>.</p>
+    #[doc(hidden)]
     pub min_workers: std::option::Option<i32>,
     /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
+    #[doc(hidden)]
     pub schedulers: std::option::Option<i32>,
 }
 impl Environment {
@@ -1646,12 +1692,16 @@ impl Environment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastUpdate {
     /// <p>The status of the last update on the environment.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::UpdateStatus>,
     /// <p>The day and time of the last update on the environment.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error that was encountered during the last update of the environment.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::UpdateError>,
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl LastUpdate {
@@ -1763,8 +1813,10 @@ impl LastUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateError {
     /// <p>The error code that corresponds to the error with the last update.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that corresponds to the error code.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl UpdateError {
@@ -1898,14 +1950,19 @@ impl AsRef<str> for UpdateStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
     /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
+    #[doc(hidden)]
     pub dag_processing_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
     /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
+    #[doc(hidden)]
     pub scheduler_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
     /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
+    #[doc(hidden)]
     pub webserver_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
     /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
+    #[doc(hidden)]
     pub worker_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
     /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+    #[doc(hidden)]
     pub task_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
 }
 impl LoggingConfiguration {
@@ -2049,10 +2106,13 @@ impl LoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModuleLoggingConfiguration {
     /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
+    #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
+    #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LoggingLevel>,
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
+    #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
 }
 impl ModuleLoggingConfiguration {
@@ -2147,8 +2207,10 @@ impl ModuleLoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
     /// <p>A list of subnet IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of security group IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NetworkConfiguration {

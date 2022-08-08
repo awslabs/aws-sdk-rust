@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAttendeeCapabilitiesOutput {
     /// <p>The updated attendee data.</p>
+    #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
 }
 impl UpdateAttendeeCapabilitiesOutput {
@@ -178,6 +179,7 @@ impl StartMeetingTranscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags requested for the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -239,8 +241,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttendeesOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>The token to use to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttendeesOutput {
@@ -321,6 +325,7 @@ impl ListAttendeesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMeetingOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
+    #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
 impl GetMeetingOutput {
@@ -375,6 +380,7 @@ impl GetMeetingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttendeeOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
+    #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
 }
 impl GetAttendeeOutput {
@@ -489,10 +495,13 @@ impl DeleteAttendeeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingWithAttendeesOutput {
     /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
+    #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
 }
 impl CreateMeetingWithAttendeesOutput {
@@ -599,6 +608,7 @@ impl CreateMeetingWithAttendeesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingOutput {
     /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
+    #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
 impl CreateMeetingOutput {
@@ -653,6 +663,7 @@ impl CreateMeetingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttendeeOutput {
     /// <p>The attendee information, including attendee ID and join token.</p>
+    #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
 }
 impl CreateAttendeeOutput {
@@ -737,8 +748,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateAttendeeOutput {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
+    #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
 }
 impl BatchCreateAttendeeOutput {

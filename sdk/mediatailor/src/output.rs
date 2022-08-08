@@ -4,20 +4,27 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The last modified time of the VOD source.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl UpdateVodSourceOutput {
@@ -224,24 +231,33 @@ impl UpdateVodSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSourceLocationOutput {
     /// <p>The access configuration for the source location.</p>
+    #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
     /// <p>The ARN of the source location.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration settings.</p>
+    #[doc(hidden)]
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP package configuration settings for the source location.</p>
+    #[doc(hidden)]
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -498,19 +514,26 @@ impl UpdateSourceLocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLiveSourceOutput {
     /// <p>The ARN of the live source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the live source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the live source was modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the live source.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the live source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -718,25 +741,35 @@ impl UpdateLiveSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the channel is in a running state or not.</p>
+    #[doc(hidden)]
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    #[doc(hidden)]
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The channel's playback mode.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the channel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The channel's tier.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
 }
 impl UpdateChannelOutput {
@@ -1108,14 +1141,19 @@ impl StartChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPlaybackConfigurationOutput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    #[doc(hidden)]
     pub avail_suppression: std::option::Option<crate::model::AvailSuppression>,
     /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    #[doc(hidden)]
     pub bumper: std::option::Option<crate::model::Bumper>,
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    #[doc(hidden)]
     pub cdn_configuration: std::option::Option<crate::model::CdnConfiguration>,
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    #[doc(hidden)]
     pub configuration_aliases: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -1123,33 +1161,47 @@ pub struct PutPlaybackConfigurationOutput {
         >,
     >,
     /// <p>The configuration for DASH content.</p>
+    #[doc(hidden)]
     pub dash_configuration: std::option::Option<crate::model::DashConfiguration>,
     /// <p>The configuration for HLS content.</p>
+    #[doc(hidden)]
     pub hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
     /// <p>The configuration for pre-roll ad insertion.</p>
+    #[doc(hidden)]
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    #[doc(hidden)]
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    #[doc(hidden)]
     pub personalization_threshold_seconds: i32,
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    #[doc(hidden)]
     pub playback_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    #[doc(hidden)]
     pub session_initialization_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the playback configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    #[doc(hidden)]
     pub transcode_profile_name: std::option::Option<std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    #[doc(hidden)]
     pub video_content_source_url: std::option::Option<std::string::String>,
 }
 impl PutPlaybackConfigurationOutput {
@@ -1661,8 +1713,10 @@ impl PutChannelPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVodSourcesOutput {
     /// <p>Lists the VOD sources.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVodSourcesOutput {
@@ -1743,6 +1797,7 @@ impl ListVodSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A comma-separated list of tag key:value pairs.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1816,8 +1871,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSourceLocationsOutput {
     /// <p>A list of source locations.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSourceLocationsOutput {
@@ -1898,8 +1955,10 @@ impl ListSourceLocationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrefetchSchedulesOutput {
     /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
     /// <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPrefetchSchedulesOutput {
@@ -1980,8 +2039,10 @@ impl ListPrefetchSchedulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaybackConfigurationsOutput {
     /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
     /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaybackConfigurationsOutput {
@@ -2062,8 +2123,10 @@ impl ListPlaybackConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLiveSourcesOutput {
     /// <p>Lists the live sources.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLiveSourcesOutput {
@@ -2144,8 +2207,10 @@ impl ListLiveSourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelsOutput {
     /// <p>A list of channels that are associated with this account.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -2226,8 +2291,10 @@ impl ListChannelsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlertsOutput {
     /// <p>A list of alerts that are associated with this resource.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
     /// <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlertsOutput {
@@ -2308,16 +2375,22 @@ impl ListAlertsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPrefetchScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    #[doc(hidden)]
     pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    #[doc(hidden)]
     pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl GetPrefetchScheduleOutput {
@@ -2472,14 +2545,19 @@ impl GetPrefetchScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPlaybackConfigurationOutput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    #[doc(hidden)]
     pub avail_suppression: std::option::Option<crate::model::AvailSuppression>,
     /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    #[doc(hidden)]
     pub bumper: std::option::Option<crate::model::Bumper>,
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    #[doc(hidden)]
     pub cdn_configuration: std::option::Option<crate::model::CdnConfiguration>,
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    #[doc(hidden)]
     pub configuration_aliases: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -2487,33 +2565,47 @@ pub struct GetPlaybackConfigurationOutput {
         >,
     >,
     /// <p>The configuration for DASH content.</p>
+    #[doc(hidden)]
     pub dash_configuration: std::option::Option<crate::model::DashConfiguration>,
     /// <p>The configuration for HLS content.</p>
+    #[doc(hidden)]
     pub hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
     /// <p>The configuration for pre-roll ad insertion.</p>
+    #[doc(hidden)]
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    #[doc(hidden)]
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    #[doc(hidden)]
     pub personalization_threshold_seconds: i32,
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    #[doc(hidden)]
     pub playback_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    #[doc(hidden)]
     pub session_initialization_endpoint_prefix: std::option::Option<std::string::String>,
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    #[doc(hidden)]
     pub slate_ad_url: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the playback configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    #[doc(hidden)]
     pub transcode_profile_name: std::option::Option<std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    #[doc(hidden)]
     pub video_content_source_url: std::option::Option<std::string::String>,
 }
 impl GetPlaybackConfigurationOutput {
@@ -2995,8 +3087,10 @@ impl GetPlaybackConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelScheduleOutput {
     /// <p>A list of schedule entries for the channel.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ScheduleEntry>>,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetChannelScheduleOutput {
@@ -3077,6 +3171,7 @@ impl GetChannelScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelPolicyOutput {
     /// <p>The IAM policy for the channel.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetChannelPolicyOutput {
@@ -3131,20 +3226,27 @@ impl GetChannelPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The last modified time of the VOD source.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl DescribeVodSourceOutput {
@@ -3351,24 +3453,33 @@ impl DescribeVodSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceLocationOutput {
     /// <p>The access configuration for the source location.</p>
+    #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
     /// <p>The ARN of the source location.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration settings.</p>
+    #[doc(hidden)]
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP package configuration settings for the source location.</p>
+    #[doc(hidden)]
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3625,22 +3736,31 @@ impl DescribeSourceLocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProgramOutput {
     /// <p>The ad break configuration settings.</p>
+    #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
     /// <p>The ARN of the program.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel that the program belongs to.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the LiveSource for this Program.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the program.</p>
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    #[doc(hidden)]
     pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source location name.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl DescribeProgramOutput {
@@ -3855,19 +3975,26 @@ impl DescribeProgramOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLiveSourceOutput {
     /// <p>The ARN of the live source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the live source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the live source was modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the live source.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the live source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4075,25 +4202,35 @@ impl DescribeLiveSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the channel is in a running state or not.</p>
+    #[doc(hidden)]
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    #[doc(hidden)]
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The channel's playback mode.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the channel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The channel's tier.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
 }
 impl DescribeChannelOutput {
@@ -4585,20 +4722,27 @@ impl DeleteChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The last modified time of the VOD source.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl CreateVodSourceOutput {
@@ -4805,24 +4949,33 @@ impl CreateVodSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSourceLocationOutput {
     /// <p>The access configuration for the source location.</p>
+    #[doc(hidden)]
     pub access_configuration: std::option::Option<crate::model::AccessConfiguration>,
     /// <p>The ARN of the source location.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration settings.</p>
+    #[doc(hidden)]
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP package configuration settings for the source location.</p>
+    #[doc(hidden)]
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    #[doc(hidden)]
     pub segment_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5079,22 +5232,31 @@ impl CreateSourceLocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProgramOutput {
     /// <p>The ad break configuration settings.</p>
+    #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
     /// <p>The ARN of the program.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel that the program belongs to.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the program was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the LiveSource for this Program.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the program.</p>
+    #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    #[doc(hidden)]
     pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source location name.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
+    #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
 }
 impl CreateProgramOutput {
@@ -5309,16 +5471,22 @@ impl CreateProgramOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrefetchScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    #[doc(hidden)]
     pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    #[doc(hidden)]
     pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl CreatePrefetchScheduleOutput {
@@ -5473,19 +5641,26 @@ impl CreatePrefetchScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLiveSourceOutput {
     /// <p>The ARN of the live source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the live source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
+    #[doc(hidden)]
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the live source was modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the live source.</p>
+    #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
     /// <p>The name of the source location associated with the VOD source.</p>
+    #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the live source.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5693,25 +5868,35 @@ impl CreateLiveSourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the channel is in a running state or not.</p>
+    #[doc(hidden)]
     pub channel_state: std::option::Option<crate::model::ChannelState>,
     /// <p>The timestamp of when the channel was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    #[doc(hidden)]
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The channel's playback mode.</p>
+    #[doc(hidden)]
     pub playback_mode: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the channel.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The channel's tier.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
 }
 impl CreateChannelOutput {
@@ -5963,8 +6148,10 @@ impl CreateChannelOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureLogsForPlaybackConfigurationOutput {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+    #[doc(hidden)]
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
+    #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
 impl ConfigureLogsForPlaybackConfigurationOutput {

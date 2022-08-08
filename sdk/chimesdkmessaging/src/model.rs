@@ -131,8 +131,10 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessageStatusStructure {
     /// <p>The message status value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::ChannelMessageStatus>,
     /// <p>Contains more details about the messasge status.</p>
+    #[doc(hidden)]
     pub detail: std::option::Option<std::string::String>,
 }
 impl ChannelMessageStatusStructure {
@@ -270,12 +272,16 @@ impl AsRef<str> for ChannelMessageStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Processor {
     /// <p>The name of the channel flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The information about the type of processor and its identifier.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ProcessorConfiguration>,
     /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
+    #[doc(hidden)]
     pub execution_order: std::option::Option<i32>,
     /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
+    #[doc(hidden)]
     pub fallback_action: std::option::Option<crate::model::FallbackAction>,
 }
 impl Processor {
@@ -442,6 +448,7 @@ impl AsRef<str> for FallbackAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaConfiguration>,
 }
 impl ProcessorConfiguration {
@@ -499,8 +506,10 @@ impl ProcessorConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Controls how the Lambda function is invoked.</p>
+    #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::model::InvocationType>,
 }
 impl LambdaConfiguration {
@@ -681,8 +690,10 @@ impl AsRef<str> for ChannelMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key in a tag.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value in a tag.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -754,6 +765,7 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
+    #[doc(hidden)]
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MessageAttributeValue {
@@ -817,10 +829,13 @@ impl MessageAttributeValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PushNotificationConfiguration {
     /// <p>The title of the push notification.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The body of the push notification.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PushNotificationType>,
 }
 impl PushNotificationConfiguration {
@@ -1077,16 +1092,22 @@ impl AsRef<str> for ChannelMessageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The mode of the channel.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The privacy setting of the channel.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the channel.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
+    #[doc(hidden)]
     pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {
@@ -1287,12 +1308,15 @@ impl AsRef<str> for ChannelPrivacy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchField {
     /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<crate::model::SearchFieldKey>,
     /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::SearchFieldOperator>,
 }
 impl SearchField {
@@ -1505,6 +1529,7 @@ impl AsRef<str> for SearchFieldKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembershipPreferences {
     /// <p>The push notification configuration of a message.</p>
+    #[doc(hidden)]
     pub push_notifications: std::option::Option<crate::model::PushNotificationPreferences>,
 }
 impl ChannelMembershipPreferences {
@@ -1568,8 +1593,10 @@ impl ChannelMembershipPreferences {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PushNotificationPreferences {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+    #[doc(hidden)]
     pub allow_notifications: std::option::Option<crate::model::AllowNotifications>,
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
+    #[doc(hidden)]
     pub filter_rule: std::option::Option<std::string::String>,
 }
 impl PushNotificationPreferences {
@@ -1703,8 +1730,10 @@ impl AsRef<str> for AllowNotifications {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
     /// <p>The ARN in an Identity.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name in an Identity.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Identity {
@@ -1776,6 +1805,7 @@ impl Identity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
+    #[doc(hidden)]
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
 }
 impl ChannelModeratedByAppInstanceUserSummary {
@@ -1833,14 +1863,19 @@ impl ChannelModeratedByAppInstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelAssociatedWithFlowSummary {
     /// <p>The name of the channel flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The mode of the channel.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The channel's privacy setting.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The channel's metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
 }
 impl ChannelAssociatedWithFlowSummary {
@@ -1966,6 +2001,7 @@ impl ChannelAssociatedWithFlowSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
+    #[doc(hidden)]
     pub moderator: std::option::Option<crate::model::Identity>,
 }
 impl ChannelModeratorSummary {
@@ -2020,26 +2056,37 @@ impl ChannelModeratorSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessageSummary {
     /// <p>The ID of the message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The content of the message.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The metadata of the message.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The type of message.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message summary was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was last edited.</p>
+    #[doc(hidden)]
     pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
+    #[doc(hidden)]
     pub redacted: bool,
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
     /// <p>The message attribues listed in a the summary of a channel message.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -2357,8 +2404,10 @@ impl AsRef<str> for SortOrder {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembershipForAppInstanceUserSummary {
     /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
+    #[doc(hidden)]
     pub app_instance_user_membership_summary:
         std::option::Option<crate::model::AppInstanceUserMembershipSummary>,
 }
@@ -2446,8 +2495,10 @@ impl ChannelMembershipForAppInstanceUserSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
+    #[doc(hidden)]
     pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {
@@ -2580,6 +2631,7 @@ impl AsRef<str> for ChannelMembershipType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembershipSummary {
     /// <p>A member's summary data.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl ChannelMembershipSummary {
@@ -2634,10 +2686,13 @@ impl ChannelMembershipSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelFlowSummary {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
+    #[doc(hidden)]
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
 }
 impl ChannelFlowSummary {
@@ -2738,6 +2793,7 @@ impl ChannelFlowSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl ChannelBanSummary {
@@ -2792,6 +2848,7 @@ impl ChannelBanSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl MessagingSessionEndpoint {
@@ -2844,30 +2901,43 @@ impl MessagingSessionEndpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessage {
     /// <p>The ARN of the channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID of a message.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The message content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The message metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The message type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
+    #[doc(hidden)]
     pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
+    #[doc(hidden)]
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Hides the content of a message.</p>
+    #[doc(hidden)]
     pub redacted: bool,
     /// <p>The persistence setting for a channel message.</p>
+    #[doc(hidden)]
     pub persistence: std::option::Option<crate::model::ChannelMessagePersistenceType>,
     /// <p>The status of the channel message.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -3167,12 +3237,16 @@ impl ChannelMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelModerator {
     /// <p>The moderator's data.</p>
+    #[doc(hidden)]
     pub moderator: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the moderator's channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the moderator was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::Identity>,
 }
 impl ChannelModerator {
@@ -3284,16 +3358,22 @@ impl ChannelModerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
+    #[doc(hidden)]
     pub invited_by: std::option::Option<crate::model::Identity>,
     /// <p>The membership type set for the channel member.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The data of the channel member.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the member's channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the channel membership was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel membership was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelMembership {
@@ -3445,14 +3525,19 @@ impl ChannelMembership {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelFlow {
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
+    #[doc(hidden)]
     pub processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
     /// <p>The name of the channel flow.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which the channel flow was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel flow was updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ChannelFlow {
@@ -3593,12 +3678,16 @@ impl ChannelFlow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelBan {
     /// <p>The member being banned from the channel.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the channel from which a member is being banned.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the ban was created.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::Identity>,
 }
 impl ChannelBan {
@@ -3710,24 +3799,34 @@ impl ChannelBan {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// <p>The name of a channel.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of a channel.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The mode of the channel.</p>
+    #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ChannelMode>,
     /// <p>The channel's privacy setting.</p>
+    #[doc(hidden)]
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The channel's metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUser</code> who created the channel.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<crate::model::Identity>,
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
+    #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a member sent the last message in the channel.</p>
+    #[doc(hidden)]
     pub last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which a channel was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ARN of the channel flow.</p>
+    #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
 }
 impl Channel {
@@ -3953,14 +4052,19 @@ impl Channel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelMessageCallback {
     /// <p>The message ID.</p>
+    #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The message content.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The message metadata.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The push notification configuration of the message.</p>
+    #[doc(hidden)]
     pub push_notification: std::option::Option<crate::model::PushNotificationConfiguration>,
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    #[doc(hidden)]
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -4115,10 +4219,13 @@ impl ChannelMessageCallback {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateChannelMembershipError {
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
+    #[doc(hidden)]
     pub member_arn: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchCreateChannelMembershipError {
@@ -4213,12 +4320,16 @@ impl BatchCreateChannelMembershipError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
+    #[doc(hidden)]
     pub invited_by: std::option::Option<crate::model::Identity>,
     /// <p>The membership types set for the channel users.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The users successfully added to the request.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Identity>>,
     /// <p>The ARN of the channel to which you're adding users.</p>
+    #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
 }
 impl BatchChannelMemberships {

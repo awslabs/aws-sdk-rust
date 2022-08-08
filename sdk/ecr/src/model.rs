@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -141,8 +143,10 @@ impl AsRef<str> for LifecyclePolicyPreviewStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanStatus {
     /// <p>The current state of an image scan.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ScanStatus>,
     /// <p>The description of the image scan status.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ImageScanStatus {
@@ -302,8 +306,10 @@ impl AsRef<str> for ScanStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The tag used for the image.</p>
+    #[doc(hidden)]
     pub image_tag: std::option::Option<std::string::String>,
 }
 impl ImageIdentifier {
@@ -375,6 +381,7 @@ impl ImageIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfiguration {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
 }
 impl ReplicationConfiguration {
@@ -436,8 +443,10 @@ impl ReplicationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
+    #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::ReplicationDestination>>,
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
+    #[doc(hidden)]
     pub repository_filters: std::option::Option<std::vec::Vec<crate::model::RepositoryFilter>>,
 }
 impl ReplicationRule {
@@ -529,8 +538,10 @@ impl ReplicationRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryFilter {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<std::string::String>,
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
+    #[doc(hidden)]
     pub filter_type: std::option::Option<crate::model::RepositoryFilterType>,
 }
 impl RepositoryFilter {
@@ -656,8 +667,10 @@ impl AsRef<str> for RepositoryFilterType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationDestination {
     /// <p>The Region to replicate to.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl ReplicationDestination {
@@ -729,8 +742,10 @@ impl ReplicationDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryScanningConfiguration {
     /// <p>The type of scanning configured for the registry.</p>
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::ScanType>,
     /// <p>The scanning rules associated with the registry.</p>
+    #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
 }
 impl RegistryScanningConfiguration {
@@ -811,8 +826,10 @@ impl RegistryScanningConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryScanningRule {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    #[doc(hidden)]
     pub scan_frequency: std::option::Option<crate::model::ScanFrequency>,
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
+    #[doc(hidden)]
     pub repository_filters:
         std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
 }
@@ -900,8 +917,10 @@ impl RegistryScanningRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanningRepositoryFilter {
     /// <p>The filter to use when scanning.</p>
+    #[doc(hidden)]
     pub filter: std::option::Option<std::string::String>,
     /// <p>The type associated with the filter.</p>
+    #[doc(hidden)]
     pub filter_type: std::option::Option<crate::model::ScanningRepositoryFilterType>,
 }
 impl ScanningRepositoryFilter {
@@ -1196,6 +1215,7 @@ impl AsRef<str> for ImageTagMutability {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanningConfiguration {
     /// <p>The setting that determines whether images are scanned after being pushed to a repository. If set to <code>true</code>, images will be scanned after being pushed. If this parameter is not specified, it will default to <code>false</code> and images will not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
+    #[doc(hidden)]
     pub scan_on_push: bool,
 }
 impl ImageScanningConfiguration {
@@ -1250,14 +1270,19 @@ impl ImageScanningConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>The Amazon Web Services account ID associated with the registry containing the image.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository associated with the image.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An object containing the image tag and image digest associated with an image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The image manifest associated with the image.</p>
+    #[doc(hidden)]
     pub image_manifest: std::option::Option<std::string::String>,
     /// <p>The manifest media type of the image.</p>
+    #[doc(hidden)]
     pub image_manifest_media_type: std::option::Option<std::string::String>,
 }
 impl Image {
@@ -1392,6 +1417,7 @@ impl Image {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesFilter {
     /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    #[doc(hidden)]
     pub tag_status: std::option::Option<crate::model::TagStatus>,
 }
 impl ListImagesFilter {
@@ -1508,6 +1534,7 @@ impl AsRef<str> for TagStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyPreviewSummary {
     /// <p>The number of expiring images.</p>
+    #[doc(hidden)]
     pub expiring_image_total_count: std::option::Option<i32>,
 }
 impl LifecyclePolicyPreviewSummary {
@@ -1565,14 +1592,19 @@ impl LifecyclePolicyPreviewSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyPreviewResult {
     /// <p>The list of tags associated with this image.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
+    #[doc(hidden)]
     pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of action to be taken.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::LifecyclePolicyRuleAction>,
     /// <p>The priority of the applied rule.</p>
+    #[doc(hidden)]
     pub applied_rule_priority: std::option::Option<i32>,
 }
 impl LifecyclePolicyPreviewResult {
@@ -1710,6 +1742,7 @@ impl LifecyclePolicyPreviewResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ImageActionType>,
 }
 impl LifecyclePolicyRuleAction {
@@ -1818,6 +1851,7 @@ impl AsRef<str> for ImageActionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicyPreviewFilter {
     /// <p>The tag status of the image.</p>
+    #[doc(hidden)]
     pub tag_status: std::option::Option<crate::model::TagStatus>,
 }
 impl LifecyclePolicyPreviewFilter {
@@ -1875,10 +1909,13 @@ impl LifecyclePolicyPreviewFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string is decoded, it is presented in the format <code>user:password</code> for private registry authentication using <code>docker login</code>.</p>
+    #[doc(hidden)]
     pub authorization_token: std::option::Option<std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
+    #[doc(hidden)]
     pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The registry URL to use for this authorization token in a <code>docker login</code> command. The Amazon ECR registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example, <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
+    #[doc(hidden)]
     pub proxy_endpoint: std::option::Option<std::string::String>,
 }
 impl AuthorizationData {
@@ -1976,20 +2013,28 @@ impl AuthorizationData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+    #[doc(hidden)]
     pub repository_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
+    #[doc(hidden)]
     pub repository_uri: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tag mutability setting for the repository.</p>
+    #[doc(hidden)]
     pub image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
     /// <p>The image scanning configuration for a repository.</p>
+    #[doc(hidden)]
     pub image_scanning_configuration: std::option::Option<crate::model::ImageScanningConfiguration>,
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl Repository {
@@ -2203,8 +2248,10 @@ pub struct EncryptionConfiguration {
     /// <p>The encryption type to use.</p>
     /// <p>If you use the <code>KMS</code> encryption type, the contents of the repository will be encrypted using server-side encryption with Key Management Service key stored in KMS. When you use KMS to encrypt your data, you can either use the default Amazon Web Services managed KMS key for Amazon ECR, or specify your own KMS key, which you already created. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
     /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts the images in the repository using an AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>If you use the <code>KMS</code> encryption type, specify the KMS key to use for encryption. The alias, key ID, or full ARN of the KMS key can be specified. The key must exist in the same Region as the repository. If no key is specified, the default Amazon Web Services managed KMS key for Amazon ECR will be used.</p>
+    #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl EncryptionConfiguration {
@@ -2340,12 +2387,16 @@ impl AsRef<str> for EncryptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullThroughCacheRule {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    #[doc(hidden)]
     pub ecr_repository_prefix: std::option::Option<std::string::String>,
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    #[doc(hidden)]
     pub upstream_registry_url: std::option::Option<std::string::String>,
     /// <p>The date and time the pull through cache was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is associated with.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl PullThroughCacheRule {
@@ -2460,15 +2511,20 @@ impl PullThroughCacheRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
+    #[doc(hidden)]
     pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
+    #[doc(hidden)]
     pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
+    #[doc(hidden)]
     pub finding_severity_counts:
         std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
     /// <p>The findings from the image scan.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::ImageScanFinding>>,
     /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
+    #[doc(hidden)]
     pub enhanced_findings:
         std::option::Option<std::vec::Vec<crate::model::EnhancedImageScanFinding>>,
 }
@@ -2641,35 +2697,50 @@ impl ImageScanFindings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnhancedImageScanFinding {
     /// <p>The Amazon Web Services account ID associated with the image.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The description of the finding.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+    #[doc(hidden)]
     pub finding_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the finding was first observed.</p>
+    #[doc(hidden)]
     pub first_observed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the finding was last observed.</p>
+    #[doc(hidden)]
     pub last_observed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
+    #[doc(hidden)]
     pub package_vulnerability_details:
         std::option::Option<crate::model::PackageVulnerabilityDetails>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
+    #[doc(hidden)]
     pub remediation: std::option::Option<crate::model::Remediation>,
     /// <p>Contains information on the resources involved in a finding.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>The Amazon Inspector score given to the finding.</p>
+    #[doc(hidden)]
     pub score: f64,
     /// <p>An object that contains details of the Amazon Inspector score.</p>
+    #[doc(hidden)]
     pub score_details: std::option::Option<crate::model::ScoreDetails>,
     /// <p>The severity of the finding.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
     /// <p>The status of the finding.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The title of the finding.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The type of the finding.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date and time the finding was last updated at.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnhancedImageScanFinding {
@@ -3001,6 +3072,7 @@ impl EnhancedImageScanFinding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
+    #[doc(hidden)]
     pub cvss: std::option::Option<crate::model::CvssScoreDetails>,
 }
 impl ScoreDetails {
@@ -3056,14 +3128,19 @@ impl ScoreDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CvssScoreDetails {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+    #[doc(hidden)]
     pub adjustments: std::option::Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
     /// <p>The CVSS score.</p>
+    #[doc(hidden)]
     pub score: f64,
     /// <p>The source for the CVSS score.</p>
+    #[doc(hidden)]
     pub score_source: std::option::Option<std::string::String>,
     /// <p>The vector for the CVSS score.</p>
+    #[doc(hidden)]
     pub scoring_vector: std::option::Option<std::string::String>,
     /// <p>The CVSS version used in scoring.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CvssScoreDetails {
@@ -3199,8 +3276,10 @@ impl CvssScoreDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The reason the CVSS score has been adjustment.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl CvssScoreAdjustment {
@@ -3272,13 +3351,17 @@ impl CvssScoreAdjustment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>An object that contains details about the resource involved in a finding.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ResourceDetails>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Resource {
@@ -3407,6 +3490,7 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
+    #[doc(hidden)]
     pub aws_ecr_container_image: std::option::Option<crate::model::AwsEcrContainerImageDetails>,
 }
 impl ResourceDetails {
@@ -3470,20 +3554,28 @@ impl ResourceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The architecture of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The image author of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The image hash of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub image_hash: std::option::Option<std::string::String>,
     /// <p>The image tags attached to the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The platform of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
+    #[doc(hidden)]
     pub pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The registry the Amazon ECR container image belongs to.</p>
+    #[doc(hidden)]
     pub registry: std::option::Option<std::string::String>,
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl AwsEcrContainerImageDetails {
@@ -3672,6 +3764,7 @@ impl AwsEcrContainerImageDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
+    #[doc(hidden)]
     pub recommendation: std::option::Option<crate::model::Recommendation>,
 }
 impl Remediation {
@@ -3729,8 +3822,10 @@ impl Remediation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recommendation {
     /// <p>The URL address to the CVE remediation recommendations.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>The recommended course of action to remediate the finding.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl Recommendation {
@@ -3802,24 +3897,34 @@ impl Recommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVulnerabilityDetails {
     /// <p>An object that contains details about the CVSS score of a finding.</p>
+    #[doc(hidden)]
     pub cvss: std::option::Option<std::vec::Vec<crate::model::CvssScore>>,
     /// <p>One or more URLs that contain details about this vulnerability type.</p>
+    #[doc(hidden)]
     pub reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more vulnerabilities related to the one identified in this finding.</p>
+    #[doc(hidden)]
     pub related_vulnerabilities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The source of the vulnerability information.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>A URL to the source of the vulnerability information.</p>
+    #[doc(hidden)]
     pub source_url: std::option::Option<std::string::String>,
     /// <p>The date and time that this vulnerability was first added to the vendor's database.</p>
+    #[doc(hidden)]
     pub vendor_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity the vendor has given to this vulnerability type.</p>
+    #[doc(hidden)]
     pub vendor_severity: std::option::Option<std::string::String>,
     /// <p>The date and time the vendor last updated this vulnerability in their database.</p>
+    #[doc(hidden)]
     pub vendor_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID given to this vulnerability.</p>
+    #[doc(hidden)]
     pub vulnerability_id: std::option::Option<std::string::String>,
     /// <p>The packages impacted by this vulnerability.</p>
+    #[doc(hidden)]
     pub vulnerable_packages: std::option::Option<std::vec::Vec<crate::model::VulnerablePackage>>,
 }
 impl PackageVulnerabilityDetails {
@@ -4076,20 +4181,28 @@ impl PackageVulnerabilityDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VulnerablePackage {
     /// <p>The architecture of the vulnerable package.</p>
+    #[doc(hidden)]
     pub arch: std::option::Option<std::string::String>,
     /// <p>The epoch of the vulnerable package.</p>
+    #[doc(hidden)]
     pub epoch: std::option::Option<i32>,
     /// <p>The file path of the vulnerable package.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The name of the vulnerable package.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The package manager of the vulnerable package.</p>
+    #[doc(hidden)]
     pub package_manager: std::option::Option<std::string::String>,
     /// <p>The release of the vulnerable package.</p>
+    #[doc(hidden)]
     pub release: std::option::Option<std::string::String>,
     /// <p>The source layer hash of the vulnerable package.</p>
+    #[doc(hidden)]
     pub source_layer_hash: std::option::Option<std::string::String>,
     /// <p>The version of the vulnerable package.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl VulnerablePackage {
@@ -4269,12 +4382,16 @@ impl VulnerablePackage {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CvssScore {
     /// <p>The base CVSS score used for the finding.</p>
+    #[doc(hidden)]
     pub base_score: f64,
     /// <p>The vector string of the CVSS score.</p>
+    #[doc(hidden)]
     pub scoring_vector: std::option::Option<std::string::String>,
     /// <p>The source of the CVSS score.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The version of CVSS used for the score.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl CvssScore {
@@ -4383,14 +4500,19 @@ impl CvssScore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanFinding {
     /// <p>The name associated with the finding, usually a CVE number.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the finding.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A link containing additional details about the security vulnerability.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The finding severity.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::FindingSeverity>,
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl ImageScanFinding {
@@ -4525,8 +4647,10 @@ impl ImageScanFinding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p>The attribute key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value assigned to the attribute key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Attribute {
@@ -4676,31 +4800,42 @@ impl AsRef<str> for FindingSeverity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDetail {
     /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which this image belongs.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The list of tags associated with this image.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    #[doc(hidden)]
     pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the scan.</p>
+    #[doc(hidden)]
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
     /// <p>A summary of the last completed image scan.</p>
+    #[doc(hidden)]
     pub image_scan_findings_summary: std::option::Option<crate::model::ImageScanFindingsSummary>,
     /// <p>The media type of the image manifest.</p>
+    #[doc(hidden)]
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
+    #[doc(hidden)]
     pub artifact_media_type: std::option::Option<std::string::String>,
     /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
+    #[doc(hidden)]
     pub last_recorded_pull_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ImageDetail {
@@ -4979,10 +5114,13 @@ impl ImageDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageScanFindingsSummary {
     /// <p>The time of the last completed image scan.</p>
+    #[doc(hidden)]
     pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
+    #[doc(hidden)]
     pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
+    #[doc(hidden)]
     pub finding_severity_counts:
         std::option::Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
 }
@@ -5100,6 +5238,7 @@ impl ImageScanFindingsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesFilter {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    #[doc(hidden)]
     pub tag_status: std::option::Option<crate::model::TagStatus>,
 }
 impl DescribeImagesFilter {
@@ -5157,12 +5296,16 @@ impl DescribeImagesFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageReplicationStatus {
     /// <p>The destination Region for the image replication.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The image replication status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationStatus>,
     /// <p>The failure code for a replication that has failed.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<std::string::String>,
 }
 impl ImageReplicationStatus {
@@ -5330,10 +5473,13 @@ impl AsRef<str> for ReplicationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryScanningConfigurationFailure {
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The failure code.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::ScanningConfigurationFailureCode>,
     /// <p>The reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl RepositoryScanningConfigurationFailure {
@@ -5488,14 +5634,19 @@ impl AsRef<str> for ScanningConfigurationFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryScanningConfiguration {
     /// <p>The ARN of the repository.</p>
+    #[doc(hidden)]
     pub repository_arn: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>Whether or not scan on push is configured for the repository.</p>
+    #[doc(hidden)]
     pub scan_on_push: bool,
     /// <p>The scan frequency for the repository.</p>
+    #[doc(hidden)]
     pub scan_frequency: std::option::Option<crate::model::ScanFrequency>,
     /// <p>The scan filters applied to the repository.</p>
+    #[doc(hidden)]
     pub applied_scan_filters:
         std::option::Option<std::vec::Vec<crate::model::ScanningRepositoryFilter>>,
 }
@@ -5643,10 +5794,13 @@ impl RepositoryScanningConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageFailure {
     /// <p>The image ID associated with the failure.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The code associated with the failure.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::ImageFailureCode>,
     /// <p>The reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl ImageFailure {
@@ -5827,10 +5981,13 @@ impl AsRef<str> for ImageFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerFailure {
     /// <p>The layer digest associated with the failure.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
     /// <p>The failure code associated with the failure.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::LayerFailureCode>,
     /// <p>The reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl LayerFailure {
@@ -5980,12 +6137,16 @@ impl AsRef<str> for LayerFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Layer {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
     /// <p>The availability status of the image layer.</p>
+    #[doc(hidden)]
     pub layer_availability: std::option::Option<crate::model::LayerAvailability>,
     /// <p>The size, in bytes, of the image layer.</p>
+    #[doc(hidden)]
     pub layer_size: std::option::Option<i64>,
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+    #[doc(hidden)]
     pub media_type: std::option::Option<std::string::String>,
 }
 impl Layer {

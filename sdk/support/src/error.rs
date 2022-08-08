@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>An internal server error occurred.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerError {
@@ -69,6 +70,7 @@ impl InternalServerError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaseIdNotFound {
     /// <p>The requested <code>CaseId</code> could not be located.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CaseIdNotFound {
@@ -133,6 +135,7 @@ impl CaseIdNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttachmentLimitExceeded {
     /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAttachmentLimitExceeded {
@@ -197,6 +200,7 @@ impl DescribeAttachmentLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentIdNotFound {
     /// <p>An attachment with the specified ID could not be found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentIdNotFound {
@@ -261,6 +265,7 @@ impl AttachmentIdNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaseCreationLimitExceeded {
     /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CaseCreationLimitExceeded {
@@ -325,6 +330,7 @@ impl CaseCreationLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentSetIdNotFound {
     /// <p>An attachment set with the specified ID could not be found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentSetIdNotFound {
@@ -389,6 +395,7 @@ impl AttachmentSetIdNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentSetExpired {
     /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentSetExpired {
@@ -453,6 +460,7 @@ impl AttachmentSetExpired {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentSetSizeLimitExceeded {
     /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentSetSizeLimitExceeded {
@@ -517,6 +525,7 @@ impl AttachmentSetSizeLimitExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentLimitExceeded {
     /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentLimitExceeded {

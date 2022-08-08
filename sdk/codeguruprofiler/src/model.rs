@@ -110,6 +110,7 @@ impl AsRef<str> for ActionGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
+    #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
 impl NotificationConfiguration {
@@ -173,10 +174,13 @@ impl NotificationConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
+    #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
+    #[doc(hidden)]
     pub event_publishers: std::option::Option<std::vec::Vec<crate::model::EventPublisher>>,
 }
 impl Channel {
@@ -325,6 +329,7 @@ impl AsRef<str> for EventPublisher {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProfileTime {
     /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProfileTime {
@@ -491,14 +496,19 @@ impl AsRef<str> for AggregationPeriod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingsReportSummary {
     /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    #[doc(hidden)]
     pub profile_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub profile_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of different recommendations that were found by the analysis.</p>
+    #[doc(hidden)]
     pub total_number_of_findings: std::option::Option<i32>,
 }
 impl FindingsReportSummary {
@@ -630,10 +640,13 @@ impl FindingsReportSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
+    #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
     /// <p>The reason for which metric was flagged as anomalous.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
+    #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::AnomalyInstance>>,
 }
 impl Anomaly {
@@ -731,12 +744,16 @@ impl Anomaly {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyInstance {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
+    #[doc(hidden)]
     pub user_feedback: std::option::Option<crate::model::UserFeedback>,
 }
 impl AnomalyInstance {
@@ -851,6 +868,7 @@ impl AnomalyInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FeedbackType>,
 }
 impl UserFeedback {
@@ -905,10 +923,13 @@ impl UserFeedback {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
+    #[doc(hidden)]
     pub frame_name: std::option::Option<std::string::String>,
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MetricType>,
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
+    #[doc(hidden)]
     pub thread_states: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Metric {
@@ -1057,16 +1078,22 @@ impl AsRef<str> for MetricType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recommendation {
     /// <p>How many different places in the profile graph triggered a match.</p>
+    #[doc(hidden)]
     pub all_matches_count: std::option::Option<i32>,
     /// <p>How much of the total sample count is potentially affected.</p>
+    #[doc(hidden)]
     pub all_matches_sum: std::option::Option<f64>,
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
+    #[doc(hidden)]
     pub pattern: std::option::Option<crate::model::Pattern>,
     /// <p>List of the matches with most impact. </p>
+    #[doc(hidden)]
     pub top_matches: std::option::Option<std::vec::Vec<crate::model::Match>>,
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Recommendation {
@@ -1221,10 +1248,13 @@ impl Recommendation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Match {
     /// <p>The target frame that triggered a match.</p>
+    #[doc(hidden)]
     pub target_frames_index: std::option::Option<i32>,
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
+    #[doc(hidden)]
     pub frame_address: std::option::Option<std::string::String>,
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
+    #[doc(hidden)]
     pub threshold_breach_value: std::option::Option<f64>,
 }
 impl Match {
@@ -1316,18 +1346,25 @@ impl Match {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Pattern {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name for this pattern.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
+    #[doc(hidden)]
     pub resolution_steps: std::option::Option<std::string::String>,
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
+    #[doc(hidden)]
     pub target_frames: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
+    #[doc(hidden)]
     pub threshold_percent: f64,
     /// <p> A list of the different counters used to determine if there is a match. </p>
+    #[doc(hidden)]
     pub counters_to_aggregate: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Pattern {
@@ -1506,8 +1543,10 @@ impl Pattern {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
+    #[doc(hidden)]
     pub should_profile: std::option::Option<bool>,
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
+    #[doc(hidden)]
     pub period_in_seconds: std::option::Option<i32>,
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
     /// <ul>
@@ -1517,6 +1556,7 @@ pub struct AgentConfiguration {
     /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
     /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub agent_parameters: std::option::Option<
         std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
     >,
@@ -1831,8 +1871,10 @@ impl AsRef<str> for MetadataField {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
+    #[doc(hidden)]
     pub frame_metric: std::option::Option<crate::model::FrameMetric>,
     /// <p> A list of values that are associated with a frame metric. </p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
 impl FrameMetricDatum {
@@ -1913,10 +1955,13 @@ impl FrameMetricDatum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
+    #[doc(hidden)]
     pub frame_name: std::option::Option<std::string::String>,
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MetricType>,
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
+    #[doc(hidden)]
     pub thread_states: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FrameMetric {
@@ -2014,6 +2059,7 @@ impl FrameMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampStructure {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub value: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimestampStructure {
@@ -2066,20 +2112,28 @@ impl TimestampStructure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProfilingGroupDescription {
     /// <p>The name of the profiling group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
+    #[doc(hidden)]
     pub agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
     /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the profiling group was created. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html"> <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
+    #[doc(hidden)]
     pub profiling_status: std::option::Option<crate::model::ProfilingStatus>,
     /// <p> The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. The default is <code>Default</code>. </p>
+    #[doc(hidden)]
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p> A list of the tags that belong to this profiling group. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2353,10 +2407,13 @@ impl AsRef<str> for ComputePlatform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProfilingStatus {
     /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    #[doc(hidden)]
     pub latest_agent_profile_reported_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a> object that contains the aggregation period and start time for an aggregated profile. </p>
+    #[doc(hidden)]
     pub latest_aggregated_profile: std::option::Option<crate::model::AggregatedProfileTime>,
     /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    #[doc(hidden)]
     pub latest_agent_orchestrated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProfilingStatus {
@@ -2473,6 +2530,7 @@ impl ProfilingStatus {
 pub struct AggregatedProfileTime {
     /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
     /// <ul>
@@ -2480,6 +2538,7 @@ pub struct AggregatedProfileTime {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub period: std::option::Option<crate::model::AggregationPeriod>,
 }
 impl AggregatedProfileTime {
@@ -2572,6 +2631,7 @@ impl AggregatedProfileTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentOrchestrationConfig {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
+    #[doc(hidden)]
     pub profiling_enabled: std::option::Option<bool>,
 }
 impl AgentOrchestrationConfig {

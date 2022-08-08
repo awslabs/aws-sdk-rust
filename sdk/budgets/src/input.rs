@@ -4219,14 +4219,19 @@ impl UpdateSubscriberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget whose subscriber you want to update.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification whose subscriber you want to update.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>The previous subscriber that is associated with a budget notification.</p>
+    #[doc(hidden)]
     pub old_subscriber: std::option::Option<crate::model::Subscriber>,
     /// <p>The updated subscriber that is associated with a budget notification.</p>
+    #[doc(hidden)]
     pub new_subscriber: std::option::Option<crate::model::Subscriber>,
 }
 impl UpdateSubscriberInput {
@@ -4268,12 +4273,16 @@ impl std::fmt::Debug for UpdateSubscriberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget whose notification you want to update.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The previous notification that is associated with a budget.</p>
+    #[doc(hidden)]
     pub old_notification: std::option::Option<crate::model::Notification>,
     /// <p>The updated notification to be associated with a budget.</p>
+    #[doc(hidden)]
     pub new_notification: std::option::Option<crate::model::Notification>,
 }
 impl UpdateNotificationInput {
@@ -4310,22 +4319,31 @@ impl std::fmt::Debug for UpdateNotificationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    #[doc(hidden)]
     pub notification_type: std::option::Option<crate::model::NotificationType>,
     /// <p>The trigger threshold of the action. </p>
+    #[doc(hidden)]
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
     /// <p>Specifies all of the type-specific parameters. </p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::Definition>,
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p> This specifies if the action needs manual or automatic approval. </p>
+    #[doc(hidden)]
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p> A list of subscribers.</p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl UpdateBudgetActionInput {
@@ -4387,8 +4405,10 @@ impl std::fmt::Debug for UpdateBudgetActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The budget that you want to update your budget to.</p>
+    #[doc(hidden)]
     pub new_budget: std::option::Option<crate::model::Budget>,
 }
 impl UpdateBudgetInput {
@@ -4415,12 +4435,16 @@ impl std::fmt::Debug for UpdateBudgetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The type of execution. </p>
+    #[doc(hidden)]
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionInput {
@@ -4457,14 +4481,19 @@ impl std::fmt::Debug for ExecuteBudgetActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSubscribersForNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification whose subscribers you want to list.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubscribersForNotificationInput {
@@ -4506,12 +4535,16 @@ impl std::fmt::Debug for DescribeSubscribersForNotificationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationsForBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget whose notifications you want descriptions of.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationsForBudgetInput {
@@ -4548,10 +4581,13 @@ impl std::fmt::Debug for DescribeNotificationsForBudgetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetsInput {
     /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetsInput {
@@ -4583,14 +4619,19 @@ impl std::fmt::Debug for DescribeBudgetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetPerformanceHistoryInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::TimePeriod>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetPerformanceHistoryInput {
@@ -4632,10 +4673,13 @@ impl std::fmt::Debug for DescribeBudgetPerformanceHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetNotificationsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetNotificationsForAccountInput {
@@ -4667,12 +4711,16 @@ impl std::fmt::Debug for DescribeBudgetNotificationsForAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForBudgetInput {
@@ -4709,10 +4757,13 @@ impl std::fmt::Debug for DescribeBudgetActionsForBudgetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForAccountInput {
@@ -4744,16 +4795,22 @@ impl std::fmt::Debug for DescribeBudgetActionsForAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionHistoriesInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    #[doc(hidden)]
     pub time_period: std::option::Option<crate::model::TimePeriod>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p> A generic string.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionHistoriesInput {
@@ -4800,10 +4857,13 @@ impl std::fmt::Debug for DescribeBudgetActionHistoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionInput {
@@ -4835,8 +4895,10 @@ impl std::fmt::Debug for DescribeBudgetActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget that you want a description of.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetInput {
@@ -4863,12 +4925,16 @@ impl std::fmt::Debug for DescribeBudgetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget whose subscriber you want to delete.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification whose subscriber you want to delete.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>The subscriber that you want to delete.</p>
+    #[doc(hidden)]
     pub subscriber: std::option::Option<crate::model::Subscriber>,
 }
 impl DeleteSubscriberInput {
@@ -4905,10 +4971,13 @@ impl std::fmt::Debug for DeleteSubscriberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget whose notification you want to delete.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification that you want to delete.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
 }
 impl DeleteNotificationInput {
@@ -4940,10 +5009,13 @@ impl std::fmt::Debug for DeleteNotificationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DeleteBudgetActionInput {
@@ -4975,8 +5047,10 @@ impl std::fmt::Debug for DeleteBudgetActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget that you want to delete.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
 }
 impl DeleteBudgetInput {
@@ -5003,12 +5077,16 @@ impl std::fmt::Debug for DeleteBudgetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification that you want to create a subscriber for.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>The subscriber that you want to associate with a budget notification.</p>
+    #[doc(hidden)]
     pub subscriber: std::option::Option<crate::model::Subscriber>,
 }
 impl CreateSubscriberInput {
@@ -5045,12 +5123,16 @@ impl std::fmt::Debug for CreateSubscriberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification that you want to create.</p>
+    #[doc(hidden)]
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl CreateNotificationInput {
@@ -5087,22 +5169,31 @@ impl std::fmt::Debug for CreateNotificationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    #[doc(hidden)]
     pub notification_type: std::option::Option<crate::model::NotificationType>,
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>The trigger threshold of the action. </p>
+    #[doc(hidden)]
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
     /// <p>Specifies all of the type-specific parameters. </p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::Definition>,
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p> This specifies if the action needs manual or automatic approval. </p>
+    #[doc(hidden)]
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p> A list of subscribers.</p>
+    #[doc(hidden)]
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl CreateBudgetActionInput {
@@ -5164,10 +5255,13 @@ impl std::fmt::Debug for CreateBudgetActionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The budget object that you want to create.</p>
+    #[doc(hidden)]
     pub budget: std::option::Option<crate::model::Budget>,
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
+    #[doc(hidden)]
     pub notifications_with_subscribers:
         std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
 }

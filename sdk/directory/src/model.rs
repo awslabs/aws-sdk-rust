@@ -60,8 +60,10 @@ impl AsRef<str> for SelectiveAuth {
 pub struct Setting {
     /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Setting {
@@ -136,20 +138,28 @@ impl Setting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RadiusSettings {
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    #[doc(hidden)]
     pub radius_servers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
+    #[doc(hidden)]
     pub radius_port: i32,
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
+    #[doc(hidden)]
     pub radius_timeout: i32,
     /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    #[doc(hidden)]
     pub radius_retries: i32,
     /// <p>Required for enabling RADIUS on the directory.</p>
+    #[doc(hidden)]
     pub shared_secret: std::option::Option<std::string::String>,
     /// <p>The protocol specified for your RADIUS endpoints.</p>
+    #[doc(hidden)]
     pub authentication_protocol: std::option::Option<crate::model::RadiusAuthenticationProtocol>,
     /// <p>Not currently used.</p>
+    #[doc(hidden)]
     pub display_label: std::option::Option<std::string::String>,
     /// <p>Not currently used.</p>
+    #[doc(hidden)]
     pub use_same_username: bool,
 }
 impl RadiusSettings {
@@ -410,8 +420,10 @@ impl AsRef<str> for RadiusAuthenticationProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareTarget {
     /// <p>Identifier of the directory consumer account.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TargetType>,
 }
 impl UnshareTarget {
@@ -589,8 +601,10 @@ impl AsRef<str> for ShareMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareTarget {
     /// <p>Identifier of the directory consumer account.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TargetType>,
 }
 impl ShareTarget {
@@ -662,6 +676,7 @@ impl ShareTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
+    #[doc(hidden)]
     pub ocsp_url: std::option::Option<std::string::String>,
 }
 impl ClientCertAuthSettings {
@@ -771,8 +786,10 @@ impl AsRef<str> for CertificateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -844,18 +861,25 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaExtensionInfo {
     /// <p>The identifier of the directory to which the schema extension is applied.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the schema extension.</p>
+    #[doc(hidden)]
     pub schema_extension_id: std::option::Option<std::string::String>,
     /// <p>A description of the schema extension.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the schema extension.</p>
+    #[doc(hidden)]
     pub schema_extension_status: std::option::Option<crate::model::SchemaExtensionStatus>,
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
+    #[doc(hidden)]
     pub schema_extension_status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that the schema extension started being applied to the directory.</p>
+    #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the schema extension was completed.</p>
+    #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SchemaExtensionInfo {
@@ -1132,10 +1156,13 @@ impl AsRef<str> for SchemaExtensionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the log group.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the log subscription was created.</p>
+    #[doc(hidden)]
     pub subscription_created_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LogSubscription {
@@ -1235,16 +1262,22 @@ impl LogSubscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRouteInfo {
     /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>IP address block in the <code>IpRoute</code>.</p>
+    #[doc(hidden)]
     pub cidr_ip: std::option::Option<std::string::String>,
     /// <p>The status of the IP address block.</p>
+    #[doc(hidden)]
     pub ip_route_status_msg: std::option::Option<crate::model::IpRouteStatusMsg>,
     /// <p>The date and time the address block was added to the directory.</p>
+    #[doc(hidden)]
     pub added_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the IpRouteStatusMsg.</p>
+    #[doc(hidden)]
     pub ip_route_status_reason: std::option::Option<std::string::String>,
     /// <p>Description of the <code>IpRouteInfo</code>.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl IpRouteInfo {
@@ -1471,14 +1504,19 @@ impl AsRef<str> for IpRouteStatusMsg {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateInfo {
     /// <p>The identifier of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The common name for the certificate.</p>
+    #[doc(hidden)]
     pub common_name: std::option::Option<std::string::String>,
     /// <p>The state of the certificate.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CertificateState>,
     /// <p>The date and time when the certificate will expire.</p>
+    #[doc(hidden)]
     pub expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateType>,
 }
 impl CertificateInfo {
@@ -1691,10 +1729,13 @@ impl AsRef<str> for CertificateState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotLimits {
     /// <p>The maximum number of manual snapshots allowed.</p>
+    #[doc(hidden)]
     pub manual_snapshots_limit: std::option::Option<i32>,
     /// <p>The current number of manual snapshots of the directory.</p>
+    #[doc(hidden)]
     pub manual_snapshots_current_count: std::option::Option<i32>,
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
+    #[doc(hidden)]
     pub manual_snapshots_limit_reached: bool,
 }
 impl SnapshotLimits {
@@ -1797,22 +1838,31 @@ impl SnapshotLimits {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryLimits {
     /// <p>The maximum number of cloud directories allowed in the Region.</p>
+    #[doc(hidden)]
     pub cloud_only_directories_limit: std::option::Option<i32>,
     /// <p>The current number of cloud directories in the Region.</p>
+    #[doc(hidden)]
     pub cloud_only_directories_current_count: std::option::Option<i32>,
     /// <p>Indicates if the cloud directory limit has been reached.</p>
+    #[doc(hidden)]
     pub cloud_only_directories_limit_reached: bool,
     /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
+    #[doc(hidden)]
     pub cloud_only_microsoft_ad_limit: std::option::Option<i32>,
     /// <p>The current number of Managed Microsoft AD directories in the region.</p>
+    #[doc(hidden)]
     pub cloud_only_microsoft_ad_current_count: std::option::Option<i32>,
     /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
+    #[doc(hidden)]
     pub cloud_only_microsoft_ad_limit_reached: bool,
     /// <p>The maximum number of connected directories allowed in the Region.</p>
+    #[doc(hidden)]
     pub connected_directories_limit: std::option::Option<i32>,
     /// <p>The current number of connected directories in the Region.</p>
+    #[doc(hidden)]
     pub connected_directories_current_count: std::option::Option<i32>,
     /// <p>Indicates if the connected directory limit has been reached.</p>
+    #[doc(hidden)]
     pub connected_directories_limit_reached: bool,
 }
 impl DirectoryLimits {
@@ -2163,26 +2213,37 @@ impl AsRef<str> for ClientAuthenticationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trust {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the trust relationship.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
+    #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
+    #[doc(hidden)]
     pub trust_type: std::option::Option<crate::model::TrustType>,
     /// <p>The trust relationship direction.</p>
+    #[doc(hidden)]
     pub trust_direction: std::option::Option<crate::model::TrustDirection>,
     /// <p>The trust relationship state.</p>
+    #[doc(hidden)]
     pub trust_state: std::option::Option<crate::model::TrustState>,
     /// <p>The date and time that the trust relationship was created.</p>
+    #[doc(hidden)]
     pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the trust relationship was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the TrustState was last updated.</p>
+    #[doc(hidden)]
     pub state_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the TrustState.</p>
+    #[doc(hidden)]
     pub trust_state_reason: std::option::Option<std::string::String>,
     /// <p>Current state of selective authentication for the trust.</p>
+    #[doc(hidden)]
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
 }
 impl Trust {
@@ -2654,16 +2715,22 @@ impl AsRef<str> for TrustType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The directory identifier.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The snapshot identifier.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The snapshot type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SnapshotType>,
     /// <p>The descriptive name of the snapshot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The snapshot status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SnapshotStatus>,
     /// <p>The date and time that the snapshot was taken.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Snapshot {
@@ -2923,22 +2990,31 @@ impl AsRef<str> for SnapshotType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharedDirectory {
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
+    #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the directory in the directory owner account. </p>
+    #[doc(hidden)]
     pub owner_directory_id: std::option::Option<std::string::String>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    #[doc(hidden)]
     pub share_method: std::option::Option<crate::model::ShareMethod>,
     /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+    #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    #[doc(hidden)]
     pub shared_directory_id: std::option::Option<std::string::String>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
+    #[doc(hidden)]
     pub share_status: std::option::Option<crate::model::ShareStatus>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
+    #[doc(hidden)]
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>The date and time that the shared directory was created.</p>
+    #[doc(hidden)]
     pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the shared directory was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SharedDirectory {
@@ -3246,27 +3322,37 @@ impl AsRef<str> for ShareStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SettingEntry {
     /// <p>The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The valid range of values for the directory setting.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::string::String>,
     /// <p>The value of the directory setting that is applied to the directory.</p>
+    #[doc(hidden)]
     pub applied_value: std::option::Option<std::string::String>,
     /// <p>The value that was last requested for the directory setting.</p>
+    #[doc(hidden)]
     pub requested_value: std::option::Option<std::string::String>,
     /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
+    #[doc(hidden)]
     pub request_status: std::option::Option<crate::model::DirectoryConfigurationStatus>,
     /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
+    #[doc(hidden)]
     pub request_detailed_status: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>,
     >,
     /// <p>The last status message for the directory status request.</p>
+    #[doc(hidden)]
     pub request_status_message: std::option::Option<std::string::String>,
     /// <p>The date and time when the directory setting was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the request to update a directory setting was last submitted.</p>
+    #[doc(hidden)]
     pub last_requested_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SettingEntry {
@@ -3594,22 +3680,31 @@ impl AsRef<str> for DirectoryConfigurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionDescription {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
+    #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
+    #[doc(hidden)]
     pub region_type: std::option::Option<crate::model::RegionType>,
     /// <p>The status of the replication process for the specified Region.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DirectoryStage>,
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    #[doc(hidden)]
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
+    #[doc(hidden)]
     pub desired_number_of_domain_controllers: i32,
     /// <p>Specifies when the Region replication began.</p>
+    #[doc(hidden)]
     pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region status was last updated.</p>
+    #[doc(hidden)]
     pub status_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region description was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RegionDescription {
@@ -3831,8 +3926,10 @@ impl RegionDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryVpcSettings {
     /// <p>The identifier of the VPC in which to create the directory.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DirectoryVpcSettings {
@@ -4071,10 +4168,13 @@ impl AsRef<str> for RegionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
+    #[doc(hidden)]
     pub ldaps_status: std::option::Option<crate::model::LdapsStatus>,
     /// <p>Describes a state change for LDAPS.</p>
+    #[doc(hidden)]
     pub ldaps_status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time when the LDAPS settings were last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LdapsSettingInfo {
@@ -4235,14 +4335,19 @@ impl AsRef<str> for LdapsStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTopic {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
+    #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
+    #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The topic registration status.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TopicStatus>,
 }
 impl EventTopic {
@@ -4431,24 +4536,34 @@ impl AsRef<str> for TopicStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainController {
     /// <p>Identifier of the directory where the domain controller resides.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>Identifies a specific domain controller in the directory.</p>
+    #[doc(hidden)]
     pub domain_controller_id: std::option::Option<std::string::String>,
     /// <p>The IP address of the domain controller.</p>
+    #[doc(hidden)]
     pub dns_ip_addr: std::option::Option<std::string::String>,
     /// <p>The identifier of the VPC that contains the domain controller.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone where the domain controller is located.</p>
+    #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The status of the domain controller.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DomainControllerStatus>,
     /// <p>A description of the domain controller state.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Specifies when the domain controller was created.</p>
+    #[doc(hidden)]
     pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the status was last updated.</p>
+    #[doc(hidden)]
     pub status_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DomainController {
@@ -4762,58 +4877,83 @@ impl AsRef<str> for DomainControllerStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryDescription {
     /// <p>The directory identifier.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified name of the directory.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The short name of the directory.</p>
+    #[doc(hidden)]
     pub short_name: std::option::Option<std::string::String>,
     /// <p>The directory size.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<crate::model::DirectorySize>,
     /// <p>The edition associated with this directory.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::DirectoryEdition>,
     /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>The access URL for the directory, such as <code>http://
     /// <alias>
     /// .awsapps.com
     /// </alias></code>. If no alias has been created for the directory, <code>
     /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    #[doc(hidden)]
     pub access_url: std::option::Option<std::string::String>,
     /// <p>The description for the directory.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    #[doc(hidden)]
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The current stage of the directory.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::DirectoryStage>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
+    #[doc(hidden)]
     pub share_status: std::option::Option<crate::model::ShareStatus>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    #[doc(hidden)]
     pub share_method: std::option::Option<crate::model::ShareMethod>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
+    #[doc(hidden)]
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>Specifies when the directory was created.</p>
+    #[doc(hidden)]
     pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the stage was last updated.</p>
+    #[doc(hidden)]
     pub stage_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The directory size.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DirectoryType>,
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
+    #[doc(hidden)]
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+    #[doc(hidden)]
     pub connect_settings: std::option::Option<crate::model::DirectoryConnectSettingsDescription>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
+    #[doc(hidden)]
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
     /// <p>The status of the RADIUS MFA server connection.</p>
+    #[doc(hidden)]
     pub radius_status: std::option::Option<crate::model::RadiusStatus>,
     /// <p>Additional information about the directory stage.</p>
+    #[doc(hidden)]
     pub stage_reason: std::option::Option<std::string::String>,
     /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
+    #[doc(hidden)]
     pub sso_enabled: bool,
     /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
+    #[doc(hidden)]
     pub desired_number_of_domain_controllers: i32,
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
+    #[doc(hidden)]
     pub owner_directory_description: std::option::Option<crate::model::OwnerDirectoryDescription>,
     /// <p>Lists the Regions where the directory has replicated.</p>
+    #[doc(hidden)]
     pub regions_info: std::option::Option<crate::model::RegionsInfo>,
 }
 impl DirectoryDescription {
@@ -5364,8 +5504,10 @@ impl DirectoryDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
+    #[doc(hidden)]
     pub primary_region: std::option::Option<std::string::String>,
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
+    #[doc(hidden)]
     pub additional_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RegionsInfo {
@@ -5449,16 +5591,22 @@ impl RegionsInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OwnerDirectoryDescription {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the directory owner account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>IP address of the directory’s domain controllers.</p>
+    #[doc(hidden)]
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the VPC settings for the directory.</p>
+    #[doc(hidden)]
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    #[doc(hidden)]
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
     /// <p>Information about the status of the RADIUS server.</p>
+    #[doc(hidden)]
     pub radius_status: std::option::Option<crate::model::RadiusStatus>,
 }
 impl OwnerDirectoryDescription {
@@ -5680,12 +5828,16 @@ impl AsRef<str> for RadiusStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryVpcSettingsDescription {
     /// <p>The identifier of the VPC that the directory is in.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The identifiers of the subnets for the directory servers.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The domain controller security group identifier for the directory.</p>
+    #[doc(hidden)]
     pub security_group_id: std::option::Option<std::string::String>,
     /// <p>The list of Availability Zones that the directory is in.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DirectoryVpcSettingsDescription {
@@ -5812,16 +5964,22 @@ impl DirectoryVpcSettingsDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user name of the service account in your self-managed directory.</p>
+    #[doc(hidden)]
     pub customer_user_name: std::option::Option<std::string::String>,
     /// <p>The security group identifier for the AD Connector directory.</p>
+    #[doc(hidden)]
     pub security_group_id: std::option::Option<std::string::String>,
     /// <p>A list of the Availability Zones that the directory is in.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IP addresses of the AD Connector servers.</p>
+    #[doc(hidden)]
     pub connect_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DirectoryConnectSettingsDescription {
@@ -6172,10 +6330,13 @@ impl AsRef<str> for DirectorySize {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionalForwarder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
+    #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
+    #[doc(hidden)]
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
+    #[doc(hidden)]
     pub replication_scope: std::option::Option<crate::model::ReplicationScope>,
 }
 impl ConditionalForwarder {
@@ -6330,10 +6491,13 @@ impl AsRef<str> for ReplicationScope {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientAuthenticationSettingInfo {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClientAuthenticationStatus>,
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ClientAuthenticationSettingInfo {
@@ -6486,20 +6650,28 @@ impl AsRef<str> for ClientAuthenticationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>The identifier of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The state of the certificate.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CertificateState>,
     /// <p>Describes a state change for the certificate.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The common name for the certificate.</p>
+    #[doc(hidden)]
     pub common_name: std::option::Option<std::string::String>,
     /// <p>The date and time that the certificate was registered.</p>
+    #[doc(hidden)]
     pub registered_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the certificate will expire.</p>
+    #[doc(hidden)]
     pub expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
+    #[doc(hidden)]
     pub client_cert_auth_settings: std::option::Option<crate::model::ClientCertAuthSettings>,
 }
 impl Certificate {
@@ -6697,10 +6869,13 @@ impl Certificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Computer {
     /// <p>The identifier of the computer.</p>
+    #[doc(hidden)]
     pub computer_id: std::option::Option<std::string::String>,
     /// <p>The computer name.</p>
+    #[doc(hidden)]
     pub computer_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
+    #[doc(hidden)]
     pub computer_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl Computer {
@@ -6801,8 +6976,10 @@ impl Computer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p>The name of the attribute.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Attribute {
@@ -6874,10 +7051,13 @@ impl Attribute {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryConnectSettings {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
+    #[doc(hidden)]
     pub customer_dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
@@ -6885,6 +7065,7 @@ pub struct DirectoryConnectSettings {
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub customer_user_name: std::option::Option<std::string::String>,
 }
 impl DirectoryConnectSettings {
@@ -7026,8 +7207,10 @@ impl DirectoryConnectSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRoute {
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+    #[doc(hidden)]
     pub cidr_ip: std::option::Option<std::string::String>,
     /// <p>Description of the address block.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl IpRoute {

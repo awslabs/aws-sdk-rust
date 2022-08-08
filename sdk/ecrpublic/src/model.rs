@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -78,22 +80,29 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryCatalogData {
     /// <p>The short description of the repository.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The architecture tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub architectures: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operating system tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL containing the logo associated with the repository.</p>
+    #[doc(hidden)]
     pub logo_url: std::option::Option<std::string::String>,
     /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
+    #[doc(hidden)]
     pub about_text: std::option::Option<std::string::String>,
     /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
+    #[doc(hidden)]
     pub usage_text: std::option::Option<std::string::String>,
     /// <p>Whether or not the repository is certified by AWS Marketplace.</p>
+    #[doc(hidden)]
     pub marketplace_certified: std::option::Option<bool>,
 }
 impl RepositoryCatalogData {
@@ -280,6 +289,7 @@ impl RepositoryCatalogData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryCatalogDataInput {
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures will appear as badges on the repository and are used as search filters.</p>
     /// <ul>
@@ -288,6 +298,7 @@ pub struct RepositoryCatalogDataInput {
     /// </ul> <note>
     /// <p>If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
+    #[doc(hidden)]
     pub architectures: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems will appear as badges on the repository and are used as search filters.</p>
     /// <ul>
@@ -298,14 +309,18 @@ pub struct RepositoryCatalogDataInput {
     /// </ul> <note>
     /// <p>If an unsupported tag is added to your repository catalog data, it will be associated with the repository and can be retrieved using the API but will not be discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
+    #[doc(hidden)]
     pub operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The base64-encoded repository logo payload.</p> <note>
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
+    #[doc(hidden)]
     pub logo_image_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public Gallery. The text must be in markdown format.</p>
+    #[doc(hidden)]
     pub about_text: std::option::Option<std::string::String>,
     /// <p>Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
+    #[doc(hidden)]
     pub usage_text: std::option::Option<std::string::String>,
 }
 impl RepositoryCatalogDataInput {
@@ -516,6 +531,7 @@ pub struct RegistryCatalogData {
     /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p> <important>
     /// <p>Only accounts that have the verified account badge can have a registry display name.</p>
     /// </important>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl RegistryCatalogData {
@@ -576,14 +592,19 @@ impl RegistryCatalogData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>The AWS account ID associated with the registry containing the image.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository associated with the image.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An object containing the image tag and image digest associated with an image.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The image manifest associated with the image.</p>
+    #[doc(hidden)]
     pub image_manifest: std::option::Option<std::string::String>,
     /// <p>The manifest media type of the image.</p>
+    #[doc(hidden)]
     pub image_manifest_media_type: std::option::Option<std::string::String>,
 }
 impl Image {
@@ -718,8 +739,10 @@ impl Image {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The tag used for the image.</p>
+    #[doc(hidden)]
     pub image_tag: std::option::Option<std::string::String>,
 }
 impl ImageIdentifier {
@@ -791,8 +814,10 @@ impl ImageIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationData {
     /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry. When the string is decoded, it is presented in the format <code>user:password</code> for public registry authentication using <code>docker login</code>.</p>
+    #[doc(hidden)]
     pub authorization_token: std::option::Option<std::string::String>,
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires. Authorization tokens are valid for 12 hours.</p>
+    #[doc(hidden)]
     pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AuthorizationData {
@@ -870,14 +895,19 @@ impl AuthorizationData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+    #[doc(hidden)]
     pub repository_arn: std::option::Option<std::string::String>,
     /// <p>The AWS account ID associated with the public registry that contains the repository.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
+    #[doc(hidden)]
     pub repository_uri: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Repository {
@@ -1012,14 +1042,19 @@ impl Repository {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Registry {
     /// <p>The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
+    #[doc(hidden)]
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
+    #[doc(hidden)]
     pub registry_uri: std::option::Option<std::string::String>,
     /// <p>Whether the account is verified. This indicates whether the account is an AWS Marketplace vendor. If an account is verified, each public repository will received a verified account badge on the Amazon ECR Public Gallery.</p>
+    #[doc(hidden)]
     pub verified: std::option::Option<bool>,
     /// <p>An array of objects representing the aliases for a public registry.</p>
+    #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::RegistryAlias>>,
 }
 impl Registry {
@@ -1151,14 +1186,18 @@ impl Registry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistryAlias {
     /// <p>The name of the registry alias.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the registry alias.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RegistryAliasStatus>,
     /// <p>Whether or not the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that is not the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
+    #[doc(hidden)]
     pub primary_registry_alias: bool,
     /// <p>Whether or not the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
+    #[doc(hidden)]
     pub default_registry_alias: bool,
 }
 impl RegistryAlias {
@@ -1332,10 +1371,13 @@ impl AsRef<str> for RegistryAliasStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTagDetail {
     /// <p>The tag associated with the image.</p>
+    #[doc(hidden)]
     pub image_tag: std::option::Option<std::string::String>,
     /// <p>The time stamp indicating when the image tag was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the details of an image.</p>
+    #[doc(hidden)]
     pub image_detail: std::option::Option<crate::model::ReferencedImageDetail>,
 }
 impl ImageTagDetail {
@@ -1430,17 +1472,22 @@ impl ImageTagDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferencedImageDetail {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image tag was pushed to the repository.</p>
+    #[doc(hidden)]
     pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The media type of the image manifest.</p>
+    #[doc(hidden)]
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
+    #[doc(hidden)]
     pub artifact_media_type: std::option::Option<std::string::String>,
 }
 impl ReferencedImageDetail {
@@ -1581,23 +1628,31 @@ impl ReferencedImageDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDetail {
     /// <p>The AWS account ID associated with the public registry to which this image belongs.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which this image belongs.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The list of tags associated with this image.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub image_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    #[doc(hidden)]
     pub image_pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The media type of the image manifest.</p>
+    #[doc(hidden)]
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
+    #[doc(hidden)]
     pub artifact_media_type: std::option::Option<std::string::String>,
 }
 impl ImageDetail {
@@ -1801,10 +1856,13 @@ impl ImageDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageFailure {
     /// <p>The image ID associated with the failure.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The code associated with the failure.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::ImageFailureCode>,
     /// <p>The reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl ImageFailure {
@@ -1985,10 +2043,13 @@ impl AsRef<str> for ImageFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerFailure {
     /// <p>The layer digest associated with the failure.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
     /// <p>The failure code associated with the failure.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::LayerFailureCode>,
     /// <p>The reason for the failure.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl LayerFailure {
@@ -2138,12 +2199,16 @@ impl AsRef<str> for LayerFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Layer {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
     /// <p>The availability status of the image layer.</p>
+    #[doc(hidden)]
     pub layer_availability: std::option::Option<crate::model::LayerAvailability>,
     /// <p>The size, in bytes, of the image layer.</p>
+    #[doc(hidden)]
     pub layer_size: std::option::Option<i64>,
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+    #[doc(hidden)]
     pub media_type: std::option::Option<std::string::String>,
 }
 impl Layer {

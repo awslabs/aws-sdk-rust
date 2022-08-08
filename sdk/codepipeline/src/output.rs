@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineOutput {
     /// <p>The structure of the updated pipeline.</p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
 }
 impl UpdatePipelineOutput {
@@ -152,6 +153,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl StopPipelineExecutionOutput {
@@ -209,6 +211,7 @@ impl StopPipelineExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl StartPipelineExecutionOutput {
@@ -266,6 +269,7 @@ impl StartPipelineExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryStageExecutionOutput {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl RetryStageExecutionOutput {
@@ -353,6 +357,7 @@ impl RegisterWebhookWithThirdPartyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWebhookOutput {
     /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
+    #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::ListWebhookItem>,
 }
 impl PutWebhookOutput {
@@ -530,6 +535,7 @@ impl PutJobFailureResultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
+    #[doc(hidden)]
     pub approved_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutApprovalResultOutput {
@@ -587,8 +593,10 @@ impl PutApprovalResultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutActionRevisionOutput {
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
+    #[doc(hidden)]
     pub new_revision: bool,
     /// <p>The ID of the current workflow state of the pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl PutActionRevisionOutput {
@@ -663,6 +671,7 @@ impl PutActionRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::ThirdPartyJob>>,
 }
 impl PollForThirdPartyJobsOutput {
@@ -724,6 +733,7 @@ impl PollForThirdPartyJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
 }
 impl PollForJobsOutput {
@@ -785,8 +795,10 @@ impl PollForJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhooksOutput {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
+    #[doc(hidden)]
     pub webhooks: std::option::Option<std::vec::Vec<crate::model::ListWebhookItem>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebhooksOutput {
@@ -867,8 +879,10 @@ impl ListWebhooksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -949,8 +963,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesOutput {
     /// <p>The list of pipelines.</p>
+    #[doc(hidden)]
     pub pipelines: std::option::Option<std::vec::Vec<crate::model::PipelineSummary>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelinesOutput {
@@ -1031,9 +1047,11 @@ impl ListPipelinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::PipelineExecutionSummary>>,
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelineExecutionsOutput {
@@ -1123,8 +1141,10 @@ impl ListPipelineExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
+    #[doc(hidden)]
     pub action_types: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionTypesOutput {
@@ -1205,9 +1225,11 @@ impl ListActionTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
+    #[doc(hidden)]
     pub action_execution_details:
         std::option::Option<std::vec::Vec<crate::model::ActionExecutionDetail>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionExecutionsOutput {
@@ -1294,6 +1316,7 @@ impl ListActionExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThirdPartyJobDetailsOutput {
     /// <p>The details of the job, including any protected values defined for the job.</p>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::ThirdPartyJobDetails>,
 }
 impl GetThirdPartyJobDetailsOutput {
@@ -1351,16 +1374,21 @@ impl GetThirdPartyJobDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineStateOutput {
     /// <p>The name of the pipeline for which you want to get the state.</p>
+    #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The version number of the pipeline.</p> <note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub pipeline_version: std::option::Option<i32>,
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
+    #[doc(hidden)]
     pub stage_states: std::option::Option<std::vec::Vec<crate::model::StageState>>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    #[doc(hidden)]
     pub updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPipelineStateOutput {
@@ -1507,6 +1535,7 @@ impl GetPipelineStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineExecutionOutput {
     /// <p>Represents information about the execution of a pipeline.</p>
+    #[doc(hidden)]
     pub pipeline_execution: std::option::Option<crate::model::PipelineExecution>,
 }
 impl GetPipelineExecutionOutput {
@@ -1564,8 +1593,10 @@ impl GetPipelineExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::PipelineMetadata>,
 }
 impl GetPipelineOutput {
@@ -1645,6 +1676,7 @@ pub struct GetJobDetailsOutput {
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
+    #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobDetails>,
 }
 impl GetJobDetailsOutput {
@@ -1708,6 +1740,7 @@ impl GetJobDetailsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActionTypeOutput {
     /// <p>The action type information for the requested action type, such as the action type ID.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
 }
 impl GetActionTypeOutput {
@@ -1945,8 +1978,10 @@ impl DeleteCustomActionTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
     /// <p>Specifies the tags applied to the pipeline.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineOutput {
@@ -2030,8 +2065,10 @@ impl CreatePipelineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomActionTypeOutput {
     /// <p>Returns information about the details of an action type.</p>
+    #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
     /// <p>Specifies the tags applied to the custom action.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCustomActionTypeOutput {
@@ -2115,6 +2152,7 @@ impl CreateCustomActionTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
 }
 impl AcknowledgeThirdPartyJobOutput {
@@ -2169,6 +2207,7 @@ impl AcknowledgeThirdPartyJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeJobOutput {
     /// <p>Whether the job worker has received the specified job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::JobStatus>,
 }
 impl AcknowledgeJobOutput {

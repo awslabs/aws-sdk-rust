@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAttributeGroupOutput {
     /// <p>The updated information of the attribute group.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::model::AttributeGroup>,
 }
 impl UpdateAttributeGroupOutput {
@@ -61,6 +62,7 @@ impl UpdateAttributeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
     /// <p>The updated information of the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl UpdateApplicationOutput {
@@ -178,10 +180,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncResourceOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
+    #[doc(hidden)]
     pub action_taken: std::option::Option<crate::model::SyncAction>,
 }
 impl SyncResourceOutput {
@@ -276,6 +281,7 @@ impl SyncResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags on the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -349,9 +355,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributeGroupsForApplicationOutput {
     /// <p> The details related to a specific AttributeGroup. </p>
+    #[doc(hidden)]
     pub attribute_groups_details:
         std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttributeGroupsForApplicationOutput {
@@ -438,8 +446,10 @@ impl ListAttributeGroupsForApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
+    #[doc(hidden)]
     pub attribute_groups: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttributeGroupsOutput {
@@ -521,8 +531,10 @@ impl ListAttributeGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedResourcesOutput {
     /// <p>Information about the resources.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedResourcesOutput {
@@ -603,8 +615,10 @@ impl ListAssociatedResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedAttributeGroupsOutput {
     /// <p>A list of attribute group IDs.</p>
+    #[doc(hidden)]
     pub attribute_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedAttributeGroupsOutput {
@@ -685,8 +699,10 @@ impl ListAssociatedAttributeGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsOutput {
     /// <p>This list of applications.</p>
+    #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -768,20 +784,28 @@ impl ListApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttributeGroupOutput {
     /// <p>The identifier of the attribute group.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the attribute group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    #[doc(hidden)]
     pub attributes: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs associated with the attribute group.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -982,6 +1006,7 @@ impl GetAttributeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
 }
 impl GetAssociatedResourceOutput {
@@ -1036,23 +1061,32 @@ impl GetAssociatedResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationOutput {
     /// <p>The identifier of the application.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of top-level resources that were registered as part of this application.</p>
+    #[doc(hidden)]
     pub associated_resource_count: i32,
     /// <p>Key-value pairs associated with the application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The information about the integration of the application with other services, such as Resource Groups.</p>
+    #[doc(hidden)]
     pub integrations: std::option::Option<crate::model::Integrations>,
 }
 impl GetApplicationOutput {
@@ -1272,8 +1306,10 @@ impl GetApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceOutput {
@@ -1348,8 +1384,10 @@ impl DisassociateResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateAttributeGroupOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    #[doc(hidden)]
     pub attribute_group_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateAttributeGroupOutput {
@@ -1427,6 +1465,7 @@ impl DisassociateAttributeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttributeGroupOutput {
     /// <p>Information about the deleted attribute group.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::model::AttributeGroupSummary>,
 }
 impl DeleteAttributeGroupOutput {
@@ -1484,6 +1523,7 @@ impl DeleteAttributeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationOutput {
     /// <p>Information about the deleted application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::ApplicationSummary>,
 }
 impl DeleteApplicationOutput {
@@ -1541,6 +1581,7 @@ impl DeleteApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAttributeGroupOutput {
     /// <p>Information about the attribute group.</p>
+    #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::model::AttributeGroup>,
 }
 impl CreateAttributeGroupOutput {
@@ -1598,6 +1639,7 @@ impl CreateAttributeGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>Information about the application.</p>
+    #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl CreateApplicationOutput {
@@ -1655,8 +1697,10 @@ impl CreateApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceOutput {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl AssociateResourceOutput {
@@ -1731,8 +1775,10 @@ impl AssociateResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAttributeGroupOutput {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
+    #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
+    #[doc(hidden)]
     pub attribute_group_arn: std::option::Option<std::string::String>,
 }
 impl AssociateAttributeGroupOutput {

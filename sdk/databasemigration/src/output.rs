@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSubscriptionsToEventBridgeOutput {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
+    #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl UpdateSubscriptionsToEventBridgeOutput {
@@ -59,6 +60,7 @@ impl UpdateSubscriptionsToEventBridgeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestConnectionOutput {
     /// <p>The connection tested.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl TestConnectionOutput {
@@ -116,6 +118,7 @@ impl TestConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopReplicationTaskOutput {
     /// <p>The replication task stopped.</p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl StopReplicationTaskOutput {
@@ -173,6 +176,7 @@ impl StopReplicationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskAssessmentRunOutput {
     /// <p>The premigration assessment run that was started.</p>
+    #[doc(hidden)]
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
@@ -240,6 +244,7 @@ impl StartReplicationTaskAssessmentRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskAssessmentOutput {
     /// <p> The assessed replication task. </p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl StartReplicationTaskAssessmentOutput {
@@ -297,6 +302,7 @@ impl StartReplicationTaskAssessmentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskOutput {
     /// <p>The replication task started.</p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl StartReplicationTaskOutput {
@@ -354,8 +360,10 @@ impl StartReplicationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunFleetAdvisorLsaAnalysisOutput {
     /// <p>The ID of the LSA analysis run.</p>
+    #[doc(hidden)]
     pub lsa_analysis_id: std::option::Option<std::string::String>,
     /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl RunFleetAdvisorLsaAnalysisOutput {
@@ -460,6 +468,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReloadTablesOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
 }
 impl ReloadTablesOutput {
@@ -517,6 +526,7 @@ impl ReloadTablesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshSchemasOutput {
     /// <p>The status of the refreshed schema.</p>
+    #[doc(hidden)]
     pub refresh_schemas_status: std::option::Option<crate::model::RefreshSchemasStatus>,
 }
 impl RefreshSchemasOutput {
@@ -576,6 +586,7 @@ impl RefreshSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootReplicationInstanceOutput {
     /// <p>The replication instance that is being rebooted. </p>
+    #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl RebootReplicationInstanceOutput {
@@ -633,6 +644,7 @@ impl RebootReplicationInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveReplicationTaskOutput {
     /// <p>The replication task that was moved.</p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl MoveReplicationTaskOutput {
@@ -690,6 +702,7 @@ impl MoveReplicationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationTaskOutput {
     /// <p>The replication task that was modified.</p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl ModifyReplicationTaskOutput {
@@ -747,6 +760,7 @@ impl ModifyReplicationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationSubnetGroupOutput {
     /// <p>The modified replication subnet group.</p>
+    #[doc(hidden)]
     pub replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
 }
 impl ModifyReplicationSubnetGroupOutput {
@@ -810,6 +824,7 @@ impl ModifyReplicationSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReplicationInstanceOutput {
     /// <p>The modified replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl ModifyReplicationInstanceOutput {
@@ -867,6 +882,7 @@ impl ModifyReplicationInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEventSubscriptionOutput {
     /// <p>The modified event subscription.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
@@ -924,6 +940,7 @@ impl ModifyEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyEndpointOutput {
     /// <p>The modified endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl ModifyEndpointOutput {
@@ -978,6 +995,7 @@ impl ModifyEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags for the resource.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -1041,6 +1059,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateOutput {
     /// <p>The certificate to be uploaded.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl ImportCertificateOutput {
@@ -1098,10 +1117,13 @@ impl ImportCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableStatisticsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The table statistics.</p>
+    #[doc(hidden)]
     pub table_statistics: std::option::Option<std::vec::Vec<crate::model::TableStatistics>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTableStatisticsOutput {
@@ -1203,8 +1225,10 @@ impl DescribeTableStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemasOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The described schema.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSchemasOutput {
@@ -1285,8 +1309,10 @@ impl DescribeSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTasksOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the replication tasks.</p>
+    #[doc(hidden)]
     pub replication_tasks: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
 }
 impl DescribeReplicationTasksOutput {
@@ -1368,8 +1394,10 @@ impl DescribeReplicationTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskIndividualAssessmentsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
+    #[doc(hidden)]
     pub replication_task_individual_assessments:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
 }
@@ -1466,8 +1494,10 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentRunsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
+    #[doc(hidden)]
     pub replication_task_assessment_runs:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
 }
@@ -1558,10 +1588,13 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentResultsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The task assessment report. </p>
+    #[doc(hidden)]
     pub replication_task_assessment_results:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
 }
@@ -1672,8 +1705,10 @@ impl DescribeReplicationTaskAssessmentResultsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationSubnetGroupsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the replication subnet groups.</p>
+    #[doc(hidden)]
     pub replication_subnet_groups:
         std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
 }
@@ -1761,11 +1796,14 @@ impl DescribeReplicationSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationInstanceTaskLogsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    #[doc(hidden)]
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    #[doc(hidden)]
     pub replication_instance_task_logs:
         std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstanceTaskLogsOutput {
@@ -1875,8 +1913,10 @@ impl DescribeReplicationInstanceTaskLogsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationInstancesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The replication instances described.</p>
+    #[doc(hidden)]
     pub replication_instances:
         std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
 }
@@ -1961,6 +2001,7 @@ impl DescribeReplicationInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRefreshSchemasStatusOutput {
     /// <p>The status of the schema.</p>
+    #[doc(hidden)]
     pub refresh_schemas_status: std::option::Option<crate::model::RefreshSchemasStatus>,
 }
 impl DescribeRefreshSchemasStatusOutput {
@@ -2020,9 +2061,11 @@ impl DescribeRefreshSchemasStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>The pending maintenance action.</p>
+    #[doc(hidden)]
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -2114,9 +2157,11 @@ impl DescribePendingMaintenanceActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableReplicationInstancesOutput {
     /// <p>The order-able replication instances available.</p>
+    #[doc(hidden)]
     pub orderable_replication_instances:
         std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesOutput {
@@ -2206,8 +2251,10 @@ impl DescribeOrderableReplicationInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAdvisorSchemasOutput {
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
+    #[doc(hidden)]
     pub fleet_advisor_schemas: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorSchemasOutput {
@@ -2289,9 +2336,11 @@ impl DescribeFleetAdvisorSchemasOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput {
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
+    #[doc(hidden)]
     pub fleet_advisor_schema_objects:
         std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
@@ -2384,8 +2433,10 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAdvisorLsaAnalysisOutput {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
+    #[doc(hidden)]
     pub analysis: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorLsaAnalysisOutput {
@@ -2471,8 +2522,10 @@ impl DescribeFleetAdvisorLsaAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAdvisorDatabasesOutput {
     /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
+    #[doc(hidden)]
     pub databases: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorDatabasesOutput {
@@ -2553,8 +2606,10 @@ impl DescribeFleetAdvisorDatabasesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetAdvisorCollectorsOutput {
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    #[doc(hidden)]
     pub collectors: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFleetAdvisorCollectorsOutput {
@@ -2635,8 +2690,10 @@ impl DescribeFleetAdvisorCollectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
+    #[doc(hidden)]
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
@@ -2721,8 +2778,10 @@ impl DescribeEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The events described.</p>
+    #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -2803,6 +2862,7 @@ impl DescribeEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of event categories.</p>
+    #[doc(hidden)]
     pub event_category_group_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
 }
@@ -2873,8 +2933,10 @@ impl DescribeEventCategoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointTypesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The types of endpoints that are supported.</p>
+    #[doc(hidden)]
     pub supported_endpoint_types:
         std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
 }
@@ -2962,8 +3024,10 @@ impl DescribeEndpointTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointSettingsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
+    #[doc(hidden)]
     pub endpoint_settings: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
 }
 impl DescribeEndpointSettingsOutput {
@@ -3045,8 +3109,10 @@ impl DescribeEndpointSettingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Endpoint description.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
 }
 impl DescribeEndpointsOutput {
@@ -3127,8 +3193,10 @@ impl DescribeEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the connections.</p>
+    #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
 impl DescribeConnectionsOutput {
@@ -3209,8 +3277,10 @@ impl DescribeConnectionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesOutput {
     /// <p>The pagination token.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
+    #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl DescribeCertificatesOutput {
@@ -3291,8 +3361,10 @@ impl DescribeCertificatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicableIndividualAssessmentsOutput {
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[doc(hidden)]
     pub individual_assessment_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeApplicableIndividualAssessmentsOutput {
@@ -3380,10 +3452,12 @@ impl DescribeApplicableIndividualAssessmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
+    #[doc(hidden)]
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
+    #[doc(hidden)]
     pub unique_account_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeAccountAttributesOutput {
@@ -3473,6 +3547,7 @@ impl DescribeAccountAttributesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
+    #[doc(hidden)]
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
@@ -3540,6 +3615,7 @@ impl DeleteReplicationTaskAssessmentRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationTaskOutput {
     /// <p>The deleted replication task.</p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl DeleteReplicationTaskOutput {
@@ -3627,6 +3703,7 @@ impl DeleteReplicationSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationInstanceOutput {
     /// <p>The replication instance that was deleted.</p>
+    #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl DeleteReplicationInstanceOutput {
@@ -3684,6 +3761,7 @@ impl DeleteReplicationInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetAdvisorDatabasesOutput {
     /// <p>The IDs of the databases that the operation deleted.</p>
+    #[doc(hidden)]
     pub database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteFleetAdvisorDatabasesOutput {
@@ -3777,6 +3855,7 @@ impl DeleteFleetAdvisorCollectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
@@ -3834,6 +3913,7 @@ impl DeleteEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointOutput {
     /// <p>The endpoint that was deleted.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl DeleteEndpointOutput {
@@ -3888,6 +3968,7 @@ impl DeleteEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>The connection that is being deleted.</p>
+    #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
 }
 impl DeleteConnectionOutput {
@@ -3945,6 +4026,7 @@ impl DeleteConnectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateOutput {
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl DeleteCertificateOutput {
@@ -4002,6 +4084,7 @@ impl DeleteCertificateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationTaskOutput {
     /// <p>The replication task that was created.</p>
+    #[doc(hidden)]
     pub replication_task: std::option::Option<crate::model::ReplicationTask>,
 }
 impl CreateReplicationTaskOutput {
@@ -4059,6 +4142,7 @@ impl CreateReplicationTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationSubnetGroupOutput {
     /// <p>The replication subnet group that was created.</p>
+    #[doc(hidden)]
     pub replication_subnet_group: std::option::Option<crate::model::ReplicationSubnetGroup>,
 }
 impl CreateReplicationSubnetGroupOutput {
@@ -4122,6 +4206,7 @@ impl CreateReplicationSubnetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationInstanceOutput {
     /// <p>The replication instance that was created.</p>
+    #[doc(hidden)]
     pub replication_instance: std::option::Option<crate::model::ReplicationInstance>,
 }
 impl CreateReplicationInstanceOutput {
@@ -4179,14 +4264,19 @@ impl CreateReplicationInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetAdvisorCollectorOutput {
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+    #[doc(hidden)]
     pub collector_referenced_id: std::option::Option<std::string::String>,
     /// <p>The name of the new Fleet Advisor collector.</p>
+    #[doc(hidden)]
     pub collector_name: std::option::Option<std::string::String>,
     /// <p>A summary description of the Fleet Advisor collector.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+    #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
 }
 impl CreateFleetAdvisorCollectorOutput {
@@ -4321,6 +4411,7 @@ impl CreateFleetAdvisorCollectorOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSubscriptionOutput {
     /// <p>The event subscription that was created.</p>
+    #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
@@ -4378,6 +4469,7 @@ impl CreateEventSubscriptionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointOutput {
     /// <p>The endpoint that was created.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl CreateEndpointOutput {
@@ -4432,6 +4524,7 @@ impl CreateEndpointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
+    #[doc(hidden)]
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
@@ -4499,6 +4592,7 @@ impl CancelReplicationTaskAssessmentRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
+    #[doc(hidden)]
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }

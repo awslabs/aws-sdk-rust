@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainOutput {
     /// <p>Details about the updated domain</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl UpdateDomainOutput {
@@ -118,6 +119,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeakerEnrollmentJobOutput {
     /// <p>Details about the started speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
 }
 impl StartSpeakerEnrollmentJobOutput {
@@ -173,6 +175,7 @@ impl StartSpeakerEnrollmentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFraudsterRegistrationJobOutput {
     /// <p>Details about the started fraudster registration job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::FraudsterRegistrationJob>,
 }
 impl StartFraudsterRegistrationJobOutput {
@@ -228,6 +231,7 @@ impl StartFraudsterRegistrationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptOutSpeakerOutput {
     /// <p>Details about the opted-out speaker.</p>
+    #[doc(hidden)]
     pub speaker: std::option::Option<crate::model::Speaker>,
 }
 impl OptOutSpeakerOutput {
@@ -282,6 +286,7 @@ impl OptOutSpeakerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags associated with the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -343,8 +348,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeakersOutput {
     /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
+    #[doc(hidden)]
     pub speaker_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakersOutput {
@@ -426,9 +433,11 @@ impl ListSpeakersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job_summaries:
         std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakerEnrollmentJobsOutput {
@@ -512,9 +521,11 @@ impl ListSpeakerEnrollmentJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFraudsterRegistrationJobsOutput {
     /// <p>A list containing details about each specified fraudster registration job.</p>
+    #[doc(hidden)]
     pub job_summaries:
         std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFraudsterRegistrationJobsOutput {
@@ -603,8 +614,10 @@ impl ListFraudsterRegistrationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
     /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -686,16 +699,22 @@ impl ListDomainsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluateSessionOutput {
     /// <p>The identifier of the domain containing the session.</p>
+    #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier of the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The client-provided name of the session.</p>
+    #[doc(hidden)]
     pub session_name: std::option::Option<std::string::String>,
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
+    #[doc(hidden)]
     pub streaming_status: std::option::Option<crate::model::StreamingStatus>,
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
+    #[doc(hidden)]
     pub authentication_result: std::option::Option<crate::model::AuthenticationResult>,
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
+    #[doc(hidden)]
     pub fraud_detection_result: std::option::Option<crate::model::FraudDetectionResult>,
 }
 impl EvaluateSessionOutput {
@@ -848,6 +867,7 @@ impl EvaluateSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpeakerEnrollmentJobOutput {
     /// <p>Contains details about the specified speaker enrollment job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
 }
 impl DescribeSpeakerEnrollmentJobOutput {
@@ -903,6 +923,7 @@ impl DescribeSpeakerEnrollmentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpeakerOutput {
     /// <p>Information about the specified speaker.</p>
+    #[doc(hidden)]
     pub speaker: std::option::Option<crate::model::Speaker>,
 }
 impl DescribeSpeakerOutput {
@@ -957,6 +978,7 @@ impl DescribeSpeakerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFraudsterRegistrationJobOutput {
     /// <p>Contains details about the specified fraudster registration job.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::FraudsterRegistrationJob>,
 }
 impl DescribeFraudsterRegistrationJobOutput {
@@ -1012,6 +1034,7 @@ impl DescribeFraudsterRegistrationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFraudsterOutput {
     /// <p>Information about the specified fraudster.</p>
+    #[doc(hidden)]
     pub fraudster: std::option::Option<crate::model::Fraudster>,
 }
 impl DescribeFraudsterOutput {
@@ -1069,6 +1092,7 @@ impl DescribeFraudsterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainOutput {
     /// <p>Information about the specified domain.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl DescribeDomainOutput {
@@ -1213,6 +1237,7 @@ impl DeleteDomainOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
     /// <p>Information about the newly created domain.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateDomainOutput {

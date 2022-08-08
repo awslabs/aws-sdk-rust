@@ -5102,14 +5102,18 @@ impl ViewBillingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViewBillingInput {
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    #[doc(hidden)]
     pub end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The number of billing records to be returned.</p>
     /// <p>Default: 20</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ViewBillingInput {
@@ -5148,8 +5152,10 @@ impl std::fmt::Debug for ViewBillingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTagsForDomainInput {
     /// <p>The domain for which you want to add or update tags.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
+    #[doc(hidden)]
     pub tags_to_update: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateTagsForDomainInput {
@@ -5177,11 +5183,14 @@ impl std::fmt::Debug for UpdateTagsForDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameserversInput {
     /// <p>The name of the domain that you want to change name servers for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
+    #[doc(hidden)]
     pub fi_auth_key: std::option::Option<std::string::String>,
     /// <p>A list of new name servers for the domain.</p>
+    #[doc(hidden)]
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
 }
 impl UpdateDomainNameserversInput {
@@ -5214,18 +5223,22 @@ impl std::fmt::Debug for UpdateDomainNameserversInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainContactPrivacyInput {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
+    #[doc(hidden)]
     pub admin_privacy: std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
+    #[doc(hidden)]
     pub registrant_privacy: std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
+    #[doc(hidden)]
     pub tech_privacy: std::option::Option<bool>,
 }
 impl UpdateDomainContactPrivacyInput {
@@ -5268,12 +5281,16 @@ impl std::fmt::Debug for UpdateDomainContactPrivacyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainContactInput {
     /// <p>The name of the domain that you want to update contact information for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Provides detailed contact information.</p>
+    #[doc(hidden)]
     pub admin_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
+    #[doc(hidden)]
     pub registrant_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
+    #[doc(hidden)]
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
 }
 impl UpdateDomainContactInput {
@@ -5310,8 +5327,10 @@ impl std::fmt::Debug for UpdateDomainContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferDomainToAnotherAwsAccountInput {
     /// <p>The name of the domain that you want to transfer from the current Amazon Web Services account to another account.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl TransferDomainToAnotherAwsAccountInput {
@@ -5345,39 +5364,51 @@ pub struct TransferDomainInput {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub idn_lang_code: std::option::Option<std::string::String>,
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
+    #[doc(hidden)]
     pub duration_in_years: std::option::Option<i32>,
     /// <p>Contains details for the host and glue IP addresses.</p>
+    #[doc(hidden)]
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
+    #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
+    #[doc(hidden)]
     pub auto_renew: std::option::Option<bool>,
     /// <p>Provides detailed contact information.</p>
+    #[doc(hidden)]
     pub admin_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
+    #[doc(hidden)]
     pub registrant_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
+    #[doc(hidden)]
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub privacy_protect_admin_contact: std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub privacy_protect_registrant_contact: std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub privacy_protect_tech_contact: std::option::Option<bool>,
 }
 impl TransferDomainInput {
@@ -5481,6 +5512,7 @@ impl std::fmt::Debug for TransferDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveDomainAuthCodeInput {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RetrieveDomainAuthCodeInput {
@@ -5502,6 +5534,7 @@ impl std::fmt::Debug for RetrieveDomainAuthCodeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendContactReachabilityEmailInput {
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl ResendContactReachabilityEmailInput {
@@ -5523,11 +5556,14 @@ impl std::fmt::Debug for ResendContactReachabilityEmailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewDomainInput {
     /// <p>The name of the domain that you want to renew.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
+    #[doc(hidden)]
     pub duration_in_years: std::option::Option<i32>,
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
+    #[doc(hidden)]
     pub current_expiry_year: i32,
 }
 impl RenewDomainInput {
@@ -5560,6 +5596,7 @@ impl std::fmt::Debug for RenewDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RejectDomainTransferFromAnotherAwsAccountInput {
@@ -5589,35 +5626,45 @@ pub struct RegisterDomainInput {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub idn_lang_code: std::option::Option<std::string::String>,
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
+    #[doc(hidden)]
     pub duration_in_years: std::option::Option<i32>,
     /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub auto_renew: std::option::Option<bool>,
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    #[doc(hidden)]
     pub admin_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    #[doc(hidden)]
     pub registrant_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    #[doc(hidden)]
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub privacy_protect_admin_contact: std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub privacy_protect_registrant_contact: std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
+    #[doc(hidden)]
     pub privacy_protect_tech_contact: std::option::Option<bool>,
 }
 impl RegisterDomainInput {
@@ -5712,6 +5759,7 @@ impl std::fmt::Debug for RegisterDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForDomainInput {
     /// <p>The domain for which you want to get a list of tags.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl ListTagsForDomainInput {
@@ -5734,12 +5782,15 @@ impl std::fmt::Debug for ListTagsForDomainInput {
 pub struct ListPricesInput {
     /// <p>The TLD for which you want to receive the pricing information. For example. <code>.net</code>.</p>
     /// <p>If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported by Route&nbsp;53 is returned.</p>
+    #[doc(hidden)]
     pub tld: std::option::Option<std::string::String>,
     /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Number of <code>Prices</code> to be returned.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListPricesInput {
@@ -5774,11 +5825,14 @@ impl std::fmt::Debug for ListPricesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsInput {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    #[doc(hidden)]
     pub submitted_since: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListOperationsInput {
@@ -5811,14 +5865,18 @@ impl std::fmt::Debug for ListOperationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
+    #[doc(hidden)]
     pub filter_conditions: std::option::Option<std::vec::Vec<crate::model::FilterCondition>>,
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
+    #[doc(hidden)]
     pub sort_condition: std::option::Option<crate::model::SortCondition>,
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListDomainsInput {
@@ -5857,6 +5915,7 @@ impl std::fmt::Debug for ListDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationDetailInput {
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
+    #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl GetOperationDetailInput {
@@ -5886,10 +5945,13 @@ pub struct GetDomainSuggestionsInput {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    #[doc(hidden)]
     pub suggestion_count: i32,
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    #[doc(hidden)]
     pub only_available: std::option::Option<bool>,
 }
 impl GetDomainSuggestionsInput {
@@ -5929,6 +5991,7 @@ impl std::fmt::Debug for GetDomainSuggestionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainDetailInput {
     /// <p>The name of the domain that you want to get detailed information about.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetDomainDetailInput {
@@ -5950,6 +6013,7 @@ impl std::fmt::Debug for GetDomainDetailInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactReachabilityStatusInput {
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetContactReachabilityStatusInput {
@@ -5971,6 +6035,7 @@ impl std::fmt::Debug for GetContactReachabilityStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDomainTransferLockInput {
     /// <p>The name of the domain that you want to set the transfer lock for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl EnableDomainTransferLockInput {
@@ -5992,6 +6057,7 @@ impl std::fmt::Debug for EnableDomainTransferLockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl EnableDomainAutoRenewInput {
@@ -6013,6 +6079,7 @@ impl std::fmt::Debug for EnableDomainAutoRenewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDomainTransferLockInput {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DisableDomainTransferLockInput {
@@ -6034,6 +6101,7 @@ impl std::fmt::Debug for DisableDomainTransferLockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DisableDomainAutoRenewInput {
@@ -6055,8 +6123,10 @@ impl std::fmt::Debug for DisableDomainAutoRenewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsForDomainInput {
     /// <p>The domain for which you want to delete one or more tags.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to delete.</p>
+    #[doc(hidden)]
     pub tags_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsForDomainInput {
@@ -6083,6 +6153,7 @@ impl std::fmt::Debug for DeleteTagsForDomainInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
     /// <p>Name of the domain to be deleted.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -6111,8 +6182,10 @@ pub struct CheckDomainTransferabilityInput {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
+    #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
 }
 impl CheckDomainTransferabilityInput {
@@ -6154,8 +6227,10 @@ pub struct CheckDomainAvailabilityInput {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub idn_lang_code: std::option::Option<std::string::String>,
 }
 impl CheckDomainAvailabilityInput {
@@ -6190,6 +6265,7 @@ impl std::fmt::Debug for CheckDomainAvailabilityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDomainTransferToAnotherAwsAccountInput {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl CancelDomainTransferToAnotherAwsAccountInput {
@@ -6211,8 +6287,10 @@ impl std::fmt::Debug for CancelDomainTransferToAnotherAwsAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl AcceptDomainTransferFromAnotherAwsAccountInput {

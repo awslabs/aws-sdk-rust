@@ -4,12 +4,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadLayerPartOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the request.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The integer value of the last byte received in the request.</p>
+    #[doc(hidden)]
     pub last_byte_received: std::option::Option<i64>,
 }
 impl UploadLayerPartOutput {
@@ -178,10 +182,13 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRepositoryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text applied to the repository.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl SetRepositoryPolicyOutput {
@@ -273,6 +280,7 @@ impl SetRepositoryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRepositoryCatalogDataOutput {
     /// <p>The catalog data for the repository.</p>
+    #[doc(hidden)]
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogData>,
 }
 impl PutRepositoryCatalogDataOutput {
@@ -330,6 +338,7 @@ impl PutRepositoryCatalogDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryCatalogDataOutput {
     /// <p>The catalog data for the public registry.</p>
+    #[doc(hidden)]
     pub registry_catalog_data: std::option::Option<crate::model::RegistryCatalogData>,
 }
 impl PutRegistryCatalogDataOutput {
@@ -387,6 +396,7 @@ impl PutRegistryCatalogDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageOutput {
     /// <p>Details of the image uploaded.</p>
+    #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
 }
 impl PutImageOutput {
@@ -439,6 +449,7 @@ impl PutImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -500,8 +511,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateLayerUploadOutput {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
+    #[doc(hidden)]
     pub part_size: std::option::Option<i64>,
 }
 impl InitiateLayerUploadOutput {
@@ -573,10 +586,13 @@ impl InitiateLayerUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPolicyOutput {
@@ -668,6 +684,7 @@ impl GetRepositoryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryCatalogDataOutput {
     /// <p>The catalog metadata for the repository.</p>
+    #[doc(hidden)]
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogData>,
 }
 impl GetRepositoryCatalogDataOutput {
@@ -725,6 +742,7 @@ impl GetRepositoryCatalogDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryCatalogDataOutput {
     /// <p>The catalog metadata for the public registry.</p>
+    #[doc(hidden)]
     pub registry_catalog_data: std::option::Option<crate::model::RegistryCatalogData>,
 }
 impl GetRegistryCatalogDataOutput {
@@ -782,6 +800,7 @@ impl GetRegistryCatalogDataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenOutput {
     /// <p>An authorization token data object that corresponds to a public registry.</p>
+    #[doc(hidden)]
     pub authorization_data: std::option::Option<crate::model::AuthorizationData>,
 }
 impl GetAuthorizationTokenOutput {
@@ -839,8 +858,10 @@ impl GetAuthorizationTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::Repository>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoriesOutput {
@@ -921,8 +942,10 @@ impl DescribeRepositoriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegistriesOutput {
     /// <p>An object containing the details for a public registry.</p>
+    #[doc(hidden)]
     pub registries: std::option::Option<std::vec::Vec<crate::model::Registry>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegistriesOutput {
@@ -1003,8 +1026,10 @@ impl DescribeRegistriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
+    #[doc(hidden)]
     pub image_tag_details: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImageTagsOutput {
@@ -1086,8 +1111,10 @@ impl DescribeImageTagsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesOutput {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
+    #[doc(hidden)]
     pub image_details: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagesOutput {
@@ -1168,10 +1195,13 @@ impl DescribeImagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy that was deleted from the repository.</p>
+    #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPolicyOutput {
@@ -1263,6 +1293,7 @@ impl DeleteRepositoryPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
     /// <p>The repository that was deleted.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl DeleteRepositoryOutput {
@@ -1320,8 +1351,10 @@ impl DeleteRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
+    #[doc(hidden)]
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogData>,
 }
 impl CreateRepositoryOutput {
@@ -1399,12 +1432,16 @@ impl CreateRepositoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadOutput {
     /// <p>The public registry ID associated with the request.</p>
+    #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The upload ID associated with the layer.</p>
+    #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
+    #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
 }
 impl CompleteLayerUploadOutput {
@@ -1513,8 +1550,10 @@ impl CompleteLayerUploadOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImageOutput {
     /// <p>The image IDs of the deleted images.</p>
+    #[doc(hidden)]
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>,
 }
 impl BatchDeleteImageOutput {
@@ -1604,8 +1643,10 @@ impl BatchDeleteImageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCheckLayerAvailabilityOutput {
     /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+    #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>Any failures associated with the call.</p>
+    #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>,
 }
 impl BatchCheckLayerAvailabilityOutput {

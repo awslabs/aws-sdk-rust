@@ -4,12 +4,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorldTemplateOutput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the world template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateWorldTemplateOutput {
@@ -121,24 +125,34 @@ impl UpdateWorldTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSimulationApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated simulation application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the simulation application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the robot application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The simulation software suite used by the simulation application.</p>
+    #[doc(hidden)]
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
+    #[doc(hidden)]
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the simulation application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI used for your simulation application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateSimulationApplicationOutput {
@@ -376,20 +390,28 @@ impl UpdateSimulationApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRobotApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated robot application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the robot application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the robot application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI for your robot application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateRobotApplicationOutput {
@@ -644,17 +666,23 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The status of the synchronization job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>Information about the deployment configuration.</p>
+    #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>Information about the deployment application configurations.</p>
+    #[doc(hidden)]
     pub deployment_application_configs:
         std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
     /// <p>The failure reason if the job fails.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The failure code if the job fails:</p>
     /// <dl>
@@ -743,8 +771,10 @@ pub struct SyncDeploymentJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SyncDeploymentJobOutput {
@@ -1209,6 +1239,7 @@ impl SyncDeploymentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSimulationJobBatchOutput {
     /// <p>The Amazon Resource Name (arn) of the batch.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
@@ -1268,25 +1299,35 @@ pub struct StartSimulationJobBatchOutput {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
+    #[doc(hidden)]
     pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
     /// <p>The failure code if the simulation job batch failed.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::SimulationJobBatchErrorCode>,
     /// <p>The reason the simulation job batch failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCreateSimulationJobRequest>>,
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+    #[doc(hidden)]
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
     /// <p>A list of created simulation job request summaries.</p>
+    #[doc(hidden)]
     pub created_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1791,8 +1832,10 @@ impl RestartSimulationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet that the robot will join.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>Information about the robot registration.</p>
+    #[doc(hidden)]
     pub robot: std::option::Option<std::string::String>,
 }
 impl RegisterRobotOutput {
@@ -1864,8 +1907,10 @@ impl RegisterRobotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldTemplatesOutput {
     /// <p>Summary information for templates.</p>
+    #[doc(hidden)]
     pub template_summaries: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldTemplatesOutput {
@@ -1947,8 +1992,10 @@ impl ListWorldTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldsOutput {
     /// <p>Summary information for worlds.</p>
+    #[doc(hidden)]
     pub world_summaries: std::option::Option<std::vec::Vec<crate::model::WorldSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldsOutput {
@@ -2029,9 +2076,11 @@ impl ListWorldsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldGenerationJobsOutput {
     /// <p>Summary information for world generator jobs.</p>
+    #[doc(hidden)]
     pub world_generation_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::WorldGenerationJobSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldGenerationJobsOutput {
@@ -2121,9 +2170,11 @@ impl ListWorldGenerationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldExportJobsOutput {
     /// <p>Summary information for world export jobs.</p>
+    #[doc(hidden)]
     pub world_export_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::WorldExportJobSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldExportJobsOutput {
@@ -2213,6 +2264,7 @@ impl ListWorldExportJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of all tags added to the specified resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2286,9 +2338,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobsOutput {
     /// <p>A list of simulation job summaries that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub simulation_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSimulationJobsOutput {
@@ -2375,9 +2429,11 @@ impl ListSimulationJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobBatchesOutput {
     /// <p>A list of simulation job batch summaries.</p>
+    #[doc(hidden)]
     pub simulation_job_batch_summaries:
         std::option::Option<std::vec::Vec<crate::model::SimulationJobBatchSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSimulationJobBatchesOutput {
@@ -2467,9 +2523,11 @@ impl ListSimulationJobBatchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationApplicationsOutput {
     /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub simulation_application_summaries:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSimulationApplicationsOutput {
@@ -2562,8 +2620,10 @@ impl ListSimulationApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotsOutput {
     /// <p>A list of robots that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRobotsOutput {
@@ -2644,9 +2704,11 @@ impl ListRobotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotApplicationsOutput {
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub robot_application_summaries:
         std::option::Option<std::vec::Vec<crate::model::RobotApplicationSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRobotApplicationsOutput {
@@ -2739,8 +2801,10 @@ impl ListRobotApplicationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsOutput {
     /// <p>A list of fleet details meeting the request criteria.</p>
+    #[doc(hidden)]
     pub fleet_details: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetsOutput {
@@ -2824,8 +2888,10 @@ impl ListFleetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentJobsOutput {
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
+    #[doc(hidden)]
     pub deployment_jobs: std::option::Option<std::vec::Vec<crate::model::DeploymentJob>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentJobsOutput {
@@ -2906,6 +2972,7 @@ impl ListDeploymentJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorldTemplateBodyOutput {
     /// <p>The world template body.</p>
+    #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
 }
 impl GetWorldTemplateBodyOutput {
@@ -2963,19 +3030,26 @@ impl GetWorldTemplateBodyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the world template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the world template that you're using.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl DescribeWorldTemplateOutput {
@@ -3161,6 +3235,7 @@ impl DescribeWorldTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldGenerationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the world generation job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world generation job:</p>
     /// <dl>
@@ -3207,8 +3282,10 @@ pub struct DescribeWorldGenerationJobOutput {
     /// <p>The world generation job is being cancelled.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generation job if it failed:</p>
     /// <dl>
@@ -3243,21 +3320,29 @@ pub struct DescribeWorldGenerationJobOutput {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
     /// <p>The reason why the world generation job failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>Information about the world count.</p>
+    #[doc(hidden)]
     pub world_count: std::option::Option<crate::model::WorldCount>,
     /// <p>Summary information about finished worlds.</p>
+    #[doc(hidden)]
     pub finished_worlds_summary: std::option::Option<crate::model::FinishedWorldsSummary>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    #[doc(hidden)]
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3778,6 +3863,7 @@ impl DescribeWorldGenerationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
@@ -3818,8 +3904,10 @@ pub struct DescribeWorldExportJobOutput {
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorldExportJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
@@ -3854,18 +3942,25 @@ pub struct DescribeWorldExportJobOutput {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::WorldExportJobErrorCode>,
     /// <p>The reason why the world export job failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to be exported.</p>
+    #[doc(hidden)]
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The output location.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4331,17 +4426,23 @@ impl DescribeWorldExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorldOutput {
     /// <p>The Amazon Resource Name (arn) of the world.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
+    #[doc(hidden)]
     pub generation_job: std::option::Option<std::string::String>,
     /// <p>The world template.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map that contains tag keys and tag values that are attached to the world.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Returns the JSON formatted string that describes the contents of your world.</p>
+    #[doc(hidden)]
     pub world_description_body: std::option::Option<std::string::String>,
 }
 impl DescribeWorldOutput {
@@ -4510,6 +4611,7 @@ impl DescribeWorldOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationJobBatchOutput {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the batch.</p>
     /// <dl>
@@ -4569,27 +4671,38 @@ pub struct DescribeSimulationJobBatchOutput {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
+    #[doc(hidden)]
     pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
     /// <p>The failure code of the simulation job batch.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::SimulationJobBatchErrorCode>,
     /// <p>The reason the simulation job batch failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
+    #[doc(hidden)]
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCreateSimulationJobRequest>>,
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+    #[doc(hidden)]
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
     /// <p>A list of created simulation job summaries.</p>
+    #[doc(hidden)]
     pub created_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5081,16 +5194,22 @@ impl DescribeSimulationJobBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the simulation job.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the simulation job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
+    #[doc(hidden)]
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure behavior for the simulation job.</p>
+    #[doc(hidden)]
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
@@ -5179,37 +5298,52 @@ pub struct DescribeSimulationJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
     /// <p>Details about why the simulation job failed. For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Location for output files generated by the simulation job.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
+    #[doc(hidden)]
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
     /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
+    #[doc(hidden)]
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
+    #[doc(hidden)]
     pub simulation_time_millis: i64,
     /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A list of robot applications.</p>
+    #[doc(hidden)]
     pub robot_applications:
         std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
     /// <p>A list of simulation applications.</p>
+    #[doc(hidden)]
     pub simulation_applications:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The list of all tags added to the specified simulation job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The VPC configuration.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The network interface information for the simulation job.</p>
+    #[doc(hidden)]
     pub network_interface: std::option::Option<crate::model::NetworkInterface>,
     /// <p>Compute information for the simulation job.</p>
+    #[doc(hidden)]
     pub compute: std::option::Option<crate::model::ComputeResponse>,
 }
 impl DescribeSimulationJobOutput {
@@ -5957,29 +6091,41 @@ impl DescribeSimulationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSimulationApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the simulation application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The simulation software suite used by the simulation application.</p>
+    #[doc(hidden)]
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
+    #[doc(hidden)]
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The revision id of the simulation application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified simulation application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
     /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationApplicationOutput {
@@ -6271,25 +6417,35 @@ impl DescribeSimulationApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the robot application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the robot application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The revision id of the robot application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create the robot application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl DescribeRobotApplicationOutput {
@@ -6538,24 +6694,34 @@ impl DescribeRobotApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the robot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The status of the fleet.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::RobotStatus>,
     /// <p>The Greengrass group id.</p>
+    #[doc(hidden)]
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The target architecture of the robot application.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+    #[doc(hidden)]
     pub last_deployment_job: std::option::Option<std::string::String>,
     /// <p>The time of the last deployment job.</p>
+    #[doc(hidden)]
     pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6802,20 +6968,28 @@ impl DescribeRobotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetOutput {
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of robots.</p>
+    #[doc(hidden)]
     pub robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the last deployment.</p>
+    #[doc(hidden)]
     pub last_deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+    #[doc(hidden)]
     pub last_deployment_job: std::option::Option<std::string::String>,
     /// <p>The time of the last deployment.</p>
+    #[doc(hidden)]
     pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified fleet.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7034,25 +7208,35 @@ impl DescribeFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The status of the deployment job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The deployment configuration.</p>
+    #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>The deployment application configuration.</p>
+    #[doc(hidden)]
     pub deployment_application_configs:
         std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
     /// <p>A short description of the reason why the deployment job failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The deployment job failure code.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of robot deployment summaries.</p>
+    #[doc(hidden)]
     pub robot_deployment_summary: std::option::Option<std::vec::Vec<crate::model::RobotDeployment>>,
     /// <p>The list of all tags added to the specified deployment job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7329,8 +7513,10 @@ impl DescribeDeploymentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    #[doc(hidden)]
     pub robot: std::option::Option<std::string::String>,
 }
 impl DeregisterRobotOutput {
@@ -7558,14 +7744,19 @@ impl DeleteFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the world template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7715,6 +7906,7 @@ impl CreateWorldTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldGenerationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world generator job.</p>
     /// <dl>
@@ -7761,8 +7953,10 @@ pub struct CreateWorldGenerationJobOutput {
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
@@ -7797,17 +7991,23 @@ pub struct CreateWorldGenerationJobOutput {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
     /// <p>Information about the world count. </p>
+    #[doc(hidden)]
     pub world_count: std::option::Option<crate::model::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    #[doc(hidden)]
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8282,6 +8482,7 @@ impl CreateWorldGenerationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
@@ -8322,8 +8523,10 @@ pub struct CreateWorldExportJobOutput {
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::WorldExportJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
@@ -8365,14 +8568,19 @@ pub struct CreateWorldExportJobOutput {
     /// </dd>
     /// </dl>
     /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::WorldExportJobErrorCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The output location.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8813,14 +9021,19 @@ impl CreateWorldExportJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the simulation job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
+    #[doc(hidden)]
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>the failure behavior for the simulation job.</p>
+    #[doc(hidden)]
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
@@ -8909,33 +9122,46 @@ pub struct CreateSimulationJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Simulation job output files location.</p>
+    #[doc(hidden)]
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
+    #[doc(hidden)]
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds. </p>
+    #[doc(hidden)]
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
+    #[doc(hidden)]
     pub simulation_time_millis: i64,
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
+    #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The robot application used by the simulation job.</p>
+    #[doc(hidden)]
     pub robot_applications:
         std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
     /// <p>The simulation application used by the simulation job.</p>
+    #[doc(hidden)]
     pub simulation_applications:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
+    #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
     /// <p>The list of all tags added to the simulation job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information about the vpc configuration.</p>
+    #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>Compute information for the simulation job.</p>
+    #[doc(hidden)]
     pub compute: std::option::Option<crate::model::ComputeResponse>,
 }
 impl CreateSimulationJobOutput {
@@ -9626,24 +9852,34 @@ impl CreateSimulationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationApplicationVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the simulation application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The simulation software suite used by the simulation application.</p>
+    #[doc(hidden)]
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
+    #[doc(hidden)]
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision ID of the simulation application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationVersionOutput {
@@ -9881,27 +10117,38 @@ impl CreateSimulationApplicationVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the simulation application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The simulation software suite used by the simulation application.</p>
+    #[doc(hidden)]
     pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
+    #[doc(hidden)]
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the simulation application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The list of all tags added to the simulation application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationOutput {
@@ -10176,20 +10423,28 @@ impl CreateSimulationApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotApplicationVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the robot application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the robot application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI used to create your robot application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationVersionOutput {
@@ -10381,23 +10636,32 @@ impl CreateRobotApplicationVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the robot application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the robot application.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    #[doc(hidden)]
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The list of all tags added to the robot application.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationOutput {
@@ -10629,16 +10893,22 @@ impl CreateRobotApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the robot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the Greengrass group associated with the robot.</p>
+    #[doc(hidden)]
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The target architecture of the robot.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The list of all tags added to the robot.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10811,12 +11081,16 @@ impl CreateRobotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the fleet.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the fleet.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10949,15 +11223,20 @@ impl CreateFleetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The target fleet for the deployment job.</p>
+    #[doc(hidden)]
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The status of the deployment job.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The deployment application configuration.</p>
+    #[doc(hidden)]
     pub deployment_application_configs:
         std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
     /// <p>The failure reason of the deployment job if it failed.</p>
+    #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
@@ -11034,12 +11313,16 @@ pub struct CreateDeploymentJobOutput {
     /// <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The deployment configuration.</p>
+    #[doc(hidden)]
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>The list of all tags added to the deployment job.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11659,8 +11942,10 @@ impl CancelDeploymentJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeSimulationJobOutput {
     /// <p>A list of simulation jobs.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::SimulationJob>>,
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub unprocessed_jobs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDescribeSimulationJobOutput {
@@ -11750,6 +12035,7 @@ impl BatchDescribeSimulationJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteWorldsOutput {
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
+    #[doc(hidden)]
     pub unprocessed_worlds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteWorldsOutput {

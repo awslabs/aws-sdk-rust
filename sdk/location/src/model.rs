@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The field name where the invalid entry was detected.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A message with the reason for the validation exception error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -115,14 +117,19 @@ where
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePositionsResponseEntry {
     /// <p>The ID of the device for this position.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    #[doc(hidden)]
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position. Empty if no positions currently stored.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
+    #[doc(hidden)]
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
+    #[doc(hidden)]
     pub position_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -278,6 +285,7 @@ impl ListDevicePositionsResponseEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
+    #[doc(hidden)]
     pub horizontal: std::option::Option<f64>,
 }
 impl PositionalAccuracy {
@@ -332,16 +340,22 @@ impl PositionalAccuracy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevicePosition {
     /// <p>The device whose position you retrieved.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub received_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
+    #[doc(hidden)]
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
+    #[doc(hidden)]
     pub position_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -517,10 +531,13 @@ impl DevicePosition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDevicePositionError {
     /// <p>The device associated with the failed location update.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details related to the error code such as the error code and error message.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
 impl BatchUpdateDevicePositionError {
@@ -615,8 +632,10 @@ impl BatchUpdateDevicePositionError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchItemError {
     /// <p>The error code associated with the batch request error.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::BatchItemErrorCode>,
     /// <p>A message with the reason for the batch request error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchItemError {
@@ -729,15 +748,20 @@ where
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevicePositionUpdate {
     /// <p>The device associated to the position update.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
+    #[doc(hidden)]
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
+    #[doc(hidden)]
     pub position_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -896,8 +920,10 @@ impl DevicePositionUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>Contains details related to the error code.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
 impl BatchGetDevicePositionError {
@@ -972,8 +998,10 @@ impl BatchGetDevicePositionError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>Contains the batch request error details associated with the request.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
 impl BatchDeleteDevicePositionHistoryError {
@@ -1048,21 +1076,27 @@ impl BatchDeleteDevicePositionHistoryError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackersResponseEntry {
     /// <p>The name of the tracker resource.</p>
+    #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The description for the tracker resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListTrackersResponseEntry {
@@ -1300,12 +1334,16 @@ pub struct CalculateRouteMatrixSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+    #[doc(hidden)]
     pub route_count: std::option::Option<i32>,
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+    #[doc(hidden)]
     pub error_count: std::option::Option<i32>,
     /// <p>The unit of measurement for route distances.</p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
 }
 impl CalculateRouteMatrixSummary {
@@ -1460,10 +1498,13 @@ where
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
+    #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The expected duration of travel for the route.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<f64>,
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::RouteMatrixEntryError>,
 }
 impl RouteMatrixEntry {
@@ -1574,8 +1615,10 @@ impl RouteMatrixEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::RouteMatrixErrorCode>,
     /// <p>A message about the error that occurred for the route calculation.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RouteMatrixEntryError {
@@ -1690,14 +1733,18 @@ pub struct CalculateRouteTruckModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub avoid_ferries: std::option::Option<bool>,
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub avoid_tolls: std::option::Option<bool>,
     /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
+    #[doc(hidden)]
     pub dimensions: std::option::Option<crate::model::TruckDimensions>,
     /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
+    #[doc(hidden)]
     pub weight: std::option::Option<crate::model::TruckWeight>,
 }
 impl CalculateRouteTruckModeOptions {
@@ -1821,9 +1868,11 @@ pub struct TruckWeight {
     /// <ul>
     /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub total: std::option::Option<f64>,
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code> </p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::VehicleWeightUnit>,
 }
 impl TruckWeight {
@@ -1944,19 +1993,23 @@ pub struct TruckDimensions {
     /// <ul>
     /// <li> <p>For example, <code>15.5</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub length: std::option::Option<f64>,
     /// <p>The height of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub height: std::option::Option<f64>,
     /// <p>The width of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub width: std::option::Option<f64>,
     /// <p> Specifies the unit of measurement for the truck dimensions.</p>
     /// <p>Default Value: <code>Meters</code> </p>
+    #[doc(hidden)]
     pub unit: std::option::Option<crate::model::DimensionUnit>,
 }
 impl TruckDimensions {
@@ -2125,10 +2178,12 @@ pub struct CalculateRouteCarModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub avoid_ferries: std::option::Option<bool>,
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    #[doc(hidden)]
     pub avoid_tolls: std::option::Option<bool>,
 }
 impl CalculateRouteCarModeOptions {
@@ -2253,6 +2308,7 @@ pub struct CalculateRouteSummary {
     /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
     /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub route_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
@@ -2260,14 +2316,18 @@ pub struct CalculateRouteSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
+    #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<f64>,
     /// <p>The unit of measurement for route distances.</p>
+    #[doc(hidden)]
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
 }
 impl CalculateRouteSummary {
@@ -2462,21 +2522,27 @@ pub struct Leg {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
+    #[doc(hidden)]
     pub start_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
+    #[doc(hidden)]
     pub end_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
     /// <ul>
     /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<f64>,
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::LegGeometry>,
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
 }
 impl Leg {
@@ -2664,15 +2730,20 @@ impl Leg {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Step {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
+    #[doc(hidden)]
     pub start_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
+    #[doc(hidden)]
     pub end_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+    #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    #[doc(hidden)]
     pub duration_seconds: std::option::Option<f64>,
     /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
+    #[doc(hidden)]
     pub geometry_offset: std::option::Option<i32>,
 }
 impl Step {
@@ -2817,6 +2888,7 @@ pub struct LegGeometry {
     /// <ul>
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
 }
 impl LegGeometry {
@@ -2892,8 +2964,10 @@ impl LegGeometry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRouteCalculatorsResponseEntry {
     /// <p>The name of the route calculator resource.</p>
+    #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The optional description of the route calculator resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
@@ -2901,22 +2975,26 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListRouteCalculatorsResponseEntry {
@@ -3113,13 +3191,16 @@ impl ListRouteCalculatorsResponseEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchForTextResult {
     /// <p>Details about the search result, such as its address and position.</p>
+    #[doc(hidden)]
     pub place: std::option::Option<crate::model::Place>,
     /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
+    #[doc(hidden)]
     pub distance: std::option::Option<f64>,
     /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
     /// <p>Returned only when the partner selected is Esri.</p>
+    #[doc(hidden)]
     pub relevance: std::option::Option<f64>,
 }
 impl SearchForTextResult {
@@ -3218,31 +3299,43 @@ impl SearchForTextResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
+    #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::PlaceGeometry>,
     /// <p>The numerical portion of an address, such as a building number. </p>
+    #[doc(hidden)]
     pub address_number: std::option::Option<std::string::String>,
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
+    #[doc(hidden)]
     pub street: std::option::Option<std::string::String>,
     /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
+    #[doc(hidden)]
     pub neighborhood: std::option::Option<std::string::String>,
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
+    #[doc(hidden)]
     pub municipality: std::option::Option<std::string::String>,
     /// <p>A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
+    #[doc(hidden)]
     pub sub_region: std::option::Option<std::string::String>,
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
+    #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
+    #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
     /// <p> <code>True</code> if the result is interpolated from other known places.</p>
     /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
+    #[doc(hidden)]
     pub interpolated: std::option::Option<bool>,
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.</p>
+    #[doc(hidden)]
     pub time_zone: std::option::Option<crate::model::TimeZone>,
 }
 impl Place {
@@ -3499,8 +3592,10 @@ impl Place {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The time zone's offset, in seconds, from UTC.</p>
+    #[doc(hidden)]
     pub offset: std::option::Option<i32>,
 }
 impl TimeZone {
@@ -3576,6 +3671,7 @@ pub struct PlaceGeometry {
     /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
     /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub point: std::option::Option<std::vec::Vec<f64>>,
 }
 impl PlaceGeometry {
@@ -3646,20 +3742,26 @@ impl PlaceGeometry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextSummary {
     /// <p>The search text specified in the request.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    #[doc(hidden)]
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
+    #[doc(hidden)]
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Contains the optional country filter specified in the request.</p>
+    #[doc(hidden)]
     pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains the optional result count limit specified in the request.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The bounding box that fully contains all search results.</p> <note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub result_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -3667,8 +3769,10 @@ pub struct SearchPlaceIndexForTextSummary {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForTextSummary {
@@ -3896,6 +4000,7 @@ impl SearchPlaceIndexForTextSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl SearchForSuggestionsResult {
@@ -3948,16 +4053,21 @@ impl SearchForSuggestionsResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForSuggestionsSummary {
     /// <p>The free-form partial text input specified in the request.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    #[doc(hidden)]
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
+    #[doc(hidden)]
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Contains the optional country filter specified in the request.</p>
+    #[doc(hidden)]
     pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains the optional result count limit specified in the request.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -3965,8 +4075,10 @@ pub struct SearchPlaceIndexForSuggestionsSummary {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForSuggestionsSummary {
@@ -4165,10 +4277,12 @@ impl SearchPlaceIndexForSuggestionsSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchForPositionResult {
     /// <p>Details about the search result, such as its address and position.</p>
+    #[doc(hidden)]
     pub place: std::option::Option<crate::model::Place>,
     /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
+    #[doc(hidden)]
     pub distance: std::option::Option<f64>,
 }
 impl SearchForPositionResult {
@@ -4246,9 +4360,11 @@ impl SearchForPositionResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionSummary {
     /// <p>The position specified in the request.</p>
+    #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code> </p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -4256,8 +4372,10 @@ pub struct SearchPlaceIndexForPositionSummary {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForPositionSummary {
@@ -4387,8 +4505,10 @@ impl SearchPlaceIndexForPositionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
+    #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The optional description for the place index resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
@@ -4396,16 +4516,20 @@ pub struct ListPlaceIndexesResponseEntry {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListPlaceIndexesResponseEntry {
@@ -4594,6 +4718,7 @@ pub struct DataSourceConfiguration {
     /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
     /// </ul>
     /// <p>Default value: <code>SingleUse</code> </p>
+    #[doc(hidden)]
     pub intended_use: std::option::Option<crate::model::IntendedUse>,
 }
 impl DataSourceConfiguration {
@@ -4700,20 +4825,26 @@ where
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
+    #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The description for the map resource.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListMapsResponseEntry {
@@ -4889,6 +5020,7 @@ pub struct MapConfiguration {
     /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
     /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub style: std::option::Option<std::string::String>,
 }
 impl MapConfiguration {
@@ -4989,6 +5121,7 @@ impl MapConfiguration {
 pub struct GeofenceGeometry {
     /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
     /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
+    #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
 }
 impl GeofenceGeometry {
@@ -5055,8 +5188,10 @@ impl GeofenceGeometry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon.</p>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
@@ -5066,10 +5201,13 @@ pub struct ListGeofenceResponseEntry {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListGeofenceResponseEntry {
@@ -5222,8 +5360,10 @@ impl ListGeofenceResponseEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutGeofenceError {
     /// <p>The geofence associated with the error message.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains details associated to the batch error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
 impl BatchPutGeofenceError {
@@ -5298,10 +5438,13 @@ impl BatchPutGeofenceError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BatchPutGeofenceSuccess {
@@ -5396,10 +5539,12 @@ impl BatchPutGeofenceSuccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutGeofenceRequestEntry {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
+    #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
 }
 impl BatchPutGeofenceRequestEntry {
@@ -5480,10 +5625,13 @@ impl BatchPutGeofenceRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains details associated to the batch error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
 impl BatchEvaluateGeofencesError {
@@ -5578,8 +5726,10 @@ impl BatchEvaluateGeofencesError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteGeofenceError {
     /// <p>The geofence associated with the error message.</p>
+    #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains details associated to the batch error.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
 impl BatchDeleteGeofenceError {
@@ -5654,21 +5804,27 @@ impl BatchDeleteGeofenceError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
+    #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The description for the geofence collection</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
+    #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
+    #[doc(hidden)]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListGeofenceCollectionsResponseEntry {

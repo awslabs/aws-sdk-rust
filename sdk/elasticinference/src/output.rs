@@ -64,6 +64,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> The tags of the Elastic Inference Accelerator. </p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -137,6 +138,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorTypesOutput {
     /// <p> The available accelerator types. </p>
+    #[doc(hidden)]
     pub accelerator_types: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
 }
 impl DescribeAcceleratorTypesOutput {
@@ -201,9 +203,11 @@ impl DescribeAcceleratorTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorsOutput {
     /// <p> The details of the Elastic Inference Accelerators. </p>
+    #[doc(hidden)]
     pub accelerator_set:
         std::option::Option<std::vec::Vec<crate::model::ElasticInferenceAccelerator>>,
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAcceleratorsOutput {
@@ -287,6 +291,7 @@ impl DescribeAcceleratorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorOfferingsOutput {
     /// <p> The list of accelerator type offerings for a specific location. </p>
+    #[doc(hidden)]
     pub accelerator_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,
 }

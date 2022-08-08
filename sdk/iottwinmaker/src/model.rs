@@ -71,8 +71,10 @@ impl AsRef<str> for State {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
+    #[doc(hidden)]
     pub update_type: std::option::Option<crate::model::ParentEntityUpdateType>,
     /// <p>The ID of the parent entity.</p>
+    #[doc(hidden)]
     pub parent_entity_id: std::option::Option<std::string::String>,
 }
 impl ParentEntityUpdateRequest {
@@ -205,12 +207,16 @@ impl AsRef<str> for ParentEntityUpdateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentUpdateRequest {
     /// <p>The update type of the component update request.</p>
+    #[doc(hidden)]
     pub update_type: std::option::Option<crate::model::ComponentUpdateType>,
     /// <p>The description of the component type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub property_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyRequest>,
     >,
@@ -345,10 +351,13 @@ impl ComponentUpdateRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyRequest {
     /// <p>An object that specifies information about a property.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::PropertyDefinitionRequest>,
     /// <p>The value of the property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::DataValue>,
     /// <p>The update type of the update property request.</p>
+    #[doc(hidden)]
     pub update_type: std::option::Option<crate::model::PropertyUpdateType>,
 }
 impl PropertyRequest {
@@ -502,24 +511,33 @@ impl AsRef<str> for PropertyUpdateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataValue {
     /// <p>A Boolean value.</p>
+    #[doc(hidden)]
     pub boolean_value: std::option::Option<bool>,
     /// <p>A double value.</p>
+    #[doc(hidden)]
     pub double_value: std::option::Option<f64>,
     /// <p>An integer value.</p>
+    #[doc(hidden)]
     pub integer_value: std::option::Option<i32>,
     /// <p>A long value.</p>
+    #[doc(hidden)]
     pub long_value: std::option::Option<i64>,
     /// <p>A string value.</p>
+    #[doc(hidden)]
     pub string_value: std::option::Option<std::string::String>,
     /// <p>A list of multiple values.</p>
+    #[doc(hidden)]
     pub list_value: std::option::Option<std::vec::Vec<crate::model::DataValue>>,
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
+    #[doc(hidden)]
     pub map_value: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::DataValue>,
     >,
     /// <p>A value that relates a component to another component.</p>
+    #[doc(hidden)]
     pub relationship_value: std::option::Option<crate::model::RelationshipValue>,
     /// <p>An expression that produces the value.</p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl DataValue {
@@ -742,8 +760,10 @@ impl DataValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelationshipValue {
     /// <p>The ID of the target entity associated with this relationship value.</p>
+    #[doc(hidden)]
     pub target_entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the target component associated with the relationship value.</p>
+    #[doc(hidden)]
     pub target_component_name: std::option::Option<std::string::String>,
 }
 impl RelationshipValue {
@@ -821,18 +841,25 @@ impl RelationshipValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyDefinitionRequest {
     /// <p>An object that contains information about the data type.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::DataType>,
     /// <p>A Boolean value that specifies whether the property is required.</p>
+    #[doc(hidden)]
     pub is_required_in_entity: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
+    #[doc(hidden)]
     pub is_external_id: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
+    #[doc(hidden)]
     pub is_stored_externally: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
+    #[doc(hidden)]
     pub is_time_series: std::option::Option<bool>,
     /// <p>An object that contains the default value.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<crate::model::DataValue>,
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
+    #[doc(hidden)]
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1013,14 +1040,19 @@ impl PropertyDefinitionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataType {
     /// <p>The underlying type of the data type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The nested type in the data type.</p>
+    #[doc(hidden)]
     pub nested_type: std::option::Option<std::boxed::Box<crate::model::DataType>>,
     /// <p>The allowed values for this data type.</p>
+    #[doc(hidden)]
     pub allowed_values: std::option::Option<std::vec::Vec<crate::model::DataValue>>,
     /// <p>The unit of measure used in this data type.</p>
+    #[doc(hidden)]
     pub unit_of_measure: std::option::Option<std::string::String>,
     /// <p>A relationship that associates a component with another component.</p>
+    #[doc(hidden)]
     pub relationship: std::option::Option<crate::model::Relationship>,
 }
 impl DataType {
@@ -1164,8 +1196,10 @@ impl DataType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Relationship {
     /// <p>The ID of the target component type associated with this relationship.</p>
+    #[doc(hidden)]
     pub target_component_type_id: std::option::Option<std::string::String>,
     /// <p>The type of the relationship.</p>
+    #[doc(hidden)]
     pub relationship_type: std::option::Option<std::string::String>,
 }
 impl Relationship {
@@ -1390,10 +1424,13 @@ impl AsRef<str> for ComponentUpdateType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionRequest {
     /// <p>The required properties of the function.</p>
+    #[doc(hidden)]
     pub required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The scope of the function.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The data connector.</p>
+    #[doc(hidden)]
     pub implemented_by: std::option::Option<crate::model::DataConnector>,
 }
 impl FunctionRequest {
@@ -1488,8 +1525,10 @@ impl FunctionRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataConnector {
     /// <p>The Lambda function associated with this data connector.</p>
+    #[doc(hidden)]
     pub lambda: std::option::Option<crate::model::LambdaFunction>,
     /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
+    #[doc(hidden)]
     pub is_native: std::option::Option<bool>,
 }
 impl DataConnector {
@@ -1564,6 +1603,7 @@ impl DataConnector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunction {
     /// <p>The ARN of the Lambda function.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaFunction {
@@ -1671,14 +1711,19 @@ impl AsRef<str> for Scope {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceSummary {
     /// <p>The ID of the workspace.</p>
+    #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the workspace.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the workspace.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time when the workspace was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the workspace was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WorkspaceSummary {
@@ -1807,16 +1852,22 @@ impl WorkspaceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SceneSummary {
     /// <p>The ID of the scene.</p>
+    #[doc(hidden)]
     pub scene_id: std::option::Option<std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    #[doc(hidden)]
     pub content_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the scene.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the scene was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the scene was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The scene description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl SceneSummary {
@@ -1965,22 +2016,31 @@ impl SceneSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitySummary {
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the entity.</p>
+    #[doc(hidden)]
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the entity.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the parent entity.</p>
+    #[doc(hidden)]
     pub parent_entity_id: std::option::Option<std::string::String>,
     /// <p>The current status of the entity.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The description of the entity.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
+    #[doc(hidden)]
     pub has_child_entities: std::option::Option<bool>,
     /// <p>The date and time when the entity was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time when the entity was updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EntitySummary {
@@ -2180,8 +2240,10 @@ impl EntitySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Status {
     /// <p>The current state of the entity, component, component type, or workspace.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
 impl Status {
@@ -2253,8 +2315,10 @@ impl Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorDetails {
@@ -2447,16 +2511,22 @@ impl ListEntitiesFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentTypeSummary {
     /// <p>The ARN of the component type.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the component type was created.</p>
+    #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the component type was last updated.</p>
+    #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the component type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the component type.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl ComponentTypeSummary {
@@ -2673,8 +2743,10 @@ impl ListComponentTypesFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValueHistory {
     /// <p>An object that uniquely identifies an entity property.</p>
+    #[doc(hidden)]
     pub entity_property_reference: std::option::Option<crate::model::EntityPropertyReference>,
     /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::PropertyValue>>,
 }
 impl PropertyValueHistory {
@@ -2767,8 +2839,10 @@ pub struct PropertyValue {
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use time instead."
     )]
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies a value for a time series property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::DataValue>,
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
     /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
@@ -2784,6 +2858,7 @@ pub struct PropertyValue {
     /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
     /// </ul>
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
+    #[doc(hidden)]
     pub time: std::option::Option<std::string::String>,
 }
 impl PropertyValue {
@@ -2923,13 +2998,17 @@ impl PropertyValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityPropertyReference {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
+    #[doc(hidden)]
     pub external_id_property:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
+    #[doc(hidden)]
     pub property_name: std::option::Option<std::string::String>,
 }
 impl EntityPropertyReference {
@@ -3116,8 +3195,10 @@ impl AsRef<str> for OrderByTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InterpolationParameters {
     /// <p>The interpolation type.</p>
+    #[doc(hidden)]
     pub interpolation_type: std::option::Option<crate::model::InterpolationType>,
     /// <p>The interpolation time interval in seconds.</p>
+    #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i64>,
 }
 impl InterpolationParameters {
@@ -3243,10 +3324,13 @@ impl AsRef<str> for InterpolationType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyFilter {
     /// <p>The property name associated with this property filter.</p>
+    #[doc(hidden)]
     pub property_name: std::option::Option<std::string::String>,
     /// <p>The operator associated with this property filter.</p>
+    #[doc(hidden)]
     pub operator: std::option::Option<std::string::String>,
     /// <p>The value associated with this property filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::DataValue>,
 }
 impl PropertyFilter {
@@ -3338,8 +3422,10 @@ impl PropertyFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyLatestValue {
     /// <p>An object that specifies information about a property.&gt;</p>
+    #[doc(hidden)]
     pub property_reference: std::option::Option<crate::model::EntityPropertyReference>,
     /// <p>The value of the property.</p>
+    #[doc(hidden)]
     pub property_value: std::option::Option<crate::model::DataValue>,
 }
 impl PropertyLatestValue {
@@ -3419,16 +3505,22 @@ impl PropertyLatestValue {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentResponse {
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The status of the component type.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The name of the property definition set in the request.</p>
+    #[doc(hidden)]
     pub defined_in: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyResponse>,
     >,
@@ -3597,8 +3689,10 @@ impl ComponentResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyResponse {
     /// <p>An object that specifies information about a property.</p>
+    #[doc(hidden)]
     pub definition: std::option::Option<crate::model::PropertyDefinitionResponse>,
     /// <p>The value of the property.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<crate::model::DataValue>,
 }
 impl PropertyResponse {
@@ -3673,24 +3767,34 @@ impl PropertyResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyDefinitionResponse {
     /// <p>An object that contains information about the data type.</p>
+    #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::DataType>,
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
+    #[doc(hidden)]
     pub is_time_series: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
+    #[doc(hidden)]
     pub is_required_in_entity: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
+    #[doc(hidden)]
     pub is_external_id: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
+    #[doc(hidden)]
     pub is_stored_externally: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
+    #[doc(hidden)]
     pub is_imported: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
+    #[doc(hidden)]
     pub is_final: std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
+    #[doc(hidden)]
     pub is_inherited: std::option::Option<bool>,
     /// <p>An object that contains the default value.</p>
+    #[doc(hidden)]
     pub default_value: std::option::Option<crate::model::DataValue>,
     /// <p>A mapping that specifies configuration information about the property.</p>
+    #[doc(hidden)]
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3922,12 +4026,16 @@ impl PropertyDefinitionResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionResponse {
     /// <p>The required properties of the function.</p>
+    #[doc(hidden)]
     pub required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The scope of the function.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The data connector.</p>
+    #[doc(hidden)]
     pub implemented_by: std::option::Option<crate::model::DataConnector>,
     /// <p>Indicates whether this function is inherited.</p>
+    #[doc(hidden)]
     pub is_inherited: std::option::Option<bool>,
 }
 impl FunctionResponse {
@@ -4039,10 +4147,13 @@ impl FunctionResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentRequest {
     /// <p>The description of the component request.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
+    #[doc(hidden)]
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyRequest>,
     >,
@@ -4157,6 +4268,7 @@ impl ComponentRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyError>>,
 }
 impl BatchPutPropertyErrorEntry {
@@ -4220,10 +4332,13 @@ impl BatchPutPropertyErrorEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutPropertyError {
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
+    #[doc(hidden)]
     pub entry: std::option::Option<crate::model::PropertyValueEntry>,
 }
 impl BatchPutPropertyError {
@@ -4318,8 +4433,10 @@ impl BatchPutPropertyError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValueEntry {
     /// <p>An object that contains information about the entity that has the property.</p>
+    #[doc(hidden)]
     pub entity_property_reference: std::option::Option<crate::model::EntityPropertyReference>,
     /// <p>A list of objects that specify time series property values.</p>
+    #[doc(hidden)]
     pub property_values: std::option::Option<std::vec::Vec<crate::model::PropertyValue>>,
 }
 impl PropertyValueEntry {

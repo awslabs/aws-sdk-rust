@@ -4324,26 +4324,36 @@ impl UpdateIdentityPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A string that you provide.</p>
+    #[doc(hidden)]
     pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    #[doc(hidden)]
     pub allow_unauthenticated_identities: bool,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub allow_classic_flow: std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    #[doc(hidden)]
     pub supported_login_providers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The "domain" by which Cognito will refer to your users.</p>
+    #[doc(hidden)]
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>The ARNs of the OpenID Connect providers.</p>
+    #[doc(hidden)]
     pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
+    #[doc(hidden)]
     pub cognito_identity_providers:
         std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+    #[doc(hidden)]
     pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    #[doc(hidden)]
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4428,8 +4438,10 @@ impl std::fmt::Debug for UpdateIdentityPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove from the user pool.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4456,11 +4468,14 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    #[doc(hidden)]
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Provider names to unlink from this identity.</p>
+    #[doc(hidden)]
     pub logins_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnlinkIdentityInput {
@@ -4495,12 +4510,16 @@ impl std::fmt::Debug for UnlinkIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users.</p>
+    #[doc(hidden)]
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
+    #[doc(hidden)]
     pub developer_user_identifier: std::option::Option<std::string::String>,
 }
 impl UnlinkDeveloperIdentityInput {
@@ -4537,8 +4556,10 @@ impl std::fmt::Debug for UnlinkDeveloperIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the identity pool.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4569,12 +4590,16 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPrincipalTagAttributeMapInput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The provider name you want to use for attribute mappings.</p>
+    #[doc(hidden)]
     pub identity_provider_name: std::option::Option<std::string::String>,
     /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
+    #[doc(hidden)]
     pub use_defaults: std::option::Option<bool>,
     /// <p>You can use this operation to add principal tags.</p>
+    #[doc(hidden)]
     pub principal_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4615,12 +4640,15 @@ impl std::fmt::Debug for SetPrincipalTagAttributeMapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+    #[doc(hidden)]
     pub roles:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
+    #[doc(hidden)]
     pub role_mappings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
     >,
@@ -4662,12 +4690,16 @@ impl std::fmt::Debug for SetIdentityPoolRolesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeDeveloperIdentitiesInput {
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+    #[doc(hidden)]
     pub source_user_identifier: std::option::Option<std::string::String>,
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+    #[doc(hidden)]
     pub destination_user_identifier: std::option::Option<std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
+    #[doc(hidden)]
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl MergeDeveloperIdentitiesInput {
@@ -4707,14 +4739,19 @@ impl std::fmt::Debug for MergeDeveloperIdentitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookupDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
+    #[doc(hidden)]
     pub developer_user_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of identities to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupDeveloperIdentityInput {
@@ -4756,6 +4793,7 @@ impl std::fmt::Debug for LookupDeveloperIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4777,8 +4815,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityPoolsInput {
@@ -4805,12 +4845,16 @@ impl std::fmt::Debug for ListIdentityPoolsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentitiesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of identities to return.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+    #[doc(hidden)]
     pub hide_disabled: bool,
 }
 impl ListIdentitiesInput {
@@ -4847,8 +4891,10 @@ impl std::fmt::Debug for ListIdentitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPrincipalTagAttributeMapInput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>You can use this operation to get the provider name.</p>
+    #[doc(hidden)]
     pub identity_provider_name: std::option::Option<std::string::String>,
 }
 impl GetPrincipalTagAttributeMapInput {
@@ -4875,18 +4921,23 @@ impl std::fmt::Debug for GetPrincipalTagAttributeMapInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpenIdTokenForDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
+    #[doc(hidden)]
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
+    #[doc(hidden)]
     pub principal_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
     /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
+    #[doc(hidden)]
     pub token_duration: std::option::Option<i64>,
 }
 impl GetOpenIdTokenForDeveloperIdentityInput {
@@ -4936,8 +4987,10 @@ impl std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpenIdTokenInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
+    #[doc(hidden)]
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4968,6 +5021,7 @@ impl std::fmt::Debug for GetOpenIdTokenInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetIdentityPoolRolesInput {
@@ -4989,8 +5043,10 @@ impl std::fmt::Debug for GetIdentityPoolRolesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdInput {
     /// <p>A standard AWS account ID (9+ digits).</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
@@ -5005,6 +5061,7 @@ pub struct GetIdInput {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5052,13 +5109,16 @@ impl std::fmt::Debug for GetIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCredentialsForIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
     /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
     /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
+    #[doc(hidden)]
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
+    #[doc(hidden)]
     pub custom_role_arn: std::option::Option<std::string::String>,
 }
 impl GetCredentialsForIdentityInput {
@@ -5095,6 +5155,7 @@ impl std::fmt::Debug for GetCredentialsForIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityPoolInput {
@@ -5116,6 +5177,7 @@ impl std::fmt::Debug for DescribeIdentityPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityInput {
@@ -5137,6 +5199,7 @@ impl std::fmt::Debug for DescribeIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityPoolInput {
@@ -5158,6 +5221,7 @@ impl std::fmt::Debug for DeleteIdentityPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
+    #[doc(hidden)]
     pub identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteIdentitiesInput {
@@ -5179,25 +5243,34 @@ impl std::fmt::Debug for DeleteIdentitiesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIdentityPoolInput {
     /// <p>A string that you provide.</p>
+    #[doc(hidden)]
     pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    #[doc(hidden)]
     pub allow_unauthenticated_identities: bool,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub allow_classic_flow: std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    #[doc(hidden)]
     pub supported_login_providers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
     /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
+    #[doc(hidden)]
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
+    #[doc(hidden)]
     pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
+    #[doc(hidden)]
     pub cognito_identity_providers:
         std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+    #[doc(hidden)]
     pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    #[doc(hidden)]
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

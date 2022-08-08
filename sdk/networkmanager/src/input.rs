@@ -16619,12 +16619,16 @@ impl UpdateVpcAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
+    #[doc(hidden)]
     pub add_subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Removes a subnet ARN from the attachment.</p>
+    #[doc(hidden)]
     pub remove_subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Additional options for updating the VPC attachment. </p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::VpcOptions>,
 }
 impl UpdateVpcAttachmentInput {
@@ -16661,11 +16665,14 @@ impl std::fmt::Debug for UpdateVpcAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of your site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The site location:</p>
     /// <ul>
@@ -16673,6 +16680,7 @@ pub struct UpdateSiteInput {
     /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
     /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
 }
 impl UpdateSiteInput {
@@ -16715,10 +16723,13 @@ impl std::fmt::Debug for UpdateSiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkResourceMetadataInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource metadata.</p>
+    #[doc(hidden)]
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -16754,19 +16765,25 @@ impl std::fmt::Debug for UpdateNetworkResourceMetadataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLinkInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The upload and download speed in Mbps. </p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<crate::model::Bandwidth>,
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
 }
 impl UpdateLinkInput {
@@ -16816,9 +16833,11 @@ impl std::fmt::Debug for UpdateLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalNetworkInput {
     /// <p>The ID of your global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateGlobalNetworkInput {
@@ -16846,28 +16865,38 @@ impl std::fmt::Debug for UpdateGlobalNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeviceInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    #[doc(hidden)]
     pub aws_location: std::option::Option<crate::model::AwsLocation>,
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the device.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>Describes a location.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
 }
 impl UpdateDeviceInput {
@@ -16938,8 +16967,10 @@ impl std::fmt::Debug for UpdateDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCoreNetworkInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The description of the update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateCoreNetworkInput {
@@ -16966,15 +16997,20 @@ impl std::fmt::Debug for UpdateCoreNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link for the first device in the connection.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link for the second device in the connection.</p>
+    #[doc(hidden)]
     pub connected_link_id: std::option::Option<std::string::String>,
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateConnectionInput {
@@ -17017,8 +17053,10 @@ impl std::fmt::Debug for UpdateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys to remove from the specified resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -17045,8 +17083,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the specified resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -17073,14 +17113,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The source from which traffic originates.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
     /// <p>The destination.</p>
+    #[doc(hidden)]
     pub destination: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub include_return_path: bool,
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
+    #[doc(hidden)]
     pub use_middleboxes: bool,
 }
 impl StartRouteAnalysisInput {
@@ -17126,6 +17171,7 @@ impl std::fmt::Debug for StartRouteAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOrganizationServiceAccessUpdateInput {
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
 }
 impl StartOrganizationServiceAccessUpdateInput {
@@ -17147,8 +17193,10 @@ impl std::fmt::Debug for StartOrganizationServiceAccessUpdateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreCoreNetworkPolicyVersionInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the policy version to restore.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
 }
 impl RestoreCoreNetworkPolicyVersionInput {
@@ -17175,6 +17223,7 @@ impl std::fmt::Debug for RestoreCoreNetworkPolicyVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectAttachmentInput {
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl RejectAttachmentInput {
@@ -17196,8 +17245,10 @@ impl std::fmt::Debug for RejectAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
 }
 impl RegisterTransitGatewayInput {
@@ -17224,8 +17275,10 @@ impl std::fmt::Debug for RegisterTransitGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p>The JSON resource policy document.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource policy. </p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -17252,14 +17305,19 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>a core network policy description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of a core network policy. </p>
+    #[doc(hidden)]
     pub latest_version_id: std::option::Option<i32>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl PutCoreNetworkPolicyInput {
@@ -17301,6 +17359,7 @@ impl std::fmt::Debug for PutCoreNetworkPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -17322,16 +17381,22 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPeeringsInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>Returns a list of a peering requests.</p>
+    #[doc(hidden)]
     pub peering_type: std::option::Option<crate::model::PeeringType>,
     /// <p>Returns a list edge locations for the </p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>Returns a list of the peering request states.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::PeeringState>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPeeringsInput {
@@ -17378,8 +17443,10 @@ impl std::fmt::Debug for ListPeeringsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationServiceAccessStatusInput {
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationServiceAccessStatusInput {
@@ -17406,8 +17473,10 @@ impl std::fmt::Debug for ListOrganizationServiceAccessStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreNetworksInput {
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreNetworksInput {
@@ -17434,10 +17503,13 @@ impl std::fmt::Debug for ListCoreNetworksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreNetworkPolicyVersionsInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreNetworkPolicyVersionsInput {
@@ -17469,12 +17541,16 @@ impl std::fmt::Debug for ListCoreNetworkPolicyVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectPeersInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub connect_attachment_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectPeersInput {
@@ -17511,16 +17587,22 @@ impl std::fmt::Debug for ListConnectPeersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttachmentsInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The type of attachment.</p>
+    #[doc(hidden)]
     pub attachment_type: std::option::Option<crate::model::AttachmentType>,
     /// <p>The Region where the edge is located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The state of the attachment.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::AttachmentState>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttachmentsInput {
@@ -17567,6 +17649,7 @@ impl std::fmt::Debug for ListAttachmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl GetVpcAttachmentInput {
@@ -17588,6 +17671,7 @@ impl std::fmt::Debug for GetVpcAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the transit gateway route table attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayRouteTableAttachmentInput {
@@ -17609,12 +17693,16 @@ impl std::fmt::Debug for GetTransitGatewayRouteTableAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRegistrationsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
+    #[doc(hidden)]
     pub transit_gateway_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayRegistrationsInput {
@@ -17651,6 +17739,7 @@ impl std::fmt::Debug for GetTransitGatewayRegistrationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayPeeringInput {
     /// <p>The ID of the peering request.</p>
+    #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayPeeringInput {
@@ -17672,12 +17761,16 @@ impl std::fmt::Debug for GetTransitGatewayPeeringInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayConnectPeerAssociationsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayConnectPeerAssociationsInput {
@@ -17717,6 +17810,7 @@ impl std::fmt::Debug for GetTransitGatewayConnectPeerAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteToSiteVpnAttachmentInput {
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl GetSiteToSiteVpnAttachmentInput {
@@ -17738,12 +17832,16 @@ impl std::fmt::Debug for GetSiteToSiteVpnAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSitesInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>One or more site IDs. The maximum is 10.</p>
+    #[doc(hidden)]
     pub site_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSitesInput {
@@ -17780,8 +17878,10 @@ impl std::fmt::Debug for GetSitesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the route analysis.</p>
+    #[doc(hidden)]
     pub route_analysis_id: std::option::Option<std::string::String>,
 }
 impl GetRouteAnalysisInput {
@@ -17808,6 +17908,7 @@ impl std::fmt::Debug for GetRouteAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
@@ -17829,14 +17930,19 @@ impl std::fmt::Debug for GetResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkTelemetryInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub registered_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -17861,12 +17967,16 @@ pub struct GetNetworkTelemetryInput {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkTelemetryInput {
@@ -17950,24 +18060,34 @@ impl std::fmt::Debug for GetNetworkTelemetryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkRoutesInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the route table.</p>
+    #[doc(hidden)]
     pub route_table_identifier: std::option::Option<crate::model::RouteTableIdentifier>,
     /// <p>An exact CIDR block.</p>
+    #[doc(hidden)]
     pub exact_cidr_matches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+    #[doc(hidden)]
     pub longest_prefix_matches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+    #[doc(hidden)]
     pub subnet_of_matches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+    #[doc(hidden)]
     pub supernet_of_matches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the prefix lists.</p>
+    #[doc(hidden)]
     pub prefix_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The route states.</p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::RouteState>>,
     /// <p>The route types.</p>
+    #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<crate::model::RouteType>>,
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+    #[doc(hidden)]
     pub destination_filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -18042,14 +18162,19 @@ impl std::fmt::Debug for GetNetworkRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkResourcesInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub registered_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -18074,12 +18199,16 @@ pub struct GetNetworkResourcesInput {
     /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
     /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkResourcesInput {
@@ -18163,14 +18292,19 @@ impl std::fmt::Debug for GetNetworkResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkResourceRelationshipsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the registered gateway.</p>
+    #[doc(hidden)]
     pub registered_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -18195,12 +18329,16 @@ pub struct GetNetworkResourceRelationshipsInput {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkResourceRelationshipsInput {
@@ -18284,6 +18422,7 @@ impl std::fmt::Debug for GetNetworkResourceRelationshipsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkResourceCountsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -18308,10 +18447,13 @@ pub struct GetNetworkResourceCountsInput {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetNetworkResourceCountsInput {
@@ -18370,18 +18512,25 @@ impl std::fmt::Debug for GetNetworkResourceCountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinksInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>One or more link IDs. The maximum is 10.</p>
+    #[doc(hidden)]
     pub link_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The link type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The link provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetLinksInput {
@@ -18433,14 +18582,19 @@ impl std::fmt::Debug for GetLinksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinkAssociationsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetLinkAssociationsInput {
@@ -18482,14 +18636,19 @@ impl std::fmt::Debug for GetLinkAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicesInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>One or more device IDs. The maximum is 10.</p>
+    #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevicesInput {
@@ -18531,12 +18690,16 @@ impl std::fmt::Debug for GetDevicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomerGatewayAssociationsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
+    #[doc(hidden)]
     pub customer_gateway_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCustomerGatewayAssociationsInput {
@@ -18573,10 +18736,13 @@ impl std::fmt::Debug for GetCustomerGatewayAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of a core network policy version.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
     /// <p>The alias of a core network policy </p>
+    #[doc(hidden)]
     pub alias: std::option::Option<crate::model::CoreNetworkPolicyAlias>,
 }
 impl GetCoreNetworkPolicyInput {
@@ -18608,12 +18774,16 @@ impl std::fmt::Debug for GetCoreNetworkPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the policy version.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCoreNetworkChangeSetInput {
@@ -18650,12 +18820,16 @@ impl std::fmt::Debug for GetCoreNetworkChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkChangeEventsInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the policy version.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCoreNetworkChangeEventsInput {
@@ -18692,6 +18866,7 @@ impl std::fmt::Debug for GetCoreNetworkChangeEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
 }
 impl GetCoreNetworkInput {
@@ -18713,12 +18888,16 @@ impl std::fmt::Debug for GetCoreNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectPeerAssociationsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the Connect peers.</p>
+    #[doc(hidden)]
     pub connect_peer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectPeerAssociationsInput {
@@ -18755,6 +18934,7 @@ impl std::fmt::Debug for GetConnectPeerAssociationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectPeerInput {
     /// <p>The ID of the Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
 }
 impl GetConnectPeerInput {
@@ -18776,14 +18956,19 @@ impl std::fmt::Debug for GetConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>One or more connection IDs.</p>
+    #[doc(hidden)]
     pub connection_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectionsInput {
@@ -18825,6 +19010,7 @@ impl std::fmt::Debug for GetConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectAttachmentInput {
     /// <p>The ID of the attachment.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl GetConnectAttachmentInput {
@@ -18846,8 +19032,10 @@ impl std::fmt::Debug for GetConnectAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the policy version.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
 }
 impl ExecuteCoreNetworkChangeSetInput {
@@ -18874,8 +19062,10 @@ impl std::fmt::Debug for ExecuteCoreNetworkChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateTransitGatewayConnectPeerInput {
@@ -18905,10 +19095,13 @@ impl std::fmt::Debug for DisassociateTransitGatewayConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLinkInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
 }
 impl DisassociateLinkInput {
@@ -18940,8 +19133,10 @@ impl std::fmt::Debug for DisassociateLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCustomerGatewayInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    #[doc(hidden)]
     pub customer_gateway_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateCustomerGatewayInput {
@@ -18968,8 +19163,10 @@ impl std::fmt::Debug for DisassociateCustomerGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectPeerInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
 }
 impl DisassociateConnectPeerInput {
@@ -18996,10 +19193,13 @@ impl std::fmt::Debug for DisassociateConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalNetworksInput {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
+    #[doc(hidden)]
     pub global_network_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeGlobalNetworksInput {
@@ -19031,8 +19231,10 @@ impl std::fmt::Debug for DescribeGlobalNetworksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTransitGatewayInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeregisterTransitGatewayInput {
@@ -19059,8 +19261,10 @@ impl std::fmt::Debug for DeregisterTransitGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSiteInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
 }
 impl DeleteSiteInput {
@@ -19087,6 +19291,7 @@ impl std::fmt::Debug for DeleteSiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The ARN of the policy to delete.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
@@ -19108,6 +19313,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePeeringInput {
     /// <p>The ID of the peering connection to delete.</p>
+    #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
 }
 impl DeletePeeringInput {
@@ -19129,8 +19335,10 @@ impl std::fmt::Debug for DeletePeeringInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLinkInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
 }
 impl DeleteLinkInput {
@@ -19157,6 +19365,7 @@ impl std::fmt::Debug for DeleteLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalNetworkInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
 }
 impl DeleteGlobalNetworkInput {
@@ -19178,8 +19387,10 @@ impl std::fmt::Debug for DeleteGlobalNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeviceInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeviceInput {
@@ -19206,8 +19417,10 @@ impl std::fmt::Debug for DeleteDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreNetworkPolicyVersionInput {
     /// <p>The ID of a core network for the deleted policy.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The version ID of the deleted policy.</p>
+    #[doc(hidden)]
     pub policy_version_id: std::option::Option<i32>,
 }
 impl DeleteCoreNetworkPolicyVersionInput {
@@ -19234,6 +19447,7 @@ impl std::fmt::Debug for DeleteCoreNetworkPolicyVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreNetworkInput {
     /// <p>The network ID of the deleted core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
 }
 impl DeleteCoreNetworkInput {
@@ -19255,6 +19469,7 @@ impl std::fmt::Debug for DeleteCoreNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectPeerInput {
     /// <p>The ID of the deleted Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectPeerInput {
@@ -19276,8 +19491,10 @@ impl std::fmt::Debug for DeleteConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
@@ -19304,6 +19521,7 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttachmentInput {
     /// <p>The ID of the attachment to delete.</p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl DeleteAttachmentInput {
@@ -19325,16 +19543,22 @@ impl std::fmt::Debug for DeleteAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcAttachmentInput {
     /// <p>The ID of a core network for the VPC attachment.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the VPC.</p>
+    #[doc(hidden)]
     pub vpc_arn: std::option::Option<std::string::String>,
     /// <p>The subnet ARN of the VPC attachment.</p>
+    #[doc(hidden)]
     pub subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Options for the VPC attachment.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::VpcOptions>,
     /// <p>The key-value tags associated with the request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcAttachmentInput {
@@ -19381,12 +19605,16 @@ impl std::fmt::Debug for CreateVpcAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the peer for the </p>
+    #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+    #[doc(hidden)]
     pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value tags associated with the request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTransitGatewayRouteTableAttachmentInput {
@@ -19426,12 +19654,16 @@ impl std::fmt::Debug for CreateTransitGatewayRouteTableAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayPeeringInput {
     /// <p>The ID of a core network.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the transit gateway for the peering request.</p>
+    #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value tags associated with the request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTransitGatewayPeeringInput {
@@ -19468,12 +19700,16 @@ impl std::fmt::Debug for CreateTransitGatewayPeeringInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSiteToSiteVpnAttachmentInput {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN identifying the VPN attachment.</p>
+    #[doc(hidden)]
     pub vpn_connection_arn: std::option::Option<std::string::String>,
     /// <p>The tags associated with the request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateSiteToSiteVpnAttachmentInput {
@@ -19510,9 +19746,11 @@ impl std::fmt::Debug for CreateSiteToSiteVpnAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSiteInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
@@ -19520,8 +19758,10 @@ pub struct CreateSiteInput {
     /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
     /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The tags to apply to the resource during creation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSiteInput {
@@ -19564,21 +19804,28 @@ impl std::fmt::Debug for CreateSiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLinkInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p> The upload speed and download speed in Mbps. </p>
+    #[doc(hidden)]
     pub bandwidth: std::option::Option<crate::model::Bandwidth>,
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<std::string::String>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLinkInput {
@@ -19634,8 +19881,10 @@ impl std::fmt::Debug for CreateLinkInput {
 pub struct CreateGlobalNetworkInput {
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGlobalNetworkInput {
@@ -19663,28 +19912,38 @@ impl std::fmt::Debug for CreateGlobalNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeviceInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    #[doc(hidden)]
     pub aws_location: std::option::Option<crate::model::AwsLocation>,
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the device.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
+    #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The location of the device.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The ID of the site.</p>
+    #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeviceInput {
@@ -19755,14 +20014,19 @@ impl std::fmt::Debug for CreateDeviceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCoreNetworkInput {
     /// <p>The ID of the global network that a core network will be a part of. </p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The description of a core network.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Key-value tags associated with a core network request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The policy document for creating a core network.</p>
+    #[doc(hidden)]
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The client token associated with a core network request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateCoreNetworkInput {
@@ -19804,18 +20068,25 @@ impl std::fmt::Debug for CreateCoreNetworkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
+    #[doc(hidden)]
     pub connect_attachment_id: std::option::Option<std::string::String>,
     /// <p>A Connect peer core network address.</p>
+    #[doc(hidden)]
     pub core_network_address: std::option::Option<std::string::String>,
     /// <p>The Connect peer address.</p>
+    #[doc(hidden)]
     pub peer_address: std::option::Option<std::string::String>,
     /// <p>The Connect peer BGP options.</p>
+    #[doc(hidden)]
     pub bgp_options: std::option::Option<crate::model::BgpOptions>,
     /// <p>The inside IP addresses used for BGP peering.</p>
+    #[doc(hidden)]
     pub inside_cidr_blocks: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags associated with the peer request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateConnectPeerInput {
@@ -19867,19 +20138,26 @@ impl std::fmt::Debug for CreateConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the first device in the connection.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the second device in the connection.</p>
+    #[doc(hidden)]
     pub connected_device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link for the first device.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link for the second device.</p>
+    #[doc(hidden)]
     pub connected_link_id: std::option::Option<std::string::String>,
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionInput {
@@ -19932,16 +20210,22 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectAttachmentInput {
     /// <p>The ID of a core network where you want to create the attachment. </p>
+    #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The Region where the edge is located.</p>
+    #[doc(hidden)]
     pub edge_location: std::option::Option<std::string::String>,
     /// <p>The ID of the attachment between the two connections.</p>
+    #[doc(hidden)]
     pub transport_attachment_id: std::option::Option<std::string::String>,
     /// <p>Options for creating an attachment.</p>
+    #[doc(hidden)]
     pub options: std::option::Option<crate::model::ConnectAttachmentOptions>,
     /// <p>The list of key-value tags associated with the request.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The client token associated with the request.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateConnectAttachmentInput {
@@ -19988,12 +20272,16 @@ impl std::fmt::Debug for CreateConnectAttachmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
+    #[doc(hidden)]
     pub transit_gateway_connect_peer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
 }
 impl AssociateTransitGatewayConnectPeerInput {
@@ -20033,10 +20321,13 @@ impl std::fmt::Debug for AssociateTransitGatewayConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLinkInput {
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
 }
 impl AssociateLinkInput {
@@ -20068,12 +20359,16 @@ impl std::fmt::Debug for AssociateLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCustomerGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    #[doc(hidden)]
     pub customer_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
 }
 impl AssociateCustomerGatewayInput {
@@ -20110,12 +20405,16 @@ impl std::fmt::Debug for AssociateCustomerGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectPeerInput {
     /// <p>The ID of your global network.</p>
+    #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Connect peer.</p>
+    #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
+    #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
+    #[doc(hidden)]
     pub link_id: std::option::Option<std::string::String>,
 }
 impl AssociateConnectPeerInput {
@@ -20152,6 +20451,7 @@ impl std::fmt::Debug for AssociateConnectPeerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptAttachmentInput {
     /// <p>The ID of the attachment. </p>
+    #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl AcceptAttachmentInput {

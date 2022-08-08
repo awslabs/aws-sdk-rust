@@ -87,6 +87,7 @@ impl AsRef<str> for EndpointState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
+    #[doc(hidden)]
     pub event_bus_arn: std::option::Option<std::string::String>,
 }
 impl EndpointEventBus {
@@ -144,6 +145,7 @@ impl EndpointEventBus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfig {
     /// <p>The state of event replication.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplicationState>,
 }
 impl ReplicationConfig {
@@ -254,6 +256,7 @@ impl AsRef<str> for ReplicationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+    #[doc(hidden)]
     pub failover_config: std::option::Option<crate::model::FailoverConfig>,
 }
 impl RoutingConfig {
@@ -311,8 +314,10 @@ impl RoutingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverConfig {
     /// <p>The main Region of the endpoint.</p>
+    #[doc(hidden)]
     pub primary: std::option::Option<crate::model::Primary>,
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+    #[doc(hidden)]
     pub secondary: std::option::Option<crate::model::Secondary>,
 }
 impl FailoverConfig {
@@ -387,6 +392,7 @@ impl FailoverConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Secondary {
     /// <p>Defines the secondary Region.</p>
+    #[doc(hidden)]
     pub route: std::option::Option<std::string::String>,
 }
 impl Secondary {
@@ -439,6 +445,7 @@ impl Secondary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
+    #[doc(hidden)]
     pub health_check: std::option::Option<std::string::String>,
 }
 impl Primary {
@@ -576,15 +583,19 @@ impl AsRef<str> for ConnectionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionAuthRequestParameters {
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    #[doc(hidden)]
     pub basic_auth_parameters:
         std::option::Option<crate::model::UpdateConnectionBasicAuthRequestParameters>,
     /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    #[doc(hidden)]
     pub o_auth_parameters:
         std::option::Option<crate::model::UpdateConnectionOAuthRequestParameters>,
     /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    #[doc(hidden)]
     pub api_key_auth_parameters:
         std::option::Option<crate::model::UpdateConnectionApiKeyAuthRequestParameters>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    #[doc(hidden)]
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl UpdateConnectionAuthRequestParameters {
@@ -729,12 +740,15 @@ impl UpdateConnectionAuthRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionHttpParameters {
     /// <p>Contains additional header parameters for the connection.</p>
+    #[doc(hidden)]
     pub header_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConnectionHeaderParameter>>,
     /// <p>Contains additional query string parameters for the connection.</p>
+    #[doc(hidden)]
     pub query_string_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConnectionQueryStringParameter>>,
     /// <p>Contains additional body string parameters for the connection.</p>
+    #[doc(hidden)]
     pub body_parameters: std::option::Option<std::vec::Vec<crate::model::ConnectionBodyParameter>>,
 }
 impl ConnectionHttpParameters {
@@ -860,10 +874,13 @@ impl ConnectionHttpParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionBodyParameter {
     /// <p>The key for the parameter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value associated with the key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Specified whether the value is secret.</p>
+    #[doc(hidden)]
     pub is_value_secret: bool,
 }
 impl ConnectionBodyParameter {
@@ -952,10 +969,13 @@ impl ConnectionBodyParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionQueryStringParameter {
     /// <p>The key for a query string parameter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value associated with the key for the query string parameter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Specifies whether the value is secret.</p>
+    #[doc(hidden)]
     pub is_value_secret: bool,
 }
 impl ConnectionQueryStringParameter {
@@ -1044,10 +1064,13 @@ impl ConnectionQueryStringParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionHeaderParameter {
     /// <p>The key for the parameter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value associated with the key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>Specified whether the value is a secret.</p>
+    #[doc(hidden)]
     pub is_value_secret: bool,
 }
 impl ConnectionHeaderParameter {
@@ -1136,8 +1159,10 @@ impl ConnectionHeaderParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
+    #[doc(hidden)]
     pub api_key_name: std::option::Option<std::string::String>,
     /// <p>The value associated with teh API key to use for authorization.</p>
+    #[doc(hidden)]
     pub api_key_value: std::option::Option<std::string::String>,
 }
 impl UpdateConnectionApiKeyAuthRequestParameters {
@@ -1212,13 +1237,17 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOAuthRequestParameters {
     /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
+    #[doc(hidden)]
     pub client_parameters:
         std::option::Option<crate::model::UpdateConnectionOAuthClientRequestParameters>,
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
+    #[doc(hidden)]
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The method used to connect to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
+    #[doc(hidden)]
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl UpdateConnectionOAuthRequestParameters {
@@ -1407,8 +1436,10 @@ impl AsRef<str> for ConnectionOAuthHttpMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
 }
 impl UpdateConnectionOAuthClientRequestParameters {
@@ -1483,8 +1514,10 @@ impl UpdateConnectionOAuthClientRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl UpdateConnectionBasicAuthRequestParameters {
@@ -1823,8 +1856,10 @@ impl AsRef<str> for ApiDestinationHttpMethod {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the specified tag key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1974,8 +2009,10 @@ impl AsRef<str> for ReplayState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplayDestination {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of ARNs for rules to replay events to.</p>
+    #[doc(hidden)]
     pub filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReplayDestination {
@@ -2056,10 +2093,13 @@ impl ReplayDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTargetsResultEntry {
     /// <p>The ID of the target.</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the target removal failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl RemoveTargetsResultEntry {
@@ -2151,10 +2191,13 @@ impl RemoveTargetsResultEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTargetsResultEntry {
     /// <p>The ID of the target.</p>
+    #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the target addition failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PutTargetsResultEntry {
@@ -2247,41 +2290,57 @@ impl PutTargetsResultEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
     /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    #[doc(hidden)]
     pub input_path: std::option::Option<std::string::String>,
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
+    #[doc(hidden)]
     pub input_transformer: std::option::Option<crate::model::InputTransformer>,
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
+    #[doc(hidden)]
     pub kinesis_parameters: std::option::Option<crate::model::KinesisParameters>,
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
+    #[doc(hidden)]
     pub run_command_parameters: std::option::Option<crate::model::RunCommandParameters>,
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub ecs_parameters: std::option::Option<crate::model::EcsParameters>,
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
+    #[doc(hidden)]
     pub batch_parameters: std::option::Option<crate::model::BatchParameters>,
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    #[doc(hidden)]
     pub sqs_parameters: std::option::Option<crate::model::SqsParameters>,
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
+    #[doc(hidden)]
     pub http_parameters: std::option::Option<crate::model::HttpParameters>,
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+    #[doc(hidden)]
     pub redshift_data_parameters: std::option::Option<crate::model::RedshiftDataParameters>,
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    #[doc(hidden)]
     pub sage_maker_pipeline_parameters:
         std::option::Option<crate::model::SageMakerPipelineParameters>,
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
+    #[doc(hidden)]
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    #[doc(hidden)]
     pub retry_policy: std::option::Option<crate::model::RetryPolicy>,
 }
 impl Target {
@@ -2653,8 +2712,10 @@ impl Target {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryPolicy {
     /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
+    #[doc(hidden)]
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
+    #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
 }
 impl RetryPolicy {
@@ -2729,6 +2790,7 @@ impl RetryPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeadLetterConfig {
     /// <p>The ARN of the SQS queue specified as the target for the dead-letter queue.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeadLetterConfig {
@@ -2781,6 +2843,7 @@ impl DeadLetterConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SageMakerPipelineParameters {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
+    #[doc(hidden)]
     pub pipeline_parameter_list:
         std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
 }
@@ -2851,8 +2914,10 @@ impl SageMakerPipelineParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SageMakerPipelineParameter {
@@ -2924,16 +2989,22 @@ impl SageMakerPipelineParameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
+    #[doc(hidden)]
     pub secret_manager_arn: std::option::Option<std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
+    #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The SQL statement text to run.</p>
+    #[doc(hidden)]
     pub sql: std::option::Option<std::string::String>,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
+    #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
+    #[doc(hidden)]
     pub with_event: bool,
 }
 impl RedshiftDataParameters {
@@ -3079,11 +3150,14 @@ impl RedshiftDataParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
+    #[doc(hidden)]
     pub path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
+    #[doc(hidden)]
     pub header_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
+    #[doc(hidden)]
     pub query_string_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3222,6 +3296,7 @@ impl HttpParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
+    #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl SqsParameters {
@@ -3279,12 +3354,16 @@ impl SqsParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchParameters {
     /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
+    #[doc(hidden)]
     pub job_definition: std::option::Option<std::string::String>,
     /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
+    #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
+    #[doc(hidden)]
     pub array_properties: std::option::Option<crate::model::BatchArrayProperties>,
     /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
+    #[doc(hidden)]
     pub retry_strategy: std::option::Option<crate::model::BatchRetryStrategy>,
 }
 impl BatchParameters {
@@ -3399,6 +3478,7 @@ impl BatchParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRetryStrategy {
     /// <p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>
+    #[doc(hidden)]
     pub attempts: i32,
 }
 impl BatchRetryStrategy {
@@ -3453,6 +3533,7 @@ impl BatchRetryStrategy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
+    #[doc(hidden)]
     pub size: i32,
 }
 impl BatchArrayProperties {
@@ -3507,37 +3588,51 @@ impl BatchArrayProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsParameters {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    #[doc(hidden)]
     pub task_definition_arn: std::option::Option<std::string::String>,
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
+    #[doc(hidden)]
     pub task_count: std::option::Option<i32>,
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub launch_type: std::option::Option<crate::model::LaunchType>,
     /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
     /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
+    #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
     /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
+    #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    #[doc(hidden)]
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    #[doc(hidden)]
     pub enable_ecs_managed_tags: bool,
     /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
+    #[doc(hidden)]
     pub enable_execute_command: bool,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
+    #[doc(hidden)]
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
+    #[doc(hidden)]
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    #[doc(hidden)]
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
     /// <p>The reference ID to use for the task.</p>
+    #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl EcsParameters {
@@ -3939,8 +4034,10 @@ impl AsRef<str> for PropagateTags {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementStrategy {
     /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PlacementStrategyType>,
     /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
+    #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
 }
 impl PlacementStrategy {
@@ -4074,8 +4171,10 @@ impl AsRef<str> for PlacementStrategyType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementConstraint {
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PlacementConstraintType>,
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
 }
 impl PlacementConstraint {
@@ -4205,10 +4304,13 @@ impl AsRef<str> for PlacementConstraintType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
+    #[doc(hidden)]
     pub capacity_provider: std::option::Option<std::string::String>,
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
+    #[doc(hidden)]
     pub weight: i32,
     /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
+    #[doc(hidden)]
     pub base: i32,
 }
 impl CapacityProviderStrategyItem {
@@ -4300,6 +4402,7 @@ impl CapacityProviderStrategyItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
+    #[doc(hidden)]
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {
@@ -4357,10 +4460,13 @@ impl NetworkConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsVpcConfiguration {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
+    #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+    #[doc(hidden)]
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
 }
 impl AwsVpcConfiguration {
@@ -4584,6 +4690,7 @@ impl AsRef<str> for LaunchType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunCommandParameters {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
+    #[doc(hidden)]
     pub run_command_targets: std::option::Option<std::vec::Vec<crate::model::RunCommandTarget>>,
 }
 impl RunCommandParameters {
@@ -4648,8 +4755,10 @@ impl RunCommandParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunCommandTarget {
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
+    #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RunCommandTarget {
@@ -4730,6 +4839,7 @@ impl RunCommandTarget {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisParameters {
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub partition_key_path: std::option::Option<std::string::String>,
 }
 impl KinesisParameters {
@@ -4789,6 +4899,7 @@ pub struct InputTransformer {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services." </p>
+    #[doc(hidden)]
     pub input_paths_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
@@ -4835,6 +4946,7 @@ pub struct InputTransformer {
     /// </instance>
     /// </instance></code> </p>
     /// <p> <code>}</code> </p>
+    #[doc(hidden)]
     pub input_template: std::option::Option<std::string::String>,
 }
 impl InputTransformer {
@@ -5120,10 +5232,13 @@ impl AsRef<str> for RuleState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Condition {
@@ -5212,10 +5327,13 @@ impl Condition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPartnerEventsResultEntry {
     /// <p>The ID of the event.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The error code that indicates why the event submission failed.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the event submission failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PutPartnerEventsResultEntry {
@@ -5307,14 +5425,19 @@ impl PutPartnerEventsResultEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPartnerEventsRequestEntry {
     /// <p>The date and time of the event.</p>
+    #[doc(hidden)]
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The event source that is generating the entry.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A free-form string used to decide what fields to expect in the event detail.</p>
+    #[doc(hidden)]
     pub detail_type: std::option::Option<std::string::String>,
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    #[doc(hidden)]
     pub detail: std::option::Option<std::string::String>,
 }
 impl PutPartnerEventsRequestEntry {
@@ -5446,10 +5569,13 @@ impl PutPartnerEventsRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsResultEntry {
     /// <p>The ID of the event.</p>
+    #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The error code that indicates why the event submission failed.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the event submission failed.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PutEventsResultEntry {
@@ -5541,21 +5667,28 @@ impl PutEventsResultEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsRequestEntry {
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
+    #[doc(hidden)]
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source of the event.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
+    #[doc(hidden)]
     pub detail_type: std::option::Option<std::string::String>,
     /// <p>A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.</p>
+    #[doc(hidden)]
     pub detail: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
     /// <p>If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in either the primary or secondary Region here and the corresponding event bus in the other Region will be determined based on the endpoint referenced by the <code>EndpointId</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
+    #[doc(hidden)]
     pub trace_header: std::option::Option<std::string::String>,
 }
 impl PutEventsRequestEntry {
@@ -5733,23 +5866,32 @@ impl PutEventsRequestEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
     /// <p>The name of the rule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    #[doc(hidden)]
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The state of the rule.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::RuleState>,
     /// <p>The description of the rule.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
+    #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
     /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
+    #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    #[doc(hidden)]
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl Rule {
@@ -5952,22 +6094,31 @@ impl Rule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Replay {
     /// <p>The name of the replay.</p>
+    #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the archive to replay event from.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the replay.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>A description of why the replay is in the current state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>A time stamp for the time to start replaying events. This is determined by the time in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
+    #[doc(hidden)]
     pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior to the <code>EventEndTime</code> specified is replayed.</p>
+    #[doc(hidden)]
     pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the last event was replayed.</p>
+    #[doc(hidden)]
     pub event_last_replayed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay started.</p>
+    #[doc(hidden)]
     pub replay_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay completed.</p>
+    #[doc(hidden)]
     pub replay_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Replay {
@@ -6176,8 +6327,10 @@ impl Replay {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartnerEventSource {
     /// <p>The ARN of the partner event source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the partner event source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PartnerEventSource {
@@ -6249,12 +6402,16 @@ impl PartnerEventSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartnerEventSourceAccount {
     /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
+    #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
     /// <p>The date and time the event source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
 impl PartnerEventSourceAccount {
@@ -6428,16 +6585,22 @@ impl AsRef<str> for EventSourceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSource {
     /// <p>The ARN of the event source.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the partner that created the event source.</p>
+    #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time the event source was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the event source.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
 impl EventSource {
@@ -6586,10 +6749,13 @@ impl EventSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventBus {
     /// <p>The name of the event bus.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl EventBus {
@@ -6678,30 +6844,43 @@ impl EventBus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
     /// <p>The name of the endpoint.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the endpoint.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the endpoint.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The routing configuration of the endpoint.</p>
+    #[doc(hidden)]
     pub routing_config: std::option::Option<crate::model::RoutingConfig>,
     /// <p>Whether event replication was enabled or disabled for this endpoint.</p>
+    #[doc(hidden)]
     pub replication_config: std::option::Option<crate::model::ReplicationConfig>,
     /// <p>The event buses being used by the endpoint.</p>
+    #[doc(hidden)]
     pub event_buses: std::option::Option<std::vec::Vec<crate::model::EndpointEventBus>>,
     /// <p>The ARN of the role used by event replication for the endpoint.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p>
+    #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The URL of the endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The current state of the endpoint.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::EndpointState>,
     /// <p>The reason the endpoint is in its current state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time the endpoint was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the endpoint was modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Endpoint {
@@ -6984,20 +7163,28 @@ impl Endpoint {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
     /// <p>The ARN of the connection.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The name of the connection.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the connection.</p>
+    #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The reason that the connection is in the connection state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The authorization type specified for the connection.</p>
+    #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
     /// <p>A time stamp for the time that the connection was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
+    #[doc(hidden)]
     pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Connection {
@@ -7195,20 +7382,28 @@ impl Connection {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Archive {
     /// <p>The name of the archive.</p>
+    #[doc(hidden)]
     pub archive_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
+    #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the archive.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ArchiveState>,
     /// <p>A description for the reason that the archive is in the current state.</p>
+    #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
+    #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
     /// <p>The size of the archive, in bytes.</p>
+    #[doc(hidden)]
     pub size_bytes: i64,
     /// <p>The number of events in the archive.</p>
+    #[doc(hidden)]
     pub event_count: i64,
     /// <p>The time stamp for the time that the archive was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Archive {
@@ -7388,22 +7583,31 @@ impl Archive {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiDestination {
     /// <p>The ARN of the API destination.</p>
+    #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
     /// <p>The name of the API destination.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the API destination.</p>
+    #[doc(hidden)]
     pub api_destination_state: std::option::Option<crate::model::ApiDestinationState>,
     /// <p>The ARN of the connection specified for the API destination.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The URL to the endpoint for the API destination.</p>
+    #[doc(hidden)]
     pub invocation_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use to connect to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ApiDestinationHttpMethod>,
     /// <p>The maximum number of invocations per second to send to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
     /// <p>A time stamp for the time that the API destination was created.</p>
+    #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
+    #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ApiDestination {
@@ -7621,14 +7825,18 @@ impl ApiDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAuthResponseParameters {
     /// <p>The authorization parameters for Basic authorization.</p>
+    #[doc(hidden)]
     pub basic_auth_parameters:
         std::option::Option<crate::model::ConnectionBasicAuthResponseParameters>,
     /// <p>The OAuth parameters to use for authorization.</p>
+    #[doc(hidden)]
     pub o_auth_parameters: std::option::Option<crate::model::ConnectionOAuthResponseParameters>,
     /// <p>The API Key parameters to use for authorization.</p>
+    #[doc(hidden)]
     pub api_key_auth_parameters:
         std::option::Option<crate::model::ConnectionApiKeyAuthResponseParameters>,
     /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl ConnectionAuthResponseParameters {
@@ -7773,6 +7981,7 @@ impl ConnectionAuthResponseParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionApiKeyAuthResponseParameters {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
+    #[doc(hidden)]
     pub api_key_name: std::option::Option<std::string::String>,
 }
 impl ConnectionApiKeyAuthResponseParameters {
@@ -7827,13 +8036,17 @@ impl ConnectionApiKeyAuthResponseParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionOAuthResponseParameters {
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
+    #[doc(hidden)]
     pub client_parameters:
         std::option::Option<crate::model::ConnectionOAuthClientResponseParameters>,
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
+    #[doc(hidden)]
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The method used to connect to the HTTP endpoint.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
+    #[doc(hidden)]
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl ConnectionOAuthResponseParameters {
@@ -7963,6 +8176,7 @@ impl ConnectionOAuthResponseParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
 }
 impl ConnectionOAuthClientResponseParameters {
@@ -8017,6 +8231,7 @@ impl ConnectionOAuthClientResponseParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionBasicAuthResponseParameters {
     /// <p>The user name to use for Basic authorization.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl ConnectionBasicAuthResponseParameters {
@@ -8071,15 +8286,19 @@ impl ConnectionBasicAuthResponseParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionAuthRequestParameters {
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
+    #[doc(hidden)]
     pub basic_auth_parameters:
         std::option::Option<crate::model::CreateConnectionBasicAuthRequestParameters>,
     /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
+    #[doc(hidden)]
     pub o_auth_parameters:
         std::option::Option<crate::model::CreateConnectionOAuthRequestParameters>,
     /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
+    #[doc(hidden)]
     pub api_key_auth_parameters:
         std::option::Option<crate::model::CreateConnectionApiKeyAuthRequestParameters>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
+    #[doc(hidden)]
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl CreateConnectionAuthRequestParameters {
@@ -8224,8 +8443,10 @@ impl CreateConnectionAuthRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
+    #[doc(hidden)]
     pub api_key_name: std::option::Option<std::string::String>,
     /// <p>The value for the API key to use for authorization.</p>
+    #[doc(hidden)]
     pub api_key_value: std::option::Option<std::string::String>,
 }
 impl CreateConnectionApiKeyAuthRequestParameters {
@@ -8300,13 +8521,17 @@ impl CreateConnectionApiKeyAuthRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOAuthRequestParameters {
     /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    #[doc(hidden)]
     pub client_parameters:
         std::option::Option<crate::model::CreateConnectionOAuthClientRequestParameters>,
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
+    #[doc(hidden)]
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use for the authorization request.</p>
+    #[doc(hidden)]
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
+    #[doc(hidden)]
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl CreateConnectionOAuthRequestParameters {
@@ -8436,8 +8661,10 @@ impl CreateConnectionOAuthRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
+    #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
+    #[doc(hidden)]
     pub client_secret: std::option::Option<std::string::String>,
 }
 impl CreateConnectionOAuthClientRequestParameters {
@@ -8512,8 +8739,10 @@ impl CreateConnectionOAuthClientRequestParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl CreateConnectionBasicAuthRequestParameters {

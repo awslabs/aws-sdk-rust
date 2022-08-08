@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectivityInfoOutput {
     /// <p>The new version of the connectivity information for the core device.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>A message about the connectivity information update request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UpdateConnectivityInfoOutput {
@@ -137,6 +139,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveComponentCandidatesOutput {
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
+    #[doc(hidden)]
     pub resolved_component_versions:
         std::option::Option<std::vec::Vec<crate::model::ResolvedComponentVersion>>,
 }
@@ -210,6 +213,7 @@ impl ResolveComponentCandidatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -283,8 +287,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstalledComponentsOutput {
     /// <p>A list that summarizes each component on the core device.</p>
+    #[doc(hidden)]
     pub installed_components: std::option::Option<std::vec::Vec<crate::model::InstalledComponent>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstalledComponentsOutput {
@@ -366,9 +372,11 @@ impl ListInstalledComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEffectiveDeploymentsOutput {
     /// <p>A list that summarizes each deployment on the core device.</p>
+    #[doc(hidden)]
     pub effective_deployments:
         std::option::Option<std::vec::Vec<crate::model::EffectiveDeployment>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEffectiveDeploymentsOutput {
@@ -452,8 +460,10 @@ impl ListEffectiveDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsOutput {
     /// <p>A list that summarizes each deployment.</p>
+    #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsOutput {
@@ -534,8 +544,10 @@ impl ListDeploymentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDevicesOutput {
     /// <p>A list that summarizes each core device.</p>
+    #[doc(hidden)]
     pub core_devices: std::option::Option<std::vec::Vec<crate::model::CoreDevice>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoreDevicesOutput {
@@ -616,9 +628,11 @@ impl ListCoreDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentVersionsOutput {
     /// <p>A list of versions that exist for the component.</p>
+    #[doc(hidden)]
     pub component_versions:
         std::option::Option<std::vec::Vec<crate::model::ComponentVersionListItem>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentVersionsOutput {
@@ -702,8 +716,10 @@ impl ListComponentVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsOutput {
     /// <p>A list that summarizes each component.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::Component>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsOutput {
@@ -784,9 +800,11 @@ impl ListComponentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceOutput {
     /// <p>A list that describes the client devices that are associated with the core device.</p>
+    #[doc(hidden)]
     pub associated_client_devices:
         std::option::Option<std::vec::Vec<crate::model::AssociatedClientDevice>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClientDevicesAssociatedWithCoreDeviceOutput {
@@ -874,8 +892,10 @@ impl ListClientDevicesAssociatedWithCoreDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceRoleForAccountOutput {
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
     /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl GetServiceRoleForAccountOutput {
@@ -950,20 +970,28 @@ impl GetServiceRoleForAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The revision number of the deployment.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The status of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    #[doc(hidden)]
     pub iot_job_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    #[doc(hidden)]
     pub iot_job_arn: std::option::Option<std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
+    #[doc(hidden)]
     pub components: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -971,14 +999,19 @@ pub struct GetDeploymentOutput {
         >,
     >,
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
+    #[doc(hidden)]
     pub deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    #[doc(hidden)]
     pub iot_job_configuration: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
+    #[doc(hidden)]
     pub is_latest_for_target: bool,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1312,22 +1345,29 @@ impl GetDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDeviceOutput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub core_version: std::option::Option<std::string::String>,
     /// <p>The operating system platform that the core device runs.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>The computer architecture of the core device.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
     /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1529,8 +1569,10 @@ impl GetCoreDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectivityInfoOutput {
     /// <p>The connectivity information for the core device.</p>
+    #[doc(hidden)]
     pub connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
     /// <p>A message about the connectivity information request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GetConnectivityInfoOutput {
@@ -1612,6 +1654,7 @@ impl GetConnectivityInfoOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentVersionArtifactOutput {
     /// <p>The URL of the artifact.</p>
+    #[doc(hidden)]
     pub pre_signed_url: std::option::Option<std::string::String>,
 }
 impl GetComponentVersionArtifactOutput {
@@ -1669,10 +1712,13 @@ impl GetComponentVersionArtifactOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentOutput {
     /// <p>The format of the recipe.</p>
+    #[doc(hidden)]
     pub recipe_output_format: std::option::Option<crate::model::RecipeOutputFormat>,
     /// <p>The recipe of the component version.</p>
+    #[doc(hidden)]
     pub recipe: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1785,6 +1831,7 @@ impl GetComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateServiceRoleFromAccountOutput {
     /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub disassociated_at: std::option::Option<std::string::String>,
 }
 impl DisassociateServiceRoleFromAccountOutput {
@@ -1842,22 +1889,31 @@ impl DisassociateServiceRoleFromAccountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The publisher of the component version.</p>
+    #[doc(hidden)]
     pub publisher: std::option::Option<std::string::String>,
     /// <p>The description of the component version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
     /// <p>The platforms that the component version supports.</p>
+    #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2180,10 +2236,13 @@ impl DeleteComponentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentOutput {
     /// <p>The ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    #[doc(hidden)]
     pub iot_job_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    #[doc(hidden)]
     pub iot_job_arn: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -2275,14 +2334,19 @@ impl CreateDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentVersionOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
+    #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
 }
 impl CreateComponentVersionOutput {
@@ -2417,6 +2481,7 @@ impl CreateComponentVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDeploymentOutput {
     /// <p>A message that communicates if the cancel was successful.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CancelDeploymentOutput {
@@ -2471,6 +2536,7 @@ impl CancelDeploymentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceOutput {
     /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
     >,
@@ -2547,6 +2613,7 @@ impl BatchDisassociateClientDeviceFromCoreDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceOutput {
     /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
+    #[doc(hidden)]
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>,
     >,
@@ -2622,6 +2689,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateServiceRoleToAccountOutput {
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
 }
 impl AssociateServiceRoleToAccountOutput {

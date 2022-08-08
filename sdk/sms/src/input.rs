@@ -5666,20 +5666,28 @@ impl UpdateReplicationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationJobInput {
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The time between consecutive replication runs, in hours.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<i32>,
     /// <p>The start time of the next replication run.</p>
+    #[doc(hidden)]
     pub next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
+    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -5689,6 +5697,7 @@ pub struct UpdateReplicationJobInput {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl UpdateReplicationJobInput {
@@ -5765,16 +5774,22 @@ impl std::fmt::Debug for UpdateReplicationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The new name of the application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new description of the application.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The server groups in the application to update.</p>
+    #[doc(hidden)]
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags to associate with the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateAppInput {
@@ -5821,6 +5836,7 @@ impl std::fmt::Debug for UpdateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateAppInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl TerminateAppInput {
@@ -5842,6 +5858,7 @@ impl std::fmt::Debug for TerminateAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAppReplicationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl StopAppReplicationInput {
@@ -5863,8 +5880,10 @@ impl std::fmt::Debug for StopAppReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOnDemandReplicationRunInput {
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The description of the replication run.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl StartOnDemandReplicationRunInput {
@@ -5891,8 +5910,10 @@ impl std::fmt::Debug for StartOnDemandReplicationRunInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOnDemandAppReplicationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The description of the replication run.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl StartOnDemandAppReplicationInput {
@@ -5919,6 +5940,7 @@ impl std::fmt::Debug for StartOnDemandAppReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAppReplicationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl StartAppReplicationInput {
@@ -5940,11 +5962,14 @@ impl std::fmt::Debug for StartAppReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The configuration for application validation.</p>
+    #[doc(hidden)]
     pub app_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppValidationConfiguration>>,
     /// <p>The configuration for instance validation.</p>
+    #[doc(hidden)]
     pub server_group_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupValidationConfiguration>>,
 }
@@ -5987,8 +6012,10 @@ impl std::fmt::Debug for PutAppValidationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Information about the replication configurations for server groups in the application.</p>
+    #[doc(hidden)]
     pub server_group_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupReplicationConfiguration>>,
 }
@@ -6021,12 +6048,16 @@ impl std::fmt::Debug for PutAppReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    #[doc(hidden)]
     pub auto_launch: std::option::Option<bool>,
     /// <p>Information about the launch configurations for server groups in the application.</p>
+    #[doc(hidden)]
     pub server_group_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupLaunchConfiguration>>,
 }
@@ -6069,8 +6100,10 @@ impl std::fmt::Debug for PutAppLaunchConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyAppValidationOutputInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The notification information.</p>
+    #[doc(hidden)]
     pub notification_context: std::option::Option<crate::model::NotificationContext>,
 }
 impl NotifyAppValidationOutputInput {
@@ -6097,10 +6130,13 @@ impl std::fmt::Debug for NotifyAppValidationOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsInput {
     /// <p>The unique application IDs.</p>
+    #[doc(hidden)]
     pub app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppsInput {
@@ -6132,6 +6168,7 @@ impl std::fmt::Debug for ListAppsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchAppInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl LaunchAppInput {
@@ -6164,6 +6201,7 @@ impl std::fmt::Debug for ImportServerCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAppCatalogInput {
     /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
 }
 impl ImportAppCatalogInput {
@@ -6185,10 +6223,13 @@ impl std::fmt::Debug for ImportAppCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServersInput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The server addresses.</p>
+    #[doc(hidden)]
     pub vm_server_address_list: std::option::Option<std::vec::Vec<crate::model::VmServerAddress>>,
 }
 impl GetServersInput {
@@ -6220,10 +6261,13 @@ impl std::fmt::Debug for GetServersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationRunsInput {
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetReplicationRunsInput {
@@ -6255,10 +6299,13 @@ impl std::fmt::Debug for GetReplicationRunsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationJobsInput {
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetReplicationJobsInput {
@@ -6290,8 +6337,10 @@ impl std::fmt::Debug for GetReplicationJobsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectorsInput {
     /// <p>The token for the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetConnectorsInput {
@@ -6318,6 +6367,7 @@ impl std::fmt::Debug for GetConnectorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppValidationOutputInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppValidationOutputInput {
@@ -6339,6 +6389,7 @@ impl std::fmt::Debug for GetAppValidationOutputInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppValidationConfigurationInput {
@@ -6360,6 +6411,7 @@ impl std::fmt::Debug for GetAppValidationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppReplicationConfigurationInput {
@@ -6381,6 +6433,7 @@ impl std::fmt::Debug for GetAppReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppLaunchConfigurationInput {
@@ -6402,6 +6455,7 @@ impl std::fmt::Debug for GetAppLaunchConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppInput {
@@ -6423,8 +6477,10 @@ impl std::fmt::Debug for GetAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateTemplateInput {
     /// <p>The ID of the application associated with the CloudFormation template.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The format for generating the CloudFormation template.</p>
+    #[doc(hidden)]
     pub template_format: std::option::Option<crate::model::OutputFormat>,
 }
 impl GenerateTemplateInput {
@@ -6451,8 +6507,10 @@ impl std::fmt::Debug for GenerateTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateChangeSetInput {
     /// <p>The ID of the application associated with the change set.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The format for the change set.</p>
+    #[doc(hidden)]
     pub changeset_format: std::option::Option<crate::model::OutputFormat>,
 }
 impl GenerateChangeSetInput {
@@ -6479,6 +6537,7 @@ impl std::fmt::Debug for GenerateChangeSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectorInput {
     /// <p>The ID of the connector.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl DisassociateConnectorInput {
@@ -6511,6 +6570,7 @@ impl std::fmt::Debug for DeleteServerCatalogInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationJobInput {
     /// <p>The ID of the replication job.</p>
+    #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationJobInput {
@@ -6532,6 +6592,7 @@ impl std::fmt::Debug for DeleteReplicationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppValidationConfigurationInput {
@@ -6553,6 +6614,7 @@ impl std::fmt::Debug for DeleteAppValidationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppReplicationConfigurationInput {
@@ -6574,6 +6636,7 @@ impl std::fmt::Debug for DeleteAppReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppLaunchConfigurationInput {
@@ -6595,10 +6658,13 @@ impl std::fmt::Debug for DeleteAppLaunchConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
     /// <p>The ID of the application.</p>
+    #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
+    #[doc(hidden)]
     pub force_stop_app_replication: std::option::Option<bool>,
     /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
+    #[doc(hidden)]
     pub force_terminate_app: std::option::Option<bool>,
 }
 impl DeleteAppInput {
@@ -6633,22 +6699,31 @@ impl std::fmt::Debug for DeleteAppInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationJobInput {
     /// <p>The ID of the server.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The seed replication time.</p>
+    #[doc(hidden)]
     pub seed_replication_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time between consecutive replication runs, in hours.</p>
+    #[doc(hidden)]
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
+    #[doc(hidden)]
     pub run_once: std::option::Option<bool>,
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
+    #[doc(hidden)]
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
+    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -6658,6 +6733,7 @@ pub struct CreateReplicationJobInput {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
+    #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateReplicationJobInput {
@@ -6734,16 +6810,22 @@ impl std::fmt::Debug for CreateReplicationJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInput {
     /// <p>The name of the new application.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new application</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the service role in the customer's account to be used by Server Migration Service.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The server groups to include in the application.</p>
+    #[doc(hidden)]
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags to be associated with the application.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppInput {

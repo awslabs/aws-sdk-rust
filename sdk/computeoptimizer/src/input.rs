@@ -3845,8 +3845,10 @@ pub struct UpdateEnrollmentStatusInput {
     /// </ul> <note>
     /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
     /// </note>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
+    #[doc(hidden)]
     pub include_member_accounts: bool,
 }
 impl UpdateEnrollmentStatusInput {
@@ -3883,15 +3885,18 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
     /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
     /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
@@ -3899,6 +3904,7 @@ pub struct PutRecommendationPreferencesInput {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
 }
 impl PutRecommendationPreferencesInput {
@@ -3956,11 +3962,14 @@ pub struct GetRecommendationSummariesInput {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of recommendation summaries.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetRecommendationSummariesInput {
@@ -3998,14 +4007,18 @@ pub struct GetRecommendationPreferencesInput {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>An object that describes the scope of the recommendation preference to return.</p>
     /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The token to advance to the next page of recommendation preferences.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommendation preferences to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetRecommendationPreferencesInput {
@@ -4048,18 +4061,23 @@ impl std::fmt::Debug for GetRecommendationPreferencesInput {
 pub struct GetLambdaFunctionRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub function_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendationFilter>>,
     /// <p>The token to advance to the next page of function recommendations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetLambdaFunctionRecommendationsInput {
@@ -4107,11 +4125,14 @@ impl std::fmt::Debug for GetLambdaFunctionRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnrollmentStatusesForOrganizationInput {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::EnrollmentFilter>>,
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl GetEnrollmentStatusesForOrganizationInput {
@@ -4155,6 +4176,7 @@ impl std::fmt::Debug for GetEnrollmentStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEffectiveRecommendationPreferencesInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetEffectiveRecommendationPreferencesInput {
@@ -4176,16 +4198,22 @@ impl std::fmt::Debug for GetEffectiveRecommendationPreferencesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
+    #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The statistic of the projected metrics.</p>
+    #[doc(hidden)]
     pub stat: std::option::Option<crate::model::MetricStatistic>,
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
+    #[doc(hidden)]
     pub period: i32,
     /// <p>The timestamp of the first projected metrics data point to return.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last projected metrics data point to return.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
+    #[doc(hidden)]
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
 }
 impl GetEc2RecommendationProjectedMetricsInput {
@@ -4237,19 +4265,25 @@ impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2InstanceRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
+    #[doc(hidden)]
     pub instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of instance recommendations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of instance recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
+    #[doc(hidden)]
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
 }
 impl GetEc2InstanceRecommendationsInput {
@@ -4304,17 +4338,22 @@ impl std::fmt::Debug for GetEc2InstanceRecommendationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEbsVolumeRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
+    #[doc(hidden)]
     pub volume_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of volume recommendations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of volume recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of objects to specify a filter that returns a more specific list of volume recommendations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::EbsFilter>>,
     /// <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetEbsVolumeRecommendationsInput {
@@ -4361,17 +4400,23 @@ pub struct GetAutoScalingGroupRecommendationsInput {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    #[doc(hidden)]
     pub auto_scaling_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    #[doc(hidden)]
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
 }
 impl GetAutoScalingGroupRecommendationsInput {
@@ -4430,24 +4475,30 @@ pub struct ExportLambdaFunctionRecommendationsInput {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
+    #[doc(hidden)]
     pub filters:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendationFilter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub fields_to_export:
         std::option::Option<std::vec::Vec<crate::model::ExportableLambdaFunctionField>>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    #[doc(hidden)]
     pub include_member_accounts: bool,
 }
 impl ExportLambdaFunctionRecommendationsInput {
@@ -4512,23 +4563,30 @@ pub struct ExportEc2InstanceRecommendationsInput {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of instance recommendations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub fields_to_export: std::option::Option<std::vec::Vec<crate::model::ExportableInstanceField>>,
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permissions policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    #[doc(hidden)]
     pub include_member_accounts: bool,
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to export.</p>
+    #[doc(hidden)]
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
 }
 impl ExportEc2InstanceRecommendationsInput {
@@ -4600,22 +4658,28 @@ pub struct ExportEbsVolumeRecommendationsInput {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::EbsFilter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub fields_to_export: std::option::Option<std::vec::Vec<crate::model::ExportableVolumeField>>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    #[doc(hidden)]
     pub include_member_accounts: bool,
 }
 impl ExportEbsVolumeRecommendationsInput {
@@ -4676,25 +4740,32 @@ pub struct ExportAutoScalingGroupRecommendationsInput {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub fields_to_export:
         std::option::Option<std::vec::Vec<crate::model::ExportableAutoScalingGroupField>>,
     /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permissions policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub s3_destination_config: std::option::Option<crate::model::S3DestinationConfig>,
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
+    #[doc(hidden)]
     pub file_format: std::option::Option<crate::model::FileFormat>,
     /// <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    #[doc(hidden)]
     pub include_member_accounts: bool,
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
+    #[doc(hidden)]
     pub recommendation_preferences: std::option::Option<crate::model::RecommendationPreferences>,
 }
 impl ExportAutoScalingGroupRecommendationsInput {
@@ -4765,13 +4836,17 @@ pub struct DescribeRecommendationExportJobsInput {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
+    #[doc(hidden)]
     pub job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::JobFilter>>,
     /// <p>The token to advance to the next page of export jobs.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of export jobs to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeRecommendationExportJobsInput {
@@ -4814,12 +4889,15 @@ pub struct DeleteRecommendationPreferencesInput {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>An object that describes the scope of the recommendation preference to delete.</p>
     /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    #[doc(hidden)]
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The name of the recommendation preference to delete.</p>
     /// <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
+    #[doc(hidden)]
     pub recommendation_preference_names:
         std::option::Option<std::vec::Vec<crate::model::RecommendationPreferenceName>>,
 }

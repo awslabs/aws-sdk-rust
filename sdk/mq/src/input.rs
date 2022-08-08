@@ -4174,14 +4174,19 @@ impl UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    #[doc(hidden)]
     pub console_access: bool,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl UpdateUserInput {
@@ -4223,10 +4228,13 @@ impl std::fmt::Debug for UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>Required. The base64-encoded XML configuration.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
     /// <p>The description of the configuration.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationInput {
@@ -4258,24 +4266,34 @@ impl std::fmt::Debug for UpdateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    #[doc(hidden)]
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>A list of information about the configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ConfigurationId>,
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
+    #[doc(hidden)]
     pub host_instance_type: std::option::Option<std::string::String>,
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataInput>,
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
+    #[doc(hidden)]
     pub logs: std::option::Option<crate::model::Logs>,
     /// <p>The parameters that determine the WeeklyStartTime.</p>
+    #[doc(hidden)]
     pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateBrokerInput {
@@ -4354,6 +4372,7 @@ impl std::fmt::Debug for UpdateBrokerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl RebootBrokerInput {
@@ -4375,10 +4394,13 @@ impl std::fmt::Debug for RebootBrokerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersInput {
@@ -4410,6 +4432,7 @@ impl std::fmt::Debug for ListUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -4431,8 +4454,10 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsInput {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsInput {
@@ -4459,10 +4484,13 @@ impl std::fmt::Debug for ListConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationRevisionsInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationRevisionsInput {
@@ -4494,8 +4522,10 @@ impl std::fmt::Debug for ListConfigurationRevisionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBrokersInput {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBrokersInput {
@@ -4522,8 +4552,10 @@ impl std::fmt::Debug for ListBrokersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl DescribeUserInput {
@@ -4550,8 +4582,10 @@ impl std::fmt::Debug for DescribeUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRevisionInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>The revision of the configuration.</p>
+    #[doc(hidden)]
     pub configuration_revision: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationRevisionInput {
@@ -4578,6 +4612,7 @@ impl std::fmt::Debug for DescribeConfigurationRevisionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationInput {
@@ -4599,14 +4634,19 @@ impl std::fmt::Debug for DescribeConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInstanceOptionsInput {
     /// <p>Filter response by engine type.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<std::string::String>,
     /// <p>Filter response by host instance type.</p>
+    #[doc(hidden)]
     pub host_instance_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filter response by storage type.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
 }
 impl DescribeBrokerInstanceOptionsInput {
@@ -4648,10 +4688,13 @@ impl std::fmt::Debug for DescribeBrokerInstanceOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerEngineTypesInput {
     /// <p>Filter response by engine type.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<std::string::String>,
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBrokerEngineTypesInput {
@@ -4683,6 +4726,7 @@ impl std::fmt::Debug for DescribeBrokerEngineTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl DescribeBrokerInput {
@@ -4704,8 +4748,10 @@ impl std::fmt::Debug for DescribeBrokerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
@@ -4732,8 +4778,10 @@ impl std::fmt::Debug for DeleteUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>An array of tag keys to delete</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
@@ -4760,6 +4808,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBrokerInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
 }
 impl DeleteBrokerInput {
@@ -4781,14 +4830,19 @@ impl std::fmt::Debug for DeleteBrokerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
+    #[doc(hidden)]
     pub console_access: bool,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl CreateUserInput {
@@ -4830,8 +4884,10 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair for the resource tag.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4862,14 +4918,19 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationInput {
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    #[doc(hidden)]
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Create tags when creating the configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4917,48 +4978,67 @@ impl std::fmt::Debug for CreateConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    #[doc(hidden)]
     pub authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
+    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    #[doc(hidden)]
     pub broker_name: std::option::Option<std::string::String>,
     /// <p>A list of information about the configuration.</p>
+    #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ConfigurationId>,
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    #[doc(hidden)]
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>Required. The broker's deployment mode.</p>
+    #[doc(hidden)]
     pub deployment_mode: std::option::Option<crate::model::DeploymentMode>,
     /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub encryption_options: std::option::Option<crate::model::EncryptionOptions>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Required. The broker's instance type.</p>
+    #[doc(hidden)]
     pub host_instance_type: std::option::Option<std::string::String>,
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    #[doc(hidden)]
     pub ldap_server_metadata: std::option::Option<crate::model::LdapServerMetadataInput>,
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
+    #[doc(hidden)]
     pub logs: std::option::Option<crate::model::Logs>,
     /// <p>The parameters that determine the WeeklyStartTime.</p>
+    #[doc(hidden)]
     pub maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
+    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
+    #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The broker's storage type.</p>
+    #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::BrokerStorageType>,
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
     /// </important>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Create tags when creating the broker.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
     /// <title>Amazon MQ for RabbitMQ</title>
     /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     /// </important>
+    #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
 }
 impl CreateBrokerInput {

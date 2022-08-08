@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetail {
     /// A detailed error code.
+    #[doc(hidden)]
     pub detailed_error_code: std::option::Option<std::string::String>,
     /// A detailed error message.
+    #[doc(hidden)]
     pub detailed_error_message: std::option::Option<std::string::String>,
 }
 impl ErrorDetail {
@@ -84,6 +86,7 @@ impl ErrorDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
+    #[doc(hidden)]
     pub telemetry: std::option::Option<crate::model::Telemetry>,
 }
 impl TelemetryConfigurationUpdate {
@@ -196,12 +199,16 @@ impl AsRef<str> for Telemetry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectivityInfo {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
+    #[doc(hidden)]
     pub host_address: std::option::Option<std::string::String>,
     /// The ID of the connectivity information.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// Metadata for this endpoint.
+    #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
     /// The port of the Greengrass core. Usually 8883.
+    #[doc(hidden)]
     pub port_number: i32,
 }
 impl ConnectivityInfo {
@@ -307,12 +314,16 @@ impl ConnectivityInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionInformation {
     /// The ARN of the version.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the parent definition that the version is associated with.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl VersionInformation {
@@ -421,20 +432,28 @@ impl VersionInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefinitionInformation {
     /// The ARN of the definition.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the definition.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the definition.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -641,18 +660,25 @@ impl DefinitionInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupInformation {
     /// The ARN of the group.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the group was created.
+    #[doc(hidden)]
     pub creation_timestamp: std::option::Option<std::string::String>,
     /// The ID of the group.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The time, in milliseconds since the epoch, when the group was last updated.
+    #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<std::string::String>,
     /// The ID of the latest version associated with the group.
+    #[doc(hidden)]
     pub latest_version: std::option::Option<std::string::String>,
     /// The ARN of the latest version associated with the group.
+    #[doc(hidden)]
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the group.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GroupInformation {
@@ -821,8 +847,10 @@ impl GroupInformation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupCertificateAuthorityProperties {
     /// The ARN of the certificate authority for the group.
+    #[doc(hidden)]
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
     /// The ID of the certificate authority for the group.
+    #[doc(hidden)]
     pub group_certificate_authority_id: std::option::Option<std::string::String>,
 }
 impl GroupCertificateAuthorityProperties {
@@ -912,14 +940,19 @@ impl GroupCertificateAuthorityProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
     /// The time, in milliseconds since the epoch, when the deployment was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The ARN of the deployment.
+    #[doc(hidden)]
     pub deployment_arn: std::option::Option<std::string::String>,
     /// The ID of the deployment.
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// The type of the deployment.
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// The ARN of the group for this deployment.
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl Deployment {
@@ -1119,10 +1152,13 @@ impl AsRef<str> for DeploymentType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkDeployment {
     /// The ARN of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_arn: std::option::Option<std::string::String>,
     /// The ID of the bulk deployment.
+    #[doc(hidden)]
     pub bulk_deployment_id: std::option::Option<std::string::String>,
     /// The time, in ISO format, when the deployment was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
 }
 impl BulkDeployment {
@@ -1217,20 +1253,28 @@ impl BulkDeployment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkDeploymentResult {
     /// The time, in ISO format, when the deployment was created.
+    #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
     /// The ARN of the group deployment.
+    #[doc(hidden)]
     pub deployment_arn: std::option::Option<std::string::String>,
     /// The ID of the group deployment.
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
     /// The type of the deployment.
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// Details about the error.
+    #[doc(hidden)]
     pub error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// The error message for a failed deployment
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
     /// The ARN of the Greengrass group.
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl BulkDeploymentResult {
@@ -1428,6 +1472,7 @@ impl BulkDeploymentResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuntimeConfiguration {
     /// Configuration for telemetry service.
+    #[doc(hidden)]
     pub telemetry_configuration: std::option::Option<crate::model::TelemetryConfiguration>,
 }
 impl RuntimeConfiguration {
@@ -1491,8 +1536,10 @@ impl RuntimeConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TelemetryConfiguration {
     /// Synchronization status of the device reported configuration with the desired configuration.
+    #[doc(hidden)]
     pub configuration_sync_status: std::option::Option<crate::model::ConfigurationSyncStatus>,
     /// Configure telemetry to be on or off.
+    #[doc(hidden)]
     pub telemetry: std::option::Option<crate::model::Telemetry>,
 }
 impl TelemetryConfiguration {
@@ -1631,6 +1678,7 @@ impl AsRef<str> for ConfigurationSyncStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionDefinitionVersion {
     /// A list of subscriptions.
+    #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
 }
 impl SubscriptionDefinitionVersion {
@@ -1694,12 +1742,16 @@ impl SubscriptionDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
     /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// The MQTT topic used to route the message.
+    #[doc(hidden)]
     pub subject: std::option::Option<std::string::String>,
     /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl Subscription {
@@ -1805,6 +1857,7 @@ impl Subscription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDefinitionVersion {
     /// A list of resources.
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl ResourceDefinitionVersion {
@@ -1868,10 +1921,13 @@ impl ResourceDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// A container of data for all resource types.
+    #[doc(hidden)]
     pub resource_data_container: std::option::Option<crate::model::ResourceDataContainer>,
 }
 impl Resource {
@@ -1969,16 +2025,21 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataContainer {
     /// Attributes that define the local device resource.
+    #[doc(hidden)]
     pub local_device_resource_data: std::option::Option<crate::model::LocalDeviceResourceData>,
     /// Attributes that define the local volume resource.
+    #[doc(hidden)]
     pub local_volume_resource_data: std::option::Option<crate::model::LocalVolumeResourceData>,
     /// Attributes that define an Amazon S3 machine learning resource.
+    #[doc(hidden)]
     pub s3_machine_learning_model_resource_data:
         std::option::Option<crate::model::S3MachineLearningModelResourceData>,
     /// Attributes that define an Amazon SageMaker machine learning resource.
+    #[doc(hidden)]
     pub sage_maker_machine_learning_model_resource_data:
         std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+    #[doc(hidden)]
     pub secrets_manager_secret_resource_data:
         std::option::Option<crate::model::SecretsManagerSecretResourceData>,
 }
@@ -2165,8 +2226,10 @@ impl ResourceDataContainer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretsManagerSecretResourceData {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
+    #[doc(hidden)]
     pub additional_staging_labels_to_download:
         std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2259,10 +2322,13 @@ impl SecretsManagerSecretResourceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SageMakerMachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
+    #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
     /// The owner setting for downloaded machine learning resources.
+    #[doc(hidden)]
     pub owner_setting: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
     /// The ARN of the Amazon SageMaker training job that represents the source model.
+    #[doc(hidden)]
     pub sage_maker_job_arn: std::option::Option<std::string::String>,
 }
 impl SageMakerMachineLearningModelResourceData {
@@ -2362,8 +2428,10 @@ impl SageMakerMachineLearningModelResourceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDownloadOwnerSetting {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
+    #[doc(hidden)]
     pub group_owner: std::option::Option<std::string::String>,
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
+    #[doc(hidden)]
     pub group_permission: std::option::Option<crate::model::Permission>,
 }
 impl ResourceDownloadOwnerSetting {
@@ -2493,10 +2561,13 @@ impl AsRef<str> for Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3MachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
+    #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
     /// The owner setting for downloaded machine learning resources.
+    #[doc(hidden)]
     pub owner_setting: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
+    #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl S3MachineLearningModelResourceData {
@@ -2593,10 +2664,13 @@ impl S3MachineLearningModelResourceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalVolumeResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
+    #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
     /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
+    #[doc(hidden)]
     pub group_owner_setting: std::option::Option<crate::model::GroupOwnerSetting>,
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
 }
 impl LocalVolumeResourceData {
@@ -2691,8 +2765,10 @@ impl LocalVolumeResourceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupOwnerSetting {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+    #[doc(hidden)]
     pub auto_add_group_owner: bool,
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
+    #[doc(hidden)]
     pub group_owner: std::option::Option<std::string::String>,
 }
 impl GroupOwnerSetting {
@@ -2764,8 +2840,10 @@ impl GroupOwnerSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocalDeviceResourceData {
     /// Group/owner related settings for local resources.
+    #[doc(hidden)]
     pub group_owner_setting: std::option::Option<crate::model::GroupOwnerSetting>,
     /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
+    #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
 }
 impl LocalDeviceResourceData {
@@ -2840,6 +2918,7 @@ impl LocalDeviceResourceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggerDefinitionVersion {
     /// A list of loggers.
+    #[doc(hidden)]
     pub loggers: std::option::Option<std::vec::Vec<crate::model::Logger>>,
 }
 impl LoggerDefinitionVersion {
@@ -2903,14 +2982,19 @@ impl LoggerDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Logger {
     /// The component that will be subject to logging.
+    #[doc(hidden)]
     pub component: std::option::Option<crate::model::LoggerComponent>,
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The level of the logs.
+    #[doc(hidden)]
     pub level: std::option::Option<crate::model::LoggerLevel>,
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
+    #[doc(hidden)]
     pub space: i32,
     /// The type of log output which will be used.
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LoggerType>,
 }
 impl Logger {
@@ -3213,18 +3297,25 @@ impl AsRef<str> for LoggerComponent {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupVersion {
     /// The ARN of the connector definition version for this group.
+    #[doc(hidden)]
     pub connector_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the core definition version for this group.
+    #[doc(hidden)]
     pub core_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the device definition version for this group.
+    #[doc(hidden)]
     pub device_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the function definition version for this group.
+    #[doc(hidden)]
     pub function_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the logger definition version for this group.
+    #[doc(hidden)]
     pub logger_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the resource definition version for this group.
+    #[doc(hidden)]
     pub resource_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the subscription definition version for this group.
+    #[doc(hidden)]
     pub subscription_definition_version_arn: std::option::Option<std::string::String>,
 }
 impl GroupVersion {
@@ -3444,8 +3535,10 @@ impl GroupVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionDefinitionVersion {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    #[doc(hidden)]
     pub default_config: std::option::Option<crate::model::FunctionDefaultConfig>,
     /// A list of Lambda functions in this function definition version.
+    #[doc(hidden)]
     pub functions: std::option::Option<std::vec::Vec<crate::model::Function>>,
 }
 impl FunctionDefinitionVersion {
@@ -3529,10 +3622,13 @@ impl FunctionDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Function {
     /// The ARN of the Lambda function.
+    #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
     /// The configuration of the Lambda function.
+    #[doc(hidden)]
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Function {
@@ -3629,18 +3725,25 @@ impl Function {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionConfiguration {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
+    #[doc(hidden)]
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
     /// The environment configuration of the function.
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::FunctionConfigurationEnvironment>,
     /// The execution arguments.
+    #[doc(hidden)]
     pub exec_args: std::option::Option<std::string::String>,
     /// The name of the function executable.
+    #[doc(hidden)]
     pub executable: std::option::Option<std::string::String>,
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
+    #[doc(hidden)]
     pub memory_size: i32,
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
+    #[doc(hidden)]
     pub pinned: bool,
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
+    #[doc(hidden)]
     pub timeout: i32,
 }
 impl FunctionConfiguration {
@@ -3808,13 +3911,17 @@ impl FunctionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionConfigurationEnvironment {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
+    #[doc(hidden)]
     pub access_sysfs: bool,
     /// Configuration related to executing the Lambda function
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::FunctionExecutionConfig>,
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
+    #[doc(hidden)]
     pub resource_access_policies:
         std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
     /// Environment variables for the Lambda function's configuration.
+    #[doc(hidden)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3959,8 +4066,10 @@ impl FunctionConfigurationEnvironment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAccessPolicy {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
+    #[doc(hidden)]
     pub permission: std::option::Option<crate::model::Permission>,
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl ResourceAccessPolicy {
@@ -4035,8 +4144,10 @@ impl ResourceAccessPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionExecutionConfig {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+    #[doc(hidden)]
     pub isolation_mode: std::option::Option<crate::model::FunctionIsolationMode>,
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
+    #[doc(hidden)]
     pub run_as: std::option::Option<crate::model::FunctionRunAsConfig>,
 }
 impl FunctionExecutionConfig {
@@ -4114,8 +4225,10 @@ impl FunctionExecutionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionRunAsConfig {
     /// The group ID whose permissions are used to run a Lambda function.
+    #[doc(hidden)]
     pub gid: i32,
     /// The user ID whose permissions are used to run a Lambda function.
+    #[doc(hidden)]
     pub uid: i32,
 }
 impl FunctionRunAsConfig {
@@ -4297,6 +4410,7 @@ impl AsRef<str> for EncodingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
+    #[doc(hidden)]
     pub execution: std::option::Option<crate::model::FunctionDefaultExecutionConfig>,
 }
 impl FunctionDefaultConfig {
@@ -4354,8 +4468,10 @@ impl FunctionDefaultConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionDefaultExecutionConfig {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+    #[doc(hidden)]
     pub isolation_mode: std::option::Option<crate::model::FunctionIsolationMode>,
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
+    #[doc(hidden)]
     pub run_as: std::option::Option<crate::model::FunctionRunAsConfig>,
 }
 impl FunctionDefaultExecutionConfig {
@@ -4433,6 +4549,7 @@ impl FunctionDefaultExecutionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceDefinitionVersion {
     /// A list of devices in the definition version.
+    #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
 }
 impl DeviceDefinitionVersion {
@@ -4496,12 +4613,16 @@ impl DeviceDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Device {
     /// The ARN of the certificate associated with the device.
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// If true, the device's local shadow will be automatically synced with the cloud.
+    #[doc(hidden)]
     pub sync_shadow: bool,
     /// The thing ARN of the device.
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl Device {
@@ -4610,6 +4731,7 @@ impl Device {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreDefinitionVersion {
     /// A list of cores in the core definition version.
+    #[doc(hidden)]
     pub cores: std::option::Option<std::vec::Vec<crate::model::Core>>,
 }
 impl CoreDefinitionVersion {
@@ -4671,12 +4793,16 @@ impl CoreDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Core {
     /// The ARN of the certificate associated with the core.
+    #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// If true, the core's local shadow is automatically synced with the cloud.
+    #[doc(hidden)]
     pub sync_shadow: bool,
     /// The ARN of the thing which is the core.
+    #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl Core {
@@ -4785,6 +4911,7 @@ impl Core {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
+    #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::Connector>>,
 }
 impl ConnectorDefinitionVersion {
@@ -4848,10 +4975,13 @@ impl ConnectorDefinitionVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connector {
     /// The ARN of the connector.
+    #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
     /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The parameters or configuration that the connector uses.
+    #[doc(hidden)]
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5042,10 +5172,13 @@ impl AsRef<str> for BulkDeploymentStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkDeploymentMetrics {
     /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
+    #[doc(hidden)]
     pub invalid_input_records: i32,
     /// The total number of group records from the input file that have been processed so far, or attempted.
+    #[doc(hidden)]
     pub records_processed: i32,
     /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
+    #[doc(hidden)]
     pub retry_attempts: i32,
 }
 impl BulkDeploymentMetrics {

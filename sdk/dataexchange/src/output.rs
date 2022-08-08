@@ -4,27 +4,38 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRevisionOutput {
     /// <p>The ARN for the revision.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revocation_comment: std::option::Option<std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revoked: bool,
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateRevisionOutput {
@@ -264,16 +275,22 @@ impl UpdateRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The ARN for the event action.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateEventActionOutput {
@@ -419,24 +436,34 @@ impl UpdateEventActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::Origin>,
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    #[doc(hidden)]
     pub origin_details: std::option::Option<crate::model::OriginDetails>,
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateDataSetOutput {
@@ -656,24 +683,34 @@ impl UpdateDataSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssetOutput {
     /// <p>The ARN for the asset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the asset.</p>
+    #[doc(hidden)]
     pub asset_details: std::option::Option<crate::model::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this asset.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateAssetOutput {
@@ -983,8 +1020,10 @@ impl StartJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendApiAssetOutput {
     /// <p>The response body from the underlying API tracked by the API asset.</p>
+    #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
+    #[doc(hidden)]
     pub response_headers:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1077,27 +1116,38 @@ impl SendApiAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeRevisionOutput {
     /// <p>The ARN for the revision.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revocation_comment: std::option::Option<std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revoked: bool,
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RevokeRevisionOutput {
@@ -1337,6 +1387,7 @@ impl RevokeRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// A label that consists of a customer-defined key and an optional value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1410,8 +1461,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRevisionAssetsOutput {
     /// <p>The asset objects listed by the request.</p>
+    #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRevisionAssetsOutput {
@@ -1492,8 +1545,10 @@ impl ListRevisionAssetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
     /// <p>The jobs listed by the request.</p>
+    #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -1574,8 +1629,10 @@ impl ListJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventActionsOutput {
     /// <p>The event action objects listed by the request.</p>
+    #[doc(hidden)]
     pub event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventActionsOutput {
@@ -1657,8 +1714,10 @@ impl ListEventActionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsOutput {
     /// <p>The data set objects listed by the request.</p>
+    #[doc(hidden)]
     pub data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSetsOutput {
@@ -1739,8 +1798,10 @@ impl ListDataSetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetRevisionsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The asset objects listed by the request.</p>
+    #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>,
 }
 impl ListDataSetRevisionsOutput {
@@ -1821,30 +1882,42 @@ impl ListDataSetRevisionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionOutput {
     /// <p>The ARN for the revision.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the revision.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revocation_comment: std::option::Option<std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revoked: bool,
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetRevisionOutput {
@@ -2121,20 +2194,28 @@ impl GetRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutput {
     /// <p>The ARN for the job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the job.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ResponseDetails>,
     /// <p>The errors associated with jobs.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::JobError>>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The state of the job.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>The job type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetJobOutput {
@@ -2326,16 +2407,22 @@ impl GetJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventActionOutput {
     /// <p>What occurs after a certain event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The ARN for the event action.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetEventActionOutput {
@@ -2481,27 +2568,38 @@ impl GetEventActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetOutput {
     /// <p>The ARN for the data set.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::Origin>,
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    #[doc(hidden)]
     pub origin_details: std::option::Option<crate::model::OriginDetails>,
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the data set.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDataSetOutput {
@@ -2758,24 +2856,34 @@ impl GetDataSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssetOutput {
     /// <p>The ARN for the asset.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the asset.</p>
+    #[doc(hidden)]
     pub asset_details: std::option::Option<crate::model::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this asset.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the asset.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this asset.</p>
+    #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAssetOutput {
@@ -3115,30 +3223,42 @@ impl DeleteAssetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRevisionOutput {
     /// <p>The ARN for the revision.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An optional comment about the revision.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
+    #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the revision.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revocation_comment: std::option::Option<std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    #[doc(hidden)]
     pub revoked: bool,
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRevisionOutput {
@@ -3415,20 +3535,28 @@ impl CreateRevisionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
     /// <p>The ARN for the job.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the job.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ResponseDetails>,
     /// <p>The errors associated with jobs.</p>
+    #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::JobError>>,
     /// <p>The unique identifier for the job.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The state of the job.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>The job type.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateJobOutput {
@@ -3620,16 +3748,22 @@ impl CreateJobOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
     /// <p>The ARN for the event action.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>What occurs to start an action.</p>
+    #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
     /// <p>The unique identifier for the event action.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateEventActionOutput {
@@ -3775,27 +3909,38 @@ impl CreateEventActionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetOutput {
     /// <p>The ARN for the data set.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of asset that is added to a data set.</p>
+    #[doc(hidden)]
     pub asset_type: std::option::Option<crate::model::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the data set.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the data set.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    #[doc(hidden)]
     pub origin: std::option::Option<crate::model::Origin>,
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    #[doc(hidden)]
     pub origin_details: std::option::Option<crate::model::OriginDetails>,
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the data set.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateDataSetOutput {

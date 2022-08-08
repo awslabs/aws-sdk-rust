@@ -5,12 +5,16 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Change {
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<std::string::String>,
     /// <p>The entity to be changed.</p>
+    #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Entity>,
     /// <p>This object contains details specific to the change type of the requested change.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>Optional name for the change.</p>
+    #[doc(hidden)]
     pub change_name: std::option::Option<std::string::String>,
 }
 impl Change {
@@ -116,8 +120,10 @@ impl Change {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entity {
     /// <p>The type of entity.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The identifier for the entity.</p>
+    #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl Entity {
@@ -189,16 +195,22 @@ impl Entity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the entity.</p>
+    #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity.</p>
+    #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The ARN associated with the unique identifier for the entity.</p>
+    #[doc(hidden)]
     pub entity_arn: std::option::Option<std::string::String>,
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
+    #[doc(hidden)]
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
+    #[doc(hidden)]
     pub visibility: std::option::Option<std::string::String>,
 }
 impl EntitySummary {
@@ -342,8 +354,10 @@ impl EntitySummary {
 pub struct Sort {
     /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
     /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<std::string::String>,
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl Sort {
@@ -477,6 +491,7 @@ impl AsRef<str> for SortOrder {
 pub struct Filter {
     /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
     /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
     /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
@@ -489,6 +504,7 @@ pub struct Filter {
     /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
     /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
@@ -602,20 +618,28 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeSetSummaryListItem {
     /// <p>The unique identifier for a change set.</p>
+    #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
+    #[doc(hidden)]
     pub change_set_arn: std::option::Option<std::string::String>,
     /// <p>The non-unique name for the change set.</p>
+    #[doc(hidden)]
     pub change_set_name: std::option::Option<std::string::String>,
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
     /// <p>The current status of the change set.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChangeStatus>,
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
+    #[doc(hidden)]
     pub entity_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::FailureCode>,
 }
 impl ChangeSetSummaryListItem {
@@ -935,14 +959,19 @@ impl AsRef<str> for ChangeStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeSummary {
     /// <p>The type of the change.</p>
+    #[doc(hidden)]
     pub change_type: std::option::Option<std::string::String>,
     /// <p>The entity to be changed.</p>
+    #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Entity>,
     /// <p>This object contains details specific to the change type of the requested change.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
+    #[doc(hidden)]
     pub error_detail_list: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// <p>Optional name for the change.</p>
+    #[doc(hidden)]
     pub change_name: std::option::Option<std::string::String>,
 }
 impl ChangeSummary {
@@ -1074,8 +1103,10 @@ impl ChangeSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDetail {
     /// <p>The error code that identifies the type of error.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message for the error.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl ErrorDetail {

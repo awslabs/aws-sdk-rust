@@ -14658,11 +14658,14 @@ impl UpdateStreamingDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
+    #[doc(hidden)]
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
     /// <p>The streaming distribution's id.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingDistributionInput {
@@ -14699,12 +14702,15 @@ impl std::fmt::Debug for UpdateStreamingDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResponseHeadersPolicyInput {
     /// <p>A response headers policy configuration.</p>
+    #[doc(hidden)]
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
     /// <p>The identifier for the response headers policy that you are updating.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the response headers policy that you are updating.</p>
     /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateResponseHeadersPolicyInput {
@@ -14742,15 +14748,20 @@ impl std::fmt::Debug for UpdateResponseHeadersPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+    #[doc(hidden)]
     pub end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for this real-time log configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub sampling_rate: std::option::Option<i64>,
 }
 impl UpdateRealtimeLogConfigInput {
@@ -14793,10 +14804,13 @@ impl std::fmt::Debug for UpdateRealtimeLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicKeyInput {
     /// <p>A public key configuration.</p>
+    #[doc(hidden)]
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     /// <p>The identifier of the public key that you are updating.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdatePublicKeyInput {
@@ -14828,10 +14842,13 @@ impl std::fmt::Debug for UpdatePublicKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
+    #[doc(hidden)]
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateOriginRequestPolicyInput {
@@ -14868,10 +14885,13 @@ impl std::fmt::Debug for UpdateOriginRequestPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyGroupInput {
     /// <p>The key group configuration.</p>
+    #[doc(hidden)]
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     /// <p>The identifier of the key group that you are updating.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateKeyGroupInput {
@@ -14903,12 +14923,16 @@ impl std::fmt::Debug for UpdateKeyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionInput {
     /// <p>The name of the function that you are updating.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
     /// <p>Configuration information about the function.</p>
+    #[doc(hidden)]
     pub function_config: std::option::Option<crate::model::FunctionConfig>,
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateFunctionInput {
@@ -14945,11 +14969,14 @@ impl std::fmt::Debug for UpdateFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionProfileInput {
     /// <p>Request to update a field-level encryption profile. </p>
+    #[doc(hidden)]
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
     /// <p>The ID of the field-level encryption profile request. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionProfileInput {
@@ -14986,11 +15013,14 @@ impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionConfigInput {
     /// <p>Request to update a field-level encryption configuration. </p>
+    #[doc(hidden)]
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
     /// <p>The ID of the configuration you want to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionConfigInput {
@@ -15027,10 +15057,13 @@ impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDistributionInput {
     /// <p>The distribution's configuration information.</p>
+    #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
     /// <p>The distribution's id.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionInput {
@@ -15062,11 +15095,14 @@ impl std::fmt::Debug for UpdateDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCloudFrontOriginAccessIdentityInput {
     /// <p>The identity's configuration information.</p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The identity's id.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateCloudFrontOriginAccessIdentityInput {
@@ -15103,10 +15139,13 @@ impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
+    #[doc(hidden)]
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateCachePolicyInput {
@@ -15138,8 +15177,10 @@ impl std::fmt::Debug for UpdateCachePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<crate::model::TagKeys>,
 }
 impl UntagResourceInput {
@@ -15166,12 +15207,16 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFunctionInput {
     /// <p>The name of the function that you are testing.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
     /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub event_object: std::option::Option<aws_smithy_types::Blob>,
 }
 impl TestFunctionInput {
@@ -15208,8 +15253,10 @@ impl std::fmt::Debug for TestFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
     /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<crate::model::Tags>,
 }
 impl TagResourceInput {
@@ -15236,8 +15283,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishFunctionInput {
     /// <p>The name of the function that you are publishing.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl PublishFunctionInput {
@@ -15264,6 +15313,7 @@ impl std::fmt::Debug for PublishFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
+    #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -15285,8 +15335,10 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamingDistributionsInput {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListStreamingDistributionsInput {
@@ -15317,10 +15369,13 @@ pub struct ListResponseHeadersPoliciesInput {
     /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListResponseHeadersPoliciesInput {
@@ -15356,8 +15411,10 @@ impl std::fmt::Debug for ListResponseHeadersPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRealtimeLogConfigsInput {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListRealtimeLogConfigsInput {
@@ -15384,8 +15441,10 @@ impl std::fmt::Debug for ListRealtimeLogConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of public keys you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListPublicKeysInput {
@@ -15416,10 +15475,13 @@ pub struct ListOriginRequestPoliciesInput {
     /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of origin request policies that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListOriginRequestPoliciesInput {
@@ -15455,8 +15517,10 @@ impl std::fmt::Debug for ListOriginRequestPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyGroupsInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of key groups that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListKeyGroupsInput {
@@ -15483,10 +15547,13 @@ impl std::fmt::Debug for ListKeyGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvalidationsInput {
     /// <p>The distribution's ID.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of invalidation batches that you want in the response body.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListInvalidationsInput {
@@ -15518,10 +15585,13 @@ impl std::fmt::Debug for ListInvalidationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of functions that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
 impl ListFunctionsInput {
@@ -15553,8 +15623,10 @@ impl std::fmt::Debug for ListFunctionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionProfilesInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListFieldLevelEncryptionProfilesInput {
@@ -15581,8 +15653,10 @@ impl std::fmt::Debug for ListFieldLevelEncryptionProfilesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionConfigsInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListFieldLevelEncryptionConfigsInput {
@@ -15609,10 +15683,13 @@ impl std::fmt::Debug for ListFieldLevelEncryptionConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByWebAclIdInput {
     /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
+    #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByWebAclIdInput {
@@ -15644,10 +15721,13 @@ impl std::fmt::Debug for ListDistributionsByWebAclIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByResponseHeadersPolicyIdInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
+    #[doc(hidden)]
     pub response_headers_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByResponseHeadersPolicyIdInput {
@@ -15682,12 +15762,16 @@ impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByRealtimeLogConfigInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
+    #[doc(hidden)]
     pub realtime_log_config_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
+    #[doc(hidden)]
     pub realtime_log_config_arn: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByRealtimeLogConfigInput {
@@ -15724,10 +15808,13 @@ impl std::fmt::Debug for ListDistributionsByRealtimeLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByOriginRequestPolicyIdInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
+    #[doc(hidden)]
     pub origin_request_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByOriginRequestPolicyIdInput {
@@ -15759,10 +15846,13 @@ impl std::fmt::Debug for ListDistributionsByOriginRequestPolicyIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByKeyGroupInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
+    #[doc(hidden)]
     pub key_group_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByKeyGroupInput {
@@ -15794,10 +15884,13 @@ impl std::fmt::Debug for ListDistributionsByKeyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByCachePolicyIdInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
+    #[doc(hidden)]
     pub cache_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByCachePolicyIdInput {
@@ -15829,8 +15922,10 @@ impl std::fmt::Debug for ListDistributionsByCachePolicyIdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions you want in the response body.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListDistributionsInput {
@@ -15857,12 +15952,16 @@ impl std::fmt::Debug for ListDistributionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConflictingAliasesInput {
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListConflictingAliasesInput {
@@ -15899,8 +15998,10 @@ impl std::fmt::Debug for ListConflictingAliasesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCloudFrontOriginAccessIdentitiesInput {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of origin access identities you want in the response body. </p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListCloudFrontOriginAccessIdentitiesInput {
@@ -15931,10 +16032,13 @@ pub struct ListCachePoliciesInput {
     /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
+    #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of cache policies that you want in the response.</p>
+    #[doc(hidden)]
     pub max_items: std::option::Option<i32>,
 }
 impl ListCachePoliciesInput {
@@ -15970,6 +16074,7 @@ impl std::fmt::Debug for ListCachePoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingDistributionConfigInput {
     /// <p>The streaming distribution's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionConfigInput {
@@ -15991,6 +16096,7 @@ impl std::fmt::Debug for GetStreamingDistributionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamingDistributionInput {
     /// <p>The streaming distribution's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionInput {
@@ -16013,6 +16119,7 @@ impl std::fmt::Debug for GetStreamingDistributionInput {
 pub struct GetResponseHeadersPolicyConfigInput {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyConfigInput {
@@ -16036,6 +16143,7 @@ impl std::fmt::Debug for GetResponseHeadersPolicyConfigInput {
 pub struct GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyInput {
@@ -16058,8 +16166,10 @@ impl std::fmt::Debug for GetResponseHeadersPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRealtimeLogConfigInput {
     /// <p>The name of the real-time log configuration to get.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRealtimeLogConfigInput {
@@ -16086,6 +16196,7 @@ impl std::fmt::Debug for GetRealtimeLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyConfigInput {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetPublicKeyConfigInput {
@@ -16107,6 +16218,7 @@ impl std::fmt::Debug for GetPublicKeyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyInput {
     /// <p>The identifier of the public key you are getting.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetPublicKeyInput {
@@ -16128,6 +16240,7 @@ impl std::fmt::Debug for GetPublicKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyConfigInput {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyConfigInput {
@@ -16149,6 +16262,7 @@ impl std::fmt::Debug for GetOriginRequestPolicyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyInput {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyInput {
@@ -16170,6 +16284,7 @@ impl std::fmt::Debug for GetOriginRequestPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
 }
 impl GetMonitoringSubscriptionInput {
@@ -16191,6 +16306,7 @@ impl std::fmt::Debug for GetMonitoringSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupConfigInput {
     /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetKeyGroupConfigInput {
@@ -16212,6 +16328,7 @@ impl std::fmt::Debug for GetKeyGroupConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupInput {
     /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetKeyGroupInput {
@@ -16233,8 +16350,10 @@ impl std::fmt::Debug for GetKeyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvalidationInput {
     /// <p>The distribution's ID.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetInvalidationInput {
@@ -16261,8 +16380,10 @@ impl std::fmt::Debug for GetInvalidationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionInput {
     /// <p>The name of the function whose code you are getting.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
 impl GetFunctionInput {
@@ -16289,6 +16410,7 @@ impl std::fmt::Debug for GetFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionProfileConfigInput {
     /// <p>Get the ID for the field-level encryption profile configuration information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionProfileConfigInput {
@@ -16310,6 +16432,7 @@ impl std::fmt::Debug for GetFieldLevelEncryptionProfileConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionProfileInput {
     /// <p>Get the ID for the field-level encryption profile information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionProfileInput {
@@ -16331,6 +16454,7 @@ impl std::fmt::Debug for GetFieldLevelEncryptionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionConfigInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionConfigInput {
@@ -16352,6 +16476,7 @@ impl std::fmt::Debug for GetFieldLevelEncryptionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionInput {
@@ -16373,6 +16498,7 @@ impl std::fmt::Debug for GetFieldLevelEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionConfigInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetDistributionConfigInput {
@@ -16394,6 +16520,7 @@ impl std::fmt::Debug for GetDistributionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetDistributionInput {
@@ -16415,6 +16542,7 @@ impl std::fmt::Debug for GetDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFrontOriginAccessIdentityConfigInput {
     /// <p>The identity's ID. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigInput {
@@ -16436,6 +16564,7 @@ impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFrontOriginAccessIdentityInput {
     /// <p>The identity's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityInput {
@@ -16457,6 +16586,7 @@ impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyConfigInput {
     /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyConfigInput {
@@ -16478,6 +16608,7 @@ impl std::fmt::Debug for GetCachePolicyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyInput {
     /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyInput {
@@ -16499,8 +16630,10 @@ impl std::fmt::Debug for GetCachePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFunctionInput {
     /// <p>The name of the function that you are getting information about.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    #[doc(hidden)]
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
 impl DescribeFunctionInput {
@@ -16527,8 +16660,10 @@ impl std::fmt::Debug for DescribeFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingDistributionInput {
     /// <p>The distribution ID. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingDistributionInput {
@@ -16556,9 +16691,11 @@ impl std::fmt::Debug for DeleteStreamingDistributionInput {
 pub struct DeleteResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the response headers policy that you are deleting.</p>
     /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteResponseHeadersPolicyInput {
@@ -16587,8 +16724,10 @@ impl std::fmt::Debug for DeleteResponseHeadersPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRealtimeLogConfigInput {
     /// <p>The name of the real-time log configuration to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRealtimeLogConfigInput {
@@ -16615,8 +16754,10 @@ impl std::fmt::Debug for DeleteRealtimeLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicKeyInput {
     /// <p>The ID of the public key you want to remove from CloudFront.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeletePublicKeyInput {
@@ -16643,8 +16784,10 @@ impl std::fmt::Debug for DeletePublicKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOriginRequestPolicyInput {
     /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteOriginRequestPolicyInput {
@@ -16671,6 +16814,7 @@ impl std::fmt::Debug for DeleteOriginRequestPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
 }
 impl DeleteMonitoringSubscriptionInput {
@@ -16692,8 +16836,10 @@ impl std::fmt::Debug for DeleteMonitoringSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeyGroupInput {
     /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteKeyGroupInput {
@@ -16720,8 +16866,10 @@ impl std::fmt::Debug for DeleteKeyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionInput {
     /// <p>The name of the function that you are deleting.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionInput {
@@ -16748,8 +16896,10 @@ impl std::fmt::Debug for DeleteFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFieldLevelEncryptionProfileInput {
     /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteFieldLevelEncryptionProfileInput {
@@ -16776,8 +16926,10 @@ impl std::fmt::Debug for DeleteFieldLevelEncryptionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFieldLevelEncryptionConfigInput {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteFieldLevelEncryptionConfigInput {
@@ -16816,8 +16968,10 @@ impl std::fmt::Debug for DeleteFieldLevelEncryptionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionInput {
     /// <p>The distribution ID. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteDistributionInput {
@@ -16844,8 +16998,10 @@ impl std::fmt::Debug for DeleteDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCloudFrontOriginAccessIdentityInput {
     /// <p>The origin access identity's ID.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteCloudFrontOriginAccessIdentityInput {
@@ -16872,8 +17028,10 @@ impl std::fmt::Debug for DeleteCloudFrontOriginAccessIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCachePolicyInput {
     /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
+    #[doc(hidden)]
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteCachePolicyInput {
@@ -16900,6 +17058,7 @@ impl std::fmt::Debug for DeleteCachePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingDistributionWithTagsInput {
     /// <p> The streaming distribution's configuration information. </p>
+    #[doc(hidden)]
     pub streaming_distribution_config_with_tags:
         std::option::Option<crate::model::StreamingDistributionConfigWithTags>,
 }
@@ -16927,6 +17086,7 @@ impl std::fmt::Debug for CreateStreamingDistributionWithTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
+    #[doc(hidden)]
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
 }
@@ -16954,6 +17114,7 @@ impl std::fmt::Debug for CreateStreamingDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponseHeadersPolicyInput {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
+    #[doc(hidden)]
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
 }
@@ -16981,13 +17142,17 @@ impl std::fmt::Debug for CreateResponseHeadersPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+    #[doc(hidden)]
     pub end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique name to identify this real-time log configuration.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    #[doc(hidden)]
     pub sampling_rate: std::option::Option<i64>,
 }
 impl CreateRealtimeLogConfigInput {
@@ -17025,6 +17190,7 @@ impl std::fmt::Debug for CreateRealtimeLogConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicKeyInput {
     /// <p>A CloudFront public key configuration.</p>
+    #[doc(hidden)]
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
 }
 impl CreatePublicKeyInput {
@@ -17046,6 +17212,7 @@ impl std::fmt::Debug for CreatePublicKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
+    #[doc(hidden)]
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
 }
 impl CreateOriginRequestPolicyInput {
@@ -17072,8 +17239,10 @@ impl std::fmt::Debug for CreateOriginRequestPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are enabling metrics for.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    #[doc(hidden)]
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
 impl CreateMonitoringSubscriptionInput {
@@ -17102,6 +17271,7 @@ impl std::fmt::Debug for CreateMonitoringSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyGroupInput {
     /// <p>A key group configuration.</p>
+    #[doc(hidden)]
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
 }
 impl CreateKeyGroupInput {
@@ -17123,8 +17293,10 @@ impl std::fmt::Debug for CreateKeyGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInvalidationInput {
     /// <p>The distribution's id.</p>
+    #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>The batch information for the invalidation.</p>
+    #[doc(hidden)]
     pub invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
 }
 impl CreateInvalidationInput {
@@ -17151,10 +17323,13 @@ impl std::fmt::Debug for CreateInvalidationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionInput {
     /// <p>A name to identify the function.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
+    #[doc(hidden)]
     pub function_config: std::option::Option<crate::model::FunctionConfig>,
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CreateFunctionInput {
@@ -17186,6 +17361,7 @@ impl std::fmt::Debug for CreateFunctionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFieldLevelEncryptionProfileInput {
     /// <p>The request to create a field-level encryption profile.</p>
+    #[doc(hidden)]
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
 }
@@ -17213,6 +17389,7 @@ impl std::fmt::Debug for CreateFieldLevelEncryptionProfileInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFieldLevelEncryptionConfigInput {
     /// <p>The request to create a new field-level encryption configuration.</p>
+    #[doc(hidden)]
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
 }
@@ -17240,6 +17417,7 @@ impl std::fmt::Debug for CreateFieldLevelEncryptionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionWithTagsInput {
     /// <p>The distribution's configuration information. </p>
+    #[doc(hidden)]
     pub distribution_config_with_tags:
         std::option::Option<crate::model::DistributionConfigWithTags>,
 }
@@ -17267,6 +17445,7 @@ impl std::fmt::Debug for CreateDistributionWithTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDistributionInput {
     /// <p>The distribution's configuration information.</p>
+    #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
 }
 impl CreateDistributionInput {
@@ -17288,6 +17467,7 @@ impl std::fmt::Debug for CreateDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFrontOriginAccessIdentityInput {
     /// <p>The current configuration information for the identity.</p>
+    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
 }
@@ -17315,6 +17495,7 @@ impl std::fmt::Debug for CreateCloudFrontOriginAccessIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
+    #[doc(hidden)]
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
 }
 impl CreateCachePolicyInput {
@@ -17336,8 +17517,10 @@ impl std::fmt::Debug for CreateCachePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAliasInput {
     /// <p>The ID of the distribution that you’re associating the alias with.</p>
+    #[doc(hidden)]
     pub target_distribution_id: std::option::Option<std::string::String>,
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl AssociateAliasInput {

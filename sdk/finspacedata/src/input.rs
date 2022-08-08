@@ -5886,26 +5886,33 @@ impl UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
     /// <p>The unique identifier for the user account to update.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>The first name of the user.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the user.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_access: std::option::Option<crate::model::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    #[doc(hidden)]
     pub api_access_principal_arn: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateUserInput {
@@ -5965,10 +5972,13 @@ impl std::fmt::Debug for UpdateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePermissionGroupInput {
     /// <p>The unique identifier for the permission group to update.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the permission group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description for the permission group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -5982,9 +5992,11 @@ pub struct UpdatePermissionGroupInput {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub application_permissions:
         std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdatePermissionGroupInput {
@@ -6039,22 +6051,29 @@ impl std::fmt::Debug for UpdatePermissionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Dataset to update.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>A display title for the Dataset.</p>
+    #[doc(hidden)]
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>A description for the Dataset.</p>
+    #[doc(hidden)]
     pub dataset_description: std::option::Option<std::string::String>,
     /// <p>The unique resource identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>Definition for a schema on a tabular Dataset.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaUnion>,
 }
 impl UpdateDatasetInput {
@@ -6110,16 +6129,20 @@ impl std::fmt::Debug for UpdateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Changeset to update.</p>
+    #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
     /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    #[doc(hidden)]
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
@@ -6135,6 +6158,7 @@ pub struct UpdateChangesetInput {
     /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
     /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
+    #[doc(hidden)]
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6199,8 +6223,10 @@ impl std::fmt::Debug for UpdateChangesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetUserPasswordInput {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ResetUserPasswordInput {
@@ -6227,10 +6253,13 @@ impl std::fmt::Debug for ResetUserPasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersByPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListUsersByPermissionGroupInput {
@@ -6262,8 +6291,10 @@ impl std::fmt::Debug for ListUsersByPermissionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListUsersInput {
@@ -6290,10 +6321,13 @@ impl std::fmt::Debug for ListUsersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionGroupsByUserInput {
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPermissionGroupsByUserInput {
@@ -6325,8 +6359,10 @@ impl std::fmt::Debug for ListPermissionGroupsByUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionGroupsInput {
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPermissionGroupsInput {
@@ -6353,10 +6389,13 @@ impl std::fmt::Debug for ListPermissionGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataViewsInput {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataViewsInput {
@@ -6388,8 +6427,10 @@ impl std::fmt::Debug for ListDataViewsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
@@ -6416,10 +6457,13 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangesetsInput {
     /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>A token that indicates where a results page should begin.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangesetsInput {
@@ -6455,6 +6499,7 @@ pub struct GetWorkingLocationInput {
     /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
     /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub location_type: std::option::Option<crate::model::LocationType>,
 }
 impl GetWorkingLocationInput {
@@ -6480,6 +6525,7 @@ impl std::fmt::Debug for GetWorkingLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserInput {
     /// <p>The unique identifier of the user to get data for.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetUserInput {
@@ -6501,8 +6547,10 @@ impl std::fmt::Debug for GetUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProgrammaticAccessCredentialsInput {
     /// <p>The time duration in which the credentials remain valid. </p>
+    #[doc(hidden)]
     pub duration_in_minutes: i64,
     /// <p>The FinSpace environment identifier.</p>
+    #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl GetProgrammaticAccessCredentialsInput {
@@ -6529,6 +6577,7 @@ impl std::fmt::Debug for GetProgrammaticAccessCredentialsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl GetPermissionGroupInput {
@@ -6550,8 +6599,10 @@ impl std::fmt::Debug for GetPermissionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExternalDataViewAccessDetailsInput {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
+    #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl GetExternalDataViewAccessDetailsInput {
@@ -6578,8 +6629,10 @@ impl std::fmt::Debug for GetExternalDataViewAccessDetailsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataViewInput {
     /// <p>The unique identifier for the Dataview.</p>
+    #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl GetDataViewInput {
@@ -6606,6 +6659,7 @@ impl std::fmt::Debug for GetDataViewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatasetInput {
     /// <p>The unique identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl GetDatasetInput {
@@ -6627,8 +6681,10 @@ impl std::fmt::Debug for GetDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangesetInput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Changeset for which to get data.</p>
+    #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
 }
 impl GetChangesetInput {
@@ -6655,8 +6711,10 @@ impl std::fmt::Debug for GetChangesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableUserInput {
     /// <p>The unique identifier for the user account that you want to enable.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl EnableUserInput {
@@ -6683,10 +6741,13 @@ impl std::fmt::Debug for EnableUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateUserFromPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateUserFromPermissionGroupInput {
@@ -6718,8 +6779,10 @@ impl std::fmt::Debug for DisassociateUserFromPermissionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableUserInput {
     /// <p>The unique identifier for the user account that you want to disable.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisableUserInput {
@@ -6746,8 +6809,10 @@ impl std::fmt::Debug for DisableUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionGroupInput {
     /// <p>The unique identifier for the permission group that you want to delete.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeletePermissionGroupInput {
@@ -6774,8 +6839,10 @@ impl std::fmt::Debug for DeletePermissionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Dataset to be deleted.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
@@ -6802,26 +6869,33 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
+    #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The option to indicate the type of user. Use one of the following options to specify this parameter:</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>The first name of the user that you want to register.</p>
+    #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the user that you want to register.</p>
+    #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub api_access: std::option::Option<crate::model::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    #[doc(hidden)]
     pub api_access_principal_arn: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateUserInput {
@@ -6881,8 +6955,10 @@ impl std::fmt::Debug for CreateUserInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePermissionGroupInput {
     /// <p>The name of the permission group.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description for the permission group.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -6896,9 +6972,11 @@ pub struct CreatePermissionGroupInput {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub application_permissions:
         std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreatePermissionGroupInput {
@@ -6948,18 +7026,25 @@ impl std::fmt::Debug for CreatePermissionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataViewInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
+    #[doc(hidden)]
     pub auto_update: bool,
     /// <p>Columns to be used for sorting the data.</p>
+    #[doc(hidden)]
     pub sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Ordered set of column names used to partition data.</p>
+    #[doc(hidden)]
     pub partition_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    #[doc(hidden)]
     pub as_of_timestamp: std::option::Option<i64>,
     /// <p>Options that define the destination type for the Dataview.</p>
+    #[doc(hidden)]
     pub destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
 }
 impl CreateDataViewInput {
@@ -7013,24 +7098,32 @@ impl std::fmt::Debug for CreateDataViewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Display title for a FinSpace Dataset.</p>
+    #[doc(hidden)]
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>Description of a Dataset.</p>
+    #[doc(hidden)]
     pub dataset_description: std::option::Option<std::string::String>,
     /// <p>Contact information for a Dataset owner.</p>
+    #[doc(hidden)]
     pub owner_info: std::option::Option<crate::model::DatasetOwnerInfo>,
     /// <p>Permission group parameters for Dataset permissions.</p>
+    #[doc(hidden)]
     pub permission_group_params: std::option::Option<crate::model::PermissionGroupParams>,
     /// <p>The unique resource identifier for a Dataset.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
     /// <p>Definition for a schema on a tabular Dataset.</p>
+    #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaUnion>,
 }
 impl CreateDatasetInput {
@@ -7093,8 +7186,10 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
+    #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
@@ -7102,12 +7197,14 @@ pub struct CreateChangesetInput {
     /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
     /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
+    #[doc(hidden)]
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
@@ -7123,6 +7220,7 @@ pub struct CreateChangesetInput {
     /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
     /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
+    #[doc(hidden)]
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7192,10 +7290,13 @@ impl std::fmt::Debug for CreateChangesetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateUserToPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
+    #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the user.</p>
+    #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateUserToPermissionGroupInput {

@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLinkedRoleFailure {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceLinkedRoleFailure {
@@ -69,6 +70,7 @@ impl ServiceLinkedRoleFailure {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingActivityInProgressFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ScalingActivityInProgressFault {
@@ -133,6 +135,7 @@ impl ScalingActivityInProgressFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceContentionFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceContentionFault {
@@ -197,6 +200,7 @@ impl ResourceContentionFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseFault {
@@ -261,6 +265,7 @@ impl ResourceInUseFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededFault {
@@ -325,6 +330,7 @@ impl LimitExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefreshInProgressFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceRefreshInProgressFault {
@@ -389,6 +395,7 @@ impl InstanceRefreshInProgressFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsFault {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlreadyExistsFault {
@@ -453,6 +460,7 @@ impl AlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextToken {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextToken {
@@ -517,6 +525,7 @@ impl InvalidNextToken {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveInstanceRefreshNotFoundFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActiveInstanceRefreshNotFoundFault {

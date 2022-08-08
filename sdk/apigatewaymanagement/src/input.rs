@@ -461,8 +461,10 @@ impl PostToConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostToConnectionInput {
     /// <p>The data to be sent to the client specified by its connection id.</p>
+    #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The identifier of the connection that a specific client is using.</p>
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl PostToConnectionInput {
@@ -489,6 +491,7 @@ impl std::fmt::Debug for PostToConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl GetConnectionInput {
@@ -510,6 +513,7 @@ impl std::fmt::Debug for GetConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {

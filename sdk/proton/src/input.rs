@@ -13476,16 +13476,22 @@ impl UpdateTemplateSyncConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateSyncConfigInput {
     /// <p>The name of your registered template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The type of the registered template.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The provider type for your repository.</p>
+    #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the registered repository for your template.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
 }
 impl CreateTemplateSyncConfigInput {
@@ -13532,8 +13538,10 @@ impl std::fmt::Debug for CreateTemplateSyncConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateSyncConfigInput {
     /// <p>The template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
 }
 impl DeleteTemplateSyncConfigInput {
@@ -13560,16 +13568,22 @@ impl std::fmt::Debug for DeleteTemplateSyncConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateSyncConfigInput {
     /// <p>The synced template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The synced template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The name of the repository (for example, <code>myrepos/myrepo</code>).</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
+    #[doc(hidden)]
     pub subdirectory: std::option::Option<std::string::String>,
 }
 impl UpdateTemplateSyncConfigInput {
@@ -13616,8 +13630,10 @@ impl std::fmt::Debug for UpdateTemplateSyncConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateSyncConfigInput {
     /// <p>The template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
 }
 impl GetTemplateSyncConfigInput {
@@ -13644,13 +13660,17 @@ impl std::fmt::Debug for GetTemplateSyncConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplateVersionsInput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
 }
 impl ListServiceTemplateVersionsInput {
@@ -13688,24 +13708,32 @@ impl std::fmt::Debug for ListServiceTemplateVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A description of the new version of a service template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
+    #[doc(hidden)]
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub supported_component_sources: std::option::Option<
         std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
     >,
@@ -13777,10 +13805,13 @@ impl std::fmt::Debug for CreateServiceTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The service template major version to delete.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The service template minor version to delete.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl DeleteServiceTemplateVersionInput {
@@ -13812,22 +13843,29 @@ impl std::fmt::Debug for DeleteServiceTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>A description of a service template version to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the service template minor version to update.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
+    #[doc(hidden)]
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub supported_component_sources: std::option::Option<
         std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
     >,
@@ -13894,10 +13932,13 @@ impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceTemplateVersionInput {
     /// <p>The name of the service template a version of which you want to get detailed data for.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl GetServiceTemplateVersionInput {
@@ -13929,8 +13970,10 @@ impl std::fmt::Debug for GetServiceTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplatesInput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service templates to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServiceTemplatesInput {
@@ -13957,17 +14000,23 @@ impl std::fmt::Debug for ListServiceTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceTemplateInput {
     /// <p>The name of the service template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service template as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the service template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateServiceTemplateInput {
@@ -14015,6 +14064,7 @@ impl std::fmt::Debug for CreateServiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceTemplateInput {
     /// <p>The name of the service template to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteServiceTemplateInput {
@@ -14036,10 +14086,13 @@ impl std::fmt::Debug for DeleteServiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceTemplateInput {
     /// <p>The name of the service template to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service template to update that's displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the service template update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateServiceTemplateInput {
@@ -14071,6 +14124,7 @@ impl std::fmt::Debug for UpdateServiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceTemplateInput {
     /// <p>The name of the service template that you want to get detailed data for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetServiceTemplateInput {
@@ -14092,8 +14146,10 @@ impl std::fmt::Debug for GetServiceTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
     /// <p>A token that indicates the location of the next service in the array of services, after the list of services that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of services to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
@@ -14120,25 +14176,35 @@ impl std::fmt::Debug for ListServicesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>The service name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the Proton service.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the service template that's used to create the service.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the service template that was used to create the service.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template that was used to create the service.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    #[doc(hidden)]
     pub repository_connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    #[doc(hidden)]
     pub repository_id: std::option::Option<std::string::String>,
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateServiceInput {
@@ -14206,6 +14272,7 @@ impl std::fmt::Debug for CreateServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceInput {
     /// <p>The name of the service to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteServiceInput {
@@ -14227,10 +14294,13 @@ impl std::fmt::Debug for DeleteServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceInput {
     /// <p>The name of the service to edit.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The edited service description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
 }
 impl UpdateServiceInput {
@@ -14262,6 +14332,7 @@ impl std::fmt::Debug for UpdateServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceInput {
     /// <p>The name of the service that you want to get the detailed data for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetServiceInput {
@@ -14283,8 +14354,10 @@ impl std::fmt::Debug for GetServiceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServicePipelineInput {
     /// <p>The name of the service to that the pipeline is associated with.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The spec for the service pipeline to update.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The deployment type.</p>
     /// <p>There are four modes for updating a service pipeline. The <code>deploymentType</code> field defines the mode.</p>
@@ -14310,10 +14383,13 @@ pub struct UpdateServicePipelineInput {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
     /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
 }
 impl UpdateServicePipelineInput {
@@ -14378,8 +14454,10 @@ impl std::fmt::Debug for UpdateServicePipelineInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineProvisionedResourcesInput {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicePipelineProvisionedResourcesInput {
@@ -14406,8 +14484,10 @@ impl std::fmt::Debug for ListServicePipelineProvisionedResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineOutputsInput {
     /// <p>The name of the service whose pipeline's outputs you want.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicePipelineOutputsInput {
@@ -14434,10 +14514,13 @@ impl std::fmt::Debug for ListServicePipelineOutputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstancesInput {
     /// <p>The name of the service that the service instance belongs to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service instances to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListServiceInstancesInput {
@@ -14469,8 +14552,10 @@ impl std::fmt::Debug for ListServiceInstancesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceInstanceInput {
     /// <p>The name of the service instance to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
@@ -14495,12 +14580,16 @@ pub struct UpdateServiceInstanceInput {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
     /// <p>The formatted specification that defines the service instance update.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The major version of the service template to update.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template to update.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
 }
 impl UpdateServiceInstanceInput {
@@ -14569,8 +14658,10 @@ impl std::fmt::Debug for UpdateServiceInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceInstanceInput {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl GetServiceInstanceInput {
@@ -14597,10 +14688,13 @@ impl std::fmt::Debug for GetServiceInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceProvisionedResourcesInput {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service instance whose provisioned resources you want.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceInstanceProvisionedResourcesInput {
@@ -14632,10 +14726,13 @@ impl std::fmt::Debug for ListServiceInstanceProvisionedResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceOutputsInput {
     /// <p>The name of the service instance whose outputs you want.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceInstanceOutputsInput {
@@ -14667,8 +14764,10 @@ impl std::fmt::Debug for ListServiceInstanceOutputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of repositories to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListRepositoriesInput {
@@ -14695,15 +14794,20 @@ impl std::fmt::Debug for ListRepositoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryInput {
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRepositoryInput {
@@ -14746,8 +14850,10 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryInput {
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The name of the repository.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryInput {
@@ -14774,8 +14880,10 @@ impl std::fmt::Debug for DeleteRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryInput {
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryInput {
@@ -14802,13 +14910,17 @@ impl std::fmt::Debug for GetRepositoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplateVersionsInput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of major or minor versions of an environment template to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentTemplateVersionsInput {
@@ -14846,18 +14958,24 @@ impl std::fmt::Debug for ListEnvironmentTemplateVersionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A description of the new version of an environment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEnvironmentTemplateVersionInput {
@@ -14906,10 +15024,13 @@ impl std::fmt::Debug for CreateEnvironmentTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The environment template major version to delete.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>The environment template minor version to delete.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentTemplateVersionInput {
@@ -14941,14 +15062,19 @@ impl std::fmt::Debug for DeleteEnvironmentTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
     /// <p>A description of environment template version to update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the environment template minor version to update.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
 }
 impl UpdateEnvironmentTemplateVersionInput {
@@ -14990,10 +15116,13 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
+    #[doc(hidden)]
     pub major_version: std::option::Option<std::string::String>,
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
+    #[doc(hidden)]
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentTemplateVersionInput {
@@ -15025,8 +15154,10 @@ impl std::fmt::Debug for GetEnvironmentTemplateVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplatesInput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment templates to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentTemplatesInput {
@@ -15053,17 +15184,23 @@ impl std::fmt::Debug for ListEnvironmentTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateInput {
     /// <p>The name of the environment template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The environment template name as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the environment template.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
+    #[doc(hidden)]
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEnvironmentTemplateInput {
@@ -15111,6 +15248,7 @@ impl std::fmt::Debug for CreateEnvironmentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentTemplateInput {
     /// <p>The name of the environment template to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentTemplateInput {
@@ -15132,10 +15270,13 @@ impl std::fmt::Debug for DeleteEnvironmentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateInput {
     /// <p>The name of the environment template to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the environment template to update as displayed in the developer interface.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>A description of the environment template update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentTemplateInput {
@@ -15167,6 +15308,7 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateInput {
     /// <p>The name of the environment template that you want to get the detailed data for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentTemplateInput {
@@ -15188,10 +15330,13 @@ impl std::fmt::Debug for GetEnvironmentTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environments to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>An array of the versions of the environment template.</p>
+    #[doc(hidden)]
     pub environment_templates:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateFilter>>,
 }
@@ -15226,32 +15371,43 @@ impl std::fmt::Debug for ListEnvironmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the environment template.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the environment template.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>A description of the environment that's being created and deployed.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
+    #[doc(hidden)]
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
+    #[doc(hidden)]
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
+    #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
@@ -15334,6 +15490,7 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentInput {
     /// <p>The name of the environment to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
@@ -15355,16 +15512,22 @@ impl std::fmt::Debug for DeleteEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the environment to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the environment update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The formatted specification that defines the update.</p>
+    #[doc(hidden)]
     pub spec: std::option::Option<std::string::String>,
     /// <p>The major version of the environment to update.</p>
+    #[doc(hidden)]
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the environment to update.</p>
+    #[doc(hidden)]
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
+    #[doc(hidden)]
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
@@ -15389,15 +15552,19 @@ pub struct UpdateEnvironmentInput {
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
     /// <p>The ID of the environment account connection.</p>
     /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
+    #[doc(hidden)]
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentInput {
@@ -15494,6 +15661,7 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentInput {
     /// <p>The name of the environment that you want to get the detailed data for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
@@ -15515,8 +15683,10 @@ impl std::fmt::Debug for GetEnvironmentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentProvisionedResourcesInput {
     /// <p>The environment name.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentProvisionedResourcesInput {
@@ -15543,8 +15713,10 @@ impl std::fmt::Debug for ListEnvironmentProvisionedResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentOutputsInput {
     /// <p>The environment name.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentOutputsInput {
@@ -15571,6 +15743,7 @@ impl std::fmt::Debug for ListEnvironmentOutputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl RejectEnvironmentAccountConnectionInput {
@@ -15592,6 +15765,7 @@ impl std::fmt::Debug for RejectEnvironmentAccountConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl AcceptEnvironmentAccountConnectionInput {
@@ -15613,16 +15787,21 @@ impl std::fmt::Debug for AcceptEnvironmentAccountConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentAccountConnectionsInput {
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
+    #[doc(hidden)]
     pub requested_by:
         std::option::Option<crate::model::EnvironmentAccountConnectionRequesterAccountType>,
     /// <p>The environment name that's associated with each listed environment account connection.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The status details for each listed environment account connection.</p>
+    #[doc(hidden)]
     pub statuses:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentAccountConnectionStatus>>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment account connections to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentAccountConnectionsInput {
@@ -15668,19 +15847,25 @@ impl std::fmt::Debug for ListEnvironmentAccountConnectionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentAccountConnectionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
+    #[doc(hidden)]
     pub management_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentAccountConnectionInput {
@@ -15730,6 +15915,7 @@ impl std::fmt::Debug for CreateEnvironmentAccountConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to delete.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentAccountConnectionInput {
@@ -15751,12 +15937,15 @@ impl std::fmt::Debug for DeleteEnvironmentAccountConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to update.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentAccountConnectionInput {
@@ -15790,6 +15979,7 @@ impl std::fmt::Debug for UpdateEnvironmentAccountConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentAccountConnectionInput {
@@ -15811,14 +16001,19 @@ impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsInput {
     /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of components to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListComponentsInput {
@@ -15860,25 +16055,34 @@ impl std::fmt::Debug for ListComponentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComponentInput {
     /// <p>The customer-provided name of the component.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional customer-provided description of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
+    #[doc(hidden)]
     pub template_file: std::option::Option<std::string::String>,
     /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+    #[doc(hidden)]
     pub manifest: std::option::Option<std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+    #[doc(hidden)]
     pub service_spec: std::option::Option<std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateComponentInput {
@@ -15943,6 +16147,7 @@ impl std::fmt::Debug for CreateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteComponentInput {
     /// <p>The name of the component to delete.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
@@ -15964,6 +16169,7 @@ impl std::fmt::Debug for DeleteComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComponentInput {
     /// <p>The name of the component to update.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
     /// <dl>
@@ -15978,18 +16184,24 @@ pub struct UpdateComponentInput {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
+    #[doc(hidden)]
     pub deployment_type: std::option::Option<crate::model::ComponentDeploymentUpdateType>,
     /// <p>An optional customer-provided description of the component.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+    #[doc(hidden)]
     pub service_spec: std::option::Option<std::string::String>,
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
+    #[doc(hidden)]
     pub template_file: std::option::Option<std::string::String>,
 }
 impl UpdateComponentInput {
@@ -16057,6 +16269,7 @@ impl std::fmt::Debug for UpdateComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentInput {
     /// <p>The name of the component that you want to get the detailed data for.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
@@ -16078,8 +16291,10 @@ impl std::fmt::Debug for GetComponentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentProvisionedResourcesInput {
     /// <p>The name of the component whose provisioned resources you want.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentProvisionedResourcesInput {
@@ -16106,8 +16321,10 @@ impl std::fmt::Debug for ListComponentProvisionedResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentOutputsInput {
     /// <p>The name of the component whose outputs you want.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentOutputsInput {
@@ -16134,8 +16351,10 @@ impl std::fmt::Debug for ListComponentOutputsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+    #[doc(hidden)]
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
     /// <p>A repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines.</p>
+    #[doc(hidden)]
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
 impl UpdateAccountSettingsInput {
@@ -16178,8 +16397,10 @@ impl std::fmt::Debug for GetAccountSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove customer tags from.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of customer tag keys that indicate the customer tags to be removed from the resource.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -16206,8 +16427,10 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Proton resource to apply customer tags to.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of customer tags to apply to the Proton resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -16234,14 +16457,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The status of your provisioned resource.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceDeploymentStatus>,
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>The deployment ID for your provisioned resource.</p>
+    #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The deployment status message for your provisioned resource.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl NotifyResourceDeploymentStatusChangeInput {
@@ -16283,10 +16511,13 @@ impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags to list.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -16318,12 +16549,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<crate::model::SyncType>,
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositorySyncDefinitionsInput {
@@ -16360,10 +16595,13 @@ impl std::fmt::Debug for ListRepositorySyncDefinitionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateSyncStatusInput {
     /// <p>The template name.</p>
+    #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The template type.</p>
+    #[doc(hidden)]
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The template major version.</p>
+    #[doc(hidden)]
     pub template_version: std::option::Option<std::string::String>,
 }
 impl GetTemplateSyncStatusInput {
@@ -16395,12 +16633,16 @@ impl std::fmt::Debug for GetTemplateSyncStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositorySyncStatusInput {
     /// <p>The repository name.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The repository provider.</p>
+    #[doc(hidden)]
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The repository branch.</p>
+    #[doc(hidden)]
     pub branch: std::option::Option<std::string::String>,
     /// <p>The repository sync type.</p>
+    #[doc(hidden)]
     pub sync_type: std::option::Option<crate::model::SyncType>,
 }
 impl GetRepositorySyncStatusInput {
@@ -16437,6 +16679,7 @@ impl std::fmt::Debug for GetRepositorySyncStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelServicePipelineDeploymentInput {
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl CancelServicePipelineDeploymentInput {
@@ -16458,8 +16701,10 @@ impl std::fmt::Debug for CancelServicePipelineDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service instance with the deployment to cancel.</p>
+    #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>The name of the service with the service instance deployment to cancel.</p>
+    #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl CancelServiceInstanceDeploymentInput {
@@ -16486,6 +16731,7 @@ impl std::fmt::Debug for CancelServiceInstanceDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
+    #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
 }
 impl CancelEnvironmentDeploymentInput {
@@ -16507,6 +16753,7 @@ impl std::fmt::Debug for CancelEnvironmentDeploymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
+    #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
 }
 impl CancelComponentDeploymentInput {

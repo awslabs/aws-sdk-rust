@@ -627,6 +627,7 @@ impl LogoutInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogoutInput {
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
 }
 impl LogoutInput {
@@ -648,10 +649,13 @@ impl std::fmt::Debug for LogoutInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsInput {
     /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>This is the number of items clients can request per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsInput {
@@ -683,12 +687,16 @@ impl std::fmt::Debug for ListAccountsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountRolesInput {
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items that clients can request per page.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListAccountRolesInput {
@@ -725,10 +733,13 @@ impl std::fmt::Debug for ListAccountRolesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoleCredentialsInput {
     /// <p>The friendly name of the role that is assigned to the user.</p>
+    #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+    #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GetRoleCredentialsInput {

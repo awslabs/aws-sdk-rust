@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVcenterClientsOutput {
     /// <p>List of items returned by DescribeVcenterClients.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::VcenterClient>>,
     /// <p>Next pagination token returned from DescribeVcenterClients.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVcenterClientsOutput {
@@ -116,25 +118,35 @@ impl DeleteVcenterClientOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSourceServerReplicationTypeOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl UpdateSourceServerReplicationTypeOutput {
@@ -383,38 +395,53 @@ impl UpdateSourceServerReplicationTypeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationOutput {
     /// <p>Replication Configuration Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Replication Configuration Staging Area subnet ID.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration Replication Server instance type.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration use Dedicated Replication Server.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration use default large Staging Disks.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration replicated disks.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>Replication Configuration EBS encryption.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration EBS encryption key ARN.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration set bandwidth throttling.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration data plane routing.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration create Public IP.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration Staging Area tags.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -830,25 +857,35 @@ impl UpdateReplicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Launch configuration name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Launch configuration EC2 Launch template ID.</p>
+    #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
     /// <p>Launch disposition for launch configuration.</p>
+    #[doc(hidden)]
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Launch configuration Target instance type right sizing method.</p>
+    #[doc(hidden)]
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Copy Tags during Launch Configuration.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>Launch configuration OS licensing.</p>
+    #[doc(hidden)]
     pub licensing: std::option::Option<crate::model::Licensing>,
     /// <p>Launch configuration boot mode.</p>
+    #[doc(hidden)]
     pub boot_mode: std::option::Option<crate::model::BootMode>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl UpdateLaunchConfigurationOutput {
@@ -1084,25 +1121,35 @@ impl UpdateLaunchConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl StartReplicationOutput {
@@ -1351,25 +1398,35 @@ impl StartReplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryDataReplicationOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl RetryDataReplicationOutput {
@@ -1618,25 +1675,35 @@ impl RetryDataReplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarkAsArchivedOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl MarkAsArchivedOutput {
@@ -1885,38 +1952,53 @@ impl MarkAsArchivedOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationConfigurationOutput {
     /// <p>Replication Configuration Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Replication Configuration Staging Area subnet ID.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration Replication Server instance type.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration use Dedicated Replication Server.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration use default large Staging Disks.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration replicated disks.</p>
+    #[doc(hidden)]
     pub replicated_disks:
         std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
     /// <p>Replication Configuration EBS encryption.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration EBS encryption key ARN.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration set bandwidth throttling.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration data plane routing.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration create Public IP.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration Staging Area tags.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2332,25 +2414,35 @@ impl GetReplicationConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Launch configuration name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Launch configuration EC2 Launch template ID.</p>
+    #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
     /// <p>Launch disposition for launch configuration.</p>
+    #[doc(hidden)]
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Launch configuration Target instance type right sizing method.</p>
+    #[doc(hidden)]
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Copy Tags during Launch Configuration.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>Launch configuration OS licensing.</p>
+    #[doc(hidden)]
     pub licensing: std::option::Option<crate::model::Licensing>,
     /// <p>Launch configuration boot mode.</p>
+    #[doc(hidden)]
     pub boot_mode: std::option::Option<crate::model::BootMode>,
     /// <p>Server participating in Job.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl GetLaunchConfigurationOutput {
@@ -2586,25 +2678,35 @@ impl GetLaunchConfigurationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FinalizeCutoverOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl FinalizeCutoverOutput {
@@ -2853,25 +2955,35 @@ impl FinalizeCutoverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectFromServiceOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl DisconnectFromServiceOutput {
@@ -3120,25 +3232,35 @@ impl DisconnectFromServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeServerLifeCycleStateOutput {
     /// <p>Source server ID.</p>
+    #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Source server ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Source server archived status.</p>
+    #[doc(hidden)]
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
+    #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
     /// <p>Source server data replication info.</p>
+    #[doc(hidden)]
     pub data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
     /// <p>Source server lifecycle state.</p>
+    #[doc(hidden)]
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
+    #[doc(hidden)]
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
     /// <p>Source server replication type.</p>
+    #[doc(hidden)]
     pub replication_type: std::option::Option<crate::model::ReplicationType>,
     /// <p>Source server vCenter client id.</p>
+    #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl ChangeServerLifeCycleStateOutput {
@@ -3387,6 +3509,7 @@ impl ChangeServerLifeCycleStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateTargetInstancesOutput {
     /// <p>Terminate Target instance Job response.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl TerminateTargetInstancesOutput {
@@ -3439,6 +3562,7 @@ impl TerminateTargetInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTestOutput {
     /// <p>Start Test Job response.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StartTestOutput {
@@ -3491,6 +3615,7 @@ impl StartTestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCutoverOutput {
     /// <p>Start Cutover Job response.</p>
+    #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl StartCutoverOutput {
@@ -3543,8 +3668,10 @@ impl StartCutoverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceServersOutput {
     /// <p>Request to filter Source Servers list by item.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceServer>>,
     /// <p>Request to filter Source Servers next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSourceServersOutput {
@@ -3655,8 +3782,10 @@ impl DeleteSourceServerOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationConfigurationTemplatesOutput {
     /// <p>Request to describe Replication Configuration template by items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
     /// <p>Request to describe Replication Configuration template by next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
@@ -3741,38 +3870,53 @@ impl DescribeReplicationConfigurationTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateOutput {
     /// <p>Replication Configuration template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template bandwidth throttling.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Replication Configuration template Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4226,38 +4370,53 @@ impl DeleteReplicationConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationTemplateOutput {
     /// <p>Replication Configuration template ID.</p>
+    #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template ARN.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
+    #[doc(hidden)]
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
+    #[doc(hidden)]
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
+    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
+    #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
+    #[doc(hidden)]
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
+    #[doc(hidden)]
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
+    #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
+    #[doc(hidden)]
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template bandwidth throttling.</p>
+    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
+    #[doc(hidden)]
     pub data_plane_routing:
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
+    #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
+    #[doc(hidden)]
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Replication Configuration template Tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4681,8 +4840,10 @@ impl UpdateReplicationConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLaunchConfigurationTemplatesOutput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchConfigurationTemplatesOutput {
@@ -4764,12 +4925,16 @@ impl DescribeLaunchConfigurationTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchConfigurationTemplateOutput {
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4938,12 +5103,16 @@ impl DeleteLaunchConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchConfigurationTemplateOutput {
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     /// <p>Copy Private IP during Launch Configuration.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5082,8 +5251,10 @@ impl UpdateLaunchConfigurationTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobLogItemsOutput {
     /// <p>Request to describe Job log response items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::JobLog>>,
     /// <p>Request to describe Job log response next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobLogItemsOutput {
@@ -5164,8 +5335,10 @@ impl DescribeJobLogItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobsOutput {
     /// <p>Request to describe Job log items.</p>
+    #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>Request to describe Job response by next token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobsOutput {
@@ -5336,6 +5509,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>List tags for resource response.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

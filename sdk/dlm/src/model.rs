@@ -6,28 +6,36 @@
 pub struct PolicyDetails {
     /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<crate::model::PolicyTypeValues>,
     /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
+    #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
     /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. </p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
+    #[doc(hidden)]
     pub resource_locations:
         std::option::Option<std::vec::Vec<crate::model::ResourceLocationValues>>,
     /// <p>The single tag that identifies targeted resources for this policy.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
+    #[doc(hidden)]
     pub target_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
+    #[doc(hidden)]
     pub schedules: std::option::Option<std::vec::Vec<crate::model::Schedule>>,
     /// <p>A set of optional parameters for snapshot and AMI lifecycle policies. </p>
     /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::Parameters>,
     /// <p>The event that triggers the event-based policy. </p>
     /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
+    #[doc(hidden)]
     pub event_source: std::option::Option<crate::model::EventSource>,
     /// <p>The actions to be performed when the event-based policy is triggered. You can specify only one action per policy.</p>
     /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
+    #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
 impl PolicyDetails {
@@ -283,8 +291,10 @@ impl PolicyDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>A descriptive name for the action.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The rule for copying shared snapshots across Regions.</p>
+    #[doc(hidden)]
     pub cross_region_copy: std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyAction>>,
 }
 impl Action {
@@ -366,10 +376,13 @@ impl Action {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyAction {
     /// <p>The target Region.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The encryption settings for the copied snapshot.</p>
+    #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>Specifies the retention rule for cross-Region snapshot copies.</p>
+    #[doc(hidden)]
     pub retain_rule: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
 }
 impl CrossRegionCopyAction {
@@ -470,8 +483,10 @@ impl CrossRegionCopyAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyRetainRule {
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time for time-based retention.</p>
+    #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyRetainRule {
@@ -609,8 +624,10 @@ impl AsRef<str> for RetentionIntervalUnitValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
     /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
+    #[doc(hidden)]
     pub cmk_arn: std::option::Option<std::string::String>,
 }
 impl EncryptionConfiguration {
@@ -682,8 +699,10 @@ impl EncryptionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EventSourceValues>,
     /// <p>Information about the event.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<crate::model::EventParameters>,
 }
 impl EventSource {
@@ -761,11 +780,14 @@ impl EventSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventParameters {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
+    #[doc(hidden)]
     pub event_type: std::option::Option<crate::model::EventTypeValues>,
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
+    #[doc(hidden)]
     pub snapshot_owner: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
+    #[doc(hidden)]
     pub description_regex: std::option::Option<std::string::String>,
 }
 impl EventParameters {
@@ -974,8 +996,10 @@ impl AsRef<str> for EventSourceValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameters {
     /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The default is false.</p>
+    #[doc(hidden)]
     pub exclude_boot_volume: std::option::Option<bool>,
     /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
+    #[doc(hidden)]
     pub no_reboot: std::option::Option<bool>,
 }
 impl Parameters {
@@ -1047,26 +1071,36 @@ impl Parameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schedule {
     /// <p>The name of the schedule.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
+    #[doc(hidden)]
     pub copy_tags: bool,
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
+    #[doc(hidden)]
     pub tags_to_add: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
+    #[doc(hidden)]
     pub variable_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The creation rule.</p>
+    #[doc(hidden)]
     pub create_rule: std::option::Option<crate::model::CreateRule>,
     /// <p>The retention rule.</p>
+    #[doc(hidden)]
     pub retain_rule: std::option::Option<crate::model::RetainRule>,
     /// <p>The rule for enabling fast snapshot restore.</p>
+    #[doc(hidden)]
     pub fast_restore_rule: std::option::Option<crate::model::FastRestoreRule>,
     /// <p>The rule for cross-Region snapshot copies.</p>
     /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region. If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
+    #[doc(hidden)]
     pub cross_region_copy_rules:
         std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
     /// <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+    #[doc(hidden)]
     pub share_rules: std::option::Option<std::vec::Vec<crate::model::ShareRule>>,
     /// <p>The AMI deprecation rule for the schedule.</p>
+    #[doc(hidden)]
     pub deprecate_rule: std::option::Option<crate::model::DeprecateRule>,
 }
 impl Schedule {
@@ -1328,10 +1362,13 @@ impl Schedule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateRule {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
+    #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl DeprecateRule {
@@ -1423,10 +1460,13 @@ impl DeprecateRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareRule {
     /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
+    #[doc(hidden)]
     pub target_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
+    #[doc(hidden)]
     pub unshare_interval: i32,
     /// <p>The unit of time for the automatic unsharing interval.</p>
+    #[doc(hidden)]
     pub unshare_interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl ShareRule {
@@ -1534,19 +1574,26 @@ impl ShareRule {
 pub struct CrossRegionCopyRule {
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
+    #[doc(hidden)]
     pub target_region: std::option::Option<std::string::String>,
     /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
     /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
+    #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
+    #[doc(hidden)]
     pub cmk_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region snapshot copy.</p>
+    #[doc(hidden)]
     pub copy_tags: std::option::Option<bool>,
     /// <p>The retention rule that indicates how long snapshot copies are to be retained in the destination Region.</p>
+    #[doc(hidden)]
     pub retain_rule: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
     /// <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+    #[doc(hidden)]
     pub deprecate_rule: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
 }
 impl CrossRegionCopyRule {
@@ -1720,8 +1767,10 @@ impl CrossRegionCopyRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrossRegionCopyDeprecateRule {
     /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
+    #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyDeprecateRule {
@@ -1796,12 +1845,16 @@ impl CrossRegionCopyDeprecateRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time for enabling fast snapshot restore.</p>
+    #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
+    #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FastRestoreRule {
@@ -1919,10 +1972,13 @@ impl FastRestoreRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetainRule {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
+    #[doc(hidden)]
     pub count: i32,
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time for time-based retention.</p>
+    #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::RetentionIntervalUnitValues>,
 }
 impl RetainRule {
@@ -2017,15 +2073,20 @@ pub struct CreateRule {
     /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource.</p>
     /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    #[doc(hidden)]
     pub location: std::option::Option<crate::model::LocationValues>,
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
+    #[doc(hidden)]
     pub interval: i32,
     /// <p>The interval unit.</p>
+    #[doc(hidden)]
     pub interval_unit: std::option::Option<crate::model::IntervalUnitValues>,
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
+    #[doc(hidden)]
     pub times: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    #[doc(hidden)]
     pub cron_expression: std::option::Option<std::string::String>,
 }
 impl CreateRule {
@@ -2281,8 +2342,10 @@ impl AsRef<str> for LocationValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -2582,25 +2645,35 @@ impl AsRef<str> for SettablePolicyStateValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicy {
     /// <p>The identifier of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The description of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The activation state of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::GettablePolicyStateValues>,
     /// <p>The description of the status.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The local date and time when the lifecycle policy was created.</p>
+    #[doc(hidden)]
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
+    #[doc(hidden)]
     pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration of the lifecycle policy</p>
+    #[doc(hidden)]
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl LifecyclePolicy {
@@ -2905,15 +2978,20 @@ impl AsRef<str> for GettablePolicyStateValues {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecyclePolicySummary {
     /// <p>The identifier of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The description of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The activation state of the lifecycle policy.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::GettablePolicyStateValues>,
     /// <p>The tags.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
+    #[doc(hidden)]
     pub policy_type: std::option::Option<crate::model::PolicyTypeValues>,
 }
 impl LifecyclePolicySummary {

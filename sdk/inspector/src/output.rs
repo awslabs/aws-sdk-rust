@@ -124,6 +124,7 @@ impl StopAssessmentRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentRunOutput {
     /// <p>The ARN of the assessment run that has been started.</p>
+    #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl StartAssessmentRunOutput {
@@ -211,6 +212,7 @@ impl SetTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAttributesFromFindingsOutput {
     /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -318,8 +320,10 @@ impl RegisterCrossAccountAccessRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreviewAgentsOutput {
     /// <p>The resulting list of agents.</p>
+    #[doc(hidden)]
     pub agent_previews: std::option::Option<std::vec::Vec<crate::model::AgentPreview>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl PreviewAgentsOutput {
@@ -400,6 +404,7 @@ impl PreviewAgentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A collection of key and value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -461,8 +466,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesPackagesOutput {
     /// <p>The list of ARNs that specifies the rules packages returned by the action.</p>
+    #[doc(hidden)]
     pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesPackagesOutput {
@@ -543,8 +550,10 @@ impl ListRulesPackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsOutput {
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
+    #[doc(hidden)]
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
@@ -625,8 +634,10 @@ impl ListFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExclusionsOutput {
     /// <p>A list of exclusions' ARNs returned by the action.</p>
+    #[doc(hidden)]
     pub exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExclusionsOutput {
@@ -707,8 +718,10 @@ impl ListExclusionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventSubscriptionsOutput {
     /// <p>Details of the returned event subscriptions.</p>
+    #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventSubscriptionsOutput {
@@ -789,8 +802,10 @@ impl ListEventSubscriptionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTemplatesOutput {
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
+    #[doc(hidden)]
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentTemplatesOutput {
@@ -872,8 +887,10 @@ impl ListAssessmentTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTargetsOutput {
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
+    #[doc(hidden)]
     pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentTargetsOutput {
@@ -954,8 +971,10 @@ impl ListAssessmentTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentRunsOutput {
     /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
+    #[doc(hidden)]
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentRunsOutput {
@@ -1036,8 +1055,10 @@ impl ListAssessmentRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentRunAgentsOutput {
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
+    #[doc(hidden)]
     pub assessment_run_agents: std::option::Option<std::vec::Vec<crate::model::AssessmentRunAgent>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentRunAgentsOutput {
@@ -1121,6 +1142,7 @@ impl ListAssessmentRunAgentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTelemetryMetadataOutput {
     /// <p>Telemetry details.</p>
+    #[doc(hidden)]
     pub telemetry_metadata: std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
 }
 impl GetTelemetryMetadataOutput {
@@ -1185,10 +1207,13 @@ impl GetTelemetryMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExclusionsPreviewOutput {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
+    #[doc(hidden)]
     pub preview_status: std::option::Option<crate::model::PreviewStatus>,
     /// <p>Information about the exclusions included in the preview.</p>
+    #[doc(hidden)]
     pub exclusion_previews: std::option::Option<std::vec::Vec<crate::model::ExclusionPreview>>,
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExclusionsPreviewOutput {
@@ -1290,8 +1315,10 @@ impl GetExclusionsPreviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentReportOutput {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReportStatus>,
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl GetAssessmentReportOutput {
@@ -1366,8 +1393,10 @@ impl GetAssessmentReportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRulesPackagesOutput {
     /// <p>Information about the rules package.</p>
+    #[doc(hidden)]
     pub rules_packages: std::option::Option<std::vec::Vec<crate::model::RulesPackage>>,
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1471,8 +1500,10 @@ impl DescribeRulesPackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceGroupsOutput {
     /// <p>Information about a resource group.</p>
+    #[doc(hidden)]
     pub resource_groups: std::option::Option<std::vec::Vec<crate::model::ResourceGroup>>,
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1576,8 +1607,10 @@ impl DescribeResourceGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFindingsOutput {
     /// <p>Information about the finding.</p>
+    #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1681,10 +1714,12 @@ impl DescribeFindingsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExclusionsOutput {
     /// <p>Information about the exclusions.</p>
+    #[doc(hidden)]
     pub exclusions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Exclusion>,
     >,
     /// <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -1799,10 +1834,13 @@ impl DescribeExclusionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCrossAccountAccessRoleOutput {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
+    #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
+    #[doc(hidden)]
     pub valid: std::option::Option<bool>,
     /// <p>The date when the cross-account access role was registered.</p>
+    #[doc(hidden)]
     pub registered_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCrossAccountAccessRoleOutput {
@@ -1894,8 +1932,10 @@ impl DescribeCrossAccountAccessRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssessmentTemplatesOutput {
     /// <p>Information about the assessment templates.</p>
+    #[doc(hidden)]
     pub assessment_templates: std::option::Option<std::vec::Vec<crate::model::AssessmentTemplate>>,
     /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -2000,8 +2040,10 @@ impl DescribeAssessmentTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssessmentTargetsOutput {
     /// <p>Information about the assessment targets.</p>
+    #[doc(hidden)]
     pub assessment_targets: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
     /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -2106,8 +2148,10 @@ impl DescribeAssessmentTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssessmentRunsOutput {
     /// <p>Information about the assessment run.</p>
+    #[doc(hidden)]
     pub assessment_runs: std::option::Option<std::vec::Vec<crate::model::AssessmentRun>>,
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
@@ -2301,6 +2345,7 @@ impl DeleteAssessmentRunOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceGroupOutput {
     /// <p>The ARN that specifies the resource group that is created.</p>
+    #[doc(hidden)]
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateResourceGroupOutput {
@@ -2358,6 +2403,7 @@ impl CreateResourceGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExclusionsPreviewOutput {
     /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
+    #[doc(hidden)]
     pub preview_token: std::option::Option<std::string::String>,
 }
 impl CreateExclusionsPreviewOutput {
@@ -2415,6 +2461,7 @@ impl CreateExclusionsPreviewOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentTemplateOutput {
     /// <p>The ARN that specifies the assessment template that is created.</p>
+    #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentTemplateOutput {
@@ -2472,6 +2519,7 @@ impl CreateAssessmentTemplateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
+    #[doc(hidden)]
     pub assessment_target_arn: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentTargetOutput {
@@ -2529,6 +2577,7 @@ impl CreateAssessmentTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttributesToFindingsOutput {
     /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
+    #[doc(hidden)]
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,

@@ -184,6 +184,7 @@ impl RejectInvitationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -257,8 +258,10 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalVotesOutput {
     /// <p> The list of votes. </p>
+    #[doc(hidden)]
     pub proposal_votes: std::option::Option<std::vec::Vec<crate::model::VoteSummary>>,
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalVotesOutput {
@@ -339,8 +342,10 @@ impl ListProposalVotesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalsOutput {
     /// <p>The summary of each proposal made on the network.</p>
+    #[doc(hidden)]
     pub proposals: std::option::Option<std::vec::Vec<crate::model::ProposalSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalsOutput {
@@ -421,8 +426,10 @@ impl ListProposalsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesOutput {
     /// <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
+    #[doc(hidden)]
     pub nodes: std::option::Option<std::vec::Vec<crate::model::NodeSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodesOutput {
@@ -503,8 +510,10 @@ impl ListNodesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworksOutput {
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
+    #[doc(hidden)]
     pub networks: std::option::Option<std::vec::Vec<crate::model::NetworkSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworksOutput {
@@ -585,8 +594,10 @@ impl ListNetworksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersOutput {
     /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
+    #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::MemberSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -667,8 +678,10 @@ impl ListMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
     /// <p>The invitations for the network.</p>
+    #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
@@ -749,6 +762,7 @@ impl ListInvitationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProposalOutput {
     /// <p>Information about a proposal.</p>
+    #[doc(hidden)]
     pub proposal: std::option::Option<crate::model::Proposal>,
 }
 impl GetProposalOutput {
@@ -803,6 +817,7 @@ impl GetProposalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNodeOutput {
     /// <p>Properties of the node configuration.</p>
+    #[doc(hidden)]
     pub node: std::option::Option<crate::model::Node>,
 }
 impl GetNodeOutput {
@@ -855,6 +870,7 @@ impl GetNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkOutput {
     /// <p>An object containing network configuration parameters.</p>
+    #[doc(hidden)]
     pub network: std::option::Option<crate::model::Network>,
 }
 impl GetNetworkOutput {
@@ -909,6 +925,7 @@ impl GetNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberOutput {
     /// <p>The properties of a member.</p>
+    #[doc(hidden)]
     pub member: std::option::Option<crate::model::Member>,
 }
 impl GetMemberOutput {
@@ -1023,6 +1040,7 @@ impl DeleteMemberOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProposalOutput {
     /// <p>The unique identifier of the proposal.</p>
+    #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
 }
 impl CreateProposalOutput {
@@ -1077,6 +1095,7 @@ impl CreateProposalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNodeOutput {
     /// <p>The unique identifier of the node.</p>
+    #[doc(hidden)]
     pub node_id: std::option::Option<std::string::String>,
 }
 impl CreateNodeOutput {
@@ -1131,8 +1150,10 @@ impl CreateNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkOutput {
     /// <p>The unique identifier for the network.</p>
+    #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the first member within the network.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl CreateNetworkOutput {
@@ -1204,6 +1225,7 @@ impl CreateNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMemberOutput {
     /// <p>The unique identifier of the member.</p>
+    #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl CreateMemberOutput {

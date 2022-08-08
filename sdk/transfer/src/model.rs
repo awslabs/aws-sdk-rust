@@ -5,10 +5,13 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PosixProfile {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
+    #[doc(hidden)]
     pub uid: std::option::Option<i64>,
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
+    #[doc(hidden)]
     pub gid: std::option::Option<i64>,
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
+    #[doc(hidden)]
     pub secondary_gids: std::option::Option<std::vec::Vec<i64>>,
 }
 impl PosixProfile {
@@ -108,8 +111,10 @@ impl PosixProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
+    #[doc(hidden)]
     pub entry: std::option::Option<std::string::String>,
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
 }
 impl HomeDirectoryMapEntry {
@@ -238,6 +243,7 @@ pub struct WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
+    #[doc(hidden)]
     pub on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
 }
 impl WorkflowDetails {
@@ -307,8 +313,10 @@ impl WorkflowDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowDetail {
     /// <p>A unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
+    #[doc(hidden)]
     pub execution_role: std::option::Option<std::string::String>,
 }
 impl WorkflowDetail {
@@ -446,12 +454,16 @@ impl AsRef<str> for Protocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderDetails {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
+    #[doc(hidden)]
     pub invocation_role: std::option::Option<std::string::String>,
     /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The ARN for a lambda function to use for the Identity provider.</p>
+    #[doc(hidden)]
     pub function: std::option::Option<std::string::String>,
 }
 impl IdentityProviderDetails {
@@ -624,24 +636,29 @@ pub struct EndpointDetails {
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
     /// </note>
+    #[doc(hidden)]
     pub address_allocation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
+    #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EndpointDetails {
@@ -834,6 +851,7 @@ pub struct ProtocolDetails {
     /// <p>Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.</p> <note>
     /// <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p>
     /// </note>
+    #[doc(hidden)]
     pub passive_ip: std::option::Option<std::string::String>,
     /// <p>A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions through a unique session ID. This property is available during <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.</p>
     /// <ul>
@@ -843,14 +861,17 @@ pub struct ProtocolDetails {
     /// <p>Not all FTPS clients perform TLS session resumption. So, if you choose to enforce TLS session resumption, you prevent any connections from FTPS clients that don't perform the protocol negotiation. To determine whether or not you can use the <code>ENFORCED</code> value, you need to test your clients.</p>
     /// </note> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tls_session_resumption_mode: std::option::Option<crate::model::TlsSessionResumptionMode>,
     /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
     /// <p>Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can result in errors even when the file is otherwise successfully uploaded.</p>
     /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.</p> <note>
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
+    #[doc(hidden)]
     pub set_stat_option: std::option::Option<crate::model::SetStatOption>,
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
+    #[doc(hidden)]
     pub as2_transports: std::option::Option<std::vec::Vec<crate::model::As2Transport>>,
 }
 impl ProtocolDetails {
@@ -1190,24 +1211,32 @@ impl AsRef<str> for TlsSessionResumptionMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 process.</p>
+    #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the partner for the connector.</p>
+    #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
     /// <p>A short description to help identify the connector.</p>
+    #[doc(hidden)]
     pub message_subject: std::option::Option<std::string::String>,
     /// <p>Specifies whether the AS2 file is compressed.</p>
+    #[doc(hidden)]
     pub compression: std::option::Option<crate::model::CompressionEnum>,
     /// <p>The algorithm that is used to encrypt the file.</p>
+    #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlg>,
     /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+    #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlg>,
     /// <p>The signing algorithm for the MDN response.</p>
+    #[doc(hidden)]
     pub mdn_signing_algorithm: std::option::Option<crate::model::MdnSigningAlg>,
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
     /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mdn_response: std::option::Option<crate::model::MdnResponse>,
 }
 impl As2ConnectorConfig {
@@ -1779,8 +1808,10 @@ impl AsRef<str> for AgreementStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The name assigned to the tag that you create.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Contains one or more values that you assigned to the key name you create.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
@@ -1907,10 +1938,13 @@ impl AsRef<str> for CustomStepStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedWorkflow {
     /// <p>A unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>Specifies the text description for the workflow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ListedWorkflow {
@@ -1999,20 +2033,26 @@ impl ListedWorkflow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedUser {
     /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    #[doc(hidden)]
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
+    #[doc(hidden)]
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
     /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
     /// <p>The policies attached to this role determine the level of access you want to provide your users when transferring files into and out of your S3 buckets or EFS file systems.</p>
     /// </note>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>Specifies the number of SSH public keys stored for the user you specified.</p>
+    #[doc(hidden)]
     pub ssh_public_key_count: std::option::Option<i32>,
     /// <p>Specifies the name of the user whose ARN was specified. User names are used for authentication purposes.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl ListedUser {
@@ -2170,24 +2210,32 @@ impl ListedUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
+    #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
+    #[doc(hidden)]
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>Specifies the unique system assigned identifier for the servers that were listed.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
+    #[doc(hidden)]
     pub user_count: std::option::Option<i32>,
 }
 impl ListedServer {
@@ -2598,12 +2646,16 @@ impl AsRef<str> for Domain {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedProfile {
     /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the AS2 process.</p>
+    #[doc(hidden)]
     pub as2_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    #[doc(hidden)]
     pub profile_type: std::option::Option<crate::model::ProfileType>,
 }
 impl ListedProfile {
@@ -2767,12 +2819,16 @@ impl AsRef<str> for ProfileType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
+    #[doc(hidden)]
     pub initial_file_location: std::option::Option<crate::model::FileLocation>,
     /// <p>A container object for the session details that are associated with a workflow.</p>
+    #[doc(hidden)]
     pub service_metadata: std::option::Option<crate::model::ServiceMetadata>,
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
 }
 impl ListedExecution {
@@ -2955,6 +3011,7 @@ impl AsRef<str> for ExecutionStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
+    #[doc(hidden)]
     pub user_details: std::option::Option<crate::model::UserDetails>,
 }
 impl ServiceMetadata {
@@ -3012,10 +3069,13 @@ impl ServiceMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDetails {
     /// <p>A unique string that identifies a user account associated with a server.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl UserDetails {
@@ -3104,8 +3164,10 @@ impl UserDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileLocation {
     /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
+    #[doc(hidden)]
     pub s3_file_location: std::option::Option<crate::model::S3FileLocation>,
     /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+    #[doc(hidden)]
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
 impl FileLocation {
@@ -3184,8 +3246,10 @@ impl FileLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsFileLocation {
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The pathname for the folder being used by a workflow.</p>
+    #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl EfsFileLocation {
@@ -3260,12 +3324,16 @@ impl EfsFileLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3FileLocation {
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>Specifies the file version.</p>
+    #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
+    #[doc(hidden)]
     pub etag: std::option::Option<std::string::String>,
 }
 impl S3FileLocation {
@@ -3371,10 +3439,13 @@ impl S3FileLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedConnector {
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the connector.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
     /// <p>The URL of the partner's AS2 endpoint.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl ListedConnector {
@@ -3463,20 +3534,28 @@ impl ListedConnector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedCertificate {
     /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    #[doc(hidden)]
     pub usage: std::option::Option<crate::model::CertificateUsageType>,
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateStatusType>,
     /// <p>An optional date that specifies when the certificate becomes active.</p>
+    #[doc(hidden)]
     pub active_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    #[doc(hidden)]
     pub inactive_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>The name or short description that's used to identify the certificate.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl ListedCertificate {
@@ -3837,18 +3916,25 @@ impl AsRef<str> for CertificateUsageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListedAgreement {
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
     /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AgreementStatusType>,
     /// <p>The unique identifier for the agreement.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the AS2 process.</p>
+    #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the partner process.</p>
+    #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
 }
 impl ListedAgreement {
@@ -4015,15 +4101,19 @@ impl ListedAgreement {
 pub struct ListedAccess {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    #[doc(hidden)]
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
+    #[doc(hidden)]
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl ListedAccess {
@@ -4147,16 +4237,22 @@ impl ListedAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the text description for the workflow.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+    #[doc(hidden)]
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
     /// <p>A unique identifier for the workflow.</p>
+    #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribedWorkflow {
@@ -4330,6 +4426,7 @@ pub struct WorkflowStep {
     /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
     /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WorkflowStepType>,
     /// <p>Details for a step that performs a file copy.</p>
     /// <p> Consists of the following values: </p>
@@ -4338,14 +4435,18 @@ pub struct WorkflowStep {
     /// <li> <p>An S3 location for the destination of the file copy.</p> </li>
     /// <li> <p>A flag that indicates whether or not to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub copy_step_details: std::option::Option<crate::model::CopyStepDetails>,
     /// <p>Details for a step that invokes a lambda function.</p>
     /// <p> Consists of the lambda function name, target, and timeout (in seconds). </p>
+    #[doc(hidden)]
     pub custom_step_details: std::option::Option<crate::model::CustomStepDetails>,
     /// <p>Details for a step that deletes the file.</p>
+    #[doc(hidden)]
     pub delete_step_details: std::option::Option<crate::model::DeleteStepDetails>,
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
+    #[doc(hidden)]
     pub tag_step_details: std::option::Option<crate::model::TagStepDetails>,
 }
 impl WorkflowStep {
@@ -4526,14 +4627,17 @@ impl WorkflowStep {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
 }
 impl TagStepDetails {
@@ -4646,8 +4750,10 @@ impl TagStepDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Tag {
     /// <p>The name assigned to the tag that you create.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The value that corresponds to the key.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl S3Tag {
@@ -4719,12 +4825,14 @@ impl S3Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
 }
 impl DeleteStepDetails {
@@ -4811,16 +4919,20 @@ impl DeleteStepDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN for the lambda function that is being called.</p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>Timeout, in seconds, for the step.</p>
+    #[doc(hidden)]
     pub timeout_seconds: std::option::Option<i32>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
 }
 impl CustomStepDetails {
@@ -4941,16 +5053,20 @@ impl CustomStepDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.</p>
+    #[doc(hidden)]
     pub destination_file_location: std::option::Option<crate::model::InputFileLocation>,
     /// <p>A flag that indicates whether or not to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
+    #[doc(hidden)]
     pub overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
 }
 impl CopyStepDetails {
@@ -5134,8 +5250,10 @@ impl AsRef<str> for OverwriteExisting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputFileLocation {
     /// <p>Specifies the details for the S3 file being copied.</p>
+    #[doc(hidden)]
     pub s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
 impl InputFileLocation {
@@ -5215,8 +5333,10 @@ impl InputFileLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3InputFileLocation {
     /// <p>Specifies the S3 bucket for the customer input file.</p>
+    #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl S3InputFileLocation {
@@ -5351,27 +5471,37 @@ impl AsRef<str> for WorkflowStepType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedUser {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    #[doc(hidden)]
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
+    #[doc(hidden)]
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
+    #[doc(hidden)]
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File System (Amazon EFS) file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    #[doc(hidden)]
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
+    #[doc(hidden)]
     pub ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SshPublicKey>>,
     /// <p>Specifies the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your server.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DescribedUser {
@@ -5627,11 +5757,14 @@ impl DescribedUser {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SshPublicKey {
     /// <p>Specifies the date that the public key was added to the user account.</p>
+    #[doc(hidden)]
     pub date_imported: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    #[doc(hidden)]
     pub ssh_public_key_body: std::option::Option<std::string::String>,
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
+    #[doc(hidden)]
     pub ssh_public_key_id: std::option::Option<std::string::String>,
 }
 impl SshPublicKey {
@@ -5732,35 +5865,47 @@ impl SshPublicKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p> The protocol settings that are configured for your server. </p>
     /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. </p>
+    #[doc(hidden)]
     pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    #[doc(hidden)]
     pub endpoint_details: std::option::Option<crate::model::EndpointDetails>,
     /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
+    #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code> command.</p>
+    #[doc(hidden)]
     pub host_key_fingerprint: std::option::Option<std::string::String>,
     /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
+    #[doc(hidden)]
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
+    #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
+    #[doc(hidden)]
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
+    #[doc(hidden)]
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
+    #[doc(hidden)]
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -5768,19 +5913,26 @@ pub struct DescribedServer {
     /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
     /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    #[doc(hidden)]
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
+    #[doc(hidden)]
     pub user_count: std::option::Option<i32>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    #[doc(hidden)]
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl DescribedServer {
@@ -6248,16 +6400,22 @@ impl DescribedServer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedSecurityPolicy {
     /// <p>Specifies whether this policy enables Federal Information Processing Standards (FIPS).</p>
+    #[doc(hidden)]
     pub fips: std::option::Option<bool>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    #[doc(hidden)]
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
+    #[doc(hidden)]
     pub ssh_ciphers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
+    #[doc(hidden)]
     pub ssh_kexs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
+    #[doc(hidden)]
     pub ssh_macs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
+    #[doc(hidden)]
     pub tls_ciphers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribedSecurityPolicy {
@@ -6436,16 +6594,22 @@ impl DescribedSecurityPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedProfile {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    #[doc(hidden)]
     pub profile_type: std::option::Option<crate::model::ProfileType>,
     /// <p>The unique identifier for the AS2 process.</p>
+    #[doc(hidden)]
     pub as2_id: std::option::Option<std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    #[doc(hidden)]
     pub certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribedProfile {
@@ -6606,20 +6770,28 @@ impl DescribedProfile {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
+    #[doc(hidden)]
     pub initial_file_location: std::option::Option<crate::model::FileLocation>,
     /// <p>A container object for the session details that are associated with a workflow.</p>
+    #[doc(hidden)]
     pub service_metadata: std::option::Option<crate::model::ServiceMetadata>,
     /// <p>The IAM role associated with the execution.</p>
+    #[doc(hidden)]
     pub execution_role: std::option::Option<std::string::String>,
     /// <p>The IAM logging role associated with the execution.</p>
+    #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    #[doc(hidden)]
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
+    #[doc(hidden)]
     pub results: std::option::Option<crate::model::ExecutionResults>,
 }
 impl DescribedExecution {
@@ -6816,8 +6988,10 @@ impl DescribedExecution {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionResults {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+    #[doc(hidden)]
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
 }
 impl ExecutionResults {
@@ -6914,10 +7088,13 @@ pub struct ExecutionStepResult {
     /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
     /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub step_type: std::option::Option<crate::model::WorkflowStepType>,
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
+    #[doc(hidden)]
     pub outputs: std::option::Option<std::string::String>,
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
+    #[doc(hidden)]
     pub error: std::option::Option<crate::model::ExecutionError>,
 }
 impl ExecutionStepResult {
@@ -7042,8 +7219,10 @@ pub struct ExecutionError {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ExecutionErrorType>,
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExecutionError {
@@ -7242,8 +7421,10 @@ impl AsRef<str> for ExecutionErrorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
+    #[doc(hidden)]
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl LoggingConfiguration {
@@ -7318,18 +7499,25 @@ impl LoggingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the connector.</p>
+    #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
     /// <p>The URL of the partner's AS2 endpoint.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
     /// <p>A structure that contains the parameters for a connector object.</p>
+    #[doc(hidden)]
     pub as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    #[doc(hidden)]
     pub access_role: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    #[doc(hidden)]
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribedConnector {
@@ -7498,32 +7686,46 @@ impl DescribedConnector {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedCertificate {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    #[doc(hidden)]
     pub usage: std::option::Option<crate::model::CertificateUsageType>,
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateStatusType>,
     /// <p>The file name for the certificate.</p>
+    #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The list of certificates that make up the chain for the certificate.</p>
+    #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
     /// <p>An optional date that specifies when the certificate becomes active.</p>
+    #[doc(hidden)]
     pub active_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    #[doc(hidden)]
     pub inactive_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The serial number for the certificate.</p>
+    #[doc(hidden)]
     pub serial: std::option::Option<std::string::String>,
     /// <p>The earliest date that the certificate is valid.</p>
+    #[doc(hidden)]
     pub not_before_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The final date that the certificate is valid.</p>
+    #[doc(hidden)]
     pub not_after_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>The name or description that's used to identity the certificate. </p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribedCertificate {
@@ -7835,24 +8037,34 @@ impl DescribedCertificate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribedAgreement {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    #[doc(hidden)]
     pub agreement_id: std::option::Option<std::string::String>,
     /// <p>The name or short description that's used to identify the agreement.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::AgreementStatusType>,
     /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
+    #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the AS2 process.</p>
+    #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the partner in the agreement.</p>
+    #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
     /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
+    #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    #[doc(hidden)]
     pub access_role: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DescribedAgreement {
@@ -8082,23 +8294,30 @@ impl DescribedAgreement {
 pub struct DescribedAccess {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    #[doc(hidden)]
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down the associated access to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
+    #[doc(hidden)]
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
+    #[doc(hidden)]
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    #[doc(hidden)]
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
     /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DescribedAccess {

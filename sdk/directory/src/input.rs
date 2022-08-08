@@ -10859,6 +10859,7 @@ impl VerifyTrustInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyTrustInput {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
 }
 impl VerifyTrustInput {
@@ -10880,8 +10881,10 @@ impl std::fmt::Debug for VerifyTrustInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustInput {
     /// <p>Identifier of the trust relationship.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
     /// <p>Updates selective authentication for the trust.</p>
+    #[doc(hidden)]
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
 }
 impl UpdateTrustInput {
@@ -10908,8 +10911,10 @@ impl std::fmt::Debug for UpdateTrustInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSettingsInput {
     /// <p>The identifier of the directory for which to update settings.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The list of <code>Setting</code> objects.</p>
+    #[doc(hidden)]
     pub settings: std::option::Option<std::vec::Vec<crate::model::Setting>>,
 }
 impl UpdateSettingsInput {
@@ -10936,8 +10941,10 @@ impl std::fmt::Debug for UpdateSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRadiusInput {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    #[doc(hidden)]
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
 }
 impl UpdateRadiusInput {
@@ -10964,8 +10971,10 @@ impl std::fmt::Debug for UpdateRadiusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNumberOfDomainControllersInput {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The number of domain controllers desired in the directory.</p>
+    #[doc(hidden)]
     pub desired_number: i32,
 }
 impl UpdateNumberOfDomainControllersInput {
@@ -10992,10 +11001,13 @@ impl std::fmt::Debug for UpdateNumberOfDomainControllersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConditionalForwarderInput {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
+    #[doc(hidden)]
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateConditionalForwarderInput {
@@ -11027,8 +11039,10 @@ impl std::fmt::Debug for UpdateConditionalForwarderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareDirectoryInput {
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
+    #[doc(hidden)]
     pub unshare_target: std::option::Option<crate::model::UnshareTarget>,
 }
 impl UnshareDirectoryInput {
@@ -11055,12 +11069,16 @@ impl std::fmt::Debug for UnshareDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaExtensionInput {
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
+    #[doc(hidden)]
     pub create_snapshot_before_schema_extension: bool,
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
+    #[doc(hidden)]
     pub ldif_content: std::option::Option<std::string::String>,
     /// <p>A description of the schema extension.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl StartSchemaExtensionInput {
@@ -11100,12 +11118,16 @@ impl std::fmt::Debug for StartSchemaExtensionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareDirectoryInput {
     /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
+    #[doc(hidden)]
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
+    #[doc(hidden)]
     pub share_target: std::option::Option<crate::model::ShareTarget>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    #[doc(hidden)]
     pub share_method: std::option::Option<crate::model::ShareMethod>,
 }
 impl ShareDirectoryInput {
@@ -11142,6 +11164,7 @@ impl std::fmt::Debug for ShareDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl RestoreFromSnapshotInput {
@@ -11163,10 +11186,13 @@ impl std::fmt::Debug for RestoreFromSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetUserPasswordInput {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user whose password will be reset.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The new password that will be reset.</p>
+    #[doc(hidden)]
     pub new_password: std::option::Option<std::string::String>,
 }
 impl ResetUserPasswordInput {
@@ -11198,8 +11224,10 @@ impl std::fmt::Debug for ResetUserPasswordInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>Identifier (ID) of the directory from which to remove the tag.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tag key (name) of the tag to be removed.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -11226,6 +11254,7 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveRegionInput {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl RemoveRegionInput {
@@ -11247,8 +11276,10 @@ impl std::fmt::Debug for RemoveRegionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveIpRoutesInput {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>IP address blocks that you want to remove.</p>
+    #[doc(hidden)]
     pub cidr_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveIpRoutesInput {
@@ -11275,6 +11306,7 @@ impl std::fmt::Debug for RemoveIpRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    #[doc(hidden)]
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl RejectSharedDirectoryInput {
@@ -11296,8 +11328,10 @@ impl std::fmt::Debug for RejectSharedDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterEventTopicInput {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
+    #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
 }
 impl RegisterEventTopicInput {
@@ -11324,12 +11358,16 @@ impl std::fmt::Debug for RegisterEventTopicInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCertificateInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The certificate PEM string that needs to be registered.</p>
+    #[doc(hidden)]
     pub certificate_data: std::option::Option<std::string::String>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
+    #[doc(hidden)]
     pub client_cert_auth_settings: std::option::Option<crate::model::ClientCertAuthSettings>,
 }
 impl RegisterCertificateInput {
@@ -11368,10 +11406,13 @@ impl std::fmt::Debug for RegisterCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -11403,10 +11444,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemaExtensionsInput {
     /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListSchemaExtensionsInput {
@@ -11438,10 +11482,13 @@ impl std::fmt::Debug for ListSchemaExtensionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogSubscriptionsInput {
     /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of items to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items returned.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListLogSubscriptionsInput {
@@ -11473,10 +11520,13 @@ impl std::fmt::Debug for ListLogSubscriptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpRoutesInput {
     /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListIpRoutesInput {
@@ -11508,10 +11558,13 @@ impl std::fmt::Debug for ListIpRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items that should show up on one page</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl ListCertificatesInput {
@@ -11543,6 +11596,7 @@ impl std::fmt::Debug for ListCertificatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotLimitsInput {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl GetSnapshotLimitsInput {
@@ -11575,11 +11629,14 @@ impl std::fmt::Debug for GetDirectoryLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSsoInput {
     /// <p>The identifier of the directory for which to enable single-sign on.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>
     /// <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl EnableSsoInput {
@@ -11612,8 +11669,10 @@ impl std::fmt::Debug for EnableSsoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableRadiusInput {
     /// <p>The identifier of the directory for which to enable MFA.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    #[doc(hidden)]
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
 }
 impl EnableRadiusInput {
@@ -11640,8 +11699,10 @@ impl std::fmt::Debug for EnableRadiusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableLdapsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LdapsType>,
 }
 impl EnableLdapsInput {
@@ -11668,8 +11729,10 @@ impl std::fmt::Debug for EnableLdapsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableClientAuthenticationInput {
     /// <p>The identifier of the specified directory. </p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
 }
 impl EnableClientAuthenticationInput {
@@ -11696,11 +11759,14 @@ impl std::fmt::Debug for EnableClientAuthenticationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSsoInput {
     /// <p>The identifier of the directory for which to disable single-sign on.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
     /// <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
+    #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
 }
 impl DisableSsoInput {
@@ -11733,6 +11799,7 @@ impl std::fmt::Debug for DisableSsoInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableRadiusInput {
     /// <p>The identifier of the directory for which to disable MFA.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DisableRadiusInput {
@@ -11754,8 +11821,10 @@ impl std::fmt::Debug for DisableRadiusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LdapsType>,
 }
 impl DisableLdapsInput {
@@ -11782,8 +11851,10 @@ impl std::fmt::Debug for DisableLdapsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableClientAuthenticationInput {
     /// <p>The identifier of the directory </p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
 }
 impl DisableClientAuthenticationInput {
@@ -11810,13 +11881,17 @@ impl std::fmt::Debug for DisableClientAuthenticationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustsInput {
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    #[doc(hidden)]
     pub trust_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeTrustsInput {
@@ -11854,12 +11929,16 @@ impl std::fmt::Debug for DescribeTrustsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsInput {
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
+    #[doc(hidden)]
     pub snapshot_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeSnapshotsInput {
@@ -11896,12 +11975,16 @@ impl std::fmt::Debug for DescribeSnapshotsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSharedDirectoriesInput {
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
+    #[doc(hidden)]
     pub owner_directory_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers of all shared directories in your account. </p>
+    #[doc(hidden)]
     pub shared_directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of shared directories to return in the response object.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeSharedDirectoriesInput {
@@ -11938,10 +12021,13 @@ impl std::fmt::Debug for DescribeSharedDirectoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The status of the directory settings for which to retrieve information.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DirectoryConfigurationStatus>,
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSettingsInput {
@@ -11973,10 +12059,13 @@ impl std::fmt::Debug for DescribeSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegionsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
+    #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegionsInput {
@@ -12008,12 +12097,16 @@ impl std::fmt::Debug for DescribeRegionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLdapsSettingsInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LdapsType>,
     /// <p>The type of next token used for pagination.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the number of items that should be displayed on one page.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeLdapsSettingsInput {
@@ -12050,9 +12143,11 @@ impl std::fmt::Debug for DescribeLdapsSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTopicsInput {
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    #[doc(hidden)]
     pub topic_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeEventTopicsInput {
@@ -12080,12 +12175,16 @@ impl std::fmt::Debug for DescribeEventTopicsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainControllersInput {
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
+    #[doc(hidden)]
     pub domain_controller_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeDomainControllersInput {
@@ -12123,10 +12222,13 @@ impl std::fmt::Debug for DescribeDomainControllersInput {
 pub struct DescribeDirectoriesInput {
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    #[doc(hidden)]
     pub directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeDirectoriesInput {
@@ -12159,8 +12261,10 @@ impl std::fmt::Debug for DescribeDirectoriesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConditionalForwardersInput {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
+    #[doc(hidden)]
     pub remote_domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConditionalForwardersInput {
@@ -12187,12 +12291,16 @@ impl std::fmt::Debug for DescribeConditionalForwardersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientAuthenticationSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl DescribeClientAuthenticationSettingsInput {
@@ -12229,8 +12337,10 @@ impl std::fmt::Debug for DescribeClientAuthenticationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DescribeCertificateInput {
@@ -12257,8 +12367,10 @@ impl std::fmt::Debug for DescribeCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterEventTopicInput {
     /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
+    #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
 }
 impl DeregisterEventTopicInput {
@@ -12285,8 +12397,10 @@ impl std::fmt::Debug for DeregisterEventTopicInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterCertificateInput {
     /// <p>The identifier of the directory.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the certificate.</p>
+    #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DeregisterCertificateInput {
@@ -12313,8 +12427,10 @@ impl std::fmt::Debug for DeregisterCertificateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrustInput {
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
+    #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+    #[doc(hidden)]
     pub delete_associated_conditional_forwarder: bool,
 }
 impl DeleteTrustInput {
@@ -12344,6 +12460,7 @@ impl std::fmt::Debug for DeleteTrustInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotInput {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotInput {
@@ -12365,6 +12482,7 @@ impl std::fmt::Debug for DeleteSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLogSubscriptionInput {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeleteLogSubscriptionInput {
@@ -12386,6 +12504,7 @@ impl std::fmt::Debug for DeleteLogSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryInput {
     /// <p>The identifier of the directory to delete.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryInput {
@@ -12407,8 +12526,10 @@ impl std::fmt::Debug for DeleteDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConditionalForwarderInput {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
+    #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
 }
 impl DeleteConditionalForwarderInput {
@@ -12436,18 +12557,25 @@ impl std::fmt::Debug for DeleteConditionalForwarderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrustInput {
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
+    #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    #[doc(hidden)]
     pub trust_password: std::option::Option<std::string::String>,
     /// <p>The direction of the trust relationship.</p>
+    #[doc(hidden)]
     pub trust_direction: std::option::Option<crate::model::TrustDirection>,
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
+    #[doc(hidden)]
     pub trust_type: std::option::Option<crate::model::TrustType>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    #[doc(hidden)]
     pub conditional_forwarder_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
+    #[doc(hidden)]
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
 }
 impl CreateTrustInput {
@@ -12502,8 +12630,10 @@ impl std::fmt::Debug for CreateTrustInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotInput {
     /// <p>The identifier of the directory of which to take a snapshot.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The descriptive name to apply to the snapshot.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateSnapshotInput {
@@ -12530,19 +12660,26 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMicrosoftAdInput {
     /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+    #[doc(hidden)]
     pub short_name: std::option::Option<std::string::String>,
     /// <p>The password for the default administrative user named <code>Admin</code>.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    #[doc(hidden)]
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
     /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+    #[doc(hidden)]
     pub edition: std::option::Option<crate::model::DirectoryEdition>,
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMicrosoftAdInput {
@@ -12595,8 +12732,10 @@ impl std::fmt::Debug for CreateMicrosoftAdInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLogSubscriptionInput {
     /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
+    #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl CreateLogSubscriptionInput {
@@ -12623,8 +12762,10 @@ impl std::fmt::Debug for CreateLogSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryInput {
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
+    #[doc(hidden)]
     pub short_name: std::option::Option<std::string::String>,
     /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
@@ -12640,14 +12781,19 @@ pub struct CreateDirectoryInput {
     /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>A description for the directory.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The size of the directory.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<crate::model::DirectorySize>,
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
+    #[doc(hidden)]
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
     /// <p>The tags to be assigned to the Simple AD directory.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDirectoryInput {
@@ -12712,10 +12858,13 @@ impl std::fmt::Debug for CreateDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConditionalForwarderInput {
     /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    #[doc(hidden)]
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateConditionalForwarderInput {
@@ -12747,14 +12896,19 @@ impl std::fmt::Debug for CreateConditionalForwarderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputerInput {
     /// <p>The identifier of the directory in which to create the computer account.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the computer account.</p>
+    #[doc(hidden)]
     pub computer_name: std::option::Option<std::string::String>,
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
+    #[doc(hidden)]
     pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
+    #[doc(hidden)]
     pub computer_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl CreateComputerInput {
@@ -12799,9 +12953,11 @@ impl std::fmt::Debug for CreateComputerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasInput {
     /// <p>The identifier of the directory for which to create the alias.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The requested alias.</p>
     /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+    #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAliasInput {
@@ -12829,18 +12985,25 @@ impl std::fmt::Debug for CreateAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectDirectoryInput {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
+    #[doc(hidden)]
     pub short_name: std::option::Option<std::string::String>,
     /// <p>The password for your self-managed user account.</p>
+    #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
     /// <p>A description for the directory.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The size of the directory.</p>
+    #[doc(hidden)]
     pub size: std::option::Option<crate::model::DirectorySize>,
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
+    #[doc(hidden)]
     pub connect_settings: std::option::Option<crate::model::DirectoryConnectSettings>,
     /// <p>The tags to be assigned to AD Connector.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConnectDirectoryInput {
@@ -12892,8 +13055,10 @@ impl std::fmt::Debug for ConnectDirectoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelSchemaExtensionInput {
     /// <p>The identifier of the directory whose schema extension will be canceled.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the schema extension that will be canceled.</p>
+    #[doc(hidden)]
     pub schema_extension_id: std::option::Option<std::string::String>,
 }
 impl CancelSchemaExtensionInput {
@@ -12920,8 +13085,10 @@ impl std::fmt::Debug for CancelSchemaExtensionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceInput {
     /// <p>Identifier (ID) for the directory to which to add the tag.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the directory.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceInput {
@@ -12948,10 +13115,13 @@ impl std::fmt::Debug for AddTagsToResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRegionInput {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
+    #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    #[doc(hidden)]
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
 }
 impl AddRegionInput {
@@ -12983,8 +13153,10 @@ impl std::fmt::Debug for AddRegionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddIpRoutesInput {
     /// <p>Identifier (ID) of the directory to which to add the address block.</p>
+    #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
+    #[doc(hidden)]
     pub ip_routes: std::option::Option<std::vec::Vec<crate::model::IpRoute>>,
     /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
     /// <p>Inbound:</p>
@@ -13013,6 +13185,7 @@ pub struct AddIpRoutesInput {
     /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
+    #[doc(hidden)]
     pub update_security_group_for_directory_controllers: bool,
 }
 impl AddIpRoutesInput {
@@ -13073,6 +13246,7 @@ impl std::fmt::Debug for AddIpRoutesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptSharedDirectoryInput {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
+    #[doc(hidden)]
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
 impl AcceptSharedDirectoryInput {

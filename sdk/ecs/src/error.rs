@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedFeatureException {
@@ -69,6 +70,7 @@ impl UnsupportedFeatureException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskSetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TaskSetNotFoundException {
@@ -133,6 +135,7 @@ impl TaskSetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceNotFoundException {
@@ -197,6 +200,7 @@ impl ServiceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNotActiveException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceNotActiveException {
@@ -261,6 +265,7 @@ impl ServiceNotActiveException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerException {
@@ -325,6 +330,7 @@ impl ServerException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -389,6 +395,7 @@ impl InvalidParameterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterNotFoundException {
@@ -453,6 +460,7 @@ impl ClusterNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClientException {
@@ -517,6 +525,7 @@ impl ClientException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -581,6 +590,7 @@ impl AccessDeniedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformUnknownException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlatformUnknownException {
@@ -645,6 +655,7 @@ impl PlatformUnknownException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformTaskDefinitionIncompatibilityException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PlatformTaskDefinitionIncompatibilityException {
@@ -709,6 +720,7 @@ impl PlatformTaskDefinitionIncompatibilityException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInProgressException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateInProgressException {
@@ -773,6 +785,7 @@ impl UpdateInProgressException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoUpdateAvailableException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoUpdateAvailableException {
@@ -837,6 +850,7 @@ impl NoUpdateAvailableException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingVersionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MissingVersionException {
@@ -901,6 +915,7 @@ impl MissingVersionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -965,6 +980,7 @@ impl ResourceNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BlockedException {
@@ -1029,6 +1045,7 @@ impl BlockedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUseException {
@@ -1093,6 +1110,7 @@ impl ResourceInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetNotFoundException {
@@ -1157,6 +1175,7 @@ impl TargetNotFoundException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttributeLimitExceededException {
@@ -1227,6 +1246,7 @@ impl AttributeLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotConnectedException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TargetNotConnectedException {
@@ -1291,6 +1311,7 @@ impl TargetNotConnectedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterContainsTasksException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterContainsTasksException {
@@ -1355,6 +1376,7 @@ impl ClusterContainsTasksException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterContainsServicesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterContainsServicesException {
@@ -1419,6 +1441,7 @@ impl ClusterContainsServicesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterContainsContainerInstancesException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClusterContainsContainerInstancesException {
@@ -1483,6 +1506,7 @@ impl ClusterContainsContainerInstancesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {

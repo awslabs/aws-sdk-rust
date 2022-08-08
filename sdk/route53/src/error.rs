@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PriorRequestNotComplete {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PriorRequestNotComplete {
@@ -69,6 +70,7 @@ impl PriorRequestNotComplete {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchTrafficPolicyInstance {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchTrafficPolicyInstance {
@@ -133,6 +135,7 @@ impl NoSuchTrafficPolicyInstance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchTrafficPolicy {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchTrafficPolicy {
@@ -197,6 +200,7 @@ impl NoSuchTrafficPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInput {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInput {
@@ -261,6 +265,7 @@ impl InvalidInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingTypes {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictingTypes {
@@ -325,6 +330,7 @@ impl ConflictingTypes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModification {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConcurrentModification {
@@ -389,6 +395,7 @@ impl ConcurrentModification {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchHostedZone {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchHostedZone {
@@ -453,6 +460,7 @@ impl NoSuchHostedZone {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchHealthCheck {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchHealthCheck {
@@ -517,6 +525,7 @@ impl NoSuchHealthCheck {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheckVersionMismatch {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HealthCheckVersionMismatch {
@@ -581,6 +590,7 @@ impl HealthCheckVersionMismatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPaginationToken {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPaginationToken {
@@ -645,6 +655,7 @@ impl InvalidPaginationToken {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -709,6 +720,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDomainName {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDomainName {
@@ -773,6 +785,7 @@ impl InvalidDomainName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchDelegationSet {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchDelegationSet {
@@ -837,6 +850,7 @@ impl NoSuchDelegationSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegationSetNotReusable {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DelegationSetNotReusable {
@@ -901,6 +915,7 @@ impl DelegationSetNotReusable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleVersion {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncompatibleVersion {
@@ -965,6 +980,7 @@ impl IncompatibleVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchCidrCollectionException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchCidrCollectionException {
@@ -1029,6 +1045,7 @@ impl NoSuchCidrCollectionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchCidrLocationException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchCidrLocationException {
@@ -1093,6 +1110,7 @@ impl NoSuchCidrLocationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchQueryLoggingConfig {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchQueryLoggingConfig {
@@ -1157,6 +1175,7 @@ impl NoSuchQueryLoggingConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZoneNotPrivate {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostedZoneNotPrivate {
@@ -1221,6 +1240,7 @@ impl HostedZoneNotPrivate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchGeoLocation {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchGeoLocation {
@@ -1285,6 +1305,7 @@ impl NoSuchGeoLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgument {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArgument {
@@ -1349,6 +1370,7 @@ impl InvalidArgument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchChange {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchChange {
@@ -1413,6 +1435,7 @@ impl NoSuchChange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySigningKeyWithActiveStatusNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeySigningKeyWithActiveStatusNotFound {
@@ -1477,6 +1500,7 @@ impl KeySigningKeyWithActiveStatusNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKmsArn {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKmsArn {
@@ -1541,6 +1565,7 @@ impl InvalidKmsArn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeySigningKeyStatus {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKeySigningKeyStatus {
@@ -1605,6 +1630,7 @@ impl InvalidKeySigningKeyStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZonePartiallyDelegated {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostedZonePartiallyDelegated {
@@ -1669,6 +1695,7 @@ impl HostedZonePartiallyDelegated {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnssecNotFound {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DnssecNotFound {
@@ -1733,6 +1760,7 @@ impl DnssecNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcAssociationNotFound {
     /// <p>The specified VPC or hosted zone weren't found.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VpcAssociationNotFound {
@@ -1797,6 +1825,7 @@ impl VpcAssociationNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastVpcAssociation {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LastVpcAssociation {
@@ -1861,6 +1890,7 @@ impl LastVpcAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidVpcId {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidVpcId {
@@ -1925,6 +1955,7 @@ impl InvalidVpcId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySigningKeyInParentDsRecord {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeySigningKeyInParentDsRecord {
@@ -1992,6 +2023,7 @@ impl KeySigningKeyInParentDsRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcAssociationAuthorizationNotFound {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VpcAssociationAuthorizationNotFound {
@@ -2059,6 +2091,7 @@ impl VpcAssociationAuthorizationNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficPolicyInUse {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrafficPolicyInUse {
@@ -2123,6 +2156,7 @@ impl TrafficPolicyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegationSetInUse {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DelegationSetInUse {
@@ -2187,6 +2221,7 @@ impl DelegationSetInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchKeySigningKey {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchKeySigningKey {
@@ -2251,6 +2286,7 @@ impl NoSuchKeySigningKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSigningStatus {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSigningStatus {
@@ -2315,6 +2351,7 @@ impl InvalidSigningStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZoneNotEmpty {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostedZoneNotEmpty {
@@ -2380,6 +2417,7 @@ impl HostedZoneNotEmpty {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheckInUse {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HealthCheckInUse {
@@ -2444,6 +2482,7 @@ impl HealthCheckInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CidrCollectionInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CidrCollectionInUseException {
@@ -2508,6 +2547,7 @@ impl CidrCollectionInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySigningKeyInUse {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeySigningKeyInUse {
@@ -2572,6 +2612,7 @@ impl KeySigningKeyInUse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyVpcAssociationAuthorizations {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyVpcAssociationAuthorizations {
@@ -2640,6 +2681,7 @@ impl TooManyVpcAssociationAuthorizations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTrafficPolicyVersionsForCurrentPolicy {
@@ -2704,6 +2746,7 @@ impl TooManyTrafficPolicyVersionsForCurrentPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTrafficPolicyDocument {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTrafficPolicyDocument {
@@ -2768,6 +2811,7 @@ impl InvalidTrafficPolicyDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficPolicyInstanceAlreadyExists {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrafficPolicyInstanceAlreadyExists {
@@ -2835,6 +2879,7 @@ impl TrafficPolicyInstanceAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTrafficPolicyInstances {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTrafficPolicyInstances {
@@ -2899,6 +2944,7 @@ impl TooManyTrafficPolicyInstances {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficPolicyAlreadyExists {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrafficPolicyAlreadyExists {
@@ -2966,6 +3012,7 @@ impl TrafficPolicyAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTrafficPolicies {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTrafficPolicies {
@@ -3030,6 +3077,7 @@ impl TooManyTrafficPolicies {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitsExceeded {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitsExceeded {
@@ -3094,6 +3142,7 @@ impl LimitsExceeded {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZoneNotFound {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostedZoneNotFound {
@@ -3158,6 +3207,7 @@ impl HostedZoneNotFound {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegationSetNotAvailable {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DelegationSetNotAvailable {
@@ -3222,6 +3272,7 @@ impl DelegationSetNotAvailable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegationSetAlreadyReusable {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DelegationSetAlreadyReusable {
@@ -3286,6 +3337,7 @@ impl DelegationSetAlreadyReusable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegationSetAlreadyCreated {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DelegationSetAlreadyCreated {
@@ -3350,6 +3402,7 @@ impl DelegationSetAlreadyCreated {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryLoggingConfigAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for QueryLoggingConfigAlreadyExists {
@@ -3414,6 +3467,7 @@ impl QueryLoggingConfigAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchCloudWatchLogsLogGroup {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoSuchCloudWatchLogsLogGroup {
@@ -3484,6 +3538,7 @@ impl NoSuchCloudWatchLogsLogGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCloudWatchLogsResourcePolicy {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientCloudWatchLogsResourcePolicy {
@@ -3548,6 +3603,7 @@ impl InsufficientCloudWatchLogsResourcePolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyKeySigningKeys {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyKeySigningKeys {
@@ -3612,6 +3668,7 @@ impl TooManyKeySigningKeys {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySigningKeyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KeySigningKeyAlreadyExists {
@@ -3676,6 +3733,7 @@ impl KeySigningKeyAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeySigningKeyName {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKeySigningKeyName {
@@ -3744,6 +3802,7 @@ impl InvalidKeySigningKeyName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHostedZones {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyHostedZones {
@@ -3808,6 +3867,7 @@ impl TooManyHostedZones {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZoneAlreadyExists {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostedZoneAlreadyExists {
@@ -3877,6 +3937,7 @@ impl HostedZoneAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingDomainExists {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictingDomainExists {
@@ -3944,6 +4005,7 @@ impl ConflictingDomainExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyHealthChecks {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyHealthChecks {
@@ -4012,6 +4074,7 @@ impl TooManyHealthChecks {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheckAlreadyExists {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HealthCheckAlreadyExists {
@@ -4076,6 +4139,7 @@ impl HealthCheckAlreadyExists {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CidrCollectionAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CidrCollectionAlreadyExistsException {
@@ -4140,8 +4204,10 @@ impl CidrCollectionAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidChangeBatch {
     /// <p></p>
+    #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidChangeBatch {
@@ -4234,6 +4300,7 @@ impl InvalidChangeBatch {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CidrCollectionVersionMismatchException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CidrCollectionVersionMismatchException {
@@ -4298,6 +4365,7 @@ impl CidrCollectionVersionMismatchException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CidrBlockInUseException {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CidrBlockInUseException {
@@ -4362,6 +4430,7 @@ impl CidrBlockInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicZoneVpcAssociation {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PublicZoneVpcAssociation {
@@ -4426,6 +4495,7 @@ impl PublicZoneVpcAssociation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
     /// <p></p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {

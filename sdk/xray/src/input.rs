@@ -4438,6 +4438,7 @@ impl UpdateSamplingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSamplingRuleInput {
     /// <p>The rule and fields to change.</p>
+    #[doc(hidden)]
     pub sampling_rule_update: std::option::Option<crate::model::SamplingRuleUpdate>,
 }
 impl UpdateSamplingRuleInput {
@@ -4459,16 +4460,20 @@ impl std::fmt::Debug for UpdateSamplingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupInput {
     /// <p>The case-sensitive name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN that was generated upon creation.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The updated filter expression defining criteria by which to group traces.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
 impl UpdateGroupInput {
@@ -4511,8 +4516,10 @@ impl std::fmt::Debug for UpdateGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
+    #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -4539,6 +4546,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -4550,6 +4558,7 @@ pub struct TagResourceInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4585,6 +4594,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTraceSegmentsInput {
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
+    #[doc(hidden)]
     pub trace_segment_documents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutTraceSegmentsInput {
@@ -4606,12 +4616,16 @@ impl std::fmt::Debug for PutTraceSegmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTelemetryRecordsInput {
     /// <p></p>
+    #[doc(hidden)]
     pub telemetry_records: std::option::Option<std::vec::Vec<crate::model::TelemetryRecord>>,
     /// <p></p>
+    #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PutTelemetryRecordsInput {
@@ -4654,8 +4668,10 @@ pub struct PutEncryptionConfigInput {
     /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
     /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
+    #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EncryptionType>,
 }
 impl PutEncryptionConfigInput {
@@ -4688,8 +4704,10 @@ impl std::fmt::Debug for PutEncryptionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -4716,18 +4734,25 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTraceSummariesInput {
     /// <p>The start of the time frame for which to retrieve traces.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which to retrieve traces.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    #[doc(hidden)]
     pub time_range_type: std::option::Option<crate::model::TimeRangeType>,
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
+    #[doc(hidden)]
     pub sampling: std::option::Option<bool>,
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
+    #[doc(hidden)]
     pub sampling_strategy: std::option::Option<crate::model::SamplingStrategy>,
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTraceSummariesInput {
@@ -4779,8 +4804,10 @@ impl std::fmt::Debug for GetTraceSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTraceGraphInput {
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
+    #[doc(hidden)]
     pub trace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTraceGraphInput {
@@ -4807,20 +4834,28 @@ impl std::fmt::Debug for GetTraceGraphInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTimeSeriesServiceStatisticsInput {
     /// <p>The start of the time frame for which to aggregate statistics.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which to aggregate statistics.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    #[doc(hidden)]
     pub entity_selector_expression: std::option::Option<std::string::String>,
     /// <p>Aggregation period in seconds.</p>
+    #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
+    #[doc(hidden)]
     pub forecast_statistics: std::option::Option<bool>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTimeSeriesServiceStatisticsInput {
@@ -4880,14 +4915,19 @@ impl std::fmt::Debug for GetTimeSeriesServiceStatisticsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceGraphInput {
     /// <p>The start of the time frame for which to generate a graph.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the timeframe for which to generate a graph.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of a group based on which you want to generate a graph.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetServiceGraphInput {
@@ -4929,6 +4969,7 @@ impl std::fmt::Debug for GetServiceGraphInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
+    #[doc(hidden)]
     pub sampling_statistics_documents:
         std::option::Option<std::vec::Vec<crate::model::SamplingStatisticsDocument>>,
 }
@@ -4956,6 +4997,7 @@ impl std::fmt::Debug for GetSamplingTargetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingStatisticSummariesInput {
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingStatisticSummariesInput {
@@ -4977,6 +5019,7 @@ impl std::fmt::Debug for GetSamplingStatisticSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingRulesInput {
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingRulesInput {
@@ -4998,18 +5041,25 @@ impl std::fmt::Debug for GetSamplingRulesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSummariesInput {
     /// <p>The list of insight states. </p>
+    #[doc(hidden)]
     pub states: std::option::Option<std::vec::Vec<crate::model::InsightState>>,
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to display.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightSummariesInput {
@@ -5061,12 +5111,16 @@ impl std::fmt::Debug for GetInsightSummariesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightImpactGraphInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightImpactGraphInput {
@@ -5103,10 +5157,13 @@ impl std::fmt::Debug for GetInsightImpactGraphInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightEventsInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>Used to retrieve at most the specified value of events.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightEventsInput {
@@ -5138,6 +5195,7 @@ impl std::fmt::Debug for GetInsightEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
 }
 impl GetInsightInput {
@@ -5159,6 +5217,7 @@ impl std::fmt::Debug for GetInsightInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupsInput {
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetGroupsInput {
@@ -5180,8 +5239,10 @@ impl std::fmt::Debug for GetGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupInput {
     /// <p>The case-sensitive name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the group that was generated on creation.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl GetGroupInput {
@@ -5219,8 +5280,10 @@ impl std::fmt::Debug for GetEncryptionConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSamplingRuleInput {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSamplingRuleInput {
@@ -5247,8 +5310,10 @@ impl std::fmt::Debug for DeleteSamplingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
     /// <p>The case-sensitive name of the group.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the group that was generated on creation.</p>
+    #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGroupInput {
@@ -5275,6 +5340,7 @@ impl std::fmt::Debug for DeleteGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSamplingRuleInput {
     /// <p>The rule definition.</p>
+    #[doc(hidden)]
     pub sampling_rule: std::option::Option<crate::model::SamplingRule>,
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -5286,6 +5352,7 @@ pub struct CreateSamplingRuleInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateSamplingRuleInput {
@@ -5321,14 +5388,17 @@ impl std::fmt::Debug for CreateSamplingRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
+    #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The filter expression defining criteria by which to group traces.</p>
+    #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
     /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -5340,6 +5410,7 @@ pub struct CreateGroupInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGroupInput {
@@ -5391,8 +5462,10 @@ impl std::fmt::Debug for CreateGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetTracesInput {
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
+    #[doc(hidden)]
     pub trace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetTracesInput {

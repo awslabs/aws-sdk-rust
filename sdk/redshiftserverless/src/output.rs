@@ -4,8 +4,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkgroupsOutput {
     /// <p> If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The returned array of workgroups.</p>
+    #[doc(hidden)]
     pub workgroups: std::option::Option<std::vec::Vec<crate::model::Workgroup>>,
 }
 impl ListWorkgroupsOutput {
@@ -86,6 +88,7 @@ impl ListWorkgroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkgroupOutput {
     /// <p>The created workgroup object.</p>
+    #[doc(hidden)]
     pub workgroup: std::option::Option<crate::model::Workgroup>,
 }
 impl CreateWorkgroupOutput {
@@ -143,6 +146,7 @@ impl CreateWorkgroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkgroupOutput {
     /// <p>The deleted workgroup object.</p>
+    #[doc(hidden)]
     pub workgroup: std::option::Option<crate::model::Workgroup>,
 }
 impl DeleteWorkgroupOutput {
@@ -200,6 +204,7 @@ impl DeleteWorkgroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkgroupOutput {
     /// <p>The updated workgroup object.</p>
+    #[doc(hidden)]
     pub workgroup: std::option::Option<crate::model::Workgroup>,
 }
 impl UpdateWorkgroupOutput {
@@ -257,6 +262,7 @@ impl UpdateWorkgroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkgroupOutput {
     /// <p>The returned workgroup object.</p>
+    #[doc(hidden)]
     pub workgroup: std::option::Option<crate::model::Workgroup>,
 }
 impl GetWorkgroupOutput {
@@ -314,6 +320,7 @@ impl GetWorkgroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUsageLimitOutput {
     /// <p>The updated usage limit object.</p>
+    #[doc(hidden)]
     pub usage_limit: std::option::Option<crate::model::UsageLimit>,
 }
 impl UpdateUsageLimitOutput {
@@ -371,8 +378,10 @@ impl UpdateUsageLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsageLimitsOutput {
     /// <p>An array of returned usage limit objects.</p>
+    #[doc(hidden)]
     pub usage_limits: std::option::Option<std::vec::Vec<crate::model::UsageLimit>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsageLimitsOutput {
@@ -453,6 +462,7 @@ impl ListUsageLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageLimitOutput {
     /// <p>The returned usage limit object.</p>
+    #[doc(hidden)]
     pub usage_limit: std::option::Option<crate::model::UsageLimit>,
 }
 impl GetUsageLimitOutput {
@@ -510,6 +520,7 @@ impl GetUsageLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsageLimitOutput {
     /// <p>The deleted usage limit object.</p>
+    #[doc(hidden)]
     pub usage_limit: std::option::Option<crate::model::UsageLimit>,
 }
 impl DeleteUsageLimitOutput {
@@ -567,6 +578,7 @@ impl DeleteUsageLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageLimitOutput {
     /// <p>The returned usage limit object.</p>
+    #[doc(hidden)]
     pub usage_limit: std::option::Option<crate::model::UsageLimit>,
 }
 impl CreateUsageLimitOutput {
@@ -624,6 +636,7 @@ impl CreateUsageLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSnapshotOutput {
     /// <p>The updated snapshot object.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl UpdateSnapshotOutput {
@@ -678,10 +691,13 @@ impl UpdateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromSnapshotOutput {
     /// <p>The name of the snapshot used to restore the namespace.</p>
+    #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
+    #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A collection of database objects and users.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl RestoreFromSnapshotOutput {
@@ -779,8 +795,10 @@ impl RestoreFromSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotsOutput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>All of the returned snapshot objects.</p>
+    #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl ListSnapshotsOutput {
@@ -861,6 +879,7 @@ impl ListSnapshotsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotOutput {
     /// <p>The returned snapshot object.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl GetSnapshotOutput {
@@ -915,6 +934,7 @@ impl GetSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSnapshotOutput {
     /// <p>The deleted snapshot object.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl DeleteSnapshotOutput {
@@ -969,6 +989,7 @@ impl DeleteSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
     /// <p>The created snapshot object.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateSnapshotOutput {
@@ -1023,8 +1044,10 @@ impl CreateSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreFromRecoveryPointOutput {
     /// <p>The unique identifier of the recovery point used for the restore.</p>
+    #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
     /// <p>The namespace that data was restored into.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl RestoreFromRecoveryPointOutput {
@@ -1102,8 +1125,10 @@ impl RestoreFromRecoveryPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsOutput {
     /// <p>The returned recovery point objects.</p>
+    #[doc(hidden)]
     pub recovery_points: std::option::Option<std::vec::Vec<crate::model::RecoveryPoint>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecoveryPointsOutput {
@@ -1184,6 +1209,7 @@ impl ListRecoveryPointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryPointOutput {
     /// <p>The returned recovery point object.</p>
+    #[doc(hidden)]
     pub recovery_point: std::option::Option<crate::model::RecoveryPoint>,
 }
 impl GetRecoveryPointOutput {
@@ -1241,6 +1267,7 @@ impl GetRecoveryPointOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConvertRecoveryPointToSnapshotOutput {
     /// <p>The snapshot converted from the recovery point.</p>
+    #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl ConvertRecoveryPointToSnapshotOutput {
@@ -1295,8 +1322,10 @@ impl ConvertRecoveryPointToSnapshotOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of returned namespaces.</p>
+    #[doc(hidden)]
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::Namespace>>,
 }
 impl ListNamespacesOutput {
@@ -1377,6 +1406,7 @@ impl ListNamespacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamespaceOutput {
     /// <p>The created namespace object.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl CreateNamespaceOutput {
@@ -1434,6 +1464,7 @@ impl CreateNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceOutput {
     /// <p>The deleted namespace object.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl DeleteNamespaceOutput {
@@ -1491,6 +1522,7 @@ impl DeleteNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNamespaceOutput {
     /// <p>A list of tag instances.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl UpdateNamespaceOutput {
@@ -1548,6 +1580,7 @@ impl UpdateNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamespaceOutput {
     /// <p>The returned namespace object.</p>
+    #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::Namespace>,
 }
 impl GetNamespaceOutput {
@@ -1605,6 +1638,7 @@ impl GetNamespaceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointAccessOutput {
     /// <p>The updated VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::EndpointAccess>,
 }
 impl UpdateEndpointAccessOutput {
@@ -1662,8 +1696,10 @@ impl UpdateEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointAccessOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The returned VPC endpoints.</p>
+    #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::EndpointAccess>>,
 }
 impl ListEndpointAccessOutput {
@@ -1744,6 +1780,7 @@ impl ListEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEndpointAccessOutput {
     /// <p>The returned VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::EndpointAccess>,
 }
 impl GetEndpointAccessOutput {
@@ -1801,6 +1838,7 @@ impl GetEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointAccessOutput {
     /// <p>The deleted VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::EndpointAccess>,
 }
 impl DeleteEndpointAccessOutput {
@@ -1858,6 +1896,7 @@ impl DeleteEndpointAccessOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointAccessOutput {
     /// <p>The created VPC endpoint.</p>
+    #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::EndpointAccess>,
 }
 impl CreateEndpointAccessOutput {
@@ -1975,6 +2014,7 @@ impl TagResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
     /// <p>The policy that was created or updated.</p>
+    #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl PutResourcePolicyOutput {
@@ -2032,6 +2072,7 @@ impl PutResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A map of the key-value pairs assigned to the resource.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -2093,6 +2134,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutput {
     /// <p>The returned resource policy.</p>
+    #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl GetResourcePolicyOutput {
@@ -2150,12 +2192,16 @@ impl GetResourcePolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
+    #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
+    #[doc(hidden)]
     pub db_password: std::option::Option<std::string::String>,
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
+    #[doc(hidden)]
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
+    #[doc(hidden)]
     pub next_refresh_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCredentialsOutput {

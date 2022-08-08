@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The field name for which validation failed.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the error.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -146,19 +148,26 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkloadShare {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub shared_by: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The status of a workload share.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
 }
 impl WorkloadShare {
@@ -467,32 +476,45 @@ impl AsRef<str> for PermissionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
+    #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The environment for the workload.</p>
+    #[doc(hidden)]
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    #[doc(hidden)]
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    #[doc(hidden)]
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
+    #[doc(hidden)]
     pub architectural_design: std::option::Option<std::string::String>,
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+    #[doc(hidden)]
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub review_restriction_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
+    #[doc(hidden)]
     pub is_review_owner_update_acknowledged: bool,
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
@@ -525,24 +547,34 @@ pub struct Workload {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub industry_type: std::option::Option<std::string::String>,
     /// <p>The industry for the workload.</p>
+    #[doc(hidden)]
     pub industry: std::option::Option<std::string::String>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>The improvement status for a workload.</p>
+    #[doc(hidden)]
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
+    #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the share invitation.</p>
+    #[doc(hidden)]
     pub share_invitation_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the workload.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1377,17 +1409,22 @@ impl AsRef<str> for WorkloadEnvironment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
+    #[doc(hidden)]
     pub share_invitation_id: std::option::Option<std::string::String>,
     /// <p>The resource type of the share invitation.</p>
+    #[doc(hidden)]
     pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
 }
 impl ShareInvitation {
@@ -1638,25 +1675,35 @@ pub struct LensReview {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The version of the lens.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
+    #[doc(hidden)]
     pub lens_name: std::option::Option<std::string::String>,
     /// <p>The status of the lens.</p>
+    #[doc(hidden)]
     pub lens_status: std::option::Option<crate::model::LensStatus>,
     /// <p>List of pillar review summaries of lens review in a workload.</p>
+    #[doc(hidden)]
     pub pillar_review_summaries:
         std::option::Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
+    #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     /// <p>The token to use to retrieve the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LensReview {
@@ -1904,12 +1951,16 @@ impl LensReview {
 pub struct PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The name of the pillar.</p>
+    #[doc(hidden)]
     pub pillar_name: std::option::Option<std::string::String>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
+    #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
 }
 impl PillarReviewSummary {
@@ -2158,35 +2209,49 @@ impl AsRef<str> for OrganizationSharingStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Answer {
     /// <p>The ID of the question.</p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
+    #[doc(hidden)]
     pub question_title: std::option::Option<std::string::String>,
     /// <p>The description of the question.</p>
+    #[doc(hidden)]
     pub question_description: std::option::Option<std::string::String>,
     /// <p>The improvement plan URL for a question.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    #[doc(hidden)]
     pub improvement_plan_url: std::option::Option<std::string::String>,
     /// <p>The helpful resource URL for a question.</p>
+    #[doc(hidden)]
     pub helpful_resource_url: std::option::Option<std::string::String>,
     /// <p>The helpful resource text to be displayed.</p>
+    #[doc(hidden)]
     pub helpful_resource_display_text: std::option::Option<std::string::String>,
     /// <p>List of choices available for a question.</p>
+    #[doc(hidden)]
     pub choices: std::option::Option<std::vec::Vec<crate::model::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
+    #[doc(hidden)]
     pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
+    #[doc(hidden)]
     pub choice_answers: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswer>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
+    #[doc(hidden)]
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    #[doc(hidden)]
     pub risk: std::option::Option<crate::model::Risk>,
     /// <p>The notes associated with the workload.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
     /// <p>The reason why the question is not applicable to your workload.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::AnswerReason>,
 }
 impl Answer {
@@ -2595,12 +2660,16 @@ impl AsRef<str> for AnswerReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChoiceAnswer {
     /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
     pub choice_id: std::option::Option<std::string::String>,
     /// <p>The status of a choice.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChoiceStatus>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ChoiceReason>,
     /// <p>The notes associated with a choice.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
 }
 impl ChoiceAnswer {
@@ -2844,16 +2913,22 @@ impl AsRef<str> for ChoiceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Choice {
     /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
     pub choice_id: std::option::Option<std::string::String>,
     /// <p>The title of a choice.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The description of a choice.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The choice level helpful resource.</p>
+    #[doc(hidden)]
     pub helpful_resource: std::option::Option<crate::model::ChoiceContent>,
     /// <p>The choice level improvement plan.</p>
+    #[doc(hidden)]
     pub improvement_plan: std::option::Option<crate::model::ChoiceContent>,
     /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    #[doc(hidden)]
     pub additional_resources: std::option::Option<std::vec::Vec<crate::model::AdditionalResources>>,
 }
 impl Choice {
@@ -3011,8 +3086,10 @@ impl Choice {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalResources {
     /// <p>Type of additional resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AdditionalResourceType>,
     /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::vec::Vec<crate::model::ChoiceContent>>,
 }
 impl AdditionalResources {
@@ -3096,8 +3173,10 @@ impl AdditionalResources {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChoiceContent {
     /// <p>The display text for the choice content.</p>
+    #[doc(hidden)]
     pub display_text: std::option::Option<std::string::String>,
     /// <p>The URL for the choice content.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl ChoiceContent {
@@ -3224,10 +3303,13 @@ impl AsRef<str> for AdditionalResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChoiceUpdate {
     /// <p>The status of a choice.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChoiceStatus>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ChoiceReason>,
     /// <p>The notes associated with a choice.</p>
+    #[doc(hidden)]
     pub notes: std::option::Option<std::string::String>,
 }
 impl ChoiceUpdate {
@@ -3322,14 +3404,19 @@ impl ChoiceUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The status of a workload share.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
     /// <p>Optional message to compliment the Status field.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl WorkloadShareSummary {
@@ -3458,21 +3545,29 @@ impl WorkloadShareSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkloadSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
+    #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
+    #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     /// <p>The improvement status for a workload.</p>
+    #[doc(hidden)]
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
 }
 impl WorkloadSummary {
@@ -3684,23 +3779,32 @@ impl WorkloadSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
+    #[doc(hidden)]
     pub share_invitation_id: std::option::Option<std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub shared_by: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
+    #[doc(hidden)]
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The resource type of the share invitation.</p>
+    #[doc(hidden)]
     pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
+    #[doc(hidden)]
     pub lens_name: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
 }
 impl ShareInvitationSummary {
@@ -3906,8 +4010,10 @@ impl ShareInvitationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationSummary {
     /// <p>The type of notification.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NotificationType>,
     /// <p>Summary of lens upgrade.</p>
+    #[doc(hidden)]
     pub lens_upgrade_summary: std::option::Option<crate::model::LensUpgradeSummary>,
 }
 impl NotificationSummary {
@@ -3985,20 +4091,26 @@ impl NotificationSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensUpgradeSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the lens.</p>
+    #[doc(hidden)]
     pub current_lens_version: std::option::Option<std::string::String>,
     /// <p>The latest version of the lens.</p>
+    #[doc(hidden)]
     pub latest_lens_version: std::option::Option<std::string::String>,
 }
 impl LensUpgradeSummary {
@@ -4215,13 +4327,17 @@ impl AsRef<str> for NotificationType {
 pub struct MilestoneSummary {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
+    #[doc(hidden)]
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub recorded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A workload summary return object.</p>
+    #[doc(hidden)]
     pub workload_summary: std::option::Option<crate::model::WorkloadSummary>,
 }
 impl MilestoneSummary {
@@ -4342,12 +4458,16 @@ impl MilestoneSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensShareSummary {
     /// <p>The ID associated with the workload share.</p>
+    #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>The status of a workload share.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ShareStatus>,
     /// <p>Optional message to compliment the Status field.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
 }
 impl LensShareSummary {
@@ -4459,18 +4579,25 @@ pub struct LensReviewSummary {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The version of the lens.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
+    #[doc(hidden)]
     pub lens_name: std::option::Option<std::string::String>,
     /// <p>The status of the lens.</p>
+    #[doc(hidden)]
     pub lens_status: std::option::Option<crate::model::LensStatus>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
+    #[doc(hidden)]
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
 }
 impl LensReviewSummary {
@@ -4654,18 +4781,24 @@ impl LensReviewSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImprovementSummary {
     /// <p>The ID of the question.</p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
+    #[doc(hidden)]
     pub question_title: std::option::Option<std::string::String>,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    #[doc(hidden)]
     pub risk: std::option::Option<crate::model::Risk>,
     /// <p>The improvement plan URL for a question.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    #[doc(hidden)]
     pub improvement_plan_url: std::option::Option<std::string::String>,
     /// <p>The improvement plan details.</p>
+    #[doc(hidden)]
     pub improvement_plans: std::option::Option<std::vec::Vec<crate::model::ChoiceImprovementPlan>>,
 }
 impl ImprovementSummary {
@@ -4827,11 +4960,14 @@ impl ImprovementSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChoiceImprovementPlan {
     /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
     pub choice_id: std::option::Option<std::string::String>,
     /// <p>The display text for the improvement plan.</p>
+    #[doc(hidden)]
     pub display_text: std::option::Option<std::string::String>,
     /// <p>The improvement plan URL for a question.</p>
     /// <p>This value is only available if the question has been answered.</p>
+    #[doc(hidden)]
     pub improvement_plan_url: std::option::Option<std::string::String>,
 }
 impl ChoiceImprovementPlan {
@@ -4926,27 +5062,37 @@ impl ChoiceImprovementPlan {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensSummary {
     /// <p>The ARN of the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
+    #[doc(hidden)]
     pub lens_name: std::option::Option<std::string::String>,
     /// <p>The type of the lens.</p>
+    #[doc(hidden)]
     pub lens_type: std::option::Option<crate::model::LensType>,
     /// <p>The description of the lens.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of the lens.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The status of the lens.</p>
+    #[doc(hidden)]
     pub lens_status: std::option::Option<crate::model::LensStatus>,
 }
 impl LensSummary {
@@ -5290,25 +5436,34 @@ impl AsRef<str> for LensStatusType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnswerSummary {
     /// <p>The ID of the question.</p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
+    #[doc(hidden)]
     pub question_title: std::option::Option<std::string::String>,
     /// <p>List of choices available for a question.</p>
+    #[doc(hidden)]
     pub choices: std::option::Option<std::vec::Vec<crate::model::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
+    #[doc(hidden)]
     pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
+    #[doc(hidden)]
     pub choice_answer_summaries:
         std::option::Option<std::vec::Vec<crate::model::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
+    #[doc(hidden)]
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    #[doc(hidden)]
     pub risk: std::option::Option<crate::model::Risk>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::AnswerReason>,
 }
 impl AnswerSummary {
@@ -5541,10 +5696,13 @@ impl AnswerSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChoiceAnswerSummary {
     /// <p>The ID of a choice.</p>
+    #[doc(hidden)]
     pub choice_id: std::option::Option<std::string::String>,
     /// <p>The status of a choice.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChoiceStatus>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ChoiceReason>,
 }
 impl ChoiceAnswerSummary {
@@ -5699,13 +5857,17 @@ impl AsRef<str> for ImportLensStatus {
 pub struct Milestone {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
+    #[doc(hidden)]
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
+    #[doc(hidden)]
     pub recorded_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A workload return object.</p>
+    #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
 }
 impl Milestone {
@@ -5823,6 +5985,7 @@ impl Milestone {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
+    #[doc(hidden)]
     pub pillar_differences: std::option::Option<std::vec::Vec<crate::model::PillarDifference>>,
 }
 impl VersionDifferences {
@@ -5888,12 +6051,16 @@ impl VersionDifferences {
 pub struct PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    #[doc(hidden)]
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The name of the pillar.</p>
+    #[doc(hidden)]
     pub pillar_name: std::option::Option<std::string::String>,
     /// <p>Indicates the type of change to the pillar.</p>
+    #[doc(hidden)]
     pub difference_status: std::option::Option<crate::model::DifferenceStatus>,
     /// <p>List of question differences.</p>
+    #[doc(hidden)]
     pub question_differences: std::option::Option<std::vec::Vec<crate::model::QuestionDifference>>,
 }
 impl PillarDifference {
@@ -6015,10 +6182,13 @@ impl PillarDifference {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuestionDifference {
     /// <p>The ID of the question.</p>
+    #[doc(hidden)]
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
+    #[doc(hidden)]
     pub question_title: std::option::Option<std::string::String>,
     /// <p>Indicates the type of change to the question.</p>
+    #[doc(hidden)]
     pub difference_status: std::option::Option<crate::model::DifferenceStatus>,
 }
 impl QuestionDifference {
@@ -6175,11 +6345,14 @@ pub struct LensReviewReport {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
+    #[doc(hidden)]
     pub base64_string: std::option::Option<std::string::String>,
 }
 impl LensReviewReport {
@@ -6283,18 +6456,25 @@ impl LensReviewReport {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Lens {
     /// <p>The ARN of a lens.</p>
+    #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The version of a lens.</p>
+    #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the lens.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the lens.</p>
+    #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the share invitation.</p>
+    #[doc(hidden)]
     pub share_invitation_id: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the lens.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

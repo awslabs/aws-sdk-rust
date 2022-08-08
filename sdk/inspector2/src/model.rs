@@ -5,8 +5,10 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationExceptionField {
     /// <p>The name of the validation exception.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The validation exception message.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationExceptionField {
@@ -137,8 +139,10 @@ impl AsRef<str> for ValidationExceptionReason {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    #[doc(hidden)]
     pub ec2: std::option::Option<bool>,
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    #[doc(hidden)]
     pub ecr: std::option::Option<bool>,
 }
 impl AutoEnable {
@@ -210,66 +214,97 @@ impl AutoEnable {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
+    #[doc(hidden)]
     pub finding_arn: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the finding types used to filter findings.</p>
+    #[doc(hidden)]
     pub finding_type: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the severity used to filter findings.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
+    #[doc(hidden)]
     pub first_observed_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
+    #[doc(hidden)]
     pub last_observed_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
     /// <p>Details on the finding status types used to filter findings.</p>
+    #[doc(hidden)]
     pub finding_status: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the finding title used to filter findings.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The Amazon Inspector score to filter on.</p>
+    #[doc(hidden)]
     pub inspector_score: std::option::Option<std::vec::Vec<crate::model::NumberFilter>>,
     /// <p>Details on the resource types used to filter findings.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the resource IDs used to filter findings.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the resource tags used to filter findings.</p>
+    #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
+    #[doc(hidden)]
     pub ec2_instance_image_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
+    #[doc(hidden)]
     pub ec2_instance_vpc_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
+    #[doc(hidden)]
     pub ec2_instance_subnet_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
+    #[doc(hidden)]
     pub ecr_image_pushed_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
+    #[doc(hidden)]
     pub ecr_image_architecture: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
+    #[doc(hidden)]
     pub ecr_image_registry: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
+    #[doc(hidden)]
     pub ecr_image_repository_name: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The tags attached to the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub ecr_image_tags: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
+    #[doc(hidden)]
     pub ecr_image_hash: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the port ranges used to filter findings.</p>
+    #[doc(hidden)]
     pub port_range: std::option::Option<std::vec::Vec<crate::model::PortRangeFilter>>,
     /// <p>Details on the ingress source addresses used to filter findings.</p>
+    #[doc(hidden)]
     pub network_protocol: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the component IDs used to filter findings.</p>
+    #[doc(hidden)]
     pub component_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details of the component types used to filter findings.</p>
+    #[doc(hidden)]
     pub component_type: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the vulnerability ID used to filter findings.</p>
+    #[doc(hidden)]
     pub vulnerability_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the vulnerability type used to filter findings.</p>
+    #[doc(hidden)]
     pub vulnerability_source: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the vendor severity used to filter findings.</p>
+    #[doc(hidden)]
     pub vendor_severity: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>Details on the vulnerable packages used to filter findings.</p>
+    #[doc(hidden)]
     pub vulnerable_packages: std::option::Option<std::vec::Vec<crate::model::PackageFilter>>,
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
+    #[doc(hidden)]
     pub related_vulnerabilities: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
 }
 impl FilterCriteria {
@@ -1123,8 +1158,10 @@ impl FilterCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StringFilter {
     /// <p>The operator to use when comparing values in the filter</p>
+    #[doc(hidden)]
     pub comparison: std::option::Option<crate::model::StringComparison>,
     /// <p>The value to filter on.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl StringFilter {
@@ -1258,16 +1295,22 @@ impl AsRef<str> for StringComparison {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageFilter {
     /// <p>An object that contains details on the name of the package to filter on.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<crate::model::StringFilter>,
     /// <p>The package version to filter on.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<crate::model::StringFilter>,
     /// <p>An object that contains details on the package epoch to filter on.</p>
+    #[doc(hidden)]
     pub epoch: std::option::Option<crate::model::NumberFilter>,
     /// <p>An object that contains details on the package release to filter on.</p>
+    #[doc(hidden)]
     pub release: std::option::Option<crate::model::StringFilter>,
     /// <p>An object that contains details on the package architecture type to filter on.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<crate::model::StringFilter>,
     /// <p>An object that contains details on the source layer hash to filter on.</p>
+    #[doc(hidden)]
     pub source_layer_hash: std::option::Option<crate::model::StringFilter>,
 }
 impl PackageFilter {
@@ -1419,8 +1462,10 @@ impl PackageFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NumberFilter {
     /// <p>The highest number to be included in the filter.</p>
+    #[doc(hidden)]
     pub upper_inclusive: std::option::Option<f64>,
     /// <p>The lowest number to be included in the filter.</p>
+    #[doc(hidden)]
     pub lower_inclusive: std::option::Option<f64>,
 }
 impl NumberFilter {
@@ -1492,8 +1537,10 @@ impl NumberFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortRangeFilter {
     /// <p>The port number the port range begins at.</p>
+    #[doc(hidden)]
     pub begin_inclusive: std::option::Option<i32>,
     /// <p>The port number the port range ends at.</p>
+    #[doc(hidden)]
     pub end_inclusive: std::option::Option<i32>,
 }
 impl PortRangeFilter {
@@ -1565,8 +1612,10 @@ impl PortRangeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateFilter {
     /// <p>A timestamp representing the start of the time period filtered on.</p>
+    #[doc(hidden)]
     pub start_inclusive: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp representing the end of the time period filtered on.</p>
+    #[doc(hidden)]
     pub end_inclusive: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DateFilter {
@@ -1644,10 +1693,13 @@ impl DateFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MapFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
+    #[doc(hidden)]
     pub comparison: std::option::Option<crate::model::MapComparison>,
     /// <p>The tag key used in the filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value used in the filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MapFilter {
@@ -1845,6 +1897,7 @@ impl AsRef<str> for FilterAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    #[doc(hidden)]
     pub rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
 }
 impl EcrConfiguration {
@@ -1961,8 +2014,10 @@ impl AsRef<str> for EcrRescanDuration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageTotal {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object representing the total usage for an account.</p>
+    #[doc(hidden)]
     pub usage: std::option::Option<std::vec::Vec<crate::model::Usage>>,
 }
 impl UsageTotal {
@@ -2043,12 +2098,16 @@ impl UsageTotal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Usage {
     /// <p>The type scan.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UsageType>,
     /// <p>The total of usage.</p>
+    #[doc(hidden)]
     pub total: f64,
     /// <p>The estimated monthly cost of Amazon Inspector.</p>
+    #[doc(hidden)]
     pub estimated_monthly_cost: f64,
     /// <p>The currency type used when calculating usage data.</p>
+    #[doc(hidden)]
     pub currency: std::option::Option<crate::model::Currency>,
 }
 impl Usage {
@@ -2264,12 +2323,16 @@ impl AsRef<str> for UsageType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status of the member account.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
+    #[doc(hidden)]
     pub delegated_admin_account_id: std::option::Option<std::string::String>,
     /// <p>A timestamp showing when the status of this member was last updated.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
@@ -2499,36 +2562,52 @@ impl AsRef<str> for RelationshipStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Finding {
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
+    #[doc(hidden)]
     pub finding_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the finding.</p>
+    #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The type of the finding.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FindingType>,
     /// <p>The description of the finding.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The title of the finding.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
+    #[doc(hidden)]
     pub remediation: std::option::Option<crate::model::Remediation>,
     /// <p>The severity of the finding.</p>
+    #[doc(hidden)]
     pub severity: std::option::Option<crate::model::Severity>,
     /// <p>The date and time that the finding was first observed.</p>
+    #[doc(hidden)]
     pub first_observed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the finding was last observed.</p>
+    #[doc(hidden)]
     pub last_observed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the finding was last updated at.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the finding.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FindingStatus>,
     /// <p>Contains information on the resources involved in a finding.</p>
+    #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>The Amazon Inspector score given to the finding.</p>
+    #[doc(hidden)]
     pub inspector_score: std::option::Option<f64>,
     /// <p>An object that contains details of the Amazon Inspector score.</p>
+    #[doc(hidden)]
     pub inspector_score_details: std::option::Option<crate::model::InspectorScoreDetails>,
     /// <p>An object that contains the details of a network reachability finding.</p>
+    #[doc(hidden)]
     pub network_reachability_details: std::option::Option<crate::model::NetworkReachabilityDetails>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
+    #[doc(hidden)]
     pub package_vulnerability_details:
         std::option::Option<crate::model::PackageVulnerabilityDetails>,
 }
@@ -2899,24 +2978,34 @@ impl Finding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVulnerabilityDetails {
     /// <p>The ID given to this vulnerability.</p>
+    #[doc(hidden)]
     pub vulnerability_id: std::option::Option<std::string::String>,
     /// <p>The packages impacted by this vulnerability.</p>
+    #[doc(hidden)]
     pub vulnerable_packages: std::option::Option<std::vec::Vec<crate::model::VulnerablePackage>>,
     /// <p>The source of the vulnerability information.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>An object that contains details about the CVSS score of a finding.</p>
+    #[doc(hidden)]
     pub cvss: std::option::Option<std::vec::Vec<crate::model::CvssScore>>,
     /// <p>One or more vulnerabilities related to the one identified in this finding.</p>
+    #[doc(hidden)]
     pub related_vulnerabilities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A URL to the source of the vulnerability information.</p>
+    #[doc(hidden)]
     pub source_url: std::option::Option<std::string::String>,
     /// <p>The severity the vendor has given to this vulnerability type.</p>
+    #[doc(hidden)]
     pub vendor_severity: std::option::Option<std::string::String>,
     /// <p>The date and time that this vulnerability was first added to the vendor's database.</p>
+    #[doc(hidden)]
     pub vendor_created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the vendor last updated this vulnerability in their database.</p>
+    #[doc(hidden)]
     pub vendor_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>One or more URLs that contain details about this vulnerability type.</p>
+    #[doc(hidden)]
     pub reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PackageVulnerabilityDetails {
@@ -3173,12 +3262,16 @@ impl PackageVulnerabilityDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CvssScore {
     /// <p>The base CVSS score used for the finding.</p>
+    #[doc(hidden)]
     pub base_score: std::option::Option<f64>,
     /// <p>The vector string of the CVSS score.</p>
+    #[doc(hidden)]
     pub scoring_vector: std::option::Option<std::string::String>,
     /// <p>The version of CVSS used for the score.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The source of the CVSS score.</p>
+    #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl CvssScore {
@@ -3287,22 +3380,31 @@ impl CvssScore {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the vulnerable package.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The source layer hash of the vulnerable package.</p>
+    #[doc(hidden)]
     pub source_layer_hash: std::option::Option<std::string::String>,
     /// <p>The epoch of the vulnerable package.</p>
+    #[doc(hidden)]
     pub epoch: i32,
     /// <p>The release of the vulnerable package.</p>
+    #[doc(hidden)]
     pub release: std::option::Option<std::string::String>,
     /// <p>The architecture of the vulnerable package.</p>
+    #[doc(hidden)]
     pub arch: std::option::Option<std::string::String>,
     /// <p>The package manager of the vulnerable package.</p>
+    #[doc(hidden)]
     pub package_manager: std::option::Option<crate::model::PackageManager>,
     /// <p>The file path of the vulnerable package.</p>
+    #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
     /// <p>The version of the package that contains the vulnerability fix.</p>
+    #[doc(hidden)]
     pub fixed_in_version: std::option::Option<std::string::String>,
 }
 impl VulnerablePackage {
@@ -3630,10 +3732,13 @@ impl AsRef<str> for PackageManager {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkReachabilityDetails {
     /// <p>An object that contains details about the open port range associated with a finding.</p>
+    #[doc(hidden)]
     pub open_port_range: std::option::Option<crate::model::PortRange>,
     /// <p>The protocol associated with a finding.</p>
+    #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::NetworkProtocol>,
     /// <p>An object that contains details about a network path associated with a finding.</p>
+    #[doc(hidden)]
     pub network_path: std::option::Option<crate::model::NetworkPath>,
 }
 impl NetworkReachabilityDetails {
@@ -3731,6 +3836,7 @@ impl NetworkReachabilityDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkPath {
     /// <p>The details on the steps in the network path.</p>
+    #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
 }
 impl NetworkPath {
@@ -3792,8 +3898,10 @@ impl NetworkPath {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Step {
     /// <p>The component ID.</p>
+    #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
     /// <p>The component type.</p>
+    #[doc(hidden)]
     pub component_type: std::option::Option<std::string::String>,
 }
 impl Step {
@@ -3923,8 +4031,10 @@ impl AsRef<str> for NetworkProtocol {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortRange {
     /// <p>The beginning port in a port range.</p>
+    #[doc(hidden)]
     pub begin: std::option::Option<i32>,
     /// <p>The ending port in a port range.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<i32>,
 }
 impl PortRange {
@@ -3996,6 +4106,7 @@ impl PortRange {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InspectorScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
+    #[doc(hidden)]
     pub adjusted_cvss: std::option::Option<crate::model::CvssScoreDetails>,
 }
 impl InspectorScoreDetails {
@@ -4053,16 +4164,22 @@ impl InspectorScoreDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CvssScoreDetails {
     /// <p>The source for the CVSS score.</p>
+    #[doc(hidden)]
     pub score_source: std::option::Option<std::string::String>,
     /// <p>The source of the CVSS data.</p>
+    #[doc(hidden)]
     pub cvss_source: std::option::Option<std::string::String>,
     /// <p>The CVSS version used in scoring.</p>
+    #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The CVSS score.</p>
+    #[doc(hidden)]
     pub score: std::option::Option<f64>,
     /// <p>The vector for the CVSS score.</p>
+    #[doc(hidden)]
     pub scoring_vector: std::option::Option<std::string::String>,
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+    #[doc(hidden)]
     pub adjustments: std::option::Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
 }
 impl CvssScoreDetails {
@@ -4215,8 +4332,10 @@ impl CvssScoreDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
+    #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
     /// <p>The reason the CVSS score has been adjustment.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl CvssScoreAdjustment {
@@ -4288,17 +4407,23 @@ impl CvssScoreAdjustment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
     /// <p>The ID of the resource.</p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The partition of the resource.</p>
+    #[doc(hidden)]
     pub partition: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
+    #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An object that contains details about the resource involved in a finding.</p>
+    #[doc(hidden)]
     pub details: std::option::Option<crate::model::ResourceDetails>,
 }
 impl Resource {
@@ -4461,8 +4586,10 @@ impl Resource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
+    #[doc(hidden)]
     pub aws_ec2_instance: std::option::Option<crate::model::AwsEc2InstanceDetails>,
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
+    #[doc(hidden)]
     pub aws_ecr_container_image: std::option::Option<crate::model::AwsEcrContainerImageDetails>,
 }
 impl ResourceDetails {
@@ -4546,20 +4673,28 @@ impl ResourceDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+    #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The image tags attached to the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
+    #[doc(hidden)]
     pub pushed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The image author of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>The architecture of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The image hash of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub image_hash: std::option::Option<std::string::String>,
     /// <p>The registry the Amazon ECR container image belongs to.</p>
+    #[doc(hidden)]
     pub registry: std::option::Option<std::string::String>,
     /// <p>The platform of the Amazon ECR container image.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
 }
 impl AwsEcrContainerImageDetails {
@@ -4748,24 +4883,34 @@ impl AwsEcrContainerImageDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEc2InstanceDetails {
     /// <p>The type of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The image ID of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub ip_v4_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub ip_v6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
     /// <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub iam_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The subnet ID of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The date and time the Amazon EC2 instance was launched at.</p>
+    #[doc(hidden)]
     pub launched_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The platform of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
 }
 impl AwsEc2InstanceDetails {
@@ -5197,6 +5342,7 @@ impl AsRef<str> for Severity {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
+    #[doc(hidden)]
     pub recommendation: std::option::Option<crate::model::Recommendation>,
 }
 impl Remediation {
@@ -5254,8 +5400,10 @@ impl Remediation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Recommendation {
     /// <p>The recommended course of action to remediate the finding.</p>
+    #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The URL address to the CVE remediation recommendations.</p>
+    #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl Recommendation {
@@ -5382,8 +5530,10 @@ impl AsRef<str> for FindingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortCriteria {
     /// <p>The finding detail field by which results are sorted.</p>
+    #[doc(hidden)]
     pub field: std::option::Option<crate::model::SortField>,
     /// <p>The order by which findings are sorted.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl SortCriteria {
@@ -5815,12 +5965,16 @@ impl AggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
+    #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The vulnerability ID of the finding.</p>
+    #[doc(hidden)]
     pub vulnerability_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
 }
 impl TitleAggregationResponse {
@@ -5932,12 +6086,16 @@ impl TitleAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SeverityCounts {
     /// <p>The total count of findings from all severities.</p>
+    #[doc(hidden)]
     pub all: std::option::Option<i64>,
     /// <p>The total count of medium severity findings.</p>
+    #[doc(hidden)]
     pub medium: std::option::Option<i64>,
     /// <p>The total count of high severity findings.</p>
+    #[doc(hidden)]
     pub high: std::option::Option<i64>,
     /// <p>The total count of critical severity findings.</p>
+    #[doc(hidden)]
     pub critical: std::option::Option<i64>,
 }
 impl SeverityCounts {
@@ -6043,12 +6201,16 @@ impl SeverityCounts {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAggregationResponse {
     /// <p>The name of the repository associated with the findings.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
     /// <p>The number of container images impacted by the findings.</p>
+    #[doc(hidden)]
     pub affected_images: std::option::Option<i64>,
 }
 impl RepositoryAggregationResponse {
@@ -6157,10 +6319,13 @@ impl RepositoryAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
+    #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
 }
 impl PackageAggregationResponse {
@@ -6252,14 +6417,19 @@ impl PackageAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageLayerAggregationResponse {
     /// <p>The repository the layer resides in.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>The resource ID of the container image layer.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The layer hash.</p>
+    #[doc(hidden)]
     pub layer_hash: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that represents the count of matched findings per severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
 }
 impl ImageLayerAggregationResponse {
@@ -6385,8 +6555,10 @@ impl ImageLayerAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingTypeAggregationResponse {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
 }
 impl FindingTypeAggregationResponse {
@@ -6461,19 +6633,26 @@ impl FindingTypeAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub ami: std::option::Option<std::string::String>,
     /// <p>The operating system of the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<std::string::String>,
     /// <p>The tags attached to the instance.</p>
+    #[doc(hidden)]
     pub instance_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub network_findings: std::option::Option<i64>,
 }
 impl Ec2InstanceAggregationResponse {
@@ -6656,18 +6835,25 @@ impl Ec2InstanceAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcrContainerAggregationResponse {
     /// <p>The resource ID of the container.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The SHA value of the container image.</p>
+    #[doc(hidden)]
     pub image_sha: std::option::Option<std::string::String>,
     /// <p>The container repository.</p>
+    #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
     /// <p>The architecture of the container.</p>
+    #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The container image stags.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The number of finding by severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
 }
 impl AwsEcrContainerAggregationResponse {
@@ -6836,12 +7022,16 @@ impl AwsEcrContainerAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
+    #[doc(hidden)]
     pub ami: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that the AMI belongs.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
+    #[doc(hidden)]
     pub affected_instances: std::option::Option<i64>,
 }
 impl AmiAggregationResponse {
@@ -6950,8 +7140,10 @@ impl AmiAggregationResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAggregationResponse {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The number of findings by severity.</p>
+    #[doc(hidden)]
     pub severity_counts: std::option::Option<crate::model::SeverityCounts>,
 }
 impl AccountAggregationResponse {
@@ -7291,14 +7483,19 @@ impl AggregationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TitleAggregation {
     /// <p>The finding titles to aggregate on.</p>
+    #[doc(hidden)]
     pub titles: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The vulnerability IDs of the findings.</p>
+    #[doc(hidden)]
     pub vulnerability_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The resource type to aggregate on.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::AggregationResourceType>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::TitleSortBy>,
 }
 impl TitleAggregation {
@@ -7563,10 +7760,13 @@ impl AsRef<str> for AggregationResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAggregation {
     /// <p>The names of repositories to aggregate findings on.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::RepositorySortBy>,
 }
 impl RepositoryAggregation {
@@ -7733,10 +7933,13 @@ impl AsRef<str> for RepositorySortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageAggregation {
     /// <p>The names of packages to aggregate findings on.</p>
+    #[doc(hidden)]
     pub package_names: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::PackageSortBy>,
 }
 impl PackageAggregation {
@@ -7899,14 +8102,19 @@ impl AsRef<str> for PackageSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageLayerAggregation {
     /// <p>The repository associated with the container image hosting the layers.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The ID of the container image layer.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The hashes associated with the layers.</p>
+    #[doc(hidden)]
     pub layer_hashes: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::ImageLayerSortBy>,
 }
 impl ImageLayerAggregation {
@@ -8121,12 +8329,16 @@ impl AsRef<str> for ImageLayerSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingTypeAggregation {
     /// <p>The finding type to aggregate.</p>
+    #[doc(hidden)]
     pub finding_type: std::option::Option<crate::model::AggregationFindingType>,
     /// <p>The resource type to aggregate.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::AggregationResourceType>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::FindingTypeSortBy>,
 }
 impl FindingTypeAggregation {
@@ -8358,16 +8570,22 @@ impl AsRef<str> for AggregationFindingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceAggregation {
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
+    #[doc(hidden)]
     pub amis: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
+    #[doc(hidden)]
     pub operating_systems: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
+    #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
+    #[doc(hidden)]
     pub instance_tags: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::Ec2InstanceSortBy>,
 }
 impl Ec2InstanceAggregation {
@@ -8613,18 +8831,25 @@ impl AsRef<str> for Ec2InstanceSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
+    #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The image SHA values.</p>
+    #[doc(hidden)]
     pub image_shas: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The container repositories.</p>
+    #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The architecture of the containers.</p>
+    #[doc(hidden)]
     pub architectures: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The image tags.</p>
+    #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The sort order (ascending or descending).</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AwsEcrContainerSortBy>,
 }
 impl AwsEcrContainerAggregation {
@@ -8891,10 +9116,13 @@ impl AsRef<str> for AwsEcrContainerSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmiAggregation {
     /// <p>The IDs of AMIs to aggregate findings for.</p>
+    #[doc(hidden)]
     pub amis: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort results by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AmiSortBy>,
 }
 impl AmiAggregation {
@@ -9058,12 +9286,16 @@ impl AsRef<str> for AmiSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAggregation {
     /// <p>The type of finding.</p>
+    #[doc(hidden)]
     pub finding_type: std::option::Option<crate::model::AggregationFindingType>,
     /// <p>The type of resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::AggregationResourceType>,
     /// <p>The sort order (ascending or descending).</p>
+    #[doc(hidden)]
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The value to sort by.</p>
+    #[doc(hidden)]
     pub sort_by: std::option::Option<crate::model::AccountSortBy>,
 }
 impl AccountAggregation {
@@ -9240,24 +9472,34 @@ impl AsRef<str> for AccountSortBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
+    #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Details on the filter criteria associated with this filter.</p>
+    #[doc(hidden)]
     pub criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The action that is to be applied to the findings that match the filter.</p>
+    #[doc(hidden)]
     pub action: std::option::Option<crate::model::FilterAction>,
     /// <p>The date and time this filter was created at.</p>
+    #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the filter was last updated at.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the filter.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The reason for the filter.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
     /// <p>The tags attached to the filter.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9498,8 +9740,10 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegatedAdminAccount {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DelegatedAdminStatus>,
 }
 impl DelegatedAdminAccount {
@@ -9629,8 +9873,10 @@ impl AsRef<str> for DelegatedAdminStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Counts {
     /// <p>The number of resources.</p>
+    #[doc(hidden)]
     pub count: i64,
     /// <p>The key associated with this group</p>
+    #[doc(hidden)]
     pub group_key: std::option::Option<crate::model::GroupKey>,
 }
 impl Counts {
@@ -9775,22 +10021,31 @@ impl AsRef<str> for GroupKey {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageFilterCriteria {
     /// <p>The scan status code to filter on.</p>
+    #[doc(hidden)]
     pub scan_status_code: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>The scan status reason to filter on.</p>
+    #[doc(hidden)]
     pub scan_status_reason: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
+    #[doc(hidden)]
     pub scan_type: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>The Amazon ECR repository name to filter on.</p>
+    #[doc(hidden)]
     pub ecr_repository_name: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>The Amazon ECR image tags to filter on.</p>
+    #[doc(hidden)]
     pub ecr_image_tags: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>The Amazon EC2 instance tags to filter on.</p>
+    #[doc(hidden)]
     pub ec2_instance_tags: std::option::Option<std::vec::Vec<crate::model::CoverageMapFilter>>,
 }
 impl CoverageFilterCriteria {
@@ -10073,10 +10328,13 @@ impl CoverageFilterCriteria {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
+    #[doc(hidden)]
     pub comparison: std::option::Option<crate::model::CoverageMapComparison>,
     /// <p>The tag key associated with the coverage map filter.</p>
+    #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value associated with the coverage map filter.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CoverageMapFilter {
@@ -10219,8 +10477,10 @@ impl AsRef<str> for CoverageMapComparison {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
+    #[doc(hidden)]
     pub comparison: std::option::Option<crate::model::CoverageStringComparison>,
     /// <p>The value to compare strings on.</p>
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CoverageStringFilter {
@@ -10350,16 +10610,22 @@ impl AsRef<str> for CoverageStringComparison {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoveredResource {
     /// <p>The type of the covered resource.</p>
+    #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::CoverageResourceType>,
     /// <p>The ID of the covered resource.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Inspector scan type covering the resource.</p>
+    #[doc(hidden)]
     pub scan_type: std::option::Option<crate::model::ScanType>,
     /// <p>The status of the scan covering the resource.</p>
+    #[doc(hidden)]
     pub scan_status: std::option::Option<crate::model::ScanStatus>,
     /// <p>An object that contains details about the metadata.</p>
+    #[doc(hidden)]
     pub resource_metadata: std::option::Option<crate::model::ResourceScanMetadata>,
 }
 impl CoveredResource {
@@ -10508,10 +10774,13 @@ impl CoveredResource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
+    #[doc(hidden)]
     pub ecr_repository: std::option::Option<crate::model::EcrRepositoryMetadata>,
     /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
+    #[doc(hidden)]
     pub ecr_image: std::option::Option<crate::model::EcrContainerImageMetadata>,
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
+    #[doc(hidden)]
     pub ec2: std::option::Option<crate::model::Ec2Metadata>,
 }
 impl ResourceScanMetadata {
@@ -10606,11 +10875,14 @@ impl ResourceScanMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Metadata {
     /// <p>The tags attached to the instance.</p>
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
+    #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The platform of the instance.</p>
+    #[doc(hidden)]
     pub platform: std::option::Option<crate::model::Ec2Platform>,
 }
 impl Ec2Metadata {
@@ -10781,6 +11053,7 @@ impl AsRef<str> for Ec2Platform {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EcrContainerImageMetadata {
@@ -10842,8 +11115,10 @@ impl EcrContainerImageMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcrRepositoryMetadata {
     /// <p>The name of the Amazon ECR repository.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The frequency of scans.</p>
+    #[doc(hidden)]
     pub scan_frequency: std::option::Option<crate::model::EcrScanFrequency>,
 }
 impl EcrRepositoryMetadata {
@@ -10977,8 +11252,10 @@ impl AsRef<str> for EcrScanFrequency {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanStatus {
     /// <p>The status code of the scan.</p>
+    #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::ScanStatusCode>,
     /// <p>The reason for the scan.</p>
+    #[doc(hidden)]
     pub reason: std::option::Option<crate::model::ScanStatusReason>,
 }
 impl ScanStatus {
@@ -11347,8 +11624,10 @@ impl AsRef<str> for CoverageResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
+    #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The operations that can be performed with the given permissions.</p>
+    #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl Permission {
@@ -11546,10 +11825,13 @@ impl AsRef<str> for Service {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
+    #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix of the KMS key used to export findings.</p>
+    #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
+    #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl Destination {
@@ -11779,8 +12061,10 @@ impl AsRef<str> for ExternalReportStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelegatedAdmin {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
+    #[doc(hidden)]
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
 }
 impl DelegatedAdmin {
@@ -11855,6 +12139,7 @@ impl DelegatedAdmin {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcrConfigurationState {
     /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    #[doc(hidden)]
     pub rescan_duration_state: std::option::Option<crate::model::EcrRescanDurationState>,
 }
 impl EcrConfigurationState {
@@ -11917,10 +12202,13 @@ impl EcrConfigurationState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcrRescanDurationState {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    #[doc(hidden)]
     pub rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
     /// <p>The status of changes to the ECR automated re-scan duration.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::EcrRescanDurationStatus>,
     /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
+    #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EcrRescanDurationState {
@@ -12077,14 +12365,19 @@ impl AsRef<str> for EcrRescanDurationStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedAccount {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status of Amazon Inspector for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
+    #[doc(hidden)]
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedAccount {
@@ -12334,8 +12627,10 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
+    #[doc(hidden)]
     pub ec2: std::option::Option<crate::model::Status>,
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
+    #[doc(hidden)]
     pub ecr: std::option::Option<crate::model::Status>,
 }
 impl ResourceStatus {
@@ -12485,10 +12780,13 @@ impl AsRef<str> for Status {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Account {
     /// <p>The ID of the Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The status of Amazon Inspector for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
+    #[doc(hidden)]
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
 }
 impl Account {
@@ -12690,10 +12988,13 @@ impl AsRef<str> for ReportFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FreeTrialInfoError {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
+    #[doc(hidden)]
     pub code: std::option::Option<crate::model::FreeTrialInfoErrorCode>,
     /// <p>The error message returned.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl FreeTrialInfoError {
@@ -12840,8 +13141,10 @@ impl AsRef<str> for FreeTrialInfoErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
+    #[doc(hidden)]
     pub free_trial_info: std::option::Option<std::vec::Vec<crate::model::FreeTrialInfo>>,
 }
 impl FreeTrialAccountInfo {
@@ -12922,12 +13225,16 @@ impl FreeTrialAccountInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FreeTrialType>,
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
+    #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
+    #[doc(hidden)]
     pub end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The order to sort results by.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::FreeTrialStatus>,
 }
 impl FreeTrialInfo {
@@ -13146,10 +13453,13 @@ impl AsRef<str> for FreeTrialType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountState {
     /// <p>The Amazon Web Services account ID.</p>
+    #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
+    #[doc(hidden)]
     pub resource_state: std::option::Option<crate::model::ResourceState>,
 }
 impl AccountState {
@@ -13241,8 +13551,10 @@ impl AccountState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceState {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
+    #[doc(hidden)]
     pub ec2: std::option::Option<crate::model::State>,
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
+    #[doc(hidden)]
     pub ecr: std::option::Option<crate::model::State>,
 }
 impl ResourceState {
@@ -13314,10 +13626,13 @@ impl ResourceState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct State {
     /// <p>The status of Amazon Inspector for the account.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
+    #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl State {

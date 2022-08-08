@@ -4,6 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartExpenseAnalysisOutput {
@@ -58,6 +59,7 @@ impl StartExpenseAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentTextDetectionOutput {
     /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentTextDetectionOutput {
@@ -112,6 +114,7 @@ impl StartDocumentTextDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentAnalysisOutput {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentAnalysisOutput {
@@ -166,18 +169,25 @@ impl StartDocumentAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExpenseAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The expenses detected by Amazon Textract.</p>
+    #[doc(hidden)]
     pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The current model version of AnalyzeExpense.</p>
+    #[doc(hidden)]
     pub analyze_expense_model_version: std::option::Option<std::string::String>,
 }
 impl GetExpenseAnalysisOutput {
@@ -371,18 +381,25 @@ impl GetExpenseAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentTextDetectionOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The results of the text-detection operation.</p>
+    #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
 }
 impl GetDocumentTextDetectionOutput {
@@ -575,18 +592,25 @@ impl GetDocumentTextDetectionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
+    #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The results of the text-analysis operation.</p>
+    #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p>A list of warnings that occurred during the document-analysis operation.</p>
+    #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
+    #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p></p>
+    #[doc(hidden)]
     pub analyze_document_model_version: std::option::Option<std::string::String>,
 }
 impl GetDocumentAnalysisOutput {
@@ -779,10 +803,13 @@ impl GetDocumentAnalysisOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectDocumentTextOutput {
     /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
+    #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p></p>
+    #[doc(hidden)]
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
 }
 impl DetectDocumentTextOutput {
@@ -892,10 +919,13 @@ impl DetectDocumentTextOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
+    #[doc(hidden)]
     pub identity_documents: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
     /// <p>Information about the input document.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+    #[doc(hidden)]
     pub analyze_id_model_version: std::option::Option<std::string::String>,
 }
 impl AnalyzeIdOutput {
@@ -1000,8 +1030,10 @@ impl AnalyzeIdOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeExpenseOutput {
     /// <p>Information about the input document.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The expenses detected by Amazon Textract.</p>
+    #[doc(hidden)]
     pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
 }
 impl AnalyzeExpenseOutput {
@@ -1086,12 +1118,16 @@ impl AnalyzeExpenseOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeDocumentOutput {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
+    #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
+    #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
+    #[doc(hidden)]
     pub human_loop_activation_output: std::option::Option<crate::model::HumanLoopActivationOutput>,
     /// <p>The version of the model used to analyze the document.</p>
+    #[doc(hidden)]
     pub analyze_document_model_version: std::option::Option<std::string::String>,
 }
 impl AnalyzeDocumentOutput {

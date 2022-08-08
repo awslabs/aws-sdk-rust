@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerTargetsLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TriggerTargetsLimitExceededException {
@@ -69,6 +70,7 @@ impl TriggerTargetsLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThrottlingException {
@@ -133,6 +135,7 @@ impl ThrottlingException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagSetListLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagSetListLimitExceededException {
@@ -197,6 +200,7 @@ impl TagSetListLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleHookLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LifecycleHookLimitExceededException {
@@ -261,6 +265,7 @@ impl LifecycleHookLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTriggerConfigException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTriggerConfigException {
@@ -325,6 +330,7 @@ impl InvalidTriggerConfigException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTrafficRoutingConfigurationException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTrafficRoutingConfigurationException {
@@ -389,6 +395,7 @@ impl InvalidTrafficRoutingConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetGroupPairException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetGroupPairException {
@@ -453,6 +460,7 @@ impl InvalidTargetGroupPairException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagException {
@@ -517,6 +525,7 @@ impl InvalidTagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRoleException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRoleException {
@@ -581,6 +590,7 @@ impl InvalidRoleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOnPremisesTagCombinationException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOnPremisesTagCombinationException {
@@ -645,6 +655,7 @@ impl InvalidOnPremisesTagCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLoadBalancerInfoException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLoadBalancerInfoException {
@@ -709,6 +720,7 @@ impl InvalidLoadBalancerInfoException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInputException {
@@ -773,6 +785,7 @@ impl InvalidInputException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEcsServiceException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEcsServiceException {
@@ -837,6 +850,7 @@ impl InvalidEcsServiceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEc2TagException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEc2TagException {
@@ -901,6 +915,7 @@ impl InvalidEc2TagException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEc2TagCombinationException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEc2TagCombinationException {
@@ -968,6 +983,7 @@ impl InvalidEc2TagCombinationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentStyleException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentStyleException {
@@ -1032,6 +1048,7 @@ impl InvalidDeploymentStyleException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentGroupNameException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentGroupNameException {
@@ -1096,6 +1113,7 @@ impl InvalidDeploymentGroupNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentConfigNameException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentConfigNameException {
@@ -1160,6 +1178,7 @@ impl InvalidDeploymentConfigNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBlueGreenDeploymentConfigurationException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBlueGreenDeploymentConfigurationException {
@@ -1225,6 +1244,7 @@ impl InvalidBlueGreenDeploymentConfigurationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutoScalingGroupException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAutoScalingGroupException {
@@ -1289,6 +1309,7 @@ impl InvalidAutoScalingGroupException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutoRollbackConfigException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAutoRollbackConfigException {
@@ -1353,6 +1374,7 @@ impl InvalidAutoRollbackConfigException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApplicationNameException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidApplicationNameException {
@@ -1424,6 +1446,7 @@ impl InvalidApplicationNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAlarmConfigException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidAlarmConfigException {
@@ -1488,6 +1511,7 @@ impl InvalidAlarmConfigException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsServiceMappingLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EcsServiceMappingLimitExceededException {
@@ -1555,6 +1579,7 @@ impl EcsServiceMappingLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupNameRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentGroupNameRequiredException {
@@ -1619,6 +1644,7 @@ impl DeploymentGroupNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentGroupDoesNotExistException {
@@ -1683,6 +1709,7 @@ impl DeploymentGroupDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupAlreadyExistsException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentGroupAlreadyExistsException {
@@ -1747,6 +1774,7 @@ impl DeploymentGroupAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentConfigDoesNotExistException {
@@ -1811,6 +1839,7 @@ impl DeploymentConfigDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationNameRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApplicationNameRequiredException {
@@ -1875,6 +1904,7 @@ impl ApplicationNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApplicationDoesNotExistException {
@@ -1939,6 +1969,7 @@ impl ApplicationDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmsLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AlarmsLimitExceededException {
@@ -2003,6 +2034,7 @@ impl AlarmsLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationAlreadyExistsException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApplicationAlreadyExistsException {
@@ -2067,6 +2099,7 @@ impl ApplicationAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagRequiredException {
@@ -2131,6 +2164,7 @@ impl TagRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceArnRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceArnRequiredException {
@@ -2195,6 +2229,7 @@ impl ResourceArnRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagsToAddException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagsToAddException {
@@ -2259,6 +2294,7 @@ impl InvalidTagsToAddException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidArnException {
@@ -2323,6 +2359,7 @@ impl InvalidArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArnNotSupportedException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ArnNotSupportedException {
@@ -2387,6 +2424,7 @@ impl ArnNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedActionForDeploymentTypeException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedActionForDeploymentTypeException {
@@ -2451,6 +2489,7 @@ impl UnsupportedActionForDeploymentTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentIdException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentIdException {
@@ -2515,6 +2554,7 @@ impl InvalidDeploymentIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIdRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentIdRequiredException {
@@ -2579,6 +2619,7 @@ impl DeploymentIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentDoesNotExistException {
@@ -2643,6 +2684,7 @@ impl DeploymentDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentAlreadyCompletedException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentAlreadyCompletedException {
@@ -2707,6 +2749,7 @@ impl DeploymentAlreadyCompletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentNotStartedException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentNotStartedException {
@@ -2771,6 +2814,7 @@ impl DeploymentNotStartedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagLimitExceededException {
@@ -2835,6 +2879,7 @@ impl TagLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceNameException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInstanceNameException {
@@ -2899,6 +2944,7 @@ impl InvalidInstanceNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNotRegisteredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceNotRegisteredException {
@@ -2963,6 +3009,7 @@ impl InstanceNotRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNameRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceNameRequiredException {
@@ -3027,6 +3074,7 @@ impl InstanceNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceLimitExceededException {
@@ -3091,6 +3139,7 @@ impl InstanceLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultipleIamArnsProvidedException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MultipleIamArnsProvidedException {
@@ -3155,6 +3204,7 @@ impl MultipleIamArnsProvidedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIamUserArnException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIamUserArnException {
@@ -3219,6 +3269,7 @@ impl InvalidIamUserArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIamSessionArnException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIamSessionArnException {
@@ -3283,6 +3334,7 @@ impl InvalidIamSessionArnException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNameAlreadyRegisteredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceNameAlreadyRegisteredException {
@@ -3347,6 +3399,7 @@ impl InstanceNameAlreadyRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUserArnRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IamUserArnRequiredException {
@@ -3411,6 +3464,7 @@ impl IamUserArnRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUserArnAlreadyRegisteredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IamUserArnAlreadyRegisteredException {
@@ -3475,6 +3529,7 @@ impl IamUserArnAlreadyRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamSessionArnAlreadyRegisteredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IamSessionArnAlreadyRegisteredException {
@@ -3539,6 +3594,7 @@ impl IamSessionArnAlreadyRegisteredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamArnRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IamArnRequiredException {
@@ -3603,6 +3659,7 @@ impl IamArnRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RevisionRequiredException {
@@ -3667,6 +3724,7 @@ impl RevisionRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRevisionException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRevisionException {
@@ -3731,6 +3789,7 @@ impl InvalidRevisionException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescriptionTooLongException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescriptionTooLongException {
@@ -3795,6 +3854,7 @@ impl DescriptionTooLongException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleEventAlreadyCompletedException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LifecycleEventAlreadyCompletedException {
@@ -3859,6 +3919,7 @@ impl LifecycleEventAlreadyCompletedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLifecycleEventHookExecutionStatusException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLifecycleEventHookExecutionStatusException {
@@ -3924,6 +3985,7 @@ impl InvalidLifecycleEventHookExecutionStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLifecycleEventHookExecutionIdException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLifecycleEventHookExecutionIdException {
@@ -3988,6 +4050,7 @@ impl InvalidLifecycleEventHookExecutionIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagFilterException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTagFilterException {
@@ -4052,6 +4115,7 @@ impl InvalidTagFilterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegistrationStatusException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidRegistrationStatusException {
@@ -4116,6 +4180,7 @@ impl InvalidRegistrationStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -4180,6 +4245,7 @@ impl InvalidNextTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceValidationException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceValidationException {
@@ -4244,6 +4310,7 @@ impl ResourceValidationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotSupportedException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotSupportedException {
@@ -4308,6 +4375,7 @@ impl OperationNotSupportedException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceTypeException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInstanceTypeException {
@@ -4372,6 +4440,7 @@ impl InvalidInstanceTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceStatusException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInstanceStatusException {
@@ -4436,6 +4505,7 @@ impl InvalidInstanceStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentInstanceTypeException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentInstanceTypeException {
@@ -4500,6 +4570,7 @@ impl InvalidDeploymentInstanceTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTimeRangeException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTimeRangeException {
@@ -4564,6 +4635,7 @@ impl InvalidTimeRangeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExternalIdException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidExternalIdException {
@@ -4628,6 +4700,7 @@ impl InvalidExternalIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentStatusException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentStatusException {
@@ -4692,6 +4765,7 @@ impl InvalidDeploymentStatusException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetFilterNameException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetFilterNameException {
@@ -4756,6 +4830,7 @@ impl InvalidTargetFilterNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidComputePlatformException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidComputePlatformException {
@@ -4820,6 +4895,7 @@ impl InvalidComputePlatformException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSortOrderException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSortOrderException {
@@ -4884,6 +4960,7 @@ impl InvalidSortOrderException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSortByException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSortByException {
@@ -4948,6 +5025,7 @@ impl InvalidSortByException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyPrefixFilterException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidKeyPrefixFilterException {
@@ -5012,6 +5090,7 @@ impl InvalidKeyPrefixFilterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeployedStateFilterException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeployedStateFilterException {
@@ -5076,6 +5155,7 @@ impl InvalidDeployedStateFilterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBucketNameFilterException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidBucketNameFilterException {
@@ -5140,6 +5220,7 @@ impl InvalidBucketNameFilterException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketNameFilterRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BucketNameFilterRequiredException {
@@ -5204,6 +5285,7 @@ impl BucketNameFilterRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentTargetIdException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentTargetIdException {
@@ -5268,6 +5350,7 @@ impl InvalidDeploymentTargetIdException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetIdRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentTargetIdRequiredException {
@@ -5332,6 +5415,7 @@ impl DeploymentTargetIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentTargetDoesNotExistException {
@@ -5399,6 +5483,7 @@ impl DeploymentTargetDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceIdRequiredException {
@@ -5466,6 +5551,7 @@ impl InstanceIdRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceDoesNotExistException {
@@ -5530,6 +5616,7 @@ impl InstanceDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigNameRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentConfigNameRequiredException {
@@ -5594,6 +5681,7 @@ impl DeploymentConfigNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevisionDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RevisionDoesNotExistException {
@@ -5658,6 +5746,7 @@ impl RevisionDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGitHubAccountTokenNameException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGitHubAccountTokenNameException {
@@ -5722,6 +5811,7 @@ impl InvalidGitHubAccountTokenNameException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubAccountTokenNameRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GitHubAccountTokenNameRequiredException {
@@ -5786,6 +5876,7 @@ impl GitHubAccountTokenNameRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubAccountTokenDoesNotExistException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GitHubAccountTokenDoesNotExistException {
@@ -5850,6 +5941,7 @@ impl GitHubAccountTokenDoesNotExistException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidOperationException {
@@ -5914,6 +6006,7 @@ impl InvalidOperationException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigInUseException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentConfigInUseException {
@@ -5978,6 +6071,7 @@ impl DeploymentConfigInUseException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleRequiredException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RoleRequiredException {
@@ -6042,6 +6136,7 @@ impl RoleRequiredException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentGroupLimitExceededException {
@@ -6106,6 +6201,7 @@ impl DeploymentGroupLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMinimumHealthyHostValueException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidMinimumHealthyHostValueException {
@@ -6170,6 +6266,7 @@ impl InvalidMinimumHealthyHostValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentConfigLimitExceededException {
@@ -6234,6 +6331,7 @@ impl DeploymentConfigLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigAlreadyExistsException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentConfigAlreadyExistsException {
@@ -6298,6 +6396,7 @@ impl DeploymentConfigAlreadyExistsException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUpdateOutdatedInstancesOnlyValueException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidUpdateOutdatedInstancesOnlyValueException {
@@ -6369,6 +6468,7 @@ impl InvalidUpdateOutdatedInstancesOnlyValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetInstancesException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetInstancesException {
@@ -6433,6 +6533,7 @@ impl InvalidTargetInstancesException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIgnoreApplicationStopFailuresValueException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIgnoreApplicationStopFailuresValueException {
@@ -6498,6 +6599,7 @@ impl InvalidIgnoreApplicationStopFailuresValueException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGitHubAccountTokenException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidGitHubAccountTokenException {
@@ -6562,6 +6664,7 @@ impl InvalidGitHubAccountTokenException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileExistsBehaviorException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFileExistsBehaviorException {
@@ -6626,6 +6729,7 @@ impl InvalidFileExistsBehaviorException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentLimitExceededException {
@@ -6690,6 +6794,7 @@ impl DeploymentLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ApplicationLimitExceededException {
@@ -6754,6 +6859,7 @@ impl ApplicationLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentWaitTypeException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDeploymentWaitTypeException {
@@ -6818,6 +6924,7 @@ impl InvalidDeploymentWaitTypeException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIsNotInReadyStateException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentIsNotInReadyStateException {
@@ -6882,6 +6989,7 @@ impl DeploymentIsNotInReadyStateException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchLimitExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchLimitExceededException {
@@ -6946,6 +7054,7 @@ impl BatchLimitExceededException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetListSizeExceededException {
     /// <p>The message that corresponds to the exception thrown by AWS CodeDeploy.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeploymentTargetListSizeExceededException {

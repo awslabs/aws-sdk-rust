@@ -65,32 +65,46 @@ impl UpdateResourceDataSyncOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch baseline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The operating system rule used by the updated patch baseline.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
+    #[doc(hidden)]
     pub global_filters: std::option::Option<crate::model::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
+    #[doc(hidden)]
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
+    #[doc(hidden)]
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
+    #[doc(hidden)]
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
+    #[doc(hidden)]
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    #[doc(hidden)]
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>The date when the patch baseline was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the patch baseline was last modified.</p>
+    #[doc(hidden)]
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl UpdatePatchBaselineOutput {
@@ -429,6 +443,7 @@ impl UpdatePatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
+    #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
 impl UpdateOpsMetadataOutput {
@@ -546,18 +561,24 @@ impl UpdateManagedInstanceRoleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p>The ID of the maintenance window that was updated.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The task ID of the maintenance window that was updated.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
     /// <p>The updated target values.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The updated task ARN value.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The updated parameter values.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -565,23 +586,31 @@ pub struct UpdateMaintenanceWindowTaskOutput {
         >,
     >,
     /// <p>The updated parameter values.</p>
+    #[doc(hidden)]
     pub task_invocation_parameters:
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The updated priority value.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>The updated <code>MaxConcurrency</code> value.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The updated <code>MaxErrors</code> value.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The updated logging information in Amazon S3.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The updated task name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated task description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl UpdateMaintenanceWindowTaskOutput {
@@ -941,16 +970,22 @@ impl UpdateMaintenanceWindowTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowTargetOutput {
     /// <p>The maintenance window ID specified in the update request.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The target ID specified in the update request.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The updated targets.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The updated owner.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The updated name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateMaintenanceWindowTargetOutput {
@@ -1105,28 +1140,40 @@ impl UpdateMaintenanceWindowTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance window.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the update.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    #[doc(hidden)]
     pub schedule_timezone: std::option::Option<std::string::String>,
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    #[doc(hidden)]
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
+    #[doc(hidden)]
     pub allow_unassociated_targets: bool,
     /// <p>Whether the maintenance window is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
 }
 impl UpdateMaintenanceWindowOutput {
@@ -1404,6 +1451,7 @@ impl UpdateDocumentMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentDefaultVersionOutput {
     /// <p>The description of a custom document that you want to set as the default version.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<crate::model::DocumentDefaultVersionDescription>,
 }
 impl UpdateDocumentDefaultVersionOutput {
@@ -1467,6 +1515,7 @@ impl UpdateDocumentDefaultVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentOutput {
     /// <p>A description of the document that was updated.</p>
+    #[doc(hidden)]
     pub document_description: std::option::Option<crate::model::DocumentDescription>,
 }
 impl UpdateDocumentOutput {
@@ -1524,6 +1573,7 @@ impl UpdateDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssociationStatusOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl UpdateAssociationStatusOutput {
@@ -1587,6 +1637,7 @@ impl UpdateAssociationStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssociationOutput {
     /// <p>The description of the association that was updated.</p>
+    #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl UpdateAssociationOutput {
@@ -1650,8 +1701,10 @@ impl UpdateAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlabelParameterVersionOutput {
     /// <p>A list of all labels deleted from the parameter.</p>
+    #[doc(hidden)]
     pub removed_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The labels that aren't attached to the given parameter version.</p>
+    #[doc(hidden)]
     pub invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnlabelParameterVersionOutput {
@@ -1741,6 +1794,7 @@ impl UnlabelParameterVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateSessionOutput {
     /// <p>The ID of the session that has been terminated.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl TerminateSessionOutput {
@@ -1825,12 +1879,15 @@ impl StopAutomationExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSessionOutput {
     /// <p>The ID of the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    #[doc(hidden)]
     pub token_value: std::option::Option<std::string::String>,
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
     /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub stream_url: std::option::Option<std::string::String>,
 }
 impl StartSessionOutput {
@@ -1925,6 +1982,7 @@ impl StartSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChangeRequestExecutionOutput {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl StartChangeRequestExecutionOutput {
@@ -1982,6 +2040,7 @@ impl StartChangeRequestExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAutomationExecutionOutput {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
+    #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl StartAutomationExecutionOutput {
@@ -2069,6 +2128,7 @@ impl StartAssociationsOnceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCommandOutput {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
+    #[doc(hidden)]
     pub command: std::option::Option<crate::model::Command>,
 }
 impl SendCommandOutput {
@@ -2153,12 +2213,15 @@ impl SendAutomationSignalOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeSessionOutput {
     /// <p>The ID of the session.</p>
+    #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    #[doc(hidden)]
     pub token_value: std::option::Option<std::string::String>,
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
     /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    #[doc(hidden)]
     pub stream_url: std::option::Option<std::string::String>,
 }
 impl ResumeSessionOutput {
@@ -2253,6 +2316,7 @@ impl ResumeSessionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
+    #[doc(hidden)]
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
 impl ResetServiceSettingOutput {
@@ -2340,6 +2404,7 @@ impl RemoveTagsFromResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTaskWithMaintenanceWindowOutput {
     /// <p>The ID of the task in the maintenance window.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
 }
 impl RegisterTaskWithMaintenanceWindowOutput {
@@ -2397,6 +2462,7 @@ impl RegisterTaskWithMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTargetWithMaintenanceWindowOutput {
     /// <p>The ID of the target definition in this maintenance window.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
 }
 impl RegisterTargetWithMaintenanceWindowOutput {
@@ -2454,8 +2520,10 @@ impl RegisterTargetWithMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group registered with the patch baseline.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl RegisterPatchBaselineForPatchGroupOutput {
@@ -2527,6 +2595,7 @@ impl RegisterPatchBaselineForPatchGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl RegisterDefaultPatchBaselineOutput {
@@ -2581,8 +2650,10 @@ impl RegisterDefaultPatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutParameterOutput {
     /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
+    #[doc(hidden)]
     pub version: i64,
     /// <p>The tier assigned to the parameter.</p>
+    #[doc(hidden)]
     pub tier: std::option::Option<crate::model::ParameterTier>,
 }
 impl PutParameterOutput {
@@ -2654,6 +2725,7 @@ impl PutParameterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInventoryOutput {
     /// <p>Information about the request.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PutInventoryOutput {
@@ -2768,6 +2840,7 @@ impl ModifyDocumentPermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
+    #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
@@ -2831,9 +2904,11 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
+    #[doc(hidden)]
     pub resource_data_sync_items:
         std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDataSyncOutput {
@@ -2920,9 +2995,11 @@ impl ListResourceDataSyncOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceComplianceSummariesOutput {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
+    #[doc(hidden)]
     pub resource_compliance_summary_items:
         std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceComplianceSummariesOutput {
@@ -3012,8 +3089,10 @@ impl ListResourceComplianceSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsMetadataOutput {
     /// <p>Returns a list of OpsMetadata objects.</p>
+    #[doc(hidden)]
     pub ops_metadata_list: std::option::Option<std::vec::Vec<crate::model::OpsMetadata>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOpsMetadataOutput {
@@ -3094,8 +3173,10 @@ impl ListOpsMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsItemRelatedItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of related-item resources for the specified OpsItem.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
 }
 impl ListOpsItemRelatedItemsOutput {
@@ -3177,8 +3258,10 @@ impl ListOpsItemRelatedItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpsItemEventsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of event information for the specified OpsItems.</p>
+    #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemEventSummary>>,
 }
 impl ListOpsItemEventsOutput {
@@ -3259,18 +3342,24 @@ impl ListOpsItemEventsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInventoryEntriesOutput {
     /// <p>The type of inventory item returned by the request.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The inventory schema version used by the managed node(s).</p>
+    #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The time that inventory information was collected for the managed node(s).</p>
+    #[doc(hidden)]
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>A list of inventory items on the managed node(s).</p>
+    #[doc(hidden)]
     pub entries: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInventoryEntriesOutput {
@@ -3432,8 +3521,10 @@ impl ListInventoryEntriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentVersionsOutput {
     /// <p>The document versions.</p>
+    #[doc(hidden)]
     pub document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentVersionsOutput {
@@ -3515,8 +3606,10 @@ impl ListDocumentVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentsOutput {
     /// <p>The names of the SSM documents.</p>
+    #[doc(hidden)]
     pub document_identifiers: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentsOutput {
@@ -3598,14 +3691,19 @@ impl ListDocumentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentMetadataHistoryOutput {
     /// <p>The name of the change template.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the change template.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
+    #[doc(hidden)]
     pub author: std::option::Option<std::string::String>,
     /// <p>Information about the response to the change template approval request.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentMetadataResponseInfo>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentMetadataHistoryOutput {
@@ -3734,9 +3832,11 @@ impl ListDocumentMetadataHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
+    #[doc(hidden)]
     pub compliance_summary_items:
         std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceSummariesOutput {
@@ -3823,8 +3923,10 @@ impl ListComplianceSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceItemsOutput {
     /// <p>A list of compliance information for the specified resource ID. </p>
+    #[doc(hidden)]
     pub compliance_items: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceItemsOutput {
@@ -3906,8 +4008,10 @@ impl ListComplianceItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCommandsOutput {
     /// <p>(Optional) The list of commands requested by the user. </p>
+    #[doc(hidden)]
     pub commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCommandsOutput {
@@ -3988,8 +4092,10 @@ impl ListCommandsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCommandInvocationsOutput {
     /// <p>(Optional) A list of all invocations. </p>
+    #[doc(hidden)]
     pub command_invocations: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCommandInvocationsOutput {
@@ -4071,9 +4177,11 @@ impl ListCommandInvocationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
+    #[doc(hidden)]
     pub association_versions:
         std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationVersionsOutput {
@@ -4157,8 +4265,10 @@ impl ListAssociationVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationsOutput {
     /// <p>The associations.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::Association>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationsOutput {
@@ -4239,8 +4349,10 @@ impl ListAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelParameterVersionOutput {
     /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the parameter that has been labeled.</p>
+    #[doc(hidden)]
     pub parameter_version: i64,
 }
 impl LabelParameterVersionOutput {
@@ -4321,6 +4433,7 @@ impl LabelParameterVersionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
+    #[doc(hidden)]
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
 impl GetServiceSettingOutput {
@@ -4378,10 +4491,13 @@ impl GetServiceSettingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
 impl GetPatchBaselineForPatchGroupOutput {
@@ -4473,34 +4589,49 @@ impl GetPatchBaselineForPatchGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPatchBaselineOutput {
     /// <p>The ID of the retrieved patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch baseline.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Returns the operating system specified for the patch baseline.</p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
+    #[doc(hidden)]
     pub global_filters: std::option::Option<crate::model::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
+    #[doc(hidden)]
     pub approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
+    #[doc(hidden)]
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
+    #[doc(hidden)]
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
+    #[doc(hidden)]
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    #[doc(hidden)]
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>Patch groups included in the patch baseline.</p>
+    #[doc(hidden)]
     pub patch_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date the patch baseline was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the patch baseline was last modified.</p>
+    #[doc(hidden)]
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl GetPatchBaselineOutput {
@@ -4865,8 +4996,10 @@ impl GetPatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersByPathOutput {
     /// <p>A list of parameters found in the specified hierarchy.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParametersByPathOutput {
@@ -4947,8 +5080,10 @@ impl GetParametersByPathOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersOutput {
     /// <p>A list of details for a parameter.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
+    #[doc(hidden)]
     pub invalid_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetParametersOutput {
@@ -5038,8 +5173,10 @@ impl GetParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParameterHistoryOutput {
     /// <p>A list of parameters returned by the request.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ParameterHistory>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParameterHistoryOutput {
@@ -5120,6 +5257,7 @@ impl GetParameterHistoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParameterOutput {
     /// <p>Information about a parameter.</p>
+    #[doc(hidden)]
     pub parameter: std::option::Option<crate::model::Parameter>,
 }
 impl GetParameterOutput {
@@ -5177,8 +5315,10 @@ impl GetParameterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsSummaryOutput {
     /// <p>The list of aggregated details and filtered OpsData.</p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOpsSummaryOutput {
@@ -5259,12 +5399,15 @@ impl GetOpsSummaryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsMetadataOutput {
     /// <p>The resource ID of the Application Manager application.</p>
+    #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>OpsMetadata for an Application Manager application.</p>
+    #[doc(hidden)]
     pub metadata: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
     >,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOpsMetadataOutput {
@@ -5374,6 +5517,7 @@ impl GetOpsMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsItemOutput {
     /// <p>The OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item: std::option::Option<crate::model::OpsItem>,
 }
 impl GetOpsItemOutput {
@@ -5428,20 +5572,27 @@ impl GetOpsItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowTaskOutput {
     /// <p>The retrieved maintenance window ID.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The retrieved maintenance window task ID.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
     /// <p>The targets where the task should run.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The type of task to run.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The parameters to pass to the task when it runs.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub task_parameters: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -5449,27 +5600,35 @@ pub struct GetMaintenanceWindowTaskOutput {
         >,
     >,
     /// <p>The parameters to pass to the task when it runs.</p>
+    #[doc(hidden)]
     pub task_invocation_parameters:
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
+    #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The retrieved task name.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The retrieved task description.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+    #[doc(hidden)]
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl GetMaintenanceWindowTaskOutput {
@@ -5861,28 +6020,40 @@ impl GetMaintenanceWindowTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// <p>The maintenance window execution ID.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The task execution ID.</p>
+    #[doc(hidden)]
     pub task_execution_id: std::option::Option<std::string::String>,
     /// <p>The invocation ID.</p>
+    #[doc(hidden)]
     pub invocation_id: std::option::Option<std::string::String>,
     /// <p>The execution ID.</p>
+    #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>Retrieves the task type for a maintenance window.</p>
+    #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The parameters used at the time that the task ran.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The task status for an invocation.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Details are only available for certain status values.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time that the task started running on the target.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the task finished running on the target.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
+    #[doc(hidden)]
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The maintenance window target ID.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowExecutionTaskInvocationOutput {
@@ -6155,14 +6326,19 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
+    #[doc(hidden)]
     pub task_execution_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
+    #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The role that was assumed when running the task.</p>
+    #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The type of task that was run.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The parameters passed to the task when it was run.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
@@ -6172,6 +6348,7 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
     /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub task_parameters: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<
@@ -6181,18 +6358,25 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
         >,
     >,
     /// <p>The priority of the task.</p>
+    #[doc(hidden)]
     pub priority: i32,
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
+    #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
+    #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The status of the task.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Not available for all status values.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the task execution started.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the task execution completed.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
@@ -6532,16 +6716,22 @@ impl GetMaintenanceWindowExecutionTaskOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The ID of the task executions from the maintenance window execution.</p>
+    #[doc(hidden)]
     pub task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the maintenance window execution.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Not available for all status values.</p>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the maintenance window started running.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the maintenance window finished running.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMaintenanceWindowExecutionOutput {
@@ -6705,34 +6895,49 @@ impl GetMaintenanceWindowExecutionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance window.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the maintenance window.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
+    #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
+    #[doc(hidden)]
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    #[doc(hidden)]
     pub schedule_timezone: std::option::Option<std::string::String>,
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
+    #[doc(hidden)]
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
+    #[doc(hidden)]
     pub next_execution_time: std::option::Option<std::string::String>,
     /// <p>The duration of the maintenance window in hours.</p>
+    #[doc(hidden)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    #[doc(hidden)]
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
+    #[doc(hidden)]
     pub allow_unassociated_targets: bool,
     /// <p>Indicates whether the maintenance window is enabled.</p>
+    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The date the maintenance window was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the maintenance window was last modified.</p>
+    #[doc(hidden)]
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMaintenanceWindowOutput {
@@ -7040,8 +7245,10 @@ impl GetMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInventorySchemaOutput {
     /// <p>Inventory schemas returned by the request.</p>
+    #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::InventoryItemSchema>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInventorySchemaOutput {
@@ -7122,8 +7329,10 @@ impl GetInventorySchemaOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInventoryOutput {
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInventoryOutput {
@@ -7205,32 +7414,45 @@ impl GetInventoryOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the SSM document was created.</p>
+    #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DocumentStatus>,
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    #[doc(hidden)]
     pub status_information: std::option::Option<std::string::String>,
     /// <p>The contents of the SSM document.</p>
+    #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>The document type.</p>
+    #[doc(hidden)]
     pub document_type: std::option::Option<crate::model::DocumentType>,
     /// <p>The document format, either JSON or YAML.</p>
+    #[doc(hidden)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
+    #[doc(hidden)]
     pub requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
+    #[doc(hidden)]
     pub attachments_content: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
+    #[doc(hidden)]
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
 }
 impl GetDocumentOutput {
@@ -7535,12 +7757,16 @@ impl GetDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>The managed node ID.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The user-defined snapshot ID.</p>
+    #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
+    #[doc(hidden)]
     pub snapshot_download_url: std::option::Option<std::string::String>,
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
+    #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
@@ -7649,8 +7875,10 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The operating system for the returned patch baseline. </p>
+    #[doc(hidden)]
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
 impl GetDefaultPatchBaselineOutput {
@@ -7725,8 +7953,10 @@ impl GetDefaultPatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionStatusOutput {
     /// <p>The ID of the managed node to check connection status. </p>
+    #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConnectionStatus>,
 }
 impl GetConnectionStatusOutput {
@@ -7801,30 +8031,41 @@ impl GetConnectionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCommandInvocationOutput {
     /// <p>The parent command ID of the invocation plugin.</p>
+    #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The comment text for the command.</p>
+    #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
     /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
+    #[doc(hidden)]
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
+    #[doc(hidden)]
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    #[doc(hidden)]
     pub plugin_name: std::option::Option<std::string::String>,
     /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
+    #[doc(hidden)]
     pub response_code: i32,
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
+    #[doc(hidden)]
     pub execution_start_date_time: std::option::Option<std::string::String>,
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
+    #[doc(hidden)]
     pub execution_elapsed_time: std::option::Option<std::string::String>,
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
+    #[doc(hidden)]
     pub execution_end_date_time: std::option::Option<std::string::String>,
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::CommandInvocationStatus>,
     /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
@@ -7839,16 +8080,22 @@ pub struct GetCommandInvocationOutput {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
+    #[doc(hidden)]
     pub standard_output_content: std::option::Option<std::string::String>,
     /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
+    #[doc(hidden)]
     pub standard_output_url: std::option::Option<std::string::String>,
     /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
+    #[doc(hidden)]
     pub standard_error_content: std::option::Option<std::string::String>,
     /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
+    #[doc(hidden)]
     pub standard_error_url: std::option::Option<std::string::String>,
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
+    #[doc(hidden)]
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
 }
 impl GetCommandInvocationOutput {
@@ -8265,10 +8512,13 @@ impl GetCommandInvocationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCalendarStateOutput {
     /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CalendarState>,
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
+    #[doc(hidden)]
     pub at_time: std::option::Option<std::string::String>,
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
+    #[doc(hidden)]
     pub next_transition_time: std::option::Option<std::string::String>,
 }
 impl GetCalendarStateOutput {
@@ -8363,6 +8613,7 @@ impl GetCalendarStateOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
+    #[doc(hidden)]
     pub automation_execution: std::option::Option<crate::model::AutomationExecution>,
 }
 impl GetAutomationExecutionOutput {
@@ -8450,8 +8701,10 @@ impl DisassociateOpsItemRelatedItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSessionsOutput {
     /// <p>A list of sessions meeting the request parameters.</p>
+    #[doc(hidden)]
     pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSessionsOutput {
@@ -8532,10 +8785,12 @@ impl DescribeSessionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
+    #[doc(hidden)]
     pub properties: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchPropertiesOutput {
@@ -8626,30 +8881,42 @@ impl DescribePatchPropertiesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchGroupStateOutput {
     /// <p>The number of managed nodes in the patch group.</p>
+    #[doc(hidden)]
     pub instances: i32,
     /// <p>The number of managed nodes with installed patches.</p>
+    #[doc(hidden)]
     pub instances_with_installed_patches: i32,
     /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
+    #[doc(hidden)]
     pub instances_with_installed_other_patches: i32,
     /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub instances_with_installed_pending_reboot_patches: std::option::Option<i32>,
     /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
+    #[doc(hidden)]
     pub instances_with_installed_rejected_patches: std::option::Option<i32>,
     /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
+    #[doc(hidden)]
     pub instances_with_missing_patches: i32,
     /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
+    #[doc(hidden)]
     pub instances_with_failed_patches: i32,
     /// <p>The number of managed nodes with patches that aren't applicable.</p>
+    #[doc(hidden)]
     pub instances_with_not_applicable_patches: i32,
     /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    #[doc(hidden)]
     pub instances_with_unreported_not_applicable_patches: std::option::Option<i32>,
     /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub instances_with_critical_non_compliant_patches: std::option::Option<i32>,
     /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub instances_with_security_non_compliant_patches: std::option::Option<i32>,
     /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    #[doc(hidden)]
     pub instances_with_other_non_compliant_patches: std::option::Option<i32>,
 }
 impl DescribePatchGroupStateOutput {
@@ -8983,8 +9250,10 @@ pub struct DescribePatchGroupsOutput {
     /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
     /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub mappings: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchGroupsOutput {
@@ -9078,9 +9347,11 @@ impl DescribePatchGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
+    #[doc(hidden)]
     pub baseline_identities:
         std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchBaselinesOutput {
@@ -9164,8 +9435,10 @@ impl DescribePatchBaselinesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersOutput {
     /// <p>Parameters returned by the request.</p>
+    #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ParameterMetadata>>,
     /// <p>The token to use when requesting the next set of items.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParametersOutput {
@@ -9246,8 +9519,10 @@ impl DescribeParametersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOpsItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of OpsItems.</p>
+    #[doc(hidden)]
     pub ops_item_summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
 }
 impl DescribeOpsItemsOutput {
@@ -9329,8 +9604,10 @@ impl DescribeOpsItemsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowTasksOutput {
     /// <p>Information about the tasks in the maintenance window.</p>
+    #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTask>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowTasksOutput {
@@ -9411,8 +9688,10 @@ impl DescribeMaintenanceWindowTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowTargetsOutput {
     /// <p>Information about the targets in the maintenance window.</p>
+    #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowTargetsOutput {
@@ -9494,9 +9773,11 @@ impl DescribeMaintenanceWindowTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
+    #[doc(hidden)]
     pub window_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
@@ -9585,9 +9866,11 @@ impl DescribeMaintenanceWindowsForTargetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowScheduleOutput {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
+    #[doc(hidden)]
     pub scheduled_window_executions:
         std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowScheduleOutput {
@@ -9677,9 +9960,11 @@ impl DescribeMaintenanceWindowScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
+    #[doc(hidden)]
     pub window_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsOutput {
@@ -9763,9 +10048,11 @@ impl DescribeMaintenanceWindowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
+    #[doc(hidden)]
     pub window_execution_task_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
@@ -9858,10 +10145,12 @@ impl DescribeMaintenanceWindowExecutionTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// <p>Information about the task invocation results per invocation.</p>
+    #[doc(hidden)]
     pub window_execution_task_invocation_identities: std::option::Option<
         std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>,
     >,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
@@ -9962,9 +10251,11 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowExecutionsOutput {
     /// <p>Information about the maintenance window executions.</p>
+    #[doc(hidden)]
     pub window_executions:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionsOutput {
@@ -10051,9 +10342,11 @@ impl DescribeMaintenanceWindowExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInventoryDeletionsOutput {
     /// <p>A list of status items for deleted inventory.</p>
+    #[doc(hidden)]
     pub inventory_deletions:
         std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInventoryDeletionsOutput {
@@ -10140,8 +10433,10 @@ impl DescribeInventoryDeletionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
+    #[doc(hidden)]
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
@@ -10226,8 +10521,10 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesOutput {
     /// <p>The high-level patch state for the requested managed nodes.</p>
+    #[doc(hidden)]
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchStatesOutput {
@@ -10320,8 +10617,10 @@ pub struct DescribeInstancePatchesOutput {
     /// <li> <p>InstalledTime (DateTime)</p> </li>
     /// <li> <p>InstalledBy (string)</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub patches: std::option::Option<std::vec::Vec<crate::model::PatchComplianceData>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchesOutput {
@@ -10429,9 +10728,11 @@ impl DescribeInstancePatchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceInformationOutput {
     /// <p>The managed node information list.</p>
+    #[doc(hidden)]
     pub instance_information_list:
         std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInformationOutput {
@@ -10518,9 +10819,11 @@ impl DescribeInstanceInformationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
+    #[doc(hidden)]
     pub instance_association_status_infos:
         std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceAssociationsStatusOutput {
@@ -10610,8 +10913,10 @@ impl DescribeInstanceAssociationsStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectivePatchesForPatchBaselineOutput {
     /// <p>An array of patches and patch status.</p>
+    #[doc(hidden)]
     pub effective_patches: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectivePatchesForPatchBaselineOutput {
@@ -10694,8 +10999,10 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The associations for the requested managed node.</p>
+    #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
@@ -10777,11 +11084,14 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentPermissionOutput {
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
+    #[doc(hidden)]
     pub account_sharing_info_list:
         std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentPermissionOutput {
@@ -10894,6 +11204,7 @@ impl DescribeDocumentPermissionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentOutput {
     /// <p>Information about the SSM document.</p>
+    #[doc(hidden)]
     pub document: std::option::Option<crate::model::DocumentDescription>,
 }
 impl DescribeDocumentOutput {
@@ -10951,8 +11262,10 @@ impl DescribeDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailablePatchesOutput {
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
+    #[doc(hidden)]
     pub patches: std::option::Option<std::vec::Vec<crate::model::Patch>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAvailablePatchesOutput {
@@ -11033,8 +11346,10 @@ impl DescribeAvailablePatchesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutomationStepExecutionsOutput {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
+    #[doc(hidden)]
     pub step_executions: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutomationStepExecutionsOutput {
@@ -11115,9 +11430,11 @@ impl DescribeAutomationStepExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutomationExecutionsOutput {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
+    #[doc(hidden)]
     pub automation_execution_metadata_list:
         std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutomationExecutionsOutput {
@@ -11207,9 +11524,11 @@ impl DescribeAutomationExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
+    #[doc(hidden)]
     pub association_execution_targets:
         std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionTargetsOutput {
@@ -11299,9 +11618,11 @@ impl DescribeAssociationExecutionTargetsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
+    #[doc(hidden)]
     pub association_executions:
         std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionsOutput {
@@ -11385,6 +11706,7 @@ impl DescribeAssociationExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl DescribeAssociationOutput {
@@ -11448,8 +11770,10 @@ impl DescribeAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivationsOutput {
     /// <p>A list of activations for your Amazon Web Services account.</p>
+    #[doc(hidden)]
     pub activation_list: std::option::Option<std::vec::Vec<crate::model::Activation>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeActivationsOutput {
@@ -11530,8 +11854,10 @@ impl DescribeActivationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTaskFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the task was removed from.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the task removed from the maintenance window.</p>
+    #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
 }
 impl DeregisterTaskFromMaintenanceWindowOutput {
@@ -11606,8 +11932,10 @@ impl DeregisterTaskFromMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTargetFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the target was removed from.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The ID of the removed target definition.</p>
+    #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
 }
 impl DeregisterTargetFromMaintenanceWindowOutput {
@@ -11682,8 +12010,10 @@ impl DeregisterTargetFromMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was deregistered from.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group deregistered from the patch baseline.</p>
+    #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl DeregisterPatchBaselineForPatchGroupOutput {
@@ -11815,6 +12145,7 @@ impl DeleteResourceDataSyncOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl DeletePatchBaselineOutput {
@@ -11869,8 +12200,10 @@ impl DeletePatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParametersOutput {
     /// <p>The names of the deleted parameters.</p>
+    #[doc(hidden)]
     pub deleted_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
+    #[doc(hidden)]
     pub invalid_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteParametersOutput {
@@ -12020,6 +12353,7 @@ impl DeleteOpsMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMaintenanceWindowOutput {
     /// <p>The ID of the deleted maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
 }
 impl DeleteMaintenanceWindowOutput {
@@ -12074,10 +12408,13 @@ impl DeleteMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInventoryOutput {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    #[doc(hidden)]
     pub deletion_id: std::option::Option<std::string::String>,
     /// <p>The name of the inventory data type specified in the request.</p>
+    #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    #[doc(hidden)]
     pub deletion_summary: std::option::Option<crate::model::InventoryDeletionSummary>,
 }
 impl DeleteInventoryOutput {
@@ -12289,6 +12626,7 @@ impl CreateResourceDataSyncOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePatchBaselineOutput {
     /// <p>The ID of the created patch baseline.</p>
+    #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl CreatePatchBaselineOutput {
@@ -12343,6 +12681,7 @@ impl CreatePatchBaselineOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
+    #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
 impl CreateOpsMetadataOutput {
@@ -12400,6 +12739,7 @@ impl CreateOpsMetadataOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
+    #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
 }
 impl CreateOpsItemOutput {
@@ -12454,6 +12794,7 @@ impl CreateOpsItemOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
+    #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
 }
 impl CreateMaintenanceWindowOutput {
@@ -12508,6 +12849,7 @@ impl CreateMaintenanceWindowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
+    #[doc(hidden)]
     pub document_description: std::option::Option<crate::model::DocumentDescription>,
 }
 impl CreateDocumentOutput {
@@ -12565,8 +12907,10 @@ impl CreateDocumentOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationBatchOutput {
     /// <p>Information about the associations that succeeded.</p>
+    #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
     /// <p>Information about the associations that failed.</p>
+    #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedCreateAssociation>>,
 }
 impl CreateAssociationBatchOutput {
@@ -12658,6 +13002,7 @@ impl CreateAssociationBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationOutput {
     /// <p>Information about the association.</p>
+    #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl CreateAssociationOutput {
@@ -12721,8 +13066,10 @@ impl CreateAssociationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateActivationOutput {
     /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
+    #[doc(hidden)]
     pub activation_id: std::option::Option<std::string::String>,
     /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
+    #[doc(hidden)]
     pub activation_code: std::option::Option<std::string::String>,
 }
 impl CreateActivationOutput {
@@ -12800,6 +13147,7 @@ impl CreateActivationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
+    #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
 }
 impl CancelMaintenanceWindowExecutionOutput {
@@ -12887,6 +13235,7 @@ impl CancelCommandOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateOpsItemRelatedItemOutput {
     /// <p>The association ID.</p>
+    #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl AssociateOpsItemRelatedItemOutput {

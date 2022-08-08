@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnknownResourceFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnknownResourceFault {
@@ -69,6 +70,7 @@ impl UnknownResourceFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotPermittedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OperationNotPermittedFault {
@@ -133,6 +135,7 @@ impl OperationNotPermittedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededFault {
@@ -197,6 +200,7 @@ impl LimitExceededFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeAlreadyExistsFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TypeAlreadyExistsFault {
@@ -261,6 +265,7 @@ impl TypeAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainAlreadyExistsFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainAlreadyExistsFault {
@@ -325,6 +330,7 @@ impl DomainAlreadyExistsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyTagsFault {
@@ -389,6 +395,7 @@ impl TooManyTagsFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowExecutionAlreadyStartedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WorkflowExecutionAlreadyStartedFault {
@@ -453,6 +460,7 @@ impl WorkflowExecutionAlreadyStartedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeDeprecatedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TypeDeprecatedFault {
@@ -520,6 +528,7 @@ impl TypeDeprecatedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultUndefinedFault {
     #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DefaultUndefinedFault {
@@ -584,6 +593,7 @@ impl DefaultUndefinedFault {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDeprecatedFault {
     /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainDeprecatedFault {

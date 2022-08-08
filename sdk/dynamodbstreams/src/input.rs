@@ -688,10 +688,13 @@ impl ListStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsInput {
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
+    #[doc(hidden)]
     pub exclusive_start_stream_arn: std::option::Option<std::string::String>,
 }
 impl ListStreamsInput {
@@ -726,8 +729,10 @@ impl std::fmt::Debug for ListStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetShardIteratorInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
+    #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
     /// <ul>
@@ -736,8 +741,10 @@ pub struct GetShardIteratorInput {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
+    #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl GetShardIteratorInput {
@@ -780,8 +787,10 @@ impl std::fmt::Debug for GetShardIteratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordsInput {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    #[doc(hidden)]
     pub shard_iterator: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
 }
 impl GetRecordsInput {
@@ -808,10 +817,13 @@ impl std::fmt::Debug for GetRecordsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
+    #[doc(hidden)]
     pub limit: std::option::Option<i32>,
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    #[doc(hidden)]
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
 }
 impl DescribeStreamInput {

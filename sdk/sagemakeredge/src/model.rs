@@ -5,16 +5,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentResult {
     /// <p>The name and unique ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>Returns the bucket error code.</p>
+    #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
     /// <p>Returns the detailed error message.</p>
+    #[doc(hidden)]
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the deployment was started on the agent.</p>
+    #[doc(hidden)]
     pub deployment_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
+    #[doc(hidden)]
     pub deployment_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns a list of models deployed on the agent.</p>
+    #[doc(hidden)]
     pub deployment_models: std::option::Option<std::vec::Vec<crate::model::DeploymentModel>>,
 }
 impl DeploymentResult {
@@ -179,20 +185,28 @@ impl DeploymentResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentModel {
     /// <p>The unique handle of the model.</p>
+    #[doc(hidden)]
     pub model_handle: std::option::Option<std::string::String>,
     /// <p>The name of the model.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The version of the model.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The desired state of the model.</p>
+    #[doc(hidden)]
     pub desired_state: std::option::Option<crate::model::ModelState>,
     /// <p>Returns the current state of the model.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ModelState>,
     /// <p>Returns the deployment status of the model.</p>
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>Returns the error message for the deployment status result.</p>
+    #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Returns the error message if there is a rollback.</p>
+    #[doc(hidden)]
     pub rollback_failure_reason: std::option::Option<std::string::String>,
 }
 impl DeploymentModel {
@@ -491,14 +505,19 @@ impl AsRef<str> for ModelState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Model {
     /// <p>The name of the model.</p>
+    #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
     /// <p>The version of the model.</p>
+    #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last data sample taken.</p>
+    #[doc(hidden)]
     pub latest_sample_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last inference that was made.</p>
+    #[doc(hidden)]
     pub latest_inference: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information required for model metrics.</p>
+    #[doc(hidden)]
     pub model_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
 }
 impl Model {
@@ -639,12 +658,16 @@ impl Model {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdgeMetric {
     /// <p>The dimension of metrics published.</p>
+    #[doc(hidden)]
     pub dimension: std::option::Option<std::string::String>,
     /// <p>Returns the name of the metric.</p>
+    #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>Returns the value of the metric.</p>
+    #[doc(hidden)]
     pub value: f64,
     /// <p>Timestamp of when the metric was requested.</p>
+    #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EdgeMetric {
@@ -753,12 +776,16 @@ impl EdgeMetric {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdgeDeployment {
     /// <p>The name and unique ID of the deployment.</p>
+    #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The type of the deployment.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DeploymentType>,
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
+    #[doc(hidden)]
     pub failure_handling_policy: std::option::Option<crate::model::FailureHandlingPolicy>,
     /// <p>Returns a list of Definition objects.</p>
+    #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::Definition>>,
 }
 impl EdgeDeployment {
@@ -888,12 +915,16 @@ impl EdgeDeployment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Definition {
     /// <p>The unique model handle.</p>
+    #[doc(hidden)]
     pub model_handle: std::option::Option<std::string::String>,
     /// <p>The absolute S3 location of the model.</p>
+    #[doc(hidden)]
     pub s3_url: std::option::Option<std::string::String>,
     /// <p>The checksum information of the model.</p>
+    #[doc(hidden)]
     pub checksum: std::option::Option<crate::model::Checksum>,
     /// <p>The desired state of the model.</p>
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::ModelState>,
 }
 impl Definition {
@@ -999,8 +1030,10 @@ impl Definition {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Checksum {
     /// <p>The type of the checksum.</p>
+    #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChecksumType>,
     /// <p>The checksum of the model.</p>
+    #[doc(hidden)]
     pub sum: std::option::Option<std::string::String>,
 }
 impl Checksum {

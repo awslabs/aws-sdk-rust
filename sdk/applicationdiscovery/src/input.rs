@@ -4155,10 +4155,13 @@ impl UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationInput {
     /// <p>Configuration ID of the application to be updated.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>New name of the application to be updated.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>New description of the application to be updated.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -4190,6 +4193,7 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDataCollectionByAgentIdsInput {
     /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    #[doc(hidden)]
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StopDataCollectionByAgentIdsInput {
@@ -4211,6 +4215,7 @@ impl std::fmt::Debug for StopDataCollectionByAgentIdsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopContinuousExportInput {
     /// <p>The unique ID assigned to this export.</p>
+    #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
 }
 impl StopContinuousExportInput {
@@ -4233,12 +4238,15 @@ impl std::fmt::Debug for StopContinuousExportInput {
 pub struct StartImportTaskInput {
     /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
+    #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
     /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
+    #[doc(hidden)]
     pub import_url: std::option::Option<std::string::String>,
 }
 impl StartImportTaskInput {
@@ -4273,12 +4281,16 @@ impl std::fmt::Debug for StartImportTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExportTaskInput {
     /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
+    #[doc(hidden)]
     pub export_data_format: std::option::Option<std::vec::Vec<crate::model::ExportDataFormat>>,
     /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
     /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
+    #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
+    #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExportTaskInput {
@@ -4315,6 +4327,7 @@ impl std::fmt::Debug for StartExportTaskInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataCollectionByAgentIdsInput {
     /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    #[doc(hidden)]
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartDataCollectionByAgentIdsInput {
@@ -4347,14 +4360,19 @@ impl std::fmt::Debug for StartContinuousExportInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServerNeighborsInput {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
+    #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
+    #[doc(hidden)]
     pub port_information_needed: bool,
     /// <p>List of configuration IDs to test for one-hop-away.</p>
+    #[doc(hidden)]
     pub neighbor_configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maximum number of results to return in a single page of output.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServerNeighborsInput {
@@ -4399,16 +4417,21 @@ impl std::fmt::Debug for ListServerNeighborsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsInput {
     /// <p>A valid configuration identified by Application Discovery Service. </p>
+    #[doc(hidden)]
     pub configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
+    #[doc(hidden)]
     pub order_by: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
 }
 impl ListConfigurationsInput {
@@ -4474,8 +4497,10 @@ impl std::fmt::Debug for ExportConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConfigurationItemsFromApplicationInput {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
+    #[doc(hidden)]
     pub application_configuration_id: std::option::Option<std::string::String>,
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
+    #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateConfigurationItemsFromApplicationInput {
@@ -4505,10 +4530,13 @@ impl std::fmt::Debug for DisassociateConfigurationItemsFromApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
@@ -4540,10 +4568,13 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportTasksInput {
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ImportTaskFilter>>,
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request a specific page of results.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportTasksInput {
@@ -4575,15 +4606,19 @@ impl std::fmt::Debug for DescribeImportTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportTasksInput {
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
+    #[doc(hidden)]
     pub export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportTasksInput {
@@ -4623,10 +4658,13 @@ impl std::fmt::Debug for DescribeExportTasksInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportConfigurationsInput {
     /// <p>A list of continuous export IDs to search for.</p>
+    #[doc(hidden)]
     pub export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token from the previous call to describe-export-tasks.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportConfigurationsInput {
@@ -4658,10 +4696,13 @@ impl std::fmt::Debug for DescribeExportConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContinuousExportsInput {
     /// <p>The unique IDs assigned to the exports.</p>
+    #[doc(hidden)]
     pub export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+    #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeContinuousExportsInput {
@@ -4693,6 +4734,7 @@ impl std::fmt::Debug for DescribeContinuousExportsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationsInput {
     /// <p>One or more configuration IDs.</p>
+    #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConfigurationsInput {
@@ -4714,13 +4756,17 @@ impl std::fmt::Debug for DescribeConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentsInput {
     /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    #[doc(hidden)]
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
+    #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAgentsInput {
@@ -4758,9 +4804,11 @@ impl std::fmt::Debug for DescribeAgentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
     /// <p>A list of configuration items with tags that you want to delete.</p>
+    #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DeleteTagsInput {
@@ -4788,6 +4836,7 @@ impl std::fmt::Debug for DeleteTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationsInput {
     /// <p>Configuration ID of an application to be deleted.</p>
+    #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteApplicationsInput {
@@ -4809,9 +4858,11 @@ impl std::fmt::Debug for DeleteApplicationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
     /// <p>A list of configuration items that you want to tag.</p>
+    #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
@@ -4839,8 +4890,10 @@ impl std::fmt::Debug for CreateTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>Name of the application to be created.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the application to be created.</p>
+    #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
@@ -4867,6 +4920,7 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImportDataInput {
     /// <p>The IDs for the import tasks that you want to delete.</p>
+    #[doc(hidden)]
     pub import_task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteImportDataInput {
@@ -4888,8 +4942,10 @@ impl std::fmt::Debug for BatchDeleteImportDataInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConfigurationItemsToApplicationInput {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
+    #[doc(hidden)]
     pub application_configuration_id: std::option::Option<std::string::String>,
     /// <p>The ID of each configuration item to be associated with an application.</p>
+    #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateConfigurationItemsToApplicationInput {

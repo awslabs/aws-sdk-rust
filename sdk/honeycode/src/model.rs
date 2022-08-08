@@ -67,8 +67,10 @@ impl AsRef<str> for TableDataImportJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportOptions {
     /// <p>Options relating to the destination of the import request.</p>
+    #[doc(hidden)]
     pub destination_options: std::option::Option<crate::model::DestinationOptions>,
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
+    #[doc(hidden)]
     pub delimited_text_options: std::option::Option<crate::model::DelimitedTextImportOptions>,
 }
 impl ImportOptions {
@@ -152,12 +154,16 @@ impl ImportOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
+    #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
+    #[doc(hidden)]
     pub has_header_row: bool,
     /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
+    #[doc(hidden)]
     pub ignore_empty_rows: bool,
     /// <p>The encoding of the data in the input file.</p>
+    #[doc(hidden)]
     pub data_character_encoding: std::option::Option<crate::model::ImportDataCharacterEncoding>,
 }
 impl DelimitedTextImportOptions {
@@ -350,6 +356,7 @@ impl AsRef<str> for ImportDataCharacterEncoding {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationOptions {
     /// <p>A map of the column id to the import properties for each column.</p>
+    #[doc(hidden)]
     pub column_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>,
     >,
@@ -433,6 +440,7 @@ impl DestinationOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceDataColumnProperties {
     /// <p>The index of the column in the input file.</p>
+    #[doc(hidden)]
     pub column_index: i32,
 }
 impl SourceDataColumnProperties {
@@ -538,6 +546,7 @@ impl AsRef<str> for ImportSourceDataFormat {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDataSource {
     /// <p>The configuration parameters for the data source of the import</p>
+    #[doc(hidden)]
     pub data_source_config: std::option::Option<crate::model::ImportDataSourceConfig>,
 }
 impl ImportDataSource {
@@ -595,6 +604,7 @@ impl ImportDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportDataSourceConfig {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
+    #[doc(hidden)]
     pub data_source_url: std::option::Option<std::string::String>,
 }
 impl ImportDataSourceConfig {
@@ -652,8 +662,10 @@ impl ImportDataSourceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableRow {
     /// <p>The id of the row in the table.</p>
+    #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<crate::model::Cell>>,
 }
 impl TableRow {
@@ -734,8 +746,10 @@ impl TableRow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cell {
     /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
+    #[doc(hidden)]
     pub formula: std::option::Option<std::string::String>,
     /// <p>The format of the cell. If this field is empty, then the format is either not specified in the workbook or the format is set to AUTO.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
     /// <p> The raw value of the data contained in the cell. The raw value depends on the format of the data in the cell. However the attribute in the API return value is always a string containing the raw value. </p>
     /// <p> Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point number where the whole number represents the number of days since 1/1/1900 and the fractional part represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all three cases, it is still represented as a string. </p>
@@ -746,11 +760,14 @@ pub struct Cell {
     /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
     /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
     /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
+    #[doc(hidden)]
     pub raw_value: std::option::Option<std::string::String>,
     /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
     /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
+    #[doc(hidden)]
     pub formatted_value: std::option::Option<std::string::String>,
     /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
+    #[doc(hidden)]
     pub formatted_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Cell {
@@ -1020,8 +1037,10 @@ impl AsRef<str> for Format {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
+    #[doc(hidden)]
     pub formula: std::option::Option<std::string::String>,
     /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
+    #[doc(hidden)]
     pub context_row_id: std::option::Option<std::string::String>,
 }
 impl Filter {
@@ -1096,8 +1115,10 @@ impl Filter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Table {
     /// <p>The id of the table.</p>
+    #[doc(hidden)]
     pub table_id: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
+    #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
 }
 impl Table {
@@ -1169,10 +1190,13 @@ impl Table {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableColumn {
     /// <p>The id of the column in the table.</p>
+    #[doc(hidden)]
     pub table_column_id: std::option::Option<std::string::String>,
     /// <p>The name of the column in the table.</p>
+    #[doc(hidden)]
     pub table_column_name: std::option::Option<std::string::String>,
     /// <p> The column level format that is applied in the table. An empty value in this field means that the column format is the default value 'AUTO'. </p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
 }
 impl TableColumn {
@@ -1267,6 +1291,7 @@ impl TableColumn {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableValue {
     /// <p>Raw value of the variable.</p>
+    #[doc(hidden)]
     pub raw_value: std::option::Option<std::string::String>,
 }
 impl VariableValue {
@@ -1322,8 +1347,10 @@ impl VariableValue {
 pub struct ResultSet {
     /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
+    #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
     /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
+    #[doc(hidden)]
     pub rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
 }
 impl ResultSet {
@@ -1416,8 +1443,10 @@ impl ResultSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultRow {
     /// <p>The ID for a particular row.</p>
+    #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
     /// <p>List of all the data cells in a row.</p>
+    #[doc(hidden)]
     pub data_items: std::option::Option<std::vec::Vec<crate::model::DataItem>>,
 }
 impl ResultRow {
@@ -1498,10 +1527,13 @@ impl ResultRow {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataItem {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
+    #[doc(hidden)]
     pub override_format: std::option::Option<crate::model::Format>,
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
+    #[doc(hidden)]
     pub raw_value: std::option::Option<std::string::String>,
     /// <p>The formatted value of the data. e.g. John Smith.</p>
+    #[doc(hidden)]
     pub formatted_value: std::option::Option<std::string::String>,
 }
 impl DataItem {
@@ -1596,8 +1628,10 @@ impl DataItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the column.</p>
+    #[doc(hidden)]
     pub format: std::option::Option<crate::model::Format>,
 }
 impl ColumnMetadata {
@@ -1787,12 +1821,16 @@ impl AsRef<str> for ErrorCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableDataImportJobMetadata {
     /// <p>Details about the submitter of the import request.</p>
+    #[doc(hidden)]
     pub submitter: std::option::Option<crate::model::ImportJobSubmitter>,
     /// <p>The timestamp when the job was submitted for import.</p>
+    #[doc(hidden)]
     pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The options that was specified at the time of submitting the import request.</p>
+    #[doc(hidden)]
     pub import_options: std::option::Option<crate::model::ImportOptions>,
     /// <p>The source of the data that was submitted for import.</p>
+    #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::ImportDataSource>,
 }
 impl TableDataImportJobMetadata {
@@ -1910,8 +1948,10 @@ impl TableDataImportJobMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportJobSubmitter {
     /// <p>The email id of the submitter of the import job, if available.</p>
+    #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
+    #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl ImportJobSubmitter {
@@ -1983,8 +2023,10 @@ impl ImportJobSubmitter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedBatchItem {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> The error message that indicates why the batch item failed. </p>
+    #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedBatchItem {
@@ -2059,8 +2101,10 @@ impl FailedBatchItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsertRowsResult {
     /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
+    #[doc(hidden)]
     pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The result of the upsert action. </p>
+    #[doc(hidden)]
     pub upsert_action: std::option::Option<crate::model::UpsertAction>,
 }
 impl UpsertRowsResult {
@@ -2199,11 +2243,14 @@ impl AsRef<str> for UpsertAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsertRowData {
     /// <p> An external identifier that represents a single item in the request that is being upserted as part of the BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request. The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
+    #[doc(hidden)]
     pub batch_item_id: std::option::Option<std::string::String>,
     /// <p> The filter formula to use to find existing matching rows to update. The formula needs to return zero or more rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula returns one or more rows, then the returned rows will be updated. </p>
     /// <p> Note that the filter formula needs to return rows from the target table for the upsert operation to succeed. If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are made to the table. </p>
+    #[doc(hidden)]
     pub filter: std::option::Option<crate::model::Filter>,
     /// <p> A map representing the cells to update for the matching rows or an appended row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
+    #[doc(hidden)]
     pub cells_to_update: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
@@ -2322,8 +2369,10 @@ impl UpsertRowData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
+    #[doc(hidden)]
     pub fact: std::option::Option<std::string::String>,
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
+    #[doc(hidden)]
     pub facts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CellInput {
@@ -2404,8 +2453,10 @@ impl CellInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRowData {
     /// <p> The id of the row that needs to be updated. </p>
+    #[doc(hidden)]
     pub row_id: std::option::Option<std::string::String>,
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
+    #[doc(hidden)]
     pub cells_to_update: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
@@ -2499,8 +2550,10 @@ impl UpdateRowData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRowData {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
+    #[doc(hidden)]
     pub batch_item_id: std::option::Option<std::string::String>,
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
+    #[doc(hidden)]
     pub cells_to_create: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,

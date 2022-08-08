@@ -5,6 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
+    #[doc(hidden)]
     pub enable_answer_machine_detection: std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfig {
@@ -120,6 +121,7 @@ impl DialerConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
+    #[doc(hidden)]
     pub bandwidth_allocation: std::option::Option<f64>,
 }
 impl PredictiveDialerConfig {
@@ -174,6 +176,7 @@ impl PredictiveDialerConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProgressiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
+    #[doc(hidden)]
     pub bandwidth_allocation: std::option::Option<f64>,
 }
 impl ProgressiveDialerConfig {
@@ -295,10 +298,13 @@ impl AsRef<str> for CampaignState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceOnboardingJobStatus {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
     /// Enumeration of the possible states for instance onboarding job
+    #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceOnboardingJobStatusCode>,
     /// Enumeration of the possible failure codes for instance onboarding job
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::InstanceOnboardingJobFailureCode>,
 }
 impl InstanceOnboardingJobStatus {
@@ -547,10 +553,13 @@ impl AsRef<str> for InstanceOnboardingJobStatusCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfig {
     /// Boolean to indicate if custom encryption has been enabled.
+    #[doc(hidden)]
     pub enabled: bool,
     /// Server-side encryption type.
+    #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// KMS key id/arn for encryption config.
+    #[doc(hidden)]
     pub key_arn: std::option::Option<std::string::String>,
 }
 impl EncryptionConfig {
@@ -693,10 +702,13 @@ impl AsRef<str> for EncryptionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// Identifier representing a Dial request
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// A predefined code indicating the error that caused the failure.
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::FailureCode>,
 }
 impl FailedRequest {
@@ -847,8 +859,10 @@ impl AsRef<str> for FailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuccessfulRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// Identifier representing a Dial request
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl SuccessfulRequest {
@@ -920,12 +934,16 @@ impl SuccessfulRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DialRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// The phone number of the customer, in E.164 format.
+    #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// Timestamp with no UTC offset or timezone
+    #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
+    #[doc(hidden)]
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1055,12 +1073,16 @@ impl DialRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignSummary {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The resource name of an Amazon Connect campaign.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The name of an Amazon Connect Campaign name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl CampaignSummary {
@@ -1169,6 +1191,7 @@ impl CampaignSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CampaignFilters {
     /// Connect instance identifier filter
+    #[doc(hidden)]
     pub instance_id_filter: std::option::Option<crate::model::InstanceIdFilter>,
 }
 impl CampaignFilters {
@@ -1226,8 +1249,10 @@ impl CampaignFilters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdFilter {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// Operators for Connect instance identifier filter
+    #[doc(hidden)]
     pub operator: std::option::Option<crate::model::InstanceIdFilterOperator>,
 }
 impl InstanceIdFilter {
@@ -1353,10 +1378,13 @@ impl AsRef<str> for InstanceIdFilterOperator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceConfig {
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
     /// Service linked role arn
+    #[doc(hidden)]
     pub service_linked_role_arn: std::option::Option<std::string::String>,
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl InstanceConfig {
@@ -1454,8 +1482,10 @@ impl InstanceConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedCampaignStateResponse {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
+    #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::GetCampaignStateBatchFailureCode>,
 }
 impl FailedCampaignStateResponse {
@@ -1591,8 +1621,10 @@ impl AsRef<str> for GetCampaignStateBatchFailureCode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuccessfulCampaignStateResponse {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
     /// State of a campaign
+    #[doc(hidden)]
     pub state: std::option::Option<crate::model::CampaignState>,
 }
 impl SuccessfulCampaignStateResponse {
@@ -1667,18 +1699,25 @@ impl SuccessfulCampaignStateResponse {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Campaign {
     /// Identifier representing a Campaign
+    #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// The resource name of an Amazon Connect campaign.
+    #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// The name of an Amazon Connect Campaign name.
+    #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// Amazon Connect Instance Id
+    #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
     /// The possible types of dialer config parameters
+    #[doc(hidden)]
     pub dialer_config: std::option::Option<crate::model::DialerConfig>,
     /// The configuration used for outbound calls.
+    #[doc(hidden)]
     pub outbound_call_config: std::option::Option<crate::model::OutboundCallConfig>,
     /// Tag map with key and value.
+    #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1865,12 +1904,16 @@ impl Campaign {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutboundCallConfig {
     /// The identifier of the contact flow for the outbound call.
+    #[doc(hidden)]
     pub connect_contact_flow_id: std::option::Option<std::string::String>,
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
+    #[doc(hidden)]
     pub connect_source_phone_number: std::option::Option<std::string::String>,
     /// The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
+    #[doc(hidden)]
     pub connect_queue_id: std::option::Option<std::string::String>,
     /// Answering Machine Detection config
+    #[doc(hidden)]
     pub answer_machine_detection_config:
         std::option::Option<crate::model::AnswerMachineDetectionConfig>,
 }
