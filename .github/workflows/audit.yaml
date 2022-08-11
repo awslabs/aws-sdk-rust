@@ -15,6 +15,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
+          default: true
       - name: install cargo audit
         run: cargo install cargo-audit
       - name: Run audit
