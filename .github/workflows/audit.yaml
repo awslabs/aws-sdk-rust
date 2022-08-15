@@ -5,36 +5,52 @@ on:
   workflow_dispatch:
   pull_request:
 env:
-  rust_version: 1.56.1
+  rust_version: nightly-2022-07-25
+
+  # RUSTSEC-2020-0071 , RUSTSEC-2020-0159
+  # chrono, a Rust date-time crate we use for timestamp parsing was added
+  # to the RustSec vulnerability database because of a call to localtime_r.
+  # We use chrono for an extremely narrow use case of converting epoch timestamps to UTC dates
+  # (so we never invoke the problematic behavior that results from attempting to determine
+  # the local time of the current platform).
+  #
+  # Chrono's only use is as an optional feature in `aws-smithy-types-convert`, for
+  # the narrow use-case of converting from the SDK's `DateTime` into chrono types,
+  # and we never invoke the problematic behavior that results from attempting to
+  # determine the local time of the current platform.
+  #
+  # RUSTSEC-2021-0127
+  # serde_cbor is being imported by criterion, a benchmarking crate. More info here https://github.com/awslabs/smithy-rs/issues/1044
+  cargo_audit_flags: --ignore RUSTSEC-2020-0071 --ignore RUSTSEC-2020-0159 --ignore RUSTSEC-2021-0127
 
 jobs:
-  audit:
+  audit-latest:
+    name: Audit Latest Dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
+          default: true
       - name: install cargo audit
         run: cargo install cargo-audit
       - name: Run audit
-        # RUSTSEC-2020-0071 , RUSTSEC-2020-0159
-        # chrono, a Rust date-time crate we use for timestamp parsing was added
-        # to the RustSec vulnerability database because of a call to localtime_r.
-        # We use chrono for an extremely narrow use case of converting epoch timestamps to UTC dates
-        # (so we never invoke the problematic behavior that results from attempting to determine
-        # the local time of the current platform).
-        #
-        # Chrono's only use is as an optional feature in `aws-smithy-types-convert`, for
-        # the narrow use-case of converting from the SDK's `DateTime` into chrono types,
-        # and we never invoke the problematic behavior that results from attempting to
-        # determine the local time of the current platform.
-        #
-        # RUSTSEC-2021-0127
-        # serde_cbor is being imported by criterion, a benchmarking crate. More info here https://github.com/awslabs/smithy-rs/issues/1044
         run: |
-          cargo audit \
-            --ignore RUSTSEC-2020-0071 \
-            --ignore RUSTSEC-2020-0159 \
-            --ignore RUSTSEC-2021-0127
+          cargo audit ${{ env.cargo_audit_flags }}
 
+  audit-minimal-versions:
+    name: Audit Minimal Versions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.rust_version }}
+          default: true
+      - name: install cargo audit
+        run: cargo install cargo-audit
+      - name: Run audit
+        run: |
+          cargo update -Zminimal-versions
+          cargo audit ${{ env.cargo_audit_flags }}
