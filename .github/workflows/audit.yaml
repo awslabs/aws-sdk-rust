@@ -52,5 +52,29 @@ jobs:
         run: cargo install cargo-audit
       - name: Run audit
         run: |
-          cargo update -Zminimal-versions
+          set -eux
+          mkdir min-version-audit
+          cd min-version-audit
+
+          # Create an empty library crate to test against so that the SDK examples
+          # can be excluded from the min-version audit.
+          cargo init --lib .
+          echo '[workspace]' >> Cargo.toml
+
+          # Add every sdk/* crate as a dependency
+          for path in ../sdk/*; do
+              if [[ -d "${path}" ]]; then
+                  # The generated crates are missing the aws-sdk- prefix on the directories
+                  if [[ "${path}" != "../sdk/aws-"* ]]; then
+                      echo "[dependencies.aws-sdk-${path#../sdk/}]" >> Cargo.toml
+                      echo "path = \"${path}\"" >> Cargo.toml
+                  else
+                      echo "[dependencies.${path#../sdk/}]" >> Cargo.toml
+                      echo "path = \"${path}\"" >> Cargo.toml
+                  fi
+              fi
+          done
+
+          # Generate a lockfile at the minimum possible versions
+          cargo generate-lockfile -Zminimal-versions
           cargo audit ${{ env.cargo_audit_flags }}
