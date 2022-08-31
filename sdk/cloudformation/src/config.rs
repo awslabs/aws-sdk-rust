@@ -18,10 +18,10 @@
 ///
 pub struct Config {
     pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
+    retry_config: Option<aws_smithy_types::retry::RetryConfig>,
+    sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
+    timeout_config: Option<aws_smithy_types::timeout::Config>,
     app_name: Option<aws_types::app_name::AppName>,
-    pub(crate) timeout_config: Option<aws_smithy_types::timeout::Config>,
-    pub(crate) sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
-    pub(crate) retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     pub(crate) endpoint_resolver: ::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>,
     pub(crate) region: Option<aws_types::region::Region>,
     pub(crate) credentials_provider: aws_types::credentials::SharedCredentialsProvider,
@@ -36,6 +36,20 @@ impl Config {
     /// Constructs a config builder.
     pub fn builder() -> Builder {
         Builder::default()
+    }
+    /// Return a reference to the retry configuration contained in this config, if any.
+    pub fn retry_config(&self) -> Option<&aws_smithy_types::retry::RetryConfig> {
+        self.retry_config.as_ref()
+    }
+    /// Return a cloned Arc containing the async sleep implementation from this config, if any.
+    pub fn sleep_impl(
+        &self,
+    ) -> Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>> {
+        self.sleep_impl.clone()
+    }
+    /// Return a reference to the timeout configuration contained in this config, if any.
+    pub fn timeout_config(&self) -> Option<&aws_smithy_types::timeout::Config> {
+        self.timeout_config.as_ref()
     }
     /// Returns the name of the app that is using the client, if it was provided.
     ///
@@ -60,10 +74,10 @@ impl Config {
 #[derive(Default)]
 pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
-    app_name: Option<aws_types::app_name::AppName>,
-    timeout_config: Option<aws_smithy_types::timeout::Config>,
-    sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
+    sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
+    timeout_config: Option<aws_smithy_types::timeout::Config>,
+    app_name: Option<aws_types::app_name::AppName>,
     endpoint_resolver: Option<::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
     region: Option<aws_types::region::Region>,
     credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
@@ -81,69 +95,42 @@ impl Builder {
         self.make_token = Some(make_token.into());
         self
     }
-    /// Sets the name of the app that is using the client.
-    ///
-    /// This _optional_ name is used to identify the application in the user agent that
-    /// gets sent along with requests.
-    pub fn app_name(mut self, app_name: aws_types::app_name::AppName) -> Self {
-        self.set_app_name(Some(app_name));
-        self
-    }
-
-    /// Sets the name of the app that is using the client.
-    ///
-    /// This _optional_ name is used to identify the application in the user agent that
-    /// gets sent along with requests.
-    pub fn set_app_name(&mut self, app_name: Option<aws_types::app_name::AppName>) -> &mut Self {
-        self.app_name = app_name;
-        self
-    }
-    /// Set the timeout_config for the builder
+    /// Set the retry_config for the builder
     ///
     /// # Examples
-    ///
     /// ```no_run
-    /// # use std::time::Duration;
     /// use aws_sdk_cloudformation::config::Config;
-    /// use aws_smithy_types::{timeout, tristate::TriState};
+    /// use aws_smithy_types::retry::RetryConfig;
     ///
-    /// let api_timeouts = timeout::Api::new()
-    ///     .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
-    /// let timeout_config = timeout::Config::new()
-    ///     .with_api_timeouts(api_timeouts);
-    /// let config = Config::builder().timeout_config(timeout_config).build();
+    /// let retry_config = RetryConfig::new().with_max_attempts(5);
+    /// let config = Config::builder().retry_config(retry_config).build();
     /// ```
-    pub fn timeout_config(mut self, timeout_config: aws_smithy_types::timeout::Config) -> Self {
-        self.set_timeout_config(Some(timeout_config));
+    pub fn retry_config(mut self, retry_config: aws_smithy_types::retry::RetryConfig) -> Self {
+        self.set_retry_config(Some(retry_config));
         self
     }
 
-    /// Set the timeout_config for the builder
+    /// Set the retry_config for the builder
     ///
     /// # Examples
-    ///
     /// ```no_run
-    /// # use std::time::Duration;
     /// use aws_sdk_cloudformation::config::{Builder, Config};
-    /// use aws_smithy_types::{timeout, tristate::TriState};
+    /// use aws_smithy_types::retry::RetryConfig;
     ///
-    /// fn set_request_timeout(builder: &mut Builder) {
-    ///     let api_timeouts = timeout::Api::new()
-    ///         .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
-    ///     let timeout_config = timeout::Config::new()
-    ///         .with_api_timeouts(api_timeouts);
-    ///     builder.set_timeout_config(Some(timeout_config));
+    /// fn disable_retries(builder: &mut Builder) {
+    ///     let retry_config = RetryConfig::new().with_max_attempts(1);
+    ///     builder.set_retry_config(Some(retry_config));
     /// }
     ///
     /// let mut builder = Config::builder();
-    /// set_request_timeout(&mut builder);
+    /// disable_retries(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_timeout_config(
+    pub fn set_retry_config(
         &mut self,
-        timeout_config: Option<aws_smithy_types::timeout::Config>,
+        retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     ) -> &mut Self {
-        self.timeout_config = timeout_config;
+        self.retry_config = retry_config;
         self
     }
     /// Set the sleep_impl for the builder
@@ -209,42 +196,69 @@ impl Builder {
         self.sleep_impl = sleep_impl;
         self
     }
-    /// Set the retry_config for the builder
+    /// Set the timeout_config for the builder
     ///
     /// # Examples
-    /// ```no_run
-    /// use aws_sdk_cloudformation::config::Config;
-    /// use aws_smithy_types::retry::RetryConfig;
     ///
-    /// let retry_config = RetryConfig::new().with_max_attempts(5);
-    /// let config = Config::builder().retry_config(retry_config).build();
+    /// ```no_run
+    /// # use std::time::Duration;
+    /// use aws_sdk_cloudformation::config::Config;
+    /// use aws_smithy_types::{timeout, tristate::TriState};
+    ///
+    /// let api_timeouts = timeout::Api::new()
+    ///     .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
+    /// let timeout_config = timeout::Config::new()
+    ///     .with_api_timeouts(api_timeouts);
+    /// let config = Config::builder().timeout_config(timeout_config).build();
     /// ```
-    pub fn retry_config(mut self, retry_config: aws_smithy_types::retry::RetryConfig) -> Self {
-        self.set_retry_config(Some(retry_config));
+    pub fn timeout_config(mut self, timeout_config: aws_smithy_types::timeout::Config) -> Self {
+        self.set_timeout_config(Some(timeout_config));
         self
     }
 
-    /// Set the retry_config for the builder
+    /// Set the timeout_config for the builder
     ///
     /// # Examples
-    /// ```no_run
-    /// use aws_sdk_cloudformation::config::{Builder, Config};
-    /// use aws_smithy_types::retry::RetryConfig;
     ///
-    /// fn disable_retries(builder: &mut Builder) {
-    ///     let retry_config = RetryConfig::new().with_max_attempts(1);
-    ///     builder.set_retry_config(Some(retry_config));
+    /// ```no_run
+    /// # use std::time::Duration;
+    /// use aws_sdk_cloudformation::config::{Builder, Config};
+    /// use aws_smithy_types::{timeout, tristate::TriState};
+    ///
+    /// fn set_request_timeout(builder: &mut Builder) {
+    ///     let api_timeouts = timeout::Api::new()
+    ///         .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
+    ///     let timeout_config = timeout::Config::new()
+    ///         .with_api_timeouts(api_timeouts);
+    ///     builder.set_timeout_config(Some(timeout_config));
     /// }
     ///
     /// let mut builder = Config::builder();
-    /// disable_retries(&mut builder);
+    /// set_request_timeout(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_retry_config(
+    pub fn set_timeout_config(
         &mut self,
-        retry_config: Option<aws_smithy_types::retry::RetryConfig>,
+        timeout_config: Option<aws_smithy_types::timeout::Config>,
     ) -> &mut Self {
-        self.retry_config = retry_config;
+        self.timeout_config = timeout_config;
+        self
+    }
+    /// Sets the name of the app that is using the client.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn app_name(mut self, app_name: aws_types::app_name::AppName) -> Self {
+        self.set_app_name(Some(app_name));
+        self
+    }
+
+    /// Sets the name of the app that is using the client.
+    ///
+    /// This _optional_ name is used to identify the application in the user agent that
+    /// gets sent along with requests.
+    pub fn set_app_name(&mut self, app_name: Option<aws_types::app_name::AppName>) -> &mut Self {
+        self.app_name = app_name;
         self
     }
     /// Overrides the endpoint resolver to use when making requests.
@@ -319,10 +333,10 @@ impl Builder {
             make_token: self
                 .make_token
                 .unwrap_or_else(crate::idempotency_token::default_provider),
-            app_name: self.app_name,
-            timeout_config: self.timeout_config,
-            sleep_impl: self.sleep_impl,
             retry_config: self.retry_config,
+            sleep_impl: self.sleep_impl,
+            timeout_config: self.timeout_config,
+            app_name: self.app_name,
             endpoint_resolver: self
                 .endpoint_resolver
                 .unwrap_or_else(|| ::std::sync::Arc::new(crate::aws_endpoint::endpoint_resolver())),
@@ -343,7 +357,7 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_endpoint_resolver(input.endpoint_resolver().clone());
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
-        builder.set_sleep_impl(input.sleep_impl().clone());
+        builder.set_sleep_impl(input.sleep_impl());
         builder.set_credentials_provider(input.credentials_provider().cloned());
         builder.set_app_name(input.app_name().cloned());
         builder

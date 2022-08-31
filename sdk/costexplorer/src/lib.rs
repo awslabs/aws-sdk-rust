@@ -77,10 +77,10 @@ pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub mod types {
     pub use aws_smithy_http::result::SdkError;
 }
+pub use aws_smithy_types::retry::RetryConfig;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("costexplorer", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;
-pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
