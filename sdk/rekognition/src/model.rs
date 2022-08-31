@@ -620,6 +620,12 @@ impl DatasetChanges {
 )]
 pub enum ProjectVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
+    CopyingCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    CopyingFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CopyingInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -643,6 +649,9 @@ pub enum ProjectVersionStatus {
 impl std::convert::From<&str> for ProjectVersionStatus {
     fn from(s: &str) -> Self {
         match s {
+            "COPYING_COMPLETED" => ProjectVersionStatus::CopyingCompleted,
+            "COPYING_FAILED" => ProjectVersionStatus::CopyingFailed,
+            "COPYING_IN_PROGRESS" => ProjectVersionStatus::CopyingInProgress,
             "DELETING" => ProjectVersionStatus::Deleting,
             "FAILED" => ProjectVersionStatus::Failed,
             "RUNNING" => ProjectVersionStatus::Running,
@@ -667,6 +676,9 @@ impl ProjectVersionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ProjectVersionStatus::CopyingCompleted => "COPYING_COMPLETED",
+            ProjectVersionStatus::CopyingFailed => "COPYING_FAILED",
+            ProjectVersionStatus::CopyingInProgress => "COPYING_IN_PROGRESS",
             ProjectVersionStatus::Deleting => "DELETING",
             ProjectVersionStatus::Failed => "FAILED",
             ProjectVersionStatus::Running => "RUNNING",
@@ -682,6 +694,9 @@ impl ProjectVersionStatus {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "COPYING_COMPLETED",
+            "COPYING_FAILED",
+            "COPYING_IN_PROGRESS",
             "DELETING",
             "FAILED",
             "RUNNING",
@@ -3527,6 +3542,174 @@ impl StreamProcessorStatus {
 impl AsRef<str> for StreamProcessorStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes a project policy in the response from <code>ListProjectPolicies</code>. </p>
+/// <p> </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProjectPolicy {
+    /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
+    #[doc(hidden)]
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the project policy.</p>
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
+    /// <p>The revision ID of the project policy.</p>
+    #[doc(hidden)]
+    pub policy_revision_id: std::option::Option<std::string::String>,
+    /// <p>The JSON document for the project policy.</p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+    /// <p>The Unix datetime for the creation of the project policy.</p>
+    #[doc(hidden)]
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Unix datetime for when the project policy was last updated. </p>
+    #[doc(hidden)]
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ProjectPolicy {
+    /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The name of the project policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The revision ID of the project policy.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+    /// <p>The JSON document for the project policy.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>The Unix datetime for the creation of the project policy.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The Unix datetime for when the project policy was last updated. </p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for ProjectPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProjectPolicy");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.field("policy_name", &self.policy_name);
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.field("policy_document", &self.policy_document);
+        formatter.field("creation_timestamp", &self.creation_timestamp);
+        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`ProjectPolicy`](crate::model::ProjectPolicy).
+pub mod project_policy {
+
+    /// A builder for [`ProjectPolicy`](crate::model::ProjectPolicy).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) policy_name: std::option::Option<std::string::String>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>The name of the project policy.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the project policy.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
+            self
+        }
+        /// <p>The revision ID of the project policy.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID of the project policy.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// <p>The JSON document for the project policy.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The JSON document for the project policy.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// <p>The Unix datetime for the creation of the project policy.</p>
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_timestamp = Some(input);
+            self
+        }
+        /// <p>The Unix datetime for the creation of the project policy.</p>
+        pub fn set_creation_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_timestamp = input;
+            self
+        }
+        /// <p>The Unix datetime for when the project policy was last updated. </p>
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_timestamp = Some(input);
+            self
+        }
+        /// <p>The Unix datetime for when the project policy was last updated. </p>
+        pub fn set_last_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProjectPolicy`](crate::model::ProjectPolicy).
+        pub fn build(self) -> crate::model::ProjectPolicy {
+            crate::model::ProjectPolicy {
+                project_arn: self.project_arn,
+                policy_name: self.policy_name,
+                policy_revision_id: self.policy_revision_id,
+                policy_document: self.policy_document,
+                creation_timestamp: self.creation_timestamp,
+                last_updated_timestamp: self.last_updated_timestamp,
+            }
+        }
+    }
+}
+impl ProjectPolicy {
+    /// Creates a new builder-style object to manufacture [`ProjectPolicy`](crate::model::ProjectPolicy).
+    pub fn builder() -> crate::model::project_policy::Builder {
+        crate::model::project_policy::Builder::default()
     }
 }
 
@@ -9909,6 +10092,9 @@ pub struct ProjectVersionDescription {
     /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
     #[doc(hidden)]
     pub max_inference_units: std::option::Option<i32>,
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    #[doc(hidden)]
+    pub source_project_version_arn: std::option::Option<std::string::String>,
 }
 impl ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
@@ -9967,6 +10153,10 @@ impl ProjectVersionDescription {
     pub fn max_inference_units(&self) -> std::option::Option<i32> {
         self.max_inference_units
     }
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    pub fn source_project_version_arn(&self) -> std::option::Option<&str> {
+        self.source_project_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectVersionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9988,6 +10178,10 @@ impl std::fmt::Debug for ProjectVersionDescription {
         formatter.field("manifest_summary", &self.manifest_summary);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("max_inference_units", &self.max_inference_units);
+        formatter.field(
+            "source_project_version_arn",
+            &self.source_project_version_arn,
+        );
         formatter.finish()
     }
 }
@@ -10011,6 +10205,7 @@ pub mod project_version_description {
         pub(crate) manifest_summary: std::option::Option<crate::model::GroundTruthManifest>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) max_inference_units: std::option::Option<i32>,
+        pub(crate) source_project_version_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the model version. </p>
@@ -10186,6 +10381,19 @@ pub mod project_version_description {
             self.max_inference_units = input;
             self
         }
+        /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+        pub fn source_project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_project_version_arn = Some(input.into());
+            self
+        }
+        /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+        pub fn set_source_project_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_project_version_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
         pub fn build(self) -> crate::model::ProjectVersionDescription {
             crate::model::ProjectVersionDescription {
@@ -10203,6 +10411,7 @@ pub mod project_version_description {
                 manifest_summary: self.manifest_summary,
                 kms_key_id: self.kms_key_id,
                 max_inference_units: self.max_inference_units,
+                source_project_version_arn: self.source_project_version_arn,
             }
         }
     }

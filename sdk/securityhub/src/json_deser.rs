@@ -6893,6 +6893,21 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_securityhub_string_list(tokens)?
                                 );
                             }
+                            "FixAvailable" => {
+                                builder = builder.set_fix_available(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::VulnerabilityFixAvailable::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -8046,6 +8061,21 @@ where
                             "AwsEcsTask" => {
                                 builder = builder.set_aws_ecs_task(
                                     crate::json_deser::deser_structure_crate_model_aws_ecs_task_details(tokens)?
+                                );
+                            }
+                            "AwsBackupBackupVault" => {
+                                builder = builder.set_aws_backup_backup_vault(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_backup_vault_details(tokens)?
+                                );
+                            }
+                            "AwsBackupBackupPlan" => {
+                                builder = builder.set_aws_backup_backup_plan(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_details(tokens)?
+                                );
+                            }
+                            "AwsBackupRecoveryPoint" => {
+                                builder = builder.set_aws_backup_recovery_point(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_recovery_point_details(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -18485,6 +18515,346 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_aws_backup_backup_vault_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AwsBackupBackupVaultDetails>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupVaultDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupVaultArn" => {
+                                builder = builder.set_backup_vault_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BackupVaultName" => {
+                                builder = builder.set_backup_vault_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EncryptionKeyArn" => {
+                                builder = builder.set_encryption_key_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Notifications" => {
+                                builder = builder.set_notifications(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_backup_vault_notifications_details(tokens)?
+                                );
+                            }
+                            "AccessPolicy" => {
+                                builder = builder.set_access_policy(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_backup_plan_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AwsBackupBackupPlanDetails>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupPlanDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupPlan" => {
+                                builder = builder.set_backup_plan(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_backup_plan_details(tokens)?
+                                );
+                            }
+                            "BackupPlanArn" => {
+                                builder = builder.set_backup_plan_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BackupPlanId" => {
+                                builder = builder.set_backup_plan_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "VersionId" => {
+                                builder = builder.set_version_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_recovery_point_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AwsBackupRecoveryPointDetails>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupRecoveryPointDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupSizeInBytes" => {
+                                builder = builder.set_backup_size_in_bytes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "BackupVaultArn" => {
+                                builder = builder.set_backup_vault_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BackupVaultName" => {
+                                builder = builder.set_backup_vault_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CalculatedLifecycle" => {
+                                builder = builder.set_calculated_lifecycle(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_recovery_point_calculated_lifecycle_details(tokens)?
+                                );
+                            }
+                            "CompletionDate" => {
+                                builder = builder.set_completion_date(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CreatedBy" => {
+                                builder = builder.set_created_by(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_recovery_point_created_by_details(tokens)?
+                                );
+                            }
+                            "CreationDate" => {
+                                builder = builder.set_creation_date(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EncryptionKeyArn" => {
+                                builder = builder.set_encryption_key_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "IamRoleArn" => {
+                                builder = builder.set_iam_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "IsEncrypted" => {
+                                builder = builder.set_is_encrypted(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "LastRestoreTime" => {
+                                builder = builder.set_last_restore_time(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Lifecycle" => {
+                                builder = builder.set_lifecycle(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_recovery_point_lifecycle_details(tokens)?
+                                );
+                            }
+                            "RecoveryPointArn" => {
+                                builder = builder.set_recovery_point_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ResourceArn" => {
+                                builder = builder.set_resource_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ResourceType" => {
+                                builder = builder.set_resource_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SourceBackupVaultArn" => {
+                                builder = builder.set_source_backup_vault_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StatusMessage" => {
+                                builder = builder.set_status_message(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StorageClass" => {
+                                builder = builder.set_storage_class(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_software_package<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SoftwarePackage>, aws_smithy_json::deserialize::Error>
@@ -18559,6 +18929,24 @@ where
                             }
                             "FilePath" => {
                                 builder = builder.set_file_path(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "FixedInVersion" => {
+                                builder = builder.set_fixed_in_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Remediation" => {
+                                builder = builder.set_remediation(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -28626,6 +29014,310 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_aws_backup_backup_vault_notifications_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupBackupVaultNotificationsDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupVaultNotificationsDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupVaultEvents" => {
+                                builder = builder.set_backup_vault_events(
+                                    crate::json_deser::deser_list_com_amazonaws_securityhub_non_empty_string_list(tokens)?
+                                );
+                            }
+                            "SnsTopicArn" => {
+                                builder = builder.set_sns_topic_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_backup_plan_backup_plan_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupBackupPlanBackupPlanDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupPlanBackupPlanDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupPlanName" => {
+                                builder = builder.set_backup_plan_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AdvancedBackupSettings" => {
+                                builder = builder.set_advanced_backup_settings(
+                                    crate::json_deser::deser_list_com_amazonaws_securityhub_aws_backup_backup_plan_advanced_backup_settings_list(tokens)?
+                                );
+                            }
+                            "BackupPlanRule" => {
+                                builder = builder.set_backup_plan_rule(
+                                    crate::json_deser::deser_list_com_amazonaws_securityhub_aws_backup_backup_plan_rule_list(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_recovery_point_calculated_lifecycle_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder =
+                crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DeleteAt" => {
+                                builder = builder.set_delete_at(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "MoveToColdStorageAt" => {
+                                builder = builder.set_move_to_cold_storage_at(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_recovery_point_created_by_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupRecoveryPointCreatedByDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupRecoveryPointCreatedByDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupPlanArn" => {
+                                builder = builder.set_backup_plan_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BackupPlanId" => {
+                                builder = builder.set_backup_plan_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BackupPlanVersion" => {
+                                builder = builder.set_backup_plan_version(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BackupRuleId" => {
+                                builder = builder.set_backup_rule_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_recovery_point_lifecycle_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupRecoveryPointLifecycleDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupRecoveryPointLifecycleDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DeleteAfterDays" => {
+                                builder = builder.set_delete_after_days(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "MoveToColdStorageAfterDays" => {
+                                builder = builder.set_move_to_cold_storage_after_days(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_securityhub_adjustment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -36971,6 +37663,89 @@ where
     }
 }
 
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_securityhub_aws_backup_backup_plan_advanced_backup_settings_list<
+    'a,
+    I,
+>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_advanced_backup_settings_details(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_securityhub_aws_backup_backup_plan_rule_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleDetails>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_rule_details(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_adjustment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Adjustment>, aws_smithy_json::deserialize::Error>
@@ -40968,6 +41743,167 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_aws_backup_backup_plan_advanced_backup_settings_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder =
+                crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "BackupOptions" => {
+                                builder = builder.set_backup_options(
+                                    crate::json_deser::deser_map_com_amazonaws_securityhub_field_map(tokens)?
+                                );
+                            }
+                            "ResourceType" => {
+                                builder = builder.set_resource_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_backup_plan_rule_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AwsBackupBackupPlanRuleDetails>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupPlanRuleDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "TargetBackupVault" => {
+                                builder = builder.set_target_backup_vault(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StartWindowMinutes" => {
+                                builder = builder.set_start_window_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "ScheduleExpression" => {
+                                builder = builder.set_schedule_expression(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "RuleName" => {
+                                builder = builder.set_rule_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "RuleId" => {
+                                builder = builder.set_rule_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EnableContinuousBackup" => {
+                                builder = builder.set_enable_continuous_backup(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "CompletionWindowMinutes" => {
+                                builder = builder.set_completion_window_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "CopyActions" => {
+                                builder = builder.set_copy_actions(
+                                    crate::json_deser::deser_list_com_amazonaws_securityhub_aws_backup_backup_plan_rule_copy_actions_list(tokens)?
+                                );
+                            }
+                            "Lifecycle" => {
+                                builder = builder.set_lifecycle(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_lifecycle_details(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_sensitive_data_detections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SensitiveDataDetections>, aws_smithy_json::deserialize::Error>
@@ -43487,6 +44423,102 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_securityhub_aws_backup_backup_plan_rule_copy_actions_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleCopyActionsDetails>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_rule_copy_actions_details(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_backup_plan_lifecycle_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupPlanLifecycleDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DeleteAfterDays" => {
+                                builder = builder.set_delete_after_days(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "MoveToColdStorageAfterDays" => {
+                                builder = builder.set_move_to_cold_storage_after_days(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_securityhub_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Range>>, aws_smithy_json::deserialize::Error>
@@ -44423,6 +45455,60 @@ where
                             "RuleDefinition" => {
                                 builder = builder.set_rule_definition(
                                     crate::json_deser::deser_structure_crate_model_rule_group_source_stateless_rule_definition(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_aws_backup_backup_plan_rule_copy_actions_details<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AwsBackupBackupPlanRuleCopyActionsDetails>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AwsBackupBackupPlanRuleCopyActionsDetails::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DestinationBackupVaultArn" => {
+                                builder = builder.set_destination_backup_vault_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Lifecycle" => {
+                                builder = builder.set_lifecycle(
+                                    crate::json_deser::deser_structure_crate_model_aws_backup_backup_plan_lifecycle_details(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

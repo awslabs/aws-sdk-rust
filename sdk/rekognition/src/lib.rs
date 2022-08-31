@@ -117,6 +117,11 @@
 //! <ul>
 //! <li>
 //! <p>
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
+//! </p>
+//! </li>
+//! <li>
+//! <p>
 //! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html">CreateDataset</a>
 //! </p>
 //! </li>
@@ -138,6 +143,11 @@
 //! <li>
 //! <p>
 //! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html">DeleteProject</a>
+//! </p>
+//! </li>
+//! <li>
+//! <p>
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html">DeleteProjectPolicy</a>
 //! </p>
 //! </li>
 //! <li>
@@ -178,6 +188,16 @@
 //! <li>
 //! <p>
 //! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html">ListDatasetLabels</a>
+//! </p>
+//! </li>
+//! <li>
+//! <p>
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html">ListProjectPolicies</a>
+//! </p>
+//! </li>
+//! <li>
+//! <p>
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html">PutProjectPolicy</a>
 //! </p>
 //! </li>
 //! <li>
@@ -318,6 +338,11 @@
 //! <li>
 //! <p>
 //! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html">StopStreamProcessor</a>
+//! </p>
+//! </li>
+//! <li>
+//! <p>
+//! <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">UpdateStreamProcessor</a>
 //! </p>
 //! </li>
 //! </ul>

@@ -1992,19 +1992,25 @@ pub struct TruckDimensions {
     /// <p>The length of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// </note>
     #[doc(hidden)]
     pub length: std::option::Option<f64>,
     /// <p>The height of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// </note>
     #[doc(hidden)]
     pub height: std::option::Option<f64>,
     /// <p>The width of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// </note>
     #[doc(hidden)]
     pub width: std::option::Option<f64>,
     /// <p> Specifies the unit of measurement for the truck dimensions.</p>
@@ -2016,21 +2022,27 @@ impl TruckDimensions {
     /// <p>The length of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// </note>
     pub fn length(&self) -> std::option::Option<f64> {
         self.length
     }
     /// <p>The height of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// </note>
     pub fn height(&self) -> std::option::Option<f64> {
         self.height
     }
     /// <p>The width of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// </note>
     pub fn width(&self) -> std::option::Option<f64> {
         self.width
     }
@@ -2065,7 +2077,9 @@ pub mod truck_dimensions {
         /// <p>The length of the truck.</p>
         /// <ul>
         /// <li> <p>For example, <code>15.5</code>.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+        /// </note>
         pub fn length(mut self, input: f64) -> Self {
             self.length = Some(input);
             self
@@ -2073,7 +2087,9 @@ pub mod truck_dimensions {
         /// <p>The length of the truck.</p>
         /// <ul>
         /// <li> <p>For example, <code>15.5</code>.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+        /// </note>
         pub fn set_length(mut self, input: std::option::Option<f64>) -> Self {
             self.length = input;
             self
@@ -2081,7 +2097,9 @@ pub mod truck_dimensions {
         /// <p>The height of the truck.</p>
         /// <ul>
         /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// </note>
         pub fn height(mut self, input: f64) -> Self {
             self.height = Some(input);
             self
@@ -2089,7 +2107,9 @@ pub mod truck_dimensions {
         /// <p>The height of the truck.</p>
         /// <ul>
         /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// </note>
         pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
             self.height = input;
             self
@@ -2097,7 +2117,9 @@ pub mod truck_dimensions {
         /// <p>The width of the truck.</p>
         /// <ul>
         /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// </note>
         pub fn width(mut self, input: f64) -> Self {
             self.width = Some(input);
             self
@@ -2105,7 +2127,9 @@ pub mod truck_dimensions {
         /// <p>The width of the truck.</p>
         /// <ul>
         /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// </note>
         pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
             self.width = input;
             self
@@ -5016,10 +5040,12 @@ pub struct MapConfiguration {
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
-    /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
     /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
     /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note>
     #[doc(hidden)]
     pub style: std::option::Option<std::string::String>,
 }
@@ -5036,10 +5062,12 @@ impl MapConfiguration {
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
-    /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
     /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
     /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note>
     pub fn style(&self) -> std::option::Option<&str> {
         self.style.as_deref()
     }
@@ -5072,10 +5100,12 @@ pub mod map_configuration {
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
         /// <ul>
-        /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
         /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
         /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+        /// </note>
         pub fn style(mut self, input: impl Into<std::string::String>) -> Self {
             self.style = Some(input.into());
             self
@@ -5092,10 +5122,12 @@ pub mod map_configuration {
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
         /// <ul>
-        /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
         /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
         /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-        /// </ul>
+        /// </ul> <note>
+        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+        /// </note>
         pub fn set_style(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.style = input;
             self
@@ -5113,7 +5145,8 @@ impl MapConfiguration {
     }
 }
 
-/// <p>Contains the geofence geometry details.</p> <note>
+/// <p>Contains the geofence geometry details.</p>
+/// <p>A geofence geometry is made up of either a polygon or a circle. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
 /// <p>Amazon Location doesn't currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian. </p>
 /// </note>
 #[non_exhaustive]
@@ -5121,20 +5154,30 @@ impl MapConfiguration {
 pub struct GeofenceGeometry {
     /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
     /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
+    /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
     #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
+    /// <p>A circle on the earth, as defined by a center point and a radius.</p>
+    #[doc(hidden)]
+    pub circle: std::option::Option<crate::model::Circle>,
 }
 impl GeofenceGeometry {
     /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
     /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
+    /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
     pub fn polygon(&self) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<f64>>]> {
         self.polygon.as_deref()
+    }
+    /// <p>A circle on the earth, as defined by a center point and a radius.</p>
+    pub fn circle(&self) -> std::option::Option<&crate::model::Circle> {
+        self.circle.as_ref()
     }
 }
 impl std::fmt::Debug for GeofenceGeometry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeofenceGeometry");
         formatter.field("polygon", &self.polygon);
+        formatter.field("circle", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -5145,6 +5188,7 @@ pub mod geofence_geometry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
+        pub(crate) circle: std::option::Option<crate::model::Circle>,
     }
     impl Builder {
         /// Appends an item to `polygon`.
@@ -5153,6 +5197,7 @@ pub mod geofence_geometry {
         ///
         /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
         /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
+        /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
         pub fn polygon(mut self, input: std::vec::Vec<std::vec::Vec<f64>>) -> Self {
             let mut v = self.polygon.unwrap_or_default();
             v.push(input);
@@ -5161,6 +5206,7 @@ pub mod geofence_geometry {
         }
         /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
         /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in clockwise order, where the left side is the polygon's interior.</p>
+        /// <p>A geofence polygon can consist of between 4 and 1,000 vertices.</p>
         pub fn set_polygon(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
@@ -5168,10 +5214,21 @@ pub mod geofence_geometry {
             self.polygon = input;
             self
         }
+        /// <p>A circle on the earth, as defined by a center point and a radius.</p>
+        pub fn circle(mut self, input: crate::model::Circle) -> Self {
+            self.circle = Some(input);
+            self
+        }
+        /// <p>A circle on the earth, as defined by a center point and a radius.</p>
+        pub fn set_circle(mut self, input: std::option::Option<crate::model::Circle>) -> Self {
+            self.circle = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GeofenceGeometry`](crate::model::GeofenceGeometry).
         pub fn build(self) -> crate::model::GeofenceGeometry {
             crate::model::GeofenceGeometry {
                 polygon: self.polygon,
+                circle: self.circle,
             }
         }
     }
@@ -5183,6 +5240,87 @@ impl GeofenceGeometry {
     }
 }
 
+/// <p>A circle on the earth, as defined by a center point and a radius.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Circle {
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    #[doc(hidden)]
+    pub center: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
+    #[doc(hidden)]
+    pub radius: std::option::Option<f64>,
+}
+impl Circle {
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    pub fn center(&self) -> std::option::Option<&[f64]> {
+        self.center.as_deref()
+    }
+    /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
+    pub fn radius(&self) -> std::option::Option<f64> {
+        self.radius
+    }
+}
+impl std::fmt::Debug for Circle {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Circle");
+        formatter.field("center", &"*** Sensitive Data Redacted ***");
+        formatter.field("radius", &self.radius);
+        formatter.finish()
+    }
+}
+/// See [`Circle`](crate::model::Circle).
+pub mod circle {
+
+    /// A builder for [`Circle`](crate::model::Circle).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) center: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) radius: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// Appends an item to `center`.
+        ///
+        /// To override the contents of this collection use [`set_center`](Self::set_center).
+        ///
+        /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+        pub fn center(mut self, input: f64) -> Self {
+            let mut v = self.center.unwrap_or_default();
+            v.push(input);
+            self.center = Some(v);
+            self
+        }
+        /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+        pub fn set_center(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.center = input;
+            self
+        }
+        /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
+        pub fn radius(mut self, input: f64) -> Self {
+            self.radius = Some(input);
+            self
+        }
+        /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
+        pub fn set_radius(mut self, input: std::option::Option<f64>) -> Self {
+            self.radius = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Circle`](crate::model::Circle).
+        pub fn build(self) -> crate::model::Circle {
+            crate::model::Circle {
+                center: self.center,
+                radius: self.radius,
+            }
+        }
+    }
+}
+impl Circle {
+    /// Creates a new builder-style object to manufacture [`Circle`](crate::model::Circle).
+    pub fn builder() -> crate::model::circle::Builder {
+        crate::model::circle::Builder::default()
+    }
+}
+
 /// <p>Contains a list of geofences stored in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5190,7 +5328,7 @@ pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>Contains the geofence geometry details describing a polygon.</p>
+    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
@@ -5215,7 +5353,7 @@ impl ListGeofenceResponseEntry {
     pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
-    /// <p>Contains the geofence geometry details describing a polygon.</p>
+    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
     }
@@ -5273,12 +5411,12 @@ pub mod list_geofence_response_entry {
             self.geofence_id = input;
             self
         }
-        /// <p>Contains the geofence geometry details describing a polygon.</p>
+        /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
             self.geometry = Some(input);
             self
         }
-        /// <p>Contains the geofence geometry details describing a polygon.</p>
+        /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::GeofenceGeometry>,
@@ -5541,8 +5679,8 @@ pub struct BatchPutGeofenceRequestEntry {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
@@ -5552,8 +5690,8 @@ impl BatchPutGeofenceRequestEntry {
     pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
-    /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
@@ -5587,15 +5725,15 @@ pub mod batch_put_geofence_request_entry {
             self.geofence_id = input;
             self
         }
-        /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
             self.geometry = Some(input);
             self
         }
-        /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
         pub fn set_geometry(
             mut self,

@@ -186,6 +186,263 @@ impl CompareFacesInput {
     }
 }
 
+/// See [`CopyProjectVersionInput`](crate::input::CopyProjectVersionInput).
+pub mod copy_project_version_input {
+
+    /// A builder for [`CopyProjectVersionInput`](crate::input::CopyProjectVersionInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_project_arn: std::option::Option<std::string::String>,
+        pub(crate) source_project_version_arn: std::option::Option<std::string::String>,
+        pub(crate) destination_project_arn: std::option::Option<std::string::String>,
+        pub(crate) version_name: std::option::Option<std::string::String>,
+        pub(crate) output_config: std::option::Option<crate::model::OutputConfig>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the source project in the trusting AWS account.</p>
+        pub fn source_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_project_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the source project in the trusting AWS account.</p>
+        pub fn set_source_project_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_project_arn = input;
+            self
+        }
+        /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+        pub fn source_project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_project_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+        pub fn set_source_project_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_project_version_arn = input;
+            self
+        }
+        /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+        pub fn destination_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_project_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+        pub fn set_destination_project_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_project_arn = input;
+            self
+        }
+        /// <p>A name for the version of the model that's copied to the destination project.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
+            self
+        }
+        /// <p>A name for the version of the model that's copied to the destination project.</p>
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
+            self
+        }
+        /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.output_config = Some(input);
+            self
+        }
+        /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputConfig>,
+        ) -> Self {
+            self.output_config = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value tags to assign to the model version. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The key-value tags to assign to the model version. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+        /// <ul>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// </ul>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+        /// <ul>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// </ul>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CopyProjectVersionInput`](crate::input::CopyProjectVersionInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CopyProjectVersionInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CopyProjectVersionInput {
+                source_project_arn: self.source_project_arn,
+                source_project_version_arn: self.source_project_version_arn,
+                destination_project_arn: self.destination_project_arn,
+                version_name: self.version_name,
+                output_config: self.output_config,
+                tags: self.tags,
+                kms_key_id: self.kms_key_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CopyProjectVersionInputOperationOutputAlias = crate::operation::CopyProjectVersion;
+#[doc(hidden)]
+pub type CopyProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CopyProjectVersionInput {
+    /// Consumes the builder and constructs an Operation<[`CopyProjectVersion`](crate::operation::CopyProjectVersion)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CopyProjectVersion,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CopyProjectVersionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CopyProjectVersionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.CopyProjectVersion",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_copy_project_version(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CopyProjectVersion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CopyProjectVersion",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CopyProjectVersionInput`](crate::input::CopyProjectVersionInput).
+    pub fn builder() -> crate::input::copy_project_version_input::Builder {
+        crate::input::copy_project_version_input::Builder::default()
+    }
+}
+
 /// See [`CreateCollectionInput`](crate::input::CreateCollectionInput).
 pub mod create_collection_input {
 
@@ -1814,6 +2071,173 @@ impl DeleteProjectInput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
+    }
+}
+
+/// See [`DeleteProjectPolicyInput`](crate::input::DeleteProjectPolicyInput).
+pub mod delete_project_policy_input {
+
+    /// A builder for [`DeleteProjectPolicyInput`](crate::input::DeleteProjectPolicyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) policy_name: std::option::Option<std::string::String>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>The name of the policy that you want to delete.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the policy that you want to delete.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
+            self
+        }
+        /// <p>The ID of the project policy revision that you want to delete.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the project policy revision that you want to delete.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteProjectPolicyInput`](crate::input::DeleteProjectPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteProjectPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteProjectPolicyInput {
+                project_arn: self.project_arn,
+                policy_name: self.policy_name,
+                policy_revision_id: self.policy_revision_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteProjectPolicyInputOperationOutputAlias = crate::operation::DeleteProjectPolicy;
+#[doc(hidden)]
+pub type DeleteProjectPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteProjectPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteProjectPolicy`](crate::operation::DeleteProjectPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteProjectPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteProjectPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteProjectPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.DeleteProjectPolicy",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_project_policy(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteProjectPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteProjectPolicy",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteProjectPolicyInput`](crate::input::DeleteProjectPolicyInput).
+    pub fn builder() -> crate::input::delete_project_policy_input::Builder {
+        crate::input::delete_project_policy_input::Builder::default()
     }
 }
 
@@ -6528,6 +6952,170 @@ impl ListFacesInput {
     }
 }
 
+/// See [`ListProjectPoliciesInput`](crate::input::ListProjectPoliciesInput).
+pub mod list_project_policies_input {
+
+    /// A builder for [`ListProjectPoliciesInput`](crate::input::ListProjectPoliciesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ARN of the project for which you want to list the project policies.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the project for which you want to list the project policies.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListProjectPoliciesInput`](crate::input::ListProjectPoliciesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListProjectPoliciesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListProjectPoliciesInput {
+                project_arn: self.project_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListProjectPoliciesInputOperationOutputAlias = crate::operation::ListProjectPolicies;
+#[doc(hidden)]
+pub type ListProjectPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListProjectPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`ListProjectPolicies`](crate::operation::ListProjectPolicies)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListProjectPolicies,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListProjectPoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListProjectPoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.ListProjectPolicies",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_project_policies(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListProjectPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListProjectPolicies",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListProjectPoliciesInput`](crate::input::ListProjectPoliciesInput).
+    pub fn builder() -> crate::input::list_project_policies_input::Builder {
+        crate::input::list_project_policies_input::Builder::default()
+    }
+}
+
 /// See [`ListStreamProcessorsInput`](crate::input::ListStreamProcessorsInput).
 pub mod list_stream_processors_input {
 
@@ -6821,6 +7409,188 @@ impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`PutProjectPolicyInput`](crate::input::PutProjectPolicyInput).
+pub mod put_project_policy_input {
+
+    /// A builder for [`PutProjectPolicyInput`](crate::input::PutProjectPolicyInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) policy_name: std::option::Option<std::string::String>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>A name for the policy.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
+            self
+        }
+        /// <p>A name for the policy.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
+            self
+        }
+        /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutProjectPolicyInput`](crate::input::PutProjectPolicyInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutProjectPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutProjectPolicyInput {
+                project_arn: self.project_arn,
+                policy_name: self.policy_name,
+                policy_revision_id: self.policy_revision_id,
+                policy_document: self.policy_document,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutProjectPolicyInputOperationOutputAlias = crate::operation::PutProjectPolicy;
+#[doc(hidden)]
+pub type PutProjectPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl PutProjectPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`PutProjectPolicy`](crate::operation::PutProjectPolicy)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutProjectPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutProjectPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutProjectPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.PutProjectPolicy",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_project_policy(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutProjectPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutProjectPolicy",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutProjectPolicyInput`](crate::input::PutProjectPolicyInput).
+    pub fn builder() -> crate::input::put_project_policy_input::Builder {
+        crate::input::put_project_policy_input::Builder::default()
     }
 }
 
@@ -11149,6 +11919,52 @@ impl std::fmt::Debug for RecognizeCelebritiesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutProjectPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+    #[doc(hidden)]
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>A name for the policy.</p>
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
+    /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+    #[doc(hidden)]
+    pub policy_revision_id: std::option::Option<std::string::String>,
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
+}
+impl PutProjectPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>A name for the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+    /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
+impl std::fmt::Debug for PutProjectPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutProjectPolicyInput");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.field("policy_name", &self.policy_name);
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.field("policy_document", &self.policy_document);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
     #[doc(hidden)]
@@ -11192,6 +12008,44 @@ impl ListStreamProcessorsInput {
 impl std::fmt::Debug for ListStreamProcessorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamProcessorsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListProjectPoliciesInput {
+    /// <p>The ARN of the project for which you want to list the project policies.</p>
+    #[doc(hidden)]
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListProjectPoliciesInput {
+    /// <p>The ARN of the project for which you want to list the project policies.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListProjectPoliciesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListProjectPoliciesInput");
+        formatter.field("project_arn", &self.project_arn);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()
@@ -12274,6 +13128,44 @@ impl std::fmt::Debug for DeleteProjectVersionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteProjectPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+    #[doc(hidden)]
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the policy that you want to delete.</p>
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the project policy revision that you want to delete.</p>
+    #[doc(hidden)]
+    pub policy_revision_id: std::option::Option<std::string::String>,
+}
+impl DeleteProjectPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The name of the policy that you want to delete.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The ID of the project policy revision that you want to delete.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteProjectPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteProjectPolicyInput");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.field("policy_name", &self.policy_name);
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
     #[doc(hidden)]
@@ -12656,6 +13548,99 @@ impl std::fmt::Debug for CreateCollectionInput {
         let mut formatter = f.debug_struct("CreateCollectionInput");
         formatter.field("collection_id", &self.collection_id);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CopyProjectVersionInput {
+    /// <p>The ARN of the source project in the trusting AWS account.</p>
+    #[doc(hidden)]
+    pub source_project_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+    #[doc(hidden)]
+    pub source_project_version_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+    #[doc(hidden)]
+    pub destination_project_arn: std::option::Option<std::string::String>,
+    /// <p>A name for the version of the model that's copied to the destination project.</p>
+    #[doc(hidden)]
+    pub version_name: std::option::Option<std::string::String>,
+    /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+    #[doc(hidden)]
+    pub output_config: std::option::Option<crate::model::OutputConfig>,
+    /// <p>The key-value tags to assign to the model version. </p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+    /// <ul>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    #[doc(hidden)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl CopyProjectVersionInput {
+    /// <p>The ARN of the source project in the trusting AWS account.</p>
+    pub fn source_project_arn(&self) -> std::option::Option<&str> {
+        self.source_project_arn.as_deref()
+    }
+    /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+    pub fn source_project_version_arn(&self) -> std::option::Option<&str> {
+        self.source_project_version_arn.as_deref()
+    }
+    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+    pub fn destination_project_arn(&self) -> std::option::Option<&str> {
+        self.destination_project_arn.as_deref()
+    }
+    /// <p>A name for the version of the model that's copied to the destination project.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The key-value tags to assign to the model version. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+    /// <ul>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CopyProjectVersionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CopyProjectVersionInput");
+        formatter.field("source_project_arn", &self.source_project_arn);
+        formatter.field(
+            "source_project_version_arn",
+            &self.source_project_version_arn,
+        );
+        formatter.field("destination_project_arn", &self.destination_project_arn);
+        formatter.field("version_name", &self.version_name);
+        formatter.field("output_config", &self.output_config);
+        formatter.field("tags", &self.tags);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }

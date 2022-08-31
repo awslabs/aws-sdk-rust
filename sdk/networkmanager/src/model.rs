@@ -6691,6 +6691,9 @@ pub struct TransitGatewayPeering {
     /// <p>The ARN of the transit gateway.</p>
     #[doc(hidden)]
     pub transit_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the transit gateway peering attachment.</p>
+    #[doc(hidden)]
+    pub transit_gateway_peering_attachment_id: std::option::Option<std::string::String>,
 }
 impl TransitGatewayPeering {
     /// <p>Describes a transit gateway peer connection.</p>
@@ -6701,12 +6704,20 @@ impl TransitGatewayPeering {
     pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
         self.transit_gateway_arn.as_deref()
     }
+    /// <p>The ID of the transit gateway peering attachment.</p>
+    pub fn transit_gateway_peering_attachment_id(&self) -> std::option::Option<&str> {
+        self.transit_gateway_peering_attachment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TransitGatewayPeering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransitGatewayPeering");
         formatter.field("peering", &self.peering);
         formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
+        formatter.field(
+            "transit_gateway_peering_attachment_id",
+            &self.transit_gateway_peering_attachment_id,
+        );
         formatter.finish()
     }
 }
@@ -6718,6 +6729,7 @@ pub mod transit_gateway_peering {
     pub struct Builder {
         pub(crate) peering: std::option::Option<crate::model::Peering>,
         pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) transit_gateway_peering_attachment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Describes a transit gateway peer connection.</p>
@@ -6743,11 +6755,28 @@ pub mod transit_gateway_peering {
             self.transit_gateway_arn = input;
             self
         }
+        /// <p>The ID of the transit gateway peering attachment.</p>
+        pub fn transit_gateway_peering_attachment_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_peering_attachment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the transit gateway peering attachment.</p>
+        pub fn set_transit_gateway_peering_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_peering_attachment_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
         pub fn build(self) -> crate::model::TransitGatewayPeering {
             crate::model::TransitGatewayPeering {
                 peering: self.peering,
                 transit_gateway_arn: self.transit_gateway_arn,
+                transit_gateway_peering_attachment_id: self.transit_gateway_peering_attachment_id,
             }
         }
     }

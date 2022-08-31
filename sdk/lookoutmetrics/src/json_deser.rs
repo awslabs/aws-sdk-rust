@@ -956,6 +956,47 @@ pub fn deser_operation_crate_operation_get_anomaly_group(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_get_data_quality_metrics(
+    value: &[u8],
+    mut builder: crate::output::get_data_quality_metrics_output::Builder,
+) -> Result<
+    crate::output::get_data_quality_metrics_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "AnomalyDetectorDataQualityMetricList" => {
+                        builder = builder.set_anomaly_detector_data_quality_metric_list(
+                            crate::json_deser::deser_list_com_amazonaws_lookoutmetrics_anomaly_detector_data_quality_metric_list(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_get_feedback(
     value: &[u8],
     mut builder: crate::output::get_feedback_output::Builder,
@@ -2146,6 +2187,46 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_lookoutmetrics_anomaly_detector_data_quality_metric_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_anomaly_detector_data_quality_metric(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
         )),
     }
 }
@@ -3555,6 +3636,59 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_anomaly_detector_data_quality_metric<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AnomalyDetectorDataQualityMetric>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AnomalyDetectorDataQualityMetric::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StartTimestamp" => {
+                                builder = builder.set_start_timestamp(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "MetricSetDataQualityMetricList" => {
+                                builder = builder.set_metric_set_data_quality_metric_list(
+                                    crate::json_deser::deser_list_com_amazonaws_lookoutmetrics_metric_set_data_quality_metric_list(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_time_series_feedback<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimeSeriesFeedback>, aws_smithy_json::deserialize::Error>
@@ -4805,6 +4939,46 @@ where
     }
 }
 
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_lookoutmetrics_metric_set_data_quality_metric_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_metric_set_data_quality_metric(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_itemized_metric_stats<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ItemizedMetricStats>, aws_smithy_json::deserialize::Error>
@@ -5421,6 +5595,57 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_metric_set_data_quality_metric<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::MetricSetDataQualityMetric>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MetricSetDataQualityMetric::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MetricSetArn" => {
+                                builder = builder.set_metric_set_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "DataQualityMetricList" => {
+                                builder = builder.set_data_quality_metric_list(
+                                    crate::json_deser::deser_list_com_amazonaws_lookoutmetrics_data_quality_metric_list(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_dimension_name_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DimensionNameValue>, aws_smithy_json::deserialize::Error>
@@ -5725,6 +5950,47 @@ where
     }
 }
 
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_lookoutmetrics_data_quality_metric_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::DataQualityMetric>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_data_quality_metric(
+                                tokens,
+                            )?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_dimension_contribution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DimensionContribution>, aws_smithy_json::deserialize::Error>
@@ -5755,6 +6021,82 @@ where
                             "DimensionValueContributionList" => {
                                 builder = builder.set_dimension_value_contribution_list(
                                     crate::json_deser::deser_list_com_amazonaws_lookoutmetrics_dimension_value_contribution_list(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_data_quality_metric<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::DataQualityMetric>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::DataQualityMetric::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MetricType" => {
+                                builder = builder.set_metric_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DataQualityMetricType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "MetricDescription" => {
+                                builder = builder.set_metric_description(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "RelatedColumnName" => {
+                                builder = builder.set_related_column_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "MetricValue" => {
+                                builder = builder.set_metric_value(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

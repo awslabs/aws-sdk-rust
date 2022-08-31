@@ -565,7 +565,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p></p>
+/// <p>The property is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValidationException {
@@ -959,11 +959,11 @@ impl InvalidContactFlowModuleException {
     }
 }
 
-/// <p>The contact flow is not valid.</p>
+/// <p>The flow is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidContactFlowException {
-    /// <p>The problems with the contact flow. Please fix before trying again.</p>
+    /// <p>The problems with the flow. Please fix before trying again.</p>
     #[doc(hidden)]
     pub problems: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
     #[allow(missing_docs)] // documentation missing in model
@@ -971,7 +971,7 @@ pub struct InvalidContactFlowException {
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidContactFlowException {
-    /// <p>The problems with the contact flow. Please fix before trying again.</p>
+    /// <p>The problems with the flow. Please fix before trying again.</p>
     pub fn problems(&self) -> std::option::Option<&[crate::model::ProblemDetail]> {
         self.problems.as_deref()
     }
@@ -1014,14 +1014,14 @@ pub mod invalid_contact_flow_exception {
         ///
         /// To override the contents of this collection use [`set_problems`](Self::set_problems).
         ///
-        /// <p>The problems with the contact flow. Please fix before trying again.</p>
+        /// <p>The problems with the flow. Please fix before trying again.</p>
         pub fn problems(mut self, input: crate::model::ProblemDetail) -> Self {
             let mut v = self.problems.unwrap_or_default();
             v.push(input);
             self.problems = Some(v);
             self
         }
-        /// <p>The problems with the contact flow. Please fix before trying again.</p>
+        /// <p>The problems with the flow. Please fix before trying again.</p>
         pub fn set_problems(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
@@ -1315,7 +1315,7 @@ impl UserNotFoundException {
     }
 }
 
-/// <p>The contact flow has not been published.</p>
+/// <p>The flow has not been published.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowNotPublishedException {
@@ -3327,7 +3327,7 @@ pub enum CreateContactFlowErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The contact flow is not valid.</p>
+    /// <p>The flow is not valid.</p>
     InvalidContactFlowException(crate::error::InvalidContactFlowException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4760,7 +4760,7 @@ pub enum CreateTaskTemplateErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p></p>
+    /// <p>The property is not valid.</p>
     PropertyValidationException(crate::error::PropertyValidationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7434,7 +7434,7 @@ pub struct DescribeContactFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeContactFlowErrorKind {
-    /// <p>The contact flow has not been published.</p>
+    /// <p>The flow has not been published.</p>
     ContactFlowNotPublishedException(crate::error::ContactFlowNotPublishedException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -16170,6 +16170,143 @@ impl std::error::Error for SearchAvailablePhoneNumbersError {
     }
 }
 
+/// Error type for the `SearchSecurityProfiles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchSecurityProfilesError {
+    /// Kind of error that occurred.
+    pub kind: SearchSecurityProfilesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchSecurityProfiles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchSecurityProfilesErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchSecurityProfilesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchSecurityProfilesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            SearchSecurityProfilesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            SearchSecurityProfilesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            SearchSecurityProfilesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SearchSecurityProfilesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchSecurityProfilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchSecurityProfilesError {
+    fn code(&self) -> Option<&str> {
+        SearchSecurityProfilesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchSecurityProfilesError {
+    /// Creates a new `SearchSecurityProfilesError`.
+    pub fn new(kind: SearchSecurityProfilesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchSecurityProfilesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchSecurityProfilesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchSecurityProfilesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchSecurityProfilesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchSecurityProfilesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchSecurityProfilesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchSecurityProfilesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchSecurityProfilesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchSecurityProfilesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchSecurityProfilesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchSecurityProfilesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchSecurityProfilesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchSecurityProfilesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchSecurityProfilesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for SearchSecurityProfilesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchSecurityProfilesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            SearchSecurityProfilesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            SearchSecurityProfilesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            SearchSecurityProfilesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SearchSecurityProfilesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchSecurityProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `SearchUsers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18487,7 +18624,7 @@ pub struct UpdateContactFlowContentError {
 pub enum UpdateContactFlowContentErrorKind {
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The contact flow is not valid.</p>
+    /// <p>The flow is not valid.</p>
     InvalidContactFlowException(crate::error::InvalidContactFlowException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -21747,7 +21884,7 @@ pub enum UpdateTaskTemplateErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p></p>
+    /// <p>The property is not valid.</p>
     PropertyValidationException(crate::error::PropertyValidationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

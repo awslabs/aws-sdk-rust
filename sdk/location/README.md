@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+"Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.47.0"
-aws-sdk-location = "0.17.0"
+aws-sdk-location = "0.18.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

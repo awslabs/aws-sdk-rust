@@ -804,6 +804,8 @@ pub mod fluent_builders {
     /// <p>The term <i>principal</i> here refers to a user or group that is defined in Amazon Web Services SSO.</p>
     /// </note> <note>
     /// <p>As part of a successful <code>CreateAccountAssignment</code> call, the specified permission set will automatically be provisioned to the account in the form of an IAM policy. That policy is attached to the IAM role created in Amazon Web Services SSO. If the permission set is subsequently updated, the corresponding IAM policies attached to roles in your accounts will not be updated automatically. In this case, you must call <code> <code>ProvisionPermissionSet</code> </code> to make these updates.</p>
+    /// </note> <note>
+    /// <p> After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment creation request. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccountAssignment {
@@ -916,7 +918,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Enables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    /// <p>Enables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p> <note>
+    /// <p>After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code> to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceAccessControlAttributeConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1106,7 +1110,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccountAssignment`.
     ///
-    /// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p>
+    /// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p> <note>
+    /// <p>After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment deletion request.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccountAssignment {
         handle: std::sync::Arc<super::Handle>,

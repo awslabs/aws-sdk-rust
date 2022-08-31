@@ -14,13 +14,13 @@ version = "0.47.0"
 features = ["native-tls"]
 default-features = false
 path = "../../sdk/s3"
-version = "0.17.0"
+version = "0.18.0"
 
 [dependencies.aws-sdk-sts]
 features = ["native-tls"]
 default-features = false
 path = "../../sdk/sts"
-version = "0.17.0"
+version = "0.18.0"
 
 [dependencies.tokio]
 version = "1"

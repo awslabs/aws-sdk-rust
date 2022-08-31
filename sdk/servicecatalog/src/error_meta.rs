@@ -17,7 +17,7 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Use the Amazon Web Services Management Console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

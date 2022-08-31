@@ -817,12 +817,12 @@ pub mod create_metric_set_input {
             self.metric_list = input;
             self
         }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
         pub fn offset(mut self, input: i32) -> Self {
             self.offset = Some(input);
             self
         }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
         pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.offset = input;
             self
@@ -2367,6 +2367,161 @@ impl GetAnomalyGroupInput {
     /// Creates a new builder-style object to manufacture [`GetAnomalyGroupInput`](crate::input::GetAnomalyGroupInput).
     pub fn builder() -> crate::input::get_anomaly_group_input::Builder {
         crate::input::get_anomaly_group_input::Builder::default()
+    }
+}
+
+/// See [`GetDataQualityMetricsInput`](crate::input::GetDataQualityMetricsInput).
+pub mod get_data_quality_metrics_input {
+
+    /// A builder for [`GetDataQualityMetricsInput`](crate::input::GetDataQualityMetricsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
+        pub(crate) metric_set_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.anomaly_detector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
+        pub fn set_anomaly_detector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.anomaly_detector_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
+        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_set_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
+        pub fn set_metric_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_set_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityMetricsInput`](crate::input::GetDataQualityMetricsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetDataQualityMetricsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDataQualityMetricsInput {
+                anomaly_detector_arn: self.anomaly_detector_arn,
+                metric_set_arn: self.metric_set_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetDataQualityMetricsInputOperationOutputAlias = crate::operation::GetDataQualityMetrics;
+#[doc(hidden)]
+pub type GetDataQualityMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetDataQualityMetricsInput {
+    /// Consumes the builder and constructs an Operation<[`GetDataQualityMetrics`](crate::operation::GetDataQualityMetrics)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataQualityMetrics,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetDataQualityMetricsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/GetDataQualityMetrics").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataQualityMetricsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_data_quality_metrics(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataQualityMetrics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataQualityMetrics",
+            "lookoutmetrics",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsInput`](crate::input::GetDataQualityMetricsInput).
+    pub fn builder() -> crate::input::get_data_quality_metrics_input::Builder {
+        crate::input::get_data_quality_metrics_input::Builder::default()
     }
 }
 
@@ -4808,12 +4963,12 @@ pub mod update_metric_set_input {
             self.metric_list = input;
             self
         }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
         pub fn offset(mut self, input: i32) -> Self {
             self.offset = Some(input);
             self
         }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
         pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.offset = input;
             self
@@ -5012,7 +5167,7 @@ pub struct UpdateMetricSetInput {
     /// <p>The metric list.</p>
     #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::Metric>>,
-    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     #[doc(hidden)]
     pub offset: std::option::Option<i32>,
     /// <p>The timestamp column.</p>
@@ -5041,7 +5196,7 @@ impl UpdateMetricSetInput {
     pub fn metric_list(&self) -> std::option::Option<&[crate::model::Metric]> {
         self.metric_list.as_deref()
     }
-    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(&self) -> std::option::Option<i32> {
         self.offset
     }
@@ -5644,6 +5799,36 @@ impl std::fmt::Debug for GetFeedbackInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDataQualityMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
+    #[doc(hidden)]
+    pub anomaly_detector_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
+    #[doc(hidden)]
+    pub metric_set_arn: std::option::Option<std::string::String>,
+}
+impl GetDataQualityMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for GetDataQualityMetricsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDataQualityMetricsInput");
+        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
+        formatter.field("metric_set_arn", &self.metric_set_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyGroupInput {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
@@ -5900,7 +6085,7 @@ pub struct CreateMetricSetInput {
     /// <p>A list of metrics that the dataset will contain.</p>
     #[doc(hidden)]
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::Metric>>,
-    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     #[doc(hidden)]
     pub offset: std::option::Option<i32>,
     /// <p>Contains information about the column used for tracking time in your source data.</p>
@@ -5940,7 +6125,7 @@ impl CreateMetricSetInput {
     pub fn metric_list(&self) -> std::option::Option<&[crate::model::Metric]> {
         self.metric_list.as_deref()
     }
-    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(&self) -> std::option::Option<i32> {
         self.offset
     }

@@ -102,6 +102,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeDecoratedRoleWithSAMLError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AssumeDecoratedRoleWithSAMLError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssumeDecoratedRoleWithSAMLErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::AssumeDecoratedRoleWithSAMLErrorKind::EntityNotFoundException(
+                    inner,
+                ) => Error::EntityNotFoundException(inner),
+                crate::error::AssumeDecoratedRoleWithSAMLErrorKind::InternalServiceException(
+                    inner,
+                ) => Error::InternalServiceException(inner),
+                crate::error::AssumeDecoratedRoleWithSAMLErrorKind::InvalidInputException(
+                    inner,
+                ) => Error::InvalidInputException(inner),
+                crate::error::AssumeDecoratedRoleWithSAMLErrorKind::OperationTimeoutException(
+                    inner,
+                ) => Error::OperationTimeoutException(inner),
+                crate::error::AssumeDecoratedRoleWithSAMLErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGrantPermissionsError, R>>
     for Error
 where

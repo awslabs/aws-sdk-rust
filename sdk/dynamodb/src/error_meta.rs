@@ -23,6 +23,10 @@ pub enum Error {
     GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
     /// <p>DynamoDB rejected the request because you retried a request with a different payload but with an idempotent token that was already used.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    /// <p> There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token. </p>
+    ImportConflictException(crate::error::ImportConflictException),
+    /// <p> The specified import was not found. </p>
+    ImportNotFoundException(crate::error::ImportNotFoundException),
     /// <p>The operation tried to access a nonexistent index.</p>
     IndexNotFoundException(crate::error::IndexNotFoundException),
     /// <p>An error occurred on the server side.</p>
@@ -168,6 +172,8 @@ impl std::fmt::Display for Error {
             Error::GlobalTableAlreadyExistsException(inner) => inner.fmt(f),
             Error::GlobalTableNotFoundException(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatchException(inner) => inner.fmt(f),
+            Error::ImportConflictException(inner) => inner.fmt(f),
+            Error::ImportNotFoundException(inner) => inner.fmt(f),
             Error::IndexNotFoundException(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
             Error::InvalidEndpointException(inner) => inner.fmt(f),
@@ -616,6 +622,22 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeImportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeImportError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeImportErrorKind::ImportNotFoundException(inner) => {
+                    Error::ImportNotFoundException(inner)
+                }
+                crate::error::DescribeImportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -878,6 +900,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ImportTableError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ImportTableErrorKind::ImportConflictException(inner) => {
+                    Error::ImportConflictException(inner)
+                }
+                crate::error::ImportTableErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::ImportTableErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::ImportTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBackupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -958,6 +1002,22 @@ where
                 crate::error::ListGlobalTablesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListImportsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::ListImportsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

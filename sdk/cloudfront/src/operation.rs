@@ -369,6 +369,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMonitoringSubscrip
     }
 }
 
+/// Operation shape for `CreateOriginAccessControl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_origin_access_control`](crate::client::Client::create_origin_access_control).
+///
+/// See [`crate::client::fluent_builders::CreateOriginAccessControl`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateOriginAccessControl {
+    _private: (),
+}
+impl CreateOriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`CreateOriginAccessControlInput`](crate::input::CreateOriginAccessControlInput).
+    pub fn builder() -> crate::input::create_origin_access_control_input::Builder {
+        crate::input::create_origin_access_control_input::Builder::default()
+    }
+    /// Creates a new `CreateOriginAccessControl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateOriginAccessControl {
+    type Output = std::result::Result<
+        crate::output::CreateOriginAccessControlOutput,
+        crate::error::CreateOriginAccessControlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_origin_access_control_error(response)
+        } else {
+            crate::operation_deser::parse_create_origin_access_control_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateOriginRequestPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -839,6 +873,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMonitoringSubscrip
             crate::operation_deser::parse_delete_monitoring_subscription_error(response)
         } else {
             crate::operation_deser::parse_delete_monitoring_subscription_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteOriginAccessControl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_origin_access_control`](crate::client::Client::delete_origin_access_control).
+///
+/// See [`crate::client::fluent_builders::DeleteOriginAccessControl`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteOriginAccessControl {
+    _private: (),
+}
+impl DeleteOriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`DeleteOriginAccessControlInput`](crate::input::DeleteOriginAccessControlInput).
+    pub fn builder() -> crate::input::delete_origin_access_control_input::Builder {
+        crate::input::delete_origin_access_control_input::Builder::default()
+    }
+    /// Creates a new `DeleteOriginAccessControl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteOriginAccessControl {
+    type Output = std::result::Result<
+        crate::output::DeleteOriginAccessControlOutput,
+        crate::error::DeleteOriginAccessControlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_origin_access_control_error(response)
+        } else {
+            crate::operation_deser::parse_delete_origin_access_control_response(response)
         }
     }
 }
@@ -1553,6 +1621,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMonitoringSubscriptio
             crate::operation_deser::parse_get_monitoring_subscription_error(response)
         } else {
             crate::operation_deser::parse_get_monitoring_subscription_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetOriginAccessControl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_origin_access_control`](crate::client::Client::get_origin_access_control).
+///
+/// See [`crate::client::fluent_builders::GetOriginAccessControl`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetOriginAccessControl {
+    _private: (),
+}
+impl GetOriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`GetOriginAccessControlInput`](crate::input::GetOriginAccessControlInput).
+    pub fn builder() -> crate::input::get_origin_access_control_input::Builder {
+        crate::input::get_origin_access_control_input::Builder::default()
+    }
+    /// Creates a new `GetOriginAccessControl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetOriginAccessControl {
+    type Output = std::result::Result<
+        crate::output::GetOriginAccessControlOutput,
+        crate::error::GetOriginAccessControlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_origin_access_control_error(response)
+        } else {
+            crate::operation_deser::parse_get_origin_access_control_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetOriginAccessControlConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_origin_access_control_config`](crate::client::Client::get_origin_access_control_config).
+///
+/// See [`crate::client::fluent_builders::GetOriginAccessControlConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetOriginAccessControlConfig {
+    _private: (),
+}
+impl GetOriginAccessControlConfig {
+    /// Creates a new builder-style object to manufacture [`GetOriginAccessControlConfigInput`](crate::input::GetOriginAccessControlConfigInput).
+    pub fn builder() -> crate::input::get_origin_access_control_config_input::Builder {
+        crate::input::get_origin_access_control_config_input::Builder::default()
+    }
+    /// Creates a new `GetOriginAccessControlConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetOriginAccessControlConfig {
+    type Output = std::result::Result<
+        crate::output::GetOriginAccessControlConfigOutput,
+        crate::error::GetOriginAccessControlConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_origin_access_control_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_origin_access_control_config_response(response)
         }
     }
 }
@@ -2381,6 +2517,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyGroups {
     }
 }
 
+/// Operation shape for `ListOriginAccessControls`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_origin_access_controls`](crate::client::Client::list_origin_access_controls).
+///
+/// See [`crate::client::fluent_builders::ListOriginAccessControls`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListOriginAccessControls {
+    _private: (),
+}
+impl ListOriginAccessControls {
+    /// Creates a new builder-style object to manufacture [`ListOriginAccessControlsInput`](crate::input::ListOriginAccessControlsInput).
+    pub fn builder() -> crate::input::list_origin_access_controls_input::Builder {
+        crate::input::list_origin_access_controls_input::Builder::default()
+    }
+    /// Creates a new `ListOriginAccessControls` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListOriginAccessControls {
+    type Output = std::result::Result<
+        crate::output::ListOriginAccessControlsOutput,
+        crate::error::ListOriginAccessControlsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_origin_access_controls_error(response)
+        } else {
+            crate::operation_deser::parse_list_origin_access_controls_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListOriginRequestPolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2945,6 +3115,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateKeyGroup {
             crate::operation_deser::parse_update_key_group_error(response)
         } else {
             crate::operation_deser::parse_update_key_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateOriginAccessControl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_origin_access_control`](crate::client::Client::update_origin_access_control).
+///
+/// See [`crate::client::fluent_builders::UpdateOriginAccessControl`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateOriginAccessControl {
+    _private: (),
+}
+impl UpdateOriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`UpdateOriginAccessControlInput`](crate::input::UpdateOriginAccessControlInput).
+    pub fn builder() -> crate::input::update_origin_access_control_input::Builder {
+        crate::input::update_origin_access_control_input::Builder::default()
+    }
+    /// Creates a new `UpdateOriginAccessControl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateOriginAccessControl {
+    type Output = std::result::Result<
+        crate::output::UpdateOriginAccessControlOutput,
+        crate::error::UpdateOriginAccessControlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_origin_access_control_error(response)
+        } else {
+            crate::operation_deser::parse_update_origin_access_control_response(response)
         }
     }
 }

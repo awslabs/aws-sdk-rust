@@ -1411,7 +1411,7 @@ pub mod calculate_route_input {
             self.waypoint_positions = input;
             self
         }
-        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the <code>TravelMode</code>.</p>
         /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
         /// <ul>
         /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
@@ -1422,7 +1422,7 @@ pub mod calculate_route_input {
             self.travel_mode = Some(input);
             self
         }
-        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the <code>TravelMode</code>.</p>
         /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
         /// <ul>
         /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
@@ -5640,7 +5640,7 @@ pub mod get_map_glyphs_input {
         /// </ul>
         /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
-        /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+        /// <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
         /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
         /// </ul>
         pub fn font_stack(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5658,7 +5658,7 @@ pub mod get_map_glyphs_input {
         /// </ul>
         /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
-        /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+        /// <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
         /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
         /// </ul>
         pub fn set_font_stack(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -7888,15 +7888,15 @@ pub mod put_geofence_input {
             self.geofence_id = input;
             self
         }
-        /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
             self.geometry = Some(input);
             self
         }
-        /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
         pub fn set_geometry(
             mut self,
@@ -11101,7 +11101,7 @@ pub struct CalculateRouteInput {
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     #[doc(hidden)]
     pub waypoint_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the <code>TravelMode</code>.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
     /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
@@ -11178,7 +11178,7 @@ impl CalculateRouteInput {
     pub fn waypoint_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
         self.waypoint_positions.as_deref()
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, or <code>Walking</code> as options for the <code>TravelMode</code>.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
     /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
@@ -12151,7 +12151,7 @@ pub struct GetMapGlyphsInput {
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
     /// <ul>
-    /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+    /// <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
     /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -12176,7 +12176,7 @@ impl GetMapGlyphsInput {
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
     /// <ul>
-    /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+    /// <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
     /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
     /// </ul>
     pub fn font_stack(&self) -> std::option::Option<&str> {
@@ -12429,8 +12429,8 @@ pub struct PutGeofenceInput {
     /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
@@ -12444,8 +12444,8 @@ impl PutGeofenceInput {
     pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
-    /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
-    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
         self.geometry.as_ref()

@@ -2480,6 +2480,99 @@ impl DocumentAttributeTarget {
     }
 }
 
+/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    #[doc(hidden)]
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceVpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+pub mod data_source_vpc_configuration {
+
+    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
+            crate::model::DataSourceVpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
 /// <p>Provides the configuration information for an Amazon Kendra data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2535,6 +2628,9 @@ pub struct DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
     #[doc(hidden)]
     pub alfresco_configuration: std::option::Option<crate::model::AlfrescoConfiguration>,
+    /// <p>Provides a template for the configuration information to connect to your data source.</p>
+    #[doc(hidden)]
+    pub template_configuration: std::option::Option<crate::model::TemplateConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2627,6 +2723,12 @@ impl DataSourceConfiguration {
     ) -> std::option::Option<&crate::model::AlfrescoConfiguration> {
         self.alfresco_configuration.as_ref()
     }
+    /// <p>Provides a template for the configuration information to connect to your data source.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2651,6 +2753,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
         formatter.field("jira_configuration", &self.jira_configuration);
         formatter.field("git_hub_configuration", &self.git_hub_configuration);
         formatter.field("alfresco_configuration", &self.alfresco_configuration);
+        formatter.field("template_configuration", &self.template_configuration);
         formatter.finish()
     }
 }
@@ -2685,6 +2788,7 @@ pub mod data_source_configuration {
         pub(crate) jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
         pub(crate) git_hub_configuration: std::option::Option<crate::model::GitHubConfiguration>,
         pub(crate) alfresco_configuration: std::option::Option<crate::model::AlfrescoConfiguration>,
+        pub(crate) template_configuration: std::option::Option<crate::model::TemplateConfiguration>,
     }
     impl Builder {
         /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2938,6 +3042,22 @@ pub mod data_source_configuration {
             self.alfresco_configuration = input;
             self
         }
+        /// <p>Provides a template for the configuration information to connect to your data source.</p>
+        pub fn template_configuration(
+            mut self,
+            input: crate::model::TemplateConfiguration,
+        ) -> Self {
+            self.template_configuration = Some(input);
+            self
+        }
+        /// <p>Provides a template for the configuration information to connect to your data source.</p>
+        pub fn set_template_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TemplateConfiguration>,
+        ) -> Self {
+            self.template_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
@@ -2958,6 +3078,7 @@ pub mod data_source_configuration {
                 jira_configuration: self.jira_configuration,
                 git_hub_configuration: self.git_hub_configuration,
                 alfresco_configuration: self.alfresco_configuration,
+                template_configuration: self.template_configuration,
             }
         }
     }
@@ -2966,6 +3087,80 @@ impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides a template for the configuration information to connect to your data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TemplateConfiguration {
+    /// <p>The template schema used for the data source.</p>
+    /// <p>The following links to the template schema for data sources where templates are supported:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub template: std::option::Option<aws_smithy_types::Document>,
+}
+impl TemplateConfiguration {
+    /// <p>The template schema used for the data source.</p>
+    /// <p>The following links to the template schema for data sources where templates are supported:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
+    /// </ul>
+    pub fn template(&self) -> std::option::Option<&aws_smithy_types::Document> {
+        self.template.as_ref()
+    }
+}
+impl std::fmt::Debug for TemplateConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TemplateConfiguration");
+        formatter.field("template", &self.template);
+        formatter.finish()
+    }
+}
+/// See [`TemplateConfiguration`](crate::model::TemplateConfiguration).
+pub mod template_configuration {
+
+    /// A builder for [`TemplateConfiguration`](crate::model::TemplateConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template: std::option::Option<aws_smithy_types::Document>,
+    }
+    impl Builder {
+        /// <p>The template schema used for the data source.</p>
+        /// <p>The following links to the template schema for data sources where templates are supported:</p>
+        /// <ul>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
+        /// </ul>
+        pub fn template(mut self, input: aws_smithy_types::Document) -> Self {
+            self.template = Some(input);
+            self
+        }
+        /// <p>The template schema used for the data source.</p>
+        /// <p>The following links to the template schema for data sources where templates are supported:</p>
+        /// <ul>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk template schema</a> </p> </li>
+        /// </ul>
+        pub fn set_template(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Document>,
+        ) -> Self {
+            self.template = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::model::TemplateConfiguration).
+        pub fn build(self) -> crate::model::TemplateConfiguration {
+            crate::model::TemplateConfiguration {
+                template: self.template,
+            }
+        }
+    }
+}
+impl TemplateConfiguration {
+    /// Creates a new builder-style object to manufacture [`TemplateConfiguration`](crate::model::TemplateConfiguration).
+    pub fn builder() -> crate::model::template_configuration::Builder {
+        crate::model::template_configuration::Builder::default()
     }
 }
 
@@ -2988,7 +3183,8 @@ pub struct AlfrescoConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     #[doc(hidden)]
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p> <code>TRUE</code> to index shared files.</p>
@@ -3039,7 +3235,8 @@ impl AlfrescoConfiguration {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
@@ -3172,12 +3369,14 @@ pub mod alfresco_configuration {
             self.secret_arn = input;
             self
         }
-        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
+        /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
         pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.ssl_certificate_s3_path = Some(input);
             self
         }
-        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
+        /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
         pub fn set_ssl_certificate_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -3368,99 +3567,6 @@ impl AlfrescoConfiguration {
     /// Creates a new builder-style object to manufacture [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
     pub fn builder() -> crate::model::alfresco_configuration::Builder {
         crate::model::alfresco_configuration::Builder::default()
-    }
-}
-
-/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-pub mod data_source_vpc_configuration {
-
-    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
-            crate::model::DataSourceVpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
     }
 }
 
@@ -4697,7 +4803,8 @@ pub struct OnPremiseConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     #[doc(hidden)]
     pub organization_name: std::option::Option<std::string::String>,
-    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     #[doc(hidden)]
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
 }
@@ -4710,7 +4817,8 @@ impl OnPremiseConfiguration {
     pub fn organization_name(&self) -> std::option::Option<&str> {
         self.organization_name.as_deref()
     }
-    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
@@ -4758,12 +4866,14 @@ pub mod on_premise_configuration {
             self.organization_name = input;
             self
         }
-        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
+        /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
         pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.ssl_certificate_s3_path = Some(input);
             self
         }
-        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub if you require a secure SSL connection.</p>
+        /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
         pub fn set_ssl_certificate_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -5426,7 +5536,7 @@ impl AsRef<str> for IssueSubEntity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuipConfiguration {
-    /// <p>The Quip site domain.</p>
+    /// <p>The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is "quipdomain".</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
@@ -5444,7 +5554,7 @@ pub struct QuipConfiguration {
     /// <p> <code>TRUE</code> to index attachments.</p>
     #[doc(hidden)]
     pub crawl_attachments: bool,
-    /// <p>The identifiers of the Quip folders you want to index.</p>
+    /// <p>The identifiers of the Quip folders you want to index. You can find the folder ID in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder ID in this example is "zlLuOVNSarTL".</p>
     #[doc(hidden)]
     pub folder_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
@@ -5470,7 +5580,7 @@ pub struct QuipConfiguration {
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl QuipConfiguration {
-    /// <p>The Quip site domain.</p>
+    /// <p>The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is "quipdomain".</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -5493,7 +5603,7 @@ impl QuipConfiguration {
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
-    /// <p>The identifiers of the Quip folders you want to index.</p>
+    /// <p>The identifiers of the Quip folders you want to index. You can find the folder ID in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder ID in this example is "zlLuOVNSarTL".</p>
     pub fn folder_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.folder_ids.as_deref()
     }
@@ -5571,12 +5681,12 @@ pub mod quip_configuration {
         pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     }
     impl Builder {
-        /// <p>The Quip site domain.</p>
+        /// <p>The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is "quipdomain".</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        /// <p>The Quip site domain.</p>
+        /// <p>The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is "quipdomain".</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -5631,14 +5741,14 @@ pub mod quip_configuration {
         ///
         /// To override the contents of this collection use [`set_folder_ids`](Self::set_folder_ids).
         ///
-        /// <p>The identifiers of the Quip folders you want to index.</p>
+        /// <p>The identifiers of the Quip folders you want to index. You can find the folder ID in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder ID in this example is "zlLuOVNSarTL".</p>
         pub fn folder_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.folder_ids.unwrap_or_default();
             v.push(input.into());
             self.folder_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the Quip folders you want to index.</p>
+        /// <p>The identifiers of the Quip folders you want to index. You can find the folder ID in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder ID in this example is "zlLuOVNSarTL".</p>
         pub fn set_folder_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8389,7 +8499,8 @@ pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     #[doc(hidden)]
     pub server_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+    /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The version or the type of Confluence installation to connect to.</p>
@@ -8417,13 +8528,23 @@ pub struct ConfluenceConfiguration {
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
     #[doc(hidden)]
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+    /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+    /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+    #[doc(hidden)]
+    pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
+    /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
+    #[doc(hidden)]
+    pub authentication_type: std::option::Option<crate::model::ConfluenceAuthenticationType>,
 }
 impl ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     pub fn server_url(&self) -> std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+    /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -8469,6 +8590,19 @@ impl ConfluenceConfiguration {
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
+    /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+    /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+    /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+    pub fn proxy_configuration(&self) -> std::option::Option<&crate::model::ProxyConfiguration> {
+        self.proxy_configuration.as_ref()
+    }
+    /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfluenceAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfluenceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8483,6 +8617,8 @@ impl std::fmt::Debug for ConfluenceConfiguration {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("inclusion_patterns", &self.inclusion_patterns);
         formatter.field("exclusion_patterns", &self.exclusion_patterns);
+        formatter.field("proxy_configuration", &self.proxy_configuration);
+        formatter.field("authentication_type", &self.authentication_type);
         formatter.finish()
     }
 }
@@ -8506,6 +8642,9 @@ pub mod confluence_configuration {
         pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
         pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
+        pub(crate) authentication_type:
+            std::option::Option<crate::model::ConfluenceAuthenticationType>,
     }
     impl Builder {
         /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
@@ -8518,12 +8657,14 @@ pub mod confluence_configuration {
             self.server_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+        /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+        /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication for a Confluence data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -8659,6 +8800,41 @@ pub mod confluence_configuration {
             self.exclusion_patterns = input;
             self
         }
+        /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+        /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+        /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+        pub fn proxy_configuration(mut self, input: crate::model::ProxyConfiguration) -> Self {
+            self.proxy_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+        /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+        /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+        pub fn set_proxy_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProxyConfiguration>,
+        ) -> Self {
+            self.proxy_configuration = input;
+            self
+        }
+        /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
+        pub fn authentication_type(
+            mut self,
+            input: crate::model::ConfluenceAuthenticationType,
+        ) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::ConfluenceAuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfluenceConfiguration`](crate::model::ConfluenceConfiguration).
         pub fn build(self) -> crate::model::ConfluenceConfiguration {
             crate::model::ConfluenceConfiguration {
@@ -8672,6 +8848,8 @@ pub mod confluence_configuration {
                 vpc_configuration: self.vpc_configuration,
                 inclusion_patterns: self.inclusion_patterns,
                 exclusion_patterns: self.exclusion_patterns,
+                proxy_configuration: self.proxy_configuration,
+                authentication_type: self.authentication_type,
             }
         }
     }
@@ -8680,6 +8858,61 @@ impl ConfluenceConfiguration {
     /// Creates a new builder-style object to manufacture [`ConfluenceConfiguration`](crate::model::ConfluenceConfiguration).
     pub fn builder() -> crate::model::confluence_configuration::Builder {
         crate::model::confluence_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConfluenceAuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
+    HttpBasic,
+    #[allow(missing_docs)] // documentation missing in model
+    Pat,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConfluenceAuthenticationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "HTTP_BASIC" => ConfluenceAuthenticationType::HttpBasic,
+            "PAT" => ConfluenceAuthenticationType::Pat,
+            other => ConfluenceAuthenticationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConfluenceAuthenticationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConfluenceAuthenticationType::from(s))
+    }
+}
+impl ConfluenceAuthenticationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConfluenceAuthenticationType::HttpBasic => "HTTP_BASIC",
+            ConfluenceAuthenticationType::Pat => "PAT",
+            ConfluenceAuthenticationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HTTP_BASIC", "PAT"]
+    }
+}
+impl AsRef<str> for ConfluenceAuthenticationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -13226,7 +13459,7 @@ pub struct SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
     #[doc(hidden)]
     pub share_point_version: std::option::Option<crate::model::SharePointVersion>,
-    /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+    /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
     #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
@@ -13260,19 +13493,26 @@ pub struct SharePointConfiguration {
     /// <p> <code>TRUE</code> to disable local groups information.</p>
     #[doc(hidden)]
     pub disable_local_groups: bool,
-    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     #[doc(hidden)]
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret. You can use OAuth authentication for SharePoint Online.</p>
     #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::SharePointOnlineAuthenticationType>,
+    /// <p>Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can use this option for SharePoint Server.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+    /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+    /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+    #[doc(hidden)]
+    pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
 }
 impl SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
     pub fn share_point_version(&self) -> std::option::Option<&crate::model::SharePointVersion> {
         self.share_point_version.as_ref()
     }
-    /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+    /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
     pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
         self.urls.as_deref()
     }
@@ -13319,7 +13559,8 @@ impl SharePointConfiguration {
     pub fn disable_local_groups(&self) -> bool {
         self.disable_local_groups
     }
-    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
+    /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
@@ -13328,6 +13569,13 @@ impl SharePointConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SharePointOnlineAuthenticationType> {
         self.authentication_type.as_ref()
+    }
+    /// <p>Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can use this option for SharePoint Server.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+    /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+    /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+    pub fn proxy_configuration(&self) -> std::option::Option<&crate::model::ProxyConfiguration> {
+        self.proxy_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for SharePointConfiguration {
@@ -13346,6 +13594,7 @@ impl std::fmt::Debug for SharePointConfiguration {
         formatter.field("disable_local_groups", &self.disable_local_groups);
         formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
         formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("proxy_configuration", &self.proxy_configuration);
         formatter.finish()
     }
 }
@@ -13370,6 +13619,7 @@ pub mod share_point_configuration {
         pub(crate) ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
         pub(crate) authentication_type:
             std::option::Option<crate::model::SharePointOnlineAuthenticationType>,
+        pub(crate) proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     }
     impl Builder {
         /// <p>The version of Microsoft SharePoint that you use.</p>
@@ -13389,14 +13639,14 @@ pub mod share_point_configuration {
         ///
         /// To override the contents of this collection use [`set_urls`](Self::set_urls).
         ///
-        /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+        /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.urls.unwrap_or_default();
             v.push(input.into());
             self.urls = Some(v);
             self
         }
-        /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+        /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
         pub fn set_urls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13539,12 +13789,14 @@ pub mod share_point_configuration {
             self.disable_local_groups = input;
             self
         }
-        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
+        /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
         pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.ssl_certificate_s3_path = Some(input);
             self
         }
-        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
+        /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
         pub fn set_ssl_certificate_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -13568,6 +13820,25 @@ pub mod share_point_configuration {
             self.authentication_type = input;
             self
         }
+        /// <p>Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can use this option for SharePoint Server.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+        /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+        /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+        pub fn proxy_configuration(mut self, input: crate::model::ProxyConfiguration) -> Self {
+            self.proxy_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can use this option for SharePoint Server.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+        /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+        /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+        pub fn set_proxy_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProxyConfiguration>,
+        ) -> Self {
+            self.proxy_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SharePointConfiguration`](crate::model::SharePointConfiguration).
         pub fn build(self) -> crate::model::SharePointConfiguration {
             crate::model::SharePointConfiguration {
@@ -13584,6 +13855,7 @@ pub mod share_point_configuration {
                 disable_local_groups: self.disable_local_groups.unwrap_or_default(),
                 ssl_certificate_s3_path: self.ssl_certificate_s3_path,
                 authentication_type: self.authentication_type,
+                proxy_configuration: self.proxy_configuration,
             }
         }
     }
@@ -13969,12 +14241,12 @@ impl S3DataSourceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlListConfiguration {
-    /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
+    /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     #[doc(hidden)]
     pub key_path: std::option::Option<std::string::String>,
 }
 impl AccessControlListConfiguration {
-    /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
+    /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     pub fn key_path(&self) -> std::option::Option<&str> {
         self.key_path.as_deref()
     }
@@ -13995,12 +14267,12 @@ pub mod access_control_list_configuration {
         pub(crate) key_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
+        /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
         pub fn key_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_path = Some(input.into());
             self
         }
-        /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
+        /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
         pub fn set_key_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_path = input;
             self
@@ -20317,6 +20589,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Slack,
     #[allow(missing_docs)] // documentation missing in model
+    Template,
+    #[allow(missing_docs)] // documentation missing in model
     Webcrawler,
     #[allow(missing_docs)] // documentation missing in model
     Workdocs,
@@ -20342,6 +20616,7 @@ impl std::convert::From<&str> for DataSourceType {
             "SERVICENOW" => DataSourceType::Servicenow,
             "SHAREPOINT" => DataSourceType::Sharepoint,
             "SLACK" => DataSourceType::Slack,
+            "TEMPLATE" => DataSourceType::Template,
             "WEBCRAWLER" => DataSourceType::Webcrawler,
             "WORKDOCS" => DataSourceType::Workdocs,
             other => DataSourceType::Unknown(other.to_owned()),
@@ -20375,6 +20650,7 @@ impl DataSourceType {
             DataSourceType::Servicenow => "SERVICENOW",
             DataSourceType::Sharepoint => "SHAREPOINT",
             DataSourceType::Slack => "SLACK",
+            DataSourceType::Template => "TEMPLATE",
             DataSourceType::Webcrawler => "WEBCRAWLER",
             DataSourceType::Workdocs => "WORKDOCS",
             DataSourceType::Unknown(s) => s.as_ref(),
@@ -20399,6 +20675,7 @@ impl DataSourceType {
             "SERVICENOW",
             "SHAREPOINT",
             "SLACK",
+            "TEMPLATE",
             "WEBCRAWLER",
             "WORKDOCS",
         ]

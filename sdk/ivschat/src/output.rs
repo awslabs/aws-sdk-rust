@@ -371,13 +371,13 @@ impl SendEventOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Tags attached to the resource, from the request.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Tags attached to the resource, from the request.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -407,7 +407,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Tags attached to the resource, from the request.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -418,7 +418,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Tags attached to the resource, from the request.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

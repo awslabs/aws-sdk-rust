@@ -3495,6 +3495,40 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumb
     }
 }
 
+/// Operation shape for `SearchSecurityProfiles`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_security_profiles`](crate::client::Client::search_security_profiles).
+///
+/// See [`crate::client::fluent_builders::SearchSecurityProfiles`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchSecurityProfiles {
+    _private: (),
+}
+impl SearchSecurityProfiles {
+    /// Creates a new builder-style object to manufacture [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
+    pub fn builder() -> crate::input::search_security_profiles_input::Builder {
+        crate::input::search_security_profiles_input::Builder::default()
+    }
+    /// Creates a new `SearchSecurityProfiles` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchSecurityProfiles {
+    type Output = std::result::Result<
+        crate::output::SearchSecurityProfilesOutput,
+        crate::error::SearchSecurityProfilesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_security_profiles_error(response)
+        } else {
+            crate::operation_deser::parse_search_security_profiles_response(response)
+        }
+    }
+}
+
 /// Operation shape for `SearchUsers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

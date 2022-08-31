@@ -191,7 +191,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`app_image_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateAppImageConfig::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::client::fluent_builders::CreateAppImageConfig::set_app_image_config_name): <p>The name of the AppImageConfig. Must be unique to your account.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppImageConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppImageConfig::set_tags): <p>A list of tags to apply to the AppImageConfig.</p>
-    ///   - [`kernel_gateway_image_config(KernelGatewayImageConfig)`](crate::client::fluent_builders::CreateAppImageConfig::kernel_gateway_image_config) / [`set_kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::client::fluent_builders::CreateAppImageConfig::set_kernel_gateway_image_config): <p>The KernelGatewayImageConfig.</p>
+    ///   - [`kernel_gateway_image_config(KernelGatewayImageConfig)`](crate::client::fluent_builders::CreateAppImageConfig::kernel_gateway_image_config) / [`set_kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::client::fluent_builders::CreateAppImageConfig::set_kernel_gateway_image_config): <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
     /// - On success, responds with [`CreateAppImageConfigOutput`](crate::output::CreateAppImageConfigOutput) with field(s):
     ///   - [`app_image_config_arn(Option<String>)`](crate::output::CreateAppImageConfigOutput::app_image_config_arn): <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
     /// - On failure, responds with [`SdkError<CreateAppImageConfigError>`](crate::error::CreateAppImageConfigError)
@@ -4114,7 +4114,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFeatureGroup::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::UpdateFeatureGroup::set_feature_group_name): <p>The name of the feature group that you're updating.</p>
-    ///   - [`feature_additions(Vec<FeatureDefinition>)`](crate::client::fluent_builders::UpdateFeatureGroup::feature_additions) / [`set_feature_additions(Option<Vec<FeatureDefinition>>)`](crate::client::fluent_builders::UpdateFeatureGroup::set_feature_additions): <p>A list of the features that you're adding to the feature group.</p>
+    ///   - [`feature_additions(Vec<FeatureDefinition>)`](crate::client::fluent_builders::UpdateFeatureGroup::feature_additions) / [`set_feature_additions(Option<Vec<FeatureDefinition>>)`](crate::client::fluent_builders::UpdateFeatureGroup::set_feature_additions): <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
     /// - On success, responds with [`UpdateFeatureGroupOutput`](crate::output::UpdateFeatureGroupOutput) with field(s):
     ///   - [`feature_group_arn(Option<String>)`](crate::output::UpdateFeatureGroupOutput::feature_group_arn): <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
     /// - On failure, responds with [`SdkError<UpdateFeatureGroupError>`](crate::error::UpdateFeatureGroupError)
@@ -4247,7 +4247,7 @@ impl Client {
     ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_name): <p>The name of the project.</p>
     ///   - [`project_description(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_description) / [`set_project_description(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_description): <p>The description for the project.</p>
     ///   - [`service_catalog_provisioning_update_details(ServiceCatalogProvisioningUpdateDetails)`](crate::client::fluent_builders::UpdateProject::service_catalog_provisioning_update_details) / [`set_service_catalog_provisioning_update_details(Option<ServiceCatalogProvisioningUpdateDetails>)`](crate::client::fluent_builders::UpdateProject::set_service_catalog_provisioning_update_details): <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::UpdateProject::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateProject::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::UpdateProject::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateProject::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::output::UpdateProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
@@ -5151,7 +5151,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The KernelGatewayImageConfig.</p>
+        /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
         pub fn kernel_gateway_image_config(
             mut self,
             input: crate::model::KernelGatewayImageConfig,
@@ -5159,7 +5159,7 @@ pub mod fluent_builders {
             self.inner = self.inner.kernel_gateway_image_config(input);
             self
         }
-        /// <p>The KernelGatewayImageConfig.</p>
+        /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
         pub fn set_kernel_gateway_image_config(
             mut self,
             input: std::option::Option<crate::model::KernelGatewayImageConfig>,
@@ -29416,12 +29416,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_feature_additions`](Self::set_feature_additions).
         ///
-        /// <p>A list of the features that you're adding to the feature group.</p>
+        /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
         pub fn feature_additions(mut self, input: crate::model::FeatureDefinition) -> Self {
             self.inner = self.inner.feature_additions(input);
             self
         }
-        /// <p>A list of the features that you're adding to the feature group.</p>
+        /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
         pub fn set_feature_additions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
@@ -30544,12 +30544,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

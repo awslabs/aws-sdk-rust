@@ -107,6 +107,19 @@ pub fn serialize_operation_crate_operation_put_channel_membership_preferences(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_redact_channel_message(
+    input: &crate::input::RedactChannelMessageInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_redact_channel_message_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_search_channels(
     input: &crate::input::SearchChannelsInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -176,6 +189,19 @@ pub fn serialize_operation_crate_operation_update_channel_message(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_channel_message_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_channel_read_marker(
+    input: &crate::input::UpdateChannelReadMarkerInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_channel_read_marker_input(
         &mut object,
         input,
     )?;

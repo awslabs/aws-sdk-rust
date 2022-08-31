@@ -12235,6 +12235,452 @@ impl GlobalSecondaryIndex {
     }
 }
 
+/// <p> Summary information about the source file for the import. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportSummary {
+    /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+    #[doc(hidden)]
+    pub import_arn: std::option::Option<std::string::String>,
+    /// <p> The status of the import operation. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+    #[doc(hidden)]
+    pub table_arn: std::option::Option<std::string::String>,
+    /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
+    #[doc(hidden)]
+    pub s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
+    /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
+    #[doc(hidden)]
+    pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+    /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    #[doc(hidden)]
+    pub input_format: std::option::Option<crate::model::InputFormat>,
+    /// <p> The time at which this import task began. </p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ImportSummary {
+    /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+    pub fn import_arn(&self) -> std::option::Option<&str> {
+        self.import_arn.as_deref()
+    }
+    /// <p> The status of the import operation. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
+    pub fn s3_bucket_source(&self) -> std::option::Option<&crate::model::S3BucketSource> {
+        self.s3_bucket_source.as_ref()
+    }
+    /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    pub fn input_format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.input_format.as_ref()
+    }
+    /// <p> The time at which this import task began. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportSummary");
+        formatter.field("import_arn", &self.import_arn);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("table_arn", &self.table_arn);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
+        formatter.field("input_format", &self.input_format);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`ImportSummary`](crate::model::ImportSummary).
+pub mod import_summary {
+
+    /// A builder for [`ImportSummary`](crate::model::ImportSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_arn: std::option::Option<std::string::String>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) table_arn: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
+        pub(crate) cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+        pub(crate) input_format: std::option::Option<crate::model::InputFormat>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+        pub fn import_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+        pub fn set_import_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_arn = input;
+            self
+        }
+        /// <p> The status of the import operation. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> The status of the import operation. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_arn = input;
+            self
+        }
+        /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
+        pub fn s3_bucket_source(mut self, input: crate::model::S3BucketSource) -> Self {
+            self.s3_bucket_source = Some(input);
+            self
+        }
+        /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
+        pub fn set_s3_bucket_source(
+            mut self,
+            input: std::option::Option<crate::model::S3BucketSource>,
+        ) -> Self {
+            self.s3_bucket_source = input;
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
+        pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_watch_log_group_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
+        pub fn set_cloud_watch_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cloud_watch_log_group_arn = input;
+            self
+        }
+        /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+        pub fn input_format(mut self, input: crate::model::InputFormat) -> Self {
+            self.input_format = Some(input);
+            self
+        }
+        /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+        pub fn set_input_format(
+            mut self,
+            input: std::option::Option<crate::model::InputFormat>,
+        ) -> Self {
+            self.input_format = input;
+            self
+        }
+        /// <p> The time at which this import task began. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p> The time at which this import task began. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportSummary`](crate::model::ImportSummary).
+        pub fn build(self) -> crate::model::ImportSummary {
+            crate::model::ImportSummary {
+                import_arn: self.import_arn,
+                import_status: self.import_status,
+                table_arn: self.table_arn,
+                s3_bucket_source: self.s3_bucket_source,
+                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
+                input_format: self.input_format,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl ImportSummary {
+    /// Creates a new builder-style object to manufacture [`ImportSummary`](crate::model::ImportSummary).
+    pub fn builder() -> crate::model::import_summary::Builder {
+        crate::model::import_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InputFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Csv,
+    #[allow(missing_docs)] // documentation missing in model
+    DynamodbJson,
+    #[allow(missing_docs)] // documentation missing in model
+    Ion,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InputFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "CSV" => InputFormat::Csv,
+            "DYNAMODB_JSON" => InputFormat::DynamodbJson,
+            "ION" => InputFormat::Ion,
+            other => InputFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InputFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InputFormat::from(s))
+    }
+}
+impl InputFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InputFormat::Csv => "CSV",
+            InputFormat::DynamodbJson => "DYNAMODB_JSON",
+            InputFormat::Ion => "ION",
+            InputFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CSV", "DYNAMODB_JSON", "ION"]
+    }
+}
+impl AsRef<str> for InputFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> The S3 bucket that is being imported from. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3BucketSource {
+    /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
+    #[doc(hidden)]
+    pub s3_bucket_owner: std::option::Option<std::string::String>,
+    /// <p> The S3 bucket that is being imported from. </p>
+    #[doc(hidden)]
+    pub s3_bucket: std::option::Option<std::string::String>,
+    /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
+    #[doc(hidden)]
+    pub s3_key_prefix: std::option::Option<std::string::String>,
+}
+impl S3BucketSource {
+    /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
+    pub fn s3_bucket_owner(&self) -> std::option::Option<&str> {
+        self.s3_bucket_owner.as_deref()
+    }
+    /// <p> The S3 bucket that is being imported from. </p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for S3BucketSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3BucketSource");
+        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key_prefix", &self.s3_key_prefix);
+        formatter.finish()
+    }
+}
+/// See [`S3BucketSource`](crate::model::S3BucketSource).
+pub mod s3_bucket_source {
+
+    /// A builder for [`S3BucketSource`](crate::model::S3BucketSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket: std::option::Option<std::string::String>,
+        pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
+        pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
+        pub fn set_s3_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_owner = input;
+            self
+        }
+        /// <p> The S3 bucket that is being imported from. </p>
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
+            self
+        }
+        /// <p> The S3 bucket that is being imported from. </p>
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
+            self
+        }
+        /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_key_prefix = Some(input.into());
+            self
+        }
+        /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
+        pub fn set_s3_key_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_key_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3BucketSource`](crate::model::S3BucketSource).
+        pub fn build(self) -> crate::model::S3BucketSource {
+            crate::model::S3BucketSource {
+                s3_bucket_owner: self.s3_bucket_owner,
+                s3_bucket: self.s3_bucket,
+                s3_key_prefix: self.s3_key_prefix,
+            }
+        }
+    }
+}
+impl S3BucketSource {
+    /// Creates a new builder-style object to manufacture [`S3BucketSource`](crate::model::S3BucketSource).
+    pub fn builder() -> crate::model::s3_bucket_source::Builder {
+        crate::model::s3_bucket_source::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImportStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImportStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELLED" => ImportStatus::Cancelled,
+            "CANCELLING" => ImportStatus::Cancelling,
+            "COMPLETED" => ImportStatus::Completed,
+            "FAILED" => ImportStatus::Failed,
+            "IN_PROGRESS" => ImportStatus::InProgress,
+            other => ImportStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImportStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImportStatus::from(s))
+    }
+}
+impl ImportStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImportStatus::Cancelled => "CANCELLED",
+            ImportStatus::Cancelling => "CANCELLING",
+            ImportStatus::Completed => "COMPLETED",
+            ImportStatus::Failed => "FAILED",
+            ImportStatus::InProgress => "IN_PROGRESS",
+            ImportStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "CANCELLING",
+            "COMPLETED",
+            "FAILED",
+            "IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for ImportStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Represents the properties of a global table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13066,6 +13512,886 @@ impl BackupTypeFilter {
 impl AsRef<str> for BackupTypeFilter {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p> Represents the properties of the table being imported into. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportTableDescription {
+    /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+    #[doc(hidden)]
+    pub import_arn: std::option::Option<std::string::String>,
+    /// <p> The status of the import. </p>
+    #[doc(hidden)]
+    pub import_status: std::option::Option<crate::model::ImportStatus>,
+    /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+    #[doc(hidden)]
+    pub table_arn: std::option::Option<std::string::String>,
+    /// <p> The table id corresponding to the table created by import table process. </p>
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p> The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent. </p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p> Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional). </p>
+    #[doc(hidden)]
+    pub s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
+    /// <p> The number of errors occurred on importing the source file into the target table. </p>
+    #[doc(hidden)]
+    pub error_count: i64,
+    /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table. </p>
+    #[doc(hidden)]
+    pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+    /// <p> The format of the source data going into the target table. </p>
+    #[doc(hidden)]
+    pub input_format: std::option::Option<crate::model::InputFormat>,
+    /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption. </p>
+    #[doc(hidden)]
+    pub input_format_options: std::option::Option<crate::model::InputFormatOptions>,
+    /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
+    #[doc(hidden)]
+    pub input_compression_type: std::option::Option<crate::model::InputCompressionType>,
+    /// <p> The parameters for the new table that is being imported into. </p>
+    #[doc(hidden)]
+    pub table_creation_parameters: std::option::Option<crate::model::TableCreationParameters>,
+    /// <p> The time when this import task started. </p>
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The time at which the creation of the table associated with this import task completed. </p>
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The total size of data processed from the source file, in Bytes. </p>
+    #[doc(hidden)]
+    pub processed_size_bytes: i64,
+    /// <p> The total number of items processed from the source file. </p>
+    #[doc(hidden)]
+    pub processed_item_count: i64,
+    /// <p> The number of items successfully imported into the new table. </p>
+    #[doc(hidden)]
+    pub imported_item_count: i64,
+    /// <p> The error code corresponding to the failure that the import job ran into during execution. </p>
+    #[doc(hidden)]
+    pub failure_code: std::option::Option<std::string::String>,
+    /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
+    #[doc(hidden)]
+    pub failure_message: std::option::Option<std::string::String>,
+}
+impl ImportTableDescription {
+    /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+    pub fn import_arn(&self) -> std::option::Option<&str> {
+        self.import_arn.as_deref()
+    }
+    /// <p> The status of the import. </p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p> The table id corresponding to the table created by import table process. </p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p> The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p> Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional). </p>
+    pub fn s3_bucket_source(&self) -> std::option::Option<&crate::model::S3BucketSource> {
+        self.s3_bucket_source.as_ref()
+    }
+    /// <p> The number of errors occurred on importing the source file into the target table. </p>
+    pub fn error_count(&self) -> i64 {
+        self.error_count
+    }
+    /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table. </p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p> The format of the source data going into the target table. </p>
+    pub fn input_format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.input_format.as_ref()
+    }
+    /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption. </p>
+    pub fn input_format_options(&self) -> std::option::Option<&crate::model::InputFormatOptions> {
+        self.input_format_options.as_ref()
+    }
+    /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
+    pub fn input_compression_type(
+        &self,
+    ) -> std::option::Option<&crate::model::InputCompressionType> {
+        self.input_compression_type.as_ref()
+    }
+    /// <p> The parameters for the new table that is being imported into. </p>
+    pub fn table_creation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::TableCreationParameters> {
+        self.table_creation_parameters.as_ref()
+    }
+    /// <p> The time when this import task started. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p> The time at which the creation of the table associated with this import task completed. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p> The total size of data processed from the source file, in Bytes. </p>
+    pub fn processed_size_bytes(&self) -> i64 {
+        self.processed_size_bytes
+    }
+    /// <p> The total number of items processed from the source file. </p>
+    pub fn processed_item_count(&self) -> i64 {
+        self.processed_item_count
+    }
+    /// <p> The number of items successfully imported into the new table. </p>
+    pub fn imported_item_count(&self) -> i64 {
+        self.imported_item_count
+    }
+    /// <p> The error code corresponding to the failure that the import job ran into during execution. </p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
+    pub fn failure_message(&self) -> std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportTableDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTableDescription");
+        formatter.field("import_arn", &self.import_arn);
+        formatter.field("import_status", &self.import_status);
+        formatter.field("table_arn", &self.table_arn);
+        formatter.field("table_id", &self.table_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("error_count", &self.error_count);
+        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
+        formatter.field("input_format", &self.input_format);
+        formatter.field("input_format_options", &self.input_format_options);
+        formatter.field("input_compression_type", &self.input_compression_type);
+        formatter.field("table_creation_parameters", &self.table_creation_parameters);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("processed_size_bytes", &self.processed_size_bytes);
+        formatter.field("processed_item_count", &self.processed_item_count);
+        formatter.field("imported_item_count", &self.imported_item_count);
+        formatter.field("failure_code", &self.failure_code);
+        formatter.field("failure_message", &self.failure_message);
+        formatter.finish()
+    }
+}
+/// See [`ImportTableDescription`](crate::model::ImportTableDescription).
+pub mod import_table_description {
+
+    /// A builder for [`ImportTableDescription`](crate::model::ImportTableDescription).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_arn: std::option::Option<std::string::String>,
+        pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
+        pub(crate) table_arn: std::option::Option<std::string::String>,
+        pub(crate) table_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
+        pub(crate) error_count: std::option::Option<i64>,
+        pub(crate) cloud_watch_log_group_arn: std::option::Option<std::string::String>,
+        pub(crate) input_format: std::option::Option<crate::model::InputFormat>,
+        pub(crate) input_format_options: std::option::Option<crate::model::InputFormatOptions>,
+        pub(crate) input_compression_type: std::option::Option<crate::model::InputCompressionType>,
+        pub(crate) table_creation_parameters:
+            std::option::Option<crate::model::TableCreationParameters>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) processed_size_bytes: std::option::Option<i64>,
+        pub(crate) processed_item_count: std::option::Option<i64>,
+        pub(crate) imported_item_count: std::option::Option<i64>,
+        pub(crate) failure_code: std::option::Option<std::string::String>,
+        pub(crate) failure_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+        pub fn import_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
+        pub fn set_import_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_arn = input;
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
+            self.import_status = Some(input);
+            self
+        }
+        /// <p> The status of the import. </p>
+        pub fn set_import_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportStatus>,
+        ) -> Self {
+            self.import_status = input;
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_arn = input;
+            self
+        }
+        /// <p> The table id corresponding to the table created by import table process. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_id = Some(input.into());
+            self
+        }
+        /// <p> The table id corresponding to the table created by import table process. </p>
+        pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_id = input;
+            self
+        }
+        /// <p> The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p> The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent. </p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p> Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional). </p>
+        pub fn s3_bucket_source(mut self, input: crate::model::S3BucketSource) -> Self {
+            self.s3_bucket_source = Some(input);
+            self
+        }
+        /// <p> Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional). </p>
+        pub fn set_s3_bucket_source(
+            mut self,
+            input: std::option::Option<crate::model::S3BucketSource>,
+        ) -> Self {
+            self.s3_bucket_source = input;
+            self
+        }
+        /// <p> The number of errors occurred on importing the source file into the target table. </p>
+        pub fn error_count(mut self, input: i64) -> Self {
+            self.error_count = Some(input);
+            self
+        }
+        /// <p> The number of errors occurred on importing the source file into the target table. </p>
+        pub fn set_error_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.error_count = input;
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table. </p>
+        pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_watch_log_group_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table. </p>
+        pub fn set_cloud_watch_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cloud_watch_log_group_arn = input;
+            self
+        }
+        /// <p> The format of the source data going into the target table. </p>
+        pub fn input_format(mut self, input: crate::model::InputFormat) -> Self {
+            self.input_format = Some(input);
+            self
+        }
+        /// <p> The format of the source data going into the target table. </p>
+        pub fn set_input_format(
+            mut self,
+            input: std::option::Option<crate::model::InputFormat>,
+        ) -> Self {
+            self.input_format = input;
+            self
+        }
+        /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption. </p>
+        pub fn input_format_options(mut self, input: crate::model::InputFormatOptions) -> Self {
+            self.input_format_options = Some(input);
+            self
+        }
+        /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption. </p>
+        pub fn set_input_format_options(
+            mut self,
+            input: std::option::Option<crate::model::InputFormatOptions>,
+        ) -> Self {
+            self.input_format_options = input;
+            self
+        }
+        /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
+        pub fn input_compression_type(mut self, input: crate::model::InputCompressionType) -> Self {
+            self.input_compression_type = Some(input);
+            self
+        }
+        /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
+        pub fn set_input_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::InputCompressionType>,
+        ) -> Self {
+            self.input_compression_type = input;
+            self
+        }
+        /// <p> The parameters for the new table that is being imported into. </p>
+        pub fn table_creation_parameters(
+            mut self,
+            input: crate::model::TableCreationParameters,
+        ) -> Self {
+            self.table_creation_parameters = Some(input);
+            self
+        }
+        /// <p> The parameters for the new table that is being imported into. </p>
+        pub fn set_table_creation_parameters(
+            mut self,
+            input: std::option::Option<crate::model::TableCreationParameters>,
+        ) -> Self {
+            self.table_creation_parameters = input;
+            self
+        }
+        /// <p> The time when this import task started. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p> The time when this import task started. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The time at which the creation of the table associated with this import task completed. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p> The time at which the creation of the table associated with this import task completed. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p> The total size of data processed from the source file, in Bytes. </p>
+        pub fn processed_size_bytes(mut self, input: i64) -> Self {
+            self.processed_size_bytes = Some(input);
+            self
+        }
+        /// <p> The total size of data processed from the source file, in Bytes. </p>
+        pub fn set_processed_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.processed_size_bytes = input;
+            self
+        }
+        /// <p> The total number of items processed from the source file. </p>
+        pub fn processed_item_count(mut self, input: i64) -> Self {
+            self.processed_item_count = Some(input);
+            self
+        }
+        /// <p> The total number of items processed from the source file. </p>
+        pub fn set_processed_item_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.processed_item_count = input;
+            self
+        }
+        /// <p> The number of items successfully imported into the new table. </p>
+        pub fn imported_item_count(mut self, input: i64) -> Self {
+            self.imported_item_count = Some(input);
+            self
+        }
+        /// <p> The number of items successfully imported into the new table. </p>
+        pub fn set_imported_item_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.imported_item_count = input;
+            self
+        }
+        /// <p> The error code corresponding to the failure that the import job ran into during execution. </p>
+        pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_code = Some(input.into());
+            self
+        }
+        /// <p> The error code corresponding to the failure that the import job ran into during execution. </p>
+        pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_code = input;
+            self
+        }
+        /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
+        pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_message = Some(input.into());
+            self
+        }
+        /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
+        pub fn set_failure_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportTableDescription`](crate::model::ImportTableDescription).
+        pub fn build(self) -> crate::model::ImportTableDescription {
+            crate::model::ImportTableDescription {
+                import_arn: self.import_arn,
+                import_status: self.import_status,
+                table_arn: self.table_arn,
+                table_id: self.table_id,
+                client_token: self.client_token,
+                s3_bucket_source: self.s3_bucket_source,
+                error_count: self.error_count.unwrap_or_default(),
+                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
+                input_format: self.input_format,
+                input_format_options: self.input_format_options,
+                input_compression_type: self.input_compression_type,
+                table_creation_parameters: self.table_creation_parameters,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                processed_size_bytes: self.processed_size_bytes.unwrap_or_default(),
+                processed_item_count: self.processed_item_count.unwrap_or_default(),
+                imported_item_count: self.imported_item_count.unwrap_or_default(),
+                failure_code: self.failure_code,
+                failure_message: self.failure_message,
+            }
+        }
+    }
+}
+impl ImportTableDescription {
+    /// Creates a new builder-style object to manufacture [`ImportTableDescription`](crate::model::ImportTableDescription).
+    pub fn builder() -> crate::model::import_table_description::Builder {
+        crate::model::import_table_description::Builder::default()
+    }
+}
+
+/// <p> The parameters for the table created as part of the import operation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TableCreationParameters {
+    /// <p> The name of the table created as part of the import operation. </p>
+    #[doc(hidden)]
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p> The attributes of the table created as part of the import operation. </p>
+    #[doc(hidden)]
+    pub attribute_definitions:
+        std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+    /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
+    #[doc(hidden)]
+    pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
+    /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
+    #[doc(hidden)]
+    pub billing_mode: std::option::Option<crate::model::BillingMode>,
+    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+    /// <p>Represents the settings used to enable server-side encryption.</p>
+    #[doc(hidden)]
+    pub sse_specification: std::option::Option<crate::model::SseSpecification>,
+    /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
+    #[doc(hidden)]
+    pub global_secondary_indexes:
+        std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+}
+impl TableCreationParameters {
+    /// <p> The name of the table created as part of the import operation. </p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p> The attributes of the table created as part of the import operation. </p>
+    pub fn attribute_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeDefinition]> {
+        self.attribute_definitions.as_deref()
+    }
+    /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
+    pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
+        self.key_schema.as_deref()
+    }
+    /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
+    pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
+        self.billing_mode.as_ref()
+    }
+    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
+    /// <p>Represents the settings used to enable server-side encryption.</p>
+    pub fn sse_specification(&self) -> std::option::Option<&crate::model::SseSpecification> {
+        self.sse_specification.as_ref()
+    }
+    /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
+    pub fn global_secondary_indexes(
+        &self,
+    ) -> std::option::Option<&[crate::model::GlobalSecondaryIndex]> {
+        self.global_secondary_indexes.as_deref()
+    }
+}
+impl std::fmt::Debug for TableCreationParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TableCreationParameters");
+        formatter.field("table_name", &self.table_name);
+        formatter.field("attribute_definitions", &self.attribute_definitions);
+        formatter.field("key_schema", &self.key_schema);
+        formatter.field("billing_mode", &self.billing_mode);
+        formatter.field("provisioned_throughput", &self.provisioned_throughput);
+        formatter.field("sse_specification", &self.sse_specification);
+        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
+        formatter.finish()
+    }
+}
+/// See [`TableCreationParameters`](crate::model::TableCreationParameters).
+pub mod table_creation_parameters {
+
+    /// A builder for [`TableCreationParameters`](crate::model::TableCreationParameters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) attribute_definitions:
+            std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+        pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
+        pub(crate) billing_mode: std::option::Option<crate::model::BillingMode>,
+        pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+        pub(crate) sse_specification: std::option::Option<crate::model::SseSpecification>,
+        pub(crate) global_secondary_indexes:
+            std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+    }
+    impl Builder {
+        /// <p> The name of the table created as part of the import operation. </p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the table created as part of the import operation. </p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// Appends an item to `attribute_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
+        ///
+        /// <p> The attributes of the table created as part of the import operation. </p>
+        pub fn attribute_definitions(mut self, input: crate::model::AttributeDefinition) -> Self {
+            let mut v = self.attribute_definitions.unwrap_or_default();
+            v.push(input);
+            self.attribute_definitions = Some(v);
+            self
+        }
+        /// <p> The attributes of the table created as part of the import operation. </p>
+        pub fn set_attribute_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+        ) -> Self {
+            self.attribute_definitions = input;
+            self
+        }
+        /// Appends an item to `key_schema`.
+        ///
+        /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
+        ///
+        /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
+            let mut v = self.key_schema.unwrap_or_default();
+            v.push(input);
+            self.key_schema = Some(v);
+            self
+        }
+        /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
+        pub fn set_key_schema(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
+        ) -> Self {
+            self.key_schema = input;
+            self
+        }
+        /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.billing_mode = Some(input);
+            self
+        }
+        /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
+        pub fn set_billing_mode(
+            mut self,
+            input: std::option::Option<crate::model::BillingMode>,
+        ) -> Self {
+            self.billing_mode = input;
+            self
+        }
+        /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.provisioned_throughput = Some(input);
+            self
+        }
+        /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        pub fn set_provisioned_throughput(
+            mut self,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
+        ) -> Self {
+            self.provisioned_throughput = input;
+            self
+        }
+        /// <p>Represents the settings used to enable server-side encryption.</p>
+        pub fn sse_specification(mut self, input: crate::model::SseSpecification) -> Self {
+            self.sse_specification = Some(input);
+            self
+        }
+        /// <p>Represents the settings used to enable server-side encryption.</p>
+        pub fn set_sse_specification(
+            mut self,
+            input: std::option::Option<crate::model::SseSpecification>,
+        ) -> Self {
+            self.sse_specification = input;
+            self
+        }
+        /// Appends an item to `global_secondary_indexes`.
+        ///
+        /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
+        ///
+        /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
+        pub fn global_secondary_indexes(
+            mut self,
+            input: crate::model::GlobalSecondaryIndex,
+        ) -> Self {
+            let mut v = self.global_secondary_indexes.unwrap_or_default();
+            v.push(input);
+            self.global_secondary_indexes = Some(v);
+            self
+        }
+        /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
+        pub fn set_global_secondary_indexes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+        ) -> Self {
+            self.global_secondary_indexes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableCreationParameters`](crate::model::TableCreationParameters).
+        pub fn build(self) -> crate::model::TableCreationParameters {
+            crate::model::TableCreationParameters {
+                table_name: self.table_name,
+                attribute_definitions: self.attribute_definitions,
+                key_schema: self.key_schema,
+                billing_mode: self.billing_mode,
+                provisioned_throughput: self.provisioned_throughput,
+                sse_specification: self.sse_specification,
+                global_secondary_indexes: self.global_secondary_indexes,
+            }
+        }
+    }
+}
+impl TableCreationParameters {
+    /// Creates a new builder-style object to manufacture [`TableCreationParameters`](crate::model::TableCreationParameters).
+    pub fn builder() -> crate::model::table_creation_parameters::Builder {
+        crate::model::table_creation_parameters::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InputCompressionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gzip,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Zstd,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InputCompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GZIP" => InputCompressionType::Gzip,
+            "NONE" => InputCompressionType::None,
+            "ZSTD" => InputCompressionType::Zstd,
+            other => InputCompressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InputCompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InputCompressionType::from(s))
+    }
+}
+impl InputCompressionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InputCompressionType::Gzip => "GZIP",
+            InputCompressionType::None => "NONE",
+            InputCompressionType::Zstd => "ZSTD",
+            InputCompressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GZIP", "NONE", "ZSTD"]
+    }
+}
+impl AsRef<str> for InputCompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InputFormatOptions {
+    /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
+    #[doc(hidden)]
+    pub csv: std::option::Option<crate::model::CsvOptions>,
+}
+impl InputFormatOptions {
+    /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
+    pub fn csv(&self) -> std::option::Option<&crate::model::CsvOptions> {
+        self.csv.as_ref()
+    }
+}
+impl std::fmt::Debug for InputFormatOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InputFormatOptions");
+        formatter.field("csv", &self.csv);
+        formatter.finish()
+    }
+}
+/// See [`InputFormatOptions`](crate::model::InputFormatOptions).
+pub mod input_format_options {
+
+    /// A builder for [`InputFormatOptions`](crate::model::InputFormatOptions).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) csv: std::option::Option<crate::model::CsvOptions>,
+    }
+    impl Builder {
+        /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
+        pub fn csv(mut self, input: crate::model::CsvOptions) -> Self {
+            self.csv = Some(input);
+            self
+        }
+        /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOptions>) -> Self {
+            self.csv = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InputFormatOptions`](crate::model::InputFormatOptions).
+        pub fn build(self) -> crate::model::InputFormatOptions {
+            crate::model::InputFormatOptions { csv: self.csv }
+        }
+    }
+}
+impl InputFormatOptions {
+    /// Creates a new builder-style object to manufacture [`InputFormatOptions`](crate::model::InputFormatOptions).
+    pub fn builder() -> crate::model::input_format_options::Builder {
+        crate::model::input_format_options::Builder::default()
+    }
+}
+
+/// <p> Processing options for the CSV file being imported. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CsvOptions {
+    /// <p> The delimiter used for separating items in the CSV file being imported. </p>
+    #[doc(hidden)]
+    pub delimiter: std::option::Option<std::string::String>,
+    /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
+    #[doc(hidden)]
+    pub header_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CsvOptions {
+    /// <p> The delimiter used for separating items in the CSV file being imported. </p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
+    pub fn header_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.header_list.as_deref()
+    }
+}
+impl std::fmt::Debug for CsvOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CsvOptions");
+        formatter.field("delimiter", &self.delimiter);
+        formatter.field("header_list", &self.header_list);
+        formatter.finish()
+    }
+}
+/// See [`CsvOptions`](crate::model::CsvOptions).
+pub mod csv_options {
+
+    /// A builder for [`CsvOptions`](crate::model::CsvOptions).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delimiter: std::option::Option<std::string::String>,
+        pub(crate) header_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p> The delimiter used for separating items in the CSV file being imported. </p>
+        pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delimiter = Some(input.into());
+            self
+        }
+        /// <p> The delimiter used for separating items in the CSV file being imported. </p>
+        pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delimiter = input;
+            self
+        }
+        /// Appends an item to `header_list`.
+        ///
+        /// To override the contents of this collection use [`set_header_list`](Self::set_header_list).
+        ///
+        /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
+        pub fn header_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.header_list.unwrap_or_default();
+            v.push(input.into());
+            self.header_list = Some(v);
+            self
+        }
+        /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
+        pub fn set_header_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.header_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CsvOptions`](crate::model::CsvOptions).
+        pub fn build(self) -> crate::model::CsvOptions {
+            crate::model::CsvOptions {
+                delimiter: self.delimiter,
+                header_list: self.header_list,
+            }
+        }
+    }
+}
+impl CsvOptions {
+    /// Creates a new builder-style object to manufacture [`CsvOptions`](crate::model::CsvOptions).
+    pub fn builder() -> crate::model::csv_options::Builder {
+        crate::model::csv_options::Builder::default()
     }
 }
 
@@ -15905,7 +17231,7 @@ pub struct BatchStatementError {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::BatchStatementErrorCodeEnum>,
-    /// <p> The error message associated with the PartiQL batch resposne. </p>
+    /// <p> The error message associated with the PartiQL batch response. </p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -15914,7 +17240,7 @@ impl BatchStatementError {
     pub fn code(&self) -> std::option::Option<&crate::model::BatchStatementErrorCodeEnum> {
         self.code.as_ref()
     }
-    /// <p> The error message associated with the PartiQL batch resposne. </p>
+    /// <p> The error message associated with the PartiQL batch response. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -15950,12 +17276,12 @@ pub mod batch_statement_error {
             self.code = input;
             self
         }
-        /// <p> The error message associated with the PartiQL batch resposne. </p>
+        /// <p> The error message associated with the PartiQL batch response. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p> The error message associated with the PartiQL batch resposne. </p>
+        /// <p> The error message associated with the PartiQL batch response. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

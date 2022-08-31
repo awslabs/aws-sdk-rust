@@ -441,6 +441,19 @@ pub fn serialize_operation_crate_operation_search_available_phone_numbers(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_search_security_profiles(
+    input: &crate::input::SearchSecurityProfilesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_search_security_profiles_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_search_users(
     input: &crate::input::SearchUsersInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {

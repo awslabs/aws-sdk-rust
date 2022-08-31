@@ -139,6 +139,16 @@ pub(crate) fn reflens_structure_crate_output_list_faces_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_project_policies_output_next_token(
+    input: &crate::output::ListProjectPoliciesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_stream_processors_output_next_token(
     input: &crate::output::ListStreamProcessorsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -203,6 +213,16 @@ pub(crate) fn lens_structure_crate_output_list_faces_output_faces(
     input: crate::output::ListFacesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Face>> {
     let input = match input.faces {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_project_policies_output_project_policies(
+    input: crate::output::ListProjectPoliciesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ProjectPolicy>> {
+    let input = match input.project_policies {
         None => return None,
         Some(t) => t,
     };

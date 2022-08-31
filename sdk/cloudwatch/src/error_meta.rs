@@ -492,6 +492,25 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedInsightRulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListManagedInsightRulesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListManagedInsightRulesErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
+                crate::error::ListManagedInsightRulesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::ListManagedInsightRulesErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+                crate::error::ListManagedInsightRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMetricsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -655,6 +674,24 @@ where
                 }
                 crate::error::PutInsightRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutManagedInsightRulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutManagedInsightRulesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutManagedInsightRulesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::PutManagedInsightRulesErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+                crate::error::PutManagedInsightRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

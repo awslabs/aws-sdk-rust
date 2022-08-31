@@ -15,8 +15,8 @@ pub struct Channel {
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
@@ -32,7 +32,7 @@ pub struct Channel {
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     #[doc(hidden)]
     pub authorized: bool,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -52,8 +52,8 @@ impl Channel {
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
@@ -74,7 +74,7 @@ impl Channel {
     pub fn authorized(&self) -> bool {
         self.authorized
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -154,8 +154,8 @@ pub mod channel {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
@@ -163,8 +163,8 @@ pub mod channel {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
@@ -223,7 +223,7 @@ pub mod channel {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -234,7 +234,7 @@ pub mod channel {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -384,10 +384,10 @@ pub struct StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+    /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
@@ -399,11 +399,11 @@ impl StreamSessionSummary {
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+    /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -444,12 +444,12 @@ pub mod stream_session_summary {
             self.stream_id = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -457,12 +457,12 @@ pub mod stream_session_summary {
             self.start_time = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+        /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+        /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -517,7 +517,7 @@ pub struct StreamSummary {
     /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     #[doc(hidden)]
     pub viewer_count: i64,
-    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -542,7 +542,7 @@ impl StreamSummary {
     pub fn viewer_count(&self) -> i64 {
         self.viewer_count
     }
-    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -626,12 +626,12 @@ pub mod stream_summary {
             self.viewer_count = input;
             self
         }
-        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -841,7 +841,7 @@ pub struct StreamKeySummary {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -855,7 +855,7 @@ impl StreamKeySummary {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -909,7 +909,7 @@ pub mod stream_key_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -920,7 +920,7 @@ pub mod stream_key_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -963,7 +963,7 @@ pub struct RecordingConfigurationSummary {
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::RecordingConfigurationState>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -987,7 +987,7 @@ impl RecordingConfigurationSummary {
     pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
         self.state.as_ref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1075,7 +1075,7 @@ pub mod recording_configuration_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1086,7 +1086,7 @@ pub mod recording_configuration_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1295,7 +1295,7 @@ pub struct PlaybackKeyPairSummary {
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1309,7 +1309,7 @@ impl PlaybackKeyPairSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1363,7 +1363,7 @@ pub mod playback_key_pair_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1374,7 +1374,7 @@ pub mod playback_key_pair_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1420,7 +1420,7 @@ pub struct ChannelSummary {
     /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
     #[doc(hidden)]
     pub recording_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1446,7 +1446,7 @@ impl ChannelSummary {
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1548,7 +1548,7 @@ pub mod channel_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1559,7 +1559,7 @@ pub mod channel_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1602,7 +1602,7 @@ pub struct PlaybackKeyPair {
     /// <p>Key-pair identifier.</p>
     #[doc(hidden)]
     pub fingerprint: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1620,7 +1620,7 @@ impl PlaybackKeyPair {
     pub fn fingerprint(&self) -> std::option::Option<&str> {
         self.fingerprint.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1686,7 +1686,7 @@ pub mod playback_key_pair {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1697,7 +1697,7 @@ pub mod playback_key_pair {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1732,10 +1732,10 @@ pub struct StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+    /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The properties of the channel at the time of going live.</p>
@@ -1756,11 +1756,11 @@ impl StreamSession {
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+    /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+    /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -1822,12 +1822,12 @@ pub mod stream_session {
             self.stream_id = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+        /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1835,12 +1835,12 @@ pub mod stream_session {
             self.start_time = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+        /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
+        /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1937,7 +1937,7 @@ pub struct StreamEvent {
     /// <p>Logical group for certain events.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+    /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     #[doc(hidden)]
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -1950,7 +1950,7 @@ impl StreamEvent {
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+    /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
@@ -1995,12 +1995,12 @@ pub mod stream_event {
             self.r#type = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+        /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+        /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn set_event_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2041,7 +2041,7 @@ pub struct RecordingConfiguration {
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::RecordingConfigurationState>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2068,7 +2068,7 @@ impl RecordingConfiguration {
     pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
         self.state.as_ref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2165,7 +2165,7 @@ pub mod recording_configuration {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2176,7 +2176,7 @@ pub mod recording_configuration {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2440,7 +2440,7 @@ impl IngestConfiguration {
     }
 }
 
-/// <p>Object specifying a stream’s audio configuration.</p>
+/// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioConfiguration {
@@ -2555,7 +2555,7 @@ impl AudioConfiguration {
     }
 }
 
-/// <p>Object specifying a stream’s video configuration.</p>
+/// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoConfiguration {
@@ -2763,7 +2763,7 @@ pub struct StreamKey {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2781,7 +2781,7 @@ impl StreamKey {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2847,7 +2847,7 @@ pub mod stream_key {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2858,7 +2858,7 @@ pub mod stream_key {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2899,7 +2899,7 @@ pub struct Stream {
     /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
     #[doc(hidden)]
     pub playback_url: std::option::Option<std::string::String>,
-    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The stream’s state.</p>
@@ -2925,7 +2925,7 @@ impl Stream {
     pub fn playback_url(&self) -> std::option::Option<&str> {
         self.playback_url.as_deref()
     }
-    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -3000,12 +3000,12 @@ pub mod stream {
             self.playback_url = input;
             self
         }
-        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

@@ -1148,6 +1148,64 @@ impl RecognizeCelebritiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutProjectPolicyOutput {
+    /// <p>The ID of the project policy.</p>
+    #[doc(hidden)]
+    pub policy_revision_id: std::option::Option<std::string::String>,
+}
+impl PutProjectPolicyOutput {
+    /// <p>The ID of the project policy.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for PutProjectPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutProjectPolicyOutput");
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.finish()
+    }
+}
+/// See [`PutProjectPolicyOutput`](crate::output::PutProjectPolicyOutput).
+pub mod put_project_policy_output {
+
+    /// A builder for [`PutProjectPolicyOutput`](crate::output::PutProjectPolicyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the project policy.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the project policy.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutProjectPolicyOutput`](crate::output::PutProjectPolicyOutput).
+        pub fn build(self) -> crate::output::PutProjectPolicyOutput {
+            crate::output::PutProjectPolicyOutput {
+                policy_revision_id: self.policy_revision_id,
+            }
+        }
+    }
+}
+impl PutProjectPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutProjectPolicyOutput`](crate::output::PutProjectPolicyOutput).
+    pub fn builder() -> crate::output::put_project_policy_output::Builder {
+        crate::output::put_project_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> A list of key-value tags assigned to the resource. </p>
     #[doc(hidden)]
@@ -1301,6 +1359,91 @@ impl ListStreamProcessorsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamProcessorsOutput`](crate::output::ListStreamProcessorsOutput).
     pub fn builder() -> crate::output::list_stream_processors_output::Builder {
         crate::output::list_stream_processors_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListProjectPoliciesOutput {
+    /// <p>A list of project policies attached to the project.</p>
+    #[doc(hidden)]
+    pub project_policies: std::option::Option<std::vec::Vec<crate::model::ProjectPolicy>>,
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectPoliciesOutput {
+    /// <p>A list of project policies attached to the project.</p>
+    pub fn project_policies(&self) -> std::option::Option<&[crate::model::ProjectPolicy]> {
+        self.project_policies.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListProjectPoliciesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListProjectPoliciesOutput");
+        formatter.field("project_policies", &self.project_policies);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListProjectPoliciesOutput`](crate::output::ListProjectPoliciesOutput).
+pub mod list_project_policies_output {
+
+    /// A builder for [`ListProjectPoliciesOutput`](crate::output::ListProjectPoliciesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_policies:
+            std::option::Option<std::vec::Vec<crate::model::ProjectPolicy>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `project_policies`.
+        ///
+        /// To override the contents of this collection use [`set_project_policies`](Self::set_project_policies).
+        ///
+        /// <p>A list of project policies attached to the project.</p>
+        pub fn project_policies(mut self, input: crate::model::ProjectPolicy) -> Self {
+            let mut v = self.project_policies.unwrap_or_default();
+            v.push(input);
+            self.project_policies = Some(v);
+            self
+        }
+        /// <p>A list of project policies attached to the project.</p>
+        pub fn set_project_policies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProjectPolicy>>,
+        ) -> Self {
+            self.project_policies = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListProjectPoliciesOutput`](crate::output::ListProjectPoliciesOutput).
+        pub fn build(self) -> crate::output::ListProjectPoliciesOutput {
+            crate::output::ListProjectPoliciesOutput {
+                project_policies: self.project_policies,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListProjectPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListProjectPoliciesOutput`](crate::output::ListProjectPoliciesOutput).
+    pub fn builder() -> crate::output::list_project_policies_output::Builder {
+        crate::output::list_project_policies_output::Builder::default()
     }
 }
 
@@ -4817,6 +4960,36 @@ impl DeleteProjectVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteProjectPolicyOutput {}
+impl std::fmt::Debug for DeleteProjectPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteProjectPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteProjectPolicyOutput`](crate::output::DeleteProjectPolicyOutput).
+pub mod delete_project_policy_output {
+
+    /// A builder for [`DeleteProjectPolicyOutput`](crate::output::DeleteProjectPolicyOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteProjectPolicyOutput`](crate::output::DeleteProjectPolicyOutput).
+        pub fn build(self) -> crate::output::DeleteProjectPolicyOutput {
+            crate::output::DeleteProjectPolicyOutput {}
+        }
+    }
+}
+impl DeleteProjectPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteProjectPolicyOutput`](crate::output::DeleteProjectPolicyOutput).
+    pub fn builder() -> crate::output::delete_project_policy_output::Builder {
+        crate::output::delete_project_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
     /// <p>The current status of the delete project operation.</p>
     #[doc(hidden)]
@@ -5345,6 +5518,64 @@ impl CreateCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionOutput`](crate::output::CreateCollectionOutput).
     pub fn builder() -> crate::output::create_collection_output::Builder {
         crate::output::create_collection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CopyProjectVersionOutput {
+    /// <p>The ARN of the copied model version in the destination project. </p>
+    #[doc(hidden)]
+    pub project_version_arn: std::option::Option<std::string::String>,
+}
+impl CopyProjectVersionOutput {
+    /// <p>The ARN of the copied model version in the destination project. </p>
+    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+        self.project_version_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CopyProjectVersionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CopyProjectVersionOutput");
+        formatter.field("project_version_arn", &self.project_version_arn);
+        formatter.finish()
+    }
+}
+/// See [`CopyProjectVersionOutput`](crate::output::CopyProjectVersionOutput).
+pub mod copy_project_version_output {
+
+    /// A builder for [`CopyProjectVersionOutput`](crate::output::CopyProjectVersionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_version_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the copied model version in the destination project. </p>
+        pub fn project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the copied model version in the destination project. </p>
+        pub fn set_project_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.project_version_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CopyProjectVersionOutput`](crate::output::CopyProjectVersionOutput).
+        pub fn build(self) -> crate::output::CopyProjectVersionOutput {
+            crate::output::CopyProjectVersionOutput {
+                project_version_arn: self.project_version_arn,
+            }
+        }
+    }
+}
+impl CopyProjectVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CopyProjectVersionOutput`](crate::output::CopyProjectVersionOutput).
+    pub fn builder() -> crate::output::copy_project_version_output::Builder {
+        crate::output::copy_project_version_output::Builder::default()
     }
 }
 

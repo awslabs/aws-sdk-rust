@@ -516,6 +516,20 @@ pub fn parse_create_distribution_error(
                                                     }
             tmp
         })},
+        "IllegalOriginAccessConfiguration" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::IllegalOriginAccessConfiguration({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_origin_access_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InconsistentQuantities" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InconsistentQuantities({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -550,6 +564,20 @@ pub fn parse_create_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidDomainNameForOriginAccessControl" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidDomainNameForOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -676,6 +704,20 @@ pub fn parse_create_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1062,6 +1104,20 @@ pub fn parse_create_distribution_error(
                                                     }
             tmp
         })},
+        "TooManyDistributionsAssociatedToOriginAccessControl" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1440,6 +1496,20 @@ pub fn parse_create_distribution_with_tags_error(
                                                     }
             tmp
         })},
+        "InvalidDomainNameForOriginAccessControl" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidDomainNameForOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InvalidErrorCode" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidErrorCode({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -1558,6 +1628,20 @@ pub fn parse_create_distribution_with_tags_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3009,64 +3093,63 @@ pub fn parse_create_monitoring_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::CreateMonitoringSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied::Builder::default();
+        "AccessDenied" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        "NoSuchDistribution" => {
-            crate::error::CreateMonitoringSubscriptionError {
-                meta: generic,
-                kind: crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::no_such_distribution::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "UnsupportedOperation" => crate::error::CreateMonitoringSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation::Builder::default();
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "MonitoringSubscriptionAlreadyExists" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::MonitoringSubscriptionAlreadyExists({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::monitoring_subscription_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_monitoring_subscription_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NoSuchDistribution" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperation" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
                     output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            }),
-        },
-        _ => crate::error::CreateMonitoringSubscriptionError::generic(generic),
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateMonitoringSubscriptionError::generic(generic)
     })
 }
 
@@ -3083,6 +3166,115 @@ pub fn parse_create_monitoring_subscription_response(
         let _ = response;
         output = output.set_monitoring_subscription(
             crate::http_serde::deser_payload_create_monitoring_subscription_create_monitoring_subscription_output_monitoring_subscription(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_origin_access_control_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateOriginAccessControlOutput,
+    crate::error::CreateOriginAccessControlError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateOriginAccessControlError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateOriginAccessControlError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidArgument" => crate::error::CreateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::CreateOriginAccessControlErrorKind::InvalidArgument({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::CreateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OriginAccessControlAlreadyExists" => crate::error::CreateOriginAccessControlError {
+            meta: generic,
+            kind:
+                crate::error::CreateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::origin_access_control_already_exists::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_crate_error_origin_access_control_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginAccessControlError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "TooManyOriginAccessControls" => crate::error::CreateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::CreateOriginAccessControlErrorKind::TooManyOriginAccessControls({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::too_many_origin_access_controls::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_origin_access_controls_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateOriginAccessControlError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_origin_access_control_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateOriginAccessControlOutput,
+    crate::error::CreateOriginAccessControlError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_origin_access_control_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_create_origin_access_control_create_origin_access_control_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::CreateOriginAccessControlError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_location(
+            crate::http_serde::deser_header_create_origin_access_control_create_origin_access_control_output_location(response.headers())
+                                    .map_err(|_|crate::error::CreateOriginAccessControlError::unhandled("Failed to parse Location from header `Location"))?
+        );
+        output = output.set_origin_access_control(
+            crate::http_serde::deser_payload_create_origin_access_control_create_origin_access_control_output_origin_access_control(response.body().as_ref())?
         );
         output.build()
     })
@@ -3723,6 +3915,20 @@ pub fn parse_create_streaming_distribution_error(
                                                     }
             tmp
         })},
+        "InvalidOriginAccessControl" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InvalidOriginAccessIdentity" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -3931,6 +4137,20 @@ pub fn parse_create_streaming_distribution_with_tags_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4969,6 +5189,26 @@ pub fn parse_delete_monitoring_subscription_error(
                 }),
             }
         }
+        "NoSuchMonitoringSubscription" => crate::error::DeleteMonitoringSubscriptionError {
+            meta: generic,
+            kind: crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::no_such_monitoring_subscription::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_no_such_monitoring_subscription_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMonitoringSubscriptionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "UnsupportedOperation" => crate::error::DeleteMonitoringSubscriptionError {
             meta: generic,
             kind: crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation({
@@ -5000,6 +5240,137 @@ pub fn parse_delete_monitoring_subscription_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_monitoring_subscription_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_origin_access_control_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteOriginAccessControlOutput,
+    crate::error::DeleteOriginAccessControlError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteOriginAccessControlError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteOriginAccessControlError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::DeleteOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::DeleteOriginAccessControlErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidIfMatchVersion" => crate::error::DeleteOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::DeleteOriginAccessControlErrorKind::InvalidIfMatchVersion({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchOriginAccessControl" => crate::error::DeleteOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::DeleteOriginAccessControlErrorKind::NoSuchOriginAccessControl({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OriginAccessControlInUse" => crate::error::DeleteOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::DeleteOriginAccessControlErrorKind::OriginAccessControlInUse({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::origin_access_control_in_use::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_origin_access_control_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailed" => {
+            crate::error::DeleteOriginAccessControlError {
+                meta: generic,
+                kind: crate::error::DeleteOriginAccessControlErrorKind::PreconditionFailed({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::precondition_failed::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOriginAccessControlError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteOriginAccessControlError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_origin_access_control_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteOriginAccessControlOutput,
+    crate::error::DeleteOriginAccessControlError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_origin_access_control_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -6923,6 +7294,24 @@ pub fn parse_get_monitoring_subscription_error(
                 }),
             }
         }
+        "NoSuchMonitoringSubscription" => crate::error::GetMonitoringSubscriptionError {
+            meta: generic,
+            kind: crate::error::GetMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_monitoring_subscription::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_monitoring_subscription_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMonitoringSubscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedOperation" => crate::error::GetMonitoringSubscriptionError {
             meta: generic,
             kind: crate::error::GetMonitoringSubscriptionErrorKind::UnsupportedOperation({
@@ -6957,6 +7346,176 @@ pub fn parse_get_monitoring_subscription_response(
         let _ = response;
         output = output.set_monitoring_subscription(
             crate::http_serde::deser_payload_get_monitoring_subscription_get_monitoring_subscription_output_monitoring_subscription(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_origin_access_control_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetOriginAccessControlOutput,
+    crate::error::GetOriginAccessControlError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetOriginAccessControlError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetOriginAccessControlError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::GetOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::GetOriginAccessControlErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchOriginAccessControl" => crate::error::GetOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::GetOriginAccessControlErrorKind::NoSuchOriginAccessControl({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetOriginAccessControlError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_origin_access_control_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetOriginAccessControlOutput,
+    crate::error::GetOriginAccessControlError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_origin_access_control_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_origin_access_control_get_origin_access_control_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::GetOriginAccessControlError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_origin_access_control(
+            crate::http_serde::deser_payload_get_origin_access_control_get_origin_access_control_output_origin_access_control(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_origin_access_control_config_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetOriginAccessControlConfigOutput,
+    crate::error::GetOriginAccessControlConfigError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetOriginAccessControlConfigError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetOriginAccessControlConfigError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::GetOriginAccessControlConfigError {
+            meta: generic,
+            kind: crate::error::GetOriginAccessControlConfigErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetOriginAccessControlConfigError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchOriginAccessControl" => crate::error::GetOriginAccessControlConfigError {
+            meta: generic,
+            kind: crate::error::GetOriginAccessControlConfigErrorKind::NoSuchOriginAccessControl({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOriginAccessControlConfigError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetOriginAccessControlConfigError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_origin_access_control_config_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetOriginAccessControlConfigOutput,
+    crate::error::GetOriginAccessControlConfigError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_origin_access_control_config_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_origin_access_control_config_get_origin_access_control_config_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::GetOriginAccessControlConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_origin_access_control_config(
+            crate::http_serde::deser_payload_get_origin_access_control_config_get_origin_access_control_config_output_origin_access_control_config(response.body().as_ref())?
         );
         output.build()
     })
@@ -8886,6 +9445,70 @@ pub fn parse_list_key_groups_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_origin_access_controls_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListOriginAccessControlsOutput,
+    crate::error::ListOriginAccessControlsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListOriginAccessControlsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListOriginAccessControlsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidArgument" => crate::error::ListOriginAccessControlsError {
+            meta: generic,
+            kind: crate::error::ListOriginAccessControlsErrorKind::InvalidArgument({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListOriginAccessControlsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListOriginAccessControlsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_origin_access_controls_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListOriginAccessControlsOutput,
+    crate::error::ListOriginAccessControlsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_origin_access_controls_output::Builder::default();
+        let _ = response;
+        output = output.set_origin_access_control_list(
+            crate::http_serde::deser_payload_list_origin_access_controls_list_origin_access_controls_output_origin_access_control_list(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_origin_request_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10383,6 +11006,20 @@ pub fn parse_update_distribution_error(
                                                     }
             tmp
         })},
+        "IllegalOriginAccessConfiguration" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::IllegalOriginAccessConfiguration({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_origin_access_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "IllegalUpdate" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::IllegalUpdate({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -10431,6 +11068,20 @@ pub fn parse_update_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidDomainNameForOriginAccessControl" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidDomainNameForOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -10557,6 +11208,20 @@ pub fn parse_update_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -11922,6 +12587,189 @@ pub fn parse_update_key_group_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_origin_access_control_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateOriginAccessControlOutput,
+    crate::error::UpdateOriginAccessControlError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateOriginAccessControlError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDenied" => crate::error::UpdateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::UpdateOriginAccessControlErrorKind::AccessDenied({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "IllegalUpdate" => crate::error::UpdateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::UpdateOriginAccessControlErrorKind::IllegalUpdate({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidArgument" => crate::error::UpdateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::UpdateOriginAccessControlErrorKind::InvalidArgument({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidIfMatchVersion" => crate::error::UpdateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::UpdateOriginAccessControlErrorKind::InvalidIfMatchVersion({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchOriginAccessControl" => crate::error::UpdateOriginAccessControlError {
+            meta: generic,
+            kind: crate::error::UpdateOriginAccessControlErrorKind::NoSuchOriginAccessControl({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OriginAccessControlAlreadyExists" => crate::error::UpdateOriginAccessControlError {
+            meta: generic,
+            kind:
+                crate::error::UpdateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::origin_access_control_already_exists::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_crate_error_origin_access_control_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "PreconditionFailed" => {
+            crate::error::UpdateOriginAccessControlError {
+                meta: generic,
+                kind: crate::error::UpdateOriginAccessControlErrorKind::PreconditionFailed({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::precondition_failed::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateOriginAccessControlError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_origin_access_control_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateOriginAccessControlOutput,
+    crate::error::UpdateOriginAccessControlError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_origin_access_control_output::Builder::default();
+        let _ = response;
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_update_origin_access_control_update_origin_access_control_output_e_tag(response.headers())
+                                    .map_err(|_|crate::error::UpdateOriginAccessControlError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_origin_access_control(
+            crate::http_serde::deser_payload_update_origin_access_control_update_origin_access_control_output_origin_access_control(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_origin_request_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -12688,6 +13536,20 @@ pub fn parse_update_streaming_distribution_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidOriginAccessControl" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessControl({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
                 }
             ;

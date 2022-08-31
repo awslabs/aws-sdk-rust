@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The contact flow has not been published.</p>
+    /// <p>The flow has not been published.</p>
     ContactFlowNotPublishedException(crate::error::ContactFlowNotPublishedException),
     /// <p>The contact with the specified ID is not active or does not exist.</p>
     ContactNotFoundException(crate::error::ContactNotFoundException),
@@ -17,7 +17,7 @@ pub enum Error {
     IdempotencyException(crate::error::IdempotencyException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The contact flow is not valid.</p>
+    /// <p>The flow is not valid.</p>
     InvalidContactFlowException(crate::error::InvalidContactFlowException),
     /// <p>The problems with the module. Please fix before trying again.</p>
     InvalidContactFlowModuleException(crate::error::InvalidContactFlowModuleException),
@@ -29,7 +29,7 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The contact is not permitted.</p>
     OutboundContactNotPermittedException(crate::error::OutboundContactNotPermittedException),
-    /// <p></p>
+    /// <p>The property is not valid.</p>
     PropertyValidationException(crate::error::PropertyValidationException),
     /// <p>A resource already has that name.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -3368,6 +3368,39 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::SearchAvailablePhoneNumbersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchSecurityProfilesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::SearchSecurityProfilesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SearchSecurityProfilesErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::SearchSecurityProfilesErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::SearchSecurityProfilesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::SearchSecurityProfilesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::SearchSecurityProfilesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::SearchSecurityProfilesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

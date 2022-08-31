@@ -190,83 +190,112 @@ pub fn serialize_structure_crate_model_tag(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_crate_model_managed_rule(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::ManagedRule,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope_52 = writer.prefix("TemplateName");
+    if let Some(var_53) = &input.template_name {
+        scope_52.string(var_53);
+    }
+    #[allow(unused_mut)]
+    let mut scope_54 = writer.prefix("ResourceARN");
+    if let Some(var_55) = &input.resource_arn {
+        scope_54.string(var_55);
+    }
+    #[allow(unused_mut)]
+    let mut scope_56 = writer.prefix("Tags");
+    if let Some(var_57) = &input.tags {
+        let mut list_59 = scope_56.start_list(false, None);
+        for item_58 in var_57 {
+            #[allow(unused_mut)]
+            let mut entry_60 = list_59.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_60, item_58)?;
+        }
+        list_59.finish();
+    }
+    Ok(())
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_datum(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricDatum,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_52 = writer.prefix("MetricName");
-    if let Some(var_53) = &input.metric_name {
-        scope_52.string(var_53);
+    let mut scope_61 = writer.prefix("MetricName");
+    if let Some(var_62) = &input.metric_name {
+        scope_61.string(var_62);
     }
     #[allow(unused_mut)]
-    let mut scope_54 = writer.prefix("Dimensions");
-    if let Some(var_55) = &input.dimensions {
-        let mut list_57 = scope_54.start_list(false, None);
-        for item_56 in var_55 {
+    let mut scope_63 = writer.prefix("Dimensions");
+    if let Some(var_64) = &input.dimensions {
+        let mut list_66 = scope_63.start_list(false, None);
+        for item_65 in var_64 {
             #[allow(unused_mut)]
-            let mut entry_58 = list_57.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_58, item_56)?;
+            let mut entry_67 = list_66.entry();
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_67, item_65)?;
         }
-        list_57.finish();
+        list_66.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_59 = writer.prefix("Timestamp");
-    if let Some(var_60) = &input.timestamp {
-        scope_59.date_time(var_60, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_68 = writer.prefix("Timestamp");
+    if let Some(var_69) = &input.timestamp {
+        scope_68.date_time(var_69, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_61 = writer.prefix("Value");
-    if let Some(var_62) = &input.value {
-        scope_61.number(
+    let mut scope_70 = writer.prefix("Value");
+    if let Some(var_71) = &input.value {
+        scope_70.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_62).into()),
+            aws_smithy_types::Number::Float((*var_71).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_63 = writer.prefix("StatisticValues");
-    if let Some(var_64) = &input.statistic_values {
-        crate::query_ser::serialize_structure_crate_model_statistic_set(scope_63, var_64)?;
+    let mut scope_72 = writer.prefix("StatisticValues");
+    if let Some(var_73) = &input.statistic_values {
+        crate::query_ser::serialize_structure_crate_model_statistic_set(scope_72, var_73)?;
     }
     #[allow(unused_mut)]
-    let mut scope_65 = writer.prefix("Values");
-    if let Some(var_66) = &input.values {
-        let mut list_68 = scope_65.start_list(false, None);
-        for item_67 in var_66 {
+    let mut scope_74 = writer.prefix("Values");
+    if let Some(var_75) = &input.values {
+        let mut list_77 = scope_74.start_list(false, None);
+        for item_76 in var_75 {
             #[allow(unused_mut)]
-            let mut entry_69 = list_68.entry();
-            entry_69.number(
+            let mut entry_78 = list_77.entry();
+            entry_78.number(
                 #[allow(clippy::useless_conversion)]
-                aws_smithy_types::Number::Float((*item_67).into()),
+                aws_smithy_types::Number::Float((*item_76).into()),
             );
         }
-        list_68.finish();
+        list_77.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_70 = writer.prefix("Counts");
-    if let Some(var_71) = &input.counts {
-        let mut list_73 = scope_70.start_list(false, None);
-        for item_72 in var_71 {
+    let mut scope_79 = writer.prefix("Counts");
+    if let Some(var_80) = &input.counts {
+        let mut list_82 = scope_79.start_list(false, None);
+        for item_81 in var_80 {
             #[allow(unused_mut)]
-            let mut entry_74 = list_73.entry();
-            entry_74.number(
+            let mut entry_83 = list_82.entry();
+            entry_83.number(
                 #[allow(clippy::useless_conversion)]
-                aws_smithy_types::Number::Float((*item_72).into()),
+                aws_smithy_types::Number::Float((*item_81).into()),
             );
         }
-        list_73.finish();
+        list_82.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("Unit");
-    if let Some(var_76) = &input.unit {
-        scope_75.string(var_76.as_str());
+    let mut scope_84 = writer.prefix("Unit");
+    if let Some(var_85) = &input.unit {
+        scope_84.string(var_85.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_77 = writer.prefix("StorageResolution");
-    if let Some(var_78) = &input.storage_resolution {
-        scope_77.number(
+    let mut scope_86 = writer.prefix("StorageResolution");
+    if let Some(var_87) = &input.storage_resolution {
+        scope_86.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_78).into()),
+            aws_smithy_types::Number::NegInt((*var_87).into()),
         );
     }
     Ok(())
@@ -278,9 +307,9 @@ pub fn serialize_structure_crate_model_metric_stream_filter(
     input: &crate::model::MetricStreamFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("Namespace");
-    if let Some(var_80) = &input.namespace {
-        scope_79.string(var_80);
+    let mut scope_88 = writer.prefix("Namespace");
+    if let Some(var_89) = &input.namespace {
+        scope_88.string(var_89);
     }
     Ok(())
 }
@@ -291,28 +320,28 @@ pub fn serialize_structure_crate_model_metric_stream_statistics_configuration(
     input: &crate::model::MetricStreamStatisticsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("IncludeMetrics");
-    if let Some(var_82) = &input.include_metrics {
-        let mut list_84 = scope_81.start_list(false, None);
-        for item_83 in var_82 {
+    let mut scope_90 = writer.prefix("IncludeMetrics");
+    if let Some(var_91) = &input.include_metrics {
+        let mut list_93 = scope_90.start_list(false, None);
+        for item_92 in var_91 {
             #[allow(unused_mut)]
-            let mut entry_85 = list_84.entry();
+            let mut entry_94 = list_93.entry();
             crate::query_ser::serialize_structure_crate_model_metric_stream_statistics_metric(
-                entry_85, item_83,
+                entry_94, item_92,
             )?;
         }
-        list_84.finish();
+        list_93.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_86 = writer.prefix("AdditionalStatistics");
-    if let Some(var_87) = &input.additional_statistics {
-        let mut list_89 = scope_86.start_list(false, None);
-        for item_88 in var_87 {
+    let mut scope_95 = writer.prefix("AdditionalStatistics");
+    if let Some(var_96) = &input.additional_statistics {
+        let mut list_98 = scope_95.start_list(false, None);
+        for item_97 in var_96 {
             #[allow(unused_mut)]
-            let mut entry_90 = list_89.entry();
-            entry_90.string(item_88);
+            let mut entry_99 = list_98.entry();
+            entry_99.string(item_97);
         }
-        list_89.finish();
+        list_98.finish();
     }
     Ok(())
 }
@@ -323,27 +352,27 @@ pub fn serialize_structure_crate_model_metric_stat(
     input: &crate::model::MetricStat,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("Metric");
-    if let Some(var_92) = &input.metric {
-        crate::query_ser::serialize_structure_crate_model_metric(scope_91, var_92)?;
+    let mut scope_100 = writer.prefix("Metric");
+    if let Some(var_101) = &input.metric {
+        crate::query_ser::serialize_structure_crate_model_metric(scope_100, var_101)?;
     }
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("Period");
-    if let Some(var_94) = &input.period {
-        scope_93.number(
+    let mut scope_102 = writer.prefix("Period");
+    if let Some(var_103) = &input.period {
+        scope_102.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_94).into()),
+            aws_smithy_types::Number::NegInt((*var_103).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("Stat");
-    if let Some(var_96) = &input.stat {
-        scope_95.string(var_96);
+    let mut scope_104 = writer.prefix("Stat");
+    if let Some(var_105) = &input.stat {
+        scope_104.string(var_105);
     }
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("Unit");
-    if let Some(var_98) = &input.unit {
-        scope_97.string(var_98.as_str());
+    let mut scope_106 = writer.prefix("Unit");
+    if let Some(var_107) = &input.unit {
+        scope_106.string(var_107.as_str());
     }
     Ok(())
 }
@@ -354,14 +383,14 @@ pub fn serialize_structure_crate_model_range(
     input: &crate::model::Range,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("StartTime");
-    if let Some(var_100) = &input.start_time {
-        scope_99.date_time(var_100, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_108 = writer.prefix("StartTime");
+    if let Some(var_109) = &input.start_time {
+        scope_108.date_time(var_109, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("EndTime");
-    if let Some(var_102) = &input.end_time {
-        scope_101.date_time(var_102, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_110 = writer.prefix("EndTime");
+    if let Some(var_111) = &input.end_time {
+        scope_110.date_time(var_111, aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }
@@ -372,35 +401,35 @@ pub fn serialize_structure_crate_model_statistic_set(
     input: &crate::model::StatisticSet,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("SampleCount");
-    if let Some(var_104) = &input.sample_count {
-        scope_103.number(
+    let mut scope_112 = writer.prefix("SampleCount");
+    if let Some(var_113) = &input.sample_count {
+        scope_112.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_104).into()),
+            aws_smithy_types::Number::Float((*var_113).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("Sum");
-    if let Some(var_106) = &input.sum {
-        scope_105.number(
+    let mut scope_114 = writer.prefix("Sum");
+    if let Some(var_115) = &input.sum {
+        scope_114.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_106).into()),
+            aws_smithy_types::Number::Float((*var_115).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_107 = writer.prefix("Minimum");
-    if let Some(var_108) = &input.minimum {
-        scope_107.number(
+    let mut scope_116 = writer.prefix("Minimum");
+    if let Some(var_117) = &input.minimum {
+        scope_116.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_108).into()),
+            aws_smithy_types::Number::Float((*var_117).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_109 = writer.prefix("Maximum");
-    if let Some(var_110) = &input.maximum {
-        scope_109.number(
+    let mut scope_118 = writer.prefix("Maximum");
+    if let Some(var_119) = &input.maximum {
+        scope_118.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_110).into()),
+            aws_smithy_types::Number::Float((*var_119).into()),
         );
     }
     Ok(())
@@ -412,14 +441,14 @@ pub fn serialize_structure_crate_model_metric_stream_statistics_metric(
     input: &crate::model::MetricStreamStatisticsMetric,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_111 = writer.prefix("Namespace");
-    if let Some(var_112) = &input.namespace {
-        scope_111.string(var_112);
+    let mut scope_120 = writer.prefix("Namespace");
+    if let Some(var_121) = &input.namespace {
+        scope_120.string(var_121);
     }
     #[allow(unused_mut)]
-    let mut scope_113 = writer.prefix("MetricName");
-    if let Some(var_114) = &input.metric_name {
-        scope_113.string(var_114);
+    let mut scope_122 = writer.prefix("MetricName");
+    if let Some(var_123) = &input.metric_name {
+        scope_122.string(var_123);
     }
     Ok(())
 }
@@ -430,25 +459,25 @@ pub fn serialize_structure_crate_model_metric(
     input: &crate::model::Metric,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_115 = writer.prefix("Namespace");
-    if let Some(var_116) = &input.namespace {
-        scope_115.string(var_116);
+    let mut scope_124 = writer.prefix("Namespace");
+    if let Some(var_125) = &input.namespace {
+        scope_124.string(var_125);
     }
     #[allow(unused_mut)]
-    let mut scope_117 = writer.prefix("MetricName");
-    if let Some(var_118) = &input.metric_name {
-        scope_117.string(var_118);
+    let mut scope_126 = writer.prefix("MetricName");
+    if let Some(var_127) = &input.metric_name {
+        scope_126.string(var_127);
     }
     #[allow(unused_mut)]
-    let mut scope_119 = writer.prefix("Dimensions");
-    if let Some(var_120) = &input.dimensions {
-        let mut list_122 = scope_119.start_list(false, None);
-        for item_121 in var_120 {
+    let mut scope_128 = writer.prefix("Dimensions");
+    if let Some(var_129) = &input.dimensions {
+        let mut list_131 = scope_128.start_list(false, None);
+        for item_130 in var_129 {
             #[allow(unused_mut)]
-            let mut entry_123 = list_122.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_123, item_121)?;
+            let mut entry_132 = list_131.entry();
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_132, item_130)?;
         }
-        list_122.finish();
+        list_131.finish();
     }
     Ok(())
 }

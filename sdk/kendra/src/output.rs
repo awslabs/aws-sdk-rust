@@ -1383,7 +1383,7 @@ impl ListEntityPersonasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourceSyncJobsOutput {
-    /// <p>A history of synchronization jobs for the data source.</p>
+    /// <p>A history of synchronization jobs for the data source connector.</p>
     #[doc(hidden)]
     pub history: std::option::Option<std::vec::Vec<crate::model::DataSourceSyncJob>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
@@ -1391,7 +1391,7 @@ pub struct ListDataSourceSyncJobsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourceSyncJobsOutput {
-    /// <p>A history of synchronization jobs for the data source.</p>
+    /// <p>A history of synchronization jobs for the data source connector.</p>
     pub fn history(&self) -> std::option::Option<&[crate::model::DataSourceSyncJob]> {
         self.history.as_deref()
     }
@@ -1422,14 +1422,14 @@ pub mod list_data_source_sync_jobs_output {
         ///
         /// To override the contents of this collection use [`set_history`](Self::set_history).
         ///
-        /// <p>A history of synchronization jobs for the data source.</p>
+        /// <p>A history of synchronization jobs for the data source connector.</p>
         pub fn history(mut self, input: crate::model::DataSourceSyncJob) -> Self {
             let mut v = self.history.unwrap_or_default();
             v.push(input);
             self.history = Some(v);
             self
         }
-        /// <p>A history of synchronization jobs for the data source.</p>
+        /// <p>A history of synchronization jobs for the data source connector.</p>
         pub fn set_history(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceSyncJob>>,
@@ -1467,19 +1467,19 @@ impl ListDataSourceSyncJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesOutput {
-    /// <p>An array of summary information for one or more data sources.</p>
+    /// <p>An array of summary information for one or more data source connector.</p>
     #[doc(hidden)]
     pub summary_items: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
-    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data sources. </p>
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourcesOutput {
-    /// <p>An array of summary information for one or more data sources.</p>
+    /// <p>An array of summary information for one or more data source connector.</p>
     pub fn summary_items(&self) -> std::option::Option<&[crate::model::DataSourceSummary]> {
         self.summary_items.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data sources. </p>
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1507,14 +1507,14 @@ pub mod list_data_sources_output {
         ///
         /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
         ///
-        /// <p>An array of summary information for one or more data sources.</p>
+        /// <p>An array of summary information for one or more data source connector.</p>
         pub fn summary_items(mut self, input: crate::model::DataSourceSummary) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
             v.push(input);
             self.summary_items = Some(v);
             self
         }
-        /// <p>An array of summary information for one or more data sources.</p>
+        /// <p>An array of summary information for one or more data source connector.</p>
         pub fn set_summary_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
@@ -1522,12 +1522,12 @@ pub mod list_data_sources_output {
             self.summary_items = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data sources. </p>
+        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data sources. </p>
+        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4051,37 +4051,40 @@ impl DescribeExperienceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceOutput {
-    /// <p>The identifier of the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The name that you gave the data source when it was created.</p>
+    /// <p>The name for the data source connector.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+    /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
-    /// <p>The Unix timestamp of when the data source was created.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+    /// <p>The Unix timestamp of when the data source connector was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp of when the data source was last updated.</p>
+    /// <p>The Unix timestamp of when the data source connector was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The description for the data source.</p>
+    /// <p>The description for the data source connector.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+    /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataSourceStatus>,
     /// <p>The schedule for Amazon Kendra to update the index.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
@@ -4097,39 +4100,45 @@ pub struct DescribeDataSourceOutput {
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl DescribeDataSourceOutput {
-    /// <p>The identifier of the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The name that you gave the data source when it was created.</p>
+    /// <p>The name for the data source connector.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+    /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The Unix timestamp of when the data source was created.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The Unix timestamp of when the data source connector was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp of when the data source was last updated.</p>
+    /// <p>The Unix timestamp of when the data source connector was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The description for the data source.</p>
+    /// <p>The description for the data source connector.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+    /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
         self.status.as_ref()
     }
@@ -4137,7 +4146,7 @@ impl DescribeDataSourceOutput {
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -4165,6 +4174,7 @@ impl std::fmt::Debug for DescribeDataSourceOutput {
         formatter.field("name", &self.name);
         formatter.field("r#type", &self.r#type);
         formatter.field("configuration", &self.configuration);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("description", &self.description);
@@ -4191,6 +4201,7 @@ pub mod describe_data_source_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
         pub(crate) configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4203,42 +4214,42 @@ pub mod describe_data_source_output {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The name that you gave the data source when it was created.</p>
+        /// <p>The name for the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name that you gave the data source when it was created.</p>
+        /// <p>The name for the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of the data source.</p>
+        /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the data source.</p>
+        /// <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -4246,12 +4257,12 @@ pub mod describe_data_source_output {
             self.r#type = input;
             self
         }
-        /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+        /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+        /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -4259,12 +4270,28 @@ pub mod describe_data_source_output {
             self.configuration = input;
             self
         }
-        /// <p>The Unix timestamp of when the data source was created.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// <p>The Unix timestamp of when the data source connector was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp of when the data source was created.</p>
+        /// <p>The Unix timestamp of when the data source connector was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4272,12 +4299,12 @@ pub mod describe_data_source_output {
             self.created_at = input;
             self
         }
-        /// <p>The Unix timestamp of when the data source was last updated.</p>
+        /// <p>The Unix timestamp of when the data source connector was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp of when the data source was last updated.</p>
+        /// <p>The Unix timestamp of when the data source connector was last updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4285,22 +4312,22 @@ pub mod describe_data_source_output {
             self.updated_at = input;
             self
         }
-        /// <p>The description for the data source.</p>
+        /// <p>The description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description for the data source.</p>
+        /// <p>The description for the data source connector.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+        /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
         pub fn status(mut self, input: crate::model::DataSourceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+        /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceStatus>,
@@ -4318,12 +4345,12 @@ pub mod describe_data_source_output {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4380,6 +4407,7 @@ pub mod describe_data_source_output {
                 name: self.name,
                 r#type: self.r#type,
                 configuration: self.configuration,
+                vpc_configuration: self.vpc_configuration,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
                 description: self.description,

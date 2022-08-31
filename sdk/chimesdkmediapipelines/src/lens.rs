@@ -8,3 +8,13 @@ pub(crate) fn reflens_structure_crate_output_list_media_capture_pipelines_output
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_list_media_pipelines_output_next_token(
+    input: &crate::output::ListMediaPipelinesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

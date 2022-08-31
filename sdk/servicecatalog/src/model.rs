@@ -16,7 +16,7 @@ pub struct TagOptionDetail {
     /// <p>The TagOption identifier.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The AWS account Id of the owner account that created the TagOption.</p>
+    /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<std::string::String>,
 }
@@ -37,7 +37,7 @@ impl TagOptionDetail {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The AWS account Id of the owner account that created the TagOption.</p>
+    /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -106,12 +106,12 @@ pub mod tag_option_detail {
             self.id = input;
             self
         }
-        /// <p>The AWS account Id of the owner account that created the TagOption.</p>
+        /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The AWS account Id of the owner account that created the TagOption.</p>
+        /// <p>The Amazon Web Services account Id of the owner account that created the TagOption.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -552,9 +552,9 @@ pub struct ProvisioningArtifactDetail {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
@@ -583,9 +583,9 @@ impl ProvisioningArtifactDetail {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
         self.r#type.as_ref()
@@ -663,9 +663,9 @@ pub mod provisioning_artifact_detail {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ProvisioningArtifactType) -> Self {
             self.r#type = Some(input);
@@ -673,9 +673,9 @@ pub mod provisioning_artifact_detail {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -1621,26 +1621,26 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisioningPreferences {
-    /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+    /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
     #[doc(hidden)]
     pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+    /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-    /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
     #[doc(hidden)]
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     #[doc(hidden)]
     pub stack_set_failure_tolerance_count: std::option::Option<i32>,
-    /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     #[doc(hidden)]
@@ -1652,20 +1652,20 @@ pub struct UpdateProvisioningPreferences {
     #[doc(hidden)]
     pub stack_set_max_concurrency_count: std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     #[doc(hidden)]
     pub stack_set_max_concurrency_percentage: std::option::Option<i32>,
-    /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
+    /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <dl>
     /// <dt>
     /// CREATE
     /// </dt>
     /// <dd>
-    /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
+    /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
     /// </dd>
     /// <dt>
     /// UPDATE
@@ -1684,29 +1684,29 @@ pub struct UpdateProvisioningPreferences {
     pub stack_set_operation_type: std::option::Option<crate::model::StackSetOperationType>,
 }
 impl UpdateProvisioningPreferences {
-    /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+    /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
     pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_set_accounts.as_deref()
     }
-    /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+    /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-    /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
     pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_set_regions.as_deref()
     }
-    /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     pub fn stack_set_failure_tolerance_count(&self) -> std::option::Option<i32> {
         self.stack_set_failure_tolerance_count
     }
-    /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     pub fn stack_set_failure_tolerance_percentage(&self) -> std::option::Option<i32> {
@@ -1720,21 +1720,21 @@ impl UpdateProvisioningPreferences {
         self.stack_set_max_concurrency_count
     }
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     pub fn stack_set_max_concurrency_percentage(&self) -> std::option::Option<i32> {
         self.stack_set_max_concurrency_percentage
     }
-    /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
+    /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <dl>
     /// <dt>
     /// CREATE
     /// </dt>
     /// <dd>
-    /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
+    /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
     /// </dd>
     /// <dt>
     /// UPDATE
@@ -1800,9 +1800,9 @@ pub mod update_provisioning_preferences {
         ///
         /// To override the contents of this collection use [`set_stack_set_accounts`](Self::set_stack_set_accounts).
         ///
-        /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+        /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-        /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
         /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_accounts.unwrap_or_default();
@@ -1810,9 +1810,9 @@ pub mod update_provisioning_preferences {
             self.stack_set_accounts = Some(v);
             self
         }
-        /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+        /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-        /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
         /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_accounts(
             mut self,
@@ -1825,20 +1825,20 @@ pub mod update_provisioning_preferences {
         ///
         /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
         ///
-        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+        /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_regions.unwrap_or_default();
             v.push(input.into());
             self.stack_set_regions = Some(v);
             self
         }
-        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+        /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1846,7 +1846,7 @@ pub mod update_provisioning_preferences {
             self.stack_set_regions = input;
             self
         }
-        /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         /// <p>The default value is <code>0</code> if no value is specified.</p>
@@ -1854,7 +1854,7 @@ pub mod update_provisioning_preferences {
             self.stack_set_failure_tolerance_count = Some(input);
             self
         }
-        /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         /// <p>The default value is <code>0</code> if no value is specified.</p>
@@ -1865,16 +1865,16 @@ pub mod update_provisioning_preferences {
             self.stack_set_failure_tolerance_count = input;
             self
         }
-        /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         pub fn stack_set_failure_tolerance_percentage(mut self, input: i32) -> Self {
             self.stack_set_failure_tolerance_percentage = Some(input);
             self
         }
-        /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         pub fn set_stack_set_failure_tolerance_percentage(
@@ -1904,7 +1904,7 @@ pub mod update_provisioning_preferences {
             self
         }
         /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
         /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -1913,7 +1913,7 @@ pub mod update_provisioning_preferences {
             self
         }
         /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
         /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -1924,14 +1924,14 @@ pub mod update_provisioning_preferences {
             self.stack_set_max_concurrency_percentage = input;
             self
         }
-        /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
+        /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <dl>
         /// <dt>
         /// CREATE
         /// </dt>
         /// <dd>
-        /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
+        /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
         /// </dd>
         /// <dt>
         /// UPDATE
@@ -1953,14 +1953,14 @@ pub mod update_provisioning_preferences {
             self.stack_set_operation_type = Some(input);
             self
         }
-        /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
+        /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <dl>
         /// <dt>
         /// CREATE
         /// </dt>
         /// <dd>
-        /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
+        /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and Regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
         /// </dd>
         /// <dt>
         /// UPDATE
@@ -2317,7 +2317,7 @@ pub struct ProductViewSummary {
     /// <p>Short description of the product.</p>
     #[doc(hidden)]
     pub short_description: std::option::Option<std::string::String>,
-    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
+    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProductType>,
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
@@ -2357,7 +2357,7 @@ impl ProductViewSummary {
     pub fn short_description(&self) -> std::option::Option<&str> {
         self.short_description.as_deref()
     }
-    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
+    /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProductType> {
         self.r#type.as_ref()
     }
@@ -2471,12 +2471,12 @@ pub mod product_view_summary {
             self.short_description = input;
             self
         }
-        /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
+        /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
         pub fn r#type(mut self, input: crate::model::ProductType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>
+        /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ProductType>) -> Self {
             self.r#type = input;
             self
@@ -4789,33 +4789,33 @@ impl AsRef<str> for PortfolioShareType {
 }
 
 /// <p>The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type</p>
-/// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+/// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
 /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-/// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+/// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
 /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningPreferences {
-    /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+    /// <p>One or more Amazon Web Services accounts where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
     #[doc(hidden)]
     pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+    /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-    /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
     #[doc(hidden)]
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     #[doc(hidden)]
     pub stack_set_failure_tolerance_count: std::option::Option<i32>,
-    /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     #[doc(hidden)]
@@ -4827,7 +4827,7 @@ pub struct ProvisioningPreferences {
     #[doc(hidden)]
     pub stack_set_max_concurrency_count: std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -4835,29 +4835,29 @@ pub struct ProvisioningPreferences {
     pub stack_set_max_concurrency_percentage: std::option::Option<i32>,
 }
 impl ProvisioningPreferences {
-    /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+    /// <p>One or more Amazon Web Services accounts where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
     pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_set_accounts.as_deref()
     }
-    /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+    /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-    /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
     pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_set_regions.as_deref()
     }
-    /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     pub fn stack_set_failure_tolerance_count(&self) -> std::option::Option<i32> {
         self.stack_set_failure_tolerance_count
     }
-    /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     pub fn stack_set_failure_tolerance_percentage(&self) -> std::option::Option<i32> {
@@ -4871,7 +4871,7 @@ impl ProvisioningPreferences {
         self.stack_set_max_concurrency_count
     }
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -4921,7 +4921,7 @@ pub mod provisioning_preferences {
         ///
         /// To override the contents of this collection use [`set_stack_set_accounts`](Self::set_stack_set_accounts).
         ///
-        /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+        /// <p>One or more Amazon Web Services accounts where the provisioned product will be available.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
         /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
@@ -4931,7 +4931,7 @@ pub mod provisioning_preferences {
             self.stack_set_accounts = Some(v);
             self
         }
-        /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+        /// <p>One or more Amazon Web Services accounts where the provisioned product will be available.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
         /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
@@ -4946,20 +4946,20 @@ pub mod provisioning_preferences {
         ///
         /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
         ///
-        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+        /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_regions.unwrap_or_default();
             v.push(input.into());
             self.stack_set_regions = Some(v);
             self
         }
-        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
-        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+        /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4967,7 +4967,7 @@ pub mod provisioning_preferences {
             self.stack_set_regions = input;
             self
         }
-        /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         /// <p>The default value is <code>0</code> if no value is specified.</p>
@@ -4975,7 +4975,7 @@ pub mod provisioning_preferences {
             self.stack_set_failure_tolerance_count = Some(input);
             self
         }
-        /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         /// <p>The default value is <code>0</code> if no value is specified.</p>
@@ -4986,16 +4986,16 @@ pub mod provisioning_preferences {
             self.stack_set_failure_tolerance_count = input;
             self
         }
-        /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         pub fn stack_set_failure_tolerance_percentage(mut self, input: i32) -> Self {
             self.stack_set_failure_tolerance_percentage = Some(input);
             self
         }
-        /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         pub fn set_stack_set_failure_tolerance_percentage(
@@ -5025,7 +5025,7 @@ pub mod provisioning_preferences {
             self
         }
         /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
         /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -5034,7 +5034,7 @@ pub mod provisioning_preferences {
             self
         }
         /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
         /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -5235,14 +5235,14 @@ impl ListTagOptionsFilters {
     }
 }
 
-/// <p>An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. </p>
+/// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackInstance {
-    /// <p>The name of the AWS account that the stack instance is associated with.</p>
+    /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
     #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
-    /// <p>The name of the AWS region that the stack instance is associated with.</p>
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
@@ -5255,11 +5255,11 @@ pub struct StackInstance {
     pub stack_instance_status: std::option::Option<crate::model::StackInstanceStatus>,
 }
 impl StackInstance {
-    /// <p>The name of the AWS account that the stack instance is associated with.</p>
+    /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
-    /// <p>The name of the AWS region that the stack instance is associated with.</p>
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -5293,22 +5293,22 @@ pub mod stack_instance {
         pub(crate) stack_instance_status: std::option::Option<crate::model::StackInstanceStatus>,
     }
     impl Builder {
-        /// <p>The name of the AWS account that the stack instance is associated with.</p>
+        /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
         }
-        /// <p>The name of the AWS account that the stack instance is associated with.</p>
+        /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
         }
-        /// <p>The name of the AWS region that the stack instance is associated with.</p>
+        /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The name of the AWS region that the stack instance is associated with.</p>
+        /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -6837,26 +6837,26 @@ impl ProvisioningArtifactOutput {
 }
 
 /// <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p>
-/// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+/// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningArtifactPreferences {
-    /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+    /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     #[doc(hidden)]
     pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+    /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     #[doc(hidden)]
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ProvisioningArtifactPreferences {
-    /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+    /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_set_accounts.as_deref()
     }
-    /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+    /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_set_regions.as_deref()
@@ -6884,7 +6884,7 @@ pub mod provisioning_artifact_preferences {
         ///
         /// To override the contents of this collection use [`set_stack_set_accounts`](Self::set_stack_set_accounts).
         ///
-        /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+        /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn stack_set_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_accounts.unwrap_or_default();
@@ -6892,7 +6892,7 @@ pub mod provisioning_artifact_preferences {
             self.stack_set_accounts = Some(v);
             self
         }
-        /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+        /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn set_stack_set_accounts(
             mut self,
@@ -6905,7 +6905,7 @@ pub mod provisioning_artifact_preferences {
         ///
         /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
         ///
-        /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+        /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_regions.unwrap_or_default();
@@ -6913,7 +6913,7 @@ pub mod provisioning_artifact_preferences {
             self.stack_set_regions = Some(v);
             self
         }
-        /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+        /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
         /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn set_stack_set_regions(
             mut self,
@@ -8731,7 +8731,7 @@ pub struct ProvisioningArtifactSummary {
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
+    /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     #[doc(hidden)]
     pub provisioning_artifact_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -8753,7 +8753,7 @@ impl ProvisioningArtifactSummary {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
+    /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     pub fn provisioning_artifact_metadata(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8837,7 +8837,7 @@ pub mod provisioning_artifact_summary {
         ///
         /// To override the contents of this collection use [`set_provisioning_artifact_metadata`](Self::set_provisioning_artifact_metadata).
         ///
-        /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
+        /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
         pub fn provisioning_artifact_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -8848,7 +8848,7 @@ pub mod provisioning_artifact_summary {
             self.provisioning_artifact_metadata = Some(hash_map);
             self
         }
-        /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
+        /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
         pub fn set_provisioning_artifact_metadata(
             mut self,
             input: std::option::Option<
@@ -9421,7 +9421,7 @@ pub struct ProvisioningArtifactProperties {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-    /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
     /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
     #[doc(hidden)]
@@ -9429,13 +9429,13 @@ pub struct ProvisioningArtifactProperties {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
-    /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
     #[doc(hidden)]
     pub disable_template_validation: bool,
 }
@@ -9449,7 +9449,7 @@ impl ProvisioningArtifactProperties {
         self.description.as_deref()
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-    /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
     /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
     pub fn info(
@@ -9460,14 +9460,14 @@ impl ProvisioningArtifactProperties {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
         self.r#type.as_ref()
     }
-    /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
     pub fn disable_template_validation(&self) -> bool {
         self.disable_template_validation
     }
@@ -9526,7 +9526,7 @@ pub mod provisioning_artifact_properties {
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
         /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-        /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
         /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
         /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
         pub fn info(
@@ -9540,7 +9540,7 @@ pub mod provisioning_artifact_properties {
             self
         }
         /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
-        /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
         /// <p> <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
         /// <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>
         pub fn set_info(
@@ -9554,9 +9554,9 @@ pub mod provisioning_artifact_properties {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ProvisioningArtifactType) -> Self {
             self.r#type = Some(input);
@@ -9564,9 +9564,9 @@ pub mod provisioning_artifact_properties {
         }
         /// <p>The type of provisioning artifact.</p>
         /// <ul>
-        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-        /// <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li>
-        /// <li> <p> <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p> </li>
+        /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
+        /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+        /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -9575,12 +9575,12 @@ pub mod provisioning_artifact_properties {
             self.r#type = input;
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+        /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
         pub fn disable_template_validation(mut self, input: bool) -> Self {
             self.disable_template_validation = Some(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+        /// <p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
         pub fn set_disable_template_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_template_validation = input;
             self

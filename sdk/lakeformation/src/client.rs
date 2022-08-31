@@ -103,6 +103,22 @@ impl Client {
     pub fn add_lf_tags_to_resource(&self) -> fluent_builders::AddLFTagsToResource {
         fluent_builders::AddLFTagsToResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AssumeDecoratedRoleWithSAML`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`saml_assertion(impl Into<String>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::saml_assertion) / [`set_saml_assertion(Option<String>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::set_saml_assertion): <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::set_role_arn): <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::set_principal_arn): <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+    ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::AssumeDecoratedRoleWithSAML::set_duration_seconds): <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+    /// - On success, responds with [`AssumeDecoratedRoleWithSamlOutput`](crate::output::AssumeDecoratedRoleWithSamlOutput) with field(s):
+    ///   - [`access_key_id(Option<String>)`](crate::output::AssumeDecoratedRoleWithSamlOutput::access_key_id): <p>The access key ID for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+    ///   - [`secret_access_key(Option<String>)`](crate::output::AssumeDecoratedRoleWithSamlOutput::secret_access_key): <p>The secret key for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+    ///   - [`session_token(Option<String>)`](crate::output::AssumeDecoratedRoleWithSamlOutput::session_token): <p>The session token for the temporary credentials.</p>
+    ///   - [`expiration(Option<DateTime>)`](crate::output::AssumeDecoratedRoleWithSamlOutput::expiration): <p>The date and time when the temporary credentials expire.</p>
+    /// - On failure, responds with [`SdkError<AssumeDecoratedRoleWithSAMLError>`](crate::error::AssumeDecoratedRoleWithSAMLError)
+    pub fn assume_decorated_role_with_saml(&self) -> fluent_builders::AssumeDecoratedRoleWithSAML {
+        fluent_builders::AssumeDecoratedRoleWithSAML::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`BatchGrantPermissions`](crate::client::fluent_builders::BatchGrantPermissions) operation.
     ///
     /// - The fluent builder is configurable:
@@ -753,6 +769,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AssumeDecoratedRoleWithSAML`.
+    ///
+    /// <p>Allows a caller to assume an IAM role decorated as the SAML user specified in the SAML assertion included in the request. This decoration allows Lake Formation to enforce access policies against the SAML users and groups. This API operation requires SAML federation setup in the caller’s account as it can only be called with valid SAML assertions. Lake Formation does not scope down the permission of the assumed role. All permissions attached to the role via the SAML federation setup will be included in the role session. </p>
+    /// <p> This decorated role is expected to access data in Amazon S3 by getting temporary access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM policy attached to such a role would look as follows: </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssumeDecoratedRoleWithSAML {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::assume_decorated_role_with_saml_input::Builder,
+    }
+    impl AssumeDecoratedRoleWithSAML {
+        /// Creates a new `AssumeDecoratedRoleWithSAML`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssumeDecoratedRoleWithSamlOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssumeDecoratedRoleWithSAMLError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+        pub fn saml_assertion(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_assertion(input.into());
+            self
+        }
+        /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+        pub fn set_saml_assertion(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_saml_assertion(input);
+            self
+        }
+        /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
+            self
+        }
+        /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+        pub fn set_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_principal_arn(input);
+            self
+        }
+        /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration_seconds(input);
+            self
+        }
+        /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_duration_seconds(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `BatchGrantPermissions`.
     ///
     /// <p>Batch operation to grant permissions to the principal.</p>
@@ -1232,7 +1338,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLFTag`.
     ///
-    /// <p>Deletes the specified LF-tag key name. If the attribute key does not exist or the LF-tag does not exist, then the operation will not do anything. If the attribute key exists, then the operation checks if any resources are tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as the LF-tag key is still attached with resources. You can consider untagging resources with this LF-tag key.</p>
+    /// <p>Deletes the specified LF-tag given a key name. If the input parameter tag key was not found, then the operation will throw an exception. When you delete an LF-tag, the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag will no longer be applied to the resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLFTag {
         handle: std::sync::Arc<super::Handle>,

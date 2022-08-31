@@ -632,6 +632,11 @@ pub fn deser_operation_crate_operation_create_event_source_mapping(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AmazonManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_amazon_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_amazon_managed_kafka_event_source_config(tokens)?
+                        );
+                    }
                     "BatchSize" => {
                         builder = builder.set_batch_size(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -739,6 +744,11 @@ pub fn deser_operation_crate_operation_create_event_source_mapping(
                     "SelfManagedEventSource" => {
                         builder = builder.set_self_managed_event_source(
                             crate::json_deser::deser_structure_crate_model_self_managed_event_source(tokens)?
+                        );
+                    }
+                    "SelfManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_self_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_self_managed_kafka_event_source_config(tokens)?
                         );
                     }
                     "SourceAccessConfigurations" => {
@@ -1512,6 +1522,11 @@ pub fn deser_operation_crate_operation_delete_event_source_mapping(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AmazonManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_amazon_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_amazon_managed_kafka_event_source_config(tokens)?
+                        );
+                    }
                     "BatchSize" => {
                         builder = builder.set_batch_size(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -1619,6 +1634,11 @@ pub fn deser_operation_crate_operation_delete_event_source_mapping(
                     "SelfManagedEventSource" => {
                         builder = builder.set_self_managed_event_source(
                             crate::json_deser::deser_structure_crate_model_self_managed_event_source(tokens)?
+                        );
+                    }
+                    "SelfManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_self_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_self_managed_kafka_event_source_config(tokens)?
                         );
                     }
                     "SourceAccessConfigurations" => {
@@ -1892,6 +1912,11 @@ pub fn deser_operation_crate_operation_get_event_source_mapping(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AmazonManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_amazon_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_amazon_managed_kafka_event_source_config(tokens)?
+                        );
+                    }
                     "BatchSize" => {
                         builder = builder.set_batch_size(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -1999,6 +2024,11 @@ pub fn deser_operation_crate_operation_get_event_source_mapping(
                     "SelfManagedEventSource" => {
                         builder = builder.set_self_managed_event_source(
                             crate::json_deser::deser_structure_crate_model_self_managed_event_source(tokens)?
+                        );
+                    }
+                    "SelfManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_self_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_self_managed_kafka_event_source_config(tokens)?
                         );
                     }
                     "SourceAccessConfigurations" => {
@@ -5716,6 +5746,11 @@ pub fn deser_operation_crate_operation_update_event_source_mapping(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AmazonManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_amazon_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_amazon_managed_kafka_event_source_config(tokens)?
+                        );
+                    }
                     "BatchSize" => {
                         builder = builder.set_batch_size(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -5823,6 +5858,11 @@ pub fn deser_operation_crate_operation_update_event_source_mapping(
                     "SelfManagedEventSource" => {
                         builder = builder.set_self_managed_event_source(
                             crate::json_deser::deser_structure_crate_model_self_managed_event_source(tokens)?
+                        );
+                    }
+                    "SelfManagedKafkaEventSourceConfig" => {
+                        builder = builder.set_self_managed_kafka_event_source_config(
+                            crate::json_deser::deser_structure_crate_model_self_managed_kafka_event_source_config(tokens)?
                         );
                     }
                     "SourceAccessConfigurations" => {
@@ -6858,6 +6898,55 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_amazon_managed_kafka_event_source_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AmazonManagedKafkaEventSourceConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ConsumerGroupId" => {
+                                builder = builder.set_consumer_group_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_destination_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DestinationConfig>, aws_smithy_json::deserialize::Error>
@@ -7060,6 +7149,55 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_lambda_endpoints(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_self_managed_kafka_event_source_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SelfManagedKafkaEventSourceConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ConsumerGroupId" => {
+                                builder = builder.set_consumer_group_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -10017,6 +10155,16 @@ where
                             "FunctionResponseTypes" => {
                                 builder = builder.set_function_response_types(
                                     crate::json_deser::deser_list_com_amazonaws_lambda_function_response_type_list(tokens)?
+                                );
+                            }
+                            "AmazonManagedKafkaEventSourceConfig" => {
+                                builder = builder.set_amazon_managed_kafka_event_source_config(
+                                    crate::json_deser::deser_structure_crate_model_amazon_managed_kafka_event_source_config(tokens)?
+                                );
+                            }
+                            "SelfManagedKafkaEventSourceConfig" => {
+                                builder = builder.set_self_managed_kafka_event_source_config(
+                                    crate::json_deser::deser_structure_crate_model_self_managed_kafka_event_source_config(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

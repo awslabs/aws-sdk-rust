@@ -970,6 +970,10 @@ pub enum BatchCreateChannelMembershipErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The request exceeds the resource limit.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
@@ -986,6 +990,10 @@ impl std::fmt::Display for BatchCreateChannelMembershipError {
         match &self.kind {
             BatchCreateChannelMembershipErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             BatchCreateChannelMembershipErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            BatchCreateChannelMembershipErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            BatchCreateChannelMembershipErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             BatchCreateChannelMembershipErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
@@ -1064,6 +1072,20 @@ impl BatchCreateChannelMembershipError {
             BatchCreateChannelMembershipErrorKind::ForbiddenException(_)
         )
     }
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateChannelMembershipErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchCreateChannelMembershipErrorKind::ResourceLimitExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
@@ -1098,6 +1120,10 @@ impl std::error::Error for BatchCreateChannelMembershipError {
         match &self.kind {
             BatchCreateChannelMembershipErrorKind::BadRequestException(_inner) => Some(_inner),
             BatchCreateChannelMembershipErrorKind::ForbiddenException(_inner) => Some(_inner),
+            BatchCreateChannelMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
+            BatchCreateChannelMembershipErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
             BatchCreateChannelMembershipErrorKind::ServiceFailureException(_inner) => Some(_inner),
             BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
@@ -1781,6 +1807,8 @@ pub enum CreateChannelMembershipErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
     /// <p>The request exceeds the resource limit.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The service encountered an unexpected error.</p>
@@ -1800,6 +1828,7 @@ impl std::fmt::Display for CreateChannelMembershipError {
             CreateChannelMembershipErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateChannelMembershipErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateChannelMembershipErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateChannelMembershipErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateChannelMembershipErrorKind::ResourceLimitExceededException(_inner) => {
                 _inner.fmt(f)
             }
@@ -1882,6 +1911,13 @@ impl CreateChannelMembershipError {
             CreateChannelMembershipErrorKind::ForbiddenException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelMembershipErrorKind::NotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -1924,6 +1960,7 @@ impl std::error::Error for CreateChannelMembershipError {
             CreateChannelMembershipErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateChannelMembershipErrorKind::ConflictException(_inner) => Some(_inner),
             CreateChannelMembershipErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateChannelMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateChannelMembershipErrorKind::ResourceLimitExceededException(_inner) => {
                 Some(_inner)
             }
@@ -6321,6 +6358,148 @@ impl std::error::Error for ListChannelsModeratedByAppInstanceUserError {
             ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
+        }
+    }
+}
+
+/// Error type for the `ListSubChannels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSubChannelsError {
+    /// Kind of error that occurred.
+    pub kind: ListSubChannelsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSubChannels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSubChannelsErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSubChannelsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSubChannelsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListSubChannelsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListSubChannelsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            ListSubChannelsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListSubChannelsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            ListSubChannelsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            ListSubChannelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSubChannelsError {
+    fn code(&self) -> Option<&str> {
+        ListSubChannelsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSubChannelsError {
+    /// Creates a new `ListSubChannelsError`.
+    pub fn new(kind: ListSubChannelsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSubChannelsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSubChannelsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSubChannelsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSubChannelsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSubChannelsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListSubChannelsErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListSubChannelsErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListSubChannelsErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `ListSubChannelsErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubChannelsErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSubChannelsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubChannelsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSubChannelsErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubChannelsErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSubChannelsErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubChannelsErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for ListSubChannelsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSubChannelsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListSubChannelsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListSubChannelsErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            ListSubChannelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListSubChannelsErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            ListSubChannelsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            ListSubChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

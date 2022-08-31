@@ -329,6 +329,16 @@ pub(crate) fn reflens_structure_crate_output_search_available_phone_numbers_outp
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_search_security_profiles_output_next_token(
+    input: &crate::output::SearchSecurityProfilesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_search_users_output_next_token(
     input: &crate::output::SearchUsersOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -643,6 +653,16 @@ pub(crate) fn lens_structure_crate_output_search_available_phone_numbers_output_
     input: crate::output::SearchAvailablePhoneNumbersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AvailableNumberSummary>> {
     let input = match input.available_numbers_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_security_profiles_output_security_profiles(
+    input: crate::output::SearchSecurityProfilesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchSummary>> {
+    let input = match input.security_profiles {
         None => return None,
         Some(t) => t,
     };

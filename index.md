@@ -17,6 +17,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Auto Scaling Plans | [aws-sdk-autoscalingplans](https://crates.io/crates/aws-sdk-autoscalingplans) ([docs](https://docs.rs/aws-sdk-autoscalingplans)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/autoscalingplans)) |
 | AWS Backup | [aws-sdk-backup](https://crates.io/crates/aws-sdk-backup) ([docs](https://docs.rs/aws-sdk-backup)) |
 | AWS Backup Gateway | [aws-sdk-backupgateway](https://crates.io/crates/aws-sdk-backupgateway) ([docs](https://docs.rs/aws-sdk-backupgateway)) |
+| AWS Backup Storage | [aws-sdk-backupstorage](https://crates.io/crates/aws-sdk-backupstorage) ([docs](https://docs.rs/aws-sdk-backupstorage)) |
 | AWS Batch | [aws-sdk-batch](https://crates.io/crates/aws-sdk-batch) ([docs](https://docs.rs/aws-sdk-batch)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/batch)) |
 | AWS Budgets | [aws-sdk-budgets](https://crates.io/crates/aws-sdk-budgets) ([docs](https://docs.rs/aws-sdk-budgets)) |
 | AWS Certificate Manager | [aws-sdk-acm](https://crates.io/crates/aws-sdk-acm) ([docs](https://docs.rs/aws-sdk-acm)) |
@@ -101,6 +102,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Panorama | [aws-sdk-panorama](https://crates.io/crates/aws-sdk-panorama) ([docs](https://docs.rs/aws-sdk-panorama)) |
 | AWS Performance Insights | [aws-sdk-pi](https://crates.io/crates/aws-sdk-pi) ([docs](https://docs.rs/aws-sdk-pi)) |
 | AWS Price List Service | [aws-sdk-pricing](https://crates.io/crates/aws-sdk-pricing) ([docs](https://docs.rs/aws-sdk-pricing)) |
+| AWS Private 5G | [aws-sdk-privatenetworks](https://crates.io/crates/aws-sdk-privatenetworks) ([docs](https://docs.rs/aws-sdk-privatenetworks)) |
 | AWS Proton | [aws-sdk-proton](https://crates.io/crates/aws-sdk-proton) ([docs](https://docs.rs/aws-sdk-proton)) |
 | AWS RDS DataService | [aws-sdk-rdsdata](https://crates.io/crates/aws-sdk-rdsdata) ([docs](https://docs.rs/aws-sdk-rdsdata)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/rdsdata)) |
 | AWS Resilience Hub | [aws-sdk-resiliencehub](https://crates.io/crates/aws-sdk-resiliencehub) ([docs](https://docs.rs/aws-sdk-resiliencehub)) |
@@ -128,6 +130,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Step Functions | [aws-sdk-sfn](https://crates.io/crates/aws-sdk-sfn) ([docs](https://docs.rs/aws-sdk-sfn)) |
 | AWS Storage Gateway | [aws-sdk-storagegateway](https://crates.io/crates/aws-sdk-storagegateway) ([docs](https://docs.rs/aws-sdk-storagegateway)) |
 | AWS Support | [aws-sdk-support](https://crates.io/crates/aws-sdk-support) ([docs](https://docs.rs/aws-sdk-support)) |
+| AWS Support App | [aws-sdk-supportapp](https://crates.io/crates/aws-sdk-supportapp) ([docs](https://docs.rs/aws-sdk-supportapp)) |
 | AWS Systems Manager Incident Manager | [aws-sdk-ssmincidents](https://crates.io/crates/aws-sdk-ssmincidents) ([docs](https://docs.rs/aws-sdk-ssmincidents)) |
 | AWS Systems Manager Incident Manager Contacts | [aws-sdk-ssmcontacts](https://crates.io/crates/aws-sdk-ssmcontacts) ([docs](https://docs.rs/aws-sdk-ssmcontacts)) |
 | AWS Transfer Family | [aws-sdk-transfer](https://crates.io/crates/aws-sdk-transfer) ([docs](https://docs.rs/aws-sdk-transfer)) |

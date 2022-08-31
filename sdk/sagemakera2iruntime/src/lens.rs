@@ -8,3 +8,13 @@ pub(crate) fn reflens_structure_crate_output_list_human_loops_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_human_loops_output_human_loop_summaries(
+    input: crate::output::ListHumanLoopsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>> {
+    let input = match input.human_loop_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

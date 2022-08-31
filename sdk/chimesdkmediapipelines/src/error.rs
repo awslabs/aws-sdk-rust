@@ -1027,6 +1027,370 @@ impl std::error::Error for CreateMediaCapturePipelineError {
     }
 }
 
+/// Error type for the `CreateMediaConcatenationPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateMediaConcatenationPipelineError {
+    /// Kind of error that occurred.
+    pub kind: CreateMediaConcatenationPipelineErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateMediaConcatenationPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateMediaConcatenationPipelineErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>The request exceeds the resource limit.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateMediaConcatenationPipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaConcatenationPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateMediaConcatenationPipelineError {
+    fn code(&self) -> Option<&str> {
+        CreateMediaConcatenationPipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateMediaConcatenationPipelineError {
+    /// Creates a new `CreateMediaConcatenationPipelineError`.
+    pub fn new(
+        kind: CreateMediaConcatenationPipelineErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateMediaConcatenationPipelineError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateMediaConcatenationPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for CreateMediaConcatenationPipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaConcatenationPipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateMediaLiveConnectorPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateMediaLiveConnectorPipelineError {
+    /// Kind of error that occurred.
+    pub kind: CreateMediaLiveConnectorPipelineErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateMediaLiveConnectorPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateMediaLiveConnectorPipelineErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>The request exceeds the resource limit.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateMediaLiveConnectorPipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateMediaLiveConnectorPipelineError {
+    fn code(&self) -> Option<&str> {
+        CreateMediaLiveConnectorPipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateMediaLiveConnectorPipelineError {
+    /// Creates a new `CreateMediaLiveConnectorPipelineError`.
+    pub fn new(
+        kind: CreateMediaLiveConnectorPipelineErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateMediaLiveConnectorPipelineError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateMediaLiveConnectorPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for CreateMediaLiveConnectorPipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaLiveConnectorPipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteMediaCapturePipeline` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1194,6 +1558,165 @@ impl std::error::Error for DeleteMediaCapturePipelineError {
     }
 }
 
+/// Error type for the `DeleteMediaPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteMediaPipelineError {
+    /// Kind of error that occurred.
+    pub kind: DeleteMediaPipelineErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteMediaPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteMediaPipelineErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteMediaPipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteMediaPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteMediaPipelineError {
+    fn code(&self) -> Option<&str> {
+        DeleteMediaPipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteMediaPipelineError {
+    /// Creates a new `DeleteMediaPipelineError`.
+    pub fn new(kind: DeleteMediaPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteMediaPipelineError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteMediaPipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteMediaPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteMediaPipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteMediaPipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteMediaPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetMediaCapturePipeline` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1349,6 +1872,159 @@ impl std::error::Error for GetMediaCapturePipelineError {
             GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
             GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
             GetMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetMediaPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMediaPipelineError {
+    /// Kind of error that occurred.
+    pub kind: GetMediaPipelineErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetMediaPipeline` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMediaPipelineErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMediaPipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMediaPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMediaPipelineError {
+    fn code(&self) -> Option<&str> {
+        GetMediaPipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMediaPipelineError {
+    /// Creates a new `GetMediaPipelineError`.
+    pub fn new(kind: GetMediaPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMediaPipelineError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMediaPipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMediaPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMediaPipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaPipelineErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GetMediaPipelineErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetMediaPipelineErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaPipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaPipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaPipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaPipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for GetMediaPipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMediaPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1516,6 +2192,165 @@ impl std::error::Error for ListMediaCapturePipelinesError {
             ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
             ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListMediaPipelines` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMediaPipelinesError {
+    /// Kind of error that occurred.
+    pub kind: ListMediaPipelinesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMediaPipelines` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMediaPipelinesErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>The request exceeds the resource limit.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMediaPipelinesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMediaPipelinesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMediaPipelinesError {
+    fn code(&self) -> Option<&str> {
+        ListMediaPipelinesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMediaPipelinesError {
+    /// Creates a new `ListMediaPipelinesError`.
+    pub fn new(kind: ListMediaPipelinesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMediaPipelinesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMediaPipelinesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMediaPipelinesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMediaPipelinesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaPipelinesErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for ListMediaPipelinesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMediaPipelinesErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

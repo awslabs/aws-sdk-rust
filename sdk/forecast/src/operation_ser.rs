@@ -130,6 +130,45 @@ pub fn serialize_operation_crate_operation_create_predictor_backtest_export_job(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_what_if_analysis(
+    input: &crate::input::CreateWhatIfAnalysisInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_what_if_analysis_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_create_what_if_forecast(
+    input: &crate::input::CreateWhatIfForecastInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_what_if_forecast_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_create_what_if_forecast_export(
+    input: &crate::input::CreateWhatIfForecastExportInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_what_if_forecast_export_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_delete_dataset(
     input: &crate::input::DeleteDatasetInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -261,6 +300,45 @@ pub fn serialize_operation_crate_operation_delete_resource_tree(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_delete_what_if_analysis(
+    input: &crate::input::DeleteWhatIfAnalysisInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_what_if_analysis_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_delete_what_if_forecast(
+    input: &crate::input::DeleteWhatIfForecastInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_what_if_forecast_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_delete_what_if_forecast_export(
+    input: &crate::input::DeleteWhatIfForecastExportInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_what_if_forecast_export_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_describe_auto_predictor(
     input: &crate::input::DescribeAutoPredictorInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -385,6 +463,45 @@ pub fn serialize_operation_crate_operation_describe_predictor_backtest_export_jo
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_describe_predictor_backtest_export_job_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_what_if_analysis(
+    input: &crate::input::DescribeWhatIfAnalysisInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_what_if_analysis_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_what_if_forecast(
+    input: &crate::input::DescribeWhatIfForecastInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_what_if_forecast_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_what_if_forecast_export(
+    input: &crate::input::DescribeWhatIfForecastExportInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_what_if_forecast_export_input(
         &mut object,
         input,
     )?;
@@ -539,6 +656,45 @@ pub fn serialize_operation_crate_operation_list_tags_for_resource(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_list_tags_for_resource_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_what_if_analyses(
+    input: &crate::input::ListWhatIfAnalysesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_what_if_analyses_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_what_if_forecast_exports(
+    input: &crate::input::ListWhatIfForecastExportsInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_what_if_forecast_exports_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_what_if_forecasts(
+    input: &crate::input::ListWhatIfForecastsInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_what_if_forecasts_input(
         &mut object,
         input,
     )?;

@@ -218,6 +218,9 @@ where
                 crate::error::GetCampaignStateErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
+                crate::error::GetCampaignStateErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::GetCampaignStateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -389,6 +392,9 @@ where
                 crate::error::PauseCampaignErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
+                crate::error::PauseCampaignErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::PauseCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -458,6 +464,9 @@ where
                 crate::error::ResumeCampaignErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
+                crate::error::ResumeCampaignErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::ResumeCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -488,6 +497,9 @@ where
                 }
                 crate::error::StartCampaignErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
+                }
+                crate::error::StartCampaignErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::StartCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -555,6 +567,9 @@ where
                 }
                 crate::error::StopCampaignErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
+                }
+                crate::error::StopCampaignErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::StopCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

@@ -109,6 +109,36 @@ pub(crate) fn reflens_structure_crate_output_list_predictors_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_what_if_analyses_output_next_token(
+    input: &crate::output::ListWhatIfAnalysesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_what_if_forecast_exports_output_next_token(
+    input: &crate::output::ListWhatIfForecastExportsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_what_if_forecasts_output_next_token(
+    input: &crate::output::ListWhatIfForecastsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_dataset_groups_output_dataset_groups(
     input: crate::output::ListDatasetGroupsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::DatasetGroupSummary>> {
@@ -213,6 +243,36 @@ pub(crate) fn lens_structure_crate_output_list_predictors_output_predictors(
     input: crate::output::ListPredictorsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::PredictorSummary>> {
     let input = match input.predictors {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_what_if_analyses_output_what_if_analyses(
+    input: crate::output::ListWhatIfAnalysesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::WhatIfAnalysisSummary>> {
+    let input = match input.what_if_analyses {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_what_if_forecast_exports_output_what_if_forecast_exports(
+    input: crate::output::ListWhatIfForecastExportsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::WhatIfForecastExportSummary>> {
+    let input = match input.what_if_forecast_exports {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_what_if_forecasts_output_what_if_forecasts(
+    input: crate::output::ListWhatIfForecastsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::WhatIfForecastSummary>> {
+    let input = match input.what_if_forecasts {
         None => return None,
         Some(t) => t,
     };

@@ -9,7 +9,7 @@
 #![allow(clippy::type_complexity)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+//! <p>"Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"</p>
 //!
 //! # Crate Organization
 //!

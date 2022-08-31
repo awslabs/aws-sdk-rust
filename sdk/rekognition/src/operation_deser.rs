@@ -172,6 +172,201 @@ pub fn parse_compare_faces_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_copy_project_version_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CopyProjectVersionOutput,
+    crate::error::CopyProjectVersionError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CopyProjectVersionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CopyProjectVersionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceInUseException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CopyProjectVersionError {
+            meta: generic,
+            kind: crate::error::CopyProjectVersionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CopyProjectVersionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_copy_project_version_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CopyProjectVersionOutput,
+    crate::error::CopyProjectVersionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::copy_project_version_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_copy_project_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CopyProjectVersionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_collection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCollectionOutput, crate::error::CreateCollectionError>
@@ -1639,6 +1834,163 @@ pub fn parse_delete_project_response(
             output,
         )
         .map_err(crate::error::DeleteProjectError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_project_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteProjectPolicyOutput,
+    crate::error::DeleteProjectPolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteProjectPolicyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteProjectPolicyErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteProjectPolicyErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteProjectPolicyErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidPolicyRevisionIdException" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_policy_revision_id_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_policy_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind:
+                crate::error::DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteProjectPolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteProjectPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteProjectPolicyErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteProjectPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_project_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteProjectPolicyOutput,
+    crate::error::DeleteProjectPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_project_policy_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }
@@ -6150,6 +6502,168 @@ pub fn parse_list_faces_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_project_policies_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListProjectPoliciesOutput,
+    crate::error::ListProjectPoliciesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListProjectPoliciesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind: crate::error::ListProjectPoliciesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind: crate::error::ListProjectPoliciesErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidPaginationTokenException" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind: crate::error::ListProjectPoliciesErrorKind::InvalidPaginationTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_pagination_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind: crate::error::ListProjectPoliciesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind:
+                crate::error::ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceNotFoundException" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind: crate::error::ListProjectPoliciesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListProjectPoliciesError {
+            meta: generic,
+            kind: crate::error::ListProjectPoliciesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListProjectPoliciesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_project_policies_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListProjectPoliciesOutput,
+    crate::error::ListProjectPoliciesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_project_policies_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_project_policies(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListProjectPoliciesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_stream_processors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -6434,6 +6948,234 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_project_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::PutProjectPolicyOutput, crate::error::PutProjectPolicyError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutProjectPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::PutProjectPolicyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidPolicyRevisionIdException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_policy_revision_id_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_policy_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MalformedPolicyDocumentException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::MalformedPolicyDocumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::malformed_policy_document_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_malformed_policy_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceAlreadyExistsException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::PutProjectPolicyError {
+            meta: generic,
+            kind: crate::error::PutProjectPolicyErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::PutProjectPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_project_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::PutProjectPolicyOutput, crate::error::PutProjectPolicyError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_project_policy_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_put_project_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutProjectPolicyError::unhandled)?;
         output.build()
     })
 }

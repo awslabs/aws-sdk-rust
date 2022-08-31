@@ -10,7 +10,7 @@ version = "0.47.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.17.0"
+version = "0.18.0"
 
 [dependencies.tokio]
 version = "1"

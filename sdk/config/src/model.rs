@@ -4259,6 +4259,96 @@ impl ConfigSnapshotDeliveryProperties {
     }
 }
 
+/// <p>This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, you first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> (and optionally <code>DocumentVersion</code>) in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack API</a>.</p>
+/// <p>The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TemplateSsmDocumentDetails {
+    /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+    #[doc(hidden)]
+    pub document_name: std::option::Option<std::string::String>,
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub document_version: std::option::Option<std::string::String>,
+}
+impl TemplateSsmDocumentDetails {
+    /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+}
+impl std::fmt::Debug for TemplateSsmDocumentDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TemplateSsmDocumentDetails");
+        formatter.field("document_name", &self.document_name);
+        formatter.field("document_version", &self.document_version);
+        formatter.finish()
+    }
+}
+/// See [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
+pub mod template_ssm_document_details {
+
+    /// A builder for [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_name: std::option::Option<std::string::String>,
+        pub(crate) document_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_name = Some(input.into());
+            self
+        }
+        /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the Document Name, Config checks only your account and region for the SSM document. If you want to use an SSM document from another region or account, you must provide the ARN.</p>
+        pub fn set_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_name = input;
+            self
+        }
+        /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
+        /// <p>This field is optional.</p>
+        /// </note>
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
+        /// <p>This field is optional.</p>
+        /// </note>
+        pub fn set_document_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
+        pub fn build(self) -> crate::model::TemplateSsmDocumentDetails {
+            crate::model::TemplateSsmDocumentDetails {
+                document_name: self.document_name,
+                document_version: self.document_version,
+            }
+        }
+    }
+}
+impl TemplateSsmDocumentDetails {
+    /// Creates a new builder-style object to manufacture [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
+    pub fn builder() -> crate::model::template_ssm_document_details::Builder {
+        crate::model::template_ssm_document_details::Builder::default()
+    }
+}
+
 /// <p>An object that represents the recording of configuration changes of an Amazon Web Services resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13602,12 +13692,16 @@ pub struct ConformancePackDetail {
     #[doc(hidden)]
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
-    /// <p>Last time when conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested. </p>
     #[doc(hidden)]
     pub last_update_requested_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Amazon Web Services service that created the conformance pack.</p>
+    /// <p>The Amazon Web Services service that created the conformance pack.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
+    /// <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+    #[doc(hidden)]
+    pub template_ssm_document_details:
+        std::option::Option<crate::model::TemplateSsmDocumentDetails>,
 }
 impl ConformancePackDetail {
     /// <p>Name of the conformance pack.</p>
@@ -13640,13 +13734,19 @@ impl ConformancePackDetail {
     ) -> std::option::Option<&[crate::model::ConformancePackInputParameter]> {
         self.conformance_pack_input_parameters.as_deref()
     }
-    /// <p>Last time when conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested. </p>
     pub fn last_update_requested_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_requested_time.as_ref()
     }
-    /// <p>Amazon Web Services service that created the conformance pack.</p>
+    /// <p>The Amazon Web Services service that created the conformance pack.</p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
+    }
+    /// <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+    pub fn template_ssm_document_details(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateSsmDocumentDetails> {
+        self.template_ssm_document_details.as_ref()
     }
 }
 impl std::fmt::Debug for ConformancePackDetail {
@@ -13666,6 +13766,10 @@ impl std::fmt::Debug for ConformancePackDetail {
             &self.last_update_requested_time,
         );
         formatter.field("created_by", &self.created_by);
+        formatter.field(
+            "template_ssm_document_details",
+            &self.template_ssm_document_details,
+        );
         formatter.finish()
     }
 }
@@ -13684,6 +13788,8 @@ pub mod conformance_pack_detail {
             std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
         pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
+        pub(crate) template_ssm_document_details:
+            std::option::Option<crate::model::TemplateSsmDocumentDetails>,
     }
     impl Builder {
         /// <p>Name of the conformance pack.</p>
@@ -13781,12 +13887,12 @@ pub mod conformance_pack_detail {
             self.conformance_pack_input_parameters = input;
             self
         }
-        /// <p>Last time when conformation pack update was requested. </p>
+        /// <p>The last time a conformation pack update was requested. </p>
         pub fn last_update_requested_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_requested_time = Some(input);
             self
         }
-        /// <p>Last time when conformation pack update was requested. </p>
+        /// <p>The last time a conformation pack update was requested. </p>
         pub fn set_last_update_requested_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -13794,14 +13900,30 @@ pub mod conformance_pack_detail {
             self.last_update_requested_time = input;
             self
         }
-        /// <p>Amazon Web Services service that created the conformance pack.</p>
+        /// <p>The Amazon Web Services service that created the conformance pack.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
         }
-        /// <p>Amazon Web Services service that created the conformance pack.</p>
+        /// <p>The Amazon Web Services service that created the conformance pack.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
+            self
+        }
+        /// <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+        pub fn template_ssm_document_details(
+            mut self,
+            input: crate::model::TemplateSsmDocumentDetails,
+        ) -> Self {
+            self.template_ssm_document_details = Some(input);
+            self
+        }
+        /// <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+        pub fn set_template_ssm_document_details(
+            mut self,
+            input: std::option::Option<crate::model::TemplateSsmDocumentDetails>,
+        ) -> Self {
+            self.template_ssm_document_details = input;
             self
         }
         /// Consumes the builder and constructs a [`ConformancePackDetail`](crate::model::ConformancePackDetail).
@@ -13815,6 +13937,7 @@ pub mod conformance_pack_detail {
                 conformance_pack_input_parameters: self.conformance_pack_input_parameters,
                 last_update_requested_time: self.last_update_requested_time,
                 created_by: self.created_by,
+                template_ssm_document_details: self.template_ssm_document_details,
             }
         }
     }

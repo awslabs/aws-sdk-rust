@@ -1115,12 +1115,12 @@ pub mod associate_phone_number_contact_flow_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1901,7 +1901,7 @@ pub mod claim_phone_number_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1912,7 +1912,7 @@ pub mod claim_phone_number_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2128,7 +2128,7 @@ pub mod create_agent_status_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2139,7 +2139,7 @@ pub mod create_agent_status_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2315,22 +2315,22 @@ pub mod create_contact_flow_input {
             self.instance_id = input;
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -2338,22 +2338,22 @@ pub mod create_contact_flow_input {
             self.r#type = input;
             self
         }
-        /// <p>The description of the contact flow. </p>
+        /// <p>The description of the flow. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow. </p>
+        /// <p>The description of the flow. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The content of the contact flow. </p>
+        /// <p>The content of the flow. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the contact flow. </p>
+        /// <p>The content of the flow. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -2362,7 +2362,7 @@ pub mod create_contact_flow_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2373,7 +2373,7 @@ pub mod create_contact_flow_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2549,32 +2549,32 @@ pub mod create_contact_flow_module_input {
             self.instance_id = input;
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the contact flow module. </p>
+        /// <p>The description of the flow module. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow module. </p>
+        /// <p>The description of the flow module. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -2583,7 +2583,7 @@ pub mod create_contact_flow_module_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2594,7 +2594,7 @@ pub mod create_contact_flow_module_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2841,7 +2841,7 @@ pub mod create_hours_of_operation_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2852,7 +2852,7 @@ pub mod create_hours_of_operation_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3245,12 +3245,16 @@ pub mod create_integration_association_input {
             self.integration_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+        /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+        /// </note>
         pub fn integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.integration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+        /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+        /// </note>
         pub fn set_integration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3301,7 +3305,7 @@ pub mod create_integration_association_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3312,7 +3316,7 @@ pub mod create_integration_association_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3573,7 +3577,7 @@ pub mod create_queue_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3584,7 +3588,7 @@ pub mod create_queue_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3794,7 +3798,7 @@ pub mod create_quick_connect_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3805,7 +3809,7 @@ pub mod create_quick_connect_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4058,7 +4062,7 @@ pub mod create_routing_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4069,7 +4073,7 @@ pub mod create_routing_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4293,7 +4297,7 @@ pub mod create_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4304,7 +4308,7 @@ pub mod create_security_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4783,7 +4787,7 @@ pub mod create_use_case_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4794,7 +4798,7 @@ pub mod create_use_case_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5092,7 +5096,7 @@ pub mod create_user_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5103,7 +5107,7 @@ pub mod create_user_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5303,7 +5307,7 @@ pub mod create_user_hierarchy_group_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5314,7 +5318,7 @@ pub mod create_user_hierarchy_group_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5543,7 +5547,7 @@ pub mod create_vocabulary_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5554,7 +5558,7 @@ pub mod create_vocabulary_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5723,12 +5727,12 @@ pub mod delete_contact_flow_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5893,12 +5897,12 @@ pub mod delete_contact_flow_module_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_module_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8094,12 +8098,12 @@ pub mod describe_contact_flow_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8264,12 +8268,12 @@ pub mod describe_contact_flow_module_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_module_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14638,7 +14642,7 @@ pub mod list_contact_flow_modules_input {
             self.max_results = input;
             self
         }
-        /// <p>The state of the contact flow module.</p>
+        /// <p>The state of the flow module.</p>
         pub fn contact_flow_module_state(
             mut self,
             input: crate::model::ContactFlowModuleState,
@@ -14646,7 +14650,7 @@ pub mod list_contact_flow_modules_input {
             self.contact_flow_module_state = Some(input);
             self
         }
-        /// <p>The state of the contact flow module.</p>
+        /// <p>The state of the flow module.</p>
         pub fn set_contact_flow_module_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleState>,
@@ -14825,14 +14829,14 @@ pub mod list_contact_flows_input {
         ///
         /// To override the contents of this collection use [`set_contact_flow_types`](Self::set_contact_flow_types).
         ///
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn contact_flow_types(mut self, input: crate::model::ContactFlowType) -> Self {
             let mut v = self.contact_flow_types.unwrap_or_default();
             v.push(input);
             self.contact_flow_types = Some(v);
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn set_contact_flow_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactFlowType>>,
@@ -14850,12 +14854,12 @@ pub mod list_contact_flows_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -15461,12 +15465,12 @@ pub mod list_hours_of_operations_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -16790,12 +16794,12 @@ pub mod list_phone_numbers_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -17210,12 +17214,12 @@ pub mod list_prompts_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -17402,12 +17406,12 @@ pub mod list_queue_quick_connects_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -17619,12 +17623,12 @@ pub mod list_queues_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -17810,12 +17814,12 @@ pub mod list_quick_connects_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -18033,12 +18037,12 @@ pub mod list_routing_profile_queues_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -18233,12 +18237,12 @@ pub mod list_routing_profiles_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -18810,12 +18814,12 @@ pub mod list_security_profiles_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -19555,12 +19559,12 @@ pub mod list_user_hierarchy_groups_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -19739,12 +19743,12 @@ pub mod list_users_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -20629,6 +20633,201 @@ impl SearchAvailablePhoneNumbersInput {
     }
 }
 
+/// See [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
+pub mod search_security_profiles_input {
+
+    /// A builder for [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) search_criteria:
+            std::option::Option<crate::model::SecurityProfileSearchCriteria>,
+        pub(crate) search_filter: std::option::Option<crate::model::SecurityProfilesSearchFilter>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The search criteria to be used to return security profiles.</p>
+        pub fn search_criteria(
+            mut self,
+            input: crate::model::SecurityProfileSearchCriteria,
+        ) -> Self {
+            self.search_criteria = Some(input);
+            self
+        }
+        /// <p>The search criteria to be used to return security profiles.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::SecurityProfileSearchCriteria>,
+        ) -> Self {
+            self.search_criteria = input;
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::SecurityProfilesSearchFilter) -> Self {
+            self.search_filter = Some(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::SecurityProfilesSearchFilter>,
+        ) -> Self {
+            self.search_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SearchSecurityProfilesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SearchSecurityProfilesInput {
+                instance_id: self.instance_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                search_criteria: self.search_criteria,
+                search_filter: self.search_filter,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SearchSecurityProfilesInputOperationOutputAlias = crate::operation::SearchSecurityProfiles;
+#[doc(hidden)]
+pub type SearchSecurityProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl SearchSecurityProfilesInput {
+    /// Consumes the builder and constructs an Operation<[`SearchSecurityProfiles`](crate::operation::SearchSecurityProfiles)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchSecurityProfiles,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SearchSecurityProfilesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/search-security-profiles").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SearchSecurityProfilesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_search_security_profiles(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchSecurityProfiles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchSecurityProfiles",
+            "connect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
+    pub fn builder() -> crate::input::search_security_profiles_input::Builder {
+        crate::input::search_security_profiles_input::Builder::default()
+    }
+}
+
 /// See [`SearchUsersInput`](crate::input::SearchUsersInput).
 pub mod search_users_input {
 
@@ -21070,13 +21269,13 @@ pub mod start_chat_contact_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
@@ -21089,7 +21288,7 @@ pub mod start_chat_contact_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -21101,7 +21300,7 @@ pub mod start_chat_contact_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -21706,13 +21905,13 @@ pub mod start_outbound_voice_contact_input {
             self.destination_phone_number = input;
             self
         }
-        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
@@ -21754,12 +21953,12 @@ pub mod start_outbound_voice_contact_input {
             self.source_phone_number = input;
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.queue_id = Some(input.into());
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_id = input;
             self
@@ -21768,7 +21967,7 @@ pub mod start_outbound_voice_contact_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -21780,7 +21979,7 @@ pub mod start_outbound_voice_contact_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -22009,13 +22208,13 @@ pub mod start_task_contact_input {
             self.previous_contact_id = input;
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
@@ -22028,7 +22227,7 @@ pub mod start_task_contact_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -22040,7 +22239,7 @@ pub mod start_task_contact_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -22106,12 +22305,12 @@ pub mod start_task_contact_input {
             self.client_token = input;
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_time = Some(input);
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn set_scheduled_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22939,7 +23138,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -22950,7 +23149,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -23146,12 +23345,12 @@ pub mod transfer_contact_input {
             self.user_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23984,7 +24183,7 @@ pub mod update_contact_attributes_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
         /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -23996,7 +24195,7 @@ pub mod update_contact_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
         /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -24151,12 +24350,12 @@ pub mod update_contact_flow_content_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24164,12 +24363,12 @@ pub mod update_contact_flow_content_input {
             self.contact_flow_id = input;
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -24354,12 +24553,12 @@ pub mod update_contact_flow_metadata_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24367,32 +24566,32 @@ pub mod update_contact_flow_metadata_input {
             self.contact_flow_id = input;
             self
         }
-        /// <p>TThe name of the contact flow.</p>
+        /// <p>TThe name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>TThe name of the contact flow.</p>
+        /// <p>TThe name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The state of contact flow.</p>
+        /// <p>The state of flow.</p>
         pub fn contact_flow_state(mut self, input: crate::model::ContactFlowState) -> Self {
             self.contact_flow_state = Some(input);
             self
         }
-        /// <p>The state of contact flow.</p>
+        /// <p>The state of flow.</p>
         pub fn set_contact_flow_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowState>,
@@ -24580,12 +24779,12 @@ pub mod update_contact_flow_module_content_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_module_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24593,12 +24792,12 @@ pub mod update_contact_flow_module_content_input {
             self.contact_flow_module_id = input;
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -24781,12 +24980,12 @@ pub mod update_contact_flow_module_metadata_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_module_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24794,32 +24993,32 @@ pub mod update_contact_flow_module_metadata_input {
             self.contact_flow_module_id = input;
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the contact flow module.</p>
+        /// <p>The description of the flow module.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow module.</p>
+        /// <p>The description of the flow module.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The state of contact flow module.</p>
+        /// <p>The state of flow module.</p>
         pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of contact flow module.</p>
+        /// <p>The state of flow module.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleState>,
@@ -25006,12 +25205,12 @@ pub mod update_contact_flow_name_input {
             self.instance_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25019,22 +25218,22 @@ pub mod update_contact_flow_name_input {
             self.contact_flow_id = input;
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -25225,12 +25424,12 @@ pub mod update_contact_schedule_input {
             self.contact_id = input;
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_time = Some(input);
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn set_scheduled_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -31371,7 +31570,7 @@ pub struct UpdateContactScheduleInput {
     /// <p>The identifier of the contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -31384,7 +31583,7 @@ impl UpdateContactScheduleInput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub fn scheduled_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_time.as_ref()
     }
@@ -31406,13 +31605,13 @@ pub struct UpdateContactFlowNameInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the contact flow.</p>
+    /// <p>The description of the flow.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
@@ -31421,15 +31620,15 @@ impl UpdateContactFlowNameInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the contact flow.</p>
+    /// <p>The description of the flow.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -31452,16 +31651,16 @@ pub struct UpdateContactFlowModuleMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the contact flow module.</p>
+    /// <p>The description of the flow module.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The state of contact flow module.</p>
+    /// <p>The state of flow module.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowModuleState>,
 }
@@ -31470,19 +31669,19 @@ impl UpdateContactFlowModuleMetadataInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(&self) -> std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the contact flow module.</p>
+    /// <p>The description of the flow module.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of contact flow module.</p>
+    /// <p>The state of flow module.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowModuleState> {
         self.state.as_ref()
     }
@@ -31506,10 +31705,10 @@ pub struct UpdateContactFlowModuleContentInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
-    /// <p>The content of the contact flow module.</p>
+    /// <p>The content of the flow module.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
@@ -31518,11 +31717,11 @@ impl UpdateContactFlowModuleContentInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(&self) -> std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
-    /// <p>The content of the contact flow module.</p>
+    /// <p>The content of the flow module.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -31544,16 +31743,16 @@ pub struct UpdateContactFlowMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>TThe name of the contact flow.</p>
+    /// <p>TThe name of the flow.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the contact flow.</p>
+    /// <p>The description of the flow.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The state of contact flow.</p>
+    /// <p>The state of flow.</p>
     #[doc(hidden)]
     pub contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
 }
@@ -31562,19 +31761,19 @@ impl UpdateContactFlowMetadataInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>TThe name of the contact flow.</p>
+    /// <p>TThe name of the flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the contact flow.</p>
+    /// <p>The description of the flow.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of contact flow.</p>
+    /// <p>The state of flow.</p>
     pub fn contact_flow_state(&self) -> std::option::Option<&crate::model::ContactFlowState> {
         self.contact_flow_state.as_ref()
     }
@@ -31598,10 +31797,10 @@ pub struct UpdateContactFlowContentInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
@@ -31610,11 +31809,11 @@ impl UpdateContactFlowContentInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -31639,7 +31838,7 @@ pub struct UpdateContactAttributesInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
     pub attributes:
@@ -31654,7 +31853,7 @@ impl UpdateContactAttributesInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
@@ -31848,7 +32047,7 @@ pub struct TransferContactInput {
     /// <p>The identifier for the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -31872,7 +32071,7 @@ impl TransferContactInput {
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
@@ -31901,7 +32100,7 @@ pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -31911,7 +32110,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -32082,11 +32281,11 @@ pub struct StartTaskContactInput {
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
     #[doc(hidden)]
     pub previous_contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
     pub attributes:
@@ -32105,7 +32304,7 @@ pub struct StartTaskContactInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     #[doc(hidden)]
     pub scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A unique identifier for the task template.</p>
@@ -32124,12 +32323,12 @@ impl StartTaskContactInput {
     pub fn previous_contact_id(&self) -> std::option::Option<&str> {
         self.previous_contact_id.as_deref()
     }
-    /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
@@ -32156,7 +32355,7 @@ impl StartTaskContactInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub fn scheduled_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_time.as_ref()
     }
@@ -32194,7 +32393,7 @@ pub struct StartOutboundVoiceContactInput {
     /// <p>The phone number of the customer, in E.164 format.</p>
     #[doc(hidden)]
     pub destination_phone_number: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
@@ -32207,10 +32406,10 @@ pub struct StartOutboundVoiceContactInput {
     /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
     #[doc(hidden)]
     pub source_phone_number: std::option::Option<std::string::String>,
-    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
     #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
     pub attributes:
@@ -32231,7 +32430,7 @@ impl StartOutboundVoiceContactInput {
     pub fn destination_phone_number(&self) -> std::option::Option<&str> {
         self.destination_phone_number.as_deref()
     }
-    /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
@@ -32248,11 +32447,11 @@ impl StartOutboundVoiceContactInput {
     pub fn source_phone_number(&self) -> std::option::Option<&str> {
         self.source_phone_number.as_deref()
     }
-    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+    /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
     pub fn queue_id(&self) -> std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
@@ -32405,11 +32604,11 @@ pub struct StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
     pub attributes:
@@ -32435,12 +32634,12 @@ impl StartChatContactInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(
         &self,
@@ -32599,6 +32798,64 @@ impl std::fmt::Debug for SearchUsersInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("search_filter", &self.search_filter);
         formatter.field("search_criteria", &self.search_criteria);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchSecurityProfilesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    #[doc(hidden)]
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>The search criteria to be used to return security profiles.</p>
+    #[doc(hidden)]
+    pub search_criteria: std::option::Option<crate::model::SecurityProfileSearchCriteria>,
+    /// <p>Filters to be applied to search results.</p>
+    #[doc(hidden)]
+    pub search_filter: std::option::Option<crate::model::SecurityProfilesSearchFilter>,
+}
+impl SearchSecurityProfilesInput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The search criteria to be used to return security profiles.</p>
+    pub fn search_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::SecurityProfileSearchCriteria> {
+        self.search_criteria.as_ref()
+    }
+    /// <p>Filters to be applied to search results.</p>
+    pub fn search_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::SecurityProfilesSearchFilter> {
+        self.search_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchSecurityProfilesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchSecurityProfilesInput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("search_criteria", &self.search_criteria);
+        formatter.field("search_filter", &self.search_filter);
         formatter.finish()
     }
 }
@@ -32783,7 +33040,7 @@ pub struct ListUsersInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -32796,7 +33053,7 @@ impl ListUsersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -32821,7 +33078,7 @@ pub struct ListUserHierarchyGroupsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -32834,7 +33091,7 @@ impl ListUserHierarchyGroupsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -32992,7 +33249,7 @@ pub struct ListSecurityProfilesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -33005,7 +33262,7 @@ impl ListSecurityProfilesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -33114,7 +33371,7 @@ pub struct ListRoutingProfilesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -33127,7 +33384,7 @@ impl ListRoutingProfilesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -33155,7 +33412,7 @@ pub struct ListRoutingProfileQueuesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -33172,7 +33429,7 @@ impl ListRoutingProfileQueuesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -33198,7 +33455,7 @@ pub struct ListQuickConnectsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
@@ -33214,7 +33471,7 @@ impl ListQuickConnectsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -33247,7 +33504,7 @@ pub struct ListQueuesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -33264,7 +33521,7 @@ impl ListQueuesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -33293,7 +33550,7 @@ pub struct ListQueueQuickConnectsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -33310,7 +33567,7 @@ impl ListQueueQuickConnectsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -33336,7 +33593,7 @@ pub struct ListPromptsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -33349,7 +33606,7 @@ impl ListPromptsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -33449,7 +33706,7 @@ pub struct ListPhoneNumbersInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -33472,7 +33729,7 @@ impl ListPhoneNumbersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -33738,7 +33995,7 @@ pub struct ListHoursOfOperationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -33751,7 +34008,7 @@ impl ListHoursOfOperationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -33869,13 +34126,13 @@ pub struct ListContactFlowsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     #[doc(hidden)]
     pub contact_flow_types: std::option::Option<std::vec::Vec<crate::model::ContactFlowType>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -33884,7 +34141,7 @@ impl ListContactFlowsInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     pub fn contact_flow_types(&self) -> std::option::Option<&[crate::model::ContactFlowType]> {
         self.contact_flow_types.as_deref()
     }
@@ -33892,7 +34149,7 @@ impl ListContactFlowsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -33921,7 +34178,7 @@ pub struct ListContactFlowModulesInput {
     /// <p>The maximum number of results to return per page.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The state of the contact flow module.</p>
+    /// <p>The state of the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_module_state: std::option::Option<crate::model::ContactFlowModuleState>,
 }
@@ -33938,7 +34195,7 @@ impl ListContactFlowModulesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The state of the contact flow module.</p>
+    /// <p>The state of the flow module.</p>
     pub fn contact_flow_module_state(
         &self,
     ) -> std::option::Option<&crate::model::ContactFlowModuleState> {
@@ -35626,7 +35883,7 @@ pub struct DescribeContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
 }
@@ -35635,7 +35892,7 @@ impl DescribeContactFlowModuleInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(&self) -> std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
@@ -35656,7 +35913,7 @@ pub struct DescribeContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
@@ -35665,7 +35922,7 @@ impl DescribeContactFlowInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
@@ -36052,7 +36309,7 @@ pub struct DeleteContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_module_id: std::option::Option<std::string::String>,
 }
@@ -36061,7 +36318,7 @@ impl DeleteContactFlowModuleInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(&self) -> std::option::Option<&str> {
         self.contact_flow_module_id.as_deref()
     }
@@ -36082,7 +36339,7 @@ pub struct DeleteContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
@@ -36091,7 +36348,7 @@ impl DeleteContactFlowInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
@@ -36124,7 +36381,7 @@ pub struct CreateVocabularyInput {
     /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36150,7 +36407,7 @@ impl CreateVocabularyInput {
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36184,7 +36441,7 @@ pub struct CreateUserHierarchyGroupInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36202,7 +36459,7 @@ impl CreateUserHierarchyGroupInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36253,7 +36510,7 @@ pub struct CreateUserInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36296,7 +36553,7 @@ impl CreateUserInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36334,7 +36591,7 @@ pub struct CreateUseCaseInput {
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     #[doc(hidden)]
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36352,7 +36609,7 @@ impl CreateUseCaseInput {
     pub fn use_case_type(&self) -> std::option::Option<&crate::model::UseCaseType> {
         self.use_case_type.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36476,7 +36733,7 @@ pub struct CreateSecurityProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36498,7 +36755,7 @@ impl CreateSecurityProfileInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36540,7 +36797,7 @@ pub struct CreateRoutingProfileInput {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     #[doc(hidden)]
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36570,7 +36827,7 @@ impl CreateRoutingProfileInput {
     pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
         self.media_concurrencies.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36608,7 +36865,7 @@ pub struct CreateQuickConnectInput {
     /// <p>Configuration settings for the quick connect.</p>
     #[doc(hidden)]
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36630,7 +36887,7 @@ impl CreateQuickConnectInput {
     pub fn quick_connect_config(&self) -> std::option::Option<&crate::model::QuickConnectConfig> {
         self.quick_connect_config.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36675,7 +36932,7 @@ pub struct CreateQueueInput {
     /// <p>The quick connects available to agents who are working the queue.</p>
     #[doc(hidden)]
     pub quick_connect_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36711,7 +36968,7 @@ impl CreateQueueInput {
     pub fn quick_connect_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.quick_connect_ids.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36744,7 +37001,9 @@ pub struct CreateIntegrationAssociationInput {
     /// <p>The type of information to be ingested.</p>
     #[doc(hidden)]
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+    /// </note>
     #[doc(hidden)]
     pub integration_arn: std::option::Option<std::string::String>,
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
@@ -36756,7 +37015,7 @@ pub struct CreateIntegrationAssociationInput {
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36770,7 +37029,9 @@ impl CreateIntegrationAssociationInput {
     pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
         self.integration_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+    /// </note>
     pub fn integration_arn(&self) -> std::option::Option<&str> {
         self.integration_arn.as_deref()
     }
@@ -36786,7 +37047,7 @@ impl CreateIntegrationAssociationInput {
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36889,7 +37150,7 @@ pub struct CreateHoursOfOperationInput {
     /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
     #[doc(hidden)]
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36915,7 +37176,7 @@ impl CreateHoursOfOperationInput {
     pub fn config(&self) -> std::option::Option<&[crate::model::HoursOfOperationConfig]> {
         self.config.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -36943,16 +37204,16 @@ pub struct CreateContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the contact flow module. </p>
+    /// <p>The description of the flow module. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The content of the contact flow module.</p>
+    /// <p>The content of the flow module.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36965,19 +37226,19 @@ impl CreateContactFlowModuleInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the contact flow module. </p>
+    /// <p>The description of the flow module. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The content of the contact flow module.</p>
+    /// <p>The content of the flow module.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -37009,19 +37270,19 @@ pub struct CreateContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
-    /// <p>The description of the contact flow. </p>
+    /// <p>The description of the flow. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The content of the contact flow. </p>
+    /// <p>The content of the flow. </p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -37031,23 +37292,23 @@ impl CreateContactFlowInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.r#type.as_ref()
     }
-    /// <p>The description of the contact flow. </p>
+    /// <p>The description of the flow. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The content of the contact flow. </p>
+    /// <p>The content of the flow. </p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -37087,7 +37348,7 @@ pub struct CreateAgentStatusInput {
     /// <p>The display order of the status.</p>
     #[doc(hidden)]
     pub display_order: std::option::Option<i32>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -37113,7 +37374,7 @@ impl CreateAgentStatusInput {
     pub fn display_order(&self) -> std::option::Option<i32> {
         self.display_order
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -37147,7 +37408,7 @@ pub struct ClaimPhoneNumberInput {
     /// <p>The description of the phone number.</p>
     #[doc(hidden)]
     pub phone_number_description: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -37168,7 +37429,7 @@ impl ClaimPhoneNumberInput {
     pub fn phone_number_description(&self) -> std::option::Option<&str> {
         self.phone_number_description.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -37308,7 +37569,7 @@ pub struct AssociatePhoneNumberContactFlowInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
@@ -37321,7 +37582,7 @@ impl AssociatePhoneNumberContactFlowInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }

@@ -25788,3 +25788,107 @@ impl std::error::Error for StopDBInstanceAutomatedBackupsReplicationError {
         }
     }
 }
+
+/// Error type for the `SwitchoverReadReplica` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SwitchoverReadReplicaError {
+    /// Kind of error that occurred.
+    pub kind: SwitchoverReadReplicaErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SwitchoverReadReplica` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SwitchoverReadReplicaErrorKind {
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    /// <p>The DB instance isn't in a valid state.</p>
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SwitchoverReadReplicaError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SwitchoverReadReplicaErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            SwitchoverReadReplicaErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            SwitchoverReadReplicaErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SwitchoverReadReplicaError {
+    fn code(&self) -> Option<&str> {
+        SwitchoverReadReplicaError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SwitchoverReadReplicaError {
+    /// Creates a new `SwitchoverReadReplicaError`.
+    pub fn new(kind: SwitchoverReadReplicaErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SwitchoverReadReplicaError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SwitchoverReadReplicaErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SwitchoverReadReplicaError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SwitchoverReadReplicaErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SwitchoverReadReplicaErrorKind::DbInstanceNotFoundFault`.
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            SwitchoverReadReplicaErrorKind::DbInstanceNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SwitchoverReadReplicaErrorKind::InvalidDbInstanceStateFault`.
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            SwitchoverReadReplicaErrorKind::InvalidDbInstanceStateFault(_)
+        )
+    }
+}
+impl std::error::Error for SwitchoverReadReplicaError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SwitchoverReadReplicaErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            SwitchoverReadReplicaErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            SwitchoverReadReplicaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}

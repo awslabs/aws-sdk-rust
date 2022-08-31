@@ -17,7 +17,7 @@ pub enum Error {
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
     /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
-    /// <li> <p>To read Amazon S3 bucket.</p> </li>
+    /// <li> <p>To read Amazon S3 bucket or call SSM:GetDocument.</p> </li>
     /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),

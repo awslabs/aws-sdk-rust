@@ -224,7 +224,7 @@ impl Client {
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_portfolio_id): <p>The portfolio identifier.</p>
     ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_product_id): <p>The product identifier.</p>
-    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_parameters): <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>  <dl>   <dt>   LAUNCH  </dt>   <dd>    <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>    <p>Specify the <code>RoleArn</code> property as follows:</p>    <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>    <p>Specify the <code>LocalRoleName</code> property as follows:</p>    <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>    <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>     <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>    </note>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>   </dd>   <dt>   NOTIFICATION  </dt>   <dd>    <p>Specify the <code>NotificationArns</code> property as follows:</p>    <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>   </dd>   <dt>   RESOURCE_UPDATE  </dt>   <dd>    <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>    <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>    <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>   </dd>   <dt>   STACKSET  </dt>   <dd>    <p>Specify the <code>Parameters</code> property as follows:</p>    <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>    <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>   </dd>   <dt>   TEMPLATE  </dt>   <dd>    <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>   </dd>  </dl>
+    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_parameters): <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>  <dl>   <dt>   LAUNCH  </dt>   <dd>    <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>    <p>Specify the <code>RoleArn</code> property as follows:</p>    <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>    <p>Specify the <code>LocalRoleName</code> property as follows:</p>    <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>    <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>     <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>    </note>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>   </dd>   <dt>   NOTIFICATION  </dt>   <dd>    <p>Specify the <code>NotificationArns</code> property as follows:</p>    <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>   </dd>   <dt>   RESOURCE_UPDATE  </dt>   <dd>    <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>    <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>    <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>   </dd>   <dt>   STACKSET  </dt>   <dd>    <p>Specify the <code>Parameters</code> property as follows:</p>    <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>    <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>   </dd>   <dt>   TEMPLATE  </dt>   <dd>    <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>   </dd>  </dl>
     ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_type): <p>The type of constraint.</p>  <ul>   <li> <p> <code>LAUNCH</code> </p> </li>   <li> <p> <code>NOTIFICATION</code> </p> </li>   <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>   <li> <p> <code>STACKSET</code> </p> </li>   <li> <p> <code>TEMPLATE</code> </p> </li>  </ul>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_description): <p>The description of the constraint.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -257,8 +257,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_account_id): <p>The AWS account ID. For example, <code>123456789012</code>.</p>
-    ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::CreatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::CreatePortfolioShare::set_organization_node): <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_account_id): <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
+    ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::CreatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::CreatePortfolioShare::set_organization_node): <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::CreatePortfolioShare::share_tag_options) / [`set_share_tag_options(bool)`](crate::client::fluent_builders::CreatePortfolioShare::set_share_tag_options): <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     /// - On success, responds with [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput) with field(s):
     ///   - [`portfolio_share_token(Option<String>)`](crate::output::CreatePortfolioShareOutput::portfolio_share_token): <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
@@ -298,7 +298,7 @@ impl Client {
     ///   - [`notification_arns(Vec<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::notification_arns) / [`set_notification_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_notification_arns): <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     ///   - [`path_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::path_id) / [`set_path_id(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_path_id): <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_product_id): <p>The product identifier.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioned_product_name): <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioned_product_name): <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
     ///   - [`provisioning_parameters(Vec<UpdateProvisioningParameter>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioning_parameters) / [`set_provisioning_parameters(Option<Vec<UpdateProvisioningParameter>>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioning_parameters): <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -322,7 +322,7 @@ impl Client {
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     /// - On success, responds with [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput) with field(s):
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::CreateProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::CreateProvisioningArtifactOutput::info): <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>  <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>  <p> <code>LoadTemplateFromURL</code> </p>  <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>  <p> <code>ImportFromPhysicalId</code> </p>  <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
+    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::CreateProvisioningArtifactOutput::info): <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>  <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p>  <p> <code>LoadTemplateFromURL</code> </p>  <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>  <p> <code>ImportFromPhysicalId</code> </p>  <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     ///   - [`status(Option<Status>)`](crate::output::CreateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningArtifactError>`](crate::error::CreateProvisioningArtifactError)
     pub fn create_provisioning_artifact(&self) -> fluent_builders::CreateProvisioningArtifact {
@@ -333,7 +333,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_name): <p>The self-service action name.</p>
     ///   - [`definition_type(ServiceActionDefinitionType)`](crate::client::fluent_builders::CreateServiceAction::definition_type) / [`set_definition_type(Option<ServiceActionDefinitionType>)`](crate::client::fluent_builders::CreateServiceAction::set_definition_type): <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    ///   - [`definition(HashMap<ServiceActionDefinitionKey, String>)`](crate::client::fluent_builders::CreateServiceAction::definition) / [`set_definition(Option<HashMap<ServiceActionDefinitionKey, String>>)`](crate::client::fluent_builders::CreateServiceAction::set_definition): <p>The self-service action definition. Can be one of the following:</p>  <dl>   <dt>   Name  </dt>   <dd>    <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>    <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>   </dd>   <dt>   Version  </dt>   <dd>    <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>   </dd>   <dt>   AssumeRole  </dt>   <dd>    <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>    <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>   </dd>   <dt>   Parameters  </dt>   <dd>    <p>The list of parameters in JSON format.</p>    <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>   </dd>  </dl>
+    ///   - [`definition(HashMap<ServiceActionDefinitionKey, String>)`](crate::client::fluent_builders::CreateServiceAction::definition) / [`set_definition(Option<HashMap<ServiceActionDefinitionKey, String>>)`](crate::client::fluent_builders::CreateServiceAction::set_definition): <p>The self-service action definition. Can be one of the following:</p>  <dl>   <dt>   Name  </dt>   <dd>    <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>    <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>   </dd>   <dt>   Version  </dt>   <dd>    <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>   </dd>   <dt>   AssumeRole  </dt>   <dd>    <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>    <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>   </dd>   <dt>   Parameters  </dt>   <dd>    <p>The list of parameters in JSON format.</p>    <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>   </dd>  </dl>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_description): <p>The self-service action description.</p>
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -381,7 +381,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_account_id): <p>The AWS account ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_account_id): <p>The Amazon Web Services account ID.</p>
     ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::DeletePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::DeletePortfolioShare::set_organization_node): <p>The organization node to whom you are going to stop sharing.</p>
     /// - On success, responds with [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput) with field(s):
     ///   - [`portfolio_share_token(Option<String>)`](crate::output::DeletePortfolioShareOutput::portfolio_share_token): <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
@@ -405,7 +405,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`plan_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::plan_id) / [`set_plan_id(Option<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_plan_id): <p>The plan identifier.</p>
-    ///   - [`ignore_errors(bool)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::ignore_errors) / [`set_ignore_errors(bool)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_ignore_errors): <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    ///   - [`ignore_errors(bool)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::ignore_errors) / [`set_ignore_errors(bool)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_ignore_errors): <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     /// - On success, responds with [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProvisionedProductPlanError>`](crate::error::DeleteProvisionedProductPlanError)
@@ -599,7 +599,7 @@ impl Client {
     ///   - [`verbose(bool)`](crate::client::fluent_builders::DescribeProvisioningArtifact::verbose) / [`set_verbose(bool)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_verbose): <p>Indicates whether a verbose level of detail is enabled.</p>
     /// - On success, responds with [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput) with field(s):
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::DescribeProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::DescribeProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3.</p>
+    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::DescribeProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
     ///   - [`status(Option<Status>)`](crate::output::DescribeProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningArtifactError>`](crate::error::DescribeProvisioningArtifactError)
     pub fn describe_provisioning_artifact(&self) -> fluent_builders::DescribeProvisioningArtifact {
@@ -620,7 +620,7 @@ impl Client {
     ///   - [`constraint_summaries(Option<Vec<ConstraintSummary>>)`](crate::output::DescribeProvisioningParametersOutput::constraint_summaries): <p>Information about the constraints used to provision the product.</p>
     ///   - [`usage_instructions(Option<Vec<UsageInstruction>>)`](crate::output::DescribeProvisioningParametersOutput::usage_instructions): <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
     ///   - [`tag_options(Option<Vec<TagOptionSummary>>)`](crate::output::DescribeProvisioningParametersOutput::tag_options): <p>Information about the TagOptions associated with the resource.</p>
-    ///   - [`provisioning_artifact_preferences(Option<ProvisioningArtifactPreferences>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_preferences): <p>An object that contains information about preferences, such as regions and accounts, for the provisioning artifact.</p>
+    ///   - [`provisioning_artifact_preferences(Option<ProvisioningArtifactPreferences>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_preferences): <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
     ///   - [`provisioning_artifact_outputs(Option<Vec<ProvisioningArtifactOutput>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_outputs): <p>The output of the provisioning artifact.</p>
     ///   - [`provisioning_artifact_output_keys(Option<Vec<ProvisioningArtifactOutput>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_output_keys): <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningParametersError>`](crate::error::DescribeProvisioningParametersError)
@@ -791,7 +791,7 @@ impl Client {
     ///   - [`service_action_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::service_action_id) / [`set_service_action_id(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_service_action_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     ///   - [`execute_token(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::execute_token) / [`set_execute_token(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_execute_token): <p>An idempotency token that uniquely identifies the execute request.</p>
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_parameters): <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+    ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_parameters): <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     /// - On success, responds with [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput) with field(s):
     ///   - [`record_detail(Option<RecordDetail>)`](crate::output::ExecuteProvisionedProductServiceActionOutput::record_detail): <p>An object containing detailed information about the result of provisioning the product.</p>
     /// - On failure, responds with [`SdkError<ExecuteProvisionedProductServiceActionError>`](crate::error::ExecuteProvisionedProductServiceActionError)
@@ -835,7 +835,7 @@ impl Client {
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_product_id): <p>The product identifier.</p>
     ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_provisioned_product_name): <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_provisioned_product_name): <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
     ///   - [`physical_id(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::physical_id) / [`set_physical_id(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_physical_id): <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     /// - On success, responds with [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput) with field(s):
@@ -933,7 +933,7 @@ impl Client {
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListPortfolioAccess::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListPortfolioAccess::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPortfolioAccess::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListPortfolioAccess::set_page_size): <p>The maximum number of items to return with this call.</p>
     /// - On success, responds with [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::ListPortfolioAccessOutput::account_ids): <p>Information about the AWS accounts with access to the portfolio.</p>
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::ListPortfolioAccessOutput::account_ids): <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::ListPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPortfolioAccessError>`](crate::error::ListPortfolioAccessError)
     pub fn list_portfolio_access(&self) -> fluent_builders::ListPortfolioAccess {
@@ -1129,7 +1129,7 @@ impl Client {
     ///   - [`provisioning_artifact_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provisioning_artifact_name) / [`set_provisioning_artifact_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_artifact_name): <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     ///   - [`path_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::path_id) / [`set_path_id(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_path_id): <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     ///   - [`path_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::path_name) / [`set_path_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_path_name): <p>The name of the path. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioned_product_name): <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioned_product_name): <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     ///   - [`provisioning_parameters(Vec<ProvisioningParameter>)`](crate::client::fluent_builders::ProvisionProduct::provisioning_parameters) / [`set_provisioning_parameters(Option<Vec<ProvisioningParameter>>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_parameters): <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     ///   - [`provisioning_preferences(ProvisioningPreferences)`](crate::client::fluent_builders::ProvisionProduct::provisioning_preferences) / [`set_provisioning_preferences(Option<ProvisioningPreferences>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_preferences): <p>An object that contains information about the provisioning preferences for a stack set.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ProvisionProduct::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ProvisionProduct::set_tags): <p>One or more tags.</p>
@@ -1229,7 +1229,7 @@ impl Client {
     ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_provisioned_product_name): <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_provisioned_product_id): <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     ///   - [`terminate_token(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::terminate_token) / [`set_terminate_token(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_terminate_token): <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    ///   - [`ignore_errors(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::ignore_errors) / [`set_ignore_errors(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_ignore_errors): <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    ///   - [`ignore_errors(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::ignore_errors) / [`set_ignore_errors(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_ignore_errors): <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`retain_physical_resources(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::retain_physical_resources) / [`set_retain_physical_resources(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_retain_physical_resources): <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
     /// - On success, responds with [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput) with field(s):
@@ -1244,7 +1244,7 @@ impl Client {
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_id): <p>The identifier of the constraint.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_description): <p>The updated description of the constraint.</p>
-    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_parameters): <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>  <dl>   <dt>   LAUNCH  </dt>   <dd>    <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>    <p>Specify the <code>RoleArn</code> property as follows:</p>    <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>    <p>Specify the <code>LocalRoleName</code> property as follows:</p>    <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>    <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>     <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>    </note>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>   </dd>   <dt>   NOTIFICATION  </dt>   <dd>    <p>Specify the <code>NotificationArns</code> property as follows:</p>    <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>   </dd>   <dt>   RESOURCE_UPDATE  </dt>   <dd>    <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>    <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>    <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>   </dd>   <dt>   STACKSET  </dt>   <dd>    <p>Specify the <code>Parameters</code> property as follows:</p>    <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>    <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>   </dd>   <dt>   TEMPLATE  </dt>   <dd>    <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>   </dd>  </dl>
+    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_parameters): <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>  <dl>   <dt>   LAUNCH  </dt>   <dd>    <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>    <p>Specify the <code>RoleArn</code> property as follows:</p>    <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>    <p>Specify the <code>LocalRoleName</code> property as follows:</p>    <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>    <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>     <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>    </note>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>   </dd>   <dt>   NOTIFICATION  </dt>   <dd>    <p>Specify the <code>NotificationArns</code> property as follows:</p>    <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>   </dd>   <dt>   RESOURCE_UPDATE  </dt>   <dd>    <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>    <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>    <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>   </dd>   <dt>   STACKSET  </dt>   <dd>    <p>Specify the <code>Parameters</code> property as follows:</p>    <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>    <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>   </dd>   <dt>   TEMPLATE  </dt>   <dd>    <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>   </dd>  </dl>
     /// - On success, responds with [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput) with field(s):
     ///   - [`constraint_detail(Option<ConstraintDetail>)`](crate::output::UpdateConstraintOutput::constraint_detail): <p>Information about the constraint.</p>
     ///   - [`constraint_parameters(Option<String>)`](crate::output::UpdateConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
@@ -1275,7 +1275,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_portfolio_id): <p>The unique identifier of the portfolio for which the share will be updated.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_account_id): <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_account_id): <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
     ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::UpdatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_organization_node): <p>Information about the organization node.</p>
     ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::UpdatePortfolioShare::share_tag_options) / [`set_share_tag_options(Option<bool>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_share_tag_options): <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
     /// - On success, responds with [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput) with field(s):
@@ -1333,7 +1333,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_provisioned_product_id): <p>The identifier of the provisioned product.</p>
-    ///   - [`provisioned_product_properties(HashMap<PropertyKey, String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::provisioned_product_properties) / [`set_provisioned_product_properties(Option<HashMap<PropertyKey, String>>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_provisioned_product_properties): <p>A map that contains the provisioned product properties to be updated.</p>  <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>  <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>  <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>  <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
+    ///   - [`provisioned_product_properties(HashMap<PropertyKey, String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::provisioned_product_properties) / [`set_provisioned_product_properties(Option<HashMap<PropertyKey, String>>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_provisioned_product_properties): <p>A map that contains the provisioned product properties to be updated.</p>  <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>  <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>  <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>  <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_idempotency_token): <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
     /// - On success, responds with [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput) with field(s):
     ///   - [`provisioned_product_id(Option<String>)`](crate::output::UpdateProvisionedProductPropertiesOutput::provisioned_product_id): <p>The provisioned product identifier.</p>
@@ -1358,7 +1358,7 @@ impl Client {
     ///   - [`guidance(ProvisioningArtifactGuidance)`](crate::client::fluent_builders::UpdateProvisioningArtifact::guidance) / [`set_guidance(Option<ProvisioningArtifactGuidance>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_guidance): <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>  <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>  <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     /// - On success, responds with [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput) with field(s):
     ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::UpdateProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::UpdateProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3.</p>
+    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::UpdateProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>
     ///   - [`status(Option<Status>)`](crate::output::UpdateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<UpdateProvisioningArtifactError>`](crate::error::UpdateProvisioningArtifactError)
     pub fn update_provisioning_artifact(&self) -> fluent_builders::UpdateProvisioningArtifact {
@@ -2114,7 +2114,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyProduct`.
     ///
     /// <p>Copies the specified source product to the specified target product or a new product.</p>
-    /// <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p>
+    /// <p>You can copy a product to the same account or another account. You can copy a product to the same Region or another Region. If you copy a product to another account, you must first share the product in a portfolio using <code>CreatePortfolioShare</code>.</p>
     /// <p>This operation is performed asynchronously. To track the progress of the operation, use <code>DescribeCopyProductStatus</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyProduct {
@@ -2406,7 +2406,7 @@ pub mod fluent_builders {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -2459,7 +2459,7 @@ pub mod fluent_builders {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -2729,22 +2729,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portfolio_id(input);
             self
         }
-        /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+        /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+        /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+        /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
             self.inner = self.inner.organization_node(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+        /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -2970,8 +2970,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProvisionedProductPlan`.
     ///
-    /// <p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p>
-    /// <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p>
+    /// <p>Creates a plan.</p>
+    /// <p>A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p>
+    /// <p>You can create one plan for each provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILABLE or TAINTED.</p>
     /// <p>To view the resource changes in the change set, use <code>DescribeProvisionedProductPlan</code>. To create or modify the provisioned product, use <code>ExecuteProvisionedProductPlan</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisionedProductPlan {
@@ -3095,12 +3096,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product_id(input);
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3353,14 +3354,14 @@ pub mod fluent_builders {
         /// Name
         /// </dt>
         /// <dd>
-        /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
         /// <dt>
         /// Version
         /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+        /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
         /// <dt>
         /// AssumeRole
@@ -3391,14 +3392,14 @@ pub mod fluent_builders {
         /// Name
         /// </dt>
         /// <dd>
-        /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
         /// <dt>
         /// Version
         /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+        /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
         /// <dt>
         /// AssumeRole
@@ -3768,12 +3769,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portfolio_id(input);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -3945,12 +3946,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_plan_id(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.inner = self.inner.ignore_errors(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ignore_errors(input);
             self
@@ -5594,9 +5595,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableAWSOrganizationsAccess`.
     ///
-    /// <p>Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the management account in the organization.</p>
-    /// <p>This API can't be invoked if there are active delegated administrators in the organization.</p>
-    /// <p>Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.</p>
+    /// <p>Disable portfolio sharing through the Organizations service. This command will not delete your current shares, but prevents you from creating new shares throughout your organization. Current shares are not kept in sync with your organization structure if the structure changes after calling this API. Only the management account in the organization can call this API.</p>
+    /// <p>You cannot call this API if there are active delegated administrators in the organization.</p>
+    /// <p>Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.</p> <important>
+    /// <p>If you share an Service Catalog portfolio in an organization within Organizations, and then disable Organizations access for Service Catalog, the portfolio access permissions will not sync with the latest changes to the organization structure. Specifically, accounts that you removed from the organization after disabling Service Catalog access will retain access to the previously shared portfolio.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAWSOrganizationsAccess {
         handle: std::sync::Arc<super::Handle>,
@@ -6050,9 +6053,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAWSOrganizationsAccess`.
     ///
-    /// <p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the management account in the organization.</p>
-    /// <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>
-    /// <p>Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.</p>
+    /// <p>Enable portfolio sharing feature through Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the management account in the organization.</p>
+    /// <p>When you call this API, Service Catalog calls <code>organizations:EnableAWSServiceAccess</code> on your behalf so that your shares stay in sync with any changes in your Organizations structure.</p>
+    /// <p>Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.</p> <important>
+    /// <p>If you have previously disabled Organizations access for Service Catalog, and then enable access again, the portfolio access permissions might not sync with the latest changes to the organization structure. Specifically, accounts that you removed from the organization after disabling Service Catalog access, and before you enabled access again, can retain access to the previously shared portfolio. As a result, an account that has been removed from the organization might still be able to create or manage Amazon Web Services resources when it is no longer authorized to do so. Amazon Web Services is working to resolve this issue.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAWSOrganizationsAccess {
         handle: std::sync::Arc<super::Handle>,
@@ -6292,7 +6297,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -6301,7 +6306,7 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -6314,7 +6319,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAWSOrganizationsAccessStatus`.
     ///
-    /// <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management account in the organization or by a delegated admin.</p>
+    /// <p>Get the Access Status for Organizations portfolio share feature. This API can only be called by the management account in the organization or by a delegated admin.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSOrganizationsAccessStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -6492,10 +6497,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportAsProvisionedProduct`.
     ///
-    /// <p>Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are supported on the provisioned product.</p>
+    /// <p>Requests the import of a resource as a Amazon Web Services Service Catalog provisioned product that is associated to a Amazon Web Services Service Catalog product and provisioning artifact. Once imported, all supported Amazon Web Services Service Catalog governance actions are supported on the provisioned product.</p>
     /// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
     /// <p>The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
-    /// <p>Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact. </p>
+    /// <p>Import of the resource requires that the CloudFormation stack template matches the associated Amazon Web Services Service Catalog product provisioning artifact. </p>
     /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportAsProvisionedProduct {
@@ -6582,12 +6587,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_id(input);
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8319,7 +8324,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStackInstancesForProvisionedProduct`.
     ///
-    /// <p>Returns summary information about stack instances that are associated with the specified <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a specific AWS account name or region. </p>
+    /// <p>Returns summary information about stack instances that are associated with the specified <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackInstancesForProvisionedProduct {
         handle: std::sync::Arc<super::Handle>,
@@ -8633,12 +8638,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_path_name(input);
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9244,7 +9249,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchProvisionedProducts`.
     ///
-    /// <p>Gets information about the provisioned products that meet the specified criteria.</p>
+    /// <p>Gets information about the provisioned products that meet the specified criteria.</p> <note>
+    /// <p>To ensure a complete list of provisioned products and remove duplicate products, use <code>sort-by createdTime</code>. </p>
+    /// <p>Here is a CLI example: <code> </code> </p>
+    /// <p> <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code> </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProvisionedProducts {
         handle: std::sync::Arc<super::Handle>,
@@ -9483,12 +9492,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminate_token(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.inner = self.inner.ignore_errors(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ignore_errors(input);
             self
@@ -9652,7 +9661,7 @@ pub mod fluent_builders {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -9705,7 +9714,7 @@ pub mod fluent_builders {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -9942,12 +9951,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portfolio_id(input);
             self
         }
-        /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+        /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+        /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -10471,8 +10480,8 @@ pub mod fluent_builders {
         ///
         /// <p>A map that contains the provisioned product properties to be updated.</p>
         /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
         /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
@@ -10484,8 +10493,8 @@ pub mod fluent_builders {
         }
         /// <p>A map that contains the provisioned product properties to be updated.</p>
         /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
         /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn set_provisioned_product_properties(
             mut self,

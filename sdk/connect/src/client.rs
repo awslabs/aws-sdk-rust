@@ -167,7 +167,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_phone_number_id): <p>A unique identifier for the phone number.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberContactFlow::set_contact_flow_id): <p>The identifier of the flow.</p>
     /// - On success, responds with [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
 
     /// - On failure, responds with [`SdkError<AssociatePhoneNumberContactFlowError>`](crate::error::AssociatePhoneNumberContactFlowError)
@@ -219,7 +219,7 @@ impl Client {
     ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_target_arn): <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
     ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_phone_number): <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     ///   - [`phone_number_description(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::phone_number_description) / [`set_phone_number_description(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_phone_number_description): <p>The description of the phone number.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ClaimPhoneNumber::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ClaimPhoneNumber::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ClaimPhoneNumber::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput) with field(s):
     ///   - [`phone_number_id(Option<String>)`](crate::output::ClaimPhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
@@ -236,7 +236,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAgentStatus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAgentStatus::set_description): <p>The description of the status.</p>
     ///   - [`state(AgentStatusState)`](crate::client::fluent_builders::CreateAgentStatus::state) / [`set_state(Option<AgentStatusState>)`](crate::client::fluent_builders::CreateAgentStatus::set_state): <p>The state of the status.</p>
     ///   - [`display_order(i32)`](crate::client::fluent_builders::CreateAgentStatus::display_order) / [`set_display_order(Option<i32>)`](crate::client::fluent_builders::CreateAgentStatus::set_display_order): <p>The display order of the status.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAgentStatus::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAgentStatus::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAgentStatus::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAgentStatus::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput) with field(s):
     ///   - [`agent_status_arn(Option<String>)`](crate::output::CreateAgentStatusOutput::agent_status_arn): <p>The Amazon Resource Name (ARN) of the agent status.</p>
     ///   - [`agent_status_id(Option<String>)`](crate::output::CreateAgentStatusOutput::agent_status_id): <p>The identifier of the agent status.</p>
@@ -248,14 +248,14 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_name): <p>The name of the contact flow.</p>
-    ///   - [`r#type(ContactFlowType)`](crate::client::fluent_builders::CreateContactFlow::type) / [`set_type(Option<ContactFlowType>)`](crate::client::fluent_builders::CreateContactFlow::set_type): <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_description): <p>The description of the contact flow. </p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_content): <p>The content of the contact flow. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlow::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlow::set_tags): <p>One or more tags.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_name): <p>The name of the flow.</p>
+    ///   - [`r#type(ContactFlowType)`](crate::client::fluent_builders::CreateContactFlow::type) / [`set_type(Option<ContactFlowType>)`](crate::client::fluent_builders::CreateContactFlow::set_type): <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_description): <p>The description of the flow. </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_content): <p>The content of the flow. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlow::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlow::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateContactFlowOutput`](crate::output::CreateContactFlowOutput) with field(s):
-    ///   - [`contact_flow_id(Option<String>)`](crate::output::CreateContactFlowOutput::contact_flow_id): <p>The identifier of the contact flow.</p>
-    ///   - [`contact_flow_arn(Option<String>)`](crate::output::CreateContactFlowOutput::contact_flow_arn): <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    ///   - [`contact_flow_id(Option<String>)`](crate::output::CreateContactFlowOutput::contact_flow_id): <p>The identifier of the flow.</p>
+    ///   - [`contact_flow_arn(Option<String>)`](crate::output::CreateContactFlowOutput::contact_flow_arn): <p>The Amazon Resource Name (ARN) of the flow.</p>
     /// - On failure, responds with [`SdkError<CreateContactFlowError>`](crate::error::CreateContactFlowError)
     pub fn create_contact_flow(&self) -> fluent_builders::CreateContactFlow {
         fluent_builders::CreateContactFlow::new(self.handle.clone())
@@ -264,14 +264,14 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_name): <p>The name of the contact flow module.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_description): <p>The description of the contact flow module. </p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_content): <p>The content of the contact flow module.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlowModule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlowModule::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_name): <p>The name of the flow module.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_description): <p>The description of the flow module. </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_content): <p>The content of the flow module.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlowModule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlowModule::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateContactFlowModuleOutput::id): <p>The identifier of the contact flow module.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateContactFlowModuleOutput::arn): <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateContactFlowModuleOutput::id): <p>The identifier of the flow module.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateContactFlowModuleOutput::arn): <p>The Amazon Resource Name (ARN) of the flow module.</p>
     /// - On failure, responds with [`SdkError<CreateContactFlowModuleError>`](crate::error::CreateContactFlowModuleError)
     pub fn create_contact_flow_module(&self) -> fluent_builders::CreateContactFlowModule {
         fluent_builders::CreateContactFlowModule::new(self.handle.clone())
@@ -284,7 +284,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_description): <p>The description of the hours of operation.</p>
     ///   - [`time_zone(impl Into<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::time_zone) / [`set_time_zone(Option<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_time_zone): <p>The time zone of the hours of operation.</p>
     ///   - [`config(Vec<HoursOfOperationConfig>)`](crate::client::fluent_builders::CreateHoursOfOperation::config) / [`set_config(Option<Vec<HoursOfOperationConfig>>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_config): <p>Configuration information for the hours of operation: day, start time, and end time.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateHoursOfOperation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateHoursOfOperation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput) with field(s):
     ///   - [`hours_of_operation_id(Option<String>)`](crate::output::CreateHoursOfOperationOutput::hours_of_operation_id): <p>The identifier for the hours of operation.</p>
     ///   - [`hours_of_operation_arn(Option<String>)`](crate::output::CreateHoursOfOperationOutput::hours_of_operation_arn): <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
@@ -313,11 +313,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`integration_type(IntegrationType)`](crate::client::fluent_builders::CreateIntegrationAssociation::integration_type) / [`set_integration_type(Option<IntegrationType>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_integration_type): <p>The type of information to be ingested.</p>
-    ///   - [`integration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::integration_arn) / [`set_integration_arn(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_integration_arn): <p>The Amazon Resource Name (ARN) of the integration.</p>
+    ///   - [`integration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::integration_arn) / [`set_integration_arn(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_integration_arn): <p>The Amazon Resource Name (ARN) of the integration.</p> <note>   <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>  </note>
     ///   - [`source_application_url(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::source_application_url) / [`set_source_application_url(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_source_application_url): <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
     ///   - [`source_application_name(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::source_application_name) / [`set_source_application_name(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_source_application_name): <p>The name of the external application. This field is only required for the EVENT integration type.</p>
     ///   - [`source_type(SourceType)`](crate::client::fluent_builders::CreateIntegrationAssociation::source_type) / [`set_source_type(Option<SourceType>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_source_type): <p>The type of the data source. This field is only required for the EVENT integration type.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateIntegrationAssociationOutput`](crate::output::CreateIntegrationAssociationOutput) with field(s):
     ///   - [`integration_association_id(Option<String>)`](crate::output::CreateIntegrationAssociationOutput::integration_association_id): <p>The identifier for the integration association.</p>
     ///   - [`integration_association_arn(Option<String>)`](crate::output::CreateIntegrationAssociationOutput::integration_association_arn): <p>The Amazon Resource Name (ARN) for the association.</p>
@@ -335,7 +335,7 @@ impl Client {
     ///   - [`hours_of_operation_id(impl Into<String>)`](crate::client::fluent_builders::CreateQueue::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::client::fluent_builders::CreateQueue::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
     ///   - [`max_contacts(i32)`](crate::client::fluent_builders::CreateQueue::max_contacts) / [`set_max_contacts(Option<i32>)`](crate::client::fluent_builders::CreateQueue::set_max_contacts): <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     ///   - [`quick_connect_ids(Vec<String>)`](crate::client::fluent_builders::CreateQueue::quick_connect_ids) / [`set_quick_connect_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateQueue::set_quick_connect_ids): <p>The quick connects available to agents who are working the queue.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateQueue::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateQueue::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateQueue::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateQueue::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateQueueOutput`](crate::output::CreateQueueOutput) with field(s):
     ///   - [`queue_arn(Option<String>)`](crate::output::CreateQueueOutput::queue_arn): <p>The Amazon Resource Name (ARN) of the queue.</p>
     ///   - [`queue_id(Option<String>)`](crate::output::CreateQueueOutput::queue_id): <p>The identifier for the queue.</p>
@@ -350,7 +350,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateQuickConnect::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateQuickConnect::set_name): <p>The name of the quick connect.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateQuickConnect::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateQuickConnect::set_description): <p>The description of the quick connect.</p>
     ///   - [`quick_connect_config(QuickConnectConfig)`](crate::client::fluent_builders::CreateQuickConnect::quick_connect_config) / [`set_quick_connect_config(Option<QuickConnectConfig>)`](crate::client::fluent_builders::CreateQuickConnect::set_quick_connect_config): <p>Configuration settings for the quick connect.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateQuickConnect::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateQuickConnect::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateQuickConnect::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateQuickConnect::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateQuickConnectOutput`](crate::output::CreateQuickConnectOutput) with field(s):
     ///   - [`quick_connect_arn(Option<String>)`](crate::output::CreateQuickConnectOutput::quick_connect_arn): <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     ///   - [`quick_connect_id(Option<String>)`](crate::output::CreateQuickConnectOutput::quick_connect_id): <p>The identifier for the quick connect. </p>
@@ -367,7 +367,7 @@ impl Client {
     ///   - [`default_outbound_queue_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoutingProfile::default_outbound_queue_id) / [`set_default_outbound_queue_id(Option<String>)`](crate::client::fluent_builders::CreateRoutingProfile::set_default_outbound_queue_id): <p>The default outbound queue for the routing profile.</p>
     ///   - [`queue_configs(Vec<RoutingProfileQueueConfig>)`](crate::client::fluent_builders::CreateRoutingProfile::queue_configs) / [`set_queue_configs(Option<Vec<RoutingProfileQueueConfig>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_queue_configs): <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     ///   - [`media_concurrencies(Vec<MediaConcurrency>)`](crate::client::fluent_builders::CreateRoutingProfile::media_concurrencies) / [`set_media_concurrencies(Option<Vec<MediaConcurrency>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_media_concurrencies): <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoutingProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_tags): <p>One or more tags.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoutingProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateRoutingProfileOutput`](crate::output::CreateRoutingProfileOutput) with field(s):
     ///   - [`routing_profile_arn(Option<String>)`](crate::output::CreateRoutingProfileOutput::routing_profile_arn): <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     ///   - [`routing_profile_id(Option<String>)`](crate::output::CreateRoutingProfileOutput::routing_profile_id): <p>The identifier of the routing profile.</p>
@@ -382,7 +382,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_description): <p>The description of the security profile.</p>
     ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_permissions): <p>Permissions assigned to the security profile.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSecurityProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSecurityProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput) with field(s):
     ///   - [`security_profile_id(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_id): <p>The identifier for the security profle.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_arn): <p>The Amazon Resource Name (ARN) for the security profile.</p>
@@ -415,7 +415,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUseCase::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUseCase::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`integration_association_id(impl Into<String>)`](crate::client::fluent_builders::CreateUseCase::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::client::fluent_builders::CreateUseCase::set_integration_association_id): <p>The identifier for the integration association.</p>
     ///   - [`use_case_type(UseCaseType)`](crate::client::fluent_builders::CreateUseCase::use_case_type) / [`set_use_case_type(Option<UseCaseType>)`](crate::client::fluent_builders::CreateUseCase::set_use_case_type): <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUseCase::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUseCase::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUseCase::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUseCase::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateUseCaseOutput`](crate::output::CreateUseCaseOutput) with field(s):
     ///   - [`use_case_id(Option<String>)`](crate::output::CreateUseCaseOutput::use_case_id): <p>The identifier of the use case.</p>
     ///   - [`use_case_arn(Option<String>)`](crate::output::CreateUseCaseOutput::use_case_arn): <p>The Amazon Resource Name (ARN) for the use case.</p>
@@ -435,7 +435,7 @@ impl Client {
     ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_routing_profile_id): <p>The identifier of the routing profile for the user.</p>
     ///   - [`hierarchy_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::hierarchy_group_id) / [`set_hierarchy_group_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_hierarchy_group_id): <p>The identifier of the hierarchy group for the user.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUser::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUser::set_tags): <p>One or more tags.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUser::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUser::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::output::CreateUserOutput::user_id): <p>The identifier of the user account.</p>
     ///   - [`user_arn(Option<String>)`](crate::output::CreateUserOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user account.</p>
@@ -449,7 +449,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_name): <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
     ///   - [`parent_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::parent_group_id) / [`set_parent_group_id(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_parent_group_id): <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateUserHierarchyGroupOutput`](crate::output::CreateUserHierarchyGroupOutput) with field(s):
     ///   - [`hierarchy_group_id(Option<String>)`](crate::output::CreateUserHierarchyGroupOutput::hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
     ///   - [`hierarchy_group_arn(Option<String>)`](crate::output::CreateUserHierarchyGroupOutput::hierarchy_group_arn): <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
@@ -465,7 +465,7 @@ impl Client {
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_name): <p>A unique name of the custom vocabulary.</p>
     ///   - [`language_code(VocabularyLanguageCode)`](crate::client::fluent_builders::CreateVocabulary::language_code) / [`set_language_code(Option<VocabularyLanguageCode>)`](crate::client::fluent_builders::CreateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_content): <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVocabulary::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVocabulary::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVocabulary::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVocabulary::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput) with field(s):
     ///   - [`vocabulary_arn(Option<String>)`](crate::output::CreateVocabularyOutput::vocabulary_arn): <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     ///   - [`vocabulary_id(Option<String>)`](crate::output::CreateVocabularyOutput::vocabulary_id): <p>The identifier of the custom vocabulary.</p>
@@ -478,7 +478,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlow::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlow::set_contact_flow_id): <p>The identifier of the flow.</p>
     /// - On success, responds with [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
 
     /// - On failure, responds with [`SdkError<DeleteContactFlowError>`](crate::error::DeleteContactFlowError)
@@ -489,7 +489,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::set_contact_flow_module_id): <p>The identifier of the flow module.</p>
     /// - On success, responds with [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
 
     /// - On failure, responds with [`SdkError<DeleteContactFlowModuleError>`](crate::error::DeleteContactFlowModuleError)
@@ -634,9 +634,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlow::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlow::set_contact_flow_id): <p>The identifier of the flow.</p>
     /// - On success, responds with [`DescribeContactFlowOutput`](crate::output::DescribeContactFlowOutput) with field(s):
-    ///   - [`contact_flow(Option<ContactFlow>)`](crate::output::DescribeContactFlowOutput::contact_flow): <p>Information about the contact flow.</p>
+    ///   - [`contact_flow(Option<ContactFlow>)`](crate::output::DescribeContactFlowOutput::contact_flow): <p>Information about the flow.</p>
     /// - On failure, responds with [`SdkError<DescribeContactFlowError>`](crate::error::DescribeContactFlowError)
     pub fn describe_contact_flow(&self) -> fluent_builders::DescribeContactFlow {
         fluent_builders::DescribeContactFlow::new(self.handle.clone())
@@ -645,9 +645,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::set_contact_flow_module_id): <p>The identifier of the flow module.</p>
     /// - On success, responds with [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput) with field(s):
-    ///   - [`contact_flow_module(Option<ContactFlowModule>)`](crate::output::DescribeContactFlowModuleOutput::contact_flow_module): <p>Information about the contact flow module.</p>
+    ///   - [`contact_flow_module(Option<ContactFlowModule>)`](crate::output::DescribeContactFlowModuleOutput::contact_flow_module): <p>Information about the flow module.</p>
     /// - On failure, responds with [`SdkError<DescribeContactFlowModuleError>`](crate::error::DescribeContactFlowModuleError)
     pub fn describe_contact_flow_module(&self) -> fluent_builders::DescribeContactFlowModule {
         fluent_builders::DescribeContactFlowModule::new(self.handle.clone())
@@ -1001,7 +1001,7 @@ impl Client {
     ///   - [`status(Option<TaskTemplateStatus>)`](crate::output::GetTaskTemplateOutput::status): <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::GetTaskTemplateOutput::last_modified_time): <p>The timestamp when the task template was last modified.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::output::GetTaskTemplateOutput::created_time): <p>The timestamp when the task template was created.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetTaskTemplateOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetTaskTemplateOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<GetTaskTemplateError>`](crate::error::GetTaskTemplateError)
     pub fn get_task_template(&self) -> fluent_builders::GetTaskTemplate {
         fluent_builders::GetTaskTemplate::new(self.handle.clone())
@@ -1057,9 +1057,9 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListContactFlowModules::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListContactFlowModules::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactFlowModules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactFlowModules::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContactFlowModules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContactFlowModules::set_max_results): <p>The maximum number of results to return per page.</p>
-    ///   - [`contact_flow_module_state(ContactFlowModuleState)`](crate::client::fluent_builders::ListContactFlowModules::contact_flow_module_state) / [`set_contact_flow_module_state(Option<ContactFlowModuleState>)`](crate::client::fluent_builders::ListContactFlowModules::set_contact_flow_module_state): <p>The state of the contact flow module.</p>
+    ///   - [`contact_flow_module_state(ContactFlowModuleState)`](crate::client::fluent_builders::ListContactFlowModules::contact_flow_module_state) / [`set_contact_flow_module_state(Option<ContactFlowModuleState>)`](crate::client::fluent_builders::ListContactFlowModules::set_contact_flow_module_state): <p>The state of the flow module.</p>
     /// - On success, responds with [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput) with field(s):
-    ///   - [`contact_flow_modules_summary_list(Option<Vec<ContactFlowModuleSummary>>)`](crate::output::ListContactFlowModulesOutput::contact_flow_modules_summary_list): <p>Information about the contact flow module.</p>
+    ///   - [`contact_flow_modules_summary_list(Option<Vec<ContactFlowModuleSummary>>)`](crate::output::ListContactFlowModulesOutput::contact_flow_modules_summary_list): <p>Information about the flow module.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContactFlowModulesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListContactFlowModulesError>`](crate::error::ListContactFlowModulesError)
     pub fn list_contact_flow_modules(&self) -> fluent_builders::ListContactFlowModules {
@@ -1070,11 +1070,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListContactFlows::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListContactFlows::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_types(Vec<ContactFlowType>)`](crate::client::fluent_builders::ListContactFlows::contact_flow_types) / [`set_contact_flow_types(Option<Vec<ContactFlowType>>)`](crate::client::fluent_builders::ListContactFlows::set_contact_flow_types): <p>The type of contact flow.</p>
+    ///   - [`contact_flow_types(Vec<ContactFlowType>)`](crate::client::fluent_builders::ListContactFlows::contact_flow_types) / [`set_contact_flow_types(Option<Vec<ContactFlowType>>)`](crate::client::fluent_builders::ListContactFlows::set_contact_flow_types): <p>The type of flow.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactFlows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactFlows::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContactFlows::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListContactFlows::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContactFlows::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListContactFlows::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListContactFlowsOutput`](crate::output::ListContactFlowsOutput) with field(s):
-    ///   - [`contact_flow_summary_list(Option<Vec<ContactFlowSummary>>)`](crate::output::ListContactFlowsOutput::contact_flow_summary_list): <p>Information about the contact flows.</p>
+    ///   - [`contact_flow_summary_list(Option<Vec<ContactFlowSummary>>)`](crate::output::ListContactFlowsOutput::contact_flow_summary_list): <p>Information about the flows.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContactFlowsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListContactFlowsError>`](crate::error::ListContactFlowsError)
     pub fn list_contact_flows(&self) -> fluent_builders::ListContactFlows {
@@ -1089,7 +1089,7 @@ impl Client {
     ///   - [`reference_types(Vec<ReferenceType>)`](crate::client::fluent_builders::ListContactReferences::reference_types) / [`set_reference_types(Option<Vec<ReferenceType>>)`](crate::client::fluent_builders::ListContactReferences::set_reference_types): <p>The type of reference.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactReferences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactReferences::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>   <p>This is not expected to be set, because the value returned in the previous response is always null.</p>  </important>
     /// - On success, responds with [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput) with field(s):
-    ///   - [`reference_summary_list(Option<Vec<ReferenceSummary>>)`](crate::output::ListContactReferencesOutput::reference_summary_list): <p>Information about the contact flows.</p>
+    ///   - [`reference_summary_list(Option<Vec<ReferenceSummary>>)`](crate::output::ListContactReferencesOutput::reference_summary_list): <p>Information about the flows.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContactReferencesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p> <important>   <p>This is always returned as null in the response.</p>  </important>
     /// - On failure, responds with [`SdkError<ListContactReferencesError>`](crate::error::ListContactReferencesError)
     pub fn list_contact_references(&self) -> fluent_builders::ListContactReferences {
@@ -1116,7 +1116,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListHoursOfOperations::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListHoursOfOperations::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHoursOfOperations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHoursOfOperations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHoursOfOperations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListHoursOfOperations::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHoursOfOperations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListHoursOfOperations::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListHoursOfOperationsOutput`](crate::output::ListHoursOfOperationsOutput) with field(s):
     ///   - [`hours_of_operation_summary_list(Option<Vec<HoursOfOperationSummary>>)`](crate::output::ListHoursOfOperationsOutput::hours_of_operation_summary_list): <p>Information about the hours of operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListHoursOfOperationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1217,7 +1217,7 @@ impl Client {
     ///   - [`phone_number_types(Vec<PhoneNumberType>)`](crate::client::fluent_builders::ListPhoneNumbers::phone_number_types) / [`set_phone_number_types(Option<Vec<PhoneNumberType>>)`](crate::client::fluent_builders::ListPhoneNumbers::set_phone_number_types): <p>The type of phone number.</p>
     ///   - [`phone_number_country_codes(Vec<PhoneNumberCountryCode>)`](crate::client::fluent_builders::ListPhoneNumbers::phone_number_country_codes) / [`set_phone_number_country_codes(Option<Vec<PhoneNumberCountryCode>>)`](crate::client::fluent_builders::ListPhoneNumbers::set_phone_number_country_codes): <p>The ISO country code.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput) with field(s):
     ///   - [`phone_number_summary_list(Option<Vec<PhoneNumberSummary>>)`](crate::output::ListPhoneNumbersOutput::phone_number_summary_list): <p>Information about the phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1248,7 +1248,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListPrompts::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListPrompts::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPrompts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPrompts::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPrompts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPrompts::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPrompts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPrompts::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListPromptsOutput`](crate::output::ListPromptsOutput) with field(s):
     ///   - [`prompt_summary_list(Option<Vec<PromptSummary>>)`](crate::output::ListPromptsOutput::prompt_summary_list): <p>Information about the prompts.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPromptsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1263,7 +1263,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_queue_id): <p>The identifier for the queue.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueueQuickConnects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueueQuickConnects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListQueueQuickConnectsOutput`](crate::output::ListQueueQuickConnectsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListQueueQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`quick_connect_summary_list(Option<Vec<QuickConnectSummary>>)`](crate::output::ListQueueQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
@@ -1278,7 +1278,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`queue_types(Vec<QueueType>)`](crate::client::fluent_builders::ListQueues::queue_types) / [`set_queue_types(Option<Vec<QueueType>>)`](crate::client::fluent_builders::ListQueues::set_queue_types): <p>The type of queue.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueues::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueues::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListQueues::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueues::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListQueues::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListQueuesOutput`](crate::output::ListQueuesOutput) with field(s):
     ///   - [`queue_summary_list(Option<Vec<QueueSummary>>)`](crate::output::ListQueuesOutput::queue_summary_list): <p>Information about the queues.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1292,7 +1292,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListQuickConnects::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListQuickConnects::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQuickConnects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQuickConnects::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQuickConnects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQuickConnects::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQuickConnects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQuickConnects::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     ///   - [`quick_connect_types(Vec<QuickConnectType>)`](crate::client::fluent_builders::ListQuickConnects::quick_connect_types) / [`set_quick_connect_types(Option<Vec<QuickConnectType>>)`](crate::client::fluent_builders::ListQuickConnects::set_quick_connect_types): <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     /// - On success, responds with [`ListQuickConnectsOutput`](crate::output::ListQuickConnectsOutput) with field(s):
     ///   - [`quick_connect_summary_list(Option<Vec<QuickConnectSummary>>)`](crate::output::ListQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
@@ -1308,7 +1308,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_routing_profile_id): <p>The identifier of the routing profile.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingProfileQueues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingProfileQueues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListRoutingProfileQueuesOutput`](crate::output::ListRoutingProfileQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRoutingProfileQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`routing_profile_queue_config_summary_list(Option<Vec<RoutingProfileQueueConfigSummary>>)`](crate::output::ListRoutingProfileQueuesOutput::routing_profile_queue_config_summary_list): <p>Information about the routing profiles.</p>
@@ -1322,7 +1322,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListRoutingProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutingProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingProfiles::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListRoutingProfilesOutput`](crate::output::ListRoutingProfilesOutput) with field(s):
     ///   - [`routing_profile_summary_list(Option<Vec<RoutingProfileSummary>>)`](crate::output::ListRoutingProfilesOutput::routing_profile_summary_list): <p>Information about the routing profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRoutingProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1367,7 +1367,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfiles::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListSecurityProfilesOutput`](crate::output::ListSecurityProfilesOutput) with field(s):
     ///   - [`security_profile_summary_list(Option<Vec<SecurityProfileSummary>>)`](crate::output::ListSecurityProfilesOutput::security_profile_summary_list): <p>Information about the security profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSecurityProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1422,7 +1422,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserHierarchyGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserHierarchyGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListUserHierarchyGroupsOutput`](crate::output::ListUserHierarchyGroupsOutput) with field(s):
     ///   - [`user_hierarchy_group_summary_list(Option<Vec<HierarchyGroupSummary>>)`](crate::output::ListUserHierarchyGroupsOutput::user_hierarchy_group_summary_list): <p>Information about the hierarchy groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListUserHierarchyGroupsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1436,7 +1436,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
     ///   - [`user_summary_list(Option<Vec<UserSummary>>)`](crate::output::ListUsersOutput::user_summary_list): <p>Information about the users.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -1496,6 +1496,23 @@ impl Client {
     pub fn search_available_phone_numbers(&self) -> fluent_builders::SearchAvailablePhoneNumbers {
         fluent_builders::SearchAvailablePhoneNumbers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`SearchSecurityProfiles`](crate::client::fluent_builders::SearchSecurityProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchSecurityProfiles::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchSecurityProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`search_criteria(SecurityProfileSearchCriteria)`](crate::client::fluent_builders::SearchSecurityProfiles::search_criteria) / [`set_search_criteria(Option<SecurityProfileSearchCriteria>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_search_criteria): <p>The search criteria to be used to return security profiles.</p>
+    ///   - [`search_filter(SecurityProfilesSearchFilter)`](crate::client::fluent_builders::SearchSecurityProfiles::search_filter) / [`set_search_filter(Option<SecurityProfilesSearchFilter>)`](crate::client::fluent_builders::SearchSecurityProfiles::set_search_filter): <p>Filters to be applied to search results.</p>
+    /// - On success, responds with [`SearchSecurityProfilesOutput`](crate::output::SearchSecurityProfilesOutput) with field(s):
+    ///   - [`security_profiles(Option<Vec<SecurityProfileSearchSummary>>)`](crate::output::SearchSecurityProfilesOutput::security_profiles): <p>Information about the security profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchSecurityProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::output::SearchSecurityProfilesOutput::approximate_total_count): <p>The total number of security profiles which matched your search query.</p>
+    /// - On failure, responds with [`SdkError<SearchSecurityProfilesError>`](crate::error::SearchSecurityProfilesError)
+    pub fn search_security_profiles(&self) -> fluent_builders::SearchSecurityProfiles {
+        fluent_builders::SearchSecurityProfiles::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`SearchUsers`](crate::client::fluent_builders::SearchUsers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchUsers::into_paginator).
     ///
@@ -1534,8 +1551,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_contact_flow_id): <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartChatContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartChatContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_contact_flow_id): <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartChatContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartChatContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     ///   - [`participant_details(ParticipantDetails)`](crate::client::fluent_builders::StartChatContact::participant_details) / [`set_participant_details(Option<ParticipantDetails>)`](crate::client::fluent_builders::StartChatContact::set_participant_details): <p>Information identifying the participant.</p>
     ///   - [`initial_message(ChatMessage)`](crate::client::fluent_builders::StartChatContact::initial_message) / [`set_initial_message(Option<ChatMessage>)`](crate::client::fluent_builders::StartChatContact::set_initial_message): <p>The initial message to be sent to the newly created chat.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1579,12 +1596,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`destination_phone_number(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::destination_phone_number) / [`set_destination_phone_number(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_destination_phone_number): <p>The phone number of the customer, in E.164 format.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_contact_flow_id): <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_contact_flow_id): <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
     ///   - [`source_phone_number(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::source_phone_number) / [`set_source_phone_number(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_source_phone_number): <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
-    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_queue_id): <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_queue_id): <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     ///   - [`answer_machine_detection_config(AnswerMachineDetectionConfig)`](crate::client::fluent_builders::StartOutboundVoiceContact::answer_machine_detection_config) / [`set_answer_machine_detection_config(Option<AnswerMachineDetectionConfig>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_answer_machine_detection_config): <p>Configuration of the answering machine detection for this outbound call. </p>
     ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_campaign_id): <p>The campaign identifier of the outbound communication.</p>
     ///   - [`traffic_type(TrafficType)`](crate::client::fluent_builders::StartOutboundVoiceContact::traffic_type) / [`set_traffic_type(Option<TrafficType>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_traffic_type): <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
@@ -1599,13 +1616,13 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`previous_contact_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::previous_contact_id) / [`set_previous_contact_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_previous_contact_id): <p>The identifier of the previous chat, voice, or task contact. </p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_contact_flow_id): <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartTaskContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartTaskContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_contact_flow_id): <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartTaskContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartTaskContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_name): <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
     ///   - [`references(HashMap<String, Reference>)`](crate::client::fluent_builders::StartTaskContact::references) / [`set_references(Option<HashMap<String, Reference>>)`](crate::client::fluent_builders::StartTaskContact::set_references): <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_description): <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::StartTaskContact::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::StartTaskContact::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::StartTaskContact::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::StartTaskContact::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     ///   - [`task_template_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::task_template_id) / [`set_task_template_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_task_template_id): <p>A unique identifier for the task template.</p>
     ///   - [`quick_connect_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_quick_connect_id): <p>The identifier for the quick connect.</p>
     /// - On success, responds with [`StartTaskContactOutput`](crate::output::StartTaskContactOutput) with field(s):
@@ -1665,7 +1682,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1679,7 +1696,7 @@ impl Client {
     ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_contact_id): <p>The identifier of the contact in this instance of Amazon Connect. </p>
     ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_queue_id): <p>The identifier for the queue.</p>
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_user_id): <p>The identifier for the user.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::TransferContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::TransferContact::set_contact_flow_id): <p>The identifier of the flow.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::TransferContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::TransferContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`TransferContactOutput`](crate::output::TransferContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::TransferContactOutput::contact_id): <p>The identifier of the contact in this instance of Amazon Connect. </p>
@@ -1734,7 +1751,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactAttributes::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateContactAttributes::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactAttributes::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactAttributes::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::UpdateContactAttributes::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateContactAttributes::set_attributes): <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>  <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::UpdateContactAttributes::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateContactAttributes::set_attributes): <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>  <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     /// - On success, responds with [`UpdateContactAttributesOutput`](crate::output::UpdateContactAttributesOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactAttributesError>`](crate::error::UpdateContactAttributesError)
@@ -1745,8 +1762,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_contact_flow_id): <p>The identifier of the contact flow.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_content): <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_contact_flow_id): <p>The identifier of the flow.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_content): <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     /// - On success, responds with [`UpdateContactFlowContentOutput`](crate::output::UpdateContactFlowContentOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactFlowContentError>`](crate::error::UpdateContactFlowContentError)
@@ -1757,10 +1774,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_id): <p>The identifier of the contact flow.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>TThe name of the contact flow.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_description): <p>The description of the contact flow.</p>
-    ///   - [`contact_flow_state(ContactFlowState)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_state): <p>The state of contact flow.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_id): <p>The identifier of the flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>TThe name of the flow.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_description): <p>The description of the flow.</p>
+    ///   - [`contact_flow_state(ContactFlowState)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_state): <p>The state of flow.</p>
     /// - On success, responds with [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactFlowMetadataError>`](crate::error::UpdateContactFlowMetadataError)
@@ -1771,8 +1788,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_content): <p>The content of the contact flow module.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_contact_flow_module_id): <p>The identifier of the flow module.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_content): <p>The content of the flow module.</p>
     /// - On success, responds with [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactFlowModuleContentError>`](crate::error::UpdateContactFlowModuleContentError)
@@ -1785,10 +1802,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_name): <p>The name of the contact flow module.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_description): <p>The description of the contact flow module.</p>
-    ///   - [`state(ContactFlowModuleState)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::state) / [`set_state(Option<ContactFlowModuleState>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_state): <p>The state of contact flow module.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_contact_flow_module_id): <p>The identifier of the flow module.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_name): <p>The name of the flow module.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_description): <p>The description of the flow module.</p>
+    ///   - [`state(ContactFlowModuleState)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::state) / [`set_state(Option<ContactFlowModuleState>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_state): <p>The state of flow module.</p>
     /// - On success, responds with [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactFlowModuleMetadataError>`](crate::error::UpdateContactFlowModuleMetadataError)
@@ -1801,9 +1818,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
-    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_contact_flow_id): <p>The identifier of the contact flow.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_name): <p>The name of the contact flow.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_description): <p>The description of the contact flow.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_contact_flow_id): <p>The identifier of the flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_name): <p>The name of the flow.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_description): <p>The description of the flow.</p>
     /// - On success, responds with [`UpdateContactFlowNameOutput`](crate::output::UpdateContactFlowNameOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactFlowNameError>`](crate::error::UpdateContactFlowNameError)
@@ -1815,7 +1832,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactSchedule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactSchedule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactSchedule::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateContactSchedule::set_contact_id): <p>The identifier of the contact.</p>
-    ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::UpdateContactSchedule::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateContactSchedule::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::UpdateContactSchedule::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateContactSchedule::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     /// - On success, responds with [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactScheduleError>`](crate::error::UpdateContactScheduleError)
@@ -2582,7 +2599,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociatePhoneNumberContactFlow`.
     ///
-    /// <p>Associates a contact flow with a phone number claimed to your Amazon Connect instance.</p>
+    /// <p>Associates a flow with a phone number claimed to your Amazon Connect instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePhoneNumberContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -2645,12 +2662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2966,7 +2983,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2975,7 +2992,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3096,7 +3113,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3105,7 +3122,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3118,8 +3135,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContactFlow`.
     ///
-    /// <p>Creates a contact flow for the specified Amazon Connect instance.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>Creates a flow for the specified Amazon Connect instance.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -3169,22 +3186,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -3192,22 +3209,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The description of the contact flow. </p>
+        /// <p>The description of the flow. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the contact flow. </p>
+        /// <p>The description of the flow. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The content of the contact flow. </p>
+        /// <p>The content of the flow. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content of the contact flow. </p>
+        /// <p>The content of the flow. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
@@ -3216,7 +3233,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3225,7 +3242,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3238,7 +3255,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContactFlowModule`.
     ///
-    /// <p>Creates a contact flow module for the specified Amazon Connect instance. </p>
+    /// <p>Creates a flow module for the specified Amazon Connect instance. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlowModule {
         handle: std::sync::Arc<super::Handle>,
@@ -3288,32 +3305,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the contact flow module. </p>
+        /// <p>The description of the flow module. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the contact flow module. </p>
+        /// <p>The description of the flow module. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
@@ -3322,7 +3339,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3331,7 +3348,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3456,7 +3473,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3465,7 +3482,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3652,12 +3669,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+        /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+        /// </note>
         pub fn integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.integration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+        /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+        /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+        /// </note>
         pub fn set_integration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3708,7 +3729,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3717,7 +3738,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3858,7 +3879,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3867,7 +3888,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3967,7 +3988,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3976,7 +3997,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4110,7 +4131,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4119,7 +4140,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4227,7 +4248,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4236,7 +4257,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4481,7 +4502,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4490,7 +4511,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4662,7 +4683,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4671,7 +4692,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4761,7 +4782,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4770,7 +4791,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4883,7 +4904,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4892,7 +4913,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4905,7 +4926,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContactFlow`.
     ///
-    /// <p>Deletes a contact flow for the specified Amazon Connect instance.</p>
+    /// <p>Deletes a flow for the specified Amazon Connect instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -4955,12 +4976,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4971,7 +4992,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContactFlowModule`.
     ///
-    /// <p>Deletes the specified contact flow module.</p>
+    /// <p>Deletes the specified flow module.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactFlowModule {
         handle: std::sync::Arc<super::Handle>,
@@ -5021,12 +5042,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5829,8 +5850,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeContactFlow`.
     ///
-    /// <p>Describes the specified contact flow.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>Describes the specified flow.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -5880,12 +5901,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5896,7 +5917,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeContactFlowModule`.
     ///
-    /// <p>Describes the specified contact flow module.</p>
+    /// <p>Describes the specified flow module.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlowModule {
         handle: std::sync::Arc<super::Handle>,
@@ -5946,12 +5967,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7020,7 +7041,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateLambdaFunction`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Remove the Lambda function from the dropdown options available in the relevant contact flow blocks.</p>
+    /// <p>Remove the Lambda function from the dropdown options available in the relevant flow blocks.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLambdaFunction {
         handle: std::sync::Arc<super::Handle>,
@@ -7157,7 +7178,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociatePhoneNumberContactFlow`.
     ///
-    /// <p>Removes the contact flow association from a phone number claimed to your Amazon Connect instance, if a contact flow association exists.</p>
+    /// <p>Removes the flow association from a phone number claimed to your Amazon Connect instance, if a flow association exists.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePhoneNumberContactFlow {
         handle: std::sync::Arc<super::Handle>,
@@ -8866,7 +8887,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListContactFlowModules`.
     ///
-    /// <p>Provides information about the contact flow modules for the specified Amazon Connect instance.</p>
+    /// <p>Provides information about the flow modules for the specified Amazon Connect instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlowModules {
         handle: std::sync::Arc<super::Handle>,
@@ -8942,7 +8963,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The state of the contact flow module.</p>
+        /// <p>The state of the flow module.</p>
         pub fn contact_flow_module_state(
             mut self,
             input: crate::model::ContactFlowModuleState,
@@ -8950,7 +8971,7 @@ pub mod fluent_builders {
             self.inner = self.inner.contact_flow_module_state(input);
             self
         }
-        /// <p>The state of the contact flow module.</p>
+        /// <p>The state of the flow module.</p>
         pub fn set_contact_flow_module_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleState>,
@@ -8961,9 +8982,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListContactFlows`.
     ///
-    /// <p>Provides information about the contact flows for the specified Amazon Connect instance.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
-    /// <p>For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Provides information about the flows for the specified Amazon Connect instance.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlows {
         handle: std::sync::Arc<super::Handle>,
@@ -9023,12 +9044,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_contact_flow_types`](Self::set_contact_flow_types).
         ///
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn contact_flow_types(mut self, input: crate::model::ContactFlowType) -> Self {
             self.inner = self.inner.contact_flow_types(input);
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn set_contact_flow_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactFlowType>>,
@@ -9046,12 +9067,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -9319,12 +9340,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -9668,7 +9689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLambdaFunctions`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant contact flow blocks.</p>
+    /// <p>Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant flow blocks.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLambdaFunctions {
         handle: std::sync::Arc<super::Handle>,
@@ -9931,12 +9952,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10140,12 +10161,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10230,12 +10251,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10328,12 +10349,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10407,12 +10428,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10516,12 +10537,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10596,12 +10617,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10849,12 +10870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -11185,12 +11206,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -11264,12 +11285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per page.</p>
+        /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -11616,6 +11637,115 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `SearchSecurityProfiles`.
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>Searches security profiles in an Amazon Connect instance, with optional filtering.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchSecurityProfiles {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_security_profiles_input::Builder,
+    }
+    impl SearchSecurityProfiles {
+        /// Creates a new `SearchSecurityProfiles`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchSecurityProfilesOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchSecurityProfilesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchSecurityProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchSecurityProfilesPaginator {
+            crate::paginator::SearchSecurityProfilesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The search criteria to be used to return security profiles.</p>
+        pub fn search_criteria(
+            mut self,
+            input: crate::model::SecurityProfileSearchCriteria,
+        ) -> Self {
+            self.inner = self.inner.search_criteria(input);
+            self
+        }
+        /// <p>The search criteria to be used to return security profiles.</p>
+        pub fn set_search_criteria(
+            mut self,
+            input: std::option::Option<crate::model::SecurityProfileSearchCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_search_criteria(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn search_filter(mut self, input: crate::model::SecurityProfilesSearchFilter) -> Self {
+            self.inner = self.inner.search_filter(input);
+            self
+        }
+        /// <p>Filters to be applied to search results.</p>
+        pub fn set_search_filter(
+            mut self,
+            input: std::option::Option<crate::model::SecurityProfilesSearchFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_search_filter(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `SearchUsers`.
     ///
     /// <p>Searches users in an Amazon Connect instance, with optional filtering.</p>
@@ -11841,7 +11971,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartChatContact`.
     ///
-    /// <p>Initiates a contact flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>
+    /// <p>Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>
     /// <p>When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the created chat within 5 minutes. This is achieved by invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS. </p>
     /// <p>A 429 error occurs in the following situations:</p>
     /// <ul>
@@ -11899,13 +12029,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
@@ -11918,7 +12048,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -11928,7 +12058,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -12197,12 +12327,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartOutboundVoiceContact`.
     ///
-    /// <p>Places an outbound call to a contact, and then initiates the contact flow. It performs the actions in the contact flow that's specified (in <code>ContactFlowId</code>).</p>
-    /// <p>Agents do not initiate the outbound API, which means that they do not dial the contact. If the contact flow places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent, like any other inbound case.</p>
+    /// <p>Places an outbound call to a contact, and then initiates the flow. It performs the actions in the flow that's specified (in <code>ContactFlowId</code>).</p>
+    /// <p>Agents do not initiate the outbound API, which means that they do not dial the contact. If the flow places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent, like any other inbound case.</p>
     /// <p>There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.</p> <note>
     /// <p>UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile numbers, you must submit a service quota increase request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     /// </note> <note>
-    /// <p>Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// <p>Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request to the quota <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon Connect campaigns</a>. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOutboundVoiceContact {
@@ -12256,13 +12386,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_phone_number(input);
             self
         }
-        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
@@ -12304,12 +12434,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_phone_number(input);
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.queue_id(input.into());
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_queue_id(input);
             self
@@ -12318,7 +12448,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -12328,7 +12458,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -12381,7 +12511,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTaskContact`.
     ///
-    /// <p>Initiates a contact flow to start a new task.</p>
+    /// <p>Initiates a flow to start a new task.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTaskContact {
         handle: std::sync::Arc<super::Handle>,
@@ -12444,13 +12574,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_previous_contact_id(input);
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
@@ -12463,7 +12593,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -12473,7 +12603,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
         /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -12537,12 +12667,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_time(input);
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn set_scheduled_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -12876,7 +13006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    /// <p>The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status, hours of operation, phone number, security profiles, and task templates.</p>
+    /// <p>Some of the supported resource types are agents, routing profiles, queues, quick connects, contact flows, agent statuses, hours of operation, phone numbers, security profiles, and task templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging resources in Amazon Connect</a>.</p>
     /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
@@ -12931,7 +13061,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -12940,7 +13070,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -12953,12 +13083,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TransferContact`.
     ///
-    /// <p>Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the contact flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers.</p>
+    /// <p>Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
     /// <li> <p>Transfer is supported for only <code>TASK</code> contacts.</p> </li>
     /// <li> <p>Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li>
-    /// <li> <p>The following contact flow types are supported: Inbound contact flow, Transfer to agent flow, and Transfer to queue flow.</p> </li>
+    /// <li> <p>The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.</p> </li>
     /// <li> <p>The <code>TransferContact</code> API can be called only on active contacts.</p> </li>
     /// <li> <p>A contact cannot be transferred more than 11 times.</p> </li>
     /// </ul>
@@ -13041,12 +13171,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13368,8 +13498,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates or updates user-defined contact attributes associated with the specified contact.</p>
     /// <p>You can create or update user-defined attributes for both ongoing and completed contacts. For example, while the call is active, you can update the customer's name or the reason the customer called. You can add notes about steps that the agent took during the call that display to the next agent that takes the call. You can also update attributes for a contact using data from your CRM application and save the data with the contact in Amazon Connect. You could also flag calls for additional analysis, such as legal review or to identify abusive callers.</p>
-    /// <p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For information about CTR retention and the maximum size of the CTR attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
-    /// <p> <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the release of the API, which was September 12, 2018. You can update attributes only for contacts that started after the release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release of the API but are still active in your instance.</p>
+    /// <p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For information about contact record retention and the maximum size of the contact record attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactAttributes {
         handle: std::sync::Arc<super::Handle>,
@@ -13436,7 +13565,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
         /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
@@ -13446,7 +13575,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
         /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
@@ -13460,8 +13589,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContactFlowContent`.
     ///
-    /// <p>Updates the specified contact flow.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>Updates the specified flow.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowContent {
         handle: std::sync::Arc<super::Handle>,
@@ -13511,12 +13640,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13524,12 +13653,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
@@ -13537,7 +13666,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContactFlowMetadata`.
     ///
-    /// <p>Updates metadata about specified contact flow.</p>
+    /// <p>Updates metadata about specified flow.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowMetadata {
         handle: std::sync::Arc<super::Handle>,
@@ -13587,12 +13716,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13600,32 +13729,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>TThe name of the contact flow.</p>
+        /// <p>TThe name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>TThe name of the contact flow.</p>
+        /// <p>TThe name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The state of contact flow.</p>
+        /// <p>The state of flow.</p>
         pub fn contact_flow_state(mut self, input: crate::model::ContactFlowState) -> Self {
             self.inner = self.inner.contact_flow_state(input);
             self
         }
-        /// <p>The state of contact flow.</p>
+        /// <p>The state of flow.</p>
         pub fn set_contact_flow_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowState>,
@@ -13636,7 +13765,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContactFlowModuleContent`.
     ///
-    /// <p>Updates specified contact flow module for the specified Amazon Connect instance. </p>
+    /// <p>Updates specified flow module for the specified Amazon Connect instance. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowModuleContent {
         handle: std::sync::Arc<super::Handle>,
@@ -13686,12 +13815,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13699,12 +13828,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_module_id(input);
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
@@ -13712,7 +13841,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContactFlowModuleMetadata`.
     ///
-    /// <p>Updates metadata about specified contact flow module.</p>
+    /// <p>Updates metadata about specified flow module.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowModuleMetadata {
         handle: std::sync::Arc<super::Handle>,
@@ -13762,12 +13891,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_contact_flow_module_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13775,32 +13904,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_module_id(input);
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the contact flow module.</p>
+        /// <p>The description of the flow module.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the contact flow module.</p>
+        /// <p>The description of the flow module.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The state of contact flow module.</p>
+        /// <p>The state of flow module.</p>
         pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
             self.inner = self.inner.state(input);
             self
         }
-        /// <p>The state of contact flow module.</p>
+        /// <p>The state of flow module.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleState>,
@@ -13811,8 +13940,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContactFlowName`.
     ///
-    /// <p>The name of the contact flow.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>The name of the flow.</p>
+    /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowName {
         handle: std::sync::Arc<super::Handle>,
@@ -13862,12 +13991,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13875,22 +14004,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -13958,12 +14087,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_id(input);
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_time(input);
             self
         }
-        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+        /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
         pub fn set_scheduled_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

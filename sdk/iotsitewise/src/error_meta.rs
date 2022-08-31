@@ -64,6 +64,9 @@ where
                 crate::error::AssociateAssetsErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
+                crate::error::AssociateAssetsErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
+                }
                 crate::error::AssociateAssetsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

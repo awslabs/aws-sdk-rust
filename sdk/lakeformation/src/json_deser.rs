@@ -304,6 +304,77 @@ pub fn deser_operation_crate_operation_add_lf_tags_to_resource(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_assume_decorated_role_with_saml(
+    value: &[u8],
+    mut builder: crate::output::assume_decorated_role_with_saml_output::Builder,
+) -> Result<
+    crate::output::assume_decorated_role_with_saml_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "AccessKeyId" => {
+                        builder = builder.set_access_key_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "Expiration" => {
+                        builder = builder.set_expiration(
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    "SecretAccessKey" => {
+                        builder = builder.set_secret_access_key(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "SessionToken" => {
+                        builder = builder.set_session_token(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_batch_grant_permissions(
     value: &[u8],
     mut builder: crate::output::batch_grant_permissions_output::Builder,

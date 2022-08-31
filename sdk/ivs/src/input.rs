@@ -326,8 +326,8 @@ pub mod create_channel_input {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
@@ -335,8 +335,8 @@ pub mod create_channel_input {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
@@ -372,7 +372,7 @@ pub mod create_channel_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -383,7 +383,7 @@ pub mod create_channel_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -560,7 +560,7 @@ pub mod create_recording_configuration_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -571,7 +571,7 @@ pub mod create_recording_configuration_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -745,7 +745,7 @@ pub mod create_stream_key_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -756,7 +756,7 @@ pub mod create_stream_key_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2275,7 +2275,7 @@ pub mod import_playback_key_pair_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+        /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2286,7 +2286,7 @@ pub mod import_playback_key_pair_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+        /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2467,12 +2467,12 @@ pub mod list_channels_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of channels to return. Default: 50.</p>
+        /// <p>Maximum number of channels to return. Default: 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of channels to return. Default: 50.</p>
+        /// <p>Maximum number of channels to return. Default: 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2606,22 +2606,22 @@ pub mod list_playback_key_pairs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of key pairs to return.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Maximum number of key pairs to return.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2765,12 +2765,12 @@ pub mod list_recording_configurations_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+        /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+        /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2925,12 +2925,12 @@ pub mod list_stream_keys_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+        /// <p>Maximum number of streamKeys to return. Default: 1.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+        /// <p>Maximum number of streamKeys to return. Default: 1.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3087,12 +3087,12 @@ pub mod list_streams_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3246,12 +3246,12 @@ pub mod list_stream_sessions_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3383,12 +3383,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the resource to be retrieved.</p>
+        /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource to be retrieved.</p>
+        /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3803,12 +3803,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>ARN of the resource for which tags are to be added or updated.</p>
+        /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>ARN of the resource for which tags are to be added or updated.</p>
+        /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3817,7 +3817,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of tags to be added or updated.</p>
+        /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3828,7 +3828,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of tags to be added or updated.</p>
+        /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3980,12 +3980,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>ARN of the resource for which tags are to be removed.</p>
+        /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>ARN of the resource for which tags are to be removed.</p>
+        /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3994,14 +3994,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Array of tags to be removed.</p>
+        /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>Array of tags to be removed.</p>
+        /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4189,8 +4189,8 @@ pub mod update_channel_input {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
@@ -4198,8 +4198,8 @@ pub mod update_channel_input {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
@@ -4367,8 +4367,8 @@ pub struct UpdateChannelInput {
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
@@ -4394,8 +4394,8 @@ impl UpdateChannelInput {
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
@@ -4429,19 +4429,19 @@ impl std::fmt::Debug for UpdateChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>ARN of the resource for which tags are to be removed.</p>
+    /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Array of tags to be removed.</p>
+    /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>ARN of the resource for which tags are to be removed.</p>
+    /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Array of tags to be removed.</p>
+    /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -4459,20 +4459,20 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>ARN of the resource for which tags are to be added or updated.</p>
+    /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Array of tags to be added or updated.</p>
+    /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>ARN of the resource for which tags are to be added or updated.</p>
+    /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Array of tags to be added or updated.</p>
+    /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4545,12 +4545,12 @@ impl std::fmt::Debug for PutMetadataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The ARN of the resource to be retrieved.</p>
+    /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The ARN of the resource to be retrieved.</p>
+    /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4573,7 +4573,7 @@ pub struct ListStreamSessionsInput {
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of streams to return. Default: 50.</p>
+    /// <p>Maximum number of streams to return. Default: 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -4586,7 +4586,7 @@ impl ListStreamSessionsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of streams to return. Default: 50.</p>
+    /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4611,7 +4611,7 @@ pub struct ListStreamsInput {
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of streams to return. Default: 50.</p>
+    /// <p>Maximum number of streams to return. Default: 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -4624,7 +4624,7 @@ impl ListStreamsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of streams to return. Default: 50.</p>
+    /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4649,7 +4649,7 @@ pub struct ListStreamKeysInput {
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+    /// <p>Maximum number of streamKeys to return. Default: 1.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -4662,7 +4662,7 @@ impl ListStreamKeysInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+    /// <p>Maximum number of streamKeys to return. Default: 1.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4684,7 +4684,7 @@ pub struct ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -4693,7 +4693,7 @@ impl ListRecordingConfigurationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+    /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4711,19 +4711,19 @@ impl std::fmt::Debug for ListRecordingConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaybackKeyPairsInput {
-    /// <p>Maximum number of key pairs to return.</p>
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+    /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListPlaybackKeyPairsInput {
-    /// <p>Maximum number of key pairs to return.</p>
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+    /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4750,7 +4750,7 @@ pub struct ListChannelsInput {
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of channels to return. Default: 50.</p>
+    /// <p>Maximum number of channels to return. Default: 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
 }
@@ -4767,7 +4767,7 @@ impl ListChannelsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of channels to return. Default: 50.</p>
+    /// <p>Maximum number of channels to return. Default: 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4796,7 +4796,7 @@ pub struct ImportPlaybackKeyPairInput {
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+    /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4810,7 +4810,7 @@ impl ImportPlaybackKeyPairInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+    /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5063,7 +5063,7 @@ pub struct CreateStreamKeyInput {
     /// <p>ARN of the channel for which to create the stream key.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5073,7 +5073,7 @@ impl CreateStreamKeyInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5100,7 +5100,7 @@ pub struct CreateRecordingConfigurationInput {
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     #[doc(hidden)]
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5119,7 +5119,7 @@ impl CreateRecordingConfigurationInput {
     ) -> std::option::Option<&crate::model::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5156,8 +5156,8 @@ pub struct CreateChannelInput {
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
@@ -5167,7 +5167,7 @@ pub struct CreateChannelInput {
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
     #[doc(hidden)]
     pub recording_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5183,8 +5183,8 @@ impl CreateChannelInput {
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
@@ -5197,7 +5197,7 @@ impl CreateChannelInput {
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
-    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

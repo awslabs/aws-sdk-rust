@@ -1161,6 +1161,85 @@ impl GetFeedbackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDataQualityMetricsOutput {
+    /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
+    #[doc(hidden)]
+    pub anomaly_detector_data_quality_metric_list:
+        std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
+}
+impl GetDataQualityMetricsOutput {
+    /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
+    pub fn anomaly_detector_data_quality_metric_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AnomalyDetectorDataQualityMetric]> {
+        self.anomaly_detector_data_quality_metric_list.as_deref()
+    }
+}
+impl std::fmt::Debug for GetDataQualityMetricsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDataQualityMetricsOutput");
+        formatter.field(
+            "anomaly_detector_data_quality_metric_list",
+            &self.anomaly_detector_data_quality_metric_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
+pub mod get_data_quality_metrics_output {
+
+    /// A builder for [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) anomaly_detector_data_quality_metric_list:
+            std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
+    }
+    impl Builder {
+        /// Appends an item to `anomaly_detector_data_quality_metric_list`.
+        ///
+        /// To override the contents of this collection use [`set_anomaly_detector_data_quality_metric_list`](Self::set_anomaly_detector_data_quality_metric_list).
+        ///
+        /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
+        pub fn anomaly_detector_data_quality_metric_list(
+            mut self,
+            input: crate::model::AnomalyDetectorDataQualityMetric,
+        ) -> Self {
+            let mut v = self
+                .anomaly_detector_data_quality_metric_list
+                .unwrap_or_default();
+            v.push(input);
+            self.anomaly_detector_data_quality_metric_list = Some(v);
+            self
+        }
+        /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
+        pub fn set_anomaly_detector_data_quality_metric_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>,
+            >,
+        ) -> Self {
+            self.anomaly_detector_data_quality_metric_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
+        pub fn build(self) -> crate::output::GetDataQualityMetricsOutput {
+            crate::output::GetDataQualityMetricsOutput {
+                anomaly_detector_data_quality_metric_list: self
+                    .anomaly_detector_data_quality_metric_list,
+            }
+        }
+    }
+}
+impl GetDataQualityMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
+    pub fn builder() -> crate::output::get_data_quality_metrics_output::Builder {
+        crate::output::get_data_quality_metrics_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyGroupOutput {
     /// <p>Details about the anomaly group.</p>
     #[doc(hidden)]
@@ -1305,7 +1384,7 @@ pub struct DescribeMetricSetOutput {
     /// <p>The time at which the dataset was last modified.</p>
     #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     #[doc(hidden)]
     pub offset: std::option::Option<i32>,
     /// <p>A list of the metrics defined by the dataset.</p>
@@ -1352,7 +1431,7 @@ impl DescribeMetricSetOutput {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
-    /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(&self) -> std::option::Option<i32> {
         self.offset
     }
@@ -1499,12 +1578,12 @@ pub mod describe_metric_set_output {
             self.last_modification_time = input;
             self
         }
-        /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
         pub fn offset(mut self, input: i32) -> Self {
             self.offset = Some(input);
             self
         }
-        /// <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
         pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.offset = input;
             self

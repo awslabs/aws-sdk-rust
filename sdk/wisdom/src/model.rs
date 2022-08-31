@@ -2639,6 +2639,174 @@ impl ContentReference {
     }
 }
 
+/// <p>The feedback to submit to Wisdom.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FeedbackData {
+    /// <p>The relevance of the target this feedback is for.</p>
+    #[doc(hidden)]
+    pub relevance: std::option::Option<crate::model::Relevance>,
+}
+impl FeedbackData {
+    /// <p>The relevance of the target this feedback is for.</p>
+    pub fn relevance(&self) -> std::option::Option<&crate::model::Relevance> {
+        self.relevance.as_ref()
+    }
+}
+impl std::fmt::Debug for FeedbackData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FeedbackData");
+        formatter.field("relevance", &self.relevance);
+        formatter.finish()
+    }
+}
+/// See [`FeedbackData`](crate::model::FeedbackData).
+pub mod feedback_data {
+
+    /// A builder for [`FeedbackData`](crate::model::FeedbackData).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) relevance: std::option::Option<crate::model::Relevance>,
+    }
+    impl Builder {
+        /// <p>The relevance of the target this feedback is for.</p>
+        pub fn relevance(mut self, input: crate::model::Relevance) -> Self {
+            self.relevance = Some(input);
+            self
+        }
+        /// <p>The relevance of the target this feedback is for.</p>
+        pub fn set_relevance(
+            mut self,
+            input: std::option::Option<crate::model::Relevance>,
+        ) -> Self {
+            self.relevance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FeedbackData`](crate::model::FeedbackData).
+        pub fn build(self) -> crate::model::FeedbackData {
+            crate::model::FeedbackData {
+                relevance: self.relevance,
+            }
+        }
+    }
+}
+impl FeedbackData {
+    /// Creates a new builder-style object to manufacture [`FeedbackData`](crate::model::FeedbackData).
+    pub fn builder() -> crate::model::feedback_data::Builder {
+        crate::model::feedback_data::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Relevance {
+    #[allow(missing_docs)] // documentation missing in model
+    Helpful,
+    #[allow(missing_docs)] // documentation missing in model
+    NotHelpful,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Relevance {
+    fn from(s: &str) -> Self {
+        match s {
+            "HELPFUL" => Relevance::Helpful,
+            "NOT_HELPFUL" => Relevance::NotHelpful,
+            other => Relevance::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Relevance {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Relevance::from(s))
+    }
+}
+impl Relevance {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Relevance::Helpful => "HELPFUL",
+            Relevance::NotHelpful => "NOT_HELPFUL",
+            Relevance::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HELPFUL", "NOT_HELPFUL"]
+    }
+}
+impl AsRef<str> for Relevance {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetType {
+    #[allow(missing_docs)] // documentation missing in model
+    Recommendation,
+    #[allow(missing_docs)] // documentation missing in model
+    Result,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetType {
+    fn from(s: &str) -> Self {
+        match s {
+            "RECOMMENDATION" => TargetType::Recommendation,
+            "RESULT" => TargetType::Result,
+            other => TargetType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetType::from(s))
+    }
+}
+impl TargetType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetType::Recommendation => "RECOMMENDATION",
+            TargetType::Result => "RESULT",
+            TargetType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["RECOMMENDATION", "RESULT"]
+    }
+}
+impl AsRef<str> for TargetType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>An error occurred when creating a recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

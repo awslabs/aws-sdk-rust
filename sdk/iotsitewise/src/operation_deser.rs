@@ -81,6 +81,24 @@ pub fn parse_associate_assets_error(
                 tmp
             }),
         },
+        "ResourceAlreadyExistsException" => crate::error::AssociateAssetsError {
+            meta: generic,
+            kind: crate::error::AssociateAssetsErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAssetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::AssociateAssetsError {
             meta: generic,
             kind: crate::error::AssociateAssetsErrorKind::ResourceNotFoundException({

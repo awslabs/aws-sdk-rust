@@ -469,6 +469,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalyGroup {
     }
 }
 
+/// Operation shape for `GetDataQualityMetrics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_quality_metrics`](crate::client::Client::get_data_quality_metrics).
+///
+/// See [`crate::client::fluent_builders::GetDataQualityMetrics`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetDataQualityMetrics {
+    _private: (),
+}
+impl GetDataQualityMetrics {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsInput`](crate::input::GetDataQualityMetricsInput).
+    pub fn builder() -> crate::input::get_data_quality_metrics_input::Builder {
+        crate::input::get_data_quality_metrics_input::Builder::default()
+    }
+    /// Creates a new `GetDataQualityMetrics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityMetrics {
+    type Output = std::result::Result<
+        crate::output::GetDataQualityMetricsOutput,
+        crate::error::GetDataQualityMetricsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_quality_metrics_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_quality_metrics_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetFeedback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

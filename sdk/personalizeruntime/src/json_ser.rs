@@ -79,11 +79,53 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
             aws_smithy_types::Number::NegInt((input.num_results).into()),
         );
     }
-    if let Some(var_26) = &input.recommender_arn {
-        object.key("recommenderArn").string(var_26.as_str());
+    if let Some(var_26) = &input.promotions {
+        let mut array_27 = object.key("promotions").start_array();
+        for item_28 in var_26 {
+            {
+                let mut object_29 = array_27.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_promotion(
+                    &mut object_29,
+                    item_28,
+                )?;
+                object_29.finish();
+            }
+        }
+        array_27.finish();
     }
-    if let Some(var_27) = &input.user_id {
-        object.key("userId").string(var_27.as_str());
+    if let Some(var_30) = &input.recommender_arn {
+        object.key("recommenderArn").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.user_id {
+        object.key("userId").string(var_31.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_promotion(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::Promotion,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_32) = &input.name {
+        object.key("name").string(var_32.as_str());
+    }
+    if input.percent_promoted_items != 0 {
+        object.key("percentPromotedItems").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.percent_promoted_items).into()),
+        );
+    }
+    if let Some(var_33) = &input.filter_arn {
+        object.key("filterArn").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.filter_values {
+        let mut object_35 = object.key("filterValues").start_object();
+        for (key_36, value_37) in var_34 {
+            {
+                object_35.key(key_36).string(value_37.as_str());
+            }
+        }
+        object_35.finish();
     }
     Ok(())
 }

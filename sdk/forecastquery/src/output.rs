@@ -2,6 +2,61 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryWhatIfForecastOutput {
+    /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
+    #[doc(hidden)]
+    pub forecast: std::option::Option<crate::model::Forecast>,
+}
+impl QueryWhatIfForecastOutput {
+    /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
+    pub fn forecast(&self) -> std::option::Option<&crate::model::Forecast> {
+        self.forecast.as_ref()
+    }
+}
+impl std::fmt::Debug for QueryWhatIfForecastOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryWhatIfForecastOutput");
+        formatter.field("forecast", &self.forecast);
+        formatter.finish()
+    }
+}
+/// See [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
+pub mod query_what_if_forecast_output {
+
+    /// A builder for [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) forecast: std::option::Option<crate::model::Forecast>,
+    }
+    impl Builder {
+        /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
+        pub fn forecast(mut self, input: crate::model::Forecast) -> Self {
+            self.forecast = Some(input);
+            self
+        }
+        /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
+        pub fn set_forecast(mut self, input: std::option::Option<crate::model::Forecast>) -> Self {
+            self.forecast = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
+        pub fn build(self) -> crate::output::QueryWhatIfForecastOutput {
+            crate::output::QueryWhatIfForecastOutput {
+                forecast: self.forecast,
+            }
+        }
+    }
+}
+impl QueryWhatIfForecastOutput {
+    /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
+    pub fn builder() -> crate::output::query_what_if_forecast_output::Builder {
+        crate::output::query_what_if_forecast_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryForecastOutput {
     /// <p>The forecast.</p>
     #[doc(hidden)]

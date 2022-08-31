@@ -17733,6 +17733,11 @@ where
                                     )?,
                                 );
                             }
+                            "HyperParameterTuningResourceConfig" => {
+                                builder = builder.set_hyper_parameter_tuning_resource_config(
+                                    crate::json_deser::deser_structure_crate_model_hyper_parameter_tuning_resource_config(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -29166,6 +29171,98 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_hyper_parameter_tuning_resource_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::HyperParameterTuningResourceConfig>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::HyperParameterTuningResourceConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "InstanceType" => {
+                                builder = builder.set_instance_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::TrainingInstanceType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "InstanceCount" => {
+                                builder = builder.set_instance_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "VolumeSizeInGB" => {
+                                builder = builder.set_volume_size_in_gb(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "VolumeKmsKeyId" => {
+                                builder = builder.set_volume_kms_key_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AllocationStrategy" => {
+                                builder = builder.set_allocation_strategy(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            crate::model::HyperParameterTuningAllocationStrategy::from(u.as_ref())
+                                        )
+                                    ).transpose()?
+                                );
+                            }
+                            "InstanceConfigs" => {
+                                builder = builder.set_instance_configs(
+                                    crate::json_deser::deser_list_com_amazonaws_sagemaker_hyper_parameter_tuning_instance_configs(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_final_hyper_parameter_tuning_job_objective_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -39739,6 +39836,46 @@ where
     }
 }
 
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_sagemaker_hyper_parameter_tuning_instance_configs<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_hyper_parameter_tuning_instance_config(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_parent_hyper_parameter_tuning_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ParentHyperParameterTuningJob>, aws_smithy_json::deserialize::Error>
@@ -44770,6 +44907,75 @@ where
                             "Values" => {
                                 builder = builder.set_values(
                                     crate::json_deser::deser_list_com_amazonaws_sagemaker_parameter_values(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_hyper_parameter_tuning_instance_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::HyperParameterTuningInstanceConfig>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::HyperParameterTuningInstanceConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "InstanceType" => {
+                                builder = builder.set_instance_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::TrainingInstanceType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "InstanceCount" => {
+                                builder = builder.set_instance_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "VolumeSizeInGB" => {
+                                builder = builder.set_volume_size_in_gb(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -1322,6 +1322,145 @@ impl std::error::Error for AddLFTagsToResourceError {
     }
 }
 
+/// Error type for the `AssumeDecoratedRoleWithSAML` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssumeDecoratedRoleWithSAMLError {
+    /// Kind of error that occurred.
+    pub kind: AssumeDecoratedRoleWithSAMLErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssumeDecoratedRoleWithSAML` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssumeDecoratedRoleWithSAMLErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssumeDecoratedRoleWithSAMLError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssumeDecoratedRoleWithSAMLErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            AssumeDecoratedRoleWithSAMLErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            AssumeDecoratedRoleWithSAMLErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            AssumeDecoratedRoleWithSAMLErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            AssumeDecoratedRoleWithSAMLErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssumeDecoratedRoleWithSAMLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssumeDecoratedRoleWithSAMLError {
+    fn code(&self) -> Option<&str> {
+        AssumeDecoratedRoleWithSAMLError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssumeDecoratedRoleWithSAMLError {
+    /// Creates a new `AssumeDecoratedRoleWithSAMLError`.
+    pub fn new(kind: AssumeDecoratedRoleWithSAMLErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssumeDecoratedRoleWithSAMLError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssumeDecoratedRoleWithSAMLErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssumeDecoratedRoleWithSAMLError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssumeDecoratedRoleWithSAMLErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssumeDecoratedRoleWithSAMLErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeDecoratedRoleWithSAMLErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeDecoratedRoleWithSAMLErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeDecoratedRoleWithSAMLErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeDecoratedRoleWithSAMLErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeDecoratedRoleWithSAMLErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeDecoratedRoleWithSAMLErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeDecoratedRoleWithSAMLErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssumeDecoratedRoleWithSAMLErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeDecoratedRoleWithSAMLErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for AssumeDecoratedRoleWithSAMLError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssumeDecoratedRoleWithSAMLErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            AssumeDecoratedRoleWithSAMLErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            AssumeDecoratedRoleWithSAMLErrorKind::InternalServiceException(_inner) => Some(_inner),
+            AssumeDecoratedRoleWithSAMLErrorKind::InvalidInputException(_inner) => Some(_inner),
+            AssumeDecoratedRoleWithSAMLErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            AssumeDecoratedRoleWithSAMLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `BatchGrantPermissions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

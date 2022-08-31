@@ -1077,12 +1077,13 @@ impl Client {
     /// Constructs a fluent builder for the [`PutConformancePack`](crate::client::fluent_builders::PutConformancePack) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_name): <p>Name of the conformance pack you want to create.</p>
-    ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_s3_uri): <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>  </note>
+    ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_name): <p>The unique name of the conformance pack you want to deploy.</p>
+    ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_s3_uri): <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>  </note>
     ///   - [`delivery_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_bucket) / [`set_delivery_s3_bucket(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_bucket): <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>   <p>This field is optional.</p>  </note>
     ///   - [`delivery_s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_key_prefix) / [`set_delivery_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_key_prefix): <p>The prefix for the Amazon S3 bucket. </p> <note>   <p>This field is optional.</p>  </note>
     ///   - [`conformance_pack_input_parameters(Vec<ConformancePackInputParameter>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_input_parameters) / [`set_conformance_pack_input_parameters(Option<Vec<ConformancePackInputParameter>>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_input_parameters): <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    ///   - [`template_ssm_document_details(TemplateSsmDocumentDetails)`](crate::client::fluent_builders::PutConformancePack::template_ssm_document_details) / [`set_template_ssm_document_details(Option<TemplateSsmDocumentDetails>)`](crate::client::fluent_builders::PutConformancePack::set_template_ssm_document_details): <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
     /// - On success, responds with [`PutConformancePackOutput`](crate::output::PutConformancePackOutput) with field(s):
     ///   - [`conformance_pack_arn(Option<String>)`](crate::output::PutConformancePackOutput::conformance_pack_arn): <p>ARN of the conformance pack.</p>
     /// - On failure, responds with [`SdkError<PutConformancePackError>`](crate::error::PutConformancePackError)
@@ -7301,7 +7302,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across Amazon Web Services Organization. For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     /// <p>This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service-linked role is created only when the role does not exist in your account. </p> <note>
-    /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
+    /// <p>You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code> or <code>TemplateSSMDocumentDetails</code> parameters.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConformancePack {
@@ -7342,12 +7343,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Name of the conformance pack you want to create.</p>
+        /// <p>The unique name of the conformance pack you want to deploy.</p>
         pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
-        /// <p>Name of the conformance pack you want to create.</p>
+        /// <p>The unique name of the conformance pack you want to deploy.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7355,14 +7356,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conformance_pack_name(input);
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_s3_uri(input.into());
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
+        /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -7372,15 +7373,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_s3_uri(input);
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
+        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
+        /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
+        /// <p>You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn set_template_body(
             mut self,
@@ -7441,6 +7442,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
         ) -> Self {
             self.inner = self.inner.set_conformance_pack_input_parameters(input);
+            self
+        }
+        /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+        pub fn template_ssm_document_details(
+            mut self,
+            input: crate::model::TemplateSsmDocumentDetails,
+        ) -> Self {
+            self.inner = self.inner.template_ssm_document_details(input);
+            self
+        }
+        /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
+        pub fn set_template_ssm_document_details(
+            mut self,
+            input: std::option::Option<crate::model::TemplateSsmDocumentDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_template_ssm_document_details(input);
             self
         }
     }

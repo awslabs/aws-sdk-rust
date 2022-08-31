@@ -30,3 +30,37 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryForecast {
         }
     }
 }
+
+/// Operation shape for `QueryWhatIfForecast`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`query_what_if_forecast`](crate::client::Client::query_what_if_forecast).
+///
+/// See [`crate::client::fluent_builders::QueryWhatIfForecast`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct QueryWhatIfForecast {
+    _private: (),
+}
+impl QueryWhatIfForecast {
+    /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
+    pub fn builder() -> crate::input::query_what_if_forecast_input::Builder {
+        crate::input::query_what_if_forecast_input::Builder::default()
+    }
+    /// Creates a new `QueryWhatIfForecast` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for QueryWhatIfForecast {
+    type Output = std::result::Result<
+        crate::output::QueryWhatIfForecastOutput,
+        crate::error::QueryWhatIfForecastError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_query_what_if_forecast_error(response)
+        } else {
+            crate::operation_deser::parse_query_what_if_forecast_response(response)
+        }
+    }
+}

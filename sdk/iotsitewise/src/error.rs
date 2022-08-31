@@ -783,6 +783,8 @@ pub enum AssociateAssetsErrorKind {
     /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
@@ -798,6 +800,7 @@ impl std::fmt::Display for AssociateAssetsError {
             AssociateAssetsErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             AssociateAssetsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             AssociateAssetsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            AssociateAssetsErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             AssociateAssetsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             AssociateAssetsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             AssociateAssetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -882,6 +885,13 @@ impl AssociateAssetsError {
             AssociateAssetsErrorKind::LimitExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateAssetsErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AssociateAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -901,6 +911,7 @@ impl std::error::Error for AssociateAssetsError {
             AssociateAssetsErrorKind::InternalFailureException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            AssociateAssetsErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),

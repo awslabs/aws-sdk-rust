@@ -3042,6 +3042,7 @@ pub mod create_db_cluster_input {
         pub(crate) performance_insights_retention_period: std::option::Option<i32>,
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -4037,6 +4038,32 @@ pub mod create_db_cluster_input {
             self.serverless_v2_scaling_configuration = input;
             self
         }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::input::CreateDbClusterInput).
         pub fn build(
             self,
@@ -4088,6 +4115,7 @@ pub mod create_db_cluster_input {
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
                 performance_insights_retention_period: self.performance_insights_retention_period,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+                network_type: self.network_type,
             })
         }
     }
@@ -21998,6 +22026,7 @@ pub mod modify_db_cluster_input {
         pub(crate) performance_insights_retention_period: std::option::Option<i32>,
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -22694,6 +22723,32 @@ pub mod modify_db_cluster_input {
             self.serverless_v2_scaling_configuration = input;
             self
         }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput).
         pub fn build(
             self,
@@ -22735,6 +22790,7 @@ pub mod modify_db_cluster_input {
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
                 performance_insights_retention_period: self.performance_insights_retention_period,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+                network_type: self.network_type,
             })
         }
     }
@@ -23524,17 +23580,15 @@ pub mod modify_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
         /// <p>Default: Uses existing setting</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-        /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
+        /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
         /// <p>Default: Uses existing setting</p>
         pub fn set_db_instance_class(
             mut self,
@@ -28943,6 +28997,7 @@ pub mod restore_db_cluster_from_s3_input {
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -29499,6 +29554,30 @@ pub mod restore_db_cluster_from_s3_input {
             self.serverless_v2_scaling_configuration = input;
             self
         }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input).
         pub fn build(
             self,
@@ -29537,6 +29616,7 @@ pub mod restore_db_cluster_from_s3_input {
                 domain: self.domain,
                 domain_iam_role_name: self.domain_iam_role_name,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+                network_type: self.network_type,
             })
         }
     }
@@ -29683,6 +29763,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -30266,6 +30347,32 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.serverless_v2_scaling_configuration = input;
             self
         }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput).
         pub fn build(
             self,
@@ -30301,6 +30408,7 @@ pub mod restore_db_cluster_from_snapshot_input {
                 iops: self.iops,
                 publicly_accessible: self.publicly_accessible,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+                network_type: self.network_type,
             })
         }
     }
@@ -30445,6 +30553,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         pub(crate) iops: std::option::Option<i32>,
         pub(crate) serverless_v2_scaling_configuration:
             std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+        pub(crate) network_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the new DB cluster to be created.</p>
@@ -30991,6 +31100,32 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.serverless_v2_scaling_configuration = input;
             self
         }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_type = Some(input.into());
+            self
+        }
+        /// <p>The network type of the DB cluster.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>IPV4</code> </p> </li>
+        /// <li> <p> <code>DUAL</code> </p> </li>
+        /// </ul>
+        /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
+        pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput).
         pub fn build(
             self,
@@ -31025,6 +31160,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
                 publicly_accessible: self.publicly_accessible,
                 iops: self.iops,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+                network_type: self.network_type,
             })
         }
     }
@@ -35463,6 +35599,184 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
     }
 }
 
+/// See [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
+pub mod switchover_read_replica_input {
+
+    /// A builder for [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+        /// </ul>
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
+            self
+        }
+        /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+        /// </ul>
+        pub fn set_db_instance_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_instance_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SwitchoverReadReplicaInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SwitchoverReadReplicaInput {
+                db_instance_identifier: self.db_instance_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SwitchoverReadReplicaInputOperationOutputAlias = crate::operation::SwitchoverReadReplica;
+#[doc(hidden)]
+pub type SwitchoverReadReplicaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl SwitchoverReadReplicaInput {
+    /// Consumes the builder and constructs an Operation<[`SwitchoverReadReplica`](crate::operation::SwitchoverReadReplica)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SwitchoverReadReplica,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SwitchoverReadReplicaInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SwitchoverReadReplicaInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_switchover_read_replica(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SwitchoverReadReplica::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SwitchoverReadReplica",
+            "rds",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
+    pub fn builder() -> crate::input::switchover_read_replica_input::Builder {
+        crate::input::switchover_read_replica_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SwitchoverReadReplicaInput {
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub db_instance_identifier: std::option::Option<std::string::String>,
+}
+impl SwitchoverReadReplicaInput {
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// </ul>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for SwitchoverReadReplicaInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SwitchoverReadReplicaInput");
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -37660,6 +37974,17 @@ pub struct RestoreDbClusterToPointInTimeInput {
     #[doc(hidden)]
     pub serverless_v2_scaling_configuration:
         std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -37876,6 +38201,18 @@ impl RestoreDbClusterToPointInTimeInput {
     ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37924,6 +38261,7 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
             "serverless_v2_scaling_configuration",
             &self.serverless_v2_scaling_configuration,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -38129,6 +38467,17 @@ pub struct RestoreDbClusterFromSnapshotInput {
     #[doc(hidden)]
     pub serverless_v2_scaling_configuration:
         std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -38358,6 +38707,18 @@ impl RestoreDbClusterFromSnapshotInput {
     ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38401,6 +38762,7 @@ impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
             "serverless_v2_scaling_configuration",
             &self.serverless_v2_scaling_configuration,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -38572,6 +38934,16 @@ pub struct RestoreDbClusterFromS3Input {
     #[doc(hidden)]
     pub serverless_v2_scaling_configuration:
         std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -38770,6 +39142,17 @@ impl RestoreDbClusterFromS3Input {
     ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterFromS3Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38821,6 +39204,7 @@ impl std::fmt::Debug for RestoreDbClusterFromS3Input {
             "serverless_v2_scaling_configuration",
             &self.serverless_v2_scaling_configuration,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -39977,9 +40361,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     #[doc(hidden)]
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-    /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
     /// <p>Default: Uses existing setting</p>
     #[doc(hidden)]
     pub db_instance_class: std::option::Option<std::string::String>,
@@ -40328,9 +40711,8 @@ impl ModifyDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
-    /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB instance class support for RDS Custom for SQL Server</a>.</p>
+    /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request. </p>
     /// <p>Default: Uses existing setting</p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
         self.db_instance_class.as_deref()
@@ -41195,6 +41577,17 @@ pub struct ModifyDbClusterInput {
     #[doc(hidden)]
     pub serverless_v2_scaling_configuration:
         std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -41473,6 +41866,18 @@ impl ModifyDbClusterInput {
     ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41548,6 +41953,7 @@ impl std::fmt::Debug for ModifyDbClusterInput {
             "serverless_v2_scaling_configuration",
             &self.serverless_v2_scaling_configuration,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -48467,6 +48873,17 @@ pub struct CreateDbClusterInput {
     #[doc(hidden)]
     pub serverless_v2_scaling_configuration:
         std::option::Option<crate::model::ServerlessV2ScalingConfiguration>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    #[doc(hidden)]
+    pub network_type: std::option::Option<std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
@@ -48863,6 +49280,18 @@ impl CreateDbClusterInput {
     ) -> std::option::Option<&crate::model::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>IPV4</code> </p> </li>
+    /// <li> <p> <code>DUAL</code> </p> </li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn network_type(&self) -> std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48945,6 +49374,7 @@ impl std::fmt::Debug for CreateDbClusterInput {
             "serverless_v2_scaling_configuration",
             &self.serverless_v2_scaling_configuration,
         );
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }

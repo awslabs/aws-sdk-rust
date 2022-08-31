@@ -272,6 +272,47 @@ impl Client {
     ) -> fluent_builders::CreatePredictorBacktestExportJob {
         fluent_builders::CreatePredictorBacktestExportJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateWhatIfAnalysis`](crate::client::fluent_builders::CreateWhatIfAnalysis) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_analysis_name(impl Into<String>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::what_if_analysis_name) / [`set_what_if_analysis_name(Option<String>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::set_what_if_analysis_name): <p>The name of the what-if analysis. Each name must be unique.</p>
+    ///   - [`forecast_arn(impl Into<String>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+    ///   - [`time_series_selector(TimeSeriesSelector)`](crate::client::fluent_builders::CreateWhatIfAnalysis::time_series_selector) / [`set_time_series_selector(Option<TimeSeriesSelector>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::set_time_series_selector): <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>  <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>  <ul>   <li> <p> <code>DataSource</code> </p> </li>   <li> <p> <code>Format</code> </p> </li>   <li> <p> <code>Schema</code> </p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWhatIfAnalysis::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    /// - On success, responds with [`CreateWhatIfAnalysisOutput`](crate::output::CreateWhatIfAnalysisOutput) with field(s):
+    ///   - [`what_if_analysis_arn(Option<String>)`](crate::output::CreateWhatIfAnalysisOutput::what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    /// - On failure, responds with [`SdkError<CreateWhatIfAnalysisError>`](crate::error::CreateWhatIfAnalysisError)
+    pub fn create_what_if_analysis(&self) -> fluent_builders::CreateWhatIfAnalysis {
+        fluent_builders::CreateWhatIfAnalysis::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateWhatIfForecast`](crate::client::fluent_builders::CreateWhatIfForecast) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_forecast_name(impl Into<String>)`](crate::client::fluent_builders::CreateWhatIfForecast::what_if_forecast_name) / [`set_what_if_forecast_name(Option<String>)`](crate::client::fluent_builders::CreateWhatIfForecast::set_what_if_forecast_name): <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+    ///   - [`what_if_analysis_arn(impl Into<String>)`](crate::client::fluent_builders::CreateWhatIfForecast::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::client::fluent_builders::CreateWhatIfForecast::set_what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    ///   - [`time_series_transformations(Vec<TimeSeriesTransformation>)`](crate::client::fluent_builders::CreateWhatIfForecast::time_series_transformations) / [`set_time_series_transformations(Option<Vec<TimeSeriesTransformation>>)`](crate::client::fluent_builders::CreateWhatIfForecast::set_time_series_transformations): <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+    ///   - [`time_series_replacements_data_source(TimeSeriesReplacementsDataSource)`](crate::client::fluent_builders::CreateWhatIfForecast::time_series_replacements_data_source) / [`set_time_series_replacements_data_source(Option<TimeSeriesReplacementsDataSource>)`](crate::client::fluent_builders::CreateWhatIfForecast::set_time_series_replacements_data_source): <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>  <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>  <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWhatIfForecast::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWhatIfForecast::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    /// - On success, responds with [`CreateWhatIfForecastOutput`](crate::output::CreateWhatIfForecastOutput) with field(s):
+    ///   - [`what_if_forecast_arn(Option<String>)`](crate::output::CreateWhatIfForecastOutput::what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    /// - On failure, responds with [`SdkError<CreateWhatIfForecastError>`](crate::error::CreateWhatIfForecastError)
+    pub fn create_what_if_forecast(&self) -> fluent_builders::CreateWhatIfForecast {
+        fluent_builders::CreateWhatIfForecast::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateWhatIfForecastExport`](crate::client::fluent_builders::CreateWhatIfForecastExport) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_forecast_export_name(impl Into<String>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::what_if_forecast_export_name) / [`set_what_if_forecast_export_name(Option<String>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::set_what_if_forecast_export_name): <p>The name of the what-if forecast to export.</p>
+    ///   - [`what_if_forecast_arns(Vec<String>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::what_if_forecast_arns) / [`set_what_if_forecast_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::set_what_if_forecast_arns): <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+    ///   - [`destination(DataDestination)`](crate::client::fluent_builders::CreateWhatIfForecastExport::destination) / [`set_destination(Option<DataDestination>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::set_destination): <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>  <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    ///   - [`format(impl Into<String>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::format) / [`set_format(Option<String>)`](crate::client::fluent_builders::CreateWhatIfForecastExport::set_format): <p>The format of the exported data, CSV or PARQUET.</p>
+    /// - On success, responds with [`CreateWhatIfForecastExportOutput`](crate::output::CreateWhatIfForecastExportOutput) with field(s):
+    ///   - [`what_if_forecast_export_arn(Option<String>)`](crate::output::CreateWhatIfForecastExportOutput::what_if_forecast_export_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    /// - On failure, responds with [`SdkError<CreateWhatIfForecastExportError>`](crate::error::CreateWhatIfForecastExportError)
+    pub fn create_what_if_forecast_export(&self) -> fluent_builders::CreateWhatIfForecastExport {
+        fluent_builders::CreateWhatIfForecastExport::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
     /// - The fluent builder is configurable:
@@ -383,6 +424,36 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteResourceTreeError>`](crate::error::DeleteResourceTreeError)
     pub fn delete_resource_tree(&self) -> fluent_builders::DeleteResourceTree {
         fluent_builders::DeleteResourceTree::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteWhatIfAnalysis`](crate::client::fluent_builders::DeleteWhatIfAnalysis) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_analysis_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteWhatIfAnalysis::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::client::fluent_builders::DeleteWhatIfAnalysis::set_what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+    /// - On success, responds with [`DeleteWhatIfAnalysisOutput`](crate::output::DeleteWhatIfAnalysisOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWhatIfAnalysisError>`](crate::error::DeleteWhatIfAnalysisError)
+    pub fn delete_what_if_analysis(&self) -> fluent_builders::DeleteWhatIfAnalysis {
+        fluent_builders::DeleteWhatIfAnalysis::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteWhatIfForecast`](crate::client::fluent_builders::DeleteWhatIfForecast) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_forecast_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteWhatIfForecast::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::client::fluent_builders::DeleteWhatIfForecast::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+    /// - On success, responds with [`DeleteWhatIfForecastOutput`](crate::output::DeleteWhatIfForecastOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWhatIfForecastError>`](crate::error::DeleteWhatIfForecastError)
+    pub fn delete_what_if_forecast(&self) -> fluent_builders::DeleteWhatIfForecast {
+        fluent_builders::DeleteWhatIfForecast::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteWhatIfForecastExport`](crate::client::fluent_builders::DeleteWhatIfForecastExport) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_forecast_export_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteWhatIfForecastExport::what_if_forecast_export_arn) / [`set_what_if_forecast_export_arn(Option<String>)`](crate::client::fluent_builders::DeleteWhatIfForecastExport::set_what_if_forecast_export_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+    /// - On success, responds with [`DeleteWhatIfForecastExportOutput`](crate::output::DeleteWhatIfForecastExportOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWhatIfForecastExportError>`](crate::error::DeleteWhatIfForecastExportError)
+    pub fn delete_what_if_forecast_export(&self) -> fluent_builders::DeleteWhatIfForecastExport {
+        fluent_builders::DeleteWhatIfForecastExport::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeAutoPredictor`](crate::client::fluent_builders::DescribeAutoPredictor) operation.
     ///
@@ -624,6 +695,65 @@ impl Client {
     ) -> fluent_builders::DescribePredictorBacktestExportJob {
         fluent_builders::DescribePredictorBacktestExportJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeWhatIfAnalysis`](crate::client::fluent_builders::DescribeWhatIfAnalysis) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_analysis_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeWhatIfAnalysis::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::client::fluent_builders::DescribeWhatIfAnalysis::set_what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+    /// - On success, responds with [`DescribeWhatIfAnalysisOutput`](crate::output::DescribeWhatIfAnalysisOutput) with field(s):
+    ///   - [`what_if_analysis_name(Option<String>)`](crate::output::DescribeWhatIfAnalysisOutput::what_if_analysis_name): <p>The name of the what-if analysis.</p>
+    ///   - [`what_if_analysis_arn(Option<String>)`](crate::output::DescribeWhatIfAnalysisOutput::what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    ///   - [`forecast_arn(Option<String>)`](crate::output::DescribeWhatIfAnalysisOutput::forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeWhatIfAnalysisOutput::estimated_time_remaining_in_minutes): <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeWhatIfAnalysisOutput::status): <p>The status of the what-if analysis. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>  </note>
+    ///   - [`message(Option<String>)`](crate::output::DescribeWhatIfAnalysisOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeWhatIfAnalysisOutput::creation_time): <p>When the what-if analysis was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeWhatIfAnalysisOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`time_series_selector(Option<TimeSeriesSelector>)`](crate::output::DescribeWhatIfAnalysisOutput::time_series_selector): <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>  <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>  <ul>   <li> <p> <code>DataSource</code> </p> </li>   <li> <p> <code>Format</code> </p> </li>   <li> <p> <code>Schema</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeWhatIfAnalysisError>`](crate::error::DescribeWhatIfAnalysisError)
+    pub fn describe_what_if_analysis(&self) -> fluent_builders::DescribeWhatIfAnalysis {
+        fluent_builders::DescribeWhatIfAnalysis::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeWhatIfForecast`](crate::client::fluent_builders::DescribeWhatIfForecast) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_forecast_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeWhatIfForecast::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::client::fluent_builders::DescribeWhatIfForecast::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    /// - On success, responds with [`DescribeWhatIfForecastOutput`](crate::output::DescribeWhatIfForecastOutput) with field(s):
+    ///   - [`what_if_forecast_name(Option<String>)`](crate::output::DescribeWhatIfForecastOutput::what_if_forecast_name): <p>The name of the what-if forecast.</p>
+    ///   - [`what_if_forecast_arn(Option<String>)`](crate::output::DescribeWhatIfForecastOutput::what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    ///   - [`what_if_analysis_arn(Option<String>)`](crate::output::DescribeWhatIfForecastOutput::what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this forecast.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeWhatIfForecastOutput::estimated_time_remaining_in_minutes): <p>The approximate time remaining to complete the what-if forecast, in minutes.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeWhatIfForecastOutput::status): <p>The status of the what-if forecast. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the what-if forecast must be <code>ACTIVE</code> before you can access the forecast.</p>  </note>
+    ///   - [`message(Option<String>)`](crate::output::DescribeWhatIfForecastOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeWhatIfForecastOutput::creation_time): <p>When the what-if forecast was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeWhatIfForecastOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`time_series_transformations(Option<Vec<TimeSeriesTransformation>>)`](crate::output::DescribeWhatIfForecastOutput::time_series_transformations): <p>An array of <code>Action</code> and <code>TimeSeriesConditions</code> elements that describe what transformations were applied to which time series.</p>
+    ///   - [`time_series_replacements_data_source(Option<TimeSeriesReplacementsDataSource>)`](crate::output::DescribeWhatIfForecastOutput::time_series_replacements_data_source): <p>An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements that describe the replacement time series.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::output::DescribeWhatIfForecastOutput::forecast_types): <p>The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeWhatIfForecastError>`](crate::error::DescribeWhatIfForecastError)
+    pub fn describe_what_if_forecast(&self) -> fluent_builders::DescribeWhatIfForecast {
+        fluent_builders::DescribeWhatIfForecast::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeWhatIfForecastExport`](crate::client::fluent_builders::DescribeWhatIfForecastExport) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`what_if_forecast_export_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeWhatIfForecastExport::what_if_forecast_export_arn) / [`set_what_if_forecast_export_arn(Option<String>)`](crate::client::fluent_builders::DescribeWhatIfForecastExport::set_what_if_forecast_export_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+    /// - On success, responds with [`DescribeWhatIfForecastExportOutput`](crate::output::DescribeWhatIfForecastExportOutput) with field(s):
+    ///   - [`what_if_forecast_export_arn(Option<String>)`](crate::output::DescribeWhatIfForecastExportOutput::what_if_forecast_export_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
+    ///   - [`what_if_forecast_export_name(Option<String>)`](crate::output::DescribeWhatIfForecastExportOutput::what_if_forecast_export_name): <p>The name of the what-if forecast export.</p>
+    ///   - [`what_if_forecast_arns(Option<Vec<String>>)`](crate::output::DescribeWhatIfForecastExportOutput::what_if_forecast_arns): <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::output::DescribeWhatIfForecastExportOutput::destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    ///   - [`message(Option<String>)`](crate::output::DescribeWhatIfForecastExportOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeWhatIfForecastExportOutput::status): <p>The status of the what-if forecast. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>  </note>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeWhatIfForecastExportOutput::creation_time): <p>When the what-if forecast export was created.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeWhatIfForecastExportOutput::estimated_time_remaining_in_minutes): <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeWhatIfForecastExportOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`format(Option<String>)`](crate::output::DescribeWhatIfForecastExportOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
+    /// - On failure, responds with [`SdkError<DescribeWhatIfForecastExportError>`](crate::error::DescribeWhatIfForecastExportError)
+    pub fn describe_what_if_forecast_export(
+        &self,
+    ) -> fluent_builders::DescribeWhatIfForecastExport {
+        fluent_builders::DescribeWhatIfForecastExport::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetAccuracyMetrics`](crate::client::fluent_builders::GetAccuracyMetrics) operation.
     ///
     /// - The fluent builder is configurable:
@@ -801,6 +931,48 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListWhatIfAnalyses`](crate::client::fluent_builders::ListWhatIfAnalyses) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWhatIfAnalyses::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWhatIfAnalyses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWhatIfAnalyses::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWhatIfAnalyses::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWhatIfAnalyses::set_max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListWhatIfAnalyses::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListWhatIfAnalyses::set_filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:   <acct-id>    :forecast/electricityWhatIf" } ]   </acct-id></code> </p>
+    /// - On success, responds with [`ListWhatIfAnalysesOutput`](crate::output::ListWhatIfAnalysesOutput) with field(s):
+    ///   - [`what_if_analyses(Option<Vec<WhatIfAnalysisSummary>>)`](crate::output::ListWhatIfAnalysesOutput::what_if_analyses): <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWhatIfAnalysesOutput::next_token): <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListWhatIfAnalysesError>`](crate::error::ListWhatIfAnalysesError)
+    pub fn list_what_if_analyses(&self) -> fluent_builders::ListWhatIfAnalyses {
+        fluent_builders::ListWhatIfAnalyses::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListWhatIfForecastExports`](crate::client::fluent_builders::ListWhatIfForecastExports) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWhatIfForecastExports::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWhatIfForecastExports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWhatIfForecastExports::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWhatIfForecastExports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWhatIfForecastExports::set_max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListWhatIfForecastExports::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListWhatIfForecastExports::set_filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:   <acct-id>    :forecast/electricityWIFExport" } ]   </acct-id></code> </p>
+    /// - On success, responds with [`ListWhatIfForecastExportsOutput`](crate::output::ListWhatIfForecastExportsOutput) with field(s):
+    ///   - [`what_if_forecast_exports(Option<Vec<WhatIfForecastExportSummary>>)`](crate::output::ListWhatIfForecastExportsOutput::what_if_forecast_exports): <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWhatIfForecastExportsOutput::next_token): <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListWhatIfForecastExportsError>`](crate::error::ListWhatIfForecastExportsError)
+    pub fn list_what_if_forecast_exports(&self) -> fluent_builders::ListWhatIfForecastExports {
+        fluent_builders::ListWhatIfForecastExports::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListWhatIfForecasts`](crate::client::fluent_builders::ListWhatIfForecasts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWhatIfForecasts::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWhatIfForecasts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWhatIfForecasts::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWhatIfForecasts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWhatIfForecasts::set_max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListWhatIfForecasts::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListWhatIfForecasts::set_filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:   <acct-id>    :forecast/electricityWhatIfForecast" } ]   </acct-id></code> </p>
+    /// - On success, responds with [`ListWhatIfForecastsOutput`](crate::output::ListWhatIfForecastsOutput) with field(s):
+    ///   - [`what_if_forecasts(Option<Vec<WhatIfForecastSummary>>)`](crate::output::ListWhatIfForecastsOutput::what_if_forecasts): <p>An array of <code>WhatIfForecasts</code> objects that describe the matched forecasts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWhatIfForecastsOutput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    /// - On failure, responds with [`SdkError<ListWhatIfForecastsError>`](crate::error::ListWhatIfForecastsError)
+    pub fn list_what_if_forecasts(&self) -> fluent_builders::ListWhatIfForecasts {
+        fluent_builders::ListWhatIfForecasts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ResumeResource`](crate::client::fluent_builders::ResumeResource) operation.
     ///
@@ -2848,6 +3020,377 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateWhatIfAnalysis`.
+    ///
+    /// <p>What-if analysis is a scenario modeling technique where you make a hypothetical change to a time series and compare the forecasts generated by these changes against the baseline, unchanged time series. It is important to remember that the purpose of a what-if analysis is to understand how a forecast can change given different modifications to the baseline time series.</p>
+    /// <p>For example, imagine you are a clothing retailer who is considering an end of season sale to clear space for new styles. After creating a baseline forecast, you can use a what-if analysis to investigate how different sales tactics might affect your goals. You could create a scenario where everything is given a 25% markdown and another where everything is given a fixed dollar markdown. You can create a scenario where the sale lasts for 1 week and another where the sale lasts for 1 month. Your what-if analysis enables you to compare many different scenarios against each other.</p>
+    /// <p>Note that a what-if analysis is meant to display what the forecasting model has learned and how it will behave in the scenarios that you are evaluating. Do not blindly use the results of the what-if analysis to make business decisions. For instance, forecasts might not be accurate for novel scenarios where there is no reference available to determine whether a forecast is good.</p>
+    /// <p>The <code>TimeSeriesSelector</code> object defines the items that you want in the what-if analysis.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateWhatIfAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_what_if_analysis_input::Builder,
+    }
+    impl CreateWhatIfAnalysis {
+        /// Creates a new `CreateWhatIfAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWhatIfAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateWhatIfAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the what-if analysis. Each name must be unique.</p>
+        pub fn what_if_analysis_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_analysis_name(input.into());
+            self
+        }
+        /// <p>The name of the what-if analysis. Each name must be unique.</p>
+        pub fn set_what_if_analysis_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_analysis_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+        pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_forecast_arn(input);
+            self
+        }
+        /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn time_series_selector(mut self, input: crate::model::TimeSeriesSelector) -> Self {
+            self.inner = self.inner.time_series_selector(input);
+            self
+        }
+        /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn set_time_series_selector(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesSelector>,
+        ) -> Self {
+            self.inner = self.inner.set_time_series_selector(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateWhatIfForecast`.
+    ///
+    /// <p>A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateWhatIfForecast {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_what_if_forecast_input::Builder,
+    }
+    impl CreateWhatIfForecast {
+        /// Creates a new `CreateWhatIfForecast`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWhatIfForecastOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateWhatIfForecastError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+        pub fn what_if_forecast_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_forecast_name(input.into());
+            self
+        }
+        /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+        pub fn set_what_if_forecast_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_analysis_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_analysis_arn(input);
+            self
+        }
+        /// Appends an item to `TimeSeriesTransformations`.
+        ///
+        /// To override the contents of this collection use [`set_time_series_transformations`](Self::set_time_series_transformations).
+        ///
+        /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+        pub fn time_series_transformations(
+            mut self,
+            input: crate::model::TimeSeriesTransformation,
+        ) -> Self {
+            self.inner = self.inner.time_series_transformations(input);
+            self
+        }
+        /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+        pub fn set_time_series_transformations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesTransformation>>,
+        ) -> Self {
+            self.inner = self.inner.set_time_series_transformations(input);
+            self
+        }
+        /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+        /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+        /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+        pub fn time_series_replacements_data_source(
+            mut self,
+            input: crate::model::TimeSeriesReplacementsDataSource,
+        ) -> Self {
+            self.inner = self.inner.time_series_replacements_data_source(input);
+            self
+        }
+        /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+        /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+        /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+        pub fn set_time_series_replacements_data_source(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesReplacementsDataSource>,
+        ) -> Self {
+            self.inner = self.inner.set_time_series_replacements_data_source(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateWhatIfForecastExport`.
+    ///
+    /// <p>Exports a forecast created by the <code>CreateWhatIfForecast</code> operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>
+    /// <p> <code>≈
+    /// <forecastexportjobname>
+    /// _
+    /// <exporttimestamp>
+    /// _
+    /// <partnumber></partnumber>
+    /// </exporttimestamp>
+    /// </forecastexportjobname></code> </p>
+    /// <p>The <exporttimestamp>
+    /// component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+    /// </exporttimestamp></p>
+    /// <p>You must specify a <code>DataDestination</code> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p>
+    /// <p>For more information, see <code>howitworks-forecast</code>.</p>
+    /// <p>To get a list of all your what-if forecast export jobs, use the <code>ListWhatIfForecastExports</code> operation.</p> <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateWhatIfForecastExport {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_what_if_forecast_export_input::Builder,
+    }
+    impl CreateWhatIfForecastExport {
+        /// Creates a new `CreateWhatIfForecastExport`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWhatIfForecastExportOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateWhatIfForecastExportError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the what-if forecast to export.</p>
+        pub fn what_if_forecast_export_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.what_if_forecast_export_name(input.into());
+            self
+        }
+        /// <p>The name of the what-if forecast to export.</p>
+        pub fn set_what_if_forecast_export_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_export_name(input);
+            self
+        }
+        /// Appends an item to `WhatIfForecastArns`.
+        ///
+        /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
+        ///
+        /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+        pub fn what_if_forecast_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_forecast_arns(input.into());
+            self
+        }
+        /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+        pub fn set_what_if_forecast_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_arns(input);
+            self
+        }
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
+            self
+        }
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::DataDestination>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_format(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes an Amazon Forecast dataset that was created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation. You can only delete datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation.</p> <note>
@@ -3467,6 +4010,179 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteWhatIfAnalysis`.
+    ///
+    /// <p>Deletes a what-if analysis created using the <code>CreateWhatIfAnalysis</code> operation. You can delete only what-if analyses that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfAnalysis</code> operation. </p>
+    /// <p>You can't delete a what-if analysis while any of its forecasts are being exported.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteWhatIfAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_what_if_analysis_input::Builder,
+    }
+    impl DeleteWhatIfAnalysis {
+        /// Creates a new `DeleteWhatIfAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWhatIfAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_analysis_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_analysis_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteWhatIfForecast`.
+    ///
+    /// <p>Deletes a what-if forecast created using the <code>CreateWhatIfForecast</code> operation. You can delete only what-if forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecast</code> operation. </p>
+    /// <p>You can't delete a what-if forecast while it is being exported. After a what-if forecast is deleted, you can no longer query the what-if analysis.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteWhatIfForecast {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_what_if_forecast_input::Builder,
+    }
+    impl DeleteWhatIfForecast {
+        /// Creates a new `DeleteWhatIfForecast`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWhatIfForecastOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfForecastError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+        pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_forecast_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+        pub fn set_what_if_forecast_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteWhatIfForecastExport`.
+    ///
+    /// <p>Deletes a what-if forecast export created using the <code>CreateWhatIfForecastExport</code> operation. You can delete only what-if forecast exports that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteWhatIfForecastExport {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_what_if_forecast_export_input::Builder,
+    }
+    impl DeleteWhatIfForecastExport {
+        /// Creates a new `DeleteWhatIfForecastExport`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWhatIfForecastExportOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfForecastExportError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+        pub fn what_if_forecast_export_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.what_if_forecast_export_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+        pub fn set_what_if_forecast_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_export_arn(input);
             self
         }
     }
@@ -4144,6 +4860,198 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_predictor_backtest_export_job_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeWhatIfAnalysis`.
+    ///
+    /// <p>Describes the what-if analysis created using the <code>CreateWhatIfAnalysis</code> operation.</p>
+    /// <p>In addition to listing the properties provided in the <code>CreateWhatIfAnalysis</code> request, this operation lists the following properties:</p>
+    /// <ul>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeWhatIfAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_what_if_analysis_input::Builder,
+    }
+    impl DescribeWhatIfAnalysis {
+        /// Creates a new `DescribeWhatIfAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeWhatIfAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_analysis_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_analysis_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeWhatIfForecast`.
+    ///
+    /// <p>Describes the what-if forecast created using the <code>CreateWhatIfForecast</code> operation.</p>
+    /// <p>In addition to listing the properties provided in the <code>CreateWhatIfForecast</code> request, this operation lists the following properties:</p>
+    /// <ul>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeWhatIfForecast {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_what_if_forecast_input::Builder,
+    }
+    impl DescribeWhatIfForecast {
+        /// Creates a new `DescribeWhatIfForecast`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeWhatIfForecastOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfForecastError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+        pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.what_if_forecast_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+        pub fn set_what_if_forecast_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeWhatIfForecastExport`.
+    ///
+    /// <p>Describes the what-if forecast export created using the <code>CreateWhatIfForecastExport</code> operation.</p>
+    /// <p>In addition to listing the properties provided in the <code>CreateWhatIfForecastExport</code> request, this operation lists the following properties:</p>
+    /// <ul>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeWhatIfForecastExport {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_what_if_forecast_export_input::Builder,
+    }
+    impl DescribeWhatIfForecastExport {
+        /// Creates a new `DescribeWhatIfForecastExport`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeWhatIfForecastExportOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfForecastExportError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+        pub fn what_if_forecast_export_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.what_if_forecast_export_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+        pub fn set_what_if_forecast_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_what_if_forecast_export_arn(input);
             self
         }
     }
@@ -5322,6 +6230,330 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListWhatIfAnalyses`.
+    ///
+    /// <p>Returns a list of what-if analyses created using the <code>CreateWhatIfAnalysis</code> operation. For each what-if analysis, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if analysis ARN with the <code>DescribeWhatIfAnalysis</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListWhatIfAnalyses {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_what_if_analyses_input::Builder,
+    }
+    impl ListWhatIfAnalyses {
+        /// Creates a new `ListWhatIfAnalyses`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListWhatIfAnalysesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListWhatIfAnalysesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWhatIfAnalysesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWhatIfAnalysesPaginator {
+            crate::paginator::ListWhatIfAnalysesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIf" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIf" } ]
+        /// </acct-id></code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListWhatIfForecastExports`.
+    ///
+    /// <p>Returns a list of what-if forecast exports created using the <code>CreateWhatIfForecastExport</code> operation. For each what-if forecast export, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if forecast export ARN with the <code>DescribeWhatIfForecastExport</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListWhatIfForecastExports {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_what_if_forecast_exports_input::Builder,
+    }
+    impl ListWhatIfForecastExports {
+        /// Creates a new `ListWhatIfForecastExports`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListWhatIfForecastExportsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListWhatIfForecastExportsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWhatIfForecastExportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWhatIfForecastExportsPaginator {
+            crate::paginator::ListWhatIfForecastExportsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWIFExport" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWIFExport" } ]
+        /// </acct-id></code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListWhatIfForecasts`.
+    ///
+    /// <p>Returns a list of what-if forecasts created using the <code>CreateWhatIfForecast</code> operation. For each what-if forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if forecast ARN with the <code>DescribeWhatIfForecast</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListWhatIfForecasts {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_what_if_forecasts_input::Builder,
+    }
+    impl ListWhatIfForecasts {
+        /// Creates a new `ListWhatIfForecasts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListWhatIfForecastsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListWhatIfForecastsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWhatIfForecastsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWhatIfForecastsPaginator {
+            crate::paginator::ListWhatIfForecastsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIfForecast" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIfForecast" } ]
+        /// </acct-id></code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }

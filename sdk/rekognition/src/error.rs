@@ -1499,6 +1499,327 @@ impl ImageTooLargeException {
     }
 }
 
+/// <p>A resource with the specified ID already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
+    pub logref: std::option::Option<std::string::String>,
+}
+impl ResourceAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
+impl std::fmt::Debug for ResourceAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("logref", &self.logref);
+        formatter.finish()
+    }
+}
+impl ResourceAlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceAlreadyExistsException")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceAlreadyExistsException {}
+/// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+pub mod resource_already_exists_exception {
+
+    /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) logref: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logref = Some(input.into());
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logref = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+        pub fn build(self) -> crate::error::ResourceAlreadyExistsException {
+            crate::error::ResourceAlreadyExistsException {
+                message: self.message,
+                code: self.code,
+                logref: self.logref,
+            }
+        }
+    }
+}
+impl ResourceAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
+    pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
+        crate::error::resource_already_exists_exception::Builder::default()
+    }
+}
+
+/// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MalformedPolicyDocumentException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
+    pub logref: std::option::Option<std::string::String>,
+}
+impl MalformedPolicyDocumentException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
+impl std::fmt::Debug for MalformedPolicyDocumentException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("logref", &self.logref);
+        formatter.finish()
+    }
+}
+impl MalformedPolicyDocumentException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MalformedPolicyDocumentException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MalformedPolicyDocumentException")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MalformedPolicyDocumentException {}
+/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+pub mod malformed_policy_document_exception {
+
+    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) logref: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logref = Some(input.into());
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logref = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
+            crate::error::MalformedPolicyDocumentException {
+                message: self.message,
+                code: self.code,
+                logref: self.logref,
+            }
+        }
+    }
+}
+impl MalformedPolicyDocumentException {
+    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
+        crate::error::malformed_policy_document_exception::Builder::default()
+    }
+}
+
+/// <p>The supplied revision id for the project policy is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidPolicyRevisionIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    #[doc(hidden)]
+    pub logref: std::option::Option<std::string::String>,
+}
+impl InvalidPolicyRevisionIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
+impl std::fmt::Debug for InvalidPolicyRevisionIdException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidPolicyRevisionIdException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("logref", &self.logref);
+        formatter.finish()
+    }
+}
+impl InvalidPolicyRevisionIdException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidPolicyRevisionIdException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidPolicyRevisionIdException")?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidPolicyRevisionIdException {}
+/// See [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+pub mod invalid_policy_revision_id_exception {
+
+    /// A builder for [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) logref: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logref = Some(input.into());
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logref = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+        pub fn build(self) -> crate::error::InvalidPolicyRevisionIdException {
+            crate::error::InvalidPolicyRevisionIdException {
+                message: self.message,
+                code: self.code,
+                logref: self.logref,
+            }
+        }
+    }
+}
+impl InvalidPolicyRevisionIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
+    pub fn builder() -> crate::error::invalid_policy_revision_id_exception::Builder {
+        crate::error::invalid_policy_revision_id_exception::Builder::default()
+    }
+}
+
 /// <p>Pagination token in the request is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1541,8 +1862,8 @@ impl InvalidPaginationTokenException {
 impl std::fmt::Display for InvalidPaginationTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPaginationTokenException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -1648,8 +1969,8 @@ impl ResourceNotReadyException {
 impl std::fmt::Display for ResourceNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotReadyException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -1779,8 +2100,8 @@ impl HumanLoopQuotaExceededException {
 impl std::fmt::Display for HumanLoopQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HumanLoopQuotaExceededException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -1880,113 +2201,6 @@ impl HumanLoopQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException).
     pub fn builder() -> crate::error::human_loop_quota_exceeded_exception::Builder {
         crate::error::human_loop_quota_exceeded_exception::Builder::default()
-    }
-}
-
-/// <p>A resource with the specified ID already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceAlreadyExistsException {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
-    /// <p>A universally unique identifier (UUID) for the request.</p>
-    #[doc(hidden)]
-    pub logref: std::option::Option<std::string::String>,
-}
-impl ResourceAlreadyExistsException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    /// <p>A universally unique identifier (UUID) for the request.</p>
-    pub fn logref(&self) -> std::option::Option<&str> {
-        self.logref.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
-    }
-}
-impl ResourceAlreadyExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceAlreadyExistsException {}
-/// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-pub mod resource_already_exists_exception {
-
-    /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) logref: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
-            self.logref = Some(input.into());
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.logref = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-        pub fn build(self) -> crate::error::ResourceAlreadyExistsException {
-            crate::error::ResourceAlreadyExistsException {
-                message: self.message,
-                code: self.code,
-                logref: self.logref,
-            }
-        }
-    }
-}
-impl ResourceAlreadyExistsException {
-    /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
-        crate::error::resource_already_exists_exception::Builder::default()
     }
 }
 
@@ -2144,6 +2358,192 @@ impl std::error::Error for CompareFacesError {
             CompareFacesErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             CompareFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
             CompareFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CopyProjectVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CopyProjectVersionError {
+    /// Kind of error that occurred.
+    pub kind: CopyProjectVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CopyProjectVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CopyProjectVersionErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The specified resource is already being used.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p></p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CopyProjectVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CopyProjectVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CopyProjectVersionErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CopyProjectVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CopyProjectVersionError {
+    fn code(&self) -> Option<&str> {
+        CopyProjectVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CopyProjectVersionError {
+    /// Creates a new `CopyProjectVersionError`.
+    pub fn new(kind: CopyProjectVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CopyProjectVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CopyProjectVersionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CopyProjectVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CopyProjectVersionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CopyProjectVersionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyProjectVersionErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CopyProjectVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CopyProjectVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::InternalServerError(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            CopyProjectVersionErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CopyProjectVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3593,6 +3993,169 @@ impl std::error::Error for DeleteProjectError {
             DeleteProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteProjectPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteProjectPolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteProjectPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteProjectPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteProjectPolicyErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The supplied revision id for the project policy is invalid.</p>
+    InvalidPolicyRevisionIdException(crate::error::InvalidPolicyRevisionIdException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteProjectPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteProjectPolicyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteProjectPolicyErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteProjectPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => _inner.fmt(f),
+            DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteProjectPolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteProjectPolicyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteProjectPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteProjectPolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteProjectPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteProjectPolicyError {
+    /// Creates a new `DeleteProjectPolicyError`.
+    pub fn new(kind: DeleteProjectPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteProjectPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteProjectPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteProjectPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteProjectPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException`.
+    pub fn is_invalid_policy_revision_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProjectPolicyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProjectPolicyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteProjectPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteProjectPolicyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteProjectPolicyErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteProjectPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => Some(_inner),
+            DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            DeleteProjectPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteProjectPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteProjectPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8194,6 +8757,169 @@ impl std::error::Error for ListFacesError {
     }
 }
 
+/// Error type for the `ListProjectPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListProjectPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: ListProjectPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListProjectPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListProjectPoliciesErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Pagination token in the request is not valid.</p>
+    InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListProjectPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListProjectPoliciesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListProjectPoliciesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            ListProjectPoliciesErrorKind::InvalidPaginationTokenException(_inner) => _inner.fmt(f),
+            ListProjectPoliciesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListProjectPoliciesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListProjectPoliciesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListProjectPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListProjectPoliciesError {
+    fn code(&self) -> Option<&str> {
+        ListProjectPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListProjectPoliciesError {
+    /// Creates a new `ListProjectPoliciesError`.
+    pub fn new(kind: ListProjectPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListProjectPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListProjectPoliciesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListProjectPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListProjectPoliciesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::InvalidPaginationTokenException`.
+    pub fn is_invalid_pagination_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::InvalidPaginationTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProjectPoliciesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProjectPoliciesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListProjectPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListProjectPoliciesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListProjectPoliciesErrorKind::InternalServerError(_inner) => Some(_inner),
+            ListProjectPoliciesErrorKind::InvalidPaginationTokenException(_inner) => Some(_inner),
+            ListProjectPoliciesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListProjectPoliciesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListProjectPoliciesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListProjectPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListStreamProcessors` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8494,6 +9220,214 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PutProjectPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutProjectPolicyError {
+    /// Kind of error that occurred.
+    pub kind: PutProjectPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutProjectPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutProjectPolicyErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The supplied revision id for the project policy is invalid.</p>
+    InvalidPolicyRevisionIdException(crate::error::InvalidPolicyRevisionIdException),
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>A resource with the specified ID already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p></p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutProjectPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutProjectPolicyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutProjectPolicyErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            PutProjectPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutProjectPolicyError {
+    fn code(&self) -> Option<&str> {
+        PutProjectPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutProjectPolicyError {
+    /// Creates a new `PutProjectPolicyError`.
+    pub fn new(kind: PutProjectPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutProjectPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutProjectPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutProjectPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutProjectPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException`.
+    pub fn is_invalid_policy_revision_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::MalformedPolicyDocumentException`.
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutProjectPolicyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProjectPolicyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for PutProjectPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutProjectPolicyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::InternalServerError(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            PutProjectPolicyErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            PutProjectPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

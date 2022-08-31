@@ -982,6 +982,11 @@ pub fn serialize_structure_crate_model_geofence_geometry(
         }
         array_200.finish();
     }
+    if let Some(var_206) = &input.circle {
+        let mut object_207 = object.key("Circle").start_object();
+        crate::json_ser::serialize_structure_crate_model_circle(&mut object_207, var_206)?;
+        object_207.finish();
+    }
     Ok(())
 }
 
@@ -989,10 +994,10 @@ pub fn serialize_structure_crate_model_positional_accuracy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PositionalAccuracy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_206) = &input.horizontal {
+    if let Some(var_208) = &input.horizontal {
         object.key("Horizontal").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_206).into()),
+            aws_smithy_types::Number::Float((*var_208).into()),
         );
     }
     Ok(())
@@ -1002,26 +1007,26 @@ pub fn serialize_structure_crate_model_truck_dimensions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckDimensions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_207) = &input.length {
+    if let Some(var_209) = &input.length {
         object.key("Length").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_207).into()),
-        );
-    }
-    if let Some(var_208) = &input.height {
-        object.key("Height").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_208).into()),
-        );
-    }
-    if let Some(var_209) = &input.width {
-        object.key("Width").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::Float((*var_209).into()),
         );
     }
-    if let Some(var_210) = &input.unit {
-        object.key("Unit").string(var_210.as_str());
+    if let Some(var_210) = &input.height {
+        object.key("Height").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_210).into()),
+        );
+    }
+    if let Some(var_211) = &input.width {
+        object.key("Width").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_211).into()),
+        );
+    }
+    if let Some(var_212) = &input.unit {
+        object.key("Unit").string(var_212.as_str());
     }
     Ok(())
 }
@@ -1030,14 +1035,39 @@ pub fn serialize_structure_crate_model_truck_weight(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckWeight,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_211) = &input.total {
+    if let Some(var_213) = &input.total {
         object.key("Total").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((*var_211).into()),
+            aws_smithy_types::Number::Float((*var_213).into()),
         );
     }
-    if let Some(var_212) = &input.unit {
-        object.key("Unit").string(var_212.as_str());
+    if let Some(var_214) = &input.unit {
+        object.key("Unit").string(var_214.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_circle(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::Circle,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_215) = &input.center {
+        let mut array_216 = object.key("Center").start_array();
+        for item_217 in var_215 {
+            {
+                array_216.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    aws_smithy_types::Number::Float((*item_217).into()),
+                );
+            }
+        }
+        array_216.finish();
+    }
+    if let Some(var_218) = &input.radius {
+        object.key("Radius").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::Float((*var_218).into()),
+        );
     }
     Ok(())
 }

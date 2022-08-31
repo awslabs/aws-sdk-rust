@@ -1581,6 +1581,8 @@ pub enum GetCampaignStateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// The request was denied due to request throttling.
     ThrottlingException(crate::error::ThrottlingException),
+    /// The input fails to satisfy the constraints specified by an AWS service.
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1591,6 +1593,7 @@ impl std::fmt::Display for GetCampaignStateError {
             GetCampaignStateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetCampaignStateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetCampaignStateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetCampaignStateErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetCampaignStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1681,6 +1684,13 @@ impl GetCampaignStateError {
             GetCampaignStateErrorKind::ThrottlingException(_)
         )
     }
+    /// Returns `true` if the error kind is `GetCampaignStateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCampaignStateErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for GetCampaignStateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1689,6 +1699,7 @@ impl std::error::Error for GetCampaignStateError {
             GetCampaignStateErrorKind::InternalServerException(_inner) => Some(_inner),
             GetCampaignStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCampaignStateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetCampaignStateErrorKind::ValidationException(_inner) => Some(_inner),
             GetCampaignStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2385,6 +2396,8 @@ pub enum PauseCampaignErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// The request was denied due to request throttling.
     ThrottlingException(crate::error::ThrottlingException),
+    /// The input fails to satisfy the constraints specified by an AWS service.
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2397,6 +2410,7 @@ impl std::fmt::Display for PauseCampaignError {
             PauseCampaignErrorKind::InvalidCampaignStateException(_inner) => _inner.fmt(f),
             PauseCampaignErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             PauseCampaignErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            PauseCampaignErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PauseCampaignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2492,6 +2506,10 @@ impl PauseCampaignError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, PauseCampaignErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `PauseCampaignErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, PauseCampaignErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for PauseCampaignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2502,6 +2520,7 @@ impl std::error::Error for PauseCampaignError {
             PauseCampaignErrorKind::InvalidCampaignStateException(_inner) => Some(_inner),
             PauseCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PauseCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
+            PauseCampaignErrorKind::ValidationException(_inner) => Some(_inner),
             PauseCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2699,6 +2718,8 @@ pub enum ResumeCampaignErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// The request was denied due to request throttling.
     ThrottlingException(crate::error::ThrottlingException),
+    /// The input fails to satisfy the constraints specified by an AWS service.
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2711,6 +2732,7 @@ impl std::fmt::Display for ResumeCampaignError {
             ResumeCampaignErrorKind::InvalidCampaignStateException(_inner) => _inner.fmt(f),
             ResumeCampaignErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ResumeCampaignErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ResumeCampaignErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ResumeCampaignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2809,6 +2831,10 @@ impl ResumeCampaignError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ResumeCampaignErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `ResumeCampaignErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ResumeCampaignErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for ResumeCampaignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2819,6 +2845,7 @@ impl std::error::Error for ResumeCampaignError {
             ResumeCampaignErrorKind::InvalidCampaignStateException(_inner) => Some(_inner),
             ResumeCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ResumeCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ResumeCampaignErrorKind::ValidationException(_inner) => Some(_inner),
             ResumeCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2849,6 +2876,8 @@ pub enum StartCampaignErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// The request was denied due to request throttling.
     ThrottlingException(crate::error::ThrottlingException),
+    /// The input fails to satisfy the constraints specified by an AWS service.
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2861,6 +2890,7 @@ impl std::fmt::Display for StartCampaignError {
             StartCampaignErrorKind::InvalidCampaignStateException(_inner) => _inner.fmt(f),
             StartCampaignErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             StartCampaignErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartCampaignErrorKind::ValidationException(_inner) => _inner.fmt(f),
             StartCampaignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2956,6 +2986,10 @@ impl StartCampaignError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartCampaignErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `StartCampaignErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, StartCampaignErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for StartCampaignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2966,6 +3000,7 @@ impl std::error::Error for StartCampaignError {
             StartCampaignErrorKind::InvalidCampaignStateException(_inner) => Some(_inner),
             StartCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartCampaignErrorKind::ValidationException(_inner) => Some(_inner),
             StartCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3152,6 +3187,8 @@ pub enum StopCampaignErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// The request was denied due to request throttling.
     ThrottlingException(crate::error::ThrottlingException),
+    /// The input fails to satisfy the constraints specified by an AWS service.
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3164,6 +3201,7 @@ impl std::fmt::Display for StopCampaignError {
             StopCampaignErrorKind::InvalidCampaignStateException(_inner) => _inner.fmt(f),
             StopCampaignErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             StopCampaignErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StopCampaignErrorKind::ValidationException(_inner) => _inner.fmt(f),
             StopCampaignErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3257,6 +3295,10 @@ impl StopCampaignError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StopCampaignErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `StopCampaignErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, StopCampaignErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for StopCampaignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3267,6 +3309,7 @@ impl std::error::Error for StopCampaignError {
             StopCampaignErrorKind::InvalidCampaignStateException(_inner) => Some(_inner),
             StopCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StopCampaignErrorKind::ValidationException(_inner) => Some(_inner),
             StopCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

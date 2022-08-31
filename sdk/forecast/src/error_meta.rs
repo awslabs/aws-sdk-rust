@@ -346,6 +346,93 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWhatIfAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateWhatIfAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateWhatIfAnalysisErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::CreateWhatIfAnalysisErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateWhatIfAnalysisErrorKind::ResourceAlreadyExistsException(
+                    inner,
+                ) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::CreateWhatIfAnalysisErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::CreateWhatIfAnalysisErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateWhatIfAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWhatIfForecastError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateWhatIfForecastError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateWhatIfForecastErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::CreateWhatIfForecastErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateWhatIfForecastErrorKind::ResourceAlreadyExistsException(
+                    inner,
+                ) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::CreateWhatIfForecastErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::CreateWhatIfForecastErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateWhatIfForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateWhatIfForecastExportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateWhatIfForecastExportError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateWhatIfForecastExportErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::CreateWhatIfForecastExportErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::CreateWhatIfForecastExportErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::CreateWhatIfForecastExportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateWhatIfForecastExportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -617,6 +704,87 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteWhatIfAnalysisErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DeleteWhatIfAnalysisErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteWhatIfAnalysisErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteWhatIfAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfForecastError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfForecastError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteWhatIfForecastErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DeleteWhatIfForecastErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteWhatIfForecastErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteWhatIfForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfForecastExportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteWhatIfForecastExportError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteWhatIfForecastExportErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DeleteWhatIfForecastExportErrorKind::ResourceInUseException(
+                    inner,
+                ) => Error::ResourceInUseException(inner),
+                crate::error::DeleteWhatIfForecastExportErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteWhatIfForecastExportErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAutoPredictorError, R>>
     for Error
 where
@@ -864,6 +1032,78 @@ where
                 crate::error::DescribePredictorBacktestExportJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeWhatIfAnalysisErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DescribeWhatIfAnalysisErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeWhatIfAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfForecastError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfForecastError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeWhatIfForecastErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DescribeWhatIfForecastErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeWhatIfForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfForecastExportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeWhatIfForecastExportError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeWhatIfForecastExportErrorKind::InvalidInputException(
+                    inner,
+                ) => Error::InvalidInputException(inner),
+                crate::error::DescribeWhatIfForecastExportErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeWhatIfForecastExportErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1148,6 +1388,76 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWhatIfAnalysesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListWhatIfAnalysesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListWhatIfAnalysesErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::ListWhatIfAnalysesErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::ListWhatIfAnalysesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWhatIfForecastExportsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListWhatIfForecastExportsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListWhatIfForecastExportsErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::ListWhatIfForecastExportsErrorKind::InvalidNextTokenException(
+                    inner,
+                ) => Error::InvalidNextTokenException(inner),
+                crate::error::ListWhatIfForecastExportsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWhatIfForecastsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListWhatIfForecastsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListWhatIfForecastsErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::ListWhatIfForecastsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::ListWhatIfForecastsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

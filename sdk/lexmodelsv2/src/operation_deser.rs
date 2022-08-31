@@ -6978,6 +6978,173 @@ pub fn parse_start_import_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_bot_recommendation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopBotRecommendationOutput,
+    crate::error::StopBotRecommendationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopBotRecommendationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StopBotRecommendationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::StopBotRecommendationError {
+                meta: generic,
+                kind: crate::error::StopBotRecommendationErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerException" => crate::error::StopBotRecommendationError {
+            meta: generic,
+            kind: crate::error::StopBotRecommendationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::StopBotRecommendationError {
+            meta: generic,
+            kind: crate::error::StopBotRecommendationErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StopBotRecommendationError {
+            meta: generic,
+            kind: crate::error::StopBotRecommendationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::StopBotRecommendationError {
+            meta: generic,
+            kind: crate::error::StopBotRecommendationErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::StopBotRecommendationError {
+            meta: generic,
+            kind: crate::error::StopBotRecommendationErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_stop_bot_recommendation_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::StopBotRecommendationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::StopBotRecommendationError {
+            meta: generic,
+            kind: crate::error::StopBotRecommendationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBotRecommendationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StopBotRecommendationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_bot_recommendation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopBotRecommendationOutput,
+    crate::error::StopBotRecommendationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_bot_recommendation_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_stop_bot_recommendation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopBotRecommendationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {

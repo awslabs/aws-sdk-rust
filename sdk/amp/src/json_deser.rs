@@ -468,6 +468,47 @@ pub fn deser_operation_crate_operation_create_alert_manager_definition(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_create_logging_configuration(
+    value: &[u8],
+    mut builder: crate::output::create_logging_configuration_output::Builder,
+) -> Result<
+    crate::output::create_logging_configuration_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "status" => {
+                        builder = builder.set_status(
+                            crate::json_deser::deser_structure_crate_model_logging_configuration_status(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_create_rule_groups_namespace(
     value: &[u8],
     mut builder: crate::output::create_rule_groups_namespace_output::Builder,
@@ -615,6 +656,47 @@ pub fn deser_operation_crate_operation_describe_alert_manager_definition(
                     "alertManagerDefinition" => {
                         builder = builder.set_alert_manager_definition(
                             crate::json_deser::deser_structure_crate_model_alert_manager_definition_description(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_describe_logging_configuration(
+    value: &[u8],
+    mut builder: crate::output::describe_logging_configuration_output::Builder,
+) -> Result<
+    crate::output::describe_logging_configuration_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "loggingConfiguration" => {
+                        builder = builder.set_logging_configuration(
+                            crate::json_deser::deser_structure_crate_model_logging_configuration_metadata(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -963,6 +1045,47 @@ pub fn deser_operation_crate_operation_put_rule_groups_namespace(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_update_logging_configuration(
+    value: &[u8],
+    mut builder: crate::output::update_logging_configuration_output::Builder,
+) -> Result<
+    crate::output::update_logging_configuration_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "status" => {
+                        builder = builder.set_status(
+                            crate::json_deser::deser_structure_crate_model_logging_configuration_status(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -1037,6 +1160,67 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::AlertManagerDefinitionStatusCode::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "statusReason" => {
+                                builder = builder.set_status_reason(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_logging_configuration_status<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LoggingConfigurationStatus>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LoggingConfigurationStatus::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "statusCode" => {
+                                builder = builder.set_status_code(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::LoggingConfigurationStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -1260,6 +1444,82 @@ where
                                     aws_smithy_json::deserialize::token::expect_blob_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "createdAt" => {
+                                builder = builder.set_created_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "modifiedAt" => {
+                                builder = builder.set_modified_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_logging_configuration_metadata<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LoggingConfigurationMetadata>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LoggingConfigurationMetadata::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "status" => {
+                                builder = builder.set_status(
+                                    crate::json_deser::deser_structure_crate_model_logging_configuration_status(tokens)?
+                                );
+                            }
+                            "workspace" => {
+                                builder = builder.set_workspace(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "logGroupArn" => {
+                                builder = builder.set_log_group_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             "createdAt" => {

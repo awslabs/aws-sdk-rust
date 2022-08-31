@@ -22,6 +22,14 @@ impl ListHumanLoopsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `human_loop_summaries`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListHumanLoopsPaginatorItems {
+        crate::paginator::ListHumanLoopsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -82,6 +90,35 @@ impl ListHumanLoopsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListHumanLoopsPaginator`
+///
+/// This is created with [`.items()`](ListHumanLoopsPaginator::items)
+pub struct ListHumanLoopsPaginatorItems(ListHumanLoopsPaginator);
+
+impl ListHumanLoopsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::HumanLoopSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListHumanLoopsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_human_loops_output_human_loop_summaries(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
         })
     }
 }

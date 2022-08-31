@@ -1744,6 +1744,71 @@ impl BackupInUseException {
     }
 }
 
+/// <p> There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ImportConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportConflictException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ImportConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ImportConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ImportConflictException")?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ImportConflictException {}
+/// See [`ImportConflictException`](crate::error::ImportConflictException).
+pub mod import_conflict_exception {
+
+    /// A builder for [`ImportConflictException`](crate::error::ImportConflictException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportConflictException`](crate::error::ImportConflictException).
+        pub fn build(self) -> crate::error::ImportConflictException {
+            crate::error::ImportConflictException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ImportConflictException {
+    /// Creates a new builder-style object to manufacture [`ImportConflictException`](crate::error::ImportConflictException).
+    pub fn builder() -> crate::error::import_conflict_exception::Builder {
+        crate::error::import_conflict_exception::Builder::default()
+    }
+}
+
 /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1768,8 +1833,8 @@ impl InvalidExportTimeException {
 impl std::fmt::Display for InvalidExportTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportTimeException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -1833,8 +1898,8 @@ impl ExportConflictException {
 impl std::fmt::Display for ExportConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportConflictException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -1898,8 +1963,8 @@ impl DuplicateItemException {
 impl std::fmt::Display for DuplicateItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateItemException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -1939,6 +2004,71 @@ impl DuplicateItemException {
     }
 }
 
+/// <p> The specified import was not found. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ImportNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ImportNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ImportNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ImportNotFoundException")?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ImportNotFoundException {}
+/// See [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+pub mod import_not_found_exception {
+
+    /// A builder for [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+        pub fn build(self) -> crate::error::ImportNotFoundException {
+            crate::error::ImportNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ImportNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ImportNotFoundException`](crate::error::ImportNotFoundException).
+    pub fn builder() -> crate::error::import_not_found_exception::Builder {
+        crate::error::import_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>The specified export was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1963,8 +2093,8 @@ impl ExportNotFoundException {
 impl std::fmt::Display for ExportNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportNotFoundException")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -2028,8 +2158,8 @@ impl GlobalTableAlreadyExistsException {
 impl std::fmt::Display for GlobalTableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalTableAlreadyExistsException")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -4050,6 +4180,99 @@ impl std::error::Error for DescribeGlobalTableSettingsError {
     }
 }
 
+/// Error type for the `DescribeImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeImportError {
+    /// Kind of error that occurred.
+    pub kind: DescribeImportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeImport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeImportErrorKind {
+    /// <p> The specified import was not found. </p>
+    ImportNotFoundException(crate::error::ImportNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeImportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeImportErrorKind::ImportNotFoundException(_inner) => _inner.fmt(f),
+            DescribeImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeImportError {
+    fn code(&self) -> Option<&str> {
+        DescribeImportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeImportError {
+    /// Creates a new `DescribeImportError`.
+    pub fn new(kind: DescribeImportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeImportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeImportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeImportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeImportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeImportErrorKind::ImportNotFoundException`.
+    pub fn is_import_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImportErrorKind::ImportNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeImportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeImportErrorKind::ImportNotFoundException(_inner) => Some(_inner),
+            DescribeImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeKinesisStreamingDestination` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5656,6 +5879,115 @@ impl std::error::Error for GetItemError {
     }
 }
 
+/// Error type for the `ImportTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportTableError {
+    /// Kind of error that occurred.
+    pub kind: ImportTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportTableErrorKind {
+    /// <p> There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token. </p>
+    ImportConflictException(crate::error::ImportConflictException),
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
+    /// <p>Up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 250 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
+    /// <p>There is a soft account quota of 2,500 tables.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportTableErrorKind::ImportConflictException(_inner) => _inner.fmt(f),
+            ImportTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ImportTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ImportTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportTableError {
+    fn code(&self) -> Option<&str> {
+        ImportTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportTableError {
+    /// Creates a new `ImportTableError`.
+    pub fn new(kind: ImportTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportTableErrorKind::ImportConflictException`.
+    pub fn is_import_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ImportTableErrorKind::ImportConflictException(_))
+    }
+    /// Returns `true` if the error kind is `ImportTableErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, ImportTableErrorKind::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `ImportTableErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, ImportTableErrorKind::ResourceInUseException(_))
+    }
+}
+impl std::error::Error for ImportTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportTableErrorKind::ImportConflictException(_inner) => Some(_inner),
+            ImportTableErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ImportTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ImportTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListBackups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6062,6 +6394,99 @@ impl std::error::Error for ListGlobalTablesError {
             ListGlobalTablesErrorKind::InternalServerError(_inner) => Some(_inner),
             ListGlobalTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             ListGlobalTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListImports` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListImportsError {
+    /// Kind of error that occurred.
+    pub kind: ListImportsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListImports` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListImportsErrorKind {
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
+    /// <p>Up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 250 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
+    /// <p>There is a soft account quota of 2,500 tables.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListImportsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListImportsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListImportsError {
+    fn code(&self) -> Option<&str> {
+        ListImportsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListImportsError {
+    /// Creates a new `ListImportsError`.
+    pub fn new(kind: ListImportsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListImportsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListImportsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListImportsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListImportsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListImportsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, ListImportsErrorKind::LimitExceededException(_))
+    }
+}
+impl std::error::Error for ListImportsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListImportsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ListImportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

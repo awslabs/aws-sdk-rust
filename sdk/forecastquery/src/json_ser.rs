@@ -26,3 +26,31 @@ pub fn serialize_structure_crate_input_query_forecast_input(
     }
     Ok(())
 }
+
+pub fn serialize_structure_crate_input_query_what_if_forecast_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::QueryWhatIfForecastInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_9) = &input.what_if_forecast_arn {
+        object.key("WhatIfForecastArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.start_date {
+        object.key("StartDate").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.end_date {
+        object.key("EndDate").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.filters {
+        let mut object_13 = object.key("Filters").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                object_13.key(key_14).string(value_15.as_str());
+            }
+        }
+        object_13.finish();
+    }
+    if let Some(var_16) = &input.next_token {
+        object.key("NextToken").string(var_16.as_str());
+    }
+    Ok(())
+}

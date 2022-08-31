@@ -2361,6 +2361,122 @@ impl VpcConfig {
     }
 }
 
+/// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SelfManagedKafkaEventSourceConfig {
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    #[doc(hidden)]
+    pub consumer_group_id: std::option::Option<std::string::String>,
+}
+impl SelfManagedKafkaEventSourceConfig {
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
+        self.consumer_group_id.as_deref()
+    }
+}
+impl std::fmt::Debug for SelfManagedKafkaEventSourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SelfManagedKafkaEventSourceConfig");
+        formatter.field("consumer_group_id", &self.consumer_group_id);
+        formatter.finish()
+    }
+}
+/// See [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
+pub mod self_managed_kafka_event_source_config {
+
+    /// A builder for [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) consumer_group_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_group_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        pub fn set_consumer_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_group_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
+        pub fn build(self) -> crate::model::SelfManagedKafkaEventSourceConfig {
+            crate::model::SelfManagedKafkaEventSourceConfig {
+                consumer_group_id: self.consumer_group_id,
+            }
+        }
+    }
+}
+impl SelfManagedKafkaEventSourceConfig {
+    /// Creates a new builder-style object to manufacture [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
+    pub fn builder() -> crate::model::self_managed_kafka_event_source_config::Builder {
+        crate::model::self_managed_kafka_event_source_config::Builder::default()
+    }
+}
+
+/// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonManagedKafkaEventSourceConfig {
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    #[doc(hidden)]
+    pub consumer_group_id: std::option::Option<std::string::String>,
+}
+impl AmazonManagedKafkaEventSourceConfig {
+    /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
+        self.consumer_group_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AmazonManagedKafkaEventSourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonManagedKafkaEventSourceConfig");
+        formatter.field("consumer_group_id", &self.consumer_group_id);
+        formatter.finish()
+    }
+}
+/// See [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
+pub mod amazon_managed_kafka_event_source_config {
+
+    /// A builder for [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) consumer_group_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_group_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <code>services-msk-consumer-group-id</code>.</p>
+        pub fn set_consumer_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_group_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
+        pub fn build(self) -> crate::model::AmazonManagedKafkaEventSourceConfig {
+            crate::model::AmazonManagedKafkaEventSourceConfig {
+                consumer_group_id: self.consumer_group_id,
+            }
+        }
+    }
+}
+impl AmazonManagedKafkaEventSourceConfig {
+    /// Creates a new builder-style object to manufacture [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
+    pub fn builder() -> crate::model::amazon_managed_kafka_event_source_config::Builder {
+        crate::model::amazon_managed_kafka_event_source_config::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2560,7 +2676,7 @@ pub struct SourceAccessConfiguration {
     /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -2579,7 +2695,7 @@ impl SourceAccessConfiguration {
     /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::SourceAccessType> {
@@ -2617,7 +2733,7 @@ pub mod source_access_configuration {
         /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::SourceAccessType) -> Self {
@@ -2633,7 +2749,7 @@ pub mod source_access_configuration {
         /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
         /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
         pub fn set_type(
@@ -5457,6 +5573,14 @@ pub struct EventSourceMappingConfiguration {
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    #[doc(hidden)]
+    pub amazon_managed_kafka_event_source_config:
+        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    #[doc(hidden)]
+    pub self_managed_kafka_event_source_config:
+        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
@@ -5561,6 +5685,18 @@ impl EventSourceMappingConfiguration {
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
+    }
 }
 impl std::fmt::Debug for EventSourceMappingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5606,6 +5742,14 @@ impl std::fmt::Debug for EventSourceMappingConfiguration {
             &self.tumbling_window_in_seconds,
         );
         formatter.field("function_response_types", &self.function_response_types);
+        formatter.field(
+            "amazon_managed_kafka_event_source_config",
+            &self.amazon_managed_kafka_event_source_config,
+        );
+        formatter.field(
+            "self_managed_kafka_event_source_config",
+            &self.self_managed_kafka_event_source_config,
+        );
         formatter.finish()
     }
 }
@@ -5641,6 +5785,10 @@ pub mod event_source_mapping_configuration {
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config:
+            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config:
+            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -5962,6 +6110,38 @@ pub mod event_source_mapping_configuration {
             self.function_response_types = input;
             self
         }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn amazon_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::AmazonManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn set_amazon_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = input;
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn self_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::SelfManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn set_self_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
         pub fn build(self) -> crate::model::EventSourceMappingConfiguration {
             crate::model::EventSourceMappingConfiguration {
@@ -5988,6 +6168,9 @@ pub mod event_source_mapping_configuration {
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 tumbling_window_in_seconds: self.tumbling_window_in_seconds,
                 function_response_types: self.function_response_types,
+                amazon_managed_kafka_event_source_config: self
+                    .amazon_managed_kafka_event_source_config,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             }
         }
     }

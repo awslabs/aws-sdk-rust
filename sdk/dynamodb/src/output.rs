@@ -1816,6 +1816,91 @@ impl ListTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImportsOutput {
+    /// <p> A list of <code>ImportSummary</code> objects. </p>
+    #[doc(hidden)]
+    pub import_summary_list: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
+    /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImportsOutput {
+    /// <p> A list of <code>ImportSummary</code> objects. </p>
+    pub fn import_summary_list(&self) -> std::option::Option<&[crate::model::ImportSummary]> {
+        self.import_summary_list.as_deref()
+    }
+    /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImportsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImportsOutput");
+        formatter.field("import_summary_list", &self.import_summary_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListImportsOutput`](crate::output::ListImportsOutput).
+pub mod list_imports_output {
+
+    /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `import_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_import_summary_list`](Self::set_import_summary_list).
+        ///
+        /// <p> A list of <code>ImportSummary</code> objects. </p>
+        pub fn import_summary_list(mut self, input: crate::model::ImportSummary) -> Self {
+            let mut v = self.import_summary_list.unwrap_or_default();
+            v.push(input);
+            self.import_summary_list = Some(v);
+            self
+        }
+        /// <p> A list of <code>ImportSummary</code> objects. </p>
+        pub fn set_import_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
+        ) -> Self {
+            self.import_summary_list = input;
+            self
+        }
+        /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput).
+        pub fn build(self) -> crate::output::ListImportsOutput {
+            crate::output::ListImportsOutput {
+                import_summary_list: self.import_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListImportsOutput {
+    /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::output::ListImportsOutput).
+    pub fn builder() -> crate::output::list_imports_output::Builder {
+        crate::output::list_imports_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
     #[doc(hidden)]
@@ -2178,6 +2263,70 @@ impl ListBackupsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupsOutput`](crate::output::ListBackupsOutput).
     pub fn builder() -> crate::output::list_backups_output::Builder {
         crate::output::list_backups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportTableOutput {
+    /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+    #[doc(hidden)]
+    pub import_table_description: std::option::Option<crate::model::ImportTableDescription>,
+}
+impl ImportTableOutput {
+    /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+    pub fn import_table_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportTableDescription> {
+        self.import_table_description.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTableOutput");
+        formatter.field("import_table_description", &self.import_table_description);
+        formatter.finish()
+    }
+}
+/// See [`ImportTableOutput`](crate::output::ImportTableOutput).
+pub mod import_table_output {
+
+    /// A builder for [`ImportTableOutput`](crate::output::ImportTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_table_description:
+            std::option::Option<crate::model::ImportTableDescription>,
+    }
+    impl Builder {
+        /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+        pub fn import_table_description(
+            mut self,
+            input: crate::model::ImportTableDescription,
+        ) -> Self {
+            self.import_table_description = Some(input);
+            self
+        }
+        /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+        pub fn set_import_table_description(
+            mut self,
+            input: std::option::Option<crate::model::ImportTableDescription>,
+        ) -> Self {
+            self.import_table_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportTableOutput`](crate::output::ImportTableOutput).
+        pub fn build(self) -> crate::output::ImportTableOutput {
+            crate::output::ImportTableOutput {
+                import_table_description: self.import_table_description,
+            }
+        }
+    }
+}
+impl ImportTableOutput {
+    /// Creates a new builder-style object to manufacture [`ImportTableOutput`](crate::output::ImportTableOutput).
+    pub fn builder() -> crate::output::import_table_output::Builder {
+        crate::output::import_table_output::Builder::default()
     }
 }
 
@@ -3215,6 +3364,70 @@ impl DescribeKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
     pub fn builder() -> crate::output::describe_kinesis_streaming_destination_output::Builder {
         crate::output::describe_kinesis_streaming_destination_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeImportOutput {
+    /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+    #[doc(hidden)]
+    pub import_table_description: std::option::Option<crate::model::ImportTableDescription>,
+}
+impl DescribeImportOutput {
+    /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+    pub fn import_table_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportTableDescription> {
+        self.import_table_description.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeImportOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeImportOutput");
+        formatter.field("import_table_description", &self.import_table_description);
+        formatter.finish()
+    }
+}
+/// See [`DescribeImportOutput`](crate::output::DescribeImportOutput).
+pub mod describe_import_output {
+
+    /// A builder for [`DescribeImportOutput`](crate::output::DescribeImportOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_table_description:
+            std::option::Option<crate::model::ImportTableDescription>,
+    }
+    impl Builder {
+        /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+        pub fn import_table_description(
+            mut self,
+            input: crate::model::ImportTableDescription,
+        ) -> Self {
+            self.import_table_description = Some(input);
+            self
+        }
+        /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+        pub fn set_import_table_description(
+            mut self,
+            input: std::option::Option<crate::model::ImportTableDescription>,
+        ) -> Self {
+            self.import_table_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeImportOutput`](crate::output::DescribeImportOutput).
+        pub fn build(self) -> crate::output::DescribeImportOutput {
+            crate::output::DescribeImportOutput {
+                import_table_description: self.import_table_description,
+            }
+        }
+    }
+}
+impl DescribeImportOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeImportOutput`](crate::output::DescribeImportOutput).
+    pub fn builder() -> crate::output::describe_import_output::Builder {
+        crate::output::describe_import_output::Builder::default()
     }
 }
 

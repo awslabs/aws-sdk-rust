@@ -3146,6 +3146,129 @@ impl std::error::Error for ListDashboardsError {
     }
 }
 
+/// Error type for the `ListManagedInsightRules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListManagedInsightRulesError {
+    /// Kind of error that occurred.
+    pub kind: ListManagedInsightRulesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListManagedInsightRules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListManagedInsightRulesErrorKind {
+    /// <p>The next token specified is invalid.</p>
+    InvalidNextToken(crate::error::InvalidNextToken),
+    /// <p>The value of an input parameter is bad or out-of-range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>An input parameter that is required is missing.</p>
+    MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListManagedInsightRulesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListManagedInsightRulesErrorKind::InvalidNextToken(_inner) => _inner.fmt(f),
+            ListManagedInsightRulesErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListManagedInsightRulesErrorKind::MissingRequiredParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListManagedInsightRulesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListManagedInsightRulesError {
+    fn code(&self) -> Option<&str> {
+        ListManagedInsightRulesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListManagedInsightRulesError {
+    /// Creates a new `ListManagedInsightRulesError`.
+    pub fn new(kind: ListManagedInsightRulesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListManagedInsightRulesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListManagedInsightRulesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListManagedInsightRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListManagedInsightRulesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListManagedInsightRulesErrorKind::InvalidNextToken`.
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedInsightRulesErrorKind::InvalidNextToken(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListManagedInsightRulesErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedInsightRulesErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListManagedInsightRulesErrorKind::MissingRequiredParameterException`.
+    pub fn is_missing_required_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedInsightRulesErrorKind::MissingRequiredParameterException(_)
+        )
+    }
+}
+impl std::error::Error for ListManagedInsightRulesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListManagedInsightRulesErrorKind::InvalidNextToken(_inner) => Some(_inner),
+            ListManagedInsightRulesErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ListManagedInsightRulesErrorKind::MissingRequiredParameterException(_inner) => {
+                Some(_inner)
+            }
+            ListManagedInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListMetrics` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3931,6 +4054,116 @@ impl std::error::Error for PutInsightRuleError {
             PutInsightRuleErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutInsightRuleErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             PutInsightRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PutManagedInsightRules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutManagedInsightRulesError {
+    /// Kind of error that occurred.
+    pub kind: PutManagedInsightRulesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutManagedInsightRules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutManagedInsightRulesErrorKind {
+    /// <p>The value of an input parameter is bad or out-of-range.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>An input parameter that is required is missing.</p>
+    MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutManagedInsightRulesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutManagedInsightRulesErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutManagedInsightRulesErrorKind::MissingRequiredParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutManagedInsightRulesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutManagedInsightRulesError {
+    fn code(&self) -> Option<&str> {
+        PutManagedInsightRulesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutManagedInsightRulesError {
+    /// Creates a new `PutManagedInsightRulesError`.
+    pub fn new(kind: PutManagedInsightRulesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutManagedInsightRulesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutManagedInsightRulesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutManagedInsightRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutManagedInsightRulesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutManagedInsightRulesErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedInsightRulesErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutManagedInsightRulesErrorKind::MissingRequiredParameterException`.
+    pub fn is_missing_required_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedInsightRulesErrorKind::MissingRequiredParameterException(_)
+        )
+    }
+}
+impl std::error::Error for PutManagedInsightRulesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutManagedInsightRulesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            PutManagedInsightRulesErrorKind::MissingRequiredParameterException(_inner) => {
+                Some(_inner)
+            }
+            PutManagedInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -28,7 +28,7 @@ The following resources contain information about your IVS live stream (see [Get
 
 __Tagging__
 
-A _tag_ is a metadata label that you assign to an Amazon Web Services resource. A tag comprises a _key_ and a _value_, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See [Tagging Amazon Web Services Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) for more information, including restrictions that apply to tags.
+A _tag_ is a metadata label that you assign to an Amazon Web Services resource. A tag comprises a _key_ and a _value_, both set by you. For example, you might set a tag as topic:nature to label a particular video category. See [Tagging Amazon Web Services Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 
 Tags can help you identify and organize your Amazon Web Services resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see [Access Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
 
@@ -40,7 +40,7 @@ __Authentication versus Authorization__
 
 Note the differences between these concepts:
   - _Authentication_ is about verifying identity. You need to be authenticated to sign Amazon IVS API requests.
-  - _Authorization_ is about granting permissions. You need to be authorized to view [Amazon IVS private channels](https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html). (Private channels are channels that are enabled for "playback authorization.")
+  - _Authorization_ is about granting permissions. Your IAM roles need to have permissions for Amazon IVS API requests. In addition, authorization is needed to view [Amazon IVS private channels](https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html). (Private channels are channels that are enabled for "playback authorization.")
 
 __Authentication__
 
@@ -52,9 +52,13 @@ For more information:
   - Authentication and generating signatures — See [Authenticating Requests (Amazon Web Services Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) in the _Amazon Web Services General Reference_.
   - Managing Amazon IVS permissions — See [Identity and Access Management](https://docs.aws.amazon.com/ivs/latest/userguide/security-iam.html) on the Security page of the _Amazon IVS User Guide_.
 
+__Amazon Resource Names (ARNs)__
+
+ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see [Amazon Resource Names](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the _AWS General Reference_.
+
 __Channel Endpoints__
   - CreateChannel — Creates a new channel and an associated stream key to start streaming.
-  - GetChannel — Gets the channel configuration for the specified channel ARN (Amazon Resource Name).
+  - GetChannel — Gets the channel configuration for the specified channel ARN.
   - BatchGetChannel — Performs GetChannel on multiple ARNs simultaneously.
   - ListChannels — Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed. This list can be filtered to match a specified name or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If you try to use both filters, you will get an error (409 Conflict Exception).
   - UpdateChannel — Updates a channel's configuration. This does not affect an ongoing stream of this channel. You must stop and restart the stream for the changes to take effect.
@@ -106,7 +110,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.47.0"
-aws-sdk-ivs = "0.17.0"
+aws-sdk-ivs = "0.18.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

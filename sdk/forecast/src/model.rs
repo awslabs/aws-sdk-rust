@@ -85,6 +85,1101 @@ impl Tag {
     }
 }
 
+/// <p>Provides a summary of the what-if forecast properties used in the <code>ListWhatIfForecasts</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfForecast</code> operation, and provide the <code>WhatIfForecastArn</code> that is listed in the summary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WhatIfForecastSummary {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the what-if forecast.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this what-if forecast.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the what-if forecast. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>When the what-if forecast was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl WhatIfForecastSummary {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    pub fn what_if_forecast_arn(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_arn.as_deref()
+    }
+    /// <p>The name of the what-if forecast.</p>
+    pub fn what_if_forecast_name(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this what-if forecast.</p>
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_arn.as_deref()
+    }
+    /// <p>The status of the what-if forecast. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the what-if forecast was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+}
+impl std::fmt::Debug for WhatIfForecastSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WhatIfForecastSummary");
+        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
+        formatter.field("what_if_forecast_name", &self.what_if_forecast_name);
+        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.finish()
+    }
+}
+/// See [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
+pub mod what_if_forecast_summary {
+
+    /// A builder for [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
+        pub(crate) what_if_forecast_name: std::option::Option<std::string::String>,
+        pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+        pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_forecast_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+        pub fn set_what_if_forecast_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_arn = input;
+            self
+        }
+        /// <p>The name of the what-if forecast.</p>
+        pub fn what_if_forecast_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_forecast_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the what-if forecast.</p>
+        pub fn set_what_if_forecast_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this what-if forecast.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this what-if forecast.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_arn = input;
+            self
+        }
+        /// <p>The status of the what-if forecast. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+        /// </note>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the what-if forecast. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+        /// </note>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>If an error occurred, an informational message about the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>If an error occurred, an informational message about the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>When the what-if forecast was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>When the what-if forecast was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+        /// </ul>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+        /// </ul>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
+        pub fn build(self) -> crate::model::WhatIfForecastSummary {
+            crate::model::WhatIfForecastSummary {
+                what_if_forecast_arn: self.what_if_forecast_arn,
+                what_if_forecast_name: self.what_if_forecast_name,
+                what_if_analysis_arn: self.what_if_analysis_arn,
+                status: self.status,
+                message: self.message,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+            }
+        }
+    }
+}
+impl WhatIfForecastSummary {
+    /// Creates a new builder-style object to manufacture [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
+    pub fn builder() -> crate::model::what_if_forecast_summary::Builder {
+        crate::model::what_if_forecast_summary::Builder::default()
+    }
+}
+
+/// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Filter {
+    /// <p>The name of the parameter to filter on.</p>
+    #[doc(hidden)]
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value to match.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    #[doc(hidden)]
+    pub condition: std::option::Option<crate::model::FilterConditionString>,
+}
+impl Filter {
+    /// <p>The name of the parameter to filter on.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value to match.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::FilterConditionString> {
+        self.condition.as_ref()
+    }
+}
+impl std::fmt::Debug for Filter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Filter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.field("condition", &self.condition);
+        formatter.finish()
+    }
+}
+/// See [`Filter`](crate::model::Filter).
+pub mod filter {
+
+    /// A builder for [`Filter`](crate::model::Filter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) condition: std::option::Option<crate::model::FilterConditionString>,
+    }
+    impl Builder {
+        /// <p>The name of the parameter to filter on.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The name of the parameter to filter on.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value to match.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value to match.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+        pub fn condition(mut self, input: crate::model::FilterConditionString) -> Self {
+            self.condition = Some(input);
+            self
+        }
+        /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<crate::model::FilterConditionString>,
+        ) -> Self {
+            self.condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
+        pub fn build(self) -> crate::model::Filter {
+            crate::model::Filter {
+                key: self.key,
+                value: self.value,
+                condition: self.condition,
+            }
+        }
+    }
+}
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FilterConditionString {
+    #[allow(missing_docs)] // documentation missing in model
+    Is,
+    #[allow(missing_docs)] // documentation missing in model
+    IsNot,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FilterConditionString {
+    fn from(s: &str) -> Self {
+        match s {
+            "IS" => FilterConditionString::Is,
+            "IS_NOT" => FilterConditionString::IsNot,
+            other => FilterConditionString::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FilterConditionString {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FilterConditionString::from(s))
+    }
+}
+impl FilterConditionString {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FilterConditionString::Is => "IS",
+            FilterConditionString::IsNot => "IS_NOT",
+            FilterConditionString::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["IS", "IS_NOT"]
+    }
+}
+impl AsRef<str> for FilterConditionString {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides a summary of the what-if forecast export properties used in the <code>ListWhatIfForecastExports</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfForecastExport</code> operation, and provide the <code>WhatIfForecastExportArn</code> that is listed in the summary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WhatIfForecastExportSummary {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_export_arn: std::option::Option<std::string::String>,
+    /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The what-if forecast export name.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_export_name: std::option::Option<std::string::String>,
+    /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+    #[doc(hidden)]
+    pub destination: std::option::Option<crate::model::DataDestination>,
+    /// <p>The status of the what-if forecast export. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>When the what-if forecast export was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl WhatIfForecastExportSummary {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
+    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_export_arn.as_deref()
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
+    pub fn what_if_forecast_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.what_if_forecast_arns.as_deref()
+    }
+    /// <p>The what-if forecast export name.</p>
+    pub fn what_if_forecast_export_name(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_export_name.as_deref()
+    }
+    /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>The status of the what-if forecast export. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the what-if forecast export was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+}
+impl std::fmt::Debug for WhatIfForecastExportSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WhatIfForecastExportSummary");
+        formatter.field(
+            "what_if_forecast_export_arn",
+            &self.what_if_forecast_export_arn,
+        );
+        formatter.field("what_if_forecast_arns", &self.what_if_forecast_arns);
+        formatter.field(
+            "what_if_forecast_export_name",
+            &self.what_if_forecast_export_name,
+        );
+        formatter.field("destination", &self.destination);
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.finish()
+    }
+}
+/// See [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
+pub mod what_if_forecast_export_summary {
+
+    /// A builder for [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_export_arn: std::option::Option<std::string::String>,
+        pub(crate) what_if_forecast_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) what_if_forecast_export_name: std::option::Option<std::string::String>,
+        pub(crate) destination: std::option::Option<crate::model::DataDestination>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
+        pub fn what_if_forecast_export_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
+        pub fn set_what_if_forecast_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_arn = input;
+            self
+        }
+        /// Appends an item to `what_if_forecast_arns`.
+        ///
+        /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
+        pub fn what_if_forecast_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.what_if_forecast_arns.unwrap_or_default();
+            v.push(input.into());
+            self.what_if_forecast_arns = Some(v);
+            self
+        }
+        /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
+        pub fn set_what_if_forecast_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.what_if_forecast_arns = input;
+            self
+        }
+        /// <p>The what-if forecast export name.</p>
+        pub fn what_if_forecast_export_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_name = Some(input.into());
+            self
+        }
+        /// <p>The what-if forecast export name.</p>
+        pub fn set_what_if_forecast_export_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_name = input;
+            self
+        }
+        /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.destination = Some(input);
+            self
+        }
+        /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::DataDestination>,
+        ) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p>The status of the what-if forecast export. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+        /// </note>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the what-if forecast export. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+        /// </note>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>If an error occurred, an informational message about the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>If an error occurred, an informational message about the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>When the what-if forecast export was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>When the what-if forecast export was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+        /// </ul>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+        /// </ul>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
+        pub fn build(self) -> crate::model::WhatIfForecastExportSummary {
+            crate::model::WhatIfForecastExportSummary {
+                what_if_forecast_export_arn: self.what_if_forecast_export_arn,
+                what_if_forecast_arns: self.what_if_forecast_arns,
+                what_if_forecast_export_name: self.what_if_forecast_export_name,
+                destination: self.destination,
+                status: self.status,
+                message: self.message,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+            }
+        }
+    }
+}
+impl WhatIfForecastExportSummary {
+    /// Creates a new builder-style object to manufacture [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
+    pub fn builder() -> crate::model::what_if_forecast_export_summary::Builder {
+        crate::model::what_if_forecast_export_summary::Builder::default()
+    }
+}
+
+/// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataDestination {
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
+    #[doc(hidden)]
+    pub s3_config: std::option::Option<crate::model::S3Config>,
+}
+impl DataDestination {
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
+    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+        self.s3_config.as_ref()
+    }
+}
+impl std::fmt::Debug for DataDestination {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataDestination");
+        formatter.field("s3_config", &self.s3_config);
+        formatter.finish()
+    }
+}
+/// See [`DataDestination`](crate::model::DataDestination).
+pub mod data_destination {
+
+    /// A builder for [`DataDestination`](crate::model::DataDestination).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
+    }
+    impl Builder {
+        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
+        pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
+            self.s3_config = Some(input);
+            self
+        }
+        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
+        pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
+            self.s3_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataDestination`](crate::model::DataDestination).
+        pub fn build(self) -> crate::model::DataDestination {
+            crate::model::DataDestination {
+                s3_config: self.s3_config,
+            }
+        }
+    }
+}
+impl DataDestination {
+    /// Creates a new builder-style object to manufacture [`DataDestination`](crate::model::DataDestination).
+    pub fn builder() -> crate::model::data_destination::Builder {
+        crate::model::data_destination::Builder::default()
+    }
+}
+
+/// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3Config {
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
+    #[doc(hidden)]
+    pub path: std::option::Option<std::string::String>,
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
+    pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3Config {
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for S3Config {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Config");
+        formatter.field("path", &self.path);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.finish()
+    }
+}
+/// See [`S3Config`](crate::model::S3Config).
+pub mod s3_config {
+
+    /// A builder for [`S3Config`](crate::model::S3Config).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Config`](crate::model::S3Config).
+        pub fn build(self) -> crate::model::S3Config {
+            crate::model::S3Config {
+                path: self.path,
+                role_arn: self.role_arn,
+                kms_key_arn: self.kms_key_arn,
+            }
+        }
+    }
+}
+impl S3Config {
+    /// Creates a new builder-style object to manufacture [`S3Config`](crate::model::S3Config).
+    pub fn builder() -> crate::model::s3_config::Builder {
+        crate::model::s3_config::Builder::default()
+    }
+}
+
+/// <p>Provides a summary of the what-if analysis properties used in the <code>ListWhatIfAnalyses</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfAnalysis</code> operation, and provide the <code>WhatIfAnalysisArn</code> that is listed in the summary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WhatIfAnalysisSummary {
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the what-if analysis.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the baseline forecast that is being used in this what-if analysis.</p>
+    #[doc(hidden)]
+    pub forecast_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the what-if analysis. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>If an error occurred, an informational message about the error.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    /// <p>When the what-if analysis was created.</p>
+    #[doc(hidden)]
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl WhatIfAnalysisSummary {
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_arn.as_deref()
+    }
+    /// <p>The name of the what-if analysis.</p>
+    pub fn what_if_analysis_name(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the baseline forecast that is being used in this what-if analysis.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>The status of the what-if analysis. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the what-if analysis was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modification_time.as_ref()
+    }
+}
+impl std::fmt::Debug for WhatIfAnalysisSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WhatIfAnalysisSummary");
+        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
+        formatter.field("what_if_analysis_name", &self.what_if_analysis_name);
+        formatter.field("forecast_arn", &self.forecast_arn);
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.finish()
+    }
+}
+/// See [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
+pub mod what_if_analysis_summary {
+
+    /// A builder for [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
+        pub(crate) what_if_analysis_name: std::option::Option<std::string::String>,
+        pub(crate) forecast_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_arn = input;
+            self
+        }
+        /// <p>The name of the what-if analysis.</p>
+        pub fn what_if_analysis_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the what-if analysis.</p>
+        pub fn set_what_if_analysis_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the baseline forecast that is being used in this what-if analysis.</p>
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forecast_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the baseline forecast that is being used in this what-if analysis.</p>
+        pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forecast_arn = input;
+            self
+        }
+        /// <p>The status of the what-if analysis. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+        /// </note>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the what-if analysis. States include:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+        /// </note>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>If an error occurred, an informational message about the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>If an error occurred, an informational message about the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>When the what-if analysis was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>When the what-if analysis was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+        /// </ul>
+        pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modification_time = Some(input);
+            self
+        }
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+        /// <ul>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+        /// </ul>
+        pub fn set_last_modification_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modification_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
+        pub fn build(self) -> crate::model::WhatIfAnalysisSummary {
+            crate::model::WhatIfAnalysisSummary {
+                what_if_analysis_arn: self.what_if_analysis_arn,
+                what_if_analysis_name: self.what_if_analysis_name,
+                forecast_arn: self.forecast_arn,
+                status: self.status,
+                message: self.message,
+                creation_time: self.creation_time,
+                last_modification_time: self.last_modification_time,
+            }
+        }
+    }
+}
+impl WhatIfAnalysisSummary {
+    /// Creates a new builder-style object to manufacture [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
+    pub fn builder() -> crate::model::what_if_analysis_summary::Builder {
+        crate::model::what_if_analysis_summary::Builder::default()
+    }
+}
+
 /// <p>Provides a summary of the predictor properties that are used in the <code>ListPredictors</code> operation. To get the complete set of properties, call the <code>DescribePredictor</code> operation, and provide the listed <code>PredictorArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -517,159 +1612,6 @@ impl AsRef<str> for State {
     }
 }
 
-/// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter {
-    /// <p>The name of the parameter to filter on.</p>
-    #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
-    /// <p>The value to match.</p>
-    #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
-    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-    #[doc(hidden)]
-    pub condition: std::option::Option<crate::model::FilterConditionString>,
-}
-impl Filter {
-    /// <p>The name of the parameter to filter on.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
-        self.key.as_deref()
-    }
-    /// <p>The value to match.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
-        self.value.as_deref()
-    }
-    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::model::FilterConditionString> {
-        self.condition.as_ref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("condition", &self.condition);
-        formatter.finish()
-    }
-}
-/// See [`Filter`](crate::model::Filter).
-pub mod filter {
-
-    /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) condition: std::option::Option<crate::model::FilterConditionString>,
-    }
-    impl Builder {
-        /// <p>The name of the parameter to filter on.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        /// <p>The name of the parameter to filter on.</p>
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// <p>The value to match.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        /// <p>The value to match.</p>
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-        pub fn condition(mut self, input: crate::model::FilterConditionString) -> Self {
-            self.condition = Some(input);
-            self
-        }
-        /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<crate::model::FilterConditionString>,
-        ) -> Self {
-            self.condition = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
-        pub fn build(self) -> crate::model::Filter {
-            crate::model::Filter {
-                key: self.key,
-                value: self.value,
-                condition: self.condition,
-            }
-        }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FilterConditionString {
-    #[allow(missing_docs)] // documentation missing in model
-    Is,
-    #[allow(missing_docs)] // documentation missing in model
-    IsNot,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FilterConditionString {
-    fn from(s: &str) -> Self {
-        match s {
-            "IS" => FilterConditionString::Is,
-            "IS_NOT" => FilterConditionString::IsNot,
-            other => FilterConditionString::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FilterConditionString {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterConditionString::from(s))
-    }
-}
-impl FilterConditionString {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FilterConditionString::Is => "IS",
-            FilterConditionString::IsNot => "IS_NOT",
-            FilterConditionString::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["IS", "IS_NOT"]
-    }
-}
-impl AsRef<str> for FilterConditionString {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Provides a summary of the predictor backtest export job properties used in the <code>ListPredictorBacktestExportJobs</code> operation. To get a complete set of properties, call the <code>DescribePredictorBacktestExportJob</code> operation, and provide the listed <code>PredictorBacktestExportJobArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -921,160 +1863,6 @@ impl PredictorBacktestExportJobSummary {
     /// Creates a new builder-style object to manufacture [`PredictorBacktestExportJobSummary`](crate::model::PredictorBacktestExportJobSummary).
     pub fn builder() -> crate::model::predictor_backtest_export_job_summary::Builder {
         crate::model::predictor_backtest_export_job_summary::Builder::default()
-    }
-}
-
-/// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataDestination {
-    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-    #[doc(hidden)]
-    pub s3_config: std::option::Option<crate::model::S3Config>,
-}
-impl DataDestination {
-    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
-        self.s3_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DataDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataDestination");
-        formatter.field("s3_config", &self.s3_config);
-        formatter.finish()
-    }
-}
-/// See [`DataDestination`](crate::model::DataDestination).
-pub mod data_destination {
-
-    /// A builder for [`DataDestination`](crate::model::DataDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
-    }
-    impl Builder {
-        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-        pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
-            self.s3_config = Some(input);
-            self
-        }
-        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-        pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
-            self.s3_config = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataDestination`](crate::model::DataDestination).
-        pub fn build(self) -> crate::model::DataDestination {
-            crate::model::DataDestination {
-                s3_config: self.s3_config,
-            }
-        }
-    }
-}
-impl DataDestination {
-    /// Creates a new builder-style object to manufacture [`DataDestination`](crate::model::DataDestination).
-    pub fn builder() -> crate::model::data_destination::Builder {
-        crate::model::data_destination::Builder::default()
-    }
-}
-
-/// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct S3Config {
-    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-    #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
-    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
-}
-impl S3Config {
-    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
-        self.path.as_deref()
-    }
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
-    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
-        self.role_arn.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Config {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Config");
-        formatter.field("path", &self.path);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
-    }
-}
-/// See [`S3Config`](crate::model::S3Config).
-pub mod s3_config {
-
-    /// A builder for [`S3Config`](crate::model::S3Config).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) path: std::option::Option<std::string::String>,
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.path = Some(input.into());
-            self
-        }
-        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
-        }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
-        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
-        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
-        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
-        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3Config`](crate::model::S3Config).
-        pub fn build(self) -> crate::model::S3Config {
-            crate::model::S3Config {
-                path: self.path,
-                role_arn: self.role_arn,
-                kms_key_arn: self.kms_key_arn,
-            }
-        }
-    }
-}
-impl S3Config {
-    /// Creates a new builder-style object to manufacture [`S3Config`](crate::model::S3Config).
-    pub fn builder() -> crate::model::s3_config::Builder {
-        crate::model::s3_config::Builder::default()
     }
 }
 
@@ -4628,6 +5416,951 @@ impl AsRef<str> for EvaluationType {
     }
 }
 
+/// <p>A replacement dataset is a modified version of the baseline related time series that contains only the values that you want to include in a what-if forecast. The replacement dataset must contain the forecast dimensions and item identifiers in the baseline related time series as well as at least 1 changed time series. This dataset is merged with the baseline related time series to create a transformed dataset that is used for the what-if forecast.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesReplacementsDataSource {
+    /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+    #[doc(hidden)]
+    pub s3_config: std::option::Option<crate::model::S3Config>,
+    /// <p>Defines the fields of a dataset.</p>
+    #[doc(hidden)]
+    pub schema: std::option::Option<crate::model::Schema>,
+    /// <p>The format of the replacement data, CSV or PARQUET.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<std::string::String>,
+    /// <p>The timestamp format of the replacement data.</p>
+    #[doc(hidden)]
+    pub timestamp_format: std::option::Option<std::string::String>,
+}
+impl TimeSeriesReplacementsDataSource {
+    /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+        self.s3_config.as_ref()
+    }
+    /// <p>Defines the fields of a dataset.</p>
+    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
+        self.schema.as_ref()
+    }
+    /// <p>The format of the replacement data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+    /// <p>The timestamp format of the replacement data.</p>
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+        self.timestamp_format.as_deref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesReplacementsDataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesReplacementsDataSource");
+        formatter.field("s3_config", &self.s3_config);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.field("timestamp_format", &self.timestamp_format);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
+pub mod time_series_replacements_data_source {
+
+    /// A builder for [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
+        pub(crate) schema: std::option::Option<crate::model::Schema>,
+        pub(crate) format: std::option::Option<std::string::String>,
+        pub(crate) timestamp_format: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+        pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
+            self.s3_config = Some(input);
+            self
+        }
+        /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+        pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
+            self.s3_config = input;
+            self
+        }
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.schema = Some(input);
+            self
+        }
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
+            self.schema = input;
+            self
+        }
+        /// <p>The format of the replacement data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the replacement data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
+        /// <p>The timestamp format of the replacement data.</p>
+        pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timestamp_format = Some(input.into());
+            self
+        }
+        /// <p>The timestamp format of the replacement data.</p>
+        pub fn set_timestamp_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timestamp_format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
+        pub fn build(self) -> crate::model::TimeSeriesReplacementsDataSource {
+            crate::model::TimeSeriesReplacementsDataSource {
+                s3_config: self.s3_config,
+                schema: self.schema,
+                format: self.format,
+                timestamp_format: self.timestamp_format,
+            }
+        }
+    }
+}
+impl TimeSeriesReplacementsDataSource {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
+    pub fn builder() -> crate::model::time_series_replacements_data_source::Builder {
+        crate::model::time_series_replacements_data_source::Builder::default()
+    }
+}
+
+/// <p>Defines the fields of a dataset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Schema {
+    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    #[doc(hidden)]
+    pub attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+}
+impl Schema {
+    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::SchemaAttribute]> {
+        self.attributes.as_deref()
+    }
+}
+impl std::fmt::Debug for Schema {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Schema");
+        formatter.field("attributes", &self.attributes);
+        formatter.finish()
+    }
+}
+/// See [`Schema`](crate::model::Schema).
+pub mod schema {
+
+    /// A builder for [`Schema`](crate::model::Schema).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+    }
+    impl Builder {
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+        pub fn attributes(mut self, input: crate::model::SchemaAttribute) -> Self {
+            let mut v = self.attributes.unwrap_or_default();
+            v.push(input);
+            self.attributes = Some(v);
+            self
+        }
+        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Schema`](crate::model::Schema).
+        pub fn build(self) -> crate::model::Schema {
+            crate::model::Schema {
+                attributes: self.attributes,
+            }
+        }
+    }
+}
+impl Schema {
+    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
+    pub fn builder() -> crate::model::schema::Builder {
+        crate::model::schema::Builder::default()
+    }
+}
+
+/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of <code>SchemaAttribute</code> objects.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SchemaAttribute {
+    /// <p>The name of the dataset field.</p>
+    #[doc(hidden)]
+    pub attribute_name: std::option::Option<std::string::String>,
+    /// <p>The data type of the field.</p>
+    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
+    #[doc(hidden)]
+    pub attribute_type: std::option::Option<crate::model::AttributeType>,
+}
+impl SchemaAttribute {
+    /// <p>The name of the dataset field.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The data type of the field.</p>
+    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
+        self.attribute_type.as_ref()
+    }
+}
+impl std::fmt::Debug for SchemaAttribute {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SchemaAttribute");
+        formatter.field("attribute_name", &self.attribute_name);
+        formatter.field("attribute_type", &self.attribute_type);
+        formatter.finish()
+    }
+}
+/// See [`SchemaAttribute`](crate::model::SchemaAttribute).
+pub mod schema_attribute {
+
+    /// A builder for [`SchemaAttribute`](crate::model::SchemaAttribute).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attribute_name: std::option::Option<std::string::String>,
+        pub(crate) attribute_type: std::option::Option<crate::model::AttributeType>,
+    }
+    impl Builder {
+        /// <p>The name of the dataset field.</p>
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the dataset field.</p>
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
+            self
+        }
+        /// <p>The data type of the field.</p>
+        /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
+        pub fn attribute_type(mut self, input: crate::model::AttributeType) -> Self {
+            self.attribute_type = Some(input);
+            self
+        }
+        /// <p>The data type of the field.</p>
+        /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
+        pub fn set_attribute_type(
+            mut self,
+            input: std::option::Option<crate::model::AttributeType>,
+        ) -> Self {
+            self.attribute_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SchemaAttribute`](crate::model::SchemaAttribute).
+        pub fn build(self) -> crate::model::SchemaAttribute {
+            crate::model::SchemaAttribute {
+                attribute_name: self.attribute_name,
+                attribute_type: self.attribute_type,
+            }
+        }
+    }
+}
+impl SchemaAttribute {
+    /// Creates a new builder-style object to manufacture [`SchemaAttribute`](crate::model::SchemaAttribute).
+    pub fn builder() -> crate::model::schema_attribute::Builder {
+        crate::model::schema_attribute::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AttributeType {
+    #[allow(missing_docs)] // documentation missing in model
+    Float,
+    #[allow(missing_docs)] // documentation missing in model
+    Geolocation,
+    #[allow(missing_docs)] // documentation missing in model
+    Integer,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestamp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AttributeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "float" => AttributeType::Float,
+            "geolocation" => AttributeType::Geolocation,
+            "integer" => AttributeType::Integer,
+            "string" => AttributeType::String,
+            "timestamp" => AttributeType::Timestamp,
+            other => AttributeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AttributeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AttributeType::from(s))
+    }
+}
+impl AttributeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AttributeType::Float => "float",
+            AttributeType::Geolocation => "geolocation",
+            AttributeType::Integer => "integer",
+            AttributeType::String => "string",
+            AttributeType::Timestamp => "timestamp",
+            AttributeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["float", "geolocation", "integer", "string", "timestamp"]
+    }
+}
+impl AsRef<str> for AttributeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A transformation function is a pair of operations that select and modify the rows in a related time series. You select the rows that you want with a condition operation and you modify the rows with a transformation operation. All conditions are joined with an AND operation, meaning that all conditions must be true for the transformation to be applied. Transformations are applied in the order that they are listed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesTransformation {
+    /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
+    #[doc(hidden)]
+    pub action: std::option::Option<crate::model::Action>,
+    /// <p>An array of conditions that define which members of the related time series are transformed.</p>
+    #[doc(hidden)]
+    pub time_series_conditions:
+        std::option::Option<std::vec::Vec<crate::model::TimeSeriesCondition>>,
+}
+impl TimeSeriesTransformation {
+    /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>An array of conditions that define which members of the related time series are transformed.</p>
+    pub fn time_series_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::TimeSeriesCondition]> {
+        self.time_series_conditions.as_deref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesTransformation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesTransformation");
+        formatter.field("action", &self.action);
+        formatter.field("time_series_conditions", &self.time_series_conditions);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
+pub mod time_series_transformation {
+
+    /// A builder for [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action: std::option::Option<crate::model::Action>,
+        pub(crate) time_series_conditions:
+            std::option::Option<std::vec::Vec<crate::model::TimeSeriesCondition>>,
+    }
+    impl Builder {
+        /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.action = input;
+            self
+        }
+        /// Appends an item to `time_series_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_time_series_conditions`](Self::set_time_series_conditions).
+        ///
+        /// <p>An array of conditions that define which members of the related time series are transformed.</p>
+        pub fn time_series_conditions(mut self, input: crate::model::TimeSeriesCondition) -> Self {
+            let mut v = self.time_series_conditions.unwrap_or_default();
+            v.push(input);
+            self.time_series_conditions = Some(v);
+            self
+        }
+        /// <p>An array of conditions that define which members of the related time series are transformed.</p>
+        pub fn set_time_series_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesCondition>>,
+        ) -> Self {
+            self.time_series_conditions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
+        pub fn build(self) -> crate::model::TimeSeriesTransformation {
+            crate::model::TimeSeriesTransformation {
+                action: self.action,
+                time_series_conditions: self.time_series_conditions,
+            }
+        }
+    }
+}
+impl TimeSeriesTransformation {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
+    pub fn builder() -> crate::model::time_series_transformation::Builder {
+        crate::model::time_series_transformation::Builder::default()
+    }
+}
+
+/// <p>Creates a subset of items within an attribute that are modified. For example, you can use this operation to create a subset of items that cost $5 or less. To do this, you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>, and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <code>Action</code> operation within the <code>CreateWhatIfForecastRequest$TimeSeriesTransformations</code> operation to define how the attribute is modified.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesCondition {
+    /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
+    #[doc(hidden)]
+    pub attribute_name: std::option::Option<std::string::String>,
+    /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
+    #[doc(hidden)]
+    pub attribute_value: std::option::Option<std::string::String>,
+    /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
+    #[doc(hidden)]
+    pub condition: std::option::Option<crate::model::Condition>,
+}
+impl TimeSeriesCondition {
+    /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
+    /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesCondition");
+        formatter.field("attribute_name", &self.attribute_name);
+        formatter.field("attribute_value", &self.attribute_value);
+        formatter.field("condition", &self.condition);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
+pub mod time_series_condition {
+
+    /// A builder for [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attribute_name: std::option::Option<std::string::String>,
+        pub(crate) attribute_value: std::option::Option<std::string::String>,
+        pub(crate) condition: std::option::Option<crate::model::Condition>,
+    }
+    impl Builder {
+        /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
+            self
+        }
+        /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
+            self
+        }
+        /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_value = Some(input.into());
+            self
+        }
+        /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
+        pub fn set_attribute_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_value = input;
+            self
+        }
+        /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
+        pub fn condition(mut self, input: crate::model::Condition) -> Self {
+            self.condition = Some(input);
+            self
+        }
+        /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<crate::model::Condition>,
+        ) -> Self {
+            self.condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
+        pub fn build(self) -> crate::model::TimeSeriesCondition {
+            crate::model::TimeSeriesCondition {
+                attribute_name: self.attribute_name,
+                attribute_value: self.attribute_value,
+                condition: self.condition,
+            }
+        }
+    }
+}
+impl TimeSeriesCondition {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
+    pub fn builder() -> crate::model::time_series_condition::Builder {
+        crate::model::time_series_condition::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Condition {
+    #[allow(missing_docs)] // documentation missing in model
+    Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThan,
+    #[allow(missing_docs)] // documentation missing in model
+    NotEquals,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Condition {
+    fn from(s: &str) -> Self {
+        match s {
+            "EQUALS" => Condition::Equals,
+            "GREATER_THAN" => Condition::GreaterThan,
+            "LESS_THAN" => Condition::LessThan,
+            "NOT_EQUALS" => Condition::NotEquals,
+            other => Condition::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Condition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Condition::from(s))
+    }
+}
+impl Condition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Condition::Equals => "EQUALS",
+            Condition::GreaterThan => "GREATER_THAN",
+            Condition::LessThan => "LESS_THAN",
+            Condition::NotEquals => "NOT_EQUALS",
+            Condition::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EQUALS", "GREATER_THAN", "LESS_THAN", "NOT_EQUALS"]
+    }
+}
+impl AsRef<str> for Condition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Defines the modifications that you are making to an attribute for a what-if forecast. For example, you can use this operation to create a what-if forecast that investigates a 10% off sale on all shoes. To do this, you specify <code>"AttributeName": "shoes"</code>, <code>"Operation": "MULTIPLY"</code>, and <code>"Value": "0.90"</code>. Pair this operation with the <code>TimeSeriesCondition</code> operation within the <code>CreateWhatIfForecastRequest$TimeSeriesTransformations</code> operation to define a subset of attribute items that are modified.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Action {
+    /// <p>The related time series that you are modifying. This value is case insensitive.</p>
+    #[doc(hidden)]
+    pub attribute_name: std::option::Option<std::string::String>,
+    /// <p>The operation that is applied to the provided attribute. Operations include:</p>
+    /// <ul>
+    /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
+    /// <li> <p> <code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p> </li>
+    /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+    /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub operation: std::option::Option<crate::model::Operation>,
+    /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<f64>,
+}
+impl Action {
+    /// <p>The related time series that you are modifying. This value is case insensitive.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The operation that is applied to the provided attribute. Operations include:</p>
+    /// <ul>
+    /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
+    /// <li> <p> <code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p> </li>
+    /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+    /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+    /// </ul>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+    /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+}
+impl std::fmt::Debug for Action {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Action");
+        formatter.field("attribute_name", &self.attribute_name);
+        formatter.field("operation", &self.operation);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`Action`](crate::model::Action).
+pub mod action {
+
+    /// A builder for [`Action`](crate::model::Action).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attribute_name: std::option::Option<std::string::String>,
+        pub(crate) operation: std::option::Option<crate::model::Operation>,
+        pub(crate) value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The related time series that you are modifying. This value is case insensitive.</p>
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
+            self
+        }
+        /// <p>The related time series that you are modifying. This value is case insensitive.</p>
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
+            self
+        }
+        /// <p>The operation that is applied to the provided attribute. Operations include:</p>
+        /// <ul>
+        /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
+        /// <li> <p> <code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p> </li>
+        /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+        /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+        /// </ul>
+        pub fn operation(mut self, input: crate::model::Operation) -> Self {
+            self.operation = Some(input);
+            self
+        }
+        /// <p>The operation that is applied to the provided attribute. Operations include:</p>
+        /// <ul>
+        /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
+        /// <li> <p> <code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p> </li>
+        /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+        /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+        /// </ul>
+        pub fn set_operation(
+            mut self,
+            input: std::option::Option<crate::model::Operation>,
+        ) -> Self {
+            self.operation = input;
+            self
+        }
+        /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
+        pub fn value(mut self, input: f64) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
+        pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Action`](crate::model::Action).
+        pub fn build(self) -> crate::model::Action {
+            crate::model::Action {
+                attribute_name: self.attribute_name,
+                operation: self.operation,
+                value: self.value,
+            }
+        }
+    }
+}
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Operation {
+    #[allow(missing_docs)] // documentation missing in model
+    Add,
+    #[allow(missing_docs)] // documentation missing in model
+    Divide,
+    #[allow(missing_docs)] // documentation missing in model
+    Multiply,
+    #[allow(missing_docs)] // documentation missing in model
+    Subtract,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Operation {
+    fn from(s: &str) -> Self {
+        match s {
+            "ADD" => Operation::Add,
+            "DIVIDE" => Operation::Divide,
+            "MULTIPLY" => Operation::Multiply,
+            "SUBTRACT" => Operation::Subtract,
+            other => Operation::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Operation {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Operation::from(s))
+    }
+}
+impl Operation {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Operation::Add => "ADD",
+            Operation::Divide => "DIVIDE",
+            Operation::Multiply => "MULTIPLY",
+            Operation::Subtract => "SUBTRACT",
+            Operation::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ADD", "DIVIDE", "MULTIPLY", "SUBTRACT"]
+    }
+}
+impl AsRef<str> for Operation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+/// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+/// <ul>
+/// <li> <p> <code>DataSource</code> </p> </li>
+/// <li> <p> <code>Format</code> </p> </li>
+/// <li> <p> <code>Schema</code> </p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesSelector {
+    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+    #[doc(hidden)]
+    pub time_series_identifiers: std::option::Option<crate::model::TimeSeriesIdentifiers>,
+}
+impl TimeSeriesSelector {
+    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+    pub fn time_series_identifiers(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeSeriesIdentifiers> {
+        self.time_series_identifiers.as_ref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesSelector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesSelector");
+        formatter.field("time_series_identifiers", &self.time_series_identifiers);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
+pub mod time_series_selector {
+
+    /// A builder for [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_series_identifiers:
+            std::option::Option<crate::model::TimeSeriesIdentifiers>,
+    }
+    impl Builder {
+        /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+        pub fn time_series_identifiers(
+            mut self,
+            input: crate::model::TimeSeriesIdentifiers,
+        ) -> Self {
+            self.time_series_identifiers = Some(input);
+            self
+        }
+        /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+        pub fn set_time_series_identifiers(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesIdentifiers>,
+        ) -> Self {
+            self.time_series_identifiers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
+        pub fn build(self) -> crate::model::TimeSeriesSelector {
+            crate::model::TimeSeriesSelector {
+                time_series_identifiers: self.time_series_identifiers,
+            }
+        }
+    }
+}
+impl TimeSeriesSelector {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
+    pub fn builder() -> crate::model::time_series_selector::Builder {
+        crate::model::time_series_selector::Builder::default()
+    }
+}
+
+/// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesIdentifiers {
+    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>Defines the fields of a dataset.</p>
+    #[doc(hidden)]
+    pub schema: std::option::Option<crate::model::Schema>,
+    /// <p>The format of the data, either CSV or PARQUET.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<std::string::String>,
+}
+impl TimeSeriesIdentifiers {
+    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>Defines the fields of a dataset.</p>
+    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
+        self.schema.as_ref()
+    }
+    /// <p>The format of the data, either CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesIdentifiers {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesIdentifiers");
+        formatter.field("data_source", &self.data_source);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
+pub mod time_series_identifiers {
+
+    /// A builder for [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) schema: std::option::Option<crate::model::Schema>,
+        pub(crate) format: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.schema = Some(input);
+            self
+        }
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
+            self.schema = input;
+            self
+        }
+        /// <p>The format of the data, either CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the data, either CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
+        pub fn build(self) -> crate::model::TimeSeriesIdentifiers {
+            crate::model::TimeSeriesIdentifiers {
+                data_source: self.data_source,
+                schema: self.schema,
+                format: self.format,
+            }
+        }
+    }
+}
+impl TimeSeriesIdentifiers {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
+    pub fn builder() -> crate::model::time_series_identifiers::Builder {
+        crate::model::time_series_identifiers::Builder::default()
+    }
+}
+
 /// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7025,390 +8758,6 @@ impl BaselineMetric {
     /// Creates a new builder-style object to manufacture [`BaselineMetric`](crate::model::BaselineMetric).
     pub fn builder() -> crate::model::baseline_metric::Builder {
         crate::model::baseline_metric::Builder::default()
-    }
-}
-
-/// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
-/// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
-/// <ul>
-/// <li> <p> <code>DataSource</code> </p> </li>
-/// <li> <p> <code>Format</code> </p> </li>
-/// <li> <p> <code>Schema</code> </p> </li>
-/// </ul>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TimeSeriesSelector {
-    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-    #[doc(hidden)]
-    pub time_series_identifiers: std::option::Option<crate::model::TimeSeriesIdentifiers>,
-}
-impl TimeSeriesSelector {
-    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-    pub fn time_series_identifiers(
-        &self,
-    ) -> std::option::Option<&crate::model::TimeSeriesIdentifiers> {
-        self.time_series_identifiers.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesSelector");
-        formatter.field("time_series_identifiers", &self.time_series_identifiers);
-        formatter.finish()
-    }
-}
-/// See [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
-pub mod time_series_selector {
-
-    /// A builder for [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) time_series_identifiers:
-            std::option::Option<crate::model::TimeSeriesIdentifiers>,
-    }
-    impl Builder {
-        /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-        pub fn time_series_identifiers(
-            mut self,
-            input: crate::model::TimeSeriesIdentifiers,
-        ) -> Self {
-            self.time_series_identifiers = Some(input);
-            self
-        }
-        /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-        pub fn set_time_series_identifiers(
-            mut self,
-            input: std::option::Option<crate::model::TimeSeriesIdentifiers>,
-        ) -> Self {
-            self.time_series_identifiers = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
-        pub fn build(self) -> crate::model::TimeSeriesSelector {
-            crate::model::TimeSeriesSelector {
-                time_series_identifiers: self.time_series_identifiers,
-            }
-        }
-    }
-}
-impl TimeSeriesSelector {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
-    pub fn builder() -> crate::model::time_series_selector::Builder {
-        crate::model::time_series_selector::Builder::default()
-    }
-}
-
-/// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TimeSeriesIdentifiers {
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
-    pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>Defines the fields of a dataset.</p>
-    #[doc(hidden)]
-    pub schema: std::option::Option<crate::model::Schema>,
-    /// <p>The format of the data, either CSV or PARQUET.</p>
-    #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
-}
-impl TimeSeriesIdentifiers {
-    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
-        self.data_source.as_ref()
-    }
-    /// <p>Defines the fields of a dataset.</p>
-    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
-        self.schema.as_ref()
-    }
-    /// <p>The format of the data, either CSV or PARQUET.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
-        self.format.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSeriesIdentifiers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesIdentifiers");
-        formatter.field("data_source", &self.data_source);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
-/// See [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
-pub mod time_series_identifiers {
-
-    /// A builder for [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
-        pub(crate) schema: std::option::Option<crate::model::Schema>,
-        pub(crate) format: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
-        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
-            self.data_source = Some(input);
-            self
-        }
-        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
-        pub fn set_data_source(
-            mut self,
-            input: std::option::Option<crate::model::DataSource>,
-        ) -> Self {
-            self.data_source = input;
-            self
-        }
-        /// <p>Defines the fields of a dataset.</p>
-        pub fn schema(mut self, input: crate::model::Schema) -> Self {
-            self.schema = Some(input);
-            self
-        }
-        /// <p>Defines the fields of a dataset.</p>
-        pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
-            self.schema = input;
-            self
-        }
-        /// <p>The format of the data, either CSV or PARQUET.</p>
-        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.format = Some(input.into());
-            self
-        }
-        /// <p>The format of the data, either CSV or PARQUET.</p>
-        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.format = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
-        pub fn build(self) -> crate::model::TimeSeriesIdentifiers {
-            crate::model::TimeSeriesIdentifiers {
-                data_source: self.data_source,
-                schema: self.schema,
-                format: self.format,
-            }
-        }
-    }
-}
-impl TimeSeriesIdentifiers {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
-    pub fn builder() -> crate::model::time_series_identifiers::Builder {
-        crate::model::time_series_identifiers::Builder::default()
-    }
-}
-
-/// <p>Defines the fields of a dataset.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Schema {
-    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
-}
-impl Schema {
-    /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::SchemaAttribute]> {
-        self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for Schema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schema");
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
-/// See [`Schema`](crate::model::Schema).
-pub mod schema {
-
-    /// A builder for [`Schema`](crate::model::Schema).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
-    }
-    impl Builder {
-        /// Appends an item to `attributes`.
-        ///
-        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
-        ///
-        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-        pub fn attributes(mut self, input: crate::model::SchemaAttribute) -> Self {
-            let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
-        }
-        /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Schema`](crate::model::Schema).
-        pub fn build(self) -> crate::model::Schema {
-            crate::model::Schema {
-                attributes: self.attributes,
-            }
-        }
-    }
-}
-impl Schema {
-    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
-    pub fn builder() -> crate::model::schema::Builder {
-        crate::model::schema::Builder::default()
-    }
-}
-
-/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of <code>SchemaAttribute</code> objects.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SchemaAttribute {
-    /// <p>The name of the dataset field.</p>
-    #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The data type of the field.</p>
-    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-    #[doc(hidden)]
-    pub attribute_type: std::option::Option<crate::model::AttributeType>,
-}
-impl SchemaAttribute {
-    /// <p>The name of the dataset field.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
-        self.attribute_name.as_deref()
-    }
-    /// <p>The data type of the field.</p>
-    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-    pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
-        self.attribute_type.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaAttribute");
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.finish()
-    }
-}
-/// See [`SchemaAttribute`](crate::model::SchemaAttribute).
-pub mod schema_attribute {
-
-    /// A builder for [`SchemaAttribute`](crate::model::SchemaAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) attribute_name: std::option::Option<std::string::String>,
-        pub(crate) attribute_type: std::option::Option<crate::model::AttributeType>,
-    }
-    impl Builder {
-        /// <p>The name of the dataset field.</p>
-        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the dataset field.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
-        }
-        /// <p>The data type of the field.</p>
-        /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-        pub fn attribute_type(mut self, input: crate::model::AttributeType) -> Self {
-            self.attribute_type = Some(input);
-            self
-        }
-        /// <p>The data type of the field.</p>
-        /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-        pub fn set_attribute_type(
-            mut self,
-            input: std::option::Option<crate::model::AttributeType>,
-        ) -> Self {
-            self.attribute_type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SchemaAttribute`](crate::model::SchemaAttribute).
-        pub fn build(self) -> crate::model::SchemaAttribute {
-            crate::model::SchemaAttribute {
-                attribute_name: self.attribute_name,
-                attribute_type: self.attribute_type,
-            }
-        }
-    }
-}
-impl SchemaAttribute {
-    /// Creates a new builder-style object to manufacture [`SchemaAttribute`](crate::model::SchemaAttribute).
-    pub fn builder() -> crate::model::schema_attribute::Builder {
-        crate::model::schema_attribute::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AttributeType {
-    #[allow(missing_docs)] // documentation missing in model
-    Float,
-    #[allow(missing_docs)] // documentation missing in model
-    Geolocation,
-    #[allow(missing_docs)] // documentation missing in model
-    Integer,
-    #[allow(missing_docs)] // documentation missing in model
-    String,
-    #[allow(missing_docs)] // documentation missing in model
-    Timestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for AttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "float" => AttributeType::Float,
-            "geolocation" => AttributeType::Geolocation,
-            "integer" => AttributeType::Integer,
-            "string" => AttributeType::String,
-            "timestamp" => AttributeType::Timestamp,
-            other => AttributeType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for AttributeType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttributeType::from(s))
-    }
-}
-impl AttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AttributeType::Float => "float",
-            AttributeType::Geolocation => "geolocation",
-            AttributeType::Integer => "integer",
-            AttributeType::String => "string",
-            AttributeType::Timestamp => "timestamp",
-            AttributeType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["float", "geolocation", "integer", "string", "timestamp"]
-    }
-}
-impl AsRef<str> for AttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

@@ -56,4 +56,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryWhatIfForecastError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::QueryWhatIfForecastError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::QueryWhatIfForecastErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::QueryWhatIfForecastErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::QueryWhatIfForecastErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::QueryWhatIfForecastErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::QueryWhatIfForecastErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::QueryWhatIfForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

@@ -671,8 +671,8 @@ pub fn add_headers_list_channels_moderated_by_app_instance_user(
     Ok(builder)
 }
 
-pub fn add_headers_put_channel_membership_preferences(
-    input: &crate::input::PutChannelMembershipPreferencesInput,
+pub fn add_headers_list_sub_channels(
+    input: &crate::input::ListSubChannelsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_57) = &input.chime_bearer {
@@ -695,8 +695,8 @@ pub fn add_headers_put_channel_membership_preferences(
     Ok(builder)
 }
 
-pub fn add_headers_redact_channel_message(
-    input: &crate::input::RedactChannelMessageInput,
+pub fn add_headers_put_channel_membership_preferences(
+    input: &crate::input::PutChannelMembershipPreferencesInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_59) = &input.chime_bearer {
@@ -719,8 +719,8 @@ pub fn add_headers_redact_channel_message(
     Ok(builder)
 }
 
-pub fn add_headers_search_channels(
-    input: &crate::input::SearchChannelsInput,
+pub fn add_headers_redact_channel_message(
+    input: &crate::input::RedactChannelMessageInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_61) = &input.chime_bearer {
@@ -743,8 +743,8 @@ pub fn add_headers_search_channels(
     Ok(builder)
 }
 
-pub fn add_headers_send_channel_message(
-    input: &crate::input::SendChannelMessageInput,
+pub fn add_headers_search_channels(
+    input: &crate::input::SearchChannelsInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_63) = &input.chime_bearer {
@@ -767,8 +767,8 @@ pub fn add_headers_send_channel_message(
     Ok(builder)
 }
 
-pub fn add_headers_update_channel(
-    input: &crate::input::UpdateChannelInput,
+pub fn add_headers_send_channel_message(
+    input: &crate::input::SendChannelMessageInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_65) = &input.chime_bearer {
@@ -791,8 +791,8 @@ pub fn add_headers_update_channel(
     Ok(builder)
 }
 
-pub fn add_headers_update_channel_message(
-    input: &crate::input::UpdateChannelMessageInput,
+pub fn add_headers_update_channel(
+    input: &crate::input::UpdateChannelInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_67) = &input.chime_bearer {
@@ -815,14 +815,38 @@ pub fn add_headers_update_channel_message(
     Ok(builder)
 }
 
-pub fn add_headers_update_channel_read_marker(
-    input: &crate::input::UpdateChannelReadMarkerInput,
+pub fn add_headers_update_channel_message(
+    input: &crate::input::UpdateChannelMessageInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_69) = &input.chime_bearer {
         let formatted_70 = AsRef::<str>::as_ref(inner_69);
         if !formatted_70.is_empty() {
             let header_value = formatted_70;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::BuildError::InvalidField {
+                        field: "chime_bearer",
+                        details: format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    }
+                })?;
+            builder = builder.header("x-amz-chime-bearer", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_channel_read_marker(
+    input: &crate::input::UpdateChannelReadMarkerInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+    if let Some(inner_71) = &input.chime_bearer {
+        let formatted_72 = AsRef::<str>::as_ref(inner_71);
+        if !formatted_72.is_empty() {
+            let header_value = formatted_72;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {

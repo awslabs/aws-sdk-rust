@@ -109,6 +109,16 @@ pub(crate) fn reflens_structure_crate_output_search_tables_by_lf_tags_output_nex
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_get_work_units_output_work_unit_ranges(
+    input: crate::output::GetWorkUnitsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::WorkUnitRange>> {
+    let input = match input.work_unit_ranges {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_data_cells_filter_output_data_cells_filters(
     input: crate::output::ListDataCellsFilterOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::DataCellsFilter>> {

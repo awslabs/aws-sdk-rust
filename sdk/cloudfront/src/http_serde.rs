@@ -167,8 +167,8 @@ pub fn add_headers_delete_key_group(
     Ok(builder)
 }
 
-pub fn add_headers_delete_origin_request_policy(
-    input: &crate::input::DeleteOriginRequestPolicyInput,
+pub fn add_headers_delete_origin_access_control(
+    input: &crate::input::DeleteOriginAccessControlInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_15) = &input.if_match {
@@ -191,8 +191,8 @@ pub fn add_headers_delete_origin_request_policy(
     Ok(builder)
 }
 
-pub fn add_headers_delete_public_key(
-    input: &crate::input::DeletePublicKeyInput,
+pub fn add_headers_delete_origin_request_policy(
+    input: &crate::input::DeleteOriginRequestPolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_17) = &input.if_match {
@@ -215,8 +215,8 @@ pub fn add_headers_delete_public_key(
     Ok(builder)
 }
 
-pub fn add_headers_delete_response_headers_policy(
-    input: &crate::input::DeleteResponseHeadersPolicyInput,
+pub fn add_headers_delete_public_key(
+    input: &crate::input::DeletePublicKeyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_19) = &input.if_match {
@@ -239,8 +239,8 @@ pub fn add_headers_delete_response_headers_policy(
     Ok(builder)
 }
 
-pub fn add_headers_delete_streaming_distribution(
-    input: &crate::input::DeleteStreamingDistributionInput,
+pub fn add_headers_delete_response_headers_policy(
+    input: &crate::input::DeleteResponseHeadersPolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_21) = &input.if_match {
@@ -263,8 +263,8 @@ pub fn add_headers_delete_streaming_distribution(
     Ok(builder)
 }
 
-pub fn add_headers_publish_function(
-    input: &crate::input::PublishFunctionInput,
+pub fn add_headers_delete_streaming_distribution(
+    input: &crate::input::DeleteStreamingDistributionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_23) = &input.if_match {
@@ -287,8 +287,8 @@ pub fn add_headers_publish_function(
     Ok(builder)
 }
 
-pub fn add_headers_test_function(
-    input: &crate::input::TestFunctionInput,
+pub fn add_headers_publish_function(
+    input: &crate::input::PublishFunctionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_25) = &input.if_match {
@@ -311,8 +311,8 @@ pub fn add_headers_test_function(
     Ok(builder)
 }
 
-pub fn add_headers_update_cache_policy(
-    input: &crate::input::UpdateCachePolicyInput,
+pub fn add_headers_test_function(
+    input: &crate::input::TestFunctionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_27) = &input.if_match {
@@ -335,8 +335,8 @@ pub fn add_headers_update_cache_policy(
     Ok(builder)
 }
 
-pub fn add_headers_update_cloud_front_origin_access_identity(
-    input: &crate::input::UpdateCloudFrontOriginAccessIdentityInput,
+pub fn add_headers_update_cache_policy(
+    input: &crate::input::UpdateCachePolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_29) = &input.if_match {
@@ -359,8 +359,8 @@ pub fn add_headers_update_cloud_front_origin_access_identity(
     Ok(builder)
 }
 
-pub fn add_headers_update_distribution(
-    input: &crate::input::UpdateDistributionInput,
+pub fn add_headers_update_cloud_front_origin_access_identity(
+    input: &crate::input::UpdateCloudFrontOriginAccessIdentityInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_31) = &input.if_match {
@@ -383,8 +383,8 @@ pub fn add_headers_update_distribution(
     Ok(builder)
 }
 
-pub fn add_headers_update_field_level_encryption_config(
-    input: &crate::input::UpdateFieldLevelEncryptionConfigInput,
+pub fn add_headers_update_distribution(
+    input: &crate::input::UpdateDistributionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_33) = &input.if_match {
@@ -407,8 +407,8 @@ pub fn add_headers_update_field_level_encryption_config(
     Ok(builder)
 }
 
-pub fn add_headers_update_field_level_encryption_profile(
-    input: &crate::input::UpdateFieldLevelEncryptionProfileInput,
+pub fn add_headers_update_field_level_encryption_config(
+    input: &crate::input::UpdateFieldLevelEncryptionConfigInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_35) = &input.if_match {
@@ -431,8 +431,8 @@ pub fn add_headers_update_field_level_encryption_profile(
     Ok(builder)
 }
 
-pub fn add_headers_update_function(
-    input: &crate::input::UpdateFunctionInput,
+pub fn add_headers_update_field_level_encryption_profile(
+    input: &crate::input::UpdateFieldLevelEncryptionProfileInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_37) = &input.if_match {
@@ -455,8 +455,8 @@ pub fn add_headers_update_function(
     Ok(builder)
 }
 
-pub fn add_headers_update_key_group(
-    input: &crate::input::UpdateKeyGroupInput,
+pub fn add_headers_update_function(
+    input: &crate::input::UpdateFunctionInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_39) = &input.if_match {
@@ -479,8 +479,8 @@ pub fn add_headers_update_key_group(
     Ok(builder)
 }
 
-pub fn add_headers_update_origin_request_policy(
-    input: &crate::input::UpdateOriginRequestPolicyInput,
+pub fn add_headers_update_key_group(
+    input: &crate::input::UpdateKeyGroupInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_41) = &input.if_match {
@@ -503,8 +503,8 @@ pub fn add_headers_update_origin_request_policy(
     Ok(builder)
 }
 
-pub fn add_headers_update_public_key(
-    input: &crate::input::UpdatePublicKeyInput,
+pub fn add_headers_update_origin_access_control(
+    input: &crate::input::UpdateOriginAccessControlInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_43) = &input.if_match {
@@ -527,8 +527,8 @@ pub fn add_headers_update_public_key(
     Ok(builder)
 }
 
-pub fn add_headers_update_response_headers_policy(
-    input: &crate::input::UpdateResponseHeadersPolicyInput,
+pub fn add_headers_update_origin_request_policy(
+    input: &crate::input::UpdateOriginRequestPolicyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_45) = &input.if_match {
@@ -551,14 +551,62 @@ pub fn add_headers_update_response_headers_policy(
     Ok(builder)
 }
 
-pub fn add_headers_update_streaming_distribution(
-    input: &crate::input::UpdateStreamingDistributionInput,
+pub fn add_headers_update_public_key(
+    input: &crate::input::UpdatePublicKeyInput,
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
     if let Some(inner_47) = &input.if_match {
         let formatted_48 = AsRef::<str>::as_ref(inner_47);
         if !formatted_48.is_empty() {
             let header_value = formatted_48;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::BuildError::InvalidField {
+                        field: "if_match",
+                        details: format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    }
+                })?;
+            builder = builder.header("If-Match", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_response_headers_policy(
+    input: &crate::input::UpdateResponseHeadersPolicyInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+    if let Some(inner_49) = &input.if_match {
+        let formatted_50 = AsRef::<str>::as_ref(inner_49);
+        if !formatted_50.is_empty() {
+            let header_value = formatted_50;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::BuildError::InvalidField {
+                        field: "if_match",
+                        details: format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    }
+                })?;
+            builder = builder.header("If-Match", header_value);
+        }
+    }
+    Ok(builder)
+}
+
+pub fn add_headers_update_streaming_distribution(
+    input: &crate::input::UpdateStreamingDistributionInput,
+    mut builder: http::request::Builder,
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+    if let Some(inner_51) = &input.if_match {
+        let formatted_52 = AsRef::<str>::as_ref(inner_51);
+        if !formatted_52.is_empty() {
+            let header_value = formatted_52;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
@@ -852,6 +900,37 @@ pub fn deser_payload_create_monitoring_subscription_create_monitoring_subscripti
 > {
     (!body.is_empty()).then(||{
         crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_monitoring_subscription_output_monitoring_subscription(body).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)
+    }).transpose()
+}
+
+pub fn deser_header_create_origin_access_control_create_origin_access_control_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_create_origin_access_control_create_origin_access_control_output_location(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("Location").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_create_origin_access_control_create_origin_access_control_output_origin_access_control(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::OriginAccessControl>,
+    crate::error::CreateOriginAccessControlError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_create_origin_access_control_output_origin_access_control(body).map_err(crate::error::CreateOriginAccessControlError::unhandled)
     }).transpose()
 }
 
@@ -1332,6 +1411,48 @@ pub fn deser_payload_get_monitoring_subscription_get_monitoring_subscription_out
     }).transpose()
 }
 
+pub fn deser_header_get_origin_access_control_get_origin_access_control_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_get_origin_access_control_get_origin_access_control_output_origin_access_control(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::OriginAccessControl>,
+    crate::error::GetOriginAccessControlError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_origin_access_control_output_origin_access_control(body).map_err(crate::error::GetOriginAccessControlError::unhandled)
+    }).transpose()
+}
+
+pub fn deser_header_get_origin_access_control_config_get_origin_access_control_config_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_get_origin_access_control_config_get_origin_access_control_config_output_origin_access_control_config(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::OriginAccessControlConfig>,
+    crate::error::GetOriginAccessControlConfigError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_get_origin_access_control_config_output_origin_access_control_config(body).map_err(crate::error::GetOriginAccessControlConfigError::unhandled)
+    }).transpose()
+}
+
 pub fn deser_header_get_origin_request_policy_get_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -1665,6 +1786,17 @@ pub fn deser_payload_list_key_groups_list_key_groups_output_key_group_list(
     }).transpose()
 }
 
+pub fn deser_payload_list_origin_access_controls_list_origin_access_controls_output_origin_access_control_list(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::OriginAccessControlList>,
+    crate::error::ListOriginAccessControlsError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_list_origin_access_controls_output_origin_access_control_list(body).map_err(crate::error::ListOriginAccessControlsError::unhandled)
+    }).transpose()
+}
+
 pub fn deser_payload_list_origin_request_policies_list_origin_request_policies_output_origin_request_policy_list(
     body: &[u8],
 ) -> std::result::Result<
@@ -1897,6 +2029,27 @@ pub fn deser_payload_update_key_group_update_key_group_output_key_group(
 > {
     (!body.is_empty()).then(||{
         crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_key_group_output_key_group(body).map_err(crate::error::UpdateKeyGroupError::unhandled)
+    }).transpose()
+}
+
+pub fn deser_header_update_origin_access_control_update_origin_access_control_output_e_tag(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("ETag").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_payload_update_origin_access_control_update_origin_access_control_output_origin_access_control(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::OriginAccessControl>,
+    crate::error::UpdateOriginAccessControlError,
+> {
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_cloudfront_synthetic_update_origin_access_control_output_origin_access_control(body).map_err(crate::error::UpdateOriginAccessControlError::unhandled)
     }).transpose()
 }
 

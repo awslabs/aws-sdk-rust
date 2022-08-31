@@ -9,6 +9,19 @@ pub fn serialize_operation_crate_operation_compare_faces(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_copy_project_version(
+    input: &crate::input::CopyProjectVersionInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_copy_project_version_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_collection(
     input: &crate::input::CreateCollectionInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -101,6 +114,19 @@ pub fn serialize_operation_crate_operation_delete_project(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_delete_project_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_delete_project_policy(
+    input: &crate::input::DeleteProjectPolicyInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_project_policy_input(
+        &mut object,
+        input,
+    )?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -421,6 +447,19 @@ pub fn serialize_operation_crate_operation_list_faces(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_list_project_policies(
+    input: &crate::input::ListProjectPoliciesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_project_policies_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_list_stream_processors(
     input: &crate::input::ListStreamProcessorsInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -443,6 +482,16 @@ pub fn serialize_operation_crate_operation_list_tags_for_resource(
         &mut object,
         input,
     )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_put_project_policy(
+    input: &crate::input::PutProjectPolicyInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_project_policy_input(&mut object, input)?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

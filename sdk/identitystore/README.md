@@ -3,7 +3,9 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-The identity store service used by Amazon Web Services Single Sign On provides a single place to retrieve all of your identities (users and groups). For more information, see the [Amazon Web Services SSO User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+The Identity Store service used by Amazon Web Services Single Sign On provides a single place to retrieve all of your identities (users and groups). For more information, see the [Amazon Web Services SSO User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+
+This reference guide describes the identity store operations that you can call programatically and includes detailed information on data types and errors.
 
 ## Getting Started
 
@@ -17,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.47.0"
-aws-sdk-identitystore = "0.17.0"
+aws-sdk-identitystore = "0.18.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

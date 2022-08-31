@@ -731,6 +731,38 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyRecommendationsRec
     }
 }
 
+/// Operation shape for `PutFeedback`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_feedback`](crate::client::Client::put_feedback).
+///
+/// See [`crate::client::fluent_builders::PutFeedback`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutFeedback {
+    _private: (),
+}
+impl PutFeedback {
+    /// Creates a new builder-style object to manufacture [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+    pub fn builder() -> crate::input::put_feedback_input::Builder {
+        crate::input::put_feedback_input::Builder::default()
+    }
+    /// Creates a new `PutFeedback` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutFeedback {
+    type Output =
+        std::result::Result<crate::output::PutFeedbackOutput, crate::error::PutFeedbackError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_feedback_error(response)
+        } else {
+            crate::operation_deser::parse_put_feedback_response(response)
+        }
+    }
+}
+
 /// Operation shape for `QueryAssistant`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

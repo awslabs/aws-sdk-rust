@@ -171,6 +171,185 @@ impl AddLfTagsToResourceInput {
     }
 }
 
+/// See [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
+pub mod assume_decorated_role_with_saml_input {
+
+    /// A builder for [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) saml_assertion: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) principal_arn: std::option::Option<std::string::String>,
+        pub(crate) duration_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+        pub fn saml_assertion(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_assertion = Some(input.into());
+            self
+        }
+        /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+        pub fn set_saml_assertion(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.saml_assertion = input;
+            self
+        }
+        /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.principal_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+        pub fn set_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.principal_arn = input;
+            self
+        }
+        /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
+            self
+        }
+        /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AssumeDecoratedRoleWithSamlInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssumeDecoratedRoleWithSamlInput {
+                saml_assertion: self.saml_assertion,
+                role_arn: self.role_arn,
+                principal_arn: self.principal_arn,
+                duration_seconds: self.duration_seconds,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssumeDecoratedRoleWithSamlInputOperationOutputAlias =
+    crate::operation::AssumeDecoratedRoleWithSAML;
+#[doc(hidden)]
+pub type AssumeDecoratedRoleWithSamlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl AssumeDecoratedRoleWithSamlInput {
+    /// Consumes the builder and constructs an Operation<[`AssumeDecoratedRoleWithSAML`](crate::operation::AssumeDecoratedRoleWithSAML)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssumeDecoratedRoleWithSAML,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssumeDecoratedRoleWithSamlInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/AssumeDecoratedRoleWithSAML").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssumeDecoratedRoleWithSamlInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_assume_decorated_role_with_saml(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssumeDecoratedRoleWithSAML::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssumeDecoratedRoleWithSAML",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
+    pub fn builder() -> crate::input::assume_decorated_role_with_saml_input::Builder {
+        crate::input::assume_decorated_role_with_saml_input::Builder::default()
+    }
+}
+
 /// See [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput).
 pub mod batch_grant_permissions_input {
 
@@ -9137,6 +9316,52 @@ impl std::fmt::Debug for BatchGrantPermissionsInput {
         let mut formatter = f.debug_struct("BatchGrantPermissionsInput");
         formatter.field("catalog_id", &self.catalog_id);
         formatter.field("entries", &self.entries);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssumeDecoratedRoleWithSamlInput {
+    /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+    #[doc(hidden)]
+    pub saml_assertion: std::option::Option<std::string::String>,
+    /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+    #[doc(hidden)]
+    pub principal_arn: std::option::Option<std::string::String>,
+    /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+    #[doc(hidden)]
+    pub duration_seconds: std::option::Option<i32>,
+}
+impl AssumeDecoratedRoleWithSamlInput {
+    /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+    pub fn saml_assertion(&self) -> std::option::Option<&str> {
+        self.saml_assertion.as_deref()
+    }
+    /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+    /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+        self.duration_seconds
+    }
+}
+impl std::fmt::Debug for AssumeDecoratedRoleWithSamlInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssumeDecoratedRoleWithSamlInput");
+        formatter.field("saml_assertion", &self.saml_assertion);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("principal_arn", &self.principal_arn);
+        formatter.field("duration_seconds", &self.duration_seconds);
         formatter.finish()
     }
 }

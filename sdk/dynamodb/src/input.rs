@@ -3115,6 +3115,146 @@ impl DescribeGlobalTableSettingsInput {
     }
 }
 
+/// See [`DescribeImportInput`](crate::input::DescribeImportInput).
+pub mod describe_import_input {
+
+    /// A builder for [`DescribeImportInput`](crate::input::DescribeImportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) import_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+        pub fn import_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+        pub fn set_import_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.import_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeImportInput`](crate::input::DescribeImportInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeImportInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeImportInput {
+                import_arn: self.import_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeImportInputOperationOutputAlias = crate::operation::DescribeImport;
+#[doc(hidden)]
+pub type DescribeImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeImportInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeImport`](crate::operation::DescribeImport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeImport,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeImportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeImportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DynamoDB_20120810.DescribeImport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_import(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeImport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeImport",
+            "dynamodb",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeImportInput`](crate::input::DescribeImportInput).
+    pub fn builder() -> crate::input::describe_import_input::Builder {
+        crate::input::describe_import_input::Builder::default()
+    }
+}
+
 /// See [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput).
 pub mod describe_kinesis_streaming_destination_input {
 
@@ -4565,14 +4705,14 @@ pub mod export_table_to_point_in_time_input {
         }
         /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
         /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
-        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
         /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
         /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
-        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5105,6 +5245,232 @@ impl GetItemInput {
     /// Creates a new builder-style object to manufacture [`GetItemInput`](crate::input::GetItemInput).
     pub fn builder() -> crate::input::get_item_input::Builder {
         crate::input::get_item_input::Builder::default()
+    }
+}
+
+/// See [`ImportTableInput`](crate::input::ImportTableInput).
+pub mod import_table_input {
+
+    /// A builder for [`ImportTableInput`](crate::input::ImportTableInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
+        pub(crate) input_format: std::option::Option<crate::model::InputFormat>,
+        pub(crate) input_format_options: std::option::Option<crate::model::InputFormatOptions>,
+        pub(crate) input_compression_type: std::option::Option<crate::model::InputCompressionType>,
+        pub(crate) table_creation_parameters:
+            std::option::Option<crate::model::TableCreationParameters>,
+    }
+    impl Builder {
+        /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p> The S3 bucket that provides the source for the import. </p>
+        pub fn s3_bucket_source(mut self, input: crate::model::S3BucketSource) -> Self {
+            self.s3_bucket_source = Some(input);
+            self
+        }
+        /// <p> The S3 bucket that provides the source for the import. </p>
+        pub fn set_s3_bucket_source(
+            mut self,
+            input: std::option::Option<crate::model::S3BucketSource>,
+        ) -> Self {
+            self.s3_bucket_source = input;
+            self
+        }
+        /// <p> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
+        pub fn input_format(mut self, input: crate::model::InputFormat) -> Self {
+            self.input_format = Some(input);
+            self
+        }
+        /// <p> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
+        pub fn set_input_format(
+            mut self,
+            input: std::option::Option<crate::model::InputFormat>,
+        ) -> Self {
+            self.input_format = input;
+            self
+        }
+        /// <p> Additional properties that specify how the input is formatted, </p>
+        pub fn input_format_options(mut self, input: crate::model::InputFormatOptions) -> Self {
+            self.input_format_options = Some(input);
+            self
+        }
+        /// <p> Additional properties that specify how the input is formatted, </p>
+        pub fn set_input_format_options(
+            mut self,
+            input: std::option::Option<crate::model::InputFormatOptions>,
+        ) -> Self {
+            self.input_format_options = input;
+            self
+        }
+        /// <p> Type of compression to be used on the input coming from the imported table. </p>
+        pub fn input_compression_type(mut self, input: crate::model::InputCompressionType) -> Self {
+            self.input_compression_type = Some(input);
+            self
+        }
+        /// <p> Type of compression to be used on the input coming from the imported table. </p>
+        pub fn set_input_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::InputCompressionType>,
+        ) -> Self {
+            self.input_compression_type = input;
+            self
+        }
+        /// <p>Parameters for the table to import the data into. </p>
+        pub fn table_creation_parameters(
+            mut self,
+            input: crate::model::TableCreationParameters,
+        ) -> Self {
+            self.table_creation_parameters = Some(input);
+            self
+        }
+        /// <p>Parameters for the table to import the data into. </p>
+        pub fn set_table_creation_parameters(
+            mut self,
+            input: std::option::Option<crate::model::TableCreationParameters>,
+        ) -> Self {
+            self.table_creation_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportTableInput`](crate::input::ImportTableInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ImportTableInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ImportTableInput {
+                client_token: self.client_token,
+                s3_bucket_source: self.s3_bucket_source,
+                input_format: self.input_format,
+                input_format_options: self.input_format_options,
+                input_compression_type: self.input_compression_type,
+                table_creation_parameters: self.table_creation_parameters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportTableInputOperationOutputAlias = crate::operation::ImportTable;
+#[doc(hidden)]
+pub type ImportTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ImportTableInput {
+    /// Consumes the builder and constructs an Operation<[`ImportTable`](crate::operation::ImportTable)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportTable,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ImportTableInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ImportTableInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DynamoDB_20120810.ImportTable",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_table(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportTable",
+            "dynamodb",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ImportTableInput`](crate::input::ImportTableInput).
+    pub fn builder() -> crate::input::import_table_input::Builder {
+        crate::input::import_table_input::Builder::default()
     }
 }
 
@@ -5834,6 +6200,170 @@ impl ListGlobalTablesInput {
     /// Creates a new builder-style object to manufacture [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput).
     pub fn builder() -> crate::input::list_global_tables_input::Builder {
         crate::input::list_global_tables_input::Builder::default()
+    }
+}
+
+/// See [`ListImportsInput`](crate::input::ListImportsInput).
+pub mod list_imports_input {
+
+    /// A builder for [`ListImportsInput`](crate::input::ListImportsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_arn: std::option::Option<std::string::String>,
+        pub(crate) page_size: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_arn = input;
+            self
+        }
+        /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
+            self
+        }
+        /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
+            self
+        }
+        /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImportsInput`](crate::input::ListImportsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListImportsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListImportsInput {
+                table_arn: self.table_arn,
+                page_size: self.page_size,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListImportsInputOperationOutputAlias = crate::operation::ListImports;
+#[doc(hidden)]
+pub type ListImportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListImportsInput {
+    /// Consumes the builder and constructs an Operation<[`ListImports`](crate::operation::ListImports)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListImports,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListImportsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListImportsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DynamoDB_20120810.ListImports",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_imports(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListImports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListImports",
+            "dynamodb",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListImportsInput`](crate::input::ListImportsInput).
+    pub fn builder() -> crate::input::list_imports_input::Builder {
+        crate::input::list_imports_input::Builder::default()
     }
 }
 
@@ -12990,6 +13520,44 @@ impl std::fmt::Debug for ListTablesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImportsInput {
+    /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+    #[doc(hidden)]
+    pub table_arn: std::option::Option<std::string::String>,
+    /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+    #[doc(hidden)]
+    pub page_size: std::option::Option<i32>,
+    /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImportsInput {
+    /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+    pub fn table_arn(&self) -> std::option::Option<&str> {
+        self.table_arn.as_deref()
+    }
+    /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImportsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImportsInput");
+        formatter.field("table_arn", &self.table_arn);
+        formatter.field("page_size", &self.page_size);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGlobalTablesInput {
     /// <p>The first global table name that this operation will evaluate.</p>
     #[doc(hidden)]
@@ -13183,6 +13751,76 @@ impl std::fmt::Debug for ListBackupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportTableInput {
+    /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p> The S3 bucket that provides the source for the import. </p>
+    #[doc(hidden)]
+    pub s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
+    /// <p> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
+    #[doc(hidden)]
+    pub input_format: std::option::Option<crate::model::InputFormat>,
+    /// <p> Additional properties that specify how the input is formatted, </p>
+    #[doc(hidden)]
+    pub input_format_options: std::option::Option<crate::model::InputFormatOptions>,
+    /// <p> Type of compression to be used on the input coming from the imported table. </p>
+    #[doc(hidden)]
+    pub input_compression_type: std::option::Option<crate::model::InputCompressionType>,
+    /// <p>Parameters for the table to import the data into. </p>
+    #[doc(hidden)]
+    pub table_creation_parameters: std::option::Option<crate::model::TableCreationParameters>,
+}
+impl ImportTableInput {
+    /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p> The S3 bucket that provides the source for the import. </p>
+    pub fn s3_bucket_source(&self) -> std::option::Option<&crate::model::S3BucketSource> {
+        self.s3_bucket_source.as_ref()
+    }
+    /// <p> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
+    pub fn input_format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.input_format.as_ref()
+    }
+    /// <p> Additional properties that specify how the input is formatted, </p>
+    pub fn input_format_options(&self) -> std::option::Option<&crate::model::InputFormatOptions> {
+        self.input_format_options.as_ref()
+    }
+    /// <p> Type of compression to be used on the input coming from the imported table. </p>
+    pub fn input_compression_type(
+        &self,
+    ) -> std::option::Option<&crate::model::InputCompressionType> {
+        self.input_compression_type.as_ref()
+    }
+    /// <p>Parameters for the table to import the data into. </p>
+    pub fn table_creation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::TableCreationParameters> {
+        self.table_creation_parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportTableInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTableInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("input_format", &self.input_format);
+        formatter.field("input_format_options", &self.input_format_options);
+        formatter.field("input_compression_type", &self.input_compression_type);
+        formatter.field("table_creation_parameters", &self.table_creation_parameters);
+        formatter.finish()
+    }
+}
+
 /// <p>Represents the input of a <code>GetItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13336,7 +13974,7 @@ pub struct ExportTableToPointInTimeInput {
     pub export_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
-    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
@@ -13373,7 +14011,7 @@ impl ExportTableToPointInTimeInput {
     }
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
-    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13694,6 +14332,28 @@ impl std::fmt::Debug for DescribeKinesisStreamingDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeKinesisStreamingDestinationInput");
         formatter.field("table_name", &self.table_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeImportInput {
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    #[doc(hidden)]
+    pub import_arn: std::option::Option<std::string::String>,
+}
+impl DescribeImportInput {
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    pub fn import_arn(&self) -> std::option::Option<&str> {
+        self.import_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeImportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeImportInput");
+        formatter.field("import_arn", &self.import_arn);
         formatter.finish()
     }
 }

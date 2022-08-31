@@ -440,6 +440,63 @@ pub fn deser_structure_crate_error_unauthorized_client_exception_json_err(
     Ok(builder)
 }
 
+pub fn deser_structure_crate_error_resource_limit_exceeded_exception_json_err(
+    value: &[u8],
+    mut builder: crate::error::resource_limit_exceeded_exception::Builder,
+) -> Result<
+    crate::error::resource_limit_exceeded_exception::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Code" => {
+                        builder = builder.set_code(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ErrorCode::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
+                    "Message" => {
+                        builder = builder.set_message(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_batch_create_channel_membership(
     value: &[u8],
     mut builder: crate::output::batch_create_channel_membership_output::Builder,
@@ -512,63 +569,6 @@ pub fn deser_operation_crate_operation_channel_flow_callback(
                     }
                     "ChannelArn" => {
                         builder = builder.set_channel_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            other => {
-                return Err(aws_smithy_json::deserialize::Error::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
-                )))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(aws_smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_structure_crate_error_resource_limit_exceeded_exception_json_err(
-    value: &[u8],
-    mut builder: crate::error::resource_limit_exceeded_exception::Builder,
-) -> Result<
-    crate::error::resource_limit_exceeded_exception::Builder,
-    aws_smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Code" => {
-                        builder = builder.set_code(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::model::ErrorCode::from(u.as_ref()))
-                            })
-                            .transpose()?,
-                        );
-                    }
-                    "Message" => {
-                        builder = builder.set_message(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
@@ -757,6 +757,15 @@ pub fn deser_operation_crate_operation_create_channel_membership(
                     "Member" => {
                         builder = builder.set_member(
                             crate::json_deser::deser_structure_crate_model_identity(tokens)?,
+                        );
+                    }
+                    "SubChannelId" => {
+                        builder = builder.set_sub_channel_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1539,6 +1548,15 @@ pub fn deser_operation_crate_operation_list_channel_messages(
                             .transpose()?,
                         );
                     }
+                    "SubChannelId" => {
+                        builder = builder.set_sub_channel_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -1764,6 +1782,62 @@ pub fn deser_operation_crate_operation_list_channels_moderated_by_app_instance_u
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_list_sub_channels(
+    value: &[u8],
+    mut builder: crate::output::list_sub_channels_output::Builder,
+) -> Result<crate::output::list_sub_channels_output::Builder, aws_smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ChannelArn" => {
+                        builder = builder.set_channel_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "SubChannels" => {
+                        builder = builder.set_sub_channels(
+                            crate::json_deser::deser_list_com_amazonaws_chimesdkmessaging_sub_channel_summary_list(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
@@ -1897,6 +1971,15 @@ pub fn deser_operation_crate_operation_redact_channel_message(
                             .transpose()?,
                         );
                     }
+                    "SubChannelId" => {
+                        builder = builder.set_sub_channel_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -1999,6 +2082,15 @@ pub fn deser_operation_crate_operation_send_channel_message(
                     "Status" => {
                         builder = builder.set_status(
                             crate::json_deser::deser_structure_crate_model_channel_message_status_structure(tokens)?
+                        );
+                    }
+                    "SubChannelId" => {
+                        builder = builder.set_sub_channel_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2145,6 +2237,15 @@ pub fn deser_operation_crate_operation_update_channel_message(
                             crate::json_deser::deser_structure_crate_model_channel_message_status_structure(tokens)?
                         );
                     }
+                    "SubChannelId" => {
+                        builder = builder.set_sub_channel_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -2183,6 +2284,15 @@ pub fn deser_operation_crate_operation_update_channel_read_marker(
                 match key.to_unescaped()?.as_ref() {
                     "ChannelArn" => {
                         builder = builder.set_channel_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "SubChannelId" => {
+                        builder = builder.set_sub_channel_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
@@ -2262,6 +2372,15 @@ where
                             }
                             "ChannelArn" => {
                                 builder = builder.set_channel_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SubChannelId" => {
+                                builder = builder.set_sub_channel_id(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -2490,6 +2609,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "ElasticChannelConfiguration" => {
+                                builder = builder.set_elastic_channel_configuration(
+                                    crate::json_deser::deser_structure_crate_model_elastic_channel_configuration(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2723,6 +2847,15 @@ where
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
+                                );
+                            }
+                            "SubChannelId" => {
+                                builder = builder.set_sub_channel_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3081,6 +3214,15 @@ where
                             "MessageAttributes" => {
                                 builder = builder.set_message_attributes(
                                     crate::json_deser::deser_map_com_amazonaws_chimesdkmessaging_message_attribute_map(tokens)?
+                                );
+                            }
+                            "SubChannelId" => {
+                                builder = builder.set_sub_channel_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3573,6 +3715,47 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_chimesdkmessaging_sub_channel_summary_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::SubChannelSummary>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_sub_channel_summary(
+                                tokens,
+                            )?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_chimesdkmessaging_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, aws_smithy_json::deserialize::Error>
@@ -3692,6 +3875,67 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_elastic_channel_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::ElasticChannelConfiguration>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::ElasticChannelConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MaximumSubChannels" => {
+                                builder = builder.set_maximum_sub_channels(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "TargetMembershipsPerSubChannel" => {
+                                builder = builder.set_target_memberships_per_sub_channel(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "MinimumMembershipPercentage" => {
+                                builder = builder.set_minimum_membership_percentage(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3885,6 +4129,15 @@ where
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
+                                );
+                            }
+                            "SubChannelId" => {
+                                builder = builder.set_sub_channel_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4397,6 +4650,60 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_sub_channel_summary<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::SubChannelSummary>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SubChannelSummary::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SubChannelId" => {
+                                builder = builder.set_sub_channel_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "MembershipCount" => {
+                                builder = builder.set_membership_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

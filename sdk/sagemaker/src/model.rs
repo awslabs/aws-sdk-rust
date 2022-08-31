@@ -29316,43 +29316,42 @@ impl ShuffleConfig {
     }
 }
 
-/// <p>The training input mode that the algorithm supports. For more information about input modes, see
-/// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+/// <p>The training input mode that the algorithm supports. For more information about input
+/// modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
 ///
 /// <p>
 /// <b>Pipe mode</b>
 /// </p>
-/// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
-/// from Amazon S3 to the container.</p>
+/// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from
+/// Amazon S3 to the container.</p>
 ///
 /// <p>
 /// <b>File mode</b>
 /// </p>
-/// <p>If an algorithm supports <code>File</code> mode, SageMaker
-/// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
-/// directory to the Docker volume for the training container.</p>
-/// <p>You must provision the ML storage volume with sufficient capacity
-/// to accommodate the data downloaded from S3. In addition to the training data, the ML
-/// storage volume also stores the output model. The algorithm container uses the ML storage
-/// volume to also store intermediate information, if any.</p>
-/// <p>For distributed algorithms, training data is distributed uniformly.
-/// Your training duration is predictable if the input data objects sizes are
-/// approximately the same. SageMaker does not split the files any further for model training.
-/// If the object sizes are skewed, training won't be optimal as the data distribution is also
-/// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
-/// training.</p>
+/// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from
+/// S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume
+/// for the training container.</p>
+/// <p>You must provision the ML storage volume with sufficient capacity to accommodate the
+/// data downloaded from S3. In addition to the training data, the ML storage volume also
+/// stores the output model. The algorithm container uses the ML storage volume to also
+/// store intermediate information, if any.</p>
+/// <p>For distributed algorithms, training data is distributed uniformly. Your training
+/// duration is predictable if the input data objects sizes are approximately the same. SageMaker
+/// does not split the files any further for model training. If the object sizes are skewed,
+/// training won't be optimal as the data distribution is also skewed when one host in a
+/// training cluster is overloaded, thus becoming a bottleneck in training.</p>
 ///
 /// <p>
 /// <b>FastFile mode</b>
 /// </p>
-/// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
-/// from S3 to the container with no code changes, and provides file system access to
-/// the data. Users can author their training script to interact with these files as if
-/// they were stored on disk.</p>
+/// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from
+/// S3 to the container with no code changes, and provides file system access to the data.
+/// Users can author their training script to interact with these files as if they were
+/// stored on disk.</p>
 /// <p>
-/// <code>FastFile</code> mode works best when the data is read sequentially.
-/// Augmented manifest files aren't supported.
-/// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+/// <code>FastFile</code> mode works best when the data is read sequentially. Augmented
+/// manifest files aren't supported. The startup time is lower when there are fewer files in
+/// the S3 bucket provided.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -62614,7 +62613,9 @@ pub struct HyperParameterTrainingJobDefinition {
     #[doc(hidden)]
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+    /// </note>
     #[doc(hidden)]
     pub resource_config: std::option::Option<crate::model::ResourceConfig>,
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
@@ -62635,6 +62636,10 @@ pub struct HyperParameterTrainingJobDefinition {
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     #[doc(hidden)]
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
+    #[doc(hidden)]
+    pub hyper_parameter_tuning_resource_config:
+        std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
 }
 impl HyperParameterTrainingJobDefinition {
     /// <p>The job definition name.</p>
@@ -62683,7 +62688,9 @@ impl HyperParameterTrainingJobDefinition {
         self.output_data_config.as_ref()
     }
     /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+    /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+    /// </note>
     pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
         self.resource_config.as_ref()
     }
@@ -62711,6 +62718,12 @@ impl HyperParameterTrainingJobDefinition {
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn hyper_parameter_tuning_resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningResourceConfig> {
+        self.hyper_parameter_tuning_resource_config.as_ref()
+    }
 }
 impl std::fmt::Debug for HyperParameterTrainingJobDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62737,6 +62750,10 @@ impl std::fmt::Debug for HyperParameterTrainingJobDefinition {
         );
         formatter.field("checkpoint_config", &self.checkpoint_config);
         formatter.field("retry_strategy", &self.retry_strategy);
+        formatter.field(
+            "hyper_parameter_tuning_resource_config",
+            &self.hyper_parameter_tuning_resource_config,
+        );
         formatter.finish()
     }
 }
@@ -62766,6 +62783,8 @@ pub mod hyper_parameter_training_job_definition {
         pub(crate) enable_managed_spot_training: std::option::Option<bool>,
         pub(crate) checkpoint_config: std::option::Option<crate::model::CheckpointConfig>,
         pub(crate) retry_strategy: std::option::Option<crate::model::RetryStrategy>,
+        pub(crate) hyper_parameter_tuning_resource_config:
+            std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
     }
     impl Builder {
         /// <p>The job definition name.</p>
@@ -62911,13 +62930,17 @@ pub mod hyper_parameter_training_job_definition {
             self
         }
         /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+        /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+        /// </note>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.resource_config = Some(input);
             self
         }
         /// <p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
-        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+        /// <p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want SageMaker to use the storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p> <note>
+        /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
+        /// </note>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -63000,6 +63023,22 @@ pub mod hyper_parameter_training_job_definition {
             self.retry_strategy = input;
             self
         }
+        /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
+        pub fn hyper_parameter_tuning_resource_config(
+            mut self,
+            input: crate::model::HyperParameterTuningResourceConfig,
+        ) -> Self {
+            self.hyper_parameter_tuning_resource_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter to additionally store training data in the storage volume (optional).</p>
+        pub fn set_hyper_parameter_tuning_resource_config(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningResourceConfig>,
+        ) -> Self {
+            self.hyper_parameter_tuning_resource_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
         pub fn build(self) -> crate::model::HyperParameterTrainingJobDefinition {
             crate::model::HyperParameterTrainingJobDefinition {
@@ -63021,6 +63060,7 @@ pub mod hyper_parameter_training_job_definition {
                 enable_managed_spot_training: self.enable_managed_spot_training.unwrap_or_default(),
                 checkpoint_config: self.checkpoint_config,
                 retry_strategy: self.retry_strategy,
+                hyper_parameter_tuning_resource_config: self.hyper_parameter_tuning_resource_config,
             }
         }
     }
@@ -63029,6 +63069,386 @@ impl HyperParameterTrainingJobDefinition {
     /// Creates a new builder-style object to manufacture [`HyperParameterTrainingJobDefinition`](crate::model::HyperParameterTrainingJobDefinition).
     pub fn builder() -> crate::model::hyper_parameter_training_job_definition::Builder {
         crate::model::hyper_parameter_training_job_definition::Builder::default()
+    }
+}
+
+/// <p>The configuration of resources, including compute instances and storage volumes for use in training jobs launched by hyperparameter tuning jobs. Specify one or more instance type and count and the allocation strategy for instance selection.</p> <note>
+/// <p>HyperParameterTuningResourceConfig supports all of the capabilities of ResourceConfig with added functionality for flexible instance management.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningResourceConfig {
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+    #[doc(hidden)]
+    pub instance_count: i32,
+    /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+    /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+    /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub volume_size_in_gb: i32,
+    /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+    /// <p>KMS Key ID:</p>
+    /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
+    /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
+    #[doc(hidden)]
+    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+    #[doc(hidden)]
+    pub allocation_strategy:
+        std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
+    /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+    /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub instance_configs:
+        std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
+}
+impl HyperParameterTuningResourceConfig {
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+    /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+    /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+    /// </note>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
+    /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+    /// <p>KMS Key ID:</p>
+    /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
+    /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+    /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+    pub fn allocation_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningAllocationStrategy> {
+        self.allocation_strategy.as_ref()
+    }
+    /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+    /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+    /// </note>
+    pub fn instance_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTuningInstanceConfig]> {
+        self.instance_configs.as_deref()
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningResourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningResourceConfig");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("allocation_strategy", &self.allocation_strategy);
+        formatter.field("instance_configs", &self.instance_configs);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+pub mod hyper_parameter_tuning_resource_config {
+
+    /// A builder for [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) allocation_strategy:
+            std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
+        pub(crate) instance_configs:
+            std::option::Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
+    }
+    impl Builder {
+        /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+        /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+        /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+        /// </note>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
+        /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
+        /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
+        /// </note>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+        /// <p>KMS Key ID:</p>
+        /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
+        /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>A key used by AWS Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
+        /// <p>KMS Key ID:</p>
+        /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Amazon Resource Name (ARN) of a AWS KMS key:</p>
+        /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+        /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS KMS encryption</a> for more information.</p>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_kms_key_id = input;
+            self
+        }
+        /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+        pub fn allocation_strategy(
+            mut self,
+            input: crate::model::HyperParameterTuningAllocationStrategy,
+        ) -> Self {
+            self.allocation_strategy = Some(input);
+            self
+        }
+        /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
+        pub fn set_allocation_strategy(
+            mut self,
+            input: std::option::Option<crate::model::HyperParameterTuningAllocationStrategy>,
+        ) -> Self {
+            self.allocation_strategy = input;
+            self
+        }
+        /// Appends an item to `instance_configs`.
+        ///
+        /// To override the contents of this collection use [`set_instance_configs`](Self::set_instance_configs).
+        ///
+        /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+        /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+        /// </note>
+        pub fn instance_configs(
+            mut self,
+            input: crate::model::HyperParameterTuningInstanceConfig,
+        ) -> Self {
+            let mut v = self.instance_configs.unwrap_or_default();
+            v.push(input);
+            self.instance_configs = Some(v);
+            self
+        }
+        /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
+        /// <p>If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
+        /// </note>
+        pub fn set_instance_configs(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>,
+            >,
+        ) -> Self {
+            self.instance_configs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningResourceConfig {
+            crate::model::HyperParameterTuningResourceConfig {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+                volume_kms_key_id: self.volume_kms_key_id,
+                allocation_strategy: self.allocation_strategy,
+                instance_configs: self.instance_configs,
+            }
+        }
+    }
+}
+impl HyperParameterTuningResourceConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningResourceConfig`](crate::model::HyperParameterTuningResourceConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_resource_config::Builder {
+        crate::model::hyper_parameter_tuning_resource_config::Builder::default()
+    }
+}
+
+/// <p>The configuration for hyperparameter tuning resources for use in training jobs launched by the tuning job. These resources include compute instances and storage volumes. Specify one or more compute instance configurations and allocation strategies to select resources (optional).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HyperParameterTuningInstanceConfig {
+    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+    #[doc(hidden)]
+    pub instance_count: i32,
+    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+    #[doc(hidden)]
+    pub volume_size_in_gb: i32,
+}
+impl HyperParameterTuningInstanceConfig {
+    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
+}
+impl std::fmt::Debug for HyperParameterTuningInstanceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HyperParameterTuningInstanceConfig");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.finish()
+    }
+}
+/// See [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+pub mod hyper_parameter_tuning_instance_config {
+
+    /// A builder for [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more information.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+        pub fn build(self) -> crate::model::HyperParameterTuningInstanceConfig {
+            crate::model::HyperParameterTuningInstanceConfig {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl HyperParameterTuningInstanceConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningInstanceConfig`](crate::model::HyperParameterTuningInstanceConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_instance_config::Builder {
+        crate::model::hyper_parameter_tuning_instance_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HyperParameterTuningAllocationStrategy {
+    #[allow(missing_docs)] // documentation missing in model
+    Prioritized,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HyperParameterTuningAllocationStrategy {
+    fn from(s: &str) -> Self {
+        match s {
+            "Prioritized" => HyperParameterTuningAllocationStrategy::Prioritized,
+            other => HyperParameterTuningAllocationStrategy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HyperParameterTuningAllocationStrategy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HyperParameterTuningAllocationStrategy::from(s))
+    }
+}
+impl HyperParameterTuningAllocationStrategy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HyperParameterTuningAllocationStrategy::Prioritized => "Prioritized",
+            HyperParameterTuningAllocationStrategy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Prioritized"]
+    }
+}
+impl AsRef<str> for HyperParameterTuningAllocationStrategy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

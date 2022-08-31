@@ -3740,6 +3740,9 @@ pub struct GrpcRouteMatch {
     /// <p>An object that represents the data to match from the request.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>,
+    /// <p>The port number to match on.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
@@ -3754,6 +3757,10 @@ impl GrpcRouteMatch {
     pub fn metadata(&self) -> std::option::Option<&[crate::model::GrpcRouteMetadata]> {
         self.metadata.as_deref()
     }
+    /// <p>The port number to match on.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 impl std::fmt::Debug for GrpcRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3761,6 +3768,7 @@ impl std::fmt::Debug for GrpcRouteMatch {
         formatter.field("service_name", &self.service_name);
         formatter.field("method_name", &self.method_name);
         formatter.field("metadata", &self.metadata);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -3773,6 +3781,7 @@ pub mod grpc_route_match {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) method_name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The fully qualified domain name for the service to match from the request.</p>
@@ -3814,12 +3823,23 @@ pub mod grpc_route_match {
             self.metadata = input;
             self
         }
+        /// <p>The port number to match on.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port number to match on.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
         pub fn build(self) -> crate::model::GrpcRouteMatch {
             crate::model::GrpcRouteMatch {
                 service_name: self.service_name,
                 method_name: self.method_name,
                 metadata: self.metadata,
+                port: self.port,
             }
         }
     }
@@ -4175,6 +4195,9 @@ pub struct WeightedTarget {
     /// <p>The relative weight of the weighted target.</p>
     #[doc(hidden)]
     pub weight: i32,
+    /// <p>The targeted port of the weighted object.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
@@ -4185,12 +4208,17 @@ impl WeightedTarget {
     pub fn weight(&self) -> i32 {
         self.weight
     }
+    /// <p>The targeted port of the weighted object.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 impl std::fmt::Debug for WeightedTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WeightedTarget");
         formatter.field("virtual_node", &self.virtual_node);
         formatter.field("weight", &self.weight);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -4202,6 +4230,7 @@ pub mod weighted_target {
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<std::string::String>,
         pub(crate) weight: std::option::Option<i32>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The virtual node to associate with the weighted target.</p>
@@ -4224,11 +4253,22 @@ pub mod weighted_target {
             self.weight = input;
             self
         }
+        /// <p>The targeted port of the weighted object.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The targeted port of the weighted object.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WeightedTarget`](crate::model::WeightedTarget).
         pub fn build(self) -> crate::model::WeightedTarget {
             crate::model::WeightedTarget {
                 virtual_node: self.virtual_node,
                 weight: self.weight.unwrap_or_default(),
+                port: self.port,
             }
         }
     }
@@ -4693,6 +4733,9 @@ pub struct HttpRouteMatch {
     /// <p>The client request headers to match on.</p>
     #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
+    /// <p>The port number to match on.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl HttpRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
@@ -4719,6 +4762,10 @@ impl HttpRouteMatch {
     pub fn headers(&self) -> std::option::Option<&[crate::model::HttpRouteHeader]> {
         self.headers.as_deref()
     }
+    /// <p>The port number to match on.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 impl std::fmt::Debug for HttpRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4729,6 +4776,7 @@ impl std::fmt::Debug for HttpRouteMatch {
         formatter.field("method", &self.method);
         formatter.field("scheme", &self.scheme);
         formatter.field("headers", &self.headers);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -4745,6 +4793,7 @@ pub mod http_route_match {
         pub(crate) method: std::option::Option<crate::model::HttpMethod>,
         pub(crate) scheme: std::option::Option<crate::model::HttpScheme>,
         pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
@@ -4825,6 +4874,16 @@ pub mod http_route_match {
             self.headers = input;
             self
         }
+        /// <p>The port number to match on.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port number to match on.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HttpRouteMatch`](crate::model::HttpRouteMatch).
         pub fn build(self) -> crate::model::HttpRouteMatch {
             crate::model::HttpRouteMatch {
@@ -4834,6 +4893,7 @@ pub mod http_route_match {
                 method: self.method,
                 scheme: self.scheme,
                 headers: self.headers,
+                port: self.port,
             }
         }
     }
@@ -5395,6 +5455,9 @@ pub struct TcpRoute {
     /// <p>An object that represents types of timeouts. </p>
     #[doc(hidden)]
     pub timeout: std::option::Option<crate::model::TcpTimeout>,
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    #[doc(hidden)]
+    pub r#match: std::option::Option<crate::model::TcpRouteMatch>,
 }
 impl TcpRoute {
     /// <p>The action to take if a match is determined.</p>
@@ -5405,12 +5468,17 @@ impl TcpRoute {
     pub fn timeout(&self) -> std::option::Option<&crate::model::TcpTimeout> {
         self.timeout.as_ref()
     }
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn r#match(&self) -> std::option::Option<&crate::model::TcpRouteMatch> {
+        self.r#match.as_ref()
+    }
 }
 impl std::fmt::Debug for TcpRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TcpRoute");
         formatter.field("action", &self.action);
         formatter.field("timeout", &self.timeout);
+        formatter.field("r#match", &self.r#match);
         formatter.finish()
     }
 }
@@ -5422,6 +5490,7 @@ pub mod tcp_route {
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::TcpRouteAction>,
         pub(crate) timeout: std::option::Option<crate::model::TcpTimeout>,
+        pub(crate) r#match: std::option::Option<crate::model::TcpRouteMatch>,
     }
     impl Builder {
         /// <p>The action to take if a match is determined.</p>
@@ -5447,11 +5516,25 @@ pub mod tcp_route {
             self.timeout = input;
             self
         }
+        /// <p>An object that represents the criteria for determining a request match.</p>
+        pub fn r#match(mut self, input: crate::model::TcpRouteMatch) -> Self {
+            self.r#match = Some(input);
+            self
+        }
+        /// <p>An object that represents the criteria for determining a request match.</p>
+        pub fn set_match(
+            mut self,
+            input: std::option::Option<crate::model::TcpRouteMatch>,
+        ) -> Self {
+            self.r#match = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TcpRoute`](crate::model::TcpRoute).
         pub fn build(self) -> crate::model::TcpRoute {
             crate::model::TcpRoute {
                 action: self.action,
                 timeout: self.timeout,
+                r#match: self.r#match,
             }
         }
     }
@@ -5460,6 +5543,59 @@ impl TcpRoute {
     /// Creates a new builder-style object to manufacture [`TcpRoute`](crate::model::TcpRoute).
     pub fn builder() -> crate::model::tcp_route::Builder {
         crate::model::tcp_route::Builder::default()
+    }
+}
+
+/// <p>An object representing the TCP route to match.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TcpRouteMatch {
+    /// <p>The port number to match on.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
+}
+impl TcpRouteMatch {
+    /// <p>The port number to match on.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+}
+impl std::fmt::Debug for TcpRouteMatch {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TcpRouteMatch");
+        formatter.field("port", &self.port);
+        formatter.finish()
+    }
+}
+/// See [`TcpRouteMatch`](crate::model::TcpRouteMatch).
+pub mod tcp_route_match {
+
+    /// A builder for [`TcpRouteMatch`](crate::model::TcpRouteMatch).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) port: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The port number to match on.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port number to match on.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TcpRouteMatch`](crate::model::TcpRouteMatch).
+        pub fn build(self) -> crate::model::TcpRouteMatch {
+            crate::model::TcpRouteMatch { port: self.port }
+        }
+    }
+}
+impl TcpRouteMatch {
+    /// Creates a new builder-style object to manufacture [`TcpRouteMatch`](crate::model::TcpRouteMatch).
+    pub fn builder() -> crate::model::tcp_route_match::Builder {
+        crate::model::tcp_route_match::Builder::default()
     }
 }
 
@@ -6315,6 +6451,9 @@ pub struct FileAccessLog {
     /// </note>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
+    /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::LoggingFormat>,
 }
 impl FileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
@@ -6323,11 +6462,16 @@ impl FileAccessLog {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
+    /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::LoggingFormat> {
+        self.format.as_ref()
+    }
 }
 impl std::fmt::Debug for FileAccessLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileAccessLog");
         formatter.field("path", &self.path);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -6338,6 +6482,7 @@ pub mod file_access_log {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
     }
     impl Builder {
         /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
@@ -6354,9 +6499,25 @@ pub mod file_access_log {
             self.path = input;
             self
         }
+        /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
+        pub fn format(mut self, input: crate::model::LoggingFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::LoggingFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FileAccessLog`](crate::model::FileAccessLog).
         pub fn build(self) -> crate::model::FileAccessLog {
-            crate::model::FileAccessLog { path: self.path }
+            crate::model::FileAccessLog {
+                path: self.path,
+                format: self.format,
+            }
         }
     }
 }
@@ -6364,6 +6525,134 @@ impl FileAccessLog {
     /// Creates a new builder-style object to manufacture [`FileAccessLog`](crate::model::FileAccessLog).
     pub fn builder() -> crate::model::file_access_log::Builder {
         crate::model::file_access_log::Builder::default()
+    }
+}
+
+/// <p>An object that represents the format for the logs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum LoggingFormat {
+    /// <p></p>
+    Json(std::vec::Vec<crate::model::JsonFormatRef>),
+    /// <p></p>
+    Text(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl LoggingFormat {
+    /// Tries to convert the enum instance into [`Json`](crate::model::LoggingFormat::Json), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_json(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<crate::model::JsonFormatRef>, &Self> {
+        if let LoggingFormat::Json(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Json`](crate::model::LoggingFormat::Json).
+    pub fn is_json(&self) -> bool {
+        self.as_json().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Text`](crate::model::LoggingFormat::Text), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_text(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let LoggingFormat::Text(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Text`](crate::model::LoggingFormat::Text).
+    pub fn is_text(&self) -> bool {
+        self.as_text().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>An object that represents the key value pairs for the JSON.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JsonFormatRef {
+    /// <p>The specified key for the JSON.</p>
+    #[doc(hidden)]
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The specified value for the JSON.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<std::string::String>,
+}
+impl JsonFormatRef {
+    /// <p>The specified key for the JSON.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The specified value for the JSON.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for JsonFormatRef {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JsonFormatRef");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`JsonFormatRef`](crate::model::JsonFormatRef).
+pub mod json_format_ref {
+
+    /// A builder for [`JsonFormatRef`](crate::model::JsonFormatRef).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The specified key for the JSON.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The specified key for the JSON.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The specified value for the JSON.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The specified value for the JSON.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JsonFormatRef`](crate::model::JsonFormatRef).
+        pub fn build(self) -> crate::model::JsonFormatRef {
+            crate::model::JsonFormatRef {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl JsonFormatRef {
+    /// Creates a new builder-style object to manufacture [`JsonFormatRef`](crate::model::JsonFormatRef).
+    pub fn builder() -> crate::model::json_format_ref::Builder {
+        crate::model::json_format_ref::Builder::default()
     }
 }
 
@@ -6615,7 +6904,7 @@ pub struct TlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
     pub trust: std::option::Option<crate::model::TlsValidationContextTrust>,
-    /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
+    /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
     #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
@@ -6624,7 +6913,7 @@ impl TlsValidationContext {
     pub fn trust(&self) -> std::option::Option<&crate::model::TlsValidationContextTrust> {
         self.trust.as_ref()
     }
-    /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
+    /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
     pub fn subject_alternative_names(
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
@@ -6663,7 +6952,7 @@ pub mod tls_validation_context {
             self.trust = input;
             self
         }
-        /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
+        /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
         pub fn subject_alternative_names(
             mut self,
             input: crate::model::SubjectAlternativeNames,
@@ -6671,7 +6960,7 @@ pub mod tls_validation_context {
             self.subject_alternative_names = Some(input);
             self
         }
-        /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
+        /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<crate::model::SubjectAlternativeNames>,
@@ -8768,7 +9057,7 @@ pub struct AwsCloudMapServiceDiscovery {
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
-    /// <p>The IP version to use to control traffic within the mesh.</p>
+    /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     #[doc(hidden)]
     pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
@@ -8785,7 +9074,7 @@ impl AwsCloudMapServiceDiscovery {
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AwsCloudMapInstanceAttribute]> {
         self.attributes.as_deref()
     }
-    /// <p>The IP version to use to control traffic within the mesh.</p>
+    /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
         self.ip_preference.as_ref()
     }
@@ -8855,12 +9144,12 @@ pub mod aws_cloud_map_service_discovery {
             self.attributes = input;
             self
         }
-        /// <p>The IP version to use to control traffic within the mesh.</p>
+        /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
         pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
             self.ip_preference = Some(input);
             self
         }
-        /// <p>The IP version to use to control traffic within the mesh.</p>
+        /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
         pub fn set_ip_preference(
             mut self,
             input: std::option::Option<crate::model::IpPreference>,
@@ -8973,7 +9262,7 @@ pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS response type for the virtual node.</p>
     #[doc(hidden)]
     pub response_type: std::option::Option<crate::model::DnsResponseType>,
-    /// <p>The IP version to use to control traffic within the mesh.</p>
+    /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     #[doc(hidden)]
     pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
@@ -8986,7 +9275,7 @@ impl DnsServiceDiscovery {
     pub fn response_type(&self) -> std::option::Option<&crate::model::DnsResponseType> {
         self.response_type.as_ref()
     }
-    /// <p>The IP version to use to control traffic within the mesh.</p>
+    /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
         self.ip_preference.as_ref()
     }
@@ -9034,12 +9323,12 @@ pub mod dns_service_discovery {
             self.response_type = input;
             self
         }
-        /// <p>The IP version to use to control traffic within the mesh.</p>
+        /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
         pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
             self.ip_preference = Some(input);
             self
         }
-        /// <p>The IP version to use to control traffic within the mesh.</p>
+        /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
         pub fn set_ip_preference(
             mut self,
             input: std::option::Option<crate::model::IpPreference>,
@@ -9811,17 +10100,25 @@ pub struct VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
+    /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::LoggingFormat>,
 }
 impl VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
+    /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::LoggingFormat> {
+        self.format.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualGatewayFileAccessLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualGatewayFileAccessLog");
         formatter.field("path", &self.path);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -9832,6 +10129,7 @@ pub mod virtual_gateway_file_access_log {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
     }
     impl Builder {
         /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
@@ -9844,9 +10142,25 @@ pub mod virtual_gateway_file_access_log {
             self.path = input;
             self
         }
+        /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
+        pub fn format(mut self, input: crate::model::LoggingFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::LoggingFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
         pub fn build(self) -> crate::model::VirtualGatewayFileAccessLog {
-            crate::model::VirtualGatewayFileAccessLog { path: self.path }
+            crate::model::VirtualGatewayFileAccessLog {
+                path: self.path,
+                format: self.format,
+            }
         }
     }
 }
@@ -12819,6 +13133,9 @@ pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
+    /// <p>The port number of the gateway route target.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
@@ -12827,11 +13144,16 @@ impl GatewayRouteTarget {
     ) -> std::option::Option<&crate::model::GatewayRouteVirtualService> {
         self.virtual_service.as_ref()
     }
+    /// <p>The port number of the gateway route target.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 impl std::fmt::Debug for GatewayRouteTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayRouteTarget");
         formatter.field("virtual_service", &self.virtual_service);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -12842,6 +13164,7 @@ pub mod gateway_route_target {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>An object that represents a virtual service gateway route target.</p>
@@ -12857,10 +13180,21 @@ pub mod gateway_route_target {
             self.virtual_service = input;
             self
         }
+        /// <p>The port number of the gateway route target.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port number of the gateway route target.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
         pub fn build(self) -> crate::model::GatewayRouteTarget {
             crate::model::GatewayRouteTarget {
                 virtual_service: self.virtual_service,
+                port: self.port,
             }
         }
     }
@@ -12943,6 +13277,9 @@ pub struct GrpcGatewayRouteMatch {
     /// <p>The gateway route metadata to be matched on.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
+    /// <p>The port number to match from the request.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
@@ -12957,6 +13294,10 @@ impl GrpcGatewayRouteMatch {
     pub fn metadata(&self) -> std::option::Option<&[crate::model::GrpcGatewayRouteMetadata]> {
         self.metadata.as_deref()
     }
+    /// <p>The port number to match from the request.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 impl std::fmt::Debug for GrpcGatewayRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12964,6 +13305,7 @@ impl std::fmt::Debug for GrpcGatewayRouteMatch {
         formatter.field("service_name", &self.service_name);
         formatter.field("hostname", &self.hostname);
         formatter.field("metadata", &self.metadata);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -12977,6 +13319,7 @@ pub mod grpc_gateway_route_match {
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
         pub(crate) metadata:
             std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The fully qualified domain name for the service to match from the request.</p>
@@ -13021,12 +13364,23 @@ pub mod grpc_gateway_route_match {
             self.metadata = input;
             self
         }
+        /// <p>The port number to match from the request.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port number to match from the request.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
         pub fn build(self) -> crate::model::GrpcGatewayRouteMatch {
             crate::model::GrpcGatewayRouteMatch {
                 service_name: self.service_name,
                 hostname: self.hostname,
                 metadata: self.metadata,
+                port: self.port,
             }
         }
     }
@@ -13726,6 +14080,9 @@ pub struct HttpGatewayRouteMatch {
     /// <p>The client request headers to match on.</p>
     #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
+    /// <p>The port number to match on.</p>
+    #[doc(hidden)]
+    pub port: std::option::Option<i32>,
 }
 impl HttpGatewayRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
@@ -13752,6 +14109,10 @@ impl HttpGatewayRouteMatch {
     pub fn headers(&self) -> std::option::Option<&[crate::model::HttpGatewayRouteHeader]> {
         self.headers.as_deref()
     }
+    /// <p>The port number to match on.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
 }
 impl std::fmt::Debug for HttpGatewayRouteMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13762,6 +14123,7 @@ impl std::fmt::Debug for HttpGatewayRouteMatch {
         formatter.field("method", &self.method);
         formatter.field("hostname", &self.hostname);
         formatter.field("headers", &self.headers);
+        formatter.field("port", &self.port);
         formatter.finish()
     }
 }
@@ -13779,6 +14141,7 @@ pub mod http_gateway_route_match {
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
         pub(crate) headers:
             std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
+        pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
@@ -13862,6 +14225,16 @@ pub mod http_gateway_route_match {
             self.headers = input;
             self
         }
+        /// <p>The port number to match on.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port number to match on.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
         pub fn build(self) -> crate::model::HttpGatewayRouteMatch {
             crate::model::HttpGatewayRouteMatch {
@@ -13871,6 +14244,7 @@ pub mod http_gateway_route_match {
                 method: self.method,
                 hostname: self.hostname,
                 headers: self.headers,
+                port: self.port,
             }
         }
     }

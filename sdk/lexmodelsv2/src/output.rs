@@ -772,6 +772,9 @@ pub struct UpdateIntentOutput {
     /// <p>A timestamp of the last time that the intent was modified.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub initial_response_setting: std::option::Option<crate::model::InitialResponseSetting>,
 }
 impl UpdateIntentOutput {
     /// <p>The identifier of the intent that was updated.</p>
@@ -852,6 +855,12 @@ impl UpdateIntentOutput {
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p></p>
+    pub fn initial_response_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::InitialResponseSetting> {
+        self.initial_response_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateIntentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -877,6 +886,7 @@ impl std::fmt::Debug for UpdateIntentOutput {
         formatter.field("locale_id", &self.locale_id);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.field("initial_response_setting", &self.initial_response_setting);
         formatter.finish()
     }
 }
@@ -907,6 +917,8 @@ pub mod update_intent_output {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) initial_response_setting:
+            std::option::Option<crate::model::InitialResponseSetting>,
     }
     impl Builder {
         /// <p>The identifier of the intent that was updated.</p>
@@ -1155,6 +1167,22 @@ pub mod update_intent_output {
             self.last_updated_date_time = input;
             self
         }
+        /// <p></p>
+        pub fn initial_response_setting(
+            mut self,
+            input: crate::model::InitialResponseSetting,
+        ) -> Self {
+            self.initial_response_setting = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_initial_response_setting(
+            mut self,
+            input: std::option::Option<crate::model::InitialResponseSetting>,
+        ) -> Self {
+            self.initial_response_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateIntentOutput`](crate::output::UpdateIntentOutput).
         pub fn build(self) -> crate::output::UpdateIntentOutput {
             crate::output::UpdateIntentOutput {
@@ -1176,6 +1204,7 @@ pub mod update_intent_output {
                 locale_id: self.locale_id,
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
+                initial_response_setting: self.initial_response_setting,
             }
         }
     }
@@ -2524,6 +2553,153 @@ impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopBotRecommendationOutput {
+    /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
+    #[doc(hidden)]
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the recommendation that is being stopped.</p>
+    #[doc(hidden)]
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    #[doc(hidden)]
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
+    #[doc(hidden)]
+    pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
+    /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
+    #[doc(hidden)]
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+}
+impl StopBotRecommendationOutput {
+    /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the recommendation that is being stopped.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
+    pub fn bot_recommendation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+        self.bot_recommendation_status.as_ref()
+    }
+    /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StopBotRecommendationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopBotRecommendationOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_status", &self.bot_recommendation_status);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.finish()
+    }
+}
+/// See [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
+pub mod stop_bot_recommendation_output {
+
+    /// A builder for [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_status:
+            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the recommendation that is being stopped.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the recommendation that is being stopped.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
+        pub fn bot_recommendation_status(
+            mut self,
+            input: crate::model::BotRecommendationStatus,
+        ) -> Self {
+            self.bot_recommendation_status = Some(input);
+            self
+        }
+        /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
+        pub fn set_bot_recommendation_status(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationStatus>,
+        ) -> Self {
+            self.bot_recommendation_status = input;
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
+        pub fn build(self) -> crate::output::StopBotRecommendationOutput {
+            crate::output::StopBotRecommendationOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_status: self.bot_recommendation_status,
+                bot_recommendation_id: self.bot_recommendation_id,
+            }
+        }
+    }
+}
+impl StopBotRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
+    pub fn builder() -> crate::output::stop_bot_recommendation_output::Builder {
+        crate::output::stop_bot_recommendation_output::Builder::default()
     }
 }
 
@@ -5987,6 +6163,9 @@ pub struct DescribeIntentOutput {
     /// <p>A timestamp of the date and time that the intent was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p></p>
+    #[doc(hidden)]
+    pub initial_response_setting: std::option::Option<crate::model::InitialResponseSetting>,
 }
 impl DescribeIntentOutput {
     /// <p>The unique identifier assigned to the intent when it was created.</p>
@@ -6067,6 +6246,12 @@ impl DescribeIntentOutput {
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p></p>
+    pub fn initial_response_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::InitialResponseSetting> {
+        self.initial_response_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIntentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6092,6 +6277,7 @@ impl std::fmt::Debug for DescribeIntentOutput {
         formatter.field("locale_id", &self.locale_id);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.field("initial_response_setting", &self.initial_response_setting);
         formatter.finish()
     }
 }
@@ -6122,6 +6308,8 @@ pub mod describe_intent_output {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) initial_response_setting:
+            std::option::Option<crate::model::InitialResponseSetting>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the intent when it was created.</p>
@@ -6370,6 +6558,22 @@ pub mod describe_intent_output {
             self.last_updated_date_time = input;
             self
         }
+        /// <p></p>
+        pub fn initial_response_setting(
+            mut self,
+            input: crate::model::InitialResponseSetting,
+        ) -> Self {
+            self.initial_response_setting = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_initial_response_setting(
+            mut self,
+            input: std::option::Option<crate::model::InitialResponseSetting>,
+        ) -> Self {
+            self.initial_response_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeIntentOutput`](crate::output::DescribeIntentOutput).
         pub fn build(self) -> crate::output::DescribeIntentOutput {
             crate::output::DescribeIntentOutput {
@@ -6391,6 +6595,7 @@ pub mod describe_intent_output {
                 locale_id: self.locale_id,
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
+                initial_response_setting: self.initial_response_setting,
             }
         }
     }
@@ -10418,6 +10623,9 @@ pub struct CreateIntentOutput {
     /// <p>A timestamp of the date and time that the intent was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+    #[doc(hidden)]
+    pub initial_response_setting: std::option::Option<crate::model::InitialResponseSetting>,
 }
 impl CreateIntentOutput {
     /// <p>A unique identifier for the intent.</p>
@@ -10490,6 +10698,12 @@ impl CreateIntentOutput {
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
+    /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+    pub fn initial_response_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::InitialResponseSetting> {
+        self.initial_response_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateIntentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10513,6 +10727,7 @@ impl std::fmt::Debug for CreateIntentOutput {
         formatter.field("bot_version", &self.bot_version);
         formatter.field("locale_id", &self.locale_id);
         formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("initial_response_setting", &self.initial_response_setting);
         formatter.finish()
     }
 }
@@ -10541,6 +10756,8 @@ pub mod create_intent_output {
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) initial_response_setting:
+            std::option::Option<crate::model::InitialResponseSetting>,
     }
     impl Builder {
         /// <p>A unique identifier for the intent.</p>
@@ -10757,6 +10974,22 @@ pub mod create_intent_output {
             self.creation_date_time = input;
             self
         }
+        /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+        pub fn initial_response_setting(
+            mut self,
+            input: crate::model::InitialResponseSetting,
+        ) -> Self {
+            self.initial_response_setting = Some(input);
+            self
+        }
+        /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+        pub fn set_initial_response_setting(
+            mut self,
+            input: std::option::Option<crate::model::InitialResponseSetting>,
+        ) -> Self {
+            self.initial_response_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateIntentOutput`](crate::output::CreateIntentOutput).
         pub fn build(self) -> crate::output::CreateIntentOutput {
             crate::output::CreateIntentOutput {
@@ -10776,6 +11009,7 @@ pub mod create_intent_output {
                 bot_version: self.bot_version,
                 locale_id: self.locale_id,
                 creation_date_time: self.creation_date_time,
+                initial_response_setting: self.initial_response_setting,
             }
         }
     }

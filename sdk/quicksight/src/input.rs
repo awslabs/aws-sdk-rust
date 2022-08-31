@@ -13304,7 +13304,7 @@ pub mod generate_embed_url_for_registered_user_input {
             self.user_arn = input;
             self
         }
-        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
         pub fn experience_configuration(
             mut self,
             input: crate::model::RegisteredUserEmbeddingExperienceConfiguration,
@@ -13312,7 +13312,7 @@ pub mod generate_embed_url_for_registered_user_input {
             self.experience_configuration = Some(input);
             self
         }
-        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
         pub fn set_experience_configuration(
             mut self,
             input: std::option::Option<
@@ -29194,7 +29194,7 @@ pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The Amazon Resource Name for the registered user.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
     #[doc(hidden)]
     pub experience_configuration:
         std::option::Option<crate::model::RegisteredUserEmbeddingExperienceConfiguration>,
@@ -29216,7 +29216,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
     pub fn experience_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RegisteredUserEmbeddingExperienceConfiguration> {

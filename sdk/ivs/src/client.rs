@@ -118,10 +118,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_name): <p>Channel name.</p>
     ///   - [`latency_mode(ChannelLatencyMode)`](crate::client::fluent_builders::CreateChannel::latency_mode) / [`set_latency_mode(Option<ChannelLatencyMode>)`](crate::client::fluent_builders::CreateChannel::set_latency_mode): <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
-    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::CreateChannel::type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::CreateChannel::set_type): <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>  <ul>   <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>   <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>  </ul>
+    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::CreateChannel::type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::CreateChannel::set_type): <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>  <ul>   <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>   <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>  </ul>
     ///   - [`authorized(bool)`](crate::client::fluent_builders::CreateChannel::authorized) / [`set_authorized(bool)`](crate::client::fluent_builders::CreateChannel::set_authorized): <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     ///   - [`recording_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::recording_configuration_arn) / [`set_recording_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_recording_configuration_arn): <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::output::CreateChannelOutput::channel): <p></p>
     ///   - [`stream_key(Option<StreamKey>)`](crate::output::CreateChannelOutput::stream_key): <p></p>
@@ -134,7 +134,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_name): <p>Recording-configuration name. The value does not need to be unique.</p>
     ///   - [`destination_configuration(DestinationConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::destination_configuration) / [`set_destination_configuration(Option<DestinationConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_destination_configuration): <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     ///   - [`thumbnail_configuration(ThumbnailConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::thumbnail_configuration) / [`set_thumbnail_configuration(Option<ThumbnailConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_thumbnail_configuration): <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     /// - On success, responds with [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput) with field(s):
     ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::output::CreateRecordingConfigurationOutput::recording_configuration): (undocumented)
@@ -146,7 +146,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStreamKey::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateStreamKey::set_channel_arn): <p>ARN of the channel for which to create the stream key.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamKey::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamKey::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamKey::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamKey::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     /// - On success, responds with [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput) with field(s):
     ///   - [`stream_key(Option<StreamKey>)`](crate::output::CreateStreamKeyOutput::stream_key): <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
     /// - On failure, responds with [`SdkError<CreateStreamKeyError>`](crate::error::CreateStreamKeyError)
@@ -259,7 +259,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`public_key_material(impl Into<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::public_key_material) / [`set_public_key_material(Option<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_public_key_material): <p>The public portion of a customer-generated key pair.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_name): <p>Playback-key-pair name. The value does not need to be unique.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_tags): <p>Any tags provided with the request are added to the playback key pair tags.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_tags): <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     /// - On success, responds with [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput) with field(s):
     ///   - [`key_pair(Option<PlaybackKeyPair>)`](crate::output::ImportPlaybackKeyPairOutput::key_pair): <p></p>
     /// - On failure, responds with [`SdkError<ImportPlaybackKeyPairError>`](crate::error::ImportPlaybackKeyPairError)
@@ -273,7 +273,7 @@ impl Client {
     ///   - [`filter_by_name(impl Into<String>)`](crate::client::fluent_builders::ListChannels::filter_by_name) / [`set_filter_by_name(Option<String>)`](crate::client::fluent_builders::ListChannels::set_filter_by_name): <p>Filters the channel list to match the specified name.</p>
     ///   - [`filter_by_recording_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannels::filter_by_recording_configuration_arn) / [`set_filter_by_recording_configuration_arn(Option<String>)`](crate::client::fluent_builders::ListChannels::set_filter_by_recording_configuration_arn): <p>Filters the channel list to match the specified recording-configuration ARN.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>Maximum number of channels to return. Default: 50.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>Maximum number of channels to return. Default: 100.</p>
     /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channels): <p>List of the matching channels.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -285,8 +285,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackKeyPairs::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlaybackKeyPairs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlaybackKeyPairs::set_next_token): <p>Maximum number of key pairs to return.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlaybackKeyPairs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPlaybackKeyPairs::set_max_results): <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlaybackKeyPairs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlaybackKeyPairs::set_next_token): <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlaybackKeyPairs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPlaybackKeyPairs::set_max_results): <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     /// - On success, responds with [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput) with field(s):
     ///   - [`key_pairs(Option<Vec<PlaybackKeyPairSummary>>)`](crate::output::ListPlaybackKeyPairsOutput::key_pairs): <p>List of key pairs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPlaybackKeyPairsOutput::next_token): <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -299,7 +299,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecordingConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecordingConfigurations::set_next_token): <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecordingConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecordingConfigurations::set_max_results): <p>Maximum number of recording configurations to return. Default: 50. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecordingConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecordingConfigurations::set_max_results): <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     /// - On success, responds with [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput) with field(s):
     ///   - [`recording_configurations(Option<Vec<RecordingConfigurationSummary>>)`](crate::output::ListRecordingConfigurationsOutput::recording_configurations): <p>List of the matching recording configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRecordingConfigurationsOutput::next_token): <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -313,7 +313,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListStreamKeys::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListStreamKeys::set_channel_arn): <p>Channel ARN used to filter the list.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamKeys::set_next_token): <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamKeys::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamKeys::set_max_results): <p>Maximum number of streamKeys to return. Default: 50.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamKeys::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamKeys::set_max_results): <p>Maximum number of streamKeys to return. Default: 1.</p>
     /// - On success, responds with [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput) with field(s):
     ///   - [`stream_keys(Option<Vec<StreamKeySummary>>)`](crate::output::ListStreamKeysOutput::stream_keys): <p>List of stream keys.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStreamKeysOutput::next_token): <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -327,7 +327,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`filter_by(StreamFilters)`](crate::client::fluent_builders::ListStreams::filter_by) / [`set_filter_by(Option<StreamFilters>)`](crate::client::fluent_builders::ListStreams::set_filter_by): <p>Filters the stream list to match the specified criterion.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreams::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreams::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreams::set_max_results): <p>Maximum number of streams to return. Default: 50.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreams::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreams::set_max_results): <p>Maximum number of streams to return. Default: 100.</p>
     /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
     ///   - [`streams(Option<Vec<StreamSummary>>)`](crate::output::ListStreamsOutput::streams): <p>List of streams.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStreamsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -341,7 +341,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListStreamSessions::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListStreamSessions::set_channel_arn): <p>Channel ARN used to filter the list.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamSessions::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::set_max_results): <p>Maximum number of streams to return. Default: 50.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::set_max_results): <p>Maximum number of streams to return. Default: 100.</p>
     /// - On success, responds with [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput) with field(s):
     ///   - [`stream_sessions(Option<Vec<StreamSessionSummary>>)`](crate::output::ListStreamSessionsOutput::stream_sessions): <p>List of stream sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStreamSessionsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -352,7 +352,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource to be retrieved.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p></p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -383,8 +383,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>ARN of the resource for which tags are to be added or updated.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Array of tags to be added or updated.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -394,8 +394,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>ARN of the resource for which tags are to be removed.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Array of tags to be removed.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -408,7 +408,7 @@ impl Client {
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_arn): <p>ARN of the channel to be updated.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_name): <p>Channel name.</p>
     ///   - [`latency_mode(ChannelLatencyMode)`](crate::client::fluent_builders::UpdateChannel::latency_mode) / [`set_latency_mode(Option<ChannelLatencyMode>)`](crate::client::fluent_builders::UpdateChannel::set_latency_mode): <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::UpdateChannel::type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::UpdateChannel::set_type): <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>  <ul>   <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>   <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>  </ul>
+    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::UpdateChannel::type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::UpdateChannel::set_type): <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>  <ul>   <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>   <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>  </ul>
     ///   - [`authorized(bool)`](crate::client::fluent_builders::UpdateChannel::authorized) / [`set_authorized(bool)`](crate::client::fluent_builders::UpdateChannel::set_authorized): <p>Whether the channel is private (enabled for playback authorization).</p>
     ///   - [`recording_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::recording_configuration_arn) / [`set_recording_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_recording_configuration_arn): <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
@@ -612,8 +612,8 @@ pub mod fluent_builders {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -621,8 +621,8 @@ pub mod fluent_builders {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.inner = self.inner.set_type(input);
@@ -658,7 +658,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -667,7 +667,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -752,7 +752,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -761,7 +761,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -845,7 +845,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -854,7 +854,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1476,7 +1476,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+        /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1485,7 +1485,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+        /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1585,12 +1585,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of channels to return. Default: 50.</p>
+        /// <p>Maximum number of channels to return. Default: 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of channels to return. Default: 50.</p>
+        /// <p>Maximum number of channels to return. Default: 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1644,22 +1644,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPlaybackKeyPairsPaginator {
             crate::paginator::ListPlaybackKeyPairsPaginator::new(self.handle, self.inner)
         }
-        /// <p>Maximum number of key pairs to return.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Maximum number of key pairs to return.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1723,12 +1723,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+        /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+        /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1802,12 +1802,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+        /// <p>Maximum number of streamKeys to return. Default: 1.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+        /// <p>Maximum number of streamKeys to return. Default: 1.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1884,12 +1884,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1963,12 +1963,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of streams to return. Default: 50.</p>
+        /// <p>Maximum number of streams to return. Default: 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2016,12 +2016,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the resource to be retrieved.</p>
+        /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the resource to be retrieved.</p>
+        /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2187,12 +2187,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN of the resource for which tags are to be added or updated.</p>
+        /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>ARN of the resource for which tags are to be added or updated.</p>
+        /// <p>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2201,7 +2201,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of tags to be added or updated.</p>
+        /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2210,7 +2210,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Array of tags to be added or updated.</p>
+        /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2263,12 +2263,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN of the resource for which tags are to be removed.</p>
+        /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>ARN of the resource for which tags are to be removed.</p>
+        /// <p>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2277,12 +2277,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Array of tags to be removed.</p>
+        /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>Array of tags to be removed.</p>
+        /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -2377,8 +2377,8 @@ pub mod fluent_builders {
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.inner = self.inner.set_type(input);

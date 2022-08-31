@@ -5327,7 +5327,7 @@ impl InsightResultValue {
     }
 }
 
-/// <p>Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code> format enables you to share findings between Amazon Web Services security services and third-party solutions, and security standards checks.</p> <note>
+/// <p>Provides a consistent format for Security Hub findings. <code>AwsSecurityFinding</code> format allows you to share findings between Amazon Web Services security services and third-party solutions.</p> <note>
 /// <p>A finding is a potential security issue generated either by Amazon Web Services services or by the integrated third-party solutions and standards checks.</p>
 /// </note>
 #[non_exhaustive]
@@ -8690,6 +8690,14 @@ pub struct Vulnerability {
     /// <p>A list of URLs that provide additional information about the vulnerability.</p>
     #[doc(hidden)]
     pub reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies if all vulnerable packages in a finding have a value for <code>FixedInVersion</code> and <code>Remediation</code>. This field is evaluated for each vulnerability <code>Id</code> based on the number of vulnerable packages that have a value for both <code>FixedInVersion</code> and <code>Remediation</code>. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>YES</code> if all vulnerable packages have a value for both <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+    /// <li> <p> <code>NO</code> if no vulnerable packages have a value for <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+    /// <li> <p> <code>PARTIAL</code> otherwise</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub fix_available: std::option::Option<crate::model::VulnerabilityFixAvailable>,
 }
 impl Vulnerability {
     /// <p>The identifier of the vulnerability.</p>
@@ -8716,6 +8724,15 @@ impl Vulnerability {
     pub fn reference_urls(&self) -> std::option::Option<&[std::string::String]> {
         self.reference_urls.as_deref()
     }
+    /// <p>Specifies if all vulnerable packages in a finding have a value for <code>FixedInVersion</code> and <code>Remediation</code>. This field is evaluated for each vulnerability <code>Id</code> based on the number of vulnerable packages that have a value for both <code>FixedInVersion</code> and <code>Remediation</code>. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>YES</code> if all vulnerable packages have a value for both <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+    /// <li> <p> <code>NO</code> if no vulnerable packages have a value for <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+    /// <li> <p> <code>PARTIAL</code> otherwise</p> </li>
+    /// </ul>
+    pub fn fix_available(&self) -> std::option::Option<&crate::model::VulnerabilityFixAvailable> {
+        self.fix_available.as_ref()
+    }
 }
 impl std::fmt::Debug for Vulnerability {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8726,6 +8743,7 @@ impl std::fmt::Debug for Vulnerability {
         formatter.field("related_vulnerabilities", &self.related_vulnerabilities);
         formatter.field("vendor", &self.vendor);
         formatter.field("reference_urls", &self.reference_urls);
+        formatter.field("fix_available", &self.fix_available);
         formatter.finish()
     }
 }
@@ -8742,6 +8760,7 @@ pub mod vulnerability {
         pub(crate) related_vulnerabilities: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) vendor: std::option::Option<crate::model::VulnerabilityVendor>,
         pub(crate) reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) fix_available: std::option::Option<crate::model::VulnerabilityFixAvailable>,
     }
     impl Builder {
         /// <p>The identifier of the vulnerability.</p>
@@ -8843,6 +8862,29 @@ pub mod vulnerability {
             self.reference_urls = input;
             self
         }
+        /// <p>Specifies if all vulnerable packages in a finding have a value for <code>FixedInVersion</code> and <code>Remediation</code>. This field is evaluated for each vulnerability <code>Id</code> based on the number of vulnerable packages that have a value for both <code>FixedInVersion</code> and <code>Remediation</code>. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>YES</code> if all vulnerable packages have a value for both <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+        /// <li> <p> <code>NO</code> if no vulnerable packages have a value for <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+        /// <li> <p> <code>PARTIAL</code> otherwise</p> </li>
+        /// </ul>
+        pub fn fix_available(mut self, input: crate::model::VulnerabilityFixAvailable) -> Self {
+            self.fix_available = Some(input);
+            self
+        }
+        /// <p>Specifies if all vulnerable packages in a finding have a value for <code>FixedInVersion</code> and <code>Remediation</code>. This field is evaluated for each vulnerability <code>Id</code> based on the number of vulnerable packages that have a value for both <code>FixedInVersion</code> and <code>Remediation</code>. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>YES</code> if all vulnerable packages have a value for both <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+        /// <li> <p> <code>NO</code> if no vulnerable packages have a value for <code>FixedInVersion</code> and <code>Remediation</code> </p> </li>
+        /// <li> <p> <code>PARTIAL</code> otherwise</p> </li>
+        /// </ul>
+        pub fn set_fix_available(
+            mut self,
+            input: std::option::Option<crate::model::VulnerabilityFixAvailable>,
+        ) -> Self {
+            self.fix_available = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Vulnerability`](crate::model::Vulnerability).
         pub fn build(self) -> crate::model::Vulnerability {
             crate::model::Vulnerability {
@@ -8852,6 +8894,7 @@ pub mod vulnerability {
                 related_vulnerabilities: self.related_vulnerabilities,
                 vendor: self.vendor,
                 reference_urls: self.reference_urls,
+                fix_available: self.fix_available,
             }
         }
     }
@@ -8860,6 +8903,65 @@ impl Vulnerability {
     /// Creates a new builder-style object to manufacture [`Vulnerability`](crate::model::Vulnerability).
     pub fn builder() -> crate::model::vulnerability::Builder {
         crate::model::vulnerability::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VulnerabilityFixAvailable {
+    #[allow(missing_docs)] // documentation missing in model
+    No,
+    #[allow(missing_docs)] // documentation missing in model
+    Partial,
+    #[allow(missing_docs)] // documentation missing in model
+    Yes,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VulnerabilityFixAvailable {
+    fn from(s: &str) -> Self {
+        match s {
+            "NO" => VulnerabilityFixAvailable::No,
+            "PARTIAL" => VulnerabilityFixAvailable::Partial,
+            "YES" => VulnerabilityFixAvailable::Yes,
+            other => VulnerabilityFixAvailable::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VulnerabilityFixAvailable {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VulnerabilityFixAvailable::from(s))
+    }
+}
+impl VulnerabilityFixAvailable {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VulnerabilityFixAvailable::No => "NO",
+            VulnerabilityFixAvailable::Partial => "PARTIAL",
+            VulnerabilityFixAvailable::Yes => "YES",
+            VulnerabilityFixAvailable::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NO", "PARTIAL", "YES"]
+    }
+}
+impl AsRef<str> for VulnerabilityFixAvailable {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -9259,6 +9361,12 @@ pub struct SoftwarePackage {
     /// <p>The file system path to the package manager inventory file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
+    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    #[doc(hidden)]
+    pub fixed_in_version: std::option::Option<std::string::String>,
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    #[doc(hidden)]
+    pub remediation: std::option::Option<std::string::String>,
 }
 impl SoftwarePackage {
     /// <p>The name of the software package.</p>
@@ -9289,6 +9397,14 @@ impl SoftwarePackage {
     pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
+    /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+    pub fn fixed_in_version(&self) -> std::option::Option<&str> {
+        self.fixed_in_version.as_deref()
+    }
+    /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+    pub fn remediation(&self) -> std::option::Option<&str> {
+        self.remediation.as_deref()
+    }
 }
 impl std::fmt::Debug for SoftwarePackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9300,6 +9416,8 @@ impl std::fmt::Debug for SoftwarePackage {
         formatter.field("architecture", &self.architecture);
         formatter.field("package_manager", &self.package_manager);
         formatter.field("file_path", &self.file_path);
+        formatter.field("fixed_in_version", &self.fixed_in_version);
+        formatter.field("remediation", &self.remediation);
         formatter.finish()
     }
 }
@@ -9316,6 +9434,8 @@ pub mod software_package {
         pub(crate) architecture: std::option::Option<std::string::String>,
         pub(crate) package_manager: std::option::Option<std::string::String>,
         pub(crate) file_path: std::option::Option<std::string::String>,
+        pub(crate) fixed_in_version: std::option::Option<std::string::String>,
+        pub(crate) remediation: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the software package.</p>
@@ -9391,6 +9511,29 @@ pub mod software_package {
             self.file_path = input;
             self
         }
+        /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+        pub fn fixed_in_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fixed_in_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the software package in which the vulnerability has been resolved. </p>
+        pub fn set_fixed_in_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.fixed_in_version = input;
+            self
+        }
+        /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+        pub fn remediation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.remediation = Some(input.into());
+            self
+        }
+        /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package. </p>
+        pub fn set_remediation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.remediation = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SoftwarePackage`](crate::model::SoftwarePackage).
         pub fn build(self) -> crate::model::SoftwarePackage {
             crate::model::SoftwarePackage {
@@ -9401,6 +9544,8 @@ pub mod software_package {
                 architecture: self.architecture,
                 package_manager: self.package_manager,
                 file_path: self.file_path,
+                fixed_in_version: self.fixed_in_version,
+                remediation: self.remediation,
             }
         }
     }
@@ -10604,6 +10749,15 @@ pub struct ResourceDetails {
     /// <p>Details about a task in a cluster. </p>
     #[doc(hidden)]
     pub aws_ecs_task: std::option::Option<crate::model::AwsEcsTaskDetails>,
+    /// <p>Provides details about an Backup backup vault. </p>
+    #[doc(hidden)]
+    pub aws_backup_backup_vault: std::option::Option<crate::model::AwsBackupBackupVaultDetails>,
+    /// <p>Provides details about an Backup backup plan. </p>
+    #[doc(hidden)]
+    pub aws_backup_backup_plan: std::option::Option<crate::model::AwsBackupBackupPlanDetails>,
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
+    #[doc(hidden)]
+    pub aws_backup_recovery_point: std::option::Option<crate::model::AwsBackupRecoveryPointDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -11017,6 +11171,24 @@ impl ResourceDetails {
     pub fn aws_ecs_task(&self) -> std::option::Option<&crate::model::AwsEcsTaskDetails> {
         self.aws_ecs_task.as_ref()
     }
+    /// <p>Provides details about an Backup backup vault. </p>
+    pub fn aws_backup_backup_vault(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupBackupVaultDetails> {
+        self.aws_backup_backup_vault.as_ref()
+    }
+    /// <p>Provides details about an Backup backup plan. </p>
+    pub fn aws_backup_backup_plan(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupBackupPlanDetails> {
+        self.aws_backup_backup_plan.as_ref()
+    }
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
+    pub fn aws_backup_recovery_point(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupRecoveryPointDetails> {
+        self.aws_backup_recovery_point.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11151,6 +11323,9 @@ impl std::fmt::Debug for ResourceDetails {
         formatter.field("aws_waf_rule", &self.aws_waf_rule);
         formatter.field("aws_waf_rule_group", &self.aws_waf_rule_group);
         formatter.field("aws_ecs_task", &self.aws_ecs_task);
+        formatter.field("aws_backup_backup_vault", &self.aws_backup_backup_vault);
+        formatter.field("aws_backup_backup_plan", &self.aws_backup_backup_plan);
+        formatter.field("aws_backup_recovery_point", &self.aws_backup_recovery_point);
         formatter.finish()
     }
 }
@@ -11281,6 +11456,12 @@ pub mod resource_details {
         pub(crate) aws_waf_rule: std::option::Option<crate::model::AwsWafRuleDetails>,
         pub(crate) aws_waf_rule_group: std::option::Option<crate::model::AwsWafRuleGroupDetails>,
         pub(crate) aws_ecs_task: std::option::Option<crate::model::AwsEcsTaskDetails>,
+        pub(crate) aws_backup_backup_vault:
+            std::option::Option<crate::model::AwsBackupBackupVaultDetails>,
+        pub(crate) aws_backup_backup_plan:
+            std::option::Option<crate::model::AwsBackupBackupPlanDetails>,
+        pub(crate) aws_backup_recovery_point:
+            std::option::Option<crate::model::AwsBackupRecoveryPointDetails>,
     }
     impl Builder {
         /// <p>Details for an autoscaling group.</p>
@@ -12423,6 +12604,54 @@ pub mod resource_details {
             self.aws_ecs_task = input;
             self
         }
+        /// <p>Provides details about an Backup backup vault. </p>
+        pub fn aws_backup_backup_vault(
+            mut self,
+            input: crate::model::AwsBackupBackupVaultDetails,
+        ) -> Self {
+            self.aws_backup_backup_vault = Some(input);
+            self
+        }
+        /// <p>Provides details about an Backup backup vault. </p>
+        pub fn set_aws_backup_backup_vault(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupBackupVaultDetails>,
+        ) -> Self {
+            self.aws_backup_backup_vault = input;
+            self
+        }
+        /// <p>Provides details about an Backup backup plan. </p>
+        pub fn aws_backup_backup_plan(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanDetails,
+        ) -> Self {
+            self.aws_backup_backup_plan = Some(input);
+            self
+        }
+        /// <p>Provides details about an Backup backup plan. </p>
+        pub fn set_aws_backup_backup_plan(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupBackupPlanDetails>,
+        ) -> Self {
+            self.aws_backup_backup_plan = input;
+            self
+        }
+        /// <p>Provides details about an Backup backup, or recovery point. </p>
+        pub fn aws_backup_recovery_point(
+            mut self,
+            input: crate::model::AwsBackupRecoveryPointDetails,
+        ) -> Self {
+            self.aws_backup_recovery_point = Some(input);
+            self
+        }
+        /// <p>Provides details about an Backup backup, or recovery point. </p>
+        pub fn set_aws_backup_recovery_point(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupRecoveryPointDetails>,
+        ) -> Self {
+            self.aws_backup_recovery_point = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
@@ -12502,6 +12731,9 @@ pub mod resource_details {
                 aws_waf_rule: self.aws_waf_rule,
                 aws_waf_rule_group: self.aws_waf_rule_group,
                 aws_ecs_task: self.aws_ecs_task,
+                aws_backup_backup_vault: self.aws_backup_backup_vault,
+                aws_backup_backup_plan: self.aws_backup_backup_plan,
+                aws_backup_recovery_point: self.aws_backup_recovery_point,
             }
         }
     }
@@ -12510,6 +12742,1902 @@ impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
     pub fn builder() -> crate::model::resource_details::Builder {
         crate::model::resource_details::Builder::default()
+    }
+}
+
+/// <p>Contains detailed information about the recovery points stored in an Backup backup vault. A backup, or recovery point, represents the content of a resource at a specified time. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupRecoveryPointDetails {
+    /// <p>The size, in bytes, of a backup. </p>
+    #[doc(hidden)]
+    pub backup_size_in_bytes: i64,
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+    #[doc(hidden)]
+    pub backup_vault_arn: std::option::Option<std::string::String>,
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+    #[doc(hidden)]
+    pub backup_vault_name: std::option::Option<std::string::String>,
+    /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps. </p>
+    #[doc(hidden)]
+    pub calculated_lifecycle:
+        std::option::Option<crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails>,
+    /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+    #[doc(hidden)]
+    pub completion_date: std::option::Option<std::string::String>,
+    /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it. </p>
+    #[doc(hidden)]
+    pub created_by: std::option::Option<crate::model::AwsBackupRecoveryPointCreatedByDetails>,
+    /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+    #[doc(hidden)]
+    pub creation_date: std::option::Option<std::string::String>,
+    /// <p>The ARN for the server-side encryption key that is used to protect your backups. </p>
+    #[doc(hidden)]
+    pub encryption_key_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the IAM role ARN used to create the target recovery point </p>
+    #[doc(hidden)]
+    pub iam_role_arn: std::option::Option<std::string::String>,
+    /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
+    #[doc(hidden)]
+    pub is_encrypted: bool,
+    /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+    #[doc(hidden)]
+    pub last_restore_time: std::option::Option<std::string::String>,
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define </p>
+    #[doc(hidden)]
+    pub lifecycle: std::option::Option<crate::model::AwsBackupRecoveryPointLifecycleDetails>,
+    /// <p>An ARN that uniquely identifies a recovery point. </p>
+    #[doc(hidden)]
+    pub recovery_point_arn: std::option::Option<std::string::String>,
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type. </p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database. </p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null. </p>
+    #[doc(hidden)]
+    pub source_backup_vault_arn: std::option::Option<std::string::String>,
+    /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>EXPIRED</code> </p> </li>
+    /// <li> <p> <code>PARTIAL</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
+    /// <p>A message explaining the reason of the recovery point deletion failure. </p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COLD</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li> <p> <code>WARM</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub storage_class: std::option::Option<std::string::String>,
+}
+impl AwsBackupRecoveryPointDetails {
+    /// <p>The size, in bytes, of a backup. </p>
+    pub fn backup_size_in_bytes(&self) -> i64 {
+        self.backup_size_in_bytes
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+    pub fn backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.backup_vault_arn.as_deref()
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+        self.backup_vault_name.as_deref()
+    }
+    /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps. </p>
+    pub fn calculated_lifecycle(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails> {
+        self.calculated_lifecycle.as_ref()
+    }
+    /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+    pub fn completion_date(&self) -> std::option::Option<&str> {
+        self.completion_date.as_deref()
+    }
+    /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it. </p>
+    pub fn created_by(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupRecoveryPointCreatedByDetails> {
+        self.created_by.as_ref()
+    }
+    /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The ARN for the server-side encryption key that is used to protect your backups. </p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>Specifies the IAM role ARN used to create the target recovery point </p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
+    pub fn is_encrypted(&self) -> bool {
+        self.is_encrypted
+    }
+    /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+    pub fn last_restore_time(&self) -> std::option::Option<&str> {
+        self.last_restore_time.as_deref()
+    }
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define </p>
+    pub fn lifecycle(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupRecoveryPointLifecycleDetails> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>An ARN that uniquely identifies a recovery point. </p>
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
+        self.recovery_point_arn.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database. </p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null. </p>
+    pub fn source_backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.source_backup_vault_arn.as_deref()
+    }
+    /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>EXPIRED</code> </p> </li>
+    /// <li> <p> <code>PARTIAL</code> </p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A message explaining the reason of the recovery point deletion failure. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COLD</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <li> <p> <code>WARM</code> </p> </li>
+    /// </ul>
+    pub fn storage_class(&self) -> std::option::Option<&str> {
+        self.storage_class.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupRecoveryPointDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupRecoveryPointDetails");
+        formatter.field("backup_size_in_bytes", &self.backup_size_in_bytes);
+        formatter.field("backup_vault_arn", &self.backup_vault_arn);
+        formatter.field("backup_vault_name", &self.backup_vault_name);
+        formatter.field("calculated_lifecycle", &self.calculated_lifecycle);
+        formatter.field("completion_date", &self.completion_date);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("creation_date", &self.creation_date);
+        formatter.field("encryption_key_arn", &self.encryption_key_arn);
+        formatter.field("iam_role_arn", &self.iam_role_arn);
+        formatter.field("is_encrypted", &self.is_encrypted);
+        formatter.field("last_restore_time", &self.last_restore_time);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.field("recovery_point_arn", &self.recovery_point_arn);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("source_backup_vault_arn", &self.source_backup_vault_arn);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("storage_class", &self.storage_class);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
+pub mod aws_backup_recovery_point_details {
+
+    /// A builder for [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_size_in_bytes: std::option::Option<i64>,
+        pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_vault_name: std::option::Option<std::string::String>,
+        pub(crate) calculated_lifecycle:
+            std::option::Option<crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails>,
+        pub(crate) completion_date: std::option::Option<std::string::String>,
+        pub(crate) created_by:
+            std::option::Option<crate::model::AwsBackupRecoveryPointCreatedByDetails>,
+        pub(crate) creation_date: std::option::Option<std::string::String>,
+        pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
+        pub(crate) iam_role_arn: std::option::Option<std::string::String>,
+        pub(crate) is_encrypted: std::option::Option<bool>,
+        pub(crate) last_restore_time: std::option::Option<std::string::String>,
+        pub(crate) lifecycle:
+            std::option::Option<crate::model::AwsBackupRecoveryPointLifecycleDetails>,
+        pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) source_backup_vault_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) storage_class: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The size, in bytes, of a backup. </p>
+        pub fn backup_size_in_bytes(mut self, input: i64) -> Self {
+            self.backup_size_in_bytes = Some(input);
+            self
+        }
+        /// <p>The size, in bytes, of a backup. </p>
+        pub fn set_backup_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.backup_size_in_bytes = input;
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+        pub fn backup_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_vault_arn = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+        pub fn set_backup_vault_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_vault_arn = input;
+            self
+        }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+        pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_vault_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_vault_name = input;
+            self
+        }
+        /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps. </p>
+        pub fn calculated_lifecycle(
+            mut self,
+            input: crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails,
+        ) -> Self {
+            self.calculated_lifecycle = Some(input);
+            self
+        }
+        /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps. </p>
+        pub fn set_calculated_lifecycle(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails,
+            >,
+        ) -> Self {
+            self.calculated_lifecycle = input;
+            self
+        }
+        /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+        pub fn completion_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.completion_date = Some(input.into());
+            self
+        }
+        /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+        pub fn set_completion_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.completion_date = input;
+            self
+        }
+        /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it. </p>
+        pub fn created_by(
+            mut self,
+            input: crate::model::AwsBackupRecoveryPointCreatedByDetails,
+        ) -> Self {
+            self.created_by = Some(input);
+            self
+        }
+        /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it. </p>
+        pub fn set_created_by(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupRecoveryPointCreatedByDetails>,
+        ) -> Self {
+            self.created_by = input;
+            self
+        }
+        /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+        pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_date = Some(input.into());
+            self
+        }
+        /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        /// <p>The ARN for the server-side encryption key that is used to protect your backups. </p>
+        pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.encryption_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the server-side encryption key that is used to protect your backups. </p>
+        pub fn set_encryption_key_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.encryption_key_arn = input;
+            self
+        }
+        /// <p>Specifies the IAM role ARN used to create the target recovery point </p>
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
+            self
+        }
+        /// <p>Specifies the IAM role ARN used to create the target recovery point </p>
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
+            self
+        }
+        /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
+        pub fn is_encrypted(mut self, input: bool) -> Self {
+            self.is_encrypted = Some(input);
+            self
+        }
+        /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
+        pub fn set_is_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_encrypted = input;
+            self
+        }
+        /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+        pub fn last_restore_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_restore_time = Some(input.into());
+            self
+        }
+        /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
+        pub fn set_last_restore_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_restore_time = input;
+            self
+        }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define </p>
+        pub fn lifecycle(
+            mut self,
+            input: crate::model::AwsBackupRecoveryPointLifecycleDetails,
+        ) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define </p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupRecoveryPointLifecycleDetails>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// <p>An ARN that uniquely identifies a recovery point. </p>
+        pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recovery_point_arn = Some(input.into());
+            self
+        }
+        /// <p>An ARN that uniquely identifies a recovery point. </p>
+        pub fn set_recovery_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recovery_point_arn = input;
+            self
+        }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database. </p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database. </p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null. </p>
+        pub fn source_backup_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_backup_vault_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null. </p>
+        pub fn set_source_backup_vault_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_backup_vault_arn = input;
+            self
+        }
+        /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETED</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>EXPIRED</code> </p> </li>
+        /// <li> <p> <code>PARTIAL</code> </p> </li>
+        /// </ul>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETED</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>EXPIRED</code> </p> </li>
+        /// <li> <p> <code>PARTIAL</code> </p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A message explaining the reason of the recovery point deletion failure. </p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>A message explaining the reason of the recovery point deletion failure. </p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COLD</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <li> <p> <code>WARM</code> </p> </li>
+        /// </ul>
+        pub fn storage_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_class = Some(input.into());
+            self
+        }
+        /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COLD</code> </p> </li>
+        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <li> <p> <code>WARM</code> </p> </li>
+        /// </ul>
+        pub fn set_storage_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_class = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
+        pub fn build(self) -> crate::model::AwsBackupRecoveryPointDetails {
+            crate::model::AwsBackupRecoveryPointDetails {
+                backup_size_in_bytes: self.backup_size_in_bytes.unwrap_or_default(),
+                backup_vault_arn: self.backup_vault_arn,
+                backup_vault_name: self.backup_vault_name,
+                calculated_lifecycle: self.calculated_lifecycle,
+                completion_date: self.completion_date,
+                created_by: self.created_by,
+                creation_date: self.creation_date,
+                encryption_key_arn: self.encryption_key_arn,
+                iam_role_arn: self.iam_role_arn,
+                is_encrypted: self.is_encrypted.unwrap_or_default(),
+                last_restore_time: self.last_restore_time,
+                lifecycle: self.lifecycle,
+                recovery_point_arn: self.recovery_point_arn,
+                resource_arn: self.resource_arn,
+                resource_type: self.resource_type,
+                source_backup_vault_arn: self.source_backup_vault_arn,
+                status: self.status,
+                status_message: self.status_message,
+                storage_class: self.storage_class,
+            }
+        }
+    }
+}
+impl AwsBackupRecoveryPointDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_details::Builder {
+        crate::model::aws_backup_recovery_point_details::Builder::default()
+    }
+}
+
+/// <p>Contains an array of Transition objects specifying how long in days before a recovery point transitions to cold storage or is deleted. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupRecoveryPointLifecycleDetails {
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    #[doc(hidden)]
+    pub delete_after_days: i64,
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    #[doc(hidden)]
+    pub move_to_cold_storage_after_days: i64,
+}
+impl AwsBackupRecoveryPointLifecycleDetails {
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    pub fn delete_after_days(&self) -> i64 {
+        self.delete_after_days
+    }
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    pub fn move_to_cold_storage_after_days(&self) -> i64 {
+        self.move_to_cold_storage_after_days
+    }
+}
+impl std::fmt::Debug for AwsBackupRecoveryPointLifecycleDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupRecoveryPointLifecycleDetails");
+        formatter.field("delete_after_days", &self.delete_after_days);
+        formatter.field(
+            "move_to_cold_storage_after_days",
+            &self.move_to_cold_storage_after_days,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
+pub mod aws_backup_recovery_point_lifecycle_details {
+
+    /// A builder for [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delete_after_days: std::option::Option<i64>,
+        pub(crate) move_to_cold_storage_after_days: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+        pub fn delete_after_days(mut self, input: i64) -> Self {
+            self.delete_after_days = Some(input);
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+        pub fn set_delete_after_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.delete_after_days = input;
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+        pub fn move_to_cold_storage_after_days(mut self, input: i64) -> Self {
+            self.move_to_cold_storage_after_days = Some(input);
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+        pub fn set_move_to_cold_storage_after_days(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.move_to_cold_storage_after_days = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
+        pub fn build(self) -> crate::model::AwsBackupRecoveryPointLifecycleDetails {
+            crate::model::AwsBackupRecoveryPointLifecycleDetails {
+                delete_after_days: self.delete_after_days.unwrap_or_default(),
+                move_to_cold_storage_after_days: self
+                    .move_to_cold_storage_after_days
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsBackupRecoveryPointLifecycleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_lifecycle_details::Builder {
+        crate::model::aws_backup_recovery_point_lifecycle_details::Builder::default()
+    }
+}
+
+/// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupRecoveryPointCreatedByDetails {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
+    #[doc(hidden)]
+    pub backup_plan_arn: std::option::Option<std::string::String>,
+    /// <p>Uniquely identifies a backup plan. </p>
+    #[doc(hidden)]
+    pub backup_plan_id: std::option::Option<std::string::String>,
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
+    #[doc(hidden)]
+    pub backup_plan_version: std::option::Option<std::string::String>,
+    /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
+    #[doc(hidden)]
+    pub backup_rule_id: std::option::Option<std::string::String>,
+}
+impl AwsBackupRecoveryPointCreatedByDetails {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
+    pub fn backup_plan_arn(&self) -> std::option::Option<&str> {
+        self.backup_plan_arn.as_deref()
+    }
+    /// <p>Uniquely identifies a backup plan. </p>
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+        self.backup_plan_id.as_deref()
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
+    pub fn backup_plan_version(&self) -> std::option::Option<&str> {
+        self.backup_plan_version.as_deref()
+    }
+    /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
+    pub fn backup_rule_id(&self) -> std::option::Option<&str> {
+        self.backup_rule_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupRecoveryPointCreatedByDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupRecoveryPointCreatedByDetails");
+        formatter.field("backup_plan_arn", &self.backup_plan_arn);
+        formatter.field("backup_plan_id", &self.backup_plan_id);
+        formatter.field("backup_plan_version", &self.backup_plan_version);
+        formatter.field("backup_rule_id", &self.backup_rule_id);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
+pub mod aws_backup_recovery_point_created_by_details {
+
+    /// A builder for [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_plan_id: std::option::Option<std::string::String>,
+        pub(crate) backup_plan_version: std::option::Option<std::string::String>,
+        pub(crate) backup_rule_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
+        pub fn backup_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_plan_arn = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
+        pub fn set_backup_plan_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_plan_arn = input;
+            self
+        }
+        /// <p>Uniquely identifies a backup plan. </p>
+        pub fn backup_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_plan_id = Some(input.into());
+            self
+        }
+        /// <p>Uniquely identifies a backup plan. </p>
+        pub fn set_backup_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_plan_id = input;
+            self
+        }
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
+        pub fn backup_plan_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_plan_version = Some(input.into());
+            self
+        }
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
+        pub fn set_backup_plan_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_plan_version = input;
+            self
+        }
+        /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
+        pub fn backup_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_rule_id = Some(input.into());
+            self
+        }
+        /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
+        pub fn set_backup_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_rule_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
+        pub fn build(self) -> crate::model::AwsBackupRecoveryPointCreatedByDetails {
+            crate::model::AwsBackupRecoveryPointCreatedByDetails {
+                backup_plan_arn: self.backup_plan_arn,
+                backup_plan_id: self.backup_plan_id,
+                backup_plan_version: self.backup_plan_version,
+                backup_rule_id: self.backup_rule_id,
+            }
+        }
+    }
+}
+impl AwsBackupRecoveryPointCreatedByDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_created_by_details::Builder {
+        crate::model::aws_backup_recovery_point_created_by_details::Builder::default()
+    }
+}
+
+/// <p>Specifies how long in days before a recovery point transitions to cold storage or is deleted. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupRecoveryPointCalculatedLifecycleDetails {
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    #[doc(hidden)]
+    pub delete_at: std::option::Option<std::string::String>,
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    #[doc(hidden)]
+    pub move_to_cold_storage_at: std::option::Option<std::string::String>,
+}
+impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    pub fn delete_at(&self) -> std::option::Option<&str> {
+        self.delete_at.as_deref()
+    }
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    pub fn move_to_cold_storage_at(&self) -> std::option::Option<&str> {
+        self.move_to_cold_storage_at.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupRecoveryPointCalculatedLifecycleDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupRecoveryPointCalculatedLifecycleDetails");
+        formatter.field("delete_at", &self.delete_at);
+        formatter.field("move_to_cold_storage_at", &self.move_to_cold_storage_at);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
+pub mod aws_backup_recovery_point_calculated_lifecycle_details {
+
+    /// A builder for [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delete_at: std::option::Option<std::string::String>,
+        pub(crate) move_to_cold_storage_at: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+        pub fn delete_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delete_at = Some(input.into());
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+        pub fn set_delete_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delete_at = input;
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+        pub fn move_to_cold_storage_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.move_to_cold_storage_at = Some(input.into());
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+        pub fn set_move_to_cold_storage_at(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.move_to_cold_storage_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
+        pub fn build(self) -> crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails {
+            crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails {
+                delete_at: self.delete_at,
+                move_to_cold_storage_at: self.move_to_cold_storage_at,
+            }
+        }
+    }
+}
+impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder
+    {
+        crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder::default()
+    }
+}
+
+/// <p>Provides details about an Backup backup plan and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupPlanDetails {
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
+    #[doc(hidden)]
+    pub backup_plan: std::option::Option<crate::model::AwsBackupBackupPlanBackupPlanDetails>,
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
+    #[doc(hidden)]
+    pub backup_plan_arn: std::option::Option<std::string::String>,
+    /// <p>A unique ID for the backup plan. </p>
+    #[doc(hidden)]
+    pub backup_plan_id: std::option::Option<std::string::String>,
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
+    #[doc(hidden)]
+    pub version_id: std::option::Option<std::string::String>,
+}
+impl AwsBackupBackupPlanDetails {
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
+    pub fn backup_plan(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupBackupPlanBackupPlanDetails> {
+        self.backup_plan.as_ref()
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
+    pub fn backup_plan_arn(&self) -> std::option::Option<&str> {
+        self.backup_plan_arn.as_deref()
+    }
+    /// <p>A unique ID for the backup plan. </p>
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+        self.backup_plan_id.as_deref()
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupPlanDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupPlanDetails");
+        formatter.field("backup_plan", &self.backup_plan);
+        formatter.field("backup_plan_arn", &self.backup_plan_arn);
+        formatter.field("backup_plan_id", &self.backup_plan_id);
+        formatter.field("version_id", &self.version_id);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
+pub mod aws_backup_backup_plan_details {
+
+    /// A builder for [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_plan:
+            std::option::Option<crate::model::AwsBackupBackupPlanBackupPlanDetails>,
+        pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_plan_id: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
+        pub fn backup_plan(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanBackupPlanDetails,
+        ) -> Self {
+            self.backup_plan = Some(input);
+            self
+        }
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
+        pub fn set_backup_plan(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupBackupPlanBackupPlanDetails>,
+        ) -> Self {
+            self.backup_plan = input;
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
+        pub fn backup_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_plan_arn = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
+        pub fn set_backup_plan_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_plan_arn = input;
+            self
+        }
+        /// <p>A unique ID for the backup plan. </p>
+        pub fn backup_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_plan_id = Some(input.into());
+            self
+        }
+        /// <p>A unique ID for the backup plan. </p>
+        pub fn set_backup_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_plan_id = input;
+            self
+        }
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupPlanDetails {
+            crate::model::AwsBackupBackupPlanDetails {
+                backup_plan: self.backup_plan,
+                backup_plan_arn: self.backup_plan_arn,
+                backup_plan_id: self.backup_plan_id,
+                version_id: self.version_id,
+            }
+        }
+    }
+}
+impl AwsBackupBackupPlanDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_details::Builder {
+        crate::model::aws_backup_backup_plan_details::Builder::default()
+    }
+}
+
+/// <p>Provides details about an Backup backup plan and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupPlanBackupPlanDetails {
+    /// <p>The display name of a backup plan. </p>
+    #[doc(hidden)]
+    pub backup_plan_name: std::option::Option<std::string::String>,
+    /// <p>A list of backup options for each resource type. </p>
+    #[doc(hidden)]
+    pub advanced_backup_settings: std::option::Option<
+        std::vec::Vec<crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails>,
+    >,
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
+    #[doc(hidden)]
+    pub backup_plan_rule:
+        std::option::Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleDetails>>,
+}
+impl AwsBackupBackupPlanBackupPlanDetails {
+    /// <p>The display name of a backup plan. </p>
+    pub fn backup_plan_name(&self) -> std::option::Option<&str> {
+        self.backup_plan_name.as_deref()
+    }
+    /// <p>A list of backup options for each resource type. </p>
+    pub fn advanced_backup_settings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails]>
+    {
+        self.advanced_backup_settings.as_deref()
+    }
+    /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
+    pub fn backup_plan_rule(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsBackupBackupPlanRuleDetails]> {
+        self.backup_plan_rule.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupPlanBackupPlanDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupPlanBackupPlanDetails");
+        formatter.field("backup_plan_name", &self.backup_plan_name);
+        formatter.field("advanced_backup_settings", &self.advanced_backup_settings);
+        formatter.field("backup_plan_rule", &self.backup_plan_rule);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
+pub mod aws_backup_backup_plan_backup_plan_details {
+
+    /// A builder for [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_plan_name: std::option::Option<std::string::String>,
+        pub(crate) advanced_backup_settings: std::option::Option<
+            std::vec::Vec<crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails>,
+        >,
+        pub(crate) backup_plan_rule:
+            std::option::Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleDetails>>,
+    }
+    impl Builder {
+        /// <p>The display name of a backup plan. </p>
+        pub fn backup_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of a backup plan. </p>
+        pub fn set_backup_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_plan_name = input;
+            self
+        }
+        /// Appends an item to `advanced_backup_settings`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_backup_settings`](Self::set_advanced_backup_settings).
+        ///
+        /// <p>A list of backup options for each resource type. </p>
+        pub fn advanced_backup_settings(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails,
+        ) -> Self {
+            let mut v = self.advanced_backup_settings.unwrap_or_default();
+            v.push(input);
+            self.advanced_backup_settings = Some(v);
+            self
+        }
+        /// <p>A list of backup options for each resource type. </p>
+        pub fn set_advanced_backup_settings(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails>,
+            >,
+        ) -> Self {
+            self.advanced_backup_settings = input;
+            self
+        }
+        /// Appends an item to `backup_plan_rule`.
+        ///
+        /// To override the contents of this collection use [`set_backup_plan_rule`](Self::set_backup_plan_rule).
+        ///
+        /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
+        pub fn backup_plan_rule(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanRuleDetails,
+        ) -> Self {
+            let mut v = self.backup_plan_rule.unwrap_or_default();
+            v.push(input);
+            self.backup_plan_rule = Some(v);
+            self
+        }
+        /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
+        pub fn set_backup_plan_rule(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleDetails>>,
+        ) -> Self {
+            self.backup_plan_rule = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupPlanBackupPlanDetails {
+            crate::model::AwsBackupBackupPlanBackupPlanDetails {
+                backup_plan_name: self.backup_plan_name,
+                advanced_backup_settings: self.advanced_backup_settings,
+                backup_plan_rule: self.backup_plan_rule,
+            }
+        }
+    }
+}
+impl AwsBackupBackupPlanBackupPlanDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_backup_plan_details::Builder {
+        crate::model::aws_backup_backup_plan_backup_plan_details::Builder::default()
+    }
+}
+
+/// <p>Provides details about an array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupPlanRuleDetails {
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
+    #[doc(hidden)]
+    pub target_backup_vault: std::option::Option<std::string::String>,
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
+    #[doc(hidden)]
+    pub start_window_minutes: i64,
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
+    #[doc(hidden)]
+    pub schedule_expression: std::option::Option<std::string::String>,
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters. </p>
+    #[doc(hidden)]
+    pub rule_name: std::option::Option<std::string::String>,
+    /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources. </p>
+    #[doc(hidden)]
+    pub rule_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
+    #[doc(hidden)]
+    pub enable_continuous_backup: bool,
+    /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
+    #[doc(hidden)]
+    pub completion_window_minutes: i64,
+    /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation. </p>
+    #[doc(hidden)]
+    pub copy_actions:
+        std::option::Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleCopyActionsDetails>>,
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+    #[doc(hidden)]
+    pub lifecycle: std::option::Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+}
+impl AwsBackupBackupPlanRuleDetails {
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
+    pub fn target_backup_vault(&self) -> std::option::Option<&str> {
+        self.target_backup_vault.as_deref()
+    }
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
+    pub fn start_window_minutes(&self) -> i64 {
+        self.start_window_minutes
+    }
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters. </p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources. </p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
+    pub fn enable_continuous_backup(&self) -> bool {
+        self.enable_continuous_backup
+    }
+    /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
+    pub fn completion_window_minutes(&self) -> i64 {
+        self.completion_window_minutes
+    }
+    /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation. </p>
+    pub fn copy_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AwsBackupBackupPlanRuleCopyActionsDetails]> {
+        self.copy_actions.as_deref()
+    }
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+    pub fn lifecycle(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupBackupPlanLifecycleDetails> {
+        self.lifecycle.as_ref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupPlanRuleDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupPlanRuleDetails");
+        formatter.field("target_backup_vault", &self.target_backup_vault);
+        formatter.field("start_window_minutes", &self.start_window_minutes);
+        formatter.field("schedule_expression", &self.schedule_expression);
+        formatter.field("rule_name", &self.rule_name);
+        formatter.field("rule_id", &self.rule_id);
+        formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+        formatter.field("completion_window_minutes", &self.completion_window_minutes);
+        formatter.field("copy_actions", &self.copy_actions);
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
+pub mod aws_backup_backup_plan_rule_details {
+
+    /// A builder for [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_backup_vault: std::option::Option<std::string::String>,
+        pub(crate) start_window_minutes: std::option::Option<i64>,
+        pub(crate) schedule_expression: std::option::Option<std::string::String>,
+        pub(crate) rule_name: std::option::Option<std::string::String>,
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+        pub(crate) enable_continuous_backup: std::option::Option<bool>,
+        pub(crate) completion_window_minutes: std::option::Option<i64>,
+        pub(crate) copy_actions: std::option::Option<
+            std::vec::Vec<crate::model::AwsBackupBackupPlanRuleCopyActionsDetails>,
+        >,
+        pub(crate) lifecycle:
+            std::option::Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+    }
+    impl Builder {
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
+        pub fn target_backup_vault(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_backup_vault = Some(input.into());
+            self
+        }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
+        pub fn set_target_backup_vault(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_backup_vault = input;
+            self
+        }
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
+        pub fn start_window_minutes(mut self, input: i64) -> Self {
+            self.start_window_minutes = Some(input);
+            self
+        }
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
+        pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
+            self.start_window_minutes = input;
+            self
+        }
+        /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
+            self
+        }
+        /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
+        pub fn set_schedule_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schedule_expression = input;
+            self
+        }
+        /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters. </p>
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_name = Some(input.into());
+            self
+        }
+        /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters. </p>
+        pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_name = input;
+            self
+        }
+        /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources. </p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources. </p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
+        pub fn enable_continuous_backup(mut self, input: bool) -> Self {
+            self.enable_continuous_backup = Some(input);
+            self
+        }
+        /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
+        pub fn set_enable_continuous_backup(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_continuous_backup = input;
+            self
+        }
+        /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
+        pub fn completion_window_minutes(mut self, input: i64) -> Self {
+            self.completion_window_minutes = Some(input);
+            self
+        }
+        /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
+        pub fn set_completion_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
+            self.completion_window_minutes = input;
+            self
+        }
+        /// Appends an item to `copy_actions`.
+        ///
+        /// To override the contents of this collection use [`set_copy_actions`](Self::set_copy_actions).
+        ///
+        /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation. </p>
+        pub fn copy_actions(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanRuleCopyActionsDetails,
+        ) -> Self {
+            let mut v = self.copy_actions.unwrap_or_default();
+            v.push(input);
+            self.copy_actions = Some(v);
+            self
+        }
+        /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation. </p>
+        pub fn set_copy_actions(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsBackupBackupPlanRuleCopyActionsDetails>,
+            >,
+        ) -> Self {
+            self.copy_actions = input;
+            self
+        }
+        /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+        pub fn lifecycle(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanLifecycleDetails,
+        ) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupPlanRuleDetails {
+            crate::model::AwsBackupBackupPlanRuleDetails {
+                target_backup_vault: self.target_backup_vault,
+                start_window_minutes: self.start_window_minutes.unwrap_or_default(),
+                schedule_expression: self.schedule_expression,
+                rule_name: self.rule_name,
+                rule_id: self.rule_id,
+                enable_continuous_backup: self.enable_continuous_backup.unwrap_or_default(),
+                completion_window_minutes: self.completion_window_minutes.unwrap_or_default(),
+                copy_actions: self.copy_actions,
+                lifecycle: self.lifecycle,
+            }
+        }
+    }
+}
+impl AwsBackupBackupPlanRuleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_rule_details::Builder {
+        crate::model::aws_backup_backup_plan_rule_details::Builder::default()
+    }
+}
+
+/// <p>Provides lifecycle details for the backup plan. A lifecycle defines when a backup is transitioned to cold storage and when it expires. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupPlanLifecycleDetails {
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    #[doc(hidden)]
+    pub delete_after_days: i64,
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    #[doc(hidden)]
+    pub move_to_cold_storage_after_days: i64,
+}
+impl AwsBackupBackupPlanLifecycleDetails {
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+    pub fn delete_after_days(&self) -> i64 {
+        self.delete_after_days
+    }
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+    pub fn move_to_cold_storage_after_days(&self) -> i64 {
+        self.move_to_cold_storage_after_days
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupPlanLifecycleDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupPlanLifecycleDetails");
+        formatter.field("delete_after_days", &self.delete_after_days);
+        formatter.field(
+            "move_to_cold_storage_after_days",
+            &self.move_to_cold_storage_after_days,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
+pub mod aws_backup_backup_plan_lifecycle_details {
+
+    /// A builder for [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delete_after_days: std::option::Option<i64>,
+        pub(crate) move_to_cold_storage_after_days: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+        pub fn delete_after_days(mut self, input: i64) -> Self {
+            self.delete_after_days = Some(input);
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
+        pub fn set_delete_after_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.delete_after_days = input;
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+        pub fn move_to_cold_storage_after_days(mut self, input: i64) -> Self {
+            self.move_to_cold_storage_after_days = Some(input);
+            self
+        }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
+        pub fn set_move_to_cold_storage_after_days(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.move_to_cold_storage_after_days = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupPlanLifecycleDetails {
+            crate::model::AwsBackupBackupPlanLifecycleDetails {
+                delete_after_days: self.delete_after_days.unwrap_or_default(),
+                move_to_cold_storage_after_days: self
+                    .move_to_cold_storage_after_days
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsBackupBackupPlanLifecycleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_lifecycle_details::Builder {
+        crate::model::aws_backup_backup_plan_lifecycle_details::Builder::default()
+    }
+}
+
+/// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupPlanRuleCopyActionsDetails {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
+    #[doc(hidden)]
+    pub destination_backup_vault_arn: std::option::Option<std::string::String>,
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+    #[doc(hidden)]
+    pub lifecycle: std::option::Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+}
+impl AwsBackupBackupPlanRuleCopyActionsDetails {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
+    pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.destination_backup_vault_arn.as_deref()
+    }
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+    pub fn lifecycle(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupBackupPlanLifecycleDetails> {
+        self.lifecycle.as_ref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupPlanRuleCopyActionsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupPlanRuleCopyActionsDetails");
+        formatter.field(
+            "destination_backup_vault_arn",
+            &self.destination_backup_vault_arn,
+        );
+        formatter.field("lifecycle", &self.lifecycle);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
+pub mod aws_backup_backup_plan_rule_copy_actions_details {
+
+    /// A builder for [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_backup_vault_arn: std::option::Option<std::string::String>,
+        pub(crate) lifecycle:
+            std::option::Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
+        pub fn destination_backup_vault_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.destination_backup_vault_arn = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
+        pub fn set_destination_backup_vault_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_backup_vault_arn = input;
+            self
+        }
+        /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+        pub fn lifecycle(
+            mut self,
+            input: crate::model::AwsBackupBackupPlanLifecycleDetails,
+        ) -> Self {
+            self.lifecycle = Some(input);
+            self
+        }
+        /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
+        pub fn set_lifecycle(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupBackupPlanLifecycleDetails>,
+        ) -> Self {
+            self.lifecycle = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupPlanRuleCopyActionsDetails {
+            crate::model::AwsBackupBackupPlanRuleCopyActionsDetails {
+                destination_backup_vault_arn: self.destination_backup_vault_arn,
+                lifecycle: self.lifecycle,
+            }
+        }
+    }
+}
+impl AwsBackupBackupPlanRuleCopyActionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_rule_copy_actions_details::Builder {
+        crate::model::aws_backup_backup_plan_rule_copy_actions_details::Builder::default()
+    }
+}
+
+/// <p>Provides a list of backup options for each resource type. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+    /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
+    /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub backup_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
+    /// <p>The only valid value is <code>EC2</code>.</p>
+    #[doc(hidden)]
+    pub resource_type: std::option::Option<std::string::String>,
+}
+impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+    /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
+    /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
+    /// </ul>
+    pub fn backup_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.backup_options.as_ref()
+    }
+    /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
+    /// <p>The only valid value is <code>EC2</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupPlanAdvancedBackupSettingsDetails");
+        formatter.field("backup_options", &self.backup_options);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
+pub mod aws_backup_backup_plan_advanced_backup_settings_details {
+
+    /// A builder for [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `backup_options`.
+        ///
+        /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
+        ///
+        /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
+        /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
+        /// </ul>
+        pub fn backup_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.backup_options.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.backup_options = Some(hash_map);
+            self
+        }
+        /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
+        /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
+        /// </ul>
+        pub fn set_backup_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.backup_options = input;
+            self
+        }
+        /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
+        /// <p>The only valid value is <code>EC2</code>.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
+        /// <p>The only valid value is <code>EC2</code>.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+            crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+                backup_options: self.backup_options,
+                resource_type: self.resource_type,
+            }
+        }
+    }
+}
+impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
+    pub fn builder(
+    ) -> crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder {
+        crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder::default()
+    }
+}
+
+/// <p>Provides details about an Backup backup vault. In Backup, a backup vault is a container that stores and organizes your backups. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupVaultDetails {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+    #[doc(hidden)]
+    pub backup_vault_arn: std::option::Option<std::string::String>,
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+    #[doc(hidden)]
+    pub backup_vault_name: std::option::Option<std::string::String>,
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
+    #[doc(hidden)]
+    pub encryption_key_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
+    #[doc(hidden)]
+    pub notifications: std::option::Option<crate::model::AwsBackupBackupVaultNotificationsDetails>,
+    /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
+    #[doc(hidden)]
+    pub access_policy: std::option::Option<std::string::String>,
+}
+impl AwsBackupBackupVaultDetails {
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+    pub fn backup_vault_arn(&self) -> std::option::Option<&str> {
+        self.backup_vault_arn.as_deref()
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+        self.backup_vault_name.as_deref()
+    }
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
+    pub fn notifications(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsBackupBackupVaultNotificationsDetails> {
+        self.notifications.as_ref()
+    }
+    /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
+    pub fn access_policy(&self) -> std::option::Option<&str> {
+        self.access_policy.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupVaultDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupVaultDetails");
+        formatter.field("backup_vault_arn", &self.backup_vault_arn);
+        formatter.field("backup_vault_name", &self.backup_vault_name);
+        formatter.field("encryption_key_arn", &self.encryption_key_arn);
+        formatter.field("notifications", &self.notifications);
+        formatter.field("access_policy", &self.access_policy);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
+pub mod aws_backup_backup_vault_details {
+
+    /// A builder for [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_vault_name: std::option::Option<std::string::String>,
+        pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
+        pub(crate) notifications:
+            std::option::Option<crate::model::AwsBackupBackupVaultNotificationsDetails>,
+        pub(crate) access_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+        pub fn backup_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_vault_arn = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+        pub fn set_backup_vault_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_vault_arn = input;
+            self
+        }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+        pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_vault_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_vault_name = input;
+            self
+        }
+        /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
+        pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.encryption_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
+        pub fn set_encryption_key_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.encryption_key_arn = input;
+            self
+        }
+        /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
+        pub fn notifications(
+            mut self,
+            input: crate::model::AwsBackupBackupVaultNotificationsDetails,
+        ) -> Self {
+            self.notifications = Some(input);
+            self
+        }
+        /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
+        pub fn set_notifications(
+            mut self,
+            input: std::option::Option<crate::model::AwsBackupBackupVaultNotificationsDetails>,
+        ) -> Self {
+            self.notifications = input;
+            self
+        }
+        /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
+        pub fn access_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_policy = Some(input.into());
+            self
+        }
+        /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
+        pub fn set_access_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupVaultDetails {
+            crate::model::AwsBackupBackupVaultDetails {
+                backup_vault_arn: self.backup_vault_arn,
+                backup_vault_name: self.backup_vault_name,
+                encryption_key_arn: self.encryption_key_arn,
+                notifications: self.notifications,
+                access_policy: self.access_policy,
+            }
+        }
+    }
+}
+impl AwsBackupBackupVaultDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_vault_details::Builder {
+        crate::model::aws_backup_backup_vault_details::Builder::default()
+    }
+}
+
+/// <p>Provides details about the Amazon SNS event notifications for the specified backup vault. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsBackupBackupVaultNotificationsDetails {
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub backup_vault_events: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+    #[doc(hidden)]
+    pub sns_topic_arn: std::option::Option<std::string::String>,
+}
+impl AwsBackupBackupVaultNotificationsDetails {
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn backup_vault_events(&self) -> std::option::Option<&[std::string::String]> {
+        self.backup_vault_events.as_deref()
+    }
+    /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for AwsBackupBackupVaultNotificationsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsBackupBackupVaultNotificationsDetails");
+        formatter.field("backup_vault_events", &self.backup_vault_events);
+        formatter.field("sns_topic_arn", &self.sns_topic_arn);
+        formatter.finish()
+    }
+}
+/// See [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
+pub mod aws_backup_backup_vault_notifications_details {
+
+    /// A builder for [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_vault_events: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `backup_vault_events`.
+        ///
+        /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).
+        ///
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+        /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+        /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
+        /// </ul>
+        pub fn backup_vault_events(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.backup_vault_events.unwrap_or_default();
+            v.push(input.into());
+            self.backup_vault_events = Some(v);
+            self
+        }
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
+        /// <ul>
+        /// <li> <p> <code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code> </p> </li>
+        /// <li> <p> <code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code> </p> </li>
+        /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
+        /// </ul>
+        pub fn set_backup_vault_events(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.backup_vault_events = input;
+            self
+        }
+        /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
+            self
+        }
+        /// <p>An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events. </p>
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
+        pub fn build(self) -> crate::model::AwsBackupBackupVaultNotificationsDetails {
+            crate::model::AwsBackupBackupVaultNotificationsDetails {
+                backup_vault_events: self.backup_vault_events,
+                sns_topic_arn: self.sns_topic_arn,
+            }
+        }
+    }
+}
+impl AwsBackupBackupVaultNotificationsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_vault_notifications_details::Builder {
+        crate::model::aws_backup_backup_vault_notifications_details::Builder::default()
     }
 }
 
@@ -21190,7 +23318,15 @@ pub struct AwsEksClusterDetails {
     /// <p>The certificate authority data for the cluster.</p>
     #[doc(hidden)]
     pub certificate_authority_data: std::option::Option<std::string::String>,
-    /// <p>The status of the cluster.</p>
+    /// <p>The status of the cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub cluster_status: std::option::Option<std::string::String>,
     /// <p>The endpoint for the Amazon EKS API server.</p>
@@ -21222,7 +23358,15 @@ impl AwsEksClusterDetails {
     pub fn certificate_authority_data(&self) -> std::option::Option<&str> {
         self.certificate_authority_data.as_deref()
     }
-    /// <p>The status of the cluster.</p>
+    /// <p>The status of the cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>FAILED</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     pub fn cluster_status(&self) -> std::option::Option<&str> {
         self.cluster_status.as_deref()
     }
@@ -21312,12 +23456,28 @@ pub mod aws_eks_cluster_details {
             self.certificate_authority_data = input;
             self
         }
-        /// <p>The status of the cluster.</p>
+        /// <p>The status of the cluster. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>FAILED</code> </p> </li>
+        /// <li> <p> <code>PENDING</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn cluster_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_status = Some(input.into());
             self
         }
-        /// <p>The status of the cluster.</p>
+        /// <p>The status of the cluster. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>FAILED</code> </p> </li>
+        /// <li> <p> <code>PENDING</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn set_cluster_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21498,7 +23658,14 @@ pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
-    /// <p>A list of logging types.</p>
+    /// <p>A list of logging types. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -21507,7 +23674,14 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>A list of logging types.</p>
+    /// <p>A list of logging types. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>api</code> </p> </li>
+    /// <li> <p> <code>audit</code> </p> </li>
+    /// <li> <p> <code>authenticator</code> </p> </li>
+    /// <li> <p> <code>controllerManager</code> </p> </li>
+    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// </ul>
     pub fn types(&self) -> std::option::Option<&[std::string::String]> {
         self.types.as_deref()
     }
@@ -21544,14 +23718,28 @@ pub mod aws_eks_cluster_logging_cluster_logging_details {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>A list of logging types.</p>
+        /// <p>A list of logging types. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>api</code> </p> </li>
+        /// <li> <p> <code>audit</code> </p> </li>
+        /// <li> <p> <code>authenticator</code> </p> </li>
+        /// <li> <p> <code>controllerManager</code> </p> </li>
+        /// <li> <p> <code>scheduler</code> </p> </li>
+        /// </ul>
         pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.types.unwrap_or_default();
             v.push(input.into());
             self.types = Some(v);
             self
         }
-        /// <p>A list of logging types.</p>
+        /// <p>A list of logging types. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>api</code> </p> </li>
+        /// <li> <p> <code>audit</code> </p> </li>
+        /// <li> <p> <code>authenticator</code> </p> </li>
+        /// <li> <p> <code>controllerManager</code> </p> </li>
+        /// <li> <p> <code>scheduler</code> </p> </li>
+        /// </ul>
         pub fn set_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21679,7 +23867,7 @@ pub struct AwsEcrRepositoryDetails {
     #[doc(hidden)]
     pub image_scanning_configuration:
         std::option::Option<crate::model::AwsEcrRepositoryImageScanningConfigurationDetails>,
-    /// <p>The tag mutability setting for the repository.</p>
+    /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
     #[doc(hidden)]
     pub image_tag_mutability: std::option::Option<std::string::String>,
     /// <p>Information about the lifecycle policy for the repository.</p>
@@ -21703,7 +23891,7 @@ impl AwsEcrRepositoryDetails {
     ) -> std::option::Option<&crate::model::AwsEcrRepositoryImageScanningConfigurationDetails> {
         self.image_scanning_configuration.as_ref()
     }
-    /// <p>The tag mutability setting for the repository.</p>
+    /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
     pub fn image_tag_mutability(&self) -> std::option::Option<&str> {
         self.image_tag_mutability.as_deref()
     }
@@ -21781,12 +23969,12 @@ pub mod aws_ecr_repository_details {
             self.image_scanning_configuration = input;
             self
         }
-        /// <p>The tag mutability setting for the repository.</p>
+        /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
         pub fn image_tag_mutability(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_tag_mutability = Some(input.into());
             self
         }
-        /// <p>The tag mutability setting for the repository.</p>
+        /// <p>The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
         pub fn set_image_tag_mutability(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22175,7 +24363,16 @@ pub struct AwsWafRegionalRateBasedRuleMatchPredicate {
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings.</p>
     #[doc(hidden)]
     pub negated: bool,
-    /// <p>The type of predicate.</p>
+    /// <p>The type of predicate. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -22189,7 +24386,16 @@ impl AwsWafRegionalRateBasedRuleMatchPredicate {
     pub fn negated(&self) -> bool {
         self.negated
     }
-    /// <p>The type of predicate.</p>
+    /// <p>The type of predicate. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -22236,12 +24442,30 @@ pub mod aws_waf_regional_rate_based_rule_match_predicate {
             self.negated = input;
             self
         }
-        /// <p>The type of predicate.</p>
+        /// <p>The type of predicate. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ByteMatch</code> </p> </li>
+        /// <li> <p> <code>GeoMatch</code> </p> </li>
+        /// <li> <p> <code>IPMatch</code> </p> </li>
+        /// <li> <p> <code>RegexMatch</code> </p> </li>
+        /// <li> <p> <code>SizeConstraint</code> </p> </li>
+        /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+        /// <li> <p> <code>XssMatch</code> </p> </li>
+        /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of predicate.</p>
+        /// <p>The type of predicate. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ByteMatch</code> </p> </li>
+        /// <li> <p> <code>GeoMatch</code> </p> </li>
+        /// <li> <p> <code>IPMatch</code> </p> </li>
+        /// <li> <p> <code>RegexMatch</code> </p> </li>
+        /// <li> <p> <code>SizeConstraint</code> </p> </li>
+        /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+        /// <li> <p> <code>XssMatch</code> </p> </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -22447,7 +24671,16 @@ pub struct AwsWafRateBasedRuleMatchPredicate {
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
     #[doc(hidden)]
     pub negated: bool,
-    /// <p>The type of predicate.</p>
+    /// <p>The type of predicate. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -22461,7 +24694,16 @@ impl AwsWafRateBasedRuleMatchPredicate {
     pub fn negated(&self) -> bool {
         self.negated
     }
-    /// <p>The type of predicate.</p>
+    /// <p>The type of predicate. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -22508,12 +24750,30 @@ pub mod aws_waf_rate_based_rule_match_predicate {
             self.negated = input;
             self
         }
-        /// <p>The type of predicate.</p>
+        /// <p>The type of predicate. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ByteMatch</code> </p> </li>
+        /// <li> <p> <code>GeoMatch</code> </p> </li>
+        /// <li> <p> <code>IPMatch</code> </p> </li>
+        /// <li> <p> <code>RegexMatch</code> </p> </li>
+        /// <li> <p> <code>SizeConstraint</code> </p> </li>
+        /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+        /// <li> <p> <code>XssMatch</code> </p> </li>
+        /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of predicate.</p>
+        /// <p>The type of predicate. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ByteMatch</code> </p> </li>
+        /// <li> <p> <code>GeoMatch</code> </p> </li>
+        /// <li> <p> <code>IPMatch</code> </p> </li>
+        /// <li> <p> <code>RegexMatch</code> </p> </li>
+        /// <li> <p> <code>SizeConstraint</code> </p> </li>
+        /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+        /// <li> <p> <code>XssMatch</code> </p> </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -22542,10 +24802,11 @@ pub struct AwsXrayEncryptionConfigDetails {
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+    /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
+    /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+    /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -22554,11 +24815,12 @@ impl AwsXrayEncryptionConfigDetails {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+    /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
+    /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+    /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -22593,22 +24855,24 @@ pub mod aws_xray_encryption_config_details {
             self.key_id = input;
             self
         }
-        /// <p>The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+        /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
+        /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+        /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
+        /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+        /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+        /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -22661,7 +24925,14 @@ pub struct AwsEc2VpcEndpointServiceDetails {
     /// <p>The name of the service.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The current state of the service.</p>
+    /// <p>The current state of the service. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub service_state: std::option::Option<std::string::String>,
     /// <p>The types for the service.</p>
@@ -22707,7 +24978,14 @@ impl AwsEc2VpcEndpointServiceDetails {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The current state of the service.</p>
+    /// <p>The current state of the service. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Available</code> </p> </li>
+    /// <li> <p> <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>Deleting</code> </p> </li>
+    /// <li> <p> <code>Failed</code> </p> </li>
+    /// <li> <p> <code>Pending</code> </p> </li>
+    /// </ul>
     pub fn service_state(&self) -> std::option::Option<&str> {
         self.service_state.as_deref()
     }
@@ -22893,12 +25171,26 @@ pub mod aws_ec2_vpc_endpoint_service_details {
             self.service_name = input;
             self
         }
-        /// <p>The current state of the service.</p>
+        /// <p>The current state of the service. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>Available</code> </p> </li>
+        /// <li> <p> <code>Deleted</code> </p> </li>
+        /// <li> <p> <code>Deleting</code> </p> </li>
+        /// <li> <p> <code>Failed</code> </p> </li>
+        /// <li> <p> <code>Pending</code> </p> </li>
+        /// </ul>
         pub fn service_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_state = Some(input.into());
             self
         }
-        /// <p>The current state of the service.</p>
+        /// <p>The current state of the service. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>Available</code> </p> </li>
+        /// <li> <p> <code>Deleted</code> </p> </li>
+        /// <li> <p> <code>Deleting</code> </p> </li>
+        /// <li> <p> <code>Failed</code> </p> </li>
+        /// <li> <p> <code>Pending</code> </p> </li>
+        /// </ul>
         pub fn set_service_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24198,7 +26490,8 @@ pub struct AwsOpenSearchServiceDomainClusterConfigDetails {
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
     #[doc(hidden)]
     pub dedicated_master_count: i32,
-    /// <p>The instance type for your data nodes. </p>
+    /// <p>The instance type for your data nodes.</p>
+    /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The type of UltraWarm instance.</p>
@@ -24241,7 +26534,8 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
     pub fn dedicated_master_count(&self) -> i32 {
         self.dedicated_master_count
     }
-    /// <p>The instance type for your data nodes. </p>
+    /// <p>The instance type for your data nodes.</p>
+    /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -24363,12 +26657,14 @@ pub mod aws_open_search_service_domain_cluster_config_details {
             self.dedicated_master_count = input;
             self
         }
-        /// <p>The instance type for your data nodes. </p>
+        /// <p>The instance type for your data nodes.</p>
+        /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type for your data nodes. </p>
+        /// <p>The instance type for your data nodes.</p>
+        /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24440,12 +26736,12 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-    /// <p>The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+    /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
     #[doc(hidden)]
     pub availability_zone_count: i32,
 }
 impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-    /// <p>The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+    /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
     pub fn availability_zone_count(&self) -> i32 {
         self.availability_zone_count
     }
@@ -24467,12 +26763,12 @@ pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_deta
         pub(crate) availability_zone_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+        /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
         pub fn availability_zone_count(mut self, input: i32) -> Self {
             self.availability_zone_count = Some(input);
             self
         }
-        /// <p>The number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+        /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
         pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
             self.availability_zone_count = input;
             self
@@ -24517,7 +26813,14 @@ pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
     /// <p>Whether a service software update is available for the domain.</p>
     #[doc(hidden)]
     pub update_available: bool,
-    /// <p>The status of the service software update.</p>
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub update_status: std::option::Option<std::string::String>,
     /// <p>Whether the service software update is optional.</p>
@@ -24549,7 +26852,14 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
     pub fn update_available(&self) -> bool {
         self.update_available
     }
-    /// <p>The status of the service software update.</p>
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+    /// </ul>
     pub fn update_status(&self) -> std::option::Option<&str> {
         self.update_status.as_deref()
     }
@@ -24655,12 +26965,26 @@ pub mod aws_open_search_service_domain_service_software_options_details {
             self.update_available = input;
             self
         }
-        /// <p>The status of the service software update.</p>
+        /// <p>The status of the service software update. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETED</code> </p> </li>
+        /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+        /// </ul>
         pub fn update_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_status = Some(input.into());
             self
         }
-        /// <p>The status of the service software update.</p>
+        /// <p>The status of the service software update. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETED</code> </p> </li>
+        /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+        /// </ul>
         pub fn set_update_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24854,7 +27178,12 @@ pub struct AwsEcrContainerImageDetails {
     /// <p>The name of the repository that the image belongs to.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The architecture of the image.</p>
+    /// <p>The architecture of the image. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>arm64</code> </p> </li>
+    /// <li> <p> <code>i386</code> </p> </li>
+    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The sha256 digest of the image manifest.</p>
@@ -24877,7 +27206,12 @@ impl AwsEcrContainerImageDetails {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The architecture of the image.</p>
+    /// <p>The architecture of the image. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>arm64</code> </p> </li>
+    /// <li> <p> <code>i386</code> </p> </li>
+    /// <li> <p> <code>x86_64</code> </p> </li>
+    /// </ul>
     pub fn architecture(&self) -> std::option::Option<&str> {
         self.architecture.as_deref()
     }
@@ -24944,12 +27278,22 @@ pub mod aws_ecr_container_image_details {
             self.repository_name = input;
             self
         }
-        /// <p>The architecture of the image.</p>
+        /// <p>The architecture of the image. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>arm64</code> </p> </li>
+        /// <li> <p> <code>i386</code> </p> </li>
+        /// <li> <p> <code>x86_64</code> </p> </li>
+        /// </ul>
         pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
             self.architecture = Some(input.into());
             self
         }
-        /// <p>The architecture of the image.</p>
+        /// <p>The architecture of the image. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>arm64</code> </p> </li>
+        /// <li> <p> <code>i386</code> </p> </li>
+        /// <li> <p> <code>x86_64</code> </p> </li>
+        /// </ul>
         pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.architecture = input;
             self
@@ -25025,7 +27369,13 @@ pub struct AwsEc2VpnConnectionDetails {
     /// <p>The identifier of the VPN connection.</p>
     #[doc(hidden)]
     pub vpn_connection_id: std::option::Option<std::string::String>,
-    /// <p>The current state of the VPN connection.</p>
+    /// <p>The current state of the VPN connection. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
@@ -25062,7 +27412,13 @@ impl AwsEc2VpnConnectionDetails {
     pub fn vpn_connection_id(&self) -> std::option::Option<&str> {
         self.vpn_connection_id.as_deref()
     }
-    /// <p>The current state of the VPN connection.</p>
+    /// <p>The current state of the VPN connection. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
+    /// </ul>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -25160,12 +27516,24 @@ pub mod aws_ec2_vpn_connection_details {
             self.vpn_connection_id = input;
             self
         }
-        /// <p>The current state of the VPN connection.</p>
+        /// <p>The current state of the VPN connection. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>available</code> </p> </li>
+        /// <li> <p> <code>deleted</code> </p> </li>
+        /// <li> <p> <code>deleting</code> </p> </li>
+        /// <li> <p> <code>pending</code> </p> </li>
+        /// </ul>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The current state of the VPN connection.</p>
+        /// <p>The current state of the VPN connection. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>available</code> </p> </li>
+        /// <li> <p> <code>deleted</code> </p> </li>
+        /// <li> <p> <code>deleting</code> </p> </li>
+        /// <li> <p> <code>pending</code> </p> </li>
+        /// </ul>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -25974,7 +28342,7 @@ pub struct AwsEc2VpnConnectionVgwTelemetryDetails {
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
     #[doc(hidden)]
     pub outside_ip_address: std::option::Option<std::string::String>,
-    /// <p>The status of the VPN tunnel.</p>
+    /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurs, a description of the error.</p>
@@ -25999,7 +28367,7 @@ impl AwsEc2VpnConnectionVgwTelemetryDetails {
     pub fn outside_ip_address(&self) -> std::option::Option<&str> {
         self.outside_ip_address.as_deref()
     }
-    /// <p>The status of the VPN tunnel.</p>
+    /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -26085,12 +28453,12 @@ pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
             self.outside_ip_address = input;
             self
         }
-        /// <p>The status of the VPN tunnel.</p>
+        /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the VPN tunnel.</p>
+        /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -26982,7 +29350,15 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     #[doc(hidden)]
     pub volume_size: i32,
-    /// <p>The volume type.</p>
+    /// <p>The volume type. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
 }
@@ -27016,7 +29392,15 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     pub fn volume_size(&self) -> i32 {
         self.volume_size
     }
-    /// <p>The volume type.</p>
+    /// <p>The volume type. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
     pub fn volume_type(&self) -> std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -27116,12 +29500,28 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details 
             self.volume_size = input;
             self
         }
-        /// <p>The volume type.</p>
+        /// <p>The volume type. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>gp2</code> </p> </li>
+        /// <li> <p> <code>gp3</code> </p> </li>
+        /// <li> <p> <code>io1</code> </p> </li>
+        /// <li> <p> <code>sc1</code> </p> </li>
+        /// <li> <p> <code>st1</code> </p> </li>
+        /// <li> <p> <code>standard</code> </p> </li>
+        /// </ul>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type.</p>
+        /// <p>The volume type. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>gp2</code> </p> </li>
+        /// <li> <p> <code>gp3</code> </p> </li>
+        /// <li> <p> <code>io1</code> </p> </li>
+        /// <li> <p> <code>sc1</code> </p> </li>
+        /// <li> <p> <code>st1</code> </p> </li>
+        /// <li> <p> <code>standard</code> </p> </li>
+        /// </ul>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
             self
@@ -29386,7 +31786,14 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub container_definitions: std::option::Option<
         std::vec::Vec<crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails>,
     >,
-    /// <p>The number of CPU units used by the task.</p>
+    /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
+    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
+    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
+    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
+    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
@@ -29400,16 +31807,28 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub inference_accelerators: std::option::Option<
         std::vec::Vec<crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>,
     >,
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>host</code> </p> </li>
+    /// <li> <p> <code>none</code> </p> </li>
+    /// <li> <p> <code>task</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub ipc_mode: std::option::Option<std::string::String>,
-    /// <p>The amount (in MiB) of memory used by the task.</p>
+    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     #[doc(hidden)]
     pub memory: std::option::Option<std::string::String>,
-    /// <p>The Docker networking mode to use for the containers in the task.</p>
+    /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsvpc</code> </p> </li>
+    /// <li> <p> <code>bridge</code> </p> </li>
+    /// <li> <p> <code>host</code> </p> </li>
+    /// <li> <p> <code>none</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub network_mode: std::option::Option<std::string::String>,
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
     #[doc(hidden)]
     pub pid_mode: std::option::Option<std::string::String>,
     /// <p>The placement constraint objects to use for tasks.</p>
@@ -29439,7 +31858,14 @@ impl AwsEcsTaskDefinitionDetails {
     ) -> std::option::Option<&[crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails]> {
         self.container_definitions.as_deref()
     }
-    /// <p>The number of CPU units used by the task.</p>
+    /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
+    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
+    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
+    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
+    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// </ul>
     pub fn cpu(&self) -> std::option::Option<&str> {
         self.cpu.as_deref()
     }
@@ -29458,19 +31884,31 @@ impl AwsEcsTaskDefinitionDetails {
     {
         self.inference_accelerators.as_deref()
     }
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>host</code> </p> </li>
+    /// <li> <p> <code>none</code> </p> </li>
+    /// <li> <p> <code>task</code> </p> </li>
+    /// </ul>
     pub fn ipc_mode(&self) -> std::option::Option<&str> {
         self.ipc_mode.as_deref()
     }
-    /// <p>The amount (in MiB) of memory used by the task.</p>
+    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub fn memory(&self) -> std::option::Option<&str> {
         self.memory.as_deref()
     }
-    /// <p>The Docker networking mode to use for the containers in the task.</p>
+    /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsvpc</code> </p> </li>
+    /// <li> <p> <code>bridge</code> </p> </li>
+    /// <li> <p> <code>host</code> </p> </li>
+    /// <li> <p> <code>none</code> </p> </li>
+    /// </ul>
     pub fn network_mode(&self) -> std::option::Option<&str> {
         self.network_mode.as_deref()
     }
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
     pub fn pid_mode(&self) -> std::option::Option<&str> {
         self.pid_mode.as_deref()
     }
@@ -29576,12 +32014,26 @@ pub mod aws_ecs_task_definition_details {
             self.container_definitions = input;
             self
         }
-        /// <p>The number of CPU units used by the task.</p>
+        /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
+        /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
+        /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
+        /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
+        /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+        /// </ul>
         pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
             self.cpu = Some(input.into());
             self
         }
-        /// <p>The number of CPU units used by the task.</p>
+        /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
+        /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
+        /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
+        /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
+        /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+        /// </ul>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
@@ -29633,42 +32085,66 @@ pub mod aws_ecs_task_definition_details {
             self.inference_accelerators = input;
             self
         }
-        /// <p>The IPC resource namespace to use for the containers in the task.</p>
+        /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>host</code> </p> </li>
+        /// <li> <p> <code>none</code> </p> </li>
+        /// <li> <p> <code>task</code> </p> </li>
+        /// </ul>
         pub fn ipc_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.ipc_mode = Some(input.into());
             self
         }
-        /// <p>The IPC resource namespace to use for the containers in the task.</p>
+        /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>host</code> </p> </li>
+        /// <li> <p> <code>none</code> </p> </li>
+        /// <li> <p> <code>task</code> </p> </li>
+        /// </ul>
         pub fn set_ipc_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ipc_mode = input;
             self
         }
-        /// <p>The amount (in MiB) of memory used by the task.</p>
+        /// <p>The amount (in MiB) of memory used by the task. </p>
+        /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
         pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
             self.memory = Some(input.into());
             self
         }
-        /// <p>The amount (in MiB) of memory used by the task.</p>
+        /// <p>The amount (in MiB) of memory used by the task. </p>
+        /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
         }
-        /// <p>The Docker networking mode to use for the containers in the task.</p>
+        /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>awsvpc</code> </p> </li>
+        /// <li> <p> <code>bridge</code> </p> </li>
+        /// <li> <p> <code>host</code> </p> </li>
+        /// <li> <p> <code>none</code> </p> </li>
+        /// </ul>
         pub fn network_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_mode = Some(input.into());
             self
         }
-        /// <p>The Docker networking mode to use for the containers in the task.</p>
+        /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>awsvpc</code> </p> </li>
+        /// <li> <p> <code>bridge</code> </p> </li>
+        /// <li> <p> <code>host</code> </p> </li>
+        /// <li> <p> <code>none</code> </p> </li>
+        /// </ul>
         pub fn set_network_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_mode = input;
             self
         }
-        /// <p>The process namespace to use for the containers in the task.</p>
+        /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
         pub fn pid_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.pid_mode = Some(input.into());
             self
         }
-        /// <p>The process namespace to use for the containers in the task.</p>
+        /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
         pub fn set_pid_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pid_mode = input;
             self
@@ -30268,7 +32744,7 @@ pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     #[doc(hidden)]
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops.</p>
+    /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
     #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
 }
@@ -30295,7 +32771,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     {
         self.labels.as_ref()
     }
-    /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops.</p>
+    /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
     pub fn scope(&self) -> std::option::Option<&str> {
         self.scope.as_deref()
     }
@@ -30399,12 +32875,12 @@ pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
             self.labels = input;
             self
         }
-        /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops.</p>
+        /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.scope = Some(input.into());
             self
         }
-        /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops.</p>
+        /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
         pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scope = input;
             self
@@ -32149,7 +34625,24 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The hard limit for the ulimit type.</p>
     #[doc(hidden)]
     pub hard_limit: i32,
-    /// <p>The type of the ulimit.</p>
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The soft limit for the ulimit type.</p>
@@ -32161,7 +34654,24 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     pub fn hard_limit(&self) -> i32 {
         self.hard_limit
     }
-    /// <p>The type of the ulimit.</p>
+    /// <p>The type of the ulimit. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>core</code> </p> </li>
+    /// <li> <p> <code>cpu</code> </p> </li>
+    /// <li> <p> <code>data</code> </p> </li>
+    /// <li> <p> <code>fsize</code> </p> </li>
+    /// <li> <p> <code>locks</code> </p> </li>
+    /// <li> <p> <code>memlock</code> </p> </li>
+    /// <li> <p> <code>msgqueue</code> </p> </li>
+    /// <li> <p> <code>nice</code> </p> </li>
+    /// <li> <p> <code>nofile</code> </p> </li>
+    /// <li> <p> <code>nproc</code> </p> </li>
+    /// <li> <p> <code>rss</code> </p> </li>
+    /// <li> <p> <code>rtprio</code> </p> </li>
+    /// <li> <p> <code>rttime</code> </p> </li>
+    /// <li> <p> <code>sigpending</code> </p> </li>
+    /// <li> <p> <code>stack</code> </p> </li>
+    /// </ul>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -32201,12 +34711,46 @@ pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
             self.hard_limit = input;
             self
         }
-        /// <p>The type of the ulimit.</p>
+        /// <p>The type of the ulimit. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>core</code> </p> </li>
+        /// <li> <p> <code>cpu</code> </p> </li>
+        /// <li> <p> <code>data</code> </p> </li>
+        /// <li> <p> <code>fsize</code> </p> </li>
+        /// <li> <p> <code>locks</code> </p> </li>
+        /// <li> <p> <code>memlock</code> </p> </li>
+        /// <li> <p> <code>msgqueue</code> </p> </li>
+        /// <li> <p> <code>nice</code> </p> </li>
+        /// <li> <p> <code>nofile</code> </p> </li>
+        /// <li> <p> <code>nproc</code> </p> </li>
+        /// <li> <p> <code>rss</code> </p> </li>
+        /// <li> <p> <code>rtprio</code> </p> </li>
+        /// <li> <p> <code>rttime</code> </p> </li>
+        /// <li> <p> <code>sigpending</code> </p> </li>
+        /// <li> <p> <code>stack</code> </p> </li>
+        /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The type of the ulimit.</p>
+        /// <p>The type of the ulimit. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>core</code> </p> </li>
+        /// <li> <p> <code>cpu</code> </p> </li>
+        /// <li> <p> <code>data</code> </p> </li>
+        /// <li> <p> <code>fsize</code> </p> </li>
+        /// <li> <p> <code>locks</code> </p> </li>
+        /// <li> <p> <code>memlock</code> </p> </li>
+        /// <li> <p> <code>msgqueue</code> </p> </li>
+        /// <li> <p> <code>nice</code> </p> </li>
+        /// <li> <p> <code>nofile</code> </p> </li>
+        /// <li> <p> <code>nproc</code> </p> </li>
+        /// <li> <p> <code>rss</code> </p> </li>
+        /// <li> <p> <code>rtprio</code> </p> </li>
+        /// <li> <p> <code>rttime</code> </p> </li>
+        /// <li> <p> <code>sigpending</code> </p> </li>
+        /// <li> <p> <code>stack</code> </p> </li>
+        /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -32400,7 +34944,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
-    /// <p>The type of resource to assign to a container.</p>
+    /// <p>The type of resource to assign to a container. Valid values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The value for the specified resource type.</p>
@@ -32410,7 +34954,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
     pub value: std::option::Option<std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
-    /// <p>The type of resource to assign to a container.</p>
+    /// <p>The type of resource to assign to a container. Valid values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -32440,12 +34984,12 @@ pub mod aws_ecs_task_definition_container_definitions_resource_requirements_deta
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of resource to assign to a container.</p>
+        /// <p>The type of resource to assign to a container. Valid values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of resource to assign to a container.</p>
+        /// <p>The type of resource to assign to a container. Valid values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -32755,7 +35299,25 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails  {
-    /// <p>The log driver to use for the container.</p>
+    /// <p>The log driver to use for the container.</p> 
+    /// <p>Valid values on Fargate are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>awsfirelens</code> </p> </li> 
+    /// <li> <p> <code>awslogs</code> </p> </li> 
+    /// <li> <p> <code>splunk</code> </p> </li> 
+    /// </ul> 
+    /// <p>Valid values on Amazon EC2 are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>awsfirelens</code> </p> </li> 
+    /// <li> <p> <code>awslogs</code> </p> </li> 
+    /// <li> <p> <code>fluentd</code> </p> </li> 
+    /// <li> <p> <code>gelf</code> </p> </li> 
+    /// <li> <p> <code>journald</code> </p> </li> 
+    /// <li> <p> <code>json-file</code> </p> </li> 
+    /// <li> <p> <code>logentries</code> </p> </li> 
+    /// <li> <p> <code>splunk</code> </p> </li> 
+    /// <li> <p> <code>syslog</code> </p> </li> 
+    /// </ul>
     #[doc(hidden)]pub log_driver: std::option::Option<std::string::String>,
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
     #[doc(hidden)]pub options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -32764,6 +35326,24 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails  {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <p>The log driver to use for the container.</p>
+    /// <p>Valid values on Fargate are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsfirelens</code> </p> </li>
+    /// <li> <p> <code>awslogs</code> </p> </li>
+    /// <li> <p> <code>splunk</code> </p> </li>
+    /// </ul>
+    /// <p>Valid values on Amazon EC2 are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsfirelens</code> </p> </li>
+    /// <li> <p> <code>awslogs</code> </p> </li>
+    /// <li> <p> <code>fluentd</code> </p> </li>
+    /// <li> <p> <code>gelf</code> </p> </li>
+    /// <li> <p> <code>journald</code> </p> </li>
+    /// <li> <p> <code>json-file</code> </p> </li>
+    /// <li> <p> <code>logentries</code> </p> </li>
+    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li> <p> <code>syslog</code> </p> </li>
+    /// </ul>
     pub fn log_driver(&self) -> std::option::Option<&str> {
         self.log_driver.as_deref()
     }
@@ -32801,11 +35381,47 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_details 
     }
     impl Builder {
         /// <p>The log driver to use for the container.</p>
+        /// <p>Valid values on Fargate are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>awsfirelens</code> </p> </li>
+        /// <li> <p> <code>awslogs</code> </p> </li>
+        /// <li> <p> <code>splunk</code> </p> </li>
+        /// </ul>
+        /// <p>Valid values on Amazon EC2 are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>awsfirelens</code> </p> </li>
+        /// <li> <p> <code>awslogs</code> </p> </li>
+        /// <li> <p> <code>fluentd</code> </p> </li>
+        /// <li> <p> <code>gelf</code> </p> </li>
+        /// <li> <p> <code>journald</code> </p> </li>
+        /// <li> <p> <code>json-file</code> </p> </li>
+        /// <li> <p> <code>logentries</code> </p> </li>
+        /// <li> <p> <code>splunk</code> </p> </li>
+        /// <li> <p> <code>syslog</code> </p> </li>
+        /// </ul>
         pub fn log_driver(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_driver = Some(input.into());
             self
         }
         /// <p>The log driver to use for the container.</p>
+        /// <p>Valid values on Fargate are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>awsfirelens</code> </p> </li>
+        /// <li> <p> <code>awslogs</code> </p> </li>
+        /// <li> <p> <code>splunk</code> </p> </li>
+        /// </ul>
+        /// <p>Valid values on Amazon EC2 are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>awsfirelens</code> </p> </li>
+        /// <li> <p> <code>awslogs</code> </p> </li>
+        /// <li> <p> <code>fluentd</code> </p> </li>
+        /// <li> <p> <code>gelf</code> </p> </li>
+        /// <li> <p> <code>journald</code> </p> </li>
+        /// <li> <p> <code>json-file</code> </p> </li>
+        /// <li> <p> <code>logentries</code> </p> </li>
+        /// <li> <p> <code>splunk</code> </p> </li>
+        /// <li> <p> <code>syslog</code> </p> </li>
+        /// </ul>
         pub fn set_log_driver(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_driver = input;
             self
@@ -33201,6 +35817,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
     #[doc(hidden)]
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
     #[doc(hidden)]
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
@@ -33213,6 +35830,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
         self.container_path.as_deref()
     }
     /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
     pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
         self.mount_options.as_deref()
     }
@@ -33260,6 +35878,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_det
         /// To override the contents of this collection use [`set_mount_options`](Self::set_mount_options).
         ///
         /// <p>The list of tmpfs volume mount options.</p>
+        /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
         pub fn mount_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.mount_options.unwrap_or_default();
             v.push(input.into());
@@ -33267,6 +35886,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_det
             self
         }
         /// <p>The list of tmpfs volume mount options.</p>
+        /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
         pub fn set_mount_options(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33419,19 +36039,23 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
-    /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker.</p>
+    /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker. Valid values are as follows:</p>
+    /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
     #[doc(hidden)]
     pub add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Linux capabilities for the container that are dropped from the default configuration provided by Docker.</p>
+    /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
     #[doc(hidden)]
     pub drop: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
-    /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker.</p>
+    /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker. Valid values are as follows:</p>
+    /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
     pub fn add(&self) -> std::option::Option<&[std::string::String]> {
         self.add.as_deref()
     }
     /// <p>The Linux capabilities for the container that are dropped from the default configuration provided by Docker.</p>
+    /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
     pub fn drop(&self) -> std::option::Option<&[std::string::String]> {
         self.drop.as_deref()
     }
@@ -33462,14 +36086,16 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilit
         ///
         /// To override the contents of this collection use [`set_add`](Self::set_add).
         ///
-        /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker.</p>
+        /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker. Valid values are as follows:</p>
+        /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
         pub fn add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.add.unwrap_or_default();
             v.push(input.into());
             self.add = Some(v);
             self
         }
-        /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker.</p>
+        /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker. Valid values are as follows:</p>
+        /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
         pub fn set_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33482,6 +36108,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilit
         /// To override the contents of this collection use [`set_drop`](Self::set_drop).
         ///
         /// <p>The Linux capabilities for the container that are dropped from the default configuration provided by Docker.</p>
+        /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
         pub fn drop(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.drop.unwrap_or_default();
             v.push(input.into());
@@ -33489,6 +36116,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilit
             self
         }
         /// <p>The Linux capabilities for the container that are dropped from the default configuration provided by Docker.</p>
+        /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
         pub fn set_drop(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33680,7 +36308,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails 
     #[doc(hidden)]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The log router to use. </p>
+    /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -33698,7 +36326,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     {
         self.options.as_ref()
     }
-    /// <p>The log router to use. </p>
+    /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -33761,12 +36389,12 @@ pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_det
             self.options = input;
             self
         }
-        /// <p>The log router to use. </p>
+        /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The log router to use. </p>
+        /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -33874,7 +36502,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
-    /// <p>The type of environment file.</p>
+    /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The ARN of the S3 object that contains the environment variable file.</p>
@@ -33882,7 +36510,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
     pub value: std::option::Option<std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
-    /// <p>The type of environment file.</p>
+    /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -33910,12 +36538,12 @@ pub mod aws_ecs_task_definition_container_definitions_environment_files_details 
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of environment file.</p>
+        /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of environment file.</p>
+        /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -34032,7 +36660,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
-    /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start.</p>
+    /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>HEALTHY</code> </p> </li>
+    /// <li> <p> <code>SUCCESS</code> </p> </li>
+    /// <li> <p> <code>START</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
     /// <p>The name of the dependent container.</p>
@@ -34040,7 +36674,13 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     pub container_name: std::option::Option<std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
-    /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start.</p>
+    /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETE</code> </p> </li>
+    /// <li> <p> <code>HEALTHY</code> </p> </li>
+    /// <li> <p> <code>SUCCESS</code> </p> </li>
+    /// <li> <p> <code>START</code> </p> </li>
+    /// </ul>
     pub fn condition(&self) -> std::option::Option<&str> {
         self.condition.as_deref()
     }
@@ -34068,12 +36708,24 @@ pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start.</p>
+        /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETE</code> </p> </li>
+        /// <li> <p> <code>HEALTHY</code> </p> </li>
+        /// <li> <p> <code>SUCCESS</code> </p> </li>
+        /// <li> <p> <code>START</code> </p> </li>
+        /// </ul>
         pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition = Some(input.into());
             self
         }
-        /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start.</p>
+        /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETE</code> </p> </li>
+        /// <li> <p> <code>HEALTHY</code> </p> </li>
+        /// <li> <p> <code>SUCCESS</code> </p> </li>
+        /// <li> <p> <code>START</code> </p> </li>
+        /// </ul>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.condition = input;
             self
@@ -34867,19 +37519,19 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEcsClusterClusterSettingsDetails {
-    /// <p>The name of the setting.</p>
+    /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the setting.</p>
+    /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AwsEcsClusterClusterSettingsDetails {
-    /// <p>The name of the setting.</p>
+    /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value of the setting.</p>
+    /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -34902,22 +37554,22 @@ pub mod aws_ecs_cluster_cluster_settings_details {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the setting.</p>
+        /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the setting.</p>
+        /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value of the setting.</p>
+        /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the setting.</p>
+        /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -34969,7 +37621,12 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>Whether the DB cluster has instances in multiple Availability Zones.</p>
     #[doc(hidden)]
     pub multi_az: bool,
-    /// <p>The name of the database engine to use for this DB cluster.</p>
+    /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine to use.</p>
@@ -35027,7 +37684,14 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     #[doc(hidden)]
     pub enabled_cloud_watch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The database engine mode of the DB cluster.</p>
+    /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>global</code> </p> </li>
+    /// <li> <p> <code>multimaster</code> </p> </li>
+    /// <li> <p> <code>parallelquery</code> </p> </li>
+    /// <li> <p> <code>provisioned</code> </p> </li>
+    /// <li> <p> <code>serverless</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub engine_mode: std::option::Option<std::string::String>,
     /// <p>Whether the DB cluster has deletion protection enabled.</p>
@@ -35036,7 +37700,13 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>Whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
     #[doc(hidden)]
     pub http_endpoint_enabled: bool,
-    /// <p>The status of the database activity stream.</p>
+    /// <p>The status of the database activity stream. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>started</code> </p> </li>
+    /// <li> <p> <code>starting</code> </p> </li>
+    /// <li> <p> <code>stopped</code> </p> </li>
+    /// <li> <p> <code>stopping</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub activity_stream_status: std::option::Option<std::string::String>,
     /// <p>Whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
@@ -35106,7 +37776,12 @@ impl AwsRdsDbClusterDetails {
     pub fn multi_az(&self) -> bool {
         self.multi_az
     }
-    /// <p>The name of the database engine to use for this DB cluster.</p>
+    /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// </ul>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -35181,7 +37856,14 @@ impl AwsRdsDbClusterDetails {
     pub fn enabled_cloud_watch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enabled_cloud_watch_logs_exports.as_deref()
     }
-    /// <p>The database engine mode of the DB cluster.</p>
+    /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>global</code> </p> </li>
+    /// <li> <p> <code>multimaster</code> </p> </li>
+    /// <li> <p> <code>parallelquery</code> </p> </li>
+    /// <li> <p> <code>provisioned</code> </p> </li>
+    /// <li> <p> <code>serverless</code> </p> </li>
+    /// </ul>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
         self.engine_mode.as_deref()
     }
@@ -35193,7 +37875,13 @@ impl AwsRdsDbClusterDetails {
     pub fn http_endpoint_enabled(&self) -> bool {
         self.http_endpoint_enabled
     }
-    /// <p>The status of the database activity stream.</p>
+    /// <p>The status of the database activity stream. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>started</code> </p> </li>
+    /// <li> <p> <code>starting</code> </p> </li>
+    /// <li> <p> <code>stopped</code> </p> </li>
+    /// <li> <p> <code>stopping</code> </p> </li>
+    /// </ul>
     pub fn activity_stream_status(&self) -> std::option::Option<&str> {
         self.activity_stream_status.as_deref()
     }
@@ -35464,12 +38152,22 @@ pub mod aws_rds_db_cluster_details {
             self.multi_az = input;
             self
         }
-        /// <p>The name of the database engine to use for this DB cluster.</p>
+        /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+        /// </ul>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
-        /// <p>The name of the database engine to use for this DB cluster.</p>
+        /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+        /// </ul>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -35707,12 +38405,26 @@ pub mod aws_rds_db_cluster_details {
             self.enabled_cloud_watch_logs_exports = input;
             self
         }
-        /// <p>The database engine mode of the DB cluster.</p>
+        /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>global</code> </p> </li>
+        /// <li> <p> <code>multimaster</code> </p> </li>
+        /// <li> <p> <code>parallelquery</code> </p> </li>
+        /// <li> <p> <code>provisioned</code> </p> </li>
+        /// <li> <p> <code>serverless</code> </p> </li>
+        /// </ul>
         pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_mode = Some(input.into());
             self
         }
-        /// <p>The database engine mode of the DB cluster.</p>
+        /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>global</code> </p> </li>
+        /// <li> <p> <code>multimaster</code> </p> </li>
+        /// <li> <p> <code>parallelquery</code> </p> </li>
+        /// <li> <p> <code>provisioned</code> </p> </li>
+        /// <li> <p> <code>serverless</code> </p> </li>
+        /// </ul>
         pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_mode = input;
             self
@@ -35737,12 +38449,24 @@ pub mod aws_rds_db_cluster_details {
             self.http_endpoint_enabled = input;
             self
         }
-        /// <p>The status of the database activity stream.</p>
+        /// <p>The status of the database activity stream. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>started</code> </p> </li>
+        /// <li> <p> <code>starting</code> </p> </li>
+        /// <li> <p> <code>stopped</code> </p> </li>
+        /// <li> <p> <code>stopping</code> </p> </li>
+        /// </ul>
         pub fn activity_stream_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_stream_status = Some(input.into());
             self
         }
-        /// <p>The status of the database activity stream.</p>
+        /// <p>The status of the database activity stream. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>started</code> </p> </li>
+        /// <li> <p> <code>starting</code> </p> </li>
+        /// <li> <p> <code>stopped</code> </p> </li>
+        /// <li> <p> <code>stopping</code> </p> </li>
+        /// </ul>
         pub fn set_activity_stream_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -36273,7 +38997,12 @@ pub struct AwsRdsDbClusterAssociatedRole {
     /// <p>The ARN of the IAM role.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the association between the IAM role and the DB cluster.</p>
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
@@ -36282,7 +39011,12 @@ impl AwsRdsDbClusterAssociatedRole {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the association between the IAM role and the DB cluster.</p>
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -36315,12 +39049,22 @@ pub mod aws_rds_db_cluster_associated_role {
             self.role_arn = input;
             self
         }
-        /// <p>The status of the association between the IAM role and the DB cluster.</p>
+        /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>INVALID</code> </p> </li>
+        /// <li> <p> <code>PENDING</code> </p> </li>
+        /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the association between the IAM role and the DB cluster.</p>
+        /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>INVALID</code> </p> </li>
+        /// <li> <p> <code>PENDING</code> </p> </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -36882,7 +39626,23 @@ pub struct AwsRdsDbSnapshotDetails {
     /// <p>When the snapshot was taken in Coordinated Universal Time (UTC).</p>
     #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<std::string::String>,
-    /// <p>The name of the database engine to use for this DB instance.</p>
+    /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>c</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-se</code> </p> </li>
+    /// <li> <p> <code>oracle-se1</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
@@ -36930,7 +39690,12 @@ pub struct AwsRdsDbSnapshotDetails {
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
     #[doc(hidden)]
     pub source_db_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The storage type associated with the DB snapshot.</p>
+    /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -36969,7 +39734,23 @@ impl AwsRdsDbSnapshotDetails {
     pub fn snapshot_create_time(&self) -> std::option::Option<&str> {
         self.snapshot_create_time.as_deref()
     }
-    /// <p>The name of the database engine to use for this DB instance.</p>
+    /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>c</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-se</code> </p> </li>
+    /// <li> <p> <code>oracle-se1</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -37033,7 +39814,12 @@ impl AwsRdsDbSnapshotDetails {
     pub fn source_db_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.source_db_snapshot_identifier.as_deref()
     }
-    /// <p>The storage type associated with the DB snapshot.</p>
+    /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -37182,12 +39968,44 @@ pub mod aws_rds_db_snapshot_details {
             self.snapshot_create_time = input;
             self
         }
-        /// <p>The name of the database engine to use for this DB instance.</p>
+        /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+        /// <li> <p> <code>c</code> </p> </li>
+        /// <li> <p> <code>mariadb</code> </p> </li>
+        /// <li> <p> <code>mysql</code> </p> </li>
+        /// <li> <p> <code>oracle-ee</code> </p> </li>
+        /// <li> <p> <code>oracle-se</code> </p> </li>
+        /// <li> <p> <code>oracle-se1</code> </p> </li>
+        /// <li> <p> <code>oracle-se2</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web</code> </p> </li>
+        /// </ul>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
-        /// <p>The name of the database engine to use for this DB instance.</p>
+        /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>aurora</code> </p> </li>
+        /// <li> <p> <code>aurora-mysql</code> </p> </li>
+        /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+        /// <li> <p> <code>c</code> </p> </li>
+        /// <li> <p> <code>mariadb</code> </p> </li>
+        /// <li> <p> <code>mysql</code> </p> </li>
+        /// <li> <p> <code>oracle-ee</code> </p> </li>
+        /// <li> <p> <code>oracle-se</code> </p> </li>
+        /// <li> <p> <code>oracle-se1</code> </p> </li>
+        /// <li> <p> <code>oracle-se2</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+        /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+        /// <li> <p> <code>sqlserver-se</code> </p> </li>
+        /// <li> <p> <code>sqlserver-web</code> </p> </li>
+        /// </ul>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -37372,12 +40190,22 @@ pub mod aws_rds_db_snapshot_details {
             self.source_db_snapshot_identifier = input;
             self
         }
-        /// <p>The storage type associated with the DB snapshot.</p>
+        /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>gp2</code> </p> </li>
+        /// <li> <p> <code>io1</code> </p> </li>
+        /// <li> <p> <code>standard</code> </p> </li>
+        /// </ul>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
-        /// <p>The storage type associated with the DB snapshot.</p>
+        /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>gp2</code> </p> </li>
+        /// <li> <p> <code>io1</code> </p> </li>
+        /// <li> <p> <code>standard</code> </p> </li>
+        /// </ul>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
@@ -37517,7 +40345,7 @@ impl AwsRdsDbSnapshotDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsRdsDbProcessorFeature {
-    /// <p>The name of the processor feature.</p>
+    /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the processor feature.</p>
@@ -37525,7 +40353,7 @@ pub struct AwsRdsDbProcessorFeature {
     pub value: std::option::Option<std::string::String>,
 }
 impl AwsRdsDbProcessorFeature {
-    /// <p>The name of the processor feature.</p>
+    /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -37552,12 +40380,12 @@ pub mod aws_rds_db_processor_feature {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the processor feature.</p>
+        /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the processor feature.</p>
+        /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -42677,7 +45505,14 @@ pub struct AwsKmsKeyDetails {
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
     #[doc(hidden)]
     pub key_manager: std::option::Option<std::string::String>,
-    /// <p>The state of the KMS key.</p>
+    /// <p>The state of the KMS key. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub key_state: std::option::Option<std::string::String>,
     /// <p>The source of the KMS key material.</p>
@@ -42711,7 +45546,14 @@ impl AwsKmsKeyDetails {
     pub fn key_manager(&self) -> std::option::Option<&str> {
         self.key_manager.as_deref()
     }
-    /// <p>The state of the KMS key.</p>
+    /// <p>The state of the KMS key. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>Enabled</code> </p> </li>
+    /// <li> <p> <code>PendingDeletion</code> </p> </li>
+    /// <li> <p> <code>PendingImport</code> </p> </li>
+    /// <li> <p> <code>Unavailable</code> </p> </li>
+    /// </ul>
     pub fn key_state(&self) -> std::option::Option<&str> {
         self.key_state.as_deref()
     }
@@ -42806,12 +45648,26 @@ pub mod aws_kms_key_details {
             self.key_manager = input;
             self
         }
-        /// <p>The state of the KMS key.</p>
+        /// <p>The state of the KMS key. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>Disabled</code> </p> </li>
+        /// <li> <p> <code>Enabled</code> </p> </li>
+        /// <li> <p> <code>PendingDeletion</code> </p> </li>
+        /// <li> <p> <code>PendingImport</code> </p> </li>
+        /// <li> <p> <code>Unavailable</code> </p> </li>
+        /// </ul>
         pub fn key_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_state = Some(input.into());
             self
         }
-        /// <p>The state of the KMS key.</p>
+        /// <p>The state of the KMS key. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>Disabled</code> </p> </li>
+        /// <li> <p> <code>Enabled</code> </p> </li>
+        /// <li> <p> <code>PendingDeletion</code> </p> </li>
+        /// <li> <p> <code>PendingImport</code> </p> </li>
+        /// <li> <p> <code>Unavailable</code> </p> </li>
+        /// </ul>
         pub fn set_key_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_state = input;
             self
@@ -49801,7 +52657,7 @@ pub struct AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
     #[doc(hidden)]
     pub renewal_status: std::option::Option<std::string::String>,
-    /// <p>The reason that a renewal request was unsuccessful.</p>
+    /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
     #[doc(hidden)]
     pub renewal_status_reason: std::option::Option<std::string::String>,
@@ -49823,7 +52679,7 @@ impl AwsCertificateManagerCertificateRenewalSummary {
     pub fn renewal_status(&self) -> std::option::Option<&str> {
         self.renewal_status.as_deref()
     }
-    /// <p>The reason that a renewal request was unsuccessful.</p>
+    /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
     pub fn renewal_status_reason(&self) -> std::option::Option<&str> {
         self.renewal_status_reason.as_deref()
@@ -49897,13 +52753,13 @@ pub mod aws_certificate_manager_certificate_renewal_summary {
             self.renewal_status = input;
             self
         }
-        /// <p>The reason that a renewal request was unsuccessful.</p>
+        /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
         /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
         pub fn renewal_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.renewal_status_reason = Some(input.into());
             self
         }
-        /// <p>The reason that a renewal request was unsuccessful.</p>
+        /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
         /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
         pub fn set_renewal_status_reason(
             mut self,
@@ -50549,8 +53405,7 @@ impl AwsSsmPatch {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsSsmComplianceSummary {
-    /// <p>The current patch compliance status.</p>
-    /// <p>The possible status values are:</p>
+    /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>COMPLIANT</code> </p> </li>
     /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
@@ -50597,7 +53452,15 @@ pub struct AwsSsmComplianceSummary {
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
     #[doc(hidden)]
     pub patch_baseline_id: std::option::Option<std::string::String>,
-    /// <p>The highest severity for the patches.</p>
+    /// <p>The highest severity for the patches. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub overall_severity: std::option::Option<std::string::String>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
@@ -50611,8 +53474,7 @@ pub struct AwsSsmComplianceSummary {
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl AwsSsmComplianceSummary {
-    /// <p>The current patch compliance status.</p>
-    /// <p>The possible status values are:</p>
+    /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>COMPLIANT</code> </p> </li>
     /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
@@ -50673,7 +53535,15 @@ impl AwsSsmComplianceSummary {
     pub fn patch_baseline_id(&self) -> std::option::Option<&str> {
         self.patch_baseline_id.as_deref()
     }
-    /// <p>The highest severity for the patches.</p>
+    /// <p>The highest severity for the patches. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>CRITICAL</code> </p> </li>
+    /// <li> <p> <code>HIGH</code> </p> </li>
+    /// <li> <p> <code>MEDIUM</code> </p> </li>
+    /// <li> <p> <code>LOW</code> </p> </li>
+    /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
+    /// </ul>
     pub fn overall_severity(&self) -> std::option::Option<&str> {
         self.overall_severity.as_deref()
     }
@@ -50758,8 +53628,7 @@ pub mod aws_ssm_compliance_summary {
         pub(crate) patch_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current patch compliance status.</p>
-        /// <p>The possible status values are:</p>
+        /// <p>The current patch compliance status. Valid values are as follows:</p>
         /// <ul>
         /// <li> <p> <code>COMPLIANT</code> </p> </li>
         /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
@@ -50769,8 +53638,7 @@ pub mod aws_ssm_compliance_summary {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current patch compliance status.</p>
-        /// <p>The possible status values are:</p>
+        /// <p>The current patch compliance status. Valid values are as follows:</p>
         /// <ul>
         /// <li> <p> <code>COMPLIANT</code> </p> </li>
         /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
@@ -50925,12 +53793,28 @@ pub mod aws_ssm_compliance_summary {
             self.patch_baseline_id = input;
             self
         }
-        /// <p>The highest severity for the patches.</p>
+        /// <p>The highest severity for the patches. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>CRITICAL</code> </p> </li>
+        /// <li> <p> <code>HIGH</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LOW</code> </p> </li>
+        /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+        /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
+        /// </ul>
         pub fn overall_severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.overall_severity = Some(input.into());
             self
         }
-        /// <p>The highest severity for the patches.</p>
+        /// <p>The highest severity for the patches. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>CRITICAL</code> </p> </li>
+        /// <li> <p> <code>HIGH</code> </p> </li>
+        /// <li> <p> <code>MEDIUM</code> </p> </li>
+        /// <li> <p> <code>LOW</code> </p> </li>
+        /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
+        /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
+        /// </ul>
         pub fn set_overall_severity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -52771,7 +55655,16 @@ pub struct AwsDynamoDbTableDetails {
     /// <p>The total size of the table in bytes.</p>
     #[doc(hidden)]
     pub table_size_bytes: i64,
-    /// <p>The current status of the table.</p>
+    /// <p>The current status of the table. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub table_status: std::option::Option<std::string::String>,
 }
@@ -52865,7 +55758,16 @@ impl AwsDynamoDbTableDetails {
     pub fn table_size_bytes(&self) -> i64 {
         self.table_size_bytes
     }
-    /// <p>The current status of the table.</p>
+    /// <p>The current status of the table. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ARCHIVED</code> </p> </li>
+    /// <li> <p> <code>ARCHIVING</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     pub fn table_status(&self) -> std::option::Option<&str> {
         self.table_status.as_deref()
     }
@@ -53216,12 +56118,30 @@ pub mod aws_dynamo_db_table_details {
             self.table_size_bytes = input;
             self
         }
-        /// <p>The current status of the table.</p>
+        /// <p>The current status of the table. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>ARCHIVED</code> </p> </li>
+        /// <li> <p> <code>ARCHIVING</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn table_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_status = Some(input.into());
             self
         }
-        /// <p>The current status of the table.</p>
+        /// <p>The current status of the table. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>ARCHIVED</code> </p> </li>
+        /// <li> <p> <code>ARCHIVING</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn set_table_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_status = input;
             self
@@ -53615,7 +56535,14 @@ pub struct AwsDynamoDbTableReplica {
     /// <p>The name of the Region where the replica is located.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The current status of the replica.</p>
+    /// <p>The current status of the replica. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub replica_status: std::option::Option<std::string::String>,
     /// <p>Detailed information about the replica status.</p>
@@ -53643,7 +56570,14 @@ impl AwsDynamoDbTableReplica {
     pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>The current status of the replica.</p>
+    /// <p>The current status of the replica. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     pub fn replica_status(&self) -> std::option::Option<&str> {
         self.replica_status.as_deref()
     }
@@ -53750,12 +56684,26 @@ pub mod aws_dynamo_db_table_replica {
             self.region_name = input;
             self
         }
-        /// <p>The current status of the replica.</p>
+        /// <p>The current status of the replica. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn replica_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.replica_status = Some(input.into());
             self
         }
-        /// <p>The current status of the replica.</p>
+        /// <p>The current status of the replica. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn set_replica_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -54223,7 +57171,12 @@ pub struct AwsDynamoDbTableProjection {
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
     #[doc(hidden)]
     pub non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The types of attributes that are projected into the index.</p>
+    /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// <li> <p> <code>INCLUDE</code> </p> </li>
+    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub projection_type: std::option::Option<std::string::String>,
 }
@@ -54232,7 +57185,12 @@ impl AwsDynamoDbTableProjection {
     pub fn non_key_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.non_key_attributes.as_deref()
     }
-    /// <p>The types of attributes that are projected into the index.</p>
+    /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// <li> <p> <code>INCLUDE</code> </p> </li>
+    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// </ul>
     pub fn projection_type(&self) -> std::option::Option<&str> {
         self.projection_type.as_deref()
     }
@@ -54274,12 +57232,22 @@ pub mod aws_dynamo_db_table_projection {
             self.non_key_attributes = input;
             self
         }
-        /// <p>The types of attributes that are projected into the index.</p>
+        /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> </p> </li>
+        /// <li> <p> <code>INCLUDE</code> </p> </li>
+        /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+        /// </ul>
         pub fn projection_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.projection_type = Some(input.into());
             self
         }
-        /// <p>The types of attributes that are projected into the index.</p>
+        /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> </p> </li>
+        /// <li> <p> <code>INCLUDE</code> </p> </li>
+        /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+        /// </ul>
         pub fn set_projection_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -54310,7 +57278,7 @@ pub struct AwsDynamoDbTableKeySchema {
     /// <p>The name of the key schema attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The type of key used for the key schema attribute.</p>
+    /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
     #[doc(hidden)]
     pub key_type: std::option::Option<std::string::String>,
 }
@@ -54319,7 +57287,7 @@ impl AwsDynamoDbTableKeySchema {
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The type of key used for the key schema attribute.</p>
+    /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
     pub fn key_type(&self) -> std::option::Option<&str> {
         self.key_type.as_deref()
     }
@@ -54355,12 +57323,12 @@ pub mod aws_dynamo_db_table_key_schema {
             self.attribute_name = input;
             self
         }
-        /// <p>The type of key used for the key schema attribute.</p>
+        /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
         pub fn key_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_type = Some(input.into());
             self
         }
-        /// <p>The type of key used for the key schema attribute.</p>
+        /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
         pub fn set_key_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_type = input;
             self
@@ -54398,6 +57366,12 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     #[doc(hidden)]
     pub index_size_bytes: i64,
     /// <p>The current status of the index.</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub index_status: std::option::Option<std::string::String>,
     /// <p>The number of items in the index.</p>
@@ -54432,6 +57406,12 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.index_size_bytes
     }
     /// <p>The current status of the index.</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
     pub fn index_status(&self) -> std::option::Option<&str> {
         self.index_status.as_deref()
     }
@@ -54529,11 +57509,23 @@ pub mod aws_dynamo_db_table_global_secondary_index {
             self
         }
         /// <p>The current status of the index.</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn index_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_status = Some(input.into());
             self
         }
         /// <p>The current status of the index.</p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATING</code> </p> </li>
+        /// <li> <p> <code>DELETING</code> </p> </li>
+        /// <li> <p> <code>UPDATING</code> </p> </li>
+        /// </ul>
         pub fn set_index_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_status = input;
             self
@@ -58045,7 +61037,7 @@ pub struct AwsS3BucketBucketVersioningConfiguration {
     /// <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning configuration. If the S3 bucket was never configured with MFA delete, then this attribute is not included.</p>
     #[doc(hidden)]
     pub is_mfa_delete_enabled: bool,
-    /// <p>The versioning status of the S3 bucket.</p>
+    /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
@@ -58054,7 +61046,7 @@ impl AwsS3BucketBucketVersioningConfiguration {
     pub fn is_mfa_delete_enabled(&self) -> bool {
         self.is_mfa_delete_enabled
     }
-    /// <p>The versioning status of the S3 bucket.</p>
+    /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -58087,12 +61079,12 @@ pub mod aws_s3_bucket_bucket_versioning_configuration {
             self.is_mfa_delete_enabled = input;
             self
         }
-        /// <p>The versioning status of the S3 bucket.</p>
+        /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The versioning status of the S3 bucket.</p>
+        /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -58201,7 +61193,12 @@ pub struct AwsS3BucketNotificationConfigurationDetail {
     /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the notification.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
-    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -58220,7 +61217,12 @@ impl AwsS3BucketNotificationConfigurationDetail {
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
-    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+    /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -58293,12 +61295,22 @@ pub mod aws_s3_bucket_notification_configuration_detail {
             self.destination = input;
             self
         }
-        /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+        /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+        /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+        /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+        /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+        /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
+        /// <li> <p> <code>QueueConfiguration</code> </p> </li>
+        /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -59113,7 +62125,7 @@ pub struct AwsS3BucketWebsiteConfigurationRedirectTo {
     /// <p>The name of the host to redirect requests to.</p>
     #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
-    /// <p>The protocol to use when redirecting requests. By default, uses the same protocol as the original request.</p>
+    /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
 }
@@ -59122,7 +62134,7 @@ impl AwsS3BucketWebsiteConfigurationRedirectTo {
     pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
-    /// <p>The protocol to use when redirecting requests. By default, uses the same protocol as the original request.</p>
+    /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
     pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -59155,12 +62167,12 @@ pub mod aws_s3_bucket_website_configuration_redirect_to {
             self.hostname = input;
             self
         }
-        /// <p>The protocol to use when redirecting requests. By default, uses the same protocol as the original request.</p>
+        /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
         pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
             self.protocol = Some(input.into());
             self
         }
-        /// <p>The protocol to use when redirecting requests. By default, uses the same protocol as the original request.</p>
+        /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -59673,7 +62685,14 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
     #[doc(hidden)]
     pub days: i32,
-    /// <p>The storage class to transition the object to.</p>
+    /// <p>The storage class to transition the object to. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub storage_class: std::option::Option<std::string::String>,
 }
@@ -59687,7 +62706,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     pub fn days(&self) -> i32 {
         self.days
     }
-    /// <p>The storage class to transition the object to.</p>
+    /// <p>The storage class to transition the object to. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
+    /// </ul>
     pub fn storage_class(&self) -> std::option::Option<&str> {
         self.storage_class.as_deref()
     }
@@ -59735,12 +62761,26 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
             self.days = input;
             self
         }
-        /// <p>The storage class to transition the object to.</p>
+        /// <p>The storage class to transition the object to. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+        /// <li> <p> <code>GLACIER</code> </p> </li>
+        /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+        /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+        /// <li> <p> <code>STANDARD_IA</code> </p> </li>
+        /// </ul>
         pub fn storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_class = Some(input.into());
             self
         }
-        /// <p>The storage class to transition the object to.</p>
+        /// <p>The storage class to transition the object to. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+        /// <li> <p> <code>GLACIER</code> </p> </li>
+        /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+        /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+        /// <li> <p> <code>STANDARD_IA</code> </p> </li>
+        /// </ul>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -59940,7 +62980,7 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails  {
     #[doc(hidden)]pub prefix: std::option::Option<std::string::String>,
     /// <p>A tag filter.</p>
     #[doc(hidden)]pub tag: std::option::Option<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>,
-    /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+    /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     #[doc(hidden)]pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
@@ -59960,7 +63000,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
     > {
         self.tag.as_ref()
     }
-    /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+    /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -60038,12 +63078,12 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_deta
             self.tag = input;
             self
         }
-        /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+        /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+        /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -60160,7 +63200,7 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDe
     pub tag: std::option::Option<
         crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
     >,
-    /// <p>The type of filter value.</p>
+    /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -60173,7 +63213,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails 
     pub fn tag(&self) -> std::option::Option<& crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails>{
         self.tag.as_ref()
     }
-    /// <p>The type of filter value.</p>
+    /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -60228,12 +63268,12 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
             self.tag = input;
             self
         }
-        /// <p>The type of filter value.</p>
+        /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of filter value.</p>
+        /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -60544,7 +63584,7 @@ impl AwsS3BucketServerSideEncryptionRule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsS3BucketServerSideEncryptionByDefault {
-    /// <p>Server-side encryption algorithm to use for the default encryption.</p>
+    /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
     #[doc(hidden)]
     pub sse_algorithm: std::option::Option<std::string::String>,
     /// <p>KMS key ID to use for the default encryption.</p>
@@ -60552,7 +63592,7 @@ pub struct AwsS3BucketServerSideEncryptionByDefault {
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl AwsS3BucketServerSideEncryptionByDefault {
-    /// <p>Server-side encryption algorithm to use for the default encryption.</p>
+    /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
     pub fn sse_algorithm(&self) -> std::option::Option<&str> {
         self.sse_algorithm.as_deref()
     }
@@ -60579,12 +63619,12 @@ pub mod aws_s3_bucket_server_side_encryption_by_default {
         pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Server-side encryption algorithm to use for the default encryption.</p>
+        /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
         pub fn sse_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_algorithm = Some(input.into());
             self
         }
-        /// <p>Server-side encryption algorithm to use for the default encryption.</p>
+        /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
         pub fn set_sse_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -61206,7 +64246,14 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <p>Whether a service software update is available for the domain.</p>
     #[doc(hidden)]
     pub update_available: bool,
-    /// <p>The status of the service software update.</p>
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub update_status: std::option::Option<std::string::String>,
 }
@@ -61235,7 +64282,14 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
     pub fn update_available(&self) -> bool {
         self.update_available
     }
-    /// <p>The status of the service software update.</p>
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+    /// </ul>
     pub fn update_status(&self) -> std::option::Option<&str> {
         self.update_status.as_deref()
     }
@@ -61334,12 +64388,26 @@ pub mod aws_elasticsearch_domain_service_software_options {
             self.update_available = input;
             self
         }
-        /// <p>The status of the service software update.</p>
+        /// <p>The status of the service software update. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETED</code> </p> </li>
+        /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+        /// </ul>
         pub fn update_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_status = Some(input.into());
             self
         }
-        /// <p>The status of the service software update.</p>
+        /// <p>The status of the service software update. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>COMPLETED</code> </p> </li>
+        /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+        /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
+        /// </ul>
         pub fn set_update_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -61728,13 +64796,15 @@ pub struct AwsElasticsearchDomainElasticsearchClusterConfigDetails {
     /// <p>Whether to use a dedicated master node for the Elasticsearch domain. A dedicated master node performs cluster management tasks, but doesn't hold data or respond to data upload requests.</p>
     #[doc(hidden)]
     pub dedicated_master_enabled: bool,
-    /// <p>The hardware configuration of the computer that hosts the dedicated master node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub dedicated_master_type: std::option::Option<std::string::String>,
     /// <p>The number of data nodes to use in the Elasticsearch domain.</p>
     #[doc(hidden)]
     pub instance_count: i32,
     /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+    /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
@@ -61755,7 +64825,8 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
     pub fn dedicated_master_enabled(&self) -> bool {
         self.dedicated_master_enabled
     }
-    /// <p>The hardware configuration of the computer that hosts the dedicated master node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     pub fn dedicated_master_type(&self) -> std::option::Option<&str> {
         self.dedicated_master_type.as_deref()
     }
@@ -61764,6 +64835,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
         self.instance_count
     }
     /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+    /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -61829,12 +64901,14 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
             self.dedicated_master_enabled = input;
             self
         }
-        /// <p>The hardware configuration of the computer that hosts the dedicated master node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+        /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+        /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
         pub fn dedicated_master_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dedicated_master_type = Some(input.into());
             self
         }
-        /// <p>The hardware configuration of the computer that hosts the dedicated master node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+        /// <p>The hardware configuration of the computer that hosts the dedicated master node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+        /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
         pub fn set_dedicated_master_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -61853,11 +64927,13 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
             self
         }
         /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+        /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
         /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+        /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -62124,7 +65200,17 @@ pub struct AwsElasticBeanstalkEnvironmentDetails {
     /// <p>The name of the solution stack that is deployed with the environment.</p>
     #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
-    /// <p>The current operational status of the environment.</p>
+    /// <p>The current operational status of the environment. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Aborting</code> </p> </li>
+    /// <li> <p> <code>Launching</code> </p> </li>
+    /// <li> <p> <code>LinkingFrom</code> </p> </li>
+    /// <li> <p> <code>LinkingTo</code> </p> </li>
+    /// <li> <p> <code>Ready</code> </p> </li>
+    /// <li> <p> <code>Terminated</code> </p> </li>
+    /// <li> <p> <code>Terminating</code> </p> </li>
+    /// <li> <p> <code>Updating</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The tier of the environment.</p>
@@ -62191,7 +65277,17 @@ impl AwsElasticBeanstalkEnvironmentDetails {
     pub fn solution_stack_name(&self) -> std::option::Option<&str> {
         self.solution_stack_name.as_deref()
     }
-    /// <p>The current operational status of the environment.</p>
+    /// <p>The current operational status of the environment. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Aborting</code> </p> </li>
+    /// <li> <p> <code>Launching</code> </p> </li>
+    /// <li> <p> <code>LinkingFrom</code> </p> </li>
+    /// <li> <p> <code>LinkingTo</code> </p> </li>
+    /// <li> <p> <code>Ready</code> </p> </li>
+    /// <li> <p> <code>Terminated</code> </p> </li>
+    /// <li> <p> <code>Terminating</code> </p> </li>
+    /// <li> <p> <code>Updating</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -62427,12 +65523,32 @@ pub mod aws_elastic_beanstalk_environment_details {
             self.solution_stack_name = input;
             self
         }
-        /// <p>The current operational status of the environment.</p>
+        /// <p>The current operational status of the environment. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>Aborting</code> </p> </li>
+        /// <li> <p> <code>Launching</code> </p> </li>
+        /// <li> <p> <code>LinkingFrom</code> </p> </li>
+        /// <li> <p> <code>LinkingTo</code> </p> </li>
+        /// <li> <p> <code>Ready</code> </p> </li>
+        /// <li> <p> <code>Terminated</code> </p> </li>
+        /// <li> <p> <code>Terminating</code> </p> </li>
+        /// <li> <p> <code>Updating</code> </p> </li>
+        /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current operational status of the environment.</p>
+        /// <p>The current operational status of the environment. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>Aborting</code> </p> </li>
+        /// <li> <p> <code>Launching</code> </p> </li>
+        /// <li> <p> <code>LinkingFrom</code> </p> </li>
+        /// <li> <p> <code>LinkingTo</code> </p> </li>
+        /// <li> <p> <code>Ready</code> </p> </li>
+        /// <li> <p> <code>Terminated</code> </p> </li>
+        /// <li> <p> <code>Terminating</code> </p> </li>
+        /// <li> <p> <code>Updating</code> </p> </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -62497,10 +65613,10 @@ impl AwsElasticBeanstalkEnvironmentDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsElasticBeanstalkEnvironmentTier {
-    /// <p>The name of the environment tier.</p>
+    /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of environment tier.</p>
+    /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The version of the environment tier.</p>
@@ -62508,11 +65624,11 @@ pub struct AwsElasticBeanstalkEnvironmentTier {
     pub version: std::option::Option<std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentTier {
-    /// <p>The name of the environment tier.</p>
+    /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of environment tier.</p>
+    /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -62541,22 +65657,22 @@ pub mod aws_elastic_beanstalk_environment_tier {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the environment tier.</p>
+        /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the environment tier.</p>
+        /// <p>The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of environment tier.</p>
+        /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of environment tier.</p>
+        /// <p>The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -63985,7 +67101,7 @@ pub struct AwsEc2SubnetDetails {
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The current state of the subnet.</p>
+    /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
     /// <p>The ARN of the subnet.</p>
@@ -64035,7 +67151,7 @@ impl AwsEc2SubnetDetails {
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The current state of the subnet.</p>
+    /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -64197,12 +67313,12 @@ pub mod aws_ec2_subnet_details {
             self.owner_id = input;
             self
         }
-        /// <p>The current state of the subnet.</p>
+        /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The current state of the subnet.</p>
+        /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -64298,7 +67414,15 @@ pub struct Ipv6CidrBlockAssociation {
     /// <p>The IPv6 CIDR block.</p>
     #[doc(hidden)]
     pub ipv6_cidr_block: std::option::Option<std::string::String>,
-    /// <p>Information about the state of the CIDR block.</p>
+    /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>associating</code> </p> </li>
+    /// <li> <p> <code>associated</code> </p> </li>
+    /// <li> <p> <code>disassociating</code> </p> </li>
+    /// <li> <p> <code>disassociated</code> </p> </li>
+    /// <li> <p> <code>failed</code> </p> </li>
+    /// <li> <p> <code>failing</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub cidr_block_state: std::option::Option<std::string::String>,
 }
@@ -64311,7 +67435,15 @@ impl Ipv6CidrBlockAssociation {
     pub fn ipv6_cidr_block(&self) -> std::option::Option<&str> {
         self.ipv6_cidr_block.as_deref()
     }
-    /// <p>Information about the state of the CIDR block.</p>
+    /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>associating</code> </p> </li>
+    /// <li> <p> <code>associated</code> </p> </li>
+    /// <li> <p> <code>disassociating</code> </p> </li>
+    /// <li> <p> <code>disassociated</code> </p> </li>
+    /// <li> <p> <code>failed</code> </p> </li>
+    /// <li> <p> <code>failing</code> </p> </li>
+    /// </ul>
     pub fn cidr_block_state(&self) -> std::option::Option<&str> {
         self.cidr_block_state.as_deref()
     }
@@ -64362,12 +67494,28 @@ pub mod ipv6_cidr_block_association {
             self.ipv6_cidr_block = input;
             self
         }
-        /// <p>Information about the state of the CIDR block.</p>
+        /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>associating</code> </p> </li>
+        /// <li> <p> <code>associated</code> </p> </li>
+        /// <li> <p> <code>disassociating</code> </p> </li>
+        /// <li> <p> <code>disassociated</code> </p> </li>
+        /// <li> <p> <code>failed</code> </p> </li>
+        /// <li> <p> <code>failing</code> </p> </li>
+        /// </ul>
         pub fn cidr_block_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.cidr_block_state = Some(input.into());
             self
         }
-        /// <p>Information about the state of the CIDR block.</p>
+        /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>associating</code> </p> </li>
+        /// <li> <p> <code>associated</code> </p> </li>
+        /// <li> <p> <code>disassociating</code> </p> </li>
+        /// <li> <p> <code>disassociated</code> </p> </li>
+        /// <li> <p> <code>failed</code> </p> </li>
+        /// <li> <p> <code>failing</code> </p> </li>
+        /// </ul>
         pub fn set_cidr_block_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -64670,7 +67818,7 @@ pub struct AwsEc2VpcDetails {
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     #[doc(hidden)]
     pub dhcp_options_id: std::option::Option<std::string::String>,
-    /// <p>The current state of the VPC.</p>
+    /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
 }
@@ -64691,7 +67839,7 @@ impl AwsEc2VpcDetails {
     pub fn dhcp_options_id(&self) -> std::option::Option<&str> {
         self.dhcp_options_id.as_deref()
     }
-    /// <p>The current state of the VPC.</p>
+    /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -64783,12 +67931,12 @@ pub mod aws_ec2_vpc_details {
             self.dhcp_options_id = input;
             self
         }
-        /// <p>The current state of the VPC.</p>
+        /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The current state of the VPC.</p>
+        /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -64932,7 +68080,15 @@ pub struct AwsEc2VolumeDetails {
     /// <p>The snapshot from which the volume was created.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The volume state.</p>
+    /// <p>The volume state. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>error</code> </p> </li>
+    /// <li> <p> <code>in-use</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
@@ -64973,7 +68129,15 @@ impl AwsEc2VolumeDetails {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The volume state.</p>
+    /// <p>The volume state. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>error</code> </p> </li>
+    /// <li> <p> <code>in-use</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -65087,12 +68251,28 @@ pub mod aws_ec2_volume_details {
             self.snapshot_id = input;
             self
         }
-        /// <p>The volume state.</p>
+        /// <p>The volume state. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>available</code> </p> </li>
+        /// <li> <p> <code>creating</code> </p> </li>
+        /// <li> <p> <code>deleted</code> </p> </li>
+        /// <li> <p> <code>deleting</code> </p> </li>
+        /// <li> <p> <code>error</code> </p> </li>
+        /// <li> <p> <code>in-use</code> </p> </li>
+        /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The volume state.</p>
+        /// <p>The volume state. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>available</code> </p> </li>
+        /// <li> <p> <code>creating</code> </p> </li>
+        /// <li> <p> <code>deleted</code> </p> </li>
+        /// <li> <p> <code>deleting</code> </p> </li>
+        /// <li> <p> <code>error</code> </p> </li>
+        /// <li> <p> <code>in-use</code> </p> </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -65197,7 +68377,14 @@ pub struct AwsEc2VolumeAttachment {
     /// <p>The identifier of the EC2 instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The attachment state of the volume.</p>
+    /// <p>The attachment state of the volume. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
@@ -65214,7 +68401,14 @@ impl AwsEc2VolumeAttachment {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The attachment state of the volume.</p>
+    /// <p>The attachment state of the volume. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>attaching</code> </p> </li>
+    /// <li> <p> <code>attached</code> </p> </li>
+    /// <li> <p> <code>busy</code> </p> </li>
+    /// <li> <p> <code>detaching</code> </p> </li>
+    /// <li> <p> <code>detached</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -65271,12 +68465,26 @@ pub mod aws_ec2_volume_attachment {
             self.instance_id = input;
             self
         }
-        /// <p>The attachment state of the volume.</p>
+        /// <p>The attachment state of the volume. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>attaching</code> </p> </li>
+        /// <li> <p> <code>attached</code> </p> </li>
+        /// <li> <p> <code>busy</code> </p> </li>
+        /// <li> <p> <code>detaching</code> </p> </li>
+        /// <li> <p> <code>detached</code> </p> </li>
+        /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The attachment state of the volume.</p>
+        /// <p>The attachment state of the volume. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>attaching</code> </p> </li>
+        /// <li> <p> <code>attached</code> </p> </li>
+        /// <li> <p> <code>busy</code> </p> </li>
+        /// <li> <p> <code>detaching</code> </p> </li>
+        /// <li> <p> <code>detached</code> </p> </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -70522,7 +73730,7 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The list of load balancers associated with the group.</p>
     #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The service to use for the health checks.</p>
+    /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
     #[doc(hidden)]
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
@@ -70560,7 +73768,7 @@ impl AwsAutoScalingAutoScalingGroupDetails {
     pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
-    /// <p>The service to use for the health checks.</p>
+    /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
     pub fn health_check_type(&self) -> std::option::Option<&str> {
         self.health_check_type.as_deref()
     }
@@ -70671,12 +73879,12 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
             self.load_balancer_names = input;
             self
         }
-        /// <p>The service to use for the health checks.</p>
+        /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
         pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_type = Some(input.into());
             self
         }
-        /// <p>The service to use for the health checks.</p>
+        /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -71356,7 +74564,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
-    /// <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+    /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
     #[doc(hidden)]
     pub on_demand_allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.</p>
@@ -71365,7 +74573,12 @@ pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributi
     /// <p>The percentage of On-Demand Instances and Spot Instances for additional capacity beyond <code>OnDemandBaseCapacity</code>.</p>
     #[doc(hidden)]
     pub on_demand_percentage_above_base_capacity: i32,
-    /// <p>How to allocate instances across Spot Instance pools.</p>
+    /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>lowest-price</code> </p> </li>
+    /// <li> <p> <code>capacity-optimized</code> </p> </li>
+    /// <li> <p> <code>capacity-optimized-prioritized</code> </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub spot_allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances.</p>
@@ -71376,7 +74589,7 @@ pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributi
     pub spot_max_price: std::option::Option<std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
-    /// <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+    /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
     pub fn on_demand_allocation_strategy(&self) -> std::option::Option<&str> {
         self.on_demand_allocation_strategy.as_deref()
     }
@@ -71388,7 +74601,12 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     pub fn on_demand_percentage_above_base_capacity(&self) -> i32 {
         self.on_demand_percentage_above_base_capacity
     }
-    /// <p>How to allocate instances across Spot Instance pools.</p>
+    /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>lowest-price</code> </p> </li>
+    /// <li> <p> <code>capacity-optimized</code> </p> </li>
+    /// <li> <p> <code>capacity-optimized-prioritized</code> </p> </li>
+    /// </ul>
     pub fn spot_allocation_strategy(&self) -> std::option::Option<&str> {
         self.spot_allocation_strategy.as_deref()
     }
@@ -71437,7 +74655,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_dis
         pub(crate) spot_max_price: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+        /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
         pub fn on_demand_allocation_strategy(
             mut self,
             input: impl Into<std::string::String>,
@@ -71445,7 +74663,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_dis
             self.on_demand_allocation_strategy = Some(input.into());
             self
         }
-        /// <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+        /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
         pub fn set_on_demand_allocation_strategy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -71476,12 +74694,22 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_dis
             self.on_demand_percentage_above_base_capacity = input;
             self
         }
-        /// <p>How to allocate instances across Spot Instance pools.</p>
+        /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>lowest-price</code> </p> </li>
+        /// <li> <p> <code>capacity-optimized</code> </p> </li>
+        /// <li> <p> <code>capacity-optimized-prioritized</code> </p> </li>
+        /// </ul>
         pub fn spot_allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
             self.spot_allocation_strategy = Some(input.into());
             self
         }
-        /// <p>How to allocate instances across Spot Instance pools.</p>
+        /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
+        /// <ul>
+        /// <li> <p> <code>lowest-price</code> </p> </li>
+        /// <li> <p> <code>capacity-optimized</code> </p> </li>
+        /// <li> <p> <code>capacity-optimized-prioritized</code> </p> </li>
+        /// </ul>
         pub fn set_spot_allocation_strategy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -76543,12 +79771,12 @@ pub struct BatchUpdateFindingsUnprocessedFinding {
     pub finding_identifier: std::option::Option<crate::model::AwsSecurityFindingIdentifier>,
     /// <p>The code associated with the error. Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
-    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
-    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
-    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
-    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
-    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+    /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
+    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code>.</p> </li>
+    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding.</p> </li>
+    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB.</p> </li>
+    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
+    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -76573,12 +79801,12 @@ impl BatchUpdateFindingsUnprocessedFinding {
     }
     /// <p>The code associated with the error. Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
-    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
-    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
-    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
-    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
-    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+    /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
+    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code>.</p> </li>
+    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding.</p> </li>
+    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB.</p> </li>
+    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
+    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
     /// </ul>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
@@ -76635,12 +79863,12 @@ pub mod batch_update_findings_unprocessed_finding {
         }
         /// <p>The code associated with the error. Possible values are:</p>
         /// <ul>
-        /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
-        /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
-        /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
-        /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
-        /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
-        /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+        /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
+        /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code>.</p> </li>
+        /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding.</p> </li>
+        /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB.</p> </li>
+        /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
+        /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
         /// </ul>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
@@ -76648,12 +79876,12 @@ pub mod batch_update_findings_unprocessed_finding {
         }
         /// <p>The code associated with the error. Possible values are:</p>
         /// <ul>
-        /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
-        /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
-        /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
-        /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
-        /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
-        /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+        /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
+        /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code>.</p> </li>
+        /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding.</p> </li>
+        /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB.</p> </li>
+        /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
+        /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
         /// </ul>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;

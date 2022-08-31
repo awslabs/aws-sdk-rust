@@ -9,7 +9,7 @@ version = "0.47.0"
 
 [dependencies.aws-sdk-apigateway]
 path = "../../sdk/apigateway"
-version = "0.17.0"
+version = "0.18.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]

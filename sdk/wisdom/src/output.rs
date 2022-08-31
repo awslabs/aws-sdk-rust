@@ -1067,6 +1067,150 @@ impl QueryAssistantOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutFeedbackOutput {
+    /// <p>The identifier of the Wisdom assistant.</p>
+    #[doc(hidden)]
+    pub assistant_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    #[doc(hidden)]
+    pub assistant_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+    #[doc(hidden)]
+    pub target_id: std::option::Option<std::string::String>,
+    /// <p>The type of the targetId for which The feedback. is targeted.</p>
+    #[doc(hidden)]
+    pub target_type: std::option::Option<crate::model::TargetType>,
+    /// <p>The feedback.</p>
+    #[doc(hidden)]
+    pub feedback: std::option::Option<crate::model::FeedbackData>,
+}
+impl PutFeedbackOutput {
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+        self.assistant_arn.as_deref()
+    }
+    /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The type of the targetId for which The feedback. is targeted.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The feedback.</p>
+    pub fn feedback(&self) -> std::option::Option<&crate::model::FeedbackData> {
+        self.feedback.as_ref()
+    }
+}
+impl std::fmt::Debug for PutFeedbackOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutFeedbackOutput");
+        formatter.field("assistant_id", &self.assistant_id);
+        formatter.field("assistant_arn", &self.assistant_arn);
+        formatter.field("target_id", &self.target_id);
+        formatter.field("target_type", &self.target_type);
+        formatter.field("feedback", &self.feedback);
+        formatter.finish()
+    }
+}
+/// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
+pub mod put_feedback_output {
+
+    /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) assistant_id: std::option::Option<std::string::String>,
+        pub(crate) assistant_arn: std::option::Option<std::string::String>,
+        pub(crate) target_id: std::option::Option<std::string::String>,
+        pub(crate) target_type: std::option::Option<crate::model::TargetType>,
+        pub(crate) feedback: std::option::Option<crate::model::FeedbackData>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Wisdom assistant.</p>
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assistant_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Wisdom assistant.</p>
+        pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+        pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assistant_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+        pub fn set_assistant_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assistant_arn = input;
+            self
+        }
+        /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+        pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_id = input;
+            self
+        }
+        /// <p>The type of the targetId for which The feedback. is targeted.</p>
+        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
+            self.target_type = Some(input);
+            self
+        }
+        /// <p>The type of the targetId for which The feedback. is targeted.</p>
+        pub fn set_target_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetType>,
+        ) -> Self {
+            self.target_type = input;
+            self
+        }
+        /// <p>The feedback.</p>
+        pub fn feedback(mut self, input: crate::model::FeedbackData) -> Self {
+            self.feedback = Some(input);
+            self
+        }
+        /// <p>The feedback.</p>
+        pub fn set_feedback(
+            mut self,
+            input: std::option::Option<crate::model::FeedbackData>,
+        ) -> Self {
+            self.feedback = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
+        pub fn build(self) -> crate::output::PutFeedbackOutput {
+            crate::output::PutFeedbackOutput {
+                assistant_id: self.assistant_id,
+                assistant_arn: self.assistant_arn,
+                target_id: self.target_id,
+                target_type: self.target_type,
+                feedback: self.feedback,
+            }
+        }
+    }
+}
+impl PutFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
+    pub fn builder() -> crate::output::put_feedback_output::Builder {
+        crate::output::put_feedback_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyRecommendationsReceivedOutput {
     /// <p>The identifiers of the recommendations.</p>
     #[doc(hidden)]

@@ -184,13 +184,14 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDataSource`](crate::client::fluent_builders::CreateDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A name for the data source connector.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_index_id): <p>The identifier of the index you want to use with the data source connector.</p>
     ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
     ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>Configuration information to connect to your data source repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
+    ///   - [`vpc_configuration(DataSourceVpcConfiguration)`](crate::client::fluent_builders::CreateDataSource::vpc_configuration) / [`set_vpc_configuration(Option<DataSourceVpcConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_vpc_configuration): <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description for the data source connector.</p>
     ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSource::set_tags): <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_client_token): <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
     ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_language_code): <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
@@ -303,8 +304,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_id): <p>The identifier of the data source you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_index_id): <p>The identifier of the index used with the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_id): <p>The identifier of the data source connector you want to delete.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::error::DeleteDataSourceError)
@@ -400,20 +401,21 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeDataSource`](crate::client::fluent_builders::DescribeDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_id): <p>The identifier of the data source.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_index_id): <p>The identifier of the index used with the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_id): <p>The identifier of the data source connector.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeDataSourceOutput::id): <p>The identifier of the data source.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeDataSourceOutput::index_id): <p>The identifier of the index that contains the data source.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeDataSourceOutput::name): <p>The name that you gave the data source when it was created.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::type): <p>The type of the data source.</p>
-    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::created_at): <p>The Unix timestamp of when the data source was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source was last updated.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description for the data source.</p>
-    ///   - [`status(Option<DataSourceStatus>)`](crate::output::DescribeDataSourceOutput::status): <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
+    ///   - [`id(Option<String>)`](crate::output::DescribeDataSourceOutput::id): <p>The identifier of the data source connector.</p>
+    ///   - [`index_id(Option<String>)`](crate::output::DescribeDataSourceOutput::index_id): <p>The identifier of the index used with the data source connector.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeDataSourceOutput::name): <p>The name for the data source connector.</p>
+    ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::type): <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
+    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
+    ///   - [`vpc_configuration(Option<DataSourceVpcConfiguration>)`](crate::output::DescribeDataSourceOutput::vpc_configuration): <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::created_at): <p>The Unix timestamp of when the data source connector was created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source connector was last updated.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description for the data source connector.</p>
+    ///   - [`status(Option<DataSourceStatus>)`](crate::output::DescribeDataSourceOutput::status): <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     ///   - [`schedule(Option<String>)`](crate::output::DescribeDataSourceOutput::schedule): <p>The schedule for Amazon Kendra to update the index.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeDataSourceOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeDataSourceOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeDataSourceOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
     ///   - [`language_code(Option<String>)`](crate::output::DescribeDataSourceOutput::language_code): <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     ///   - [`custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::output::DescribeDataSourceOutput::custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -650,12 +652,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_index_id): <p>The identifier of the index used with one or more data sources.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of data sources to return.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_index_id): <p>The identifier of the index used with one or more data source connectors.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of data source connectors to return.</p>
     /// - On success, responds with [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<DataSourceSummary>>)`](crate::output::ListDataSourcesOutput::summary_items): <p>An array of summary information for one or more data sources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDataSourcesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data sources. </p>
+    ///   - [`summary_items(Option<Vec<DataSourceSummary>>)`](crate::output::ListDataSourcesOutput::summary_items): <p>An array of summary information for one or more data source connector.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataSourcesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
     /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::error::ListDataSourcesError)
     pub fn list_data_sources(&self) -> fluent_builders::ListDataSources {
         fluent_builders::ListDataSources::new(self.handle.clone())
@@ -664,14 +666,14 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSourceSyncJobs::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_id): <p>The identifier of the data source.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_index_id): <p>The identifier of the index used with the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_id): <p>The identifier of the data source connector.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSourceSyncJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_max_results): <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
-    ///   - [`start_time_filter(TimeRange)`](crate::client::fluent_builders::ListDataSourceSyncJobs::start_time_filter) / [`set_start_time_filter(Option<TimeRange>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_start_time_filter): <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
-    ///   - [`status_filter(DataSourceSyncJobStatus)`](crate::client::fluent_builders::ListDataSourceSyncJobs::status_filter) / [`set_status_filter(Option<DataSourceSyncJobStatus>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_status_filter): <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+    ///   - [`start_time_filter(TimeRange)`](crate::client::fluent_builders::ListDataSourceSyncJobs::start_time_filter) / [`set_start_time_filter(Option<TimeRange>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_start_time_filter): <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
+    ///   - [`status_filter(DataSourceSyncJobStatus)`](crate::client::fluent_builders::ListDataSourceSyncJobs::status_filter) / [`set_status_filter(Option<DataSourceSyncJobStatus>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_status_filter): <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     /// - On success, responds with [`ListDataSourceSyncJobsOutput`](crate::output::ListDataSourceSyncJobsOutput) with field(s):
-    ///   - [`history(Option<Vec<DataSourceSyncJob>>)`](crate::output::ListDataSourceSyncJobsOutput::history): <p>A history of synchronization jobs for the data source.</p>
+    ///   - [`history(Option<Vec<DataSourceSyncJob>>)`](crate::output::ListDataSourceSyncJobsOutput::history): <p>A history of synchronization jobs for the data source connector.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataSourceSyncJobsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
     /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::error::ListDataSourceSyncJobsError)
     pub fn list_data_source_sync_jobs(&self) -> fluent_builders::ListDataSourceSyncJobs {
@@ -850,8 +852,8 @@ impl Client {
     /// Constructs a fluent builder for the [`StartDataSourceSyncJob`](crate::client::fluent_builders::StartDataSourceSyncJob) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::set_id): <p>The identifier of the data source to synchronize.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::set_index_id): <p>The identifier of the index that contains the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::set_id): <p>The identifier of the data source connector to synchronize.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`StartDataSourceSyncJobOutput`](crate::output::StartDataSourceSyncJobOutput) with field(s):
     ///   - [`execution_id(Option<String>)`](crate::output::StartDataSourceSyncJobOutput::execution_id): <p>Identifies a particular synchronization job.</p>
     /// - On failure, responds with [`SdkError<StartDataSourceSyncJobError>`](crate::error::StartDataSourceSyncJobError)
@@ -861,8 +863,8 @@ impl Client {
     /// Constructs a fluent builder for the [`StopDataSourceSyncJob`](crate::client::fluent_builders::StopDataSourceSyncJob) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::set_id): <p>The identifier of the data source for which to stop the synchronization jobs.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::set_index_id): <p>The identifier of the index that contains the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::set_id): <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`StopDataSourceSyncJobOutput`](crate::output::StopDataSourceSyncJobOutput)
 
     /// - On failure, responds with [`SdkError<StopDataSourceSyncJobError>`](crate::error::StopDataSourceSyncJobError)
@@ -924,13 +926,14 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_id): <p>The identifier of the data source you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_id): <p>The identifier of the data source connector you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>A new name for the data source connector.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_configuration): <p>Configuration information you want to update for the data source connector.</p>
+    ///   - [`vpc_configuration(DataSourceVpcConfiguration)`](crate::client::fluent_builders::UpdateDataSource::vpc_configuration) / [`set_vpc_configuration(Option<DataSourceVpcConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_vpc_configuration): <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_description): <p>A new description for the data source connector.</p>
     ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_schedule): <p>The sync schedule you want to update for the data source connector.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_language_code): <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::UpdateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput)
@@ -1642,7 +1645,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataSource`.
     ///
-    /// <p>Creates a data source that you want to use with an Amazon Kendra index. </p>
+    /// <p>Creates a data source connector that you want to use with an Amazon Kendra index.</p>
     /// <p>You specify a name, data source connector type and description for your data source. You also specify configuration information for the data source connector.</p>
     /// <p> <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised.</p>
     /// <p>Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a> data sources are the only supported data sources in the Amazon Web Services GovCloud (US-West) region.</p>
@@ -1686,12 +1689,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+        /// <p>A name for the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+        /// <p>A name for the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1736,6 +1739,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_configuration(input);
+            self
+        }
         /// <p>A description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
@@ -1758,14 +1777,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2630,7 +2649,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataSource`.
     ///
-    /// <p>Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>
+    /// <p>Deletes an Amazon Kendra data source connector. An exception is not thrown if the data source is already being deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource {
         handle: std::sync::Arc<super::Handle>,
@@ -2670,22 +2689,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the data source you want to delete.</p>
+        /// <p>The identifier of the data source connector you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the data source you want to delete.</p>
+        /// <p>The identifier of the data source connector you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -3160,7 +3179,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataSource`.
     ///
-    /// <p>Gets information about an Amazon Kendra data source.</p>
+    /// <p>Gets information about an Amazon Kendra data source connector.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSource {
         handle: std::sync::Arc<super::Handle>,
@@ -3200,22 +3219,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -4101,7 +4120,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataSources`.
     ///
-    /// <p>Lists the data sources that you have created.</p>
+    /// <p>Lists the data source connectors that you have created.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSources {
         handle: std::sync::Arc<super::Handle>,
@@ -4147,32 +4166,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDataSourcesPaginator {
             crate::paginator::ListDataSourcesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The identifier of the index used with one or more data sources.</p>
+        /// <p>The identifier of the index used with one or more data source connectors.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index used with one or more data sources.</p>
+        /// <p>The identifier of the index used with one or more data source connectors.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of data sources to return.</p>
+        /// <p>The maximum number of data source connectors to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of data sources to return.</p>
+        /// <p>The maximum number of data source connectors to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4180,7 +4199,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataSourceSyncJobs`.
     ///
-    /// <p>Gets statistics about synchronizing Amazon Kendra with a data source.</p>
+    /// <p>Gets statistics about synchronizing a data source connector.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSourceSyncJobs {
         handle: std::sync::Arc<super::Handle>,
@@ -4226,22 +4245,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDataSourceSyncJobsPaginator {
             crate::paginator::ListDataSourceSyncJobsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -4266,12 +4285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
         pub fn start_time_filter(mut self, input: crate::model::TimeRange) -> Self {
             self.inner = self.inner.start_time_filter(input);
             self
         }
-        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::TimeRange>,
@@ -4279,12 +4298,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_filter(input);
             self
         }
-        /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+        /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
         pub fn status_filter(mut self, input: crate::model::DataSourceSyncJobStatus) -> Self {
             self.inner = self.inner.status_filter(input);
             self
         }
-        /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+        /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::DataSourceSyncJobStatus>,
@@ -5372,7 +5391,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDataSourceSyncJob`.
     ///
-    /// <p>Starts a synchronization job for a data source. If a synchronization job is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code> exception.</p>
+    /// <p>Starts a synchronization job for a data source connector. If a synchronization job is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code> exception.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDataSourceSyncJob {
         handle: std::sync::Arc<super::Handle>,
@@ -5412,22 +5431,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the data source to synchronize.</p>
+        /// <p>The identifier of the data source connector to synchronize.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the data source to synchronize.</p>
+        /// <p>The identifier of the data source connector to synchronize.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -5475,22 +5494,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+        /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+        /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -5858,7 +5877,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDataSource`.
     ///
-    /// <p>Updates an existing Amazon Kendra data source.</p>
+    /// <p>Updates an existing Amazon Kendra data source connector.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSource {
         handle: std::sync::Arc<super::Handle>,
@@ -5898,22 +5917,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the data source you want to update.</p>
+        /// <p>The identifier of the data source connector you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the data source you want to update.</p>
+        /// <p>The identifier of the data source connector you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+        /// <p>A new name for the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+        /// <p>A new name for the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -5941,6 +5960,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_configuration(input);
+            self
+        }
         /// <p>A new description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
@@ -5961,12 +5996,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self

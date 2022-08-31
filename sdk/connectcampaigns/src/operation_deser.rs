@@ -823,6 +823,27 @@ pub fn parse_get_campaign_state_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::GetCampaignStateError {
+            meta: generic,
+            kind: crate::error::GetCampaignStateErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCampaignStateError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::http_serde::deser_header_get_campaign_state_validation_exception_x_amz_error_type(response.headers())
+                                                .map_err(|_|crate::error::GetCampaignStateError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetCampaignStateError::generic(generic),
     })
 }
@@ -1610,6 +1631,27 @@ pub fn parse_pause_campaign_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::PauseCampaignError {
+            meta: generic,
+            kind: crate::error::PauseCampaignErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PauseCampaignError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::http_serde::deser_header_pause_campaign_validation_exception_x_amz_error_type(response.headers())
+                                                .map_err(|_|crate::error::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PauseCampaignError::generic(generic),
     })
 }
@@ -1958,6 +2000,27 @@ pub fn parse_resume_campaign_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::ResumeCampaignError {
+            meta: generic,
+            kind: crate::error::ResumeCampaignErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResumeCampaignError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::http_serde::deser_header_resume_campaign_validation_exception_x_amz_error_type(response.headers())
+                                                .map_err(|_|crate::error::ResumeCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ResumeCampaignError::generic(generic),
     })
 }
@@ -2106,6 +2169,27 @@ pub fn parse_start_campaign_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
                         crate::http_serde::deser_header_start_campaign_throttling_exception_x_amz_error_type(response.headers())
+                                                .map_err(|_|crate::error::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::StartCampaignError {
+            meta: generic,
+            kind: crate::error::StartCampaignErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCampaignError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::http_serde::deser_header_start_campaign_validation_exception_x_amz_error_type(response.headers())
                                                 .map_err(|_|crate::error::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     output.build()
@@ -2436,6 +2520,27 @@ pub fn parse_stop_campaign_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
                         crate::http_serde::deser_header_stop_campaign_throttling_exception_x_amz_error_type(response.headers())
+                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::StopCampaignError {
+            meta: generic,
+            kind: crate::error::StopCampaignErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::http_serde::deser_header_stop_campaign_validation_exception_x_amz_error_type(response.headers())
                                                 .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     output.build()

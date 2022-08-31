@@ -2059,14 +2059,14 @@ impl PhoneNumberQuickConnectConfig {
     }
 }
 
-/// <p>Contains information about a queue for a quick connect. The contact flow must be of type Transfer to Queue.</p>
+/// <p>Contains information about a queue for a quick connect. The flow must be of type Transfer to Queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueQuickConnectConfig {
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
     pub queue_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
@@ -2075,7 +2075,7 @@ impl QueueQuickConnectConfig {
     pub fn queue_id(&self) -> std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
@@ -2108,12 +2108,12 @@ pub mod queue_quick_connect_config {
             self.queue_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2144,7 +2144,7 @@ pub struct UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
 }
@@ -2153,7 +2153,7 @@ impl UserQuickConnectConfig {
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
@@ -2186,12 +2186,12 @@ pub mod user_quick_connect_config {
             self.user_id = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4814,7 +4814,7 @@ pub struct UserSearchSummary {
     /// <p>The identifiers of the user's security profiles.</p>
     #[doc(hidden)]
     pub security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4855,7 +4855,7 @@ impl UserSearchSummary {
     pub fn security_profile_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_profile_ids.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5011,7 +5011,7 @@ pub mod user_search_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5022,7 +5022,7 @@ pub mod user_search_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5857,6 +5857,389 @@ impl TagCondition {
     /// Creates a new builder-style object to manufacture [`TagCondition`](crate::model::TagCondition).
     pub fn builder() -> crate::model::tag_condition::Builder {
         crate::model::tag_condition::Builder::default()
+    }
+}
+
+/// <p>Information about the returned security profiles.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityProfileSearchSummary {
+    /// <p>The identifier of the security profile.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The organization resource identifier.</p>
+    #[doc(hidden)]
+    pub organization_resource_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+    #[doc(hidden)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the security profile.</p>
+    #[doc(hidden)]
+    pub security_profile_name: std::option::Option<std::string::String>,
+    /// <p>The description of the security profile.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SecurityProfileSearchSummary {
+    /// <p>The identifier of the security profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The organization resource identifier.</p>
+    pub fn organization_resource_id(&self) -> std::option::Option<&str> {
+        self.organization_resource_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the security profile.</p>
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+        self.security_profile_name.as_deref()
+    }
+    /// <p>The description of the security profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for SecurityProfileSearchSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityProfileSearchSummary");
+        formatter.field("id", &self.id);
+        formatter.field("organization_resource_id", &self.organization_resource_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("security_profile_name", &self.security_profile_name);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`SecurityProfileSearchSummary`](crate::model::SecurityProfileSearchSummary).
+pub mod security_profile_search_summary {
+
+    /// A builder for [`SecurityProfileSearchSummary`](crate::model::SecurityProfileSearchSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) organization_resource_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) security_profile_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The identifier of the security profile.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the security profile.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The organization resource identifier.</p>
+        pub fn organization_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_resource_id = Some(input.into());
+            self
+        }
+        /// <p>The organization resource identifier.</p>
+        pub fn set_organization_resource_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_resource_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the security profile.</p>
+        pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_profile_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the security profile.</p>
+        pub fn set_security_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_profile_name = input;
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the security profile.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityProfileSearchSummary`](crate::model::SecurityProfileSearchSummary).
+        pub fn build(self) -> crate::model::SecurityProfileSearchSummary {
+            crate::model::SecurityProfileSearchSummary {
+                id: self.id,
+                organization_resource_id: self.organization_resource_id,
+                arn: self.arn,
+                security_profile_name: self.security_profile_name,
+                description: self.description,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl SecurityProfileSearchSummary {
+    /// Creates a new builder-style object to manufacture [`SecurityProfileSearchSummary`](crate::model::SecurityProfileSearchSummary).
+    pub fn builder() -> crate::model::security_profile_search_summary::Builder {
+        crate::model::security_profile_search_summary::Builder::default()
+    }
+}
+
+/// <p>Filters to be applied to search results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityProfilesSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+}
+impl SecurityProfilesSearchFilter {
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+    /// <ul>
+    /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+    /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+    /// </ul>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::ControlPlaneTagFilter> {
+        self.tag_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for SecurityProfilesSearchFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityProfilesSearchFilter");
+        formatter.field("tag_filter", &self.tag_filter);
+        formatter.finish()
+    }
+}
+/// See [`SecurityProfilesSearchFilter`](crate::model::SecurityProfilesSearchFilter).
+pub mod security_profiles_search_filter {
+
+    /// A builder for [`SecurityProfilesSearchFilter`](crate::model::SecurityProfilesSearchFilter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_filter: std::option::Option<crate::model::ControlPlaneTagFilter>,
+    }
+    impl Builder {
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn tag_filter(mut self, input: crate::model::ControlPlaneTagFilter) -> Self {
+            self.tag_filter = Some(input);
+            self
+        }
+        /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: </p>
+        /// <ul>
+        /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
+        /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
+        /// </ul>
+        pub fn set_tag_filter(
+            mut self,
+            input: std::option::Option<crate::model::ControlPlaneTagFilter>,
+        ) -> Self {
+            self.tag_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityProfilesSearchFilter`](crate::model::SecurityProfilesSearchFilter).
+        pub fn build(self) -> crate::model::SecurityProfilesSearchFilter {
+            crate::model::SecurityProfilesSearchFilter {
+                tag_filter: self.tag_filter,
+            }
+        }
+    }
+}
+impl SecurityProfilesSearchFilter {
+    /// Creates a new builder-style object to manufacture [`SecurityProfilesSearchFilter`](crate::model::SecurityProfilesSearchFilter).
+    pub fn builder() -> crate::model::security_profiles_search_filter::Builder {
+        crate::model::security_profiles_search_filter::Builder::default()
+    }
+}
+
+/// <p>The search criteria to be used to return security profiles.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityProfileSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    #[doc(hidden)]
+    pub or_conditions:
+        std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    #[doc(hidden)]
+    pub and_conditions:
+        std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
+    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    #[doc(hidden)]
+    pub string_condition: std::option::Option<crate::model::StringCondition>,
+}
+impl SecurityProfileSearchCriteria {
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    pub fn or_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityProfileSearchCriteria]> {
+        self.or_conditions.as_deref()
+    }
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    pub fn and_conditions(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityProfileSearchCriteria]> {
+        self.and_conditions.as_deref()
+    }
+    /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+    pub fn string_condition(&self) -> std::option::Option<&crate::model::StringCondition> {
+        self.string_condition.as_ref()
+    }
+}
+impl std::fmt::Debug for SecurityProfileSearchCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityProfileSearchCriteria");
+        formatter.field("or_conditions", &self.or_conditions);
+        formatter.field("and_conditions", &self.and_conditions);
+        formatter.field("string_condition", &self.string_condition);
+        formatter.finish()
+    }
+}
+/// See [`SecurityProfileSearchCriteria`](crate::model::SecurityProfileSearchCriteria).
+pub mod security_profile_search_criteria {
+
+    /// A builder for [`SecurityProfileSearchCriteria`](crate::model::SecurityProfileSearchCriteria).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) or_conditions:
+            std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
+        pub(crate) and_conditions:
+            std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
+        pub(crate) string_condition: std::option::Option<crate::model::StringCondition>,
+    }
+    impl Builder {
+        /// Appends an item to `or_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_or_conditions`](Self::set_or_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an OR condition.</p>
+        pub fn or_conditions(mut self, input: crate::model::SecurityProfileSearchCriteria) -> Self {
+            let mut v = self.or_conditions.unwrap_or_default();
+            v.push(input);
+            self.or_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an OR condition.</p>
+        pub fn set_or_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
+        ) -> Self {
+            self.or_conditions = input;
+            self
+        }
+        /// Appends an item to `and_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
+        ///
+        /// <p>A list of conditions which would be applied together with an AND condition.</p>
+        pub fn and_conditions(
+            mut self,
+            input: crate::model::SecurityProfileSearchCriteria,
+        ) -> Self {
+            let mut v = self.and_conditions.unwrap_or_default();
+            v.push(input);
+            self.and_conditions = Some(v);
+            self
+        }
+        /// <p>A list of conditions which would be applied together with an AND condition.</p>
+        pub fn set_and_conditions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchCriteria>>,
+        ) -> Self {
+            self.and_conditions = input;
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        pub fn string_condition(mut self, input: crate::model::StringCondition) -> Self {
+            self.string_condition = Some(input);
+            self
+        }
+        /// <p>A leaf node condition which can be used to specify a string condition, for example, <code>username = 'abc'</code>. </p>
+        pub fn set_string_condition(
+            mut self,
+            input: std::option::Option<crate::model::StringCondition>,
+        ) -> Self {
+            self.string_condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityProfileSearchCriteria`](crate::model::SecurityProfileSearchCriteria).
+        pub fn build(self) -> crate::model::SecurityProfileSearchCriteria {
+            crate::model::SecurityProfileSearchCriteria {
+                or_conditions: self.or_conditions,
+                and_conditions: self.and_conditions,
+                string_condition: self.string_condition,
+            }
+        }
+    }
+}
+impl SecurityProfileSearchCriteria {
+    /// Creates a new builder-style object to manufacture [`SecurityProfileSearchCriteria`](crate::model::SecurityProfileSearchCriteria).
+    pub fn builder() -> crate::model::security_profile_search_criteria::Builder {
+        crate::model::security_profile_search_criteria::Builder::default()
     }
 }
 
@@ -10423,45 +10806,45 @@ impl UrlReference {
     }
 }
 
-/// <p>Contains summary information about a contact flow.</p>
-/// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+/// <p>Contains summary information about a flow.</p>
+/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowSummary {
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     #[doc(hidden)]
     pub contact_flow_type: std::option::Option<crate::model::ContactFlowType>,
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     #[doc(hidden)]
     pub contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
 }
 impl ContactFlowSummary {
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     pub fn contact_flow_type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.contact_flow_type.as_ref()
     }
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     pub fn contact_flow_state(&self) -> std::option::Option<&crate::model::ContactFlowState> {
         self.contact_flow_state.as_ref()
     }
@@ -10490,42 +10873,42 @@ pub mod contact_flow_summary {
         pub(crate) contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
     }
     impl Builder {
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn contact_flow_type(mut self, input: crate::model::ContactFlowType) -> Self {
             self.contact_flow_type = Some(input);
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn set_contact_flow_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -10533,12 +10916,12 @@ pub mod contact_flow_summary {
             self.contact_flow_type = input;
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn contact_flow_state(mut self, input: crate::model::ContactFlowState) -> Self {
             self.contact_flow_state = Some(input);
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn set_contact_flow_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowState>,
@@ -10658,37 +11041,37 @@ impl AsRef<str> for ContactFlowType {
     }
 }
 
-/// <p>Contains summary information about a contact flow.</p>
+/// <p>Contains summary information about a flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowModuleSummary {
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of contact flow module.</p>
+    /// <p>The type of flow module.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowModuleState>,
 }
 impl ContactFlowModuleSummary {
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of contact flow module.</p>
+    /// <p>The type of flow module.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowModuleState> {
         self.state.as_ref()
     }
@@ -10715,42 +11098,42 @@ pub mod contact_flow_module_summary {
         pub(crate) state: std::option::Option<crate::model::ContactFlowModuleState>,
     }
     impl Builder {
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of contact flow module.</p>
+        /// <p>The type of flow module.</p>
         pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The type of contact flow module.</p>
+        /// <p>The type of flow module.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleState>,
@@ -13894,7 +14277,7 @@ pub struct Vocabulary {
     /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13932,7 +14315,7 @@ impl Vocabulary {
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14070,7 +14453,7 @@ pub mod vocabulary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -14081,7 +14464,7 @@ pub mod vocabulary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -14378,7 +14761,7 @@ pub struct HierarchyGroup {
     /// <p>Information about the levels in the hierarchy group.</p>
     #[doc(hidden)]
     pub hierarchy_path: std::option::Option<crate::model::HierarchyPath>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -14404,7 +14787,7 @@ impl HierarchyGroup {
     pub fn hierarchy_path(&self) -> std::option::Option<&crate::model::HierarchyPath> {
         self.hierarchy_path.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14497,7 +14880,7 @@ pub mod hierarchy_group {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -14508,7 +14891,7 @@ pub mod hierarchy_group {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -14987,7 +15370,7 @@ pub struct SecurityProfile {
     /// <p>The description of the security profile.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -15013,7 +15396,7 @@ impl SecurityProfile {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -15109,7 +15492,7 @@ pub mod security_profile {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15120,7 +15503,7 @@ pub mod security_profile {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15175,7 +15558,7 @@ pub struct RoutingProfile {
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
     #[doc(hidden)]
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -15209,7 +15592,7 @@ impl RoutingProfile {
     pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
         self.default_outbound_queue_id.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -15342,7 +15725,7 @@ pub mod routing_profile {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15353,7 +15736,7 @@ pub mod routing_profile {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15404,7 +15787,7 @@ pub struct QuickConnect {
     /// <p>Contains information about the quick connect.</p>
     #[doc(hidden)]
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -15430,7 +15813,7 @@ impl QuickConnect {
     pub fn quick_connect_config(&self) -> std::option::Option<&crate::model::QuickConnectConfig> {
         self.quick_connect_config.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -15529,7 +15912,7 @@ pub mod quick_connect {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15540,7 +15923,7 @@ pub mod quick_connect {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15598,7 +15981,7 @@ pub struct Queue {
     /// <p>The status of the queue.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::QueueStatus>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -15638,7 +16021,7 @@ impl Queue {
     pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
         self.status.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -15770,7 +16153,7 @@ pub mod queue {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15781,7 +16164,7 @@ pub mod queue {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15839,7 +16222,7 @@ pub struct ClaimedPhoneNumberSummary {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -15878,7 +16261,7 @@ impl ClaimedPhoneNumberSummary {
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16017,7 +16400,7 @@ pub mod claimed_phone_number_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -16028,7 +16411,7 @@ pub mod claimed_phone_number_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -16538,7 +16921,7 @@ pub struct HoursOfOperation {
     /// <p>Configuration information for the hours of operation.</p>
     #[doc(hidden)]
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -16568,7 +16951,7 @@ impl HoursOfOperation {
     pub fn config(&self) -> std::option::Option<&[crate::model::HoursOfOperationConfig]> {
         self.config.as_deref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16685,7 +17068,7 @@ pub mod hours_of_operation {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -16696,7 +17079,7 @@ pub mod hours_of_operation {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -16727,32 +17110,32 @@ impl HoursOfOperation {
     }
 }
 
-/// <p>Contains information about a contact flow module.</p>
+/// <p>Contains information about a flow module.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowModule {
     /// <p>The Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The content of the contact flow module.</p>
+    /// <p>The content of the flow module.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The description of the contact flow module.</p>
+    /// <p>The description of the flow module.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of contact flow module.</p>
+    /// <p>The type of flow module.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowModuleState>,
-    /// <p>The status of the contact flow module.</p>
+    /// <p>The status of the flow module.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ContactFlowModuleStatus>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -16762,31 +17145,31 @@ impl ContactFlowModule {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the contact flow module.</p>
+    /// <p>The name of the flow module.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The content of the contact flow module.</p>
+    /// <p>The content of the flow module.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The description of the contact flow module.</p>
+    /// <p>The description of the flow module.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of contact flow module.</p>
+    /// <p>The type of flow module.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowModuleState> {
         self.state.as_ref()
     }
-    /// <p>The status of the contact flow module.</p>
+    /// <p>The status of the flow module.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ContactFlowModuleStatus> {
         self.status.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16836,52 +17219,52 @@ pub mod contact_flow_module {
             self.arn = input;
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow module.</p>
+        /// <p>The name of the flow module.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the contact flow module.</p>
+        /// <p>The content of the flow module.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>The description of the contact flow module.</p>
+        /// <p>The description of the flow module.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow module.</p>
+        /// <p>The description of the flow module.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The type of contact flow module.</p>
+        /// <p>The type of flow module.</p>
         pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The type of contact flow module.</p>
+        /// <p>The type of flow module.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleState>,
@@ -16889,12 +17272,12 @@ pub mod contact_flow_module {
             self.state = input;
             self
         }
-        /// <p>The status of the contact flow module.</p>
+        /// <p>The status of the flow module.</p>
         pub fn status(mut self, input: crate::model::ContactFlowModuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the contact flow module.</p>
+        /// <p>The status of the flow module.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModuleStatus>,
@@ -16906,7 +17289,7 @@ pub mod contact_flow_module {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -16917,7 +17300,7 @@ pub mod contact_flow_module {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -17004,66 +17387,66 @@ impl AsRef<str> for ContactFlowModuleStatus {
     }
 }
 
-/// <p>Contains information about a contact flow.</p>
+/// <p>Contains information about a flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlow {
-    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ContactFlowState>,
-    /// <p>The description of the contact flow.</p>
+    /// <p>The description of the flow.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The content of the contact flow.</p>
+    /// <p>The content of the flow.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ContactFlow {
-    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the contact flow.</p>
+    /// <p>The name of the flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.r#type.as_ref()
     }
-    /// <p>The type of contact flow.</p>
+    /// <p>The type of flow.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowState> {
         self.state.as_ref()
     }
-    /// <p>The description of the contact flow.</p>
+    /// <p>The description of the flow.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The content of the contact flow.</p>
+    /// <p>The content of the flow.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -17103,42 +17486,42 @@ pub mod contact_flow {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>The name of the flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -17146,12 +17529,12 @@ pub mod contact_flow {
             self.r#type = input;
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn state(mut self, input: crate::model::ContactFlowState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The type of contact flow.</p>
+        /// <p>The type of flow.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContactFlowState>,
@@ -17159,22 +17542,22 @@ pub mod contact_flow {
             self.state = input;
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the contact flow.</p>
+        /// <p>The description of the flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The content of the contact flow.</p>
+        /// <p>The content of the flow.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the contact flow.</p>
+        /// <p>The content of the flow.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -17183,7 +17566,7 @@ pub mod contact_flow {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -17194,7 +17577,7 @@ pub mod contact_flow {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -17752,7 +18135,7 @@ pub struct AgentStatus {
     /// <p>The state of the agent status.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::AgentStatusState>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -17786,7 +18169,7 @@ impl AgentStatus {
     pub fn state(&self) -> std::option::Option<&crate::model::AgentStatusState> {
         self.state.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -17912,7 +18295,7 @@ pub mod agent_status {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -17923,7 +18306,7 @@ pub mod agent_status {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

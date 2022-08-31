@@ -1096,10 +1096,10 @@ impl Client {
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_user_arn): <p>The Amazon Resource Name for the registered user.</p>
-    ///   - [`experience_configuration(RegisteredUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::experience_configuration) / [`set_experience_configuration(Option<RegisteredUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_experience_configuration): <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+    ///   - [`experience_configuration(RegisteredUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::experience_configuration) / [`set_experience_configuration(Option<RegisteredUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_experience_configuration): <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
     ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     /// - On success, responds with [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput) with field(s):
-    ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::embed_url): <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+    ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::embed_url): <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<GenerateEmbedUrlForRegisteredUserError>`](crate::error::GenerateEmbedUrlForRegisteredUserError)
@@ -7698,7 +7698,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GenerateEmbedUrlForAnonymousUser`.
     ///
-    /// <p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p>
+    /// <p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or visual in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p>
     /// <p>The following rules apply to the generated URL:</p>
     /// <ul>
     /// <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li>
@@ -7934,7 +7934,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
         pub fn experience_configuration(
             mut self,
             input: crate::model::RegisteredUserEmbeddingExperienceConfiguration,
@@ -7942,7 +7942,7 @@ pub mod fluent_builders {
             self.inner = self.inner.experience_configuration(input);
             self
         }
-        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
         pub fn set_experience_configuration(
             mut self,
             input: std::option::Option<

@@ -229,6 +229,18 @@ impl Client {
     pub fn create_monitoring_subscription(&self) -> fluent_builders::CreateMonitoringSubscription {
         fluent_builders::CreateMonitoringSubscription::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateOriginAccessControl`](crate::client::fluent_builders::CreateOriginAccessControl) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`origin_access_control_config(OriginAccessControlConfig)`](crate::client::fluent_builders::CreateOriginAccessControl::origin_access_control_config) / [`set_origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::client::fluent_builders::CreateOriginAccessControl::set_origin_access_control_config): <p>Contains the origin access control.</p>
+    /// - On success, responds with [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput) with field(s):
+    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::CreateOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateOriginAccessControlOutput::location): <p>The URL of the origin access control.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::CreateOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
+    /// - On failure, responds with [`SdkError<CreateOriginAccessControlError>`](crate::error::CreateOriginAccessControlError)
+    pub fn create_origin_access_control(&self) -> fluent_builders::CreateOriginAccessControl {
+        fluent_builders::CreateOriginAccessControl::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateOriginRequestPolicy`](crate::client::fluent_builders::CreateOriginRequestPolicy) operation.
     ///
     /// - The fluent builder is configurable:
@@ -396,6 +408,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteMonitoringSubscriptionError>`](crate::error::DeleteMonitoringSubscriptionError)
     pub fn delete_monitoring_subscription(&self) -> fluent_builders::DeleteMonitoringSubscription {
         fluent_builders::DeleteMonitoringSubscription::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteOriginAccessControl`](crate::client::fluent_builders::DeleteOriginAccessControl) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::set_id): <p>The unique identifier of the origin access control that you are deleting.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::set_if_match): <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
+    /// - On success, responds with [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOriginAccessControlError>`](crate::error::DeleteOriginAccessControlError)
+    pub fn delete_origin_access_control(&self) -> fluent_builders::DeleteOriginAccessControl {
+        fluent_builders::DeleteOriginAccessControl::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteOriginRequestPolicy`](crate::client::fluent_builders::DeleteOriginRequestPolicy) operation.
     ///
@@ -639,6 +662,30 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetMonitoringSubscriptionError>`](crate::error::GetMonitoringSubscriptionError)
     pub fn get_monitoring_subscription(&self) -> fluent_builders::GetMonitoringSubscription {
         fluent_builders::GetMonitoringSubscription::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetOriginAccessControl`](crate::client::fluent_builders::GetOriginAccessControl) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginAccessControl::set_id): <p>The unique identifier of the origin access control.</p>
+    /// - On success, responds with [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput) with field(s):
+    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::GetOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
+    /// - On failure, responds with [`SdkError<GetOriginAccessControlError>`](crate::error::GetOriginAccessControlError)
+    pub fn get_origin_access_control(&self) -> fluent_builders::GetOriginAccessControl {
+        fluent_builders::GetOriginAccessControl::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetOriginAccessControlConfig`](crate::client::fluent_builders::GetOriginAccessControlConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginAccessControlConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginAccessControlConfig::set_id): <p>The unique identifier of the origin access control.</p>
+    /// - On success, responds with [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput) with field(s):
+    ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::output::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlConfigOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
+    /// - On failure, responds with [`SdkError<GetOriginAccessControlConfigError>`](crate::error::GetOriginAccessControlConfigError)
+    pub fn get_origin_access_control_config(
+        &self,
+    ) -> fluent_builders::GetOriginAccessControlConfig {
+        fluent_builders::GetOriginAccessControlConfig::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetOriginRequestPolicy`](crate::client::fluent_builders::GetOriginRequestPolicy) operation.
     ///
@@ -939,6 +986,17 @@ impl Client {
     pub fn list_key_groups(&self) -> fluent_builders::ListKeyGroups {
         fluent_builders::ListKeyGroups::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListOriginAccessControls`](crate::client::fluent_builders::ListOriginAccessControls) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOriginAccessControls::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOriginAccessControls::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOriginAccessControls::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOriginAccessControls::set_max_items): <p>The maximum number of origin access controls that you want in the response.</p>
+    /// - On success, responds with [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput) with field(s):
+    ///   - [`origin_access_control_list(Option<OriginAccessControlList>)`](crate::output::ListOriginAccessControlsOutput::origin_access_control_list): <p>A list of origin access controls.</p>
+    /// - On failure, responds with [`SdkError<ListOriginAccessControlsError>`](crate::error::ListOriginAccessControlsError)
+    pub fn list_origin_access_controls(&self) -> fluent_builders::ListOriginAccessControls {
+        fluent_builders::ListOriginAccessControls::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListOriginRequestPolicies`](crate::client::fluent_builders::ListOriginRequestPolicies) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1150,6 +1208,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateKeyGroupError>`](crate::error::UpdateKeyGroupError)
     pub fn update_key_group(&self) -> fluent_builders::UpdateKeyGroup {
         fluent_builders::UpdateKeyGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateOriginAccessControl`](crate::client::fluent_builders::UpdateOriginAccessControl) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`origin_access_control_config(OriginAccessControlConfig)`](crate::client::fluent_builders::UpdateOriginAccessControl::origin_access_control_config) / [`set_origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::client::fluent_builders::UpdateOriginAccessControl::set_origin_access_control_config): <p>An origin access control.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::set_id): <p>The unique identifier of the origin access control that you are updating.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::set_if_match): <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
+    /// - On success, responds with [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput) with field(s):
+    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::UpdateOriginAccessControlOutput::origin_access_control): <p>The origin access control after it has been updated.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::UpdateOriginAccessControlOutput::e_tag): <p>The new version of the origin access control after it has been updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateOriginAccessControlError>`](crate::error::UpdateOriginAccessControlError)
+    pub fn update_origin_access_control(&self) -> fluent_builders::UpdateOriginAccessControl {
+        fluent_builders::UpdateOriginAccessControl::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateOriginRequestPolicy`](crate::client::fluent_builders::UpdateOriginRequestPolicy) operation.
     ///
@@ -1932,6 +2003,67 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::MonitoringSubscription>,
         ) -> Self {
             self.inner = self.inner.set_monitoring_subscription(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateOriginAccessControl`.
+    ///
+    /// <p>Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.</p>
+    /// <p>For an Amazon S3 origin, this makes it possible to block public access to the Amazon S3 bucket so that viewers (users) can access the content in the bucket only through CloudFront.</p>
+    /// <p>For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateOriginAccessControl {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_origin_access_control_input::Builder,
+    }
+    impl CreateOriginAccessControl {
+        /// Creates a new `CreateOriginAccessControl`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateOriginAccessControlOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Contains the origin access control.</p>
+        pub fn origin_access_control_config(
+            mut self,
+            input: crate::model::OriginAccessControlConfig,
+        ) -> Self {
+            self.inner = self.inner.origin_access_control_config(input);
+            self
+        }
+        /// <p>Contains the origin access control.</p>
+        pub fn set_origin_access_control_config(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_origin_access_control_config(input);
             self
         }
     }
@@ -2844,6 +2976,70 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_distribution_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteOriginAccessControl`.
+    ///
+    /// <p>Deletes a CloudFront origin access control.</p>
+    /// <p>You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin access control from all origins, then delete the origin access control.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteOriginAccessControl {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_origin_access_control_input::Builder,
+    }
+    impl DeleteOriginAccessControl {
+        /// Creates a new `DeleteOriginAccessControl`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteOriginAccessControlOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the origin access control that you are deleting.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the origin access control that you are deleting.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
             self
         }
     }
@@ -4085,6 +4281,112 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_distribution_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetOriginAccessControl`.
+    ///
+    /// <p>Gets a CloudFront origin access control.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetOriginAccessControl {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_origin_access_control_input::Builder,
+    }
+    impl GetOriginAccessControl {
+        /// Creates a new `GetOriginAccessControl`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetOriginAccessControlOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetOriginAccessControlConfig`.
+    ///
+    /// <p>Gets a CloudFront origin access control.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetOriginAccessControlConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_origin_access_control_config_input::Builder,
+    }
+    impl GetOriginAccessControlConfig {
+        /// Creates a new `GetOriginAccessControlConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetOriginAccessControlConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -5733,6 +6035,70 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListOriginAccessControls`.
+    ///
+    /// <p>Gets the list of CloudFront origin access controls in this Amazon Web Services account.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send another request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the next request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListOriginAccessControls {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_origin_access_controls_input::Builder,
+    }
+    impl ListOriginAccessControls {
+        /// Creates a new `ListOriginAccessControls`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListOriginAccessControlsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of origin access controls that you want in the response.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
+            self
+        }
+        /// <p>The maximum number of origin access controls that you want in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListOriginRequestPolicies`.
     ///
     /// <p>Gets a list of origin request policies.</p>
@@ -7029,6 +7395,85 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateOriginAccessControl`.
+    ///
+    /// <p>Updates a CloudFront origin access control.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateOriginAccessControl {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_origin_access_control_input::Builder,
+    }
+    impl UpdateOriginAccessControl {
+        /// Creates a new `UpdateOriginAccessControl`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateOriginAccessControlOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An origin access control.</p>
+        pub fn origin_access_control_config(
+            mut self,
+            input: crate::model::OriginAccessControlConfig,
+        ) -> Self {
+            self.inner = self.inner.origin_access_control_config(input);
+            self
+        }
+        /// <p>An origin access control.</p>
+        pub fn set_origin_access_control_config(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_origin_access_control_config(input);
+            self
+        }
+        /// <p>The unique identifier of the origin access control that you are updating.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the origin access control that you are updating.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
+            self
+        }
+        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
             self

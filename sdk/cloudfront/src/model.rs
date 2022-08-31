@@ -1262,14 +1262,14 @@ pub struct ResponseHeadersPolicyConfig {
     #[doc(hidden)]
     pub security_headers_config:
         std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
-    /// <p>A configuration for a set of custom HTTP response headers.</p>
-    #[doc(hidden)]
-    pub custom_headers_config:
-        std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
     #[doc(hidden)]
     pub server_timing_headers_config:
         std::option::Option<crate::model::ResponseHeadersPolicyServerTimingHeadersConfig>,
+    /// <p>A configuration for a set of custom HTTP response headers.</p>
+    #[doc(hidden)]
+    pub custom_headers_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
 }
 impl ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
@@ -1294,17 +1294,17 @@ impl ResponseHeadersPolicyConfig {
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicySecurityHeadersConfig> {
         self.security_headers_config.as_ref()
     }
-    /// <p>A configuration for a set of custom HTTP response headers.</p>
-    pub fn custom_headers_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyCustomHeadersConfig> {
-        self.custom_headers_config.as_ref()
-    }
     /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
     pub fn server_timing_headers_config(
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyServerTimingHeadersConfig> {
         self.server_timing_headers_config.as_ref()
+    }
+    /// <p>A configuration for a set of custom HTTP response headers.</p>
+    pub fn custom_headers_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyCustomHeadersConfig> {
+        self.custom_headers_config.as_ref()
     }
 }
 impl std::fmt::Debug for ResponseHeadersPolicyConfig {
@@ -1314,11 +1314,11 @@ impl std::fmt::Debug for ResponseHeadersPolicyConfig {
         formatter.field("name", &self.name);
         formatter.field("cors_config", &self.cors_config);
         formatter.field("security_headers_config", &self.security_headers_config);
-        formatter.field("custom_headers_config", &self.custom_headers_config);
         formatter.field(
             "server_timing_headers_config",
             &self.server_timing_headers_config,
         );
+        formatter.field("custom_headers_config", &self.custom_headers_config);
         formatter.finish()
     }
 }
@@ -1333,10 +1333,10 @@ pub mod response_headers_policy_config {
         pub(crate) cors_config: std::option::Option<crate::model::ResponseHeadersPolicyCorsConfig>,
         pub(crate) security_headers_config:
             std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
-        pub(crate) custom_headers_config:
-            std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
         pub(crate) server_timing_headers_config:
             std::option::Option<crate::model::ResponseHeadersPolicyServerTimingHeadersConfig>,
+        pub(crate) custom_headers_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
     }
     impl Builder {
         /// <p>A comment to describe the response headers policy.</p>
@@ -1392,22 +1392,6 @@ pub mod response_headers_policy_config {
             self.security_headers_config = input;
             self
         }
-        /// <p>A configuration for a set of custom HTTP response headers.</p>
-        pub fn custom_headers_config(
-            mut self,
-            input: crate::model::ResponseHeadersPolicyCustomHeadersConfig,
-        ) -> Self {
-            self.custom_headers_config = Some(input);
-            self
-        }
-        /// <p>A configuration for a set of custom HTTP response headers.</p>
-        pub fn set_custom_headers_config(
-            mut self,
-            input: std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
-        ) -> Self {
-            self.custom_headers_config = input;
-            self
-        }
         /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront.</p>
         pub fn server_timing_headers_config(
             mut self,
@@ -1426,6 +1410,22 @@ pub mod response_headers_policy_config {
             self.server_timing_headers_config = input;
             self
         }
+        /// <p>A configuration for a set of custom HTTP response headers.</p>
+        pub fn custom_headers_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyCustomHeadersConfig,
+        ) -> Self {
+            self.custom_headers_config = Some(input);
+            self
+        }
+        /// <p>A configuration for a set of custom HTTP response headers.</p>
+        pub fn set_custom_headers_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
+        ) -> Self {
+            self.custom_headers_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
         pub fn build(self) -> crate::model::ResponseHeadersPolicyConfig {
             crate::model::ResponseHeadersPolicyConfig {
@@ -1433,8 +1433,8 @@ pub mod response_headers_policy_config {
                 name: self.name,
                 cors_config: self.cors_config,
                 security_headers_config: self.security_headers_config,
-                custom_headers_config: self.custom_headers_config,
                 server_timing_headers_config: self.server_timing_headers_config,
+                custom_headers_config: self.custom_headers_config,
             }
         }
     }
@@ -1443,83 +1443,6 @@ impl ResponseHeadersPolicyConfig {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
     pub fn builder() -> crate::model::response_headers_policy_config::Builder {
         crate::model::response_headers_policy_config::Builder::default()
-    }
-}
-
-/// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-/// <p>You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header">Server-Timing header</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
-    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-    #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
-    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
-    #[doc(hidden)]
-    pub sampling_rate: std::option::Option<f64>,
-}
-impl ResponseHeadersPolicyServerTimingHeadersConfig {
-    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
-        self.enabled
-    }
-    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
-    pub fn sampling_rate(&self) -> std::option::Option<f64> {
-        self.sampling_rate
-    }
-}
-impl std::fmt::Debug for ResponseHeadersPolicyServerTimingHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyServerTimingHeadersConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.finish()
-    }
-}
-/// See [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
-pub mod response_headers_policy_server_timing_headers_config {
-
-    /// A builder for [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) sampling_rate: std::option::Option<f64>,
-    }
-    impl Builder {
-        /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-        pub fn enabled(mut self, input: bool) -> Self {
-            self.enabled = Some(input);
-            self
-        }
-        /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
-        }
-        /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
-        pub fn sampling_rate(mut self, input: f64) -> Self {
-            self.sampling_rate = Some(input);
-            self
-        }
-        /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
-        pub fn set_sampling_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.sampling_rate = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
-        pub fn build(self) -> crate::model::ResponseHeadersPolicyServerTimingHeadersConfig {
-            crate::model::ResponseHeadersPolicyServerTimingHeadersConfig {
-                enabled: self.enabled,
-                sampling_rate: self.sampling_rate,
-            }
-        }
-    }
-}
-impl ResponseHeadersPolicyServerTimingHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
-    pub fn builder() -> crate::model::response_headers_policy_server_timing_headers_config::Builder
-    {
-        crate::model::response_headers_policy_server_timing_headers_config::Builder::default()
     }
 }
 
@@ -1702,6 +1625,83 @@ impl ResponseHeadersPolicyCustomHeader {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
     pub fn builder() -> crate::model::response_headers_policy_custom_header::Builder {
         crate::model::response_headers_policy_custom_header::Builder::default()
+    }
+}
+
+/// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+/// <p>You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header">Server-Timing header</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    #[doc(hidden)]
+    pub enabled: std::option::Option<bool>,
+    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+    #[doc(hidden)]
+    pub sampling_rate: std::option::Option<f64>,
+}
+impl ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+    pub fn sampling_rate(&self) -> std::option::Option<f64> {
+        self.sampling_rate
+    }
+}
+impl std::fmt::Debug for ResponseHeadersPolicyServerTimingHeadersConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyServerTimingHeadersConfig");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("sampling_rate", &self.sampling_rate);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
+pub mod response_headers_policy_server_timing_headers_config {
+
+    /// A builder for [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) sampling_rate: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+        pub fn sampling_rate(mut self, input: f64) -> Self {
+            self.sampling_rate = Some(input);
+            self
+        }
+        /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+        pub fn set_sampling_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.sampling_rate = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyServerTimingHeadersConfig {
+            crate::model::ResponseHeadersPolicyServerTimingHeadersConfig {
+                enabled: self.enabled,
+                sampling_rate: self.sampling_rate,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
+    pub fn builder() -> crate::model::response_headers_policy_server_timing_headers_config::Builder
+    {
+        crate::model::response_headers_policy_server_timing_headers_config::Builder::default()
     }
 }
 
@@ -5015,6 +5015,444 @@ impl AsRef<str> for OriginRequestPolicyHeaderBehavior {
     }
 }
 
+/// <p>A CloudFront origin access control.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OriginAccessControl {
+    /// <p>The unique identifier of the origin access control.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The origin access control.</p>
+    #[doc(hidden)]
+    pub origin_access_control_config: std::option::Option<crate::model::OriginAccessControlConfig>,
+}
+impl OriginAccessControl {
+    /// <p>The unique identifier of the origin access control.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The origin access control.</p>
+    pub fn origin_access_control_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlConfig> {
+        self.origin_access_control_config.as_ref()
+    }
+}
+impl std::fmt::Debug for OriginAccessControl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OriginAccessControl");
+        formatter.field("id", &self.id);
+        formatter.field(
+            "origin_access_control_config",
+            &self.origin_access_control_config,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OriginAccessControl`](crate::model::OriginAccessControl).
+pub mod origin_access_control {
+
+    /// A builder for [`OriginAccessControl`](crate::model::OriginAccessControl).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) origin_access_control_config:
+            std::option::Option<crate::model::OriginAccessControlConfig>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The origin access control.</p>
+        pub fn origin_access_control_config(
+            mut self,
+            input: crate::model::OriginAccessControlConfig,
+        ) -> Self {
+            self.origin_access_control_config = Some(input);
+            self
+        }
+        /// <p>The origin access control.</p>
+        pub fn set_origin_access_control_config(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlConfig>,
+        ) -> Self {
+            self.origin_access_control_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OriginAccessControl`](crate::model::OriginAccessControl).
+        pub fn build(self) -> crate::model::OriginAccessControl {
+            crate::model::OriginAccessControl {
+                id: self.id,
+                origin_access_control_config: self.origin_access_control_config,
+            }
+        }
+    }
+}
+impl OriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControl`](crate::model::OriginAccessControl).
+    pub fn builder() -> crate::model::origin_access_control::Builder {
+        crate::model::origin_access_control::Builder::default()
+    }
+}
+
+/// <p>A CloudFront origin access control.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OriginAccessControlConfig {
+    /// <p>A name to identify the origin access control.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the origin access control.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    #[doc(hidden)]
+    pub signing_protocol: std::option::Option<crate::model::OriginAccessControlSigningProtocols>,
+    /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>This field can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if one exists.</p> </li>
+    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests. This value turns off origin access control for all origins in all distributions that use this origin access control.</p> </li>
+    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin request policy</a> for all cache behaviors that use origins associated with this origin access control.</b> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub signing_behavior: std::option::Option<crate::model::OriginAccessControlSigningBehaviors>,
+    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    #[doc(hidden)]
+    pub origin_access_control_origin_type:
+        std::option::Option<crate::model::OriginAccessControlOriginTypes>,
+}
+impl OriginAccessControlConfig {
+    /// <p>A name to identify the origin access control.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the origin access control.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    pub fn signing_protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlSigningProtocols> {
+        self.signing_protocol.as_ref()
+    }
+    /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>This field can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if one exists.</p> </li>
+    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests. This value turns off origin access control for all origins in all distributions that use this origin access control.</p> </li>
+    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin request policy</a> for all cache behaviors that use origins associated with this origin access control.</b> </p> </li>
+    /// </ul>
+    pub fn signing_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlSigningBehaviors> {
+        self.signing_behavior.as_ref()
+    }
+    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    pub fn origin_access_control_origin_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlOriginTypes> {
+        self.origin_access_control_origin_type.as_ref()
+    }
+}
+impl std::fmt::Debug for OriginAccessControlConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OriginAccessControlConfig");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("signing_protocol", &self.signing_protocol);
+        formatter.field("signing_behavior", &self.signing_behavior);
+        formatter.field(
+            "origin_access_control_origin_type",
+            &self.origin_access_control_origin_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
+pub mod origin_access_control_config {
+
+    /// A builder for [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) signing_protocol:
+            std::option::Option<crate::model::OriginAccessControlSigningProtocols>,
+        pub(crate) signing_behavior:
+            std::option::Option<crate::model::OriginAccessControlSigningBehaviors>,
+        pub(crate) origin_access_control_origin_type:
+            std::option::Option<crate::model::OriginAccessControlOriginTypes>,
+    }
+    impl Builder {
+        /// <p>A name to identify the origin access control.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name to identify the origin access control.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the origin access control.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the origin access control.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+        pub fn signing_protocol(
+            mut self,
+            input: crate::model::OriginAccessControlSigningProtocols,
+        ) -> Self {
+            self.signing_protocol = Some(input);
+            self
+        }
+        /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+        pub fn set_signing_protocol(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlSigningProtocols>,
+        ) -> Self {
+            self.signing_protocol = input;
+            self
+        }
+        /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>This field can have one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if one exists.</p> </li>
+        /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests. This value turns off origin access control for all origins in all distributions that use this origin access control.</p> </li>
+        /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin request policy</a> for all cache behaviors that use origins associated with this origin access control.</b> </p> </li>
+        /// </ul>
+        pub fn signing_behavior(
+            mut self,
+            input: crate::model::OriginAccessControlSigningBehaviors,
+        ) -> Self {
+            self.signing_behavior = Some(input);
+            self
+        }
+        /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>This field can have one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if one exists.</p> </li>
+        /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests. This value turns off origin access control for all origins in all distributions that use this origin access control.</p> </li>
+        /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin request policy</a> for all cache behaviors that use origins associated with this origin access control.</b> </p> </li>
+        /// </ul>
+        pub fn set_signing_behavior(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlSigningBehaviors>,
+        ) -> Self {
+            self.signing_behavior = input;
+            self
+        }
+        /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+        pub fn origin_access_control_origin_type(
+            mut self,
+            input: crate::model::OriginAccessControlOriginTypes,
+        ) -> Self {
+            self.origin_access_control_origin_type = Some(input);
+            self
+        }
+        /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+        pub fn set_origin_access_control_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlOriginTypes>,
+        ) -> Self {
+            self.origin_access_control_origin_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
+        pub fn build(self) -> crate::model::OriginAccessControlConfig {
+            crate::model::OriginAccessControlConfig {
+                name: self.name,
+                description: self.description,
+                signing_protocol: self.signing_protocol,
+                signing_behavior: self.signing_behavior,
+                origin_access_control_origin_type: self.origin_access_control_origin_type,
+            }
+        }
+    }
+}
+impl OriginAccessControlConfig {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
+    pub fn builder() -> crate::model::origin_access_control_config::Builder {
+        crate::model::origin_access_control_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OriginAccessControlOriginTypes {
+    #[allow(missing_docs)] // documentation missing in model
+    S3,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OriginAccessControlOriginTypes {
+    fn from(s: &str) -> Self {
+        match s {
+            "s3" => OriginAccessControlOriginTypes::S3,
+            other => OriginAccessControlOriginTypes::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OriginAccessControlOriginTypes {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OriginAccessControlOriginTypes::from(s))
+    }
+}
+impl OriginAccessControlOriginTypes {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OriginAccessControlOriginTypes::S3 => "s3",
+            OriginAccessControlOriginTypes::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["s3"]
+    }
+}
+impl AsRef<str> for OriginAccessControlOriginTypes {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OriginAccessControlSigningBehaviors {
+    #[allow(missing_docs)] // documentation missing in model
+    Always,
+    #[allow(missing_docs)] // documentation missing in model
+    Never,
+    #[allow(missing_docs)] // documentation missing in model
+    NoOverride,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OriginAccessControlSigningBehaviors {
+    fn from(s: &str) -> Self {
+        match s {
+            "always" => OriginAccessControlSigningBehaviors::Always,
+            "never" => OriginAccessControlSigningBehaviors::Never,
+            "no-override" => OriginAccessControlSigningBehaviors::NoOverride,
+            other => OriginAccessControlSigningBehaviors::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OriginAccessControlSigningBehaviors {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OriginAccessControlSigningBehaviors::from(s))
+    }
+}
+impl OriginAccessControlSigningBehaviors {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OriginAccessControlSigningBehaviors::Always => "always",
+            OriginAccessControlSigningBehaviors::Never => "never",
+            OriginAccessControlSigningBehaviors::NoOverride => "no-override",
+            OriginAccessControlSigningBehaviors::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["always", "never", "no-override"]
+    }
+}
+impl AsRef<str> for OriginAccessControlSigningBehaviors {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OriginAccessControlSigningProtocols {
+    #[allow(missing_docs)] // documentation missing in model
+    Sigv4,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OriginAccessControlSigningProtocols {
+    fn from(s: &str) -> Self {
+        match s {
+            "sigv4" => OriginAccessControlSigningProtocols::Sigv4,
+            other => OriginAccessControlSigningProtocols::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OriginAccessControlSigningProtocols {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OriginAccessControlSigningProtocols::from(s))
+    }
+}
+impl OriginAccessControlSigningProtocols {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OriginAccessControlSigningProtocols::Sigv4 => "sigv4",
+            OriginAccessControlSigningProtocols::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["sigv4"]
+    }
+}
+impl AsRef<str> for OriginAccessControlSigningProtocols {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A key group.</p>
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
@@ -7482,9 +7920,9 @@ pub struct DistributionConfig {
     /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, CloudFront responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer Guide</a>. </p>
     #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
-    /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and must support Server Name Identification (SNI).</p>
-    /// <p>In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. You can improve performance by optimizing for HTTP/2. For more information, do an Internet search for "http/2 optimization." </p>
+    /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
+    /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
+    /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
     #[doc(hidden)]
     pub http_version: std::option::Option<crate::model::HttpVersion>,
     /// <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second request, for an IPv4 address for your distribution. </p>
@@ -7580,9 +8018,9 @@ impl DistributionConfig {
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
-    /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
-    /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and must support Server Name Identification (SNI).</p>
-    /// <p>In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. You can improve performance by optimizing for HTTP/2. For more information, do an Internet search for "http/2 optimization." </p>
+    /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
+    /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
+    /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
     pub fn http_version(&self) -> std::option::Option<&crate::model::HttpVersion> {
         self.http_version.as_ref()
     }
@@ -7859,16 +8297,16 @@ pub mod distribution_config {
             self.web_acl_id = input;
             self
         }
-        /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
-        /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and must support Server Name Identification (SNI).</p>
-        /// <p>In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. You can improve performance by optimizing for HTTP/2. For more information, do an Internet search for "http/2 optimization." </p>
+        /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
+        /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
+        /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
         pub fn http_version(mut self, input: crate::model::HttpVersion) -> Self {
             self.http_version = Some(input);
             self
         }
-        /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
-        /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and must support Server Name Identification (SNI).</p>
-        /// <p>In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency. You can improve performance by optimizing for HTTP/2. For more information, do an Internet search for "http/2 optimization." </p>
+        /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
+        /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
+        /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
         pub fn set_http_version(
             mut self,
             input: std::option::Option<crate::model::HttpVersion>,
@@ -7949,6 +8387,10 @@ pub enum HttpVersion {
     Http11,
     #[allow(missing_docs)] // documentation missing in model
     Http2,
+    #[allow(missing_docs)] // documentation missing in model
+    Http2and3,
+    #[allow(missing_docs)] // documentation missing in model
+    Http3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -7957,6 +8399,8 @@ impl std::convert::From<&str> for HttpVersion {
         match s {
             "http1.1" => HttpVersion::Http11,
             "http2" => HttpVersion::Http2,
+            "http2and3" => HttpVersion::Http2and3,
+            "http3" => HttpVersion::Http3,
             other => HttpVersion::Unknown(other.to_owned()),
         }
     }
@@ -7974,12 +8418,14 @@ impl HttpVersion {
         match self {
             HttpVersion::Http11 => "http1.1",
             HttpVersion::Http2 => "http2",
+            HttpVersion::Http2and3 => "http2and3",
+            HttpVersion::Http3 => "http3",
             HttpVersion::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["http1.1", "http2"]
+        &["http1.1", "http2", "http2and3", "http3"]
     }
 }
 impl AsRef<str> for HttpVersion {
@@ -12434,6 +12880,10 @@ pub struct Origin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
     pub origin_shield: std::option::Option<crate::model::OriginShield>,
+    /// <p>The unique identifier of an origin access control for this origin.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub origin_access_control_id: std::option::Option<std::string::String>,
 }
 impl Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
@@ -12480,6 +12930,11 @@ impl Origin {
     pub fn origin_shield(&self) -> std::option::Option<&crate::model::OriginShield> {
         self.origin_shield.as_ref()
     }
+    /// <p>The unique identifier of an origin access control for this origin.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_access_control_id(&self) -> std::option::Option<&str> {
+        self.origin_access_control_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Origin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12493,6 +12948,7 @@ impl std::fmt::Debug for Origin {
         formatter.field("connection_attempts", &self.connection_attempts);
         formatter.field("connection_timeout", &self.connection_timeout);
         formatter.field("origin_shield", &self.origin_shield);
+        formatter.field("origin_access_control_id", &self.origin_access_control_id);
         formatter.finish()
     }
 }
@@ -12511,6 +12967,7 @@ pub mod origin {
         pub(crate) connection_attempts: std::option::Option<i32>,
         pub(crate) connection_timeout: std::option::Option<i32>,
         pub(crate) origin_shield: std::option::Option<crate::model::OriginShield>,
+        pub(crate) origin_access_control_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
@@ -12631,6 +13088,21 @@ pub mod origin {
             self.origin_shield = input;
             self
         }
+        /// <p>The unique identifier of an origin access control for this origin.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        pub fn origin_access_control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.origin_access_control_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of an origin access control for this origin.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        pub fn set_origin_access_control_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.origin_access_control_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Origin`](crate::model::Origin).
         pub fn build(self) -> crate::model::Origin {
             crate::model::Origin {
@@ -12643,6 +13115,7 @@ pub mod origin {
                 connection_attempts: self.connection_attempts,
                 connection_timeout: self.connection_timeout,
                 origin_shield: self.origin_shield,
+                origin_access_control_id: self.origin_access_control_id,
             }
         }
     }
@@ -16515,6 +16988,377 @@ impl OriginRequestPolicyType {
 impl AsRef<str> for OriginRequestPolicyType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>A list of CloudFront origin access controls.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OriginAccessControlList {
+    /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
+    #[doc(hidden)]
+    pub next_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of origin access controls requested.</p>
+    #[doc(hidden)]
+    pub max_items: std::option::Option<i32>,
+    /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
+    #[doc(hidden)]
+    pub is_truncated: std::option::Option<bool>,
+    /// <p>The number of origin access controls returned in the response.</p>
+    #[doc(hidden)]
+    pub quantity: std::option::Option<i32>,
+    /// <p>Contains the origin access controls in the list.</p>
+    #[doc(hidden)]
+    pub items: std::option::Option<std::vec::Vec<crate::model::OriginAccessControlSummary>>,
+}
+impl OriginAccessControlList {
+    /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The maximum number of origin access controls requested.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
+    pub fn is_truncated(&self) -> std::option::Option<bool> {
+        self.is_truncated
+    }
+    /// <p>The number of origin access controls returned in the response.</p>
+    pub fn quantity(&self) -> std::option::Option<i32> {
+        self.quantity
+    }
+    /// <p>Contains the origin access controls in the list.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::OriginAccessControlSummary]> {
+        self.items.as_deref()
+    }
+}
+impl std::fmt::Debug for OriginAccessControlList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OriginAccessControlList");
+        formatter.field("marker", &self.marker);
+        formatter.field("next_marker", &self.next_marker);
+        formatter.field("max_items", &self.max_items);
+        formatter.field("is_truncated", &self.is_truncated);
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`OriginAccessControlList`](crate::model::OriginAccessControlList).
+pub mod origin_access_control_list {
+
+    /// A builder for [`OriginAccessControlList`](crate::model::OriginAccessControlList).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+        pub(crate) is_truncated: std::option::Option<bool>,
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items:
+            std::option::Option<std::vec::Vec<crate::model::OriginAccessControlSummary>>,
+    }
+    impl Builder {
+        /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// <p>The maximum number of origin access controls requested.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        /// <p>The maximum number of origin access controls requested.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
+            self
+        }
+        /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
+            self
+        }
+        /// <p>The number of origin access controls returned in the response.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of origin access controls returned in the response.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the origin access controls in the list.</p>
+        pub fn items(mut self, input: crate::model::OriginAccessControlSummary) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Contains the origin access controls in the list.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OriginAccessControlSummary>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OriginAccessControlList`](crate::model::OriginAccessControlList).
+        pub fn build(self) -> crate::model::OriginAccessControlList {
+            crate::model::OriginAccessControlList {
+                marker: self.marker,
+                next_marker: self.next_marker,
+                max_items: self.max_items,
+                is_truncated: self.is_truncated,
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl OriginAccessControlList {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControlList`](crate::model::OriginAccessControlList).
+    pub fn builder() -> crate::model::origin_access_control_list::Builder {
+        crate::model::origin_access_control_list::Builder::default()
+    }
+}
+
+/// <p>A CloudFront origin access control.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OriginAccessControlSummary {
+    /// <p>The unique identifier of the origin access control.</p>
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A description of the origin access control.</p>
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A unique name that identifies the origin access control.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    #[doc(hidden)]
+    pub signing_protocol: std::option::Option<crate::model::OriginAccessControlSigningProtocols>,
+    /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
+    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
+    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub signing_behavior: std::option::Option<crate::model::OriginAccessControlSigningBehaviors>,
+    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    #[doc(hidden)]
+    pub origin_access_control_origin_type:
+        std::option::Option<crate::model::OriginAccessControlOriginTypes>,
+}
+impl OriginAccessControlSummary {
+    /// <p>The unique identifier of the origin access control.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A description of the origin access control.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique name that identifies the origin access control.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    pub fn signing_protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlSigningProtocols> {
+        self.signing_protocol.as_ref()
+    }
+    /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
+    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
+    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// </ul>
+    pub fn signing_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlSigningBehaviors> {
+        self.signing_behavior.as_ref()
+    }
+    /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+    pub fn origin_access_control_origin_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlOriginTypes> {
+        self.origin_access_control_origin_type.as_ref()
+    }
+}
+impl std::fmt::Debug for OriginAccessControlSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OriginAccessControlSummary");
+        formatter.field("id", &self.id);
+        formatter.field("description", &self.description);
+        formatter.field("name", &self.name);
+        formatter.field("signing_protocol", &self.signing_protocol);
+        formatter.field("signing_behavior", &self.signing_behavior);
+        formatter.field(
+            "origin_access_control_origin_type",
+            &self.origin_access_control_origin_type,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
+pub mod origin_access_control_summary {
+
+    /// A builder for [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) signing_protocol:
+            std::option::Option<crate::model::OriginAccessControlSigningProtocols>,
+        pub(crate) signing_behavior:
+            std::option::Option<crate::model::OriginAccessControlSigningBehaviors>,
+        pub(crate) origin_access_control_origin_type:
+            std::option::Option<crate::model::OriginAccessControlOriginTypes>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the origin access control.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A description of the origin access control.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the origin access control.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A unique name that identifies the origin access control.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique name that identifies the origin access control.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+        pub fn signing_protocol(
+            mut self,
+            input: crate::model::OriginAccessControlSigningProtocols,
+        ) -> Self {
+            self.signing_protocol = Some(input);
+            self
+        }
+        /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+        pub fn set_signing_protocol(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlSigningProtocols>,
+        ) -> Self {
+            self.signing_protocol = input;
+            self
+        }
+        /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
+        /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
+        /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+        /// </ul>
+        pub fn signing_behavior(
+            mut self,
+            input: crate::model::OriginAccessControlSigningBehaviors,
+        ) -> Self {
+            self.signing_behavior = Some(input);
+            self
+        }
+        /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
+        /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
+        /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+        /// </ul>
+        pub fn set_signing_behavior(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlSigningBehaviors>,
+        ) -> Self {
+            self.signing_behavior = input;
+            self
+        }
+        /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+        pub fn origin_access_control_origin_type(
+            mut self,
+            input: crate::model::OriginAccessControlOriginTypes,
+        ) -> Self {
+            self.origin_access_control_origin_type = Some(input);
+            self
+        }
+        /// <p>The type of origin that this origin access control is for. The only valid value is <code>s3</code>.</p>
+        pub fn set_origin_access_control_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlOriginTypes>,
+        ) -> Self {
+            self.origin_access_control_origin_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
+        pub fn build(self) -> crate::model::OriginAccessControlSummary {
+            crate::model::OriginAccessControlSummary {
+                id: self.id,
+                description: self.description,
+                name: self.name,
+                signing_protocol: self.signing_protocol,
+                signing_behavior: self.signing_behavior,
+                origin_access_control_origin_type: self.origin_access_control_origin_type,
+            }
+        }
+    }
+}
+impl OriginAccessControlSummary {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
+    pub fn builder() -> crate::model::origin_access_control_summary::Builder {
+        crate::model::origin_access_control_summary::Builder::default()
     }
 }
 

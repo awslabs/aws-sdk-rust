@@ -12,6 +12,19 @@ pub fn serialize_operation_crate_operation_create_alert_manager_definition(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_logging_configuration(
+    input: &crate::input::CreateLoggingConfigurationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_logging_configuration_input(
+        &mut object,
+        input,
+    )?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_rule_groups_namespace(
     input: &crate::input::CreateRuleGroupsNamespaceInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -67,6 +80,19 @@ pub fn serialize_operation_crate_operation_tag_resource(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_tag_resource_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_logging_configuration(
+    input: &crate::input::UpdateLoggingConfigurationInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_logging_configuration_input(
+        &mut object,
+        input,
+    )?;
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

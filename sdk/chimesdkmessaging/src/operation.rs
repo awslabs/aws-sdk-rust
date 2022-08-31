@@ -1206,6 +1206,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelsModeratedByA
     }
 }
 
+/// Operation shape for `ListSubChannels`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_sub_channels`](crate::client::Client::list_sub_channels).
+///
+/// See [`crate::client::fluent_builders::ListSubChannels`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSubChannels {
+    _private: (),
+}
+impl ListSubChannels {
+    /// Creates a new builder-style object to manufacture [`ListSubChannelsInput`](crate::input::ListSubChannelsInput).
+    pub fn builder() -> crate::input::list_sub_channels_input::Builder {
+        crate::input::list_sub_channels_input::Builder::default()
+    }
+    /// Creates a new `ListSubChannels` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSubChannels {
+    type Output = std::result::Result<
+        crate::output::ListSubChannelsOutput,
+        crate::error::ListSubChannelsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sub_channels_error(response)
+        } else {
+            crate::operation_deser::parse_list_sub_channels_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

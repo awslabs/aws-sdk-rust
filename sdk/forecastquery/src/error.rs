@@ -458,3 +458,140 @@ impl std::error::Error for QueryForecastError {
         }
     }
 }
+
+/// Error type for the `QueryWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct QueryWhatIfForecastError {
+    /// Kind of error that occurred.
+    pub kind: QueryWhatIfForecastErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `QueryWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum QueryWhatIfForecastErrorKind {
+    /// <p>The value is invalid or is too long.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid. Tokens expire after 24 hours.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>The limit on the number of requests per second has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for QueryWhatIfForecastError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            QueryWhatIfForecastErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            QueryWhatIfForecastErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            QueryWhatIfForecastErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            QueryWhatIfForecastErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            QueryWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            QueryWhatIfForecastErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for QueryWhatIfForecastError {
+    fn code(&self) -> Option<&str> {
+        QueryWhatIfForecastError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl QueryWhatIfForecastError {
+    /// Creates a new `QueryWhatIfForecastError`.
+    pub fn new(kind: QueryWhatIfForecastErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `QueryWhatIfForecastError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: QueryWhatIfForecastErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `QueryWhatIfForecastError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: QueryWhatIfForecastErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `QueryWhatIfForecastErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            QueryWhatIfForecastErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `QueryWhatIfForecastErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            QueryWhatIfForecastErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `QueryWhatIfForecastErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            QueryWhatIfForecastErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `QueryWhatIfForecastErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            QueryWhatIfForecastErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `QueryWhatIfForecastErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            QueryWhatIfForecastErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for QueryWhatIfForecastError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            QueryWhatIfForecastErrorKind::InvalidInputException(_inner) => Some(_inner),
+            QueryWhatIfForecastErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            QueryWhatIfForecastErrorKind::LimitExceededException(_inner) => Some(_inner),
+            QueryWhatIfForecastErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            QueryWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            QueryWhatIfForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}

@@ -14684,6 +14684,10 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     #[doc(hidden)]
     pub q_search_bar:
         std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+    #[doc(hidden)]
+    pub dashboard_visual:
+        std::option::Option<crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration>,
 }
 impl RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -14712,6 +14716,13 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     ) -> std::option::Option<&crate::model::RegisteredUserQSearchBarEmbeddingConfiguration> {
         self.q_search_bar.as_ref()
     }
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+    pub fn dashboard_visual(
+        &self,
+    ) -> std::option::Option<&crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration>
+    {
+        self.dashboard_visual.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisteredUserEmbeddingExperienceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14719,6 +14730,7 @@ impl std::fmt::Debug for RegisteredUserEmbeddingExperienceConfiguration {
         formatter.field("dashboard", &self.dashboard);
         formatter.field("quick_sight_console", &self.quick_sight_console);
         formatter.field("q_search_bar", &self.q_search_bar);
+        formatter.field("dashboard_visual", &self.dashboard_visual);
         formatter.finish()
     }
 }
@@ -14735,6 +14747,8 @@ pub mod registered_user_embedding_experience_configuration {
         >,
         pub(crate) q_search_bar:
             std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
+        pub(crate) dashboard_visual:
+            std::option::Option<crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration>,
     }
     impl Builder {
         /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -14803,12 +14817,31 @@ pub mod registered_user_embedding_experience_configuration {
             self.q_search_bar = input;
             self
         }
+        /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+        pub fn dashboard_visual(
+            mut self,
+            input: crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration,
+        ) -> Self {
+            self.dashboard_visual = Some(input);
+            self
+        }
+        /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+        pub fn set_dashboard_visual(
+            mut self,
+            input: std::option::Option<
+                crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration,
+            >,
+        ) -> Self {
+            self.dashboard_visual = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration).
         pub fn build(self) -> crate::model::RegisteredUserEmbeddingExperienceConfiguration {
             crate::model::RegisteredUserEmbeddingExperienceConfiguration {
                 dashboard: self.dashboard,
                 quick_sight_console: self.quick_sight_console,
                 q_search_bar: self.q_search_bar,
+                dashboard_visual: self.dashboard_visual,
             }
         }
     }
@@ -14817,6 +14850,179 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration).
     pub fn builder() -> crate::model::registered_user_embedding_experience_configuration::Builder {
         crate::model::registered_user_embedding_experience_configuration::Builder::default()
+    }
+}
+
+/// <p>The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisteredUserDashboardVisualEmbeddingConfiguration {
+    /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    #[doc(hidden)]
+    pub initial_dashboard_visual_id: std::option::Option<crate::model::DashboardVisualId>,
+}
+impl RegisteredUserDashboardVisualEmbeddingConfiguration {
+    /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    pub fn initial_dashboard_visual_id(
+        &self,
+    ) -> std::option::Option<&crate::model::DashboardVisualId> {
+        self.initial_dashboard_visual_id.as_ref()
+    }
+}
+impl std::fmt::Debug for RegisteredUserDashboardVisualEmbeddingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisteredUserDashboardVisualEmbeddingConfiguration");
+        formatter.field(
+            "initial_dashboard_visual_id",
+            &self.initial_dashboard_visual_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration).
+pub mod registered_user_dashboard_visual_embedding_configuration {
+
+    /// A builder for [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_dashboard_visual_id:
+            std::option::Option<crate::model::DashboardVisualId>,
+    }
+    impl Builder {
+        /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+        pub fn initial_dashboard_visual_id(
+            mut self,
+            input: crate::model::DashboardVisualId,
+        ) -> Self {
+            self.initial_dashboard_visual_id = Some(input);
+            self
+        }
+        /// <p>The visual ID for the visual that you want the user to embed. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+        pub fn set_initial_dashboard_visual_id(
+            mut self,
+            input: std::option::Option<crate::model::DashboardVisualId>,
+        ) -> Self {
+            self.initial_dashboard_visual_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration).
+        pub fn build(self) -> crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration {
+            crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration {
+                initial_dashboard_visual_id: self.initial_dashboard_visual_id,
+            }
+        }
+    }
+}
+impl RegisteredUserDashboardVisualEmbeddingConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegisteredUserDashboardVisualEmbeddingConfiguration`](crate::model::RegisteredUserDashboardVisualEmbeddingConfiguration).
+    pub fn builder(
+    ) -> crate::model::registered_user_dashboard_visual_embedding_configuration::Builder {
+        crate::model::registered_user_dashboard_visual_embedding_configuration::Builder::default()
+    }
+}
+
+/// <p>A structure that contains the following elements:</p>
+/// <ul>
+/// <li> <p>The <code>DashboardId</code> of the dashboard that has the visual that you want to embed.</p> </li>
+/// <li> <p>The <code>SheetId</code> of the sheet that has the visual that you want to embed.</p> </li>
+/// <li> <p>The <code>VisualId</code> of the visual that you want to embed.</p> </li>
+/// </ul>
+/// <p>The <code>DashboardId</code>, <code>SheetId</code>, and <code>VisualId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DashboardVisualId {
+    /// <p>The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
+    #[doc(hidden)]
+    pub dashboard_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+    #[doc(hidden)]
+    pub sheet_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+    #[doc(hidden)]
+    pub visual_id: std::option::Option<std::string::String>,
+}
+impl DashboardVisualId {
+    /// <p>The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+    pub fn sheet_id(&self) -> std::option::Option<&str> {
+        self.sheet_id.as_deref()
+    }
+    /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+    pub fn visual_id(&self) -> std::option::Option<&str> {
+        self.visual_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DashboardVisualId {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DashboardVisualId");
+        formatter.field("dashboard_id", &self.dashboard_id);
+        formatter.field("sheet_id", &self.sheet_id);
+        formatter.field("visual_id", &self.visual_id);
+        formatter.finish()
+    }
+}
+/// See [`DashboardVisualId`](crate::model::DashboardVisualId).
+pub mod dashboard_visual_id {
+
+    /// A builder for [`DashboardVisualId`](crate::model::DashboardVisualId).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dashboard_id: std::option::Option<std::string::String>,
+        pub(crate) sheet_id: std::option::Option<std::string::String>,
+        pub(crate) visual_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dashboard_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
+        pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_id = input;
+            self
+        }
+        /// <p>The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+        pub fn sheet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sheet_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+        pub fn set_sheet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sheet_id = input;
+            self
+        }
+        /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+        pub fn visual_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.visual_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console.</p>
+        pub fn set_visual_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.visual_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DashboardVisualId`](crate::model::DashboardVisualId).
+        pub fn build(self) -> crate::model::DashboardVisualId {
+            crate::model::DashboardVisualId {
+                dashboard_id: self.dashboard_id,
+                sheet_id: self.sheet_id,
+                visual_id: self.visual_id,
+            }
+        }
+    }
+}
+impl DashboardVisualId {
+    /// Creates a new builder-style object to manufacture [`DashboardVisualId`](crate::model::DashboardVisualId).
+    pub fn builder() -> crate::model::dashboard_visual_id::Builder {
+        crate::model::dashboard_visual_id::Builder::default()
     }
 }
 
@@ -15045,6 +15251,10 @@ pub struct AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
     #[doc(hidden)]
     pub dashboard: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+    #[doc(hidden)]
+    pub dashboard_visual:
+        std::option::Option<crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
@@ -15053,11 +15263,19 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
     ) -> std::option::Option<&crate::model::AnonymousUserDashboardEmbeddingConfiguration> {
         self.dashboard.as_ref()
     }
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+    pub fn dashboard_visual(
+        &self,
+    ) -> std::option::Option<&crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration>
+    {
+        self.dashboard_visual.as_ref()
+    }
 }
 impl std::fmt::Debug for AnonymousUserEmbeddingExperienceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnonymousUserEmbeddingExperienceConfiguration");
         formatter.field("dashboard", &self.dashboard);
+        formatter.field("dashboard_visual", &self.dashboard_visual);
         formatter.finish()
     }
 }
@@ -15069,6 +15287,8 @@ pub mod anonymous_user_embedding_experience_configuration {
     pub struct Builder {
         pub(crate) dashboard:
             std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
+        pub(crate) dashboard_visual:
+            std::option::Option<crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration>,
     }
     impl Builder {
         /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
@@ -15087,10 +15307,29 @@ pub mod anonymous_user_embedding_experience_configuration {
             self.dashboard = input;
             self
         }
+        /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+        pub fn dashboard_visual(
+            mut self,
+            input: crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration,
+        ) -> Self {
+            self.dashboard_visual = Some(input);
+            self
+        }
+        /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+        pub fn set_dashboard_visual(
+            mut self,
+            input: std::option::Option<
+                crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration,
+            >,
+        ) -> Self {
+            self.dashboard_visual = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration).
         pub fn build(self) -> crate::model::AnonymousUserEmbeddingExperienceConfiguration {
             crate::model::AnonymousUserEmbeddingExperienceConfiguration {
                 dashboard: self.dashboard,
+                dashboard_visual: self.dashboard_visual,
             }
         }
     }
@@ -15099,6 +15338,78 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
     /// Creates a new builder-style object to manufacture [`AnonymousUserEmbeddingExperienceConfiguration`](crate::model::AnonymousUserEmbeddingExperienceConfiguration).
     pub fn builder() -> crate::model::anonymous_user_embedding_experience_configuration::Builder {
         crate::model::anonymous_user_embedding_experience_configuration::Builder::default()
+    }
+}
+
+/// <p>The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnonymousUserDashboardVisualEmbeddingConfiguration {
+    /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    #[doc(hidden)]
+    pub initial_dashboard_visual_id: std::option::Option<crate::model::DashboardVisualId>,
+}
+impl AnonymousUserDashboardVisualEmbeddingConfiguration {
+    /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    pub fn initial_dashboard_visual_id(
+        &self,
+    ) -> std::option::Option<&crate::model::DashboardVisualId> {
+        self.initial_dashboard_visual_id.as_ref()
+    }
+}
+impl std::fmt::Debug for AnonymousUserDashboardVisualEmbeddingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnonymousUserDashboardVisualEmbeddingConfiguration");
+        formatter.field(
+            "initial_dashboard_visual_id",
+            &self.initial_dashboard_visual_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration).
+pub mod anonymous_user_dashboard_visual_embedding_configuration {
+
+    /// A builder for [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_dashboard_visual_id:
+            std::option::Option<crate::model::DashboardVisualId>,
+    }
+    impl Builder {
+        /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+        pub fn initial_dashboard_visual_id(
+            mut self,
+            input: crate::model::DashboardVisualId,
+        ) -> Self {
+            self.initial_dashboard_visual_id = Some(input);
+            self
+        }
+        /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+        pub fn set_initial_dashboard_visual_id(
+            mut self,
+            input: std::option::Option<crate::model::DashboardVisualId>,
+        ) -> Self {
+            self.initial_dashboard_visual_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration).
+        pub fn build(self) -> crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration {
+            crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration {
+                initial_dashboard_visual_id: self.initial_dashboard_visual_id,
+            }
+        }
+    }
+}
+impl AnonymousUserDashboardVisualEmbeddingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::model::AnonymousUserDashboardVisualEmbeddingConfiguration).
+    pub fn builder(
+    ) -> crate::model::anonymous_user_dashboard_visual_embedding_configuration::Builder {
+        crate::model::anonymous_user_dashboard_visual_embedding_configuration::Builder::default()
     }
 }
 

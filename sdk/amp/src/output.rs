@@ -804,6 +804,216 @@ impl DescribeRuleGroupsNamespaceOutput {
     }
 }
 
+/// Represents the output of a CreateLoggingConfiguration operation.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLoggingConfigurationOutput {
+    /// The status of the logging configuration.
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+}
+impl CreateLoggingConfigurationOutput {
+    /// The status of the logging configuration.
+    pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLoggingConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLoggingConfigurationOutput");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
+pub mod create_logging_configuration_output {
+
+    /// A builder for [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+    }
+    impl Builder {
+        /// The status of the logging configuration.
+        pub fn status(mut self, input: crate::model::LoggingConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// The status of the logging configuration.
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
+        pub fn build(self) -> crate::output::CreateLoggingConfigurationOutput {
+            crate::output::CreateLoggingConfigurationOutput {
+                status: self.status,
+            }
+        }
+    }
+}
+impl CreateLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::create_logging_configuration_output::Builder {
+        crate::output::create_logging_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLoggingConfigurationOutput {}
+impl std::fmt::Debug for DeleteLoggingConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLoggingConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+pub mod delete_logging_configuration_output {
+
+    /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+        pub fn build(self) -> crate::output::DeleteLoggingConfigurationOutput {
+            crate::output::DeleteLoggingConfigurationOutput {}
+        }
+    }
+}
+impl DeleteLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::delete_logging_configuration_output::Builder {
+        crate::output::delete_logging_configuration_output::Builder::default()
+    }
+}
+
+/// Represents the output of an UpdateLoggingConfiguration operation.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLoggingConfigurationOutput {
+    /// The status of the logging configuration.
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+}
+impl UpdateLoggingConfigurationOutput {
+    /// The status of the logging configuration.
+    pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateLoggingConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLoggingConfigurationOutput");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+pub mod update_logging_configuration_output {
+
+    /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+    }
+    impl Builder {
+        /// The status of the logging configuration.
+        pub fn status(mut self, input: crate::model::LoggingConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// The status of the logging configuration.
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateLoggingConfigurationOutput {
+            crate::output::UpdateLoggingConfigurationOutput {
+                status: self.status,
+            }
+        }
+    }
+}
+impl UpdateLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::update_logging_configuration_output::Builder {
+        crate::output::update_logging_configuration_output::Builder::default()
+    }
+}
+
+/// Represents the output of a DescribeLoggingConfiguration operation.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLoggingConfigurationOutput {
+    /// Metadata object containing information about the logging configuration of a workspace.
+    #[doc(hidden)]
+    pub logging_configuration: std::option::Option<crate::model::LoggingConfigurationMetadata>,
+}
+impl DescribeLoggingConfigurationOutput {
+    /// Metadata object containing information about the logging configuration of a workspace.
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfigurationMetadata> {
+        self.logging_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeLoggingConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLoggingConfigurationOutput");
+        formatter.field("logging_configuration", &self.logging_configuration);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
+pub mod describe_logging_configuration_output {
+
+    /// A builder for [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logging_configuration:
+            std::option::Option<crate::model::LoggingConfigurationMetadata>,
+    }
+    impl Builder {
+        /// Metadata object containing information about the logging configuration of a workspace.
+        pub fn logging_configuration(
+            mut self,
+            input: crate::model::LoggingConfigurationMetadata,
+        ) -> Self {
+            self.logging_configuration = Some(input);
+            self
+        }
+        /// Metadata object containing information about the logging configuration of a workspace.
+        pub fn set_logging_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfigurationMetadata>,
+        ) -> Self {
+            self.logging_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeLoggingConfigurationOutput {
+            crate::output::DescribeLoggingConfigurationOutput {
+                logging_configuration: self.logging_configuration,
+            }
+        }
+    }
+}
+impl DescribeLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::describe_logging_configuration_output::Builder {
+        crate::output::describe_logging_configuration_output::Builder::default()
+    }
+}
+
 /// Represents the output of a CreateAlertManagerDefinition operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

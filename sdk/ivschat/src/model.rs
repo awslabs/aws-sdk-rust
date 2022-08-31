@@ -340,7 +340,7 @@ pub struct RoomSummary {
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Tags attached to the resource. </p>
+    /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -372,7 +372,7 @@ impl RoomSummary {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>Tags attached to the resource. </p>
+    /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -483,7 +483,7 @@ pub mod room_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags attached to the resource. </p>
+        /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -494,7 +494,7 @@ pub mod room_summary {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags attached to the resource. </p>
+        /// <p>Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

@@ -108,6 +108,22 @@ impl Client {
     pub fn compare_faces(&self) -> fluent_builders::CompareFaces {
         fluent_builders::CompareFaces::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CopyProjectVersion`](crate::client::fluent_builders::CopyProjectVersion) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_project_arn(impl Into<String>)`](crate::client::fluent_builders::CopyProjectVersion::source_project_arn) / [`set_source_project_arn(Option<String>)`](crate::client::fluent_builders::CopyProjectVersion::set_source_project_arn): <p>The ARN of the source project in the trusting AWS account.</p>
+    ///   - [`source_project_version_arn(impl Into<String>)`](crate::client::fluent_builders::CopyProjectVersion::source_project_version_arn) / [`set_source_project_version_arn(Option<String>)`](crate::client::fluent_builders::CopyProjectVersion::set_source_project_version_arn): <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+    ///   - [`destination_project_arn(impl Into<String>)`](crate::client::fluent_builders::CopyProjectVersion::destination_project_arn) / [`set_destination_project_arn(Option<String>)`](crate::client::fluent_builders::CopyProjectVersion::set_destination_project_arn): <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+    ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::CopyProjectVersion::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::CopyProjectVersion::set_version_name): <p>A name for the version of the model that's copied to the destination project.</p>
+    ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::CopyProjectVersion::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::CopyProjectVersion::set_output_config): <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CopyProjectVersion::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CopyProjectVersion::set_tags): <p>The key-value tags to assign to the model version. </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CopyProjectVersion::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CopyProjectVersion::set_kms_key_id): <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>  <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>  <ul>   <li> <p>kms:CreateGrant</p> </li>   <li> <p>kms:DescribeKey</p> </li>   <li> <p>kms:GenerateDataKey</p> </li>   <li> <p>kms:Decrypt</p> </li>  </ul>  <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    /// - On success, responds with [`CopyProjectVersionOutput`](crate::output::CopyProjectVersionOutput) with field(s):
+    ///   - [`project_version_arn(Option<String>)`](crate::output::CopyProjectVersionOutput::project_version_arn): <p>The ARN of the copied model version in the destination project. </p>
+    /// - On failure, responds with [`SdkError<CopyProjectVersionError>`](crate::error::CopyProjectVersionError)
+    pub fn copy_project_version(&self) -> fluent_builders::CopyProjectVersion {
+        fluent_builders::CopyProjectVersion::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateCollection`](crate::client::fluent_builders::CreateCollection) operation.
     ///
     /// - The fluent builder is configurable:
@@ -218,6 +234,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject {
         fluent_builders::DeleteProject::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteProjectPolicy`](crate::client::fluent_builders::DeleteProjectPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteProjectPolicy::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::DeleteProjectPolicy::set_project_arn): <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProjectPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteProjectPolicy::set_policy_name): <p>The name of the policy that you want to delete.</p>
+    ///   - [`policy_revision_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProjectPolicy::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::client::fluent_builders::DeleteProjectPolicy::set_policy_revision_id): <p>The ID of the project policy revision that you want to delete.</p>
+    /// - On success, responds with [`DeleteProjectPolicyOutput`](crate::output::DeleteProjectPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProjectPolicyError>`](crate::error::DeleteProjectPolicyError)
+    pub fn delete_project_policy(&self) -> fluent_builders::DeleteProjectPolicy {
+        fluent_builders::DeleteProjectPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteProjectVersion`](crate::client::fluent_builders::DeleteProjectVersion) operation.
     ///
@@ -639,6 +667,20 @@ impl Client {
     pub fn list_faces(&self) -> fluent_builders::ListFaces {
         fluent_builders::ListFaces::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListProjectPolicies`](crate::client::fluent_builders::ListProjectPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjectPolicies::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::ListProjectPolicies::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::ListProjectPolicies::set_project_arn): <p>The ARN of the project for which you want to list the project policies.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjectPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjectPolicies::set_next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjectPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjectPolicies::set_max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+    /// - On success, responds with [`ListProjectPoliciesOutput`](crate::output::ListProjectPoliciesOutput) with field(s):
+    ///   - [`project_policies(Option<Vec<ProjectPolicy>>)`](crate::output::ListProjectPoliciesOutput::project_policies): <p>A list of project policies attached to the project.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectPoliciesOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
+    /// - On failure, responds with [`SdkError<ListProjectPoliciesError>`](crate::error::ListProjectPoliciesError)
+    pub fn list_project_policies(&self) -> fluent_builders::ListProjectPolicies {
+        fluent_builders::ListProjectPolicies::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListStreamProcessors`](crate::client::fluent_builders::ListStreamProcessors) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamProcessors::into_paginator).
     ///
@@ -661,6 +703,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutProjectPolicy`](crate::client::fluent_builders::PutProjectPolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::PutProjectPolicy::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::PutProjectPolicy::set_project_arn): <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutProjectPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutProjectPolicy::set_policy_name): <p>A name for the policy.</p>
+    ///   - [`policy_revision_id(impl Into<String>)`](crate::client::fluent_builders::PutProjectPolicy::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::client::fluent_builders::PutProjectPolicy::set_policy_revision_id): <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutProjectPolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutProjectPolicy::set_policy_document): <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+    /// - On success, responds with [`PutProjectPolicyOutput`](crate::output::PutProjectPolicyOutput) with field(s):
+    ///   - [`policy_revision_id(Option<String>)`](crate::output::PutProjectPolicyOutput::policy_revision_id): <p>The ID of the project policy.</p>
+    /// - On failure, responds with [`SdkError<PutProjectPolicyError>`](crate::error::PutProjectPolicyError)
+    pub fn put_project_policy(&self) -> fluent_builders::PutProjectPolicy {
+        fluent_builders::PutProjectPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RecognizeCelebrities`](crate::client::fluent_builders::RecognizeCelebrities) operation.
     ///
@@ -1021,6 +1076,166 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::QualityFilter>,
         ) -> Self {
             self.inner = self.inner.set_quality_filter(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CopyProjectVersion`.
+    ///
+    /// <p>Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't copy a model to another AWS service. </p>
+    /// <p>To copy a model version to a different AWS account, you need to create a resource-based policy known as a <i>project policy</i>. You attach the project policy to the source project by calling <code>PutProjectPolicy</code>. The project policy gives permission to copy the model version from a trusting AWS account to a trusted account.</p>
+    /// <p>For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+    /// <p>If you are copying a model version to a project in the same AWS account, you don't need to create a project policy.</p> <note>
+    /// <p>To copy a model, the destination project, source project, and source model version must already exist.</p>
+    /// </note>
+    /// <p>Copying a model version takes a while to complete. To get the current status, call <code>DescribeProjectVersions</code> and check the value of <code>Status</code> in the <code>ProjectVersionDescription</code> object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CopyProjectVersion {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::copy_project_version_input::Builder,
+    }
+    impl CopyProjectVersion {
+        /// Creates a new `CopyProjectVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CopyProjectVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the source project in the trusting AWS account.</p>
+        pub fn source_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_project_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the source project in the trusting AWS account.</p>
+        pub fn set_source_project_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_project_arn(input);
+            self
+        }
+        /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+        pub fn source_project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_project_version_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+        pub fn set_source_project_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_project_version_arn(input);
+            self
+        }
+        /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+        pub fn destination_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_project_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+        pub fn set_destination_project_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_project_arn(input);
+            self
+        }
+        /// <p>A name for the version of the model that's copied to the destination project.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
+            self
+        }
+        /// <p>A name for the version of the model that's copied to the destination project.</p>
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_name(input);
+            self
+        }
+        /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
+            self
+        }
+        /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_config(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value tags to assign to the model version. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The key-value tags to assign to the model version. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+        /// <ul>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// </ul>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
+            self
+        }
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+        /// <ul>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
+        /// </ul>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
             self
         }
     }
@@ -1794,7 +2009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models associated with the project. To delete a model, see <code>DeleteProjectVersion</code>.</p>
-    /// <p> <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call <code>DescribeProjects</code>. The project is deleted when the project no longer appears in the response.</p>
+    /// <p> <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted, call <code>DescribeProjects</code>. The project is deleted when the project no longer appears in the response. Be aware that deleting a given project will also delete any <code>ProjectPolicies</code> associated with that project.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject {
@@ -1843,6 +2058,83 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteProjectPolicy`.
+    ///
+    /// <p>Deletes an existing project policy.</p>
+    /// <p>To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>. To attach a project policy to a project, call <code>PutProjectPolicy</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteProjectPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_project_policy_input::Builder,
+    }
+    impl DeleteProjectPolicy {
+        /// Creates a new `DeleteProjectPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteProjectPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_arn(input);
+            self
+        }
+        /// <p>The name of the policy that you want to delete.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
+            self
+        }
+        /// <p>The name of the policy that you want to delete.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
+            self
+        }
+        /// <p>The ID of the project policy revision that you want to delete.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision_id(input.into());
+            self
+        }
+        /// <p>The ID of the project policy revision that you want to delete.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_revision_id(input);
             self
         }
     }
@@ -4222,6 +4514,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListProjectPolicies`.
+    ///
+    /// <p>Gets a list of the project policies attached to a project.</p>
+    /// <p>To attach a project policy to a project, call <code>PutProjectPolicy</code>. To remove a project policy from a project, call <code>DeleteProjectPolicy</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListProjectPolicies {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_project_policies_input::Builder,
+    }
+    impl ListProjectPolicies {
+        /// Creates a new `ListProjectPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListProjectPoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectPoliciesPaginator {
+            crate::paginator::ListProjectPoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the project for which you want to list the project policies.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the project for which you want to list the project policies.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_arn(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListStreamProcessors`.
     ///
     /// <p>Gets a list of stream processors that you have created with <code>CreateStreamProcessor</code>. </p>
@@ -4342,6 +4714,99 @@ pub mod fluent_builders {
         /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutProjectPolicy`.
+    ///
+    /// <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in the trusted AWS account. To copy a model version you use the <code>CopyProjectVersion</code> operation.</p>
+    /// <p>For more information about the format of a project policy document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+    /// <p>The response from <code>PutProjectPolicy</code> is a revision ID for the project policy. You can attach multiple project policies to a project. You can also update an existing project policy by specifying the policy revision ID of the existing policy.</p>
+    /// <p>To remove a project policy from a project, call <code>DeleteProjectPolicy</code>. To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>. </p>
+    /// <p>You copy a model version by calling <code>CopyProjectVersion</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutProjectPolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_project_policy_input::Builder,
+    }
+    impl PutProjectPolicy {
+        /// Creates a new `PutProjectPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutProjectPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_arn(input);
+            self
+        }
+        /// <p>A name for the policy.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
+            self
+        }
+        /// <p>A name for the policy.</p>
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
+            self
+        }
+        /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision_id(input.into());
+            self
+        }
+        /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_revision_id(input);
+            self
+        }
+        /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
+            self
+        }
+        /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_document(input);
             self
         }
     }

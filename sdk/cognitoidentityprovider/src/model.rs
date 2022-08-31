@@ -11889,17 +11889,20 @@ impl AsRef<str> for RiskDecisionType {
 )]
 pub enum EventResponseType {
     #[allow(missing_docs)] // documentation missing in model
-    Failure,
+    Fail,
     #[allow(missing_docs)] // documentation missing in model
-    Success,
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Pass,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EventResponseType {
     fn from(s: &str) -> Self {
         match s {
-            "Failure" => EventResponseType::Failure,
-            "Success" => EventResponseType::Success,
+            "Fail" => EventResponseType::Fail,
+            "InProgress" => EventResponseType::InProgress,
+            "Pass" => EventResponseType::Pass,
             other => EventResponseType::Unknown(other.to_owned()),
         }
     }
@@ -11915,14 +11918,15 @@ impl EventResponseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            EventResponseType::Failure => "Failure",
-            EventResponseType::Success => "Success",
+            EventResponseType::Fail => "Fail",
+            EventResponseType::InProgress => "InProgress",
+            EventResponseType::Pass => "Pass",
             EventResponseType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["Failure", "Success"]
+        &["Fail", "InProgress", "Pass"]
     }
 }
 impl AsRef<str> for EventResponseType {
@@ -11946,6 +11950,10 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     ForgotPassword,
     #[allow(missing_docs)] // documentation missing in model
+    PasswordChange,
+    #[allow(missing_docs)] // documentation missing in model
+    ResendCode,
+    #[allow(missing_docs)] // documentation missing in model
     SignIn,
     #[allow(missing_docs)] // documentation missing in model
     SignUp,
@@ -11956,6 +11964,8 @@ impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
         match s {
             "ForgotPassword" => EventType::ForgotPassword,
+            "PasswordChange" => EventType::PasswordChange,
+            "ResendCode" => EventType::ResendCode,
             "SignIn" => EventType::SignIn,
             "SignUp" => EventType::SignUp,
             other => EventType::Unknown(other.to_owned()),
@@ -11974,6 +11984,8 @@ impl EventType {
     pub fn as_str(&self) -> &str {
         match self {
             EventType::ForgotPassword => "ForgotPassword",
+            EventType::PasswordChange => "PasswordChange",
+            EventType::ResendCode => "ResendCode",
             EventType::SignIn => "SignIn",
             EventType::SignUp => "SignUp",
             EventType::Unknown(s) => s.as_ref(),
@@ -11981,7 +11993,13 @@ impl EventType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ForgotPassword", "SignIn", "SignUp"]
+        &[
+            "ForgotPassword",
+            "PasswordChange",
+            "ResendCode",
+            "SignIn",
+            "SignUp",
+        ]
     }
 }
 impl AsRef<str> for EventType {

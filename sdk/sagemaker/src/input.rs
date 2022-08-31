@@ -1449,7 +1449,7 @@ pub mod create_app_image_config_input {
             self.tags = input;
             self
         }
-        /// <p>The KernelGatewayImageConfig.</p>
+        /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
         pub fn kernel_gateway_image_config(
             mut self,
             input: crate::model::KernelGatewayImageConfig,
@@ -1457,7 +1457,7 @@ pub mod create_app_image_config_input {
             self.kernel_gateway_image_config = Some(input);
             self
         }
-        /// <p>The KernelGatewayImageConfig.</p>
+        /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
         pub fn set_kernel_gateway_image_config(
             mut self,
             input: std::option::Option<crate::model::KernelGatewayImageConfig>,
@@ -48113,14 +48113,14 @@ pub mod update_feature_group_input {
         ///
         /// To override the contents of this collection use [`set_feature_additions`](Self::set_feature_additions).
         ///
-        /// <p>A list of the features that you're adding to the feature group.</p>
+        /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
         pub fn feature_additions(mut self, input: crate::model::FeatureDefinition) -> Self {
             let mut v = self.feature_additions.unwrap_or_default();
             v.push(input);
             self.feature_additions = Some(v);
             self
         }
-        /// <p>A list of the features that you're adding to the feature group.</p>
+        /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
         pub fn set_feature_additions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
@@ -50155,14 +50155,14 @@ pub mod update_project_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -51918,7 +51918,7 @@ pub struct UpdateProjectInput {
     #[doc(hidden)]
     pub service_catalog_provisioning_update_details:
         std::option::Option<crate::model::ServiceCatalogProvisioningUpdateDetails>,
-    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -51937,7 +51937,7 @@ impl UpdateProjectInput {
     ) -> std::option::Option<&crate::model::ServiceCatalogProvisioningUpdateDetails> {
         self.service_catalog_provisioning_update_details.as_ref()
     }
-    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -52519,7 +52519,7 @@ pub struct UpdateFeatureGroupInput {
     /// <p>The name of the feature group that you're updating.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
-    /// <p>A list of the features that you're adding to the feature group.</p>
+    /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
     #[doc(hidden)]
     pub feature_additions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
 }
@@ -52528,7 +52528,7 @@ impl UpdateFeatureGroupInput {
     pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
-    /// <p>A list of the features that you're adding to the feature group.</p>
+    /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
     pub fn feature_additions(&self) -> std::option::Option<&[crate::model::FeatureDefinition]> {
         self.feature_additions.as_deref()
     }
@@ -64681,7 +64681,7 @@ pub struct CreateAppImageConfigInput {
     /// <p>A list of tags to apply to the AppImageConfig.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The KernelGatewayImageConfig.</p>
+    /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
     #[doc(hidden)]
     pub kernel_gateway_image_config: std::option::Option<crate::model::KernelGatewayImageConfig>,
 }
@@ -64694,7 +64694,7 @@ impl CreateAppImageConfigInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The KernelGatewayImageConfig.</p>
+    /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
     pub fn kernel_gateway_image_config(
         &self,
     ) -> std::option::Option<&crate::model::KernelGatewayImageConfig> {

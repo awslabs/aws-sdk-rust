@@ -116,8 +116,9 @@ impl Client {
     ///   - [`num_results(i32)`](crate::client::fluent_builders::GetRecommendations::num_results) / [`set_num_results(i32)`](crate::client::fluent_builders::GetRecommendations::set_num_results): <p>The number of results to return. The default is 25. The maximum is 500.</p>
     ///   - [`context(HashMap<String, String>)`](crate::client::fluent_builders::GetRecommendations::context) / [`set_context(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetRecommendations::set_context): <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
     ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::GetRecommendations::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::GetRecommendations::set_filter_arn): <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>  <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
-    ///   - [`filter_values(HashMap<String, String>)`](crate::client::fluent_builders::GetRecommendations::filter_values) / [`set_filter_values(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetRecommendations::set_filter_values): <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>  <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+    ///   - [`filter_values(HashMap<String, String>)`](crate::client::fluent_builders::GetRecommendations::filter_values) / [`set_filter_values(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetRecommendations::set_filter_values): <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>  <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     ///   - [`recommender_arn(impl Into<String>)`](crate::client::fluent_builders::GetRecommendations::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::client::fluent_builders::GetRecommendations::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you created a Domain dataset group with a recommender for a domain use case.</p>
+    ///   - [`promotions(Vec<Promotion>)`](crate::client::fluent_builders::GetRecommendations::promotions) / [`set_promotions(Option<Vec<Promotion>>)`](crate::client::fluent_builders::GetRecommendations::set_promotions): <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
     /// - On success, responds with [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput) with field(s):
     ///   - [`item_list(Option<Vec<PredictedItem>>)`](crate::output::GetRecommendationsOutput::item_list): <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
     ///   - [`recommendation_id(Option<String>)`](crate::output::GetRecommendationsOutput::recommendation_id): <p>The ID of the recommendation.</p>
@@ -409,7 +410,7 @@ pub mod fluent_builders {
         ///
         /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
         /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
         pub fn filter_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -420,7 +421,7 @@ pub mod fluent_builders {
         }
         /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
         /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
         pub fn set_filter_values(
             mut self,
             input: std::option::Option<
@@ -441,6 +442,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_recommender_arn(input);
+            self
+        }
+        /// Appends an item to `promotions`.
+        ///
+        /// To override the contents of this collection use [`set_promotions`](Self::set_promotions).
+        ///
+        /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
+        pub fn promotions(mut self, input: crate::model::Promotion) -> Self {
+            self.inner = self.inner.promotions(input);
+            self
+        }
+        /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
+        pub fn set_promotions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Promotion>>,
+        ) -> Self {
+            self.inner = self.inner.set_promotions(input);
             self
         }
     }

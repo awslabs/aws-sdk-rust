@@ -122,6 +122,18 @@ pub fn serialize_payload_create_monitoring_subscription_input(
     )
 }
 
+pub fn serialize_payload_create_origin_access_control_input(
+    payload: &std::option::Option<crate::model::OriginAccessControlConfig>,
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
+    };
+    Ok(
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_access_control_input_origin_access_control_config(payload)?
+    )
+}
+
 pub fn serialize_payload_create_origin_request_policy_input(
     payload: &std::option::Option<crate::model::OriginRequestPolicyConfig>,
 ) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
@@ -369,6 +381,18 @@ pub fn serialize_payload_update_key_group_input(
     };
     Ok(
         crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_input_key_group_config(payload)?
+    )
+}
+
+pub fn serialize_payload_update_origin_access_control_input(
+    payload: &std::option::Option<crate::model::OriginAccessControlConfig>,
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
+    };
+    Ok(
+        crate::xml_ser::serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_access_control_input_origin_access_control_config(payload)?
     )
 }
 

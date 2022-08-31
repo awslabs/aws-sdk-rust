@@ -4698,6 +4698,432 @@ impl AnomalyGroupTimeSeries {
     }
 }
 
+/// <p>Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <code>GetDataQualityMetrics</code> object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnomalyDetectorDataQualityMetric {
+    /// <p>The start time for the data quality metrics collection.</p>
+    #[doc(hidden)]
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
+    #[doc(hidden)]
+    pub metric_set_data_quality_metric_list:
+        std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+}
+impl AnomalyDetectorDataQualityMetric {
+    /// <p>The start time for the data quality metrics collection.</p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
+    pub fn metric_set_data_quality_metric_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricSetDataQualityMetric]> {
+        self.metric_set_data_quality_metric_list.as_deref()
+    }
+}
+impl std::fmt::Debug for AnomalyDetectorDataQualityMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnomalyDetectorDataQualityMetric");
+        formatter.field("start_timestamp", &self.start_timestamp);
+        formatter.field(
+            "metric_set_data_quality_metric_list",
+            &self.metric_set_data_quality_metric_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
+pub mod anomaly_detector_data_quality_metric {
+
+    /// A builder for [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) metric_set_data_quality_metric_list:
+            std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+    }
+    impl Builder {
+        /// <p>The start time for the data quality metrics collection.</p>
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_timestamp = Some(input);
+            self
+        }
+        /// <p>The start time for the data quality metrics collection.</p>
+        pub fn set_start_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_timestamp = input;
+            self
+        }
+        /// Appends an item to `metric_set_data_quality_metric_list`.
+        ///
+        /// To override the contents of this collection use [`set_metric_set_data_quality_metric_list`](Self::set_metric_set_data_quality_metric_list).
+        ///
+        /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
+        pub fn metric_set_data_quality_metric_list(
+            mut self,
+            input: crate::model::MetricSetDataQualityMetric,
+        ) -> Self {
+            let mut v = self.metric_set_data_quality_metric_list.unwrap_or_default();
+            v.push(input);
+            self.metric_set_data_quality_metric_list = Some(v);
+            self
+        }
+        /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
+        pub fn set_metric_set_data_quality_metric_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+        ) -> Self {
+            self.metric_set_data_quality_metric_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
+        pub fn build(self) -> crate::model::AnomalyDetectorDataQualityMetric {
+            crate::model::AnomalyDetectorDataQualityMetric {
+                start_timestamp: self.start_timestamp,
+                metric_set_data_quality_metric_list: self.metric_set_data_quality_metric_list,
+            }
+        }
+    }
+}
+impl AnomalyDetectorDataQualityMetric {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
+    pub fn builder() -> crate::model::anomaly_detector_data_quality_metric::Builder {
+        crate::model::anomaly_detector_data_quality_metric::Builder::default()
+    }
+}
+
+/// <p>An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricSetDataQualityMetric {
+    /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
+    #[doc(hidden)]
+    pub metric_set_arn: std::option::Option<std::string::String>,
+    /// <p>The array of data quality metrics contained in the data quality metric set.</p>
+    #[doc(hidden)]
+    pub data_quality_metric_list:
+        std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
+}
+impl MetricSetDataQualityMetric {
+    /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+        self.metric_set_arn.as_deref()
+    }
+    /// <p>The array of data quality metrics contained in the data quality metric set.</p>
+    pub fn data_quality_metric_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataQualityMetric]> {
+        self.data_quality_metric_list.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricSetDataQualityMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricSetDataQualityMetric");
+        formatter.field("metric_set_arn", &self.metric_set_arn);
+        formatter.field("data_quality_metric_list", &self.data_quality_metric_list);
+        formatter.finish()
+    }
+}
+/// See [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
+pub mod metric_set_data_quality_metric {
+
+    /// A builder for [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_set_arn: std::option::Option<std::string::String>,
+        pub(crate) data_quality_metric_list:
+            std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
+        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_set_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
+        pub fn set_metric_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_set_arn = input;
+            self
+        }
+        /// Appends an item to `data_quality_metric_list`.
+        ///
+        /// To override the contents of this collection use [`set_data_quality_metric_list`](Self::set_data_quality_metric_list).
+        ///
+        /// <p>The array of data quality metrics contained in the data quality metric set.</p>
+        pub fn data_quality_metric_list(mut self, input: crate::model::DataQualityMetric) -> Self {
+            let mut v = self.data_quality_metric_list.unwrap_or_default();
+            v.push(input);
+            self.data_quality_metric_list = Some(v);
+            self
+        }
+        /// <p>The array of data quality metrics contained in the data quality metric set.</p>
+        pub fn set_data_quality_metric_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataQualityMetric>>,
+        ) -> Self {
+            self.data_quality_metric_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
+        pub fn build(self) -> crate::model::MetricSetDataQualityMetric {
+            crate::model::MetricSetDataQualityMetric {
+                metric_set_arn: self.metric_set_arn,
+                data_quality_metric_list: self.data_quality_metric_list,
+            }
+        }
+    }
+}
+impl MetricSetDataQualityMetric {
+    /// Creates a new builder-style object to manufacture [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
+    pub fn builder() -> crate::model::metric_set_data_quality_metric::Builder {
+        crate::model::metric_set_data_quality_metric::Builder::default()
+    }
+}
+
+/// <p>An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataQualityMetric {
+    /// <p>The name of the data quality metric.</p>
+    #[doc(hidden)]
+    pub metric_type: std::option::Option<crate::model::DataQualityMetricType>,
+    /// <p>A description of the data quality metric.</p>
+    #[doc(hidden)]
+    pub metric_description: std::option::Option<std::string::String>,
+    /// <p>The column that is being monitored.</p>
+    #[doc(hidden)]
+    pub related_column_name: std::option::Option<std::string::String>,
+    /// <p>The value of the data quality metric.</p>
+    #[doc(hidden)]
+    pub metric_value: std::option::Option<f64>,
+}
+impl DataQualityMetric {
+    /// <p>The name of the data quality metric.</p>
+    pub fn metric_type(&self) -> std::option::Option<&crate::model::DataQualityMetricType> {
+        self.metric_type.as_ref()
+    }
+    /// <p>A description of the data quality metric.</p>
+    pub fn metric_description(&self) -> std::option::Option<&str> {
+        self.metric_description.as_deref()
+    }
+    /// <p>The column that is being monitored.</p>
+    pub fn related_column_name(&self) -> std::option::Option<&str> {
+        self.related_column_name.as_deref()
+    }
+    /// <p>The value of the data quality metric.</p>
+    pub fn metric_value(&self) -> std::option::Option<f64> {
+        self.metric_value
+    }
+}
+impl std::fmt::Debug for DataQualityMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityMetric");
+        formatter.field("metric_type", &self.metric_type);
+        formatter.field("metric_description", &self.metric_description);
+        formatter.field("related_column_name", &self.related_column_name);
+        formatter.field("metric_value", &self.metric_value);
+        formatter.finish()
+    }
+}
+/// See [`DataQualityMetric`](crate::model::DataQualityMetric).
+pub mod data_quality_metric {
+
+    /// A builder for [`DataQualityMetric`](crate::model::DataQualityMetric).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_type: std::option::Option<crate::model::DataQualityMetricType>,
+        pub(crate) metric_description: std::option::Option<std::string::String>,
+        pub(crate) related_column_name: std::option::Option<std::string::String>,
+        pub(crate) metric_value: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The name of the data quality metric.</p>
+        pub fn metric_type(mut self, input: crate::model::DataQualityMetricType) -> Self {
+            self.metric_type = Some(input);
+            self
+        }
+        /// <p>The name of the data quality metric.</p>
+        pub fn set_metric_type(
+            mut self,
+            input: std::option::Option<crate::model::DataQualityMetricType>,
+        ) -> Self {
+            self.metric_type = input;
+            self
+        }
+        /// <p>A description of the data quality metric.</p>
+        pub fn metric_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the data quality metric.</p>
+        pub fn set_metric_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metric_description = input;
+            self
+        }
+        /// <p>The column that is being monitored.</p>
+        pub fn related_column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.related_column_name = Some(input.into());
+            self
+        }
+        /// <p>The column that is being monitored.</p>
+        pub fn set_related_column_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.related_column_name = input;
+            self
+        }
+        /// <p>The value of the data quality metric.</p>
+        pub fn metric_value(mut self, input: f64) -> Self {
+            self.metric_value = Some(input);
+            self
+        }
+        /// <p>The value of the data quality metric.</p>
+        pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.metric_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataQualityMetric`](crate::model::DataQualityMetric).
+        pub fn build(self) -> crate::model::DataQualityMetric {
+            crate::model::DataQualityMetric {
+                metric_type: self.metric_type,
+                metric_description: self.metric_description,
+                related_column_name: self.related_column_name,
+                metric_value: self.metric_value,
+            }
+        }
+    }
+}
+impl DataQualityMetric {
+    /// Creates a new builder-style object to manufacture [`DataQualityMetric`](crate::model::DataQualityMetric).
+    pub fn builder() -> crate::model::data_quality_metric::Builder {
+        crate::model::data_quality_metric::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataQualityMetricType {
+    #[allow(missing_docs)] // documentation missing in model
+    BacktestInferenceDataEndTimeStamp,
+    #[allow(missing_docs)] // documentation missing in model
+    BacktestInferenceDataStartTimeStamp,
+    #[allow(missing_docs)] // documentation missing in model
+    BacktestTrainingDataEndTimeStamp,
+    #[allow(missing_docs)] // documentation missing in model
+    BacktestTrainingDataStartTimeStamp,
+    #[allow(missing_docs)] // documentation missing in model
+    ColumnCompleteness,
+    #[allow(missing_docs)] // documentation missing in model
+    DimensionUniqueness,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidRowsCompliance,
+    #[allow(missing_docs)] // documentation missing in model
+    RowsPartialCompliance,
+    #[allow(missing_docs)] // documentation missing in model
+    RowsProcessed,
+    #[allow(missing_docs)] // documentation missing in model
+    TimeSeriesCount,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataQualityMetricType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => {
+                DataQualityMetricType::BacktestInferenceDataEndTimeStamp
+            }
+            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => {
+                DataQualityMetricType::BacktestInferenceDataStartTimeStamp
+            }
+            "BACKTEST_TRAINING_DATA_END_TIME_STAMP" => {
+                DataQualityMetricType::BacktestTrainingDataEndTimeStamp
+            }
+            "BACKTEST_TRAINING_DATA_START_TIME_STAMP" => {
+                DataQualityMetricType::BacktestTrainingDataStartTimeStamp
+            }
+            "COLUMN_COMPLETENESS" => DataQualityMetricType::ColumnCompleteness,
+            "DIMENSION_UNIQUENESS" => DataQualityMetricType::DimensionUniqueness,
+            "INVALID_ROWS_COMPLIANCE" => DataQualityMetricType::InvalidRowsCompliance,
+            "ROWS_PARTIAL_COMPLIANCE" => DataQualityMetricType::RowsPartialCompliance,
+            "ROWS_PROCESSED" => DataQualityMetricType::RowsProcessed,
+            "TIME_SERIES_COUNT" => DataQualityMetricType::TimeSeriesCount,
+            other => DataQualityMetricType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataQualityMetricType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataQualityMetricType::from(s))
+    }
+}
+impl DataQualityMetricType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => {
+                "BACKTEST_INFERENCE_DATA_END_TIME_STAMP"
+            }
+            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => {
+                "BACKTEST_INFERENCE_DATA_START_TIME_STAMP"
+            }
+            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => {
+                "BACKTEST_TRAINING_DATA_END_TIME_STAMP"
+            }
+            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => {
+                "BACKTEST_TRAINING_DATA_START_TIME_STAMP"
+            }
+            DataQualityMetricType::ColumnCompleteness => "COLUMN_COMPLETENESS",
+            DataQualityMetricType::DimensionUniqueness => "DIMENSION_UNIQUENESS",
+            DataQualityMetricType::InvalidRowsCompliance => "INVALID_ROWS_COMPLIANCE",
+            DataQualityMetricType::RowsPartialCompliance => "ROWS_PARTIAL_COMPLIANCE",
+            DataQualityMetricType::RowsProcessed => "ROWS_PROCESSED",
+            DataQualityMetricType::TimeSeriesCount => "TIME_SERIES_COUNT",
+            DataQualityMetricType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
+            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
+            "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
+            "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
+            "COLUMN_COMPLETENESS",
+            "DIMENSION_UNIQUENESS",
+            "INVALID_ROWS_COMPLIANCE",
+            "ROWS_PARTIAL_COMPLIANCE",
+            "ROWS_PROCESSED",
+            "TIME_SERIES_COUNT",
+        ]
+    }
+}
+impl AsRef<str> for DataQualityMetricType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A group of anomalous metrics</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

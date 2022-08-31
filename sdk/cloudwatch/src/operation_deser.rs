@@ -1516,6 +1516,107 @@ pub fn parse_list_dashboards_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_managed_insight_rules_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListManagedInsightRulesOutput,
+    crate::error::ListManagedInsightRulesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListManagedInsightRulesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextToken" => {
+            crate::error::ListManagedInsightRulesError {
+                meta: generic,
+                kind: crate::error::ListManagedInsightRulesErrorKind::InvalidNextToken({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidParameterValue" => crate::error::ListManagedInsightRulesError {
+            meta: generic,
+            kind: crate::error::ListManagedInsightRulesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::ListManagedInsightRulesError {
+            meta: generic,
+            kind: crate::error::ListManagedInsightRulesErrorKind::MissingRequiredParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::missing_required_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::ListManagedInsightRulesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_managed_insight_rules_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListManagedInsightRulesOutput,
+    crate::error::ListManagedInsightRulesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_managed_insight_rules_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_managed_insight_rules(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_metrics_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMetricsOutput, crate::error::ListMetricsError> {
@@ -2107,6 +2208,88 @@ pub fn parse_put_insight_rule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_insight_rule_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_managed_insight_rules_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutManagedInsightRulesOutput,
+    crate::error::PutManagedInsightRulesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutManagedInsightRulesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValue" => crate::error::PutManagedInsightRulesError {
+            meta: generic,
+            kind: crate::error::PutManagedInsightRulesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::PutManagedInsightRulesError {
+            meta: generic,
+            kind: crate::error::PutManagedInsightRulesErrorKind::MissingRequiredParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::missing_required_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::PutManagedInsightRulesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_managed_insight_rules_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutManagedInsightRulesOutput,
+    crate::error::PutManagedInsightRulesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_managed_insight_rules_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_put_managed_insight_rules(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
         output.build()
     })
 }

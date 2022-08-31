@@ -3022,6 +3022,115 @@ impl std::error::Error for NotifyRecommendationsReceivedError {
     }
 }
 
+/// Error type for the `PutFeedback` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutFeedbackError {
+    /// Kind of error that occurred.
+    pub kind: PutFeedbackErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutFeedback` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutFeedbackErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The input fails to satisfy the constraints specified by a service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutFeedbackError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutFeedbackErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutFeedbackErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutFeedbackErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            PutFeedbackErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutFeedbackError {
+    fn code(&self) -> Option<&str> {
+        PutFeedbackError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutFeedbackError {
+    /// Creates a new `PutFeedbackError`.
+    pub fn new(kind: PutFeedbackErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutFeedbackError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutFeedbackErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutFeedbackError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutFeedbackErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, PutFeedbackErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFeedbackErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, PutFeedbackErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for PutFeedbackError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutFeedbackErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutFeedbackErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutFeedbackErrorKind::ValidationException(_inner) => Some(_inner),
+            PutFeedbackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `QueryAssistant` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

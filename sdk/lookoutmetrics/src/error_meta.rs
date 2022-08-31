@@ -487,6 +487,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDataQualityMetricsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetDataQualityMetricsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetDataQualityMetricsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetDataQualityMetricsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetDataQualityMetricsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetDataQualityMetricsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::GetDataQualityMetricsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetDataQualityMetricsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFeedbackError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

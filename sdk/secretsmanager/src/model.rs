@@ -279,7 +279,7 @@ pub struct ReplicationStatusType {
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
     #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>The date that you last accessed the secret in the Region. </p>
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     #[doc(hidden)]
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -300,7 +300,7 @@ impl ReplicationStatusType {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The date that you last accessed the secret in the Region. </p>
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
@@ -372,12 +372,12 @@ pub mod replication_status_type {
             self.status_message = input;
             self
         }
-        /// <p>The date that you last accessed the secret in the Region. </p>
+        /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
-        /// <p>The date that you last accessed the secret in the Region. </p>
+        /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn set_last_accessed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -728,7 +728,7 @@ pub struct SecretListEntry {
     /// <p>The last date and time that this secret was modified in any way.</p>
     #[doc(hidden)]
     pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     #[doc(hidden)]
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
@@ -791,7 +791,7 @@ impl SecretListEntry {
     pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
@@ -976,12 +976,12 @@ pub mod secret_list_entry {
             self.last_changed_date = input;
             self
         }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
+        /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
+        /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn set_last_accessed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

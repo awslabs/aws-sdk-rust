@@ -49,6 +49,8 @@ pub enum Error {
     IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(
         crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior,
     ),
+    /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
+    IllegalOriginAccessConfiguration(crate::error::IllegalOriginAccessConfiguration),
     /// <p>The update contains modifications that are not allowed.</p>
     IllegalUpdate(crate::error::IllegalUpdate),
     /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
@@ -57,6 +59,8 @@ pub enum Error {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The default root object file name is too big or contains an invalid character.</p>
     InvalidDefaultRootObject(crate::error::InvalidDefaultRootObject),
+    /// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
+    InvalidDomainNameForOriginAccessControl(crate::error::InvalidDomainNameForOriginAccessControl),
     /// <p>An invalid error code was specified.</p>
     InvalidErrorCode(crate::error::InvalidErrorCode),
     /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
@@ -77,6 +81,8 @@ pub enum Error {
     InvalidMinimumProtocolVersion(crate::error::InvalidMinimumProtocolVersion),
     /// <p>The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.</p>
     InvalidOrigin(crate::error::InvalidOrigin),
+    /// <p>The origin access control is not valid.</p>
+    InvalidOriginAccessControl(crate::error::InvalidOriginAccessControl),
     /// <p>The origin access identity is not valid or doesn't exist.</p>
     InvalidOriginAccessIdentity(crate::error::InvalidOriginAccessIdentity),
     /// <p>The keep alive timeout specified for the origin is not valid.</p>
@@ -105,6 +111,8 @@ pub enum Error {
     KeyGroupAlreadyExists(crate::error::KeyGroupAlreadyExists),
     /// <p>This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.</p>
     MissingBody(crate::error::MissingBody),
+    /// <p>A monitoring subscription already exists for the specified distribution.</p>
+    MonitoringSubscriptionAlreadyExists(crate::error::MonitoringSubscriptionAlreadyExists),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
     /// <p>The specified origin access identity does not exist.</p>
@@ -119,8 +127,12 @@ pub enum Error {
     NoSuchFunctionExists(crate::error::NoSuchFunctionExists),
     /// <p>The specified invalidation does not exist.</p>
     NoSuchInvalidation(crate::error::NoSuchInvalidation),
+    /// <p>A monitoring subscription does not exist for the specified distribution.</p>
+    NoSuchMonitoringSubscription(crate::error::NoSuchMonitoringSubscription),
     /// <p>No origin exists with the specified <code>Origin Id</code>. </p>
     NoSuchOrigin(crate::error::NoSuchOrigin),
+    /// <p>The origin access control does not exist.</p>
+    NoSuchOriginAccessControl(crate::error::NoSuchOriginAccessControl),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
     /// <p>The specified public key doesn't exist.</p>
@@ -133,6 +145,10 @@ pub enum Error {
     NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
     /// <p>The specified streaming distribution does not exist.</p>
     NoSuchStreamingDistribution(crate::error::NoSuchStreamingDistribution),
+    /// <p>An origin access control with the specified parameters already exists.</p>
+    OriginAccessControlAlreadyExists(crate::error::OriginAccessControlAlreadyExists),
+    /// <p>Cannot delete the origin access control because it's in use by one or more distributions.</p>
+    OriginAccessControlInUse(crate::error::OriginAccessControlInUse),
     /// <p>An origin request policy with this name already exists. You must provide a unique name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.</p>
     OriginRequestPolicyAlreadyExists(crate::error::OriginRequestPolicyAlreadyExists),
     /// <p>Cannot delete the origin request policy because it is attached to one or more cache behaviors.</p>
@@ -201,6 +217,11 @@ pub enum Error {
     TooManyDistributionsAssociatedToKeyGroup(
         crate::error::TooManyDistributionsAssociatedToKeyGroup,
     ),
+    /// <p>The maximum number of distributions have been associated with the specified origin access control.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToOriginAccessControl(
+        crate::error::TooManyDistributionsAssociatedToOriginAccessControl,
+    ),
     /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(
         crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
@@ -262,6 +283,9 @@ pub enum Error {
     ),
     /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
     TooManyLambdaFunctionAssociations(crate::error::TooManyLambdaFunctionAssociations),
+    /// <p>The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyOriginAccessControls(crate::error::TooManyOriginAccessControls),
     /// <p>Your request contains too many origin custom headers.</p>
     TooManyOriginCustomHeaders(crate::error::TooManyOriginCustomHeaders),
     /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
@@ -327,10 +351,12 @@ impl std::fmt::Display for Error {
             Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
                 inner.fmt(f)
             }
+            Error::IllegalOriginAccessConfiguration(inner) => inner.fmt(f),
             Error::IllegalUpdate(inner) => inner.fmt(f),
             Error::InconsistentQuantities(inner) => inner.fmt(f),
             Error::InvalidArgument(inner) => inner.fmt(f),
             Error::InvalidDefaultRootObject(inner) => inner.fmt(f),
+            Error::InvalidDomainNameForOriginAccessControl(inner) => inner.fmt(f),
             Error::InvalidErrorCode(inner) => inner.fmt(f),
             Error::InvalidForwardCookies(inner) => inner.fmt(f),
             Error::InvalidFunctionAssociation(inner) => inner.fmt(f),
@@ -341,6 +367,7 @@ impl std::fmt::Display for Error {
             Error::InvalidLocationCode(inner) => inner.fmt(f),
             Error::InvalidMinimumProtocolVersion(inner) => inner.fmt(f),
             Error::InvalidOrigin(inner) => inner.fmt(f),
+            Error::InvalidOriginAccessControl(inner) => inner.fmt(f),
             Error::InvalidOriginAccessIdentity(inner) => inner.fmt(f),
             Error::InvalidOriginKeepaliveTimeout(inner) => inner.fmt(f),
             Error::InvalidOriginReadTimeout(inner) => inner.fmt(f),
@@ -355,6 +382,7 @@ impl std::fmt::Display for Error {
             Error::InvalidWebAclId(inner) => inner.fmt(f),
             Error::KeyGroupAlreadyExists(inner) => inner.fmt(f),
             Error::MissingBody(inner) => inner.fmt(f),
+            Error::MonitoringSubscriptionAlreadyExists(inner) => inner.fmt(f),
             Error::NoSuchCachePolicy(inner) => inner.fmt(f),
             Error::NoSuchCloudFrontOriginAccessIdentity(inner) => inner.fmt(f),
             Error::NoSuchDistribution(inner) => inner.fmt(f),
@@ -362,13 +390,17 @@ impl std::fmt::Display for Error {
             Error::NoSuchFieldLevelEncryptionProfile(inner) => inner.fmt(f),
             Error::NoSuchFunctionExists(inner) => inner.fmt(f),
             Error::NoSuchInvalidation(inner) => inner.fmt(f),
+            Error::NoSuchMonitoringSubscription(inner) => inner.fmt(f),
             Error::NoSuchOrigin(inner) => inner.fmt(f),
+            Error::NoSuchOriginAccessControl(inner) => inner.fmt(f),
             Error::NoSuchOriginRequestPolicy(inner) => inner.fmt(f),
             Error::NoSuchPublicKey(inner) => inner.fmt(f),
             Error::NoSuchRealtimeLogConfig(inner) => inner.fmt(f),
             Error::NoSuchResource(inner) => inner.fmt(f),
             Error::NoSuchResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::NoSuchStreamingDistribution(inner) => inner.fmt(f),
+            Error::OriginAccessControlAlreadyExists(inner) => inner.fmt(f),
+            Error::OriginAccessControlInUse(inner) => inner.fmt(f),
             Error::OriginRequestPolicyAlreadyExists(inner) => inner.fmt(f),
             Error::OriginRequestPolicyInUse(inner) => inner.fmt(f),
             Error::PreconditionFailed(inner) => inner.fmt(f),
@@ -400,6 +432,7 @@ impl std::fmt::Display for Error {
                 inner.fmt(f)
             }
             Error::TooManyDistributionsAssociatedToKeyGroup(inner) => inner.fmt(f),
+            Error::TooManyDistributionsAssociatedToOriginAccessControl(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::TooManyDistributionsWithFunctionAssociations(inner) => inner.fmt(f),
@@ -420,6 +453,7 @@ impl std::fmt::Display for Error {
             Error::TooManyKeyGroups(inner) => inner.fmt(f),
             Error::TooManyKeyGroupsAssociatedToDistribution(inner) => inner.fmt(f),
             Error::TooManyLambdaFunctionAssociations(inner) => inner.fmt(f),
+            Error::TooManyOriginAccessControls(inner) => inner.fmt(f),
             Error::TooManyOriginCustomHeaders(inner) => inner.fmt(f),
             Error::TooManyOriginGroupsPerDistribution(inner) => inner.fmt(f),
             Error::TooManyOriginRequestPolicies(inner) => inner.fmt(f),
@@ -552,9 +586,11 @@ where
                 crate::error::CreateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
                 crate::error::CreateDistributionErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
                 crate::error::CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+                crate::error::CreateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
                 crate::error::CreateDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::CreateDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::CreateDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+                crate::error::CreateDistributionErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
                 crate::error::CreateDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
                 crate::error::CreateDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
                 crate::error::CreateDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
@@ -564,6 +600,7 @@ where
                 crate::error::CreateDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
                 crate::error::CreateDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
                 crate::error::CreateDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+                crate::error::CreateDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
                 crate::error::CreateDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
                 crate::error::CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
                 crate::error::CreateDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
@@ -591,6 +628,7 @@ where
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
@@ -630,6 +668,7 @@ where
                 crate::error::CreateDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+                crate::error::CreateDistributionWithTagsErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
@@ -639,6 +678,7 @@ where
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+                crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
@@ -845,20 +885,32 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
-                    Error::NoSuchDistribution(inner)
-                }
-                crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation(
-                    inner,
-                ) => Error::UnsupportedOperation(inner),
-                crate::error::CreateMonitoringSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::CreateMonitoringSubscriptionErrorKind::MonitoringSubscriptionAlreadyExists(inner) => Error::MonitoringSubscriptionAlreadyExists(inner),
+                crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+                crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+                crate::error::CreateMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateOriginAccessControlErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+                crate::error::CreateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
+                crate::error::CreateOriginAccessControlErrorKind::TooManyOriginAccessControls(inner) => Error::TooManyOriginAccessControls(inner),
+                crate::error::CreateOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -977,6 +1029,7 @@ where
                 crate::error::CreateStreamingDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::CreateStreamingDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::CreateStreamingDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+                crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
                 crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
                 crate::error::CreateStreamingDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
                 crate::error::CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists(inner) => Error::StreamingDistributionAlreadyExists(inner),
@@ -1013,6 +1066,7 @@ where
                 crate::error::CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+                crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
                 crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
                 crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
                 crate::error::CreateStreamingDistributionWithTagsErrorKind::MissingBody(inner) => Error::MissingBody(inner),
@@ -1235,17 +1289,43 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError, R>,
     ) -> Self {
         match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+                crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(inner) => Error::NoSuchMonitoringSubscription(inner),
+                crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+                crate::error::DeleteMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError, R>,
+    ) -> Self {
+        match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
+                crate::error::DeleteOriginAccessControlErrorKind::AccessDenied(inner) => {
                     Error::AccessDenied(inner)
                 }
-                crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
-                    Error::NoSuchDistribution(inner)
+                crate::error::DeleteOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => {
+                    Error::InvalidIfMatchVersion(inner)
                 }
-                crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation(
+                crate::error::DeleteOriginAccessControlErrorKind::NoSuchOriginAccessControl(
                     inner,
-                ) => Error::UnsupportedOperation(inner),
-                crate::error::DeleteMonitoringSubscriptionErrorKind::Unhandled(inner) => {
+                ) => Error::NoSuchOriginAccessControl(inner),
+                crate::error::DeleteOriginAccessControlErrorKind::OriginAccessControlInUse(
+                    inner,
+                ) => Error::OriginAccessControlInUse(inner),
+                crate::error::DeleteOriginAccessControlErrorKind::PreconditionFailed(inner) => {
+                    Error::PreconditionFailed(inner)
+                }
+                crate::error::DeleteOriginAccessControlErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1738,10 +1818,61 @@ where
                 crate::error::GetMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
                     Error::NoSuchDistribution(inner)
                 }
+                crate::error::GetMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
+                    inner,
+                ) => Error::NoSuchMonitoringSubscription(inner),
                 crate::error::GetMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => {
                     Error::UnsupportedOperation(inner)
                 }
                 crate::error::GetMonitoringSubscriptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetOriginAccessControlErrorKind::AccessDenied(inner) => {
+                    Error::AccessDenied(inner)
+                }
+                crate::error::GetOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
+                    Error::NoSuchOriginAccessControl(inner)
+                }
+                crate::error::GetOriginAccessControlErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetOriginAccessControlConfigErrorKind::AccessDenied(inner) => {
+                    Error::AccessDenied(inner)
+                }
+                crate::error::GetOriginAccessControlConfigErrorKind::NoSuchOriginAccessControl(
+                    inner,
+                ) => Error::NoSuchOriginAccessControl(inner),
+                crate::error::GetOriginAccessControlConfigErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -2330,6 +2461,27 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListOriginAccessControlsErrorKind::InvalidArgument(inner) => {
+                    Error::InvalidArgument(inner)
+                }
+                crate::error::ListOriginAccessControlsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError, R>>
     for Error
 where
@@ -2677,10 +2829,12 @@ where
                 crate::error::UpdateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
                 crate::error::UpdateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
                 crate::error::UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+                crate::error::UpdateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
                 crate::error::UpdateDistributionErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
                 crate::error::UpdateDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+                crate::error::UpdateDistributionErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
@@ -2690,6 +2844,7 @@ where
                 crate::error::UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+                crate::error::UpdateDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
                 crate::error::UpdateDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
@@ -2864,6 +3019,29 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateOriginAccessControlErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+                crate::error::UpdateOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError, R>>
     for Error
 where
@@ -2994,6 +3172,7 @@ where
                 crate::error::UpdateStreamingDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
                 crate::error::UpdateStreamingDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+                crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
                 crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
                 crate::error::UpdateStreamingDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
                 crate::error::UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),

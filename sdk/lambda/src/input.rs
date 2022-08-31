@@ -997,6 +997,10 @@ pub mod create_event_source_mapping_input {
             std::option::Option<crate::model::SelfManagedEventSource>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config:
+            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config:
+            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -1071,7 +1075,7 @@ pub mod create_event_source_mapping_input {
         /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -1084,7 +1088,7 @@ pub mod create_event_source_mapping_input {
         /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
@@ -1131,12 +1135,12 @@ pub mod create_event_source_mapping_input {
             self.parallelization_factor = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -1196,22 +1200,22 @@ pub mod create_event_source_mapping_input {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
         }
-        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.tumbling_window_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.tumbling_window_in_seconds = input;
             self
@@ -1276,7 +1280,7 @@ pub mod create_event_source_mapping_input {
             self.source_access_configurations = input;
             self
         }
-        /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
+        /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
         pub fn self_managed_event_source(
             mut self,
             input: crate::model::SelfManagedEventSource,
@@ -1284,7 +1288,7 @@ pub mod create_event_source_mapping_input {
             self.self_managed_event_source = Some(input);
             self
         }
-        /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
+        /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
         pub fn set_self_managed_event_source(
             mut self,
             input: std::option::Option<crate::model::SelfManagedEventSource>,
@@ -1314,6 +1318,38 @@ pub mod create_event_source_mapping_input {
             self.function_response_types = input;
             self
         }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn amazon_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::AmazonManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn set_amazon_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = input;
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn self_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::SelfManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn set_self_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput).
         pub fn build(
             self,
@@ -1341,6 +1377,9 @@ pub mod create_event_source_mapping_input {
                 source_access_configurations: self.source_access_configurations,
                 self_managed_event_source: self.self_managed_event_source,
                 function_response_types: self.function_response_types,
+                amazon_managed_kafka_event_source_config: self
+                    .amazon_managed_kafka_event_source_config,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             })
         }
     }
@@ -11658,7 +11697,7 @@ pub mod update_event_source_mapping_input {
         /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -11671,7 +11710,7 @@ pub mod update_event_source_mapping_input {
         /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
         /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
         /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
@@ -11747,12 +11786,12 @@ pub mod update_event_source_mapping_input {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -11789,12 +11828,12 @@ pub mod update_event_source_mapping_input {
             self.source_access_configurations = input;
             self
         }
-        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.tumbling_window_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.tumbling_window_in_seconds = input;
             self
@@ -13588,7 +13627,7 @@ pub struct UpdateEventSourceMappingInput {
     /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -13610,7 +13649,7 @@ pub struct UpdateEventSourceMappingInput {
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     #[doc(hidden)]
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     #[doc(hidden)]
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
@@ -13620,7 +13659,7 @@ pub struct UpdateEventSourceMappingInput {
     #[doc(hidden)]
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     #[doc(hidden)]
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
@@ -13656,7 +13695,7 @@ impl UpdateEventSourceMappingInput {
     /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
@@ -13684,7 +13723,7 @@ impl UpdateEventSourceMappingInput {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -13698,7 +13737,7 @@ impl UpdateEventSourceMappingInput {
     ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
-    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
@@ -16294,7 +16333,7 @@ pub struct CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -16310,7 +16349,7 @@ pub struct CreateEventSourceMappingInput {
     /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     #[doc(hidden)]
     pub parallelization_factor: std::option::Option<i32>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     #[doc(hidden)]
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
@@ -16325,10 +16364,10 @@ pub struct CreateEventSourceMappingInput {
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
     #[doc(hidden)]
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     #[doc(hidden)]
     pub maximum_retry_attempts: std::option::Option<i32>,
-    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     #[doc(hidden)]
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>The name of the Kafka topic.</p>
@@ -16341,13 +16380,21 @@ pub struct CreateEventSourceMappingInput {
     #[doc(hidden)]
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-    /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
+    /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    #[doc(hidden)]
+    pub amazon_managed_kafka_event_source_config:
+        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    #[doc(hidden)]
+    pub self_managed_kafka_event_source_config:
+        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -16383,7 +16430,7 @@ impl CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
     /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
-    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
@@ -16403,7 +16450,7 @@ impl CreateEventSourceMappingInput {
     pub fn parallelization_factor(&self) -> std::option::Option<i32> {
         self.parallelization_factor
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
@@ -16423,11 +16470,11 @@ impl CreateEventSourceMappingInput {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
-    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.</p>
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
@@ -16445,7 +16492,7 @@ impl CreateEventSourceMappingInput {
     ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
-    /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
+    /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
     pub fn self_managed_event_source(
         &self,
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
@@ -16456,6 +16503,18 @@ impl CreateEventSourceMappingInput {
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
     }
 }
 impl std::fmt::Debug for CreateEventSourceMappingInput {
@@ -16498,6 +16557,14 @@ impl std::fmt::Debug for CreateEventSourceMappingInput {
         );
         formatter.field("self_managed_event_source", &self.self_managed_event_source);
         formatter.field("function_response_types", &self.function_response_types);
+        formatter.field(
+            "amazon_managed_kafka_event_source_config",
+            &self.amazon_managed_kafka_event_source_config,
+        );
+        formatter.field(
+            "self_managed_kafka_event_source_config",
+            &self.self_managed_kafka_event_source_config,
+        );
         formatter.finish()
     }
 }

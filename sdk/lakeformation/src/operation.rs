@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AddLFTagsToResource {
     }
 }
 
+/// Operation shape for `AssumeDecoratedRoleWithSAML`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`assume_decorated_role_with_saml`](crate::client::Client::assume_decorated_role_with_saml).
+///
+/// See [`crate::client::fluent_builders::AssumeDecoratedRoleWithSAML`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssumeDecoratedRoleWithSAML {
+    _private: (),
+}
+impl AssumeDecoratedRoleWithSAML {
+    /// Creates a new builder-style object to manufacture [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
+    pub fn builder() -> crate::input::assume_decorated_role_with_saml_input::Builder {
+        crate::input::assume_decorated_role_with_saml_input::Builder::default()
+    }
+    /// Creates a new `AssumeDecoratedRoleWithSAML` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssumeDecoratedRoleWithSAML {
+    type Output = std::result::Result<
+        crate::output::AssumeDecoratedRoleWithSamlOutput,
+        crate::error::AssumeDecoratedRoleWithSAMLError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_assume_decorated_role_with_saml_error(response)
+        } else {
+            crate::operation_deser::parse_assume_decorated_role_with_saml_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchGrantPermissions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

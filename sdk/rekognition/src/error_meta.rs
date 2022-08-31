@@ -19,10 +19,14 @@ pub enum Error {
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The supplied revision id for the project policy is invalid.</p>
+    InvalidPolicyRevisionIdException(crate::error::InvalidPolicyRevisionIdException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
     /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A resource with the specified ID already exists.</p>
@@ -54,8 +58,10 @@ impl std::fmt::Display for Error {
             Error::InvalidImageFormatException(inner) => inner.fmt(f),
             Error::InvalidPaginationTokenException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
+            Error::InvalidPolicyRevisionIdException(inner) => inner.fmt(f),
             Error::InvalidS3ObjectException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
             Error::ProvisionedThroughputExceededException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
@@ -101,6 +107,30 @@ where
                 }
                 crate::error::CompareFacesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CopyProjectVersionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CopyProjectVersionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CopyProjectVersionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::CopyProjectVersionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::CopyProjectVersionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CopyProjectVersionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::CopyProjectVersionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+                crate::error::CopyProjectVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CopyProjectVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CopyProjectVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CopyProjectVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -399,6 +429,28 @@ where
                 }
                 crate::error::DeleteProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteProjectPolicyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeleteProjectPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::DeleteProjectPolicyErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DeleteProjectPolicyErrorKind::InvalidPolicyRevisionIdException(inner) => Error::InvalidPolicyRevisionIdException(inner),
+                crate::error::DeleteProjectPolicyErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::DeleteProjectPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteProjectPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DeleteProjectPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1206,6 +1258,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListProjectPoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListProjectPoliciesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListProjectPoliciesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::ListProjectPoliciesErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+                crate::error::ListProjectPoliciesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::ListProjectPoliciesErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::ListProjectPoliciesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListProjectPoliciesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListProjectPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStreamProcessorsError, R>>
     for Error
 where
@@ -1245,6 +1319,56 @@ where
                 crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutProjectPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutProjectPolicyErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::InvalidPolicyRevisionIdException(
+                    inner,
+                ) => Error::InvalidPolicyRevisionIdException(inner),
+                crate::error::PutProjectPolicyErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::MalformedPolicyDocumentException(
+                    inner,
+                ) => Error::MalformedPolicyDocumentException(inner),
+                crate::error::PutProjectPolicyErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::PutProjectPolicyErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::ServiceQuotaExceededException(inner) => {
+                    Error::ServiceQuotaExceededException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::PutProjectPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }

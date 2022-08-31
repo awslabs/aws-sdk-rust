@@ -703,6 +703,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDashboards {
     }
 }
 
+/// Operation shape for `ListManagedInsightRules`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_managed_insight_rules`](crate::client::Client::list_managed_insight_rules).
+///
+/// See [`crate::client::fluent_builders::ListManagedInsightRules`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListManagedInsightRules {
+    _private: (),
+}
+impl ListManagedInsightRules {
+    /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
+    pub fn builder() -> crate::input::list_managed_insight_rules_input::Builder {
+        crate::input::list_managed_insight_rules_input::Builder::default()
+    }
+    /// Creates a new `ListManagedInsightRules` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListManagedInsightRules {
+    type Output = std::result::Result<
+        crate::output::ListManagedInsightRulesOutput,
+        crate::error::ListManagedInsightRulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_managed_insight_rules_error(response)
+        } else {
+            crate::operation_deser::parse_list_managed_insight_rules_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListMetrics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -931,6 +965,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInsightRule {
             crate::operation_deser::parse_put_insight_rule_error(response)
         } else {
             crate::operation_deser::parse_put_insight_rule_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutManagedInsightRules`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_managed_insight_rules`](crate::client::Client::put_managed_insight_rules).
+///
+/// See [`crate::client::fluent_builders::PutManagedInsightRules`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutManagedInsightRules {
+    _private: (),
+}
+impl PutManagedInsightRules {
+    /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
+    pub fn builder() -> crate::input::put_managed_insight_rules_input::Builder {
+        crate::input::put_managed_insight_rules_input::Builder::default()
+    }
+    /// Creates a new `PutManagedInsightRules` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutManagedInsightRules {
+    type Output = std::result::Result<
+        crate::output::PutManagedInsightRulesOutput,
+        crate::error::PutManagedInsightRulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_managed_insight_rules_error(response)
+        } else {
+            crate::operation_deser::parse_put_managed_insight_rules_response(response)
         }
     }
 }

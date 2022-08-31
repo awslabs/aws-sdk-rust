@@ -11,6 +11,7 @@ pub struct Forecast {
     /// <li> <p>p50</p> </li>
     /// <li> <p>p90</p> </li>
     /// </ul>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
     #[doc(hidden)]
     pub predictions: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
@@ -24,6 +25,7 @@ impl Forecast {
     /// <li> <p>p50</p> </li>
     /// <li> <p>p90</p> </li>
     /// </ul>
+    /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
     pub fn predictions(
         &self,
     ) -> std::option::Option<
@@ -61,6 +63,7 @@ pub mod forecast {
         /// <li> <p>p50</p> </li>
         /// <li> <p>p90</p> </li>
         /// </ul>
+        /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
         pub fn predictions(
             mut self,
             k: impl Into<std::string::String>,
@@ -78,6 +81,7 @@ pub mod forecast {
         /// <li> <p>p50</p> </li>
         /// <li> <p>p90</p> </li>
         /// </ul>
+        /// <p>The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a> operation to change the values. The values will vary depending on how this is set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
         pub fn set_predictions(
             mut self,
             input: std::option::Option<

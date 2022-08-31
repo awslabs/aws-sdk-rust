@@ -568,6 +568,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutFeedbackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutFeedbackError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutFeedbackErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::PutFeedbackErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::PutFeedbackErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::PutFeedbackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryAssistantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

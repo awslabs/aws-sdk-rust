@@ -1210,6 +1210,314 @@ impl RuleGroupsNamespaceDescription {
     }
 }
 
+/// Represents the status of a logging configuration.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoggingConfigurationStatus {
+    /// Status code of the logging configuration.
+    #[doc(hidden)]
+    pub status_code: std::option::Option<crate::model::LoggingConfigurationStatusCode>,
+    /// The reason for failure if any.
+    #[doc(hidden)]
+    pub status_reason: std::option::Option<std::string::String>,
+}
+impl LoggingConfigurationStatus {
+    /// Status code of the logging configuration.
+    pub fn status_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfigurationStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// The reason for failure if any.
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for LoggingConfigurationStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoggingConfigurationStatus");
+        formatter.field("status_code", &self.status_code);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.finish()
+    }
+}
+/// See [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
+pub mod logging_configuration_status {
+
+    /// A builder for [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_code: std::option::Option<crate::model::LoggingConfigurationStatusCode>,
+        pub(crate) status_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Status code of the logging configuration.
+        pub fn status_code(mut self, input: crate::model::LoggingConfigurationStatusCode) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        /// Status code of the logging configuration.
+        pub fn set_status_code(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfigurationStatusCode>,
+        ) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// The reason for failure if any.
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
+            self
+        }
+        /// The reason for failure if any.
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
+        pub fn build(self) -> crate::model::LoggingConfigurationStatus {
+            crate::model::LoggingConfigurationStatus {
+                status_code: self.status_code,
+                status_reason: self.status_reason,
+            }
+        }
+    }
+}
+impl LoggingConfigurationStatus {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
+    pub fn builder() -> crate::model::logging_configuration_status::Builder {
+        crate::model::logging_configuration_status::Builder::default()
+    }
+}
+
+/// State of a logging configuration.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LoggingConfigurationStatusCode {
+    /// Logging configuration has been created/updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
+    Active,
+    /// Logging configuration is being created. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
+    Creating,
+    /// Logging configuration creation failed.
+    CreationFailed,
+    /// Logging configuration is being deleting. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
+    Deleting,
+    /// Logging configuration update failed.
+    UpdateFailed,
+    /// Logging configuration is being updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LoggingConfigurationStatusCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => LoggingConfigurationStatusCode::Active,
+            "CREATING" => LoggingConfigurationStatusCode::Creating,
+            "CREATION_FAILED" => LoggingConfigurationStatusCode::CreationFailed,
+            "DELETING" => LoggingConfigurationStatusCode::Deleting,
+            "UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
+            "UPDATING" => LoggingConfigurationStatusCode::Updating,
+            other => LoggingConfigurationStatusCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LoggingConfigurationStatusCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoggingConfigurationStatusCode::from(s))
+    }
+}
+impl LoggingConfigurationStatusCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoggingConfigurationStatusCode::Active => "ACTIVE",
+            LoggingConfigurationStatusCode::Creating => "CREATING",
+            LoggingConfigurationStatusCode::CreationFailed => "CREATION_FAILED",
+            LoggingConfigurationStatusCode::Deleting => "DELETING",
+            LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
+            LoggingConfigurationStatusCode::Updating => "UPDATING",
+            LoggingConfigurationStatusCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for LoggingConfigurationStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Represents the properties of a logging configuration metadata.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoggingConfigurationMetadata {
+    /// The status of the logging configuration.
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+    /// The workspace where the logging configuration exists.
+    #[doc(hidden)]
+    pub workspace: std::option::Option<std::string::String>,
+    /// The ARN of the CW log group to which the vended log data will be published.
+    #[doc(hidden)]
+    pub log_group_arn: std::option::Option<std::string::String>,
+    /// The time when the logging configuration was created.
+    #[doc(hidden)]
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// The time when the logging configuration was modified.
+    #[doc(hidden)]
+    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LoggingConfigurationMetadata {
+    /// The status of the logging configuration.
+    pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// The workspace where the logging configuration exists.
+    pub fn workspace(&self) -> std::option::Option<&str> {
+        self.workspace.as_deref()
+    }
+    /// The ARN of the CW log group to which the vended log data will be published.
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+    /// The time when the logging configuration was created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// The time when the logging configuration was modified.
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.modified_at.as_ref()
+    }
+}
+impl std::fmt::Debug for LoggingConfigurationMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoggingConfigurationMetadata");
+        formatter.field("status", &self.status);
+        formatter.field("workspace", &self.workspace);
+        formatter.field("log_group_arn", &self.log_group_arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.finish()
+    }
+}
+/// See [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
+pub mod logging_configuration_metadata {
+
+    /// A builder for [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+        pub(crate) workspace: std::option::Option<std::string::String>,
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// The status of the logging configuration.
+        pub fn status(mut self, input: crate::model::LoggingConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// The status of the logging configuration.
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// The workspace where the logging configuration exists.
+        pub fn workspace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace = Some(input.into());
+            self
+        }
+        /// The workspace where the logging configuration exists.
+        pub fn set_workspace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace = input;
+            self
+        }
+        /// The ARN of the CW log group to which the vended log data will be published.
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// The ARN of the CW log group to which the vended log data will be published.
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// The time when the logging configuration was created.
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// The time when the logging configuration was created.
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// The time when the logging configuration was modified.
+        pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.modified_at = Some(input);
+            self
+        }
+        /// The time when the logging configuration was modified.
+        pub fn set_modified_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.modified_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
+        pub fn build(self) -> crate::model::LoggingConfigurationMetadata {
+            crate::model::LoggingConfigurationMetadata {
+                status: self.status,
+                workspace: self.workspace,
+                log_group_arn: self.log_group_arn,
+                created_at: self.created_at,
+                modified_at: self.modified_at,
+            }
+        }
+    }
+}
+impl LoggingConfigurationMetadata {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
+    pub fn builder() -> crate::model::logging_configuration_metadata::Builder {
+        crate::model::logging_configuration_metadata::Builder::default()
+    }
+}
+
 /// Represents the status of a definition.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

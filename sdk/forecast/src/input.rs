@@ -2992,6 +2992,659 @@ impl CreatePredictorBacktestExportJobInput {
     }
 }
 
+/// See [`CreateWhatIfAnalysisInput`](crate::input::CreateWhatIfAnalysisInput).
+pub mod create_what_if_analysis_input {
+
+    /// A builder for [`CreateWhatIfAnalysisInput`](crate::input::CreateWhatIfAnalysisInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_analysis_name: std::option::Option<std::string::String>,
+        pub(crate) forecast_arn: std::option::Option<std::string::String>,
+        pub(crate) time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the what-if analysis. Each name must be unique.</p>
+        pub fn what_if_analysis_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the what-if analysis. Each name must be unique.</p>
+        pub fn set_what_if_analysis_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.forecast_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+        pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.forecast_arn = input;
+            self
+        }
+        /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn time_series_selector(mut self, input: crate::model::TimeSeriesSelector) -> Self {
+            self.time_series_selector = Some(input);
+            self
+        }
+        /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn set_time_series_selector(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesSelector>,
+        ) -> Self {
+            self.time_series_selector = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWhatIfAnalysisInput`](crate::input::CreateWhatIfAnalysisInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateWhatIfAnalysisInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateWhatIfAnalysisInput {
+                what_if_analysis_name: self.what_if_analysis_name,
+                forecast_arn: self.forecast_arn,
+                time_series_selector: self.time_series_selector,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateWhatIfAnalysisInputOperationOutputAlias = crate::operation::CreateWhatIfAnalysis;
+#[doc(hidden)]
+pub type CreateWhatIfAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateWhatIfAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`CreateWhatIfAnalysis`](crate::operation::CreateWhatIfAnalysis)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWhatIfAnalysis,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateWhatIfAnalysisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWhatIfAnalysisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.CreateWhatIfAnalysis",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_what_if_analysis(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWhatIfAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWhatIfAnalysis",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateWhatIfAnalysisInput`](crate::input::CreateWhatIfAnalysisInput).
+    pub fn builder() -> crate::input::create_what_if_analysis_input::Builder {
+        crate::input::create_what_if_analysis_input::Builder::default()
+    }
+}
+
+/// See [`CreateWhatIfForecastInput`](crate::input::CreateWhatIfForecastInput).
+pub mod create_what_if_forecast_input {
+
+    /// A builder for [`CreateWhatIfForecastInput`](crate::input::CreateWhatIfForecastInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_name: std::option::Option<std::string::String>,
+        pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
+        pub(crate) time_series_transformations:
+            std::option::Option<std::vec::Vec<crate::model::TimeSeriesTransformation>>,
+        pub(crate) time_series_replacements_data_source:
+            std::option::Option<crate::model::TimeSeriesReplacementsDataSource>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+        pub fn what_if_forecast_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_forecast_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+        pub fn set_what_if_forecast_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_arn = input;
+            self
+        }
+        /// Appends an item to `time_series_transformations`.
+        ///
+        /// To override the contents of this collection use [`set_time_series_transformations`](Self::set_time_series_transformations).
+        ///
+        /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+        pub fn time_series_transformations(
+            mut self,
+            input: crate::model::TimeSeriesTransformation,
+        ) -> Self {
+            let mut v = self.time_series_transformations.unwrap_or_default();
+            v.push(input);
+            self.time_series_transformations = Some(v);
+            self
+        }
+        /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+        pub fn set_time_series_transformations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesTransformation>>,
+        ) -> Self {
+            self.time_series_transformations = input;
+            self
+        }
+        /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+        /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+        /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+        pub fn time_series_replacements_data_source(
+            mut self,
+            input: crate::model::TimeSeriesReplacementsDataSource,
+        ) -> Self {
+            self.time_series_replacements_data_source = Some(input);
+            self
+        }
+        /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+        /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+        /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+        pub fn set_time_series_replacements_data_source(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesReplacementsDataSource>,
+        ) -> Self {
+            self.time_series_replacements_data_source = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWhatIfForecastInput`](crate::input::CreateWhatIfForecastInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateWhatIfForecastInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateWhatIfForecastInput {
+                what_if_forecast_name: self.what_if_forecast_name,
+                what_if_analysis_arn: self.what_if_analysis_arn,
+                time_series_transformations: self.time_series_transformations,
+                time_series_replacements_data_source: self.time_series_replacements_data_source,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateWhatIfForecastInputOperationOutputAlias = crate::operation::CreateWhatIfForecast;
+#[doc(hidden)]
+pub type CreateWhatIfForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateWhatIfForecastInput {
+    /// Consumes the builder and constructs an Operation<[`CreateWhatIfForecast`](crate::operation::CreateWhatIfForecast)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWhatIfForecast,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateWhatIfForecastInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWhatIfForecastInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.CreateWhatIfForecast",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_what_if_forecast(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWhatIfForecast::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWhatIfForecast",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateWhatIfForecastInput`](crate::input::CreateWhatIfForecastInput).
+    pub fn builder() -> crate::input::create_what_if_forecast_input::Builder {
+        crate::input::create_what_if_forecast_input::Builder::default()
+    }
+}
+
+/// See [`CreateWhatIfForecastExportInput`](crate::input::CreateWhatIfForecastExportInput).
+pub mod create_what_if_forecast_export_input {
+
+    /// A builder for [`CreateWhatIfForecastExportInput`](crate::input::CreateWhatIfForecastExportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_export_name: std::option::Option<std::string::String>,
+        pub(crate) what_if_forecast_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) destination: std::option::Option<crate::model::DataDestination>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) format: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the what-if forecast to export.</p>
+        pub fn what_if_forecast_export_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the what-if forecast to export.</p>
+        pub fn set_what_if_forecast_export_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_name = input;
+            self
+        }
+        /// Appends an item to `what_if_forecast_arns`.
+        ///
+        /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
+        ///
+        /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+        pub fn what_if_forecast_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.what_if_forecast_arns.unwrap_or_default();
+            v.push(input.into());
+            self.what_if_forecast_arns = Some(v);
+            self
+        }
+        /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+        pub fn set_what_if_forecast_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.what_if_forecast_arns = input;
+            self
+        }
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.destination = Some(input);
+            self
+        }
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::DataDestination>,
+        ) -> Self {
+            self.destination = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWhatIfForecastExportInput`](crate::input::CreateWhatIfForecastExportInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateWhatIfForecastExportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateWhatIfForecastExportInput {
+                what_if_forecast_export_name: self.what_if_forecast_export_name,
+                what_if_forecast_arns: self.what_if_forecast_arns,
+                destination: self.destination,
+                tags: self.tags,
+                format: self.format,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateWhatIfForecastExportInputOperationOutputAlias =
+    crate::operation::CreateWhatIfForecastExport;
+#[doc(hidden)]
+pub type CreateWhatIfForecastExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateWhatIfForecastExportInput {
+    /// Consumes the builder and constructs an Operation<[`CreateWhatIfForecastExport`](crate::operation::CreateWhatIfForecastExport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWhatIfForecastExport,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateWhatIfForecastExportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWhatIfForecastExportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.CreateWhatIfForecastExport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_what_if_forecast_export(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWhatIfForecastExport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWhatIfForecastExport",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateWhatIfForecastExportInput`](crate::input::CreateWhatIfForecastExportInput).
+    pub fn builder() -> crate::input::create_what_if_forecast_export_input::Builder {
+        crate::input::create_what_if_forecast_export_input::Builder::default()
+    }
+}
+
 /// See [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
 pub mod delete_dataset_input {
 
@@ -4568,6 +5221,444 @@ impl DeleteResourceTreeInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceTreeInput`](crate::input::DeleteResourceTreeInput).
     pub fn builder() -> crate::input::delete_resource_tree_input::Builder {
         crate::input::delete_resource_tree_input::Builder::default()
+    }
+}
+
+/// See [`DeleteWhatIfAnalysisInput`](crate::input::DeleteWhatIfAnalysisInput).
+pub mod delete_what_if_analysis_input {
+
+    /// A builder for [`DeleteWhatIfAnalysisInput`](crate::input::DeleteWhatIfAnalysisInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteWhatIfAnalysisInput`](crate::input::DeleteWhatIfAnalysisInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteWhatIfAnalysisInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteWhatIfAnalysisInput {
+                what_if_analysis_arn: self.what_if_analysis_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteWhatIfAnalysisInputOperationOutputAlias = crate::operation::DeleteWhatIfAnalysis;
+#[doc(hidden)]
+pub type DeleteWhatIfAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteWhatIfAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteWhatIfAnalysis`](crate::operation::DeleteWhatIfAnalysis)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteWhatIfAnalysis,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteWhatIfAnalysisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWhatIfAnalysisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.DeleteWhatIfAnalysis",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_what_if_analysis(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWhatIfAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWhatIfAnalysis",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteWhatIfAnalysisInput`](crate::input::DeleteWhatIfAnalysisInput).
+    pub fn builder() -> crate::input::delete_what_if_analysis_input::Builder {
+        crate::input::delete_what_if_analysis_input::Builder::default()
+    }
+}
+
+/// See [`DeleteWhatIfForecastInput`](crate::input::DeleteWhatIfForecastInput).
+pub mod delete_what_if_forecast_input {
+
+    /// A builder for [`DeleteWhatIfForecastInput`](crate::input::DeleteWhatIfForecastInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+        pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_forecast_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+        pub fn set_what_if_forecast_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteWhatIfForecastInput`](crate::input::DeleteWhatIfForecastInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteWhatIfForecastInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteWhatIfForecastInput {
+                what_if_forecast_arn: self.what_if_forecast_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteWhatIfForecastInputOperationOutputAlias = crate::operation::DeleteWhatIfForecast;
+#[doc(hidden)]
+pub type DeleteWhatIfForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteWhatIfForecastInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteWhatIfForecast`](crate::operation::DeleteWhatIfForecast)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteWhatIfForecast,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteWhatIfForecastInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWhatIfForecastInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.DeleteWhatIfForecast",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_what_if_forecast(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWhatIfForecast::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWhatIfForecast",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastInput`](crate::input::DeleteWhatIfForecastInput).
+    pub fn builder() -> crate::input::delete_what_if_forecast_input::Builder {
+        crate::input::delete_what_if_forecast_input::Builder::default()
+    }
+}
+
+/// See [`DeleteWhatIfForecastExportInput`](crate::input::DeleteWhatIfForecastExportInput).
+pub mod delete_what_if_forecast_export_input {
+
+    /// A builder for [`DeleteWhatIfForecastExportInput`](crate::input::DeleteWhatIfForecastExportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_export_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+        pub fn what_if_forecast_export_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+        pub fn set_what_if_forecast_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteWhatIfForecastExportInput`](crate::input::DeleteWhatIfForecastExportInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteWhatIfForecastExportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteWhatIfForecastExportInput {
+                what_if_forecast_export_arn: self.what_if_forecast_export_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteWhatIfForecastExportInputOperationOutputAlias =
+    crate::operation::DeleteWhatIfForecastExport;
+#[doc(hidden)]
+pub type DeleteWhatIfForecastExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteWhatIfForecastExportInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteWhatIfForecastExport`](crate::operation::DeleteWhatIfForecastExport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteWhatIfForecastExport,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteWhatIfForecastExportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWhatIfForecastExportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.DeleteWhatIfForecastExport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_what_if_forecast_export(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWhatIfForecastExport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWhatIfForecastExport",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastExportInput`](crate::input::DeleteWhatIfForecastExportInput).
+    pub fn builder() -> crate::input::delete_what_if_forecast_export_input::Builder {
+        crate::input::delete_what_if_forecast_export_input::Builder::default()
     }
 }
 
@@ -6157,6 +7248,445 @@ impl DescribePredictorBacktestExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribePredictorBacktestExportJobInput`](crate::input::DescribePredictorBacktestExportJobInput).
     pub fn builder() -> crate::input::describe_predictor_backtest_export_job_input::Builder {
         crate::input::describe_predictor_backtest_export_job_input::Builder::default()
+    }
+}
+
+/// See [`DescribeWhatIfAnalysisInput`](crate::input::DescribeWhatIfAnalysisInput).
+pub mod describe_what_if_analysis_input {
+
+    /// A builder for [`DescribeWhatIfAnalysisInput`](crate::input::DescribeWhatIfAnalysisInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+        pub fn what_if_analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_analysis_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+        pub fn set_what_if_analysis_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_analysis_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWhatIfAnalysisInput`](crate::input::DescribeWhatIfAnalysisInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeWhatIfAnalysisInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeWhatIfAnalysisInput {
+                what_if_analysis_arn: self.what_if_analysis_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeWhatIfAnalysisInputOperationOutputAlias = crate::operation::DescribeWhatIfAnalysis;
+#[doc(hidden)]
+pub type DescribeWhatIfAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeWhatIfAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeWhatIfAnalysis`](crate::operation::DescribeWhatIfAnalysis)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWhatIfAnalysis,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeWhatIfAnalysisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWhatIfAnalysisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.DescribeWhatIfAnalysis",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_what_if_analysis(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWhatIfAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWhatIfAnalysis",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeWhatIfAnalysisInput`](crate::input::DescribeWhatIfAnalysisInput).
+    pub fn builder() -> crate::input::describe_what_if_analysis_input::Builder {
+        crate::input::describe_what_if_analysis_input::Builder::default()
+    }
+}
+
+/// See [`DescribeWhatIfForecastInput`](crate::input::DescribeWhatIfForecastInput).
+pub mod describe_what_if_forecast_input {
+
+    /// A builder for [`DescribeWhatIfForecastInput`](crate::input::DescribeWhatIfForecastInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+        pub fn what_if_forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.what_if_forecast_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+        pub fn set_what_if_forecast_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWhatIfForecastInput`](crate::input::DescribeWhatIfForecastInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeWhatIfForecastInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeWhatIfForecastInput {
+                what_if_forecast_arn: self.what_if_forecast_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeWhatIfForecastInputOperationOutputAlias = crate::operation::DescribeWhatIfForecast;
+#[doc(hidden)]
+pub type DescribeWhatIfForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeWhatIfForecastInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeWhatIfForecast`](crate::operation::DescribeWhatIfForecast)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWhatIfForecast,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeWhatIfForecastInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWhatIfForecastInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.DescribeWhatIfForecast",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_what_if_forecast(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWhatIfForecast::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWhatIfForecast",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastInput`](crate::input::DescribeWhatIfForecastInput).
+    pub fn builder() -> crate::input::describe_what_if_forecast_input::Builder {
+        crate::input::describe_what_if_forecast_input::Builder::default()
+    }
+}
+
+/// See [`DescribeWhatIfForecastExportInput`](crate::input::DescribeWhatIfForecastExportInput).
+pub mod describe_what_if_forecast_export_input {
+
+    /// A builder for [`DescribeWhatIfForecastExportInput`](crate::input::DescribeWhatIfForecastExportInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) what_if_forecast_export_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+        pub fn what_if_forecast_export_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+        pub fn set_what_if_forecast_export_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_export_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWhatIfForecastExportInput`](crate::input::DescribeWhatIfForecastExportInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeWhatIfForecastExportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeWhatIfForecastExportInput {
+                what_if_forecast_export_arn: self.what_if_forecast_export_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeWhatIfForecastExportInputOperationOutputAlias =
+    crate::operation::DescribeWhatIfForecastExport;
+#[doc(hidden)]
+pub type DescribeWhatIfForecastExportInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeWhatIfForecastExportInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeWhatIfForecastExport`](crate::operation::DescribeWhatIfForecastExport)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWhatIfForecastExport,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeWhatIfForecastExportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWhatIfForecastExportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.DescribeWhatIfForecastExport",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_what_if_forecast_export(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWhatIfForecastExport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWhatIfForecastExport",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastExportInput`](crate::input::DescribeWhatIfForecastExportInput).
+    pub fn builder() -> crate::input::describe_what_if_forecast_export_input::Builder {
+        crate::input::describe_what_if_forecast_export_input::Builder::default()
     }
 }
 
@@ -8470,6 +10000,595 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`ListWhatIfAnalysesInput`](crate::input::ListWhatIfAnalysesInput).
+pub mod list_what_if_analyses_input {
+
+    /// A builder for [`ListWhatIfAnalysesInput`](crate::input::ListWhatIfAnalysesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    }
+    impl Builder {
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIf" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIf" } ]
+        /// </acct-id></code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWhatIfAnalysesInput`](crate::input::ListWhatIfAnalysesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListWhatIfAnalysesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListWhatIfAnalysesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListWhatIfAnalysesInputOperationOutputAlias = crate::operation::ListWhatIfAnalyses;
+#[doc(hidden)]
+pub type ListWhatIfAnalysesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListWhatIfAnalysesInput {
+    /// Consumes the builder and constructs an Operation<[`ListWhatIfAnalyses`](crate::operation::ListWhatIfAnalyses)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWhatIfAnalyses,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListWhatIfAnalysesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWhatIfAnalysesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.ListWhatIfAnalyses",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_what_if_analyses(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWhatIfAnalyses::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWhatIfAnalyses",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListWhatIfAnalysesInput`](crate::input::ListWhatIfAnalysesInput).
+    pub fn builder() -> crate::input::list_what_if_analyses_input::Builder {
+        crate::input::list_what_if_analyses_input::Builder::default()
+    }
+}
+
+/// See [`ListWhatIfForecastExportsInput`](crate::input::ListWhatIfForecastExportsInput).
+pub mod list_what_if_forecast_exports_input {
+
+    /// A builder for [`ListWhatIfForecastExportsInput`](crate::input::ListWhatIfForecastExportsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    }
+    impl Builder {
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWIFExport" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWIFExport" } ]
+        /// </acct-id></code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWhatIfForecastExportsInput`](crate::input::ListWhatIfForecastExportsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListWhatIfForecastExportsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListWhatIfForecastExportsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListWhatIfForecastExportsInputOperationOutputAlias =
+    crate::operation::ListWhatIfForecastExports;
+#[doc(hidden)]
+pub type ListWhatIfForecastExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListWhatIfForecastExportsInput {
+    /// Consumes the builder and constructs an Operation<[`ListWhatIfForecastExports`](crate::operation::ListWhatIfForecastExports)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWhatIfForecastExports,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListWhatIfForecastExportsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWhatIfForecastExportsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.ListWhatIfForecastExports",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_what_if_forecast_exports(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWhatIfForecastExports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWhatIfForecastExports",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListWhatIfForecastExportsInput`](crate::input::ListWhatIfForecastExportsInput).
+    pub fn builder() -> crate::input::list_what_if_forecast_exports_input::Builder {
+        crate::input::list_what_if_forecast_exports_input::Builder::default()
+    }
+}
+
+/// See [`ListWhatIfForecastsInput`](crate::input::ListWhatIfForecastsInput).
+pub mod list_what_if_forecasts_input {
+
+    /// A builder for [`ListWhatIfForecastsInput`](crate::input::ListWhatIfForecastsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    }
+    impl Builder {
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The number of items to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIfForecast" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
+        /// <ul>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityWhatIfForecast" } ]
+        /// </acct-id></code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWhatIfForecastsInput`](crate::input::ListWhatIfForecastsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListWhatIfForecastsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListWhatIfForecastsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListWhatIfForecastsInputOperationOutputAlias = crate::operation::ListWhatIfForecasts;
+#[doc(hidden)]
+pub type ListWhatIfForecastsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListWhatIfForecastsInput {
+    /// Consumes the builder and constructs an Operation<[`ListWhatIfForecasts`](crate::operation::ListWhatIfForecasts)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWhatIfForecasts,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListWhatIfForecastsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWhatIfForecastsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecast.ListWhatIfForecasts",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_what_if_forecasts(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWhatIfForecasts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWhatIfForecasts",
+            "forecast",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListWhatIfForecastsInput`](crate::input::ListWhatIfForecastsInput).
+    pub fn builder() -> crate::input::list_what_if_forecasts_input::Builder {
+        crate::input::list_what_if_forecasts_input::Builder::default()
+    }
+}
+
 /// See [`ResumeResourceInput`](crate::input::ResumeResourceInput).
 pub mod resume_resource_input {
 
@@ -9413,6 +11532,186 @@ impl std::fmt::Debug for ResumeResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWhatIfForecastsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWhatIfForecast" } ]
+    /// </acct-id></code> </p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListWhatIfForecastsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWhatIfForecast" } ]
+    /// </acct-id></code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
+impl std::fmt::Debug for ListWhatIfForecastsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWhatIfForecastsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWhatIfForecastExportsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWIFExport" } ]
+    /// </acct-id></code> </p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListWhatIfForecastExportsInput {
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWIFExport" } ]
+    /// </acct-id></code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
+impl std::fmt::Debug for ListWhatIfForecastExportsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWhatIfForecastExportsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWhatIfAnalysesInput {
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The number of items to return in the response.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWhatIf" } ]
+    /// </acct-id></code> </p>
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListWhatIfAnalysesInput {
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the what-if analysis jobs that match the statement, specify <code>IS</code>. To exclude matching what-if analysis jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfAnalysisArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIf</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWhatIf" } ]
+    /// </acct-id></code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
+impl std::fmt::Debug for ListWhatIfAnalysesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWhatIfAnalysesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     #[doc(hidden)]
@@ -10005,6 +12304,75 @@ impl std::fmt::Debug for GetAccuracyMetricsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWhatIfForecastExportInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_export_arn: std::option::Option<std::string::String>,
+}
+impl DescribeWhatIfForecastExportInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_export_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeWhatIfForecastExportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeWhatIfForecastExportInput");
+        formatter.field(
+            "what_if_forecast_export_arn",
+            &self.what_if_forecast_export_arn,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWhatIfForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_arn: std::option::Option<std::string::String>,
+}
+impl DescribeWhatIfForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    pub fn what_if_forecast_arn(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeWhatIfForecastInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeWhatIfForecastInput");
+        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWhatIfAnalysisInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_arn: std::option::Option<std::string::String>,
+}
+impl DescribeWhatIfAnalysisInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeWhatIfAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeWhatIfAnalysisInput");
+        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     #[doc(hidden)]
@@ -10250,6 +12618,75 @@ impl std::fmt::Debug for DescribeAutoPredictorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWhatIfForecastExportInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_export_arn: std::option::Option<std::string::String>,
+}
+impl DeleteWhatIfForecastExportInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_export_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteWhatIfForecastExportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWhatIfForecastExportInput");
+        formatter.field(
+            "what_if_forecast_export_arn",
+            &self.what_if_forecast_export_arn,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWhatIfForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_arn: std::option::Option<std::string::String>,
+}
+impl DeleteWhatIfForecastInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+    pub fn what_if_forecast_arn(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteWhatIfForecastInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWhatIfForecastInput");
+        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWhatIfAnalysisInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_arn: std::option::Option<std::string::String>,
+}
+impl DeleteWhatIfAnalysisInput {
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteWhatIfAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWhatIfAnalysisInput");
+        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceTreeInput {
     /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
     #[doc(hidden)]
@@ -10488,6 +12925,193 @@ impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
         formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWhatIfForecastExportInput {
+    /// <p>The name of the what-if forecast to export.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_export_name: std::option::Option<std::string::String>,
+    /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    #[doc(hidden)]
+    pub destination: std::option::Option<crate::model::DataDestination>,
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    #[doc(hidden)]
+    pub format: std::option::Option<std::string::String>,
+}
+impl CreateWhatIfForecastExportInput {
+    /// <p>The name of the what-if forecast to export.</p>
+    pub fn what_if_forecast_export_name(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_export_name.as_deref()
+    }
+    /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
+    pub fn what_if_forecast_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.what_if_forecast_arns.as_deref()
+    }
+    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateWhatIfForecastExportInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWhatIfForecastExportInput");
+        formatter.field(
+            "what_if_forecast_export_name",
+            &self.what_if_forecast_export_name,
+        );
+        formatter.field("what_if_forecast_arns", &self.what_if_forecast_arns);
+        formatter.field("destination", &self.destination);
+        formatter.field("tags", &self.tags);
+        formatter.field("format", &self.format);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWhatIfForecastInput {
+    /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+    #[doc(hidden)]
+    pub what_if_forecast_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_arn: std::option::Option<std::string::String>,
+    /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+    #[doc(hidden)]
+    pub time_series_transformations:
+        std::option::Option<std::vec::Vec<crate::model::TimeSeriesTransformation>>,
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+    #[doc(hidden)]
+    pub time_series_replacements_data_source:
+        std::option::Option<crate::model::TimeSeriesReplacementsDataSource>,
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateWhatIfForecastInput {
+    /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+    pub fn what_if_forecast_name(&self) -> std::option::Option<&str> {
+        self.what_if_forecast_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_arn.as_deref()
+    }
+    /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
+    pub fn time_series_transformations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TimeSeriesTransformation]> {
+        self.time_series_transformations.as_deref()
+    }
+    /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast. This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
+    /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
+    /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
+    pub fn time_series_replacements_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeSeriesReplacementsDataSource> {
+        self.time_series_replacements_data_source.as_ref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateWhatIfForecastInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWhatIfForecastInput");
+        formatter.field("what_if_forecast_name", &self.what_if_forecast_name);
+        formatter.field("what_if_analysis_arn", &self.what_if_analysis_arn);
+        formatter.field(
+            "time_series_transformations",
+            &self.time_series_transformations,
+        );
+        formatter.field(
+            "time_series_replacements_data_source",
+            &self.time_series_replacements_data_source,
+        );
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWhatIfAnalysisInput {
+    /// <p>The name of the what-if analysis. Each name must be unique.</p>
+    #[doc(hidden)]
+    pub what_if_analysis_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+    #[doc(hidden)]
+    pub forecast_arn: std::option::Option<std::string::String>,
+    /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+    /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+    /// <ul>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>Format</code> </p> </li>
+    /// <li> <p> <code>Schema</code> </p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateWhatIfAnalysisInput {
+    /// <p>The name of the what-if analysis. Each name must be unique.</p>
+    pub fn what_if_analysis_name(&self) -> std::option::Option<&str> {
+        self.what_if_analysis_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+    /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+    /// <ul>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>Format</code> </p> </li>
+    /// <li> <p> <code>Schema</code> </p> </li>
+    /// </ul>
+    pub fn time_series_selector(&self) -> std::option::Option<&crate::model::TimeSeriesSelector> {
+        self.time_series_selector.as_ref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateWhatIfAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWhatIfAnalysisInput");
+        formatter.field("what_if_analysis_name", &self.what_if_analysis_name);
+        formatter.field("forecast_arn", &self.forecast_arn);
+        formatter.field("time_series_selector", &self.time_series_selector);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

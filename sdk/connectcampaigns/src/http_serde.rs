@@ -299,6 +299,16 @@ pub fn deser_header_get_campaign_state_throttling_exception_x_amz_error_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_get_campaign_state_validation_exception_x_amz_error_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("x-amzn-ErrorType").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_get_campaign_state_batch_access_denied_exception_x_amz_error_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -559,6 +569,16 @@ pub fn deser_header_pause_campaign_throttling_exception_x_amz_error_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_pause_campaign_validation_exception_x_amz_error_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("x-amzn-ErrorType").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_put_dial_request_batch_access_denied_exception_x_amz_error_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -689,6 +709,16 @@ pub fn deser_header_resume_campaign_throttling_exception_x_amz_error_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_resume_campaign_validation_exception_x_amz_error_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("x-amzn-ErrorType").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_start_campaign_access_denied_exception_x_amz_error_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -740,6 +770,16 @@ pub fn deser_header_start_campaign_resource_not_found_exception_x_amz_error_type
 }
 
 pub fn deser_header_start_campaign_throttling_exception_x_amz_error_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("x-amzn-ErrorType").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_start_campaign_validation_exception_x_amz_error_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -860,6 +900,16 @@ pub fn deser_header_stop_campaign_resource_not_found_exception_x_amz_error_type(
 }
 
 pub fn deser_header_stop_campaign_throttling_exception_x_amz_error_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map.get_all("x-amzn-ErrorType").iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_stop_campaign_validation_exception_x_amz_error_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

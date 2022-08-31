@@ -1379,6 +1379,69 @@ pub fn deser_operation_crate_operation_list_dashboards(
 }
 
 #[allow(unused_mut)]
+pub fn deser_operation_crate_operation_list_managed_insight_rules(
+    inp: &[u8],
+    mut builder: crate::output::list_managed_insight_rules_output::Builder,
+) -> Result<
+    crate::output::list_managed_insight_rules_output::Builder,
+    aws_smithy_xml::decode::XmlError,
+> {
+    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    let start_el = decoder.start_el();
+    if !(start_el.matches("ListManagedInsightRulesResponse")) {
+        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
+            "invalid root, expected ListManagedInsightRulesResponse got {:?}",
+            start_el
+        )));
+    }
+    if let Some(mut result_tag) = decoder.next_tag() {
+        let start_el = result_tag.start_el();
+        if !(start_el.matches("ListManagedInsightRulesResult")) {
+            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
+                "invalid result, expected ListManagedInsightRulesResult got {:?}",
+                start_el
+            )));
+        }
+        while let Some(mut tag) = result_tag.next_tag() {
+            match tag.start_el() {
+            s if s.matches("ManagedRules") /* ManagedRules com.amazonaws.cloudwatch.synthetic#ListManagedInsightRulesOutput$ManagedRules */ =>  {
+                let var_53 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_managed_rule_descriptions(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_managed_rules(var_53);
+            }
+            ,
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#ListManagedInsightRulesOutput$NextToken */ =>  {
+                let var_54 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_token(var_54);
+            }
+            ,
+            _ => {}
+        }
+        }
+    } else {
+        return Err(aws_smithy_xml::decode::XmlError::custom(
+            "expected ListManagedInsightRulesResult tag",
+        ));
+    };
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
 pub fn deser_operation_crate_operation_list_metrics(
     inp: &[u8],
     mut builder: crate::output::list_metrics_output::Builder,
@@ -1405,17 +1468,17 @@ pub fn deser_operation_crate_operation_list_metrics(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Metrics") /* Metrics com.amazonaws.cloudwatch.synthetic#ListMetricsOutput$Metrics */ =>  {
-                let var_53 =
+                let var_55 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metrics(var_53);
+                builder = builder.set_metrics(var_55);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#ListMetricsOutput$NextToken */ =>  {
-                let var_54 =
+                let var_56 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1424,7 +1487,7 @@ pub fn deser_operation_crate_operation_list_metrics(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_54);
+                builder = builder.set_next_token(var_56);
             }
             ,
             _ => {}
@@ -1465,7 +1528,7 @@ pub fn deser_operation_crate_operation_list_metric_streams(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#ListMetricStreamsOutput$NextToken */ =>  {
-                let var_55 =
+                let var_57 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1474,17 +1537,17 @@ pub fn deser_operation_crate_operation_list_metric_streams(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_55);
+                builder = builder.set_next_token(var_57);
             }
             ,
             s if s.matches("Entries") /* Entries com.amazonaws.cloudwatch.synthetic#ListMetricStreamsOutput$Entries */ =>  {
-                let var_56 =
+                let var_58 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_stream_entries(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_entries(var_56);
+                builder = builder.set_entries(var_58);
             }
             ,
             _ => {}
@@ -1526,13 +1589,13 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Tags") /* Tags com.amazonaws.cloudwatch.synthetic#ListTagsForResourceOutput$Tags */ =>  {
-                let var_57 =
+                let var_59 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_57);
+                builder = builder.set_tags(var_59);
             }
             ,
             _ => {}
@@ -1560,7 +1623,7 @@ pub fn deser_structure_crate_error_limit_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.cloudwatch#LimitExceededFault$message */ =>  {
-                let var_58 =
+                let var_60 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1569,7 +1632,7 @@ pub fn deser_structure_crate_error_limit_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_58);
+                builder = builder.set_message(var_60);
             }
             ,
             _ => {}
@@ -1593,17 +1656,17 @@ pub fn deser_structure_crate_error_dashboard_invalid_input_error_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("dashboardValidationMessages") /* dashboardValidationMessages com.amazonaws.cloudwatch#DashboardInvalidInputError$dashboardValidationMessages */ =>  {
-                let var_59 =
+                let var_61 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dashboard_validation_messages(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dashboard_validation_messages(var_59);
+                builder = builder.set_dashboard_validation_messages(var_61);
             }
             ,
             s if s.matches("message") /* message com.amazonaws.cloudwatch#DashboardInvalidInputError$message */ =>  {
-                let var_60 =
+                let var_62 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1612,7 +1675,7 @@ pub fn deser_structure_crate_error_dashboard_invalid_input_error_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_60);
+                builder = builder.set_message(var_62);
             }
             ,
             _ => {}
@@ -1648,13 +1711,13 @@ pub fn deser_operation_crate_operation_put_dashboard(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("DashboardValidationMessages") /* DashboardValidationMessages com.amazonaws.cloudwatch.synthetic#PutDashboardOutput$DashboardValidationMessages */ =>  {
-                let var_61 =
+                let var_63 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dashboard_validation_messages(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dashboard_validation_messages(var_61);
+                builder = builder.set_dashboard_validation_messages(var_63);
             }
             ,
             _ => {}
@@ -1663,6 +1726,56 @@ pub fn deser_operation_crate_operation_put_dashboard(
     } else {
         return Err(aws_smithy_xml::decode::XmlError::custom(
             "expected PutDashboardResult tag",
+        ));
+    };
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_operation_crate_operation_put_managed_insight_rules(
+    inp: &[u8],
+    mut builder: crate::output::put_managed_insight_rules_output::Builder,
+) -> Result<
+    crate::output::put_managed_insight_rules_output::Builder,
+    aws_smithy_xml::decode::XmlError,
+> {
+    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    let start_el = decoder.start_el();
+    if !(start_el.matches("PutManagedInsightRulesResponse")) {
+        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
+            "invalid root, expected PutManagedInsightRulesResponse got {:?}",
+            start_el
+        )));
+    }
+    if let Some(mut result_tag) = decoder.next_tag() {
+        let start_el = result_tag.start_el();
+        if !(start_el.matches("PutManagedInsightRulesResult")) {
+            return Err(aws_smithy_xml::decode::XmlError::custom(format!(
+                "invalid result, expected PutManagedInsightRulesResult got {:?}",
+                start_el
+            )));
+        }
+        while let Some(mut tag) = result_tag.next_tag() {
+            match tag.start_el() {
+            s if s.matches("Failures") /* Failures com.amazonaws.cloudwatch.synthetic#PutManagedInsightRulesOutput$Failures */ =>  {
+                let var_64 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_batch_failures(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_failures(var_64);
+            }
+            ,
+            _ => {}
+        }
+        }
+    } else {
+        return Err(aws_smithy_xml::decode::XmlError::custom(
+            "expected PutManagedInsightRulesResult tag",
         ));
     };
     Ok(builder)
@@ -1685,7 +1798,7 @@ pub fn deser_structure_crate_error_concurrent_modification_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudwatch#ConcurrentModificationException$Message */ =>  {
-                let var_62 =
+                let var_65 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1694,7 +1807,7 @@ pub fn deser_structure_crate_error_concurrent_modification_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_62);
+                builder = builder.set_message(var_65);
             }
             ,
             _ => {}
@@ -1730,7 +1843,7 @@ pub fn deser_operation_crate_operation_put_metric_stream(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.cloudwatch.synthetic#PutMetricStreamOutput$Arn */ =>  {
-                let var_63 =
+                let var_66 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1739,7 +1852,7 @@ pub fn deser_operation_crate_operation_put_metric_stream(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_63);
+                builder = builder.set_arn(var_66);
             }
             ,
             _ => {}
@@ -1767,7 +1880,7 @@ pub fn deser_structure_crate_error_invalid_format_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.cloudwatch#InvalidFormatFault$message */ =>  {
-                let var_64 =
+                let var_67 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1776,7 +1889,7 @@ pub fn deser_structure_crate_error_invalid_format_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_64);
+                builder = builder.set_message(var_67);
             }
             ,
             _ => {}
@@ -2077,6 +2190,25 @@ pub fn deser_list_com_amazonaws_cloudwatch_dashboard_entries(
     Ok(out)
 }
 
+pub fn deser_list_com_amazonaws_cloudwatch_managed_rule_descriptions(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<std::vec::Vec<crate::model::ManagedRuleDescription>, aws_smithy_xml::decode::XmlError> {
+    let mut out = std::vec::Vec::new();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("member") /* member com.amazonaws.cloudwatch#ManagedRuleDescriptions$member */ =>  {
+                out.push(
+                    crate::xml_deser::deser_structure_crate_model_managed_rule_description(&mut tag)
+                    ?
+                );
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(out)
+}
+
 pub fn deser_list_com_amazonaws_cloudwatch_metrics(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Metric>, aws_smithy_xml::decode::XmlError> {
@@ -2162,45 +2294,6 @@ pub fn deser_structure_crate_model_partial_failure(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FailureResource") /* FailureResource com.amazonaws.cloudwatch#PartialFailure$FailureResource */ =>  {
-                let var_65 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_failure_resource(var_65);
-            }
-            ,
-            s if s.matches("ExceptionType") /* ExceptionType com.amazonaws.cloudwatch#PartialFailure$ExceptionType */ =>  {
-                let var_66 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_exception_type(var_66);
-            }
-            ,
-            s if s.matches("FailureCode") /* FailureCode com.amazonaws.cloudwatch#PartialFailure$FailureCode */ =>  {
-                let var_67 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_failure_code(var_67);
-            }
-            ,
-            s if s.matches("FailureDescription") /* FailureDescription com.amazonaws.cloudwatch#PartialFailure$FailureDescription */ =>  {
                 let var_68 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2210,7 +2303,46 @@ pub fn deser_structure_crate_model_partial_failure(
                         ?
                     )
                 ;
-                builder = builder.set_failure_description(var_68);
+                builder = builder.set_failure_resource(var_68);
+            }
+            ,
+            s if s.matches("ExceptionType") /* ExceptionType com.amazonaws.cloudwatch#PartialFailure$ExceptionType */ =>  {
+                let var_69 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_exception_type(var_69);
+            }
+            ,
+            s if s.matches("FailureCode") /* FailureCode com.amazonaws.cloudwatch#PartialFailure$FailureCode */ =>  {
+                let var_70 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_failure_code(var_70);
+            }
+            ,
+            s if s.matches("FailureDescription") /* FailureDescription com.amazonaws.cloudwatch#PartialFailure$FailureDescription */ =>  {
+                let var_71 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_failure_description(var_71);
             }
             ,
             _ => {}
@@ -2227,7 +2359,7 @@ pub fn deser_structure_crate_model_alarm_history_item(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AlarmName") /* AlarmName com.amazonaws.cloudwatch#AlarmHistoryItem$AlarmName */ =>  {
-                let var_69 =
+                let var_72 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2236,11 +2368,11 @@ pub fn deser_structure_crate_model_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_name(var_69);
+                builder = builder.set_alarm_name(var_72);
             }
             ,
             s if s.matches("AlarmType") /* AlarmType com.amazonaws.cloudwatch#AlarmHistoryItem$AlarmType */ =>  {
-                let var_70 =
+                let var_73 =
                     Some(
                         Result::<crate::model::AlarmType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AlarmType::from(
@@ -2250,11 +2382,11 @@ pub fn deser_structure_crate_model_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_type(var_70);
+                builder = builder.set_alarm_type(var_73);
             }
             ,
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudwatch#AlarmHistoryItem$Timestamp */ =>  {
-                let var_71 =
+                let var_74 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2264,11 +2396,11 @@ pub fn deser_structure_crate_model_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_71);
+                builder = builder.set_timestamp(var_74);
             }
             ,
             s if s.matches("HistoryItemType") /* HistoryItemType com.amazonaws.cloudwatch#AlarmHistoryItem$HistoryItemType */ =>  {
-                let var_72 =
+                let var_75 =
                     Some(
                         Result::<crate::model::HistoryItemType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::HistoryItemType::from(
@@ -2278,11 +2410,11 @@ pub fn deser_structure_crate_model_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_history_item_type(var_72);
+                builder = builder.set_history_item_type(var_75);
             }
             ,
             s if s.matches("HistorySummary") /* HistorySummary com.amazonaws.cloudwatch#AlarmHistoryItem$HistorySummary */ =>  {
-                let var_73 =
+                let var_76 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2291,11 +2423,11 @@ pub fn deser_structure_crate_model_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_history_summary(var_73);
+                builder = builder.set_history_summary(var_76);
             }
             ,
             s if s.matches("HistoryData") /* HistoryData com.amazonaws.cloudwatch#AlarmHistoryItem$HistoryData */ =>  {
-                let var_74 =
+                let var_77 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2304,7 +2436,7 @@ pub fn deser_structure_crate_model_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_history_data(var_74);
+                builder = builder.set_history_data(var_77);
             }
             ,
             _ => {}
@@ -2321,7 +2453,7 @@ pub fn deser_structure_crate_model_composite_alarm(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ActionsEnabled") /* ActionsEnabled com.amazonaws.cloudwatch#CompositeAlarm$ActionsEnabled */ =>  {
-                let var_75 =
+                let var_78 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2332,60 +2464,20 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_enabled(var_75);
+                builder = builder.set_actions_enabled(var_78);
             }
             ,
             s if s.matches("AlarmActions") /* AlarmActions com.amazonaws.cloudwatch#CompositeAlarm$AlarmActions */ =>  {
-                let var_76 =
+                let var_79 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alarm_actions(var_76);
+                builder = builder.set_alarm_actions(var_79);
             }
             ,
             s if s.matches("AlarmArn") /* AlarmArn com.amazonaws.cloudwatch#CompositeAlarm$AlarmArn */ =>  {
-                let var_77 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_alarm_arn(var_77);
-            }
-            ,
-            s if s.matches("AlarmConfigurationUpdatedTimestamp") /* AlarmConfigurationUpdatedTimestamp com.amazonaws.cloudwatch#CompositeAlarm$AlarmConfigurationUpdatedTimestamp */ =>  {
-                let var_78 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_alarm_configuration_updated_timestamp(var_78);
-            }
-            ,
-            s if s.matches("AlarmDescription") /* AlarmDescription com.amazonaws.cloudwatch#CompositeAlarm$AlarmDescription */ =>  {
-                let var_79 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_alarm_description(var_79);
-            }
-            ,
-            s if s.matches("AlarmName") /* AlarmName com.amazonaws.cloudwatch#CompositeAlarm$AlarmName */ =>  {
                 let var_80 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2395,11 +2487,25 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_name(var_80);
+                builder = builder.set_alarm_arn(var_80);
             }
             ,
-            s if s.matches("AlarmRule") /* AlarmRule com.amazonaws.cloudwatch#CompositeAlarm$AlarmRule */ =>  {
+            s if s.matches("AlarmConfigurationUpdatedTimestamp") /* AlarmConfigurationUpdatedTimestamp com.amazonaws.cloudwatch#CompositeAlarm$AlarmConfigurationUpdatedTimestamp */ =>  {
                 let var_81 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_alarm_configuration_updated_timestamp(var_81);
+            }
+            ,
+            s if s.matches("AlarmDescription") /* AlarmDescription com.amazonaws.cloudwatch#CompositeAlarm$AlarmDescription */ =>  {
+                let var_82 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2408,30 +2514,23 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_rule(var_81);
+                builder = builder.set_alarm_description(var_82);
             }
             ,
-            s if s.matches("InsufficientDataActions") /* InsufficientDataActions com.amazonaws.cloudwatch#CompositeAlarm$InsufficientDataActions */ =>  {
-                let var_82 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_insufficient_data_actions(var_82);
-            }
-            ,
-            s if s.matches("OKActions") /* OKActions com.amazonaws.cloudwatch#CompositeAlarm$OKActions */ =>  {
+            s if s.matches("AlarmName") /* AlarmName com.amazonaws.cloudwatch#CompositeAlarm$AlarmName */ =>  {
                 let var_83 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_ok_actions(var_83);
+                builder = builder.set_alarm_name(var_83);
             }
             ,
-            s if s.matches("StateReason") /* StateReason com.amazonaws.cloudwatch#CompositeAlarm$StateReason */ =>  {
+            s if s.matches("AlarmRule") /* AlarmRule com.amazonaws.cloudwatch#CompositeAlarm$AlarmRule */ =>  {
                 let var_84 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2441,11 +2540,31 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_state_reason(var_84);
+                builder = builder.set_alarm_rule(var_84);
             }
             ,
-            s if s.matches("StateReasonData") /* StateReasonData com.amazonaws.cloudwatch#CompositeAlarm$StateReasonData */ =>  {
+            s if s.matches("InsufficientDataActions") /* InsufficientDataActions com.amazonaws.cloudwatch#CompositeAlarm$InsufficientDataActions */ =>  {
                 let var_85 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_insufficient_data_actions(var_85);
+            }
+            ,
+            s if s.matches("OKActions") /* OKActions com.amazonaws.cloudwatch#CompositeAlarm$OKActions */ =>  {
+                let var_86 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ok_actions(var_86);
+            }
+            ,
+            s if s.matches("StateReason") /* StateReason com.amazonaws.cloudwatch#CompositeAlarm$StateReason */ =>  {
+                let var_87 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2454,11 +2573,24 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_state_reason_data(var_85);
+                builder = builder.set_state_reason(var_87);
+            }
+            ,
+            s if s.matches("StateReasonData") /* StateReasonData com.amazonaws.cloudwatch#CompositeAlarm$StateReasonData */ =>  {
+                let var_88 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state_reason_data(var_88);
             }
             ,
             s if s.matches("StateUpdatedTimestamp") /* StateUpdatedTimestamp com.amazonaws.cloudwatch#CompositeAlarm$StateUpdatedTimestamp */ =>  {
-                let var_86 =
+                let var_89 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2468,11 +2600,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_state_updated_timestamp(var_86);
+                builder = builder.set_state_updated_timestamp(var_89);
             }
             ,
             s if s.matches("StateValue") /* StateValue com.amazonaws.cloudwatch#CompositeAlarm$StateValue */ =>  {
-                let var_87 =
+                let var_90 =
                     Some(
                         Result::<crate::model::StateValue, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::StateValue::from(
@@ -2482,11 +2614,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_state_value(var_87);
+                builder = builder.set_state_value(var_90);
             }
             ,
             s if s.matches("StateTransitionedTimestamp") /* StateTransitionedTimestamp com.amazonaws.cloudwatch#CompositeAlarm$StateTransitionedTimestamp */ =>  {
-                let var_88 =
+                let var_91 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2496,11 +2628,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_state_transitioned_timestamp(var_88);
+                builder = builder.set_state_transitioned_timestamp(var_91);
             }
             ,
             s if s.matches("ActionsSuppressedBy") /* ActionsSuppressedBy com.amazonaws.cloudwatch#CompositeAlarm$ActionsSuppressedBy */ =>  {
-                let var_89 =
+                let var_92 =
                     Some(
                         Result::<crate::model::ActionsSuppressedBy, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ActionsSuppressedBy::from(
@@ -2510,11 +2642,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_suppressed_by(var_89);
+                builder = builder.set_actions_suppressed_by(var_92);
             }
             ,
             s if s.matches("ActionsSuppressedReason") /* ActionsSuppressedReason com.amazonaws.cloudwatch#CompositeAlarm$ActionsSuppressedReason */ =>  {
-                let var_90 =
+                let var_93 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2523,11 +2655,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_suppressed_reason(var_90);
+                builder = builder.set_actions_suppressed_reason(var_93);
             }
             ,
             s if s.matches("ActionsSuppressor") /* ActionsSuppressor com.amazonaws.cloudwatch#CompositeAlarm$ActionsSuppressor */ =>  {
-                let var_91 =
+                let var_94 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2536,11 +2668,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_suppressor(var_91);
+                builder = builder.set_actions_suppressor(var_94);
             }
             ,
             s if s.matches("ActionsSuppressorWaitPeriod") /* ActionsSuppressorWaitPeriod com.amazonaws.cloudwatch#CompositeAlarm$ActionsSuppressorWaitPeriod */ =>  {
-                let var_92 =
+                let var_95 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2551,11 +2683,11 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_suppressor_wait_period(var_92);
+                builder = builder.set_actions_suppressor_wait_period(var_95);
             }
             ,
             s if s.matches("ActionsSuppressorExtensionPeriod") /* ActionsSuppressorExtensionPeriod com.amazonaws.cloudwatch#CompositeAlarm$ActionsSuppressorExtensionPeriod */ =>  {
-                let var_93 =
+                let var_96 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2566,7 +2698,7 @@ pub fn deser_structure_crate_model_composite_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_suppressor_extension_period(var_93);
+                builder = builder.set_actions_suppressor_extension_period(var_96);
             }
             ,
             _ => {}
@@ -2583,7 +2715,7 @@ pub fn deser_structure_crate_model_metric_alarm(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AlarmName") /* AlarmName com.amazonaws.cloudwatch#MetricAlarm$AlarmName */ =>  {
-                let var_94 =
+                let var_97 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2592,11 +2724,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_name(var_94);
+                builder = builder.set_alarm_name(var_97);
             }
             ,
             s if s.matches("AlarmArn") /* AlarmArn com.amazonaws.cloudwatch#MetricAlarm$AlarmArn */ =>  {
-                let var_95 =
+                let var_98 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2605,11 +2737,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_arn(var_95);
+                builder = builder.set_alarm_arn(var_98);
             }
             ,
             s if s.matches("AlarmDescription") /* AlarmDescription com.amazonaws.cloudwatch#MetricAlarm$AlarmDescription */ =>  {
-                let var_96 =
+                let var_99 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2618,11 +2750,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_description(var_96);
+                builder = builder.set_alarm_description(var_99);
             }
             ,
             s if s.matches("AlarmConfigurationUpdatedTimestamp") /* AlarmConfigurationUpdatedTimestamp com.amazonaws.cloudwatch#MetricAlarm$AlarmConfigurationUpdatedTimestamp */ =>  {
-                let var_97 =
+                let var_100 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2632,11 +2764,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_configuration_updated_timestamp(var_97);
+                builder = builder.set_alarm_configuration_updated_timestamp(var_100);
             }
             ,
             s if s.matches("ActionsEnabled") /* ActionsEnabled com.amazonaws.cloudwatch#MetricAlarm$ActionsEnabled */ =>  {
-                let var_98 =
+                let var_101 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2647,41 +2779,41 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_actions_enabled(var_98);
+                builder = builder.set_actions_enabled(var_101);
             }
             ,
             s if s.matches("OKActions") /* OKActions com.amazonaws.cloudwatch#MetricAlarm$OKActions */ =>  {
-                let var_99 =
+                let var_102 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ok_actions(var_99);
+                builder = builder.set_ok_actions(var_102);
             }
             ,
             s if s.matches("AlarmActions") /* AlarmActions com.amazonaws.cloudwatch#MetricAlarm$AlarmActions */ =>  {
-                let var_100 =
+                let var_103 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alarm_actions(var_100);
+                builder = builder.set_alarm_actions(var_103);
             }
             ,
             s if s.matches("InsufficientDataActions") /* InsufficientDataActions com.amazonaws.cloudwatch#MetricAlarm$InsufficientDataActions */ =>  {
-                let var_101 =
+                let var_104 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_resource_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_insufficient_data_actions(var_101);
+                builder = builder.set_insufficient_data_actions(var_104);
             }
             ,
             s if s.matches("StateValue") /* StateValue com.amazonaws.cloudwatch#MetricAlarm$StateValue */ =>  {
-                let var_102 =
+                let var_105 =
                     Some(
                         Result::<crate::model::StateValue, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::StateValue::from(
@@ -2691,50 +2823,10 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_state_value(var_102);
+                builder = builder.set_state_value(var_105);
             }
             ,
             s if s.matches("StateReason") /* StateReason com.amazonaws.cloudwatch#MetricAlarm$StateReason */ =>  {
-                let var_103 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state_reason(var_103);
-            }
-            ,
-            s if s.matches("StateReasonData") /* StateReasonData com.amazonaws.cloudwatch#MetricAlarm$StateReasonData */ =>  {
-                let var_104 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state_reason_data(var_104);
-            }
-            ,
-            s if s.matches("StateUpdatedTimestamp") /* StateUpdatedTimestamp com.amazonaws.cloudwatch#MetricAlarm$StateUpdatedTimestamp */ =>  {
-                let var_105 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_state_updated_timestamp(var_105);
-            }
-            ,
-            s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#MetricAlarm$MetricName */ =>  {
                 let var_106 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2744,10 +2836,10 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_metric_name(var_106);
+                builder = builder.set_state_reason(var_106);
             }
             ,
-            s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#MetricAlarm$Namespace */ =>  {
+            s if s.matches("StateReasonData") /* StateReasonData com.amazonaws.cloudwatch#MetricAlarm$StateReasonData */ =>  {
                 let var_107 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2757,24 +2849,24 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_107);
+                builder = builder.set_state_reason_data(var_107);
             }
             ,
-            s if s.matches("Statistic") /* Statistic com.amazonaws.cloudwatch#MetricAlarm$Statistic */ =>  {
+            s if s.matches("StateUpdatedTimestamp") /* StateUpdatedTimestamp com.amazonaws.cloudwatch#MetricAlarm$StateUpdatedTimestamp */ =>  {
                 let var_108 =
                     Some(
-                        Result::<crate::model::Statistic, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::Statistic::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
                         )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_statistic(var_108);
+                builder = builder.set_state_updated_timestamp(var_108);
             }
             ,
-            s if s.matches("ExtendedStatistic") /* ExtendedStatistic com.amazonaws.cloudwatch#MetricAlarm$ExtendedStatistic */ =>  {
+            s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#MetricAlarm$MetricName */ =>  {
                 let var_109 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2784,21 +2876,61 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_extended_statistic(var_109);
+                builder = builder.set_metric_name(var_109);
+            }
+            ,
+            s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#MetricAlarm$Namespace */ =>  {
+                let var_110 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_namespace(var_110);
+            }
+            ,
+            s if s.matches("Statistic") /* Statistic com.amazonaws.cloudwatch#MetricAlarm$Statistic */ =>  {
+                let var_111 =
+                    Some(
+                        Result::<crate::model::Statistic, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::Statistic::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_statistic(var_111);
+            }
+            ,
+            s if s.matches("ExtendedStatistic") /* ExtendedStatistic com.amazonaws.cloudwatch#MetricAlarm$ExtendedStatistic */ =>  {
+                let var_112 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_extended_statistic(var_112);
             }
             ,
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.cloudwatch#MetricAlarm$Dimensions */ =>  {
-                let var_110 =
+                let var_113 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dimensions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimensions(var_110);
+                builder = builder.set_dimensions(var_113);
             }
             ,
             s if s.matches("Period") /* Period com.amazonaws.cloudwatch#MetricAlarm$Period */ =>  {
-                let var_111 =
+                let var_114 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2809,11 +2941,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_period(var_111);
+                builder = builder.set_period(var_114);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.cloudwatch#MetricAlarm$Unit */ =>  {
-                let var_112 =
+                let var_115 =
                     Some(
                         Result::<crate::model::StandardUnit, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::StandardUnit::from(
@@ -2823,11 +2955,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_112);
+                builder = builder.set_unit(var_115);
             }
             ,
             s if s.matches("EvaluationPeriods") /* EvaluationPeriods com.amazonaws.cloudwatch#MetricAlarm$EvaluationPeriods */ =>  {
-                let var_113 =
+                let var_116 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2838,11 +2970,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_evaluation_periods(var_113);
+                builder = builder.set_evaluation_periods(var_116);
             }
             ,
             s if s.matches("DatapointsToAlarm") /* DatapointsToAlarm com.amazonaws.cloudwatch#MetricAlarm$DatapointsToAlarm */ =>  {
-                let var_114 =
+                let var_117 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2853,11 +2985,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_datapoints_to_alarm(var_114);
+                builder = builder.set_datapoints_to_alarm(var_117);
             }
             ,
             s if s.matches("Threshold") /* Threshold com.amazonaws.cloudwatch#MetricAlarm$Threshold */ =>  {
-                let var_115 =
+                let var_118 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -2868,11 +3000,11 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_threshold(var_115);
+                builder = builder.set_threshold(var_118);
             }
             ,
             s if s.matches("ComparisonOperator") /* ComparisonOperator com.amazonaws.cloudwatch#MetricAlarm$ComparisonOperator */ =>  {
-                let var_116 =
+                let var_119 =
                     Some(
                         Result::<crate::model::ComparisonOperator, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ComparisonOperator::from(
@@ -2882,46 +3014,10 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_comparison_operator(var_116);
+                builder = builder.set_comparison_operator(var_119);
             }
             ,
             s if s.matches("TreatMissingData") /* TreatMissingData com.amazonaws.cloudwatch#MetricAlarm$TreatMissingData */ =>  {
-                let var_117 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_treat_missing_data(var_117);
-            }
-            ,
-            s if s.matches("EvaluateLowSampleCountPercentile") /* EvaluateLowSampleCountPercentile com.amazonaws.cloudwatch#MetricAlarm$EvaluateLowSampleCountPercentile */ =>  {
-                let var_118 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_evaluate_low_sample_count_percentile(var_118);
-            }
-            ,
-            s if s.matches("Metrics") /* Metrics com.amazonaws.cloudwatch#MetricAlarm$Metrics */ =>  {
-                let var_119 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_data_queries(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_metrics(var_119);
-            }
-            ,
-            s if s.matches("ThresholdMetricId") /* ThresholdMetricId com.amazonaws.cloudwatch#MetricAlarm$ThresholdMetricId */ =>  {
                 let var_120 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2931,7 +3027,43 @@ pub fn deser_structure_crate_model_metric_alarm(
                         ?
                     )
                 ;
-                builder = builder.set_threshold_metric_id(var_120);
+                builder = builder.set_treat_missing_data(var_120);
+            }
+            ,
+            s if s.matches("EvaluateLowSampleCountPercentile") /* EvaluateLowSampleCountPercentile com.amazonaws.cloudwatch#MetricAlarm$EvaluateLowSampleCountPercentile */ =>  {
+                let var_121 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_evaluate_low_sample_count_percentile(var_121);
+            }
+            ,
+            s if s.matches("Metrics") /* Metrics com.amazonaws.cloudwatch#MetricAlarm$Metrics */ =>  {
+                let var_122 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_data_queries(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_metrics(var_122);
+            }
+            ,
+            s if s.matches("ThresholdMetricId") /* ThresholdMetricId com.amazonaws.cloudwatch#MetricAlarm$ThresholdMetricId */ =>  {
+                let var_123 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_threshold_metric_id(var_123);
             }
             ,
             _ => {}
@@ -2948,42 +3080,6 @@ pub fn deser_structure_crate_model_anomaly_detector(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#AnomalyDetector$Namespace */ =>  {
-                let var_121 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_namespace(var_121);
-            }
-            ,
-            s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#AnomalyDetector$MetricName */ =>  {
-                let var_122 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_metric_name(var_122);
-            }
-            ,
-            s if s.matches("Dimensions") /* Dimensions com.amazonaws.cloudwatch#AnomalyDetector$Dimensions */ =>  {
-                let var_123 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dimensions(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_dimensions(var_123);
-            }
-            ,
-            s if s.matches("Stat") /* Stat com.amazonaws.cloudwatch#AnomalyDetector$Stat */ =>  {
                 let var_124 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2993,21 +3089,57 @@ pub fn deser_structure_crate_model_anomaly_detector(
                         ?
                     )
                 ;
-                builder = builder.set_stat(var_124);
+                builder = builder.set_namespace(var_124);
+            }
+            ,
+            s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#AnomalyDetector$MetricName */ =>  {
+                let var_125 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_name(var_125);
+            }
+            ,
+            s if s.matches("Dimensions") /* Dimensions com.amazonaws.cloudwatch#AnomalyDetector$Dimensions */ =>  {
+                let var_126 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dimensions(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_dimensions(var_126);
+            }
+            ,
+            s if s.matches("Stat") /* Stat com.amazonaws.cloudwatch#AnomalyDetector$Stat */ =>  {
+                let var_127 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_stat(var_127);
             }
             ,
             s if s.matches("Configuration") /* Configuration com.amazonaws.cloudwatch#AnomalyDetector$Configuration */ =>  {
-                let var_125 =
+                let var_128 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_anomaly_detector_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_configuration(var_125);
+                builder = builder.set_configuration(var_128);
             }
             ,
             s if s.matches("StateValue") /* StateValue com.amazonaws.cloudwatch#AnomalyDetector$StateValue */ =>  {
-                let var_126 =
+                let var_129 =
                     Some(
                         Result::<crate::model::AnomalyDetectorStateValue, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AnomalyDetectorStateValue::from(
@@ -3017,27 +3149,27 @@ pub fn deser_structure_crate_model_anomaly_detector(
                         ?
                     )
                 ;
-                builder = builder.set_state_value(var_126);
+                builder = builder.set_state_value(var_129);
             }
             ,
             s if s.matches("SingleMetricAnomalyDetector") /* SingleMetricAnomalyDetector com.amazonaws.cloudwatch#AnomalyDetector$SingleMetricAnomalyDetector */ =>  {
-                let var_127 =
+                let var_130 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_single_metric_anomaly_detector(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_single_metric_anomaly_detector(var_127);
+                builder = builder.set_single_metric_anomaly_detector(var_130);
             }
             ,
             s if s.matches("MetricMathAnomalyDetector") /* MetricMathAnomalyDetector com.amazonaws.cloudwatch#AnomalyDetector$MetricMathAnomalyDetector */ =>  {
-                let var_128 =
+                let var_131 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_metric_math_anomaly_detector(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_math_anomaly_detector(var_128);
+                builder = builder.set_metric_math_anomaly_detector(var_131);
             }
             ,
             _ => {}
@@ -3054,45 +3186,6 @@ pub fn deser_structure_crate_model_insight_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.cloudwatch#InsightRule$Name */ =>  {
-                let var_129 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_129);
-            }
-            ,
-            s if s.matches("State") /* State com.amazonaws.cloudwatch#InsightRule$State */ =>  {
-                let var_130 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_130);
-            }
-            ,
-            s if s.matches("Schema") /* Schema com.amazonaws.cloudwatch#InsightRule$Schema */ =>  {
-                let var_131 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_schema(var_131);
-            }
-            ,
-            s if s.matches("Definition") /* Definition com.amazonaws.cloudwatch#InsightRule$Definition */ =>  {
                 let var_132 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3102,7 +3195,61 @@ pub fn deser_structure_crate_model_insight_rule(
                         ?
                     )
                 ;
-                builder = builder.set_definition(var_132);
+                builder = builder.set_name(var_132);
+            }
+            ,
+            s if s.matches("State") /* State com.amazonaws.cloudwatch#InsightRule$State */ =>  {
+                let var_133 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_133);
+            }
+            ,
+            s if s.matches("Schema") /* Schema com.amazonaws.cloudwatch#InsightRule$Schema */ =>  {
+                let var_134 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_schema(var_134);
+            }
+            ,
+            s if s.matches("Definition") /* Definition com.amazonaws.cloudwatch#InsightRule$Definition */ =>  {
+                let var_135 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_definition(var_135);
+            }
+            ,
+            s if s.matches("ManagedRule") /* ManagedRule com.amazonaws.cloudwatch#InsightRule$ManagedRule */ =>  {
+                let var_136 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudwatch#InsightRuleIsManaged`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_managed_rule(var_136);
             }
             ,
             _ => {}
@@ -3119,17 +3266,17 @@ pub fn deser_structure_crate_model_insight_rule_contributor(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Keys") /* Keys com.amazonaws.cloudwatch#InsightRuleContributor$Keys */ =>  {
-                let var_133 =
+                let var_137 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_insight_rule_contributor_keys(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_keys(var_133);
+                builder = builder.set_keys(var_137);
             }
             ,
             s if s.matches("ApproximateAggregateValue") /* ApproximateAggregateValue com.amazonaws.cloudwatch#InsightRuleContributor$ApproximateAggregateValue */ =>  {
-                let var_134 =
+                let var_138 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3140,17 +3287,17 @@ pub fn deser_structure_crate_model_insight_rule_contributor(
                         ?
                     )
                 ;
-                builder = builder.set_approximate_aggregate_value(var_134);
+                builder = builder.set_approximate_aggregate_value(var_138);
             }
             ,
             s if s.matches("Datapoints") /* Datapoints com.amazonaws.cloudwatch#InsightRuleContributor$Datapoints */ =>  {
-                let var_135 =
+                let var_139 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_insight_rule_contributor_datapoints(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_datapoints(var_135);
+                builder = builder.set_datapoints(var_139);
             }
             ,
             _ => {}
@@ -3167,7 +3314,7 @@ pub fn deser_structure_crate_model_insight_rule_metric_datapoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Timestamp */ =>  {
-                let var_136 =
+                let var_140 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3177,70 +3324,10 @@ pub fn deser_structure_crate_model_insight_rule_metric_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_136);
+                builder = builder.set_timestamp(var_140);
             }
             ,
             s if s.matches("UniqueContributors") /* UniqueContributors com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$UniqueContributors */ =>  {
-                let var_137 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_unique_contributors(var_137);
-            }
-            ,
-            s if s.matches("MaxContributorValue") /* MaxContributorValue com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$MaxContributorValue */ =>  {
-                let var_138 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_max_contributor_value(var_138);
-            }
-            ,
-            s if s.matches("SampleCount") /* SampleCount com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$SampleCount */ =>  {
-                let var_139 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_sample_count(var_139);
-            }
-            ,
-            s if s.matches("Average") /* Average com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Average */ =>  {
-                let var_140 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_average(var_140);
-            }
-            ,
-            s if s.matches("Sum") /* Sum com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Sum */ =>  {
                 let var_141 =
                     Some(
                          {
@@ -3252,10 +3339,10 @@ pub fn deser_structure_crate_model_insight_rule_metric_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_sum(var_141);
+                builder = builder.set_unique_contributors(var_141);
             }
             ,
-            s if s.matches("Minimum") /* Minimum com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Minimum */ =>  {
+            s if s.matches("MaxContributorValue") /* MaxContributorValue com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$MaxContributorValue */ =>  {
                 let var_142 =
                     Some(
                          {
@@ -3267,10 +3354,10 @@ pub fn deser_structure_crate_model_insight_rule_metric_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_minimum(var_142);
+                builder = builder.set_max_contributor_value(var_142);
             }
             ,
-            s if s.matches("Maximum") /* Maximum com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Maximum */ =>  {
+            s if s.matches("SampleCount") /* SampleCount com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$SampleCount */ =>  {
                 let var_143 =
                     Some(
                          {
@@ -3282,7 +3369,67 @@ pub fn deser_structure_crate_model_insight_rule_metric_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_maximum(var_143);
+                builder = builder.set_sample_count(var_143);
+            }
+            ,
+            s if s.matches("Average") /* Average com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Average */ =>  {
+                let var_144 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_average(var_144);
+            }
+            ,
+            s if s.matches("Sum") /* Sum com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Sum */ =>  {
+                let var_145 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_sum(var_145);
+            }
+            ,
+            s if s.matches("Minimum") /* Minimum com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Minimum */ =>  {
+                let var_146 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum(var_146);
+            }
+            ,
+            s if s.matches("Maximum") /* Maximum com.amazonaws.cloudwatch#InsightRuleMetricDatapoint$Maximum */ =>  {
+                let var_147 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum(var_147);
             }
             ,
             _ => {}
@@ -3299,7 +3446,7 @@ pub fn deser_structure_crate_model_metric_data_result(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudwatch#MetricDataResult$Id */ =>  {
-                let var_144 =
+                let var_148 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3308,11 +3455,11 @@ pub fn deser_structure_crate_model_metric_data_result(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_144);
+                builder = builder.set_id(var_148);
             }
             ,
             s if s.matches("Label") /* Label com.amazonaws.cloudwatch#MetricDataResult$Label */ =>  {
-                let var_145 =
+                let var_149 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3321,31 +3468,31 @@ pub fn deser_structure_crate_model_metric_data_result(
                         ?
                     )
                 ;
-                builder = builder.set_label(var_145);
+                builder = builder.set_label(var_149);
             }
             ,
             s if s.matches("Timestamps") /* Timestamps com.amazonaws.cloudwatch#MetricDataResult$Timestamps */ =>  {
-                let var_146 =
+                let var_150 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_timestamps(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_timestamps(var_146);
+                builder = builder.set_timestamps(var_150);
             }
             ,
             s if s.matches("Values") /* Values com.amazonaws.cloudwatch#MetricDataResult$Values */ =>  {
-                let var_147 =
+                let var_151 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_datapoint_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_values(var_147);
+                builder = builder.set_values(var_151);
             }
             ,
             s if s.matches("StatusCode") /* StatusCode com.amazonaws.cloudwatch#MetricDataResult$StatusCode */ =>  {
-                let var_148 =
+                let var_152 =
                     Some(
                         Result::<crate::model::StatusCode, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::StatusCode::from(
@@ -3355,17 +3502,17 @@ pub fn deser_structure_crate_model_metric_data_result(
                         ?
                     )
                 ;
-                builder = builder.set_status_code(var_148);
+                builder = builder.set_status_code(var_152);
             }
             ,
             s if s.matches("Messages") /* Messages com.amazonaws.cloudwatch#MetricDataResult$Messages */ =>  {
-                let var_149 =
+                let var_153 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_data_result_messages(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_messages(var_149);
+                builder = builder.set_messages(var_153);
             }
             ,
             _ => {}
@@ -3382,7 +3529,7 @@ pub fn deser_structure_crate_model_message_data(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Code") /* Code com.amazonaws.cloudwatch#MessageData$Code */ =>  {
-                let var_150 =
+                let var_154 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3391,11 +3538,11 @@ pub fn deser_structure_crate_model_message_data(
                         ?
                     )
                 ;
-                builder = builder.set_code(var_150);
+                builder = builder.set_code(var_154);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.cloudwatch#MessageData$Value */ =>  {
-                let var_151 =
+                let var_155 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3404,7 +3551,7 @@ pub fn deser_structure_crate_model_message_data(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_151);
+                builder = builder.set_value(var_155);
             }
             ,
             _ => {}
@@ -3421,7 +3568,7 @@ pub fn deser_structure_crate_model_datapoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudwatch#Datapoint$Timestamp */ =>  {
-                let var_152 =
+                let var_156 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3431,70 +3578,10 @@ pub fn deser_structure_crate_model_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_152);
+                builder = builder.set_timestamp(var_156);
             }
             ,
             s if s.matches("SampleCount") /* SampleCount com.amazonaws.cloudwatch#Datapoint$SampleCount */ =>  {
-                let var_153 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_sample_count(var_153);
-            }
-            ,
-            s if s.matches("Average") /* Average com.amazonaws.cloudwatch#Datapoint$Average */ =>  {
-                let var_154 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_average(var_154);
-            }
-            ,
-            s if s.matches("Sum") /* Sum com.amazonaws.cloudwatch#Datapoint$Sum */ =>  {
-                let var_155 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_sum(var_155);
-            }
-            ,
-            s if s.matches("Minimum") /* Minimum com.amazonaws.cloudwatch#Datapoint$Minimum */ =>  {
-                let var_156 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_minimum(var_156);
-            }
-            ,
-            s if s.matches("Maximum") /* Maximum com.amazonaws.cloudwatch#Datapoint$Maximum */ =>  {
                 let var_157 =
                     Some(
                          {
@@ -3506,11 +3593,71 @@ pub fn deser_structure_crate_model_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_maximum(var_157);
+                builder = builder.set_sample_count(var_157);
+            }
+            ,
+            s if s.matches("Average") /* Average com.amazonaws.cloudwatch#Datapoint$Average */ =>  {
+                let var_158 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_average(var_158);
+            }
+            ,
+            s if s.matches("Sum") /* Sum com.amazonaws.cloudwatch#Datapoint$Sum */ =>  {
+                let var_159 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_sum(var_159);
+            }
+            ,
+            s if s.matches("Minimum") /* Minimum com.amazonaws.cloudwatch#Datapoint$Minimum */ =>  {
+                let var_160 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum(var_160);
+            }
+            ,
+            s if s.matches("Maximum") /* Maximum com.amazonaws.cloudwatch#Datapoint$Maximum */ =>  {
+                let var_161 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum(var_161);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.cloudwatch#Datapoint$Unit */ =>  {
-                let var_158 =
+                let var_162 =
                     Some(
                         Result::<crate::model::StandardUnit, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::StandardUnit::from(
@@ -3520,17 +3667,17 @@ pub fn deser_structure_crate_model_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_158);
+                builder = builder.set_unit(var_162);
             }
             ,
             s if s.matches("ExtendedStatistics") /* ExtendedStatistics com.amazonaws.cloudwatch#Datapoint$ExtendedStatistics */ =>  {
-                let var_159 =
+                let var_163 =
                     Some(
                         crate::xml_deser::deser_map_com_amazonaws_cloudwatch_datapoint_value_map(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_extended_statistics(var_159);
+                builder = builder.set_extended_statistics(var_163);
             }
             ,
             _ => {}
@@ -3547,7 +3694,7 @@ pub fn deser_structure_crate_model_metric_stream_filter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#MetricStreamFilter$Namespace */ =>  {
-                let var_160 =
+                let var_164 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3556,7 +3703,7 @@ pub fn deser_structure_crate_model_metric_stream_filter(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_160);
+                builder = builder.set_namespace(var_164);
             }
             ,
             _ => {}
@@ -3573,23 +3720,23 @@ pub fn deser_structure_crate_model_metric_stream_statistics_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IncludeMetrics") /* IncludeMetrics com.amazonaws.cloudwatch#MetricStreamStatisticsConfiguration$IncludeMetrics */ =>  {
-                let var_161 =
+                let var_165 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_stream_statistics_include_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_include_metrics(var_161);
+                builder = builder.set_include_metrics(var_165);
             }
             ,
             s if s.matches("AdditionalStatistics") /* AdditionalStatistics com.amazonaws.cloudwatch#MetricStreamStatisticsConfiguration$AdditionalStatistics */ =>  {
-                let var_162 =
+                let var_166 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_stream_statistics_additional_statistics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_additional_statistics(var_162);
+                builder = builder.set_additional_statistics(var_166);
             }
             ,
             _ => {}
@@ -3606,7 +3753,7 @@ pub fn deser_structure_crate_model_dashboard_entry(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DashboardName") /* DashboardName com.amazonaws.cloudwatch#DashboardEntry$DashboardName */ =>  {
-                let var_163 =
+                let var_167 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3615,11 +3762,11 @@ pub fn deser_structure_crate_model_dashboard_entry(
                         ?
                     )
                 ;
-                builder = builder.set_dashboard_name(var_163);
+                builder = builder.set_dashboard_name(var_167);
             }
             ,
             s if s.matches("DashboardArn") /* DashboardArn com.amazonaws.cloudwatch#DashboardEntry$DashboardArn */ =>  {
-                let var_164 =
+                let var_168 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3628,11 +3775,11 @@ pub fn deser_structure_crate_model_dashboard_entry(
                         ?
                     )
                 ;
-                builder = builder.set_dashboard_arn(var_164);
+                builder = builder.set_dashboard_arn(var_168);
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.cloudwatch#DashboardEntry$LastModified */ =>  {
-                let var_165 =
+                let var_169 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3642,11 +3789,11 @@ pub fn deser_structure_crate_model_dashboard_entry(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified(var_165);
+                builder = builder.set_last_modified(var_169);
             }
             ,
             s if s.matches("Size") /* Size com.amazonaws.cloudwatch#DashboardEntry$Size */ =>  {
-                let var_166 =
+                let var_170 =
                     Some(
                          {
                             <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -3657,7 +3804,56 @@ pub fn deser_structure_crate_model_dashboard_entry(
                         ?
                     )
                 ;
-                builder = builder.set_size(var_166);
+                builder = builder.set_size(var_170);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_crate_model_managed_rule_description(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::ManagedRuleDescription, aws_smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::ManagedRuleDescription::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("TemplateName") /* TemplateName com.amazonaws.cloudwatch#ManagedRuleDescription$TemplateName */ =>  {
+                let var_171 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_template_name(var_171);
+            }
+            ,
+            s if s.matches("ResourceARN") /* ResourceARN com.amazonaws.cloudwatch#ManagedRuleDescription$ResourceARN */ =>  {
+                let var_172 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_arn(var_172);
+            }
+            ,
+            s if s.matches("RuleState") /* RuleState com.amazonaws.cloudwatch#ManagedRuleDescription$RuleState */ =>  {
+                let var_173 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_managed_rule_state(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_rule_state(var_173);
             }
             ,
             _ => {}
@@ -3674,7 +3870,7 @@ pub fn deser_structure_crate_model_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#Metric$Namespace */ =>  {
-                let var_167 =
+                let var_174 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3683,11 +3879,11 @@ pub fn deser_structure_crate_model_metric(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_167);
+                builder = builder.set_namespace(var_174);
             }
             ,
             s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#Metric$MetricName */ =>  {
-                let var_168 =
+                let var_175 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3696,17 +3892,17 @@ pub fn deser_structure_crate_model_metric(
                         ?
                     )
                 ;
-                builder = builder.set_metric_name(var_168);
+                builder = builder.set_metric_name(var_175);
             }
             ,
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.cloudwatch#Metric$Dimensions */ =>  {
-                let var_169 =
+                let var_176 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dimensions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimensions(var_169);
+                builder = builder.set_dimensions(var_176);
             }
             ,
             _ => {}
@@ -3723,7 +3919,7 @@ pub fn deser_structure_crate_model_metric_stream_entry(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.cloudwatch#MetricStreamEntry$Arn */ =>  {
-                let var_170 =
+                let var_177 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3732,11 +3928,11 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_170);
+                builder = builder.set_arn(var_177);
             }
             ,
             s if s.matches("CreationDate") /* CreationDate com.amazonaws.cloudwatch#MetricStreamEntry$CreationDate */ =>  {
-                let var_171 =
+                let var_178 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3746,11 +3942,11 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_creation_date(var_171);
+                builder = builder.set_creation_date(var_178);
             }
             ,
             s if s.matches("LastUpdateDate") /* LastUpdateDate com.amazonaws.cloudwatch#MetricStreamEntry$LastUpdateDate */ =>  {
-                let var_172 =
+                let var_179 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3760,11 +3956,11 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_last_update_date(var_172);
+                builder = builder.set_last_update_date(var_179);
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.cloudwatch#MetricStreamEntry$Name */ =>  {
-                let var_173 =
+                let var_180 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3773,11 +3969,11 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_173);
+                builder = builder.set_name(var_180);
             }
             ,
             s if s.matches("FirehoseArn") /* FirehoseArn com.amazonaws.cloudwatch#MetricStreamEntry$FirehoseArn */ =>  {
-                let var_174 =
+                let var_181 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3786,11 +3982,11 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_firehose_arn(var_174);
+                builder = builder.set_firehose_arn(var_181);
             }
             ,
             s if s.matches("State") /* State com.amazonaws.cloudwatch#MetricStreamEntry$State */ =>  {
-                let var_175 =
+                let var_182 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3799,11 +3995,11 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_175);
+                builder = builder.set_state(var_182);
             }
             ,
             s if s.matches("OutputFormat") /* OutputFormat com.amazonaws.cloudwatch#MetricStreamEntry$OutputFormat */ =>  {
-                let var_176 =
+                let var_183 =
                     Some(
                         Result::<crate::model::MetricStreamOutputFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::MetricStreamOutputFormat::from(
@@ -3813,7 +4009,7 @@ pub fn deser_structure_crate_model_metric_stream_entry(
                         ?
                     )
                 ;
-                builder = builder.set_output_format(var_176);
+                builder = builder.set_output_format(var_183);
             }
             ,
             _ => {}
@@ -3830,7 +4026,7 @@ pub fn deser_structure_crate_model_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.cloudwatch#Tag$Key */ =>  {
-                let var_177 =
+                let var_184 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3839,11 +4035,11 @@ pub fn deser_structure_crate_model_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_177);
+                builder = builder.set_key(var_184);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.cloudwatch#Tag$Value */ =>  {
-                let var_178 =
+                let var_185 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3852,7 +4048,7 @@ pub fn deser_structure_crate_model_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_178);
+                builder = builder.set_value(var_185);
             }
             ,
             _ => {}
@@ -3869,7 +4065,7 @@ pub fn deser_structure_crate_model_dashboard_validation_message(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DataPath") /* DataPath com.amazonaws.cloudwatch#DashboardValidationMessage$DataPath */ =>  {
-                let var_179 =
+                let var_186 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3878,11 +4074,11 @@ pub fn deser_structure_crate_model_dashboard_validation_message(
                         ?
                     )
                 ;
-                builder = builder.set_data_path(var_179);
+                builder = builder.set_data_path(var_186);
             }
             ,
             s if s.matches("Message") /* Message com.amazonaws.cloudwatch#DashboardValidationMessage$Message */ =>  {
-                let var_180 =
+                let var_187 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3891,7 +4087,7 @@ pub fn deser_structure_crate_model_dashboard_validation_message(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_180);
+                builder = builder.set_message(var_187);
             }
             ,
             _ => {}
@@ -3968,17 +4164,17 @@ pub fn deser_structure_crate_model_anomaly_detector_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExcludedTimeRanges") /* ExcludedTimeRanges com.amazonaws.cloudwatch#AnomalyDetectorConfiguration$ExcludedTimeRanges */ =>  {
-                let var_181 =
+                let var_188 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_anomaly_detector_excluded_time_ranges(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_excluded_time_ranges(var_181);
+                builder = builder.set_excluded_time_ranges(var_188);
             }
             ,
             s if s.matches("MetricTimezone") /* MetricTimezone com.amazonaws.cloudwatch#AnomalyDetectorConfiguration$MetricTimezone */ =>  {
-                let var_182 =
+                let var_189 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3987,7 +4183,7 @@ pub fn deser_structure_crate_model_anomaly_detector_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_metric_timezone(var_182);
+                builder = builder.set_metric_timezone(var_189);
             }
             ,
             _ => {}
@@ -4004,7 +4200,7 @@ pub fn deser_structure_crate_model_single_metric_anomaly_detector(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#SingleMetricAnomalyDetector$Namespace */ =>  {
-                let var_183 =
+                let var_190 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4013,11 +4209,11 @@ pub fn deser_structure_crate_model_single_metric_anomaly_detector(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_183);
+                builder = builder.set_namespace(var_190);
             }
             ,
             s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#SingleMetricAnomalyDetector$MetricName */ =>  {
-                let var_184 =
+                let var_191 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4026,21 +4222,21 @@ pub fn deser_structure_crate_model_single_metric_anomaly_detector(
                         ?
                     )
                 ;
-                builder = builder.set_metric_name(var_184);
+                builder = builder.set_metric_name(var_191);
             }
             ,
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.cloudwatch#SingleMetricAnomalyDetector$Dimensions */ =>  {
-                let var_185 =
+                let var_192 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_dimensions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimensions(var_185);
+                builder = builder.set_dimensions(var_192);
             }
             ,
             s if s.matches("Stat") /* Stat com.amazonaws.cloudwatch#SingleMetricAnomalyDetector$Stat */ =>  {
-                let var_186 =
+                let var_193 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4049,7 +4245,7 @@ pub fn deser_structure_crate_model_single_metric_anomaly_detector(
                         ?
                     )
                 ;
-                builder = builder.set_stat(var_186);
+                builder = builder.set_stat(var_193);
             }
             ,
             _ => {}
@@ -4066,13 +4262,13 @@ pub fn deser_structure_crate_model_metric_math_anomaly_detector(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricDataQueries") /* MetricDataQueries com.amazonaws.cloudwatch#MetricMathAnomalyDetector$MetricDataQueries */ =>  {
-                let var_187 =
+                let var_194 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudwatch_metric_data_queries(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_data_queries(var_187);
+                builder = builder.set_metric_data_queries(var_194);
             }
             ,
             _ => {}
@@ -4233,6 +4429,45 @@ pub fn deser_list_com_amazonaws_cloudwatch_metric_stream_statistics_additional_s
     Ok(out)
 }
 
+pub fn deser_structure_crate_model_managed_rule_state(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::ManagedRuleState, aws_smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::ManagedRuleState::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("RuleName") /* RuleName com.amazonaws.cloudwatch#ManagedRuleState$RuleName */ =>  {
+                let var_195 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_rule_name(var_195);
+            }
+            ,
+            s if s.matches("State") /* State com.amazonaws.cloudwatch#ManagedRuleState$State */ =>  {
+                let var_196 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_196);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
 pub fn deser_structure_crate_model_dimension(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Dimension, aws_smithy_xml::decode::XmlError> {
@@ -4241,7 +4476,7 @@ pub fn deser_structure_crate_model_dimension(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.cloudwatch#Dimension$Name */ =>  {
-                let var_188 =
+                let var_197 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4250,11 +4485,11 @@ pub fn deser_structure_crate_model_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_188);
+                builder = builder.set_name(var_197);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.cloudwatch#Dimension$Value */ =>  {
-                let var_189 =
+                let var_198 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4263,7 +4498,7 @@ pub fn deser_structure_crate_model_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_189);
+                builder = builder.set_value(var_198);
             }
             ,
             _ => {}
@@ -4280,7 +4515,7 @@ pub fn deser_structure_crate_model_metric_data_query(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudwatch#MetricDataQuery$Id */ =>  {
-                let var_190 =
+                let var_199 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4289,21 +4524,21 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_190);
+                builder = builder.set_id(var_199);
             }
             ,
             s if s.matches("MetricStat") /* MetricStat com.amazonaws.cloudwatch#MetricDataQuery$MetricStat */ =>  {
-                let var_191 =
+                let var_200 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_metric_stat(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_stat(var_191);
+                builder = builder.set_metric_stat(var_200);
             }
             ,
             s if s.matches("Expression") /* Expression com.amazonaws.cloudwatch#MetricDataQuery$Expression */ =>  {
-                let var_192 =
+                let var_201 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4312,11 +4547,11 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_expression(var_192);
+                builder = builder.set_expression(var_201);
             }
             ,
             s if s.matches("Label") /* Label com.amazonaws.cloudwatch#MetricDataQuery$Label */ =>  {
-                let var_193 =
+                let var_202 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4325,11 +4560,11 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_label(var_193);
+                builder = builder.set_label(var_202);
             }
             ,
             s if s.matches("ReturnData") /* ReturnData com.amazonaws.cloudwatch#MetricDataQuery$ReturnData */ =>  {
-                let var_194 =
+                let var_203 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4340,11 +4575,11 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_return_data(var_194);
+                builder = builder.set_return_data(var_203);
             }
             ,
             s if s.matches("Period") /* Period com.amazonaws.cloudwatch#MetricDataQuery$Period */ =>  {
-                let var_195 =
+                let var_204 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4355,11 +4590,11 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_period(var_195);
+                builder = builder.set_period(var_204);
             }
             ,
             s if s.matches("AccountId") /* AccountId com.amazonaws.cloudwatch#MetricDataQuery$AccountId */ =>  {
-                let var_196 =
+                let var_205 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4368,7 +4603,7 @@ pub fn deser_structure_crate_model_metric_data_query(
                         ?
                     )
                 ;
-                builder = builder.set_account_id(var_196);
+                builder = builder.set_account_id(var_205);
             }
             ,
             _ => {}
@@ -4404,7 +4639,7 @@ pub fn deser_structure_crate_model_insight_rule_contributor_datapoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudwatch#InsightRuleContributorDatapoint$Timestamp */ =>  {
-                let var_197 =
+                let var_206 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4414,11 +4649,11 @@ pub fn deser_structure_crate_model_insight_rule_contributor_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_197);
+                builder = builder.set_timestamp(var_206);
             }
             ,
             s if s.matches("ApproximateValue") /* ApproximateValue com.amazonaws.cloudwatch#InsightRuleContributorDatapoint$ApproximateValue */ =>  {
-                let var_198 =
+                let var_207 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4429,7 +4664,7 @@ pub fn deser_structure_crate_model_insight_rule_contributor_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_approximate_value(var_198);
+                builder = builder.set_approximate_value(var_207);
             }
             ,
             _ => {}
@@ -4485,7 +4720,7 @@ pub fn deser_structure_crate_model_metric_stream_statistics_metric(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#MetricStreamStatisticsMetric$Namespace */ =>  {
-                let var_199 =
+                let var_208 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4494,11 +4729,11 @@ pub fn deser_structure_crate_model_metric_stream_statistics_metric(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_199);
+                builder = builder.set_namespace(var_208);
             }
             ,
             s if s.matches("MetricName") /* MetricName com.amazonaws.cloudwatch#MetricStreamStatisticsMetric$MetricName */ =>  {
-                let var_200 =
+                let var_209 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4507,7 +4742,7 @@ pub fn deser_structure_crate_model_metric_stream_statistics_metric(
                         ?
                     )
                 ;
-                builder = builder.set_metric_name(var_200);
+                builder = builder.set_metric_name(var_209);
             }
             ,
             _ => {}
@@ -4524,17 +4759,17 @@ pub fn deser_structure_crate_model_metric_stat(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.cloudwatch#MetricStat$Metric */ =>  {
-                let var_201 =
+                let var_210 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric(var_201);
+                builder = builder.set_metric(var_210);
             }
             ,
             s if s.matches("Period") /* Period com.amazonaws.cloudwatch#MetricStat$Period */ =>  {
-                let var_202 =
+                let var_211 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4545,11 +4780,11 @@ pub fn deser_structure_crate_model_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_period(var_202);
+                builder = builder.set_period(var_211);
             }
             ,
             s if s.matches("Stat") /* Stat com.amazonaws.cloudwatch#MetricStat$Stat */ =>  {
-                let var_203 =
+                let var_212 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4558,11 +4793,11 @@ pub fn deser_structure_crate_model_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_stat(var_203);
+                builder = builder.set_stat(var_212);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.cloudwatch#MetricStat$Unit */ =>  {
-                let var_204 =
+                let var_213 =
                     Some(
                         Result::<crate::model::StandardUnit, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::StandardUnit::from(
@@ -4572,7 +4807,7 @@ pub fn deser_structure_crate_model_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_204);
+                builder = builder.set_unit(var_213);
             }
             ,
             _ => {}
@@ -4589,7 +4824,7 @@ pub fn deser_structure_crate_model_range(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StartTime") /* StartTime com.amazonaws.cloudwatch#Range$StartTime */ =>  {
-                let var_205 =
+                let var_214 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4599,11 +4834,11 @@ pub fn deser_structure_crate_model_range(
                         ?
                     )
                 ;
-                builder = builder.set_start_time(var_205);
+                builder = builder.set_start_time(var_214);
             }
             ,
             s if s.matches("EndTime") /* EndTime com.amazonaws.cloudwatch#Range$EndTime */ =>  {
-                let var_206 =
+                let var_215 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4613,7 +4848,7 @@ pub fn deser_structure_crate_model_range(
                         ?
                     )
                 ;
-                builder = builder.set_end_time(var_206);
+                builder = builder.set_end_time(var_215);
             }
             ,
             _ => {}

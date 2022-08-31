@@ -1210,13 +1210,13 @@ impl AsRef<str> for TlsSessionResumptionMode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct As2ConnectorConfig {
-    /// <p>A unique identifier for the AS2 process.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p>
     #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the partner for the connector.</p>
+    /// <p>A unique identifier for the partner profile for the connector.</p>
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
-    /// <p>A short description to help identify the connector.</p>
+    /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     #[doc(hidden)]
     pub message_subject: std::option::Option<std::string::String>,
     /// <p>Specifies whether the AS2 file is compressed.</p>
@@ -1225,10 +1225,12 @@ pub struct As2ConnectorConfig {
     /// <p>The algorithm that is used to encrypt the file.</p>
     #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlg>,
-    /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+    /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlg>,
-    /// <p>The signing algorithm for the MDN response.</p>
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+    /// </note>
     #[doc(hidden)]
     pub mdn_signing_algorithm: std::option::Option<crate::model::MdnSigningAlg>,
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
@@ -1240,15 +1242,15 @@ pub struct As2ConnectorConfig {
     pub mdn_response: std::option::Option<crate::model::MdnResponse>,
 }
 impl As2ConnectorConfig {
-    /// <p>A unique identifier for the AS2 process.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn local_profile_id(&self) -> std::option::Option<&str> {
         self.local_profile_id.as_deref()
     }
-    /// <p>A unique identifier for the partner for the connector.</p>
+    /// <p>A unique identifier for the partner profile for the connector.</p>
     pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
     }
-    /// <p>A short description to help identify the connector.</p>
+    /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     pub fn message_subject(&self) -> std::option::Option<&str> {
         self.message_subject.as_deref()
     }
@@ -1260,11 +1262,13 @@ impl As2ConnectorConfig {
     pub fn encryption_algorithm(&self) -> std::option::Option<&crate::model::EncryptionAlg> {
         self.encryption_algorithm.as_ref()
     }
-    /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+    /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlg> {
         self.signing_algorithm.as_ref()
     }
-    /// <p>The signing algorithm for the MDN response.</p>
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+    /// </note>
     pub fn mdn_signing_algorithm(&self) -> std::option::Option<&crate::model::MdnSigningAlg> {
         self.mdn_signing_algorithm.as_ref()
     }
@@ -1307,12 +1311,12 @@ pub mod as2_connector_config {
         pub(crate) mdn_response: std::option::Option<crate::model::MdnResponse>,
     }
     impl Builder {
-        /// <p>A unique identifier for the AS2 process.</p>
+        /// <p>A unique identifier for the AS2 local profile.</p>
         pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.local_profile_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AS2 process.</p>
+        /// <p>A unique identifier for the AS2 local profile.</p>
         pub fn set_local_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1320,12 +1324,12 @@ pub mod as2_connector_config {
             self.local_profile_id = input;
             self
         }
-        /// <p>A unique identifier for the partner for the connector.</p>
+        /// <p>A unique identifier for the partner profile for the connector.</p>
         pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_profile_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the partner for the connector.</p>
+        /// <p>A unique identifier for the partner profile for the connector.</p>
         pub fn set_partner_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1333,12 +1337,12 @@ pub mod as2_connector_config {
             self.partner_profile_id = input;
             self
         }
-        /// <p>A short description to help identify the connector.</p>
+        /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
         pub fn message_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_subject = Some(input.into());
             self
         }
-        /// <p>A short description to help identify the connector.</p>
+        /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
         pub fn set_message_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1372,12 +1376,12 @@ pub mod as2_connector_config {
             self.encryption_algorithm = input;
             self
         }
-        /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+        /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
         pub fn signing_algorithm(mut self, input: crate::model::SigningAlg) -> Self {
             self.signing_algorithm = Some(input);
             self
         }
-        /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+        /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::SigningAlg>,
@@ -1385,12 +1389,16 @@ pub mod as2_connector_config {
             self.signing_algorithm = input;
             self
         }
-        /// <p>The signing algorithm for the MDN response.</p>
+        /// <p>The signing algorithm for the MDN response.</p> <note>
+        /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+        /// </note>
         pub fn mdn_signing_algorithm(mut self, input: crate::model::MdnSigningAlg) -> Self {
             self.mdn_signing_algorithm = Some(input);
             self
         }
-        /// <p>The signing algorithm for the MDN response.</p>
+        /// <p>The signing algorithm for the MDN response.</p> <note>
+        /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+        /// </note>
         pub fn set_mdn_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::MdnSigningAlg>,
@@ -2651,7 +2659,7 @@ pub struct ListedProfile {
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the AS2 process.</p>
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     #[doc(hidden)]
     pub as2_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
@@ -2667,7 +2675,7 @@ impl ListedProfile {
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>The unique identifier for the AS2 process.</p>
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn as2_id(&self) -> std::option::Option<&str> {
         self.as2_id.as_deref()
     }
@@ -2718,12 +2726,12 @@ pub mod listed_profile {
             self.profile_id = input;
             self
         }
-        /// <p>The unique identifier for the AS2 process.</p>
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
         pub fn as2_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.as2_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the AS2 process.</p>
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
         pub fn set_as2_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.as2_id = input;
             self
@@ -3930,10 +3938,10 @@ pub struct ListedAgreement {
     /// <p>The unique identifier for the agreement.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the AS2 process.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p>
     #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the partner process.</p>
+    /// <p>A unique identifier for the partner profile.</p>
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
 }
@@ -3958,11 +3966,11 @@ impl ListedAgreement {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier for the AS2 process.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn local_profile_id(&self) -> std::option::Option<&str> {
         self.local_profile_id.as_deref()
     }
-    /// <p>A unique identifier for the partner process.</p>
+    /// <p>A unique identifier for the partner profile.</p>
     pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
     }
@@ -4048,12 +4056,12 @@ pub mod listed_agreement {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier for the AS2 process.</p>
+        /// <p>A unique identifier for the AS2 local profile.</p>
         pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.local_profile_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AS2 process.</p>
+        /// <p>A unique identifier for the AS2 local profile.</p>
         pub fn set_local_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4061,12 +4069,12 @@ pub mod listed_agreement {
             self.local_profile_id = input;
             self
         }
-        /// <p>A unique identifier for the partner process.</p>
+        /// <p>A unique identifier for the partner profile.</p>
         pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_profile_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the partner process.</p>
+        /// <p>A unique identifier for the partner profile.</p>
         pub fn set_partner_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5870,8 +5878,13 @@ pub struct DescribedServer {
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
-    /// <p> The protocol settings that are configured for your server. </p>
-    /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. </p>
+    /// <p>The protocol settings that are configured for your server.</p>
+    /// <ul>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
@@ -5912,7 +5925,16 @@ pub struct DescribedServer {
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
     /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
     /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
+    /// </ul> <note>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
+    /// </note>
     #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -5944,8 +5966,13 @@ impl DescribedServer {
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p> The protocol settings that are configured for your server. </p>
-    /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. </p>
+    /// <p>The protocol settings that are configured for your server.</p>
+    /// <ul>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
+    /// </ul>
     pub fn protocol_details(&self) -> std::option::Option<&crate::model::ProtocolDetails> {
         self.protocol_details.as_ref()
     }
@@ -6000,7 +6027,16 @@ impl DescribedServer {
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
     /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
     /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
+    /// </ul> <note>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
+    /// </note>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
     }
@@ -6109,14 +6145,24 @@ pub mod described_server {
             self.certificate = input;
             self
         }
-        /// <p> The protocol settings that are configured for your server. </p>
-        /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. </p>
+        /// <p>The protocol settings that are configured for your server.</p>
+        /// <ul>
+        /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+        /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+        /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+        /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
+        /// </ul>
         pub fn protocol_details(mut self, input: crate::model::ProtocolDetails) -> Self {
             self.protocol_details = Some(input);
             self
         }
-        /// <p> The protocol settings that are configured for your server. </p>
-        /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. </p>
+        /// <p>The protocol settings that are configured for your server.</p>
+        /// <ul>
+        /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+        /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+        /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+        /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
+        /// </ul>
         pub fn set_protocol_details(
             mut self,
             input: std::option::Option<crate::model::ProtocolDetails>,
@@ -6265,7 +6311,16 @@ pub mod described_server {
         /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
         /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
         /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
+        /// </ul> <note>
+        /// <ul>
+        /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+        /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
         /// </ul>
+        /// </note>
         pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input);
@@ -6277,7 +6332,16 @@ pub mod described_server {
         /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
         /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
         /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
+        /// </ul> <note>
+        /// <ul>
+        /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+        /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
         /// </ul>
+        /// </note>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -6602,7 +6666,7 @@ pub struct DescribedProfile {
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     #[doc(hidden)]
     pub profile_type: std::option::Option<crate::model::ProfileType>,
-    /// <p>The unique identifier for the AS2 process.</p>
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     #[doc(hidden)]
     pub as2_id: std::option::Option<std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
@@ -6625,7 +6689,7 @@ impl DescribedProfile {
     pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
         self.profile_type.as_ref()
     }
-    /// <p>The unique identifier for the AS2 process.</p>
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn as2_id(&self) -> std::option::Option<&str> {
         self.as2_id.as_deref()
     }
@@ -6697,12 +6761,12 @@ pub mod described_profile {
             self.profile_type = input;
             self
         }
-        /// <p>The unique identifier for the AS2 process.</p>
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
         pub fn as2_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.as2_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the AS2 process.</p>
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
         pub fn set_as2_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.as2_id = input;
             self
@@ -8051,16 +8115,16 @@ pub struct DescribedAgreement {
     /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the AS2 process.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p>
     #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the partner in the agreement.</p>
+    /// <p>A unique identifier for the partner profile used in the agreement.</p>
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
     /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
     #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     #[doc(hidden)]
     pub access_role: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
@@ -8088,11 +8152,11 @@ impl DescribedAgreement {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier for the AS2 process.</p>
+    /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn local_profile_id(&self) -> std::option::Option<&str> {
         self.local_profile_id.as_deref()
     }
-    /// <p>A unique identifier for the partner in the agreement.</p>
+    /// <p>A unique identifier for the partner profile used in the agreement.</p>
     pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
     }
@@ -8100,7 +8164,7 @@ impl DescribedAgreement {
     pub fn base_directory(&self) -> std::option::Option<&str> {
         self.base_directory.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn access_role(&self) -> std::option::Option<&str> {
         self.access_role.as_deref()
     }
@@ -8196,12 +8260,12 @@ pub mod described_agreement {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier for the AS2 process.</p>
+        /// <p>A unique identifier for the AS2 local profile.</p>
         pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.local_profile_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AS2 process.</p>
+        /// <p>A unique identifier for the AS2 local profile.</p>
         pub fn set_local_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8209,12 +8273,12 @@ pub mod described_agreement {
             self.local_profile_id = input;
             self
         }
-        /// <p>A unique identifier for the partner in the agreement.</p>
+        /// <p>A unique identifier for the partner profile used in the agreement.</p>
         pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_profile_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the partner in the agreement.</p>
+        /// <p>A unique identifier for the partner profile used in the agreement.</p>
         pub fn set_partner_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8235,12 +8299,12 @@ pub mod described_agreement {
             self.base_directory = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
         pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
         pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_role = input;
             self

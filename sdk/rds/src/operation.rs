@@ -4624,3 +4624,37 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDBInstanceAutomatedB
         }
     }
 }
+
+/// Operation shape for `SwitchoverReadReplica`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`switchover_read_replica`](crate::client::Client::switchover_read_replica).
+///
+/// See [`crate::client::fluent_builders::SwitchoverReadReplica`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SwitchoverReadReplica {
+    _private: (),
+}
+impl SwitchoverReadReplica {
+    /// Creates a new builder-style object to manufacture [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
+    pub fn builder() -> crate::input::switchover_read_replica_input::Builder {
+        crate::input::switchover_read_replica_input::Builder::default()
+    }
+    /// Creates a new `SwitchoverReadReplica` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SwitchoverReadReplica {
+    type Output = std::result::Result<
+        crate::output::SwitchoverReadReplicaOutput,
+        crate::error::SwitchoverReadReplicaError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_switchover_read_replica_error(response)
+        } else {
+            crate::operation_deser::parse_switchover_read_replica_response(response)
+        }
+    }
+}

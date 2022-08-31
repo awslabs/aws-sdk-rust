@@ -1982,6 +1982,14 @@ pub struct UpdateEventSourceMappingOutput {
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    #[doc(hidden)]
+    pub amazon_managed_kafka_event_source_config:
+        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    #[doc(hidden)]
+    pub self_managed_kafka_event_source_config:
+        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl UpdateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -2086,6 +2094,18 @@ impl UpdateEventSourceMappingOutput {
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2131,6 +2151,14 @@ impl std::fmt::Debug for UpdateEventSourceMappingOutput {
             &self.tumbling_window_in_seconds,
         );
         formatter.field("function_response_types", &self.function_response_types);
+        formatter.field(
+            "amazon_managed_kafka_event_source_config",
+            &self.amazon_managed_kafka_event_source_config,
+        );
+        formatter.field(
+            "self_managed_kafka_event_source_config",
+            &self.self_managed_kafka_event_source_config,
+        );
         formatter.finish()
     }
 }
@@ -2166,6 +2194,10 @@ pub mod update_event_source_mapping_output {
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config:
+            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config:
+            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -2487,6 +2519,38 @@ pub mod update_event_source_mapping_output {
             self.function_response_types = input;
             self
         }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn amazon_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::AmazonManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn set_amazon_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = input;
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn self_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::SelfManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn set_self_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
         pub fn build(self) -> crate::output::UpdateEventSourceMappingOutput {
             crate::output::UpdateEventSourceMappingOutput {
@@ -2513,6 +2577,9 @@ pub mod update_event_source_mapping_output {
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 tumbling_window_in_seconds: self.tumbling_window_in_seconds,
                 function_response_types: self.function_response_types,
+                amazon_managed_kafka_event_source_config: self
+                    .amazon_managed_kafka_event_source_config,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             }
         }
     }
@@ -7974,6 +8041,14 @@ pub struct GetEventSourceMappingOutput {
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    #[doc(hidden)]
+    pub amazon_managed_kafka_event_source_config:
+        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    #[doc(hidden)]
+    pub self_managed_kafka_event_source_config:
+        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl GetEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -8078,6 +8153,18 @@ impl GetEventSourceMappingOutput {
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8123,6 +8210,14 @@ impl std::fmt::Debug for GetEventSourceMappingOutput {
             &self.tumbling_window_in_seconds,
         );
         formatter.field("function_response_types", &self.function_response_types);
+        formatter.field(
+            "amazon_managed_kafka_event_source_config",
+            &self.amazon_managed_kafka_event_source_config,
+        );
+        formatter.field(
+            "self_managed_kafka_event_source_config",
+            &self.self_managed_kafka_event_source_config,
+        );
         formatter.finish()
     }
 }
@@ -8158,6 +8253,10 @@ pub mod get_event_source_mapping_output {
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config:
+            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config:
+            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -8479,6 +8578,38 @@ pub mod get_event_source_mapping_output {
             self.function_response_types = input;
             self
         }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn amazon_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::AmazonManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn set_amazon_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = input;
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn self_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::SelfManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn set_self_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
         pub fn build(self) -> crate::output::GetEventSourceMappingOutput {
             crate::output::GetEventSourceMappingOutput {
@@ -8505,6 +8636,9 @@ pub mod get_event_source_mapping_output {
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 tumbling_window_in_seconds: self.tumbling_window_in_seconds,
                 function_response_types: self.function_response_types,
+                amazon_managed_kafka_event_source_config: self
+                    .amazon_managed_kafka_event_source_config,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             }
         }
     }
@@ -9105,6 +9239,14 @@ pub struct DeleteEventSourceMappingOutput {
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    #[doc(hidden)]
+    pub amazon_managed_kafka_event_source_config:
+        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    #[doc(hidden)]
+    pub self_managed_kafka_event_source_config:
+        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl DeleteEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -9209,6 +9351,18 @@ impl DeleteEventSourceMappingOutput {
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9254,6 +9408,14 @@ impl std::fmt::Debug for DeleteEventSourceMappingOutput {
             &self.tumbling_window_in_seconds,
         );
         formatter.field("function_response_types", &self.function_response_types);
+        formatter.field(
+            "amazon_managed_kafka_event_source_config",
+            &self.amazon_managed_kafka_event_source_config,
+        );
+        formatter.field(
+            "self_managed_kafka_event_source_config",
+            &self.self_managed_kafka_event_source_config,
+        );
         formatter.finish()
     }
 }
@@ -9289,6 +9451,10 @@ pub mod delete_event_source_mapping_output {
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config:
+            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config:
+            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -9610,6 +9776,38 @@ pub mod delete_event_source_mapping_output {
             self.function_response_types = input;
             self
         }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn amazon_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::AmazonManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn set_amazon_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = input;
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn self_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::SelfManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn set_self_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
         pub fn build(self) -> crate::output::DeleteEventSourceMappingOutput {
             crate::output::DeleteEventSourceMappingOutput {
@@ -9636,6 +9834,9 @@ pub mod delete_event_source_mapping_output {
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 tumbling_window_in_seconds: self.tumbling_window_in_seconds,
                 function_response_types: self.function_response_types,
+                amazon_managed_kafka_event_source_config: self
+                    .amazon_managed_kafka_event_source_config,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             }
         }
     }
@@ -10711,6 +10912,14 @@ pub struct CreateEventSourceMappingOutput {
     #[doc(hidden)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    #[doc(hidden)]
+    pub amazon_managed_kafka_event_source_config:
+        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    #[doc(hidden)]
+    pub self_managed_kafka_event_source_config:
+        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl CreateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
@@ -10815,6 +11024,18 @@ impl CreateEventSourceMappingOutput {
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEventSourceMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10860,6 +11081,14 @@ impl std::fmt::Debug for CreateEventSourceMappingOutput {
             &self.tumbling_window_in_seconds,
         );
         formatter.field("function_response_types", &self.function_response_types);
+        formatter.field(
+            "amazon_managed_kafka_event_source_config",
+            &self.amazon_managed_kafka_event_source_config,
+        );
+        formatter.field(
+            "self_managed_kafka_event_source_config",
+            &self.self_managed_kafka_event_source_config,
+        );
         formatter.finish()
     }
 }
@@ -10895,6 +11124,10 @@ pub mod create_event_source_mapping_output {
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
         pub(crate) function_response_types:
             std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config:
+            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config:
+            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -11216,6 +11449,38 @@ pub mod create_event_source_mapping_output {
             self.function_response_types = input;
             self
         }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn amazon_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::AmazonManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+        pub fn set_amazon_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.amazon_managed_kafka_event_source_config = input;
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn self_managed_kafka_event_source_config(
+            mut self,
+            input: crate::model::SelfManagedKafkaEventSourceConfig,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = Some(input);
+            self
+        }
+        /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+        pub fn set_self_managed_kafka_event_source_config(
+            mut self,
+            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        ) -> Self {
+            self.self_managed_kafka_event_source_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
         pub fn build(self) -> crate::output::CreateEventSourceMappingOutput {
             crate::output::CreateEventSourceMappingOutput {
@@ -11242,6 +11507,9 @@ pub mod create_event_source_mapping_output {
                 maximum_retry_attempts: self.maximum_retry_attempts,
                 tumbling_window_in_seconds: self.tumbling_window_in_seconds,
                 function_response_types: self.function_response_types,
+                amazon_managed_kafka_event_source_config: self
+                    .amazon_managed_kafka_event_source_config,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             }
         }
     }

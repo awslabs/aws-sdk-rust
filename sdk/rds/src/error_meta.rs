@@ -3807,4 +3807,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SwitchoverReadReplicaError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::SwitchoverReadReplicaError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SwitchoverReadReplicaErrorKind::DbInstanceNotFoundFault(inner) => {
+                    Error::DbInstanceNotFoundFault(inner)
+                }
+                crate::error::SwitchoverReadReplicaErrorKind::InvalidDbInstanceStateFault(
+                    inner,
+                ) => Error::InvalidDbInstanceStateFault(inner),
+                crate::error::SwitchoverReadReplicaErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

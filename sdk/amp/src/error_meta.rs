@@ -57,6 +57,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateLoggingConfigurationErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::CreateLoggingConfigurationErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateLoggingConfigurationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::CreateLoggingConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupsNamespaceError, R>>
     for Error
 where
@@ -163,6 +193,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteLoggingConfigurationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::DeleteLoggingConfigurationErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DeleteLoggingConfigurationErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteLoggingConfigurationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupsNamespaceError, R>>
     for Error
 where
@@ -251,6 +314,36 @@ where
                 crate::error::DescribeAlertManagerDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::DescribeAlertManagerDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeLoggingConfigurationErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::DescribeLoggingConfigurationErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DescribeLoggingConfigurationErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeLoggingConfigurationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribeLoggingConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -539,6 +632,39 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateLoggingConfigurationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateLoggingConfigurationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::UpdateLoggingConfigurationErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::UpdateLoggingConfigurationErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateLoggingConfigurationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::UpdateLoggingConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

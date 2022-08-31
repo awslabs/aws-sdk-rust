@@ -1681,6 +1681,57 @@ pub fn parse_describe_global_table_settings_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_import_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeImportOutput, crate::error::DescribeImportError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeImportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeImportError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ImportNotFoundException" => crate::error::DescribeImportError {
+            meta: generic,
+            kind: crate::error::DescribeImportErrorKind::ImportNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::import_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_import_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeImportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_import_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeImportOutput, crate::error::DescribeImportError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_import_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeImportError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_kinesis_streaming_destination_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2949,6 +3000,91 @@ pub fn parse_get_item_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_import_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ImportTableOutput, crate::error::ImportTableError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ImportTableError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ImportTableError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ImportConflictException" => crate::error::ImportTableError {
+            meta: generic,
+            kind: crate::error::ImportTableErrorKind::ImportConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::import_conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_import_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::ImportTableError {
+            meta: generic,
+            kind: crate::error::ImportTableErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::ImportTableError {
+            meta: generic,
+            kind: crate::error::ImportTableErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ImportTableError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_import_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ImportTableOutput, crate::error::ImportTableError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::import_table_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_import_table(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_backups_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBackupsOutput, crate::error::ListBackupsError> {
@@ -3228,6 +3364,57 @@ pub fn parse_list_global_tables_response(
             output,
         )
         .map_err(crate::error::ListGlobalTablesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_imports_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListImportsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListImportsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "LimitExceededException" => crate::error::ListImportsError {
+            meta: generic,
+            kind: crate::error::ListImportsErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListImportsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_imports_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_imports_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_imports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImportsError::unhandled)?;
         output.build()
     })
 }

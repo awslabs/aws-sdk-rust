@@ -1325,6 +1325,390 @@ pub fn parse_create_predictor_backtest_export_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_what_if_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateWhatIfAnalysisOutput,
+    crate::error::CreateWhatIfAnalysisError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateWhatIfAnalysisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::CreateWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfAnalysisErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfAnalysisErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfAnalysisErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::CreateWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfAnalysisErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfAnalysisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateWhatIfAnalysisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_what_if_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateWhatIfAnalysisOutput,
+    crate::error::CreateWhatIfAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_what_if_analysis_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_what_if_analysis(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateWhatIfAnalysisError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_what_if_forecast_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateWhatIfForecastOutput,
+    crate::error::CreateWhatIfForecastError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateWhatIfForecastError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::CreateWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::CreateWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateWhatIfForecastError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_what_if_forecast_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateWhatIfForecastOutput,
+    crate::error::CreateWhatIfForecastError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_what_if_forecast_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_what_if_forecast(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateWhatIfForecastError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_what_if_forecast_export_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateWhatIfForecastExportOutput,
+    crate::error::CreateWhatIfForecastExportError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateWhatIfForecastExportError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::CreateWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastExportErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastExportErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_already_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceInUseException" => crate::error::CreateWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastExportErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::CreateWhatIfForecastExportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateWhatIfForecastExportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_what_if_forecast_export_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateWhatIfForecastExportOutput,
+    crate::error::CreateWhatIfForecastExportError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_what_if_forecast_export_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_what_if_forecast_export(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateWhatIfForecastExportError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_dataset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError> {
@@ -2269,6 +2653,268 @@ pub fn parse_delete_resource_tree_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_what_if_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteWhatIfAnalysisOutput,
+    crate::error::DeleteWhatIfAnalysisError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteWhatIfAnalysisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteWhatIfAnalysisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DeleteWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfAnalysisErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::DeleteWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfAnalysisErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfAnalysisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteWhatIfAnalysisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_what_if_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteWhatIfAnalysisOutput,
+    crate::error::DeleteWhatIfAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_what_if_analysis_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_what_if_forecast_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteWhatIfForecastOutput,
+    crate::error::DeleteWhatIfForecastError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteWhatIfForecastError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteWhatIfForecastError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DeleteWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfForecastErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::DeleteWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfForecastErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfForecastErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteWhatIfForecastError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_what_if_forecast_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteWhatIfForecastOutput,
+    crate::error::DeleteWhatIfForecastError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_what_if_forecast_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_what_if_forecast_export_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteWhatIfForecastExportOutput,
+    crate::error::DeleteWhatIfForecastExportError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteWhatIfForecastExportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteWhatIfForecastExportError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DeleteWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfForecastExportErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::DeleteWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfForecastExportErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::DeleteWhatIfForecastExportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteWhatIfForecastExportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_what_if_forecast_export_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteWhatIfForecastExportOutput,
+    crate::error::DeleteWhatIfForecastExportError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_what_if_forecast_export_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_auto_predictor_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3079,6 +3725,241 @@ pub fn parse_describe_predictor_backtest_export_job_response(
             crate::output::describe_predictor_backtest_export_job_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_predictor_backtest_export_job(response.body().as_ref(), output).map_err(crate::error::DescribePredictorBacktestExportJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_what_if_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeWhatIfAnalysisOutput,
+    crate::error::DescribeWhatIfAnalysisError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeWhatIfAnalysisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeWhatIfAnalysisError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DescribeWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::DescribeWhatIfAnalysisErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeWhatIfAnalysisError {
+            meta: generic,
+            kind: crate::error::DescribeWhatIfAnalysisErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWhatIfAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeWhatIfAnalysisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_what_if_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeWhatIfAnalysisOutput,
+    crate::error::DescribeWhatIfAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_what_if_analysis_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_what_if_analysis(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeWhatIfAnalysisError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_what_if_forecast_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeWhatIfForecastOutput,
+    crate::error::DescribeWhatIfForecastError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeWhatIfForecastError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeWhatIfForecastError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DescribeWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::DescribeWhatIfForecastErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeWhatIfForecastError {
+            meta: generic,
+            kind: crate::error::DescribeWhatIfForecastErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWhatIfForecastError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeWhatIfForecastError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_what_if_forecast_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeWhatIfForecastOutput,
+    crate::error::DescribeWhatIfForecastError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_what_if_forecast_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_what_if_forecast(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeWhatIfForecastError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_what_if_forecast_export_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeWhatIfForecastExportOutput,
+    crate::error::DescribeWhatIfForecastExportError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeWhatIfForecastExportError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeWhatIfForecastExportError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::DescribeWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::DescribeWhatIfForecastExportErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeWhatIfForecastExportError {
+            meta: generic,
+            kind: crate::error::DescribeWhatIfForecastExportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWhatIfForecastExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeWhatIfForecastExportError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_what_if_forecast_export_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeWhatIfForecastExportOutput,
+    crate::error::DescribeWhatIfForecastExportError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_what_if_forecast_export_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_what_if_forecast_export(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeWhatIfForecastExportError::unhandled)?;
         output.build()
     })
 }
@@ -4030,6 +4911,232 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_what_if_analyses_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListWhatIfAnalysesOutput,
+    crate::error::ListWhatIfAnalysesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListWhatIfAnalysesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListWhatIfAnalysesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::ListWhatIfAnalysesError {
+            meta: generic,
+            kind: crate::error::ListWhatIfAnalysesErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWhatIfAnalysesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListWhatIfAnalysesError {
+            meta: generic,
+            kind: crate::error::ListWhatIfAnalysesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWhatIfAnalysesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListWhatIfAnalysesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_what_if_analyses_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListWhatIfAnalysesOutput,
+    crate::error::ListWhatIfAnalysesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_what_if_analyses_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_what_if_analyses(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListWhatIfAnalysesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_what_if_forecast_exports_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListWhatIfForecastExportsOutput,
+    crate::error::ListWhatIfForecastExportsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListWhatIfForecastExportsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListWhatIfForecastExportsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::ListWhatIfForecastExportsError {
+            meta: generic,
+            kind: crate::error::ListWhatIfForecastExportsErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWhatIfForecastExportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListWhatIfForecastExportsError {
+            meta: generic,
+            kind: crate::error::ListWhatIfForecastExportsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWhatIfForecastExportsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListWhatIfForecastExportsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_what_if_forecast_exports_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListWhatIfForecastExportsOutput,
+    crate::error::ListWhatIfForecastExportsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_what_if_forecast_exports_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_what_if_forecast_exports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListWhatIfForecastExportsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_what_if_forecasts_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListWhatIfForecastsOutput,
+    crate::error::ListWhatIfForecastsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListWhatIfForecastsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListWhatIfForecastsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::ListWhatIfForecastsError {
+            meta: generic,
+            kind: crate::error::ListWhatIfForecastsErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWhatIfForecastsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListWhatIfForecastsError {
+            meta: generic,
+            kind: crate::error::ListWhatIfForecastsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWhatIfForecastsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListWhatIfForecastsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_what_if_forecasts_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListWhatIfForecastsOutput,
+    crate::error::ListWhatIfForecastsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_what_if_forecasts_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_what_if_forecasts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListWhatIfForecastsError::unhandled)?;
         output.build()
     })
 }

@@ -992,7 +992,7 @@ impl StatisticSet {
 }
 
 /// <p>A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension name, and the actual instance ID as the value for that dimension.</p>
-/// <p>You can assign up to 10 dimensions to a metric.</p>
+/// <p>You can assign up to 30 dimensions to a metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
@@ -1671,6 +1671,237 @@ impl Statistic {
 impl AsRef<str> for Statistic {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PartialFailure {
+    /// <p>The specified rule that could not be deleted.</p>
+    #[doc(hidden)]
+    pub failure_resource: std::option::Option<std::string::String>,
+    /// <p>The type of error.</p>
+    #[doc(hidden)]
+    pub exception_type: std::option::Option<std::string::String>,
+    /// <p>The code of the error.</p>
+    #[doc(hidden)]
+    pub failure_code: std::option::Option<std::string::String>,
+    /// <p>A description of the error.</p>
+    #[doc(hidden)]
+    pub failure_description: std::option::Option<std::string::String>,
+}
+impl PartialFailure {
+    /// <p>The specified rule that could not be deleted.</p>
+    pub fn failure_resource(&self) -> std::option::Option<&str> {
+        self.failure_resource.as_deref()
+    }
+    /// <p>The type of error.</p>
+    pub fn exception_type(&self) -> std::option::Option<&str> {
+        self.exception_type.as_deref()
+    }
+    /// <p>The code of the error.</p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>A description of the error.</p>
+    pub fn failure_description(&self) -> std::option::Option<&str> {
+        self.failure_description.as_deref()
+    }
+}
+impl std::fmt::Debug for PartialFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PartialFailure");
+        formatter.field("failure_resource", &self.failure_resource);
+        formatter.field("exception_type", &self.exception_type);
+        formatter.field("failure_code", &self.failure_code);
+        formatter.field("failure_description", &self.failure_description);
+        formatter.finish()
+    }
+}
+/// See [`PartialFailure`](crate::model::PartialFailure).
+pub mod partial_failure {
+
+    /// A builder for [`PartialFailure`](crate::model::PartialFailure).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failure_resource: std::option::Option<std::string::String>,
+        pub(crate) exception_type: std::option::Option<std::string::String>,
+        pub(crate) failure_code: std::option::Option<std::string::String>,
+        pub(crate) failure_description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The specified rule that could not be deleted.</p>
+        pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_resource = Some(input.into());
+            self
+        }
+        /// <p>The specified rule that could not be deleted.</p>
+        pub fn set_failure_resource(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_resource = input;
+            self
+        }
+        /// <p>The type of error.</p>
+        pub fn exception_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exception_type = Some(input.into());
+            self
+        }
+        /// <p>The type of error.</p>
+        pub fn set_exception_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.exception_type = input;
+            self
+        }
+        /// <p>The code of the error.</p>
+        pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_code = Some(input.into());
+            self
+        }
+        /// <p>The code of the error.</p>
+        pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_code = input;
+            self
+        }
+        /// <p>A description of the error.</p>
+        pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the error.</p>
+        pub fn set_failure_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PartialFailure`](crate::model::PartialFailure).
+        pub fn build(self) -> crate::model::PartialFailure {
+            crate::model::PartialFailure {
+                failure_resource: self.failure_resource,
+                exception_type: self.exception_type,
+                failure_code: self.failure_code,
+                failure_description: self.failure_description,
+            }
+        }
+    }
+}
+impl PartialFailure {
+    /// Creates a new builder-style object to manufacture [`PartialFailure`](crate::model::PartialFailure).
+    pub fn builder() -> crate::model::partial_failure::Builder {
+        crate::model::partial_failure::Builder::default()
+    }
+}
+
+/// <p> Contains the information that's required to enable a managed Contributor Insights rule for an Amazon Web Services resource. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedRule {
+    /// <p> The template name for the managed Contributor Insights rule, as returned by <code>ListManagedInsightRules</code>. </p>
+    #[doc(hidden)]
+    pub template_name: std::option::Option<std::string::String>,
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p> A list of key-value pairs that you can associate with a managed Contributor Insights rule. You can associate as many as 50 tags with a rule. Tags can help you organize and categorize your resources. You also can use them to scope user permissions by granting a user permission to access or change only the resources that have certain tag values. To associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission. If you are using this operation to update an existing Contributor Insights rule, any tags that you specify in this parameter are ignored. To change the tags of an existing rule, use <code>TagResource</code>. </p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ManagedRule {
+    /// <p> The template name for the managed Contributor Insights rule, as returned by <code>ListManagedInsightRules</code>. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> A list of key-value pairs that you can associate with a managed Contributor Insights rule. You can associate as many as 50 tags with a rule. Tags can help you organize and categorize your resources. You also can use them to scope user permissions by granting a user permission to access or change only the resources that have certain tag values. To associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission. If you are using this operation to update an existing Contributor Insights rule, any tags that you specify in this parameter are ignored. To change the tags of an existing rule, use <code>TagResource</code>. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for ManagedRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedRule");
+        formatter.field("template_name", &self.template_name);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ManagedRule`](crate::model::ManagedRule).
+pub mod managed_rule {
+
+    /// A builder for [`ManagedRule`](crate::model::ManagedRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template_name: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p> The template name for the managed Contributor Insights rule, as returned by <code>ListManagedInsightRules</code>. </p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        /// <p> The template name for the managed Contributor Insights rule, as returned by <code>ListManagedInsightRules</code>. </p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
+        /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> A list of key-value pairs that you can associate with a managed Contributor Insights rule. You can associate as many as 50 tags with a rule. Tags can help you organize and categorize your resources. You also can use them to scope user permissions by granting a user permission to access or change only the resources that have certain tag values. To associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission. If you are using this operation to update an existing Contributor Insights rule, any tags that you specify in this parameter are ignored. To change the tags of an existing rule, use <code>TagResource</code>. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p> A list of key-value pairs that you can associate with a managed Contributor Insights rule. You can associate as many as 50 tags with a rule. Tags can help you organize and categorize your resources. You also can use them to scope user permissions by granting a user permission to access or change only the resources that have certain tag values. To associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission. If you are using this operation to update an existing Contributor Insights rule, any tags that you specify in this parameter are ignored. To change the tags of an existing rule, use <code>TagResource</code>. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedRule`](crate::model::ManagedRule).
+        pub fn build(self) -> crate::model::ManagedRule {
+            crate::model::ManagedRule {
+                template_name: self.template_name,
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl ManagedRule {
+    /// Creates a new builder-style object to manufacture [`ManagedRule`](crate::model::ManagedRule).
+    pub fn builder() -> crate::model::managed_rule::Builder {
+        crate::model::managed_rule::Builder::default()
     }
 }
 
@@ -2417,6 +2648,182 @@ impl DimensionFilter {
     /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter).
     pub fn builder() -> crate::model::dimension_filter::Builder {
         crate::model::dimension_filter::Builder::default()
+    }
+}
+
+/// <p> Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedRuleDescription {
+    /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
+    #[doc(hidden)]
+    pub template_name: std::option::Option<std::string::String>,
+    /// <p> If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource. </p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
+    #[doc(hidden)]
+    pub rule_state: std::option::Option<crate::model::ManagedRuleState>,
+}
+impl ManagedRuleDescription {
+    /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p> If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
+    pub fn rule_state(&self) -> std::option::Option<&crate::model::ManagedRuleState> {
+        self.rule_state.as_ref()
+    }
+}
+impl std::fmt::Debug for ManagedRuleDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedRuleDescription");
+        formatter.field("template_name", &self.template_name);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("rule_state", &self.rule_state);
+        formatter.finish()
+    }
+}
+/// See [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
+pub mod managed_rule_description {
+
+    /// A builder for [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template_name: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) rule_state: std::option::Option<crate::model::ManagedRuleState>,
+    }
+    impl Builder {
+        /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
+        /// <p> If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p> If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
+        pub fn rule_state(mut self, input: crate::model::ManagedRuleState) -> Self {
+            self.rule_state = Some(input);
+            self
+        }
+        /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
+        pub fn set_rule_state(
+            mut self,
+            input: std::option::Option<crate::model::ManagedRuleState>,
+        ) -> Self {
+            self.rule_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
+        pub fn build(self) -> crate::model::ManagedRuleDescription {
+            crate::model::ManagedRuleDescription {
+                template_name: self.template_name,
+                resource_arn: self.resource_arn,
+                rule_state: self.rule_state,
+            }
+        }
+    }
+}
+impl ManagedRuleDescription {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
+    pub fn builder() -> crate::model::managed_rule_description::Builder {
+        crate::model::managed_rule_description::Builder::default()
+    }
+}
+
+/// <p> The status of a managed Contributor Insights rule. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedRuleState {
+    /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
+    #[doc(hidden)]
+    pub rule_name: std::option::Option<std::string::String>,
+    /// <p> Indicates whether the rule is enabled or disabled. </p>
+    #[doc(hidden)]
+    pub state: std::option::Option<std::string::String>,
+}
+impl ManagedRuleState {
+    /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p> Indicates whether the rule is enabled or disabled. </p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+}
+impl std::fmt::Debug for ManagedRuleState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedRuleState");
+        formatter.field("rule_name", &self.rule_name);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`ManagedRuleState`](crate::model::ManagedRuleState).
+pub mod managed_rule_state {
+
+    /// A builder for [`ManagedRuleState`](crate::model::ManagedRuleState).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_name: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
+        pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_name = input;
+            self
+        }
+        /// <p> Indicates whether the rule is enabled or disabled. </p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        /// <p> Indicates whether the rule is enabled or disabled. </p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedRuleState`](crate::model::ManagedRuleState).
+        pub fn build(self) -> crate::model::ManagedRuleState {
+            crate::model::ManagedRuleState {
+                rule_name: self.rule_name,
+                state: self.state,
+            }
+        }
+    }
+}
+impl ManagedRuleState {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleState`](crate::model::ManagedRuleState).
+    pub fn builder() -> crate::model::managed_rule_state::Builder {
+        crate::model::managed_rule_state::Builder::default()
     }
 }
 
@@ -3613,130 +4020,6 @@ impl InsightRuleContributorDatapoint {
     }
 }
 
-/// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PartialFailure {
-    /// <p>The specified rule that could not be deleted.</p>
-    #[doc(hidden)]
-    pub failure_resource: std::option::Option<std::string::String>,
-    /// <p>The type of error.</p>
-    #[doc(hidden)]
-    pub exception_type: std::option::Option<std::string::String>,
-    /// <p>The code of the error.</p>
-    #[doc(hidden)]
-    pub failure_code: std::option::Option<std::string::String>,
-    /// <p>A description of the error.</p>
-    #[doc(hidden)]
-    pub failure_description: std::option::Option<std::string::String>,
-}
-impl PartialFailure {
-    /// <p>The specified rule that could not be deleted.</p>
-    pub fn failure_resource(&self) -> std::option::Option<&str> {
-        self.failure_resource.as_deref()
-    }
-    /// <p>The type of error.</p>
-    pub fn exception_type(&self) -> std::option::Option<&str> {
-        self.exception_type.as_deref()
-    }
-    /// <p>The code of the error.</p>
-    pub fn failure_code(&self) -> std::option::Option<&str> {
-        self.failure_code.as_deref()
-    }
-    /// <p>A description of the error.</p>
-    pub fn failure_description(&self) -> std::option::Option<&str> {
-        self.failure_description.as_deref()
-    }
-}
-impl std::fmt::Debug for PartialFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PartialFailure");
-        formatter.field("failure_resource", &self.failure_resource);
-        formatter.field("exception_type", &self.exception_type);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_description", &self.failure_description);
-        formatter.finish()
-    }
-}
-/// See [`PartialFailure`](crate::model::PartialFailure).
-pub mod partial_failure {
-
-    /// A builder for [`PartialFailure`](crate::model::PartialFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) failure_resource: std::option::Option<std::string::String>,
-        pub(crate) exception_type: std::option::Option<std::string::String>,
-        pub(crate) failure_code: std::option::Option<std::string::String>,
-        pub(crate) failure_description: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The specified rule that could not be deleted.</p>
-        pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
-            self.failure_resource = Some(input.into());
-            self
-        }
-        /// <p>The specified rule that could not be deleted.</p>
-        pub fn set_failure_resource(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_resource = input;
-            self
-        }
-        /// <p>The type of error.</p>
-        pub fn exception_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.exception_type = Some(input.into());
-            self
-        }
-        /// <p>The type of error.</p>
-        pub fn set_exception_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exception_type = input;
-            self
-        }
-        /// <p>The code of the error.</p>
-        pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.failure_code = Some(input.into());
-            self
-        }
-        /// <p>The code of the error.</p>
-        pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.failure_code = input;
-            self
-        }
-        /// <p>A description of the error.</p>
-        pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.failure_description = Some(input.into());
-            self
-        }
-        /// <p>A description of the error.</p>
-        pub fn set_failure_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_description = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`PartialFailure`](crate::model::PartialFailure).
-        pub fn build(self) -> crate::model::PartialFailure {
-            crate::model::PartialFailure {
-                failure_resource: self.failure_resource,
-                exception_type: self.exception_type,
-                failure_code: self.failure_code,
-                failure_description: self.failure_description,
-            }
-        }
-    }
-}
-impl PartialFailure {
-    /// Creates a new builder-style object to manufacture [`PartialFailure`](crate::model::PartialFailure).
-    pub fn builder() -> crate::model::partial_failure::Builder {
-        crate::model::partial_failure::Builder::default()
-    }
-}
-
 /// <p>This structure contains the definition for a Contributor Insights rule. For more information about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"> Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3753,6 +4036,9 @@ pub struct InsightRule {
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<std::string::String>,
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
+    #[doc(hidden)]
+    pub managed_rule: bool,
 }
 impl InsightRule {
     /// <p>The name of the rule.</p>
@@ -3771,6 +4057,10 @@ impl InsightRule {
     pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
+    pub fn managed_rule(&self) -> bool {
+        self.managed_rule
+    }
 }
 impl std::fmt::Debug for InsightRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3779,6 +4069,7 @@ impl std::fmt::Debug for InsightRule {
         formatter.field("state", &self.state);
         formatter.field("schema", &self.schema);
         formatter.field("definition", &self.definition);
+        formatter.field("managed_rule", &self.managed_rule);
         formatter.finish()
     }
 }
@@ -3792,6 +4083,7 @@ pub mod insight_rule {
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) schema: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<std::string::String>,
+        pub(crate) managed_rule: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the rule.</p>
@@ -3834,6 +4126,16 @@ pub mod insight_rule {
             self.definition = input;
             self
         }
+        /// <p> An optional built-in rule that Amazon Web Services manages. </p>
+        pub fn managed_rule(mut self, input: bool) -> Self {
+            self.managed_rule = Some(input);
+            self
+        }
+        /// <p> An optional built-in rule that Amazon Web Services manages. </p>
+        pub fn set_managed_rule(mut self, input: std::option::Option<bool>) -> Self {
+            self.managed_rule = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InsightRule`](crate::model::InsightRule).
         pub fn build(self) -> crate::model::InsightRule {
             crate::model::InsightRule {
@@ -3841,6 +4143,7 @@ pub mod insight_rule {
                 state: self.state,
                 schema: self.schema,
                 definition: self.definition,
+                managed_rule: self.managed_rule.unwrap_or_default(),
             }
         }
     }

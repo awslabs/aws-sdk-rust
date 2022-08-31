@@ -2757,6 +2757,133 @@ impl BatchGrantPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssumeDecoratedRoleWithSamlOutput {
+    /// <p>The access key ID for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+    #[doc(hidden)]
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p>The secret key for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+    #[doc(hidden)]
+    pub secret_access_key: std::option::Option<std::string::String>,
+    /// <p>The session token for the temporary credentials.</p>
+    #[doc(hidden)]
+    pub session_token: std::option::Option<std::string::String>,
+    /// <p>The date and time when the temporary credentials expire.</p>
+    #[doc(hidden)]
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl AssumeDecoratedRoleWithSamlOutput {
+    /// <p>The access key ID for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The secret key for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The session token for the temporary credentials.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>The date and time when the temporary credentials expire.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration.as_ref()
+    }
+}
+impl std::fmt::Debug for AssumeDecoratedRoleWithSamlOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssumeDecoratedRoleWithSamlOutput");
+        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("secret_access_key", &self.secret_access_key);
+        formatter.field("session_token", &self.session_token);
+        formatter.field("expiration", &self.expiration);
+        formatter.finish()
+    }
+}
+/// See [`AssumeDecoratedRoleWithSamlOutput`](crate::output::AssumeDecoratedRoleWithSamlOutput).
+pub mod assume_decorated_role_with_saml_output {
+
+    /// A builder for [`AssumeDecoratedRoleWithSamlOutput`](crate::output::AssumeDecoratedRoleWithSamlOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_access_key: std::option::Option<std::string::String>,
+        pub(crate) session_token: std::option::Option<std::string::String>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The access key ID for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        /// <p>The access key ID for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p>The secret key for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+        pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_access_key = Some(input.into());
+            self
+        }
+        /// <p>The secret key for the temporary credentials. (The access key consists of an access key ID and a secret key).</p>
+        pub fn set_secret_access_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_access_key = input;
+            self
+        }
+        /// <p>The session token for the temporary credentials.</p>
+        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_token = Some(input.into());
+            self
+        }
+        /// <p>The session token for the temporary credentials.</p>
+        pub fn set_session_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.session_token = input;
+            self
+        }
+        /// <p>The date and time when the temporary credentials expire.</p>
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration = Some(input);
+            self
+        }
+        /// <p>The date and time when the temporary credentials expire.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssumeDecoratedRoleWithSamlOutput`](crate::output::AssumeDecoratedRoleWithSamlOutput).
+        pub fn build(self) -> crate::output::AssumeDecoratedRoleWithSamlOutput {
+            crate::output::AssumeDecoratedRoleWithSamlOutput {
+                access_key_id: self.access_key_id,
+                secret_access_key: self.secret_access_key,
+                session_token: self.session_token,
+                expiration: self.expiration,
+            }
+        }
+    }
+}
+impl AssumeDecoratedRoleWithSamlOutput {
+    /// Creates a new builder-style object to manufacture [`AssumeDecoratedRoleWithSamlOutput`](crate::output::AssumeDecoratedRoleWithSamlOutput).
+    pub fn builder() -> crate::output::assume_decorated_role_with_saml_output::Builder {
+        crate::output::assume_decorated_role_with_saml_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddLfTagsToResourceOutput {
     /// <p>A list of failures to tag the resource.</p>
     #[doc(hidden)]

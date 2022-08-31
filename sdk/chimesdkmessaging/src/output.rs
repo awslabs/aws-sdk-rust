@@ -6,17 +6,25 @@ pub struct UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the SubChannel in the response.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
+    /// <p>The ID of the SubChannel in the response.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelReadMarkerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelReadMarkerOutput");
         formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -27,6 +35,7 @@ pub mod update_channel_read_marker_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -39,10 +48,24 @@ pub mod update_channel_read_marker_output {
             self.channel_arn = input;
             self
         }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
         pub fn build(self) -> crate::output::UpdateChannelReadMarkerOutput {
             crate::output::UpdateChannelReadMarkerOutput {
                 channel_arn: self.channel_arn,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -67,6 +90,9 @@ pub struct UpdateChannelMessageOutput {
     /// <p>The status of the message update.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+    /// <p>The ID of the SubChannel in the response.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl UpdateChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
@@ -81,6 +107,10 @@ impl UpdateChannelMessageOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
         self.status.as_ref()
     }
+    /// <p>The ID of the SubChannel in the response.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -88,6 +118,7 @@ impl std::fmt::Debug for UpdateChannelMessageOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("message_id", &self.message_id);
         formatter.field("status", &self.status);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -100,6 +131,7 @@ pub mod update_channel_message_output {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -135,12 +167,26 @@ pub mod update_channel_message_output {
             self.status = input;
             self
         }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
         pub fn build(self) -> crate::output::UpdateChannelMessageOutput {
             crate::output::UpdateChannelMessageOutput {
                 channel_arn: self.channel_arn,
                 message_id: self.message_id,
                 status: self.status,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -338,6 +384,9 @@ pub struct SendChannelMessageOutput {
     /// <p>The status of the channel message.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+    /// <p>The ID of the SubChannel in the response.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl SendChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
@@ -352,6 +401,10 @@ impl SendChannelMessageOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
         self.status.as_ref()
     }
+    /// <p>The ID of the SubChannel in the response.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SendChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -359,6 +412,7 @@ impl std::fmt::Debug for SendChannelMessageOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("message_id", &self.message_id);
         formatter.field("status", &self.status);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -371,6 +425,7 @@ pub mod send_channel_message_output {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -406,12 +461,26 @@ pub mod send_channel_message_output {
             self.status = input;
             self
         }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
         pub fn build(self) -> crate::output::SendChannelMessageOutput {
             crate::output::SendChannelMessageOutput {
                 channel_arn: self.channel_arn,
                 message_id: self.message_id,
                 status: self.status,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -517,6 +586,11 @@ pub struct RedactChannelMessageOutput {
     /// <p>The ID of the message being redacted.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the SubChannel in the response.</p> <note>
+    /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -527,12 +601,19 @@ impl RedactChannelMessageOutput {
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
+    /// <p>The ID of the SubChannel in the response.</p> <note>
+    /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
+    /// </note>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RedactChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactChannelMessageOutput");
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("message_id", &self.message_id);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -544,6 +625,7 @@ pub mod redact_channel_message_output {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -566,11 +648,29 @@ pub mod redact_channel_message_output {
             self.message_id = input;
             self
         }
+        /// <p>The ID of the SubChannel in the response.</p> <note>
+        /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
+        /// </note>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel in the response.</p> <note>
+        /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
+        /// </note>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
         pub fn build(self) -> crate::output::RedactChannelMessageOutput {
             crate::output::RedactChannelMessageOutput {
                 channel_arn: self.channel_arn,
                 message_id: self.message_id,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -739,6 +839,111 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSubChannelsOutput {
+    /// <p>The ARN of elastic channel.</p>
+    #[doc(hidden)]
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>The information about each sub-channel.</p>
+    #[doc(hidden)]
+    pub sub_channels: std::option::Option<std::vec::Vec<crate::model::SubChannelSummary>>,
+    /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSubChannelsOutput {
+    /// <p>The ARN of elastic channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The information about each sub-channel.</p>
+    pub fn sub_channels(&self) -> std::option::Option<&[crate::model::SubChannelSummary]> {
+        self.sub_channels.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSubChannelsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSubChannelsOutput");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("sub_channels", &self.sub_channels);
+        formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
+pub mod list_sub_channels_output {
+
+    /// A builder for [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) sub_channels:
+            std::option::Option<std::vec::Vec<crate::model::SubChannelSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of elastic channel.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of elastic channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// Appends an item to `sub_channels`.
+        ///
+        /// To override the contents of this collection use [`set_sub_channels`](Self::set_sub_channels).
+        ///
+        /// <p>The information about each sub-channel.</p>
+        pub fn sub_channels(mut self, input: crate::model::SubChannelSummary) -> Self {
+            let mut v = self.sub_channels.unwrap_or_default();
+            v.push(input);
+            self.sub_channels = Some(v);
+            self
+        }
+        /// <p>The information about each sub-channel.</p>
+        pub fn set_sub_channels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubChannelSummary>>,
+        ) -> Self {
+            self.sub_channels = input;
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
+        pub fn build(self) -> crate::output::ListSubChannelsOutput {
+            crate::output::ListSubChannelsOutput {
+                channel_arn: self.channel_arn,
+                sub_channels: self.sub_channels,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSubChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
+    pub fn builder() -> crate::output::list_sub_channels_output::Builder {
+        crate::output::list_sub_channels_output::Builder::default()
     }
 }
 
@@ -1132,6 +1337,9 @@ pub struct ListChannelMessagesOutput {
     /// <p>The information about, and content of, each requested message.</p>
     #[doc(hidden)]
     pub channel_messages: std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
+    /// <p>The ID of the SubChannel in the response.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl ListChannelMessagesOutput {
     /// <p>The ARN of the channel containing the requested messages.</p>
@@ -1146,6 +1354,10 @@ impl ListChannelMessagesOutput {
     pub fn channel_messages(&self) -> std::option::Option<&[crate::model::ChannelMessageSummary]> {
         self.channel_messages.as_deref()
     }
+    /// <p>The ID of the SubChannel in the response.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1153,6 +1365,7 @@ impl std::fmt::Debug for ListChannelMessagesOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("channel_messages", &self.channel_messages);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -1166,6 +1379,7 @@ pub mod list_channel_messages_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) channel_messages:
             std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel containing the requested messages.</p>
@@ -1207,12 +1421,26 @@ pub mod list_channel_messages_output {
             self.channel_messages = input;
             self
         }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
         pub fn build(self) -> crate::output::ListChannelMessagesOutput {
             crate::output::ListChannelMessagesOutput {
                 channel_arn: self.channel_arn,
                 next_token: self.next_token,
                 channel_messages: self.channel_messages,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -2609,6 +2837,9 @@ pub struct CreateChannelMembershipOutput {
     /// <p>The ARN and metadata of the member being added.</p>
     #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
+    /// <p>The ID of the SubChannel in the response.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl CreateChannelMembershipOutput {
     /// <p>The ARN of the channel.</p>
@@ -2619,12 +2850,17 @@ impl CreateChannelMembershipOutput {
     pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
         self.member.as_ref()
     }
+    /// <p>The ID of the SubChannel in the response.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelMembershipOutput");
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("member", &self.member);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -2636,6 +2872,7 @@ pub mod create_channel_membership_output {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -2658,11 +2895,25 @@ pub mod create_channel_membership_output {
             self.member = input;
             self
         }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel in the response.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
         pub fn build(self) -> crate::output::CreateChannelMembershipOutput {
             crate::output::CreateChannelMembershipOutput {
                 channel_arn: self.channel_arn,
                 member: self.member,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }

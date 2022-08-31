@@ -135,6 +135,7 @@ impl MalformedPolicyDocumentException {
 /// <ul>
 /// <li> <p>The secret is scheduled for deletion.</p> </li>
 /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+/// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -807,6 +808,7 @@ pub enum CancelRotateSecretErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -942,6 +944,7 @@ pub enum CreateSecretErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
@@ -1123,6 +1126,7 @@ pub enum DeleteResourcePolicyErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -1254,6 +1258,7 @@ pub enum DeleteSecretErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -1494,6 +1499,7 @@ pub enum GetRandomPasswordErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1614,6 +1620,7 @@ pub enum GetResourcePolicyErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -1747,6 +1754,7 @@ pub enum GetSecretValueErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -2119,6 +2127,7 @@ pub enum PutResourcePolicyErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource policy has syntax errors.</p>
@@ -2276,6 +2285,7 @@ pub enum PutSecretValueErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
@@ -2438,6 +2448,7 @@ pub enum RemoveRegionsFromReplicationErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -2577,6 +2588,7 @@ pub enum ReplicateSecretToRegionsErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -2708,6 +2720,7 @@ pub enum RestoreSecretErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -2836,6 +2849,7 @@ pub enum RotateSecretErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -2964,6 +2978,7 @@ pub enum StopReplicationToReplicaErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -3095,6 +3110,7 @@ pub enum TagResourceErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -3220,6 +3236,7 @@ pub enum UntagResourceErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
@@ -3352,6 +3369,7 @@ pub enum UpdateSecretErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
@@ -3533,6 +3551,7 @@ pub enum UpdateSecretVersionStageErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
@@ -3675,6 +3694,7 @@ pub enum ValidateResourcePolicyErrorKind {
     /// <ul>
     /// <li> <p>The secret is scheduled for deletion.</p> </li>
     /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource policy has syntax errors.</p>

@@ -352,12 +352,12 @@ pub mod create_agreement_input {
             self.base_directory = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
         pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
         pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_role = input;
             self
@@ -734,12 +734,12 @@ pub mod create_profile_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
         pub fn as2_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.as2_id = Some(input.into());
             self
         }
-        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
         pub fn set_as2_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.as2_id = input;
             self
@@ -8378,11 +8378,13 @@ pub mod update_agreement_input {
             self.status = input;
             self
         }
+        /// <p>A unique identifier for the AS2 local profile.</p>
         /// <p>To change the local profile identifier, provide a new value here.</p>
         pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.local_profile_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the AS2 local profile.</p>
         /// <p>To change the local profile identifier, provide a new value here.</p>
         pub fn set_local_profile_id(
             mut self,
@@ -8391,12 +8393,12 @@ pub mod update_agreement_input {
             self.local_profile_id = input;
             self
         }
-        /// <p>To change the partner profile identifier, provide a new value here.</p>
+        /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
         pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.partner_profile_id = Some(input.into());
             self
         }
-        /// <p>To change the partner profile identifier, provide a new value here.</p>
+        /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
         pub fn set_partner_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8417,12 +8419,12 @@ pub mod update_agreement_input {
             self.base_directory = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
         pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
         pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_role = input;
             self
@@ -9313,14 +9315,18 @@ pub mod update_server_input {
         ///
         /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
         /// <ul>
-        /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
-        /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
-        /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+        /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+        /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
         /// </ul> <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+        /// <ul>
+        /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+        /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+        /// </ul>
         /// </note>
         pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
@@ -9330,14 +9336,18 @@ pub mod update_server_input {
         }
         /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
         /// <ul>
-        /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
-        /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
-        /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+        /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+        /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
         /// </ul> <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+        /// <ul>
+        /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+        /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+        /// </ul>
         /// </note>
         pub fn set_protocols(
             mut self,
@@ -9960,14 +9970,18 @@ pub struct UpdateServerInput {
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+    /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+    /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
     /// </ul> <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+    /// </ul>
     /// </note>
     #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -10062,14 +10076,18 @@ impl UpdateServerInput {
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+    /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+    /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
     /// </ul> <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+    /// </ul>
     /// </note>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
@@ -10261,16 +10279,17 @@ pub struct UpdateAgreementInput {
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AgreementStatusType>,
+    /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
     #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
-    /// <p>To change the partner profile identifier, provide a new value here.</p>
+    /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
     #[doc(hidden)]
     pub partner_profile_id: std::option::Option<std::string::String>,
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
     #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     #[doc(hidden)]
     pub access_role: std::option::Option<std::string::String>,
 }
@@ -10291,11 +10310,12 @@ impl UpdateAgreementInput {
     pub fn status(&self) -> std::option::Option<&crate::model::AgreementStatusType> {
         self.status.as_ref()
     }
+    /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
     pub fn local_profile_id(&self) -> std::option::Option<&str> {
         self.local_profile_id.as_deref()
     }
-    /// <p>To change the partner profile identifier, provide a new value here.</p>
+    /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
     pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
     }
@@ -10303,7 +10323,7 @@ impl UpdateAgreementInput {
     pub fn base_directory(&self) -> std::option::Option<&str> {
         self.base_directory.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn access_role(&self) -> std::option::Option<&str> {
         self.access_role.as_deref()
     }
@@ -12139,7 +12159,7 @@ impl std::fmt::Debug for CreateServerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProfileInput {
-    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     #[doc(hidden)]
     pub as2_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
@@ -12153,7 +12173,7 @@ pub struct CreateProfileInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateProfileInput {
-    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn as2_id(&self) -> std::option::Option<&str> {
         self.as2_id.as_deref()
     }
@@ -12255,7 +12275,7 @@ pub struct CreateAgreementInput {
     /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
     #[doc(hidden)]
     pub base_directory: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     #[doc(hidden)]
     pub access_role: std::option::Option<std::string::String>,
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
@@ -12287,7 +12307,7 @@ impl CreateAgreementInput {
     pub fn base_directory(&self) -> std::option::Option<&str> {
         self.base_directory.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     pub fn access_role(&self) -> std::option::Option<&str> {
         self.access_role.as_deref()
     }

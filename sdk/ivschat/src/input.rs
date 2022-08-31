@@ -279,7 +279,7 @@ pub mod create_room_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -290,7 +290,7 @@ pub mod create_room_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+        /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1519,7 +1519,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Array of tags to be added or updated.</p>
+        /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1530,7 +1530,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Array of tags to be added or updated.</p>
+        /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1696,14 +1696,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Array of tags to be removed.</p>
+        /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>Array of tags to be removed.</p>
+        /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2098,7 +2098,7 @@ pub struct UntagResourceInput {
     /// <p>The ARN of the resource to be untagged. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Array of tags to be removed.</p>
+    /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2107,7 +2107,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Array of tags to be removed.</p>
+    /// <p>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -2128,7 +2128,7 @@ pub struct TagResourceInput {
     /// <p>The ARN of the resource to be tagged. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Array of tags to be added or updated.</p>
+    /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2138,7 +2138,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Array of tags to be added or updated.</p>
+    /// <p>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2404,7 +2404,7 @@ pub struct CreateRoomInput {
     /// <p>Configuration information for optional review of messages.</p>
     #[doc(hidden)]
     pub message_review_handler: std::option::Option<crate::model::MessageReviewHandler>,
-    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2428,7 +2428,7 @@ impl CreateRoomInput {
     ) -> std::option::Option<&crate::model::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
-    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

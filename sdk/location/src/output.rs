@@ -4362,7 +4362,7 @@ pub struct GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>Contains the geofence geometry details describing a polygon.</p>
+    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
@@ -4387,7 +4387,7 @@ impl GetGeofenceOutput {
     pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
-    /// <p>Contains the geofence geometry details describing a polygon.</p>
+    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
     }
@@ -4445,12 +4445,12 @@ pub mod get_geofence_output {
             self.geofence_id = input;
             self
         }
-        /// <p>Contains the geofence geometry details describing a polygon.</p>
+        /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
             self.geometry = Some(input);
             self
         }
-        /// <p>Contains the geofence geometry details describing a polygon.</p>
+        /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::GeofenceGeometry>,

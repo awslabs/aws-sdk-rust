@@ -1850,7 +1850,7 @@ pub mod create_constraint_input {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -1903,7 +1903,7 @@ pub mod create_constraint_input {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -2370,22 +2370,22 @@ pub mod create_portfolio_share_input {
             self.portfolio_id = input;
             self
         }
-        /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+        /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+        /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+        /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
             self.organization_node = Some(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+        /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -2953,12 +2953,12 @@ pub mod create_provisioned_product_plan_input {
             self.product_id = input;
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3427,14 +3427,14 @@ pub mod create_service_action_input {
         /// Name
         /// </dt>
         /// <dd>
-        /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
         /// <dt>
         /// Version
         /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+        /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
         /// <dt>
         /// AssumeRole
@@ -3467,14 +3467,14 @@ pub mod create_service_action_input {
         /// Name
         /// </dt>
         /// <dd>
-        /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
         /// <dt>
         /// Version
         /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+        /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
         /// <dt>
         /// AssumeRole
@@ -4205,12 +4205,12 @@ pub mod delete_portfolio_share_input {
             self.portfolio_id = input;
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4563,12 +4563,12 @@ pub mod delete_provisioned_product_plan_input {
             self.plan_id = input;
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.ignore_errors = Some(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_errors = input;
             self
@@ -9471,7 +9471,7 @@ pub mod execute_provisioned_product_service_action_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -9482,7 +9482,7 @@ pub mod execute_provisioned_product_service_action_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -10036,12 +10036,12 @@ pub mod import_as_provisioned_product_input {
             self.provisioning_artifact_id = input;
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13810,12 +13810,12 @@ pub mod provision_product_input {
             self.path_name = input;
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioned_product_name = Some(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15268,12 +15268,12 @@ pub mod terminate_provisioned_product_input {
             self.terminate_token = input;
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn ignore_errors(mut self, input: bool) -> Self {
             self.ignore_errors = Some(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_errors = input;
             self
@@ -15537,7 +15537,7 @@ pub mod update_constraint_input {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -15590,7 +15590,7 @@ pub mod update_constraint_input {
         /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
         /// </dd>
         /// <dt>
         /// TEMPLATE
@@ -16019,12 +16019,12 @@ pub mod update_portfolio_share_input {
             self.portfolio_id = input;
             self
         }
-        /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+        /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+        /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -16878,8 +16878,8 @@ pub mod update_provisioned_product_properties_input {
         ///
         /// <p>A map that contains the provisioned product properties to be updated.</p>
         /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
         /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
@@ -16893,8 +16893,8 @@ pub mod update_provisioned_product_properties_input {
         }
         /// <p>A map that contains the provisioned product properties to be updated.</p>
         /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
         /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn set_provisioned_product_properties(
             mut self,
@@ -17889,8 +17889,8 @@ pub struct UpdateProvisionedProductPropertiesInput {
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>A map that contains the provisioned product properties to be updated.</p>
     /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
-    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+    /// <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+    /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     #[doc(hidden)]
     pub provisioned_product_properties: std::option::Option<
@@ -17916,8 +17916,8 @@ impl UpdateProvisionedProductPropertiesInput {
     }
     /// <p>A map that contains the provisioned product properties to be updated.</p>
     /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
-    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+    /// <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+    /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub fn provisioned_product_properties(
         &self,
@@ -18208,7 +18208,7 @@ pub struct UpdatePortfolioShareInput {
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+    /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Information about the organization node.</p>
@@ -18232,7 +18232,7 @@ impl UpdatePortfolioShareInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+    /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -18395,7 +18395,7 @@ pub struct UpdateConstraintInput {
     /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-    /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+    /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
     /// </dd>
     /// <dt>
     /// TEMPLATE
@@ -18465,7 +18465,7 @@ impl UpdateConstraintInput {
     /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-    /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+    /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
     /// </dd>
     /// <dt>
     /// TEMPLATE
@@ -18502,7 +18502,7 @@ pub struct TerminateProvisionedProductInput {
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
     #[doc(hidden)]
     pub terminate_token: std::option::Option<std::string::String>,
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     #[doc(hidden)]
     pub ignore_errors: bool,
     /// <p>The language code.</p>
@@ -18530,7 +18530,7 @@ impl TerminateProvisionedProductInput {
     pub fn terminate_token(&self) -> std::option::Option<&str> {
         self.terminate_token.as_deref()
     }
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(&self) -> bool {
         self.ignore_errors
     }
@@ -18987,7 +18987,7 @@ pub struct ProvisionProductInput {
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     #[doc(hidden)]
     pub path_name: std::option::Option<std::string::String>,
-    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
@@ -19041,7 +19041,7 @@ impl ProvisionProductInput {
     pub fn path_name(&self) -> std::option::Option<&str> {
         self.path_name.as_deref()
     }
-    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
@@ -20139,7 +20139,7 @@ pub struct ImportAsProvisionedProductInput {
     /// <p>The identifier of the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
     #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
@@ -20167,7 +20167,7 @@ impl ImportAsProvisionedProductInput {
     pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
-    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
@@ -20297,7 +20297,7 @@ pub struct ExecuteProvisionedProductServiceActionInput {
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
-    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -20325,7 +20325,7 @@ impl ExecuteProvisionedProductServiceActionInput {
     pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
+    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<
@@ -21528,7 +21528,7 @@ pub struct DeleteProvisionedProductPlanInput {
     /// <p>The plan identifier.</p>
     #[doc(hidden)]
     pub plan_id: std::option::Option<std::string::String>,
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     #[doc(hidden)]
     pub ignore_errors: bool,
 }
@@ -21546,7 +21546,7 @@ impl DeleteProvisionedProductPlanInput {
     pub fn plan_id(&self) -> std::option::Option<&str> {
         self.plan_id.as_deref()
     }
-    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+    /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(&self) -> bool {
         self.ignore_errors
     }
@@ -21616,7 +21616,7 @@ pub struct DeletePortfolioShareInput {
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The organization node to whom you are going to stop sharing.</p>
@@ -21637,7 +21637,7 @@ impl DeletePortfolioShareInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -21783,14 +21783,14 @@ pub struct CreateServiceActionInput {
     /// Name
     /// </dt>
     /// <dd>
-    /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
     /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
     /// </dd>
     /// <dt>
     /// Version
     /// </dt>
     /// <dd>
-    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+    /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
     /// </dd>
     /// <dt>
     /// AssumeRole
@@ -21843,14 +21843,14 @@ impl CreateServiceActionInput {
     /// Name
     /// </dt>
     /// <dd>
-    /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
     /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
     /// </dd>
     /// <dt>
     /// Version
     /// </dt>
     /// <dd>
-    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
+    /// <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
     /// </dd>
     /// <dt>
     /// AssumeRole
@@ -21988,7 +21988,7 @@ pub struct CreateProvisionedProductPlanInput {
     /// <p>The product identifier.</p>
     #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
-    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     #[doc(hidden)]
     pub provisioned_product_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
@@ -22036,7 +22036,7 @@ impl CreateProvisionedProductPlanInput {
     pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
-    /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
@@ -22221,10 +22221,10 @@ pub struct CreatePortfolioShareInput {
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+    /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+    /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     #[doc(hidden)]
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
@@ -22245,11 +22245,11 @@ impl CreatePortfolioShareInput {
     pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+    /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+    /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     pub fn organization_node(&self) -> std::option::Option<&crate::model::OrganizationNode> {
         self.organization_node.as_ref()
     }
@@ -22400,7 +22400,7 @@ pub struct CreateConstraintInput {
     /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-    /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+    /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
     /// </dd>
     /// <dt>
     /// TEMPLATE
@@ -22486,7 +22486,7 @@ impl CreateConstraintInput {
     /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
-    /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+    /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
     /// </dd>
     /// <dt>
     /// TEMPLATE

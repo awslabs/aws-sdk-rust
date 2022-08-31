@@ -103,6 +103,18 @@ impl Client {
     pub fn create_alert_manager_definition(&self) -> fluent_builders::CreateAlertManagerDefinition {
         fluent_builders::CreateAlertManagerDefinition::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateLoggingConfiguration`](crate::client::fluent_builders::CreateLoggingConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::set_workspace_id): The ID of the workspace to vend logs to.
+    ///   - [`log_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::log_group_arn) / [`set_log_group_arn(Option<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::set_log_group_arn): The ARN of the CW log group to which the vended log data will be published.
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput) with field(s):
+    ///   - [`status(Option<LoggingConfigurationStatus>)`](crate::output::CreateLoggingConfigurationOutput::status): The status of the logging configuration.
+    /// - On failure, responds with [`SdkError<CreateLoggingConfigurationError>`](crate::error::CreateLoggingConfigurationError)
+    pub fn create_logging_configuration(&self) -> fluent_builders::CreateLoggingConfiguration {
+        fluent_builders::CreateLoggingConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateRuleGroupsNamespace`](crate::client::fluent_builders::CreateRuleGroupsNamespace) operation.
     ///
     /// - The fluent builder is configurable:
@@ -146,6 +158,17 @@ impl Client {
     pub fn delete_alert_manager_definition(&self) -> fluent_builders::DeleteAlertManagerDefinition {
         fluent_builders::DeleteAlertManagerDefinition::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::client::fluent_builders::DeleteLoggingConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::set_workspace_id): The ID of the workspace to vend logs to.
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::error::DeleteLoggingConfigurationError)
+    pub fn delete_logging_configuration(&self) -> fluent_builders::DeleteLoggingConfiguration {
+        fluent_builders::DeleteLoggingConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteRuleGroupsNamespace`](crate::client::fluent_builders::DeleteRuleGroupsNamespace) operation.
     ///
     /// - The fluent builder is configurable:
@@ -180,6 +203,16 @@ impl Client {
         &self,
     ) -> fluent_builders::DescribeAlertManagerDefinition {
         fluent_builders::DescribeAlertManagerDefinition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeLoggingConfiguration`](crate::client::fluent_builders::DescribeLoggingConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLoggingConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DescribeLoggingConfiguration::set_workspace_id): The ID of the workspace to vend logs to.
+    /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput) with field(s):
+    ///   - [`logging_configuration(Option<LoggingConfigurationMetadata>)`](crate::output::DescribeLoggingConfigurationOutput::logging_configuration): Metadata object containing information about the logging configuration of a workspace.
+    /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::error::DescribeLoggingConfigurationError)
+    pub fn describe_logging_configuration(&self) -> fluent_builders::DescribeLoggingConfiguration {
+        fluent_builders::DescribeLoggingConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeRuleGroupsNamespace`](crate::client::fluent_builders::DescribeRuleGroupsNamespace) operation.
     ///
@@ -291,6 +324,18 @@ impl Client {
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateLoggingConfiguration`](crate::client::fluent_builders::UpdateLoggingConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::set_workspace_id): The ID of the workspace to vend logs to.
+    ///   - [`log_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::log_group_arn) / [`set_log_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::set_log_group_arn): The ARN of the CW log group to which the vended log data will be published.
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput) with field(s):
+    ///   - [`status(Option<LoggingConfigurationStatus>)`](crate::output::UpdateLoggingConfigurationOutput::status): The status of the logging configuration.
+    /// - On failure, responds with [`SdkError<UpdateLoggingConfigurationError>`](crate::error::UpdateLoggingConfigurationError)
+    pub fn update_logging_configuration(&self) -> fluent_builders::UpdateLoggingConfiguration {
+        fluent_builders::UpdateLoggingConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateWorkspaceAlias`](crate::client::fluent_builders::UpdateWorkspaceAlias) operation.
     ///
     /// - The fluent builder is configurable:
@@ -371,6 +416,82 @@ pub mod fluent_builders {
         /// The alert manager definition data.
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_data(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLoggingConfiguration`.
+    ///
+    /// Create logging configuration.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLoggingConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_logging_configuration_input::Builder,
+    }
+    impl CreateLoggingConfiguration {
+        /// Creates a new `CreateLoggingConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLoggingConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The ARN of the CW log group to which the vended log data will be published.
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_arn(input.into());
+            self
+        }
+        /// The ARN of the CW log group to which the vended log data will be published.
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_arn(input);
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -639,6 +760,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteLoggingConfiguration`.
+    ///
+    /// Delete logging configuration.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteLoggingConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_logging_configuration_input::Builder,
+    }
+    impl DeleteLoggingConfiguration {
+        /// Creates a new `DeleteLoggingConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLoggingConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteRuleGroupsNamespace`.
     ///
     /// Delete a rule groups namespace.
@@ -823,6 +1007,59 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the workspace to describe.
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
+    ///
+    /// Describes logging configuration.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeLoggingConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_logging_configuration_input::Builder,
+    }
+    impl DescribeLoggingConfiguration {
+        /// Creates a new `DescribeLoggingConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLoggingConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeLoggingConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// The ID of the workspace to vend logs to.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workspace_id(input);
             self
@@ -1464,6 +1701,82 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
+    ///
+    /// Update logging configuration.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateLoggingConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_logging_configuration_input::Builder,
+    }
+    impl UpdateLoggingConfiguration {
+        /// Creates a new `UpdateLoggingConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateLoggingConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// The ID of the workspace to vend logs to.
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The ARN of the CW log group to which the vended log data will be published.
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_arn(input.into());
+            self
+        }
+        /// The ARN of the CW log group to which the vended log data will be published.
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_arn(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }

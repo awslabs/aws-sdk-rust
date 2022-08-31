@@ -60,6 +60,60 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateMediaConcatenationPipelineError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateMediaConcatenationPipelineError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateMediaConcatenationPipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateMediaLiveConnectorPipelineError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateMediaLiveConnectorPipelineError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>>
     for Error
 where
@@ -92,6 +146,44 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::DeleteMediaCapturePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMediaPipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaPipelineError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteMediaPipelineErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::DeleteMediaPipelineErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -138,6 +230,44 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaPipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetMediaPipelineError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMediaPipelineErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::GetMediaPipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>>
     for Error
 where
@@ -157,6 +287,44 @@ where
                 crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
                 crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMediaPipelinesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListMediaPipelinesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListMediaPipelinesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListMediaPipelinesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ListMediaPipelinesErrorKind::ResourceLimitExceededException(
+                    inner,
+                ) => Error::ResourceLimitExceededException(inner),
+                crate::error::ListMediaPipelinesErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::ListMediaPipelinesErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListMediaPipelinesErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::ListMediaPipelinesErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::ListMediaPipelinesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }

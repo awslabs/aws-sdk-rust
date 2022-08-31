@@ -384,6 +384,84 @@ impl UpdateOriginRequestPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateOriginAccessControlOutput {
+    /// <p>The origin access control after it has been updated.</p>
+    #[doc(hidden)]
+    pub origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
+    /// <p>The new version of the origin access control after it has been updated.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl UpdateOriginAccessControlOutput {
+    /// <p>The origin access control after it has been updated.</p>
+    pub fn origin_access_control(&self) -> std::option::Option<&crate::model::OriginAccessControl> {
+        self.origin_access_control.as_ref()
+    }
+    /// <p>The new version of the origin access control after it has been updated.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateOriginAccessControlOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateOriginAccessControlOutput");
+        formatter.field("origin_access_control", &self.origin_access_control);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput).
+pub mod update_origin_access_control_output {
+
+    /// A builder for [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The origin access control after it has been updated.</p>
+        pub fn origin_access_control(mut self, input: crate::model::OriginAccessControl) -> Self {
+            self.origin_access_control = Some(input);
+            self
+        }
+        /// <p>The origin access control after it has been updated.</p>
+        pub fn set_origin_access_control(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControl>,
+        ) -> Self {
+            self.origin_access_control = input;
+            self
+        }
+        /// <p>The new version of the origin access control after it has been updated.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The new version of the origin access control after it has been updated.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput).
+        pub fn build(self) -> crate::output::UpdateOriginAccessControlOutput {
+            crate::output::UpdateOriginAccessControlOutput {
+                origin_access_control: self.origin_access_control,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl UpdateOriginAccessControlOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput).
+    pub fn builder() -> crate::output::update_origin_access_control_output::Builder {
+        crate::output::update_origin_access_control_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyGroupOutput {
     /// <p>The key group that was just updated.</p>
     #[doc(hidden)]
@@ -1489,6 +1567,73 @@ impl ListOriginRequestPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginRequestPoliciesOutput`](crate::output::ListOriginRequestPoliciesOutput).
     pub fn builder() -> crate::output::list_origin_request_policies_output::Builder {
         crate::output::list_origin_request_policies_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOriginAccessControlsOutput {
+    /// <p>A list of origin access controls.</p>
+    #[doc(hidden)]
+    pub origin_access_control_list: std::option::Option<crate::model::OriginAccessControlList>,
+}
+impl ListOriginAccessControlsOutput {
+    /// <p>A list of origin access controls.</p>
+    pub fn origin_access_control_list(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlList> {
+        self.origin_access_control_list.as_ref()
+    }
+}
+impl std::fmt::Debug for ListOriginAccessControlsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListOriginAccessControlsOutput");
+        formatter.field(
+            "origin_access_control_list",
+            &self.origin_access_control_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput).
+pub mod list_origin_access_controls_output {
+
+    /// A builder for [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_access_control_list:
+            std::option::Option<crate::model::OriginAccessControlList>,
+    }
+    impl Builder {
+        /// <p>A list of origin access controls.</p>
+        pub fn origin_access_control_list(
+            mut self,
+            input: crate::model::OriginAccessControlList,
+        ) -> Self {
+            self.origin_access_control_list = Some(input);
+            self
+        }
+        /// <p>A list of origin access controls.</p>
+        pub fn set_origin_access_control_list(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlList>,
+        ) -> Self {
+            self.origin_access_control_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput).
+        pub fn build(self) -> crate::output::ListOriginAccessControlsOutput {
+            crate::output::ListOriginAccessControlsOutput {
+                origin_access_control_list: self.origin_access_control_list,
+            }
+        }
+    }
+}
+impl ListOriginAccessControlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput).
+    pub fn builder() -> crate::output::list_origin_access_controls_output::Builder {
+        crate::output::list_origin_access_controls_output::Builder::default()
     }
 }
 
@@ -3125,6 +3270,171 @@ impl GetOriginRequestPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetOriginAccessControlConfigOutput {
+    /// <p>Contains an origin access control.</p>
+    #[doc(hidden)]
+    pub origin_access_control_config: std::option::Option<crate::model::OriginAccessControlConfig>,
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetOriginAccessControlConfigOutput {
+    /// <p>Contains an origin access control.</p>
+    pub fn origin_access_control_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginAccessControlConfig> {
+        self.origin_access_control_config.as_ref()
+    }
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+impl std::fmt::Debug for GetOriginAccessControlConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOriginAccessControlConfigOutput");
+        formatter.field(
+            "origin_access_control_config",
+            &self.origin_access_control_config,
+        );
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput).
+pub mod get_origin_access_control_config_output {
+
+    /// A builder for [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_access_control_config:
+            std::option::Option<crate::model::OriginAccessControlConfig>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains an origin access control.</p>
+        pub fn origin_access_control_config(
+            mut self,
+            input: crate::model::OriginAccessControlConfig,
+        ) -> Self {
+            self.origin_access_control_config = Some(input);
+            self
+        }
+        /// <p>Contains an origin access control.</p>
+        pub fn set_origin_access_control_config(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControlConfig>,
+        ) -> Self {
+            self.origin_access_control_config = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the origin access control.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the origin access control.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput).
+        pub fn build(self) -> crate::output::GetOriginAccessControlConfigOutput {
+            crate::output::GetOriginAccessControlConfigOutput {
+                origin_access_control_config: self.origin_access_control_config,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl GetOriginAccessControlConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput).
+    pub fn builder() -> crate::output::get_origin_access_control_config_output::Builder {
+        crate::output::get_origin_access_control_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetOriginAccessControlOutput {
+    /// <p>Contains an origin access control.</p>
+    #[doc(hidden)]
+    pub origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl GetOriginAccessControlOutput {
+    /// <p>Contains an origin access control.</p>
+    pub fn origin_access_control(&self) -> std::option::Option<&crate::model::OriginAccessControl> {
+        self.origin_access_control.as_ref()
+    }
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+impl std::fmt::Debug for GetOriginAccessControlOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOriginAccessControlOutput");
+        formatter.field("origin_access_control", &self.origin_access_control);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput).
+pub mod get_origin_access_control_output {
+
+    /// A builder for [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains an origin access control.</p>
+        pub fn origin_access_control(mut self, input: crate::model::OriginAccessControl) -> Self {
+            self.origin_access_control = Some(input);
+            self
+        }
+        /// <p>Contains an origin access control.</p>
+        pub fn set_origin_access_control(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControl>,
+        ) -> Self {
+            self.origin_access_control = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the origin access control.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the origin access control.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput).
+        pub fn build(self) -> crate::output::GetOriginAccessControlOutput {
+            crate::output::GetOriginAccessControlOutput {
+                origin_access_control: self.origin_access_control,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl GetOriginAccessControlOutput {
+    /// Creates a new builder-style object to manufacture [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput).
+    pub fn builder() -> crate::output::get_origin_access_control_output::Builder {
+        crate::output::get_origin_access_control_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     #[doc(hidden)]
@@ -4560,6 +4870,36 @@ impl DeleteOriginRequestPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteOriginAccessControlOutput {}
+impl std::fmt::Debug for DeleteOriginAccessControlOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteOriginAccessControlOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput).
+pub mod delete_origin_access_control_output {
+
+    /// A builder for [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput).
+        pub fn build(self) -> crate::output::DeleteOriginAccessControlOutput {
+            crate::output::DeleteOriginAccessControlOutput {}
+        }
+    }
+}
+impl DeleteOriginAccessControlOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput).
+    pub fn builder() -> crate::output::delete_origin_access_control_output::Builder {
+        crate::output::delete_origin_access_control_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMonitoringSubscriptionOutput {}
 impl std::fmt::Debug for DeleteMonitoringSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5358,6 +5698,104 @@ impl CreateOriginRequestPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateOriginRequestPolicyOutput`](crate::output::CreateOriginRequestPolicyOutput).
     pub fn builder() -> crate::output::create_origin_request_policy_output::Builder {
         crate::output::create_origin_request_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateOriginAccessControlOutput {
+    /// <p>Contains an origin access control.</p>
+    #[doc(hidden)]
+    pub origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
+    /// <p>The URL of the origin access control.</p>
+    #[doc(hidden)]
+    pub location: std::option::Option<std::string::String>,
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    #[doc(hidden)]
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl CreateOriginAccessControlOutput {
+    /// <p>Contains an origin access control.</p>
+    pub fn origin_access_control(&self) -> std::option::Option<&crate::model::OriginAccessControl> {
+        self.origin_access_control.as_ref()
+    }
+    /// <p>The URL of the origin access control.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The version identifier for the current version of the origin access control.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateOriginAccessControlOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateOriginAccessControlOutput");
+        formatter.field("origin_access_control", &self.origin_access_control);
+        formatter.field("location", &self.location);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput).
+pub mod create_origin_access_control_output {
+
+    /// A builder for [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_access_control: std::option::Option<crate::model::OriginAccessControl>,
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains an origin access control.</p>
+        pub fn origin_access_control(mut self, input: crate::model::OriginAccessControl) -> Self {
+            self.origin_access_control = Some(input);
+            self
+        }
+        /// <p>Contains an origin access control.</p>
+        pub fn set_origin_access_control(
+            mut self,
+            input: std::option::Option<crate::model::OriginAccessControl>,
+        ) -> Self {
+            self.origin_access_control = input;
+            self
+        }
+        /// <p>The URL of the origin access control.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>The URL of the origin access control.</p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the origin access control.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the origin access control.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput).
+        pub fn build(self) -> crate::output::CreateOriginAccessControlOutput {
+            crate::output::CreateOriginAccessControlOutput {
+                origin_access_control: self.origin_access_control,
+                location: self.location,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl CreateOriginAccessControlOutput {
+    /// Creates a new builder-style object to manufacture [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput).
+    pub fn builder() -> crate::output::create_origin_access_control_output::Builder {
+        crate::output::create_origin_access_control_output::Builder::default()
     }
 }
 

@@ -2059,6 +2059,117 @@ impl SearchUsersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchSecurityProfilesOutput {
+    /// <p>Information about the security profiles.</p>
+    #[doc(hidden)]
+    pub security_profiles:
+        std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchSummary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The total number of security profiles which matched your search query.</p>
+    #[doc(hidden)]
+    pub approximate_total_count: std::option::Option<i64>,
+}
+impl SearchSecurityProfilesOutput {
+    /// <p>Information about the security profiles.</p>
+    pub fn security_profiles(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityProfileSearchSummary]> {
+        self.security_profiles.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of security profiles which matched your search query.</p>
+    pub fn approximate_total_count(&self) -> std::option::Option<i64> {
+        self.approximate_total_count
+    }
+}
+impl std::fmt::Debug for SearchSecurityProfilesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchSecurityProfilesOutput");
+        formatter.field("security_profiles", &self.security_profiles);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("approximate_total_count", &self.approximate_total_count);
+        formatter.finish()
+    }
+}
+/// See [`SearchSecurityProfilesOutput`](crate::output::SearchSecurityProfilesOutput).
+pub mod search_security_profiles_output {
+
+    /// A builder for [`SearchSecurityProfilesOutput`](crate::output::SearchSecurityProfilesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_profiles:
+            std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) approximate_total_count: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// Appends an item to `security_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_security_profiles`](Self::set_security_profiles).
+        ///
+        /// <p>Information about the security profiles.</p>
+        pub fn security_profiles(
+            mut self,
+            input: crate::model::SecurityProfileSearchSummary,
+        ) -> Self {
+            let mut v = self.security_profiles.unwrap_or_default();
+            v.push(input);
+            self.security_profiles = Some(v);
+            self
+        }
+        /// <p>Information about the security profiles.</p>
+        pub fn set_security_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityProfileSearchSummary>>,
+        ) -> Self {
+            self.security_profiles = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The total number of security profiles which matched your search query.</p>
+        pub fn approximate_total_count(mut self, input: i64) -> Self {
+            self.approximate_total_count = Some(input);
+            self
+        }
+        /// <p>The total number of security profiles which matched your search query.</p>
+        pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.approximate_total_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchSecurityProfilesOutput`](crate::output::SearchSecurityProfilesOutput).
+        pub fn build(self) -> crate::output::SearchSecurityProfilesOutput {
+            crate::output::SearchSecurityProfilesOutput {
+                security_profiles: self.security_profiles,
+                next_token: self.next_token,
+                approximate_total_count: self.approximate_total_count,
+            }
+        }
+    }
+}
+impl SearchSecurityProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`SearchSecurityProfilesOutput`](crate::output::SearchSecurityProfilesOutput).
+    pub fn builder() -> crate::output::search_security_profiles_output::Builder {
+        crate::output::search_security_profiles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
@@ -4368,7 +4479,7 @@ impl ListDefaultVocabulariesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactReferencesOutput {
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     #[doc(hidden)]
     pub reference_summary_list: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
@@ -4378,7 +4489,7 @@ pub struct ListContactReferencesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactReferencesOutput {
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     pub fn reference_summary_list(&self) -> std::option::Option<&[crate::model::ReferenceSummary]> {
         self.reference_summary_list.as_deref()
     }
@@ -4412,14 +4523,14 @@ pub mod list_contact_references_output {
         ///
         /// To override the contents of this collection use [`set_reference_summary_list`](Self::set_reference_summary_list).
         ///
-        /// <p>Information about the contact flows.</p>
+        /// <p>Information about the flows.</p>
         pub fn reference_summary_list(mut self, input: crate::model::ReferenceSummary) -> Self {
             let mut v = self.reference_summary_list.unwrap_or_default();
             v.push(input);
             self.reference_summary_list = Some(v);
             self
         }
-        /// <p>Information about the contact flows.</p>
+        /// <p>Information about the flows.</p>
         pub fn set_reference_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
@@ -4461,7 +4572,7 @@ impl ListContactReferencesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowsOutput {
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     #[doc(hidden)]
     pub contact_flow_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ContactFlowSummary>>,
@@ -4470,7 +4581,7 @@ pub struct ListContactFlowsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactFlowsOutput {
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     pub fn contact_flow_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::ContactFlowSummary]> {
@@ -4504,7 +4615,7 @@ pub mod list_contact_flows_output {
         ///
         /// To override the contents of this collection use [`set_contact_flow_summary_list`](Self::set_contact_flow_summary_list).
         ///
-        /// <p>Information about the contact flows.</p>
+        /// <p>Information about the flows.</p>
         pub fn contact_flow_summary_list(
             mut self,
             input: crate::model::ContactFlowSummary,
@@ -4514,7 +4625,7 @@ pub mod list_contact_flows_output {
             self.contact_flow_summary_list = Some(v);
             self
         }
-        /// <p>Information about the contact flows.</p>
+        /// <p>Information about the flows.</p>
         pub fn set_contact_flow_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactFlowSummary>>,
@@ -4552,7 +4663,7 @@ impl ListContactFlowsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactFlowModulesOutput {
-    /// <p>Information about the contact flow module.</p>
+    /// <p>Information about the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_modules_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ContactFlowModuleSummary>>,
@@ -4561,7 +4672,7 @@ pub struct ListContactFlowModulesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactFlowModulesOutput {
-    /// <p>Information about the contact flow module.</p>
+    /// <p>Information about the flow module.</p>
     pub fn contact_flow_modules_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::ContactFlowModuleSummary]> {
@@ -4598,7 +4709,7 @@ pub mod list_contact_flow_modules_output {
         ///
         /// To override the contents of this collection use [`set_contact_flow_modules_summary_list`](Self::set_contact_flow_modules_summary_list).
         ///
-        /// <p>Information about the contact flow module.</p>
+        /// <p>Information about the flow module.</p>
         pub fn contact_flow_modules_summary_list(
             mut self,
             input: crate::model::ContactFlowModuleSummary,
@@ -4608,7 +4719,7 @@ pub mod list_contact_flow_modules_output {
             self.contact_flow_modules_summary_list = Some(v);
             self
         }
-        /// <p>Information about the contact flow module.</p>
+        /// <p>Information about the flow module.</p>
         pub fn set_contact_flow_modules_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactFlowModuleSummary>>,
@@ -4941,7 +5052,7 @@ pub struct GetTaskTemplateOutput {
     /// <p>The timestamp when the task template was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4995,7 +5106,7 @@ impl GetTaskTemplateOutput {
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5196,7 +5307,7 @@ pub mod get_task_template_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5207,7 +5318,7 @@ pub mod get_task_template_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6691,12 +6802,12 @@ impl DescribeHoursOfOperationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowModuleOutput {
-    /// <p>Information about the contact flow module.</p>
+    /// <p>Information about the flow module.</p>
     #[doc(hidden)]
     pub contact_flow_module: std::option::Option<crate::model::ContactFlowModule>,
 }
 impl DescribeContactFlowModuleOutput {
-    /// <p>Information about the contact flow module.</p>
+    /// <p>Information about the flow module.</p>
     pub fn contact_flow_module(&self) -> std::option::Option<&crate::model::ContactFlowModule> {
         self.contact_flow_module.as_ref()
     }
@@ -6717,12 +6828,12 @@ pub mod describe_contact_flow_module_output {
         pub(crate) contact_flow_module: std::option::Option<crate::model::ContactFlowModule>,
     }
     impl Builder {
-        /// <p>Information about the contact flow module.</p>
+        /// <p>Information about the flow module.</p>
         pub fn contact_flow_module(mut self, input: crate::model::ContactFlowModule) -> Self {
             self.contact_flow_module = Some(input);
             self
         }
-        /// <p>Information about the contact flow module.</p>
+        /// <p>Information about the flow module.</p>
         pub fn set_contact_flow_module(
             mut self,
             input: std::option::Option<crate::model::ContactFlowModule>,
@@ -6749,12 +6860,12 @@ impl DescribeContactFlowModuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowOutput {
-    /// <p>Information about the contact flow.</p>
+    /// <p>Information about the flow.</p>
     #[doc(hidden)]
     pub contact_flow: std::option::Option<crate::model::ContactFlow>,
 }
 impl DescribeContactFlowOutput {
-    /// <p>Information about the contact flow.</p>
+    /// <p>Information about the flow.</p>
     pub fn contact_flow(&self) -> std::option::Option<&crate::model::ContactFlow> {
         self.contact_flow.as_ref()
     }
@@ -6775,12 +6886,12 @@ pub mod describe_contact_flow_output {
         pub(crate) contact_flow: std::option::Option<crate::model::ContactFlow>,
     }
     impl Builder {
-        /// <p>Information about the contact flow.</p>
+        /// <p>Information about the flow.</p>
         pub fn contact_flow(mut self, input: crate::model::ContactFlow) -> Self {
             self.contact_flow = Some(input);
             self
         }
-        /// <p>Information about the contact flow.</p>
+        /// <p>Information about the flow.</p>
         pub fn set_contact_flow(
             mut self,
             input: std::option::Option<crate::model::ContactFlow>,
@@ -8328,19 +8439,19 @@ impl CreateHoursOfOperationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowModuleOutput {
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateContactFlowModuleOutput {
-    /// <p>The identifier of the contact flow module.</p>
+    /// <p>The identifier of the flow module.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -8363,22 +8474,22 @@ pub mod create_contact_flow_module_output {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow module.</p>
+        /// <p>The identifier of the flow module.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow module.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8403,19 +8514,19 @@ impl CreateContactFlowModuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowOutput {
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     #[doc(hidden)]
     pub contact_flow_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactFlowOutput {
-    /// <p>The identifier of the contact flow.</p>
+    /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn contact_flow_arn(&self) -> std::option::Option<&str> {
         self.contact_flow_arn.as_deref()
     }
@@ -8438,12 +8549,12 @@ pub mod create_contact_flow_output {
         pub(crate) contact_flow_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the contact flow.</p>
+        /// <p>The identifier of the flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8451,12 +8562,12 @@ pub mod create_contact_flow_output {
             self.contact_flow_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow.</p>
         pub fn contact_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_flow_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow.</p>
         pub fn set_contact_flow_arn(
             mut self,
             input: std::option::Option<std::string::String>,

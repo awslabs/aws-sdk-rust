@@ -525,6 +525,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalTableSetti
     }
 }
 
+/// Operation shape for `DescribeImport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_import`](crate::client::Client::describe_import).
+///
+/// See [`crate::client::fluent_builders::DescribeImport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeImport {
+    _private: (),
+}
+impl DescribeImport {
+    /// Creates a new builder-style object to manufacture [`DescribeImportInput`](crate::input::DescribeImportInput).
+    pub fn builder() -> crate::input::describe_import_input::Builder {
+        crate::input::describe_import_input::Builder::default()
+    }
+    /// Creates a new `DescribeImport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeImport {
+    type Output =
+        std::result::Result<crate::output::DescribeImportOutput, crate::error::DescribeImportError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_import_error(response)
+        } else {
+            crate::operation_deser::parse_describe_import_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeKinesisStreamingDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -892,6 +924,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetItem {
     }
 }
 
+/// Operation shape for `ImportTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_table`](crate::client::Client::import_table).
+///
+/// See [`crate::client::fluent_builders::ImportTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportTable {
+    _private: (),
+}
+impl ImportTable {
+    /// Creates a new builder-style object to manufacture [`ImportTableInput`](crate::input::ImportTableInput).
+    pub fn builder() -> crate::input::import_table_input::Builder {
+        crate::input::import_table_input::Builder::default()
+    }
+    /// Creates a new `ImportTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportTable {
+    type Output =
+        std::result::Result<crate::output::ImportTableOutput, crate::error::ImportTableError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_table_error(response)
+        } else {
+            crate::operation_deser::parse_import_table_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListBackups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1020,6 +1084,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGlobalTables {
             crate::operation_deser::parse_list_global_tables_error(response)
         } else {
             crate::operation_deser::parse_list_global_tables_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListImports`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_imports`](crate::client::Client::list_imports).
+///
+/// See [`crate::client::fluent_builders::ListImports`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListImports {
+    _private: (),
+}
+impl ListImports {
+    /// Creates a new builder-style object to manufacture [`ListImportsInput`](crate::input::ListImportsInput).
+    pub fn builder() -> crate::input::list_imports_input::Builder {
+        crate::input::list_imports_input::Builder::default()
+    }
+    /// Creates a new `ListImports` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListImports {
+    type Output =
+        std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_imports_error(response)
+        } else {
+            crate::operation_deser::parse_list_imports_response(response)
         }
     }
 }

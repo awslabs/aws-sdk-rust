@@ -367,6 +367,108 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePredictorBacktestE
     }
 }
 
+/// Operation shape for `CreateWhatIfAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_what_if_analysis`](crate::client::Client::create_what_if_analysis).
+///
+/// See [`crate::client::fluent_builders::CreateWhatIfAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateWhatIfAnalysis {
+    _private: (),
+}
+impl CreateWhatIfAnalysis {
+    /// Creates a new builder-style object to manufacture [`CreateWhatIfAnalysisInput`](crate::input::CreateWhatIfAnalysisInput).
+    pub fn builder() -> crate::input::create_what_if_analysis_input::Builder {
+        crate::input::create_what_if_analysis_input::Builder::default()
+    }
+    /// Creates a new `CreateWhatIfAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfAnalysis {
+    type Output = std::result::Result<
+        crate::output::CreateWhatIfAnalysisOutput,
+        crate::error::CreateWhatIfAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_what_if_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_create_what_if_analysis_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateWhatIfForecast`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_what_if_forecast`](crate::client::Client::create_what_if_forecast).
+///
+/// See [`crate::client::fluent_builders::CreateWhatIfForecast`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateWhatIfForecast {
+    _private: (),
+}
+impl CreateWhatIfForecast {
+    /// Creates a new builder-style object to manufacture [`CreateWhatIfForecastInput`](crate::input::CreateWhatIfForecastInput).
+    pub fn builder() -> crate::input::create_what_if_forecast_input::Builder {
+        crate::input::create_what_if_forecast_input::Builder::default()
+    }
+    /// Creates a new `CreateWhatIfForecast` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfForecast {
+    type Output = std::result::Result<
+        crate::output::CreateWhatIfForecastOutput,
+        crate::error::CreateWhatIfForecastError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_what_if_forecast_error(response)
+        } else {
+            crate::operation_deser::parse_create_what_if_forecast_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateWhatIfForecastExport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_what_if_forecast_export`](crate::client::Client::create_what_if_forecast_export).
+///
+/// See [`crate::client::fluent_builders::CreateWhatIfForecastExport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateWhatIfForecastExport {
+    _private: (),
+}
+impl CreateWhatIfForecastExport {
+    /// Creates a new builder-style object to manufacture [`CreateWhatIfForecastExportInput`](crate::input::CreateWhatIfForecastExportInput).
+    pub fn builder() -> crate::input::create_what_if_forecast_export_input::Builder {
+        crate::input::create_what_if_forecast_export_input::Builder::default()
+    }
+    /// Creates a new `CreateWhatIfForecastExport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfForecastExport {
+    type Output = std::result::Result<
+        crate::output::CreateWhatIfForecastExportOutput,
+        crate::error::CreateWhatIfForecastExportError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_what_if_forecast_export_error(response)
+        } else {
+            crate::operation_deser::parse_create_what_if_forecast_export_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteDataset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -731,6 +833,108 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceTree {
             crate::operation_deser::parse_delete_resource_tree_error(response)
         } else {
             crate::operation_deser::parse_delete_resource_tree_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteWhatIfAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_what_if_analysis`](crate::client::Client::delete_what_if_analysis).
+///
+/// See [`crate::client::fluent_builders::DeleteWhatIfAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteWhatIfAnalysis {
+    _private: (),
+}
+impl DeleteWhatIfAnalysis {
+    /// Creates a new builder-style object to manufacture [`DeleteWhatIfAnalysisInput`](crate::input::DeleteWhatIfAnalysisInput).
+    pub fn builder() -> crate::input::delete_what_if_analysis_input::Builder {
+        crate::input::delete_what_if_analysis_input::Builder::default()
+    }
+    /// Creates a new `DeleteWhatIfAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfAnalysis {
+    type Output = std::result::Result<
+        crate::output::DeleteWhatIfAnalysisOutput,
+        crate::error::DeleteWhatIfAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_what_if_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_delete_what_if_analysis_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteWhatIfForecast`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_what_if_forecast`](crate::client::Client::delete_what_if_forecast).
+///
+/// See [`crate::client::fluent_builders::DeleteWhatIfForecast`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteWhatIfForecast {
+    _private: (),
+}
+impl DeleteWhatIfForecast {
+    /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastInput`](crate::input::DeleteWhatIfForecastInput).
+    pub fn builder() -> crate::input::delete_what_if_forecast_input::Builder {
+        crate::input::delete_what_if_forecast_input::Builder::default()
+    }
+    /// Creates a new `DeleteWhatIfForecast` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfForecast {
+    type Output = std::result::Result<
+        crate::output::DeleteWhatIfForecastOutput,
+        crate::error::DeleteWhatIfForecastError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_what_if_forecast_error(response)
+        } else {
+            crate::operation_deser::parse_delete_what_if_forecast_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteWhatIfForecastExport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_what_if_forecast_export`](crate::client::Client::delete_what_if_forecast_export).
+///
+/// See [`crate::client::fluent_builders::DeleteWhatIfForecastExport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteWhatIfForecastExport {
+    _private: (),
+}
+impl DeleteWhatIfForecastExport {
+    /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastExportInput`](crate::input::DeleteWhatIfForecastExportInput).
+    pub fn builder() -> crate::input::delete_what_if_forecast_export_input::Builder {
+        crate::input::delete_what_if_forecast_export_input::Builder::default()
+    }
+    /// Creates a new `DeleteWhatIfForecastExport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfForecastExport {
+    type Output = std::result::Result<
+        crate::output::DeleteWhatIfForecastExportOutput,
+        crate::error::DeleteWhatIfForecastExportError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_what_if_forecast_export_error(response)
+        } else {
+            crate::operation_deser::parse_delete_what_if_forecast_export_response(response)
         }
     }
 }
@@ -1105,6 +1309,108 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePredictorBacktes
             crate::operation_deser::parse_describe_predictor_backtest_export_job_error(response)
         } else {
             crate::operation_deser::parse_describe_predictor_backtest_export_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeWhatIfAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_what_if_analysis`](crate::client::Client::describe_what_if_analysis).
+///
+/// See [`crate::client::fluent_builders::DescribeWhatIfAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeWhatIfAnalysis {
+    _private: (),
+}
+impl DescribeWhatIfAnalysis {
+    /// Creates a new builder-style object to manufacture [`DescribeWhatIfAnalysisInput`](crate::input::DescribeWhatIfAnalysisInput).
+    pub fn builder() -> crate::input::describe_what_if_analysis_input::Builder {
+        crate::input::describe_what_if_analysis_input::Builder::default()
+    }
+    /// Creates a new `DescribeWhatIfAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeWhatIfAnalysis {
+    type Output = std::result::Result<
+        crate::output::DescribeWhatIfAnalysisOutput,
+        crate::error::DescribeWhatIfAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_what_if_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_describe_what_if_analysis_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeWhatIfForecast`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_what_if_forecast`](crate::client::Client::describe_what_if_forecast).
+///
+/// See [`crate::client::fluent_builders::DescribeWhatIfForecast`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeWhatIfForecast {
+    _private: (),
+}
+impl DescribeWhatIfForecast {
+    /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastInput`](crate::input::DescribeWhatIfForecastInput).
+    pub fn builder() -> crate::input::describe_what_if_forecast_input::Builder {
+        crate::input::describe_what_if_forecast_input::Builder::default()
+    }
+    /// Creates a new `DescribeWhatIfForecast` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeWhatIfForecast {
+    type Output = std::result::Result<
+        crate::output::DescribeWhatIfForecastOutput,
+        crate::error::DescribeWhatIfForecastError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_what_if_forecast_error(response)
+        } else {
+            crate::operation_deser::parse_describe_what_if_forecast_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeWhatIfForecastExport`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_what_if_forecast_export`](crate::client::Client::describe_what_if_forecast_export).
+///
+/// See [`crate::client::fluent_builders::DescribeWhatIfForecastExport`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeWhatIfForecastExport {
+    _private: (),
+}
+impl DescribeWhatIfForecastExport {
+    /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastExportInput`](crate::input::DescribeWhatIfForecastExportInput).
+    pub fn builder() -> crate::input::describe_what_if_forecast_export_input::Builder {
+        crate::input::describe_what_if_forecast_export_input::Builder::default()
+    }
+    /// Creates a new `DescribeWhatIfForecastExport` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeWhatIfForecastExport {
+    type Output = std::result::Result<
+        crate::output::DescribeWhatIfForecastExportOutput,
+        crate::error::DescribeWhatIfForecastExportError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_what_if_forecast_export_error(response)
+        } else {
+            crate::operation_deser::parse_describe_what_if_forecast_export_response(response)
         }
     }
 }
@@ -1539,6 +1845,108 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListWhatIfAnalyses`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_what_if_analyses`](crate::client::Client::list_what_if_analyses).
+///
+/// See [`crate::client::fluent_builders::ListWhatIfAnalyses`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListWhatIfAnalyses {
+    _private: (),
+}
+impl ListWhatIfAnalyses {
+    /// Creates a new builder-style object to manufacture [`ListWhatIfAnalysesInput`](crate::input::ListWhatIfAnalysesInput).
+    pub fn builder() -> crate::input::list_what_if_analyses_input::Builder {
+        crate::input::list_what_if_analyses_input::Builder::default()
+    }
+    /// Creates a new `ListWhatIfAnalyses` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfAnalyses {
+    type Output = std::result::Result<
+        crate::output::ListWhatIfAnalysesOutput,
+        crate::error::ListWhatIfAnalysesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_what_if_analyses_error(response)
+        } else {
+            crate::operation_deser::parse_list_what_if_analyses_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListWhatIfForecastExports`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_what_if_forecast_exports`](crate::client::Client::list_what_if_forecast_exports).
+///
+/// See [`crate::client::fluent_builders::ListWhatIfForecastExports`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListWhatIfForecastExports {
+    _private: (),
+}
+impl ListWhatIfForecastExports {
+    /// Creates a new builder-style object to manufacture [`ListWhatIfForecastExportsInput`](crate::input::ListWhatIfForecastExportsInput).
+    pub fn builder() -> crate::input::list_what_if_forecast_exports_input::Builder {
+        crate::input::list_what_if_forecast_exports_input::Builder::default()
+    }
+    /// Creates a new `ListWhatIfForecastExports` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfForecastExports {
+    type Output = std::result::Result<
+        crate::output::ListWhatIfForecastExportsOutput,
+        crate::error::ListWhatIfForecastExportsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_what_if_forecast_exports_error(response)
+        } else {
+            crate::operation_deser::parse_list_what_if_forecast_exports_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListWhatIfForecasts`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_what_if_forecasts`](crate::client::Client::list_what_if_forecasts).
+///
+/// See [`crate::client::fluent_builders::ListWhatIfForecasts`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListWhatIfForecasts {
+    _private: (),
+}
+impl ListWhatIfForecasts {
+    /// Creates a new builder-style object to manufacture [`ListWhatIfForecastsInput`](crate::input::ListWhatIfForecastsInput).
+    pub fn builder() -> crate::input::list_what_if_forecasts_input::Builder {
+        crate::input::list_what_if_forecasts_input::Builder::default()
+    }
+    /// Creates a new `ListWhatIfForecasts` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfForecasts {
+    type Output = std::result::Result<
+        crate::output::ListWhatIfForecastsOutput,
+        crate::error::ListWhatIfForecastsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_what_if_forecasts_error(response)
+        } else {
+            crate::operation_deser::parse_list_what_if_forecasts_response(response)
         }
     }
 }

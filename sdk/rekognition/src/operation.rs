@@ -31,6 +31,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CompareFaces {
     }
 }
 
+/// Operation shape for `CopyProjectVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`copy_project_version`](crate::client::Client::copy_project_version).
+///
+/// See [`crate::client::fluent_builders::CopyProjectVersion`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CopyProjectVersion {
+    _private: (),
+}
+impl CopyProjectVersion {
+    /// Creates a new builder-style object to manufacture [`CopyProjectVersionInput`](crate::input::CopyProjectVersionInput).
+    pub fn builder() -> crate::input::copy_project_version_input::Builder {
+        crate::input::copy_project_version_input::Builder::default()
+    }
+    /// Creates a new `CopyProjectVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CopyProjectVersion {
+    type Output = std::result::Result<
+        crate::output::CopyProjectVersionOutput,
+        crate::error::CopyProjectVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_copy_project_version_error(response)
+        } else {
+            crate::operation_deser::parse_copy_project_version_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateCollection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -323,6 +357,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
             crate::operation_deser::parse_delete_project_error(response)
         } else {
             crate::operation_deser::parse_delete_project_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteProjectPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_project_policy`](crate::client::Client::delete_project_policy).
+///
+/// See [`crate::client::fluent_builders::DeleteProjectPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteProjectPolicy {
+    _private: (),
+}
+impl DeleteProjectPolicy {
+    /// Creates a new builder-style object to manufacture [`DeleteProjectPolicyInput`](crate::input::DeleteProjectPolicyInput).
+    pub fn builder() -> crate::input::delete_project_policy_input::Builder {
+        crate::input::delete_project_policy_input::Builder::default()
+    }
+    /// Creates a new `DeleteProjectPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteProjectPolicy {
+    type Output = std::result::Result<
+        crate::output::DeleteProjectPolicyOutput,
+        crate::error::DeleteProjectPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_project_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_project_policy_response(response)
         }
     }
 }
@@ -1266,6 +1334,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFaces {
     }
 }
 
+/// Operation shape for `ListProjectPolicies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_project_policies`](crate::client::Client::list_project_policies).
+///
+/// See [`crate::client::fluent_builders::ListProjectPolicies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListProjectPolicies {
+    _private: (),
+}
+impl ListProjectPolicies {
+    /// Creates a new builder-style object to manufacture [`ListProjectPoliciesInput`](crate::input::ListProjectPoliciesInput).
+    pub fn builder() -> crate::input::list_project_policies_input::Builder {
+        crate::input::list_project_policies_input::Builder::default()
+    }
+    /// Creates a new `ListProjectPolicies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListProjectPolicies {
+    type Output = std::result::Result<
+        crate::output::ListProjectPoliciesOutput,
+        crate::error::ListProjectPoliciesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_project_policies_error(response)
+        } else {
+            crate::operation_deser::parse_list_project_policies_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListStreamProcessors`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1330,6 +1432,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutProjectPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_project_policy`](crate::client::Client::put_project_policy).
+///
+/// See [`crate::client::fluent_builders::PutProjectPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutProjectPolicy {
+    _private: (),
+}
+impl PutProjectPolicy {
+    /// Creates a new builder-style object to manufacture [`PutProjectPolicyInput`](crate::input::PutProjectPolicyInput).
+    pub fn builder() -> crate::input::put_project_policy_input::Builder {
+        crate::input::put_project_policy_input::Builder::default()
+    }
+    /// Creates a new `PutProjectPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutProjectPolicy {
+    type Output = std::result::Result<
+        crate::output::PutProjectPolicyOutput,
+        crate::error::PutProjectPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_project_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_project_policy_response(response)
         }
     }
 }

@@ -40,12 +40,12 @@ pub mod create_media_capture_pipeline_input {
             self.source_arn = input;
             self
         }
-        /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+        /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
         pub fn sink_type(mut self, input: crate::model::MediaPipelineSinkType) -> Self {
             self.sink_type = Some(input);
             self
         }
-        /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+        /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
         pub fn set_sink_type(
             mut self,
             input: std::option::Option<crate::model::MediaPipelineSinkType>,
@@ -63,12 +63,12 @@ pub mod create_media_capture_pipeline_input {
             self.sink_arn = input;
             self
         }
-        /// <p>The token assigned to the client making the pipeline request.</p>
+        /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>The token assigned to the client making the pipeline request.</p>
+        /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -76,7 +76,7 @@ pub mod create_media_capture_pipeline_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+        /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
         pub fn chime_sdk_meeting_configuration(
             mut self,
             input: crate::model::ChimeSdkMeetingConfiguration,
@@ -84,7 +84,7 @@ pub mod create_media_capture_pipeline_input {
             self.chime_sdk_meeting_configuration = Some(input);
             self
         }
-        /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+        /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
         pub fn set_chime_sdk_meeting_configuration(
             mut self,
             input: std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
@@ -96,14 +96,14 @@ pub mod create_media_capture_pipeline_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of tags.</p>
+        /// <p>The tag key-value pairs.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The list of tags.</p>
+        /// <p>The tag key-value pairs.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -238,6 +238,426 @@ impl CreateMediaCapturePipelineInput {
     }
 }
 
+/// See [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
+pub mod create_media_concatenation_pipeline_input {
+
+    /// A builder for [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ConcatenationSource>>,
+        pub(crate) sinks: std::option::Option<std::vec::Vec<crate::model::ConcatenationSink>>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+        pub fn sources(mut self, input: crate::model::ConcatenationSource) -> Self {
+            let mut v = self.sources.unwrap_or_default();
+            v.push(input);
+            self.sources = Some(v);
+            self
+        }
+        /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConcatenationSource>>,
+        ) -> Self {
+            self.sources = input;
+            self
+        }
+        /// Appends an item to `sinks`.
+        ///
+        /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
+        ///
+        /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+        pub fn sinks(mut self, input: crate::model::ConcatenationSink) -> Self {
+            let mut v = self.sinks.unwrap_or_default();
+            v.push(input);
+            self.sinks = Some(v);
+            self
+        }
+        /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+        pub fn set_sinks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConcatenationSink>>,
+        ) -> Self {
+            self.sinks = input;
+            self
+        }
+        /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the media concatenation pipeline.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags associated with the media concatenation pipeline.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateMediaConcatenationPipelineInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateMediaConcatenationPipelineInput {
+                sources: self.sources,
+                sinks: self.sinks,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateMediaConcatenationPipelineInputOperationOutputAlias =
+    crate::operation::CreateMediaConcatenationPipeline;
+#[doc(hidden)]
+pub type CreateMediaConcatenationPipelineInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateMediaConcatenationPipelineInput {
+    /// Consumes the builder and constructs an Operation<[`CreateMediaConcatenationPipeline`](crate::operation::CreateMediaConcatenationPipeline)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateMediaConcatenationPipeline,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateMediaConcatenationPipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/sdk-media-concatenation-pipelines")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateMediaConcatenationPipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_media_concatenation_pipeline(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateMediaConcatenationPipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateMediaConcatenationPipeline",
+            "chimesdkmediapipelines",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
+    pub fn builder() -> crate::input::create_media_concatenation_pipeline_input::Builder {
+        crate::input::create_media_concatenation_pipeline_input::Builder::default()
+    }
+}
+
+/// See [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
+pub mod create_media_live_connector_pipeline_input {
+
+    /// A builder for [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sources:
+            std::option::Option<std::vec::Vec<crate::model::LiveConnectorSourceConfiguration>>,
+        pub(crate) sinks:
+            std::option::Option<std::vec::Vec<crate::model::LiveConnectorSinkConfiguration>>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>The media pipeline's data sources.</p>
+        pub fn sources(mut self, input: crate::model::LiveConnectorSourceConfiguration) -> Self {
+            let mut v = self.sources.unwrap_or_default();
+            v.push(input);
+            self.sources = Some(v);
+            self
+        }
+        /// <p>The media pipeline's data sources.</p>
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::LiveConnectorSourceConfiguration>,
+            >,
+        ) -> Self {
+            self.sources = input;
+            self
+        }
+        /// Appends an item to `sinks`.
+        ///
+        /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
+        ///
+        /// <p>The media pipeline's data sinks.</p>
+        pub fn sinks(mut self, input: crate::model::LiveConnectorSinkConfiguration) -> Self {
+            let mut v = self.sinks.unwrap_or_default();
+            v.push(input);
+            self.sinks = Some(v);
+            self
+        }
+        /// <p>The media pipeline's data sinks.</p>
+        pub fn set_sinks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LiveConnectorSinkConfiguration>>,
+        ) -> Self {
+            self.sinks = input;
+            self
+        }
+        /// <p>The token assigned to the client making the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>The token assigned to the client making the request.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the media pipeline.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags associated with the media pipeline.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateMediaLiveConnectorPipelineInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateMediaLiveConnectorPipelineInput {
+                sources: self.sources,
+                sinks: self.sinks,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateMediaLiveConnectorPipelineInputOperationOutputAlias =
+    crate::operation::CreateMediaLiveConnectorPipeline;
+#[doc(hidden)]
+pub type CreateMediaLiveConnectorPipelineInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateMediaLiveConnectorPipelineInput {
+    /// Consumes the builder and constructs an Operation<[`CreateMediaLiveConnectorPipeline`](crate::operation::CreateMediaLiveConnectorPipeline)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateMediaLiveConnectorPipeline,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateMediaLiveConnectorPipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/sdk-media-live-connector-pipelines")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateMediaLiveConnectorPipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_media_live_connector_pipeline(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateMediaLiveConnectorPipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateMediaLiveConnectorPipeline",
+            "chimesdkmediapipelines",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
+    pub fn builder() -> crate::input::create_media_live_connector_pipeline_input::Builder {
+        crate::input::create_media_live_connector_pipeline_input::Builder::default()
+    }
+}
+
 /// See [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput).
 pub mod delete_media_capture_pipeline_input {
 
@@ -247,12 +667,12 @@ pub mod delete_media_capture_pipeline_input {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the media capture pipeline being deleted. </p>
+        /// <p>The ID of the media pipeline being deleted. </p>
         pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_pipeline_id = Some(input.into());
             self
         }
-        /// <p>The ID of the media capture pipeline being deleted. </p>
+        /// <p>The ID of the media pipeline being deleted. </p>
         pub fn set_media_pipeline_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,6 +804,149 @@ impl DeleteMediaCapturePipelineInput {
     }
 }
 
+/// See [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
+pub mod delete_media_pipeline_input {
+
+    /// A builder for [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the media pipeline to delete.</p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_pipeline_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the media pipeline to delete.</p>
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_pipeline_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteMediaPipelineInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteMediaPipelineInput {
+                media_pipeline_id: self.media_pipeline_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteMediaPipelineInputOperationOutputAlias = crate::operation::DeleteMediaPipeline;
+#[doc(hidden)]
+pub type DeleteMediaPipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteMediaPipelineInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMediaPipeline`](crate::operation::DeleteMediaPipeline)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteMediaPipeline,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteMediaPipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_2 = &_input.media_pipeline_id;
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_pipeline_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_2, false);
+                if media_pipeline_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_pipeline_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sdk-media-pipelines/{MediaPipelineId}",
+                    MediaPipelineId = media_pipeline_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteMediaPipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteMediaPipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteMediaPipeline",
+            "chimesdkmediapipelines",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
+    pub fn builder() -> crate::input::delete_media_pipeline_input::Builder {
+        crate::input::delete_media_pipeline_input::Builder::default()
+    }
+}
+
 /// See [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
 pub mod get_media_capture_pipeline_input {
 
@@ -444,14 +1007,14 @@ impl GetMediaCapturePipelineInput {
                 _input: &crate::input::GetMediaCapturePipelineInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_2 = &_input.media_pipeline_id;
-                let input_2 = input_2.as_ref().ok_or(
+                let input_3 = &_input.media_pipeline_id;
+                let input_3 = input_3.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "media_pipeline_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_3, false);
                 if media_pipeline_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "media_pipeline_id",
@@ -527,6 +1090,149 @@ impl GetMediaCapturePipelineInput {
     /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
     pub fn builder() -> crate::input::get_media_capture_pipeline_input::Builder {
         crate::input::get_media_capture_pipeline_input::Builder::default()
+    }
+}
+
+/// See [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
+pub mod get_media_pipeline_input {
+
+    /// A builder for [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the pipeline that you want to get.</p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.media_pipeline_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the pipeline that you want to get.</p>
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_pipeline_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetMediaPipelineInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetMediaPipelineInput {
+                media_pipeline_id: self.media_pipeline_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMediaPipelineInputOperationOutputAlias = crate::operation::GetMediaPipeline;
+#[doc(hidden)]
+pub type GetMediaPipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetMediaPipelineInput {
+    /// Consumes the builder and constructs an Operation<[`GetMediaPipeline`](crate::operation::GetMediaPipeline)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetMediaPipeline,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetMediaPipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_4 = &_input.media_pipeline_id;
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_pipeline_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_4, false);
+                if media_pipeline_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_pipeline_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/sdk-media-pipelines/{MediaPipelineId}",
+                    MediaPipelineId = media_pipeline_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetMediaPipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMediaPipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMediaPipeline",
+            "chimesdkmediapipelines",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
+    pub fn builder() -> crate::input::get_media_pipeline_input::Builder {
+        crate::input::get_media_pipeline_input::Builder::default()
     }
 }
 
@@ -607,13 +1313,13 @@ impl ListMediaCapturePipelinesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_3));
+                if let Some(inner_5) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
-                if let Some(inner_4) = &_input.max_results {
+                if let Some(inner_6) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
                     );
                 }
                 Ok(())
@@ -683,6 +1389,156 @@ impl ListMediaCapturePipelinesInput {
     }
 }
 
+/// See [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
+pub mod list_media_pipelines_input {
+
+    /// A builder for [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The token used to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token used to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListMediaPipelinesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListMediaPipelinesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMediaPipelinesInputOperationOutputAlias = crate::operation::ListMediaPipelines;
+#[doc(hidden)]
+pub type ListMediaPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListMediaPipelinesInput {
+    /// Consumes the builder and constructs an Operation<[`ListMediaPipelines`](crate::operation::ListMediaPipelines)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMediaPipelines,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListMediaPipelinesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/sdk-media-pipelines").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListMediaPipelinesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_7) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_7));
+                }
+                if let Some(inner_8) = &_input.max_results {
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMediaPipelinesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMediaPipelines::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMediaPipelines",
+            "chimesdkmediapipelines",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
+    pub fn builder() -> crate::input::list_media_pipelines_input::Builder {
+        crate::input::list_media_pipelines_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
 
@@ -692,12 +1548,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The resource ARN.</p>
+        /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The resource ARN.</p>
+        /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -745,8 +1601,8 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_5) = &_input.resource_arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_5));
+                if let Some(inner_9) = &_input.resource_arn {
+                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
                 Ok(())
             }
@@ -825,12 +1681,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The resource ARN.</p>
+        /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The resource ARN.</p>
+        /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -839,14 +1695,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tag key-value pairs.</p>
+        /// <p>The tags associated with the specified media pipeline.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tag key-value pairs.</p>
+        /// <p>The tags associated with the specified media pipeline.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -990,12 +1846,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The resource ARN.</p>
+        /// <p>The ARN of the pipeline that you want to untag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The resource ARN.</p>
+        /// <p>The ARN of the pipeline that you want to untag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1004,14 +1860,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys.</p>
+        /// <p>The key/value pairs in the tag that you want to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tag keys.</p>
+        /// <p>The key/value pairs in the tag that you want to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1149,19 +2005,19 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The resource ARN.</p>
+    /// <p>The ARN of the pipeline that you want to untag.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tag keys.</p>
+    /// <p>The key/value pairs in the tag that you want to remove.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The resource ARN.</p>
+    /// <p>The ARN of the pipeline that you want to untag.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tag keys.</p>
+    /// <p>The key/value pairs in the tag that you want to remove.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -1179,19 +2035,19 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The resource ARN.</p>
+    /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tag key-value pairs.</p>
+    /// <p>The tags associated with the specified media pipeline.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The resource ARN.</p>
+    /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tag key-value pairs.</p>
+    /// <p>The tags associated with the specified media pipeline.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -1209,12 +2065,12 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The resource ARN.</p>
+    /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The resource ARN.</p>
+    /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -1223,6 +2079,36 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMediaPipelinesInput {
+    /// <p>The token used to retrieve the next page of results.</p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListMediaPipelinesInput {
+    /// <p>The token used to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListMediaPipelinesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMediaPipelinesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -1260,6 +2146,28 @@ impl std::fmt::Debug for ListMediaCapturePipelinesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMediaPipelineInput {
+    /// <p>The ID of the pipeline that you want to get.</p>
+    #[doc(hidden)]
+    pub media_pipeline_id: std::option::Option<std::string::String>,
+}
+impl GetMediaPipelineInput {
+    /// <p>The ID of the pipeline that you want to get.</p>
+    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+        self.media_pipeline_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetMediaPipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMediaPipelineInput");
+        formatter.field("media_pipeline_id", &self.media_pipeline_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaCapturePipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
@@ -1282,13 +2190,35 @@ impl std::fmt::Debug for GetMediaCapturePipelineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMediaPipelineInput {
+    /// <p>The ID of the media pipeline to delete.</p>
+    #[doc(hidden)]
+    pub media_pipeline_id: std::option::Option<std::string::String>,
+}
+impl DeleteMediaPipelineInput {
+    /// <p>The ID of the media pipeline to delete.</p>
+    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+        self.media_pipeline_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteMediaPipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMediaPipelineInput");
+        formatter.field("media_pipeline_id", &self.media_pipeline_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMediaCapturePipelineInput {
-    /// <p>The ID of the media capture pipeline being deleted. </p>
+    /// <p>The ID of the media pipeline being deleted. </p>
     #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
 }
 impl DeleteMediaCapturePipelineInput {
-    /// <p>The ID of the media capture pipeline being deleted. </p>
+    /// <p>The ID of the media pipeline being deleted. </p>
     pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
         self.media_pipeline_id.as_deref()
     }
@@ -1304,6 +2234,100 @@ impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMediaLiveConnectorPipelineInput {
+    /// <p>The media pipeline's data sources.</p>
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::LiveConnectorSourceConfiguration>>,
+    /// <p>The media pipeline's data sinks.</p>
+    #[doc(hidden)]
+    pub sinks: std::option::Option<std::vec::Vec<crate::model::LiveConnectorSinkConfiguration>>,
+    /// <p>The token assigned to the client making the request.</p>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the media pipeline.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateMediaLiveConnectorPipelineInput {
+    /// <p>The media pipeline's data sources.</p>
+    pub fn sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::LiveConnectorSourceConfiguration]> {
+        self.sources.as_deref()
+    }
+    /// <p>The media pipeline's data sinks.</p>
+    pub fn sinks(&self) -> std::option::Option<&[crate::model::LiveConnectorSinkConfiguration]> {
+        self.sinks.as_deref()
+    }
+    /// <p>The token assigned to the client making the request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags associated with the media pipeline.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateMediaLiveConnectorPipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMediaLiveConnectorPipelineInput");
+        formatter.field("sources", &self.sources);
+        formatter.field("sinks", &self.sinks);
+        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMediaConcatenationPipelineInput {
+    /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::ConcatenationSource>>,
+    /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+    #[doc(hidden)]
+    pub sinks: std::option::Option<std::vec::Vec<crate::model::ConcatenationSink>>,
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the media concatenation pipeline.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateMediaConcatenationPipelineInput {
+    /// <p>An object that specifies the sources for the media concatenation pipeline.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::ConcatenationSource]> {
+        self.sources.as_deref()
+    }
+    /// <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
+    pub fn sinks(&self) -> std::option::Option<&[crate::model::ConcatenationSink]> {
+        self.sinks.as_deref()
+    }
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags associated with the media concatenation pipeline.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateMediaConcatenationPipelineInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMediaConcatenationPipelineInput");
+        formatter.field("sources", &self.sources);
+        formatter.field("sinks", &self.sinks);
+        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineInput {
     /// <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
     #[doc(hidden)]
@@ -1311,20 +2335,20 @@ pub struct CreateMediaCapturePipelineInput {
     /// <p>ARN of the source from which the media artifacts are captured.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     #[doc(hidden)]
     pub sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
     /// <p>The ARN of the sink type.</p>
     #[doc(hidden)]
     pub sink_arn: std::option::Option<std::string::String>,
-    /// <p>The token assigned to the client making the pipeline request.</p>
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     #[doc(hidden)]
     pub chime_sdk_meeting_configuration:
         std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
-    /// <p>The list of tags.</p>
+    /// <p>The tag key-value pairs.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -1337,7 +2361,7 @@ impl CreateMediaCapturePipelineInput {
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     pub fn sink_type(&self) -> std::option::Option<&crate::model::MediaPipelineSinkType> {
         self.sink_type.as_ref()
     }
@@ -1345,17 +2369,17 @@ impl CreateMediaCapturePipelineInput {
     pub fn sink_arn(&self) -> std::option::Option<&str> {
         self.sink_arn.as_deref()
     }
-    /// <p>The token assigned to the client making the pipeline request.</p>
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub fn chime_sdk_meeting_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ChimeSdkMeetingConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
-    /// <p>The list of tags.</p>
+    /// <p>The tag key-value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

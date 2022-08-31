@@ -1800,6 +1800,84 @@ impl Identity {
     }
 }
 
+/// <p>Summary of the sub-channels associated with the elastic channel.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SubChannelSummary {
+    /// <p>The unique ID of a SubChannel.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
+    /// <p>The number of members in a SubChannel.</p>
+    #[doc(hidden)]
+    pub membership_count: std::option::Option<i32>,
+}
+impl SubChannelSummary {
+    /// <p>The unique ID of a SubChannel.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
+    /// <p>The number of members in a SubChannel.</p>
+    pub fn membership_count(&self) -> std::option::Option<i32> {
+        self.membership_count
+    }
+}
+impl std::fmt::Debug for SubChannelSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SubChannelSummary");
+        formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("membership_count", &self.membership_count);
+        formatter.finish()
+    }
+}
+/// See [`SubChannelSummary`](crate::model::SubChannelSummary).
+pub mod sub_channel_summary {
+
+    /// A builder for [`SubChannelSummary`](crate::model::SubChannelSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        pub(crate) membership_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique ID of a SubChannel.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of a SubChannel.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
+        /// <p>The number of members in a SubChannel.</p>
+        pub fn membership_count(mut self, input: i32) -> Self {
+            self.membership_count = Some(input);
+            self
+        }
+        /// <p>The number of members in a SubChannel.</p>
+        pub fn set_membership_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.membership_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SubChannelSummary`](crate::model::SubChannelSummary).
+        pub fn build(self) -> crate::model::SubChannelSummary {
+            crate::model::SubChannelSummary {
+                sub_channel_id: self.sub_channel_id,
+                membership_count: self.membership_count,
+            }
+        }
+    }
+}
+impl SubChannelSummary {
+    /// Creates a new builder-style object to manufacture [`SubChannelSummary`](crate::model::SubChannelSummary).
+    pub fn builder() -> crate::model::sub_channel_summary::Builder {
+        crate::model::sub_channel_summary::Builder::default()
+    }
+}
+
 /// <p>Summary of the details of a moderated channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2500,6 +2578,9 @@ pub struct AppInstanceUserMembershipSummary {
     /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
     #[doc(hidden)]
     pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
@@ -2510,12 +2591,17 @@ impl AppInstanceUserMembershipSummary {
     pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_marker_timestamp.as_ref()
     }
+    /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AppInstanceUserMembershipSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserMembershipSummary");
         formatter.field("r#type", &self.r#type);
         formatter.field("read_marker_timestamp", &self.read_marker_timestamp);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -2527,6 +2613,7 @@ pub mod app_instance_user_membership_summary {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
         pub(crate) read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The type of <code>ChannelMembership</code>.</p>
@@ -2555,11 +2642,25 @@ pub mod app_instance_user_membership_summary {
             self.read_marker_timestamp = input;
             self
         }
+        /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
         pub fn build(self) -> crate::model::AppInstanceUserMembershipSummary {
             crate::model::AppInstanceUserMembershipSummary {
                 r#type: self.r#type,
                 read_marker_timestamp: self.read_marker_timestamp,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -2941,6 +3042,9 @@ pub struct ChannelMessage {
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
+    /// <p>The ID of the SubChannel.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl ChannelMessage {
     /// <p>The ARN of the channel.</p>
@@ -2999,6 +3103,10 @@ impl ChannelMessage {
     > {
         self.message_attributes.as_ref()
     }
+    /// <p>The ID of the SubChannel.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3016,6 +3124,7 @@ impl std::fmt::Debug for ChannelMessage {
         formatter.field("persistence", &self.persistence);
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -3040,6 +3149,7 @@ pub mod channel_message {
         pub(crate) message_attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
         >,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -3205,6 +3315,19 @@ pub mod channel_message {
             self.message_attributes = input;
             self
         }
+        /// <p>The ID of the SubChannel.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelMessage`](crate::model::ChannelMessage).
         pub fn build(self) -> crate::model::ChannelMessage {
             crate::model::ChannelMessage {
@@ -3221,6 +3344,7 @@ pub mod channel_message {
                 persistence: self.persistence,
                 status: self.status,
                 message_attributes: self.message_attributes,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -3375,6 +3499,9 @@ pub struct ChannelMembership {
     /// <p>The time at which a channel membership was last updated.</p>
     #[doc(hidden)]
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ID of the SubChannel that a user belongs to.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
@@ -3401,6 +3528,10 @@ impl ChannelMembership {
     pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
+    /// <p>The ID of the SubChannel that a user belongs to.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3411,6 +3542,7 @@ impl std::fmt::Debug for ChannelMembership {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -3426,6 +3558,7 @@ pub mod channel_membership {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the member who invited another member.</p>
@@ -3500,6 +3633,19 @@ pub mod channel_membership {
             self.last_updated_timestamp = input;
             self
         }
+        /// <p>The ID of the SubChannel that a user belongs to.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel that a user belongs to.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelMembership`](crate::model::ChannelMembership).
         pub fn build(self) -> crate::model::ChannelMembership {
             crate::model::ChannelMembership {
@@ -3509,6 +3655,7 @@ pub mod channel_membership {
                 channel_arn: self.channel_arn,
                 created_timestamp: self.created_timestamp,
                 last_updated_timestamp: self.last_updated_timestamp,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -3828,6 +3975,10 @@ pub struct Channel {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
+    /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
+    #[doc(hidden)]
+    pub elastic_channel_configuration:
+        std::option::Option<crate::model::ElasticChannelConfiguration>,
 }
 impl Channel {
     /// <p>The name of a channel.</p>
@@ -3870,6 +4021,12 @@ impl Channel {
     pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
+    /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
+    pub fn elastic_channel_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticChannelConfiguration> {
+        self.elastic_channel_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3884,6 +4041,10 @@ impl std::fmt::Debug for Channel {
         formatter.field("last_message_timestamp", &self.last_message_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
+        formatter.field(
+            "elastic_channel_configuration",
+            &self.elastic_channel_configuration,
+        );
         formatter.finish()
     }
 }
@@ -3903,6 +4064,8 @@ pub mod channel {
         pub(crate) last_message_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
+        pub(crate) elastic_channel_configuration:
+            std::option::Option<crate::model::ElasticChannelConfiguration>,
     }
     impl Builder {
         /// <p>The name of a channel.</p>
@@ -4023,6 +4186,22 @@ pub mod channel {
             self.channel_flow_arn = input;
             self
         }
+        /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
+        pub fn elastic_channel_configuration(
+            mut self,
+            input: crate::model::ElasticChannelConfiguration,
+        ) -> Self {
+            self.elastic_channel_configuration = Some(input);
+            self
+        }
+        /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
+        pub fn set_elastic_channel_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ElasticChannelConfiguration>,
+        ) -> Self {
+            self.elastic_channel_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
@@ -4036,6 +4215,7 @@ pub mod channel {
                 last_message_timestamp: self.last_message_timestamp,
                 last_updated_timestamp: self.last_updated_timestamp,
                 channel_flow_arn: self.channel_flow_arn,
+                elastic_channel_configuration: self.elastic_channel_configuration,
             }
         }
     }
@@ -4044,6 +4224,113 @@ impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
     pub fn builder() -> crate::model::channel::Builder {
         crate::model::channel::Builder::default()
+    }
+}
+
+/// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ElasticChannelConfiguration {
+    /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
+    #[doc(hidden)]
+    pub maximum_sub_channels: std::option::Option<i32>,
+    /// <p>The maximum number of members allowed in a SubChannel.</p>
+    #[doc(hidden)]
+    pub target_memberships_per_sub_channel: std::option::Option<i32>,
+    /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
+    #[doc(hidden)]
+    pub minimum_membership_percentage: std::option::Option<i32>,
+}
+impl ElasticChannelConfiguration {
+    /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
+    pub fn maximum_sub_channels(&self) -> std::option::Option<i32> {
+        self.maximum_sub_channels
+    }
+    /// <p>The maximum number of members allowed in a SubChannel.</p>
+    pub fn target_memberships_per_sub_channel(&self) -> std::option::Option<i32> {
+        self.target_memberships_per_sub_channel
+    }
+    /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
+    pub fn minimum_membership_percentage(&self) -> std::option::Option<i32> {
+        self.minimum_membership_percentage
+    }
+}
+impl std::fmt::Debug for ElasticChannelConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ElasticChannelConfiguration");
+        formatter.field("maximum_sub_channels", &self.maximum_sub_channels);
+        formatter.field(
+            "target_memberships_per_sub_channel",
+            &self.target_memberships_per_sub_channel,
+        );
+        formatter.field(
+            "minimum_membership_percentage",
+            &self.minimum_membership_percentage,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
+pub mod elastic_channel_configuration {
+
+    /// A builder for [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) maximum_sub_channels: std::option::Option<i32>,
+        pub(crate) target_memberships_per_sub_channel: std::option::Option<i32>,
+        pub(crate) minimum_membership_percentage: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
+        pub fn maximum_sub_channels(mut self, input: i32) -> Self {
+            self.maximum_sub_channels = Some(input);
+            self
+        }
+        /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
+        pub fn set_maximum_sub_channels(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_sub_channels = input;
+            self
+        }
+        /// <p>The maximum number of members allowed in a SubChannel.</p>
+        pub fn target_memberships_per_sub_channel(mut self, input: i32) -> Self {
+            self.target_memberships_per_sub_channel = Some(input);
+            self
+        }
+        /// <p>The maximum number of members allowed in a SubChannel.</p>
+        pub fn set_target_memberships_per_sub_channel(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.target_memberships_per_sub_channel = input;
+            self
+        }
+        /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
+        pub fn minimum_membership_percentage(mut self, input: i32) -> Self {
+            self.minimum_membership_percentage = Some(input);
+            self
+        }
+        /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
+        pub fn set_minimum_membership_percentage(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.minimum_membership_percentage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
+        pub fn build(self) -> crate::model::ElasticChannelConfiguration {
+            crate::model::ElasticChannelConfiguration {
+                maximum_sub_channels: self.maximum_sub_channels,
+                target_memberships_per_sub_channel: self.target_memberships_per_sub_channel,
+                minimum_membership_percentage: self.minimum_membership_percentage,
+            }
+        }
+    }
+}
+impl ElasticChannelConfiguration {
+    /// Creates a new builder-style object to manufacture [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
+    pub fn builder() -> crate::model::elastic_channel_configuration::Builder {
+        crate::model::elastic_channel_configuration::Builder::default()
     }
 }
 
@@ -4068,6 +4355,9 @@ pub struct ChannelMessageCallback {
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
+    /// <p>The ID of the SubChannel.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl ChannelMessageCallback {
     /// <p>The message ID.</p>
@@ -4096,6 +4386,10 @@ impl ChannelMessageCallback {
     > {
         self.message_attributes.as_ref()
     }
+    /// <p>The ID of the SubChannel.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMessageCallback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4105,6 +4399,7 @@ impl std::fmt::Debug for ChannelMessageCallback {
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("push_notification", &self.push_notification);
         formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -4122,6 +4417,7 @@ pub mod channel_message_callback {
         pub(crate) message_attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
         >,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The message ID.</p>
@@ -4195,6 +4491,19 @@ pub mod channel_message_callback {
             self.message_attributes = input;
             self
         }
+        /// <p>The ID of the SubChannel.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
         pub fn build(self) -> crate::model::ChannelMessageCallback {
             crate::model::ChannelMessageCallback {
@@ -4203,6 +4512,7 @@ pub mod channel_message_callback {
                 metadata: self.metadata,
                 push_notification: self.push_notification,
                 message_attributes: self.message_attributes,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }
@@ -4331,6 +4641,9 @@ pub struct BatchChannelMemberships {
     /// <p>The ARN of the channel to which you're adding users.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the SubChannel.</p>
+    #[doc(hidden)]
+    pub sub_channel_id: std::option::Option<std::string::String>,
 }
 impl BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
@@ -4349,6 +4662,10 @@ impl BatchChannelMemberships {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
+    /// <p>The ID of the SubChannel.</p>
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+        self.sub_channel_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchChannelMemberships {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4357,6 +4674,7 @@ impl std::fmt::Debug for BatchChannelMemberships {
         formatter.field("r#type", &self.r#type);
         formatter.field("members", &self.members);
         formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.finish()
     }
 }
@@ -4370,6 +4688,7 @@ pub mod batch_channel_memberships {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::Identity>>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) sub_channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the member who invited another member.</p>
@@ -4427,6 +4746,19 @@ pub mod batch_channel_memberships {
             self.channel_arn = input;
             self
         }
+        /// <p>The ID of the SubChannel.</p>
+        pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sub_channel_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the SubChannel.</p>
+        pub fn set_sub_channel_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sub_channel_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
         pub fn build(self) -> crate::model::BatchChannelMemberships {
             crate::model::BatchChannelMemberships {
@@ -4434,6 +4766,7 @@ pub mod batch_channel_memberships {
                 r#type: self.r#type,
                 members: self.members,
                 channel_arn: self.channel_arn,
+                sub_channel_id: self.sub_channel_id,
             }
         }
     }

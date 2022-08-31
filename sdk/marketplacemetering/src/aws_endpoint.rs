@@ -47,7 +47,9 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     uri_template: "metering.marketplace.{region}.sc2s.sgov.gov",
                     protocol: aws_endpoint::partition::endpoint::Protocol::Https,
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("aws-marketplace")
+                        .build(),
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .build()

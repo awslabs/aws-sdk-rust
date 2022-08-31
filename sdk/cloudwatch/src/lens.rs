@@ -19,6 +19,16 @@ pub(crate) fn reflens_structure_crate_output_describe_alarms_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_anomaly_detectors_output_next_token(
+    input: &crate::output::DescribeAnomalyDetectorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_insight_rules_output_next_token(
     input: &crate::output::DescribeInsightRulesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -41,6 +51,16 @@ pub(crate) fn reflens_structure_crate_output_get_metric_data_output_next_token(
 
 pub(crate) fn reflens_structure_crate_output_list_dashboards_output_next_token(
     input: &crate::output::ListDashboardsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_managed_insight_rules_output_next_token(
+    input: &crate::output::ListManagedInsightRulesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -73,6 +93,16 @@ pub(crate) fn lens_structure_crate_output_describe_alarm_history_output_alarm_hi
     input: crate::output::DescribeAlarmHistoryOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AlarmHistoryItem>> {
     let input = match input.alarm_history_items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_anomaly_detectors_output_anomaly_detectors(
+    input: crate::output::DescribeAnomalyDetectorsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AnomalyDetector>> {
+    let input = match input.anomaly_detectors {
         None => return None,
         Some(t) => t,
     };

@@ -1628,6 +1628,45 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopBotRecommendationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StopBotRecommendationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StopBotRecommendationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::StopBotRecommendationErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::StopBotRecommendationErrorKind::PreconditionFailedException(
+                    inner,
+                ) => Error::PreconditionFailedException(inner),
+                crate::error::StopBotRecommendationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::StopBotRecommendationErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::StopBotRecommendationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::StopBotRecommendationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::StopBotRecommendationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -332,6 +332,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "me-central-1-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "kms-fips.me-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("me-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "me-south-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "kms.{region}.amazonaws.com",

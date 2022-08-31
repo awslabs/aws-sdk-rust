@@ -3926,6 +3926,170 @@ impl ListDashboardsInput {
     }
 }
 
+/// See [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
+pub mod list_managed_insight_rules_input {
+
+    /// A builder for [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListManagedInsightRulesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListManagedInsightRulesInput {
+                resource_arn: self.resource_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListManagedInsightRulesInputOperationOutputAlias =
+    crate::operation::ListManagedInsightRules;
+#[doc(hidden)]
+pub type ListManagedInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListManagedInsightRulesInput {
+    /// Consumes the builder and constructs an Operation<[`ListManagedInsightRules`](crate::operation::ListManagedInsightRules)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListManagedInsightRules,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListManagedInsightRulesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListManagedInsightRulesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_managed_insight_rules(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListManagedInsightRules::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListManagedInsightRules",
+            "cloudwatch",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
+    pub fn builder() -> crate::input::list_managed_insight_rules_input::Builder {
+        crate::input::list_managed_insight_rules_input::Builder::default()
+    }
+}
+
 /// See [`ListMetricsInput`](crate::input::ListMetricsInput).
 pub mod list_metrics_input {
 
@@ -5392,6 +5556,152 @@ impl PutInsightRuleInput {
     }
 }
 
+/// See [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
+pub mod put_managed_insight_rules_input {
+
+    /// A builder for [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRule>>,
+    }
+    impl Builder {
+        /// Appends an item to `managed_rules`.
+        ///
+        /// To override the contents of this collection use [`set_managed_rules`](Self::set_managed_rules).
+        ///
+        /// <p> A list of <code>ManagedRules</code> to enable. </p>
+        pub fn managed_rules(mut self, input: crate::model::ManagedRule) -> Self {
+            let mut v = self.managed_rules.unwrap_or_default();
+            v.push(input);
+            self.managed_rules = Some(v);
+            self
+        }
+        /// <p> A list of <code>ManagedRules</code> to enable. </p>
+        pub fn set_managed_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedRule>>,
+        ) -> Self {
+            self.managed_rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutManagedInsightRulesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutManagedInsightRulesInput {
+                managed_rules: self.managed_rules,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutManagedInsightRulesInputOperationOutputAlias = crate::operation::PutManagedInsightRules;
+#[doc(hidden)]
+pub type PutManagedInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl PutManagedInsightRulesInput {
+    /// Consumes the builder and constructs an Operation<[`PutManagedInsightRules`](crate::operation::PutManagedInsightRules)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutManagedInsightRules,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutManagedInsightRulesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutManagedInsightRulesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_managed_insight_rules(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutManagedInsightRules::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutManagedInsightRules",
+            "cloudwatch",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
+    pub fn builder() -> crate::input::put_managed_insight_rules_input::Builder {
+        crate::input::put_managed_insight_rules_input::Builder::default()
+    }
+}
+
 /// See [`PutMetricAlarmInput`](crate::input::PutMetricAlarmInput).
 pub mod put_metric_alarm_input {
 
@@ -5610,7 +5920,7 @@ pub mod put_metric_alarm_input {
         }
         /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
         /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>
+        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
         /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
             self.unit = Some(input);
@@ -5618,7 +5928,7 @@ pub mod put_metric_alarm_input {
         }
         /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
         /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>
+        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
         /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
@@ -5938,14 +6248,14 @@ pub mod put_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
-        /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
+        /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
             v.push(input);
             self.metric_data = Some(v);
             self
         }
-        /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
+        /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
         pub fn set_metric_data(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
@@ -7428,7 +7738,7 @@ pub struct PutMetricDataInput {
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
+    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
     #[doc(hidden)]
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
 }
@@ -7438,7 +7748,7 @@ impl PutMetricDataInput {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
+    /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
     pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatum]> {
         self.metric_data.as_deref()
     }
@@ -7504,7 +7814,7 @@ pub struct PutMetricAlarmInput {
     pub period: std::option::Option<i32>,
     /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
     /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>
+    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
@@ -7611,7 +7921,7 @@ impl PutMetricAlarmInput {
     }
     /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
     /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>
+    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
         self.unit.as_ref()
@@ -7695,6 +8005,28 @@ impl std::fmt::Debug for PutMetricAlarmInput {
         formatter.field("metrics", &self.metrics);
         formatter.field("tags", &self.tags);
         formatter.field("threshold_metric_id", &self.threshold_metric_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutManagedInsightRulesInput {
+    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    #[doc(hidden)]
+    pub managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRule>>,
+}
+impl PutManagedInsightRulesInput {
+    /// <p> A list of <code>ManagedRules</code> to enable. </p>
+    pub fn managed_rules(&self) -> std::option::Option<&[crate::model::ManagedRule]> {
+        self.managed_rules.as_deref()
+    }
+}
+impl std::fmt::Debug for PutManagedInsightRulesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutManagedInsightRulesInput");
+        formatter.field("managed_rules", &self.managed_rules);
         formatter.finish()
     }
 }
@@ -8182,6 +8514,44 @@ impl std::fmt::Debug for ListMetricsInput {
         formatter.field("dimensions", &self.dimensions);
         formatter.field("next_token", &self.next_token);
         formatter.field("recently_active", &self.recently_active);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListManagedInsightRulesInput {
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+}
+impl ListManagedInsightRulesInput {
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListManagedInsightRulesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListManagedInsightRulesInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }

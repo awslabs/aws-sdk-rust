@@ -265,6 +265,70 @@ impl PutMetricAlarmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutManagedInsightRulesOutput {
+    /// <p> An array that lists the rules that could not be enabled. </p>
+    #[doc(hidden)]
+    pub failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
+}
+impl PutManagedInsightRulesOutput {
+    /// <p> An array that lists the rules that could not be enabled. </p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::PartialFailure]> {
+        self.failures.as_deref()
+    }
+}
+impl std::fmt::Debug for PutManagedInsightRulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutManagedInsightRulesOutput");
+        formatter.field("failures", &self.failures);
+        formatter.finish()
+    }
+}
+/// See [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
+pub mod put_managed_insight_rules_output {
+
+    /// A builder for [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failures: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
+    }
+    impl Builder {
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p> An array that lists the rules that could not be enabled. </p>
+        pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
+            let mut v = self.failures.unwrap_or_default();
+            v.push(input);
+            self.failures = Some(v);
+            self
+        }
+        /// <p> An array that lists the rules that could not be enabled. </p>
+        pub fn set_failures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PartialFailure>>,
+        ) -> Self {
+            self.failures = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
+        pub fn build(self) -> crate::output::PutManagedInsightRulesOutput {
+            crate::output::PutManagedInsightRulesOutput {
+                failures: self.failures,
+            }
+        }
+    }
+}
+impl PutManagedInsightRulesOutput {
+    /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesOutput`](crate::output::PutManagedInsightRulesOutput).
+    pub fn builder() -> crate::output::put_managed_insight_rules_output::Builder {
+        crate::output::put_managed_insight_rules_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInsightRuleOutput {}
 impl std::fmt::Debug for PutInsightRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -667,6 +731,91 @@ impl ListMetricsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListManagedInsightRulesOutput {
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
+    #[doc(hidden)]
+    pub managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListManagedInsightRulesOutput {
+    /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
+    pub fn managed_rules(&self) -> std::option::Option<&[crate::model::ManagedRuleDescription]> {
+        self.managed_rules.as_deref()
+    }
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListManagedInsightRulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListManagedInsightRulesOutput");
+        formatter.field("managed_rules", &self.managed_rules);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
+pub mod list_managed_insight_rules_output {
+
+    /// A builder for [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) managed_rules:
+            std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `managed_rules`.
+        ///
+        /// To override the contents of this collection use [`set_managed_rules`](Self::set_managed_rules).
+        ///
+        /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
+        pub fn managed_rules(mut self, input: crate::model::ManagedRuleDescription) -> Self {
+            let mut v = self.managed_rules.unwrap_or_default();
+            v.push(input);
+            self.managed_rules = Some(v);
+            self
+        }
+        /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
+        pub fn set_managed_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleDescription>>,
+        ) -> Self {
+            self.managed_rules = input;
+            self
+        }
+        /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
+        pub fn build(self) -> crate::output::ListManagedInsightRulesOutput {
+            crate::output::ListManagedInsightRulesOutput {
+                managed_rules: self.managed_rules,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListManagedInsightRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesOutput`](crate::output::ListManagedInsightRulesOutput).
+    pub fn builder() -> crate::output::list_managed_insight_rules_output::Builder {
+        crate::output::list_managed_insight_rules_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
     /// <p>The list of matching dashboards.</p>
     #[doc(hidden)]
@@ -838,7 +987,7 @@ pub struct GetMetricStreamOutput {
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
     #[doc(hidden)]
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
@@ -883,7 +1032,7 @@ impl GetMetricStreamOutput {
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
@@ -1047,12 +1196,12 @@ pub mod get_metric_stream_output {
             self.last_update_date = input;
             self
         }
-        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
         pub fn output_format(mut self, input: crate::model::MetricStreamOutputFormat) -> Self {
             self.output_format = Some(input);
             self
         }
-        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::MetricStreamOutputFormat>,

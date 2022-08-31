@@ -993,6 +993,9 @@ pub struct SlotValueElicitationSetting {
     #[doc(hidden)]
     pub wait_and_continue_specification:
         std::option::Option<crate::model::WaitAndContinueSpecification>,
+    /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
+    #[doc(hidden)]
+    pub slot_capture_setting: std::option::Option<crate::model::SlotCaptureSetting>,
 }
 impl SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
@@ -1019,6 +1022,10 @@ impl SlotValueElicitationSetting {
     ) -> std::option::Option<&crate::model::WaitAndContinueSpecification> {
         self.wait_and_continue_specification.as_ref()
     }
+    /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
+    pub fn slot_capture_setting(&self) -> std::option::Option<&crate::model::SlotCaptureSetting> {
+        self.slot_capture_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for SlotValueElicitationSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1034,6 +1041,7 @@ impl std::fmt::Debug for SlotValueElicitationSetting {
             "wait_and_continue_specification",
             &self.wait_and_continue_specification,
         );
+        formatter.field("slot_capture_setting", &self.slot_capture_setting);
         formatter.finish()
     }
 }
@@ -1051,6 +1059,7 @@ pub mod slot_value_elicitation_setting {
             std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
         pub(crate) wait_and_continue_specification:
             std::option::Option<crate::model::WaitAndContinueSpecification>,
+        pub(crate) slot_capture_setting: std::option::Option<crate::model::SlotCaptureSetting>,
     }
     impl Builder {
         /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
@@ -1130,6 +1139,19 @@ pub mod slot_value_elicitation_setting {
             self.wait_and_continue_specification = input;
             self
         }
+        /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
+        pub fn slot_capture_setting(mut self, input: crate::model::SlotCaptureSetting) -> Self {
+            self.slot_capture_setting = Some(input);
+            self
+        }
+        /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
+        pub fn set_slot_capture_setting(
+            mut self,
+            input: std::option::Option<crate::model::SlotCaptureSetting>,
+        ) -> Self {
+            self.slot_capture_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
         pub fn build(self) -> crate::model::SlotValueElicitationSetting {
             crate::model::SlotValueElicitationSetting {
@@ -1138,6 +1160,7 @@ pub mod slot_value_elicitation_setting {
                 prompt_specification: self.prompt_specification,
                 sample_utterances: self.sample_utterances,
                 wait_and_continue_specification: self.wait_and_continue_specification,
+                slot_capture_setting: self.slot_capture_setting,
             }
         }
     }
@@ -1149,191 +1172,939 @@ impl SlotValueElicitationSetting {
     }
 }
 
-/// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+/// <p>Settings used when Amazon Lex successfully captures a slot value from a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct WaitAndContinueSpecification {
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+pub struct SlotCaptureSetting {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
-    pub waiting_response: std::option::Option<crate::model::ResponseSpecification>,
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    pub capture_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
     #[doc(hidden)]
-    pub continue_response: std::option::Option<crate::model::ResponseSpecification>,
-    /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+    pub capture_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
     #[doc(hidden)]
-    pub still_waiting_response:
-        std::option::Option<crate::model::StillWaitingResponseSpecification>,
-    /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+    pub capture_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
-    pub active: std::option::Option<bool>,
+    pub failure_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
+    #[doc(hidden)]
+    pub failure_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
+    #[doc(hidden)]
+    pub failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
+    #[doc(hidden)]
+    pub code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+    /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
+    #[doc(hidden)]
+    pub elicitation_code_hook:
+        std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
 }
-impl WaitAndContinueSpecification {
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-    pub fn waiting_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
-        self.waiting_response.as_ref()
+impl SlotCaptureSetting {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn capture_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.capture_response.as_ref()
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-    pub fn continue_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
-        self.continue_response.as_ref()
+    /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
+    pub fn capture_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.capture_next_step.as_ref()
     }
-    /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    pub fn still_waiting_response(
+    /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
+    pub fn capture_conditional(
         &self,
-    ) -> std::option::Option<&crate::model::StillWaitingResponseSpecification> {
-        self.still_waiting_response.as_ref()
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.capture_conditional.as_ref()
     }
-    /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
-    pub fn active(&self) -> std::option::Option<bool> {
-        self.active
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.failure_response.as_ref()
+    }
+    /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
+    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.failure_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
+    pub fn failure_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.failure_conditional.as_ref()
+    }
+    /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
+    pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
+        self.code_hook.as_ref()
+    }
+    /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
+    pub fn elicitation_code_hook(
+        &self,
+    ) -> std::option::Option<&crate::model::ElicitationCodeHookInvocationSetting> {
+        self.elicitation_code_hook.as_ref()
     }
 }
-impl std::fmt::Debug for WaitAndContinueSpecification {
+impl std::fmt::Debug for SlotCaptureSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WaitAndContinueSpecification");
-        formatter.field("waiting_response", &self.waiting_response);
-        formatter.field("continue_response", &self.continue_response);
-        formatter.field("still_waiting_response", &self.still_waiting_response);
-        formatter.field("active", &self.active);
+        let mut formatter = f.debug_struct("SlotCaptureSetting");
+        formatter.field("capture_response", &self.capture_response);
+        formatter.field("capture_next_step", &self.capture_next_step);
+        formatter.field("capture_conditional", &self.capture_conditional);
+        formatter.field("failure_response", &self.failure_response);
+        formatter.field("failure_next_step", &self.failure_next_step);
+        formatter.field("failure_conditional", &self.failure_conditional);
+        formatter.field("code_hook", &self.code_hook);
+        formatter.field("elicitation_code_hook", &self.elicitation_code_hook);
         formatter.finish()
     }
 }
-/// See [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
-pub mod wait_and_continue_specification {
+/// See [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
+pub mod slot_capture_setting {
 
-    /// A builder for [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
+    /// A builder for [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) waiting_response: std::option::Option<crate::model::ResponseSpecification>,
-        pub(crate) continue_response: std::option::Option<crate::model::ResponseSpecification>,
-        pub(crate) still_waiting_response:
-            std::option::Option<crate::model::StillWaitingResponseSpecification>,
-        pub(crate) active: std::option::Option<bool>,
+        pub(crate) capture_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) capture_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) capture_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) failure_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) failure_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+        pub(crate) elicitation_code_hook:
+            std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
     }
     impl Builder {
-        /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-        pub fn waiting_response(mut self, input: crate::model::ResponseSpecification) -> Self {
-            self.waiting_response = Some(input);
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn capture_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.capture_response = Some(input);
             self
         }
-        /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-        pub fn set_waiting_response(
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_capture_response(
             mut self,
             input: std::option::Option<crate::model::ResponseSpecification>,
         ) -> Self {
-            self.waiting_response = input;
+            self.capture_response = input;
             self
         }
-        /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-        pub fn continue_response(mut self, input: crate::model::ResponseSpecification) -> Self {
-            self.continue_response = Some(input);
+        /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
+        pub fn capture_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.capture_next_step = Some(input);
             self
         }
-        /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-        pub fn set_continue_response(
+        /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
+        pub fn set_capture_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.capture_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
+        pub fn capture_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.capture_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
+        pub fn set_capture_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.capture_conditional = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.failure_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_failure_response(
             mut self,
             input: std::option::Option<crate::model::ResponseSpecification>,
         ) -> Self {
-            self.continue_response = input;
+            self.failure_response = input;
             self
         }
-        /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-        pub fn still_waiting_response(
+        /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
+        pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.failure_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
+        pub fn set_failure_next_step(
             mut self,
-            input: crate::model::StillWaitingResponseSpecification,
+            input: std::option::Option<crate::model::DialogState>,
         ) -> Self {
-            self.still_waiting_response = Some(input);
+            self.failure_next_step = input;
             self
         }
-        /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-        pub fn set_still_waiting_response(
+        /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
+        pub fn failure_conditional(
             mut self,
-            input: std::option::Option<crate::model::StillWaitingResponseSpecification>,
+            input: crate::model::ConditionalSpecification,
         ) -> Self {
-            self.still_waiting_response = input;
+            self.failure_conditional = Some(input);
             self
         }
-        /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
-        pub fn active(mut self, input: bool) -> Self {
-            self.active = Some(input);
+        /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
+        pub fn set_failure_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.failure_conditional = input;
             self
         }
-        /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
-        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
+        /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
+        pub fn code_hook(mut self, input: crate::model::DialogCodeHookInvocationSetting) -> Self {
+            self.code_hook = Some(input);
             self
         }
-        /// Consumes the builder and constructs a [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
-        pub fn build(self) -> crate::model::WaitAndContinueSpecification {
-            crate::model::WaitAndContinueSpecification {
-                waiting_response: self.waiting_response,
-                continue_response: self.continue_response,
-                still_waiting_response: self.still_waiting_response,
-                active: self.active,
+        /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
+        pub fn set_code_hook(
+            mut self,
+            input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+        ) -> Self {
+            self.code_hook = input;
+            self
+        }
+        /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
+        pub fn elicitation_code_hook(
+            mut self,
+            input: crate::model::ElicitationCodeHookInvocationSetting,
+        ) -> Self {
+            self.elicitation_code_hook = Some(input);
+            self
+        }
+        /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
+        pub fn set_elicitation_code_hook(
+            mut self,
+            input: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
+        ) -> Self {
+            self.elicitation_code_hook = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
+        pub fn build(self) -> crate::model::SlotCaptureSetting {
+            crate::model::SlotCaptureSetting {
+                capture_response: self.capture_response,
+                capture_next_step: self.capture_next_step,
+                capture_conditional: self.capture_conditional,
+                failure_response: self.failure_response,
+                failure_next_step: self.failure_next_step,
+                failure_conditional: self.failure_conditional,
+                code_hook: self.code_hook,
+                elicitation_code_hook: self.elicitation_code_hook,
             }
         }
     }
 }
-impl WaitAndContinueSpecification {
-    /// Creates a new builder-style object to manufacture [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
-    pub fn builder() -> crate::model::wait_and_continue_specification::Builder {
-        crate::model::wait_and_continue_specification::Builder::default()
+impl SlotCaptureSetting {
+    /// Creates a new builder-style object to manufacture [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
+    pub fn builder() -> crate::model::slot_capture_setting::Builder {
+        crate::model::slot_capture_setting::Builder::default()
     }
 }
 
-/// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
+/// <p>Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StillWaitingResponseSpecification {
-    /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
+pub struct ElicitationCodeHookInvocationSetting {
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    #[doc(hidden)]
+    pub enable_code_hook_invocation: std::option::Option<bool>,
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    #[doc(hidden)]
+    pub invocation_label: std::option::Option<std::string::String>,
+}
+impl ElicitationCodeHookInvocationSetting {
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    pub fn enable_code_hook_invocation(&self) -> std::option::Option<bool> {
+        self.enable_code_hook_invocation
+    }
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    pub fn invocation_label(&self) -> std::option::Option<&str> {
+        self.invocation_label.as_deref()
+    }
+}
+impl std::fmt::Debug for ElicitationCodeHookInvocationSetting {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ElicitationCodeHookInvocationSetting");
+        formatter.field(
+            "enable_code_hook_invocation",
+            &self.enable_code_hook_invocation,
+        );
+        formatter.field("invocation_label", &self.invocation_label);
+        formatter.finish()
+    }
+}
+/// See [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
+pub mod elicitation_code_hook_invocation_setting {
+
+    /// A builder for [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_code_hook_invocation: std::option::Option<bool>,
+        pub(crate) invocation_label: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+        pub fn enable_code_hook_invocation(mut self, input: bool) -> Self {
+            self.enable_code_hook_invocation = Some(input);
+            self
+        }
+        /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+        pub fn set_enable_code_hook_invocation(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_code_hook_invocation = input;
+            self
+        }
+        /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+        pub fn invocation_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invocation_label = Some(input.into());
+            self
+        }
+        /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+        pub fn set_invocation_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invocation_label = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
+        pub fn build(self) -> crate::model::ElicitationCodeHookInvocationSetting {
+            crate::model::ElicitationCodeHookInvocationSetting {
+                enable_code_hook_invocation: self.enable_code_hook_invocation,
+                invocation_label: self.invocation_label,
+            }
+        }
+    }
+}
+impl ElicitationCodeHookInvocationSetting {
+    /// Creates a new builder-style object to manufacture [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
+    pub fn builder() -> crate::model::elicitation_code_hook_invocation_setting::Builder {
+        crate::model::elicitation_code_hook_invocation_setting::Builder::default()
+    }
+}
+
+/// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DialogCodeHookInvocationSetting {
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    #[doc(hidden)]
+    pub enable_code_hook_invocation: std::option::Option<bool>,
+    /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
+    #[doc(hidden)]
+    pub active: std::option::Option<bool>,
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    #[doc(hidden)]
+    pub invocation_label: std::option::Option<std::string::String>,
+    /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
+    #[doc(hidden)]
+    pub post_code_hook_specification:
+        std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
+}
+impl DialogCodeHookInvocationSetting {
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    pub fn enable_code_hook_invocation(&self) -> std::option::Option<bool> {
+        self.enable_code_hook_invocation
+    }
+    /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    pub fn invocation_label(&self) -> std::option::Option<&str> {
+        self.invocation_label.as_deref()
+    }
+    /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
+    pub fn post_code_hook_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::PostDialogCodeHookInvocationSpecification> {
+        self.post_code_hook_specification.as_ref()
+    }
+}
+impl std::fmt::Debug for DialogCodeHookInvocationSetting {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DialogCodeHookInvocationSetting");
+        formatter.field(
+            "enable_code_hook_invocation",
+            &self.enable_code_hook_invocation,
+        );
+        formatter.field("active", &self.active);
+        formatter.field("invocation_label", &self.invocation_label);
+        formatter.field(
+            "post_code_hook_specification",
+            &self.post_code_hook_specification,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
+pub mod dialog_code_hook_invocation_setting {
+
+    /// A builder for [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_code_hook_invocation: std::option::Option<bool>,
+        pub(crate) active: std::option::Option<bool>,
+        pub(crate) invocation_label: std::option::Option<std::string::String>,
+        pub(crate) post_code_hook_specification:
+            std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
+    }
+    impl Builder {
+        /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+        pub fn enable_code_hook_invocation(mut self, input: bool) -> Self {
+            self.enable_code_hook_invocation = Some(input);
+            self
+        }
+        /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+        pub fn set_enable_code_hook_invocation(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_code_hook_invocation = input;
+            self
+        }
+        /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
+        /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+        pub fn invocation_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invocation_label = Some(input.into());
+            self
+        }
+        /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+        pub fn set_invocation_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invocation_label = input;
+            self
+        }
+        /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
+        pub fn post_code_hook_specification(
+            mut self,
+            input: crate::model::PostDialogCodeHookInvocationSpecification,
+        ) -> Self {
+            self.post_code_hook_specification = Some(input);
+            self
+        }
+        /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
+        pub fn set_post_code_hook_specification(
+            mut self,
+            input: std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
+        ) -> Self {
+            self.post_code_hook_specification = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
+        pub fn build(self) -> crate::model::DialogCodeHookInvocationSetting {
+            crate::model::DialogCodeHookInvocationSetting {
+                enable_code_hook_invocation: self.enable_code_hook_invocation,
+                active: self.active,
+                invocation_label: self.invocation_label,
+                post_code_hook_specification: self.post_code_hook_specification,
+            }
+        }
+    }
+}
+impl DialogCodeHookInvocationSetting {
+    /// Creates a new builder-style object to manufacture [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
+    pub fn builder() -> crate::model::dialog_code_hook_invocation_setting::Builder {
+        crate::model::dialog_code_hook_invocation_setting::Builder::default()
+    }
+}
+
+/// <p>Specifies next steps to run after the dialog code hook finishes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PostDialogCodeHookInvocationSpecification {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub success_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
+    #[doc(hidden)]
+    pub success_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
+    #[doc(hidden)]
+    pub success_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub failure_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    #[doc(hidden)]
+    pub failure_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    #[doc(hidden)]
+    pub failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub timeout_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
+    #[doc(hidden)]
+    pub timeout_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
+    #[doc(hidden)]
+    pub timeout_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+}
+impl PostDialogCodeHookInvocationSpecification {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn success_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.success_response.as_ref()
+    }
+    /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
+    pub fn success_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.success_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
+    pub fn success_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.success_conditional.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.failure_response.as_ref()
+    }
+    /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.failure_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    pub fn failure_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.failure_conditional.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn timeout_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.timeout_response.as_ref()
+    }
+    /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
+    pub fn timeout_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.timeout_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
+    pub fn timeout_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.timeout_conditional.as_ref()
+    }
+}
+impl std::fmt::Debug for PostDialogCodeHookInvocationSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PostDialogCodeHookInvocationSpecification");
+        formatter.field("success_response", &self.success_response);
+        formatter.field("success_next_step", &self.success_next_step);
+        formatter.field("success_conditional", &self.success_conditional);
+        formatter.field("failure_response", &self.failure_response);
+        formatter.field("failure_next_step", &self.failure_next_step);
+        formatter.field("failure_conditional", &self.failure_conditional);
+        formatter.field("timeout_response", &self.timeout_response);
+        formatter.field("timeout_next_step", &self.timeout_next_step);
+        formatter.field("timeout_conditional", &self.timeout_conditional);
+        formatter.finish()
+    }
+}
+/// See [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
+pub mod post_dialog_code_hook_invocation_specification {
+
+    /// A builder for [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) success_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) success_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) success_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) failure_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) failure_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) timeout_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) timeout_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) timeout_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    }
+    impl Builder {
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn success_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.success_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_success_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.success_response = input;
+            self
+        }
+        /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
+        pub fn success_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.success_next_step = Some(input);
+            self
+        }
+        /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
+        pub fn set_success_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.success_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
+        pub fn success_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.success_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
+        pub fn set_success_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.success_conditional = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.failure_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_failure_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.failure_response = input;
+            self
+        }
+        /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.failure_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn set_failure_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.failure_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn failure_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.failure_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn set_failure_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.failure_conditional = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn timeout_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.timeout_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_timeout_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.timeout_response = input;
+            self
+        }
+        /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
+        pub fn timeout_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.timeout_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
+        pub fn set_timeout_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.timeout_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
+        pub fn timeout_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.timeout_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
+        pub fn set_timeout_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.timeout_conditional = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
+        pub fn build(self) -> crate::model::PostDialogCodeHookInvocationSpecification {
+            crate::model::PostDialogCodeHookInvocationSpecification {
+                success_response: self.success_response,
+                success_next_step: self.success_next_step,
+                success_conditional: self.success_conditional,
+                failure_response: self.failure_response,
+                failure_next_step: self.failure_next_step,
+                failure_conditional: self.failure_conditional,
+                timeout_response: self.timeout_response,
+                timeout_next_step: self.timeout_next_step,
+                timeout_conditional: self.timeout_conditional,
+            }
+        }
+    }
+}
+impl PostDialogCodeHookInvocationSpecification {
+    /// Creates a new builder-style object to manufacture [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
+    pub fn builder() -> crate::model::post_dialog_code_hook_invocation_specification::Builder {
+        crate::model::post_dialog_code_hook_invocation_specification::Builder::default()
+    }
+}
+
+/// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConditionalSpecification {
+    /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
+    #[doc(hidden)]
+    pub active: std::option::Option<bool>,
+    /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
+    #[doc(hidden)]
+    pub conditional_branches: std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>,
+    /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
+    #[doc(hidden)]
+    pub default_branch: std::option::Option<crate::model::DefaultConditionalBranch>,
+}
+impl ConditionalSpecification {
+    /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
+    pub fn conditional_branches(&self) -> std::option::Option<&[crate::model::ConditionalBranch]> {
+        self.conditional_branches.as_deref()
+    }
+    /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
+    pub fn default_branch(&self) -> std::option::Option<&crate::model::DefaultConditionalBranch> {
+        self.default_branch.as_ref()
+    }
+}
+impl std::fmt::Debug for ConditionalSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConditionalSpecification");
+        formatter.field("active", &self.active);
+        formatter.field("conditional_branches", &self.conditional_branches);
+        formatter.field("default_branch", &self.default_branch);
+        formatter.finish()
+    }
+}
+/// See [`ConditionalSpecification`](crate::model::ConditionalSpecification).
+pub mod conditional_specification {
+
+    /// A builder for [`ConditionalSpecification`](crate::model::ConditionalSpecification).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active: std::option::Option<bool>,
+        pub(crate) conditional_branches:
+            std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>,
+        pub(crate) default_branch: std::option::Option<crate::model::DefaultConditionalBranch>,
+    }
+    impl Builder {
+        /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
+        /// Appends an item to `conditional_branches`.
+        ///
+        /// To override the contents of this collection use [`set_conditional_branches`](Self::set_conditional_branches).
+        ///
+        /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
+        pub fn conditional_branches(mut self, input: crate::model::ConditionalBranch) -> Self {
+            let mut v = self.conditional_branches.unwrap_or_default();
+            v.push(input);
+            self.conditional_branches = Some(v);
+            self
+        }
+        /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
+        pub fn set_conditional_branches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>,
+        ) -> Self {
+            self.conditional_branches = input;
+            self
+        }
+        /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
+        pub fn default_branch(mut self, input: crate::model::DefaultConditionalBranch) -> Self {
+            self.default_branch = Some(input);
+            self
+        }
+        /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
+        pub fn set_default_branch(
+            mut self,
+            input: std::option::Option<crate::model::DefaultConditionalBranch>,
+        ) -> Self {
+            self.default_branch = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConditionalSpecification`](crate::model::ConditionalSpecification).
+        pub fn build(self) -> crate::model::ConditionalSpecification {
+            crate::model::ConditionalSpecification {
+                active: self.active,
+                conditional_branches: self.conditional_branches,
+                default_branch: self.default_branch,
+            }
+        }
+    }
+}
+impl ConditionalSpecification {
+    /// Creates a new builder-style object to manufacture [`ConditionalSpecification`](crate::model::ConditionalSpecification).
+    pub fn builder() -> crate::model::conditional_specification::Builder {
+        crate::model::conditional_specification::Builder::default()
+    }
+}
+
+/// <p>A set of actions that Amazon Lex should run if none of the other conditions are met.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DefaultConditionalBranch {
+    /// <p>The next step in the conversation.</p>
+    #[doc(hidden)]
+    pub next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub response: std::option::Option<crate::model::ResponseSpecification>,
+}
+impl DefaultConditionalBranch {
+    /// <p>The next step in the conversation.</p>
+    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.next_step.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.response.as_ref()
+    }
+}
+impl std::fmt::Debug for DefaultConditionalBranch {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DefaultConditionalBranch");
+        formatter.field("next_step", &self.next_step);
+        formatter.field("response", &self.response);
+        formatter.finish()
+    }
+}
+/// See [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
+pub mod default_conditional_branch {
+
+    /// A builder for [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) response: std::option::Option<crate::model::ResponseSpecification>,
+    }
+    impl Builder {
+        /// <p>The next step in the conversation.</p>
+        pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.next_step = Some(input);
+            self
+        }
+        /// <p>The next step in the conversation.</p>
+        pub fn set_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.next_step = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
+        pub fn build(self) -> crate::model::DefaultConditionalBranch {
+            crate::model::DefaultConditionalBranch {
+                next_step: self.next_step,
+                response: self.response,
+            }
+        }
+    }
+}
+impl DefaultConditionalBranch {
+    /// Creates a new builder-style object to manufacture [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
+    pub fn builder() -> crate::model::default_conditional_branch::Builder {
+        crate::model::default_conditional_branch::Builder::default()
+    }
+}
+
+/// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseSpecification {
+    /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
     #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-    /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-    #[doc(hidden)]
-    pub frequency_in_seconds: std::option::Option<i32>,
-    /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-    #[doc(hidden)]
-    pub timeout_in_seconds: std::option::Option<i32>,
-    /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
+    /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
 }
-impl StillWaitingResponseSpecification {
-    /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
+impl ResponseSpecification {
+    /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
     pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
-    /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-    pub fn frequency_in_seconds(&self) -> std::option::Option<i32> {
-        self.frequency_in_seconds
-    }
-    /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
-        self.timeout_in_seconds
-    }
-    /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
+    /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
     }
 }
-impl std::fmt::Debug for StillWaitingResponseSpecification {
+impl std::fmt::Debug for ResponseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StillWaitingResponseSpecification");
+        let mut formatter = f.debug_struct("ResponseSpecification");
         formatter.field("message_groups", &self.message_groups);
-        formatter.field("frequency_in_seconds", &self.frequency_in_seconds);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
         formatter.field("allow_interrupt", &self.allow_interrupt);
         formatter.finish()
     }
 }
-/// See [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
-pub mod still_waiting_response_specification {
+/// See [`ResponseSpecification`](crate::model::ResponseSpecification).
+pub mod response_specification {
 
-    /// A builder for [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
+    /// A builder for [`ResponseSpecification`](crate::model::ResponseSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-        pub(crate) frequency_in_seconds: std::option::Option<i32>,
-        pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) allow_interrupt: std::option::Option<bool>,
     }
     impl Builder {
@@ -1341,14 +2112,14 @@ pub mod still_waiting_response_specification {
         ///
         /// To override the contents of this collection use [`set_message_groups`](Self::set_message_groups).
         ///
-        /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
+        /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
             v.push(input);
             self.message_groups = Some(v);
             self
         }
-        /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
+        /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
         pub fn set_message_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
@@ -1356,51 +2127,29 @@ pub mod still_waiting_response_specification {
             self.message_groups = input;
             self
         }
-        /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-        pub fn frequency_in_seconds(mut self, input: i32) -> Self {
-            self.frequency_in_seconds = Some(input);
-            self
-        }
-        /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-        pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.frequency_in_seconds = input;
-            self
-        }
-        /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-        pub fn timeout_in_seconds(mut self, input: i32) -> Self {
-            self.timeout_in_seconds = Some(input);
-            self
-        }
-        /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-        pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_seconds = input;
-            self
-        }
-        /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
+        /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
             self.allow_interrupt = Some(input);
             self
         }
-        /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
+        /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_interrupt = input;
             self
         }
-        /// Consumes the builder and constructs a [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
-        pub fn build(self) -> crate::model::StillWaitingResponseSpecification {
-            crate::model::StillWaitingResponseSpecification {
+        /// Consumes the builder and constructs a [`ResponseSpecification`](crate::model::ResponseSpecification).
+        pub fn build(self) -> crate::model::ResponseSpecification {
+            crate::model::ResponseSpecification {
                 message_groups: self.message_groups,
-                frequency_in_seconds: self.frequency_in_seconds,
-                timeout_in_seconds: self.timeout_in_seconds,
                 allow_interrupt: self.allow_interrupt,
             }
         }
     }
 }
-impl StillWaitingResponseSpecification {
-    /// Creates a new builder-style object to manufacture [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
-    pub fn builder() -> crate::model::still_waiting_response_specification::Builder {
-        crate::model::still_waiting_response_specification::Builder::default()
+impl ResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`ResponseSpecification`](crate::model::ResponseSpecification).
+    pub fn builder() -> crate::model::response_specification::Builder {
+        crate::model::response_specification::Builder::default()
     }
 }
 
@@ -1974,42 +2723,1004 @@ impl PlainTextMessage {
     }
 }
 
-/// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+/// <p>The current state of the conversation with the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResponseSpecification {
-    /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
+pub struct DialogState {
+    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    #[doc(hidden)]
+    pub dialog_action: std::option::Option<crate::model::DialogAction>,
+    /// <p>Override settings to configure the intent state.</p>
+    #[doc(hidden)]
+    pub intent: std::option::Option<crate::model::IntentOverride>,
+    /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+    #[doc(hidden)]
+    pub session_attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DialogState {
+    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    pub fn dialog_action(&self) -> std::option::Option<&crate::model::DialogAction> {
+        self.dialog_action.as_ref()
+    }
+    /// <p>Override settings to configure the intent state.</p>
+    pub fn intent(&self) -> std::option::Option<&crate::model::IntentOverride> {
+        self.intent.as_ref()
+    }
+    /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+    pub fn session_attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.session_attributes.as_ref()
+    }
+}
+impl std::fmt::Debug for DialogState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DialogState");
+        formatter.field("dialog_action", &self.dialog_action);
+        formatter.field("intent", &self.intent);
+        formatter.field("session_attributes", &self.session_attributes);
+        formatter.finish()
+    }
+}
+/// See [`DialogState`](crate::model::DialogState).
+pub mod dialog_state {
+
+    /// A builder for [`DialogState`](crate::model::DialogState).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dialog_action: std::option::Option<crate::model::DialogAction>,
+        pub(crate) intent: std::option::Option<crate::model::IntentOverride>,
+        pub(crate) session_attributes: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+        pub fn dialog_action(mut self, input: crate::model::DialogAction) -> Self {
+            self.dialog_action = Some(input);
+            self
+        }
+        /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+        pub fn set_dialog_action(
+            mut self,
+            input: std::option::Option<crate::model::DialogAction>,
+        ) -> Self {
+            self.dialog_action = input;
+            self
+        }
+        /// <p>Override settings to configure the intent state.</p>
+        pub fn intent(mut self, input: crate::model::IntentOverride) -> Self {
+            self.intent = Some(input);
+            self
+        }
+        /// <p>Override settings to configure the intent state.</p>
+        pub fn set_intent(
+            mut self,
+            input: std::option::Option<crate::model::IntentOverride>,
+        ) -> Self {
+            self.intent = input;
+            self
+        }
+        /// Adds a key-value pair to `session_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
+        ///
+        /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+        pub fn session_attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.session_attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.session_attributes = Some(hash_map);
+            self
+        }
+        /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
+        pub fn set_session_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.session_attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DialogState`](crate::model::DialogState).
+        pub fn build(self) -> crate::model::DialogState {
+            crate::model::DialogState {
+                dialog_action: self.dialog_action,
+                intent: self.intent,
+                session_attributes: self.session_attributes,
+            }
+        }
+    }
+}
+impl DialogState {
+    /// Creates a new builder-style object to manufacture [`DialogState`](crate::model::DialogState).
+    pub fn builder() -> crate::model::dialog_state::Builder {
+        crate::model::dialog_state::Builder::default()
+    }
+}
+
+/// <p>Override settings to configure the intent state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IntentOverride {
+    /// <p>The name of the intent. Only required when you're switching intents.</p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
+    #[doc(hidden)]
+    pub slots: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
+    >,
+}
+impl IntentOverride {
+    /// <p>The name of the intent. Only required when you're switching intents.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
+    pub fn slots(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
+    > {
+        self.slots.as_ref()
+    }
+}
+impl std::fmt::Debug for IntentOverride {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IntentOverride");
+        formatter.field("name", &self.name);
+        formatter.field("slots", &self.slots);
+        formatter.finish()
+    }
+}
+/// See [`IntentOverride`](crate::model::IntentOverride).
+pub mod intent_override {
+
+    /// A builder for [`IntentOverride`](crate::model::IntentOverride).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) slots: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the intent. Only required when you're switching intents.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the intent. Only required when you're switching intents.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Adds a key-value pair to `slots`.
+        ///
+        /// To override the contents of this collection use [`set_slots`](Self::set_slots).
+        ///
+        /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
+        pub fn slots(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::SlotValueOverride,
+        ) -> Self {
+            let mut hash_map = self.slots.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.slots = Some(hash_map);
+            self
+        }
+        /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
+        pub fn set_slots(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
+            >,
+        ) -> Self {
+            self.slots = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IntentOverride`](crate::model::IntentOverride).
+        pub fn build(self) -> crate::model::IntentOverride {
+            crate::model::IntentOverride {
+                name: self.name,
+                slots: self.slots,
+            }
+        }
+    }
+}
+impl IntentOverride {
+    /// Creates a new builder-style object to manufacture [`IntentOverride`](crate::model::IntentOverride).
+    pub fn builder() -> crate::model::intent_override::Builder {
+        crate::model::intent_override::Builder::default()
+    }
+}
+
+/// <p>The slot values that Amazon Lex uses when it sets slot values in a dialog step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SlotValueOverride {
+    /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+    #[doc(hidden)]
+    pub shape: std::option::Option<crate::model::SlotShape>,
+    /// <p>The current value of the slot.</p>
+    #[doc(hidden)]
+    pub value: std::option::Option<crate::model::SlotValue>,
+    /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
+    #[doc(hidden)]
+    pub values: std::option::Option<std::vec::Vec<crate::model::SlotValueOverride>>,
+}
+impl SlotValueOverride {
+    /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+    pub fn shape(&self) -> std::option::Option<&crate::model::SlotShape> {
+        self.shape.as_ref()
+    }
+    /// <p>The current value of the slot.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::SlotValue> {
+        self.value.as_ref()
+    }
+    /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::SlotValueOverride]> {
+        self.values.as_deref()
+    }
+}
+impl std::fmt::Debug for SlotValueOverride {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SlotValueOverride");
+        formatter.field("shape", &self.shape);
+        formatter.field("value", &self.value);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`SlotValueOverride`](crate::model::SlotValueOverride).
+pub mod slot_value_override {
+
+    /// A builder for [`SlotValueOverride`](crate::model::SlotValueOverride).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) shape: std::option::Option<crate::model::SlotShape>,
+        pub(crate) value: std::option::Option<crate::model::SlotValue>,
+        pub(crate) values: std::option::Option<std::vec::Vec<crate::model::SlotValueOverride>>,
+    }
+    impl Builder {
+        /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+        pub fn shape(mut self, input: crate::model::SlotShape) -> Self {
+            self.shape = Some(input);
+            self
+        }
+        /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+        pub fn set_shape(mut self, input: std::option::Option<crate::model::SlotShape>) -> Self {
+            self.shape = input;
+            self
+        }
+        /// <p>The current value of the slot.</p>
+        pub fn value(mut self, input: crate::model::SlotValue) -> Self {
+            self.value = Some(input);
+            self
+        }
+        /// <p>The current value of the slot.</p>
+        pub fn set_value(mut self, input: std::option::Option<crate::model::SlotValue>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
+        pub fn values(mut self, input: crate::model::SlotValueOverride) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input);
+            self.values = Some(v);
+            self
+        }
+        /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SlotValueOverride>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SlotValueOverride`](crate::model::SlotValueOverride).
+        pub fn build(self) -> crate::model::SlotValueOverride {
+            crate::model::SlotValueOverride {
+                shape: self.shape,
+                value: self.value,
+                values: self.values,
+            }
+        }
+    }
+}
+impl SlotValueOverride {
+    /// Creates a new builder-style object to manufacture [`SlotValueOverride`](crate::model::SlotValueOverride).
+    pub fn builder() -> crate::model::slot_value_override::Builder {
+        crate::model::slot_value_override::Builder::default()
+    }
+}
+
+/// <p>The value to set in a slot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SlotValue {
+    /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
+    #[doc(hidden)]
+    pub interpreted_value: std::option::Option<std::string::String>,
+}
+impl SlotValue {
+    /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
+    pub fn interpreted_value(&self) -> std::option::Option<&str> {
+        self.interpreted_value.as_deref()
+    }
+}
+impl std::fmt::Debug for SlotValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SlotValue");
+        formatter.field("interpreted_value", &self.interpreted_value);
+        formatter.finish()
+    }
+}
+/// See [`SlotValue`](crate::model::SlotValue).
+pub mod slot_value {
+
+    /// A builder for [`SlotValue`](crate::model::SlotValue).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interpreted_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
+        pub fn interpreted_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.interpreted_value = Some(input.into());
+            self
+        }
+        /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
+        pub fn set_interpreted_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.interpreted_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SlotValue`](crate::model::SlotValue).
+        pub fn build(self) -> crate::model::SlotValue {
+            crate::model::SlotValue {
+                interpreted_value: self.interpreted_value,
+            }
+        }
+    }
+}
+impl SlotValue {
+    /// Creates a new builder-style object to manufacture [`SlotValue`](crate::model::SlotValue).
+    pub fn builder() -> crate::model::slot_value::Builder {
+        crate::model::slot_value::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SlotShape {
+    #[allow(missing_docs)] // documentation missing in model
+    List,
+    #[allow(missing_docs)] // documentation missing in model
+    Scalar,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SlotShape {
+    fn from(s: &str) -> Self {
+        match s {
+            "List" => SlotShape::List,
+            "Scalar" => SlotShape::Scalar,
+            other => SlotShape::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SlotShape {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SlotShape::from(s))
+    }
+}
+impl SlotShape {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SlotShape::List => "List",
+            SlotShape::Scalar => "Scalar",
+            SlotShape::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["List", "Scalar"]
+    }
+}
+impl AsRef<str> for SlotShape {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DialogAction {
+    /// <p>The action that the bot should execute. </p>
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::DialogActionType>,
+    /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
+    #[doc(hidden)]
+    pub slot_to_elicit: std::option::Option<std::string::String>,
+    /// <p>When true the next message for the intent is not used.</p>
+    #[doc(hidden)]
+    pub suppress_next_message: std::option::Option<bool>,
+}
+impl DialogAction {
+    /// <p>The action that the bot should execute. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DialogActionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
+    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+        self.slot_to_elicit.as_deref()
+    }
+    /// <p>When true the next message for the intent is not used.</p>
+    pub fn suppress_next_message(&self) -> std::option::Option<bool> {
+        self.suppress_next_message
+    }
+}
+impl std::fmt::Debug for DialogAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DialogAction");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("slot_to_elicit", &self.slot_to_elicit);
+        formatter.field("suppress_next_message", &self.suppress_next_message);
+        formatter.finish()
+    }
+}
+/// See [`DialogAction`](crate::model::DialogAction).
+pub mod dialog_action {
+
+    /// A builder for [`DialogAction`](crate::model::DialogAction).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::DialogActionType>,
+        pub(crate) slot_to_elicit: std::option::Option<std::string::String>,
+        pub(crate) suppress_next_message: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The action that the bot should execute. </p>
+        pub fn r#type(mut self, input: crate::model::DialogActionType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The action that the bot should execute. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::DialogActionType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
+        pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.slot_to_elicit = Some(input.into());
+            self
+        }
+        /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
+        pub fn set_slot_to_elicit(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.slot_to_elicit = input;
+            self
+        }
+        /// <p>When true the next message for the intent is not used.</p>
+        pub fn suppress_next_message(mut self, input: bool) -> Self {
+            self.suppress_next_message = Some(input);
+            self
+        }
+        /// <p>When true the next message for the intent is not used.</p>
+        pub fn set_suppress_next_message(mut self, input: std::option::Option<bool>) -> Self {
+            self.suppress_next_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction).
+        pub fn build(self) -> crate::model::DialogAction {
+            crate::model::DialogAction {
+                r#type: self.r#type,
+                slot_to_elicit: self.slot_to_elicit,
+                suppress_next_message: self.suppress_next_message,
+            }
+        }
+    }
+}
+impl DialogAction {
+    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
+    pub fn builder() -> crate::model::dialog_action::Builder {
+        crate::model::dialog_action::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DialogActionType {
+    #[allow(missing_docs)] // documentation missing in model
+    CloseIntent,
+    #[allow(missing_docs)] // documentation missing in model
+    ConfirmIntent,
+    #[allow(missing_docs)] // documentation missing in model
+    ElicitIntent,
+    #[allow(missing_docs)] // documentation missing in model
+    ElicitSlot,
+    #[allow(missing_docs)] // documentation missing in model
+    EndConversation,
+    #[allow(missing_docs)] // documentation missing in model
+    EvaluateConditional,
+    #[allow(missing_docs)] // documentation missing in model
+    FulfillIntent,
+    #[allow(missing_docs)] // documentation missing in model
+    InvokeDialogCodeHook,
+    #[allow(missing_docs)] // documentation missing in model
+    StartIntent,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DialogActionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CloseIntent" => DialogActionType::CloseIntent,
+            "ConfirmIntent" => DialogActionType::ConfirmIntent,
+            "ElicitIntent" => DialogActionType::ElicitIntent,
+            "ElicitSlot" => DialogActionType::ElicitSlot,
+            "EndConversation" => DialogActionType::EndConversation,
+            "EvaluateConditional" => DialogActionType::EvaluateConditional,
+            "FulfillIntent" => DialogActionType::FulfillIntent,
+            "InvokeDialogCodeHook" => DialogActionType::InvokeDialogCodeHook,
+            "StartIntent" => DialogActionType::StartIntent,
+            other => DialogActionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DialogActionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DialogActionType::from(s))
+    }
+}
+impl DialogActionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DialogActionType::CloseIntent => "CloseIntent",
+            DialogActionType::ConfirmIntent => "ConfirmIntent",
+            DialogActionType::ElicitIntent => "ElicitIntent",
+            DialogActionType::ElicitSlot => "ElicitSlot",
+            DialogActionType::EndConversation => "EndConversation",
+            DialogActionType::EvaluateConditional => "EvaluateConditional",
+            DialogActionType::FulfillIntent => "FulfillIntent",
+            DialogActionType::InvokeDialogCodeHook => "InvokeDialogCodeHook",
+            DialogActionType::StartIntent => "StartIntent",
+            DialogActionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CloseIntent",
+            "ConfirmIntent",
+            "ElicitIntent",
+            "ElicitSlot",
+            "EndConversation",
+            "EvaluateConditional",
+            "FulfillIntent",
+            "InvokeDialogCodeHook",
+            "StartIntent",
+        ]
+    }
+}
+impl AsRef<str> for DialogActionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A set of actions that Amazon Lex should run if the condition is matched.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConditionalBranch {
+    /// <p>The name of the branch. </p>
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
+    #[doc(hidden)]
+    pub condition: std::option::Option<crate::model::Condition>,
+    /// <p>The next step in the conversation.</p>
+    #[doc(hidden)]
+    pub next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub response: std::option::Option<crate::model::ResponseSpecification>,
+}
+impl ConditionalBranch {
+    /// <p>The name of the branch. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+    /// <p>The next step in the conversation.</p>
+    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.next_step.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.response.as_ref()
+    }
+}
+impl std::fmt::Debug for ConditionalBranch {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConditionalBranch");
+        formatter.field("name", &self.name);
+        formatter.field("condition", &self.condition);
+        formatter.field("next_step", &self.next_step);
+        formatter.field("response", &self.response);
+        formatter.finish()
+    }
+}
+/// See [`ConditionalBranch`](crate::model::ConditionalBranch).
+pub mod conditional_branch {
+
+    /// A builder for [`ConditionalBranch`](crate::model::ConditionalBranch).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) condition: std::option::Option<crate::model::Condition>,
+        pub(crate) next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) response: std::option::Option<crate::model::ResponseSpecification>,
+    }
+    impl Builder {
+        /// <p>The name of the branch. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the branch. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
+        pub fn condition(mut self, input: crate::model::Condition) -> Self {
+            self.condition = Some(input);
+            self
+        }
+        /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<crate::model::Condition>,
+        ) -> Self {
+            self.condition = input;
+            self
+        }
+        /// <p>The next step in the conversation.</p>
+        pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.next_step = Some(input);
+            self
+        }
+        /// <p>The next step in the conversation.</p>
+        pub fn set_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.next_step = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConditionalBranch`](crate::model::ConditionalBranch).
+        pub fn build(self) -> crate::model::ConditionalBranch {
+            crate::model::ConditionalBranch {
+                name: self.name,
+                condition: self.condition,
+                next_step: self.next_step,
+                response: self.response,
+            }
+        }
+    }
+}
+impl ConditionalBranch {
+    /// Creates a new builder-style object to manufacture [`ConditionalBranch`](crate::model::ConditionalBranch).
+    pub fn builder() -> crate::model::conditional_branch::Builder {
+        crate::model::conditional_branch::Builder::default()
+    }
+}
+
+/// <p>Provides an expression that evaluates to true or false. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Condition {
+    /// <p>The expression string that is evaluated. </p>
+    #[doc(hidden)]
+    pub expression_string: std::option::Option<std::string::String>,
+}
+impl Condition {
+    /// <p>The expression string that is evaluated. </p>
+    pub fn expression_string(&self) -> std::option::Option<&str> {
+        self.expression_string.as_deref()
+    }
+}
+impl std::fmt::Debug for Condition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Condition");
+        formatter.field("expression_string", &self.expression_string);
+        formatter.finish()
+    }
+}
+/// See [`Condition`](crate::model::Condition).
+pub mod condition {
+
+    /// A builder for [`Condition`](crate::model::Condition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expression_string: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The expression string that is evaluated. </p>
+        pub fn expression_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression_string = Some(input.into());
+            self
+        }
+        /// <p>The expression string that is evaluated. </p>
+        pub fn set_expression_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expression_string = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Condition`](crate::model::Condition).
+        pub fn build(self) -> crate::model::Condition {
+            crate::model::Condition {
+                expression_string: self.expression_string,
+            }
+        }
+    }
+}
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
+/// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WaitAndContinueSpecification {
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    #[doc(hidden)]
+    pub waiting_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    #[doc(hidden)]
+    pub continue_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+    #[doc(hidden)]
+    pub still_waiting_response:
+        std::option::Option<crate::model::StillWaitingResponseSpecification>,
+    /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+    #[doc(hidden)]
+    pub active: std::option::Option<bool>,
+}
+impl WaitAndContinueSpecification {
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    pub fn waiting_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.waiting_response.as_ref()
+    }
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    pub fn continue_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.continue_response.as_ref()
+    }
+    /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+    pub fn still_waiting_response(
+        &self,
+    ) -> std::option::Option<&crate::model::StillWaitingResponseSpecification> {
+        self.still_waiting_response.as_ref()
+    }
+    /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+}
+impl std::fmt::Debug for WaitAndContinueSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WaitAndContinueSpecification");
+        formatter.field("waiting_response", &self.waiting_response);
+        formatter.field("continue_response", &self.continue_response);
+        formatter.field("still_waiting_response", &self.still_waiting_response);
+        formatter.field("active", &self.active);
+        formatter.finish()
+    }
+}
+/// See [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
+pub mod wait_and_continue_specification {
+
+    /// A builder for [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) waiting_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) continue_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) still_waiting_response:
+            std::option::Option<crate::model::StillWaitingResponseSpecification>,
+        pub(crate) active: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+        pub fn waiting_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.waiting_response = Some(input);
+            self
+        }
+        /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+        pub fn set_waiting_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.waiting_response = input;
+            self
+        }
+        /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+        pub fn continue_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.continue_response = Some(input);
+            self
+        }
+        /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+        pub fn set_continue_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.continue_response = input;
+            self
+        }
+        /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+        pub fn still_waiting_response(
+            mut self,
+            input: crate::model::StillWaitingResponseSpecification,
+        ) -> Self {
+            self.still_waiting_response = Some(input);
+            self
+        }
+        /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+        pub fn set_still_waiting_response(
+            mut self,
+            input: std::option::Option<crate::model::StillWaitingResponseSpecification>,
+        ) -> Self {
+            self.still_waiting_response = input;
+            self
+        }
+        /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
+        pub fn build(self) -> crate::model::WaitAndContinueSpecification {
+            crate::model::WaitAndContinueSpecification {
+                waiting_response: self.waiting_response,
+                continue_response: self.continue_response,
+                still_waiting_response: self.still_waiting_response,
+                active: self.active,
+            }
+        }
+    }
+}
+impl WaitAndContinueSpecification {
+    /// Creates a new builder-style object to manufacture [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
+    pub fn builder() -> crate::model::wait_and_continue_specification::Builder {
+        crate::model::wait_and_continue_specification::Builder::default()
+    }
+}
+
+/// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StillWaitingResponseSpecification {
+    /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-    /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
+    /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
+    #[doc(hidden)]
+    pub frequency_in_seconds: std::option::Option<i32>,
+    /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
+    #[doc(hidden)]
+    pub timeout_in_seconds: std::option::Option<i32>,
+    /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
 }
-impl ResponseSpecification {
-    /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
+impl StillWaitingResponseSpecification {
+    /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
-    /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
+    /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
+    pub fn frequency_in_seconds(&self) -> std::option::Option<i32> {
+        self.frequency_in_seconds
+    }
+    /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
     }
 }
-impl std::fmt::Debug for ResponseSpecification {
+impl std::fmt::Debug for StillWaitingResponseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseSpecification");
+        let mut formatter = f.debug_struct("StillWaitingResponseSpecification");
         formatter.field("message_groups", &self.message_groups);
+        formatter.field("frequency_in_seconds", &self.frequency_in_seconds);
+        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
         formatter.field("allow_interrupt", &self.allow_interrupt);
         formatter.finish()
     }
 }
-/// See [`ResponseSpecification`](crate::model::ResponseSpecification).
-pub mod response_specification {
+/// See [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
+pub mod still_waiting_response_specification {
 
-    /// A builder for [`ResponseSpecification`](crate::model::ResponseSpecification).
+    /// A builder for [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+        pub(crate) frequency_in_seconds: std::option::Option<i32>,
+        pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) allow_interrupt: std::option::Option<bool>,
     }
     impl Builder {
@@ -2017,14 +3728,14 @@ pub mod response_specification {
         ///
         /// To override the contents of this collection use [`set_message_groups`](Self::set_message_groups).
         ///
-        /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
+        /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
             v.push(input);
             self.message_groups = Some(v);
             self
         }
-        /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
+        /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
         pub fn set_message_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
@@ -2032,29 +3743,51 @@ pub mod response_specification {
             self.message_groups = input;
             self
         }
-        /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
+        /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
+        pub fn frequency_in_seconds(mut self, input: i32) -> Self {
+            self.frequency_in_seconds = Some(input);
+            self
+        }
+        /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
+        pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.frequency_in_seconds = input;
+            self
+        }
+        /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
+        pub fn timeout_in_seconds(mut self, input: i32) -> Self {
+            self.timeout_in_seconds = Some(input);
+            self
+        }
+        /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
+        pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_seconds = input;
+            self
+        }
+        /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
             self.allow_interrupt = Some(input);
             self
         }
-        /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
+        /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_interrupt = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponseSpecification`](crate::model::ResponseSpecification).
-        pub fn build(self) -> crate::model::ResponseSpecification {
-            crate::model::ResponseSpecification {
+        /// Consumes the builder and constructs a [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
+        pub fn build(self) -> crate::model::StillWaitingResponseSpecification {
+            crate::model::StillWaitingResponseSpecification {
                 message_groups: self.message_groups,
+                frequency_in_seconds: self.frequency_in_seconds,
+                timeout_in_seconds: self.timeout_in_seconds,
                 allow_interrupt: self.allow_interrupt,
             }
         }
     }
 }
-impl ResponseSpecification {
-    /// Creates a new builder-style object to manufacture [`ResponseSpecification`](crate::model::ResponseSpecification).
-    pub fn builder() -> crate::model::response_specification::Builder {
-        crate::model::response_specification::Builder::default()
+impl StillWaitingResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
+    pub fn builder() -> crate::model::still_waiting_response_specification::Builder {
+        crate::model::still_waiting_response_specification::Builder::default()
     }
 }
 
@@ -2482,6 +4215,133 @@ impl SlotDefaultValue {
     }
 }
 
+/// <p>Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InitialResponseSetting {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub initial_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>The next step in the conversation.</p>
+    #[doc(hidden)]
+    pub next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+    #[doc(hidden)]
+    pub conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    #[doc(hidden)]
+    pub code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+}
+impl InitialResponseSetting {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn initial_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.initial_response.as_ref()
+    }
+    /// <p>The next step in the conversation.</p>
+    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.next_step.as_ref()
+    }
+    /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+    pub fn conditional(&self) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.conditional.as_ref()
+    }
+    /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
+        self.code_hook.as_ref()
+    }
+}
+impl std::fmt::Debug for InitialResponseSetting {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InitialResponseSetting");
+        formatter.field("initial_response", &self.initial_response);
+        formatter.field("next_step", &self.next_step);
+        formatter.field("conditional", &self.conditional);
+        formatter.field("code_hook", &self.code_hook);
+        formatter.finish()
+    }
+}
+/// See [`InitialResponseSetting`](crate::model::InitialResponseSetting).
+pub mod initial_response_setting {
+
+    /// A builder for [`InitialResponseSetting`](crate::model::InitialResponseSetting).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+    }
+    impl Builder {
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn initial_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.initial_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_initial_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.initial_response = input;
+            self
+        }
+        /// <p>The next step in the conversation.</p>
+        pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.next_step = Some(input);
+            self
+        }
+        /// <p>The next step in the conversation.</p>
+        pub fn set_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.next_step = input;
+            self
+        }
+        /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+        pub fn conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
+            self.conditional = Some(input);
+            self
+        }
+        /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+        pub fn set_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.conditional = input;
+            self
+        }
+        /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+        pub fn code_hook(mut self, input: crate::model::DialogCodeHookInvocationSetting) -> Self {
+            self.code_hook = Some(input);
+            self
+        }
+        /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+        pub fn set_code_hook(
+            mut self,
+            input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+        ) -> Self {
+            self.code_hook = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InitialResponseSetting`](crate::model::InitialResponseSetting).
+        pub fn build(self) -> crate::model::InitialResponseSetting {
+            crate::model::InitialResponseSetting {
+                initial_response: self.initial_response,
+                next_step: self.next_step,
+                conditional: self.conditional,
+                code_hook: self.code_hook,
+            }
+        }
+    }
+}
+impl InitialResponseSetting {
+    /// Creates a new builder-style object to manufacture [`InitialResponseSetting`](crate::model::InitialResponseSetting).
+    pub fn builder() -> crate::model::initial_response_setting::Builder {
+        crate::model::initial_response_setting::Builder::default()
+    }
+}
+
 /// <p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2741,6 +4601,12 @@ pub struct IntentClosingSetting {
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
     #[doc(hidden)]
     pub active: std::option::Option<bool>,
+    /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
+    #[doc(hidden)]
+    pub next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
+    #[doc(hidden)]
+    pub conditional: std::option::Option<crate::model::ConditionalSpecification>,
 }
 impl IntentClosingSetting {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
@@ -2751,12 +4617,22 @@ impl IntentClosingSetting {
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
     }
+    /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
+    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.next_step.as_ref()
+    }
+    /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
+    pub fn conditional(&self) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.conditional.as_ref()
+    }
 }
 impl std::fmt::Debug for IntentClosingSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntentClosingSetting");
         formatter.field("closing_response", &self.closing_response);
         formatter.field("active", &self.active);
+        formatter.field("next_step", &self.next_step);
+        formatter.field("conditional", &self.conditional);
         formatter.finish()
     }
 }
@@ -2768,6 +4644,8 @@ pub mod intent_closing_setting {
     pub struct Builder {
         pub(crate) closing_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) active: std::option::Option<bool>,
+        pub(crate) next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) conditional: std::option::Option<crate::model::ConditionalSpecification>,
     }
     impl Builder {
         /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
@@ -2793,11 +4671,39 @@ pub mod intent_closing_setting {
             self.active = input;
             self
         }
+        /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
+        pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
+        pub fn set_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
+        pub fn conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
+            self.conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
+        pub fn set_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.conditional = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IntentClosingSetting`](crate::model::IntentClosingSetting).
         pub fn build(self) -> crate::model::IntentClosingSetting {
             crate::model::IntentClosingSetting {
                 closing_response: self.closing_response,
                 active: self.active,
+                next_step: self.next_step,
+                conditional: self.conditional,
             }
         }
     }
@@ -2823,6 +4729,37 @@ pub struct IntentConfirmationSetting {
     /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
     #[doc(hidden)]
     pub active: std::option::Option<bool>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub confirmation_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
+    #[doc(hidden)]
+    pub confirmation_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
+    #[doc(hidden)]
+    pub confirmation_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
+    #[doc(hidden)]
+    pub declination_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
+    #[doc(hidden)]
+    pub declination_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    #[doc(hidden)]
+    pub failure_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>The next step to take in the conversation if the confirmation step fails.</p>
+    #[doc(hidden)]
+    pub failure_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+    #[doc(hidden)]
+    pub failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    #[doc(hidden)]
+    pub code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
+    #[doc(hidden)]
+    pub elicitation_code_hook:
+        std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
 }
 impl IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
@@ -2840,6 +4777,56 @@ impl IntentConfirmationSetting {
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
     }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn confirmation_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.confirmation_response.as_ref()
+    }
+    /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
+    pub fn confirmation_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.confirmation_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
+    pub fn confirmation_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.confirmation_conditional.as_ref()
+    }
+    /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
+    pub fn declination_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.declination_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
+    pub fn declination_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.declination_conditional.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.failure_response.as_ref()
+    }
+    /// <p>The next step to take in the conversation if the confirmation step fails.</p>
+    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.failure_next_step.as_ref()
+    }
+    /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+    pub fn failure_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.failure_conditional.as_ref()
+    }
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+    pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
+        self.code_hook.as_ref()
+    }
+    /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
+    pub fn elicitation_code_hook(
+        &self,
+    ) -> std::option::Option<&crate::model::ElicitationCodeHookInvocationSetting> {
+        self.elicitation_code_hook.as_ref()
+    }
 }
 impl std::fmt::Debug for IntentConfirmationSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2847,6 +4834,16 @@ impl std::fmt::Debug for IntentConfirmationSetting {
         formatter.field("prompt_specification", &self.prompt_specification);
         formatter.field("declination_response", &self.declination_response);
         formatter.field("active", &self.active);
+        formatter.field("confirmation_response", &self.confirmation_response);
+        formatter.field("confirmation_next_step", &self.confirmation_next_step);
+        formatter.field("confirmation_conditional", &self.confirmation_conditional);
+        formatter.field("declination_next_step", &self.declination_next_step);
+        formatter.field("declination_conditional", &self.declination_conditional);
+        formatter.field("failure_response", &self.failure_response);
+        formatter.field("failure_next_step", &self.failure_next_step);
+        formatter.field("failure_conditional", &self.failure_conditional);
+        formatter.field("code_hook", &self.code_hook);
+        formatter.field("elicitation_code_hook", &self.elicitation_code_hook);
         formatter.finish()
     }
 }
@@ -2859,6 +4856,19 @@ pub mod intent_confirmation_setting {
         pub(crate) prompt_specification: std::option::Option<crate::model::PromptSpecification>,
         pub(crate) declination_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) active: std::option::Option<bool>,
+        pub(crate) confirmation_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) confirmation_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) confirmation_conditional:
+            std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) declination_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) declination_conditional:
+            std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) failure_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) failure_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+        pub(crate) elicitation_code_hook:
+            std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
     }
     impl Builder {
         /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
@@ -2899,12 +4909,164 @@ pub mod intent_confirmation_setting {
             self.active = input;
             self
         }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn confirmation_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.confirmation_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_confirmation_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.confirmation_response = input;
+            self
+        }
+        /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
+        pub fn confirmation_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.confirmation_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
+        pub fn set_confirmation_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.confirmation_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
+        pub fn confirmation_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.confirmation_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
+        pub fn set_confirmation_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.confirmation_conditional = input;
+            self
+        }
+        /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
+        pub fn declination_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.declination_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
+        pub fn set_declination_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.declination_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
+        pub fn declination_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.declination_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
+        pub fn set_declination_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.declination_conditional = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.failure_response = Some(input);
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+        pub fn set_failure_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.failure_response = input;
+            self
+        }
+        /// <p>The next step to take in the conversation if the confirmation step fails.</p>
+        pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.failure_next_step = Some(input);
+            self
+        }
+        /// <p>The next step to take in the conversation if the confirmation step fails.</p>
+        pub fn set_failure_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.failure_next_step = input;
+            self
+        }
+        /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+        pub fn failure_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.failure_conditional = Some(input);
+            self
+        }
+        /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+        pub fn set_failure_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.failure_conditional = input;
+            self
+        }
+        /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+        pub fn code_hook(mut self, input: crate::model::DialogCodeHookInvocationSetting) -> Self {
+            self.code_hook = Some(input);
+            self
+        }
+        /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
+        pub fn set_code_hook(
+            mut self,
+            input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
+        ) -> Self {
+            self.code_hook = input;
+            self
+        }
+        /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
+        pub fn elicitation_code_hook(
+            mut self,
+            input: crate::model::ElicitationCodeHookInvocationSetting,
+        ) -> Self {
+            self.elicitation_code_hook = Some(input);
+            self
+        }
+        /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
+        pub fn set_elicitation_code_hook(
+            mut self,
+            input: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
+        ) -> Self {
+            self.elicitation_code_hook = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
         pub fn build(self) -> crate::model::IntentConfirmationSetting {
             crate::model::IntentConfirmationSetting {
                 prompt_specification: self.prompt_specification,
                 declination_response: self.declination_response,
                 active: self.active,
+                confirmation_response: self.confirmation_response,
+                confirmation_next_step: self.confirmation_next_step,
+                confirmation_conditional: self.confirmation_conditional,
+                declination_next_step: self.declination_next_step,
+                declination_conditional: self.declination_conditional,
+                failure_response: self.failure_response,
+                failure_next_step: self.failure_next_step,
+                failure_conditional: self.failure_conditional,
+                code_hook: self.code_hook,
+                elicitation_code_hook: self.elicitation_code_hook,
             }
         }
     }
@@ -3006,6 +5168,9 @@ pub struct FulfillmentCodeHookSettings {
     #[doc(hidden)]
     pub fulfillment_updates_specification:
         std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
+    /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
+    #[doc(hidden)]
+    pub active: std::option::Option<bool>,
 }
 impl FulfillmentCodeHookSettings {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
@@ -3024,6 +5189,10 @@ impl FulfillmentCodeHookSettings {
     ) -> std::option::Option<&crate::model::FulfillmentUpdatesSpecification> {
         self.fulfillment_updates_specification.as_ref()
     }
+    /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
 }
 impl std::fmt::Debug for FulfillmentCodeHookSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3037,6 +5206,7 @@ impl std::fmt::Debug for FulfillmentCodeHookSettings {
             "fulfillment_updates_specification",
             &self.fulfillment_updates_specification,
         );
+        formatter.field("active", &self.active);
         formatter.finish()
     }
 }
@@ -3051,6 +5221,7 @@ pub mod fulfillment_code_hook_settings {
             std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
         pub(crate) fulfillment_updates_specification:
             std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
+        pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
@@ -3095,12 +5266,23 @@ pub mod fulfillment_code_hook_settings {
             self.fulfillment_updates_specification = input;
             self
         }
+        /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
         pub fn build(self) -> crate::model::FulfillmentCodeHookSettings {
             crate::model::FulfillmentCodeHookSettings {
                 enabled: self.enabled.unwrap_or_default(),
                 post_fulfillment_status_specification: self.post_fulfillment_status_specification,
                 fulfillment_updates_specification: self.fulfillment_updates_specification,
+                active: self.active,
             }
         }
     }
@@ -3470,6 +5652,24 @@ pub struct PostFulfillmentStatusSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
     pub timeout_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
+    #[doc(hidden)]
+    pub success_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
+    #[doc(hidden)]
+    pub success_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    #[doc(hidden)]
+    pub failure_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    #[doc(hidden)]
+    pub failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+    /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
+    #[doc(hidden)]
+    pub timeout_next_step: std::option::Option<crate::model::DialogState>,
+    /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
+    #[doc(hidden)]
+    pub timeout_conditional: std::option::Option<crate::model::ConditionalSpecification>,
 }
 impl PostFulfillmentStatusSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -3484,6 +5684,36 @@ impl PostFulfillmentStatusSpecification {
     pub fn timeout_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
         self.timeout_response.as_ref()
     }
+    /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
+    pub fn success_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.success_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
+    pub fn success_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.success_conditional.as_ref()
+    }
+    /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.failure_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+    pub fn failure_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.failure_conditional.as_ref()
+    }
+    /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
+    pub fn timeout_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+        self.timeout_next_step.as_ref()
+    }
+    /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
+    pub fn timeout_conditional(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+        self.timeout_conditional.as_ref()
+    }
 }
 impl std::fmt::Debug for PostFulfillmentStatusSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3491,6 +5721,12 @@ impl std::fmt::Debug for PostFulfillmentStatusSpecification {
         formatter.field("success_response", &self.success_response);
         formatter.field("failure_response", &self.failure_response);
         formatter.field("timeout_response", &self.timeout_response);
+        formatter.field("success_next_step", &self.success_next_step);
+        formatter.field("success_conditional", &self.success_conditional);
+        formatter.field("failure_next_step", &self.failure_next_step);
+        formatter.field("failure_conditional", &self.failure_conditional);
+        formatter.field("timeout_next_step", &self.timeout_next_step);
+        formatter.field("timeout_conditional", &self.timeout_conditional);
         formatter.finish()
     }
 }
@@ -3503,6 +5739,12 @@ pub mod post_fulfillment_status_specification {
         pub(crate) success_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) failure_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) timeout_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) success_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) success_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) failure_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) timeout_next_step: std::option::Option<crate::model::DialogState>,
+        pub(crate) timeout_conditional: std::option::Option<crate::model::ConditionalSpecification>,
     }
     impl Builder {
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -3544,12 +5786,105 @@ pub mod post_fulfillment_status_specification {
             self.timeout_response = input;
             self
         }
+        /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
+        pub fn success_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.success_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
+        pub fn set_success_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.success_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
+        pub fn success_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.success_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
+        pub fn set_success_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.success_conditional = input;
+            self
+        }
+        /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.failure_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn set_failure_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.failure_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn failure_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.failure_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
+        pub fn set_failure_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.failure_conditional = input;
+            self
+        }
+        /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
+        pub fn timeout_next_step(mut self, input: crate::model::DialogState) -> Self {
+            self.timeout_next_step = Some(input);
+            self
+        }
+        /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
+        pub fn set_timeout_next_step(
+            mut self,
+            input: std::option::Option<crate::model::DialogState>,
+        ) -> Self {
+            self.timeout_next_step = input;
+            self
+        }
+        /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
+        pub fn timeout_conditional(
+            mut self,
+            input: crate::model::ConditionalSpecification,
+        ) -> Self {
+            self.timeout_conditional = Some(input);
+            self
+        }
+        /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
+        pub fn set_timeout_conditional(
+            mut self,
+            input: std::option::Option<crate::model::ConditionalSpecification>,
+        ) -> Self {
+            self.timeout_conditional = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
         pub fn build(self) -> crate::model::PostFulfillmentStatusSpecification {
             crate::model::PostFulfillmentStatusSpecification {
                 success_response: self.success_response,
                 failure_response: self.failure_response,
                 timeout_response: self.timeout_response,
+                success_next_step: self.success_next_step,
+                success_conditional: self.success_conditional,
+                failure_next_step: self.failure_next_step,
+                failure_conditional: self.failure_conditional,
+                timeout_next_step: self.timeout_next_step,
+                timeout_conditional: self.timeout_conditional,
             }
         }
     }
@@ -4790,6 +7125,10 @@ pub enum BotRecommendationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Processing,
     #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4803,6 +7142,8 @@ impl std::convert::From<&str> for BotRecommendationStatus {
             "Downloading" => BotRecommendationStatus::Downloading,
             "Failed" => BotRecommendationStatus::Failed,
             "Processing" => BotRecommendationStatus::Processing,
+            "Stopped" => BotRecommendationStatus::Stopped,
+            "Stopping" => BotRecommendationStatus::Stopping,
             "Updating" => BotRecommendationStatus::Updating,
             other => BotRecommendationStatus::Unknown(other.to_owned()),
         }
@@ -4825,6 +7166,8 @@ impl BotRecommendationStatus {
             BotRecommendationStatus::Downloading => "Downloading",
             BotRecommendationStatus::Failed => "Failed",
             BotRecommendationStatus::Processing => "Processing",
+            BotRecommendationStatus::Stopped => "Stopped",
+            BotRecommendationStatus::Stopping => "Stopping",
             BotRecommendationStatus::Updating => "Updating",
             BotRecommendationStatus::Unknown(s) => s.as_ref(),
         }
@@ -4838,6 +7181,8 @@ impl BotRecommendationStatus {
             "Downloading",
             "Failed",
             "Processing",
+            "Stopped",
+            "Stopping",
             "Updating",
         ]
     }

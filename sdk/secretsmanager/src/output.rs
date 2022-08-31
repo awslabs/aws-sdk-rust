@@ -1489,7 +1489,7 @@ pub struct DescribeSecretOutput {
     /// <p>The description of the secret.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
+    /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
@@ -1508,7 +1508,7 @@ pub struct DescribeSecretOutput {
     /// <p>The last date and time that this secret was modified in any way.</p>
     #[doc(hidden)]
     pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last date that the secret value was retrieved. This value does not include the time. This field is omitted if the secret has never been retrieved.</p>
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     #[doc(hidden)]
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
@@ -1530,7 +1530,7 @@ pub struct DescribeSecretOutput {
     pub version_ids_to_stages: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The name of the service that created this secret.</p>
+    /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
     #[doc(hidden)]
     pub owning_service: std::option::Option<std::string::String>,
     /// <p>The date the secret was created.</p>
@@ -1561,7 +1561,7 @@ impl DescribeSecretOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
+    /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -1586,7 +1586,7 @@ impl DescribeSecretOutput {
     pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
-    /// <p>The last date that the secret value was retrieved. This value does not include the time. This field is omitted if the secret has never been retrieved.</p>
+    /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
@@ -1614,7 +1614,7 @@ impl DescribeSecretOutput {
     > {
         self.version_ids_to_stages.as_ref()
     }
-    /// <p>The name of the service that created this secret.</p>
+    /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
     pub fn owning_service(&self) -> std::option::Option<&str> {
         self.owning_service.as_deref()
     }
@@ -1719,12 +1719,12 @@ pub mod describe_secret_output {
             self.description = input;
             self
         }
-        /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
+        /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
+        /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1793,12 +1793,12 @@ pub mod describe_secret_output {
             self.last_changed_date = input;
             self
         }
-        /// <p>The last date that the secret value was retrieved. This value does not include the time. This field is omitted if the secret has never been retrieved.</p>
+        /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
-        /// <p>The last date that the secret value was retrieved. This value does not include the time. This field is omitted if the secret has never been retrieved.</p>
+        /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn set_last_accessed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1879,12 +1879,12 @@ pub mod describe_secret_output {
             self.version_ids_to_stages = input;
             self
         }
-        /// <p>The name of the service that created this secret.</p>
+        /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
         pub fn owning_service(mut self, input: impl Into<std::string::String>) -> Self {
             self.owning_service = Some(input.into());
             self
         }
-        /// <p>The name of the service that created this secret.</p>
+        /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
         pub fn set_owning_service(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -33,6 +33,74 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeli
     }
 }
 
+/// Operation shape for `CreateMediaConcatenationPipeline`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_media_concatenation_pipeline`](crate::client::Client::create_media_concatenation_pipeline).
+///
+/// See [`crate::client::fluent_builders::CreateMediaConcatenationPipeline`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateMediaConcatenationPipeline {
+    _private: (),
+}
+impl CreateMediaConcatenationPipeline {
+    /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
+    pub fn builder() -> crate::input::create_media_concatenation_pipeline_input::Builder {
+        crate::input::create_media_concatenation_pipeline_input::Builder::default()
+    }
+    /// Creates a new `CreateMediaConcatenationPipeline` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateMediaConcatenationPipeline {
+    type Output = std::result::Result<
+        crate::output::CreateMediaConcatenationPipelineOutput,
+        crate::error::CreateMediaConcatenationPipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_media_concatenation_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_create_media_concatenation_pipeline_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateMediaLiveConnectorPipeline`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_media_live_connector_pipeline`](crate::client::Client::create_media_live_connector_pipeline).
+///
+/// See [`crate::client::fluent_builders::CreateMediaLiveConnectorPipeline`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateMediaLiveConnectorPipeline {
+    _private: (),
+}
+impl CreateMediaLiveConnectorPipeline {
+    /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
+    pub fn builder() -> crate::input::create_media_live_connector_pipeline_input::Builder {
+        crate::input::create_media_live_connector_pipeline_input::Builder::default()
+    }
+    /// Creates a new `CreateMediaLiveConnectorPipeline` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateMediaLiveConnectorPipeline {
+    type Output = std::result::Result<
+        crate::output::CreateMediaLiveConnectorPipelineOutput,
+        crate::error::CreateMediaLiveConnectorPipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_media_live_connector_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_create_media_live_connector_pipeline_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteMediaCapturePipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -63,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeli
             crate::operation_deser::parse_delete_media_capture_pipeline_error(response)
         } else {
             crate::operation_deser::parse_delete_media_capture_pipeline_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteMediaPipeline`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_media_pipeline`](crate::client::Client::delete_media_pipeline).
+///
+/// See [`crate::client::fluent_builders::DeleteMediaPipeline`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteMediaPipeline {
+    _private: (),
+}
+impl DeleteMediaPipeline {
+    /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineInput`](crate::input::DeleteMediaPipelineInput).
+    pub fn builder() -> crate::input::delete_media_pipeline_input::Builder {
+        crate::input::delete_media_pipeline_input::Builder::default()
+    }
+    /// Creates a new `DeleteMediaPipeline` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaPipeline {
+    type Output = std::result::Result<
+        crate::output::DeleteMediaPipelineOutput,
+        crate::error::DeleteMediaPipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_media_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_delete_media_pipeline_response(response)
         }
     }
 }
@@ -101,6 +203,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaCapturePipeline 
     }
 }
 
+/// Operation shape for `GetMediaPipeline`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_media_pipeline`](crate::client::Client::get_media_pipeline).
+///
+/// See [`crate::client::fluent_builders::GetMediaPipeline`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMediaPipeline {
+    _private: (),
+}
+impl GetMediaPipeline {
+    /// Creates a new builder-style object to manufacture [`GetMediaPipelineInput`](crate::input::GetMediaPipelineInput).
+    pub fn builder() -> crate::input::get_media_pipeline_input::Builder {
+        crate::input::get_media_pipeline_input::Builder::default()
+    }
+    /// Creates a new `GetMediaPipeline` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMediaPipeline {
+    type Output = std::result::Result<
+        crate::output::GetMediaPipelineOutput,
+        crate::error::GetMediaPipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_media_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_get_media_pipeline_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListMediaCapturePipelines`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -131,6 +267,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaCapturePipeline
             crate::operation_deser::parse_list_media_capture_pipelines_error(response)
         } else {
             crate::operation_deser::parse_list_media_capture_pipelines_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMediaPipelines`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_media_pipelines`](crate::client::Client::list_media_pipelines).
+///
+/// See [`crate::client::fluent_builders::ListMediaPipelines`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMediaPipelines {
+    _private: (),
+}
+impl ListMediaPipelines {
+    /// Creates a new builder-style object to manufacture [`ListMediaPipelinesInput`](crate::input::ListMediaPipelinesInput).
+    pub fn builder() -> crate::input::list_media_pipelines_input::Builder {
+        crate::input::list_media_pipelines_input::Builder::default()
+    }
+    /// Creates a new `ListMediaPipelines` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMediaPipelines {
+    type Output = std::result::Result<
+        crate::output::ListMediaPipelinesOutput,
+        crate::error::ListMediaPipelinesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_media_pipelines_error(response)
+        } else {
+            crate::operation_deser::parse_list_media_pipelines_response(response)
         }
     }
 }

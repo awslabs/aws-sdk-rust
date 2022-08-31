@@ -178,6 +178,122 @@ pub fn parse_create_alert_manager_definition_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_logging_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLoggingConfigurationOutput,
+    crate::error::CreateLoggingConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLoggingConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateLoggingConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::CreateLoggingConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::CreateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::CreateLoggingConfigurationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLoggingConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_create_logging_configuration_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::CreateLoggingConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::CreateLoggingConfigurationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::CreateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::CreateLoggingConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateLoggingConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_logging_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLoggingConfigurationOutput,
+    crate::error::CreateLoggingConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_logging_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_logging_configuration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateLoggingConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_rule_groups_namespace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -652,6 +768,136 @@ pub fn parse_delete_alert_manager_definition_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_logging_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteLoggingConfigurationOutput,
+    crate::error::DeleteLoggingConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteLoggingConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DeleteLoggingConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => {
+            crate::error::DeleteLoggingConfigurationError {
+                meta: generic,
+                kind: crate::error::DeleteLoggingConfigurationErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerException" => crate::error::DeleteLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DeleteLoggingConfigurationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_delete_logging_configuration_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DeleteLoggingConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DeleteLoggingConfigurationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DeleteLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DeleteLoggingConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteLoggingConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_logging_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteLoggingConfigurationOutput,
+    crate::error::DeleteLoggingConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_logging_configuration_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_rule_groups_namespace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1077,6 +1323,122 @@ pub fn parse_describe_alert_manager_definition_response(
                 output,
             )
             .map_err(crate::error::DescribeAlertManagerDefinitionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_logging_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLoggingConfigurationOutput,
+    crate::error::DescribeLoggingConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeLoggingConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeLoggingConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::DescribeLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeLoggingConfigurationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_describe_logging_configuration_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::DescribeLoggingConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeLoggingConfigurationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DescribeLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeLoggingConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeLoggingConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_logging_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLoggingConfigurationOutput,
+    crate::error::DescribeLoggingConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_logging_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_logging_configuration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeLoggingConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -2317,6 +2679,141 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_logging_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateLoggingConfigurationOutput,
+    crate::error::UpdateLoggingConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateLoggingConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateLoggingConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => {
+            crate::error::UpdateLoggingConfigurationError {
+                meta: generic,
+                kind: crate::error::UpdateLoggingConfigurationErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerException" => crate::error::UpdateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateLoggingConfigurationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_update_logging_configuration_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::UpdateLoggingConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateLoggingConfigurationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateLoggingConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateLoggingConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateLoggingConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_logging_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateLoggingConfigurationOutput,
+    crate::error::UpdateLoggingConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_logging_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_logging_configuration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
         output.build()
     })
 }

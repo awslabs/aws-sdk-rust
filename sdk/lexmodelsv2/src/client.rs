@@ -232,6 +232,7 @@ impl Client {
     ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntent::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::CreateIntent::set_bot_id): <p>The identifier of the bot associated with this intent.</p>
     ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::CreateIntent::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::CreateIntent::set_bot_version): <p>The identifier of the version of the bot associated with this intent.</p>
     ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntent::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::CreateIntent::set_locale_id): <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    ///   - [`initial_response_setting(InitialResponseSetting)`](crate::client::fluent_builders::CreateIntent::initial_response_setting) / [`set_initial_response_setting(Option<InitialResponseSetting>)`](crate::client::fluent_builders::CreateIntent::set_initial_response_setting): <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     /// - On success, responds with [`CreateIntentOutput`](crate::output::CreateIntentOutput) with field(s):
     ///   - [`intent_id(Option<String>)`](crate::output::CreateIntentOutput::intent_id): <p>A unique identifier for the intent.</p>
     ///   - [`intent_name(Option<String>)`](crate::output::CreateIntentOutput::intent_name): <p>The name specified for the intent.</p>
@@ -249,6 +250,7 @@ impl Client {
     ///   - [`bot_version(Option<String>)`](crate::output::CreateIntentOutput::bot_version): <p>The identifier of the version of the bot associated with the intent.</p>
     ///   - [`locale_id(Option<String>)`](crate::output::CreateIntentOutput::locale_id): <p>The locale that the intent is specified to use.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateIntentOutput::creation_date_time): <p>A timestamp of the date and time that the intent was created.</p>
+    ///   - [`initial_response_setting(Option<InitialResponseSetting>)`](crate::output::CreateIntentOutput::initial_response_setting): <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     /// - On failure, responds with [`SdkError<CreateIntentError>`](crate::error::CreateIntentError)
     pub fn create_intent(&self) -> fluent_builders::CreateIntent {
         fluent_builders::CreateIntent::new(self.handle.clone())
@@ -715,6 +717,7 @@ impl Client {
     ///   - [`locale_id(Option<String>)`](crate::output::DescribeIntentOutput::locale_id): <p>The language and locale specified for the intent.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::DescribeIntentOutput::creation_date_time): <p>A timestamp of the date and time that the intent was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::DescribeIntentOutput::last_updated_date_time): <p>A timestamp of the date and time that the intent was last updated.</p>
+    ///   - [`initial_response_setting(Option<InitialResponseSetting>)`](crate::output::DescribeIntentOutput::initial_response_setting): <p></p>
     /// - On failure, responds with [`SdkError<DescribeIntentError>`](crate::error::DescribeIntentError)
     pub fn describe_intent(&self) -> fluent_builders::DescribeIntent {
         fluent_builders::DescribeIntent::new(self.handle.clone())
@@ -1124,6 +1127,23 @@ impl Client {
     pub fn start_import(&self) -> fluent_builders::StartImport {
         fluent_builders::StartImport::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StopBotRecommendation`](crate::client::fluent_builders::StopBotRecommendation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::StopBotRecommendation::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::StopBotRecommendation::set_bot_id): <p>The unique identifier of the bot containing the bot recommendation to be stopped.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::StopBotRecommendation::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::StopBotRecommendation::set_bot_version): <p>The version of the bot containing the bot recommendation.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::StopBotRecommendation::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::StopBotRecommendation::set_locale_id): <p>The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    ///   - [`bot_recommendation_id(impl Into<String>)`](crate::client::fluent_builders::StopBotRecommendation::bot_recommendation_id) / [`set_bot_recommendation_id(Option<String>)`](crate::client::fluent_builders::StopBotRecommendation::set_bot_recommendation_id): <p>The unique identifier of the bot recommendation to be stopped.</p>
+    /// - On success, responds with [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::StopBotRecommendationOutput::bot_id): <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::StopBotRecommendationOutput::bot_version): <p>The version of the bot containing the recommendation that is being stopped.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::StopBotRecommendationOutput::locale_id): <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    ///   - [`bot_recommendation_status(Option<BotRecommendationStatus>)`](crate::output::StopBotRecommendationOutput::bot_recommendation_status): <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
+    ///   - [`bot_recommendation_id(Option<String>)`](crate::output::StopBotRecommendationOutput::bot_recommendation_id): <p>The unique identifier of the bot recommendation that is being stopped.</p>
+    /// - On failure, responds with [`SdkError<StopBotRecommendationError>`](crate::error::StopBotRecommendationError)
+    pub fn stop_bot_recommendation(&self) -> fluent_builders::StopBotRecommendation {
+        fluent_builders::StopBotRecommendation::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1279,6 +1299,7 @@ impl Client {
     ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntent::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::UpdateIntent::set_bot_id): <p>The identifier of the bot that contains the intent.</p>
     ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::UpdateIntent::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::UpdateIntent::set_bot_version): <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
     ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntent::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::UpdateIntent::set_locale_id): <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    ///   - [`initial_response_setting(InitialResponseSetting)`](crate::client::fluent_builders::UpdateIntent::initial_response_setting) / [`set_initial_response_setting(Option<InitialResponseSetting>)`](crate::client::fluent_builders::UpdateIntent::set_initial_response_setting): <p></p>
     /// - On success, responds with [`UpdateIntentOutput`](crate::output::UpdateIntentOutput) with field(s):
     ///   - [`intent_id(Option<String>)`](crate::output::UpdateIntentOutput::intent_id): <p>The identifier of the intent that was updated.</p>
     ///   - [`intent_name(Option<String>)`](crate::output::UpdateIntentOutput::intent_name): <p>The updated name of the intent.</p>
@@ -1298,6 +1319,7 @@ impl Client {
     ///   - [`locale_id(Option<String>)`](crate::output::UpdateIntentOutput::locale_id): <p>The updated language and locale of the intent.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::UpdateIntentOutput::creation_date_time): <p>A timestamp of when the intent was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::UpdateIntentOutput::last_updated_date_time): <p>A timestamp of the last time that the intent was modified.</p>
+    ///   - [`initial_response_setting(Option<InitialResponseSetting>)`](crate::output::UpdateIntentOutput::initial_response_setting): <p></p>
     /// - On failure, responds with [`SdkError<UpdateIntentError>`](crate::error::UpdateIntentError)
     pub fn update_intent(&self) -> fluent_builders::UpdateIntent {
         fluent_builders::UpdateIntent::new(self.handle.clone())
@@ -2325,6 +2347,22 @@ pub mod fluent_builders {
         /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+        pub fn initial_response_setting(
+            mut self,
+            input: crate::model::InitialResponseSetting,
+        ) -> Self {
+            self.inner = self.inner.initial_response_setting(input);
+            self
+        }
+        /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+        pub fn set_initial_response_setting(
+            mut self,
+            input: std::option::Option<crate::model::InitialResponseSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_initial_response_setting(input);
             self
         }
     }
@@ -6699,6 +6737,92 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StopBotRecommendation`.
+    ///
+    /// <p>Stop an already running Bot Recommendation request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StopBotRecommendation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::stop_bot_recommendation_input::Builder,
+    }
+    impl StopBotRecommendation {
+        /// Creates a new `StopBotRecommendation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopBotRecommendationOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopBotRecommendationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation to be stopped.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation to be stopped.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be stopped.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be stopped.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_bot_recommendation_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.</p>
@@ -7636,6 +7760,22 @@ pub mod fluent_builders {
         /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p></p>
+        pub fn initial_response_setting(
+            mut self,
+            input: crate::model::InitialResponseSetting,
+        ) -> Self {
+            self.inner = self.inner.initial_response_setting(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_initial_response_setting(
+            mut self,
+            input: std::option::Option<crate::model::InitialResponseSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_initial_response_setting(input);
             self
         }
     }

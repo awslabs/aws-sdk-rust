@@ -4026,6 +4026,202 @@ impl NotifyRecommendationsReceivedInput {
     }
 }
 
+/// See [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+pub mod put_feedback_input {
+
+    /// A builder for [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) assistant_id: std::option::Option<std::string::String>,
+        pub(crate) target_id: std::option::Option<std::string::String>,
+        pub(crate) target_type: std::option::Option<crate::model::TargetType>,
+        pub(crate) feedback: std::option::Option<crate::model::FeedbackData>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assistant_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+        pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assistant_id = input;
+            self
+        }
+        /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+        pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_id = input;
+            self
+        }
+        /// <p>The type of the targetId for which The feedback. is targeted.</p>
+        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
+            self.target_type = Some(input);
+            self
+        }
+        /// <p>The type of the targetId for which The feedback. is targeted.</p>
+        pub fn set_target_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetType>,
+        ) -> Self {
+            self.target_type = input;
+            self
+        }
+        /// <p>The feedback.</p>
+        pub fn feedback(mut self, input: crate::model::FeedbackData) -> Self {
+            self.feedback = Some(input);
+            self
+        }
+        /// <p>The feedback.</p>
+        pub fn set_feedback(
+            mut self,
+            input: std::option::Option<crate::model::FeedbackData>,
+        ) -> Self {
+            self.feedback = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutFeedbackInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutFeedbackInput {
+                assistant_id: self.assistant_id,
+                target_id: self.target_id,
+                target_type: self.target_type,
+                feedback: self.feedback,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutFeedbackInputOperationOutputAlias = crate::operation::PutFeedback;
+#[doc(hidden)]
+pub type PutFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl PutFeedbackInput {
+    /// Consumes the builder and constructs an Operation<[`PutFeedback`](crate::operation::PutFeedback)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutFeedback,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutFeedbackInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_36 = &_input.assistant_id;
+                let input_36 = input_36.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "assistant_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let assistant_id = aws_smithy_http::label::fmt_string(input_36, false);
+                if assistant_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "assistant_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/assistants/{assistantId}/feedback",
+                    assistantId = assistant_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutFeedbackInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_feedback(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutFeedback::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutFeedback",
+            "wisdom",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+    pub fn builder() -> crate::input::put_feedback_input::Builder {
+        crate::input::put_feedback_input::Builder::default()
+    }
+}
+
 /// See [`QueryAssistantInput`](crate::input::QueryAssistantInput).
 pub mod query_assistant_input {
 
@@ -4116,14 +4312,14 @@ impl QueryAssistantInput {
                 _input: &crate::input::QueryAssistantInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.assistant_id;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_37 = &_input.assistant_id;
+                let input_37 = input_37.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "assistant_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let assistant_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let assistant_id = aws_smithy_http::label::fmt_string(input_37, false);
                 if assistant_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "assistant_id",
@@ -4277,14 +4473,14 @@ impl RemoveKnowledgeBaseTemplateUriInput {
                 _input: &crate::input::RemoveKnowledgeBaseTemplateUriInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_37 = &_input.knowledge_base_id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_38 = &_input.knowledge_base_id;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_38, false);
                 if knowledge_base_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
@@ -4459,14 +4655,14 @@ impl SearchContentInput {
                 _input: &crate::input::SearchContentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.knowledge_base_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_39 = &_input.knowledge_base_id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_39, false);
                 if knowledge_base_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
@@ -4486,13 +4682,13 @@ impl SearchContentInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                if let Some(inner_40) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
-                if let Some(inner_40) = &_input.max_results {
+                if let Some(inner_41) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                     );
                 }
                 Ok(())
@@ -4669,14 +4865,14 @@ impl SearchSessionsInput {
                 _input: &crate::input::SearchSessionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.assistant_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_42 = &_input.assistant_id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "assistant_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let assistant_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let assistant_id = aws_smithy_http::label::fmt_string(input_42, false);
                 if assistant_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "assistant_id",
@@ -4696,13 +4892,13 @@ impl SearchSessionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                if let Some(inner_43) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
-                if let Some(inner_43) = &_input.max_results {
+                if let Some(inner_44) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_43).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
                     );
                 }
                 Ok(())
@@ -4855,14 +5051,14 @@ impl StartContentUploadInput {
                 _input: &crate::input::StartContentUploadInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.knowledge_base_id;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_45 = &_input.knowledge_base_id;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_45, false);
                 if knowledge_base_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
@@ -5038,14 +5234,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.resource_arn;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_46 = &_input.resource_arn;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5209,14 +5405,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_47 = &_input.resource_arn;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5232,9 +5428,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.tag_keys {
-                    for inner_48 in inner_47 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
+                if let Some(inner_48) = &_input.tag_keys {
+                    for inner_49 in inner_48 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_49));
                     }
                 }
                 Ok(())
@@ -5468,28 +5664,28 @@ impl UpdateContentInput {
                 _input: &crate::input::UpdateContentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.knowledge_base_id;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_50 = &_input.knowledge_base_id;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_50, false);
                 if knowledge_base_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_50 = &_input.content_id;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_51 = &_input.content_id;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "content_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let content_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let content_id = aws_smithy_http::label::fmt_string(input_51, false);
                 if content_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "content_id",
@@ -5656,14 +5852,14 @@ impl UpdateKnowledgeBaseTemplateUriInput {
                 _input: &crate::input::UpdateKnowledgeBaseTemplateUriInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_51 = &_input.knowledge_base_id;
-                let input_51 = input_51.as_ref().ok_or(
+                let input_52 = &_input.knowledge_base_id;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let knowledge_base_id = aws_smithy_http::label::fmt_string(input_52, false);
                 if knowledge_base_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "knowledge_base_id",
@@ -6434,6 +6630,52 @@ impl std::fmt::Debug for QueryAssistantInput {
         formatter.field("query_text", &"*** Sensitive Data Redacted ***");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutFeedbackInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    #[doc(hidden)]
+    pub assistant_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+    #[doc(hidden)]
+    pub target_id: std::option::Option<std::string::String>,
+    /// <p>The type of the targetId for which The feedback. is targeted.</p>
+    #[doc(hidden)]
+    pub target_type: std::option::Option<crate::model::TargetType>,
+    /// <p>The feedback.</p>
+    #[doc(hidden)]
+    pub feedback: std::option::Option<crate::model::FeedbackData>,
+}
+impl PutFeedbackInput {
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The identifier of a recommendation. or The identifier of the result data.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The type of the targetId for which The feedback. is targeted.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The feedback.</p>
+    pub fn feedback(&self) -> std::option::Option<&crate::model::FeedbackData> {
+        self.feedback.as_ref()
+    }
+}
+impl std::fmt::Debug for PutFeedbackInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutFeedbackInput");
+        formatter.field("assistant_id", &self.assistant_id);
+        formatter.field("target_id", &self.target_id);
+        formatter.field("target_type", &self.target_type);
+        formatter.field("feedback", &self.feedback);
         formatter.finish()
     }
 }

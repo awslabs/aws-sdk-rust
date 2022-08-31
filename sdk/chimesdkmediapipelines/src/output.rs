@@ -63,12 +63,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The tag key-value pairs.</p>
+    /// <p>The tags associated with the specified media pipeline.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>The tag key-value pairs.</p>
+    /// <p>The tags associated with the specified media pipeline.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -93,14 +93,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tag key-value pairs.</p>
+        /// <p>The tags associated with the specified media pipeline.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tag key-value pairs.</p>
+        /// <p>The tags associated with the specified media pipeline.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -124,8 +124,93 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMediaPipelinesOutput {
+    /// <p>The media pipeline objects in the list.</p>
+    #[doc(hidden)]
+    pub media_pipelines: std::option::Option<std::vec::Vec<crate::model::MediaPipelineSummary>>,
+    /// <p>The token used to retrieve the next page of results. </p>
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMediaPipelinesOutput {
+    /// <p>The media pipeline objects in the list.</p>
+    pub fn media_pipelines(&self) -> std::option::Option<&[crate::model::MediaPipelineSummary]> {
+        self.media_pipelines.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMediaPipelinesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMediaPipelinesOutput");
+        formatter.field("media_pipelines", &self.media_pipelines);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
+pub mod list_media_pipelines_output {
+
+    /// A builder for [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipelines:
+            std::option::Option<std::vec::Vec<crate::model::MediaPipelineSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `media_pipelines`.
+        ///
+        /// To override the contents of this collection use [`set_media_pipelines`](Self::set_media_pipelines).
+        ///
+        /// <p>The media pipeline objects in the list.</p>
+        pub fn media_pipelines(mut self, input: crate::model::MediaPipelineSummary) -> Self {
+            let mut v = self.media_pipelines.unwrap_or_default();
+            v.push(input);
+            self.media_pipelines = Some(v);
+            self
+        }
+        /// <p>The media pipeline objects in the list.</p>
+        pub fn set_media_pipelines(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaPipelineSummary>>,
+        ) -> Self {
+            self.media_pipelines = input;
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
+        pub fn build(self) -> crate::output::ListMediaPipelinesOutput {
+            crate::output::ListMediaPipelinesOutput {
+                media_pipelines: self.media_pipelines,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMediaPipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
+    pub fn builder() -> crate::output::list_media_pipelines_output::Builder {
+        crate::output::list_media_pipelines_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMediaCapturePipelinesOutput {
-    /// <p>The media capture pipeline objects in the list.</p>
+    /// <p>The media pipeline objects in the list.</p>
     #[doc(hidden)]
     pub media_capture_pipelines:
         std::option::Option<std::vec::Vec<crate::model::MediaCapturePipelineSummary>>,
@@ -134,7 +219,7 @@ pub struct ListMediaCapturePipelinesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMediaCapturePipelinesOutput {
-    /// <p>The media capture pipeline objects in the list.</p>
+    /// <p>The media pipeline objects in the list.</p>
     pub fn media_capture_pipelines(
         &self,
     ) -> std::option::Option<&[crate::model::MediaCapturePipelineSummary]> {
@@ -168,7 +253,7 @@ pub mod list_media_capture_pipelines_output {
         ///
         /// To override the contents of this collection use [`set_media_capture_pipelines`](Self::set_media_capture_pipelines).
         ///
-        /// <p>The media capture pipeline objects in the list.</p>
+        /// <p>The media pipeline objects in the list.</p>
         pub fn media_capture_pipelines(
             mut self,
             input: crate::model::MediaCapturePipelineSummary,
@@ -178,7 +263,7 @@ pub mod list_media_capture_pipelines_output {
             self.media_capture_pipelines = Some(v);
             self
         }
-        /// <p>The media capture pipeline objects in the list.</p>
+        /// <p>The media pipeline objects in the list.</p>
         pub fn set_media_capture_pipelines(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaCapturePipelineSummary>>,
@@ -215,13 +300,71 @@ impl ListMediaCapturePipelinesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMediaPipelineOutput {
+    /// <p>The media pipeline object.</p>
+    #[doc(hidden)]
+    pub media_pipeline: std::option::Option<crate::model::MediaPipeline>,
+}
+impl GetMediaPipelineOutput {
+    /// <p>The media pipeline object.</p>
+    pub fn media_pipeline(&self) -> std::option::Option<&crate::model::MediaPipeline> {
+        self.media_pipeline.as_ref()
+    }
+}
+impl std::fmt::Debug for GetMediaPipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMediaPipelineOutput");
+        formatter.field("media_pipeline", &self.media_pipeline);
+        formatter.finish()
+    }
+}
+/// See [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
+pub mod get_media_pipeline_output {
+
+    /// A builder for [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_pipeline: std::option::Option<crate::model::MediaPipeline>,
+    }
+    impl Builder {
+        /// <p>The media pipeline object.</p>
+        pub fn media_pipeline(mut self, input: crate::model::MediaPipeline) -> Self {
+            self.media_pipeline = Some(input);
+            self
+        }
+        /// <p>The media pipeline object.</p>
+        pub fn set_media_pipeline(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipeline>,
+        ) -> Self {
+            self.media_pipeline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
+        pub fn build(self) -> crate::output::GetMediaPipelineOutput {
+            crate::output::GetMediaPipelineOutput {
+                media_pipeline: self.media_pipeline,
+            }
+        }
+    }
+}
+impl GetMediaPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
+    pub fn builder() -> crate::output::get_media_pipeline_output::Builder {
+        crate::output::get_media_pipeline_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaCapturePipelineOutput {
-    /// <p>The media capture pipeline object.</p>
+    /// <p>The media pipeline object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl GetMediaCapturePipelineOutput {
-    /// <p>The media capture pipeline object.</p>
+    /// <p>The media pipeline object.</p>
     pub fn media_capture_pipeline(
         &self,
     ) -> std::option::Option<&crate::model::MediaCapturePipeline> {
@@ -244,12 +387,12 @@ pub mod get_media_capture_pipeline_output {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }
     impl Builder {
-        /// <p>The media capture pipeline object.</p>
+        /// <p>The media pipeline object.</p>
         pub fn media_capture_pipeline(mut self, input: crate::model::MediaCapturePipeline) -> Self {
             self.media_capture_pipeline = Some(input);
             self
         }
-        /// <p>The media capture pipeline object.</p>
+        /// <p>The media pipeline object.</p>
         pub fn set_media_capture_pipeline(
             mut self,
             input: std::option::Option<crate::model::MediaCapturePipeline>,
@@ -269,6 +412,36 @@ impl GetMediaCapturePipelineOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
     pub fn builder() -> crate::output::get_media_capture_pipeline_output::Builder {
         crate::output::get_media_capture_pipeline_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMediaPipelineOutput {}
+impl std::fmt::Debug for DeleteMediaPipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMediaPipelineOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
+pub mod delete_media_pipeline_output {
+
+    /// A builder for [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
+        pub fn build(self) -> crate::output::DeleteMediaPipelineOutput {
+            crate::output::DeleteMediaPipelineOutput {}
+        }
+    }
+}
+impl DeleteMediaPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
+    pub fn builder() -> crate::output::delete_media_pipeline_output::Builder {
+        crate::output::delete_media_pipeline_output::Builder::default()
     }
 }
 
@@ -305,13 +478,148 @@ impl DeleteMediaCapturePipelineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMediaLiveConnectorPipelineOutput {
+    /// <p>The new media pipeline.</p>
+    #[doc(hidden)]
+    pub media_live_connector_pipeline:
+        std::option::Option<crate::model::MediaLiveConnectorPipeline>,
+}
+impl CreateMediaLiveConnectorPipelineOutput {
+    /// <p>The new media pipeline.</p>
+    pub fn media_live_connector_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::model::MediaLiveConnectorPipeline> {
+        self.media_live_connector_pipeline.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateMediaLiveConnectorPipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMediaLiveConnectorPipelineOutput");
+        formatter.field(
+            "media_live_connector_pipeline",
+            &self.media_live_connector_pipeline,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
+pub mod create_media_live_connector_pipeline_output {
+
+    /// A builder for [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_live_connector_pipeline:
+            std::option::Option<crate::model::MediaLiveConnectorPipeline>,
+    }
+    impl Builder {
+        /// <p>The new media pipeline.</p>
+        pub fn media_live_connector_pipeline(
+            mut self,
+            input: crate::model::MediaLiveConnectorPipeline,
+        ) -> Self {
+            self.media_live_connector_pipeline = Some(input);
+            self
+        }
+        /// <p>The new media pipeline.</p>
+        pub fn set_media_live_connector_pipeline(
+            mut self,
+            input: std::option::Option<crate::model::MediaLiveConnectorPipeline>,
+        ) -> Self {
+            self.media_live_connector_pipeline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
+        pub fn build(self) -> crate::output::CreateMediaLiveConnectorPipelineOutput {
+            crate::output::CreateMediaLiveConnectorPipelineOutput {
+                media_live_connector_pipeline: self.media_live_connector_pipeline,
+            }
+        }
+    }
+}
+impl CreateMediaLiveConnectorPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
+    pub fn builder() -> crate::output::create_media_live_connector_pipeline_output::Builder {
+        crate::output::create_media_live_connector_pipeline_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMediaConcatenationPipelineOutput {
+    /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
+    #[doc(hidden)]
+    pub media_concatenation_pipeline: std::option::Option<crate::model::MediaConcatenationPipeline>,
+}
+impl CreateMediaConcatenationPipelineOutput {
+    /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
+    pub fn media_concatenation_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::model::MediaConcatenationPipeline> {
+        self.media_concatenation_pipeline.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateMediaConcatenationPipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMediaConcatenationPipelineOutput");
+        formatter.field(
+            "media_concatenation_pipeline",
+            &self.media_concatenation_pipeline,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
+pub mod create_media_concatenation_pipeline_output {
+
+    /// A builder for [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_concatenation_pipeline:
+            std::option::Option<crate::model::MediaConcatenationPipeline>,
+    }
+    impl Builder {
+        /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
+        pub fn media_concatenation_pipeline(
+            mut self,
+            input: crate::model::MediaConcatenationPipeline,
+        ) -> Self {
+            self.media_concatenation_pipeline = Some(input);
+            self
+        }
+        /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
+        pub fn set_media_concatenation_pipeline(
+            mut self,
+            input: std::option::Option<crate::model::MediaConcatenationPipeline>,
+        ) -> Self {
+            self.media_concatenation_pipeline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
+        pub fn build(self) -> crate::output::CreateMediaConcatenationPipelineOutput {
+            crate::output::CreateMediaConcatenationPipelineOutput {
+                media_concatenation_pipeline: self.media_concatenation_pipeline,
+            }
+        }
+    }
+}
+impl CreateMediaConcatenationPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
+    pub fn builder() -> crate::output::create_media_concatenation_pipeline_output::Builder {
+        crate::output::create_media_concatenation_pipeline_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineOutput {
-    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
+    /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl CreateMediaCapturePipelineOutput {
-    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
+    /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
     pub fn media_capture_pipeline(
         &self,
     ) -> std::option::Option<&crate::model::MediaCapturePipeline> {
@@ -334,12 +642,12 @@ pub mod create_media_capture_pipeline_output {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }
     impl Builder {
-        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
+        /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
         pub fn media_capture_pipeline(mut self, input: crate::model::MediaCapturePipeline) -> Self {
             self.media_capture_pipeline = Some(input);
             self
         }
-        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
+        /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
         pub fn set_media_capture_pipeline(
             mut self,
             input: std::option::Option<crate::model::MediaCapturePipeline>,

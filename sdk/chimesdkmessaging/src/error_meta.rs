@@ -94,6 +94,8 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::BatchCreateChannelMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::BatchCreateChannelMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::BatchCreateChannelMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::BatchCreateChannelMembershipErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
                 crate::error::BatchCreateChannelMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
                 crate::error::BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::BatchCreateChannelMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
@@ -279,6 +281,9 @@ where
                 }
                 crate::error::CreateChannelMembershipErrorKind::ForbiddenException(inner) => {
                     Error::ForbiddenException(inner)
+                }
+                crate::error::CreateChannelMembershipErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
                 crate::error::CreateChannelMembershipErrorKind::ResourceLimitExceededException(
                     inner,
@@ -1267,6 +1272,37 @@ where
                 crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
                 crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSubChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSubChannelsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListSubChannelsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListSubChannelsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ListSubChannelsErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::ListSubChannelsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListSubChannelsErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::ListSubChannelsErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::ListSubChannelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
             _ => Error::Unhandled(err.into()),
         }
     }

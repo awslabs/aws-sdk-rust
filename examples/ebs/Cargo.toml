@@ -15,11 +15,11 @@ version = "0.47.0"
 
 [dependencies.aws-sdk-ebs]
 path = "../../sdk/ebs"
-version = "0.17.0"
+version = "0.18.0"
 
 [dependencies.aws-sdk-ec2]
 path = "../../sdk/ec2"
-version = "0.17.0"
+version = "0.18.0"
 
 [dependencies.tokio]
 version = "1"

@@ -1902,6 +1902,421 @@ impl std::error::Error for CreatePredictorBacktestExportJobError {
     }
 }
 
+/// Error type for the `CreateWhatIfAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateWhatIfAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: CreateWhatIfAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateWhatIfAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateWhatIfAnalysisErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of resources per account has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>There is already a resource with this name. Try again with a different name.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateWhatIfAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateWhatIfAnalysisErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateWhatIfAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateWhatIfAnalysisErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateWhatIfAnalysisErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CreateWhatIfAnalysisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateWhatIfAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateWhatIfAnalysisError {
+    fn code(&self) -> Option<&str> {
+        CreateWhatIfAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateWhatIfAnalysisError {
+    /// Creates a new `CreateWhatIfAnalysisError`.
+    pub fn new(kind: CreateWhatIfAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateWhatIfAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateWhatIfAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateWhatIfAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateWhatIfAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfAnalysisErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfAnalysisErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfAnalysisErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfAnalysisErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfAnalysisErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfAnalysisErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfAnalysisErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfAnalysisErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfAnalysisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfAnalysisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateWhatIfAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateWhatIfAnalysisErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateWhatIfAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateWhatIfAnalysisErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateWhatIfAnalysisErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CreateWhatIfAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateWhatIfAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateWhatIfForecastError {
+    /// Kind of error that occurred.
+    pub kind: CreateWhatIfForecastErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateWhatIfForecastErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of resources per account has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>There is already a resource with this name. Try again with a different name.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateWhatIfForecastError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateWhatIfForecastErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateWhatIfForecastError {
+    fn code(&self) -> Option<&str> {
+        CreateWhatIfForecastError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateWhatIfForecastError {
+    /// Creates a new `CreateWhatIfForecastError`.
+    pub fn new(kind: CreateWhatIfForecastErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateWhatIfForecastError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateWhatIfForecastErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateWhatIfForecastError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateWhatIfForecastErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateWhatIfForecastError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateWhatIfForecastErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateWhatIfForecastErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateWhatIfForecastErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateWhatIfForecastErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CreateWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateWhatIfForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateWhatIfForecastExport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateWhatIfForecastExportError {
+    /// Kind of error that occurred.
+    pub kind: CreateWhatIfForecastExportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateWhatIfForecastExport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateWhatIfForecastExportErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of resources per account has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>There is already a resource with this name. Try again with a different name.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateWhatIfForecastExportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateWhatIfForecastExportErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastExportErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateWhatIfForecastExportErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastExportErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateWhatIfForecastExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateWhatIfForecastExportError {
+    fn code(&self) -> Option<&str> {
+        CreateWhatIfForecastExportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateWhatIfForecastExportError {
+    /// Creates a new `CreateWhatIfForecastExportError`.
+    pub fn new(kind: CreateWhatIfForecastExportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateWhatIfForecastExportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateWhatIfForecastExportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateWhatIfForecastExportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateWhatIfForecastExportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastExportErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastExportErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastExportErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastExportErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastExportErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastExportErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWhatIfForecastExportErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWhatIfForecastExportErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateWhatIfForecastExportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateWhatIfForecastExportErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateWhatIfForecastExportErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateWhatIfForecastExportErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CreateWhatIfForecastExportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateWhatIfForecastExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteDataset` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3176,6 +3591,351 @@ impl std::error::Error for DeleteResourceTreeError {
     }
 }
 
+/// Error type for the `DeleteWhatIfAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteWhatIfAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: DeleteWhatIfAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteWhatIfAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteWhatIfAnalysisErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteWhatIfAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteWhatIfAnalysisErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteWhatIfAnalysisErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteWhatIfAnalysisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteWhatIfAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteWhatIfAnalysisError {
+    fn code(&self) -> Option<&str> {
+        DeleteWhatIfAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteWhatIfAnalysisError {
+    /// Creates a new `DeleteWhatIfAnalysisError`.
+    pub fn new(kind: DeleteWhatIfAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteWhatIfAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteWhatIfAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteWhatIfAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteWhatIfAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfAnalysisErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfAnalysisErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfAnalysisErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfAnalysisErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfAnalysisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfAnalysisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteWhatIfAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteWhatIfAnalysisErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteWhatIfAnalysisErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteWhatIfAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteWhatIfAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteWhatIfForecastError {
+    /// Kind of error that occurred.
+    pub kind: DeleteWhatIfForecastErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteWhatIfForecastErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteWhatIfForecastError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteWhatIfForecastErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteWhatIfForecastErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteWhatIfForecastErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteWhatIfForecastError {
+    fn code(&self) -> Option<&str> {
+        DeleteWhatIfForecastError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteWhatIfForecastError {
+    /// Creates a new `DeleteWhatIfForecastError`.
+    pub fn new(kind: DeleteWhatIfForecastErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteWhatIfForecastError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteWhatIfForecastErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteWhatIfForecastError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteWhatIfForecastErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfForecastErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfForecastErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfForecastErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfForecastErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfForecastErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfForecastErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteWhatIfForecastError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteWhatIfForecastErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteWhatIfForecastErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteWhatIfForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteWhatIfForecastExport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteWhatIfForecastExportError {
+    /// Kind of error that occurred.
+    pub kind: DeleteWhatIfForecastExportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteWhatIfForecastExport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteWhatIfForecastExportErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteWhatIfForecastExportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteWhatIfForecastExportErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteWhatIfForecastExportErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteWhatIfForecastExportErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteWhatIfForecastExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteWhatIfForecastExportError {
+    fn code(&self) -> Option<&str> {
+        DeleteWhatIfForecastExportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteWhatIfForecastExportError {
+    /// Creates a new `DeleteWhatIfForecastExportError`.
+    pub fn new(kind: DeleteWhatIfForecastExportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteWhatIfForecastExportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteWhatIfForecastExportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteWhatIfForecastExportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteWhatIfForecastExportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfForecastExportErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfForecastExportErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfForecastExportErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfForecastExportErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWhatIfForecastExportErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWhatIfForecastExportErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteWhatIfForecastExportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteWhatIfForecastExportErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteWhatIfForecastExportErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteWhatIfForecastExportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteWhatIfForecastExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeAutoPredictor` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4331,6 +5091,322 @@ impl std::error::Error for DescribePredictorBacktestExportJobError {
                 Some(_inner)
             }
             DescribePredictorBacktestExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeWhatIfAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeWhatIfAnalysisError {
+    /// Kind of error that occurred.
+    pub kind: DescribeWhatIfAnalysisErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeWhatIfAnalysis` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeWhatIfAnalysisErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeWhatIfAnalysisError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeWhatIfAnalysisErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeWhatIfAnalysisErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeWhatIfAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeWhatIfAnalysisError {
+    fn code(&self) -> Option<&str> {
+        DescribeWhatIfAnalysisError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeWhatIfAnalysisError {
+    /// Creates a new `DescribeWhatIfAnalysisError`.
+    pub fn new(kind: DescribeWhatIfAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeWhatIfAnalysisError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeWhatIfAnalysisErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeWhatIfAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeWhatIfAnalysisErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeWhatIfAnalysisErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWhatIfAnalysisErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeWhatIfAnalysisErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWhatIfAnalysisErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeWhatIfAnalysisError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeWhatIfAnalysisErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeWhatIfAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeWhatIfAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeWhatIfForecastError {
+    /// Kind of error that occurred.
+    pub kind: DescribeWhatIfForecastErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeWhatIfForecast` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeWhatIfForecastErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeWhatIfForecastError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeWhatIfForecastErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeWhatIfForecastErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeWhatIfForecastError {
+    fn code(&self) -> Option<&str> {
+        DescribeWhatIfForecastError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeWhatIfForecastError {
+    /// Creates a new `DescribeWhatIfForecastError`.
+    pub fn new(kind: DescribeWhatIfForecastErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeWhatIfForecastError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeWhatIfForecastErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeWhatIfForecastError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeWhatIfForecastErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeWhatIfForecastErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWhatIfForecastErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeWhatIfForecastErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWhatIfForecastErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeWhatIfForecastError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeWhatIfForecastErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeWhatIfForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeWhatIfForecastExport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeWhatIfForecastExportError {
+    /// Kind of error that occurred.
+    pub kind: DescribeWhatIfForecastExportErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeWhatIfForecastExport` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeWhatIfForecastExportErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeWhatIfForecastExportError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeWhatIfForecastExportErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeWhatIfForecastExportErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeWhatIfForecastExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeWhatIfForecastExportError {
+    fn code(&self) -> Option<&str> {
+        DescribeWhatIfForecastExportError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeWhatIfForecastExportError {
+    /// Creates a new `DescribeWhatIfForecastExportError`.
+    pub fn new(kind: DescribeWhatIfForecastExportErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeWhatIfForecastExportError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeWhatIfForecastExportErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeWhatIfForecastExportError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeWhatIfForecastExportErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeWhatIfForecastExportErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWhatIfForecastExportErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeWhatIfForecastExportErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeWhatIfForecastExportErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeWhatIfForecastExportError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeWhatIfForecastExportErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeWhatIfForecastExportErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeWhatIfForecastExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5686,6 +6762,318 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListWhatIfAnalyses` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListWhatIfAnalysesError {
+    /// Kind of error that occurred.
+    pub kind: ListWhatIfAnalysesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListWhatIfAnalyses` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListWhatIfAnalysesErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid. Tokens expire after 24 hours.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListWhatIfAnalysesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListWhatIfAnalysesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListWhatIfAnalysesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListWhatIfAnalysesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListWhatIfAnalysesError {
+    fn code(&self) -> Option<&str> {
+        ListWhatIfAnalysesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListWhatIfAnalysesError {
+    /// Creates a new `ListWhatIfAnalysesError`.
+    pub fn new(kind: ListWhatIfAnalysesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListWhatIfAnalysesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListWhatIfAnalysesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListWhatIfAnalysesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListWhatIfAnalysesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListWhatIfAnalysesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWhatIfAnalysesErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListWhatIfAnalysesErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWhatIfAnalysesErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListWhatIfAnalysesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListWhatIfAnalysesErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListWhatIfAnalysesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListWhatIfAnalysesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListWhatIfForecastExports` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListWhatIfForecastExportsError {
+    /// Kind of error that occurred.
+    pub kind: ListWhatIfForecastExportsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListWhatIfForecastExports` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListWhatIfForecastExportsErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid. Tokens expire after 24 hours.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListWhatIfForecastExportsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListWhatIfForecastExportsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListWhatIfForecastExportsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListWhatIfForecastExportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListWhatIfForecastExportsError {
+    fn code(&self) -> Option<&str> {
+        ListWhatIfForecastExportsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListWhatIfForecastExportsError {
+    /// Creates a new `ListWhatIfForecastExportsError`.
+    pub fn new(kind: ListWhatIfForecastExportsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListWhatIfForecastExportsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListWhatIfForecastExportsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListWhatIfForecastExportsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListWhatIfForecastExportsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListWhatIfForecastExportsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWhatIfForecastExportsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListWhatIfForecastExportsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWhatIfForecastExportsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListWhatIfForecastExportsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListWhatIfForecastExportsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListWhatIfForecastExportsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListWhatIfForecastExportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListWhatIfForecasts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListWhatIfForecastsError {
+    /// Kind of error that occurred.
+    pub kind: ListWhatIfForecastsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListWhatIfForecasts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListWhatIfForecastsErrorKind {
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid. Tokens expire after 24 hours.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListWhatIfForecastsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListWhatIfForecastsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListWhatIfForecastsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListWhatIfForecastsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListWhatIfForecastsError {
+    fn code(&self) -> Option<&str> {
+        ListWhatIfForecastsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListWhatIfForecastsError {
+    /// Creates a new `ListWhatIfForecastsError`.
+    pub fn new(kind: ListWhatIfForecastsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListWhatIfForecastsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListWhatIfForecastsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListWhatIfForecastsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListWhatIfForecastsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListWhatIfForecastsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWhatIfForecastsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListWhatIfForecastsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWhatIfForecastsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListWhatIfForecastsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListWhatIfForecastsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListWhatIfForecastsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListWhatIfForecastsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

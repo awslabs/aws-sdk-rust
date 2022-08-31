@@ -1287,6 +1287,7 @@ pub mod create_data_source_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
         pub(crate) configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -1297,12 +1298,12 @@ pub mod create_data_source_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+        /// <p>A name for the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+        /// <p>A name for the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1347,6 +1348,22 @@ pub mod create_data_source_input {
             self.configuration = input;
             self
         }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
         /// <p>A description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -1369,14 +1386,14 @@ pub mod create_data_source_input {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1453,6 +1470,7 @@ pub mod create_data_source_input {
                 index_id: self.index_id,
                 r#type: self.r#type,
                 configuration: self.configuration,
+                vpc_configuration: self.vpc_configuration,
                 description: self.description,
                 schedule: self.schedule,
                 role_arn: self.role_arn,
@@ -2996,22 +3014,22 @@ pub mod delete_data_source_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the data source you want to delete.</p>
+        /// <p>The identifier of the data source connector you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source you want to delete.</p>
+        /// <p>The identifier of the data source connector you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -4236,22 +4254,22 @@ pub mod describe_data_source_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -6350,32 +6368,32 @@ pub mod list_data_sources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the index used with one or more data sources.</p>
+        /// <p>The identifier of the index used with one or more data source connectors.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index used with one or more data sources.</p>
+        /// <p>The identifier of the index used with one or more data source connectors.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of data sources to return.</p>
+        /// <p>The maximum number of data source connectors to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of data sources to return.</p>
+        /// <p>The maximum number of data source connectors to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6517,22 +6535,22 @@ pub mod list_data_source_sync_jobs_input {
         pub(crate) status_filter: std::option::Option<crate::model::DataSourceSyncJobStatus>,
     }
     impl Builder {
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index used with the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -6557,12 +6575,12 @@ pub mod list_data_source_sync_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
         pub fn start_time_filter(mut self, input: crate::model::TimeRange) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+        /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::TimeRange>,
@@ -6570,12 +6588,12 @@ pub mod list_data_source_sync_jobs_input {
             self.start_time_filter = input;
             self
         }
-        /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+        /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
         pub fn status_filter(mut self, input: crate::model::DataSourceSyncJobStatus) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+        /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::DataSourceSyncJobStatus>,
@@ -8771,22 +8789,22 @@ pub mod start_data_source_sync_job_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the data source to synchronize.</p>
+        /// <p>The identifier of the data source connector to synchronize.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source to synchronize.</p>
+        /// <p>The identifier of the data source connector to synchronize.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -8925,22 +8943,22 @@ pub mod stop_data_source_sync_job_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+        /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+        /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -9822,6 +9840,7 @@ pub mod update_data_source_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) index_id: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -9830,22 +9849,22 @@ pub mod update_data_source_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>The identifier of the data source you want to update.</p>
+        /// <p>The identifier of the data source connector you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the data source you want to update.</p>
+        /// <p>The identifier of the data source connector you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+        /// <p>A new name for the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+        /// <p>A new name for the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9873,6 +9892,22 @@ pub mod update_data_source_input {
             self.configuration = input;
             self
         }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
         /// <p>A new description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -9893,12 +9928,12 @@ pub mod update_data_source_input {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -9944,6 +9979,7 @@ pub mod update_data_source_input {
                 name: self.name,
                 index_id: self.index_id,
                 configuration: self.configuration,
+                vpc_configuration: self.vpc_configuration,
                 description: self.description,
                 schedule: self.schedule,
                 role_arn: self.role_arn,
@@ -11585,10 +11621,10 @@ impl std::fmt::Debug for UpdateExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
-    /// <p>The identifier of the data source you want to update.</p>
+    /// <p>The identifier of the data source connector you want to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+    /// <p>A new name for the data source connector.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index used with the data source connector.</p>
@@ -11597,13 +11633,16 @@ pub struct UpdateDataSourceInput {
     /// <p>Configuration information you want to update for the data source connector.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A new description for the data source connector.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The sync schedule you want to update for the data source connector.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
@@ -11616,11 +11655,11 @@ pub struct UpdateDataSourceInput {
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInput {
-    /// <p>The identifier of the data source you want to update.</p>
+    /// <p>The identifier of the data source connector you want to update.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+    /// <p>A new name for the data source connector.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -11632,6 +11671,12 @@ impl UpdateDataSourceInput {
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
     /// <p>A new description for the data source connector.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -11640,7 +11685,7 @@ impl UpdateDataSourceInput {
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11663,6 +11708,7 @@ impl std::fmt::Debug for UpdateDataSourceInput {
         formatter.field("name", &self.name);
         formatter.field("index_id", &self.index_id);
         formatter.field("configuration", &self.configuration);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("description", &self.description);
         formatter.field("schedule", &self.schedule);
         formatter.field("role_arn", &self.role_arn);
@@ -11856,19 +11902,19 @@ impl std::fmt::Debug for SubmitFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDataSourceSyncJobInput {
-    /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+    /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl StopDataSourceSyncJobInput {
-    /// <p>The identifier of the data source for which to stop the synchronization jobs.</p>
+    /// <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11886,19 +11932,19 @@ impl std::fmt::Debug for StopDataSourceSyncJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataSourceSyncJobInput {
-    /// <p>The identifier of the data source to synchronize.</p>
+    /// <p>The identifier of the data source connector to synchronize.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl StartDataSourceSyncJobInput {
-    /// <p>The identifier of the data source to synchronize.</p>
+    /// <p>The identifier of the data source connector to synchronize.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12479,10 +12525,10 @@ impl std::fmt::Debug for ListEntityPersonasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourceSyncJobsInput {
-    /// <p>The identifier of the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index used with the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
@@ -12491,19 +12537,19 @@ pub struct ListDataSourceSyncJobsInput {
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
     #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::TimeRange>,
-    /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+    /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     #[doc(hidden)]
     pub status_filter: std::option::Option<crate::model::DataSourceSyncJobStatus>,
 }
 impl ListDataSourceSyncJobsInput {
-    /// <p>The identifier of the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index used with the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12515,11 +12561,11 @@ impl ListDataSourceSyncJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
+    /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
     pub fn start_time_filter(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.start_time_filter.as_ref()
     }
-    /// <p>When specified, only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
+    /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::DataSourceSyncJobStatus> {
         self.status_filter.as_ref()
     }
@@ -12541,26 +12587,26 @@ impl std::fmt::Debug for ListDataSourceSyncJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesInput {
-    /// <p>The identifier of the index used with one or more data sources.</p>
+    /// <p>The identifier of the index used with one or more data source connectors.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of data sources to return.</p>
+    /// <p>The maximum number of data source connectors to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataSourcesInput {
-    /// <p>The identifier of the index used with one or more data sources.</p>
+    /// <p>The identifier of the index used with one or more data source connectors.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors (<code>DataSourceSummaryItems</code>). </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of data sources to return.</p>
+    /// <p>The maximum number of data source connectors to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -13009,19 +13055,19 @@ impl std::fmt::Debug for DescribeExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceInput {
-    /// <p>The identifier of the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index used with the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeDataSourceInput {
-    /// <p>The identifier of the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index used with the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -13263,19 +13309,19 @@ impl std::fmt::Debug for DeleteExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
-    /// <p>The identifier of the data source you want to delete.</p>
+    /// <p>The identifier of the data source connector you want to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index used with the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
-    /// <p>The identifier of the data source you want to delete.</p>
+    /// <p>The identifier of the data source connector you want to delete.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index used with the data source.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -13766,7 +13812,7 @@ impl std::fmt::Debug for CreateExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
-    /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+    /// <p>A name for the data source connector.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index you want to use with the data source connector.</p>
@@ -13780,6 +13826,9 @@ pub struct CreateDataSourceInput {
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    #[doc(hidden)]
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A description for the data source connector.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13787,7 +13836,7 @@ pub struct CreateDataSourceInput {
     /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     #[doc(hidden)]
@@ -13808,7 +13857,7 @@ pub struct CreateDataSourceInput {
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl CreateDataSourceInput {
-    /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+    /// <p>A name for the data source connector.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13826,6 +13875,12 @@ impl CreateDataSourceInput {
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
     /// <p>A description for the data source connector.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -13835,7 +13890,7 @@ impl CreateDataSourceInput {
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
@@ -13868,6 +13923,7 @@ impl std::fmt::Debug for CreateDataSourceInput {
         formatter.field("index_id", &self.index_id);
         formatter.field("r#type", &self.r#type);
         formatter.field("configuration", &self.configuration);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("description", &self.description);
         formatter.field("schedule", &self.schedule);
         formatter.field("role_arn", &self.role_arn);
