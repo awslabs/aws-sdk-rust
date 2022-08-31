@@ -9,7 +9,7 @@ license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
 [package.metadata.smithy]
-codegen-version = "0.48.0-6e96137ca79b592960881b140ab17717b1ebb780"
+codegen-version = "0.48.0-2cb76641b654c4443c6fc96fc5f02957023fffe1"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
