@@ -1,0 +1,5 @@
+allowed_external_types = [
+    "aws_types::*",
+    "aws_smithy_http::property_bag::PropertyBag",
+    "aws_smithy_http::middleware::MapRequest",
+]
