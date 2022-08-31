@@ -10,7 +10,7 @@ repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
 
 [package.metadata.smithy]
-codegen-version = "0.47.0-e179bea6254e9cc8064ec2130f46fe3a36ec4d48"
+codegen-version = "0.47.0-a2f17cff314946a8c26908e08535b755588249d5"
 
 [package.metadata.docs.rs]
 all-features = true
