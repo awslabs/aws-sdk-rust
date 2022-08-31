@@ -72,7 +72,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS IoT Events | [aws-sdk-iotevents](https://crates.io/crates/aws-sdk-iotevents) ([docs](https://docs.rs/aws-sdk-iotevents)) |
 | AWS IoT Events Data | [aws-sdk-ioteventsdata](https://crates.io/crates/aws-sdk-ioteventsdata) ([docs](https://docs.rs/aws-sdk-ioteventsdata)) |
 | AWS IoT Fleet Hub | [aws-sdk-iotfleethub](https://crates.io/crates/aws-sdk-iotfleethub) ([docs](https://docs.rs/aws-sdk-iotfleethub)) |
-| AWS IoT Greengrass V2 | [aws-sdk-greengrassv2](https://crates.io/crates/aws-sdk-greengrassv2) ([docs](https://docs.rs/aws-sdk-greengrassv2)) |
+| AWS IoT Greengrass V2 | [aws-sdk-greengrassv2](https://crates.io/crates/aws-sdk-greengrassv2) ([docs](https://docs.rs/aws-sdk-greengrassv2)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/greengrassv2)) |
 | AWS IoT Jobs Data Plane | [aws-sdk-iotjobsdataplane](https://crates.io/crates/aws-sdk-iotjobsdataplane) ([docs](https://docs.rs/aws-sdk-iotjobsdataplane)) |
 | AWS IoT Secure Tunneling | [aws-sdk-iotsecuretunneling](https://crates.io/crates/aws-sdk-iotsecuretunneling) ([docs](https://docs.rs/aws-sdk-iotsecuretunneling)) |
 | AWS IoT SiteWise | [aws-sdk-iotsitewise](https://crates.io/crates/aws-sdk-iotsitewise) ([docs](https://docs.rs/aws-sdk-iotsitewise)) |

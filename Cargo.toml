@@ -22,6 +22,7 @@ members = [
     "examples/ecs",
     "examples/eks",
     "examples/globalaccelerator",
+    "examples/greengrassv2",
     "examples/iam",
     "examples/iot",
     "examples/kinesis",

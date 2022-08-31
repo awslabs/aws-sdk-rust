@@ -4,8 +4,7 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_config::model::ResourceType;
-use aws_sdk_config::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_greengrassv2::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -19,40 +18,33 @@ struct Opt {
     verbose: bool,
 }
 
-// Lists your resources.
-// snippet-start:[config.rust.list-resources]
-async fn show_resources(verbose: bool, client: &Client) -> Result<(), Error> {
-    for value in ResourceType::values() {
-        let parsed = ResourceType::from(*value);
+// Lists your IoT cores.
+// snippet-start:[iot.rust.list-core-devices]
+async fn show_cores(client: &Client) -> Result<(), Error> {
+    let resp = client.list_core_devices().send().await?;
 
-        let resp = client
-            .list_discovered_resources()
-            .resource_type(parsed)
-            .send()
-            .await?;
+    println!("cores:");
 
-        let resources = resp.resource_identifiers().unwrap_or_default();
-
-        if !resources.is_empty() || verbose {
-            println!();
-            println!("Resources of type {}:", value);
-        }
-
-        for resource in resources {
-            println!(
-                "  Resource ID: {}",
-                resource.resource_id().unwrap_or_default()
-            );
-        }
+    for core in resp.core_devices().unwrap() {
+        println!(
+            "  Name:  {}",
+            core.core_device_thing_name().unwrap_or_default()
+        );
+        println!("  Status:  {:?}", core.status().unwrap());
+        println!(
+            "  Last update:  {:?}",
+            core.last_status_update_timestamp().unwrap()
+        );
+        println!();
     }
 
     println!();
 
     Ok(())
 }
-// snippet-end:[config.rust.list-resources]
+// snippet-end:[iot.rust.list-core-devices]
 
-/// Lists your AWS Config resources, by resource type, in the Region.
+/// Lists the name, type, and ARN of your IoT cores in the Region.
 ///
 /// # Arguments
 ///
@@ -68,24 +60,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    println!();
 
+    println!();
     if verbose {
-        println!("Config client version: {}", PKG_VERSION);
+        println!("IoT client version: {}", PKG_VERSION);
         println!(
-            "Region:                {}",
+            "Region:             {}",
             region_provider.region().await.unwrap().as_ref()
         );
-
         println!();
     }
 
     let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    if !verbose {
-        println!("You won't see any output if you don't have any resources defined in the region.");
-    }
-
-    show_resources(verbose, &client).await
+    show_cores(&client).await
 }

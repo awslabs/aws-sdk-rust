@@ -17,7 +17,7 @@ path = "../../sdk/aws-types"
 version = "0.48.0"
 
 [dependencies.tokio]
-version = "1"
+version = "1.20.1"
 features = ["full"]
 
 [dependencies.structopt]
@@ -25,5 +25,5 @@ version = "0.3"
 default-features = false
 
 [dependencies.tracing-subscriber]
-version = "0.3.5"
+version = "0.3.15"
 features = ["env-filter"]

@@ -13,8 +13,8 @@ name = "tls"
 path = "src/lib.rs"
 
 [dependencies]
-webpki-roots = "0.22.2"
-rustls = "0.20.2"
+webpki-roots = "0.22.4"
+rustls = "0.20.6"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
@@ -30,7 +30,7 @@ path = "../../sdk/kms"
 version = "0.18.0"
 
 [dependencies.tokio]
-version = "1"
+version = "1.20.1"
 features = ["full"]
 
 [dependencies.hyper-rustls]
