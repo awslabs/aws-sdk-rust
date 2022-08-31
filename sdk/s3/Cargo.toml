@@ -8,102 +8,129 @@ edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
-
 [package.metadata.smithy]
-codegen-version = "0.47.0-a2f17cff314946a8c26908e08535b755588249d5"
-
+codegen-version = "0.47.0-e185990a0e846b38bdde0b67a9b53ed0c9f27776"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-endpoint]
 path = "../aws-endpoint"
 version = "0.47.0"
+
 [dependencies.aws-http]
 path = "../aws-http"
 version = "0.47.0"
+
 [dependencies.aws-sig-auth]
 path = "../aws-sig-auth"
-version = "0.47.0"
 features = ["sign-eventstream"]
+version = "0.47.0"
+
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
 version = "0.47.0"
+
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 version = "0.47.0"
+
 [dependencies.aws-smithy-checksums]
 path = "../aws-smithy-checksums"
 version = "0.47.0"
+
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 version = "0.47.0"
+
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
 version = "0.47.0"
+
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.47.0"
 features = ["event-stream"]
+version = "0.47.0"
+
 [dependencies.aws-smithy-http-tower]
 path = "../aws-smithy-http-tower"
 version = "0.47.0"
+
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 version = "0.47.0"
+
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
 version = "0.47.0"
+
 [dependencies.aws-types]
 path = "../aws-types"
 version = "0.47.0"
+
 [dependencies.bytes]
 version = "1.0.0"
+
 [dependencies.bytes-utils]
 version = "0.1.0"
+
 [dependencies.http]
 version = "0.2.0"
+
 [dependencies.http-body]
 version = "0.4.4"
+
 [dependencies.tokio-stream]
 version = "0.1.7"
+
 [dependencies.tower]
 version = "0.4"
+
 [dependencies.tracing]
 version = "0.1"
 [dev-dependencies.async-std]
 version = "1.12.0"
+
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "0.47.0"
+
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-version = "0.47.0"
 features = ["test-util"]
+version = "0.47.0"
+
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 version = "0.47.0"
+
 [dev-dependencies.futures-util]
 version = "0.3.0"
+
 [dev-dependencies.pretty_assertions]
 version = "1.0.0"
+
 [dev-dependencies.serde_json]
 version = "1.0.0"
+
 [dev-dependencies.smol]
 version = "1.2.0"
+
 [dev-dependencies.tempfile]
 version = "3.2.0"
+
 [dev-dependencies.tokio]
 version = "1"
 features = ["macros", "test-util", "rt"]
+
 [dev-dependencies.tracing]
 version = "0.1.0"
+
 [dev-dependencies.tracing-subscriber]
 version = "0.3.5"
 features = ["env-filter"]
+
 [features]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-http/rt-tokio"]
 default = ["rustls", "rt-tokio"]
-
-
