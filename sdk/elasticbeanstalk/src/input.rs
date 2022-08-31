@@ -128,10 +128,17 @@ impl AbortEnvironmentUpdateInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -296,10 +303,17 @@ impl ApplyEnvironmentManagedActionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -452,10 +466,17 @@ impl AssociateEnvironmentOperationsRoleInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -589,10 +610,17 @@ impl CheckDnsAvailabilityInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -760,10 +788,17 @@ impl ComposeEnvironmentsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -952,10 +987,17 @@ impl CreateApplicationInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1232,10 +1274,17 @@ impl CreateApplicationVersionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1515,10 +1564,17 @@ impl CreateConfigurationTemplateInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1874,10 +1930,17 @@ impl CreateEnvironmentInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2104,10 +2167,17 @@ impl CreatePlatformVersionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2220,10 +2290,17 @@ impl CreateStorageLocationInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2370,10 +2447,17 @@ impl DeleteApplicationInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2540,10 +2624,17 @@ impl DeleteApplicationVersionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2695,10 +2786,17 @@ impl DeleteConfigurationTemplateInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2851,10 +2949,17 @@ impl DeleteEnvironmentConfigurationInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2988,10 +3093,17 @@ impl DeletePlatformVersionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3107,10 +3219,17 @@ impl DescribeAccountAttributesInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3251,10 +3370,17 @@ impl DescribeApplicationsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3440,10 +3566,17 @@ impl DescribeApplicationVersionsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3659,10 +3792,17 @@ impl DescribeConfigurationOptionsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3834,10 +3974,17 @@ impl DescribeConfigurationSettingsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4018,10 +4165,17 @@ impl DescribeEnvironmentHealthInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4198,10 +4352,17 @@ impl DescribeEnvironmentManagedActionHistoryInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4369,10 +4530,17 @@ impl DescribeEnvironmentManagedActionsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4529,10 +4697,17 @@ impl DescribeEnvironmentResourcesInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4783,10 +4958,17 @@ impl DescribeEnvironmentsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5074,10 +5256,17 @@ impl DescribeEventsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5266,10 +5455,17 @@ impl DescribeInstancesHealthInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5406,10 +5602,17 @@ impl DescribePlatformVersionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5547,10 +5750,17 @@ impl DisassociateEnvironmentOperationsRoleInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5663,10 +5873,17 @@ impl ListAvailableSolutionStacksInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5881,10 +6098,17 @@ impl ListPlatformBranchesInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6053,10 +6277,17 @@ impl ListPlatformVersionsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6192,10 +6423,17 @@ impl ListTagsForResourceInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6349,10 +6587,17 @@ impl RebuildEnvironmentInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6527,10 +6772,17 @@ impl RequestEnvironmentInfoInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6684,10 +6936,17 @@ impl RestartAppServerInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6865,10 +7124,17 @@ impl RetrieveEnvironmentInfoInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7061,10 +7327,17 @@ impl SwapEnvironmentCnamEsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7256,10 +7529,17 @@ impl TerminateEnvironmentInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7408,10 +7688,17 @@ impl UpdateApplicationInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7568,10 +7855,17 @@ impl UpdateApplicationResourceLifecycleInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7742,10 +8036,17 @@ impl UpdateApplicationVersionInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7959,10 +8260,17 @@ impl UpdateConfigurationTemplateInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8275,10 +8583,17 @@ impl UpdateEnvironmentInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8460,10 +8775,17 @@ impl UpdateTagsForResourceInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8657,10 +8979,17 @@ impl ValidateConfigurationSettingsInput {
             .insert(aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
-        aws_endpoint::set_endpoint_resolver(
-            &mut request.properties_mut(),
-            _config.endpoint_resolver.clone(),
-        );
+        if let Some(region) = &_config.region {
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }

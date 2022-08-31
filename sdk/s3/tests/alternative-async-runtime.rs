@@ -145,15 +145,15 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
         .send()
         .await
         .expect_err("call should fail");
-    assert_eq!(
-        conn.num_calls(),
-        3,
-        "client level timeouts should be retried"
-    );
     assert!(
         matches!(resp, SdkError::TimeoutError { .. }),
         "expected a timeout error, got: {}",
         resp
+    );
+    assert_eq!(
+        conn.num_calls(),
+        3,
+        "client level timeouts should be retried"
     );
 
     Ok(())

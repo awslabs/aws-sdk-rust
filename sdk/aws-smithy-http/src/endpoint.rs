@@ -4,12 +4,56 @@
  */
 
 use std::borrow::Cow;
+use std::fmt::{Display, Formatter};
 use std::str::FromStr;
 
 use http::uri::{Authority, Uri};
 
 use crate::operation::BuildError;
 
+pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, Error>;
+
+pub trait ResolveEndpoint<Params>: Send + Sync {
+    fn resolve_endpoint(&self, params: &Params) -> Result;
+}
+
+/// Endpoint Resolution Error
+#[derive(Debug)]
+pub struct Error {
+    message: String,
+    extra: Option<Box<dyn std::error::Error + Send + Sync>>,
+}
+
+impl Error {
+    /// Create an [`Error`] with a message
+    pub fn message(message: impl Into<String>) -> Self {
+        Self {
+            message: message.into(),
+            extra: None,
+        }
+    }
+
+    pub fn with_cause(self, cause: impl Into<Box<dyn std::error::Error + Send + Sync>>) -> Self {
+        Self {
+            extra: Some(cause.into()),
+            ..self
+        }
+    }
+}
+
+impl Display for Error {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.message)
+    }
+}
+
+impl std::error::Error for Error {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        self.extra.as_ref().map(|err| err.as_ref() as _)
+    }
+}
+
+// TODO(endpoints 2.0): when `endpoint_url` is added, deprecate & delete `Endpoint`
 /// API Endpoint
 ///
 /// This implements an API endpoint as specified in the
@@ -25,7 +69,7 @@ pub struct Endpoint {
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EndpointPrefix(String);
 impl EndpointPrefix {
-    pub fn new(prefix: impl Into<String>) -> Result<Self, BuildError> {
+    pub fn new(prefix: impl Into<String>) -> std::result::Result<Self, BuildError> {
         let prefix = prefix.into();
         match Authority::from_str(&prefix) {
             Ok(_) => Ok(EndpointPrefix(prefix)),
@@ -46,6 +90,68 @@ impl EndpointPrefix {
 #[derive(Debug, Eq, PartialEq, Clone)]
 pub enum InvalidEndpoint {
     EndpointMustHaveAuthority,
+    EndpointMustHaveScheme,
+    FailedToConstructAuthority,
+    FailedToConstructUri,
+}
+
+impl Display for InvalidEndpoint {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match self {
+            InvalidEndpoint::EndpointMustHaveAuthority => {
+                write!(f, "Endpoint must contain an authority")
+            }
+            InvalidEndpoint::EndpointMustHaveScheme => {
+                write!(f, "Endpoint must contain a valid scheme")
+            }
+            InvalidEndpoint::FailedToConstructAuthority => {
+                write!(
+                    f,
+                    "Endpoint must contain a valid authority when combined with endpoint prefix"
+                )
+            }
+            InvalidEndpoint::FailedToConstructUri => write!(f, "Failed to construct URI"),
+        }
+    }
+}
+
+impl std::error::Error for InvalidEndpoint {}
+
+/// Apply `endpoint` to `uri`
+///
+/// This method mutates `uri` by setting the `endpoint` on it
+///
+/// # Panics
+/// This method panics if `uri` does not have a scheme
+pub fn apply_endpoint(
+    uri: &mut Uri,
+    endpoint: &Uri,
+    prefix: Option<&EndpointPrefix>,
+) -> std::result::Result<(), InvalidEndpoint> {
+    let prefix = prefix.map(|p| p.0.as_str()).unwrap_or("");
+    let authority = endpoint
+        .authority()
+        .as_ref()
+        .map(|auth| auth.as_str())
+        .unwrap_or("");
+    let authority = if !prefix.is_empty() {
+        Authority::from_str(&format!("{}{}", prefix, authority))
+    } else {
+        Authority::from_str(authority)
+    }
+    .map_err(|_| InvalidEndpoint::FailedToConstructAuthority)?;
+    let scheme = *endpoint
+        .scheme()
+        .as_ref()
+        .ok_or(InvalidEndpoint::EndpointMustHaveScheme)?;
+    let new_uri = Uri::builder()
+        .authority(authority)
+        .scheme(scheme.clone())
+        .path_and_query(Endpoint::merge_paths(endpoint, uri).as_ref())
+        .build()
+        .map_err(|_| InvalidEndpoint::FailedToConstructUri)?;
+    *uri = new_uri;
+    Ok(())
 }
 
 impl Endpoint {
@@ -59,6 +165,11 @@ impl Endpoint {
             uri,
             immutable: false,
         }
+    }
+
+    /// Returns the URI of this endpoint
+    pub fn uri(&self) -> &Uri {
+        &self.uri
     }
 
     /// Create a new immutable endpoint from a URI
@@ -82,26 +193,11 @@ impl Endpoint {
 
     /// Sets the endpoint on `uri`, potentially applying the specified `prefix` in the process.
     pub fn set_endpoint(&self, uri: &mut http::Uri, prefix: Option<&EndpointPrefix>) {
-        let prefix = prefix.map(|p| p.0.as_str()).unwrap_or("");
-        let authority = self
-            .uri
-            .authority()
-            .as_ref()
-            .map(|auth| auth.as_str())
-            .unwrap_or("");
-        let authority = if !self.immutable && !prefix.is_empty() {
-            Authority::from_str(&format!("{}{}", prefix, authority)).expect("parts must be valid")
-        } else {
-            Authority::from_str(authority).expect("authority is valid")
+        let prefix = match self.immutable {
+            true => None,
+            false => prefix,
         };
-        let scheme = *self.uri.scheme().as_ref().expect("scheme must be provided");
-        let new_uri = Uri::builder()
-            .authority(authority)
-            .scheme(scheme.clone())
-            .path_and_query(Self::merge_paths(&self.uri, uri).as_ref())
-            .build()
-            .expect("valid uri");
-        *uri = new_uri;
+        apply_endpoint(uri, &self.uri, prefix).expect("failed to set endpoint");
     }
 
     fn merge_paths<'a>(endpoint: &'a Uri, uri: &'a Uri) -> Cow<'a, str> {

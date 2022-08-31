@@ -11,6 +11,7 @@ use http::{Request, Version};
 use http_body::Body;
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
+use std::ops::DerefMut;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll};
@@ -61,7 +62,8 @@ impl ReplayingConnection {
         checked_headers: &[&str],
         body_comparer: impl Fn(&[u8], &[u8]) -> Result<(), Box<dyn Error>>,
     ) -> Result<(), Box<dyn Error>> {
-        let mut actual_requests = self.recorded_requests.lock().unwrap();
+        let mut actual_requests =
+            std::mem::take(self.recorded_requests.lock().unwrap().deref_mut());
         for conn_id in 0..self.verifiable_events.len() {
             let conn_id = ConnectionId(conn_id);
             let expected = self.verifiable_events.get(&conn_id).unwrap();
@@ -98,7 +100,8 @@ impl ReplayingConnection {
 
     /// Return all the recorded requests for further analysis
     pub async fn take_requests(self) -> Vec<http::Request<Bytes>> {
-        let mut recorded_requests = self.recorded_requests.lock().unwrap();
+        let mut recorded_requests =
+            std::mem::take(self.recorded_requests.lock().unwrap().deref_mut());
         let mut out = Vec::with_capacity(recorded_requests.len());
         for conn_id in 0..recorded_requests.len() {
             out.push(

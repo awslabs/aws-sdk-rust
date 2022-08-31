@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_endpoint::get_endpoint_resolver;
 use aws_sdk_iam::Region;
-use http::Uri;
 
 #[tokio::test]
 async fn correct_endpoint_resolver() {
-    let conf = aws_sdk_iam::Config::builder().build();
+    let conf = aws_sdk_iam::Config::builder()
+        .region(Region::from_static("iam-fips"))
+        .build();
     let operation = aws_sdk_iam::operation::ListRoles::builder()
         .build()
         .unwrap()
@@ -17,23 +17,9 @@ async fn correct_endpoint_resolver() {
         .await
         .expect("valid operation");
     let props = operation.properties();
-    let resolver = get_endpoint_resolver(&props).expect("operation should have endpoint resolver");
-    // test regular endpoint
-    {
-        let ep = resolver
-            .resolve_endpoint(&Region::new("us-east-1"))
-            .expect("valid endpoint");
-        let mut uri = Uri::from_static("/");
-        ep.set_endpoint(&mut uri, None);
-        assert_eq!(uri, Uri::from_static("https://iam.amazonaws.com/"));
-    }
+    let ep: &aws_smithy_http::endpoint::Result =
+        props.get().expect("endpoint result was not present");
+    let ep = ep.as_ref().expect("ep resolved successfully");
     // test fips endpoint
-    {
-        let ep = resolver
-            .resolve_endpoint(&Region::new("iam-fips"))
-            .expect("valid endpoint");
-        let mut uri = Uri::from_static("/");
-        ep.set_endpoint(&mut uri, None);
-        assert_eq!(uri, Uri::from_static("https://iam-fips.amazonaws.com/"));
-    }
+    assert_eq!(ep.url(), "https://iam-fips.amazonaws.com/");
 }

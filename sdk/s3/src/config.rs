@@ -21,7 +21,8 @@ pub struct Config {
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::Config>,
     app_name: Option<aws_types::app_name::AppName>,
-    pub(crate) endpoint_resolver: ::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>,
+    pub(crate) endpoint_resolver:
+        std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
     pub(crate) region: Option<aws_types::region::Region>,
     pub(crate) credentials_provider: aws_types::credentials::SharedCredentialsProvider,
 }
@@ -83,7 +84,9 @@ pub struct Builder {
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::Config>,
     app_name: Option<aws_types::app_name::AppName>,
-    endpoint_resolver: Option<::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
+    endpoint_resolver: Option<
+        std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
+    >,
     region: Option<aws_types::region::Region>,
     credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
 }
@@ -278,7 +281,9 @@ impl Builder {
         mut self,
         endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
     ) -> Self {
-        self.endpoint_resolver = Some(::std::sync::Arc::new(endpoint_resolver));
+        self.endpoint_resolver = Some(std::sync::Arc::new(
+            aws_endpoint::EndpointShim::from_resolver(endpoint_resolver),
+        ) as _);
         self
     }
 
@@ -287,7 +292,8 @@ impl Builder {
         &mut self,
         endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
     ) -> &mut Self {
-        self.endpoint_resolver = endpoint_resolver;
+        self.endpoint_resolver = endpoint_resolver
+            .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
         self
     }
     /// Sets the AWS region to use when making requests.
@@ -331,9 +337,11 @@ impl Builder {
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,
             app_name: self.app_name,
-            endpoint_resolver: self
-                .endpoint_resolver
-                .unwrap_or_else(|| ::std::sync::Arc::new(crate::aws_endpoint::endpoint_resolver())),
+            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
+                std::sync::Arc::new(aws_endpoint::EndpointShim::from_resolver(
+                    crate::aws_endpoint::endpoint_resolver(),
+                ))
+            }),
             region: self.region,
             credentials_provider: self.credentials_provider.unwrap_or_else(|| {
                 aws_types::credentials::SharedCredentialsProvider::new(

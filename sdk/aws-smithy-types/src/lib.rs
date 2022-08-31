@@ -17,6 +17,7 @@ use std::collections::HashMap;
 
 pub mod base64;
 pub mod date_time;
+pub mod endpoint;
 pub mod primitive;
 pub mod retry;
 pub mod timeout;
@@ -74,6 +75,30 @@ pub enum Document {
     Bool(bool),
     /// JSON null
     Null,
+}
+
+impl From<bool> for Document {
+    fn from(value: bool) -> Self {
+        Document::Bool(value)
+    }
+}
+
+impl From<String> for Document {
+    fn from(value: String) -> Self {
+        Document::String(value)
+    }
+}
+
+impl From<Vec<Document>> for Document {
+    fn from(values: Vec<Document>) -> Self {
+        Document::Array(values)
+    }
+}
+
+impl From<HashMap<String, Document>> for Document {
+    fn from(values: HashMap<String, Document>) -> Self {
+        Document::Object(values)
+    }
 }
 
 /// A number type that implements Javascript / JSON semantics, modeled on serde_json:

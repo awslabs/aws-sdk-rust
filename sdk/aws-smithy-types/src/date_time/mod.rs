@@ -209,7 +209,7 @@ impl DateTime {
             Format::DateTime => format::rfc3339::read(s)?,
             Format::HttpDate => format::http_date::read(s)?,
             Format::EpochSeconds => {
-                let split_point = s.find(delim).unwrap_or_else(|| s.len());
+                let split_point = s.find(delim).unwrap_or(s.len());
                 let (s, rest) = s.split_at(split_point);
                 (Self::from_str(s, format)?, rest)
             }

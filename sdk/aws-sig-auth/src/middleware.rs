@@ -172,8 +172,9 @@ mod test {
     use crate::middleware::{SigV4SigningStage, Signature, SigningStageError};
     use crate::signer::{OperationSigningConfig, SigV4Signer};
     use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
-    use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage};
+    use aws_endpoint::{AwsEndpointStage, Params};
     use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::endpoint::ResolveEndpoint;
     use aws_smithy_http::middleware::MapRequest;
     use aws_smithy_http::operation;
     use aws_types::region::{Region, SigningRegion};
@@ -181,7 +182,6 @@ mod test {
     use aws_types::SigningService;
     use http::header::AUTHORIZATION;
     use std::convert::Infallible;
-    use std::sync::Arc;
     use std::time::{Duration, UNIX_EPOCH};
 
     #[test]
@@ -214,12 +214,14 @@ mod test {
     // check that the endpoint middleware followed by signing middleware produce the expected result
     #[test]
     fn endpoint_plus_signer() {
-        let provider = Arc::new(aws_endpoint::partition::endpoint::Metadata {
-            uri_template: "kinesis.{region}.amazonaws.com",
-            protocol: Protocol::Https,
-            credential_scope: Default::default(),
-            signature_versions: SignatureVersion::V4,
-        });
+        let provider = aws_endpoint::EndpointShim::from_resolver(
+            aws_endpoint::partition::endpoint::Metadata {
+                uri_template: "kinesis.{region}.amazonaws.com",
+                protocol: Protocol::Https,
+                credential_scope: Default::default(),
+                signature_versions: SignatureVersion::V4,
+            },
+        );
         let req = http::Request::new(SdkBody::from(""));
         let region = Region::new("us-east-1");
         let req = operation::Request::new(req)
@@ -227,7 +229,7 @@ mod test {
                 conf.insert(region.clone());
                 conf.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
                 conf.insert(SigningService::from_static("kinesis"));
-                set_endpoint_resolver(conf, provider);
+                conf.insert(provider.resolve_endpoint(&Params::new(Some(region.clone()))));
                 Result::<_, Infallible>::Ok(req)
             })
             .expect("succeeds");
