@@ -35,15 +35,14 @@ impl EnvironmentVariableCredentialsProvider {
             .or_else(|_| self.env.get("SECRET_ACCESS_KEY"))
             .and_then(err_if_blank)
             .map_err(to_cred_error)?;
-        let session_token = self
-            .env
-            .get("AWS_SESSION_TOKEN")
-            .ok()
-            .map(|token| match token.trim() {
-                s if s.is_empty() => None,
-                s => Some(s.to_string()),
-            })
-            .flatten();
+        let session_token =
+            self.env
+                .get("AWS_SESSION_TOKEN")
+                .ok()
+                .and_then(|token| match token.trim() {
+                    s if s.is_empty() => None,
+                    s => Some(s.to_string()),
+                });
         Ok(Credentials::new(
             access_key,
             secret_key,

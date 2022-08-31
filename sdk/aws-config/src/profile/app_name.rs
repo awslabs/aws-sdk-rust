@@ -67,14 +67,13 @@ impl ProfileFileAppNameProvider {
         let selected_profile = profile.get_profile(selected_profile_name)?;
         selected_profile
             .get("sdk-ua-app-id")
-            .map(|name| match AppName::new(name.to_owned()) {
+            .and_then(|name| match AppName::new(name.to_owned()) {
                 Ok(app_name) => Some(app_name),
                 Err(err) => {
                     tracing::warn!(err = %err, "`sdk-ua-app-id` property in profile `{}` was invalid", selected_profile_name);
                     None
                 }
             })
-            .flatten()
     }
 }
 
