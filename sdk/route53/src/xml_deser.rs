@@ -208,12 +208,14 @@ pub fn deser_operation_crate_operation_activate_key_signing_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ActivateKeySigningKeyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ActivateKeySigningKeyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ActivateKeySigningKeyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ActivateKeySigningKeyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -469,12 +471,14 @@ pub fn deser_operation_crate_operation_associate_vpc_with_hosted_zone(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("AssociateVPCWithHostedZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected AssociateVPCWithHostedZoneResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("AssociateVPCWithHostedZoneResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected AssociateVPCWithHostedZoneResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -606,12 +610,14 @@ pub fn deser_operation_crate_operation_change_cidr_collection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ChangeCidrCollectionResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ChangeCidrCollectionResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ChangeCidrCollectionResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ChangeCidrCollectionResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -720,12 +726,14 @@ pub fn deser_operation_crate_operation_change_resource_record_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ChangeResourceRecordSetsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ChangeResourceRecordSetsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ChangeResourceRecordSetsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ChangeResourceRecordSetsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -822,12 +830,14 @@ pub fn deser_operation_crate_operation_create_cidr_collection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateCidrCollectionResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateCidrCollectionResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateCidrCollectionResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateCidrCollectionResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -920,12 +930,14 @@ pub fn deser_operation_crate_operation_create_health_check(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateHealthCheckResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateHealthCheckResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateHealthCheckResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateHealthCheckResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1146,12 +1158,14 @@ pub fn deser_operation_crate_operation_create_hosted_zone(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateHostedZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateHostedZoneResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateHostedZoneResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateHostedZoneResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1340,12 +1354,14 @@ pub fn deser_operation_crate_operation_create_key_signing_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateKeySigningKeyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateKeySigningKeyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateKeySigningKeyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateKeySigningKeyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1492,12 +1508,14 @@ pub fn deser_operation_crate_operation_create_query_logging_config(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateQueryLoggingConfigResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateQueryLoggingConfigResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateQueryLoggingConfigResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateQueryLoggingConfigResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1627,12 +1645,14 @@ pub fn deser_operation_crate_operation_create_reusable_delegation_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateReusableDelegationSetResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateReusableDelegationSetResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateReusableDelegationSetResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateReusableDelegationSetResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1760,12 +1780,14 @@ pub fn deser_operation_crate_operation_create_traffic_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateTrafficPolicyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateTrafficPolicyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateTrafficPolicyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateTrafficPolicyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1899,12 +1921,14 @@ pub fn deser_operation_crate_operation_create_traffic_policy_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateTrafficPolicyInstanceResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateTrafficPolicyInstanceResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateTrafficPolicyInstanceResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateTrafficPolicyInstanceResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1971,12 +1995,14 @@ pub fn deser_operation_crate_operation_create_traffic_policy_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateTrafficPolicyVersionResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateTrafficPolicyVersionResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateTrafficPolicyVersionResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateTrafficPolicyVersionResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2043,12 +2069,14 @@ pub fn deser_operation_crate_operation_create_vpc_association_authorization(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateVPCAssociationAuthorizationResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateVPCAssociationAuthorizationResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateVPCAssociationAuthorizationResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateVPCAssociationAuthorizationResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2160,12 +2188,14 @@ pub fn deser_operation_crate_operation_deactivate_key_signing_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("DeactivateKeySigningKeyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DeactivateKeySigningKeyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("DeactivateKeySigningKeyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected DeactivateKeySigningKeyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2291,12 +2321,14 @@ pub fn deser_operation_crate_operation_delete_hosted_zone(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("DeleteHostedZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DeleteHostedZoneResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("DeleteHostedZoneResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected DeleteHostedZoneResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2326,12 +2358,14 @@ pub fn deser_operation_crate_operation_delete_key_signing_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("DeleteKeySigningKeyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DeleteKeySigningKeyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("DeleteKeySigningKeyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected DeleteKeySigningKeyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2559,12 +2593,14 @@ pub fn deser_operation_crate_operation_disable_hosted_zone_dnssec(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("DisableHostedZoneDNSSECResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DisableHostedZoneDNSSECResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("DisableHostedZoneDNSSECResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected DisableHostedZoneDNSSECResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2660,12 +2696,14 @@ pub fn deser_operation_crate_operation_disassociate_vpc_from_hosted_zone(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("DisassociateVPCFromHostedZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DisassociateVPCFromHostedZoneResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("DisassociateVPCFromHostedZoneResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected DisassociateVPCFromHostedZoneResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2765,12 +2803,14 @@ pub fn deser_operation_crate_operation_enable_hosted_zone_dnssec(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("EnableHostedZoneDNSSECResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected EnableHostedZoneDNSSECResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("EnableHostedZoneDNSSECResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected EnableHostedZoneDNSSECResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2799,12 +2839,14 @@ pub fn deser_operation_crate_operation_get_account_limit(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetAccountLimitResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetAccountLimitResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetAccountLimitResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetAccountLimitResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2880,12 +2922,14 @@ pub fn deser_operation_crate_operation_get_change(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetChangeResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetChangeResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetChangeResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetChangeResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2915,12 +2959,14 @@ pub fn deser_operation_crate_operation_get_checker_ip_ranges(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetCheckerIpRangesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetCheckerIpRangesResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetCheckerIpRangesResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetCheckerIpRangesResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2949,12 +2995,14 @@ pub fn deser_operation_crate_operation_get_dnssec(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetDNSSECResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetDNSSECResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetDNSSECResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetDNSSECResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3025,12 +3073,14 @@ pub fn deser_operation_crate_operation_get_geo_location(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetGeoLocationResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetGeoLocationResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetGeoLocationResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetGeoLocationResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3091,12 +3141,14 @@ pub fn deser_operation_crate_operation_get_health_check(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHealthCheckResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHealthCheckResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHealthCheckResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHealthCheckResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3126,12 +3178,14 @@ pub fn deser_operation_crate_operation_get_health_check_count(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHealthCheckCountResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHealthCheckCountResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHealthCheckCountResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHealthCheckCountResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3168,12 +3222,14 @@ pub fn deser_operation_crate_operation_get_health_check_last_failure_reason(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHealthCheckLastFailureReasonResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHealthCheckLastFailureReasonResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHealthCheckLastFailureReasonResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHealthCheckLastFailureReasonResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3203,12 +3259,14 @@ pub fn deser_operation_crate_operation_get_health_check_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHealthCheckStatusResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHealthCheckStatusResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHealthCheckStatusResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHealthCheckStatusResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3237,12 +3295,14 @@ pub fn deser_operation_crate_operation_get_hosted_zone(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHostedZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHostedZoneResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHostedZoneResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHostedZoneResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3292,12 +3352,14 @@ pub fn deser_operation_crate_operation_get_hosted_zone_count(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHostedZoneCountResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHostedZoneCountResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHostedZoneCountResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHostedZoneCountResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3364,12 +3426,14 @@ pub fn deser_operation_crate_operation_get_hosted_zone_limit(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetHostedZoneLimitResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetHostedZoneLimitResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetHostedZoneLimitResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetHostedZoneLimitResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3414,12 +3478,14 @@ pub fn deser_operation_crate_operation_get_query_logging_config(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetQueryLoggingConfigResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetQueryLoggingConfigResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetQueryLoggingConfigResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetQueryLoggingConfigResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3451,12 +3517,14 @@ pub fn deser_operation_crate_operation_get_reusable_delegation_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetReusableDelegationSetResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetReusableDelegationSetResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetReusableDelegationSetResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetReusableDelegationSetResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3488,12 +3556,14 @@ pub fn deser_operation_crate_operation_get_reusable_delegation_set_limit(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetReusableDelegationSetLimitResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetReusableDelegationSetLimitResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetReusableDelegationSetLimitResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetReusableDelegationSetLimitResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3537,12 +3607,14 @@ pub fn deser_operation_crate_operation_get_traffic_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetTrafficPolicyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetTrafficPolicyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetTrafficPolicyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetTrafficPolicyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3574,12 +3646,14 @@ pub fn deser_operation_crate_operation_get_traffic_policy_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetTrafficPolicyInstanceResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetTrafficPolicyInstanceResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetTrafficPolicyInstanceResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetTrafficPolicyInstanceResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3611,12 +3685,14 @@ pub fn deser_operation_crate_operation_get_traffic_policy_instance_count(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetTrafficPolicyInstanceCountResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetTrafficPolicyInstanceCountResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetTrafficPolicyInstanceCountResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetTrafficPolicyInstanceCountResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3683,12 +3759,14 @@ pub fn deser_operation_crate_operation_list_cidr_blocks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListCidrBlocksResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListCidrBlocksResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListCidrBlocksResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListCidrBlocksResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3731,12 +3809,14 @@ pub fn deser_operation_crate_operation_list_cidr_collections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListCidrCollectionsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListCidrCollectionsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListCidrCollectionsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListCidrCollectionsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3778,12 +3858,14 @@ pub fn deser_operation_crate_operation_list_cidr_locations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListCidrLocationsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListCidrLocationsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListCidrLocationsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListCidrLocationsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3825,12 +3907,14 @@ pub fn deser_operation_crate_operation_list_geo_locations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListGeoLocationsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListGeoLocationsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListGeoLocationsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListGeoLocationsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -3928,12 +4012,14 @@ pub fn deser_operation_crate_operation_list_health_checks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListHealthChecksResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListHealthChecksResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListHealthChecksResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListHealthChecksResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4018,12 +4104,14 @@ pub fn deser_operation_crate_operation_list_hosted_zones(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListHostedZonesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListHostedZonesResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListHostedZonesResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListHostedZonesResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4111,12 +4199,14 @@ pub fn deser_operation_crate_operation_list_hosted_zones_by_name(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListHostedZonesByNameResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListHostedZonesByNameResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListHostedZonesByNameResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListHostedZonesByNameResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4260,12 +4350,14 @@ pub fn deser_operation_crate_operation_list_hosted_zones_by_vpc(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListHostedZonesByVPCResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListHostedZonesByVPCResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListHostedZonesByVPCResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListHostedZonesByVPCResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4325,12 +4417,14 @@ pub fn deser_operation_crate_operation_list_query_logging_configs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListQueryLoggingConfigsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListQueryLoggingConfigsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListQueryLoggingConfigsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListQueryLoggingConfigsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4375,12 +4469,14 @@ pub fn deser_operation_crate_operation_list_resource_record_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListResourceRecordSetsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListResourceRecordSetsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListResourceRecordSetsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListResourceRecordSetsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4482,12 +4578,14 @@ pub fn deser_operation_crate_operation_list_reusable_delegation_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListReusableDelegationSetsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListReusableDelegationSetsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListReusableDelegationSetsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListReusableDelegationSetsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4573,12 +4671,14 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTagsForResourceResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTagsForResourceResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTagsForResourceResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTagsForResourceResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4608,12 +4708,14 @@ pub fn deser_operation_crate_operation_list_tags_for_resources(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTagsForResourcesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTagsForResourcesResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTagsForResourcesResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTagsForResourcesResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4643,12 +4745,14 @@ pub fn deser_operation_crate_operation_list_traffic_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTrafficPoliciesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTrafficPoliciesResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTrafficPoliciesResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTrafficPoliciesResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4723,12 +4827,14 @@ pub fn deser_operation_crate_operation_list_traffic_policy_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTrafficPolicyInstancesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTrafficPolicyInstancesResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTrafficPolicyInstancesResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTrafficPolicyInstancesResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4830,12 +4936,14 @@ pub fn deser_operation_crate_operation_list_traffic_policy_instances_by_hosted_z
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTrafficPolicyInstancesByHostedZoneResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTrafficPolicyInstancesByHostedZoneResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTrafficPolicyInstancesByHostedZoneResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTrafficPolicyInstancesByHostedZoneResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4924,12 +5032,14 @@ pub fn deser_operation_crate_operation_list_traffic_policy_instances_by_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTrafficPolicyInstancesByPolicyResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTrafficPolicyInstancesByPolicyResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTrafficPolicyInstancesByPolicyResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTrafficPolicyInstancesByPolicyResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5031,12 +5141,14 @@ pub fn deser_operation_crate_operation_list_traffic_policy_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListTrafficPolicyVersionsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListTrafficPolicyVersionsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListTrafficPolicyVersionsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListTrafficPolicyVersionsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5111,12 +5223,14 @@ pub fn deser_operation_crate_operation_list_vpc_association_authorizations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListVPCAssociationAuthorizationsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListVPCAssociationAuthorizationsResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListVPCAssociationAuthorizationsResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListVPCAssociationAuthorizationsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5171,12 +5285,14 @@ pub fn deser_operation_crate_operation_test_dns_answer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("TestDNSAnswerResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected TestDNSAnswerResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("TestDNSAnswerResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected TestDNSAnswerResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5304,12 +5420,14 @@ pub fn deser_operation_crate_operation_update_health_check(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("UpdateHealthCheckResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected UpdateHealthCheckResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("UpdateHealthCheckResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected UpdateHealthCheckResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5341,12 +5459,14 @@ pub fn deser_operation_crate_operation_update_hosted_zone_comment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("UpdateHostedZoneCommentResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected UpdateHostedZoneCommentResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("UpdateHostedZoneCommentResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected UpdateHostedZoneCommentResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5378,12 +5498,14 @@ pub fn deser_operation_crate_operation_update_traffic_policy_comment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("UpdateTrafficPolicyCommentResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected UpdateTrafficPolicyCommentResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("UpdateTrafficPolicyCommentResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected UpdateTrafficPolicyCommentResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -5447,12 +5569,14 @@ pub fn deser_operation_crate_operation_update_traffic_policy_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("UpdateTrafficPolicyInstanceResponse")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected UpdateTrafficPolicyInstanceResponse got {:?}",
-            start_el
-        )));
+    if !start_el.matches("UpdateTrafficPolicyInstanceResponse") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected UpdateTrafficPolicyInstanceResponse but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

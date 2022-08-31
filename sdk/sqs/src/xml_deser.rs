@@ -244,6 +244,7 @@ pub fn deser_operation_crate_operation_change_message_visibility_batch(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ChangeMessageVisibilityBatchResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -379,6 +380,7 @@ pub fn deser_operation_crate_operation_create_queue(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateQueueResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -461,6 +463,7 @@ pub fn deser_operation_crate_operation_delete_message_batch(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteMessageBatchResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -564,6 +567,7 @@ pub fn deser_operation_crate_operation_get_queue_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetQueueAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -647,6 +651,7 @@ pub fn deser_operation_crate_operation_get_queue_url(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetQueueUrlResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -700,6 +705,7 @@ pub fn deser_operation_crate_operation_list_dead_letter_source_queues(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListDeadLetterSourceQueuesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -770,6 +776,7 @@ pub fn deser_operation_crate_operation_list_queues(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListQueuesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -840,6 +847,7 @@ pub fn deser_operation_crate_operation_list_queue_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListQueueTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -923,6 +931,7 @@ pub fn deser_operation_crate_operation_receive_message(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReceiveMessageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1041,6 +1050,7 @@ pub fn deser_operation_crate_operation_send_message(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendMessageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1175,6 +1185,7 @@ pub fn deser_operation_crate_operation_send_message_batch(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendMessageBatchResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

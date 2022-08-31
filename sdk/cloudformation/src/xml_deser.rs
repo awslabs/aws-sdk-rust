@@ -78,6 +78,7 @@ pub fn deser_operation_crate_operation_activate_type(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ActivateTypeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -166,6 +167,7 @@ pub fn deser_operation_crate_operation_batch_describe_type_configurations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchDescribeTypeConfigurationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -365,6 +367,7 @@ pub fn deser_operation_crate_operation_create_change_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateChangeSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -428,6 +431,7 @@ pub fn deser_operation_crate_operation_create_stack(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateStackResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -644,6 +648,7 @@ pub fn deser_operation_crate_operation_create_stack_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateStackInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -760,6 +765,7 @@ pub fn deser_operation_crate_operation_create_stack_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateStackSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -846,6 +852,7 @@ pub fn deser_operation_crate_operation_delete_stack_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteStackInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -930,6 +937,7 @@ pub fn deser_operation_crate_operation_describe_account_limits(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAccountLimitsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1023,6 +1031,7 @@ pub fn deser_operation_crate_operation_describe_change_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeChangeSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1297,6 +1306,7 @@ pub fn deser_operation_crate_operation_describe_change_set_hooks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeChangeSetHooksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1423,6 +1433,7 @@ pub fn deser_operation_crate_operation_describe_publisher(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePublisherResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1517,6 +1528,7 @@ pub fn deser_operation_crate_operation_describe_stack_drift_detection_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackDriftDetectionStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1651,6 +1663,7 @@ pub fn deser_operation_crate_operation_describe_stack_events(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackEventsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1747,6 +1760,7 @@ pub fn deser_operation_crate_operation_describe_stack_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1795,6 +1809,7 @@ pub fn deser_operation_crate_operation_describe_stack_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1845,6 +1860,7 @@ pub fn deser_operation_crate_operation_describe_stack_resource_drifts(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackResourceDriftsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1906,6 +1922,7 @@ pub fn deser_operation_crate_operation_describe_stack_resources(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackResourcesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1953,6 +1970,7 @@ pub fn deser_operation_crate_operation_describe_stacks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStacksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2013,6 +2031,7 @@ pub fn deser_operation_crate_operation_describe_stack_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2096,6 +2115,7 @@ pub fn deser_operation_crate_operation_describe_stack_set_operation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackSetOperationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2143,6 +2163,7 @@ pub fn deser_operation_crate_operation_describe_type(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTypeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2541,6 +2562,7 @@ pub fn deser_operation_crate_operation_describe_type_registration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTypeRegistrationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2631,6 +2653,7 @@ pub fn deser_operation_crate_operation_detect_stack_drift(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetectStackDriftResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2684,6 +2707,7 @@ pub fn deser_operation_crate_operation_detect_stack_resource_drift(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetectStackResourceDriftResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2732,6 +2756,7 @@ pub fn deser_operation_crate_operation_detect_stack_set_drift(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetectStackSetDriftResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2783,6 +2808,7 @@ pub fn deser_operation_crate_operation_estimate_template_cost(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EstimateTemplateCostResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2833,6 +2859,7 @@ pub fn deser_operation_crate_operation_get_stack_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetStackPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2883,6 +2910,7 @@ pub fn deser_operation_crate_operation_get_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2943,6 +2971,7 @@ pub fn deser_operation_crate_operation_get_template_summary(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTemplateSummaryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3117,6 +3146,7 @@ pub fn deser_operation_crate_operation_import_stacks_to_stack_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportStacksToStackSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3167,6 +3197,7 @@ pub fn deser_operation_crate_operation_list_change_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListChangeSetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3227,6 +3258,7 @@ pub fn deser_operation_crate_operation_list_exports(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListExportsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3287,6 +3319,7 @@ pub fn deser_operation_crate_operation_list_imports(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListImportsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3347,6 +3380,7 @@ pub fn deser_operation_crate_operation_list_stack_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStackInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3407,6 +3441,7 @@ pub fn deser_operation_crate_operation_list_stack_resources(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStackResourcesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3467,6 +3502,7 @@ pub fn deser_operation_crate_operation_list_stacks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStacksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3530,6 +3566,7 @@ pub fn deser_operation_crate_operation_list_stack_set_operation_results(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStackSetOperationResultsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3593,6 +3630,7 @@ pub fn deser_operation_crate_operation_list_stack_set_operations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStackSetOperationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3653,6 +3691,7 @@ pub fn deser_operation_crate_operation_list_stack_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStackSetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3714,6 +3753,7 @@ pub fn deser_operation_crate_operation_list_type_registrations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTypeRegistrationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3774,6 +3814,7 @@ pub fn deser_operation_crate_operation_list_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3834,6 +3875,7 @@ pub fn deser_operation_crate_operation_list_type_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTypeVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3894,6 +3936,7 @@ pub fn deser_operation_crate_operation_publish_type(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PublishTypeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4014,6 +4057,7 @@ pub fn deser_operation_crate_operation_register_publisher(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterPublisherResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4064,6 +4108,7 @@ pub fn deser_operation_crate_operation_register_type(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterTypeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4114,6 +4159,7 @@ pub fn deser_operation_crate_operation_rollback_stack(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RollbackStackResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4165,6 +4211,7 @@ pub fn deser_operation_crate_operation_set_type_configuration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SetTypeConfigurationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4215,6 +4262,7 @@ pub fn deser_operation_crate_operation_test_type(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TestTypeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4265,6 +4313,7 @@ pub fn deser_operation_crate_operation_update_stack(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateStackResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4316,6 +4365,7 @@ pub fn deser_operation_crate_operation_update_stack_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateStackInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4366,6 +4416,7 @@ pub fn deser_operation_crate_operation_update_stack_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateStackSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4419,6 +4470,7 @@ pub fn deser_operation_crate_operation_update_termination_protection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateTerminationProtectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4469,6 +4521,7 @@ pub fn deser_operation_crate_operation_validate_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ValidateTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

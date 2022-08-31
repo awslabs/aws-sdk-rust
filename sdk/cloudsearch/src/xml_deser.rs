@@ -194,6 +194,7 @@ pub fn deser_operation_crate_operation_build_suggesters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BuildSuggestersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -334,6 +335,7 @@ pub fn deser_operation_crate_operation_create_domain(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDomainResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -427,6 +429,7 @@ pub fn deser_operation_crate_operation_define_analysis_scheme(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DefineAnalysisSchemeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -474,6 +477,7 @@ pub fn deser_operation_crate_operation_define_expression(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DefineExpressionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -521,6 +525,7 @@ pub fn deser_operation_crate_operation_define_index_field(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DefineIndexFieldResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -568,6 +573,7 @@ pub fn deser_operation_crate_operation_define_suggester(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DefineSuggesterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -616,6 +622,7 @@ pub fn deser_operation_crate_operation_delete_analysis_scheme(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteAnalysisSchemeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -663,6 +670,7 @@ pub fn deser_operation_crate_operation_delete_domain(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteDomainResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -710,6 +718,7 @@ pub fn deser_operation_crate_operation_delete_expression(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteExpressionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -757,6 +766,7 @@ pub fn deser_operation_crate_operation_delete_index_field(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteIndexFieldResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -804,6 +814,7 @@ pub fn deser_operation_crate_operation_delete_suggester(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteSuggesterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -854,6 +865,7 @@ pub fn deser_operation_crate_operation_describe_analysis_schemes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAnalysisSchemesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -949,6 +961,7 @@ pub fn deser_operation_crate_operation_describe_availability_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAvailabilityOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -999,6 +1012,7 @@ pub fn deser_operation_crate_operation_describe_domain_endpoint_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDomainEndpointOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1046,6 +1060,7 @@ pub fn deser_operation_crate_operation_describe_domains(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDomainsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1093,6 +1108,7 @@ pub fn deser_operation_crate_operation_describe_expressions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeExpressionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1141,6 +1157,7 @@ pub fn deser_operation_crate_operation_describe_index_fields(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIndexFieldsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1191,6 +1208,7 @@ pub fn deser_operation_crate_operation_describe_scaling_parameters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScalingParametersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1241,6 +1259,7 @@ pub fn deser_operation_crate_operation_describe_service_access_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeServiceAccessPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1288,6 +1307,7 @@ pub fn deser_operation_crate_operation_describe_suggesters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSuggestersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1335,6 +1355,7 @@ pub fn deser_operation_crate_operation_index_documents(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("IndexDocumentsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1382,6 +1403,7 @@ pub fn deser_operation_crate_operation_list_domain_names(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListDomainNamesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1432,6 +1454,7 @@ pub fn deser_operation_crate_operation_update_availability_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateAvailabilityOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1482,6 +1505,7 @@ pub fn deser_operation_crate_operation_update_domain_endpoint_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateDomainEndpointOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1532,6 +1556,7 @@ pub fn deser_operation_crate_operation_update_scaling_parameters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateScalingParametersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1582,6 +1607,7 @@ pub fn deser_operation_crate_operation_update_service_access_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateServiceAccessPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

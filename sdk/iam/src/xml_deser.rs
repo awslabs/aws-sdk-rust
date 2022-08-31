@@ -343,6 +343,7 @@ pub fn deser_operation_crate_operation_create_access_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateAccessKeyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -390,6 +391,7 @@ pub fn deser_operation_crate_operation_create_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -473,6 +475,7 @@ pub fn deser_operation_crate_operation_create_instance_profile(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateInstanceProfileResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -520,6 +523,7 @@ pub fn deser_operation_crate_operation_create_login_profile(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLoginProfileResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -570,6 +574,7 @@ pub fn deser_operation_crate_operation_create_open_id_connect_provider(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateOpenIDConnectProviderResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -665,6 +670,7 @@ pub fn deser_operation_crate_operation_create_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -713,6 +719,7 @@ pub fn deser_operation_crate_operation_create_policy_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePolicyVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -760,6 +767,7 @@ pub fn deser_operation_crate_operation_create_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -807,6 +815,7 @@ pub fn deser_operation_crate_operation_create_saml_provider(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSAMLProviderResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -870,6 +879,7 @@ pub fn deser_operation_crate_operation_create_service_linked_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateServiceLinkedRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -953,6 +963,7 @@ pub fn deser_operation_crate_operation_create_service_specific_credential(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateServiceSpecificCredentialResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1000,6 +1011,7 @@ pub fn deser_operation_crate_operation_create_user(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateUserResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1050,6 +1062,7 @@ pub fn deser_operation_crate_operation_create_virtual_mfa_device(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVirtualMFADeviceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1132,6 +1145,7 @@ pub fn deser_operation_crate_operation_delete_service_linked_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteServiceLinkedRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1220,6 +1234,7 @@ pub fn deser_operation_crate_operation_generate_credential_report(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GenerateCredentialReportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1322,6 +1337,7 @@ pub fn deser_operation_crate_operation_generate_organizations_access_report(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GenerateOrganizationsAccessReportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1375,6 +1391,7 @@ pub fn deser_operation_crate_operation_generate_service_last_accessed_details(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GenerateServiceLastAccessedDetailsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1426,6 +1443,7 @@ pub fn deser_operation_crate_operation_get_access_key_last_used(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccessKeyLastUsedResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1489,6 +1507,7 @@ pub fn deser_operation_crate_operation_get_account_authorization_details(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccountAuthorizationDetailsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1597,6 +1616,7 @@ pub fn deser_operation_crate_operation_get_account_password_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccountPasswordPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1644,6 +1664,7 @@ pub fn deser_operation_crate_operation_get_account_summary(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccountSummaryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1694,6 +1715,7 @@ pub fn deser_operation_crate_operation_get_context_keys_for_custom_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetContextKeysForCustomPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1744,6 +1766,7 @@ pub fn deser_operation_crate_operation_get_context_keys_for_principal_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetContextKeysForPrincipalPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1897,6 +1920,7 @@ pub fn deser_operation_crate_operation_get_credential_report(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetCredentialReportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1975,6 +1999,7 @@ pub fn deser_operation_crate_operation_get_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2060,6 +2085,7 @@ pub fn deser_operation_crate_operation_get_group_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetGroupPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2136,6 +2162,7 @@ pub fn deser_operation_crate_operation_get_instance_profile(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInstanceProfileResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2183,6 +2210,7 @@ pub fn deser_operation_crate_operation_get_login_profile(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetLoginProfileResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2233,6 +2261,7 @@ pub fn deser_operation_crate_operation_get_open_id_connect_provider(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetOpenIDConnectProviderResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2330,6 +2359,7 @@ pub fn deser_operation_crate_operation_get_organizations_access_report(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetOrganizationsAccessReportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2487,6 +2517,7 @@ pub fn deser_operation_crate_operation_get_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2534,6 +2565,7 @@ pub fn deser_operation_crate_operation_get_policy_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetPolicyVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2581,6 +2613,7 @@ pub fn deser_operation_crate_operation_get_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2628,6 +2661,7 @@ pub fn deser_operation_crate_operation_get_role_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetRolePolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2704,6 +2738,7 @@ pub fn deser_operation_crate_operation_get_saml_provider(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSAMLProviderResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2793,6 +2828,7 @@ pub fn deser_operation_crate_operation_get_server_certificate(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetServerCertificateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2843,6 +2879,7 @@ pub fn deser_operation_crate_operation_get_service_last_accessed_details(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetServiceLastAccessedDetailsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2987,6 +3024,7 @@ pub fn deser_operation_crate_operation_get_service_last_accessed_details_with_en
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetServiceLastAccessedDetailsWithEntitiesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3117,6 +3155,7 @@ pub fn deser_operation_crate_operation_get_service_linked_role_deletion_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetServiceLinkedRoleDeletionStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3213,6 +3252,7 @@ pub fn deser_operation_crate_operation_get_ssh_public_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSSHPublicKeyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3260,6 +3300,7 @@ pub fn deser_operation_crate_operation_get_user(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetUserResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3307,6 +3348,7 @@ pub fn deser_operation_crate_operation_get_user_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetUserPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3383,6 +3425,7 @@ pub fn deser_operation_crate_operation_list_access_keys(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAccessKeysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3458,6 +3501,7 @@ pub fn deser_operation_crate_operation_list_account_aliases(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAccountAliasesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3536,6 +3580,7 @@ pub fn deser_operation_crate_operation_list_attached_group_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAttachedGroupPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3614,6 +3659,7 @@ pub fn deser_operation_crate_operation_list_attached_role_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAttachedRolePoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3692,6 +3738,7 @@ pub fn deser_operation_crate_operation_list_attached_user_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAttachedUserPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3768,6 +3815,7 @@ pub fn deser_operation_crate_operation_list_entities_for_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListEntitiesForPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3863,6 +3911,7 @@ pub fn deser_operation_crate_operation_list_group_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListGroupPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3938,6 +3987,7 @@ pub fn deser_operation_crate_operation_list_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4013,6 +4063,7 @@ pub fn deser_operation_crate_operation_list_groups_for_user(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListGroupsForUserResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4089,6 +4140,7 @@ pub fn deser_operation_crate_operation_list_instance_profiles(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListInstanceProfilesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4167,6 +4219,7 @@ pub fn deser_operation_crate_operation_list_instance_profiles_for_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListInstanceProfilesForRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4245,6 +4298,7 @@ pub fn deser_operation_crate_operation_list_instance_profile_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListInstanceProfileTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4320,6 +4374,7 @@ pub fn deser_operation_crate_operation_list_mfa_devices(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListMFADevicesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4395,6 +4450,7 @@ pub fn deser_operation_crate_operation_list_mfa_device_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListMFADeviceTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4473,6 +4529,7 @@ pub fn deser_operation_crate_operation_list_open_id_connect_providers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListOpenIDConnectProvidersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4523,6 +4580,7 @@ pub fn deser_operation_crate_operation_list_open_id_connect_provider_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListOpenIDConnectProviderTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4598,6 +4656,7 @@ pub fn deser_operation_crate_operation_list_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4676,6 +4735,7 @@ pub fn deser_operation_crate_operation_list_policies_granting_service_access(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPoliciesGrantingServiceAccessResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4751,6 +4811,7 @@ pub fn deser_operation_crate_operation_list_policy_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPolicyTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4826,6 +4887,7 @@ pub fn deser_operation_crate_operation_list_policy_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPolicyVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4901,6 +4963,7 @@ pub fn deser_operation_crate_operation_list_role_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListRolePoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4976,6 +5039,7 @@ pub fn deser_operation_crate_operation_list_roles(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListRolesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5051,6 +5115,7 @@ pub fn deser_operation_crate_operation_list_role_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListRoleTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5126,6 +5191,7 @@ pub fn deser_operation_crate_operation_list_saml_providers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSAMLProvidersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5174,6 +5240,7 @@ pub fn deser_operation_crate_operation_list_saml_provider_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSAMLProviderTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5250,6 +5317,7 @@ pub fn deser_operation_crate_operation_list_server_certificates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListServerCertificatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5328,6 +5396,7 @@ pub fn deser_operation_crate_operation_list_server_certificate_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListServerCertificateTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5406,6 +5475,7 @@ pub fn deser_operation_crate_operation_list_service_specific_credentials(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListServiceSpecificCredentialsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5456,6 +5526,7 @@ pub fn deser_operation_crate_operation_list_signing_certificates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSigningCertificatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5531,6 +5602,7 @@ pub fn deser_operation_crate_operation_list_ssh_public_keys(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSSHPublicKeysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5606,6 +5678,7 @@ pub fn deser_operation_crate_operation_list_user_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListUserPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5681,6 +5754,7 @@ pub fn deser_operation_crate_operation_list_users(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListUsersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5756,6 +5830,7 @@ pub fn deser_operation_crate_operation_list_user_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListUserTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5832,6 +5907,7 @@ pub fn deser_operation_crate_operation_list_virtual_mfa_devices(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListVirtualMFADevicesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5910,6 +5986,7 @@ pub fn deser_operation_crate_operation_reset_service_specific_credential(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetServiceSpecificCredentialResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5990,6 +6067,7 @@ pub fn deser_operation_crate_operation_simulate_custom_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SimulateCustomPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6068,6 +6146,7 @@ pub fn deser_operation_crate_operation_simulate_principal_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SimulatePrincipalPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6144,6 +6223,7 @@ pub fn deser_operation_crate_operation_update_role_description(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateRoleDescriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6191,6 +6271,7 @@ pub fn deser_operation_crate_operation_update_saml_provider(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateSAMLProviderResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6309,6 +6390,7 @@ pub fn deser_operation_crate_operation_upload_server_certificate(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UploadServerCertificateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6435,6 +6517,7 @@ pub fn deser_operation_crate_operation_upload_signing_certificate(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UploadSigningCertificateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6550,6 +6633,7 @@ pub fn deser_operation_crate_operation_upload_ssh_public_key(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UploadSSHPublicKeyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

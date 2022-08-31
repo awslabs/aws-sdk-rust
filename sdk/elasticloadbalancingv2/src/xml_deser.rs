@@ -115,6 +115,7 @@ pub fn deser_operation_crate_operation_add_listener_certificates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AddListenerCertificatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -763,6 +764,7 @@ pub fn deser_operation_crate_operation_create_listener(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateListenerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1146,6 +1148,7 @@ pub fn deser_operation_crate_operation_create_load_balancer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1290,6 +1293,7 @@ pub fn deser_operation_crate_operation_create_rule(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateRuleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1372,6 +1376,7 @@ pub fn deser_operation_crate_operation_create_target_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTargetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1452,6 +1457,7 @@ pub fn deser_operation_crate_operation_describe_account_limits(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAccountLimitsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1515,6 +1521,7 @@ pub fn deser_operation_crate_operation_describe_listener_certificates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeListenerCertificatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1575,6 +1582,7 @@ pub fn deser_operation_crate_operation_describe_listeners(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeListenersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1638,6 +1646,7 @@ pub fn deser_operation_crate_operation_describe_load_balancer_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancerAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1686,6 +1695,7 @@ pub fn deser_operation_crate_operation_describe_load_balancers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1746,6 +1756,7 @@ pub fn deser_operation_crate_operation_describe_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1807,6 +1818,7 @@ pub fn deser_operation_crate_operation_describe_ssl_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSSLPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1867,6 +1879,7 @@ pub fn deser_operation_crate_operation_describe_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1917,6 +1930,7 @@ pub fn deser_operation_crate_operation_describe_target_group_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTargetGroupAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1965,6 +1979,7 @@ pub fn deser_operation_crate_operation_describe_target_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTargetGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2058,6 +2073,7 @@ pub fn deser_operation_crate_operation_describe_target_health(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTargetHealthResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2105,6 +2121,7 @@ pub fn deser_operation_crate_operation_modify_listener(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyListenerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2155,6 +2172,7 @@ pub fn deser_operation_crate_operation_modify_load_balancer_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyLoadBalancerAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2202,6 +2220,7 @@ pub fn deser_operation_crate_operation_modify_rule(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyRuleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2249,6 +2268,7 @@ pub fn deser_operation_crate_operation_modify_target_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTargetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2299,6 +2319,7 @@ pub fn deser_operation_crate_operation_modify_target_group_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTargetGroupAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2346,6 +2367,7 @@ pub fn deser_operation_crate_operation_set_ip_address_type(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SetIpAddressTypeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2397,6 +2419,7 @@ pub fn deser_operation_crate_operation_set_rule_priorities(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SetRulePrioritiesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2444,6 +2467,7 @@ pub fn deser_operation_crate_operation_set_security_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SetSecurityGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2491,6 +2515,7 @@ pub fn deser_operation_crate_operation_set_subnets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SetSubnetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

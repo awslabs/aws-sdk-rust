@@ -418,6 +418,7 @@ pub fn deser_operation_crate_operation_add_tags_to_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AddTagsToResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -608,6 +609,7 @@ pub fn deser_operation_crate_operation_authorize_cache_security_group_ingress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeCacheSecurityGroupIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -691,6 +693,7 @@ pub fn deser_operation_crate_operation_batch_apply_update_action(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchApplyUpdateActionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -749,6 +752,7 @@ pub fn deser_operation_crate_operation_batch_stop_update_action(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchStopUpdateActionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -841,6 +845,7 @@ pub fn deser_operation_crate_operation_complete_migration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CompleteMigrationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -986,6 +991,7 @@ pub fn deser_operation_crate_operation_copy_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CopySnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1241,6 +1247,7 @@ pub fn deser_operation_crate_operation_create_cache_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCacheClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1396,6 +1403,7 @@ pub fn deser_operation_crate_operation_create_cache_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCacheParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1516,6 +1524,7 @@ pub fn deser_operation_crate_operation_create_cache_security_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCacheSecurityGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1735,6 +1744,7 @@ pub fn deser_operation_crate_operation_create_cache_subnet_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCacheSubnetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1855,6 +1865,7 @@ pub fn deser_operation_crate_operation_create_global_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2111,6 +2122,7 @@ pub fn deser_operation_crate_operation_create_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2193,6 +2205,7 @@ pub fn deser_operation_crate_operation_create_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2336,6 +2349,7 @@ pub fn deser_operation_crate_operation_create_user(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateUserResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2582,6 +2596,7 @@ pub fn deser_operation_crate_operation_create_user_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateUserGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2717,6 +2732,7 @@ pub fn deser_operation_crate_operation_decrease_node_groups_in_global_replicatio
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DecreaseNodeGroupsInGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2794,6 +2810,7 @@ pub fn deser_operation_crate_operation_decrease_replica_count(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DecreaseReplicaCountResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2841,6 +2858,7 @@ pub fn deser_operation_crate_operation_delete_cache_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteCacheClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2923,6 +2941,7 @@ pub fn deser_operation_crate_operation_delete_global_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2971,6 +2990,7 @@ pub fn deser_operation_crate_operation_delete_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3018,6 +3038,7 @@ pub fn deser_operation_crate_operation_delete_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3132,6 +3153,7 @@ pub fn deser_operation_crate_operation_delete_user(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteUserResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3280,6 +3302,7 @@ pub fn deser_operation_crate_operation_delete_user_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteUserGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3413,6 +3436,7 @@ pub fn deser_operation_crate_operation_describe_cache_clusters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheClustersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3476,6 +3500,7 @@ pub fn deser_operation_crate_operation_describe_cache_engine_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheEngineVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3539,6 +3564,7 @@ pub fn deser_operation_crate_operation_describe_cache_parameter_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheParameterGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3602,6 +3628,7 @@ pub fn deser_operation_crate_operation_describe_cache_parameters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheParametersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3675,6 +3702,7 @@ pub fn deser_operation_crate_operation_describe_cache_security_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheSecurityGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3738,6 +3766,7 @@ pub fn deser_operation_crate_operation_describe_cache_subnet_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheSubnetGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3801,6 +3830,7 @@ pub fn deser_operation_crate_operation_describe_engine_default_parameters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEngineDefaultParametersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3848,6 +3878,7 @@ pub fn deser_operation_crate_operation_describe_events(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEventsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3911,6 +3942,7 @@ pub fn deser_operation_crate_operation_describe_global_replication_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeGlobalReplicationGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3974,6 +4006,7 @@ pub fn deser_operation_crate_operation_describe_replication_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReplicationGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4037,6 +4070,7 @@ pub fn deser_operation_crate_operation_describe_reserved_cache_nodes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedCacheNodesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4135,6 +4169,7 @@ pub fn deser_operation_crate_operation_describe_reserved_cache_nodes_offerings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedCacheNodesOfferingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4196,6 +4231,7 @@ pub fn deser_operation_crate_operation_describe_service_updates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeServiceUpdatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4256,6 +4292,7 @@ pub fn deser_operation_crate_operation_describe_snapshots(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSnapshotsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4317,6 +4354,7 @@ pub fn deser_operation_crate_operation_describe_update_actions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeUpdateActionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4377,6 +4415,7 @@ pub fn deser_operation_crate_operation_describe_user_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeUserGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4437,6 +4476,7 @@ pub fn deser_operation_crate_operation_describe_users(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeUsersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4500,6 +4540,7 @@ pub fn deser_operation_crate_operation_disassociate_global_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4550,6 +4591,7 @@ pub fn deser_operation_crate_operation_failover_global_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("FailoverGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4600,6 +4642,7 @@ pub fn deser_operation_crate_operation_increase_node_groups_in_global_replicatio
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("IncreaseNodeGroupsInGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4677,6 +4720,7 @@ pub fn deser_operation_crate_operation_increase_replica_count(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("IncreaseReplicaCountResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4727,6 +4771,7 @@ pub fn deser_operation_crate_operation_list_allowed_node_type_modifications(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAllowedNodeTypeModificationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4785,6 +4830,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTagsForResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4832,6 +4878,7 @@ pub fn deser_operation_crate_operation_modify_cache_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCacheClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4882,6 +4929,7 @@ pub fn deser_operation_crate_operation_modify_cache_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCacheParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4967,6 +5015,7 @@ pub fn deser_operation_crate_operation_modify_cache_subnet_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCacheSubnetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5017,6 +5066,7 @@ pub fn deser_operation_crate_operation_modify_global_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5065,6 +5115,7 @@ pub fn deser_operation_crate_operation_modify_replication_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5115,6 +5166,7 @@ pub fn deser_operation_crate_operation_modify_replication_group_shard_configurat
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyReplicationGroupShardConfigurationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5162,6 +5214,7 @@ pub fn deser_operation_crate_operation_modify_user(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyUserResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5310,6 +5363,7 @@ pub fn deser_operation_crate_operation_modify_user_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyUserGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5515,6 +5569,7 @@ pub fn deser_operation_crate_operation_purchase_reserved_cache_nodes_offering(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PurchaseReservedCacheNodesOfferingResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5565,6 +5620,7 @@ pub fn deser_operation_crate_operation_rebalance_slots_in_global_replication_gro
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RebalanceSlotsInGlobalReplicationGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5612,6 +5668,7 @@ pub fn deser_operation_crate_operation_reboot_cache_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RebootCacheClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5694,6 +5751,7 @@ pub fn deser_operation_crate_operation_remove_tags_from_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RemoveTagsFromResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5744,6 +5802,7 @@ pub fn deser_operation_crate_operation_reset_cache_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetCacheParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5830,6 +5889,7 @@ pub fn deser_operation_crate_operation_revoke_cache_security_group_ingress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeCacheSecurityGroupIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5912,6 +5972,7 @@ pub fn deser_operation_crate_operation_start_migration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartMigrationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6061,6 +6122,7 @@ pub fn deser_operation_crate_operation_test_failover(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TestFailoverResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

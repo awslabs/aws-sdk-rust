@@ -17,6 +17,7 @@ pub fn deser_operation_crate_operation_accept_reserved_instances_exchange_quote(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptReservedInstancesExchangeQuoteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -57,6 +58,7 @@ pub fn deser_operation_crate_operation_accept_transit_gateway_multicast_domain_a
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptTransitGatewayMulticastDomainAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!("invalid root, expected AcceptTransitGatewayMulticastDomainAssociationsResponse got {:?}", start_el)));
@@ -91,6 +93,7 @@ pub fn deser_operation_crate_operation_accept_transit_gateway_peering_attachment
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptTransitGatewayPeeringAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -128,6 +131,7 @@ pub fn deser_operation_crate_operation_accept_transit_gateway_vpc_attachment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptTransitGatewayVpcAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -165,6 +169,7 @@ pub fn deser_operation_crate_operation_accept_vpc_endpoint_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptVpcEndpointConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -202,6 +207,7 @@ pub fn deser_operation_crate_operation_accept_vpc_peering_connection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptVpcPeeringConnectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -236,6 +242,7 @@ pub fn deser_operation_crate_operation_advertise_byoip_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AdvertiseByoipCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -270,6 +277,7 @@ pub fn deser_operation_crate_operation_allocate_address(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AllocateAddressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -399,6 +407,7 @@ pub fn deser_operation_crate_operation_allocate_hosts(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AllocateHostsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -434,6 +443,7 @@ pub fn deser_operation_crate_operation_allocate_ipam_pool_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AllocateIpamPoolCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -471,6 +481,7 @@ pub fn deser_operation_crate_operation_apply_security_groups_to_client_vpn_targe
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ApplySecurityGroupsToClientVpnTargetNetworkResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -506,6 +517,7 @@ pub fn deser_operation_crate_operation_assign_ipv6_addresses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssignIpv6AddressesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -566,6 +578,7 @@ pub fn deser_operation_crate_operation_assign_private_ip_addresses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssignPrivateIpAddressesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -623,6 +636,7 @@ pub fn deser_operation_crate_operation_associate_address(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateAddressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -663,6 +677,7 @@ pub fn deser_operation_crate_operation_associate_client_vpn_target_network(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateClientVpnTargetNetworkResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -713,6 +728,7 @@ pub fn deser_operation_crate_operation_associate_enclave_certificate_iam_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateEnclaveCertificateIamRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -779,6 +795,7 @@ pub fn deser_operation_crate_operation_associate_iam_instance_profile(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateIamInstanceProfileResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -816,6 +833,7 @@ pub fn deser_operation_crate_operation_associate_instance_event_window(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateInstanceEventWindowResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -851,6 +869,7 @@ pub fn deser_operation_crate_operation_associate_route_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateRouteTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -901,6 +920,7 @@ pub fn deser_operation_crate_operation_associate_subnet_cidr_block(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateSubnetCidrBlockResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -951,6 +971,7 @@ pub fn deser_operation_crate_operation_associate_transit_gateway_multicast_domai
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateTransitGatewayMulticastDomainResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -988,6 +1009,7 @@ pub fn deser_operation_crate_operation_associate_transit_gateway_policy_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateTransitGatewayPolicyTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1025,6 +1047,7 @@ pub fn deser_operation_crate_operation_associate_transit_gateway_route_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateTransitGatewayRouteTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1062,6 +1085,7 @@ pub fn deser_operation_crate_operation_associate_trunk_interface(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateTrunkInterfaceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1110,6 +1134,7 @@ pub fn deser_operation_crate_operation_associate_vpc_cidr_block(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateVpcCidrBlockResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1168,6 +1193,7 @@ pub fn deser_operation_crate_operation_attach_classic_link_vpc(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachClassicLinkVpcResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1208,6 +1234,7 @@ pub fn deser_operation_crate_operation_attach_network_interface(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachNetworkInterfaceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1260,6 +1287,7 @@ pub fn deser_operation_crate_operation_attach_volume(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachVolumeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1366,6 +1394,7 @@ pub fn deser_operation_crate_operation_attach_vpn_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachVpnGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1403,6 +1432,7 @@ pub fn deser_operation_crate_operation_authorize_client_vpn_ingress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeClientVpnIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1440,6 +1470,7 @@ pub fn deser_operation_crate_operation_authorize_security_group_egress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeSecurityGroupEgressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1492,6 +1523,7 @@ pub fn deser_operation_crate_operation_authorize_security_group_ingress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeSecurityGroupIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1541,6 +1573,7 @@ pub fn deser_operation_crate_operation_bundle_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BundleInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1575,6 +1608,7 @@ pub fn deser_operation_crate_operation_cancel_bundle_task(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelBundleTaskResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1612,6 +1646,7 @@ pub fn deser_operation_crate_operation_cancel_capacity_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelCapacityReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1654,6 +1689,7 @@ pub fn deser_operation_crate_operation_cancel_capacity_reservation_fleets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelCapacityReservationFleetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1698,6 +1734,7 @@ pub fn deser_operation_crate_operation_cancel_import_task(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelImportTaskResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1764,6 +1801,7 @@ pub fn deser_operation_crate_operation_cancel_reserved_instances_listing(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelReservedInstancesListingResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1801,6 +1839,7 @@ pub fn deser_operation_crate_operation_cancel_spot_fleet_requests(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelSpotFleetRequestsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1848,6 +1887,7 @@ pub fn deser_operation_crate_operation_cancel_spot_instance_requests(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelSpotInstanceRequestsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1883,6 +1923,7 @@ pub fn deser_operation_crate_operation_confirm_product_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ConfirmProductInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1935,6 +1976,7 @@ pub fn deser_operation_crate_operation_copy_fpga_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyFpgaImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1972,6 +2014,7 @@ pub fn deser_operation_crate_operation_copy_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2009,6 +2052,7 @@ pub fn deser_operation_crate_operation_copy_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CopySnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2059,6 +2103,7 @@ pub fn deser_operation_crate_operation_create_capacity_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCapacityReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2096,6 +2141,7 @@ pub fn deser_operation_crate_operation_create_capacity_reservation_fleet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCapacityReservationFleetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2267,6 +2313,7 @@ pub fn deser_operation_crate_operation_create_carrier_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCarrierGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2304,6 +2351,7 @@ pub fn deser_operation_crate_operation_create_client_vpn_endpoint(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateClientVpnEndpointResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2365,6 +2413,7 @@ pub fn deser_operation_crate_operation_create_client_vpn_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateClientVpnRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2400,6 +2449,7 @@ pub fn deser_operation_crate_operation_create_customer_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCustomerGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2435,6 +2485,7 @@ pub fn deser_operation_crate_operation_create_default_subnet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDefaultSubnetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2469,6 +2520,7 @@ pub fn deser_operation_crate_operation_create_default_vpc(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDefaultVpcResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2503,6 +2555,7 @@ pub fn deser_operation_crate_operation_create_dhcp_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDhcpOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2540,6 +2593,7 @@ pub fn deser_operation_crate_operation_create_egress_only_internet_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateEgressOnlyInternetGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2587,6 +2641,7 @@ pub fn deser_operation_crate_operation_create_fleet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateFleetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2644,6 +2699,7 @@ pub fn deser_operation_crate_operation_create_flow_logs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateFlowLogsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2701,6 +2757,7 @@ pub fn deser_operation_crate_operation_create_fpga_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateFpgaImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2751,6 +2808,7 @@ pub fn deser_operation_crate_operation_create_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2791,6 +2849,7 @@ pub fn deser_operation_crate_operation_create_instance_event_window(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateInstanceEventWindowResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2828,6 +2887,7 @@ pub fn deser_operation_crate_operation_create_instance_export_task(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateInstanceExportTaskResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2863,6 +2923,7 @@ pub fn deser_operation_crate_operation_create_internet_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateInternetGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2897,6 +2958,7 @@ pub fn deser_operation_crate_operation_create_ipam(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateIpamResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2931,6 +2993,7 @@ pub fn deser_operation_crate_operation_create_ipam_pool(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateIpamPoolResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2965,6 +3028,7 @@ pub fn deser_operation_crate_operation_create_ipam_scope(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateIpamScopeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2999,6 +3063,7 @@ pub fn deser_operation_crate_operation_create_key_pair(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateKeyPairResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3086,6 +3151,7 @@ pub fn deser_operation_crate_operation_create_launch_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLaunchTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3133,6 +3199,7 @@ pub fn deser_operation_crate_operation_create_launch_template_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLaunchTemplateVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3180,6 +3247,7 @@ pub fn deser_operation_crate_operation_create_local_gateway_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLocalGatewayRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3217,6 +3285,7 @@ pub fn deser_operation_crate_operation_create_local_gateway_route_table_vpc_asso
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLocalGatewayRouteTableVpcAssociationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3254,6 +3323,7 @@ pub fn deser_operation_crate_operation_create_managed_prefix_list(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateManagedPrefixListResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3288,6 +3358,7 @@ pub fn deser_operation_crate_operation_create_nat_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNatGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3335,6 +3406,7 @@ pub fn deser_operation_crate_operation_create_network_acl(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNetworkAclResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3372,6 +3444,7 @@ pub fn deser_operation_crate_operation_create_network_insights_access_scope(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNetworkInsightsAccessScopeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3419,6 +3492,7 @@ pub fn deser_operation_crate_operation_create_network_insights_path(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNetworkInsightsPathResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3454,6 +3528,7 @@ pub fn deser_operation_crate_operation_create_network_interface(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNetworkInterfaceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3504,6 +3579,7 @@ pub fn deser_operation_crate_operation_create_network_interface_permission(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNetworkInterfacePermissionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3539,6 +3615,7 @@ pub fn deser_operation_crate_operation_create_placement_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePlacementGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3574,6 +3651,7 @@ pub fn deser_operation_crate_operation_create_public_ipv4_pool(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePublicIpv4PoolResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3614,6 +3692,7 @@ pub fn deser_operation_crate_operation_create_replace_root_volume_task(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateReplaceRootVolumeTaskResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3651,6 +3730,7 @@ pub fn deser_operation_crate_operation_create_reserved_instances_listing(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateReservedInstancesListingResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3688,6 +3768,7 @@ pub fn deser_operation_crate_operation_create_restore_image_task(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateRestoreImageTaskResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3725,6 +3806,7 @@ pub fn deser_operation_crate_operation_create_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3764,6 +3846,7 @@ pub fn deser_operation_crate_operation_create_route_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateRouteTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3799,6 +3882,7 @@ pub fn deser_operation_crate_operation_create_security_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSecurityGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3846,6 +3930,7 @@ pub fn deser_operation_crate_operation_create_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4096,6 +4181,7 @@ pub fn deser_operation_crate_operation_create_snapshots(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSnapshotsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4133,6 +4219,7 @@ pub fn deser_operation_crate_operation_create_spot_datafeed_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSpotDatafeedSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4168,6 +4255,7 @@ pub fn deser_operation_crate_operation_create_store_image_task(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateStoreImageTaskResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4205,6 +4293,7 @@ pub fn deser_operation_crate_operation_create_subnet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSubnetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4242,6 +4331,7 @@ pub fn deser_operation_crate_operation_create_subnet_cidr_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSubnetCidrReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4279,6 +4369,7 @@ pub fn deser_operation_crate_operation_create_traffic_mirror_filter(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrafficMirrorFilterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4329,6 +4420,7 @@ pub fn deser_operation_crate_operation_create_traffic_mirror_filter_rule(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrafficMirrorFilterRuleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4379,6 +4471,7 @@ pub fn deser_operation_crate_operation_create_traffic_mirror_session(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrafficMirrorSessionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4429,6 +4522,7 @@ pub fn deser_operation_crate_operation_create_traffic_mirror_target(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrafficMirrorTargetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4477,6 +4571,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4514,6 +4609,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_connect(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayConnectResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4551,6 +4647,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_connect_peer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayConnectPeerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4588,6 +4685,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_multicast_domain(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayMulticastDomainResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4625,6 +4723,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_peering_attachment
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayPeeringAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4662,6 +4761,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_policy_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayPolicyTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4699,6 +4799,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_prefix_list_refere
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayPrefixListReferenceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4736,6 +4837,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4773,6 +4875,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_route_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayRouteTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4810,6 +4913,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_route_table_announ
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayRouteTableAnnouncementResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4847,6 +4951,7 @@ pub fn deser_operation_crate_operation_create_transit_gateway_vpc_attachment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayVpcAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4881,6 +4986,7 @@ pub fn deser_operation_crate_operation_create_volume(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVolumeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5122,6 +5228,7 @@ pub fn deser_operation_crate_operation_create_vpc(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpcResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5156,6 +5263,7 @@ pub fn deser_operation_crate_operation_create_vpc_endpoint(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpcEndpointResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5206,6 +5314,7 @@ pub fn deser_operation_crate_operation_create_vpc_endpoint_connection_notificati
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpcEndpointConnectionNotificationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5256,6 +5365,7 @@ pub fn deser_operation_crate_operation_create_vpc_endpoint_service_configuration
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpcEndpointServiceConfigurationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5306,6 +5416,7 @@ pub fn deser_operation_crate_operation_create_vpc_peering_connection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpcPeeringConnectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5341,6 +5452,7 @@ pub fn deser_operation_crate_operation_create_vpn_connection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpnConnectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5375,6 +5487,7 @@ pub fn deser_operation_crate_operation_create_vpn_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVpnGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5410,6 +5523,7 @@ pub fn deser_operation_crate_operation_delete_carrier_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteCarrierGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5447,6 +5561,7 @@ pub fn deser_operation_crate_operation_delete_client_vpn_endpoint(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteClientVpnEndpointResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5482,6 +5597,7 @@ pub fn deser_operation_crate_operation_delete_client_vpn_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteClientVpnRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5519,6 +5635,7 @@ pub fn deser_operation_crate_operation_delete_egress_only_internet_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteEgressOnlyInternetGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5558,6 +5675,7 @@ pub fn deser_operation_crate_operation_delete_fleets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteFleetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5602,6 +5720,7 @@ pub fn deser_operation_crate_operation_delete_flow_logs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteFlowLogsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5636,6 +5755,7 @@ pub fn deser_operation_crate_operation_delete_fpga_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteFpgaImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5678,6 +5798,7 @@ pub fn deser_operation_crate_operation_delete_instance_event_window(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteInstanceEventWindowResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5712,6 +5833,7 @@ pub fn deser_operation_crate_operation_delete_ipam(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteIpamResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5746,6 +5868,7 @@ pub fn deser_operation_crate_operation_delete_ipam_pool(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteIpamPoolResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5780,6 +5903,7 @@ pub fn deser_operation_crate_operation_delete_ipam_scope(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteIpamScopeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5815,6 +5939,7 @@ pub fn deser_operation_crate_operation_delete_launch_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteLaunchTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5852,6 +5977,7 @@ pub fn deser_operation_crate_operation_delete_launch_template_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteLaunchTemplateVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5899,6 +6025,7 @@ pub fn deser_operation_crate_operation_delete_local_gateway_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteLocalGatewayRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5936,6 +6063,7 @@ pub fn deser_operation_crate_operation_delete_local_gateway_route_table_vpc_asso
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteLocalGatewayRouteTableVpcAssociationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -5973,6 +6101,7 @@ pub fn deser_operation_crate_operation_delete_managed_prefix_list(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteManagedPrefixListResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6007,6 +6136,7 @@ pub fn deser_operation_crate_operation_delete_nat_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNatGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6047,6 +6177,7 @@ pub fn deser_operation_crate_operation_delete_network_insights_access_scope(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNetworkInsightsAccessScopeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6087,6 +6218,7 @@ pub fn deser_operation_crate_operation_delete_network_insights_access_scope_anal
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNetworkInsightsAccessScopeAnalysisResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6127,6 +6259,7 @@ pub fn deser_operation_crate_operation_delete_network_insights_analysis(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNetworkInsightsAnalysisResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6167,6 +6300,7 @@ pub fn deser_operation_crate_operation_delete_network_insights_path(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNetworkInsightsPathResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6207,6 +6341,7 @@ pub fn deser_operation_crate_operation_delete_network_interface_permission(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNetworkInterfacePermissionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6247,6 +6382,7 @@ pub fn deser_operation_crate_operation_delete_public_ipv4_pool(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeletePublicIpv4PoolResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6289,6 +6425,7 @@ pub fn deser_operation_crate_operation_delete_queued_reserved_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteQueuedReservedInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6336,6 +6473,7 @@ pub fn deser_operation_crate_operation_delete_subnet_cidr_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteSubnetCidrReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6373,6 +6511,7 @@ pub fn deser_operation_crate_operation_delete_traffic_mirror_filter(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTrafficMirrorFilterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6413,6 +6552,7 @@ pub fn deser_operation_crate_operation_delete_traffic_mirror_filter_rule(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTrafficMirrorFilterRuleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6453,6 +6593,7 @@ pub fn deser_operation_crate_operation_delete_traffic_mirror_session(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTrafficMirrorSessionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6493,6 +6634,7 @@ pub fn deser_operation_crate_operation_delete_traffic_mirror_target(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTrafficMirrorTargetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6531,6 +6673,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6568,6 +6711,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_connect(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayConnectResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6605,6 +6749,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_connect_peer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayConnectPeerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6642,6 +6787,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_multicast_domain(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayMulticastDomainResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6679,6 +6825,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_peering_attachment
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayPeeringAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6716,6 +6863,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_policy_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayPolicyTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6753,6 +6901,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_prefix_list_refere
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayPrefixListReferenceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6790,6 +6939,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6827,6 +6977,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_route_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayRouteTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6864,6 +7015,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_route_table_announ
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayRouteTableAnnouncementResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6901,6 +7053,7 @@ pub fn deser_operation_crate_operation_delete_transit_gateway_vpc_attachment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayVpcAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6938,6 +7091,7 @@ pub fn deser_operation_crate_operation_delete_vpc_endpoint_connection_notificati
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteVpcEndpointConnectionNotificationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -6972,6 +7126,7 @@ pub fn deser_operation_crate_operation_delete_vpc_endpoints(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteVpcEndpointsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7009,6 +7164,7 @@ pub fn deser_operation_crate_operation_delete_vpc_endpoint_service_configuration
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteVpcEndpointServiceConfigurationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7046,6 +7202,7 @@ pub fn deser_operation_crate_operation_delete_vpc_peering_connection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteVpcPeeringConnectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7086,6 +7243,7 @@ pub fn deser_operation_crate_operation_deprovision_byoip_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeprovisionByoipCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7123,6 +7281,7 @@ pub fn deser_operation_crate_operation_deprovision_ipam_pool_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeprovisionIpamPoolCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7160,6 +7319,7 @@ pub fn deser_operation_crate_operation_deprovision_public_ipv4_pool_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeprovisionPublicIpv4PoolCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7210,6 +7370,7 @@ pub fn deser_operation_crate_operation_deregister_instance_event_notification_at
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeregisterInstanceEventNotificationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7247,6 +7408,7 @@ pub fn deser_operation_crate_operation_deregister_transit_gateway_multicast_grou
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeregisterTransitGatewayMulticastGroupMembersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7284,6 +7446,7 @@ pub fn deser_operation_crate_operation_deregister_transit_gateway_multicast_grou
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeregisterTransitGatewayMulticastGroupSourcesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7321,6 +7484,7 @@ pub fn deser_operation_crate_operation_describe_account_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAccountAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7355,6 +7519,7 @@ pub fn deser_operation_crate_operation_describe_addresses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAddressesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7392,6 +7557,7 @@ pub fn deser_operation_crate_operation_describe_addresses_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAddressesAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7442,6 +7608,7 @@ pub fn deser_operation_crate_operation_describe_aggregate_id_format(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAggregateIdFormatResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7494,6 +7661,7 @@ pub fn deser_operation_crate_operation_describe_availability_zones(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAvailabilityZonesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7529,6 +7697,7 @@ pub fn deser_operation_crate_operation_describe_bundle_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeBundleTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7563,6 +7732,7 @@ pub fn deser_operation_crate_operation_describe_byoip_cidrs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeByoipCidrsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7613,6 +7783,7 @@ pub fn deser_operation_crate_operation_describe_capacity_reservation_fleets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCapacityReservationFleetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7663,6 +7834,7 @@ pub fn deser_operation_crate_operation_describe_capacity_reservations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCapacityReservationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7713,6 +7885,7 @@ pub fn deser_operation_crate_operation_describe_carrier_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCarrierGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7763,6 +7936,7 @@ pub fn deser_operation_crate_operation_describe_classic_link_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClassicLinkInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7813,6 +7987,7 @@ pub fn deser_operation_crate_operation_describe_client_vpn_authorization_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClientVpnAuthorizationRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7863,6 +8038,7 @@ pub fn deser_operation_crate_operation_describe_client_vpn_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClientVpnConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7913,6 +8089,7 @@ pub fn deser_operation_crate_operation_describe_client_vpn_endpoints(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClientVpnEndpointsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -7963,6 +8140,7 @@ pub fn deser_operation_crate_operation_describe_client_vpn_routes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClientVpnRoutesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8013,6 +8191,7 @@ pub fn deser_operation_crate_operation_describe_client_vpn_target_networks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClientVpnTargetNetworksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8060,6 +8239,7 @@ pub fn deser_operation_crate_operation_describe_coip_pools(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCoipPoolsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8110,6 +8290,7 @@ pub fn deser_operation_crate_operation_describe_conversion_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeConversionTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8147,6 +8328,7 @@ pub fn deser_operation_crate_operation_describe_customer_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCustomerGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8182,6 +8364,7 @@ pub fn deser_operation_crate_operation_describe_dhcp_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDhcpOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8232,6 +8415,7 @@ pub fn deser_operation_crate_operation_describe_egress_only_internet_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEgressOnlyInternetGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8280,6 +8464,7 @@ pub fn deser_operation_crate_operation_describe_elastic_gpus(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeElasticGpusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8345,6 +8530,7 @@ pub fn deser_operation_crate_operation_describe_export_image_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeExportImageTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8393,6 +8579,7 @@ pub fn deser_operation_crate_operation_describe_export_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeExportTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8430,6 +8617,7 @@ pub fn deser_operation_crate_operation_describe_fast_launch_images(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFastLaunchImagesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8480,6 +8668,7 @@ pub fn deser_operation_crate_operation_describe_fast_snapshot_restores(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFastSnapshotRestoresResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8528,6 +8717,7 @@ pub fn deser_operation_crate_operation_describe_fleet_history(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFleetHistoryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8617,6 +8807,7 @@ pub fn deser_operation_crate_operation_describe_fleet_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFleetInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8677,6 +8868,7 @@ pub fn deser_operation_crate_operation_describe_fleets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFleetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8724,6 +8916,7 @@ pub fn deser_operation_crate_operation_describe_flow_logs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFlowLogsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8774,6 +8967,7 @@ pub fn deser_operation_crate_operation_describe_fpga_image_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFpgaImageAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8808,6 +9002,7 @@ pub fn deser_operation_crate_operation_describe_fpga_images(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFpgaImagesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8858,6 +9053,7 @@ pub fn deser_operation_crate_operation_describe_host_reservation_offerings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeHostReservationOfferingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8908,6 +9104,7 @@ pub fn deser_operation_crate_operation_describe_host_reservations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeHostReservationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -8955,6 +9152,7 @@ pub fn deser_operation_crate_operation_describe_hosts(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeHostsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9005,6 +9203,7 @@ pub fn deser_operation_crate_operation_describe_iam_instance_profile_association
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIamInstanceProfileAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9055,6 +9254,7 @@ pub fn deser_operation_crate_operation_describe_identity_id_format(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIdentityIdFormatResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9089,6 +9289,7 @@ pub fn deser_operation_crate_operation_describe_id_format(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIdFormatResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9124,6 +9325,7 @@ pub fn deser_operation_crate_operation_describe_image_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeImageAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9271,6 +9473,7 @@ pub fn deser_operation_crate_operation_describe_images(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeImagesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9308,6 +9511,7 @@ pub fn deser_operation_crate_operation_describe_import_image_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeImportImageTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9358,6 +9562,7 @@ pub fn deser_operation_crate_operation_describe_import_snapshot_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeImportSnapshotTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9408,6 +9613,7 @@ pub fn deser_operation_crate_operation_describe_instance_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9608,6 +9814,7 @@ pub fn deser_operation_crate_operation_describe_instance_credit_specifications(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceCreditSpecificationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9658,6 +9865,7 @@ pub fn deser_operation_crate_operation_describe_instance_event_notification_attr
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceEventNotificationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9695,6 +9903,7 @@ pub fn deser_operation_crate_operation_describe_instance_event_windows(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceEventWindowsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9742,6 +9951,7 @@ pub fn deser_operation_crate_operation_describe_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9790,6 +10000,7 @@ pub fn deser_operation_crate_operation_describe_instance_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9840,6 +10051,7 @@ pub fn deser_operation_crate_operation_describe_instance_type_offerings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceTypeOfferingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9888,6 +10100,7 @@ pub fn deser_operation_crate_operation_describe_instance_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9938,6 +10151,7 @@ pub fn deser_operation_crate_operation_describe_internet_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInternetGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -9985,6 +10199,7 @@ pub fn deser_operation_crate_operation_describe_ipam_pools(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIpamPoolsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10032,6 +10247,7 @@ pub fn deser_operation_crate_operation_describe_ipams(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIpamsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10079,6 +10295,7 @@ pub fn deser_operation_crate_operation_describe_ipam_scopes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIpamScopesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10126,6 +10343,7 @@ pub fn deser_operation_crate_operation_describe_ipv6_pools(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIpv6PoolsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10173,6 +10391,7 @@ pub fn deser_operation_crate_operation_describe_key_pairs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeKeyPairsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10210,6 +10429,7 @@ pub fn deser_operation_crate_operation_describe_launch_templates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLaunchTemplatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10260,6 +10480,7 @@ pub fn deser_operation_crate_operation_describe_launch_template_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLaunchTemplateVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10310,6 +10531,7 @@ pub fn deser_operation_crate_operation_describe_local_gateway_route_tables(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewayRouteTablesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10353,6 +10575,7 @@ pub fn deser_operation_crate_operation_describe_local_gateway_route_tables(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el
         .matches("DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse"))
@@ -10402,6 +10625,7 @@ pub fn deser_operation_crate_operation_describe_local_gateway_route_table_vpc_as
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewayRouteTableVpcAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10450,6 +10674,7 @@ pub fn deser_operation_crate_operation_describe_local_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10500,6 +10725,7 @@ pub fn deser_operation_crate_operation_describe_local_gateway_virtual_interface_
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewayVirtualInterfaceGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10550,6 +10776,7 @@ pub fn deser_operation_crate_operation_describe_local_gateway_virtual_interfaces
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewayVirtualInterfacesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10600,6 +10827,7 @@ pub fn deser_operation_crate_operation_describe_managed_prefix_lists(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeManagedPrefixListsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10650,6 +10878,7 @@ pub fn deser_operation_crate_operation_describe_moving_addresses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeMovingAddressesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10698,6 +10927,7 @@ pub fn deser_operation_crate_operation_describe_nat_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNatGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10746,6 +10976,7 @@ pub fn deser_operation_crate_operation_describe_network_acls(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkAclsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10796,6 +11027,7 @@ pub fn deser_operation_crate_operation_describe_network_insights_access_scope_an
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInsightsAccessScopeAnalysesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10846,6 +11078,7 @@ pub fn deser_operation_crate_operation_describe_network_insights_access_scopes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInsightsAccessScopesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10896,6 +11129,7 @@ pub fn deser_operation_crate_operation_describe_network_insights_analyses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInsightsAnalysesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10946,6 +11180,7 @@ pub fn deser_operation_crate_operation_describe_network_insights_paths(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInsightsPathsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -10996,6 +11231,7 @@ pub fn deser_operation_crate_operation_describe_network_interface_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInterfaceAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11076,6 +11312,7 @@ pub fn deser_operation_crate_operation_describe_network_interface_permissions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInterfacePermissionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11126,6 +11363,7 @@ pub fn deser_operation_crate_operation_describe_network_interfaces(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNetworkInterfacesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11176,6 +11414,7 @@ pub fn deser_operation_crate_operation_describe_placement_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePlacementGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11211,6 +11450,7 @@ pub fn deser_operation_crate_operation_describe_prefix_lists(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePrefixListsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11261,6 +11501,7 @@ pub fn deser_operation_crate_operation_describe_principal_id_format(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePrincipalIdFormatResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11311,6 +11552,7 @@ pub fn deser_operation_crate_operation_describe_public_ipv4_pools(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePublicIpv4PoolsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11358,6 +11600,7 @@ pub fn deser_operation_crate_operation_describe_regions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeRegionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11395,6 +11638,7 @@ pub fn deser_operation_crate_operation_describe_replace_root_volume_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReplaceRootVolumeTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11445,6 +11689,7 @@ pub fn deser_operation_crate_operation_describe_reserved_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11482,6 +11727,7 @@ pub fn deser_operation_crate_operation_describe_reserved_instances_listings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedInstancesListingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11519,6 +11765,7 @@ pub fn deser_operation_crate_operation_describe_reserved_instances_modifications
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedInstancesModificationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11569,6 +11816,7 @@ pub fn deser_operation_crate_operation_describe_reserved_instances_offerings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedInstancesOfferingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11617,6 +11865,7 @@ pub fn deser_operation_crate_operation_describe_route_tables(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeRouteTablesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11667,6 +11916,7 @@ pub fn deser_operation_crate_operation_describe_scheduled_instance_availability(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScheduledInstanceAvailabilityResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11717,6 +11967,7 @@ pub fn deser_operation_crate_operation_describe_scheduled_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScheduledInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11767,6 +12018,7 @@ pub fn deser_operation_crate_operation_describe_security_group_references(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSecurityGroupReferencesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11804,6 +12056,7 @@ pub fn deser_operation_crate_operation_describe_security_group_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSecurityGroupRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11852,6 +12105,7 @@ pub fn deser_operation_crate_operation_describe_security_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSecurityGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11902,6 +12156,7 @@ pub fn deser_operation_crate_operation_describe_snapshot_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSnapshotAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -11959,6 +12214,7 @@ pub fn deser_operation_crate_operation_describe_snapshots(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSnapshotsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12009,6 +12265,7 @@ pub fn deser_operation_crate_operation_describe_snapshot_tier_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSnapshotTierStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12059,6 +12316,7 @@ pub fn deser_operation_crate_operation_describe_spot_datafeed_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSpotDatafeedSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12096,6 +12354,7 @@ pub fn deser_operation_crate_operation_describe_spot_fleet_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSpotFleetInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12159,6 +12418,7 @@ pub fn deser_operation_crate_operation_describe_spot_fleet_request_history(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSpotFleetRequestHistoryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12250,6 +12510,7 @@ pub fn deser_operation_crate_operation_describe_spot_fleet_requests(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSpotFleetRequestsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12300,6 +12561,7 @@ pub fn deser_operation_crate_operation_describe_spot_instance_requests(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSpotInstanceRequestsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12350,6 +12612,7 @@ pub fn deser_operation_crate_operation_describe_spot_price_history(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSpotPriceHistoryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12400,6 +12663,7 @@ pub fn deser_operation_crate_operation_describe_stale_security_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStaleSecurityGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12450,6 +12714,7 @@ pub fn deser_operation_crate_operation_describe_store_image_tasks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStoreImageTasksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12497,6 +12762,7 @@ pub fn deser_operation_crate_operation_describe_subnets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSubnetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12544,6 +12810,7 @@ pub fn deser_operation_crate_operation_describe_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12594,6 +12861,7 @@ pub fn deser_operation_crate_operation_describe_traffic_mirror_filters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrafficMirrorFiltersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12644,6 +12912,7 @@ pub fn deser_operation_crate_operation_describe_traffic_mirror_sessions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrafficMirrorSessionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12694,6 +12963,7 @@ pub fn deser_operation_crate_operation_describe_traffic_mirror_targets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrafficMirrorTargetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12744,6 +13014,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_attachments(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayAttachmentsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12794,6 +13065,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_connect_peers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayConnectPeersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12844,6 +13116,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_connects(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayConnectsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12894,6 +13167,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_multicast_domain
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayMulticastDomainsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12944,6 +13218,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_peering_attachme
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayPeeringAttachmentsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -12994,6 +13269,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_policy_tables(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayPolicyTablesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13044,6 +13320,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_route_table_anno
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayRouteTableAnnouncementsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13094,6 +13371,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_route_tables(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayRouteTablesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13144,6 +13422,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13194,6 +13473,7 @@ pub fn deser_operation_crate_operation_describe_transit_gateway_vpc_attachments(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayVpcAttachmentsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13244,6 +13524,7 @@ pub fn deser_operation_crate_operation_describe_trunk_interface_associations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrunkInterfaceAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13294,6 +13575,7 @@ pub fn deser_operation_crate_operation_describe_volume_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVolumeAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13351,6 +13633,7 @@ pub fn deser_operation_crate_operation_describe_volumes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVolumesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13401,6 +13684,7 @@ pub fn deser_operation_crate_operation_describe_volumes_modifications(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVolumesModificationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13449,6 +13733,7 @@ pub fn deser_operation_crate_operation_describe_volume_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVolumeStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13497,6 +13782,7 @@ pub fn deser_operation_crate_operation_describe_vpc_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13557,6 +13843,7 @@ pub fn deser_operation_crate_operation_describe_vpc_classic_link(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcClassicLinkResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13594,6 +13881,7 @@ pub fn deser_operation_crate_operation_describe_vpc_classic_link_dns_support(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcClassicLinkDnsSupportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13644,6 +13932,7 @@ pub fn deser_operation_crate_operation_describe_vpc_endpoint_connection_notifica
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointConnectionNotificationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13694,6 +13983,7 @@ pub fn deser_operation_crate_operation_describe_vpc_endpoint_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13742,6 +14032,7 @@ pub fn deser_operation_crate_operation_describe_vpc_endpoints(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13792,6 +14083,7 @@ pub fn deser_operation_crate_operation_describe_vpc_endpoint_service_configurati
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointServiceConfigurationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13842,6 +14134,7 @@ pub fn deser_operation_crate_operation_describe_vpc_endpoint_service_permissions
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointServicePermissionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13892,6 +14185,7 @@ pub fn deser_operation_crate_operation_describe_vpc_endpoint_services(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointServicesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13952,6 +14246,7 @@ pub fn deser_operation_crate_operation_describe_vpc_peering_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcPeeringConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -13999,6 +14294,7 @@ pub fn deser_operation_crate_operation_describe_vpcs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14047,6 +14343,7 @@ pub fn deser_operation_crate_operation_describe_vpn_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpnConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14082,6 +14379,7 @@ pub fn deser_operation_crate_operation_describe_vpn_gateways(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpnGatewaysResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14117,6 +14415,7 @@ pub fn deser_operation_crate_operation_detach_classic_link_vpc(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetachClassicLinkVpcResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14156,6 +14455,7 @@ pub fn deser_operation_crate_operation_detach_volume(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetachVolumeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14265,6 +14565,7 @@ pub fn deser_operation_crate_operation_disable_ebs_encryption_by_default(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableEbsEncryptionByDefaultResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14304,6 +14605,7 @@ pub fn deser_operation_crate_operation_disable_fast_launch(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableFastLaunchResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14447,6 +14749,7 @@ pub fn deser_operation_crate_operation_disable_fast_snapshot_restores(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableFastSnapshotRestoresResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14494,6 +14797,7 @@ pub fn deser_operation_crate_operation_disable_image_deprecation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableImageDeprecationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14536,6 +14840,7 @@ pub fn deser_operation_crate_operation_disable_ipam_organization_admin_account(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableIpamOrganizationAdminAccountResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14578,6 +14883,7 @@ pub fn deser_operation_crate_operation_disable_serial_console_access(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableSerialConsoleAccessResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14620,6 +14926,7 @@ pub fn deser_operation_crate_operation_disable_transit_gateway_route_table_propa
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableTransitGatewayRouteTablePropagationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14655,6 +14962,7 @@ pub fn deser_operation_crate_operation_disable_vpc_classic_link(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableVpcClassicLinkResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14697,6 +15005,7 @@ pub fn deser_operation_crate_operation_disable_vpc_classic_link_dns_support(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableVpcClassicLinkDnsSupportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14739,6 +15048,7 @@ pub fn deser_operation_crate_operation_disassociate_client_vpn_target_network(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateClientVpnTargetNetworkResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14789,6 +15099,7 @@ pub fn deser_operation_crate_operation_disassociate_enclave_certificate_iam_role
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateEnclaveCertificateIamRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14831,6 +15142,7 @@ pub fn deser_operation_crate_operation_disassociate_iam_instance_profile(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateIamInstanceProfileResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14868,6 +15180,7 @@ pub fn deser_operation_crate_operation_disassociate_instance_event_window(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateInstanceEventWindowResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14905,6 +15218,7 @@ pub fn deser_operation_crate_operation_disassociate_subnet_cidr_block(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateSubnetCidrBlockResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14955,6 +15269,7 @@ pub fn deser_operation_crate_operation_disassociate_transit_gateway_multicast_do
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateTransitGatewayMulticastDomainResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -14992,6 +15307,7 @@ pub fn deser_operation_crate_operation_disassociate_transit_gateway_policy_table
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateTransitGatewayPolicyTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15029,6 +15345,7 @@ pub fn deser_operation_crate_operation_disassociate_transit_gateway_route_table(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateTransitGatewayRouteTableResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15066,6 +15383,7 @@ pub fn deser_operation_crate_operation_disassociate_trunk_interface(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateTrunkInterfaceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15121,6 +15439,7 @@ pub fn deser_operation_crate_operation_disassociate_vpc_cidr_block(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateVpcCidrBlockResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15181,6 +15500,7 @@ pub fn deser_operation_crate_operation_enable_ebs_encryption_by_default(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableEbsEncryptionByDefaultResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15220,6 +15540,7 @@ pub fn deser_operation_crate_operation_enable_fast_launch(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableFastLaunchResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15363,6 +15684,7 @@ pub fn deser_operation_crate_operation_enable_fast_snapshot_restores(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableFastSnapshotRestoresResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15408,6 +15730,7 @@ pub fn deser_operation_crate_operation_enable_image_deprecation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableImageDeprecationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15450,6 +15773,7 @@ pub fn deser_operation_crate_operation_enable_ipam_organization_admin_account(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableIpamOrganizationAdminAccountResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15492,6 +15816,7 @@ pub fn deser_operation_crate_operation_enable_serial_console_access(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableSerialConsoleAccessResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15534,6 +15859,7 @@ pub fn deser_operation_crate_operation_enable_transit_gateway_route_table_propag
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableTransitGatewayRouteTablePropagationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15569,6 +15895,7 @@ pub fn deser_operation_crate_operation_enable_vpc_classic_link(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableVpcClassicLinkResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15611,6 +15938,7 @@ pub fn deser_operation_crate_operation_enable_vpc_classic_link_dns_support(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableVpcClassicLinkDnsSupportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15653,6 +15981,7 @@ pub fn deser_operation_crate_operation_export_client_vpn_client_certificate_revo
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ExportClientVpnClientCertificateRevocationListResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!("invalid root, expected ExportClientVpnClientCertificateRevocationListResponse got {:?}", start_el)));
@@ -15700,6 +16029,7 @@ pub fn deser_operation_crate_operation_export_client_vpn_client_configuration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ExportClientVpnClientConfigurationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15737,6 +16067,7 @@ pub fn deser_operation_crate_operation_export_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ExportImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15889,6 +16220,7 @@ pub fn deser_operation_crate_operation_export_transit_gateway_routes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ExportTransitGatewayRoutesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15929,6 +16261,7 @@ pub fn deser_operation_crate_operation_get_associated_enclave_certificate_iam_ro
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAssociatedEnclaveCertificateIamRolesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -15966,6 +16299,7 @@ pub fn deser_operation_crate_operation_get_associated_ipv6_pool_cidrs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAssociatedIpv6PoolCidrsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16016,6 +16350,7 @@ pub fn deser_operation_crate_operation_get_capacity_reservation_usage(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetCapacityReservationUsageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16133,6 +16468,7 @@ pub fn deser_operation_crate_operation_get_coip_pool_usage(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetCoipPoolUsageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16193,6 +16529,7 @@ pub fn deser_operation_crate_operation_get_console_output(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetConsoleOutputResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16258,6 +16595,7 @@ pub fn deser_operation_crate_operation_get_console_screenshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetConsoleScreenshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16311,6 +16649,7 @@ pub fn deser_operation_crate_operation_get_default_credit_specification(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetDefaultCreditSpecificationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16348,6 +16687,7 @@ pub fn deser_operation_crate_operation_get_ebs_default_kms_key_id(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetEbsDefaultKmsKeyIdResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16388,6 +16728,7 @@ pub fn deser_operation_crate_operation_get_ebs_encryption_by_default(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetEbsEncryptionByDefaultResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16430,6 +16771,7 @@ pub fn deser_operation_crate_operation_get_flow_logs_integration_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetFlowLogsIntegrationTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16470,6 +16812,7 @@ pub fn deser_operation_crate_operation_get_groups_for_capacity_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetGroupsForCapacityReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16520,6 +16863,7 @@ pub fn deser_operation_crate_operation_get_host_reservation_purchase_preview(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetHostReservationPurchasePreviewResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16597,6 +16941,7 @@ pub fn deser_operation_crate_operation_get_instance_types_from_instance_requirem
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInstanceTypesFromInstanceRequirementsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16645,6 +16990,7 @@ pub fn deser_operation_crate_operation_get_instance_uefi_data(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInstanceUefiDataResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16696,6 +17042,7 @@ pub fn deser_operation_crate_operation_get_ipam_address_history(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamAddressHistoryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16746,6 +17093,7 @@ pub fn deser_operation_crate_operation_get_ipam_pool_allocations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamPoolAllocationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16793,6 +17141,7 @@ pub fn deser_operation_crate_operation_get_ipam_pool_cidrs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamPoolCidrsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16841,6 +17190,7 @@ pub fn deser_operation_crate_operation_get_ipam_resource_cidrs(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamResourceCidrsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16889,6 +17239,7 @@ pub fn deser_operation_crate_operation_get_launch_template_data(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetLaunchTemplateDataResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16926,6 +17277,7 @@ pub fn deser_operation_crate_operation_get_managed_prefix_list_associations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetManagedPrefixListAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -16976,6 +17328,7 @@ pub fn deser_operation_crate_operation_get_managed_prefix_list_entries(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetManagedPrefixListEntriesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17026,6 +17379,7 @@ pub fn deser_operation_crate_operation_get_network_insights_access_scope_analysi
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetNetworkInsightsAccessScopeAnalysisFindingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17103,6 +17457,7 @@ pub fn deser_operation_crate_operation_get_network_insights_access_scope_content
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetNetworkInsightsAccessScopeContentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17137,6 +17492,7 @@ pub fn deser_operation_crate_operation_get_password_data(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetPasswordDataResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17204,6 +17560,7 @@ pub fn deser_operation_crate_operation_get_reserved_instances_exchange_quote(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetReservedInstancesExchangeQuoteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17339,6 +17696,7 @@ pub fn deser_operation_crate_operation_get_serial_console_access_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSerialConsoleAccessStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17381,6 +17739,7 @@ pub fn deser_operation_crate_operation_get_spot_placement_scores(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSpotPlacementScoresResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17431,6 +17790,7 @@ pub fn deser_operation_crate_operation_get_subnet_cidr_reservations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSubnetCidrReservationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17491,6 +17851,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_attachment_propagatio
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayAttachmentPropagationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17541,6 +17902,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_multicast_domain_asso
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayMulticastDomainAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17591,6 +17953,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_policy_table_associat
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayPolicyTableAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17641,6 +18004,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_policy_table_entries(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayPolicyTableEntriesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17678,6 +18042,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_prefix_list_reference
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayPrefixListReferencesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17728,6 +18093,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_route_table_associati
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayRouteTableAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17778,6 +18144,7 @@ pub fn deser_operation_crate_operation_get_transit_gateway_route_table_propagati
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayRouteTablePropagationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17828,6 +18195,7 @@ pub fn deser_operation_crate_operation_get_vpn_connection_device_sample_configur
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetVpnConnectionDeviceSampleConfigurationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17868,6 +18236,7 @@ pub fn deser_operation_crate_operation_get_vpn_connection_device_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetVpnConnectionDeviceTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -17918,6 +18287,7 @@ pub fn deser_operation_crate_operation_import_client_vpn_client_certificate_revo
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportClientVpnClientCertificateRevocationListResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!("invalid root, expected ImportClientVpnClientCertificateRevocationListResponse got {:?}", start_el)));
@@ -17954,6 +18324,7 @@ pub fn deser_operation_crate_operation_import_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18179,6 +18550,7 @@ pub fn deser_operation_crate_operation_import_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18213,6 +18585,7 @@ pub fn deser_operation_crate_operation_import_key_pair(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportKeyPairResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18286,6 +18659,7 @@ pub fn deser_operation_crate_operation_import_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18356,6 +18730,7 @@ pub fn deser_operation_crate_operation_import_volume(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportVolumeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18393,6 +18768,7 @@ pub fn deser_operation_crate_operation_list_images_in_recycle_bin(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListImagesInRecycleBinResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18443,6 +18819,7 @@ pub fn deser_operation_crate_operation_list_snapshots_in_recycle_bin(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSnapshotsInRecycleBinResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18491,6 +18868,7 @@ pub fn deser_operation_crate_operation_modify_address_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyAddressAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18528,6 +18906,7 @@ pub fn deser_operation_crate_operation_modify_availability_zone_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyAvailabilityZoneGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18570,6 +18949,7 @@ pub fn deser_operation_crate_operation_modify_capacity_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCapacityReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18612,6 +18992,7 @@ pub fn deser_operation_crate_operation_modify_capacity_reservation_fleet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCapacityReservationFleetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18654,6 +19035,7 @@ pub fn deser_operation_crate_operation_modify_client_vpn_endpoint(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyClientVpnEndpointResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18696,6 +19078,7 @@ pub fn deser_operation_crate_operation_modify_default_credit_specification(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDefaultCreditSpecificationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18733,6 +19116,7 @@ pub fn deser_operation_crate_operation_modify_ebs_default_kms_key_id(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyEbsDefaultKmsKeyIdResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18770,6 +19154,7 @@ pub fn deser_operation_crate_operation_modify_fleet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyFleetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18812,6 +19197,7 @@ pub fn deser_operation_crate_operation_modify_fpga_image_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyFpgaImageAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18846,6 +19232,7 @@ pub fn deser_operation_crate_operation_modify_hosts(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyHostsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18893,6 +19280,7 @@ pub fn deser_operation_crate_operation_modify_instance_capacity_reservation_attr
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceCapacityReservationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18935,6 +19323,7 @@ pub fn deser_operation_crate_operation_modify_instance_credit_specification(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceCreditSpecificationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -18982,6 +19371,7 @@ pub fn deser_operation_crate_operation_modify_instance_event_start_time(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceEventStartTimeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19019,6 +19409,7 @@ pub fn deser_operation_crate_operation_modify_instance_event_window(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceEventWindowResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19056,6 +19447,7 @@ pub fn deser_operation_crate_operation_modify_instance_maintenance_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceMaintenanceOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19110,6 +19502,7 @@ pub fn deser_operation_crate_operation_modify_instance_metadata_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceMetadataOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19160,6 +19553,7 @@ pub fn deser_operation_crate_operation_modify_instance_placement(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstancePlacementResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19199,6 +19593,7 @@ pub fn deser_operation_crate_operation_modify_ipam(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyIpamResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19233,6 +19628,7 @@ pub fn deser_operation_crate_operation_modify_ipam_pool(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyIpamPoolResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19270,6 +19666,7 @@ pub fn deser_operation_crate_operation_modify_ipam_resource_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyIpamResourceCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19304,6 +19701,7 @@ pub fn deser_operation_crate_operation_modify_ipam_scope(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyIpamScopeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19339,6 +19737,7 @@ pub fn deser_operation_crate_operation_modify_launch_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyLaunchTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19376,6 +19775,7 @@ pub fn deser_operation_crate_operation_modify_managed_prefix_list(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyManagedPrefixListResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19413,6 +19813,7 @@ pub fn deser_operation_crate_operation_modify_private_dns_name_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyPrivateDnsNameOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19455,6 +19856,7 @@ pub fn deser_operation_crate_operation_modify_reserved_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyReservedInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19495,6 +19897,7 @@ pub fn deser_operation_crate_operation_modify_security_group_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifySecurityGroupRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19534,6 +19937,7 @@ pub fn deser_operation_crate_operation_modify_snapshot_tier(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifySnapshotTierResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19588,6 +19992,7 @@ pub fn deser_operation_crate_operation_modify_spot_fleet_request(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifySpotFleetRequestResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19630,6 +20035,7 @@ pub fn deser_operation_crate_operation_modify_traffic_mirror_filter_network_serv
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTrafficMirrorFilterNetworkServicesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19667,6 +20073,7 @@ pub fn deser_operation_crate_operation_modify_traffic_mirror_filter_rule(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTrafficMirrorFilterRuleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19704,6 +20111,7 @@ pub fn deser_operation_crate_operation_modify_traffic_mirror_session(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTrafficMirrorSessionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19739,6 +20147,7 @@ pub fn deser_operation_crate_operation_modify_transit_gateway(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTransitGatewayResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19776,6 +20185,7 @@ pub fn deser_operation_crate_operation_modify_transit_gateway_prefix_list_refere
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTransitGatewayPrefixListReferenceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19813,6 +20223,7 @@ pub fn deser_operation_crate_operation_modify_transit_gateway_vpc_attachment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyTransitGatewayVpcAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19847,6 +20258,7 @@ pub fn deser_operation_crate_operation_modify_volume(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVolumeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19881,6 +20293,7 @@ pub fn deser_operation_crate_operation_modify_vpc_endpoint(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcEndpointResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19923,6 +20336,7 @@ pub fn deser_operation_crate_operation_modify_vpc_endpoint_connection_notificati
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcEndpointConnectionNotificationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -19965,6 +20379,7 @@ pub fn deser_operation_crate_operation_modify_vpc_endpoint_service_configuration
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcEndpointServiceConfigurationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20007,6 +20422,7 @@ pub fn deser_operation_crate_operation_modify_vpc_endpoint_service_payer_respons
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcEndpointServicePayerResponsibilityResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20049,6 +20465,7 @@ pub fn deser_operation_crate_operation_modify_vpc_endpoint_service_permissions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcEndpointServicePermissionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20091,6 +20508,7 @@ pub fn deser_operation_crate_operation_modify_vpc_peering_connection_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcPeeringConnectionOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20135,6 +20553,7 @@ pub fn deser_operation_crate_operation_modify_vpc_tenancy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcTenancyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20175,6 +20594,7 @@ pub fn deser_operation_crate_operation_modify_vpn_connection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpnConnectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20212,6 +20632,7 @@ pub fn deser_operation_crate_operation_modify_vpn_connection_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpnConnectionOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20249,6 +20670,7 @@ pub fn deser_operation_crate_operation_modify_vpn_tunnel_certificate(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpnTunnelCertificateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20286,6 +20708,7 @@ pub fn deser_operation_crate_operation_modify_vpn_tunnel_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpnTunnelOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20320,6 +20743,7 @@ pub fn deser_operation_crate_operation_monitor_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("MonitorInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20354,6 +20778,7 @@ pub fn deser_operation_crate_operation_move_address_to_vpc(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("MoveAddressToVpcResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20406,6 +20831,7 @@ pub fn deser_operation_crate_operation_move_byoip_cidr_to_ipam(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("MoveByoipCidrToIpamResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20440,6 +20866,7 @@ pub fn deser_operation_crate_operation_provision_byoip_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ProvisionByoipCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20475,6 +20902,7 @@ pub fn deser_operation_crate_operation_provision_ipam_pool_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ProvisionIpamPoolCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20512,6 +20940,7 @@ pub fn deser_operation_crate_operation_provision_public_ipv4_pool_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ProvisionPublicIpv4PoolCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20562,6 +20991,7 @@ pub fn deser_operation_crate_operation_purchase_host_reservation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PurchaseHostReservationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20652,6 +21082,7 @@ pub fn deser_operation_crate_operation_purchase_reserved_instances_offering(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PurchaseReservedInstancesOfferingResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20692,6 +21123,7 @@ pub fn deser_operation_crate_operation_purchase_scheduled_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PurchaseScheduledInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20726,6 +21158,7 @@ pub fn deser_operation_crate_operation_register_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20766,6 +21199,7 @@ pub fn deser_operation_crate_operation_register_instance_event_notification_attr
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterInstanceEventNotificationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20803,6 +21237,7 @@ pub fn deser_operation_crate_operation_register_transit_gateway_multicast_group_
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterTransitGatewayMulticastGroupMembersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20840,6 +21275,7 @@ pub fn deser_operation_crate_operation_register_transit_gateway_multicast_group_
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterTransitGatewayMulticastGroupSourcesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20877,6 +21313,7 @@ pub fn deser_operation_crate_operation_reject_transit_gateway_multicast_domain_a
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectTransitGatewayMulticastDomainAssociationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!("invalid root, expected RejectTransitGatewayMulticastDomainAssociationsResponse got {:?}", start_el)));
@@ -20911,6 +21348,7 @@ pub fn deser_operation_crate_operation_reject_transit_gateway_peering_attachment
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectTransitGatewayPeeringAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20948,6 +21386,7 @@ pub fn deser_operation_crate_operation_reject_transit_gateway_vpc_attachment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectTransitGatewayVpcAttachmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -20985,6 +21424,7 @@ pub fn deser_operation_crate_operation_reject_vpc_endpoint_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectVpcEndpointConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21022,6 +21462,7 @@ pub fn deser_operation_crate_operation_reject_vpc_peering_connection(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectVpcPeeringConnectionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21061,6 +21502,7 @@ pub fn deser_operation_crate_operation_release_hosts(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReleaseHostsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21108,6 +21550,7 @@ pub fn deser_operation_crate_operation_release_ipam_pool_allocation(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReleaseIpamPoolAllocationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21150,6 +21593,7 @@ pub fn deser_operation_crate_operation_replace_iam_instance_profile_association(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReplaceIamInstanceProfileAssociationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21187,6 +21631,7 @@ pub fn deser_operation_crate_operation_replace_network_acl_association(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReplaceNetworkAclAssociationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21227,6 +21672,7 @@ pub fn deser_operation_crate_operation_replace_route_table_association(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReplaceRouteTableAssociationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21277,6 +21723,7 @@ pub fn deser_operation_crate_operation_replace_transit_gateway_route(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReplaceTransitGatewayRouteResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21311,6 +21758,7 @@ pub fn deser_operation_crate_operation_request_spot_fleet(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RequestSpotFleetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21349,6 +21797,7 @@ pub fn deser_operation_crate_operation_request_spot_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RequestSpotInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21384,6 +21833,7 @@ pub fn deser_operation_crate_operation_reset_address_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetAddressAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21421,6 +21871,7 @@ pub fn deser_operation_crate_operation_reset_ebs_default_kms_key_id(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetEbsDefaultKmsKeyIdResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21461,6 +21912,7 @@ pub fn deser_operation_crate_operation_reset_fpga_image_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetFpgaImageAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21503,6 +21955,7 @@ pub fn deser_operation_crate_operation_restore_address_to_classic(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreAddressToClassicResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21557,6 +22010,7 @@ pub fn deser_operation_crate_operation_restore_image_from_recycle_bin(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreImageFromRecycleBinResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21599,6 +22053,7 @@ pub fn deser_operation_crate_operation_restore_managed_prefix_list_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreManagedPrefixListVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21636,6 +22091,7 @@ pub fn deser_operation_crate_operation_restore_snapshot_from_recycle_bin(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreSnapshotFromRecycleBinResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21797,6 +22253,7 @@ pub fn deser_operation_crate_operation_restore_snapshot_tier(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreSnapshotTierResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21881,6 +22338,7 @@ pub fn deser_operation_crate_operation_revoke_client_vpn_ingress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeClientVpnIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21918,6 +22376,7 @@ pub fn deser_operation_crate_operation_revoke_security_group_egress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeSecurityGroupEgressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -21970,6 +22429,7 @@ pub fn deser_operation_crate_operation_revoke_security_group_ingress(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeSecurityGroupIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22019,6 +22479,7 @@ pub fn deser_operation_crate_operation_run_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RunInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22103,6 +22564,7 @@ pub fn deser_operation_crate_operation_run_scheduled_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RunScheduledInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22140,6 +22602,7 @@ pub fn deser_operation_crate_operation_search_local_gateway_routes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SearchLocalGatewayRoutesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22190,6 +22653,7 @@ pub fn deser_operation_crate_operation_search_transit_gateway_multicast_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SearchTransitGatewayMulticastGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22240,6 +22704,7 @@ pub fn deser_operation_crate_operation_search_transit_gateway_routes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SearchTransitGatewayRoutesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22289,6 +22754,7 @@ pub fn deser_operation_crate_operation_start_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22326,6 +22792,7 @@ pub fn deser_operation_crate_operation_start_network_insights_access_scope_analy
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartNetworkInsightsAccessScopeAnalysisResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22363,6 +22830,7 @@ pub fn deser_operation_crate_operation_start_network_insights_analysis(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartNetworkInsightsAnalysisResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22400,6 +22868,7 @@ pub fn deser_operation_crate_operation_start_vpc_endpoint_service_private_dns_ve
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartVpcEndpointServicePrivateDnsVerificationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22439,6 +22908,7 @@ pub fn deser_operation_crate_operation_stop_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StopInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22476,6 +22946,7 @@ pub fn deser_operation_crate_operation_terminate_client_vpn_connections(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TerminateClientVpnConnectionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22536,6 +23007,7 @@ pub fn deser_operation_crate_operation_terminate_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TerminateInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22571,6 +23043,7 @@ pub fn deser_operation_crate_operation_unassign_ipv6_addresses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UnassignIpv6AddressesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22628,6 +23101,7 @@ pub fn deser_operation_crate_operation_unmonitor_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UnmonitorInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22665,6 +23139,7 @@ pub fn deser_operation_crate_operation_update_security_group_rule_descriptions_e
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateSecurityGroupRuleDescriptionsEgressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22707,6 +23182,7 @@ pub fn deser_operation_crate_operation_update_security_group_rule_descriptions_i
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateSecurityGroupRuleDescriptionsIngressResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -22746,6 +23222,7 @@ pub fn deser_operation_crate_operation_withdraw_byoip_cidr(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("WithdrawByoipCidrResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

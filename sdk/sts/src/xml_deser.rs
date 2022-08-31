@@ -148,6 +148,7 @@ pub fn deser_operation_crate_operation_assume_role(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssumeRoleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -299,6 +300,7 @@ pub fn deser_operation_crate_operation_assume_role_with_saml(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssumeRoleWithSAMLResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -487,6 +489,7 @@ pub fn deser_operation_crate_operation_assume_role_with_web_identity(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssumeRoleWithWebIdentityResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -649,6 +652,7 @@ pub fn deser_operation_crate_operation_decode_authorization_message(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DecodeAuthorizationMessageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -699,6 +703,7 @@ pub fn deser_operation_crate_operation_get_access_key_info(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccessKeyInfoResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -749,6 +754,7 @@ pub fn deser_operation_crate_operation_get_caller_identity(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetCallerIdentityResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -825,6 +831,7 @@ pub fn deser_operation_crate_operation_get_federation_token(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetFederationTokenResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -897,6 +904,7 @@ pub fn deser_operation_crate_operation_get_session_token(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSessionTokenResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

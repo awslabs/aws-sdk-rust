@@ -1117,6 +1117,7 @@ pub fn deser_operation_crate_operation_describe_active_receipt_rule_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeActiveReceiptRuleSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1177,6 +1178,7 @@ pub fn deser_operation_crate_operation_describe_configuration_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeConfigurationSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1265,6 +1267,7 @@ pub fn deser_operation_crate_operation_describe_receipt_rule(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReceiptRuleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1315,6 +1318,7 @@ pub fn deser_operation_crate_operation_describe_receipt_rule_set(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReceiptRuleSetResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1375,6 +1379,7 @@ pub fn deser_operation_crate_operation_get_account_sending_enabled(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccountSendingEnabledResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1478,6 +1483,7 @@ pub fn deser_operation_crate_operation_get_custom_verification_email_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetCustomVerificationEmailTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1596,6 +1602,7 @@ pub fn deser_operation_crate_operation_get_identity_dkim_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityDkimAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1646,6 +1653,7 @@ pub fn deser_operation_crate_operation_get_identity_mail_from_domain_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityMailFromDomainAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1696,6 +1704,7 @@ pub fn deser_operation_crate_operation_get_identity_notification_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityNotificationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1744,6 +1753,7 @@ pub fn deser_operation_crate_operation_get_identity_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1794,6 +1804,7 @@ pub fn deser_operation_crate_operation_get_identity_verification_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityVerificationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1841,6 +1852,7 @@ pub fn deser_operation_crate_operation_get_send_quota(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSendQuotaResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1923,6 +1935,7 @@ pub fn deser_operation_crate_operation_get_send_statistics(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSendStatisticsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2018,6 +2031,7 @@ pub fn deser_operation_crate_operation_get_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2066,6 +2080,7 @@ pub fn deser_operation_crate_operation_list_configuration_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListConfigurationSetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2129,6 +2144,7 @@ pub fn deser_operation_crate_operation_list_custom_verification_email_templates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListCustomVerificationEmailTemplatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2189,6 +2205,7 @@ pub fn deser_operation_crate_operation_list_identities(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListIdentitiesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2250,6 +2267,7 @@ pub fn deser_operation_crate_operation_list_identity_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListIdentityPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2297,6 +2315,7 @@ pub fn deser_operation_crate_operation_list_receipt_filters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListReceiptFiltersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2345,6 +2364,7 @@ pub fn deser_operation_crate_operation_list_receipt_rule_sets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListReceiptRuleSetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2405,6 +2425,7 @@ pub fn deser_operation_crate_operation_list_templates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTemplatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2468,6 +2489,7 @@ pub fn deser_operation_crate_operation_list_verified_email_addresses(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListVerifiedEmailAddressesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2614,6 +2636,7 @@ pub fn deser_operation_crate_operation_send_bounce(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendBounceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2783,6 +2806,7 @@ pub fn deser_operation_crate_operation_send_bulk_templated_email(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendBulkTemplatedEmailResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2868,6 +2892,7 @@ pub fn deser_operation_crate_operation_send_custom_verification_email(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendCustomVerificationEmailResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2918,6 +2943,7 @@ pub fn deser_operation_crate_operation_send_email(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendEmailResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2968,6 +2994,7 @@ pub fn deser_operation_crate_operation_send_raw_email(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendRawEmailResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3018,6 +3045,7 @@ pub fn deser_operation_crate_operation_send_templated_email(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SendTemplatedEmailResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3164,6 +3192,7 @@ pub fn deser_operation_crate_operation_test_render_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TestRenderTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3214,6 +3243,7 @@ pub fn deser_operation_crate_operation_verify_domain_dkim(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("VerifyDomainDkimResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3262,6 +3292,7 @@ pub fn deser_operation_crate_operation_verify_domain_identity(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("VerifyDomainIdentityResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

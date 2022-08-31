@@ -273,6 +273,7 @@ pub fn deser_operation_crate_operation_delete_insight_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteInsightRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -353,6 +354,7 @@ pub fn deser_operation_crate_operation_describe_alarm_history(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAlarmHistoryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -413,6 +415,7 @@ pub fn deser_operation_crate_operation_describe_alarms(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAlarmsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -486,6 +489,7 @@ pub fn deser_operation_crate_operation_describe_alarms_for_metric(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAlarmsForMetricResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -536,6 +540,7 @@ pub fn deser_operation_crate_operation_describe_anomaly_detectors(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAnomalyDetectorsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -597,6 +602,7 @@ pub fn deser_operation_crate_operation_describe_insight_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInsightRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -658,6 +664,7 @@ pub fn deser_operation_crate_operation_disable_insight_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableInsightRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -737,6 +744,7 @@ pub fn deser_operation_crate_operation_enable_insight_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableInsightRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -784,6 +792,7 @@ pub fn deser_operation_crate_operation_get_dashboard(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetDashboardResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -861,6 +870,7 @@ pub fn deser_operation_crate_operation_get_insight_rule_report(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInsightRuleReportResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -971,6 +981,7 @@ pub fn deser_operation_crate_operation_get_metric_data(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetMetricDataResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1042,6 +1053,7 @@ pub fn deser_operation_crate_operation_get_metric_statistics(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetMetricStatisticsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1102,6 +1114,7 @@ pub fn deser_operation_crate_operation_get_metric_stream(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetMetricStreamResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1277,6 +1290,7 @@ pub fn deser_operation_crate_operation_get_metric_widget_image(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetMetricWidgetImageResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1327,6 +1341,7 @@ pub fn deser_operation_crate_operation_list_dashboards(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListDashboardsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1390,6 +1405,7 @@ pub fn deser_operation_crate_operation_list_managed_insight_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListManagedInsightRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1450,6 +1466,7 @@ pub fn deser_operation_crate_operation_list_metrics(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListMetricsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1510,6 +1527,7 @@ pub fn deser_operation_crate_operation_list_metric_streams(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListMetricStreamsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1571,6 +1589,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTagsForResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1693,6 +1712,7 @@ pub fn deser_operation_crate_operation_put_dashboard(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PutDashboardResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1743,6 +1763,7 @@ pub fn deser_operation_crate_operation_put_managed_insight_rules(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PutManagedInsightRulesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1825,6 +1846,7 @@ pub fn deser_operation_crate_operation_put_metric_stream(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PutMetricStreamResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

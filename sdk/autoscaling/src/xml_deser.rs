@@ -81,6 +81,7 @@ pub fn deser_operation_crate_operation_batch_delete_scheduled_action(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchDeleteScheduledActionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -195,6 +196,7 @@ pub fn deser_operation_crate_operation_batch_put_scheduled_update_group_action(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchPutScheduledUpdateGroupActionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -278,6 +280,7 @@ pub fn deser_operation_crate_operation_cancel_instance_refresh(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CancelInstanceRefreshResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -396,6 +399,7 @@ pub fn deser_operation_crate_operation_describe_account_limits(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAccountLimitsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -496,6 +500,7 @@ pub fn deser_operation_crate_operation_describe_adjustment_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAdjustmentTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -578,6 +583,7 @@ pub fn deser_operation_crate_operation_describe_auto_scaling_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAutoScalingGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -641,6 +647,7 @@ pub fn deser_operation_crate_operation_describe_auto_scaling_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAutoScalingInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -704,6 +711,7 @@ pub fn deser_operation_crate_operation_describe_auto_scaling_notification_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAutoScalingNotificationTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -754,6 +762,7 @@ pub fn deser_operation_crate_operation_describe_instance_refreshes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceRefreshesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -817,6 +826,7 @@ pub fn deser_operation_crate_operation_describe_launch_configurations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLaunchConfigurationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -878,6 +888,7 @@ pub fn deser_operation_crate_operation_describe_lifecycle_hooks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLifecycleHooksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -928,6 +939,7 @@ pub fn deser_operation_crate_operation_describe_lifecycle_hook_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLifecycleHookTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -976,6 +988,7 @@ pub fn deser_operation_crate_operation_describe_load_balancers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1039,6 +1052,7 @@ pub fn deser_operation_crate_operation_describe_load_balancer_target_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancerTargetGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1102,6 +1116,7 @@ pub fn deser_operation_crate_operation_describe_metric_collection_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeMetricCollectionTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1162,6 +1177,7 @@ pub fn deser_operation_crate_operation_describe_notification_configurations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeNotificationConfigurationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1222,6 +1238,7 @@ pub fn deser_operation_crate_operation_describe_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1285,6 +1302,7 @@ pub fn deser_operation_crate_operation_describe_scaling_activities(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScalingActivitiesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1348,6 +1366,7 @@ pub fn deser_operation_crate_operation_describe_scaling_process_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScalingProcessTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1398,6 +1417,7 @@ pub fn deser_operation_crate_operation_describe_scheduled_actions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScheduledActionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1458,6 +1478,7 @@ pub fn deser_operation_crate_operation_describe_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1521,6 +1542,7 @@ pub fn deser_operation_crate_operation_describe_termination_policy_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTerminationPolicyTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1568,6 +1590,7 @@ pub fn deser_operation_crate_operation_describe_warm_pool(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeWarmPoolResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1638,6 +1661,7 @@ pub fn deser_operation_crate_operation_detach_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetachInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1685,6 +1709,7 @@ pub fn deser_operation_crate_operation_enter_standby(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnterStandbyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1732,6 +1757,7 @@ pub fn deser_operation_crate_operation_exit_standby(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ExitStandbyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1782,6 +1808,7 @@ pub fn deser_operation_crate_operation_get_predictive_scaling_forecast(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetPredictiveScalingForecastResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1853,6 +1880,7 @@ pub fn deser_operation_crate_operation_put_scaling_policy(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PutScalingPolicyResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1949,6 +1977,7 @@ pub fn deser_operation_crate_operation_start_instance_refresh(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartInstanceRefreshResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2002,6 +2031,7 @@ pub fn deser_operation_crate_operation_terminate_instance_in_auto_scaling_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TerminateInstanceInAutoScalingGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

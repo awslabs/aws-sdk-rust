@@ -182,6 +182,7 @@ pub fn deser_operation_crate_operation_apply_security_groups_to_load_balancer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ApplySecurityGroupsToLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -296,6 +297,7 @@ pub fn deser_operation_crate_operation_attach_load_balancer_to_subnets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachLoadBalancerToSubnetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -344,6 +346,7 @@ pub fn deser_operation_crate_operation_configure_health_check(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ConfigureHealthCheckResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -657,6 +660,7 @@ pub fn deser_operation_crate_operation_create_load_balancer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -807,6 +811,7 @@ pub fn deser_operation_crate_operation_deregister_instances_from_load_balancer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeregisterInstancesFromLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -855,6 +860,7 @@ pub fn deser_operation_crate_operation_describe_account_limits(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAccountLimitsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -916,6 +922,7 @@ pub fn deser_operation_crate_operation_describe_instance_health(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceHealthResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1001,6 +1008,7 @@ pub fn deser_operation_crate_operation_describe_load_balancer_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancerAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1083,6 +1091,7 @@ pub fn deser_operation_crate_operation_describe_load_balancer_policies(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancerPoliciesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1133,6 +1142,7 @@ pub fn deser_operation_crate_operation_describe_load_balancer_policy_types(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancerPolicyTypesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1214,6 +1224,7 @@ pub fn deser_operation_crate_operation_describe_load_balancers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1274,6 +1285,7 @@ pub fn deser_operation_crate_operation_describe_tags(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTagsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1324,6 +1336,7 @@ pub fn deser_operation_crate_operation_detach_load_balancer_from_subnets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetachLoadBalancerFromSubnetsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1374,6 +1387,7 @@ pub fn deser_operation_crate_operation_disable_availability_zones_for_load_balan
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableAvailabilityZonesForLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1424,6 +1438,7 @@ pub fn deser_operation_crate_operation_enable_availability_zones_for_load_balanc
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableAvailabilityZonesForLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1474,6 +1489,7 @@ pub fn deser_operation_crate_operation_modify_load_balancer_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyLoadBalancerAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1537,6 +1553,7 @@ pub fn deser_operation_crate_operation_register_instances_with_load_balancer(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterInstancesWithLoadBalancerResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

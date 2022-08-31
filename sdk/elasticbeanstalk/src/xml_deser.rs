@@ -122,6 +122,7 @@ pub fn deser_operation_crate_operation_apply_environment_managed_action(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ApplyEnvironmentManagedActionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -213,6 +214,7 @@ pub fn deser_operation_crate_operation_check_dns_availability(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CheckDNSAvailabilityResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -311,6 +313,7 @@ pub fn deser_operation_crate_operation_compose_environments(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ComposeEnvironmentsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -404,6 +407,7 @@ pub fn deser_operation_crate_operation_create_application(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateApplicationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -559,6 +563,7 @@ pub fn deser_operation_crate_operation_create_application_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateApplicationVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -676,6 +681,7 @@ pub fn deser_operation_crate_operation_create_configuration_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateConfigurationTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -843,6 +849,7 @@ pub fn deser_operation_crate_operation_create_environment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateEnvironmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1184,6 +1191,7 @@ pub fn deser_operation_crate_operation_create_platform_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePlatformVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1277,6 +1285,7 @@ pub fn deser_operation_crate_operation_create_storage_location(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateStorageLocationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1429,6 +1438,7 @@ pub fn deser_operation_crate_operation_delete_platform_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeletePlatformVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1479,6 +1489,7 @@ pub fn deser_operation_crate_operation_describe_account_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAccountAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1527,6 +1538,7 @@ pub fn deser_operation_crate_operation_describe_applications(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeApplicationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1577,6 +1589,7 @@ pub fn deser_operation_crate_operation_describe_application_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeApplicationVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1640,6 +1653,7 @@ pub fn deser_operation_crate_operation_describe_configuration_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeConfigurationOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1716,6 +1730,7 @@ pub fn deser_operation_crate_operation_describe_configuration_settings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeConfigurationSettingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1798,6 +1813,7 @@ pub fn deser_operation_crate_operation_describe_environment_health(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEnvironmentHealthResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1935,6 +1951,7 @@ pub fn deser_operation_crate_operation_describe_environment_managed_action_histo
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEnvironmentManagedActionHistoryResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1998,6 +2015,7 @@ pub fn deser_operation_crate_operation_describe_environment_managed_actions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEnvironmentManagedActionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2048,6 +2066,7 @@ pub fn deser_operation_crate_operation_describe_environment_resources(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEnvironmentResourcesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2096,6 +2115,7 @@ pub fn deser_operation_crate_operation_describe_environments(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEnvironmentsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2156,6 +2176,7 @@ pub fn deser_operation_crate_operation_describe_events(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEventsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2219,6 +2240,7 @@ pub fn deser_operation_crate_operation_describe_instances_health(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstancesHealthResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2296,6 +2318,7 @@ pub fn deser_operation_crate_operation_describe_platform_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePlatformVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2346,6 +2369,7 @@ pub fn deser_operation_crate_operation_list_available_solution_stacks(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListAvailableSolutionStacksResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2404,6 +2428,7 @@ pub fn deser_operation_crate_operation_list_platform_branches(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPlatformBranchesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2465,6 +2490,7 @@ pub fn deser_operation_crate_operation_list_platform_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPlatformVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2593,6 +2619,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTagsForResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2656,6 +2683,7 @@ pub fn deser_operation_crate_operation_retrieve_environment_info(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RetrieveEnvironmentInfoResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2704,6 +2732,7 @@ pub fn deser_operation_crate_operation_terminate_environment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("TerminateEnvironmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3012,6 +3041,7 @@ pub fn deser_operation_crate_operation_update_application(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateApplicationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3062,6 +3092,7 @@ pub fn deser_operation_crate_operation_update_application_resource_lifecycle(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateApplicationResourceLifecycleResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3125,6 +3156,7 @@ pub fn deser_operation_crate_operation_update_application_version(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateApplicationVersionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3175,6 +3207,7 @@ pub fn deser_operation_crate_operation_update_configuration_template(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateConfigurationTemplateResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3342,6 +3375,7 @@ pub fn deser_operation_crate_operation_update_environment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateEnvironmentResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3685,6 +3719,7 @@ pub fn deser_operation_crate_operation_validate_configuration_settings(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ValidateConfigurationSettingsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

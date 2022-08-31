@@ -62,12 +62,14 @@ pub fn deser_operation_crate_operation_complete_multipart_upload(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CompleteMultipartUploadResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CompleteMultipartUploadResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CompleteMultipartUploadResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CompleteMultipartUploadResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -288,12 +290,14 @@ pub fn deser_operation_crate_operation_create_multipart_upload(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("InitiateMultipartUploadResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected InitiateMultipartUploadResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("InitiateMultipartUploadResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected InitiateMultipartUploadResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -351,12 +355,14 @@ pub fn deser_operation_crate_operation_delete_objects(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("DeleteResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected DeleteResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("DeleteResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected DeleteResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -412,12 +418,14 @@ pub fn deser_operation_crate_operation_get_bucket_accelerate_configuration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("AccelerateConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected AccelerateConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("AccelerateConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected AccelerateConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -450,12 +458,14 @@ pub fn deser_operation_crate_operation_get_bucket_acl(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("AccessControlPolicy")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected AccessControlPolicy got {:?}",
-            start_el
-        )));
+    if !start_el.matches("AccessControlPolicy") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected AccessControlPolicy but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -494,12 +504,14 @@ pub fn deser_operation_crate_operation_get_bucket_cors(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CORSConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CORSConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CORSConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CORSConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -538,12 +550,14 @@ pub fn deser_operation_crate_operation_get_bucket_lifecycle_configuration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("LifecycleConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected LifecycleConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("LifecycleConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected LifecycleConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -579,6 +593,7 @@ pub fn deser_operation_crate_operation_get_bucket_location(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     match start_el {
         s if s.matches("LocationConstraint") /* LocationConstraint com.amazonaws.s3.synthetic#GetBucketLocationOutput$LocationConstraint */ =>  {
@@ -609,12 +624,14 @@ pub fn deser_operation_crate_operation_get_bucket_logging(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("BucketLoggingStatus")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected BucketLoggingStatus got {:?}",
-            start_el
-        )));
+    if !start_el.matches("BucketLoggingStatus") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected BucketLoggingStatus but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -646,12 +663,14 @@ pub fn deser_operation_crate_operation_get_bucket_notification_configuration(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("NotificationConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected NotificationConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("NotificationConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected NotificationConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -734,12 +753,14 @@ pub fn deser_operation_crate_operation_get_bucket_request_payment(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("RequestPaymentConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected RequestPaymentConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("RequestPaymentConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected RequestPaymentConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -772,12 +793,14 @@ pub fn deser_operation_crate_operation_get_bucket_tagging(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("Tagging")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected Tagging got {:?}",
-            start_el
-        )));
+    if !start_el.matches("Tagging") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected Tagging but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -807,12 +830,14 @@ pub fn deser_operation_crate_operation_get_bucket_versioning(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("VersioningConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected VersioningConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("VersioningConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected VersioningConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -859,12 +884,14 @@ pub fn deser_operation_crate_operation_get_bucket_website(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("WebsiteConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected WebsiteConfiguration got {:?}",
-            start_el
-        )));
+    if !start_el.matches("WebsiteConfiguration") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected WebsiteConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1015,12 +1042,14 @@ pub fn deser_operation_crate_operation_get_object_acl(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("AccessControlPolicy")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected AccessControlPolicy got {:?}",
-            start_el
-        )));
+    if !start_el.matches("AccessControlPolicy") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected AccessControlPolicy but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1060,13 +1089,8 @@ pub fn deser_operation_crate_operation_get_object_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetObjectAttributesOutput")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetObjectAttributesOutput got {:?}",
-            start_el
-        )));
-    }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ETag") /* ETag com.amazonaws.s3.synthetic#GetObjectAttributesOutput$ETag */ =>  {
@@ -1146,12 +1170,14 @@ pub fn deser_operation_crate_operation_get_object_tagging(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("Tagging")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected Tagging got {:?}",
-            start_el
-        )));
+    if !start_el.matches("Tagging") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected Tagging but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1215,12 +1241,14 @@ pub fn deser_operation_crate_operation_list_bucket_analytics_configurations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListBucketAnalyticsConfigurationResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListBucketAnalyticsConfigurationResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListBucketAnalyticsConfigurationResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListBucketAnalyticsConfigurationResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1300,12 +1328,14 @@ pub fn deser_operation_crate_operation_list_bucket_intelligent_tiering_configura
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListBucketIntelligentTieringConfigurationsOutput")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListBucketIntelligentTieringConfigurationsOutput got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListBucketIntelligentTieringConfigurationsOutput") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListBucketIntelligentTieringConfigurationsOutput but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1385,12 +1415,14 @@ pub fn deser_operation_crate_operation_list_bucket_inventory_configurations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListInventoryConfigurationsResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListInventoryConfigurationsResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListInventoryConfigurationsResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListInventoryConfigurationsResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1470,12 +1502,14 @@ pub fn deser_operation_crate_operation_list_bucket_metrics_configurations(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListMetricsConfigurationsResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListMetricsConfigurationsResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListMetricsConfigurationsResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListMetricsConfigurationsResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1552,12 +1586,14 @@ pub fn deser_operation_crate_operation_list_buckets(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListAllMyBucketsResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListAllMyBucketsResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListAllMyBucketsResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListAllMyBucketsResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1597,12 +1633,14 @@ pub fn deser_operation_crate_operation_list_multipart_uploads(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListMultipartUploadsResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListMultipartUploadsResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListMultipartUploadsResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListMultipartUploadsResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1822,12 +1860,14 @@ pub fn deser_operation_crate_operation_list_objects(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListBucketResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListBucketResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListBucketResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListBucketResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -1989,12 +2029,14 @@ pub fn deser_operation_crate_operation_list_objects_v2(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListBucketResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListBucketResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListBucketResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListBucketResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2184,12 +2226,14 @@ pub fn deser_operation_crate_operation_list_object_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListVersionsResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListVersionsResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListVersionsResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListVersionsResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -2394,12 +2438,14 @@ pub fn deser_operation_crate_operation_list_parts(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("ListPartsResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected ListPartsResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("ListPartsResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected ListPartsResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

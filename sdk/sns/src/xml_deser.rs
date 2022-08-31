@@ -178,6 +178,7 @@ pub fn deser_operation_crate_operation_check_if_phone_number_is_opted_out(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CheckIfPhoneNumberIsOptedOutResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -300,6 +301,7 @@ pub fn deser_operation_crate_operation_confirm_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ConfirmSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -353,6 +355,7 @@ pub fn deser_operation_crate_operation_create_platform_application(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePlatformApplicationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -404,6 +407,7 @@ pub fn deser_operation_crate_operation_create_platform_endpoint(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePlatformEndpointResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -711,6 +715,7 @@ pub fn deser_operation_crate_operation_create_topic(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTopicResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -794,6 +799,7 @@ pub fn deser_operation_crate_operation_get_endpoint_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetEndpointAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -844,6 +850,7 @@ pub fn deser_operation_crate_operation_get_platform_application_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetPlatformApplicationAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -891,6 +898,7 @@ pub fn deser_operation_crate_operation_get_sms_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSMSAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -941,6 +949,7 @@ pub fn deser_operation_crate_operation_get_sms_sandbox_account_status(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSMSSandboxAccountStatusResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -996,6 +1005,7 @@ pub fn deser_operation_crate_operation_get_subscription_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSubscriptionAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1043,6 +1053,7 @@ pub fn deser_operation_crate_operation_get_topic_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTopicAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1093,6 +1104,7 @@ pub fn deser_operation_crate_operation_list_endpoints_by_platform_application(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListEndpointsByPlatformApplicationResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1186,6 +1198,7 @@ pub fn deser_operation_crate_operation_list_origination_numbers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListOriginationNumbersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1249,6 +1262,7 @@ pub fn deser_operation_crate_operation_list_phone_numbers_opted_out(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPhoneNumbersOptedOutResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1312,6 +1326,7 @@ pub fn deser_operation_crate_operation_list_platform_applications(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListPlatformApplicationsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1375,6 +1390,7 @@ pub fn deser_operation_crate_operation_list_sms_sandbox_phone_numbers(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSMSSandboxPhoneNumbersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1435,6 +1451,7 @@ pub fn deser_operation_crate_operation_list_subscriptions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSubscriptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1498,6 +1515,7 @@ pub fn deser_operation_crate_operation_list_subscriptions_by_topic(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSubscriptionsByTopicResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1559,6 +1577,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTagsForResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1606,6 +1625,7 @@ pub fn deser_operation_crate_operation_list_topics(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTopicsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1960,6 +1980,7 @@ pub fn deser_operation_crate_operation_publish(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PublishResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2192,6 +2213,7 @@ pub fn deser_operation_crate_operation_publish_batch(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("PublishBatchResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2249,6 +2271,7 @@ pub fn deser_operation_crate_operation_subscribe(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SubscribeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(

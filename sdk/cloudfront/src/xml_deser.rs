@@ -3557,12 +3557,14 @@ pub fn deser_operation_crate_operation_create_realtime_log_config(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("CreateRealtimeLogConfigResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected CreateRealtimeLogConfigResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("CreateRealtimeLogConfigResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected CreateRealtimeLogConfigResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4590,12 +4592,14 @@ pub fn deser_operation_crate_operation_get_realtime_log_config(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("GetRealtimeLogConfigResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected GetRealtimeLogConfigResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("GetRealtimeLogConfigResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected GetRealtimeLogConfigResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -4694,12 +4698,14 @@ pub fn deser_operation_crate_operation_update_realtime_log_config(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !(start_el.matches("UpdateRealtimeLogConfigResult")) {
-        return Err(aws_smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected UpdateRealtimeLogConfigResult got {:?}",
-            start_el
-        )));
+    if !start_el.matches("UpdateRealtimeLogConfigResult") {
+        return Err(
+                                aws_smithy_xml::decode::XmlError::custom(
+                                    format!("encountered invalid XML root: expected UpdateRealtimeLogConfigResult but got {:?}. This is likely a bug in the SDK.", start_el)
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

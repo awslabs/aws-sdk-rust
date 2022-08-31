@@ -81,6 +81,7 @@ pub fn deser_operation_crate_operation_add_source_identifier_to_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AddSourceIdentifierToSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -325,6 +326,7 @@ pub fn deser_operation_crate_operation_apply_pending_maintenance_action(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ApplyPendingMaintenanceActionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -480,6 +482,7 @@ pub fn deser_operation_crate_operation_copy_db_cluster_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyDBClusterParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -698,6 +701,7 @@ pub fn deser_operation_crate_operation_copy_db_cluster_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyDBClusterSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1149,6 +1153,7 @@ pub fn deser_operation_crate_operation_create_db_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1199,6 +1204,7 @@ pub fn deser_operation_crate_operation_create_db_cluster_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBClusterParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1249,6 +1255,7 @@ pub fn deser_operation_crate_operation_create_db_cluster_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBClusterSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1498,6 +1505,7 @@ pub fn deser_operation_crate_operation_create_db_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1649,6 +1657,7 @@ pub fn deser_operation_crate_operation_create_db_subnet_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBSubnetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -1899,6 +1908,7 @@ pub fn deser_operation_crate_operation_create_event_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateEventSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2017,6 +2027,7 @@ pub fn deser_operation_crate_operation_create_global_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateGlobalClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2064,6 +2075,7 @@ pub fn deser_operation_crate_operation_delete_db_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteDBClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2149,6 +2161,7 @@ pub fn deser_operation_crate_operation_delete_db_cluster_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteDBClusterSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2229,6 +2242,7 @@ pub fn deser_operation_crate_operation_delete_db_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteDBInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2347,6 +2361,7 @@ pub fn deser_operation_crate_operation_delete_event_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteEventSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2395,6 +2410,7 @@ pub fn deser_operation_crate_operation_delete_global_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteGlobalClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2475,6 +2491,7 @@ pub fn deser_operation_crate_operation_describe_certificates(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCertificatesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2538,6 +2555,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_parameter_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClusterParameterGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2601,6 +2619,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_parameters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClusterParametersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2661,6 +2680,7 @@ pub fn deser_operation_crate_operation_describe_db_clusters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClustersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2724,6 +2744,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_snapshot_attributes(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClusterSnapshotAttributesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2774,6 +2795,7 @@ pub fn deser_operation_crate_operation_describe_db_cluster_snapshots(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClusterSnapshotsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2837,6 +2859,7 @@ pub fn deser_operation_crate_operation_describe_db_engine_versions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBEngineVersionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2898,6 +2921,7 @@ pub fn deser_operation_crate_operation_describe_db_instances(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBInstancesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -2961,6 +2985,7 @@ pub fn deser_operation_crate_operation_describe_db_subnet_groups(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBSubnetGroupsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3024,6 +3049,7 @@ pub fn deser_operation_crate_operation_describe_engine_default_cluster_parameter
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEngineDefaultClusterParametersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3074,6 +3100,7 @@ pub fn deser_operation_crate_operation_describe_event_categories(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEventCategoriesResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3121,6 +3148,7 @@ pub fn deser_operation_crate_operation_describe_events(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEventsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3184,6 +3212,7 @@ pub fn deser_operation_crate_operation_describe_event_subscriptions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeEventSubscriptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3245,6 +3274,7 @@ pub fn deser_operation_crate_operation_describe_global_clusters(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeGlobalClustersResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3308,6 +3338,7 @@ pub fn deser_operation_crate_operation_describe_orderable_db_instance_options(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeOrderableDBInstanceOptionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3371,6 +3402,7 @@ pub fn deser_operation_crate_operation_describe_pending_maintenance_actions(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePendingMaintenanceActionsResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3431,6 +3463,7 @@ pub fn deser_operation_crate_operation_failover_db_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("FailoverDBClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3479,6 +3512,7 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ListTagsForResourceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3561,6 +3595,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3611,6 +3646,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBClusterParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3699,6 +3735,7 @@ pub fn deser_operation_crate_operation_modify_db_cluster_snapshot_attribute(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBClusterSnapshotAttributeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3781,6 +3818,7 @@ pub fn deser_operation_crate_operation_modify_db_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3861,6 +3899,7 @@ pub fn deser_operation_crate_operation_modify_db_subnet_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBSubnetGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3911,6 +3950,7 @@ pub fn deser_operation_crate_operation_modify_event_subscription(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyEventSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -3959,6 +3999,7 @@ pub fn deser_operation_crate_operation_modify_global_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyGlobalClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4006,6 +4047,7 @@ pub fn deser_operation_crate_operation_reboot_db_instance(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RebootDBInstanceResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4056,6 +4098,7 @@ pub fn deser_operation_crate_operation_remove_from_global_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RemoveFromGlobalClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4106,6 +4149,7 @@ pub fn deser_operation_crate_operation_remove_source_identifier_from_subscriptio
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RemoveSourceIdentifierFromSubscriptionResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4156,6 +4200,7 @@ pub fn deser_operation_crate_operation_reset_db_cluster_parameter_group(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetDBClusterParameterGroupResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4309,6 +4354,7 @@ pub fn deser_operation_crate_operation_restore_db_cluster_from_snapshot(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreDBClusterFromSnapshotResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4359,6 +4405,7 @@ pub fn deser_operation_crate_operation_restore_db_cluster_to_point_in_time(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreDBClusterToPointInTimeResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4406,6 +4453,7 @@ pub fn deser_operation_crate_operation_start_db_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartDBClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
@@ -4453,6 +4501,7 @@ pub fn deser_operation_crate_operation_stop_db_cluster(
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StopDBClusterResponse")) {
         return Err(aws_smithy_xml::decode::XmlError::custom(format!(
