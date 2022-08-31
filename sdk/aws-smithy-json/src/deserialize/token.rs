@@ -216,9 +216,26 @@ pub fn expect_timestamp_or_null(
     timestamp_format: Format,
 ) -> Result<Option<DateTime>, Error> {
     Ok(match timestamp_format {
-        Format::EpochSeconds => {
-            expect_number_or_null(token)?.map(|v| DateTime::from_secs_f64(v.to_f64_lossy()))
-        }
+        Format::EpochSeconds => expect_number_or_null(token)?
+            .map(|v| v.to_f64_lossy())
+            .map(|v| {
+                if v.is_nan() {
+                    Err(Error::new(
+                        ErrorReason::Custom(Cow::Owned("NaN is not a valid epoch".to_string())),
+                        None,
+                    ))
+                } else if v.is_infinite() {
+                    Err(Error::new(
+                        ErrorReason::Custom(Cow::Owned(
+                            "Infinity is not a valid epoch".to_string(),
+                        )),
+                        None,
+                    ))
+                } else {
+                    Ok(DateTime::from_secs_f64(v))
+                }
+            })
+            .transpose()?,
         Format::DateTime | Format::HttpDate => expect_string_or_null(token)?
             .map(|v| DateTime::from_str(v.as_escaped_str(), timestamp_format))
             .transpose()
@@ -578,6 +595,18 @@ pub mod test {
             Ok(None),
             expect_timestamp_or_null(value_null(0), Format::HttpDate)
         );
+        for &invalid in &["NaN", "Infinity", "-Infinity"] {
+            assert_eq!(
+                Err(Error::new(
+                    ErrorReason::Custom(Cow::Owned(format!(
+                        "{} is not a valid epoch",
+                        invalid.replace("-", "")
+                    ))),
+                    None,
+                )),
+                expect_timestamp_or_null(value_string(0, invalid), Format::EpochSeconds)
+            );
+        }
         assert_eq!(
             Ok(Some(DateTime::from_secs_f64(2048.0))),
             expect_timestamp_or_null(value_number(0, Number::Float(2048.0)), Format::EpochSeconds)
