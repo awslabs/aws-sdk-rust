@@ -48,16 +48,16 @@ version = "0.47.0"
 path = "../aws-types"
 version = "0.47.0"
 [dependencies.bytes]
-version = "1"
+version = "1.0.0"
 [dependencies.http]
-version = "0.2"
+version = "0.2.0"
 [dependencies.hyper]
 version = "0.14.12"
 features = ["stream"]
 [dependencies.tower]
 version = "0.4"
 [dev-dependencies.async-stream]
-version = "0.3"
+version = "0.3.0"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "0.47.0"
@@ -69,20 +69,21 @@ features = ["test-util"]
 path = "../aws-smithy-protocol-test"
 version = "0.47.0"
 [dev-dependencies.futures-core]
-version = "0.3"
+version = "0.3.0"
 [dev-dependencies.futures-util]
-version = "0.3"
+version = "0.3.0"
 [dev-dependencies.hound]
-version = "3.4"
+version = "3.4.0"
 [dev-dependencies.serde_json]
-version = "1"
+version = "1.0.0"
 [dev-dependencies.tokio]
-version = "1"
+version = "1.0.0"
 features = ["macros", "test-util"]
 [dev-dependencies.tracing]
-version = "0.1"
+version = "0.1.0"
 [dev-dependencies.tracing-subscriber]
-version = "0.2"
+version = "0.3.5"
+features = ["env-filter"]
 [features]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]

@@ -46,9 +46,9 @@ version = "0.47.0"
 path = "../aws-types"
 version = "0.47.0"
 [dependencies.bytes]
-version = "1"
+version = "1.0.0"
 [dependencies.http]
-version = "0.2"
+version = "0.2.0"
 [dependencies.tokio-stream]
 version = "0.1.7"
 [dependencies.tower]
@@ -60,7 +60,7 @@ version = "0.47.0"
 path = "../aws-smithy-protocol-test"
 version = "0.47.0"
 [dev-dependencies.pretty_assertions]
-version = "1"
+version = "1.0.0"
 [dev-dependencies.tokio]
 version = "1"
 features = ["macros", "test-util", "rt"]
