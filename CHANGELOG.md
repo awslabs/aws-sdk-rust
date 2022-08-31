@@ -1,4 +1,44 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+August 31st, 2022
+=================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1641](https://github.com/awslabs/smithy-rs/issues/1641)) Refactor endpoint resolution internals to use `aws_smithy_types::Endpoint` internally. The public internal
+    functions `aws_endpoint::set_endpoint_resolver` and `aws_endpoint::get_endpoint_resolver were removed.
+- 🐛⚠ ([smithy-rs#1274](https://github.com/awslabs/smithy-rs/issues/1274)) Lossy converters into integer types for `aws_smithy_types::Number` have been
+    removed. Lossy converters into floating point types for
+    `aws_smithy_types::Number` have been suffixed with `_lossy`. If you were
+    directly using the integer lossy converters, we recommend you use the safe
+    converters.
+    _Before:_
+    ```rust
+    fn f1(n: aws_smithy_types::Number) {
+        let foo: f32 = n.to_f32(); // Lossy conversion!
+        let bar: u32 = n.to_u32(); // Lossy conversion!
+    }
+    ```
+    _After:_
+    ```rust
+    fn f1(n: aws_smithy_types::Number) {
+        use std::convert::TryInto; // Unnecessary import if you're using Rust 2021 edition.
+        let foo: f32 = n.try_into().expect("lossy conversion detected"); // Or handle the error instead of panicking.
+        // You can still do lossy conversions, but only into floating point types.
+        let foo: f32 = n.to_f32_lossy();
+        // To lossily convert into integer types, use an `as` cast directly.
+        let bar: u32 = n as u32; // Lossy conversion!
+    }
+    ```
+- ⚠ ([smithy-rs#1699](https://github.com/awslabs/smithy-rs/issues/1699)) Bump [MSRV](https://github.com/awslabs/aws-sdk-rust#supported-rust-versions-msrv) from 1.58.1 to 1.61.0 per our policy.
+
+**New this release:**
+- 🎉 ([smithy-rs#1598](https://github.com/awslabs/smithy-rs/issues/1598)) Service configs are now generated with new accessors for:
+    - `Config::retry_config()` - Returns a reference to the inner retry configuration.
+    - `Config::timeout_config()` - Returns a reference to the inner timeout configuration.
+    - `Config::sleep_impl()` - Returns a clone of the inner async sleep implementation.
+
+    Previously, these were only accessible through `SdkConfig`.
+- 🐛🎉 ([aws-sdk-rust#609](https://github.com/awslabs/aws-sdk-rust/issues/609)) The AWS S3 `GetObjectAttributes` operation will no longer fail with an XML error.
+
+
 August 8th, 2022
 ================
 **Breaking Changes:**

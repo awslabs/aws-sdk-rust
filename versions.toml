@@ -1963,6 +1963,10 @@ source_hash = 'aaca70df9f7779b46c5f231d3f9aa903c474ff454ab8ad4004506ea40fa050b3'
 category = 'AwsRuntime'
 version = '0.48.0'
 source_hash = '117a7d3601ab227f7708d0ed1abb0f72c7f7db65e62a59a1e297b7537547a646'
+
+[release]
+tag = 'release-2022-08-31'
+
 [release.crates]
 aws-config = '0.48.0'
 aws-endpoint = '0.48.0'
