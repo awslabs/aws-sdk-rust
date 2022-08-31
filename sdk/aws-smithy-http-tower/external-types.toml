@@ -1,0 +1,12 @@
+allowed_external_types = [
+    "aws_smithy_http::*",
+    "http::request::Request",
+    "http::response::Response",
+    "tower_service::Service",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose on `tower::BoxError`
+    "tower::BoxError",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if we want to continue exposing tower_layer
+    "tower_layer::Layer",
+]

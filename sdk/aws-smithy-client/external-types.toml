@@ -1,0 +1,39 @@
+allowed_external_types = [
+    "aws_smithy_async::*",
+    "aws_smithy_http::*",
+    "aws_smithy_http_tower::*",
+    "aws_smithy_types::*",
+    "http::header::name::HeaderName",
+    "http::request::Request",
+    "http::response::Response",
+    "http::uri::Uri",
+    "tower::retry::policy::Policy",
+    "tower_service::Service",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Move `rustls`/`native-tls` features into separate crates
+    "hyper::client::connect::http::HttpConnector",
+    "hyper_rustls::connector::HttpsConnector",
+    "hyper_tls::client::HttpsConnector",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `client-hyper` feature
+    "hyper::client::client::Builder",
+    "hyper::client::connect::Connection",
+    "tokio::io::async_read::AsyncRead",
+    "tokio::io::async_write::AsyncWrite",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `test-utils` feature
+    "bytes::bytes::Bytes",
+    "serde::ser::Serialize",
+    "serde::de::Deserialize",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if we want to continue exposing tower_layer
+    "tower_layer::Layer",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Feature gate middleware_fn and service_fn, or remove them if they're unused
+    "tower::util::map_request::MapRequestLayer",
+    "tower::util::service_fn::ServiceFn",
+    "tower_util::MapRequestLayer",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose on `tower::BoxError`
+    "tower::BoxError",
+]

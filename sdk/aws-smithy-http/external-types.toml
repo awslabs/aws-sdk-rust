@@ -1,0 +1,40 @@
+allowed_external_types = [
+    "aws_smithy_types::*",
+    "bytes::buf::buf_impl::Buf",
+    "bytes::bytes::Bytes",
+    "http::error::Error",
+    "http::header::map::HeaderMap",
+    "http::header::map::ValueIter",
+    "http::header::name::HeaderName",
+    "http::header::value::HeaderValue",
+    "http::request::Builder",
+    "http::request::Request",
+    "http::response::Builder",
+    "http::response::Response",
+    "http::uri::Uri",
+    "http::version::Version",
+    "http_body::Body",
+    "http_body::combinators::box_body::BoxBody",
+    "hyper::body::body::Body",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Feature gate Tokio `AsyncRead`
+    "tokio::io::async_read::AsyncRead",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Switch to AsyncIterator once standardized
+    "futures_core::stream::Stream",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Feature gate references to Tokio `File`
+    "tokio::fs::file::File",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if `InvalidUri` should be exposed
+    "http::uri::InvalidUri",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose `once_cell` in public API
+    "once_cell::sync::Lazy",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
+    "aws_smithy_eventstream::*",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide whether to expose this type or not
+    "bytes_utils::segmented::SegmentedBuf",
+]

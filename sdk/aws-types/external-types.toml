@@ -1,0 +1,10 @@
+allowed_external_types = [
+    "aws_smithy_async::rt::sleep::AsyncSleep",
+    "aws_smithy_client::http_connector",
+    "aws_smithy_client::http_connector::HttpConnector",
+    "aws_smithy_http::endpoint::Endpoint",
+    "aws_smithy_http::endpoint::EndpointPrefix",
+    "aws_smithy_types::retry::RetryConfig",
+    "aws_smithy_types::timeout::config::Config",
+    "http::uri::Uri",
+]

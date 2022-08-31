@@ -1,0 +1,14 @@
+allowed_external_types = [
+    "http::header::map::HeaderMap",
+    "http::header::name::HeaderName",
+    "http::header::value::HeaderValue",
+    "http::method::Method",
+    "http::request::Request",
+    "http::uri::Uri",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose on `ring`
+    "ring::hmac::Tag",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
+    "aws_smithy_eventstream::frame::Message",
+]

@@ -17,10 +17,14 @@ allowed_external_types = [
    "aws_smithy_types::timeout::error::ConfigError",
    "aws_types::*",
    "http::response::Response",
-   "http::uri::InvalidUri",
    "http::uri::Uri",
+   "tower_service::Service",
+
+   # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if `InvalidUri` should be exposed
+   "http::uri::InvalidUri",
+
+   # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if the following should be exposed
    "hyper::client::connect::Connection",
    "tokio::io::async_read::AsyncRead",
    "tokio::io::async_write::AsyncWrite",
-   "tower_service::Service",
 ]

@@ -1,0 +1,9 @@
+allowed_external_types = [
+    "aws_sigv4::http_request::sign::SignableBody",
+    "aws_smithy_http::*",
+    "aws_types::*",
+    "http::request::Request",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
+    "aws_smithy_eventstream::frame::SignMessage",
+]

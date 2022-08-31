@@ -1,0 +1,5 @@
+allowed_external_types = [
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose `xmlparser` at all
+    "xmlparser::Token",
+    "xmlparser::error::Error",
+]

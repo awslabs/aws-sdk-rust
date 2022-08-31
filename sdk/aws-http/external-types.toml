@@ -1,0 +1,10 @@
+allowed_external_types = [
+    "aws_smithy_http::*",
+    "aws_smithy_types::*",
+    "aws_types::*",
+    "bytes::bytes::Bytes",
+    "http_body::Body",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if the following should be exposed
+    "http::header::value::InvalidHeaderValue",
+]

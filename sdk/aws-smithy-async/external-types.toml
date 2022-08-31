@@ -1,0 +1,7 @@
+allowed_external_types = [
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Switch to AsyncIterator once standardized
+    "futures_core::stream::Stream",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose `SendError`
+    "tokio::sync::mpsc::error::SendError",
+]
