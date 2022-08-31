@@ -8,16 +8,16 @@ use aws_sdk_s3::model::{
     OutputSerialization,
 };
 use aws_sdk_s3::{Client, Config, Credentials, Region};
-use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_client::never::NeverConnector;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_types::timeout;
 use aws_smithy_types::tristate::TriState;
 
+use aws_smithy_async::assert_elapsed;
 use std::fmt::Debug;
 use std::sync::Arc;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 #[derive(Debug)]
 struct SmolSleep;
@@ -89,7 +89,7 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
         .build();
     let client = Client::from_conf_conn(config, conn.clone());
 
-    let now = std::time::Instant::now();
+    let now = Instant::now();
 
     let err = client
         .select_object_content()
@@ -117,7 +117,8 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
         .unwrap_err();
 
     assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"API call (all attempts including retries)\", duration: 500ms })");
-    assert_elapsed!(now, std::time::Duration::from_secs_f32(0.5));
+    // Assert 500ms have passed with a 10ms margin of error
+    assert_elapsed!(now, Duration::from_millis(500), Duration::from_millis(10));
 
     Ok(())
 }

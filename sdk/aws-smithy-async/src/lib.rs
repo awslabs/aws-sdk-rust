@@ -30,14 +30,18 @@ pub mod rt;
 /// ```
 #[macro_export]
 macro_rules! assert_elapsed {
-    ($start:expr, $dur:expr) => {{
+    ($start:expr, $dur:expr) => {
+        assert_elapsed!($start, $dur, std::time::Duration::from_millis(5));
+    };
+    ($start:expr, $dur:expr, $margin_of_error:expr) => {{
         let elapsed = $start.elapsed();
         // type ascription improves compiler error when wrong type is passed
         let lower: std::time::Duration = $dur;
+        let margin_of_error: std::time::Duration = $margin_of_error;
 
         // Handles ms rounding
         assert!(
-            elapsed >= lower && elapsed <= lower + std::time::Duration::from_millis(5),
+            elapsed >= lower && elapsed <= lower + margin_of_error,
             "actual = {:?}, expected = {:?}",
             elapsed,
             lower
