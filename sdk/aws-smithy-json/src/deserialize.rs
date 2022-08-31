@@ -282,7 +282,7 @@ impl<'a> JsonTokenIterator<'a> {
     /// returns `(start_index, end_index, negative, floating)`, with `start_index`
     /// and `end_index` representing the slice of the stream that is the number,
     /// `negative` whether or not it is a negative number, and `floating` whether or not
-    /// it is a floating point number.
+    /// the number contains a decimal point and/or an exponent.
     fn scan_number(&mut self) -> (usize, usize, bool, bool) {
         let start_index = self.index;
         let negative = if self.peek_byte() == Some(b'-') {
@@ -338,7 +338,7 @@ impl<'a> JsonTokenIterator<'a> {
                 if negative > 0 {
                     Number::Float(-(positive as f64))
                 } else {
-                    Number::NegInt(negative as i64)
+                    Number::NegInt(negative)
                 }
             } else {
                 Number::PosInt(

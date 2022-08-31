@@ -217,7 +217,7 @@ pub fn expect_timestamp_or_null(
 ) -> Result<Option<DateTime>, Error> {
     Ok(match timestamp_format {
         Format::EpochSeconds => {
-            expect_number_or_null(token)?.map(|v| DateTime::from_secs_f64(v.to_f64()))
+            expect_number_or_null(token)?.map(|v| DateTime::from_secs_f64(v.to_f64_lossy()))
         }
         Format::DateTime | Format::HttpDate => expect_string_or_null(token)?
             .map(|v| DateTime::from_str(v.as_escaped_str(), timestamp_format))

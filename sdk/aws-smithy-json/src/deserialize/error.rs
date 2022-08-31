@@ -82,3 +82,12 @@ impl From<EscapeError> for Error {
         }
     }
 }
+
+impl From<aws_smithy_types::TryFromNumberError> for Error {
+    fn from(_: aws_smithy_types::TryFromNumberError) -> Self {
+        Error {
+            reason: ErrorReason::InvalidNumber,
+            offset: None,
+        }
+    }
+}

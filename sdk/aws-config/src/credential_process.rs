@@ -194,7 +194,12 @@ pub(crate) fn parse_credential_process_json_credentials(
              "Expiration": "2022-05-02T18:36:00+00:00"
             */
             (key, Token::ValueNumber { value, .. }) if key.eq_ignore_ascii_case("Version") => {
-                version = Some(value.to_i32())
+                version = Some(i32::try_from(*value).map_err(|err| {
+                    InvalidJsonCredentials::InvalidField {
+                        field: "Version",
+                        err: err.into(),
+                    }
+                })?);
             }
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("AccessKeyId") => {
                 access_key_id = Some(value.to_unescaped()?)

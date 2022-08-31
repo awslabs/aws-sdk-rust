@@ -347,7 +347,8 @@ pub fn deser_operation_crate_operation_create_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "Description" => {
@@ -364,7 +365,8 @@ pub fn deser_operation_crate_operation_create_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "GrowthFactor" => {
@@ -372,7 +374,7 @@ pub fn deser_operation_crate_operation_create_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "GrowthType" => {
@@ -681,7 +683,8 @@ pub fn deser_operation_crate_operation_create_extension(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -743,7 +746,8 @@ pub fn deser_operation_crate_operation_create_extension_association(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "Id" => {
@@ -829,7 +833,7 @@ pub fn deser_structure_crate_error_payload_too_large_exception_json_err(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "Size" => {
@@ -837,7 +841,7 @@ pub fn deser_structure_crate_error_payload_too_large_exception_json_err(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1102,7 +1106,8 @@ pub fn deser_operation_crate_operation_get_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "DeploymentNumber" => {
@@ -1110,7 +1115,8 @@ pub fn deser_operation_crate_operation_get_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "DeploymentStrategyId" => {
@@ -1150,7 +1156,8 @@ pub fn deser_operation_crate_operation_get_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "GrowthFactor" => {
@@ -1158,7 +1165,7 @@ pub fn deser_operation_crate_operation_get_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "GrowthType" => {
@@ -1178,7 +1185,7 @@ pub fn deser_operation_crate_operation_get_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "StartedAt" => {
@@ -1242,7 +1249,8 @@ pub fn deser_operation_crate_operation_get_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "Description" => {
@@ -1259,7 +1267,8 @@ pub fn deser_operation_crate_operation_get_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "GrowthFactor" => {
@@ -1267,7 +1276,7 @@ pub fn deser_operation_crate_operation_get_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "GrowthType" => {
@@ -1488,7 +1497,8 @@ pub fn deser_operation_crate_operation_get_extension(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1550,7 +1560,8 @@ pub fn deser_operation_crate_operation_get_extension_association(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "Id" => {
@@ -2107,7 +2118,8 @@ pub fn deser_operation_crate_operation_start_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "DeploymentNumber" => {
@@ -2115,7 +2127,8 @@ pub fn deser_operation_crate_operation_start_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "DeploymentStrategyId" => {
@@ -2155,7 +2168,8 @@ pub fn deser_operation_crate_operation_start_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "GrowthFactor" => {
@@ -2163,7 +2177,7 @@ pub fn deser_operation_crate_operation_start_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "GrowthType" => {
@@ -2183,7 +2197,7 @@ pub fn deser_operation_crate_operation_start_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "StartedAt" => {
@@ -2302,7 +2316,8 @@ pub fn deser_operation_crate_operation_stop_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "DeploymentNumber" => {
@@ -2310,7 +2325,8 @@ pub fn deser_operation_crate_operation_stop_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "DeploymentStrategyId" => {
@@ -2350,7 +2366,8 @@ pub fn deser_operation_crate_operation_stop_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "GrowthFactor" => {
@@ -2358,7 +2375,7 @@ pub fn deser_operation_crate_operation_stop_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "GrowthType" => {
@@ -2378,7 +2395,7 @@ pub fn deser_operation_crate_operation_stop_deployment(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "StartedAt" => {
@@ -2609,7 +2626,8 @@ pub fn deser_operation_crate_operation_update_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "Description" => {
@@ -2626,7 +2644,8 @@ pub fn deser_operation_crate_operation_update_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "GrowthFactor" => {
@@ -2634,7 +2653,7 @@ pub fn deser_operation_crate_operation_update_deployment_strategy(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_f32()),
+                            .map(|v| v.to_f32_lossy()),
                         );
                     }
                     "GrowthType" => {
@@ -2856,7 +2875,8 @@ pub fn deser_operation_crate_operation_update_extension(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2918,7 +2938,8 @@ pub fn deser_operation_crate_operation_update_extension_association(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "Id" => {
@@ -3952,7 +3973,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "Parameters" => {
@@ -4237,7 +4259,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "ConfigurationName" => {
@@ -4263,7 +4286,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "GrowthType" => {
@@ -4283,7 +4307,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_f32()),
+                                    .map(|v| v.to_f32_lossy()),
                                 );
                             }
                             "FinalBakeTimeInMinutes" => {
@@ -4291,7 +4315,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "State" => {
@@ -4312,7 +4337,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_f32()),
+                                    .map(|v| v.to_f32_lossy()),
                                 );
                             }
                             "StartedAt" => {
@@ -4400,7 +4425,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "GrowthType" => {
@@ -4420,7 +4446,7 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_f32()),
+                                    .map(|v| v.to_f32_lossy()),
                                 );
                             }
                             "FinalBakeTimeInMinutes" => {
@@ -4428,7 +4454,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "ReplicateTo" => {
@@ -4658,7 +4685,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "Arn" => {
@@ -4742,7 +4770,8 @@ where
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_i32()),
+                                    .map(|v| v.try_into())
+                                    .transpose()?,
                                 );
                             }
                             "Description" => {

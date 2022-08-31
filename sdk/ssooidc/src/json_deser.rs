@@ -700,7 +700,8 @@ pub fn deser_operation_crate_operation_create_token(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "idToken" => {
@@ -849,7 +850,8 @@ pub fn deser_operation_crate_operation_register_client(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i64()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "clientSecret" => {
@@ -866,7 +868,8 @@ pub fn deser_operation_crate_operation_register_client(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i64()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "tokenEndpoint" => {
@@ -928,7 +931,8 @@ pub fn deser_operation_crate_operation_start_device_authorization(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "interval" => {
@@ -936,7 +940,8 @@ pub fn deser_operation_crate_operation_start_device_authorization(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
-                            .map(|v| v.to_i32()),
+                            .map(|v| v.try_into())
+                            .transpose()?,
                         );
                     }
                     "userCode" => {
