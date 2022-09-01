@@ -3,7 +3,7 @@ August 31st, 2022
 =================
 **Breaking Changes:**
 - ⚠ ([smithy-rs#1641](https://github.com/awslabs/smithy-rs/issues/1641)) Refactor endpoint resolution internals to use `aws_smithy_types::Endpoint` internally. The public internal
-    functions `aws_endpoint::set_endpoint_resolver` and `aws_endpoint::get_endpoint_resolver were removed.
+    functions `aws_endpoint::set_endpoint_resolver` and `aws_endpoint::get_endpoint_resolver` were removed.
 - 🐛⚠ ([smithy-rs#1274](https://github.com/awslabs/smithy-rs/issues/1274)) Lossy converters into integer types for `aws_smithy_types::Number` have been
     removed. Lossy converters into floating point types for
     `aws_smithy_types::Number` have been suffixed with `_lossy`. If you were
@@ -27,7 +27,7 @@ August 31st, 2022
         let bar: u32 = n as u32; // Lossy conversion!
     }
     ```
-- ⚠ ([smithy-rs#1699](https://github.com/awslabs/smithy-rs/issues/1699)) Bump [MSRV](https://github.com/awslabs/aws-sdk-rust#supported-rust-versions-msrv) from 1.58.1 to 1.61.0 per our policy.
+- ⚠ ([smithy-rs#1669](https://github.com/awslabs/smithy-rs/issues/1669)) Bump [MSRV](https://github.com/awslabs/aws-sdk-rust#supported-rust-versions-msrv) from 1.58.1 to 1.61.0 per our policy.
 
 **New this release:**
 - 🎉 ([smithy-rs#1598](https://github.com/awslabs/smithy-rs/issues/1598)) Service configs are now generated with new accessors for:
