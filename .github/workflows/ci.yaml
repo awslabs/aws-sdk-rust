@@ -13,8 +13,8 @@ name: CI
 env:
   SDK_BATCH_COUNT: 12
   EXAMPLES_BATCH_COUNT: 1
-  RUST_VERSIONS: "1.58.1"
-  RUST_VERSION: "1.58.1"
+  RUST_VERSIONS: "1.61.0"
+  RUST_VERSION: "1.61.0"
 
 jobs:
   generate-test-sdk-matrix:
