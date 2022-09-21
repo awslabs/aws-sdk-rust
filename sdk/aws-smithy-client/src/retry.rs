@@ -355,7 +355,7 @@ impl RetryHandler {
             sleep_future.await;
             next
         }
-        .instrument(tracing::info_span!("retry", kind = &debug(retry_kind)));
+        .instrument(tracing::debug_span!("retry", kind = &debug(retry_kind)));
         Some(check_send(Box::pin(fut)))
     }
 }
