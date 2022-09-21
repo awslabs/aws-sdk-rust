@@ -6,7 +6,7 @@ edition = "2018"
 publish = false
 [dependencies.aws-sdk-autoscalingplans]
 path = "../../sdk/autoscalingplans"
-version = "0.18.0"
+version = "0.19.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
