@@ -989,6 +989,33 @@ pub(crate) mod test {
         connection.assert_requests_match(&[]);
     }
 
+    /// 401 error during metadata retrieval must be retried
+    #[tokio::test]
+    #[traced_test]
+    async fn retry_metadata_401() {
+        let connection = TestConnection::new(vec![
+            (
+                token_request("http://169.254.169.254", 21600),
+                token_response(0, TOKEN_A),
+            ),
+            (
+                imds_request("http://169.254.169.254/latest/metadata", TOKEN_A),
+                http::Response::builder().status(401).body("").unwrap(),
+            ),
+            (
+                token_request("http://169.254.169.254", 21600),
+                token_response(21600, TOKEN_B),
+            ),
+            (
+                imds_request("http://169.254.169.254/latest/metadata", TOKEN_B),
+                imds_response("ok"),
+            ),
+        ]);
+        let client = make_client(&connection).await;
+        assert_eq!(client.get("/latest/metadata").await.expect("success"), "ok");
+        connection.assert_requests_match(&[]);
+    }
+
     /// 403 responses from IMDS during token acquisition MUST NOT be retried
     #[tokio::test]
     #[traced_test]
