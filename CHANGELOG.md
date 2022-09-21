@@ -1,4 +1,72 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+September 21st, 2022
+====================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1603](https://github.com/awslabs/smithy-rs/issues/1603), [aws-sdk-rust#586](https://github.com/awslabs/aws-sdk-rust/issues/586)) `aws_config::RetryConfig` no longer implements `Default`, and its `new` function has been replaced with `standard`.
+- ⚠ ([smithy-rs#1603](https://github.com/awslabs/smithy-rs/issues/1603), [aws-sdk-rust#586](https://github.com/awslabs/aws-sdk-rust/issues/586)) Direct configuration of `aws_config::SdkConfig` now defaults to retries being disabled.
+    If you're using `aws_config::load_from_env()` or `aws_config::from_env()` to configure
+    the SDK, then you are NOT affected by this change. If you use `SdkConfig::builder()` to
+    configure the SDK, then you ARE affected by this change and should set the retry config
+    on that builder.
+- ⚠ ([smithy-rs#1603](https://github.com/awslabs/smithy-rs/issues/1603), [aws-sdk-rust#586](https://github.com/awslabs/aws-sdk-rust/issues/586)) Client creation now panics if retries or timeouts are enabled without an async sleep
+    implementation set on the SDK config.
+    If you're using the Tokio runtime and have the `rt-tokio` feature enabled (which is enabled by default),
+    then you shouldn't notice this change at all.
+    Otherwise, if using something other than Tokio as the async runtime, the `AsyncSleep` trait must be implemented,
+    and that implementation given to the config builder via the `sleep_impl` method. Alternatively, retry can be
+    explicitly turned off by setting the retry config to `RetryConfig::disabled()`, which will result in successful
+    client creation without an async sleep implementation.
+- ⚠ ([smithy-rs#1715](https://github.com/awslabs/smithy-rs/issues/1715), [smithy-rs#1717](https://github.com/awslabs/smithy-rs/issues/1717)) `ClassifyResponse` was renamed to `ClassifyRetry` and is no longer implemented for the unit type.
+- ⚠ ([smithy-rs#1715](https://github.com/awslabs/smithy-rs/issues/1715), [smithy-rs#1717](https://github.com/awslabs/smithy-rs/issues/1717)) The `with_retry_policy` and `retry_policy` functions on `aws_smithy_http::operation::Operation` have been
+    renamed to `with_retry_classifier` and `retry_classifier` respectively. Public member `retry_policy` on
+    `aws_smithy_http::operation::Parts` has been renamed to `retry_classifier`.
+
+**New this release:**
+- 🎉 ([smithy-rs#1647](https://github.com/awslabs/smithy-rs/issues/1647), [smithy-rs#1112](https://github.com/awslabs/smithy-rs/issues/1112)) Implemented customizable operations per [RFC-0017](https://awslabs.github.io/smithy-rs/design/rfcs/rfc0017_customizable_client_operations.html).
+
+    Before this change, modifying operations before sending them required using lower-level APIs:
+
+    ```rust
+    let input = SomeOperationInput::builder().some_value(5).build()?;
+
+    let operation = {
+        let op = input.make_operation(&service_config).await?;
+        let (request, response) = op.into_request_response();
+
+        let request = request.augment(|req, _props| {
+            req.headers_mut().insert(
+                HeaderName::from_static("x-some-header"),
+                HeaderValue::from_static("some-value")
+            );
+            Result::<_, Infallible>::Ok(req)
+        })?;
+
+        Operation::from_parts(request, response)
+    };
+
+    let response = smithy_client.call(operation).await?;
+    ```
+
+    Now, users may easily modify operations before sending with the `customize` method:
+
+    ```rust
+    let response = client.some_operation()
+        .some_value(5)
+        .customize()
+        .await?
+        .mutate_request(|mut req| {
+            req.headers_mut().insert(
+                HeaderName::from_static("x-some-header"),
+                HeaderValue::from_static("some-value")
+            );
+        })
+        .send()
+        .await?;
+    ```
+- 🐛 ([smithy-rs#966](https://github.com/awslabs/smithy-rs/issues/966), [smithy-rs#1718](https://github.com/awslabs/smithy-rs/issues/1718)) The AWS STS SDK now automatically retries `IDPCommunicationError` when calling `AssumeRoleWithWebIdentity`
+- 🐛 ([aws-sdk-rust#303](https://github.com/awslabs/aws-sdk-rust/issues/303), [smithy-rs#1717](https://github.com/awslabs/smithy-rs/issues/1717)) The `SdkError::ResponseError`, typically caused by a connection terminating before the full response is received, is now treated as a transient failure and retried.
+
+
 August 31st, 2022
 =================
 **Breaking Changes:**
