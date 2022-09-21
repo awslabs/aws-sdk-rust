@@ -227,7 +227,7 @@ mod loader {
         /// # use aws_smithy_types::retry::RetryConfig;
         /// # async fn create_config() {
         ///     let config = aws_config::from_env()
-        ///         .retry_config(RetryConfig::new().with_max_attempts(2))
+        ///         .retry_config(RetryConfig::standard().with_max_attempts(2))
         ///         .load().await;
         /// # }
         /// ```
@@ -449,6 +449,7 @@ mod loader {
     mod test {
         use crate::from_env;
         use crate::provider_config::ProviderConfig;
+        use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_client::erase::DynConnector;
         use aws_smithy_client::never::NeverConnector;
         use aws_types::credentials::ProvideCredentials;
@@ -465,6 +466,7 @@ mod loader {
             let loader = from_env()
                 .configure(
                     ProviderConfig::empty()
+                        .with_sleep(TokioSleep::new())
                         .with_env(env)
                         .with_http_connector(DynConnector::new(NeverConnector::new())),
                 )

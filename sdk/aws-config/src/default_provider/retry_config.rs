@@ -76,7 +76,7 @@ impl Builder {
     /// Attempt to create a [RetryConfig](aws_smithy_types::retry::RetryConfig) from following sources in order:
     /// 1. [Environment variables](crate::environment::retry_config::EnvironmentVariableRetryConfigProvider)
     /// 2. [Profile file](crate::profile::retry_config::ProfileFileRetryConfigProvider)
-    /// 3. [RetryConfig::default()](aws_smithy_types::retry::RetryConfig::default)
+    /// 3. [RetryConfig::standard()](aws_smithy_types::retry::RetryConfig::standard)
     ///
     /// Precedence is considered on a per-field basis
     ///

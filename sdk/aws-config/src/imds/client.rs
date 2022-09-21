@@ -744,11 +744,8 @@ impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
 
 #[cfg(test)]
 pub(crate) mod test {
-    use std::collections::HashMap;
-    use std::error::Error;
-    use std::io;
-    use std::time::{Duration, UNIX_EPOCH};
-
+    use crate::imds::client::{Client, EndpointMode, ImdsErrorPolicy};
+    use crate::provider_config::ProviderConfig;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::{capture_request, TestConnection};
@@ -760,10 +757,11 @@ pub(crate) mod test {
     use http::header::USER_AGENT;
     use http::Uri;
     use serde::Deserialize;
+    use std::collections::HashMap;
+    use std::error::Error;
+    use std::io;
+    use std::time::{Duration, UNIX_EPOCH};
     use tracing_test::traced_test;
-
-    use crate::imds::client::{Client, EndpointMode, ImdsErrorPolicy};
-    use crate::provider_config::ProviderConfig;
 
     const TOKEN_A: &str = "AQAEAFTNrA4eEGx0AQgJ1arIq_Cc-t4tWt3fB0Hd8RKhXlKc5ccvhg==";
     const TOKEN_B: &str = "alternatetoken==";
@@ -918,6 +916,7 @@ pub(crate) mod test {
         let client = super::Client::builder()
             .configure(
                 &ProviderConfig::no_configuration()
+                    .with_sleep(TokioSleep::new())
                     .with_http_connector(DynConnector::new(connection.clone()))
                     .with_time_source(TimeSource::manual(&time_source)),
             )
@@ -1134,6 +1133,7 @@ pub(crate) mod test {
     async fn check(test_case: ImdsConfigTest) {
         let (server, watcher) = capture_request(None);
         let provider_config = ProviderConfig::no_configuration()
+            .with_sleep(TokioSleep::new())
             .with_env(Env::from(test_case.env))
             .with_fs(Fs::from_map(test_case.fs))
             .with_http_connector(DynConnector::new(server));

@@ -273,6 +273,7 @@ impl ProvideCredentials for AssumeRoleProvider {
 mod test {
     use crate::provider_config::ProviderConfig;
     use crate::sts::AssumeRoleProvider;
+    use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::capture_request;
     use aws_smithy_http::body::SdkBody;
@@ -286,6 +287,7 @@ mod test {
     async fn configures_session_length() {
         let (server, request) = capture_request(None);
         let provider_conf = ProviderConfig::empty()
+            .with_sleep(TokioSleep::new())
             .with_time_source(TimeSource::manual(&ManualTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
             )))
@@ -314,6 +316,7 @@ mod test {
         ));
         let (server, _request) = capture_request(Some(resp));
         let provider_conf = ProviderConfig::empty()
+            .with_sleep(TokioSleep::new())
             .with_time_source(TimeSource::manual(&ManualTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
             )))

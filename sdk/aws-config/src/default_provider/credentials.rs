@@ -399,7 +399,7 @@ mod test {
             .retry_config()
             .await;
 
-        let expected_retry_config = RetryConfig::new();
+        let expected_retry_config = RetryConfig::standard();
 
         assert_eq!(actual_retry_config, expected_retry_config);
         // This is redundant but it's really important to make sure that
@@ -420,7 +420,7 @@ mod test {
             .retry_config()
             .await;
 
-        let expected_retry_config = RetryConfig::new();
+        let expected_retry_config = RetryConfig::standard();
 
         assert_eq!(actual_retry_config, expected_retry_config)
     }
@@ -447,9 +447,7 @@ retry_mode = standard
             .retry_config()
             .await;
 
-        let expected_retry_config = RetryConfig::new()
-            .with_max_attempts(1)
-            .with_retry_mode(RetryMode::Standard);
+        let expected_retry_config = RetryConfig::standard().with_max_attempts(1);
 
         assert_eq!(actual_retry_config, expected_retry_config)
     }
@@ -480,9 +478,7 @@ retry_mode = standard
             .retry_config()
             .await;
 
-        let expected_retry_config = RetryConfig::new()
-            .with_max_attempts(42)
-            .with_retry_mode(RetryMode::Standard);
+        let expected_retry_config = RetryConfig::standard().with_max_attempts(42);
 
         assert_eq!(actual_retry_config, expected_retry_config)
     }

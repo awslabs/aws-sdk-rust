@@ -3,18 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_config::RetryConfig;
 use aws_sdk_s3::model::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization,
 };
 use aws_sdk_s3::{Client, Config, Credentials, Region};
+use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_client::never::NeverConnector;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_types::timeout;
 use aws_smithy_types::tristate::TriState;
-
-use aws_smithy_async::assert_elapsed;
 use std::fmt::Debug;
 use std::sync::Arc;
 use std::time::{Duration, Instant};
@@ -131,6 +131,7 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
         .credentials_provider(aws_types::credentials::SharedCredentialsProvider::new(
             credentials,
         ))
+        .retry_config(RetryConfig::standard())
         .timeout_config(
             timeout::Config::new().with_api_timeouts(
                 timeout::Api::new()

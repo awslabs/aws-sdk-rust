@@ -909,7 +909,10 @@ impl Client {
         C: aws_smithy_client::bounds::SmithyConnector<Error = E> + Send + 'static,
         E: Into<aws_smithy_http::result::ConnectorError>,
     {
-        let retry_config = conf.retry_config().cloned().unwrap_or_default();
+        let retry_config = conf
+            .retry_config()
+            .cloned()
+            .unwrap_or_else(aws_smithy_types::retry::RetryConfig::disabled);
         let timeout_config = conf.timeout_config().cloned().unwrap_or_default();
         let mut builder = aws_smithy_client::Builder::new()
             .connector(aws_smithy_client::erase::DynConnector::new(conn))
@@ -936,8 +939,16 @@ impl Client {
     /// Creates a new client from the service [`Config`](crate::Config).
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let retry_config = conf.retry_config().cloned().unwrap_or_default();
+        let retry_config = conf
+            .retry_config()
+            .cloned()
+            .unwrap_or_else(aws_smithy_types::retry::RetryConfig::disabled);
         let timeout_config = conf.timeout_config().cloned().unwrap_or_default();
+        let sleep_impl = conf.sleep_impl();
+        if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
+            panic!("An async sleep implementation is required for retries or timeouts to work. \
+                                    Set the `sleep_impl` on the Config passed into this function to fix this panic.");
+        }
         let mut builder = aws_smithy_client::Builder::dyn_https().middleware(
             aws_smithy_client::erase::DynMiddleware::new(
                 crate::middleware::DefaultMiddleware::new(),
@@ -947,7 +958,7 @@ impl Client {
         builder.set_timeout_config(timeout_config);
         // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
         // only set it if we actually have a sleep impl.
-        if let Some(sleep_impl) = conf.sleep_impl() {
+        if let Some(sleep_impl) = sleep_impl {
             builder.set_sleep_impl(Some(sleep_impl));
         }
         let client = builder.build();

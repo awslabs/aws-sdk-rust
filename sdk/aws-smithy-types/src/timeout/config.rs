@@ -111,7 +111,7 @@ impl Config {
         }
     }
 
-    /// Returns true if any of the possible timeouts are se
+    /// Returns true if any of the possible timeouts are set
     pub fn has_timeouts(&self) -> bool {
         self.api.has_timeouts() || self.http.has_timeouts() || self.tcp.has_timeouts()
     }

@@ -58,7 +58,9 @@ pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub mod types {
     pub use aws_smithy_http::result::SdkError;
 }
+pub use aws_smithy_async::rt::sleep::AsyncSleep;
 pub use aws_smithy_types::retry::RetryConfig;
+pub use aws_smithy_types::timeout::Config as TimeoutConfig;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("amplifybackend", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;

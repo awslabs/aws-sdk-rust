@@ -42,12 +42,14 @@ impl Config {
     pub fn retry_config(&self) -> Option<&aws_smithy_types::retry::RetryConfig> {
         self.retry_config.as_ref()
     }
+
     /// Return a cloned Arc containing the async sleep implementation from this config, if any.
     pub fn sleep_impl(
         &self,
     ) -> Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>> {
         self.sleep_impl.clone()
     }
+
     /// Return a reference to the timeout configuration contained in this config, if any.
     pub fn timeout_config(&self) -> Option<&aws_smithy_types::timeout::Config> {
         self.timeout_config.as_ref()
@@ -105,7 +107,7 @@ impl Builder {
     /// use aws_sdk_servicediscovery::config::Config;
     /// use aws_smithy_types::retry::RetryConfig;
     ///
-    /// let retry_config = RetryConfig::new().with_max_attempts(5);
+    /// let retry_config = RetryConfig::standard().with_max_attempts(5);
     /// let config = Config::builder().retry_config(retry_config).build();
     /// ```
     pub fn retry_config(mut self, retry_config: aws_smithy_types::retry::RetryConfig) -> Self {
@@ -121,7 +123,7 @@ impl Builder {
     /// use aws_smithy_types::retry::RetryConfig;
     ///
     /// fn disable_retries(builder: &mut Builder) {
-    ///     let retry_config = RetryConfig::new().with_max_attempts(1);
+    ///     let retry_config = RetryConfig::standard().with_max_attempts(1);
     ///     builder.set_retry_config(Some(retry_config));
     /// }
     ///
@@ -136,6 +138,7 @@ impl Builder {
         self.retry_config = retry_config;
         self
     }
+
     /// Set the sleep_impl for the builder
     ///
     /// # Examples
@@ -199,6 +202,7 @@ impl Builder {
         self.sleep_impl = sleep_impl;
         self
     }
+
     /// Set the timeout_config for the builder
     ///
     /// # Examples

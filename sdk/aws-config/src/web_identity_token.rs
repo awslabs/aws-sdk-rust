@@ -259,22 +259,22 @@ async fn load_credentials(
 
 #[cfg(test)]
 mod test {
+    use crate::provider_config::ProviderConfig;
+    use crate::test_case::no_traffic_connector;
     use crate::web_identity_token::{
         Builder, ENV_VAR_ROLE_ARN, ENV_VAR_SESSION_NAME, ENV_VAR_TOKEN_FILE,
     };
-
     use aws_sdk_sts::Region;
-    use aws_types::os_shim_internal::{Env, Fs};
-
-    use crate::provider_config::ProviderConfig;
-    use crate::test_case::no_traffic_connector;
+    use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_types::credentials::CredentialsError;
+    use aws_types::os_shim_internal::{Env, Fs};
     use std::collections::HashMap;
 
     #[tokio::test]
     async fn unloaded_provider() {
         // empty environment
         let conf = ProviderConfig::empty()
+            .with_sleep(TokioSleep::new())
             .with_env(Env::from_slice(&[]))
             .with_http_connector(no_traffic_connector())
             .with_region(Some(Region::from_static("us-east-1")));
@@ -297,6 +297,7 @@ mod test {
         let provider = Builder::default()
             .configure(
                 &ProviderConfig::empty()
+                    .with_sleep(TokioSleep::new())
                     .with_region(region)
                     .with_env(env)
                     .with_http_connector(no_traffic_connector()),
@@ -328,6 +329,7 @@ mod test {
         let provider = Builder::default()
             .configure(
                 &ProviderConfig::empty()
+                    .with_sleep(TokioSleep::new())
                     .with_http_connector(no_traffic_connector())
                     .with_region(Some(Region::new("us-east-1")))
                     .with_env(env)

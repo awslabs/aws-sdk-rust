@@ -98,7 +98,6 @@ use aws_smithy_http::retry::ClassifyResponse;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::retry::ProvideErrorKind;
-use aws_smithy_types::tristate::TriState;
 
 /// Smithy service client.
 ///
@@ -129,7 +128,7 @@ pub struct Client<
     middleware: Middleware,
     retry_policy: RetryPolicy,
     timeout_config: aws_smithy_types::timeout::Config,
-    sleep_impl: TriState<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<Arc<dyn AsyncSleep>>,
 }
 
 // Quick-create for people who just want "the default".
@@ -144,7 +143,6 @@ where
         Builder::new()
             .connector(connector)
             .middleware(M::default())
-            .default_async_sleep()
             .build()
     }
 }
@@ -181,7 +179,7 @@ impl<C, M, R> Client<C, M, R> {
     ///
     /// *Note: If `None` is passed, this will prevent the client from using retries or timeouts.*
     pub fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) {
-        self.sleep_impl = sleep_impl.clone().into();
+        self.sleep_impl = sleep_impl;
     }
 
     /// Set the [`AsyncSleep`] function that the client will use to create things like timeout futures.
@@ -237,26 +235,18 @@ where
         bounds::Parsed<<M as bounds::SmithyMiddleware<C>>::Service, O, Retry>:
             Service<Operation<O, Retry>, Response = SdkSuccess<T>, Error = SdkError<E>> + Clone,
     {
-        if matches!(&self.sleep_impl, TriState::Unset) {
-            // during requests, debug log (a warning is emitted during client construction)
-            tracing::debug!(
-                "Client does not have a sleep implementation. Timeouts and retry \
-                will not work without this. {}",
-                MISSING_SLEEP_IMPL_RECOMMENDATION
-            );
-        }
         let connector = self.connector.clone();
 
         let timeout_service_params = generate_timeout_service_params_from_timeout_config(
             &self.timeout_config.api,
-            self.sleep_impl.clone().into(),
+            self.sleep_impl.clone(),
         );
 
         let svc = ServiceBuilder::new()
             .layer(TimeoutLayer::new(timeout_service_params.api_call))
             .retry(
                 self.retry_policy
-                    .new_request_policy(self.sleep_impl.clone().into()),
+                    .new_request_policy(self.sleep_impl.clone()),
             )
             .layer(TimeoutLayer::new(timeout_service_params.api_call_attempt))
             .layer(ParseResponseLayer::<O, Retry>::new())
@@ -288,10 +278,3 @@ where
         };
     }
 }
-
-pub(crate) const MISSING_SLEEP_IMPL_RECOMMENDATION: &str =
-    "If this was intentional, you can suppress this message with `Client::set_sleep_impl(None). \
-     Otherwise, unless you have a good reason to use the low-level service \
-     client API, consider using the `aws-config` crate to load a shared config from \
-     the environment, and construct a fluent client from that. If you need to use the low-level \
-     service client API, then pass in a sleep implementation to make timeouts and retry work.";

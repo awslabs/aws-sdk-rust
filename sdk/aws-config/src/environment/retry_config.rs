@@ -102,7 +102,7 @@ mod test {
                 .retry_config_builder()
                 .unwrap()
                 .build(),
-            RetryConfig::new().with_max_attempts(88)
+            RetryConfig::standard().with_max_attempts(88)
         );
     }
 
@@ -123,7 +123,7 @@ mod test {
                 .retry_config_builder()
                 .unwrap()
                 .build(),
-            RetryConfig::new().with_retry_mode(RetryMode::Standard)
+            RetryConfig::standard()
         );
     }
 
@@ -137,9 +137,7 @@ mod test {
             .retry_config_builder()
             .unwrap()
             .build(),
-            RetryConfig::new()
-                .with_max_attempts(13)
-                .with_retry_mode(RetryMode::Standard)
+            RetryConfig::standard().with_max_attempts(13)
         );
     }
 

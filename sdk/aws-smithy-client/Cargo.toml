@@ -85,7 +85,6 @@ features = ["util", "retry"]
 [dev-dependencies]
 serde_json = "1"
 tower-test = "0.4.0"
-tracing-test = "0.2.1"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
