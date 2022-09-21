@@ -188,6 +188,16 @@ impl<H, R> Operation<H, R> {
         self.request.properties()
     }
 
+    /// Gives mutable access to the underlying HTTP request.
+    pub fn request_mut(&mut self) -> &mut http::Request<SdkBody> {
+        self.request.http_mut()
+    }
+
+    /// Gives readonly access to the underlying HTTP request.
+    pub fn request(&self) -> &http::Request<SdkBody> {
+        self.request.http()
+    }
+
     pub fn with_metadata(mut self, metadata: Metadata) -> Self {
         self.parts.metadata = Some(metadata);
         self
