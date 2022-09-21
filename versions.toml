@@ -1,4 +1,4 @@
-smithy_rs_revision = '4809a5b4fde934d08e3b258281455641efab0ff0'
+smithy_rs_revision = '4671922fc579856ecb2df2622ba212e9d8ef442e'
 aws_doc_sdk_examples_revision = 'a751f54917fb1bf4ad320b0751053e82470b22d0'
 
 [manual_interventions]
@@ -1962,7 +1962,7 @@ source_hash = 'aaca70df9f7779b46c5f231d3f9aa903c474ff454ab8ad4004506ea40fa050b3'
 [crates.aws-types]
 category = 'AwsRuntime'
 version = '0.48.0'
-source_hash = 'be1eedc20029d1424f289290f47c7556a8732062e625d023f10bbacfde67b1eb'
+source_hash = '9c42229ca5088ab36a29b28681f8ce403f41798c1c96f7fd52aac0ff3bc30d00'
 [release.crates]
 aws-sdk-accessanalyzer = '0.19.0'
 aws-sdk-account = '0.19.0'

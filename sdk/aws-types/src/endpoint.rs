@@ -81,7 +81,6 @@ pub type BoxError = Box<dyn Error + Send + Sync + 'static>;
 /// Each AWS service generates their own implementation of `ResolveAwsEndpoint`.
 pub trait ResolveAwsEndpoint: Send + Sync + Debug {
     /// Resolves the AWS endpoint for a given region.
-    // TODO(https://github.com/awslabs/smithy-rs/issues/866): Create `ResolveEndpointError`
     fn resolve_endpoint(&self, region: &Region) -> Result<AwsEndpoint, BoxError>;
 }
 
