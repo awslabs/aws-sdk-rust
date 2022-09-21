@@ -408,6 +408,10 @@ impl std::fmt::Debug for IdpCommunicationErrorException {
     }
 }
 impl IdpCommunicationErrorException {
+    /// Returns `Some(ErrorKind)` if the error is retryable. Otherwise, returns `None`.
+    pub fn retryable_error_kind(&self) -> aws_smithy_types::retry::ErrorKind {
+        aws_smithy_types::retry::ErrorKind::ServerError
+    }
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
@@ -855,7 +859,12 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssumeRoleWithWebIdentityErro
         AssumeRoleWithWebIdentityError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl AssumeRoleWithWebIdentityError {
