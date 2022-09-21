@@ -117,10 +117,6 @@ pub mod create_savings_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSavingsPlanInputOperationOutputAlias = crate::operation::CreateSavingsPlan;
-#[doc(hidden)]
-pub type CreateSavingsPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSavingsPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateSavingsPlan`](crate::operation::CreateSavingsPlan)>
     #[allow(unused_mut)]
@@ -267,11 +263,6 @@ pub mod delete_queued_savings_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteQueuedSavingsPlanInputOperationOutputAlias =
-    crate::operation::DeleteQueuedSavingsPlan;
-#[doc(hidden)]
-pub type DeleteQueuedSavingsPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQueuedSavingsPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueuedSavingsPlan`](crate::operation::DeleteQueuedSavingsPlan)>
     #[allow(unused_mut)]
@@ -462,11 +453,6 @@ pub mod describe_savings_plan_rates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSavingsPlanRatesInputOperationOutputAlias =
-    crate::operation::DescribeSavingsPlanRates;
-#[doc(hidden)]
-pub type DescribeSavingsPlanRatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlanRatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlanRates`](crate::operation::DescribeSavingsPlanRates)>
     #[allow(unused_mut)]
@@ -703,10 +689,6 @@ pub mod describe_savings_plans_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSavingsPlansInputOperationOutputAlias = crate::operation::DescribeSavingsPlans;
-#[doc(hidden)]
-pub type DescribeSavingsPlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlansInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlans`](crate::operation::DescribeSavingsPlans)>
     #[allow(unused_mut)]
@@ -1043,12 +1025,6 @@ pub mod describe_savings_plans_offering_rates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSavingsPlansOfferingRatesInputOperationOutputAlias =
-    crate::operation::DescribeSavingsPlansOfferingRates;
-#[doc(hidden)]
-pub type DescribeSavingsPlansOfferingRatesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlansOfferingRatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlansOfferingRates`](crate::operation::DescribeSavingsPlansOfferingRates)>
     #[allow(unused_mut)]
@@ -1427,12 +1403,6 @@ pub mod describe_savings_plans_offerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSavingsPlansOfferingsInputOperationOutputAlias =
-    crate::operation::DescribeSavingsPlansOfferings;
-#[doc(hidden)]
-pub type DescribeSavingsPlansOfferingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSavingsPlansOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSavingsPlansOfferings`](crate::operation::DescribeSavingsPlansOfferings)>
     #[allow(unused_mut)]
@@ -1571,10 +1541,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1744,10 +1710,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1907,10 +1869,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

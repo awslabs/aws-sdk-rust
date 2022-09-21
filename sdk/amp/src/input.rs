@@ -57,12 +57,6 @@ pub mod create_alert_manager_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAlertManagerDefinitionInputOperationOutputAlias =
-    crate::operation::CreateAlertManagerDefinition;
-#[doc(hidden)]
-pub type CreateAlertManagerDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlertManagerDefinition`](crate::operation::CreateAlertManagerDefinition)>
     #[allow(unused_mut)]
@@ -251,11 +245,6 @@ pub mod create_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::CreateLoggingConfiguration;
-#[doc(hidden)]
-pub type CreateLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoggingConfiguration`](crate::operation::CreateLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -485,11 +474,6 @@ pub mod create_rule_groups_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRuleGroupsNamespaceInputOperationOutputAlias =
-    crate::operation::CreateRuleGroupsNamespace;
-#[doc(hidden)]
-pub type CreateRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleGroupsNamespace`](crate::operation::CreateRuleGroupsNamespace)>
     #[allow(unused_mut)]
@@ -693,10 +677,6 @@ pub mod create_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkspaceInputOperationOutputAlias = crate::operation::CreateWorkspace;
-#[doc(hidden)]
-pub type CreateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspace`](crate::operation::CreateWorkspace)>
     #[allow(unused_mut)]
@@ -852,12 +832,6 @@ pub mod delete_alert_manager_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAlertManagerDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteAlertManagerDefinition;
-#[doc(hidden)]
-pub type DeleteAlertManagerDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlertManagerDefinition`](crate::operation::DeleteAlertManagerDefinition)>
     #[allow(unused_mut)]
@@ -1029,11 +1003,6 @@ pub mod delete_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteLoggingConfiguration;
-#[doc(hidden)]
-pub type DeleteLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoggingConfiguration`](crate::operation::DeleteLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -1217,11 +1186,6 @@ pub mod delete_rule_groups_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRuleGroupsNamespaceInputOperationOutputAlias =
-    crate::operation::DeleteRuleGroupsNamespace;
-#[doc(hidden)]
-pub type DeleteRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleGroupsNamespace`](crate::operation::DeleteRuleGroupsNamespace)>
     #[allow(unused_mut)]
@@ -1409,10 +1373,6 @@ pub mod delete_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkspaceInputOperationOutputAlias = crate::operation::DeleteWorkspace;
-#[doc(hidden)]
-pub type DeleteWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspace`](crate::operation::DeleteWorkspace)>
     #[allow(unused_mut)]
@@ -1575,12 +1535,6 @@ pub mod describe_alert_manager_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAlertManagerDefinitionInputOperationOutputAlias =
-    crate::operation::DescribeAlertManagerDefinition;
-#[doc(hidden)]
-pub type DescribeAlertManagerDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlertManagerDefinition`](crate::operation::DescribeAlertManagerDefinition)>
     #[allow(unused_mut)]
@@ -1726,12 +1680,6 @@ pub mod describe_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeLoggingConfiguration;
-#[doc(hidden)]
-pub type DescribeLoggingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingConfiguration`](crate::operation::DescribeLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -1889,11 +1837,6 @@ pub mod describe_rule_groups_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRuleGroupsNamespaceInputOperationOutputAlias =
-    crate::operation::DescribeRuleGroupsNamespace;
-#[doc(hidden)]
-pub type DescribeRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleGroupsNamespace`](crate::operation::DescribeRuleGroupsNamespace)>
     #[allow(unused_mut)]
@@ -2052,10 +1995,6 @@ pub mod describe_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceInputOperationOutputAlias = crate::operation::DescribeWorkspace;
-#[doc(hidden)]
-pub type DescribeWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspace`](crate::operation::DescribeWorkspace)>
     #[allow(unused_mut)]
@@ -2237,11 +2176,6 @@ pub mod list_rule_groups_namespaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRuleGroupsNamespacesInputOperationOutputAlias =
-    crate::operation::ListRuleGroupsNamespaces;
-#[doc(hidden)]
-pub type ListRuleGroupsNamespacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRuleGroupsNamespacesInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleGroupsNamespaces`](crate::operation::ListRuleGroupsNamespaces)>
     #[allow(unused_mut)]
@@ -2405,10 +2339,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2572,10 +2502,6 @@ pub mod list_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkspacesInputOperationOutputAlias = crate::operation::ListWorkspaces;
-#[doc(hidden)]
-pub type ListWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkspaces`](crate::operation::ListWorkspaces)>
     #[allow(unused_mut)]
@@ -2746,11 +2672,6 @@ pub mod put_alert_manager_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAlertManagerDefinitionInputOperationOutputAlias =
-    crate::operation::PutAlertManagerDefinition;
-#[doc(hidden)]
-pub type PutAlertManagerDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutAlertManagerDefinition`](crate::operation::PutAlertManagerDefinition)>
     #[allow(unused_mut)]
@@ -2949,10 +2870,6 @@ pub mod put_rule_groups_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRuleGroupsNamespaceInputOperationOutputAlias = crate::operation::PutRuleGroupsNamespace;
-#[doc(hidden)]
-pub type PutRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`PutRuleGroupsNamespace`](crate::operation::PutRuleGroupsNamespace)>
     #[allow(unused_mut)]
@@ -3159,10 +3076,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3337,10 +3250,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3522,11 +3431,6 @@ pub mod update_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateLoggingConfiguration;
-#[doc(hidden)]
-pub type UpdateLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLoggingConfiguration`](crate::operation::UpdateLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -3713,10 +3617,6 @@ pub mod update_workspace_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkspaceAliasInputOperationOutputAlias = crate::operation::UpdateWorkspaceAlias;
-#[doc(hidden)]
-pub type UpdateWorkspaceAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceAlias`](crate::operation::UpdateWorkspaceAlias)>
     #[allow(unused_mut)]

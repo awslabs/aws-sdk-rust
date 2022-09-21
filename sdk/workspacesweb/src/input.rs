@@ -48,11 +48,6 @@ pub mod associate_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateBrowserSettingsInputOperationOutputAlias =
-    crate::operation::AssociateBrowserSettings;
-#[doc(hidden)]
-pub type AssociateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateBrowserSettings`](crate::operation::AssociateBrowserSettings)>
     #[allow(unused_mut)]
@@ -227,11 +222,6 @@ pub mod associate_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateNetworkSettingsInputOperationOutputAlias =
-    crate::operation::AssociateNetworkSettings;
-#[doc(hidden)]
-pub type AssociateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateNetworkSettings`](crate::operation::AssociateNetworkSettings)>
     #[allow(unused_mut)]
@@ -404,10 +394,6 @@ pub mod associate_trust_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateTrustStoreInputOperationOutputAlias = crate::operation::AssociateTrustStore;
-#[doc(hidden)]
-pub type AssociateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTrustStore`](crate::operation::AssociateTrustStore)>
     #[allow(unused_mut)]
@@ -580,10 +566,6 @@ pub mod associate_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateUserSettingsInputOperationOutputAlias = crate::operation::AssociateUserSettings;
-#[doc(hidden)]
-pub type AssociateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateUserSettings`](crate::operation::AssociateUserSettings)>
     #[allow(unused_mut)]
@@ -823,10 +805,6 @@ pub mod create_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBrowserSettingsInputOperationOutputAlias = crate::operation::CreateBrowserSettings;
-#[doc(hidden)]
-pub type CreateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateBrowserSettings`](crate::operation::CreateBrowserSettings)>
     #[allow(unused_mut)]
@@ -1123,10 +1101,6 @@ pub mod create_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateIdentityProviderInputOperationOutputAlias = crate::operation::CreateIdentityProvider;
-#[doc(hidden)]
-pub type CreateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`CreateIdentityProvider`](crate::operation::CreateIdentityProvider)>
     #[allow(unused_mut)]
@@ -1347,10 +1321,6 @@ pub mod create_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNetworkSettingsInputOperationOutputAlias = crate::operation::CreateNetworkSettings;
-#[doc(hidden)]
-pub type CreateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateNetworkSettings`](crate::operation::CreateNetworkSettings)>
     #[allow(unused_mut)]
@@ -1573,10 +1543,6 @@ pub mod create_portal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePortalInputOperationOutputAlias = crate::operation::CreatePortal;
-#[doc(hidden)]
-pub type CreatePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePortalInput {
     /// Consumes the builder and constructs an Operation<[`CreatePortal`](crate::operation::CreatePortal)>
     #[allow(unused_mut)]
@@ -1762,10 +1728,6 @@ pub mod create_trust_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTrustStoreInputOperationOutputAlias = crate::operation::CreateTrustStore;
-#[doc(hidden)]
-pub type CreateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrustStore`](crate::operation::CreateTrustStore)>
     #[allow(unused_mut)]
@@ -2035,10 +1997,6 @@ pub mod create_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserSettingsInputOperationOutputAlias = crate::operation::CreateUserSettings;
-#[doc(hidden)]
-pub type CreateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserSettings`](crate::operation::CreateUserSettings)>
     #[allow(unused_mut)]
@@ -2183,10 +2141,6 @@ pub mod delete_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBrowserSettingsInputOperationOutputAlias = crate::operation::DeleteBrowserSettings;
-#[doc(hidden)]
-pub type DeleteBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBrowserSettings`](crate::operation::DeleteBrowserSettings)>
     #[allow(unused_mut)]
@@ -2333,10 +2287,6 @@ pub mod delete_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIdentityProviderInputOperationOutputAlias = crate::operation::DeleteIdentityProvider;
-#[doc(hidden)]
-pub type DeleteIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityProvider`](crate::operation::DeleteIdentityProvider)>
     #[allow(unused_mut)]
@@ -2483,10 +2433,6 @@ pub mod delete_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNetworkSettingsInputOperationOutputAlias = crate::operation::DeleteNetworkSettings;
-#[doc(hidden)]
-pub type DeleteNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNetworkSettings`](crate::operation::DeleteNetworkSettings)>
     #[allow(unused_mut)]
@@ -2630,10 +2576,6 @@ pub mod delete_portal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePortalInputOperationOutputAlias = crate::operation::DeletePortal;
-#[doc(hidden)]
-pub type DeletePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePortalInput {
     /// Consumes the builder and constructs an Operation<[`DeletePortal`](crate::operation::DeletePortal)>
     #[allow(unused_mut)]
@@ -2776,10 +2718,6 @@ pub mod delete_trust_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTrustStoreInputOperationOutputAlias = crate::operation::DeleteTrustStore;
-#[doc(hidden)]
-pub type DeleteTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrustStore`](crate::operation::DeleteTrustStore)>
     #[allow(unused_mut)]
@@ -2926,10 +2864,6 @@ pub mod delete_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserSettingsInputOperationOutputAlias = crate::operation::DeleteUserSettings;
-#[doc(hidden)]
-pub type DeleteUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserSettings`](crate::operation::DeleteUserSettings)>
     #[allow(unused_mut)]
@@ -3075,11 +3009,6 @@ pub mod disassociate_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateBrowserSettingsInputOperationOutputAlias =
-    crate::operation::DisassociateBrowserSettings;
-#[doc(hidden)]
-pub type DisassociateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateBrowserSettings`](crate::operation::DisassociateBrowserSettings)>
     #[allow(unused_mut)]
@@ -3225,11 +3154,6 @@ pub mod disassociate_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateNetworkSettingsInputOperationOutputAlias =
-    crate::operation::DisassociateNetworkSettings;
-#[doc(hidden)]
-pub type DisassociateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateNetworkSettings`](crate::operation::DisassociateNetworkSettings)>
     #[allow(unused_mut)]
@@ -3373,10 +3297,6 @@ pub mod disassociate_trust_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateTrustStoreInputOperationOutputAlias = crate::operation::DisassociateTrustStore;
-#[doc(hidden)]
-pub type DisassociateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTrustStore`](crate::operation::DisassociateTrustStore)>
     #[allow(unused_mut)]
@@ -3522,11 +3442,6 @@ pub mod disassociate_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateUserSettingsInputOperationOutputAlias =
-    crate::operation::DisassociateUserSettings;
-#[doc(hidden)]
-pub type DisassociateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateUserSettings`](crate::operation::DisassociateUserSettings)>
     #[allow(unused_mut)]
@@ -3673,10 +3588,6 @@ pub mod get_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBrowserSettingsInputOperationOutputAlias = crate::operation::GetBrowserSettings;
-#[doc(hidden)]
-pub type GetBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetBrowserSettings`](crate::operation::GetBrowserSettings)>
     #[allow(unused_mut)]
@@ -3823,10 +3734,6 @@ pub mod get_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityProviderInputOperationOutputAlias = crate::operation::GetIdentityProvider;
-#[doc(hidden)]
-pub type GetIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityProvider`](crate::operation::GetIdentityProvider)>
     #[allow(unused_mut)]
@@ -3973,10 +3880,6 @@ pub mod get_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkSettingsInputOperationOutputAlias = crate::operation::GetNetworkSettings;
-#[doc(hidden)]
-pub type GetNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkSettings`](crate::operation::GetNetworkSettings)>
     #[allow(unused_mut)]
@@ -4119,10 +4022,6 @@ pub mod get_portal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPortalInputOperationOutputAlias = crate::operation::GetPortal;
-#[doc(hidden)]
-pub type GetPortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortalInput {
     /// Consumes the builder and constructs an Operation<[`GetPortal`](crate::operation::GetPortal)>
     #[allow(unused_mut)]
@@ -4262,12 +4161,6 @@ pub mod get_portal_service_provider_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPortalServiceProviderMetadataInputOperationOutputAlias =
-    crate::operation::GetPortalServiceProviderMetadata;
-#[doc(hidden)]
-pub type GetPortalServiceProviderMetadataInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortalServiceProviderMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetPortalServiceProviderMetadata`](crate::operation::GetPortalServiceProviderMetadata)>
     #[allow(unused_mut)]
@@ -4410,10 +4303,6 @@ pub mod get_trust_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTrustStoreInputOperationOutputAlias = crate::operation::GetTrustStore;
-#[doc(hidden)]
-pub type GetTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`GetTrustStore`](crate::operation::GetTrustStore)>
     #[allow(unused_mut)]
@@ -4574,11 +4463,6 @@ pub mod get_trust_store_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTrustStoreCertificateInputOperationOutputAlias =
-    crate::operation::GetTrustStoreCertificate;
-#[doc(hidden)]
-pub type GetTrustStoreCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrustStoreCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetTrustStoreCertificate`](crate::operation::GetTrustStoreCertificate)>
     #[allow(unused_mut)]
@@ -4736,10 +4620,6 @@ pub mod get_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserSettingsInputOperationOutputAlias = crate::operation::GetUserSettings;
-#[doc(hidden)]
-pub type GetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetUserSettings`](crate::operation::GetUserSettings)>
     #[allow(unused_mut)]
@@ -4895,10 +4775,6 @@ pub mod list_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBrowserSettingsInputOperationOutputAlias = crate::operation::ListBrowserSettings;
-#[doc(hidden)]
-pub type ListBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListBrowserSettings`](crate::operation::ListBrowserSettings)>
     #[allow(unused_mut)]
@@ -5064,10 +4940,6 @@ pub mod list_identity_providers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentityProvidersInputOperationOutputAlias = crate::operation::ListIdentityProviders;
-#[doc(hidden)]
-pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityProviders`](crate::operation::ListIdentityProviders)>
     #[allow(unused_mut)]
@@ -5240,10 +5112,6 @@ pub mod list_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNetworkSettingsInputOperationOutputAlias = crate::operation::ListNetworkSettings;
-#[doc(hidden)]
-pub type ListNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListNetworkSettings`](crate::operation::ListNetworkSettings)>
     #[allow(unused_mut)]
@@ -5397,10 +5265,6 @@ pub mod list_portals_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPortalsInputOperationOutputAlias = crate::operation::ListPortals;
-#[doc(hidden)]
-pub type ListPortalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPortalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPortals`](crate::operation::ListPortals)>
     #[allow(unused_mut)]
@@ -5542,10 +5406,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5714,11 +5574,6 @@ pub mod list_trust_store_certificates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTrustStoreCertificatesInputOperationOutputAlias =
-    crate::operation::ListTrustStoreCertificates;
-#[doc(hidden)]
-pub type ListTrustStoreCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrustStoreCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListTrustStoreCertificates`](crate::operation::ListTrustStoreCertificates)>
     #[allow(unused_mut)]
@@ -5891,10 +5746,6 @@ pub mod list_trust_stores_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTrustStoresInputOperationOutputAlias = crate::operation::ListTrustStores;
-#[doc(hidden)]
-pub type ListTrustStoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrustStoresInput {
     /// Consumes the builder and constructs an Operation<[`ListTrustStores`](crate::operation::ListTrustStores)>
     #[allow(unused_mut)]
@@ -6048,10 +5899,6 @@ pub mod list_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUserSettingsInputOperationOutputAlias = crate::operation::ListUserSettings;
-#[doc(hidden)]
-pub type ListUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserSettings`](crate::operation::ListUserSettings)>
     #[allow(unused_mut)]
@@ -6228,10 +6075,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6409,10 +6252,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6597,10 +6436,6 @@ pub mod update_browser_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBrowserSettingsInputOperationOutputAlias = crate::operation::UpdateBrowserSettings;
-#[doc(hidden)]
-pub type UpdateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBrowserSettings`](crate::operation::UpdateBrowserSettings)>
     #[allow(unused_mut)]
@@ -6919,10 +6754,6 @@ pub mod update_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateIdentityProviderInputOperationOutputAlias = crate::operation::UpdateIdentityProvider;
-#[doc(hidden)]
-pub type UpdateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityProvider`](crate::operation::UpdateIdentityProvider)>
     #[allow(unused_mut)]
@@ -7156,10 +6987,6 @@ pub mod update_network_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNetworkSettingsInputOperationOutputAlias = crate::operation::UpdateNetworkSettings;
-#[doc(hidden)]
-pub type UpdateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNetworkSettings`](crate::operation::UpdateNetworkSettings)>
     #[allow(unused_mut)]
@@ -7334,10 +7161,6 @@ pub mod update_portal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePortalInputOperationOutputAlias = crate::operation::UpdatePortal;
-#[doc(hidden)]
-pub type UpdatePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePortalInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePortal`](crate::operation::UpdatePortal)>
     #[allow(unused_mut)]
@@ -7550,10 +7373,6 @@ pub mod update_trust_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTrustStoreInputOperationOutputAlias = crate::operation::UpdateTrustStore;
-#[doc(hidden)]
-pub type UpdateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrustStore`](crate::operation::UpdateTrustStore)>
     #[allow(unused_mut)]
@@ -7836,10 +7655,6 @@ pub mod update_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserSettingsInputOperationOutputAlias = crate::operation::UpdateUserSettings;
-#[doc(hidden)]
-pub type UpdateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserSettings`](crate::operation::UpdateUserSettings)>
     #[allow(unused_mut)]

@@ -46,10 +46,6 @@ pub mod associate_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResourceInputOperationOutputAlias = crate::operation::AssociateResource;
-#[doc(hidden)]
-pub type AssociateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResource`](crate::operation::AssociateResource)>
     #[allow(unused_mut)]
@@ -412,10 +408,6 @@ pub mod create_canary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCanaryInputOperationOutputAlias = crate::operation::CreateCanary;
-#[doc(hidden)]
-pub type CreateCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCanaryInput {
     /// Consumes the builder and constructs an Operation<[`CreateCanary`](crate::operation::CreateCanary)>
     #[allow(unused_mut)]
@@ -587,10 +579,6 @@ pub mod create_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
-#[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(unused_mut)]
@@ -743,10 +731,6 @@ pub mod delete_canary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCanaryInputOperationOutputAlias = crate::operation::DeleteCanary;
-#[doc(hidden)]
-pub type DeleteCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCanaryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCanary`](crate::operation::DeleteCanary)>
     #[allow(unused_mut)]
@@ -902,10 +886,6 @@ pub mod delete_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
-#[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(unused_mut)]
@@ -1086,10 +1066,6 @@ pub mod describe_canaries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCanariesInputOperationOutputAlias = crate::operation::DescribeCanaries;
-#[doc(hidden)]
-pub type DescribeCanariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCanariesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCanaries`](crate::operation::DescribeCanaries)>
     #[allow(unused_mut)]
@@ -1267,11 +1243,6 @@ pub mod describe_canaries_last_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCanariesLastRunInputOperationOutputAlias =
-    crate::operation::DescribeCanariesLastRun;
-#[doc(hidden)]
-pub type DescribeCanariesLastRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCanariesLastRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCanariesLastRun`](crate::operation::DescribeCanariesLastRun)>
     #[allow(unused_mut)]
@@ -1426,11 +1397,6 @@ pub mod describe_runtime_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRuntimeVersionsInputOperationOutputAlias =
-    crate::operation::DescribeRuntimeVersions;
-#[doc(hidden)]
-pub type DescribeRuntimeVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuntimeVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuntimeVersions`](crate::operation::DescribeRuntimeVersions)>
     #[allow(unused_mut)]
@@ -1586,10 +1552,6 @@ pub mod disassociate_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResourceInputOperationOutputAlias = crate::operation::DisassociateResource;
-#[doc(hidden)]
-pub type DisassociateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResource`](crate::operation::DisassociateResource)>
     #[allow(unused_mut)]
@@ -1744,10 +1706,6 @@ pub mod get_canary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCanaryInputOperationOutputAlias = crate::operation::GetCanary;
-#[doc(hidden)]
-pub type GetCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCanaryInput {
     /// Consumes the builder and constructs an Operation<[`GetCanary`](crate::operation::GetCanary)>
     #[allow(unused_mut)]
@@ -1908,10 +1866,6 @@ pub mod get_canary_runs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCanaryRunsInputOperationOutputAlias = crate::operation::GetCanaryRuns;
-#[doc(hidden)]
-pub type GetCanaryRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCanaryRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetCanaryRuns`](crate::operation::GetCanaryRuns)>
     #[allow(unused_mut)]
@@ -2067,10 +2021,6 @@ pub mod get_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
-#[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(unused_mut)]
@@ -2236,10 +2186,6 @@ pub mod list_associated_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssociatedGroupsInputOperationOutputAlias = crate::operation::ListAssociatedGroups;
-#[doc(hidden)]
-pub type ListAssociatedGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedGroups`](crate::operation::ListAssociatedGroups)>
     #[allow(unused_mut)]
@@ -2426,10 +2372,6 @@ pub mod list_group_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupResourcesInputOperationOutputAlias = crate::operation::ListGroupResources;
-#[doc(hidden)]
-pub type ListGroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupResources`](crate::operation::ListGroupResources)>
     #[allow(unused_mut)]
@@ -2598,10 +2540,6 @@ pub mod list_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
-#[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(unused_mut)]
@@ -2744,10 +2682,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2885,10 +2819,6 @@ pub mod start_canary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartCanaryInputOperationOutputAlias = crate::operation::StartCanary;
-#[doc(hidden)]
-pub type StartCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCanaryInput {
     /// Consumes the builder and constructs an Operation<[`StartCanary`](crate::operation::StartCanary)>
     #[allow(unused_mut)]
@@ -3025,10 +2955,6 @@ pub mod stop_canary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopCanaryInputOperationOutputAlias = crate::operation::StopCanary;
-#[doc(hidden)]
-pub type StopCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopCanaryInput {
     /// Consumes the builder and constructs an Operation<[`StopCanary`](crate::operation::StopCanary)>
     #[allow(unused_mut)]
@@ -3201,10 +3127,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3383,10 +3305,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3730,10 +3648,6 @@ pub mod update_canary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCanaryInputOperationOutputAlias = crate::operation::UpdateCanary;
-#[doc(hidden)]
-pub type UpdateCanaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCanaryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCanary`](crate::operation::UpdateCanary)>
     #[allow(unused_mut)]

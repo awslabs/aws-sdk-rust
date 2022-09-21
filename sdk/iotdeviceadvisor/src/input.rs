@@ -67,10 +67,6 @@ pub mod create_suite_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSuiteDefinitionInputOperationOutputAlias = crate::operation::CreateSuiteDefinition;
-#[doc(hidden)]
-pub type CreateSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSuiteDefinition`](crate::operation::CreateSuiteDefinition)>
     #[allow(unused_mut)]
@@ -214,10 +210,6 @@ pub mod delete_suite_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSuiteDefinitionInputOperationOutputAlias = crate::operation::DeleteSuiteDefinition;
-#[doc(hidden)]
-pub type DeleteSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSuiteDefinition`](crate::operation::DeleteSuiteDefinition)>
     #[allow(unused_mut)]
@@ -376,10 +368,6 @@ pub mod get_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEndpointInputOperationOutputAlias = crate::operation::GetEndpoint;
-#[doc(hidden)]
-pub type GetEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetEndpoint`](crate::operation::GetEndpoint)>
     #[allow(unused_mut)]
@@ -539,10 +527,6 @@ pub mod get_suite_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSuiteDefinitionInputOperationOutputAlias = crate::operation::GetSuiteDefinition;
-#[doc(hidden)]
-pub type GetSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetSuiteDefinition`](crate::operation::GetSuiteDefinition)>
     #[allow(unused_mut)]
@@ -715,10 +699,6 @@ pub mod get_suite_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSuiteRunInputOperationOutputAlias = crate::operation::GetSuiteRun;
-#[doc(hidden)]
-pub type GetSuiteRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSuiteRunInput {
     /// Consumes the builder and constructs an Operation<[`GetSuiteRun`](crate::operation::GetSuiteRun)>
     #[allow(unused_mut)]
@@ -892,10 +872,6 @@ pub mod get_suite_run_report_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSuiteRunReportInputOperationOutputAlias = crate::operation::GetSuiteRunReport;
-#[doc(hidden)]
-pub type GetSuiteRunReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSuiteRunReportInput {
     /// Consumes the builder and constructs an Operation<[`GetSuiteRunReport`](crate::operation::GetSuiteRunReport)>
     #[allow(unused_mut)]
@@ -1066,10 +1042,6 @@ pub mod list_suite_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSuiteDefinitionsInputOperationOutputAlias = crate::operation::ListSuiteDefinitions;
-#[doc(hidden)]
-pub type ListSuiteDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSuiteDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSuiteDefinitions`](crate::operation::ListSuiteDefinitions)>
     #[allow(unused_mut)]
@@ -1253,10 +1225,6 @@ pub mod list_suite_runs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSuiteRunsInputOperationOutputAlias = crate::operation::ListSuiteRuns;
-#[doc(hidden)]
-pub type ListSuiteRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSuiteRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListSuiteRuns`](crate::operation::ListSuiteRuns)>
     #[allow(unused_mut)]
@@ -1410,10 +1378,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1619,10 +1583,6 @@ pub mod start_suite_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSuiteRunInputOperationOutputAlias = crate::operation::StartSuiteRun;
-#[doc(hidden)]
-pub type StartSuiteRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSuiteRunInput {
     /// Consumes the builder and constructs an Operation<[`StartSuiteRun`](crate::operation::StartSuiteRun)>
     #[allow(unused_mut)]
@@ -1795,10 +1755,6 @@ pub mod stop_suite_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopSuiteRunInputOperationOutputAlias = crate::operation::StopSuiteRun;
-#[doc(hidden)]
-pub type StopSuiteRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopSuiteRunInput {
     /// Consumes the builder and constructs an Operation<[`StopSuiteRun`](crate::operation::StopSuiteRun)>
     #[allow(unused_mut)]
@@ -1986,10 +1942,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2164,10 +2116,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2342,10 +2290,6 @@ pub mod update_suite_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSuiteDefinitionInputOperationOutputAlias = crate::operation::UpdateSuiteDefinition;
-#[doc(hidden)]
-pub type UpdateSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSuiteDefinition`](crate::operation::UpdateSuiteDefinition)>
     #[allow(unused_mut)]

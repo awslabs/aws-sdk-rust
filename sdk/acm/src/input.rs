@@ -59,10 +59,6 @@ pub mod add_tags_to_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsToCertificateInputOperationOutputAlias = crate::operation::AddTagsToCertificate;
-#[doc(hidden)]
-pub type AddTagsToCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToCertificate`](crate::operation::AddTagsToCertificate)>
     #[allow(unused_mut)]
@@ -215,10 +211,6 @@ pub mod delete_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCertificateInputOperationOutputAlias = crate::operation::DeleteCertificate;
-#[doc(hidden)]
-pub type DeleteCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCertificate`](crate::operation::DeleteCertificate)>
     #[allow(unused_mut)]
@@ -369,10 +361,6 @@ pub mod describe_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCertificateInputOperationOutputAlias = crate::operation::DescribeCertificate;
-#[doc(hidden)]
-pub type DescribeCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCertificate`](crate::operation::DescribeCertificate)>
     #[allow(unused_mut)]
@@ -538,10 +526,6 @@ pub mod export_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportCertificateInputOperationOutputAlias = crate::operation::ExportCertificate;
-#[doc(hidden)]
-pub type ExportCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ExportCertificate`](crate::operation::ExportCertificate)>
     #[allow(unused_mut)]
@@ -673,11 +657,6 @@ pub mod get_account_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountConfigurationInputOperationOutputAlias =
-    crate::operation::GetAccountConfiguration;
-#[doc(hidden)]
-pub type GetAccountConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountConfiguration`](crate::operation::GetAccountConfiguration)>
     #[allow(unused_mut)]
@@ -823,10 +802,6 @@ pub mod get_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCertificateInputOperationOutputAlias = crate::operation::GetCertificate;
-#[doc(hidden)]
-pub type GetCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetCertificate`](crate::operation::GetCertificate)>
     #[allow(unused_mut)]
@@ -1041,10 +1016,6 @@ pub mod import_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportCertificateInputOperationOutputAlias = crate::operation::ImportCertificate;
-#[doc(hidden)]
-pub type ImportCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ImportCertificate`](crate::operation::ImportCertificate)>
     #[allow(unused_mut)]
@@ -1234,10 +1205,6 @@ pub mod list_certificates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCertificatesInputOperationOutputAlias = crate::operation::ListCertificates;
-#[doc(hidden)]
-pub type ListCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListCertificates`](crate::operation::ListCertificates)>
     #[allow(unused_mut)]
@@ -1388,10 +1355,6 @@ pub mod list_tags_for_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForCertificateInputOperationOutputAlias = crate::operation::ListTagsForCertificate;
-#[doc(hidden)]
-pub type ListTagsForCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForCertificate`](crate::operation::ListTagsForCertificate)>
     #[allow(unused_mut)]
@@ -1557,11 +1520,6 @@ pub mod put_account_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAccountConfigurationInputOperationOutputAlias =
-    crate::operation::PutAccountConfiguration;
-#[doc(hidden)]
-pub type PutAccountConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccountConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountConfiguration`](crate::operation::PutAccountConfiguration)>
     #[allow(unused_mut)]
@@ -1737,11 +1695,6 @@ pub mod remove_tags_from_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsFromCertificateInputOperationOutputAlias =
-    crate::operation::RemoveTagsFromCertificate;
-#[doc(hidden)]
-pub type RemoveTagsFromCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromCertificate`](crate::operation::RemoveTagsFromCertificate)>
     #[allow(unused_mut)]
@@ -1894,10 +1847,6 @@ pub mod renew_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RenewCertificateInputOperationOutputAlias = crate::operation::RenewCertificate;
-#[doc(hidden)]
-pub type RenewCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RenewCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RenewCertificate`](crate::operation::RenewCertificate)>
     #[allow(unused_mut)]
@@ -2185,10 +2134,6 @@ pub mod request_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RequestCertificateInputOperationOutputAlias = crate::operation::RequestCertificate;
-#[doc(hidden)]
-pub type RequestCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RequestCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RequestCertificate`](crate::operation::RequestCertificate)>
     #[allow(unused_mut)]
@@ -2378,10 +2323,6 @@ pub mod resend_validation_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResendValidationEmailInputOperationOutputAlias = crate::operation::ResendValidationEmail;
-#[doc(hidden)]
-pub type ResendValidationEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResendValidationEmailInput {
     /// Consumes the builder and constructs an Operation<[`ResendValidationEmail`](crate::operation::ResendValidationEmail)>
     #[allow(unused_mut)]
@@ -2549,11 +2490,6 @@ pub mod update_certificate_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCertificateOptionsInputOperationOutputAlias =
-    crate::operation::UpdateCertificateOptions;
-#[doc(hidden)]
-pub type UpdateCertificateOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCertificateOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCertificateOptions`](crate::operation::UpdateCertificateOptions)>
     #[allow(unused_mut)]

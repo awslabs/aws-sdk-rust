@@ -34,10 +34,6 @@ pub mod delete_human_loop_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteHumanLoopInputOperationOutputAlias = crate::operation::DeleteHumanLoop;
-#[doc(hidden)]
-pub type DeleteHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHumanLoop`](crate::operation::DeleteHumanLoop)>
     #[allow(unused_mut)]
@@ -184,10 +180,6 @@ pub mod describe_human_loop_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeHumanLoopInputOperationOutputAlias = crate::operation::DescribeHumanLoop;
-#[doc(hidden)]
-pub type DescribeHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHumanLoop`](crate::operation::DescribeHumanLoop)>
     #[allow(unused_mut)]
@@ -403,10 +395,6 @@ pub mod list_human_loops_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListHumanLoopsInputOperationOutputAlias = crate::operation::ListHumanLoops;
-#[doc(hidden)]
-pub type ListHumanLoopsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHumanLoopsInput {
     /// Consumes the builder and constructs an Operation<[`ListHumanLoops`](crate::operation::ListHumanLoops)>
     #[allow(unused_mut)]
@@ -623,10 +611,6 @@ pub mod start_human_loop_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartHumanLoopInputOperationOutputAlias = crate::operation::StartHumanLoop;
-#[doc(hidden)]
-pub type StartHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`StartHumanLoop`](crate::operation::StartHumanLoop)>
     #[allow(unused_mut)]
@@ -768,10 +752,6 @@ pub mod stop_human_loop_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopHumanLoopInputOperationOutputAlias = crate::operation::StopHumanLoop;
-#[doc(hidden)]
-pub type StopHumanLoopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopHumanLoopInput {
     /// Consumes the builder and constructs an Operation<[`StopHumanLoop`](crate::operation::StopHumanLoop)>
     #[allow(unused_mut)]

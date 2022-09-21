@@ -161,12 +161,6 @@ pub mod create_slack_channel_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSlackChannelConfigurationInputOperationOutputAlias =
-    crate::operation::CreateSlackChannelConfiguration;
-#[doc(hidden)]
-pub type CreateSlackChannelConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSlackChannelConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSlackChannelConfiguration`](crate::operation::CreateSlackChannelConfiguration)>
     #[allow(unused_mut)]
@@ -291,10 +285,6 @@ pub mod delete_account_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAccountAliasInputOperationOutputAlias = crate::operation::DeleteAccountAlias;
-#[doc(hidden)]
-pub type DeleteAccountAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccountAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccountAlias`](crate::operation::DeleteAccountAlias)>
     #[allow(unused_mut)]
@@ -433,12 +423,6 @@ pub mod delete_slack_channel_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSlackChannelConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteSlackChannelConfiguration;
-#[doc(hidden)]
-pub type DeleteSlackChannelConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSlackChannelConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlackChannelConfiguration`](crate::operation::DeleteSlackChannelConfiguration)>
     #[allow(unused_mut)]
@@ -579,12 +563,6 @@ pub mod delete_slack_workspace_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSlackWorkspaceConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteSlackWorkspaceConfiguration;
-#[doc(hidden)]
-pub type DeleteSlackWorkspaceConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSlackWorkspaceConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlackWorkspaceConfiguration`](crate::operation::DeleteSlackWorkspaceConfiguration)>
     #[allow(unused_mut)]
@@ -709,10 +687,6 @@ pub mod get_account_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountAliasInputOperationOutputAlias = crate::operation::GetAccountAlias;
-#[doc(hidden)]
-pub type GetAccountAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountAliasInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountAlias`](crate::operation::GetAccountAlias)>
     #[allow(unused_mut)]
@@ -839,12 +813,6 @@ pub mod list_slack_channel_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSlackChannelConfigurationsInputOperationOutputAlias =
-    crate::operation::ListSlackChannelConfigurations;
-#[doc(hidden)]
-pub type ListSlackChannelConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSlackChannelConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSlackChannelConfigurations`](crate::operation::ListSlackChannelConfigurations)>
     #[allow(unused_mut)]
@@ -985,12 +953,6 @@ pub mod list_slack_workspace_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSlackWorkspaceConfigurationsInputOperationOutputAlias =
-    crate::operation::ListSlackWorkspaceConfigurations;
-#[doc(hidden)]
-pub type ListSlackWorkspaceConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSlackWorkspaceConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSlackWorkspaceConfigurations`](crate::operation::ListSlackWorkspaceConfigurations)>
     #[allow(unused_mut)]
@@ -1132,10 +1094,6 @@ pub mod put_account_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAccountAliasInputOperationOutputAlias = crate::operation::PutAccountAlias;
-#[doc(hidden)]
-pub type PutAccountAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccountAliasInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountAlias`](crate::operation::PutAccountAlias)>
     #[allow(unused_mut)]
@@ -1404,12 +1362,6 @@ pub mod update_slack_channel_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSlackChannelConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateSlackChannelConfiguration;
-#[doc(hidden)]
-pub type UpdateSlackChannelConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSlackChannelConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSlackChannelConfiguration`](crate::operation::UpdateSlackChannelConfiguration)>
     #[allow(unused_mut)]

@@ -72,10 +72,6 @@ pub mod create_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
-#[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(unused_mut)]
@@ -273,10 +269,6 @@ pub mod create_control_panel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateControlPanelInputOperationOutputAlias = crate::operation::CreateControlPanel;
-#[doc(hidden)]
-pub type CreateControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`CreateControlPanel`](crate::operation::CreateControlPanel)>
     #[allow(unused_mut)]
@@ -460,10 +452,6 @@ pub mod create_routing_control_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRoutingControlInputOperationOutputAlias = crate::operation::CreateRoutingControl;
-#[doc(hidden)]
-pub type CreateRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoutingControl`](crate::operation::CreateRoutingControl)>
     #[allow(unused_mut)]
@@ -666,10 +654,6 @@ pub mod create_safety_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSafetyRuleInputOperationOutputAlias = crate::operation::CreateSafetyRule;
-#[doc(hidden)]
-pub type CreateSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSafetyRule`](crate::operation::CreateSafetyRule)>
     #[allow(unused_mut)]
@@ -811,10 +795,6 @@ pub mod delete_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
-#[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(unused_mut)]
@@ -957,10 +937,6 @@ pub mod delete_control_panel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteControlPanelInputOperationOutputAlias = crate::operation::DeleteControlPanel;
-#[doc(hidden)]
-pub type DeleteControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteControlPanel`](crate::operation::DeleteControlPanel)>
     #[allow(unused_mut)]
@@ -1107,10 +1083,6 @@ pub mod delete_routing_control_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRoutingControlInputOperationOutputAlias = crate::operation::DeleteRoutingControl;
-#[doc(hidden)]
-pub type DeleteRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoutingControl`](crate::operation::DeleteRoutingControl)>
     #[allow(unused_mut)]
@@ -1257,10 +1229,6 @@ pub mod delete_safety_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSafetyRuleInputOperationOutputAlias = crate::operation::DeleteSafetyRule;
-#[doc(hidden)]
-pub type DeleteSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSafetyRule`](crate::operation::DeleteSafetyRule)>
     #[allow(unused_mut)]
@@ -1404,10 +1372,6 @@ pub mod describe_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterInputOperationOutputAlias = crate::operation::DescribeCluster;
-#[doc(hidden)]
-pub type DescribeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCluster`](crate::operation::DescribeCluster)>
     #[allow(unused_mut)]
@@ -1550,10 +1514,6 @@ pub mod describe_control_panel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeControlPanelInputOperationOutputAlias = crate::operation::DescribeControlPanel;
-#[doc(hidden)]
-pub type DescribeControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeControlPanel`](crate::operation::DescribeControlPanel)>
     #[allow(unused_mut)]
@@ -1700,10 +1660,6 @@ pub mod describe_routing_control_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRoutingControlInputOperationOutputAlias = crate::operation::DescribeRoutingControl;
-#[doc(hidden)]
-pub type DescribeRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRoutingControl`](crate::operation::DescribeRoutingControl)>
     #[allow(unused_mut)]
@@ -1850,10 +1806,6 @@ pub mod describe_safety_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSafetyRuleInputOperationOutputAlias = crate::operation::DescribeSafetyRule;
-#[doc(hidden)]
-pub type DescribeSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSafetyRule`](crate::operation::DescribeSafetyRule)>
     #[allow(unused_mut)]
@@ -2026,12 +1978,6 @@ pub mod list_associated_route53_health_checks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssociatedRoute53HealthChecksInputOperationOutputAlias =
-    crate::operation::ListAssociatedRoute53HealthChecks;
-#[doc(hidden)]
-pub type ListAssociatedRoute53HealthChecksInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedRoute53HealthChecksInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedRoute53HealthChecks`](crate::operation::ListAssociatedRoute53HealthChecks)>
     #[allow(unused_mut)]
@@ -2204,10 +2150,6 @@ pub mod list_clusters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListClustersInputOperationOutputAlias = crate::operation::ListClusters;
-#[doc(hidden)]
-pub type ListClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(unused_mut)]
@@ -2373,10 +2315,6 @@ pub mod list_control_panels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListControlPanelsInputOperationOutputAlias = crate::operation::ListControlPanels;
-#[doc(hidden)]
-pub type ListControlPanelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListControlPanelsInput {
     /// Consumes the builder and constructs an Operation<[`ListControlPanels`](crate::operation::ListControlPanels)>
     #[allow(unused_mut)]
@@ -2548,10 +2486,6 @@ pub mod list_routing_controls_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRoutingControlsInputOperationOutputAlias = crate::operation::ListRoutingControls;
-#[doc(hidden)]
-pub type ListRoutingControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoutingControlsInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutingControls`](crate::operation::ListRoutingControls)>
     #[allow(unused_mut)]
@@ -2739,10 +2673,6 @@ pub mod list_safety_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSafetyRulesInputOperationOutputAlias = crate::operation::ListSafetyRules;
-#[doc(hidden)]
-pub type ListSafetyRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSafetyRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListSafetyRules`](crate::operation::ListSafetyRules)>
     #[allow(unused_mut)]
@@ -2903,10 +2833,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3075,10 +3001,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3253,10 +3175,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3427,10 +3345,6 @@ pub mod update_control_panel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateControlPanelInputOperationOutputAlias = crate::operation::UpdateControlPanel;
-#[doc(hidden)]
-pub type UpdateControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateControlPanel`](crate::operation::UpdateControlPanel)>
     #[allow(unused_mut)]
@@ -3587,10 +3501,6 @@ pub mod update_routing_control_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRoutingControlInputOperationOutputAlias = crate::operation::UpdateRoutingControl;
-#[doc(hidden)]
-pub type UpdateRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControl`](crate::operation::UpdateRoutingControl)>
     #[allow(unused_mut)]
@@ -3749,10 +3659,6 @@ pub mod update_safety_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSafetyRuleInputOperationOutputAlias = crate::operation::UpdateSafetyRule;
-#[doc(hidden)]
-pub type UpdateSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSafetyRule`](crate::operation::UpdateSafetyRule)>
     #[allow(unused_mut)]

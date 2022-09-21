@@ -46,10 +46,6 @@ pub mod describe_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGroupInputOperationOutputAlias = crate::operation::DescribeGroup;
-#[doc(hidden)]
-pub type DescribeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGroup`](crate::operation::DescribeGroup)>
     #[allow(unused_mut)]
@@ -208,10 +204,6 @@ pub mod describe_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserInputOperationOutputAlias = crate::operation::DescribeUser;
-#[doc(hidden)]
-pub type DescribeUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUser`](crate::operation::DescribeUser)>
     #[allow(unused_mut)]
@@ -402,10 +394,6 @@ pub mod list_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
-#[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(unused_mut)]
@@ -596,10 +584,6 @@ pub mod list_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
-#[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(unused_mut)]

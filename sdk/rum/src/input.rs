@@ -115,10 +115,6 @@ pub mod create_app_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppMonitorInputOperationOutputAlias = crate::operation::CreateAppMonitor;
-#[doc(hidden)]
-pub type CreateAppMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppMonitorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppMonitor`](crate::operation::CreateAppMonitor)>
     #[allow(unused_mut)]
@@ -255,10 +251,6 @@ pub mod delete_app_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppMonitorInputOperationOutputAlias = crate::operation::DeleteAppMonitor;
-#[doc(hidden)]
-pub type DeleteAppMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppMonitorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppMonitor`](crate::operation::DeleteAppMonitor)>
     #[allow(unused_mut)]
@@ -396,10 +388,6 @@ pub mod get_app_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppMonitorInputOperationOutputAlias = crate::operation::GetAppMonitor;
-#[doc(hidden)]
-pub type GetAppMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppMonitorInput {
     /// Consumes the builder and constructs an Operation<[`GetAppMonitor`](crate::operation::GetAppMonitor)>
     #[allow(unused_mut)]
@@ -599,10 +587,6 @@ pub mod get_app_monitor_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppMonitorDataInputOperationOutputAlias = crate::operation::GetAppMonitorData;
-#[doc(hidden)]
-pub type GetAppMonitorDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppMonitorDataInput {
     /// Consumes the builder and constructs an Operation<[`GetAppMonitorData`](crate::operation::GetAppMonitorData)>
     #[allow(unused_mut)]
@@ -768,10 +752,6 @@ pub mod list_app_monitors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppMonitorsInputOperationOutputAlias = crate::operation::ListAppMonitors;
-#[doc(hidden)]
-pub type ListAppMonitorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppMonitorsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppMonitors`](crate::operation::ListAppMonitors)>
     #[allow(unused_mut)]
@@ -913,10 +893,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1119,10 +1095,6 @@ pub mod put_rum_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRumEventsInputOperationOutputAlias = crate::operation::PutRumEvents;
-#[doc(hidden)]
-pub type PutRumEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRumEventsInput {
     /// Consumes the builder and constructs an Operation<[`PutRumEvents`](crate::operation::PutRumEvents)>
     #[allow(unused_mut)]
@@ -1306,10 +1278,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1484,10 +1452,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -1683,10 +1647,6 @@ pub mod update_app_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppMonitorInputOperationOutputAlias = crate::operation::UpdateAppMonitor;
-#[doc(hidden)]
-pub type UpdateAppMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppMonitorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppMonitor`](crate::operation::UpdateAppMonitor)>
     #[allow(unused_mut)]

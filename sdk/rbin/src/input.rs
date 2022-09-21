@@ -106,10 +106,6 @@ pub mod create_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRuleInputOperationOutputAlias = crate::operation::CreateRule;
-#[doc(hidden)]
-pub type CreateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(unused_mut)]
@@ -247,10 +243,6 @@ pub mod delete_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
-#[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(unused_mut)]
@@ -389,10 +381,6 @@ pub mod get_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRuleInputOperationOutputAlias = crate::operation::GetRule;
-#[doc(hidden)]
-pub type GetRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetRule`](crate::operation::GetRule)>
     #[allow(unused_mut)]
@@ -574,10 +562,6 @@ pub mod list_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRulesInputOperationOutputAlias = crate::operation::ListRules;
-#[doc(hidden)]
-pub type ListRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListRules`](crate::operation::ListRules)>
     #[allow(unused_mut)]
@@ -714,10 +698,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -878,10 +858,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1056,10 +1032,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -1278,10 +1250,6 @@ pub mod update_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRuleInputOperationOutputAlias = crate::operation::UpdateRule;
-#[doc(hidden)]
-pub type UpdateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRule`](crate::operation::UpdateRule)>
     #[allow(unused_mut)]

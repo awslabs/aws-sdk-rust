@@ -106,10 +106,6 @@ pub mod create_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
-#[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(unused_mut)]
@@ -266,10 +262,6 @@ pub mod delete_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
-#[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(unused_mut)]
@@ -430,10 +422,6 @@ pub mod describe_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeApplicationInputOperationOutputAlias = crate::operation::DescribeApplication;
-#[doc(hidden)]
-pub type DescribeApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplication`](crate::operation::DescribeApplication)>
     #[allow(unused_mut)]
@@ -577,10 +565,6 @@ pub mod list_applications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
-#[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(unused_mut)]
@@ -716,10 +700,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -888,10 +868,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1066,10 +1042,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -1267,10 +1239,6 @@ pub mod update_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
-#[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(unused_mut)]

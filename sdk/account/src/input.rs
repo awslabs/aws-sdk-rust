@@ -56,10 +56,6 @@ pub mod delete_alternate_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAlternateContactInputOperationOutputAlias = crate::operation::DeleteAlternateContact;
-#[doc(hidden)]
-pub type DeleteAlternateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlternateContact`](crate::operation::DeleteAlternateContact)>
     #[allow(unused_mut)]
@@ -225,10 +221,6 @@ pub mod get_alternate_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAlternateContactInputOperationOutputAlias = crate::operation::GetAlternateContact;
-#[doc(hidden)]
-pub type GetAlternateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`GetAlternateContact`](crate::operation::GetAlternateContact)>
     #[allow(unused_mut)]
@@ -373,10 +365,6 @@ pub mod get_contact_information_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContactInformationInputOperationOutputAlias = crate::operation::GetContactInformation;
-#[doc(hidden)]
-pub type GetContactInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactInformationInput {
     /// Consumes the builder and constructs an Operation<[`GetContactInformation`](crate::operation::GetContactInformation)>
     #[allow(unused_mut)]
@@ -593,10 +581,6 @@ pub mod put_alternate_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAlternateContactInputOperationOutputAlias = crate::operation::PutAlternateContact;
-#[doc(hidden)]
-pub type PutAlternateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAlternateContactInput {
     /// Consumes the builder and constructs an Operation<[`PutAlternateContact`](crate::operation::PutAlternateContact)>
     #[allow(unused_mut)]
@@ -756,10 +740,6 @@ pub mod put_contact_information_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutContactInformationInputOperationOutputAlias = crate::operation::PutContactInformation;
-#[doc(hidden)]
-pub type PutContactInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContactInformationInput {
     /// Consumes the builder and constructs an Operation<[`PutContactInformation`](crate::operation::PutContactInformation)>
     #[allow(unused_mut)]

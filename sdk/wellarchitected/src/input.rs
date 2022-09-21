@@ -54,10 +54,6 @@ pub mod associate_lenses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateLensesInputOperationOutputAlias = crate::operation::AssociateLenses;
-#[doc(hidden)]
-pub type AssociateLensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateLensesInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLenses`](crate::operation::AssociateLenses)>
     #[allow(unused_mut)]
@@ -254,10 +250,6 @@ pub mod create_lens_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLensShareInputOperationOutputAlias = crate::operation::CreateLensShare;
-#[doc(hidden)]
-pub type CreateLensShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLensShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateLensShare`](crate::operation::CreateLensShare)>
     #[allow(unused_mut)]
@@ -465,10 +457,6 @@ pub mod create_lens_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLensVersionInputOperationOutputAlias = crate::operation::CreateLensVersion;
-#[doc(hidden)]
-pub type CreateLensVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLensVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLensVersion`](crate::operation::CreateLensVersion)>
     #[allow(unused_mut)]
@@ -667,10 +655,6 @@ pub mod create_milestone_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMilestoneInputOperationOutputAlias = crate::operation::CreateMilestone;
-#[doc(hidden)]
-pub type CreateMilestoneInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMilestoneInput {
     /// Consumes the builder and constructs an Operation<[`CreateMilestone`](crate::operation::CreateMilestone)>
     #[allow(unused_mut)]
@@ -1144,10 +1128,6 @@ pub mod create_workload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkloadInputOperationOutputAlias = crate::operation::CreateWorkload;
-#[doc(hidden)]
-pub type CreateWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkload`](crate::operation::CreateWorkload)>
     #[allow(unused_mut)]
@@ -1337,10 +1317,6 @@ pub mod create_workload_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkloadShareInputOperationOutputAlias = crate::operation::CreateWorkloadShare;
-#[doc(hidden)]
-pub type CreateWorkloadShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkloadShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkloadShare`](crate::operation::CreateWorkloadShare)>
     #[allow(unused_mut)]
@@ -1542,10 +1518,6 @@ pub mod delete_lens_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLensInputOperationOutputAlias = crate::operation::DeleteLens;
-#[doc(hidden)]
-pub type DeleteLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLensInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLens`](crate::operation::DeleteLens)>
     #[allow(unused_mut)]
@@ -1744,10 +1716,6 @@ pub mod delete_lens_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLensShareInputOperationOutputAlias = crate::operation::DeleteLensShare;
-#[doc(hidden)]
-pub type DeleteLensShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLensShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLensShare`](crate::operation::DeleteLensShare)>
     #[allow(unused_mut)]
@@ -1944,10 +1912,6 @@ pub mod delete_workload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkloadInputOperationOutputAlias = crate::operation::DeleteWorkload;
-#[doc(hidden)]
-pub type DeleteWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkload`](crate::operation::DeleteWorkload)>
     #[allow(unused_mut)]
@@ -2137,10 +2101,6 @@ pub mod delete_workload_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkloadShareInputOperationOutputAlias = crate::operation::DeleteWorkloadShare;
-#[doc(hidden)]
-pub type DeleteWorkloadShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkloadShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkloadShare`](crate::operation::DeleteWorkloadShare)>
     #[allow(unused_mut)]
@@ -2339,10 +2299,6 @@ pub mod disassociate_lenses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateLensesInputOperationOutputAlias = crate::operation::DisassociateLenses;
-#[doc(hidden)]
-pub type DisassociateLensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateLensesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLenses`](crate::operation::DisassociateLenses)>
     #[allow(unused_mut)]
@@ -2517,10 +2473,6 @@ pub mod export_lens_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportLensInputOperationOutputAlias = crate::operation::ExportLens;
-#[doc(hidden)]
-pub type ExportLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportLensInput {
     /// Consumes the builder and constructs an Operation<[`ExportLens`](crate::operation::ExportLens)>
     #[allow(unused_mut)]
@@ -2717,10 +2669,6 @@ pub mod get_answer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAnswerInputOperationOutputAlias = crate::operation::GetAnswer;
-#[doc(hidden)]
-pub type GetAnswerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnswerInput {
     /// Consumes the builder and constructs an Operation<[`GetAnswer`](crate::operation::GetAnswer)>
     #[allow(unused_mut)]
@@ -2924,10 +2872,6 @@ pub mod get_lens_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLensInputOperationOutputAlias = crate::operation::GetLens;
-#[doc(hidden)]
-pub type GetLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensInput {
     /// Consumes the builder and constructs an Operation<[`GetLens`](crate::operation::GetLens)>
     #[allow(unused_mut)]
@@ -3111,10 +3055,6 @@ pub mod get_lens_review_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLensReviewInputOperationOutputAlias = crate::operation::GetLensReview;
-#[doc(hidden)]
-pub type GetLensReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensReviewInput {
     /// Consumes the builder and constructs an Operation<[`GetLensReview`](crate::operation::GetLensReview)>
     #[allow(unused_mut)]
@@ -3320,10 +3260,6 @@ pub mod get_lens_review_report_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLensReviewReportInputOperationOutputAlias = crate::operation::GetLensReviewReport;
-#[doc(hidden)]
-pub type GetLensReviewReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensReviewReportInput {
     /// Consumes the builder and constructs an Operation<[`GetLensReviewReport`](crate::operation::GetLensReviewReport)>
     #[allow(unused_mut)]
@@ -3535,11 +3471,6 @@ pub mod get_lens_version_difference_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLensVersionDifferenceInputOperationOutputAlias =
-    crate::operation::GetLensVersionDifference;
-#[doc(hidden)]
-pub type GetLensVersionDifferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensVersionDifferenceInput {
     /// Consumes the builder and constructs an Operation<[`GetLensVersionDifference`](crate::operation::GetLensVersionDifference)>
     #[allow(unused_mut)]
@@ -3717,10 +3648,6 @@ pub mod get_milestone_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMilestoneInputOperationOutputAlias = crate::operation::GetMilestone;
-#[doc(hidden)]
-pub type GetMilestoneInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMilestoneInput {
     /// Consumes the builder and constructs an Operation<[`GetMilestone`](crate::operation::GetMilestone)>
     #[allow(unused_mut)]
@@ -3875,10 +3802,6 @@ pub mod get_workload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWorkloadInputOperationOutputAlias = crate::operation::GetWorkload;
-#[doc(hidden)]
-pub type GetWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkload`](crate::operation::GetWorkload)>
     #[allow(unused_mut)]
@@ -4085,10 +4008,6 @@ pub mod import_lens_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportLensInputOperationOutputAlias = crate::operation::ImportLens;
-#[doc(hidden)]
-pub type ImportLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportLensInput {
     /// Consumes the builder and constructs an Operation<[`ImportLens`](crate::operation::ImportLens)>
     #[allow(unused_mut)]
@@ -4300,10 +4219,6 @@ pub mod list_answers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAnswersInputOperationOutputAlias = crate::operation::ListAnswers;
-#[doc(hidden)]
-pub type ListAnswersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnswersInput {
     /// Consumes the builder and constructs an Operation<[`ListAnswers`](crate::operation::ListAnswers)>
     #[allow(unused_mut)]
@@ -4539,10 +4454,6 @@ pub mod list_lenses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLensesInputOperationOutputAlias = crate::operation::ListLenses;
-#[doc(hidden)]
-pub type ListLensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensesInput {
     /// Consumes the builder and constructs an Operation<[`ListLenses`](crate::operation::ListLenses)>
     #[allow(unused_mut)]
@@ -4765,11 +4676,6 @@ pub mod list_lens_review_improvements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLensReviewImprovementsInputOperationOutputAlias =
-    crate::operation::ListLensReviewImprovements;
-#[doc(hidden)]
-pub type ListLensReviewImprovementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensReviewImprovementsInput {
     /// Consumes the builder and constructs an Operation<[`ListLensReviewImprovements`](crate::operation::ListLensReviewImprovements)>
     #[allow(unused_mut)]
@@ -4993,10 +4899,6 @@ pub mod list_lens_reviews_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLensReviewsInputOperationOutputAlias = crate::operation::ListLensReviews;
-#[doc(hidden)]
-pub type ListLensReviewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensReviewsInput {
     /// Consumes the builder and constructs an Operation<[`ListLensReviews`](crate::operation::ListLensReviews)>
     #[allow(unused_mut)]
@@ -5221,10 +5123,6 @@ pub mod list_lens_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLensSharesInputOperationOutputAlias = crate::operation::ListLensShares;
-#[doc(hidden)]
-pub type ListLensSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensSharesInput {
     /// Consumes the builder and constructs an Operation<[`ListLensShares`](crate::operation::ListLensShares)>
     #[allow(unused_mut)]
@@ -5414,10 +5312,6 @@ pub mod list_milestones_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMilestonesInputOperationOutputAlias = crate::operation::ListMilestones;
-#[doc(hidden)]
-pub type ListMilestonesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMilestonesInput {
     /// Consumes the builder and constructs an Operation<[`ListMilestones`](crate::operation::ListMilestones)>
     #[allow(unused_mut)]
@@ -5599,10 +5493,6 @@ pub mod list_notifications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNotificationsInputOperationOutputAlias = crate::operation::ListNotifications;
-#[doc(hidden)]
-pub type ListNotificationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`ListNotifications`](crate::operation::ListNotifications)>
     #[allow(unused_mut)]
@@ -5798,10 +5688,6 @@ pub mod list_share_invitations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListShareInvitationsInputOperationOutputAlias = crate::operation::ListShareInvitations;
-#[doc(hidden)]
-pub type ListShareInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListShareInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListShareInvitations`](crate::operation::ListShareInvitations)>
     #[allow(unused_mut)]
@@ -5961,10 +5847,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -6131,10 +6013,6 @@ pub mod list_workloads_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkloadsInputOperationOutputAlias = crate::operation::ListWorkloads;
-#[doc(hidden)]
-pub type ListWorkloadsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkloadsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkloads`](crate::operation::ListWorkloads)>
     #[allow(unused_mut)]
@@ -6324,10 +6202,6 @@ pub mod list_workload_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkloadSharesInputOperationOutputAlias = crate::operation::ListWorkloadShares;
-#[doc(hidden)]
-pub type ListWorkloadSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkloadSharesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkloadShares`](crate::operation::ListWorkloadShares)>
     #[allow(unused_mut)]
@@ -6526,10 +6400,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6704,10 +6574,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6981,10 +6847,6 @@ pub mod update_answer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAnswerInputOperationOutputAlias = crate::operation::UpdateAnswer;
-#[doc(hidden)]
-pub type UpdateAnswerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnswerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnswer`](crate::operation::UpdateAnswer)>
     #[allow(unused_mut)]
@@ -7179,10 +7041,6 @@ pub mod update_global_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGlobalSettingsInputOperationOutputAlias = crate::operation::UpdateGlobalSettings;
-#[doc(hidden)]
-pub type UpdateGlobalSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalSettings`](crate::operation::UpdateGlobalSettings)>
     #[allow(unused_mut)]
@@ -7382,10 +7240,6 @@ pub mod update_lens_review_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLensReviewInputOperationOutputAlias = crate::operation::UpdateLensReview;
-#[doc(hidden)]
-pub type UpdateLensReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLensReviewInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLensReview`](crate::operation::UpdateLensReview)>
     #[allow(unused_mut)]
@@ -7580,10 +7434,6 @@ pub mod update_share_invitation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateShareInvitationInputOperationOutputAlias = crate::operation::UpdateShareInvitation;
-#[doc(hidden)]
-pub type UpdateShareInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateShareInvitation`](crate::operation::UpdateShareInvitation)>
     #[allow(unused_mut)]
@@ -8034,10 +7884,6 @@ pub mod update_workload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkloadInputOperationOutputAlias = crate::operation::UpdateWorkload;
-#[doc(hidden)]
-pub type UpdateWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkload`](crate::operation::UpdateWorkload)>
     #[allow(unused_mut)]
@@ -8218,10 +8064,6 @@ pub mod update_workload_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkloadShareInputOperationOutputAlias = crate::operation::UpdateWorkloadShare;
-#[doc(hidden)]
-pub type UpdateWorkloadShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkloadShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkloadShare`](crate::operation::UpdateWorkloadShare)>
     #[allow(unused_mut)]
@@ -8450,10 +8292,6 @@ pub mod upgrade_lens_review_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpgradeLensReviewInputOperationOutputAlias = crate::operation::UpgradeLensReview;
-#[doc(hidden)]
-pub type UpgradeLensReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpgradeLensReviewInput {
     /// Consumes the builder and constructs an Operation<[`UpgradeLensReview`](crate::operation::UpgradeLensReview)>
     #[allow(unused_mut)]

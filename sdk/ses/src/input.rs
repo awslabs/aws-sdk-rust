@@ -59,10 +59,6 @@ pub mod clone_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CloneReceiptRuleSetInputOperationOutputAlias = crate::operation::CloneReceiptRuleSet;
-#[doc(hidden)]
-pub type CloneReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloneReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`CloneReceiptRuleSet`](crate::operation::CloneReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -206,10 +202,6 @@ pub mod create_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetInputOperationOutputAlias = crate::operation::CreateConfigurationSet;
-#[doc(hidden)]
-pub type CreateConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
     #[allow(unused_mut)]
@@ -370,12 +362,6 @@ pub mod create_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::CreateConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type CreateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetEventDestination`](crate::operation::CreateConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -535,12 +521,6 @@ pub mod create_configuration_set_tracking_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetTrackingOptionsInputOperationOutputAlias =
-    crate::operation::CreateConfigurationSetTrackingOptions;
-#[doc(hidden)]
-pub type CreateConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetTrackingOptions`](crate::operation::CreateConfigurationSetTrackingOptions)>
     #[allow(unused_mut)]
@@ -758,12 +738,6 @@ pub mod create_custom_verification_email_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomVerificationEmailTemplateInputOperationOutputAlias =
-    crate::operation::CreateCustomVerificationEmailTemplate;
-#[doc(hidden)]
-pub type CreateCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomVerificationEmailTemplate`](crate::operation::CreateCustomVerificationEmailTemplate)>
     #[allow(unused_mut)]
@@ -904,10 +878,6 @@ pub mod create_receipt_filter_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateReceiptFilterInputOperationOutputAlias = crate::operation::CreateReceiptFilter;
-#[doc(hidden)]
-pub type CreateReceiptFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReceiptFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateReceiptFilter`](crate::operation::CreateReceiptFilter)>
     #[allow(unused_mut)]
@@ -1073,10 +1043,6 @@ pub mod create_receipt_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateReceiptRuleInputOperationOutputAlias = crate::operation::CreateReceiptRule;
-#[doc(hidden)]
-pub type CreateReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateReceiptRule`](crate::operation::CreateReceiptRule)>
     #[allow(unused_mut)]
@@ -1228,10 +1194,6 @@ pub mod create_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateReceiptRuleSetInputOperationOutputAlias = crate::operation::CreateReceiptRuleSet;
-#[doc(hidden)]
-pub type CreateReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateReceiptRuleSet`](crate::operation::CreateReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -1372,10 +1334,6 @@ pub mod create_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTemplateInputOperationOutputAlias = crate::operation::CreateTemplate;
-#[doc(hidden)]
-pub type CreateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateTemplate`](crate::operation::CreateTemplate)>
     #[allow(unused_mut)]
@@ -1517,10 +1475,6 @@ pub mod delete_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationOutputAlias = crate::operation::DeleteConfigurationSet;
-#[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
     #[allow(unused_mut)]
@@ -1681,12 +1635,6 @@ pub mod delete_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::DeleteConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type DeleteConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetEventDestination`](crate::operation::DeleteConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -1829,12 +1777,6 @@ pub mod delete_configuration_set_tracking_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetTrackingOptionsInputOperationOutputAlias =
-    crate::operation::DeleteConfigurationSetTrackingOptions;
-#[doc(hidden)]
-pub type DeleteConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetTrackingOptions`](crate::operation::DeleteConfigurationSetTrackingOptions)>
     #[allow(unused_mut)]
@@ -1977,12 +1919,6 @@ pub mod delete_custom_verification_email_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomVerificationEmailTemplateInputOperationOutputAlias =
-    crate::operation::DeleteCustomVerificationEmailTemplate;
-#[doc(hidden)]
-pub type DeleteCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomVerificationEmailTemplate`](crate::operation::DeleteCustomVerificationEmailTemplate)>
     #[allow(unused_mut)]
@@ -2120,10 +2056,6 @@ pub mod delete_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIdentityInputOperationOutputAlias = crate::operation::DeleteIdentity;
-#[doc(hidden)]
-pub type DeleteIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentity`](crate::operation::DeleteIdentity)>
     #[allow(unused_mut)]
@@ -2276,10 +2208,6 @@ pub mod delete_identity_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIdentityPolicyInputOperationOutputAlias = crate::operation::DeleteIdentityPolicy;
-#[doc(hidden)]
-pub type DeleteIdentityPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityPolicy`](crate::operation::DeleteIdentityPolicy)>
     #[allow(unused_mut)]
@@ -2420,10 +2348,6 @@ pub mod delete_receipt_filter_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReceiptFilterInputOperationOutputAlias = crate::operation::DeleteReceiptFilter;
-#[doc(hidden)]
-pub type DeleteReceiptFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReceiptFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReceiptFilter`](crate::operation::DeleteReceiptFilter)>
     #[allow(unused_mut)]
@@ -2577,10 +2501,6 @@ pub mod delete_receipt_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReceiptRuleInputOperationOutputAlias = crate::operation::DeleteReceiptRule;
-#[doc(hidden)]
-pub type DeleteReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReceiptRule`](crate::operation::DeleteReceiptRule)>
     #[allow(unused_mut)]
@@ -2722,10 +2642,6 @@ pub mod delete_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReceiptRuleSetInputOperationOutputAlias = crate::operation::DeleteReceiptRuleSet;
-#[doc(hidden)]
-pub type DeleteReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReceiptRuleSet`](crate::operation::DeleteReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -2869,10 +2785,6 @@ pub mod delete_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTemplateInputOperationOutputAlias = crate::operation::DeleteTemplate;
-#[doc(hidden)]
-pub type DeleteTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTemplate`](crate::operation::DeleteTemplate)>
     #[allow(unused_mut)]
@@ -3016,11 +2928,6 @@ pub mod delete_verified_email_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVerifiedEmailAddressInputOperationOutputAlias =
-    crate::operation::DeleteVerifiedEmailAddress;
-#[doc(hidden)]
-pub type DeleteVerifiedEmailAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVerifiedEmailAddressInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVerifiedEmailAddress`](crate::operation::DeleteVerifiedEmailAddress)>
     #[allow(unused_mut)]
@@ -3146,12 +3053,6 @@ pub mod describe_active_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeActiveReceiptRuleSetInputOperationOutputAlias =
-    crate::operation::DescribeActiveReceiptRuleSet;
-#[doc(hidden)]
-pub type DescribeActiveReceiptRuleSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActiveReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActiveReceiptRuleSet`](crate::operation::DescribeActiveReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -3312,11 +3213,6 @@ pub mod describe_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationSetInputOperationOutputAlias =
-    crate::operation::DescribeConfigurationSet;
-#[doc(hidden)]
-pub type DescribeConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationSet`](crate::operation::DescribeConfigurationSet)>
     #[allow(unused_mut)]
@@ -3472,10 +3368,6 @@ pub mod describe_receipt_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReceiptRuleInputOperationOutputAlias = crate::operation::DescribeReceiptRule;
-#[doc(hidden)]
-pub type DescribeReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReceiptRule`](crate::operation::DescribeReceiptRule)>
     #[allow(unused_mut)]
@@ -3617,10 +3509,6 @@ pub mod describe_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReceiptRuleSetInputOperationOutputAlias = crate::operation::DescribeReceiptRuleSet;
-#[doc(hidden)]
-pub type DescribeReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReceiptRuleSet`](crate::operation::DescribeReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -3749,11 +3637,6 @@ pub mod get_account_sending_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountSendingEnabledInputOperationOutputAlias =
-    crate::operation::GetAccountSendingEnabled;
-#[doc(hidden)]
-pub type GetAccountSendingEnabledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountSendingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountSendingEnabled`](crate::operation::GetAccountSendingEnabled)>
     #[allow(unused_mut)]
@@ -3892,12 +3775,6 @@ pub mod get_custom_verification_email_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCustomVerificationEmailTemplateInputOperationOutputAlias =
-    crate::operation::GetCustomVerificationEmailTemplate;
-#[doc(hidden)]
-pub type GetCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetCustomVerificationEmailTemplate`](crate::operation::GetCustomVerificationEmailTemplate)>
     #[allow(unused_mut)]
@@ -4046,11 +3923,6 @@ pub mod get_identity_dkim_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityDkimAttributesInputOperationOutputAlias =
-    crate::operation::GetIdentityDkimAttributes;
-#[doc(hidden)]
-pub type GetIdentityDkimAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityDkimAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityDkimAttributes`](crate::operation::GetIdentityDkimAttributes)>
     #[allow(unused_mut)]
@@ -4202,12 +4074,6 @@ pub mod get_identity_mail_from_domain_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityMailFromDomainAttributesInputOperationOutputAlias =
-    crate::operation::GetIdentityMailFromDomainAttributes;
-#[doc(hidden)]
-pub type GetIdentityMailFromDomainAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityMailFromDomainAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityMailFromDomainAttributes`](crate::operation::GetIdentityMailFromDomainAttributes)>
     #[allow(unused_mut)]
@@ -4356,12 +4222,6 @@ pub mod get_identity_notification_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityNotificationAttributesInputOperationOutputAlias =
-    crate::operation::GetIdentityNotificationAttributes;
-#[doc(hidden)]
-pub type GetIdentityNotificationAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityNotificationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityNotificationAttributes`](crate::operation::GetIdentityNotificationAttributes)>
     #[allow(unused_mut)]
@@ -4522,10 +4382,6 @@ pub mod get_identity_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityPoliciesInputOperationOutputAlias = crate::operation::GetIdentityPolicies;
-#[doc(hidden)]
-pub type GetIdentityPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPolicies`](crate::operation::GetIdentityPolicies)>
     #[allow(unused_mut)]
@@ -4675,12 +4531,6 @@ pub mod get_identity_verification_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityVerificationAttributesInputOperationOutputAlias =
-    crate::operation::GetIdentityVerificationAttributes;
-#[doc(hidden)]
-pub type GetIdentityVerificationAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityVerificationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityVerificationAttributes`](crate::operation::GetIdentityVerificationAttributes)>
     #[allow(unused_mut)]
@@ -4804,10 +4654,6 @@ pub mod get_send_quota_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSendQuotaInputOperationOutputAlias = crate::operation::GetSendQuota;
-#[doc(hidden)]
-pub type GetSendQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSendQuotaInput {
     /// Consumes the builder and constructs an Operation<[`GetSendQuota`](crate::operation::GetSendQuota)>
     #[allow(unused_mut)]
@@ -4925,10 +4771,6 @@ pub mod get_send_statistics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSendStatisticsInputOperationOutputAlias = crate::operation::GetSendStatistics;
-#[doc(hidden)]
-pub type GetSendStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSendStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetSendStatistics`](crate::operation::GetSendStatistics)>
     #[allow(unused_mut)]
@@ -5063,10 +4905,6 @@ pub mod get_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTemplateInputOperationOutputAlias = crate::operation::GetTemplate;
-#[doc(hidden)]
-pub type GetTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplate`](crate::operation::GetTemplate)>
     #[allow(unused_mut)]
@@ -5217,10 +5055,6 @@ pub mod list_configuration_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConfigurationSetsInputOperationOutputAlias = crate::operation::ListConfigurationSets;
-#[doc(hidden)]
-pub type ListConfigurationSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationSets`](crate::operation::ListConfigurationSets)>
     #[allow(unused_mut)]
@@ -5375,12 +5209,6 @@ pub mod list_custom_verification_email_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomVerificationEmailTemplatesInputOperationOutputAlias =
-    crate::operation::ListCustomVerificationEmailTemplates;
-#[doc(hidden)]
-pub type ListCustomVerificationEmailTemplatesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomVerificationEmailTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomVerificationEmailTemplates`](crate::operation::ListCustomVerificationEmailTemplates)>
     #[allow(unused_mut)]
@@ -5545,10 +5373,6 @@ pub mod list_identities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentitiesInputOperationOutputAlias = crate::operation::ListIdentities;
-#[doc(hidden)]
-pub type ListIdentitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentities`](crate::operation::ListIdentities)>
     #[allow(unused_mut)]
@@ -5689,10 +5513,6 @@ pub mod list_identity_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentityPoliciesInputOperationOutputAlias = crate::operation::ListIdentityPolicies;
-#[doc(hidden)]
-pub type ListIdentityPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPolicies`](crate::operation::ListIdentityPolicies)>
     #[allow(unused_mut)]
@@ -5819,10 +5639,6 @@ pub mod list_receipt_filters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReceiptFiltersInputOperationOutputAlias = crate::operation::ListReceiptFilters;
-#[doc(hidden)]
-pub type ListReceiptFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceiptFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListReceiptFilters`](crate::operation::ListReceiptFilters)>
     #[allow(unused_mut)]
@@ -5954,10 +5770,6 @@ pub mod list_receipt_rule_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReceiptRuleSetsInputOperationOutputAlias = crate::operation::ListReceiptRuleSets;
-#[doc(hidden)]
-pub type ListReceiptRuleSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceiptRuleSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListReceiptRuleSets`](crate::operation::ListReceiptRuleSets)>
     #[allow(unused_mut)]
@@ -6110,10 +5922,6 @@ pub mod list_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTemplatesInputOperationOutputAlias = crate::operation::ListTemplates;
-#[doc(hidden)]
-pub type ListTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplates`](crate::operation::ListTemplates)>
     #[allow(unused_mut)]
@@ -6240,11 +6048,6 @@ pub mod list_verified_email_addresses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVerifiedEmailAddressesInputOperationOutputAlias =
-    crate::operation::ListVerifiedEmailAddresses;
-#[doc(hidden)]
-pub type ListVerifiedEmailAddressesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVerifiedEmailAddressesInput {
     /// Consumes the builder and constructs an Operation<[`ListVerifiedEmailAddresses`](crate::operation::ListVerifiedEmailAddresses)>
     #[allow(unused_mut)]
@@ -6395,12 +6198,6 @@ pub mod put_configuration_set_delivery_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationSetDeliveryOptionsInputOperationOutputAlias =
-    crate::operation::PutConfigurationSetDeliveryOptions;
-#[doc(hidden)]
-pub type PutConfigurationSetDeliveryOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationSetDeliveryOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetDeliveryOptions`](crate::operation::PutConfigurationSetDeliveryOptions)>
     #[allow(unused_mut)]
@@ -6568,10 +6365,6 @@ pub mod put_identity_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutIdentityPolicyInputOperationOutputAlias = crate::operation::PutIdentityPolicy;
-#[doc(hidden)]
-pub type PutIdentityPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutIdentityPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutIdentityPolicy`](crate::operation::PutIdentityPolicy)>
     #[allow(unused_mut)]
@@ -6734,10 +6527,6 @@ pub mod reorder_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ReorderReceiptRuleSetInputOperationOutputAlias = crate::operation::ReorderReceiptRuleSet;
-#[doc(hidden)]
-pub type ReorderReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReorderReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`ReorderReceiptRuleSet`](crate::operation::ReorderReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -6962,10 +6751,6 @@ pub mod send_bounce_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendBounceInputOperationOutputAlias = crate::operation::SendBounce;
-#[doc(hidden)]
-pub type SendBounceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendBounceInput {
     /// Consumes the builder and constructs an Operation<[`SendBounce`](crate::operation::SendBounce)>
     #[allow(unused_mut)]
@@ -7277,10 +7062,6 @@ pub mod send_bulk_templated_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendBulkTemplatedEmailInputOperationOutputAlias = crate::operation::SendBulkTemplatedEmail;
-#[doc(hidden)]
-pub type SendBulkTemplatedEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendBulkTemplatedEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendBulkTemplatedEmail`](crate::operation::SendBulkTemplatedEmail)>
     #[allow(unused_mut)]
@@ -7456,11 +7237,6 @@ pub mod send_custom_verification_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendCustomVerificationEmailInputOperationOutputAlias =
-    crate::operation::SendCustomVerificationEmail;
-#[doc(hidden)]
-pub type SendCustomVerificationEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendCustomVerificationEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendCustomVerificationEmail`](crate::operation::SendCustomVerificationEmail)>
     #[allow(unused_mut)]
@@ -7734,10 +7510,6 @@ pub mod send_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendEmailInputOperationOutputAlias = crate::operation::SendEmail;
-#[doc(hidden)]
-pub type SendEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendEmail`](crate::operation::SendEmail)>
     #[allow(unused_mut)]
@@ -8035,10 +7807,6 @@ pub mod send_raw_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendRawEmailInputOperationOutputAlias = crate::operation::SendRawEmail;
-#[doc(hidden)]
-pub type SendRawEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendRawEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendRawEmail`](crate::operation::SendRawEmail)>
     #[allow(unused_mut)]
@@ -8341,10 +8109,6 @@ pub mod send_templated_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendTemplatedEmailInputOperationOutputAlias = crate::operation::SendTemplatedEmail;
-#[doc(hidden)]
-pub type SendTemplatedEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTemplatedEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendTemplatedEmail`](crate::operation::SendTemplatedEmail)>
     #[allow(unused_mut)]
@@ -8488,11 +8252,6 @@ pub mod set_active_receipt_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetActiveReceiptRuleSetInputOperationOutputAlias =
-    crate::operation::SetActiveReceiptRuleSet;
-#[doc(hidden)]
-pub type SetActiveReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetActiveReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`SetActiveReceiptRuleSet`](crate::operation::SetActiveReceiptRuleSet)>
     #[allow(unused_mut)]
@@ -8645,10 +8404,6 @@ pub mod set_identity_dkim_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityDkimEnabledInputOperationOutputAlias = crate::operation::SetIdentityDkimEnabled;
-#[doc(hidden)]
-pub type SetIdentityDkimEnabledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityDkimEnabledInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityDkimEnabled`](crate::operation::SetIdentityDkimEnabled)>
     #[allow(unused_mut)]
@@ -8803,12 +8558,6 @@ pub mod set_identity_feedback_forwarding_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityFeedbackForwardingEnabledInputOperationOutputAlias =
-    crate::operation::SetIdentityFeedbackForwardingEnabled;
-#[doc(hidden)]
-pub type SetIdentityFeedbackForwardingEnabledInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityFeedbackForwardingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityFeedbackForwardingEnabled`](crate::operation::SetIdentityFeedbackForwardingEnabled)>
     #[allow(unused_mut)]
@@ -8979,12 +8728,6 @@ pub mod set_identity_headers_in_notifications_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityHeadersInNotificationsEnabledInputOperationOutputAlias =
-    crate::operation::SetIdentityHeadersInNotificationsEnabled;
-#[doc(hidden)]
-pub type SetIdentityHeadersInNotificationsEnabledInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityHeadersInNotificationsEnabledInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityHeadersInNotificationsEnabled`](crate::operation::SetIdentityHeadersInNotificationsEnabled)>
     #[allow(unused_mut)]
@@ -9156,11 +8899,6 @@ pub mod set_identity_mail_from_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityMailFromDomainInputOperationOutputAlias =
-    crate::operation::SetIdentityMailFromDomain;
-#[doc(hidden)]
-pub type SetIdentityMailFromDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityMailFromDomainInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityMailFromDomain`](crate::operation::SetIdentityMailFromDomain)>
     #[allow(unused_mut)]
@@ -9333,12 +9071,6 @@ pub mod set_identity_notification_topic_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityNotificationTopicInputOperationOutputAlias =
-    crate::operation::SetIdentityNotificationTopic;
-#[doc(hidden)]
-pub type SetIdentityNotificationTopicInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityNotificationTopicInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityNotificationTopic`](crate::operation::SetIdentityNotificationTopic)>
     #[allow(unused_mut)]
@@ -9503,10 +9235,6 @@ pub mod set_receipt_rule_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetReceiptRulePositionInputOperationOutputAlias = crate::operation::SetReceiptRulePosition;
-#[doc(hidden)]
-pub type SetReceiptRulePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetReceiptRulePositionInput {
     /// Consumes the builder and constructs an Operation<[`SetReceiptRulePosition`](crate::operation::SetReceiptRulePosition)>
     #[allow(unused_mut)]
@@ -9665,10 +9393,6 @@ pub mod test_render_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TestRenderTemplateInputOperationOutputAlias = crate::operation::TestRenderTemplate;
-#[doc(hidden)]
-pub type TestRenderTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestRenderTemplateInput {
     /// Consumes the builder and constructs an Operation<[`TestRenderTemplate`](crate::operation::TestRenderTemplate)>
     #[allow(unused_mut)]
@@ -9809,11 +9533,6 @@ pub mod update_account_sending_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAccountSendingEnabledInputOperationOutputAlias =
-    crate::operation::UpdateAccountSendingEnabled;
-#[doc(hidden)]
-pub type UpdateAccountSendingEnabledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccountSendingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccountSendingEnabled`](crate::operation::UpdateAccountSendingEnabled)>
     #[allow(unused_mut)]
@@ -9971,12 +9690,6 @@ pub mod update_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::UpdateConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type UpdateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetEventDestination`](crate::operation::UpdateConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -10133,12 +9846,6 @@ pub mod update_configuration_set_reputation_metrics_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationSetReputationMetricsEnabledInputOperationOutputAlias =
-    crate::operation::UpdateConfigurationSetReputationMetricsEnabled;
-#[doc(hidden)]
-pub type UpdateConfigurationSetReputationMetricsEnabledInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetReputationMetricsEnabledInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetReputationMetricsEnabled`](crate::operation::UpdateConfigurationSetReputationMetricsEnabled)>
     #[allow(unused_mut)]
@@ -10294,12 +10001,6 @@ pub mod update_configuration_set_sending_enabled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationSetSendingEnabledInputOperationOutputAlias =
-    crate::operation::UpdateConfigurationSetSendingEnabled;
-#[doc(hidden)]
-pub type UpdateConfigurationSetSendingEnabledInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetSendingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetSendingEnabled`](crate::operation::UpdateConfigurationSetSendingEnabled)>
     #[allow(unused_mut)]
@@ -10459,12 +10160,6 @@ pub mod update_configuration_set_tracking_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationSetTrackingOptionsInputOperationOutputAlias =
-    crate::operation::UpdateConfigurationSetTrackingOptions;
-#[doc(hidden)]
-pub type UpdateConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetTrackingOptions`](crate::operation::UpdateConfigurationSetTrackingOptions)>
     #[allow(unused_mut)]
@@ -10682,12 +10377,6 @@ pub mod update_custom_verification_email_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCustomVerificationEmailTemplateInputOperationOutputAlias =
-    crate::operation::UpdateCustomVerificationEmailTemplate;
-#[doc(hidden)]
-pub type UpdateCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomVerificationEmailTemplate`](crate::operation::UpdateCustomVerificationEmailTemplate)>
     #[allow(unused_mut)]
@@ -10840,10 +10529,6 @@ pub mod update_receipt_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateReceiptRuleInputOperationOutputAlias = crate::operation::UpdateReceiptRule;
-#[doc(hidden)]
-pub type UpdateReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReceiptRule`](crate::operation::UpdateReceiptRule)>
     #[allow(unused_mut)]
@@ -10982,10 +10667,6 @@ pub mod update_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTemplateInputOperationOutputAlias = crate::operation::UpdateTemplate;
-#[doc(hidden)]
-pub type UpdateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTemplate`](crate::operation::UpdateTemplate)>
     #[allow(unused_mut)]
@@ -11124,10 +10805,6 @@ pub mod verify_domain_dkim_input {
         }
     }
 }
-#[doc(hidden)]
-pub type VerifyDomainDkimInputOperationOutputAlias = crate::operation::VerifyDomainDkim;
-#[doc(hidden)]
-pub type VerifyDomainDkimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyDomainDkimInput {
     /// Consumes the builder and constructs an Operation<[`VerifyDomainDkim`](crate::operation::VerifyDomainDkim)>
     #[allow(unused_mut)]
@@ -11266,10 +10943,6 @@ pub mod verify_domain_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type VerifyDomainIdentityInputOperationOutputAlias = crate::operation::VerifyDomainIdentity;
-#[doc(hidden)]
-pub type VerifyDomainIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyDomainIdentityInput {
     /// Consumes the builder and constructs an Operation<[`VerifyDomainIdentity`](crate::operation::VerifyDomainIdentity)>
     #[allow(unused_mut)]
@@ -11413,10 +11086,6 @@ pub mod verify_email_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type VerifyEmailAddressInputOperationOutputAlias = crate::operation::VerifyEmailAddress;
-#[doc(hidden)]
-pub type VerifyEmailAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyEmailAddressInput {
     /// Consumes the builder and constructs an Operation<[`VerifyEmailAddress`](crate::operation::VerifyEmailAddress)>
     #[allow(unused_mut)]
@@ -11558,10 +11227,6 @@ pub mod verify_email_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type VerifyEmailIdentityInputOperationOutputAlias = crate::operation::VerifyEmailIdentity;
-#[doc(hidden)]
-pub type VerifyEmailIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`VerifyEmailIdentity`](crate::operation::VerifyEmailIdentity)>
     #[allow(unused_mut)]

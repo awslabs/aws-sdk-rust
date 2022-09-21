@@ -34,10 +34,6 @@ pub mod accept_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptAttachmentInputOperationOutputAlias = crate::operation::AcceptAttachment;
-#[doc(hidden)]
-pub type AcceptAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`AcceptAttachment`](crate::operation::AcceptAttachment)>
     #[allow(unused_mut)]
@@ -223,10 +219,6 @@ pub mod associate_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateConnectPeerInputOperationOutputAlias = crate::operation::AssociateConnectPeer;
-#[doc(hidden)]
-pub type AssociateConnectPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConnectPeer`](crate::operation::AssociateConnectPeer)>
     #[allow(unused_mut)]
@@ -430,11 +422,6 @@ pub mod associate_customer_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateCustomerGatewayInputOperationOutputAlias =
-    crate::operation::AssociateCustomerGateway;
-#[doc(hidden)]
-pub type AssociateCustomerGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateCustomerGatewayInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCustomerGateway`](crate::operation::AssociateCustomerGateway)>
     #[allow(unused_mut)]
@@ -621,10 +608,6 @@ pub mod associate_link_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateLinkInputOperationOutputAlias = crate::operation::AssociateLink;
-#[doc(hidden)]
-pub type AssociateLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateLinkInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLink`](crate::operation::AssociateLink)>
     #[allow(unused_mut)]
@@ -829,12 +812,6 @@ pub mod associate_transit_gateway_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateTransitGatewayConnectPeerInputOperationOutputAlias =
-    crate::operation::AssociateTransitGatewayConnectPeer;
-#[doc(hidden)]
-pub type AssociateTransitGatewayConnectPeerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTransitGatewayConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTransitGatewayConnectPeer`](crate::operation::AssociateTransitGatewayConnectPeer)>
     #[allow(unused_mut)]
@@ -1074,11 +1051,6 @@ pub mod create_connect_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectAttachmentInputOperationOutputAlias =
-    crate::operation::CreateConnectAttachment;
-#[doc(hidden)]
-pub type CreateConnectAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectAttachment`](crate::operation::CreateConnectAttachment)>
     #[allow(unused_mut)]
@@ -1314,10 +1286,6 @@ pub mod create_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectionInputOperationOutputAlias = crate::operation::CreateConnection;
-#[doc(hidden)]
-pub type CreateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnection`](crate::operation::CreateConnection)>
     #[allow(unused_mut)]
@@ -1574,10 +1542,6 @@ pub mod create_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectPeerInputOperationOutputAlias = crate::operation::CreateConnectPeer;
-#[doc(hidden)]
-pub type CreateConnectPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectPeer`](crate::operation::CreateConnectPeer)>
     #[allow(unused_mut)]
@@ -1782,10 +1746,6 @@ pub mod create_core_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCoreNetworkInputOperationOutputAlias = crate::operation::CreateCoreNetwork;
-#[doc(hidden)]
-pub type CreateCoreNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCoreNetworkInput {
     /// Consumes the builder and constructs an Operation<[`CreateCoreNetwork`](crate::operation::CreateCoreNetwork)>
     #[allow(unused_mut)]
@@ -2061,10 +2021,6 @@ pub mod create_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeviceInputOperationOutputAlias = crate::operation::CreateDevice;
-#[doc(hidden)]
-pub type CreateDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeviceInput {
     /// Consumes the builder and constructs an Operation<[`CreateDevice`](crate::operation::CreateDevice)>
     #[allow(unused_mut)]
@@ -2245,10 +2201,6 @@ pub mod create_global_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGlobalNetworkInputOperationOutputAlias = crate::operation::CreateGlobalNetwork;
-#[doc(hidden)]
-pub type CreateGlobalNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGlobalNetworkInput {
     /// Consumes the builder and constructs an Operation<[`CreateGlobalNetwork`](crate::operation::CreateGlobalNetwork)>
     #[allow(unused_mut)]
@@ -2479,10 +2431,6 @@ pub mod create_link_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLinkInputOperationOutputAlias = crate::operation::CreateLink;
-#[doc(hidden)]
-pub type CreateLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLinkInput {
     /// Consumes the builder and constructs an Operation<[`CreateLink`](crate::operation::CreateLink)>
     #[allow(unused_mut)]
@@ -2699,10 +2647,6 @@ pub mod create_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSiteInputOperationOutputAlias = crate::operation::CreateSite;
-#[doc(hidden)]
-pub type CreateSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSiteInput {
     /// Consumes the builder and constructs an Operation<[`CreateSite`](crate::operation::CreateSite)>
     #[allow(unused_mut)]
@@ -2913,12 +2857,6 @@ pub mod create_site_to_site_vpn_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSiteToSiteVpnAttachmentInputOperationOutputAlias =
-    crate::operation::CreateSiteToSiteVpnAttachment;
-#[doc(hidden)]
-pub type CreateSiteToSiteVpnAttachmentInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSiteToSiteVpnAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateSiteToSiteVpnAttachment`](crate::operation::CreateSiteToSiteVpnAttachment)>
     #[allow(unused_mut)]
@@ -3112,11 +3050,6 @@ pub mod create_transit_gateway_peering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTransitGatewayPeeringInputOperationOutputAlias =
-    crate::operation::CreateTransitGatewayPeering;
-#[doc(hidden)]
-pub type CreateTransitGatewayPeeringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTransitGatewayPeeringInput {
     /// Consumes the builder and constructs an Operation<[`CreateTransitGatewayPeering`](crate::operation::CreateTransitGatewayPeering)>
     #[allow(unused_mut)]
@@ -3312,12 +3245,6 @@ pub mod create_transit_gateway_route_table_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTransitGatewayRouteTableAttachmentInputOperationOutputAlias =
-    crate::operation::CreateTransitGatewayRouteTableAttachment;
-#[doc(hidden)]
-pub type CreateTransitGatewayRouteTableAttachmentInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTransitGatewayRouteTableAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateTransitGatewayRouteTableAttachment`](crate::operation::CreateTransitGatewayRouteTableAttachment)>
     #[allow(unused_mut)]
@@ -3540,10 +3467,6 @@ pub mod create_vpc_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVpcAttachmentInputOperationOutputAlias = crate::operation::CreateVpcAttachment;
-#[doc(hidden)]
-pub type CreateVpcAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVpcAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateVpcAttachment`](crate::operation::CreateVpcAttachment)>
     #[allow(unused_mut)]
@@ -3688,10 +3611,6 @@ pub mod delete_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAttachmentInputOperationOutputAlias = crate::operation::DeleteAttachment;
-#[doc(hidden)]
-pub type DeleteAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttachment`](crate::operation::DeleteAttachment)>
     #[allow(unused_mut)]
@@ -3853,10 +3772,6 @@ pub mod delete_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
-#[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(unused_mut)]
@@ -4018,10 +3933,6 @@ pub mod delete_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectPeerInputOperationOutputAlias = crate::operation::DeleteConnectPeer;
-#[doc(hidden)]
-pub type DeleteConnectPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectPeer`](crate::operation::DeleteConnectPeer)>
     #[allow(unused_mut)]
@@ -4168,10 +4079,6 @@ pub mod delete_core_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCoreNetworkInputOperationOutputAlias = crate::operation::DeleteCoreNetwork;
-#[doc(hidden)]
-pub type DeleteCoreNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCoreNetworkInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCoreNetwork`](crate::operation::DeleteCoreNetwork)>
     #[allow(unused_mut)]
@@ -4332,12 +4239,6 @@ pub mod delete_core_network_policy_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCoreNetworkPolicyVersionInputOperationOutputAlias =
-    crate::operation::DeleteCoreNetworkPolicyVersion;
-#[doc(hidden)]
-pub type DeleteCoreNetworkPolicyVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCoreNetworkPolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCoreNetworkPolicyVersion`](crate::operation::DeleteCoreNetworkPolicyVersion)>
     #[allow(unused_mut)]
@@ -4513,10 +4414,6 @@ pub mod delete_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeviceInputOperationOutputAlias = crate::operation::DeleteDevice;
-#[doc(hidden)]
-pub type DeleteDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDevice`](crate::operation::DeleteDevice)>
     #[allow(unused_mut)]
@@ -4678,10 +4575,6 @@ pub mod delete_global_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGlobalNetworkInputOperationOutputAlias = crate::operation::DeleteGlobalNetwork;
-#[doc(hidden)]
-pub type DeleteGlobalNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGlobalNetworkInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGlobalNetwork`](crate::operation::DeleteGlobalNetwork)>
     #[allow(unused_mut)]
@@ -4839,10 +4732,6 @@ pub mod delete_link_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLinkInputOperationOutputAlias = crate::operation::DeleteLink;
-#[doc(hidden)]
-pub type DeleteLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLinkInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLink`](crate::operation::DeleteLink)>
     #[allow(unused_mut)]
@@ -5001,10 +4890,6 @@ pub mod delete_peering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePeeringInputOperationOutputAlias = crate::operation::DeletePeering;
-#[doc(hidden)]
-pub type DeletePeeringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePeeringInput {
     /// Consumes the builder and constructs an Operation<[`DeletePeering`](crate::operation::DeletePeering)>
     #[allow(unused_mut)]
@@ -5144,10 +5029,6 @@ pub mod delete_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(unused_mut)]
@@ -5305,10 +5186,6 @@ pub mod delete_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSiteInputOperationOutputAlias = crate::operation::DeleteSite;
-#[doc(hidden)]
-pub type DeleteSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSiteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSite`](crate::operation::DeleteSite)>
     #[allow(unused_mut)]
@@ -5487,11 +5364,6 @@ pub mod deregister_transit_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterTransitGatewayInputOperationOutputAlias =
-    crate::operation::DeregisterTransitGateway;
-#[doc(hidden)]
-pub type DeregisterTransitGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterTransitGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterTransitGateway`](crate::operation::DeregisterTransitGateway)>
     #[allow(unused_mut)]
@@ -5677,10 +5549,6 @@ pub mod describe_global_networks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGlobalNetworksInputOperationOutputAlias = crate::operation::DescribeGlobalNetworks;
-#[doc(hidden)]
-pub type DescribeGlobalNetworksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalNetworksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalNetworks`](crate::operation::DescribeGlobalNetworks)>
     #[allow(unused_mut)]
@@ -5850,11 +5718,6 @@ pub mod disassociate_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateConnectPeerInputOperationOutputAlias =
-    crate::operation::DisassociateConnectPeer;
-#[doc(hidden)]
-pub type DisassociateConnectPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnectPeer`](crate::operation::DisassociateConnectPeer)>
     #[allow(unused_mut)]
@@ -6033,11 +5896,6 @@ pub mod disassociate_customer_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateCustomerGatewayInputOperationOutputAlias =
-    crate::operation::DisassociateCustomerGateway;
-#[doc(hidden)]
-pub type DisassociateCustomerGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateCustomerGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCustomerGateway`](crate::operation::DisassociateCustomerGateway)>
     #[allow(unused_mut)]
@@ -6217,10 +6075,6 @@ pub mod disassociate_link_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateLinkInputOperationOutputAlias = crate::operation::DisassociateLink;
-#[doc(hidden)]
-pub type DisassociateLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateLinkInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLink`](crate::operation::DisassociateLink)>
     #[allow(unused_mut)]
@@ -6401,12 +6255,6 @@ pub mod disassociate_transit_gateway_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateTransitGatewayConnectPeerInputOperationOutputAlias =
-    crate::operation::DisassociateTransitGatewayConnectPeer;
-#[doc(hidden)]
-pub type DisassociateTransitGatewayConnectPeerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTransitGatewayConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTransitGatewayConnectPeer`](crate::operation::DisassociateTransitGatewayConnectPeer)>
     #[allow(unused_mut)]
@@ -6577,11 +6425,6 @@ pub mod execute_core_network_change_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteCoreNetworkChangeSetInputOperationOutputAlias =
-    crate::operation::ExecuteCoreNetworkChangeSet;
-#[doc(hidden)]
-pub type ExecuteCoreNetworkChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteCoreNetworkChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteCoreNetworkChangeSet`](crate::operation::ExecuteCoreNetworkChangeSet)>
     #[allow(unused_mut)]
@@ -6739,10 +6582,6 @@ pub mod get_connect_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectAttachmentInputOperationOutputAlias = crate::operation::GetConnectAttachment;
-#[doc(hidden)]
-pub type GetConnectAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectAttachment`](crate::operation::GetConnectAttachment)>
     #[allow(unused_mut)]
@@ -6946,10 +6785,6 @@ pub mod get_connections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectionsInputOperationOutputAlias = crate::operation::GetConnections;
-#[doc(hidden)]
-pub type GetConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnections`](crate::operation::GetConnections)>
     #[allow(unused_mut)]
@@ -7124,10 +6959,6 @@ pub mod get_connect_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectPeerInputOperationOutputAlias = crate::operation::GetConnectPeer;
-#[doc(hidden)]
-pub type GetConnectPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectPeer`](crate::operation::GetConnectPeer)>
     #[allow(unused_mut)]
@@ -7321,11 +7152,6 @@ pub mod get_connect_peer_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectPeerAssociationsInputOperationOutputAlias =
-    crate::operation::GetConnectPeerAssociations;
-#[doc(hidden)]
-pub type GetConnectPeerAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectPeerAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectPeerAssociations`](crate::operation::GetConnectPeerAssociations)>
     #[allow(unused_mut)]
@@ -7497,10 +7323,6 @@ pub mod get_core_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreNetworkInputOperationOutputAlias = crate::operation::GetCoreNetwork;
-#[doc(hidden)]
-pub type GetCoreNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreNetworkInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreNetwork`](crate::operation::GetCoreNetwork)>
     #[allow(unused_mut)]
@@ -7685,11 +7507,6 @@ pub mod get_core_network_change_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreNetworkChangeEventsInputOperationOutputAlias =
-    crate::operation::GetCoreNetworkChangeEvents;
-#[doc(hidden)]
-pub type GetCoreNetworkChangeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreNetworkChangeEventsInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreNetworkChangeEvents`](crate::operation::GetCoreNetworkChangeEvents)>
     #[allow(unused_mut)]
@@ -7908,11 +7725,6 @@ pub mod get_core_network_change_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreNetworkChangeSetInputOperationOutputAlias =
-    crate::operation::GetCoreNetworkChangeSet;
-#[doc(hidden)]
-pub type GetCoreNetworkChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreNetworkChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreNetworkChangeSet`](crate::operation::GetCoreNetworkChangeSet)>
     #[allow(unused_mut)]
@@ -8120,10 +7932,6 @@ pub mod get_core_network_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreNetworkPolicyInputOperationOutputAlias = crate::operation::GetCoreNetworkPolicy;
-#[doc(hidden)]
-pub type GetCoreNetworkPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreNetworkPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreNetworkPolicy`](crate::operation::GetCoreNetworkPolicy)>
     #[allow(unused_mut)]
@@ -8334,12 +8142,6 @@ pub mod get_customer_gateway_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCustomerGatewayAssociationsInputOperationOutputAlias =
-    crate::operation::GetCustomerGatewayAssociations;
-#[doc(hidden)]
-pub type GetCustomerGatewayAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCustomerGatewayAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetCustomerGatewayAssociations`](crate::operation::GetCustomerGatewayAssociations)>
     #[allow(unused_mut)]
@@ -8567,10 +8369,6 @@ pub mod get_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDevicesInputOperationOutputAlias = crate::operation::GetDevices;
-#[doc(hidden)]
-pub type GetDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicesInput {
     /// Consumes the builder and constructs an Operation<[`GetDevices`](crate::operation::GetDevices)>
     #[allow(unused_mut)]
@@ -8790,10 +8588,6 @@ pub mod get_link_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLinkAssociationsInputOperationOutputAlias = crate::operation::GetLinkAssociations;
-#[doc(hidden)]
-pub type GetLinkAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLinkAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetLinkAssociations`](crate::operation::GetLinkAssociations)>
     #[allow(unused_mut)]
@@ -9043,10 +8837,6 @@ pub mod get_links_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLinksInputOperationOutputAlias = crate::operation::GetLinks;
-#[doc(hidden)]
-pub type GetLinksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLinksInput {
     /// Consumes the builder and constructs an Operation<[`GetLinks`](crate::operation::GetLinks)>
     #[allow(unused_mut)]
@@ -9307,11 +9097,6 @@ pub mod get_network_resource_counts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkResourceCountsInputOperationOutputAlias =
-    crate::operation::GetNetworkResourceCounts;
-#[doc(hidden)]
-pub type GetNetworkResourceCountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkResourceCountsInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkResourceCounts`](crate::operation::GetNetworkResourceCounts)>
     #[allow(unused_mut)]
@@ -9632,12 +9417,6 @@ pub mod get_network_resource_relationships_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkResourceRelationshipsInputOperationOutputAlias =
-    crate::operation::GetNetworkResourceRelationships;
-#[doc(hidden)]
-pub type GetNetworkResourceRelationshipsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkResourceRelationshipsInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkResourceRelationships`](crate::operation::GetNetworkResourceRelationships)>
     #[allow(unused_mut)]
@@ -9980,10 +9759,6 @@ pub mod get_network_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkResourcesInputOperationOutputAlias = crate::operation::GetNetworkResources;
-#[doc(hidden)]
-pub type GetNetworkResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkResources`](crate::operation::GetNetworkResources)>
     #[allow(unused_mut)]
@@ -10368,10 +10143,6 @@ pub mod get_network_routes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkRoutesInputOperationOutputAlias = crate::operation::GetNetworkRoutes;
-#[doc(hidden)]
-pub type GetNetworkRoutesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkRoutesInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkRoutes`](crate::operation::GetNetworkRoutes)>
     #[allow(unused_mut)]
@@ -10681,10 +10452,6 @@ pub mod get_network_telemetry_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkTelemetryInputOperationOutputAlias = crate::operation::GetNetworkTelemetry;
-#[doc(hidden)]
-pub type GetNetworkTelemetryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkTelemetryInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkTelemetry`](crate::operation::GetNetworkTelemetry)>
     #[allow(unused_mut)]
@@ -10875,10 +10642,6 @@ pub mod get_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourcePolicyInputOperationOutputAlias = crate::operation::GetResourcePolicy;
-#[doc(hidden)]
-pub type GetResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicy`](crate::operation::GetResourcePolicy)>
     #[allow(unused_mut)]
@@ -11040,10 +10803,6 @@ pub mod get_route_analysis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRouteAnalysisInputOperationOutputAlias = crate::operation::GetRouteAnalysis;
-#[doc(hidden)]
-pub type GetRouteAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRouteAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`GetRouteAnalysis`](crate::operation::GetRouteAnalysis)>
     #[allow(unused_mut)]
@@ -11249,10 +11008,6 @@ pub mod get_sites_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSitesInputOperationOutputAlias = crate::operation::GetSites;
-#[doc(hidden)]
-pub type GetSitesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSitesInput {
     /// Consumes the builder and constructs an Operation<[`GetSites`](crate::operation::GetSites)>
     #[allow(unused_mut)]
@@ -11421,11 +11176,6 @@ pub mod get_site_to_site_vpn_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSiteToSiteVpnAttachmentInputOperationOutputAlias =
-    crate::operation::GetSiteToSiteVpnAttachment;
-#[doc(hidden)]
-pub type GetSiteToSiteVpnAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSiteToSiteVpnAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetSiteToSiteVpnAttachment`](crate::operation::GetSiteToSiteVpnAttachment)>
     #[allow(unused_mut)]
@@ -11625,12 +11375,6 @@ pub mod get_transit_gateway_connect_peer_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTransitGatewayConnectPeerAssociationsInputOperationOutputAlias =
-    crate::operation::GetTransitGatewayConnectPeerAssociations;
-#[doc(hidden)]
-pub type GetTransitGatewayConnectPeerAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetTransitGatewayConnectPeerAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetTransitGatewayConnectPeerAssociations`](crate::operation::GetTransitGatewayConnectPeerAssociations)>
     #[allow(unused_mut)]
@@ -11801,11 +11545,6 @@ pub mod get_transit_gateway_peering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTransitGatewayPeeringInputOperationOutputAlias =
-    crate::operation::GetTransitGatewayPeering;
-#[doc(hidden)]
-pub type GetTransitGatewayPeeringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTransitGatewayPeeringInput {
     /// Consumes the builder and constructs an Operation<[`GetTransitGatewayPeering`](crate::operation::GetTransitGatewayPeering)>
     #[allow(unused_mut)]
@@ -11999,12 +11738,6 @@ pub mod get_transit_gateway_registrations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTransitGatewayRegistrationsInputOperationOutputAlias =
-    crate::operation::GetTransitGatewayRegistrations;
-#[doc(hidden)]
-pub type GetTransitGatewayRegistrationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetTransitGatewayRegistrationsInput {
     /// Consumes the builder and constructs an Operation<[`GetTransitGatewayRegistrations`](crate::operation::GetTransitGatewayRegistrations)>
     #[allow(unused_mut)]
@@ -12178,12 +11911,6 @@ pub mod get_transit_gateway_route_table_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTransitGatewayRouteTableAttachmentInputOperationOutputAlias =
-    crate::operation::GetTransitGatewayRouteTableAttachment;
-#[doc(hidden)]
-pub type GetTransitGatewayRouteTableAttachmentInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetTransitGatewayRouteTableAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetTransitGatewayRouteTableAttachment`](crate::operation::GetTransitGatewayRouteTableAttachment)>
     #[allow(unused_mut)]
@@ -12330,10 +12057,6 @@ pub mod get_vpc_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVpcAttachmentInputOperationOutputAlias = crate::operation::GetVpcAttachment;
-#[doc(hidden)]
-pub type GetVpcAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVpcAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetVpcAttachment`](crate::operation::GetVpcAttachment)>
     #[allow(unused_mut)]
@@ -12549,10 +12272,6 @@ pub mod list_attachments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAttachmentsInputOperationOutputAlias = crate::operation::ListAttachments;
-#[doc(hidden)]
-pub type ListAttachmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttachmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAttachments`](crate::operation::ListAttachments)>
     #[allow(unused_mut)]
@@ -12757,10 +12476,6 @@ pub mod list_connect_peers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConnectPeersInputOperationOutputAlias = crate::operation::ListConnectPeers;
-#[doc(hidden)]
-pub type ListConnectPeersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectPeersInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectPeers`](crate::operation::ListConnectPeers)>
     #[allow(unused_mut)]
@@ -12943,12 +12658,6 @@ pub mod list_core_network_policy_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCoreNetworkPolicyVersionsInputOperationOutputAlias =
-    crate::operation::ListCoreNetworkPolicyVersions;
-#[doc(hidden)]
-pub type ListCoreNetworkPolicyVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoreNetworkPolicyVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCoreNetworkPolicyVersions`](crate::operation::ListCoreNetworkPolicyVersions)>
     #[allow(unused_mut)]
@@ -13121,10 +12830,6 @@ pub mod list_core_networks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCoreNetworksInputOperationOutputAlias = crate::operation::ListCoreNetworks;
-#[doc(hidden)]
-pub type ListCoreNetworksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoreNetworksInput {
     /// Consumes the builder and constructs an Operation<[`ListCoreNetworks`](crate::operation::ListCoreNetworks)>
     #[allow(unused_mut)]
@@ -13280,12 +12985,6 @@ pub mod list_organization_service_access_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOrganizationServiceAccessStatusInputOperationOutputAlias =
-    crate::operation::ListOrganizationServiceAccessStatus;
-#[doc(hidden)]
-pub type ListOrganizationServiceAccessStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationServiceAccessStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationServiceAccessStatus`](crate::operation::ListOrganizationServiceAccessStatus)>
     #[allow(unused_mut)]
@@ -13496,10 +13195,6 @@ pub mod list_peerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPeeringsInputOperationOutputAlias = crate::operation::ListPeerings;
-#[doc(hidden)]
-pub type ListPeeringsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPeeringsInput {
     /// Consumes the builder and constructs an Operation<[`ListPeerings`](crate::operation::ListPeerings)>
     #[allow(unused_mut)]
@@ -13662,10 +13357,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -13859,10 +13550,6 @@ pub mod put_core_network_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutCoreNetworkPolicyInputOperationOutputAlias = crate::operation::PutCoreNetworkPolicy;
-#[doc(hidden)]
-pub type PutCoreNetworkPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutCoreNetworkPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutCoreNetworkPolicy`](crate::operation::PutCoreNetworkPolicy)>
     #[allow(unused_mut)]
@@ -14040,10 +13727,6 @@ pub mod put_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(unused_mut)]
@@ -14219,10 +13902,6 @@ pub mod register_transit_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterTransitGatewayInputOperationOutputAlias = crate::operation::RegisterTransitGateway;
-#[doc(hidden)]
-pub type RegisterTransitGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterTransitGatewayInput {
     /// Consumes the builder and constructs an Operation<[`RegisterTransitGateway`](crate::operation::RegisterTransitGateway)>
     #[allow(unused_mut)]
@@ -14385,10 +14064,6 @@ pub mod reject_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectAttachmentInputOperationOutputAlias = crate::operation::RejectAttachment;
-#[doc(hidden)]
-pub type RejectAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`RejectAttachment`](crate::operation::RejectAttachment)>
     #[allow(unused_mut)]
@@ -14549,12 +14224,6 @@ pub mod restore_core_network_policy_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreCoreNetworkPolicyVersionInputOperationOutputAlias =
-    crate::operation::RestoreCoreNetworkPolicyVersion;
-#[doc(hidden)]
-pub type RestoreCoreNetworkPolicyVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreCoreNetworkPolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`RestoreCoreNetworkPolicyVersion`](crate::operation::RestoreCoreNetworkPolicyVersion)>
     #[allow(unused_mut)]
@@ -14711,12 +14380,6 @@ pub mod start_organization_service_access_update_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartOrganizationServiceAccessUpdateInputOperationOutputAlias =
-    crate::operation::StartOrganizationServiceAccessUpdate;
-#[doc(hidden)]
-pub type StartOrganizationServiceAccessUpdateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartOrganizationServiceAccessUpdateInput {
     /// Consumes the builder and constructs an Operation<[`StartOrganizationServiceAccessUpdate`](crate::operation::StartOrganizationServiceAccessUpdate)>
     #[allow(unused_mut)]
@@ -14919,10 +14582,6 @@ pub mod start_route_analysis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartRouteAnalysisInputOperationOutputAlias = crate::operation::StartRouteAnalysis;
-#[doc(hidden)]
-pub type StartRouteAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRouteAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`StartRouteAnalysis`](crate::operation::StartRouteAnalysis)>
     #[allow(unused_mut)]
@@ -15101,10 +14760,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -15279,10 +14934,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -15494,10 +15145,6 @@ pub mod update_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectionInputOperationOutputAlias = crate::operation::UpdateConnection;
-#[doc(hidden)]
-pub type UpdateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnection`](crate::operation::UpdateConnection)>
     #[allow(unused_mut)]
@@ -15685,10 +15332,6 @@ pub mod update_core_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCoreNetworkInputOperationOutputAlias = crate::operation::UpdateCoreNetwork;
-#[doc(hidden)]
-pub type UpdateCoreNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCoreNetworkInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCoreNetwork`](crate::operation::UpdateCoreNetwork)>
     #[allow(unused_mut)]
@@ -15971,10 +15614,6 @@ pub mod update_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDeviceInputOperationOutputAlias = crate::operation::UpdateDevice;
-#[doc(hidden)]
-pub type UpdateDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDevice`](crate::operation::UpdateDevice)>
     #[allow(unused_mut)]
@@ -16164,10 +15803,6 @@ pub mod update_global_network_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGlobalNetworkInputOperationOutputAlias = crate::operation::UpdateGlobalNetwork;
-#[doc(hidden)]
-pub type UpdateGlobalNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalNetworkInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalNetwork`](crate::operation::UpdateGlobalNetwork)>
     #[allow(unused_mut)]
@@ -16396,10 +16031,6 @@ pub mod update_link_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLinkInputOperationOutputAlias = crate::operation::UpdateLink;
-#[doc(hidden)]
-pub type UpdateLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLinkInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLink`](crate::operation::UpdateLink)>
     #[allow(unused_mut)]
@@ -16618,12 +16249,6 @@ pub mod update_network_resource_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNetworkResourceMetadataInputOperationOutputAlias =
-    crate::operation::UpdateNetworkResourceMetadata;
-#[doc(hidden)]
-pub type UpdateNetworkResourceMetadataInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNetworkResourceMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNetworkResourceMetadata`](crate::operation::UpdateNetworkResourceMetadata)>
     #[allow(unused_mut)]
@@ -16845,10 +16470,6 @@ pub mod update_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSiteInputOperationOutputAlias = crate::operation::UpdateSite;
-#[doc(hidden)]
-pub type UpdateSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSite`](crate::operation::UpdateSite)>
     #[allow(unused_mut)]
@@ -17078,10 +16699,6 @@ pub mod update_vpc_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVpcAttachmentInputOperationOutputAlias = crate::operation::UpdateVpcAttachment;
-#[doc(hidden)]
-pub type UpdateVpcAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVpcAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVpcAttachment`](crate::operation::UpdateVpcAttachment)>
     #[allow(unused_mut)]

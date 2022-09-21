@@ -134,10 +134,6 @@ pub mod batch_execute_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchExecuteStatementInputOperationOutputAlias = crate::operation::BatchExecuteStatement;
-#[doc(hidden)]
-pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
     #[allow(unused_mut)]
@@ -314,10 +310,6 @@ pub mod begin_transaction_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BeginTransactionInputOperationOutputAlias = crate::operation::BeginTransaction;
-#[doc(hidden)]
-pub type BeginTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BeginTransactionInput {
     /// Consumes the builder and constructs an Operation<[`BeginTransaction`](crate::operation::BeginTransaction)>
     #[allow(unused_mut)]
@@ -483,10 +475,6 @@ pub mod commit_transaction_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CommitTransactionInputOperationOutputAlias = crate::operation::CommitTransaction;
-#[doc(hidden)]
-pub type CommitTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CommitTransactionInput {
     /// Consumes the builder and constructs an Operation<[`CommitTransaction`](crate::operation::CommitTransaction)>
     #[allow(unused_mut)]
@@ -685,10 +673,6 @@ pub mod execute_sql_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteSqlInputOperationOutputAlias = crate::operation::ExecuteSql;
-#[doc(hidden)]
-pub type ExecuteSqlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteSqlInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteSql`](crate::operation::ExecuteSql)>
     #[allow(unused_mut)]
@@ -983,10 +967,6 @@ pub mod execute_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteStatementInputOperationOutputAlias = crate::operation::ExecuteStatement;
-#[doc(hidden)]
-pub type ExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
     #[allow(unused_mut)]
@@ -1152,10 +1132,6 @@ pub mod rollback_transaction_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RollbackTransactionInputOperationOutputAlias = crate::operation::RollbackTransaction;
-#[doc(hidden)]
-pub type RollbackTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RollbackTransactionInput {
     /// Consumes the builder and constructs an Operation<[`RollbackTransaction`](crate::operation::RollbackTransaction)>
     #[allow(unused_mut)]

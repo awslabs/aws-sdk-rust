@@ -163,10 +163,6 @@ pub mod create_notification_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNotificationRuleInputOperationOutputAlias = crate::operation::CreateNotificationRule;
-#[doc(hidden)]
-pub type CreateNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateNotificationRule`](crate::operation::CreateNotificationRule)>
     #[allow(unused_mut)]
@@ -308,10 +304,6 @@ pub mod delete_notification_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNotificationRuleInputOperationOutputAlias = crate::operation::DeleteNotificationRule;
-#[doc(hidden)]
-pub type DeleteNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotificationRule`](crate::operation::DeleteNotificationRule)>
     #[allow(unused_mut)]
@@ -467,10 +459,6 @@ pub mod delete_target_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTargetInputOperationOutputAlias = crate::operation::DeleteTarget;
-#[doc(hidden)]
-pub type DeleteTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTarget`](crate::operation::DeleteTarget)>
     #[allow(unused_mut)]
@@ -609,11 +597,6 @@ pub mod describe_notification_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNotificationRuleInputOperationOutputAlias =
-    crate::operation::DescribeNotificationRule;
-#[doc(hidden)]
-pub type DescribeNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationRule`](crate::operation::DescribeNotificationRule)>
     #[allow(unused_mut)]
@@ -787,10 +770,6 @@ pub mod list_event_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventTypesInputOperationOutputAlias = crate::operation::ListEventTypes;
-#[doc(hidden)]
-pub type ListEventTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListEventTypes`](crate::operation::ListEventTypes)>
     #[allow(unused_mut)]
@@ -967,10 +946,6 @@ pub mod list_notification_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNotificationRulesInputOperationOutputAlias = crate::operation::ListNotificationRules;
-#[doc(hidden)]
-pub type ListNotificationRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNotificationRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListNotificationRules`](crate::operation::ListNotificationRules)>
     #[allow(unused_mut)]
@@ -1109,10 +1084,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1290,10 +1261,6 @@ pub mod list_targets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTargetsInputOperationOutputAlias = crate::operation::ListTargets;
-#[doc(hidden)]
-pub type ListTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetsInput {
     /// Consumes the builder and constructs an Operation<[`ListTargets`](crate::operation::ListTargets)>
     #[allow(unused_mut)]
@@ -1458,10 +1425,6 @@ pub mod subscribe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SubscribeInputOperationOutputAlias = crate::operation::Subscribe;
-#[doc(hidden)]
-pub type SubscribeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Subscribe`](crate::operation::Subscribe)>
     #[allow(unused_mut)]
@@ -1627,10 +1590,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1784,10 +1743,6 @@ pub mod unsubscribe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnsubscribeInputOperationOutputAlias = crate::operation::Unsubscribe;
-#[doc(hidden)]
-pub type UnsubscribeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnsubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Unsubscribe`](crate::operation::Unsubscribe)>
     #[allow(unused_mut)]
@@ -1947,10 +1902,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2173,10 +2124,6 @@ pub mod update_notification_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNotificationRuleInputOperationOutputAlias = crate::operation::UpdateNotificationRule;
-#[doc(hidden)]
-pub type UpdateNotificationRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotificationRule`](crate::operation::UpdateNotificationRule)>
     #[allow(unused_mut)]

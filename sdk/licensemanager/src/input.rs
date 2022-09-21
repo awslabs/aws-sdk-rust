@@ -31,10 +31,6 @@ pub mod accept_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptGrantInputOperationOutputAlias = crate::operation::AcceptGrant;
-#[doc(hidden)]
-pub type AcceptGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptGrantInput {
     /// Consumes the builder and constructs an Operation<[`AcceptGrant`](crate::operation::AcceptGrant)>
     #[allow(unused_mut)]
@@ -193,10 +189,6 @@ pub mod check_in_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CheckInLicenseInputOperationOutputAlias = crate::operation::CheckInLicense;
-#[doc(hidden)]
-pub type CheckInLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckInLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckInLicense`](crate::operation::CheckInLicense)>
     #[allow(unused_mut)]
@@ -425,10 +417,6 @@ pub mod checkout_borrow_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CheckoutBorrowLicenseInputOperationOutputAlias = crate::operation::CheckoutBorrowLicense;
-#[doc(hidden)]
-pub type CheckoutBorrowLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckoutBorrowLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckoutBorrowLicense`](crate::operation::CheckoutBorrowLicense)>
     #[allow(unused_mut)]
@@ -661,10 +649,6 @@ pub mod checkout_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CheckoutLicenseInputOperationOutputAlias = crate::operation::CheckoutLicense;
-#[doc(hidden)]
-pub type CheckoutLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckoutLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckoutLicense`](crate::operation::CheckoutLicense)>
     #[allow(unused_mut)]
@@ -887,10 +871,6 @@ pub mod create_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGrantInputOperationOutputAlias = crate::operation::CreateGrant;
-#[doc(hidden)]
-pub type CreateGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGrantInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrant`](crate::operation::CreateGrant)>
     #[allow(unused_mut)]
@@ -1122,10 +1102,6 @@ pub mod create_grant_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGrantVersionInputOperationOutputAlias = crate::operation::CreateGrantVersion;
-#[doc(hidden)]
-pub type CreateGrantVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGrantVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrantVersion`](crate::operation::CreateGrantVersion)>
     #[allow(unused_mut)]
@@ -1417,10 +1393,6 @@ pub mod create_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLicenseInputOperationOutputAlias = crate::operation::CreateLicense;
-#[doc(hidden)]
-pub type CreateLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicense`](crate::operation::CreateLicense)>
     #[allow(unused_mut)]
@@ -1707,11 +1679,6 @@ pub mod create_license_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLicenseConfigurationInputOperationOutputAlias =
-    crate::operation::CreateLicenseConfiguration;
-#[doc(hidden)]
-pub type CreateLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseConfiguration`](crate::operation::CreateLicenseConfiguration)>
     #[allow(unused_mut)]
@@ -1897,12 +1864,6 @@ pub mod create_license_conversion_task_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLicenseConversionTaskForResourceInputOperationOutputAlias =
-    crate::operation::CreateLicenseConversionTaskForResource;
-#[doc(hidden)]
-pub type CreateLicenseConversionTaskForResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseConversionTaskForResourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseConversionTaskForResource`](crate::operation::CreateLicenseConversionTaskForResource)>
     #[allow(unused_mut)]
@@ -2154,12 +2115,6 @@ pub mod create_license_manager_report_generator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLicenseManagerReportGeneratorInputOperationOutputAlias =
-    crate::operation::CreateLicenseManagerReportGenerator;
-#[doc(hidden)]
-pub type CreateLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseManagerReportGenerator`](crate::operation::CreateLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
@@ -2468,10 +2423,6 @@ pub mod create_license_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLicenseVersionInputOperationOutputAlias = crate::operation::CreateLicenseVersion;
-#[doc(hidden)]
-pub type CreateLicenseVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseVersion`](crate::operation::CreateLicenseVersion)>
     #[allow(unused_mut)]
@@ -2683,10 +2634,6 @@ pub mod create_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTokenInputOperationOutputAlias = crate::operation::CreateToken;
-#[doc(hidden)]
-pub type CreateTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(unused_mut)]
@@ -2857,10 +2804,6 @@ pub mod delete_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGrantInputOperationOutputAlias = crate::operation::DeleteGrant;
-#[doc(hidden)]
-pub type DeleteGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGrantInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGrant`](crate::operation::DeleteGrant)>
     #[allow(unused_mut)]
@@ -3019,10 +2962,6 @@ pub mod delete_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLicenseInputOperationOutputAlias = crate::operation::DeleteLicense;
-#[doc(hidden)]
-pub type DeleteLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLicenseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicense`](crate::operation::DeleteLicense)>
     #[allow(unused_mut)]
@@ -3171,11 +3110,6 @@ pub mod delete_license_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLicenseConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteLicenseConfiguration;
-#[doc(hidden)]
-pub type DeleteLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicenseConfiguration`](crate::operation::DeleteLicenseConfiguration)>
     #[allow(unused_mut)]
@@ -3329,12 +3263,6 @@ pub mod delete_license_manager_report_generator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLicenseManagerReportGeneratorInputOperationOutputAlias =
-    crate::operation::DeleteLicenseManagerReportGenerator;
-#[doc(hidden)]
-pub type DeleteLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicenseManagerReportGenerator`](crate::operation::DeleteLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
@@ -3477,10 +3405,6 @@ pub mod delete_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTokenInputOperationOutputAlias = crate::operation::DeleteToken;
-#[doc(hidden)]
-pub type DeleteTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTokenInput {
     /// Consumes the builder and constructs an Operation<[`DeleteToken`](crate::operation::DeleteToken)>
     #[allow(unused_mut)]
@@ -3641,11 +3565,6 @@ pub mod extend_license_consumption_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExtendLicenseConsumptionInputOperationOutputAlias =
-    crate::operation::ExtendLicenseConsumption;
-#[doc(hidden)]
-pub type ExtendLicenseConsumptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExtendLicenseConsumptionInput {
     /// Consumes the builder and constructs an Operation<[`ExtendLicenseConsumption`](crate::operation::ExtendLicenseConsumption)>
     #[allow(unused_mut)]
@@ -3812,10 +3731,6 @@ pub mod get_access_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccessTokenInputOperationOutputAlias = crate::operation::GetAccessToken;
-#[doc(hidden)]
-pub type GetAccessTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessToken`](crate::operation::GetAccessToken)>
     #[allow(unused_mut)]
@@ -3970,10 +3885,6 @@ pub mod get_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGrantInputOperationOutputAlias = crate::operation::GetGrant;
-#[doc(hidden)]
-pub type GetGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGrantInput {
     /// Consumes the builder and constructs an Operation<[`GetGrant`](crate::operation::GetGrant)>
     #[allow(unused_mut)]
@@ -4126,10 +4037,6 @@ pub mod get_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLicenseInputOperationOutputAlias = crate::operation::GetLicense;
-#[doc(hidden)]
-pub type GetLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseInput {
     /// Consumes the builder and constructs an Operation<[`GetLicense`](crate::operation::GetLicense)>
     #[allow(unused_mut)]
@@ -4278,11 +4185,6 @@ pub mod get_license_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLicenseConfigurationInputOperationOutputAlias =
-    crate::operation::GetLicenseConfiguration;
-#[doc(hidden)]
-pub type GetLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseConfiguration`](crate::operation::GetLicenseConfiguration)>
     #[allow(unused_mut)]
@@ -4433,11 +4335,6 @@ pub mod get_license_conversion_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLicenseConversionTaskInputOperationOutputAlias =
-    crate::operation::GetLicenseConversionTask;
-#[doc(hidden)]
-pub type GetLicenseConversionTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseConversionTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseConversionTask`](crate::operation::GetLicenseConversionTask)>
     #[allow(unused_mut)]
@@ -4591,12 +4488,6 @@ pub mod get_license_manager_report_generator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLicenseManagerReportGeneratorInputOperationOutputAlias =
-    crate::operation::GetLicenseManagerReportGenerator;
-#[doc(hidden)]
-pub type GetLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseManagerReportGenerator`](crate::operation::GetLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
@@ -4739,10 +4630,6 @@ pub mod get_license_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLicenseUsageInputOperationOutputAlias = crate::operation::GetLicenseUsage;
-#[doc(hidden)]
-pub type GetLicenseUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseUsage`](crate::operation::GetLicenseUsage)>
     #[allow(unused_mut)]
@@ -4872,10 +4759,6 @@ pub mod get_service_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceSettingsInputOperationOutputAlias = crate::operation::GetServiceSettings;
-#[doc(hidden)]
-pub type GetServiceSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceSettings`](crate::operation::GetServiceSettings)>
     #[allow(unused_mut)]
@@ -5041,12 +4924,6 @@ pub mod list_associations_for_license_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssociationsForLicenseConfigurationInputOperationOutputAlias =
-    crate::operation::ListAssociationsForLicenseConfiguration;
-#[doc(hidden)]
-pub type ListAssociationsForLicenseConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociationsForLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociationsForLicenseConfiguration`](crate::operation::ListAssociationsForLicenseConfiguration)>
     #[allow(unused_mut)]
@@ -5257,10 +5134,6 @@ pub mod list_distributed_grants_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDistributedGrantsInputOperationOutputAlias = crate::operation::ListDistributedGrants;
-#[doc(hidden)]
-pub type ListDistributedGrantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributedGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributedGrants`](crate::operation::ListDistributedGrants)>
     #[allow(unused_mut)]
@@ -5437,12 +5310,6 @@ pub mod list_failures_for_license_configuration_operations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFailuresForLicenseConfigurationOperationsInputOperationOutputAlias =
-    crate::operation::ListFailuresForLicenseConfigurationOperations;
-#[doc(hidden)]
-pub type ListFailuresForLicenseConfigurationOperationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListFailuresForLicenseConfigurationOperations`](crate::operation::ListFailuresForLicenseConfigurationOperations)>
     #[allow(unused_mut)]
@@ -5653,11 +5520,6 @@ pub mod list_license_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLicenseConfigurationsInputOperationOutputAlias =
-    crate::operation::ListLicenseConfigurations;
-#[doc(hidden)]
-pub type ListLicenseConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseConfigurations`](crate::operation::ListLicenseConfigurations)>
     #[allow(unused_mut)]
@@ -5838,11 +5700,6 @@ pub mod list_license_conversion_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLicenseConversionTasksInputOperationOutputAlias =
-    crate::operation::ListLicenseConversionTasks;
-#[doc(hidden)]
-pub type ListLicenseConversionTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseConversionTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseConversionTasks`](crate::operation::ListLicenseConversionTasks)>
     #[allow(unused_mut)]
@@ -6026,12 +5883,6 @@ pub mod list_license_manager_report_generators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLicenseManagerReportGeneratorsInputOperationOutputAlias =
-    crate::operation::ListLicenseManagerReportGenerators;
-#[doc(hidden)]
-pub type ListLicenseManagerReportGeneratorsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseManagerReportGeneratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseManagerReportGenerators`](crate::operation::ListLicenseManagerReportGenerators)>
     #[allow(unused_mut)]
@@ -6240,10 +6091,6 @@ pub mod list_licenses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLicensesInputOperationOutputAlias = crate::operation::ListLicenses;
-#[doc(hidden)]
-pub type ListLicensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicensesInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenses`](crate::operation::ListLicenses)>
     #[allow(unused_mut)]
@@ -6413,12 +6260,6 @@ pub mod list_license_specifications_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLicenseSpecificationsForResourceInputOperationOutputAlias =
-    crate::operation::ListLicenseSpecificationsForResource;
-#[doc(hidden)]
-pub type ListLicenseSpecificationsForResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseSpecificationsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseSpecificationsForResource`](crate::operation::ListLicenseSpecificationsForResource)>
     #[allow(unused_mut)]
@@ -6585,10 +6426,6 @@ pub mod list_license_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLicenseVersionsInputOperationOutputAlias = crate::operation::ListLicenseVersions;
-#[doc(hidden)]
-pub type ListLicenseVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseVersions`](crate::operation::ListLicenseVersions)>
     #[allow(unused_mut)]
@@ -6800,10 +6637,6 @@ pub mod list_received_grants_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReceivedGrantsInputOperationOutputAlias = crate::operation::ListReceivedGrants;
-#[doc(hidden)]
-pub type ListReceivedGrantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceivedGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedGrants`](crate::operation::ListReceivedGrants)>
     #[allow(unused_mut)]
@@ -7015,10 +6848,6 @@ pub mod list_received_licenses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReceivedLicensesInputOperationOutputAlias = crate::operation::ListReceivedLicenses;
-#[doc(hidden)]
-pub type ListReceivedLicensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceivedLicensesInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedLicenses`](crate::operation::ListReceivedLicenses)>
     #[allow(unused_mut)]
@@ -7215,10 +7044,6 @@ pub mod list_resource_inventory_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourceInventoryInputOperationOutputAlias = crate::operation::ListResourceInventory;
-#[doc(hidden)]
-pub type ListResourceInventoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceInventoryInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceInventory`](crate::operation::ListResourceInventory)>
     #[allow(unused_mut)]
@@ -7364,10 +7189,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7572,10 +7393,6 @@ pub mod list_tokens_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTokensInputOperationOutputAlias = crate::operation::ListTokens;
-#[doc(hidden)]
-pub type ListTokensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTokensInput {
     /// Consumes the builder and constructs an Operation<[`ListTokens`](crate::operation::ListTokens)>
     #[allow(unused_mut)]
@@ -7779,12 +7596,6 @@ pub mod list_usage_for_license_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsageForLicenseConfigurationInputOperationOutputAlias =
-    crate::operation::ListUsageForLicenseConfiguration;
-#[doc(hidden)]
-pub type ListUsageForLicenseConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsageForLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ListUsageForLicenseConfiguration`](crate::operation::ListUsageForLicenseConfiguration)>
     #[allow(unused_mut)]
@@ -7927,10 +7738,6 @@ pub mod reject_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectGrantInputOperationOutputAlias = crate::operation::RejectGrant;
-#[doc(hidden)]
-pub type RejectGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectGrantInput {
     /// Consumes the builder and constructs an Operation<[`RejectGrant`](crate::operation::RejectGrant)>
     #[allow(unused_mut)]
@@ -8095,10 +7902,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -8263,10 +8066,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -8537,11 +8336,6 @@ pub mod update_license_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLicenseConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateLicenseConfiguration;
-#[doc(hidden)]
-pub type UpdateLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseConfiguration`](crate::operation::UpdateLicenseConfiguration)>
     #[allow(unused_mut)]
@@ -8793,12 +8587,6 @@ pub mod update_license_manager_report_generator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLicenseManagerReportGeneratorInputOperationOutputAlias =
-    crate::operation::UpdateLicenseManagerReportGenerator;
-#[doc(hidden)]
-pub type UpdateLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseManagerReportGenerator`](crate::operation::UpdateLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
@@ -8993,12 +8781,6 @@ pub mod update_license_specifications_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLicenseSpecificationsForResourceInputOperationOutputAlias =
-    crate::operation::UpdateLicenseSpecificationsForResource;
-#[doc(hidden)]
-pub type UpdateLicenseSpecificationsForResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLicenseSpecificationsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseSpecificationsForResource`](crate::operation::UpdateLicenseSpecificationsForResource)>
     #[allow(unused_mut)]
@@ -9193,10 +8975,6 @@ pub mod update_service_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServiceSettingsInputOperationOutputAlias = crate::operation::UpdateServiceSettings;
-#[doc(hidden)]
-pub type UpdateServiceSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceSettings`](crate::operation::UpdateServiceSettings)>
     #[allow(unused_mut)]

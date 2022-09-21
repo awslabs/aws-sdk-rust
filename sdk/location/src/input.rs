@@ -51,11 +51,6 @@ pub mod associate_tracker_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateTrackerConsumerInputOperationOutputAlias =
-    crate::operation::AssociateTrackerConsumer;
-#[doc(hidden)]
-pub type AssociateTrackerConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTrackerConsumerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTrackerConsumer`](crate::operation::AssociateTrackerConsumer)>
     #[allow(unused_mut)]
@@ -246,12 +241,6 @@ pub mod batch_delete_device_position_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteDevicePositionHistoryInputOperationOutputAlias =
-    crate::operation::BatchDeleteDevicePositionHistory;
-#[doc(hidden)]
-pub type BatchDeleteDevicePositionHistoryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteDevicePositionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteDevicePositionHistory`](crate::operation::BatchDeleteDevicePositionHistory)>
     #[allow(unused_mut)]
@@ -434,10 +423,6 @@ pub mod batch_delete_geofence_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteGeofenceInputOperationOutputAlias = crate::operation::BatchDeleteGeofence;
-#[doc(hidden)]
-pub type BatchDeleteGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteGeofence`](crate::operation::BatchDeleteGeofence)>
     #[allow(unused_mut)]
@@ -625,10 +610,6 @@ pub mod batch_evaluate_geofences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchEvaluateGeofencesInputOperationOutputAlias = crate::operation::BatchEvaluateGeofences;
-#[doc(hidden)]
-pub type BatchEvaluateGeofencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEvaluateGeofencesInput {
     /// Consumes the builder and constructs an Operation<[`BatchEvaluateGeofences`](crate::operation::BatchEvaluateGeofences)>
     #[allow(unused_mut)]
@@ -817,10 +798,6 @@ pub mod batch_get_device_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetDevicePositionInputOperationOutputAlias = crate::operation::BatchGetDevicePosition;
-#[doc(hidden)]
-pub type BatchGetDevicePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetDevicePosition`](crate::operation::BatchGetDevicePosition)>
     #[allow(unused_mut)]
@@ -1007,10 +984,6 @@ pub mod batch_put_geofence_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchPutGeofenceInputOperationOutputAlias = crate::operation::BatchPutGeofence;
-#[doc(hidden)]
-pub type BatchPutGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutGeofence`](crate::operation::BatchPutGeofence)>
     #[allow(unused_mut)]
@@ -1193,11 +1166,6 @@ pub mod batch_update_device_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdateDevicePositionInputOperationOutputAlias =
-    crate::operation::BatchUpdateDevicePosition;
-#[doc(hidden)]
-pub type BatchUpdateDevicePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDevicePosition`](crate::operation::BatchUpdateDevicePosition)>
     #[allow(unused_mut)]
@@ -1608,10 +1576,6 @@ pub mod calculate_route_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CalculateRouteInputOperationOutputAlias = crate::operation::CalculateRoute;
-#[doc(hidden)]
-pub type CalculateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CalculateRouteInput {
     /// Consumes the builder and constructs an Operation<[`CalculateRoute`](crate::operation::CalculateRoute)>
     #[allow(unused_mut)]
@@ -1963,10 +1927,6 @@ pub mod calculate_route_matrix_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CalculateRouteMatrixInputOperationOutputAlias = crate::operation::CalculateRouteMatrix;
-#[doc(hidden)]
-pub type CalculateRouteMatrixInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CalculateRouteMatrixInput {
     /// Consumes the builder and constructs an Operation<[`CalculateRouteMatrix`](crate::operation::CalculateRouteMatrix)>
     #[allow(unused_mut)]
@@ -2258,11 +2218,6 @@ pub mod create_geofence_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGeofenceCollectionInputOperationOutputAlias =
-    crate::operation::CreateGeofenceCollection;
-#[doc(hidden)]
-pub type CreateGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGeofenceCollection`](crate::operation::CreateGeofenceCollection)>
     #[allow(unused_mut)]
@@ -2515,10 +2470,6 @@ pub mod create_map_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMapInputOperationOutputAlias = crate::operation::CreateMap;
-#[doc(hidden)]
-pub type CreateMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMapInput {
     /// Consumes the builder and constructs an Operation<[`CreateMap`](crate::operation::CreateMap)>
     #[allow(unused_mut)]
@@ -2804,10 +2755,6 @@ pub mod create_place_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePlaceIndexInputOperationOutputAlias = crate::operation::CreatePlaceIndex;
-#[doc(hidden)]
-pub type CreatePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlaceIndex`](crate::operation::CreatePlaceIndex)>
     #[allow(unused_mut)]
@@ -3081,10 +3028,6 @@ pub mod create_route_calculator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRouteCalculatorInputOperationOutputAlias = crate::operation::CreateRouteCalculator;
-#[doc(hidden)]
-pub type CreateRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`CreateRouteCalculator`](crate::operation::CreateRouteCalculator)>
     #[allow(unused_mut)]
@@ -3381,10 +3324,6 @@ pub mod create_tracker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTrackerInputOperationOutputAlias = crate::operation::CreateTracker;
-#[doc(hidden)]
-pub type CreateTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrackerInput {
     /// Consumes the builder and constructs an Operation<[`CreateTracker`](crate::operation::CreateTracker)>
     #[allow(unused_mut)]
@@ -3530,11 +3469,6 @@ pub mod delete_geofence_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGeofenceCollectionInputOperationOutputAlias =
-    crate::operation::DeleteGeofenceCollection;
-#[doc(hidden)]
-pub type DeleteGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGeofenceCollection`](crate::operation::DeleteGeofenceCollection)>
     #[allow(unused_mut)]
@@ -3679,10 +3613,6 @@ pub mod delete_map_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMapInputOperationOutputAlias = crate::operation::DeleteMap;
-#[doc(hidden)]
-pub type DeleteMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMapInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMap`](crate::operation::DeleteMap)>
     #[allow(unused_mut)]
@@ -3822,10 +3752,6 @@ pub mod delete_place_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePlaceIndexInputOperationOutputAlias = crate::operation::DeletePlaceIndex;
-#[doc(hidden)]
-pub type DeletePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaceIndex`](crate::operation::DeletePlaceIndex)>
     #[allow(unused_mut)]
@@ -3974,10 +3900,6 @@ pub mod delete_route_calculator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRouteCalculatorInputOperationOutputAlias = crate::operation::DeleteRouteCalculator;
-#[doc(hidden)]
-pub type DeleteRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRouteCalculator`](crate::operation::DeleteRouteCalculator)>
     #[allow(unused_mut)]
@@ -4123,10 +4045,6 @@ pub mod delete_tracker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTrackerInputOperationOutputAlias = crate::operation::DeleteTracker;
-#[doc(hidden)]
-pub type DeleteTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTracker`](crate::operation::DeleteTracker)>
     #[allow(unused_mut)]
@@ -4277,11 +4195,6 @@ pub mod describe_geofence_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGeofenceCollectionInputOperationOutputAlias =
-    crate::operation::DescribeGeofenceCollection;
-#[doc(hidden)]
-pub type DescribeGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGeofenceCollection`](crate::operation::DescribeGeofenceCollection)>
     #[allow(unused_mut)]
@@ -4427,10 +4340,6 @@ pub mod describe_map_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMapInputOperationOutputAlias = crate::operation::DescribeMap;
-#[doc(hidden)]
-pub type DescribeMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMapInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMap`](crate::operation::DescribeMap)>
     #[allow(unused_mut)]
@@ -4572,10 +4481,6 @@ pub mod describe_place_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePlaceIndexInputOperationOutputAlias = crate::operation::DescribePlaceIndex;
-#[doc(hidden)]
-pub type DescribePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlaceIndex`](crate::operation::DescribePlaceIndex)>
     #[allow(unused_mut)]
@@ -4726,11 +4631,6 @@ pub mod describe_route_calculator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRouteCalculatorInputOperationOutputAlias =
-    crate::operation::DescribeRouteCalculator;
-#[doc(hidden)]
-pub type DescribeRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRouteCalculator`](crate::operation::DescribeRouteCalculator)>
     #[allow(unused_mut)]
@@ -4876,10 +4776,6 @@ pub mod describe_tracker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTrackerInputOperationOutputAlias = crate::operation::DescribeTracker;
-#[doc(hidden)]
-pub type DescribeTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTracker`](crate::operation::DescribeTracker)>
     #[allow(unused_mut)]
@@ -5045,11 +4941,6 @@ pub mod disassociate_tracker_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateTrackerConsumerInputOperationOutputAlias =
-    crate::operation::DisassociateTrackerConsumer;
-#[doc(hidden)]
-pub type DisassociateTrackerConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTrackerConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTrackerConsumer`](crate::operation::DisassociateTrackerConsumer)>
     #[allow(unused_mut)]
@@ -5222,10 +5113,6 @@ pub mod get_device_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDevicePositionInputOperationOutputAlias = crate::operation::GetDevicePosition;
-#[doc(hidden)]
-pub type GetDevicePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicePositionInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicePosition`](crate::operation::GetDevicePosition)>
     #[allow(unused_mut)]
@@ -5474,11 +5361,6 @@ pub mod get_device_position_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDevicePositionHistoryInputOperationOutputAlias =
-    crate::operation::GetDevicePositionHistory;
-#[doc(hidden)]
-pub type GetDevicePositionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicePositionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicePositionHistory`](crate::operation::GetDevicePositionHistory)>
     #[allow(unused_mut)]
@@ -5670,10 +5552,6 @@ pub mod get_geofence_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGeofenceInputOperationOutputAlias = crate::operation::GetGeofence;
-#[doc(hidden)]
-pub type GetGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`GetGeofence`](crate::operation::GetGeofence)>
     #[allow(unused_mut)]
@@ -5887,10 +5765,6 @@ pub mod get_map_glyphs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMapGlyphsInputOperationOutputAlias = crate::operation::GetMapGlyphs;
-#[doc(hidden)]
-pub type GetMapGlyphsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapGlyphsInput {
     /// Consumes the builder and constructs an Operation<[`GetMapGlyphs`](crate::operation::GetMapGlyphs)>
     #[allow(unused_mut)]
@@ -6096,10 +5970,6 @@ pub mod get_map_sprites_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMapSpritesInputOperationOutputAlias = crate::operation::GetMapSprites;
-#[doc(hidden)]
-pub type GetMapSpritesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapSpritesInput {
     /// Consumes the builder and constructs an Operation<[`GetMapSprites`](crate::operation::GetMapSprites)>
     #[allow(unused_mut)]
@@ -6260,10 +6130,6 @@ pub mod get_map_style_descriptor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMapStyleDescriptorInputOperationOutputAlias = crate::operation::GetMapStyleDescriptor;
-#[doc(hidden)]
-pub type GetMapStyleDescriptorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapStyleDescriptorInput {
     /// Consumes the builder and constructs an Operation<[`GetMapStyleDescriptor`](crate::operation::GetMapStyleDescriptor)>
     #[allow(unused_mut)]
@@ -6444,10 +6310,6 @@ pub mod get_map_tile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMapTileInputOperationOutputAlias = crate::operation::GetMapTile;
-#[doc(hidden)]
-pub type GetMapTileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMapTileInput {
     /// Consumes the builder and constructs an Operation<[`GetMapTile`](crate::operation::GetMapTile)>
     #[allow(unused_mut)]
@@ -6666,10 +6528,6 @@ pub mod list_device_positions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDevicePositionsInputOperationOutputAlias = crate::operation::ListDevicePositions;
-#[doc(hidden)]
-pub type ListDevicePositionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicePositionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevicePositions`](crate::operation::ListDevicePositions)>
     #[allow(unused_mut)]
@@ -6847,11 +6705,6 @@ pub mod list_geofence_collections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGeofenceCollectionsInputOperationOutputAlias =
-    crate::operation::ListGeofenceCollections;
-#[doc(hidden)]
-pub type ListGeofenceCollectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGeofenceCollectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListGeofenceCollections`](crate::operation::ListGeofenceCollections)>
     #[allow(unused_mut)]
@@ -7026,10 +6879,6 @@ pub mod list_geofences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGeofencesInputOperationOutputAlias = crate::operation::ListGeofences;
-#[doc(hidden)]
-pub type ListGeofencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGeofencesInput {
     /// Consumes the builder and constructs an Operation<[`ListGeofences`](crate::operation::ListGeofences)>
     #[allow(unused_mut)]
@@ -7204,10 +7053,6 @@ pub mod list_maps_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMapsInputOperationOutputAlias = crate::operation::ListMaps;
-#[doc(hidden)]
-pub type ListMapsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMapsInput {
     /// Consumes the builder and constructs an Operation<[`ListMaps`](crate::operation::ListMaps)>
     #[allow(unused_mut)]
@@ -7361,10 +7206,6 @@ pub mod list_place_indexes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPlaceIndexesInputOperationOutputAlias = crate::operation::ListPlaceIndexes;
-#[doc(hidden)]
-pub type ListPlaceIndexesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlaceIndexesInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaceIndexes`](crate::operation::ListPlaceIndexes)>
     #[allow(unused_mut)]
@@ -7521,10 +7362,6 @@ pub mod list_route_calculators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRouteCalculatorsInputOperationOutputAlias = crate::operation::ListRouteCalculators;
-#[doc(hidden)]
-pub type ListRouteCalculatorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRouteCalculatorsInput {
     /// Consumes the builder and constructs an Operation<[`ListRouteCalculators`](crate::operation::ListRouteCalculators)>
     #[allow(unused_mut)]
@@ -7673,10 +7510,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7846,10 +7679,6 @@ pub mod list_tracker_consumers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTrackerConsumersInputOperationOutputAlias = crate::operation::ListTrackerConsumers;
-#[doc(hidden)]
-pub type ListTrackerConsumersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrackerConsumersInput {
     /// Consumes the builder and constructs an Operation<[`ListTrackerConsumers`](crate::operation::ListTrackerConsumers)>
     #[allow(unused_mut)]
@@ -8027,10 +7856,6 @@ pub mod list_trackers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTrackersInputOperationOutputAlias = crate::operation::ListTrackers;
-#[doc(hidden)]
-pub type ListTrackersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrackersInput {
     /// Consumes the builder and constructs an Operation<[`ListTrackers`](crate::operation::ListTrackers)>
     #[allow(unused_mut)]
@@ -8205,10 +8030,6 @@ pub mod put_geofence_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutGeofenceInputOperationOutputAlias = crate::operation::PutGeofence;
-#[doc(hidden)]
-pub type PutGeofenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutGeofenceInput {
     /// Consumes the builder and constructs an Operation<[`PutGeofence`](crate::operation::PutGeofence)>
     #[allow(unused_mut)]
@@ -8441,11 +8262,6 @@ pub mod search_place_index_for_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchPlaceIndexForPositionInputOperationOutputAlias =
-    crate::operation::SearchPlaceIndexForPosition;
-#[doc(hidden)]
-pub type SearchPlaceIndexForPositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchPlaceIndexForPositionInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForPosition`](crate::operation::SearchPlaceIndexForPosition)>
     #[allow(unused_mut)]
@@ -8731,12 +8547,6 @@ pub mod search_place_index_for_suggestions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchPlaceIndexForSuggestionsInputOperationOutputAlias =
-    crate::operation::SearchPlaceIndexForSuggestions;
-#[doc(hidden)]
-pub type SearchPlaceIndexForSuggestionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SearchPlaceIndexForSuggestionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForSuggestions`](crate::operation::SearchPlaceIndexForSuggestions)>
     #[allow(unused_mut)]
@@ -9022,11 +8832,6 @@ pub mod search_place_index_for_text_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchPlaceIndexForTextInputOperationOutputAlias =
-    crate::operation::SearchPlaceIndexForText;
-#[doc(hidden)]
-pub type SearchPlaceIndexForTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchPlaceIndexForTextInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForText`](crate::operation::SearchPlaceIndexForText)>
     #[allow(unused_mut)]
@@ -9243,10 +9048,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -9429,10 +9230,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -9644,11 +9441,6 @@ pub mod update_geofence_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGeofenceCollectionInputOperationOutputAlias =
-    crate::operation::UpdateGeofenceCollection;
-#[doc(hidden)]
-pub type UpdateGeofenceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGeofenceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGeofenceCollection`](crate::operation::UpdateGeofenceCollection)>
     #[allow(unused_mut)]
@@ -9844,10 +9636,6 @@ pub mod update_map_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMapInputOperationOutputAlias = crate::operation::UpdateMap;
-#[doc(hidden)]
-pub type UpdateMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMapInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMap`](crate::operation::UpdateMap)>
     #[allow(unused_mut)]
@@ -10055,10 +9843,6 @@ pub mod update_place_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePlaceIndexInputOperationOutputAlias = crate::operation::UpdatePlaceIndex;
-#[doc(hidden)]
-pub type UpdatePlaceIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePlaceIndexInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePlaceIndex`](crate::operation::UpdatePlaceIndex)>
     #[allow(unused_mut)]
@@ -10256,10 +10040,6 @@ pub mod update_route_calculator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRouteCalculatorInputOperationOutputAlias = crate::operation::UpdateRouteCalculator;
-#[doc(hidden)]
-pub type UpdateRouteCalculatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRouteCalculatorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRouteCalculator`](crate::operation::UpdateRouteCalculator)>
     #[allow(unused_mut)]
@@ -10500,10 +10280,6 @@ pub mod update_tracker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTrackerInputOperationOutputAlias = crate::operation::UpdateTracker;
-#[doc(hidden)]
-pub type UpdateTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrackerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTracker`](crate::operation::UpdateTracker)>
     #[allow(unused_mut)]

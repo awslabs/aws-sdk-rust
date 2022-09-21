@@ -57,10 +57,6 @@ pub mod add_attachments_to_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddAttachmentsToSetInputOperationOutputAlias = crate::operation::AddAttachmentsToSet;
-#[doc(hidden)]
-pub type AddAttachmentsToSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddAttachmentsToSetInput {
     /// Consumes the builder and constructs an Operation<[`AddAttachmentsToSet`](crate::operation::AddAttachmentsToSet)>
     #[allow(unused_mut)]
@@ -257,10 +253,6 @@ pub mod add_communication_to_case_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddCommunicationToCaseInputOperationOutputAlias = crate::operation::AddCommunicationToCase;
-#[doc(hidden)]
-pub type AddCommunicationToCaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCommunicationToCaseInput {
     /// Consumes the builder and constructs an Operation<[`AddCommunicationToCase`](crate::operation::AddCommunicationToCase)>
     #[allow(unused_mut)]
@@ -528,10 +520,6 @@ pub mod create_case_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCaseInputOperationOutputAlias = crate::operation::CreateCase;
-#[doc(hidden)]
-pub type CreateCaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateCase`](crate::operation::CreateCase)>
     #[allow(unused_mut)]
@@ -678,10 +666,6 @@ pub mod describe_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAttachmentInputOperationOutputAlias = crate::operation::DescribeAttachment;
-#[doc(hidden)]
-pub type DescribeAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAttachment`](crate::operation::DescribeAttachment)>
     #[allow(unused_mut)]
@@ -930,10 +914,6 @@ pub mod describe_cases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCasesInputOperationOutputAlias = crate::operation::DescribeCases;
-#[doc(hidden)]
-pub type DescribeCasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCases`](crate::operation::DescribeCases)>
     #[allow(unused_mut)]
@@ -1125,10 +1105,6 @@ pub mod describe_communications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCommunicationsInputOperationOutputAlias = crate::operation::DescribeCommunications;
-#[doc(hidden)]
-pub type DescribeCommunicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCommunicationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCommunications`](crate::operation::DescribeCommunications)>
     #[allow(unused_mut)]
@@ -1295,10 +1271,6 @@ pub mod describe_services_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServicesInputOperationOutputAlias = crate::operation::DescribeServices;
-#[doc(hidden)]
-pub type DescribeServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServices`](crate::operation::DescribeServices)>
     #[allow(unused_mut)]
@@ -1442,10 +1414,6 @@ pub mod describe_severity_levels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSeverityLevelsInputOperationOutputAlias = crate::operation::DescribeSeverityLevels;
-#[doc(hidden)]
-pub type DescribeSeverityLevelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSeverityLevelsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSeverityLevels`](crate::operation::DescribeSeverityLevels)>
     #[allow(unused_mut)]
@@ -1608,12 +1576,6 @@ pub mod describe_trusted_advisor_check_refresh_statuses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckRefreshStatusesInputOperationOutputAlias =
-    crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses;
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckRefreshStatusesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckRefreshStatuses`](crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses)>
     #[allow(unused_mut)]
@@ -1771,12 +1733,6 @@ pub mod describe_trusted_advisor_check_result_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckResultInputOperationOutputAlias =
-    crate::operation::DescribeTrustedAdvisorCheckResult;
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckResultInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorCheckResultInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckResult`](crate::operation::DescribeTrustedAdvisorCheckResult)>
     #[allow(unused_mut)]
@@ -1921,12 +1877,6 @@ pub mod describe_trusted_advisor_checks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorChecksInputOperationOutputAlias =
-    crate::operation::DescribeTrustedAdvisorChecks;
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorChecksInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorChecksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorChecks`](crate::operation::DescribeTrustedAdvisorChecks)>
     #[allow(unused_mut)]
@@ -2080,12 +2030,6 @@ pub mod describe_trusted_advisor_check_summaries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckSummariesInputOperationOutputAlias =
-    crate::operation::DescribeTrustedAdvisorCheckSummaries;
-#[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckSummariesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckSummaries`](crate::operation::DescribeTrustedAdvisorCheckSummaries)>
     #[allow(unused_mut)]
@@ -2234,11 +2178,6 @@ pub mod refresh_trusted_advisor_check_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RefreshTrustedAdvisorCheckInputOperationOutputAlias =
-    crate::operation::RefreshTrustedAdvisorCheck;
-#[doc(hidden)]
-pub type RefreshTrustedAdvisorCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RefreshTrustedAdvisorCheckInput {
     /// Consumes the builder and constructs an Operation<[`RefreshTrustedAdvisorCheck`](crate::operation::RefreshTrustedAdvisorCheck)>
     #[allow(unused_mut)]
@@ -2381,10 +2320,6 @@ pub mod resolve_case_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResolveCaseInputOperationOutputAlias = crate::operation::ResolveCase;
-#[doc(hidden)]
-pub type ResolveCaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveCaseInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCase`](crate::operation::ResolveCase)>
     #[allow(unused_mut)]

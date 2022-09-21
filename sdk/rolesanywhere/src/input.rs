@@ -145,10 +145,6 @@ pub mod create_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProfileInputOperationOutputAlias = crate::operation::CreateProfile;
-#[doc(hidden)]
-pub type CreateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfile`](crate::operation::CreateProfile)>
     #[allow(unused_mut)]
@@ -332,10 +328,6 @@ pub mod create_trust_anchor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTrustAnchorInputOperationOutputAlias = crate::operation::CreateTrustAnchor;
-#[doc(hidden)]
-pub type CreateTrustAnchorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrustAnchorInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrustAnchor`](crate::operation::CreateTrustAnchor)>
     #[allow(unused_mut)]
@@ -473,10 +465,6 @@ pub mod delete_crl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCrlInputOperationOutputAlias = crate::operation::DeleteCrl;
-#[doc(hidden)]
-pub type DeleteCrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCrlInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCrl`](crate::operation::DeleteCrl)>
     #[allow(unused_mut)]
@@ -613,10 +601,6 @@ pub mod delete_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProfileInputOperationOutputAlias = crate::operation::DeleteProfile;
-#[doc(hidden)]
-pub type DeleteProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfile`](crate::operation::DeleteProfile)>
     #[allow(unused_mut)]
@@ -759,10 +743,6 @@ pub mod delete_trust_anchor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTrustAnchorInputOperationOutputAlias = crate::operation::DeleteTrustAnchor;
-#[doc(hidden)]
-pub type DeleteTrustAnchorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrustAnchorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrustAnchor`](crate::operation::DeleteTrustAnchor)>
     #[allow(unused_mut)]
@@ -905,10 +885,6 @@ pub mod disable_crl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableCrlInputOperationOutputAlias = crate::operation::DisableCrl;
-#[doc(hidden)]
-pub type DisableCrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableCrlInput {
     /// Consumes the builder and constructs an Operation<[`DisableCrl`](crate::operation::DisableCrl)>
     #[allow(unused_mut)]
@@ -1048,10 +1024,6 @@ pub mod disable_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableProfileInputOperationOutputAlias = crate::operation::DisableProfile;
-#[doc(hidden)]
-pub type DisableProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableProfileInput {
     /// Consumes the builder and constructs an Operation<[`DisableProfile`](crate::operation::DisableProfile)>
     #[allow(unused_mut)]
@@ -1198,10 +1170,6 @@ pub mod disable_trust_anchor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableTrustAnchorInputOperationOutputAlias = crate::operation::DisableTrustAnchor;
-#[doc(hidden)]
-pub type DisableTrustAnchorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableTrustAnchorInput {
     /// Consumes the builder and constructs an Operation<[`DisableTrustAnchor`](crate::operation::DisableTrustAnchor)>
     #[allow(unused_mut)]
@@ -1344,10 +1312,6 @@ pub mod enable_crl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableCrlInputOperationOutputAlias = crate::operation::EnableCrl;
-#[doc(hidden)]
-pub type EnableCrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableCrlInput {
     /// Consumes the builder and constructs an Operation<[`EnableCrl`](crate::operation::EnableCrl)>
     #[allow(unused_mut)]
@@ -1485,10 +1449,6 @@ pub mod enable_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableProfileInputOperationOutputAlias = crate::operation::EnableProfile;
-#[doc(hidden)]
-pub type EnableProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableProfileInput {
     /// Consumes the builder and constructs an Operation<[`EnableProfile`](crate::operation::EnableProfile)>
     #[allow(unused_mut)]
@@ -1635,10 +1595,6 @@ pub mod enable_trust_anchor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableTrustAnchorInputOperationOutputAlias = crate::operation::EnableTrustAnchor;
-#[doc(hidden)]
-pub type EnableTrustAnchorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableTrustAnchorInput {
     /// Consumes the builder and constructs an Operation<[`EnableTrustAnchor`](crate::operation::EnableTrustAnchor)>
     #[allow(unused_mut)]
@@ -1781,10 +1737,6 @@ pub mod get_crl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCrlInputOperationOutputAlias = crate::operation::GetCrl;
-#[doc(hidden)]
-pub type GetCrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCrlInput {
     /// Consumes the builder and constructs an Operation<[`GetCrl`](crate::operation::GetCrl)>
     #[allow(unused_mut)]
@@ -1920,10 +1872,6 @@ pub mod get_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetProfileInputOperationOutputAlias = crate::operation::GetProfile;
-#[doc(hidden)]
-pub type GetProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetProfile`](crate::operation::GetProfile)>
     #[allow(unused_mut)]
@@ -2062,10 +2010,6 @@ pub mod get_subject_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSubjectInputOperationOutputAlias = crate::operation::GetSubject;
-#[doc(hidden)]
-pub type GetSubjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSubjectInput {
     /// Consumes the builder and constructs an Operation<[`GetSubject`](crate::operation::GetSubject)>
     #[allow(unused_mut)]
@@ -2208,10 +2152,6 @@ pub mod get_trust_anchor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTrustAnchorInputOperationOutputAlias = crate::operation::GetTrustAnchor;
-#[doc(hidden)]
-pub type GetTrustAnchorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrustAnchorInput {
     /// Consumes the builder and constructs an Operation<[`GetTrustAnchor`](crate::operation::GetTrustAnchor)>
     #[allow(unused_mut)]
@@ -2414,10 +2354,6 @@ pub mod import_crl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportCrlInputOperationOutputAlias = crate::operation::ImportCrl;
-#[doc(hidden)]
-pub type ImportCrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportCrlInput {
     /// Consumes the builder and constructs an Operation<[`ImportCrl`](crate::operation::ImportCrl)>
     #[allow(unused_mut)]
@@ -2565,10 +2501,6 @@ pub mod list_crls_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCrlsInputOperationOutputAlias = crate::operation::ListCrls;
-#[doc(hidden)]
-pub type ListCrlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCrlsInput {
     /// Consumes the builder and constructs an Operation<[`ListCrls`](crate::operation::ListCrls)>
     #[allow(unused_mut)]
@@ -2720,10 +2652,6 @@ pub mod list_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProfilesInputOperationOutputAlias = crate::operation::ListProfiles;
-#[doc(hidden)]
-pub type ListProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfiles`](crate::operation::ListProfiles)>
     #[allow(unused_mut)]
@@ -2877,10 +2805,6 @@ pub mod list_subjects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSubjectsInputOperationOutputAlias = crate::operation::ListSubjects;
-#[doc(hidden)]
-pub type ListSubjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSubjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListSubjects`](crate::operation::ListSubjects)>
     #[allow(unused_mut)]
@@ -3022,10 +2946,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3176,10 +3096,6 @@ pub mod list_trust_anchors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTrustAnchorsInputOperationOutputAlias = crate::operation::ListTrustAnchors;
-#[doc(hidden)]
-pub type ListTrustAnchorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrustAnchorsInput {
     /// Consumes the builder and constructs an Operation<[`ListTrustAnchors`](crate::operation::ListTrustAnchors)>
     #[allow(unused_mut)]
@@ -3342,10 +3258,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3505,10 +3417,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3670,10 +3578,6 @@ pub mod update_crl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCrlInputOperationOutputAlias = crate::operation::UpdateCrl;
-#[doc(hidden)]
-pub type UpdateCrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCrlInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCrl`](crate::operation::UpdateCrl)>
     #[allow(unused_mut)]
@@ -3905,10 +3809,6 @@ pub mod update_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProfileInputOperationOutputAlias = crate::operation::UpdateProfile;
-#[doc(hidden)]
-pub type UpdateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfile`](crate::operation::UpdateProfile)>
     #[allow(unused_mut)]
@@ -4089,10 +3989,6 @@ pub mod update_trust_anchor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTrustAnchorInputOperationOutputAlias = crate::operation::UpdateTrustAnchor;
-#[doc(hidden)]
-pub type UpdateTrustAnchorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrustAnchorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrustAnchor`](crate::operation::UpdateTrustAnchor)>
     #[allow(unused_mut)]

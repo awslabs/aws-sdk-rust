@@ -34,10 +34,6 @@ pub mod associate_member_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateMemberAccountInputOperationOutputAlias = crate::operation::AssociateMemberAccount;
-#[doc(hidden)]
-pub type AssociateMemberAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMemberAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMemberAccount`](crate::operation::AssociateMemberAccount)>
     #[allow(unused_mut)]
@@ -208,10 +204,6 @@ pub mod associate_s3_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateS3ResourcesInputOperationOutputAlias = crate::operation::AssociateS3Resources;
-#[doc(hidden)]
-pub type AssociateS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`AssociateS3Resources`](crate::operation::AssociateS3Resources)>
     #[allow(unused_mut)]
@@ -362,11 +354,6 @@ pub mod disassociate_member_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateMemberAccountInputOperationOutputAlias =
-    crate::operation::DisassociateMemberAccount;
-#[doc(hidden)]
-pub type DisassociateMemberAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMemberAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMemberAccount`](crate::operation::DisassociateMemberAccount)>
     #[allow(unused_mut)]
@@ -539,11 +526,6 @@ pub mod disassociate_s3_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateS3ResourcesInputOperationOutputAlias =
-    crate::operation::DisassociateS3Resources;
-#[doc(hidden)]
-pub type DisassociateS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateS3Resources`](crate::operation::DisassociateS3Resources)>
     #[allow(unused_mut)]
@@ -701,10 +683,6 @@ pub mod list_member_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMemberAccountsInputOperationOutputAlias = crate::operation::ListMemberAccounts;
-#[doc(hidden)]
-pub type ListMemberAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMemberAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListMemberAccounts`](crate::operation::ListMemberAccounts)>
     #[allow(unused_mut)]
@@ -875,10 +853,6 @@ pub mod list_s3_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListS3ResourcesInputOperationOutputAlias = crate::operation::ListS3Resources;
-#[doc(hidden)]
-pub type ListS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListS3Resources`](crate::operation::ListS3Resources)>
     #[allow(unused_mut)]
@@ -1050,10 +1024,6 @@ pub mod update_s3_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateS3ResourcesInputOperationOutputAlias = crate::operation::UpdateS3Resources;
-#[doc(hidden)]
-pub type UpdateS3ResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateS3ResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateS3Resources`](crate::operation::UpdateS3Resources)>
     #[allow(unused_mut)]

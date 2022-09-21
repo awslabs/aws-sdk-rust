@@ -53,10 +53,6 @@ pub mod add_flow_media_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddFlowMediaStreamsInputOperationOutputAlias = crate::operation::AddFlowMediaStreams;
-#[doc(hidden)]
-pub type AddFlowMediaStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowMediaStreamsInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowMediaStreams`](crate::operation::AddFlowMediaStreams)>
     #[allow(unused_mut)]
@@ -237,10 +233,6 @@ pub mod add_flow_outputs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddFlowOutputsInputOperationOutputAlias = crate::operation::AddFlowOutputs;
-#[doc(hidden)]
-pub type AddFlowOutputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowOutputsInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowOutputs`](crate::operation::AddFlowOutputs)>
     #[allow(unused_mut)]
@@ -415,10 +407,6 @@ pub mod add_flow_sources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddFlowSourcesInputOperationOutputAlias = crate::operation::AddFlowSources;
-#[doc(hidden)]
-pub type AddFlowSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowSourcesInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowSources`](crate::operation::AddFlowSources)>
     #[allow(unused_mut)]
@@ -594,10 +582,6 @@ pub mod add_flow_vpc_interfaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddFlowVpcInterfacesInputOperationOutputAlias = crate::operation::AddFlowVpcInterfaces;
-#[doc(hidden)]
-pub type AddFlowVpcInterfacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowVpcInterfacesInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowVpcInterfaces`](crate::operation::AddFlowVpcInterfaces)>
     #[allow(unused_mut)]
@@ -923,10 +907,6 @@ pub mod create_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFlowInputOperationOutputAlias = crate::operation::CreateFlow;
-#[doc(hidden)]
-pub type CreateFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlow`](crate::operation::CreateFlow)>
     #[allow(unused_mut)]
@@ -1064,10 +1044,6 @@ pub mod delete_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFlowInputOperationOutputAlias = crate::operation::DeleteFlow;
-#[doc(hidden)]
-pub type DeleteFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlow`](crate::operation::DeleteFlow)>
     #[allow(unused_mut)]
@@ -1207,10 +1183,6 @@ pub mod describe_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFlowInputOperationOutputAlias = crate::operation::DescribeFlow;
-#[doc(hidden)]
-pub type DescribeFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlow`](crate::operation::DescribeFlow)>
     #[allow(unused_mut)]
@@ -1350,10 +1322,6 @@ pub mod describe_offering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOfferingInputOperationOutputAlias = crate::operation::DescribeOffering;
-#[doc(hidden)]
-pub type DescribeOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOfferingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOffering`](crate::operation::DescribeOffering)>
     #[allow(unused_mut)]
@@ -1500,10 +1468,6 @@ pub mod describe_reservation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservationInputOperationOutputAlias = crate::operation::DescribeReservation;
-#[doc(hidden)]
-pub type DescribeReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservation`](crate::operation::DescribeReservation)>
     #[allow(unused_mut)]
@@ -1669,10 +1633,6 @@ pub mod grant_flow_entitlements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GrantFlowEntitlementsInputOperationOutputAlias = crate::operation::GrantFlowEntitlements;
-#[doc(hidden)]
-pub type GrantFlowEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GrantFlowEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`GrantFlowEntitlements`](crate::operation::GrantFlowEntitlements)>
     #[allow(unused_mut)]
@@ -1844,10 +1804,6 @@ pub mod list_entitlements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntitlementsInputOperationOutputAlias = crate::operation::ListEntitlements;
-#[doc(hidden)]
-pub type ListEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitlements`](crate::operation::ListEntitlements)>
     #[allow(unused_mut)]
@@ -2000,10 +1956,6 @@ pub mod list_flows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFlowsInputOperationOutputAlias = crate::operation::ListFlows;
-#[doc(hidden)]
-pub type ListFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListFlows`](crate::operation::ListFlows)>
     #[allow(unused_mut)]
@@ -2155,10 +2107,6 @@ pub mod list_offerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOfferingsInputOperationOutputAlias = crate::operation::ListOfferings;
-#[doc(hidden)]
-pub type ListOfferingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`ListOfferings`](crate::operation::ListOfferings)>
     #[allow(unused_mut)]
@@ -2312,10 +2260,6 @@ pub mod list_reservations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReservationsInputOperationOutputAlias = crate::operation::ListReservations;
-#[doc(hidden)]
-pub type ListReservationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReservationsInput {
     /// Consumes the builder and constructs an Operation<[`ListReservations`](crate::operation::ListReservations)>
     #[allow(unused_mut)]
@@ -2457,10 +2401,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2627,10 +2567,6 @@ pub mod purchase_offering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PurchaseOfferingInputOperationOutputAlias = crate::operation::PurchaseOffering;
-#[doc(hidden)]
-pub type PurchaseOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseOffering`](crate::operation::PurchaseOffering)>
     #[allow(unused_mut)]
@@ -2803,10 +2739,6 @@ pub mod remove_flow_media_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveFlowMediaStreamInputOperationOutputAlias = crate::operation::RemoveFlowMediaStream;
-#[doc(hidden)]
-pub type RemoveFlowMediaStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowMediaStreamInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowMediaStream`](crate::operation::RemoveFlowMediaStream)>
     #[allow(unused_mut)]
@@ -2977,10 +2909,6 @@ pub mod remove_flow_output_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveFlowOutputInputOperationOutputAlias = crate::operation::RemoveFlowOutput;
-#[doc(hidden)]
-pub type RemoveFlowOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowOutputInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowOutput`](crate::operation::RemoveFlowOutput)>
     #[allow(unused_mut)]
@@ -3151,10 +3079,6 @@ pub mod remove_flow_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveFlowSourceInputOperationOutputAlias = crate::operation::RemoveFlowSource;
-#[doc(hidden)]
-pub type RemoveFlowSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowSourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowSource`](crate::operation::RemoveFlowSource)>
     #[allow(unused_mut)]
@@ -3328,10 +3252,6 @@ pub mod remove_flow_vpc_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveFlowVpcInterfaceInputOperationOutputAlias = crate::operation::RemoveFlowVpcInterface;
-#[doc(hidden)]
-pub type RemoveFlowVpcInterfaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowVpcInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowVpcInterface`](crate::operation::RemoveFlowVpcInterface)>
     #[allow(unused_mut)]
@@ -3505,10 +3425,6 @@ pub mod revoke_flow_entitlement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeFlowEntitlementInputOperationOutputAlias = crate::operation::RevokeFlowEntitlement;
-#[doc(hidden)]
-pub type RevokeFlowEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeFlowEntitlementInput {
     /// Consumes the builder and constructs an Operation<[`RevokeFlowEntitlement`](crate::operation::RevokeFlowEntitlement)>
     #[allow(unused_mut)]
@@ -3666,10 +3582,6 @@ pub mod start_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFlowInputOperationOutputAlias = crate::operation::StartFlow;
-#[doc(hidden)]
-pub type StartFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFlowInput {
     /// Consumes the builder and constructs an Operation<[`StartFlow`](crate::operation::StartFlow)>
     #[allow(unused_mut)]
@@ -3806,10 +3718,6 @@ pub mod stop_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopFlowInputOperationOutputAlias = crate::operation::StopFlow;
-#[doc(hidden)]
-pub type StopFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFlowInput {
     /// Consumes the builder and constructs an Operation<[`StopFlow`](crate::operation::StopFlow)>
     #[allow(unused_mut)]
@@ -3976,10 +3884,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4154,10 +4058,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4339,10 +4239,6 @@ pub mod update_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFlowInputOperationOutputAlias = crate::operation::UpdateFlow;
-#[doc(hidden)]
-pub type UpdateFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlow`](crate::operation::UpdateFlow)>
     #[allow(unused_mut)]
@@ -4574,10 +4470,6 @@ pub mod update_flow_entitlement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFlowEntitlementInputOperationOutputAlias = crate::operation::UpdateFlowEntitlement;
-#[doc(hidden)]
-pub type UpdateFlowEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowEntitlementInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowEntitlement`](crate::operation::UpdateFlowEntitlement)>
     #[allow(unused_mut)]
@@ -4833,10 +4725,6 @@ pub mod update_flow_media_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFlowMediaStreamInputOperationOutputAlias = crate::operation::UpdateFlowMediaStream;
-#[doc(hidden)]
-pub type UpdateFlowMediaStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowMediaStreamInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowMediaStream`](crate::operation::UpdateFlowMediaStream)>
     #[allow(unused_mut)]
@@ -5240,10 +5128,6 @@ pub mod update_flow_output_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFlowOutputInputOperationOutputAlias = crate::operation::UpdateFlowOutput;
-#[doc(hidden)]
-pub type UpdateFlowOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowOutputInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowOutput`](crate::operation::UpdateFlowOutput)>
     #[allow(unused_mut)]
@@ -5638,10 +5522,6 @@ pub mod update_flow_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFlowSourceInputOperationOutputAlias = crate::operation::UpdateFlowSource;
-#[doc(hidden)]
-pub type UpdateFlowSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowSource`](crate::operation::UpdateFlowSource)>
     #[allow(unused_mut)]

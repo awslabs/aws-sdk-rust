@@ -91,10 +91,6 @@ pub mod complete_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompleteSnapshotInputOperationOutputAlias = crate::operation::CompleteSnapshot;
-#[doc(hidden)]
-pub type CompleteSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CompleteSnapshot`](crate::operation::CompleteSnapshot)>
     #[allow(unused_mut)]
@@ -267,10 +263,6 @@ pub mod get_snapshot_block_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSnapshotBlockInputOperationOutputAlias = crate::operation::GetSnapshotBlock;
-#[doc(hidden)]
-pub type GetSnapshotBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnapshotBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshotBlock`](crate::operation::GetSnapshotBlock)>
     #[allow(unused_mut)]
@@ -513,10 +505,6 @@ pub mod list_changed_blocks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChangedBlocksInputOperationOutputAlias = crate::operation::ListChangedBlocks;
-#[doc(hidden)]
-pub type ListChangedBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangedBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListChangedBlocks`](crate::operation::ListChangedBlocks)>
     #[allow(unused_mut)]
@@ -733,10 +721,6 @@ pub mod list_snapshot_blocks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSnapshotBlocksInputOperationOutputAlias = crate::operation::ListSnapshotBlocks;
-#[doc(hidden)]
-pub type ListSnapshotBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSnapshotBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListSnapshotBlocks`](crate::operation::ListSnapshotBlocks)>
     #[allow(unused_mut)]
@@ -989,10 +973,6 @@ pub mod put_snapshot_block_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutSnapshotBlockInputOperationOutputAlias = crate::operation::PutSnapshotBlock;
-#[doc(hidden)]
-pub type PutSnapshotBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSnapshotBlockInput {
     /// Consumes the builder and constructs an Operation<[`PutSnapshotBlock`](crate::operation::PutSnapshotBlock)>
     #[allow(unused_mut)]
@@ -1304,10 +1284,6 @@ pub mod start_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSnapshotInputOperationOutputAlias = crate::operation::StartSnapshot;
-#[doc(hidden)]
-pub type StartSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`StartSnapshot`](crate::operation::StartSnapshot)>
     #[allow(unused_mut)]

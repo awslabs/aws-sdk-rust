@@ -345,10 +345,6 @@ pub mod create_broker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBrokerInputOperationOutputAlias = crate::operation::CreateBroker;
-#[doc(hidden)]
-pub type CreateBrokerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBrokerInput {
     /// Consumes the builder and constructs an Operation<[`CreateBroker`](crate::operation::CreateBroker)>
     #[allow(unused_mut)]
@@ -568,10 +564,6 @@ pub mod create_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationInputOperationOutputAlias = crate::operation::CreateConfiguration;
-#[doc(hidden)]
-pub type CreateConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfiguration`](crate::operation::CreateConfiguration)>
     #[allow(unused_mut)]
@@ -738,10 +730,6 @@ pub mod create_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
-#[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(unused_mut)]
@@ -951,10 +939,6 @@ pub mod create_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
-#[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(unused_mut)]
@@ -1127,10 +1111,6 @@ pub mod delete_broker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBrokerInputOperationOutputAlias = crate::operation::DeleteBroker;
-#[doc(hidden)]
-pub type DeleteBrokerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBrokerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBroker`](crate::operation::DeleteBroker)>
     #[allow(unused_mut)]
@@ -1290,10 +1270,6 @@ pub mod delete_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
-#[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(unused_mut)]
@@ -1457,10 +1433,6 @@ pub mod delete_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
-#[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(unused_mut)]
@@ -1619,10 +1591,6 @@ pub mod describe_broker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBrokerInputOperationOutputAlias = crate::operation::DescribeBroker;
-#[doc(hidden)]
-pub type DescribeBrokerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBrokerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBroker`](crate::operation::DescribeBroker)>
     #[allow(unused_mut)]
@@ -1788,11 +1756,6 @@ pub mod describe_broker_engine_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBrokerEngineTypesInputOperationOutputAlias =
-    crate::operation::DescribeBrokerEngineTypes;
-#[doc(hidden)]
-pub type DescribeBrokerEngineTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBrokerEngineTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBrokerEngineTypes`](crate::operation::DescribeBrokerEngineTypes)>
     #[allow(unused_mut)]
@@ -1990,12 +1953,6 @@ pub mod describe_broker_instance_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBrokerInstanceOptionsInputOperationOutputAlias =
-    crate::operation::DescribeBrokerInstanceOptions;
-#[doc(hidden)]
-pub type DescribeBrokerInstanceOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBrokerInstanceOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBrokerInstanceOptions`](crate::operation::DescribeBrokerInstanceOptions)>
     #[allow(unused_mut)]
@@ -2155,10 +2112,6 @@ pub mod describe_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationInputOperationOutputAlias = crate::operation::DescribeConfiguration;
-#[doc(hidden)]
-pub type DescribeConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfiguration`](crate::operation::DescribeConfiguration)>
     #[allow(unused_mut)]
@@ -2322,12 +2275,6 @@ pub mod describe_configuration_revision_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationRevisionInputOperationOutputAlias =
-    crate::operation::DescribeConfigurationRevision;
-#[doc(hidden)]
-pub type DescribeConfigurationRevisionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationRevisionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationRevision`](crate::operation::DescribeConfigurationRevision)>
     #[allow(unused_mut)]
@@ -2498,10 +2445,6 @@ pub mod describe_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserInputOperationOutputAlias = crate::operation::DescribeUser;
-#[doc(hidden)]
-pub type DescribeUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUser`](crate::operation::DescribeUser)>
     #[allow(unused_mut)]
@@ -2672,10 +2615,6 @@ pub mod list_brokers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBrokersInputOperationOutputAlias = crate::operation::ListBrokers;
-#[doc(hidden)]
-pub type ListBrokersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBrokersInput {
     /// Consumes the builder and constructs an Operation<[`ListBrokers`](crate::operation::ListBrokers)>
     #[allow(unused_mut)]
@@ -2846,11 +2785,6 @@ pub mod list_configuration_revisions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConfigurationRevisionsInputOperationOutputAlias =
-    crate::operation::ListConfigurationRevisions;
-#[doc(hidden)]
-pub type ListConfigurationRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationRevisions`](crate::operation::ListConfigurationRevisions)>
     #[allow(unused_mut)]
@@ -3023,10 +2957,6 @@ pub mod list_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConfigurationsInputOperationOutputAlias = crate::operation::ListConfigurations;
-#[doc(hidden)]
-pub type ListConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurations`](crate::operation::ListConfigurations)>
     #[allow(unused_mut)]
@@ -3167,10 +3097,6 @@ pub mod list_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
-#[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(unused_mut)]
@@ -3328,10 +3254,6 @@ pub mod list_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
-#[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(unused_mut)]
@@ -3483,10 +3405,6 @@ pub mod reboot_broker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RebootBrokerInputOperationOutputAlias = crate::operation::RebootBroker;
-#[doc(hidden)]
-pub type RebootBrokerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootBrokerInput {
     /// Consumes the builder and constructs an Operation<[`RebootBroker`](crate::operation::RebootBroker)>
     #[allow(unused_mut)]
@@ -3776,10 +3694,6 @@ pub mod update_broker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBrokerInputOperationOutputAlias = crate::operation::UpdateBroker;
-#[doc(hidden)]
-pub type UpdateBrokerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBrokerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBroker`](crate::operation::UpdateBroker)>
     #[allow(unused_mut)]
@@ -3960,10 +3874,6 @@ pub mod update_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationInputOperationOutputAlias = crate::operation::UpdateConfiguration;
-#[doc(hidden)]
-pub type UpdateConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfiguration`](crate::operation::UpdateConfiguration)>
     #[allow(unused_mut)]
@@ -4177,10 +4087,6 @@ pub mod update_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserInputOperationOutputAlias = crate::operation::UpdateUser;
-#[doc(hidden)]
-pub type UpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUser`](crate::operation::UpdateUser)>
     #[allow(unused_mut)]

@@ -64,12 +64,6 @@ pub mod batch_get_aggregate_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetAggregateResourceConfigInputOperationOutputAlias =
-    crate::operation::BatchGetAggregateResourceConfig;
-#[doc(hidden)]
-pub type BatchGetAggregateResourceConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetAggregateResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetAggregateResourceConfig`](crate::operation::BatchGetAggregateResourceConfig)>
     #[allow(unused_mut)]
@@ -221,10 +215,6 @@ pub mod batch_get_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetResourceConfigInputOperationOutputAlias = crate::operation::BatchGetResourceConfig;
-#[doc(hidden)]
-pub type BatchGetResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetResourceConfig`](crate::operation::BatchGetResourceConfig)>
     #[allow(unused_mut)]
@@ -390,12 +380,6 @@ pub mod delete_aggregation_authorization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAggregationAuthorizationInputOperationOutputAlias =
-    crate::operation::DeleteAggregationAuthorization;
-#[doc(hidden)]
-pub type DeleteAggregationAuthorizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAggregationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAggregationAuthorization`](crate::operation::DeleteAggregationAuthorization)>
     #[allow(unused_mut)]
@@ -541,10 +525,6 @@ pub mod delete_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigRuleInputOperationOutputAlias = crate::operation::DeleteConfigRule;
-#[doc(hidden)]
-pub type DeleteConfigRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigRule`](crate::operation::DeleteConfigRule)>
     #[allow(unused_mut)]
@@ -696,12 +676,6 @@ pub mod delete_configuration_aggregator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationAggregatorInputOperationOutputAlias =
-    crate::operation::DeleteConfigurationAggregator;
-#[doc(hidden)]
-pub type DeleteConfigurationAggregatorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationAggregator`](crate::operation::DeleteConfigurationAggregator)>
     #[allow(unused_mut)]
@@ -852,11 +826,6 @@ pub mod delete_configuration_recorder_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationRecorderInputOperationOutputAlias =
-    crate::operation::DeleteConfigurationRecorder;
-#[doc(hidden)]
-pub type DeleteConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationRecorder`](crate::operation::DeleteConfigurationRecorder)>
     #[allow(unused_mut)]
@@ -1002,10 +971,6 @@ pub mod delete_conformance_pack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConformancePackInputOperationOutputAlias = crate::operation::DeleteConformancePack;
-#[doc(hidden)]
-pub type DeleteConformancePackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConformancePack`](crate::operation::DeleteConformancePack)>
     #[allow(unused_mut)]
@@ -1154,10 +1119,6 @@ pub mod delete_delivery_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeliveryChannelInputOperationOutputAlias = crate::operation::DeleteDeliveryChannel;
-#[doc(hidden)]
-pub type DeleteDeliveryChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeliveryChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeliveryChannel`](crate::operation::DeleteDeliveryChannel)>
     #[allow(unused_mut)]
@@ -1308,11 +1269,6 @@ pub mod delete_evaluation_results_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEvaluationResultsInputOperationOutputAlias =
-    crate::operation::DeleteEvaluationResults;
-#[doc(hidden)]
-pub type DeleteEvaluationResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEvaluationResultsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEvaluationResults`](crate::operation::DeleteEvaluationResults)>
     #[allow(unused_mut)]
@@ -1466,12 +1422,6 @@ pub mod delete_organization_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteOrganizationConfigRuleInputOperationOutputAlias =
-    crate::operation::DeleteOrganizationConfigRule;
-#[doc(hidden)]
-pub type DeleteOrganizationConfigRuleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganizationConfigRule`](crate::operation::DeleteOrganizationConfigRule)>
     #[allow(unused_mut)]
@@ -1622,12 +1572,6 @@ pub mod delete_organization_conformance_pack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteOrganizationConformancePackInputOperationOutputAlias =
-    crate::operation::DeleteOrganizationConformancePack;
-#[doc(hidden)]
-pub type DeleteOrganizationConformancePackInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganizationConformancePack`](crate::operation::DeleteOrganizationConformancePack)>
     #[allow(unused_mut)]
@@ -1790,12 +1734,6 @@ pub mod delete_pending_aggregation_request_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePendingAggregationRequestInputOperationOutputAlias =
-    crate::operation::DeletePendingAggregationRequest;
-#[doc(hidden)]
-pub type DeletePendingAggregationRequestInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePendingAggregationRequestInput {
     /// Consumes the builder and constructs an Operation<[`DeletePendingAggregationRequest`](crate::operation::DeletePendingAggregationRequest)>
     #[allow(unused_mut)]
@@ -1958,12 +1896,6 @@ pub mod delete_remediation_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRemediationConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteRemediationConfiguration;
-#[doc(hidden)]
-pub type DeleteRemediationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRemediationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRemediationConfiguration`](crate::operation::DeleteRemediationConfiguration)>
     #[allow(unused_mut)]
@@ -2138,11 +2070,6 @@ pub mod delete_remediation_exceptions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRemediationExceptionsInputOperationOutputAlias =
-    crate::operation::DeleteRemediationExceptions;
-#[doc(hidden)]
-pub type DeleteRemediationExceptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRemediationExceptionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRemediationExceptions`](crate::operation::DeleteRemediationExceptions)>
     #[allow(unused_mut)]
@@ -2300,10 +2227,6 @@ pub mod delete_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourceConfigInputOperationOutputAlias = crate::operation::DeleteResourceConfig;
-#[doc(hidden)]
-pub type DeleteResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceConfig`](crate::operation::DeleteResourceConfig)>
     #[allow(unused_mut)]
@@ -2457,12 +2380,6 @@ pub mod delete_retention_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRetentionConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteRetentionConfiguration;
-#[doc(hidden)]
-pub type DeleteRetentionConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRetentionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRetentionConfiguration`](crate::operation::DeleteRetentionConfiguration)>
     #[allow(unused_mut)]
@@ -2605,10 +2522,6 @@ pub mod delete_stored_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStoredQueryInputOperationOutputAlias = crate::operation::DeleteStoredQuery;
-#[doc(hidden)]
-pub type DeleteStoredQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStoredQueryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStoredQuery`](crate::operation::DeleteStoredQuery)>
     #[allow(unused_mut)]
@@ -2755,10 +2668,6 @@ pub mod deliver_config_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeliverConfigSnapshotInputOperationOutputAlias = crate::operation::DeliverConfigSnapshot;
-#[doc(hidden)]
-pub type DeliverConfigSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeliverConfigSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeliverConfigSnapshot`](crate::operation::DeliverConfigSnapshot)>
     #[allow(unused_mut)]
@@ -2953,12 +2862,6 @@ pub mod describe_aggregate_compliance_by_config_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAggregateComplianceByConfigRulesInputOperationOutputAlias =
-    crate::operation::DescribeAggregateComplianceByConfigRules;
-#[doc(hidden)]
-pub type DescribeAggregateComplianceByConfigRulesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAggregateComplianceByConfigRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAggregateComplianceByConfigRules`](crate::operation::DescribeAggregateComplianceByConfigRules)>
     #[allow(unused_mut)]
@@ -3154,12 +3057,6 @@ pub mod describe_aggregate_compliance_by_conformance_packs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAggregateComplianceByConformancePacksInputOperationOutputAlias =
-    crate::operation::DescribeAggregateComplianceByConformancePacks;
-#[doc(hidden)]
-pub type DescribeAggregateComplianceByConformancePacksInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAggregateComplianceByConformancePacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAggregateComplianceByConformancePacks`](crate::operation::DescribeAggregateComplianceByConformancePacks)>
     #[allow(unused_mut)]
@@ -3317,12 +3214,6 @@ pub mod describe_aggregation_authorizations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAggregationAuthorizationsInputOperationOutputAlias =
-    crate::operation::DescribeAggregationAuthorizations;
-#[doc(hidden)]
-pub type DescribeAggregationAuthorizationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAggregationAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAggregationAuthorizations`](crate::operation::DescribeAggregationAuthorizations)>
     #[allow(unused_mut)]
@@ -3512,12 +3403,6 @@ pub mod describe_compliance_by_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeComplianceByConfigRuleInputOperationOutputAlias =
-    crate::operation::DescribeComplianceByConfigRule;
-#[doc(hidden)]
-pub type DescribeComplianceByConfigRuleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComplianceByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComplianceByConfigRule`](crate::operation::DescribeComplianceByConfigRule)>
     #[allow(unused_mut)]
@@ -3725,12 +3610,6 @@ pub mod describe_compliance_by_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeComplianceByResourceInputOperationOutputAlias =
-    crate::operation::DescribeComplianceByResource;
-#[doc(hidden)]
-pub type DescribeComplianceByResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComplianceByResourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComplianceByResource`](crate::operation::DescribeComplianceByResource)>
     #[allow(unused_mut)]
@@ -3912,12 +3791,6 @@ pub mod describe_config_rule_evaluation_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigRuleEvaluationStatusInputOperationOutputAlias =
-    crate::operation::DescribeConfigRuleEvaluationStatus;
-#[doc(hidden)]
-pub type DescribeConfigRuleEvaluationStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigRuleEvaluationStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigRuleEvaluationStatus`](crate::operation::DescribeConfigRuleEvaluationStatus)>
     #[allow(unused_mut)]
@@ -4081,10 +3954,6 @@ pub mod describe_config_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigRulesInputOperationOutputAlias = crate::operation::DescribeConfigRules;
-#[doc(hidden)]
-pub type DescribeConfigRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigRules`](crate::operation::DescribeConfigRules)>
     #[allow(unused_mut)]
@@ -4267,12 +4136,6 @@ pub mod describe_configuration_aggregators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationAggregatorsInputOperationOutputAlias =
-    crate::operation::DescribeConfigurationAggregators;
-#[doc(hidden)]
-pub type DescribeConfigurationAggregatorsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationAggregatorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationAggregators`](crate::operation::DescribeConfigurationAggregators)>
     #[allow(unused_mut)]
@@ -4481,12 +4344,6 @@ pub mod describe_configuration_aggregator_sources_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationAggregatorSourcesStatusInputOperationOutputAlias =
-    crate::operation::DescribeConfigurationAggregatorSourcesStatus;
-#[doc(hidden)]
-pub type DescribeConfigurationAggregatorSourcesStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationAggregatorSourcesStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationAggregatorSourcesStatus`](crate::operation::DescribeConfigurationAggregatorSourcesStatus)>
     #[allow(unused_mut)]
@@ -4645,12 +4502,6 @@ pub mod describe_configuration_recorders_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationRecordersInputOperationOutputAlias =
-    crate::operation::DescribeConfigurationRecorders;
-#[doc(hidden)]
-pub type DescribeConfigurationRecordersInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationRecordersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationRecorders`](crate::operation::DescribeConfigurationRecorders)>
     #[allow(unused_mut)]
@@ -4808,12 +4659,6 @@ pub mod describe_configuration_recorder_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConfigurationRecorderStatusInputOperationOutputAlias =
-    crate::operation::DescribeConfigurationRecorderStatus;
-#[doc(hidden)]
-pub type DescribeConfigurationRecorderStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationRecorderStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationRecorderStatus`](crate::operation::DescribeConfigurationRecorderStatus)>
     #[allow(unused_mut)]
@@ -5000,12 +4845,6 @@ pub mod describe_conformance_pack_compliance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConformancePackComplianceInputOperationOutputAlias =
-    crate::operation::DescribeConformancePackCompliance;
-#[doc(hidden)]
-pub type DescribeConformancePackComplianceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConformancePackComplianceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConformancePackCompliance`](crate::operation::DescribeConformancePackCompliance)>
     #[allow(unused_mut)]
@@ -5183,11 +5022,6 @@ pub mod describe_conformance_packs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConformancePacksInputOperationOutputAlias =
-    crate::operation::DescribeConformancePacks;
-#[doc(hidden)]
-pub type DescribeConformancePacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConformancePacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConformancePacks`](crate::operation::DescribeConformancePacks)>
     #[allow(unused_mut)]
@@ -5368,12 +5202,6 @@ pub mod describe_conformance_pack_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConformancePackStatusInputOperationOutputAlias =
-    crate::operation::DescribeConformancePackStatus;
-#[doc(hidden)]
-pub type DescribeConformancePackStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConformancePackStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConformancePackStatus`](crate::operation::DescribeConformancePackStatus)>
     #[allow(unused_mut)]
@@ -5527,11 +5355,6 @@ pub mod describe_delivery_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeliveryChannelsInputOperationOutputAlias =
-    crate::operation::DescribeDeliveryChannels;
-#[doc(hidden)]
-pub type DescribeDeliveryChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeliveryChannelsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeliveryChannels`](crate::operation::DescribeDeliveryChannels)>
     #[allow(unused_mut)]
@@ -5688,12 +5511,6 @@ pub mod describe_delivery_channel_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeliveryChannelStatusInputOperationOutputAlias =
-    crate::operation::DescribeDeliveryChannelStatus;
-#[doc(hidden)]
-pub type DescribeDeliveryChannelStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeliveryChannelStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeliveryChannelStatus`](crate::operation::DescribeDeliveryChannelStatus)>
     #[allow(unused_mut)]
@@ -5875,12 +5692,6 @@ pub mod describe_organization_config_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOrganizationConfigRulesInputOperationOutputAlias =
-    crate::operation::DescribeOrganizationConfigRules;
-#[doc(hidden)]
-pub type DescribeOrganizationConfigRulesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfigRules`](crate::operation::DescribeOrganizationConfigRules)>
     #[allow(unused_mut)]
@@ -6062,12 +5873,6 @@ pub mod describe_organization_config_rule_statuses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOrganizationConfigRuleStatusesInputOperationOutputAlias =
-    crate::operation::DescribeOrganizationConfigRuleStatuses;
-#[doc(hidden)]
-pub type DescribeOrganizationConfigRuleStatusesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigRuleStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfigRuleStatuses`](crate::operation::DescribeOrganizationConfigRuleStatuses)>
     #[allow(unused_mut)]
@@ -6249,12 +6054,6 @@ pub mod describe_organization_conformance_packs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOrganizationConformancePacksInputOperationOutputAlias =
-    crate::operation::DescribeOrganizationConformancePacks;
-#[doc(hidden)]
-pub type DescribeOrganizationConformancePacksInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConformancePacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConformancePacks`](crate::operation::DescribeOrganizationConformancePacks)>
     #[allow(unused_mut)]
@@ -6438,12 +6237,6 @@ pub mod describe_organization_conformance_pack_statuses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOrganizationConformancePackStatusesInputOperationOutputAlias =
-    crate::operation::DescribeOrganizationConformancePackStatuses;
-#[doc(hidden)]
-pub type DescribeOrganizationConformancePackStatusesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConformancePackStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConformancePackStatuses`](crate::operation::DescribeOrganizationConformancePackStatuses)>
     #[allow(unused_mut)]
@@ -6601,12 +6394,6 @@ pub mod describe_pending_aggregation_requests_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePendingAggregationRequestsInputOperationOutputAlias =
-    crate::operation::DescribePendingAggregationRequests;
-#[doc(hidden)]
-pub type DescribePendingAggregationRequestsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePendingAggregationRequestsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePendingAggregationRequests`](crate::operation::DescribePendingAggregationRequests)>
     #[allow(unused_mut)]
@@ -6760,12 +6547,6 @@ pub mod describe_remediation_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRemediationConfigurationsInputOperationOutputAlias =
-    crate::operation::DescribeRemediationConfigurations;
-#[doc(hidden)]
-pub type DescribeRemediationConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRemediationConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRemediationConfigurations`](crate::operation::DescribeRemediationConfigurations)>
     #[allow(unused_mut)]
@@ -6964,12 +6745,6 @@ pub mod describe_remediation_exceptions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRemediationExceptionsInputOperationOutputAlias =
-    crate::operation::DescribeRemediationExceptions;
-#[doc(hidden)]
-pub type DescribeRemediationExceptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRemediationExceptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRemediationExceptions`](crate::operation::DescribeRemediationExceptions)>
     #[allow(unused_mut)]
@@ -7162,12 +6937,6 @@ pub mod describe_remediation_execution_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRemediationExecutionStatusInputOperationOutputAlias =
-    crate::operation::DescribeRemediationExecutionStatus;
-#[doc(hidden)]
-pub type DescribeRemediationExecutionStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRemediationExecutionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRemediationExecutionStatus`](crate::operation::DescribeRemediationExecutionStatus)>
     #[allow(unused_mut)]
@@ -7341,12 +7110,6 @@ pub mod describe_retention_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRetentionConfigurationsInputOperationOutputAlias =
-    crate::operation::DescribeRetentionConfigurations;
-#[doc(hidden)]
-pub type DescribeRetentionConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRetentionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRetentionConfigurations`](crate::operation::DescribeRetentionConfigurations)>
     #[allow(unused_mut)]
@@ -7581,12 +7344,6 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAggregateComplianceDetailsByConfigRuleInputOperationOutputAlias =
-    crate::operation::GetAggregateComplianceDetailsByConfigRule;
-#[doc(hidden)]
-pub type GetAggregateComplianceDetailsByConfigRuleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateComplianceDetailsByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateComplianceDetailsByConfigRule`](crate::operation::GetAggregateComplianceDetailsByConfigRule)>
     #[allow(unused_mut)]
@@ -7796,12 +7553,6 @@ pub mod get_aggregate_config_rule_compliance_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAggregateConfigRuleComplianceSummaryInputOperationOutputAlias =
-    crate::operation::GetAggregateConfigRuleComplianceSummary;
-#[doc(hidden)]
-pub type GetAggregateConfigRuleComplianceSummaryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateConfigRuleComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateConfigRuleComplianceSummary`](crate::operation::GetAggregateConfigRuleComplianceSummary)>
     #[allow(unused_mut)]
@@ -8020,12 +7771,6 @@ pub mod get_aggregate_conformance_pack_compliance_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAggregateConformancePackComplianceSummaryInputOperationOutputAlias =
-    crate::operation::GetAggregateConformancePackComplianceSummary;
-#[doc(hidden)]
-pub type GetAggregateConformancePackComplianceSummaryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateConformancePackComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateConformancePackComplianceSummary`](crate::operation::GetAggregateConformancePackComplianceSummary)>
     #[allow(unused_mut)]
@@ -8231,12 +7976,6 @@ pub mod get_aggregate_discovered_resource_counts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAggregateDiscoveredResourceCountsInputOperationOutputAlias =
-    crate::operation::GetAggregateDiscoveredResourceCounts;
-#[doc(hidden)]
-pub type GetAggregateDiscoveredResourceCountsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateDiscoveredResourceCountsInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateDiscoveredResourceCounts`](crate::operation::GetAggregateDiscoveredResourceCounts)>
     #[allow(unused_mut)]
@@ -8406,11 +8145,6 @@ pub mod get_aggregate_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAggregateResourceConfigInputOperationOutputAlias =
-    crate::operation::GetAggregateResourceConfig;
-#[doc(hidden)]
-pub type GetAggregateResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateResourceConfig`](crate::operation::GetAggregateResourceConfig)>
     #[allow(unused_mut)]
@@ -8606,12 +8340,6 @@ pub mod get_compliance_details_by_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComplianceDetailsByConfigRuleInputOperationOutputAlias =
-    crate::operation::GetComplianceDetailsByConfigRule;
-#[doc(hidden)]
-pub type GetComplianceDetailsByConfigRuleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceDetailsByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceDetailsByConfigRule`](crate::operation::GetComplianceDetailsByConfigRule)>
     #[allow(unused_mut)]
@@ -8807,12 +8535,6 @@ pub mod get_compliance_details_by_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComplianceDetailsByResourceInputOperationOutputAlias =
-    crate::operation::GetComplianceDetailsByResource;
-#[doc(hidden)]
-pub type GetComplianceDetailsByResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceDetailsByResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceDetailsByResource`](crate::operation::GetComplianceDetailsByResource)>
     #[allow(unused_mut)]
@@ -8943,12 +8665,6 @@ pub mod get_compliance_summary_by_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComplianceSummaryByConfigRuleInputOperationOutputAlias =
-    crate::operation::GetComplianceSummaryByConfigRule;
-#[doc(hidden)]
-pub type GetComplianceSummaryByConfigRuleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceSummaryByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummaryByConfigRule`](crate::operation::GetComplianceSummaryByConfigRule)>
     #[allow(unused_mut)]
@@ -9097,12 +8813,6 @@ pub mod get_compliance_summary_by_resource_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComplianceSummaryByResourceTypeInputOperationOutputAlias =
-    crate::operation::GetComplianceSummaryByResourceType;
-#[doc(hidden)]
-pub type GetComplianceSummaryByResourceTypeInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceSummaryByResourceTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummaryByResourceType`](crate::operation::GetComplianceSummaryByResourceType)>
     #[allow(unused_mut)]
@@ -9289,12 +8999,6 @@ pub mod get_conformance_pack_compliance_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConformancePackComplianceDetailsInputOperationOutputAlias =
-    crate::operation::GetConformancePackComplianceDetails;
-#[doc(hidden)]
-pub type GetConformancePackComplianceDetailsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConformancePackComplianceDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetConformancePackComplianceDetails`](crate::operation::GetConformancePackComplianceDetails)>
     #[allow(unused_mut)]
@@ -9472,12 +9176,6 @@ pub mod get_conformance_pack_compliance_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConformancePackComplianceSummaryInputOperationOutputAlias =
-    crate::operation::GetConformancePackComplianceSummary;
-#[doc(hidden)]
-pub type GetConformancePackComplianceSummaryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConformancePackComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetConformancePackComplianceSummary`](crate::operation::GetConformancePackComplianceSummary)>
     #[allow(unused_mut)]
@@ -9623,10 +9321,6 @@ pub mod get_custom_rule_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCustomRulePolicyInputOperationOutputAlias = crate::operation::GetCustomRulePolicy;
-#[doc(hidden)]
-pub type GetCustomRulePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCustomRulePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCustomRulePolicy`](crate::operation::GetCustomRulePolicy)>
     #[allow(unused_mut)]
@@ -9813,11 +9507,6 @@ pub mod get_discovered_resource_counts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDiscoveredResourceCountsInputOperationOutputAlias =
-    crate::operation::GetDiscoveredResourceCounts;
-#[doc(hidden)]
-pub type GetDiscoveredResourceCountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDiscoveredResourceCountsInput {
     /// Consumes the builder and constructs an Operation<[`GetDiscoveredResourceCounts`](crate::operation::GetDiscoveredResourceCounts)>
     #[allow(unused_mut)]
@@ -10007,12 +9696,6 @@ pub mod get_organization_config_rule_detailed_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOrganizationConfigRuleDetailedStatusInputOperationOutputAlias =
-    crate::operation::GetOrganizationConfigRuleDetailedStatus;
-#[doc(hidden)]
-pub type GetOrganizationConfigRuleDetailedStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrganizationConfigRuleDetailedStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetOrganizationConfigRuleDetailedStatus`](crate::operation::GetOrganizationConfigRuleDetailedStatus)>
     #[allow(unused_mut)]
@@ -10208,12 +9891,6 @@ pub mod get_organization_conformance_pack_detailed_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOrganizationConformancePackDetailedStatusInputOperationOutputAlias =
-    crate::operation::GetOrganizationConformancePackDetailedStatus;
-#[doc(hidden)]
-pub type GetOrganizationConformancePackDetailedStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrganizationConformancePackDetailedStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetOrganizationConformancePackDetailedStatus`](crate::operation::GetOrganizationConformancePackDetailedStatus)>
     #[allow(unused_mut)]
@@ -10365,12 +10042,6 @@ pub mod get_organization_custom_rule_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOrganizationCustomRulePolicyInputOperationOutputAlias =
-    crate::operation::GetOrganizationCustomRulePolicy;
-#[doc(hidden)]
-pub type GetOrganizationCustomRulePolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrganizationCustomRulePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetOrganizationCustomRulePolicy`](crate::operation::GetOrganizationCustomRulePolicy)>
     #[allow(unused_mut)]
@@ -10599,11 +10270,6 @@ pub mod get_resource_config_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceConfigHistoryInputOperationOutputAlias =
-    crate::operation::GetResourceConfigHistory;
-#[doc(hidden)]
-pub type GetResourceConfigHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceConfigHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceConfigHistory`](crate::operation::GetResourceConfigHistory)>
     #[allow(unused_mut)]
@@ -10749,10 +10415,6 @@ pub mod get_stored_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStoredQueryInputOperationOutputAlias = crate::operation::GetStoredQuery;
-#[doc(hidden)]
-pub type GetStoredQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStoredQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetStoredQuery`](crate::operation::GetStoredQuery)>
     #[allow(unused_mut)]
@@ -10958,12 +10620,6 @@ pub mod list_aggregate_discovered_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAggregateDiscoveredResourcesInputOperationOutputAlias =
-    crate::operation::ListAggregateDiscoveredResources;
-#[doc(hidden)]
-pub type ListAggregateDiscoveredResourcesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAggregateDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAggregateDiscoveredResources`](crate::operation::ListAggregateDiscoveredResources)>
     #[allow(unused_mut)]
@@ -11170,12 +10826,6 @@ pub mod list_conformance_pack_compliance_scores_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConformancePackComplianceScoresInputOperationOutputAlias =
-    crate::operation::ListConformancePackComplianceScores;
-#[doc(hidden)]
-pub type ListConformancePackComplianceScoresInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListConformancePackComplianceScoresInput {
     /// Consumes the builder and constructs an Operation<[`ListConformancePackComplianceScores`](crate::operation::ListConformancePackComplianceScores)>
     #[allow(unused_mut)]
@@ -11395,11 +11045,6 @@ pub mod list_discovered_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDiscoveredResourcesInputOperationOutputAlias =
-    crate::operation::ListDiscoveredResources;
-#[doc(hidden)]
-pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDiscoveredResources`](crate::operation::ListDiscoveredResources)>
     #[allow(unused_mut)]
@@ -11557,10 +11202,6 @@ pub mod list_stored_queries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStoredQueriesInputOperationOutputAlias = crate::operation::ListStoredQueries;
-#[doc(hidden)]
-pub type ListStoredQueriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStoredQueriesInput {
     /// Consumes the builder and constructs an Operation<[`ListStoredQueries`](crate::operation::ListStoredQueries)>
     #[allow(unused_mut)]
@@ -11728,10 +11369,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -11918,11 +11555,6 @@ pub mod put_aggregation_authorization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAggregationAuthorizationInputOperationOutputAlias =
-    crate::operation::PutAggregationAuthorization;
-#[doc(hidden)]
-pub type PutAggregationAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAggregationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`PutAggregationAuthorization`](crate::operation::PutAggregationAuthorization)>
     #[allow(unused_mut)]
@@ -12089,10 +11721,6 @@ pub mod put_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigRuleInputOperationOutputAlias = crate::operation::PutConfigRule;
-#[doc(hidden)]
-pub type PutConfigRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigRule`](crate::operation::PutConfigRule)>
     #[allow(unused_mut)]
@@ -12309,11 +11937,6 @@ pub mod put_configuration_aggregator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationAggregatorInputOperationOutputAlias =
-    crate::operation::PutConfigurationAggregator;
-#[doc(hidden)]
-pub type PutConfigurationAggregatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationAggregator`](crate::operation::PutConfigurationAggregator)>
     #[allow(unused_mut)]
@@ -12467,11 +12090,6 @@ pub mod put_configuration_recorder_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationRecorderInputOperationOutputAlias =
-    crate::operation::PutConfigurationRecorder;
-#[doc(hidden)]
-pub type PutConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationRecorder`](crate::operation::PutConfigurationRecorder)>
     #[allow(unused_mut)]
@@ -12740,10 +12358,6 @@ pub mod put_conformance_pack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConformancePackInputOperationOutputAlias = crate::operation::PutConformancePack;
-#[doc(hidden)]
-pub type PutConformancePackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`PutConformancePack`](crate::operation::PutConformancePack)>
     #[allow(unused_mut)]
@@ -12890,10 +12504,6 @@ pub mod put_delivery_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDeliveryChannelInputOperationOutputAlias = crate::operation::PutDeliveryChannel;
-#[doc(hidden)]
-pub type PutDeliveryChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDeliveryChannelInput {
     /// Consumes the builder and constructs an Operation<[`PutDeliveryChannel`](crate::operation::PutDeliveryChannel)>
     #[allow(unused_mut)]
@@ -13074,10 +12684,6 @@ pub mod put_evaluations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEvaluationsInputOperationOutputAlias = crate::operation::PutEvaluations;
-#[doc(hidden)]
-pub type PutEvaluationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEvaluationsInput {
     /// Consumes the builder and constructs an Operation<[`PutEvaluations`](crate::operation::PutEvaluations)>
     #[allow(unused_mut)]
@@ -13239,10 +12845,6 @@ pub mod put_external_evaluation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutExternalEvaluationInputOperationOutputAlias = crate::operation::PutExternalEvaluation;
-#[doc(hidden)]
-pub type PutExternalEvaluationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutExternalEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`PutExternalEvaluation`](crate::operation::PutExternalEvaluation)>
     #[allow(unused_mut)]
@@ -13475,11 +13077,6 @@ pub mod put_organization_config_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutOrganizationConfigRuleInputOperationOutputAlias =
-    crate::operation::PutOrganizationConfigRule;
-#[doc(hidden)]
-pub type PutOrganizationConfigRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutOrganizationConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutOrganizationConfigRule`](crate::operation::PutOrganizationConfigRule)>
     #[allow(unused_mut)]
@@ -13751,12 +13348,6 @@ pub mod put_organization_conformance_pack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutOrganizationConformancePackInputOperationOutputAlias =
-    crate::operation::PutOrganizationConformancePack;
-#[doc(hidden)]
-pub type PutOrganizationConformancePackInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutOrganizationConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`PutOrganizationConformancePack`](crate::operation::PutOrganizationConformancePack)>
     #[allow(unused_mut)]
@@ -13914,12 +13505,6 @@ pub mod put_remediation_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRemediationConfigurationsInputOperationOutputAlias =
-    crate::operation::PutRemediationConfigurations;
-#[doc(hidden)]
-pub type PutRemediationConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutRemediationConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`PutRemediationConfigurations`](crate::operation::PutRemediationConfigurations)>
     #[allow(unused_mut)]
@@ -14121,11 +13706,6 @@ pub mod put_remediation_exceptions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRemediationExceptionsInputOperationOutputAlias =
-    crate::operation::PutRemediationExceptions;
-#[doc(hidden)]
-pub type PutRemediationExceptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRemediationExceptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutRemediationExceptions`](crate::operation::PutRemediationExceptions)>
     #[allow(unused_mut)]
@@ -14372,10 +13952,6 @@ pub mod put_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourceConfigInputOperationOutputAlias = crate::operation::PutResourceConfig;
-#[doc(hidden)]
-pub type PutResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceConfig`](crate::operation::PutResourceConfig)>
     #[allow(unused_mut)]
@@ -14525,11 +14101,6 @@ pub mod put_retention_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRetentionConfigurationInputOperationOutputAlias =
-    crate::operation::PutRetentionConfiguration;
-#[doc(hidden)]
-pub type PutRetentionConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRetentionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutRetentionConfiguration`](crate::operation::PutRetentionConfiguration)>
     #[allow(unused_mut)]
@@ -14703,10 +14274,6 @@ pub mod put_stored_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutStoredQueryInputOperationOutputAlias = crate::operation::PutStoredQuery;
-#[doc(hidden)]
-pub type PutStoredQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutStoredQueryInput {
     /// Consumes the builder and constructs an Operation<[`PutStoredQuery`](crate::operation::PutStoredQuery)>
     #[allow(unused_mut)]
@@ -14906,12 +14473,6 @@ pub mod select_aggregate_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SelectAggregateResourceConfigInputOperationOutputAlias =
-    crate::operation::SelectAggregateResourceConfig;
-#[doc(hidden)]
-pub type SelectAggregateResourceConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SelectAggregateResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`SelectAggregateResourceConfig`](crate::operation::SelectAggregateResourceConfig)>
     #[allow(unused_mut)]
@@ -15078,10 +14639,6 @@ pub mod select_resource_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SelectResourceConfigInputOperationOutputAlias = crate::operation::SelectResourceConfig;
-#[doc(hidden)]
-pub type SelectResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SelectResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`SelectResourceConfig`](crate::operation::SelectResourceConfig)>
     #[allow(unused_mut)]
@@ -15238,11 +14795,6 @@ pub mod start_config_rules_evaluation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartConfigRulesEvaluationInputOperationOutputAlias =
-    crate::operation::StartConfigRulesEvaluation;
-#[doc(hidden)]
-pub type StartConfigRulesEvaluationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigRulesEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigRulesEvaluation`](crate::operation::StartConfigRulesEvaluation)>
     #[allow(unused_mut)]
@@ -15393,11 +14945,6 @@ pub mod start_configuration_recorder_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartConfigurationRecorderInputOperationOutputAlias =
-    crate::operation::StartConfigurationRecorder;
-#[doc(hidden)]
-pub type StartConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigurationRecorder`](crate::operation::StartConfigurationRecorder)>
     #[allow(unused_mut)]
@@ -15569,11 +15116,6 @@ pub mod start_remediation_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartRemediationExecutionInputOperationOutputAlias =
-    crate::operation::StartRemediationExecution;
-#[doc(hidden)]
-pub type StartRemediationExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRemediationExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartRemediationExecution`](crate::operation::StartRemediationExecution)>
     #[allow(unused_mut)]
@@ -15727,11 +15269,6 @@ pub mod stop_configuration_recorder_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopConfigurationRecorderInputOperationOutputAlias =
-    crate::operation::StopConfigurationRecorder;
-#[doc(hidden)]
-pub type StopConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`StopConfigurationRecorder`](crate::operation::StopConfigurationRecorder)>
     #[allow(unused_mut)]
@@ -15898,10 +15435,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -16066,10 +15599,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

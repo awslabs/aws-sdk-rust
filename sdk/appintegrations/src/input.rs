@@ -123,10 +123,6 @@ pub mod create_data_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDataIntegrationInputOperationOutputAlias = crate::operation::CreateDataIntegration;
-#[doc(hidden)]
-pub type CreateDataIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataIntegration`](crate::operation::CreateDataIntegration)>
     #[allow(unused_mut)]
@@ -353,10 +349,6 @@ pub mod create_event_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEventIntegrationInputOperationOutputAlias = crate::operation::CreateEventIntegration;
-#[doc(hidden)]
-pub type CreateEventIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventIntegration`](crate::operation::CreateEventIntegration)>
     #[allow(unused_mut)]
@@ -506,10 +498,6 @@ pub mod delete_data_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDataIntegrationInputOperationOutputAlias = crate::operation::DeleteDataIntegration;
-#[doc(hidden)]
-pub type DeleteDataIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataIntegration`](crate::operation::DeleteDataIntegration)>
     #[allow(unused_mut)]
@@ -652,10 +640,6 @@ pub mod delete_event_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventIntegrationInputOperationOutputAlias = crate::operation::DeleteEventIntegration;
-#[doc(hidden)]
-pub type DeleteEventIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventIntegration`](crate::operation::DeleteEventIntegration)>
     #[allow(unused_mut)]
@@ -795,10 +779,6 @@ pub mod get_data_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDataIntegrationInputOperationOutputAlias = crate::operation::GetDataIntegration;
-#[doc(hidden)]
-pub type GetDataIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`GetDataIntegration`](crate::operation::GetDataIntegration)>
     #[allow(unused_mut)]
@@ -940,10 +920,6 @@ pub mod get_event_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventIntegrationInputOperationOutputAlias = crate::operation::GetEventIntegration;
-#[doc(hidden)]
-pub type GetEventIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`GetEventIntegration`](crate::operation::GetEventIntegration)>
     #[allow(unused_mut)]
@@ -1115,12 +1091,6 @@ pub mod list_data_integration_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataIntegrationAssociationsInputOperationOutputAlias =
-    crate::operation::ListDataIntegrationAssociations;
-#[doc(hidden)]
-pub type ListDataIntegrationAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataIntegrationAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataIntegrationAssociations`](crate::operation::ListDataIntegrationAssociations)>
     #[allow(unused_mut)]
@@ -1294,10 +1264,6 @@ pub mod list_data_integrations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataIntegrationsInputOperationOutputAlias = crate::operation::ListDataIntegrations;
-#[doc(hidden)]
-pub type ListDataIntegrationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataIntegrationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataIntegrations`](crate::operation::ListDataIntegrations)>
     #[allow(unused_mut)]
@@ -1468,12 +1434,6 @@ pub mod list_event_integration_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventIntegrationAssociationsInputOperationOutputAlias =
-    crate::operation::ListEventIntegrationAssociations;
-#[doc(hidden)]
-pub type ListEventIntegrationAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventIntegrationAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventIntegrationAssociations`](crate::operation::ListEventIntegrationAssociations)>
     #[allow(unused_mut)]
@@ -1646,10 +1606,6 @@ pub mod list_event_integrations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventIntegrationsInputOperationOutputAlias = crate::operation::ListEventIntegrations;
-#[doc(hidden)]
-pub type ListEventIntegrationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventIntegrationsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventIntegrations`](crate::operation::ListEventIntegrations)>
     #[allow(unused_mut)]
@@ -1791,10 +1747,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1963,10 +1915,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2141,10 +2089,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2321,10 +2265,6 @@ pub mod update_data_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDataIntegrationInputOperationOutputAlias = crate::operation::UpdateDataIntegration;
-#[doc(hidden)]
-pub type UpdateDataIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataIntegration`](crate::operation::UpdateDataIntegration)>
     #[allow(unused_mut)]
@@ -2496,10 +2436,6 @@ pub mod update_event_integration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEventIntegrationInputOperationOutputAlias = crate::operation::UpdateEventIntegration;
-#[doc(hidden)]
-pub type UpdateEventIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventIntegration`](crate::operation::UpdateEventIntegration)>
     #[allow(unused_mut)]

@@ -83,10 +83,6 @@ pub mod accept_portfolio_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptPortfolioShareInputOperationOutputAlias = crate::operation::AcceptPortfolioShare;
-#[doc(hidden)]
-pub type AcceptPortfolioShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptPortfolioShareInput {
     /// Consumes the builder and constructs an Operation<[`AcceptPortfolioShare`](crate::operation::AcceptPortfolioShare)>
     #[allow(unused_mut)]
@@ -246,11 +242,6 @@ pub mod associate_budget_with_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateBudgetWithResourceInputOperationOutputAlias =
-    crate::operation::AssociateBudgetWithResource;
-#[doc(hidden)]
-pub type AssociateBudgetWithResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateBudgetWithResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateBudgetWithResource`](crate::operation::AssociateBudgetWithResource)>
     #[allow(unused_mut)]
@@ -450,12 +441,6 @@ pub mod associate_principal_with_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePrincipalWithPortfolioInputOperationOutputAlias =
-    crate::operation::AssociatePrincipalWithPortfolio;
-#[doc(hidden)]
-pub type AssociatePrincipalWithPortfolioInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePrincipalWithPortfolioInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePrincipalWithPortfolio`](crate::operation::AssociatePrincipalWithPortfolio)>
     #[allow(unused_mut)]
@@ -652,12 +637,6 @@ pub mod associate_product_with_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateProductWithPortfolioInputOperationOutputAlias =
-    crate::operation::AssociateProductWithPortfolio;
-#[doc(hidden)]
-pub type AssociateProductWithPortfolioInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateProductWithPortfolioInput {
     /// Consumes the builder and constructs an Operation<[`AssociateProductWithPortfolio`](crate::operation::AssociateProductWithPortfolio)>
     #[allow(unused_mut)]
@@ -859,12 +838,6 @@ pub mod associate_service_action_with_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateServiceActionWithProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::AssociateServiceActionWithProvisioningArtifact;
-#[doc(hidden)]
-pub type AssociateServiceActionWithProvisioningArtifactInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateServiceActionWithProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`AssociateServiceActionWithProvisioningArtifact`](crate::operation::AssociateServiceActionWithProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -1025,12 +998,6 @@ pub mod associate_tag_option_with_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateTagOptionWithResourceInputOperationOutputAlias =
-    crate::operation::AssociateTagOptionWithResource;
-#[doc(hidden)]
-pub type AssociateTagOptionWithResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTagOptionWithResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTagOptionWithResource`](crate::operation::AssociateTagOptionWithResource)>
     #[allow(unused_mut)]
@@ -1215,12 +1182,6 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchAssociateServiceActionWithProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::BatchAssociateServiceActionWithProvisioningArtifact;
-#[doc(hidden)]
-pub type BatchAssociateServiceActionWithProvisioningArtifactInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateServiceActionWithProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateServiceActionWithProvisioningArtifact`](crate::operation::BatchAssociateServiceActionWithProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -1407,12 +1368,6 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDisassociateServiceActionFromProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::BatchDisassociateServiceActionFromProvisioningArtifact;
-#[doc(hidden)]
-pub type BatchDisassociateServiceActionFromProvisioningArtifactInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateServiceActionFromProvisioningArtifact`](crate::operation::BatchDisassociateServiceActionFromProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -1695,10 +1650,6 @@ pub mod copy_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CopyProductInputOperationOutputAlias = crate::operation::CopyProduct;
-#[doc(hidden)]
-pub type CopyProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyProductInput {
     /// Consumes the builder and constructs an Operation<[`CopyProduct`](crate::operation::CopyProduct)>
     #[allow(unused_mut)]
@@ -2043,10 +1994,6 @@ pub mod create_constraint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConstraintInputOperationOutputAlias = crate::operation::CreateConstraint;
-#[doc(hidden)]
-pub type CreateConstraintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConstraintInput {
     /// Consumes the builder and constructs an Operation<[`CreateConstraint`](crate::operation::CreateConstraint)>
     #[allow(unused_mut)]
@@ -2281,10 +2228,6 @@ pub mod create_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePortfolioInputOperationOutputAlias = crate::operation::CreatePortfolio;
-#[doc(hidden)]
-pub type CreatePortfolioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePortfolioInput {
     /// Consumes the builder and constructs an Operation<[`CreatePortfolio`](crate::operation::CreatePortfolio)>
     #[allow(unused_mut)]
@@ -2495,10 +2438,6 @@ pub mod create_portfolio_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePortfolioShareInputOperationOutputAlias = crate::operation::CreatePortfolioShare;
-#[doc(hidden)]
-pub type CreatePortfolioShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePortfolioShareInput {
     /// Consumes the builder and constructs an Operation<[`CreatePortfolioShare`](crate::operation::CreatePortfolioShare)>
     #[allow(unused_mut)]
@@ -2819,10 +2758,6 @@ pub mod create_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProductInputOperationOutputAlias = crate::operation::CreateProduct;
-#[doc(hidden)]
-pub type CreateProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProductInput {
     /// Consumes the builder and constructs an Operation<[`CreateProduct`](crate::operation::CreateProduct)>
     #[allow(unused_mut)]
@@ -3149,12 +3084,6 @@ pub mod create_provisioned_product_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProvisionedProductPlanInputOperationOutputAlias =
-    crate::operation::CreateProvisionedProductPlan;
-#[doc(hidden)]
-pub type CreateProvisionedProductPlanInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProvisionedProductPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateProvisionedProductPlan`](crate::operation::CreateProvisionedProductPlan)>
     #[allow(unused_mut)]
@@ -3357,11 +3286,6 @@ pub mod create_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::CreateProvisioningArtifact;
-#[doc(hidden)]
-pub type CreateProvisioningArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`CreateProvisioningArtifact`](crate::operation::CreateProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -3670,10 +3594,6 @@ pub mod create_service_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateServiceActionInputOperationOutputAlias = crate::operation::CreateServiceAction;
-#[doc(hidden)]
-pub type CreateServiceActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceActionInput {
     /// Consumes the builder and constructs an Operation<[`CreateServiceAction`](crate::operation::CreateServiceAction)>
     #[allow(unused_mut)]
@@ -3832,10 +3752,6 @@ pub mod create_tag_option_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTagOptionInputOperationOutputAlias = crate::operation::CreateTagOption;
-#[doc(hidden)]
-pub type CreateTagOptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagOptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateTagOption`](crate::operation::CreateTagOption)>
     #[allow(unused_mut)]
@@ -4004,10 +3920,6 @@ pub mod delete_constraint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConstraintInputOperationOutputAlias = crate::operation::DeleteConstraint;
-#[doc(hidden)]
-pub type DeleteConstraintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConstraintInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConstraint`](crate::operation::DeleteConstraint)>
     #[allow(unused_mut)]
@@ -4176,10 +4088,6 @@ pub mod delete_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePortfolioInputOperationOutputAlias = crate::operation::DeletePortfolio;
-#[doc(hidden)]
-pub type DeletePortfolioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePortfolioInput {
     /// Consumes the builder and constructs an Operation<[`DeletePortfolio`](crate::operation::DeletePortfolio)>
     #[allow(unused_mut)]
@@ -4375,10 +4283,6 @@ pub mod delete_portfolio_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePortfolioShareInputOperationOutputAlias = crate::operation::DeletePortfolioShare;
-#[doc(hidden)]
-pub type DeletePortfolioShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePortfolioShareInput {
     /// Consumes the builder and constructs an Operation<[`DeletePortfolioShare`](crate::operation::DeletePortfolioShare)>
     #[allow(unused_mut)]
@@ -4549,10 +4453,6 @@ pub mod delete_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProductInputOperationOutputAlias = crate::operation::DeleteProduct;
-#[doc(hidden)]
-pub type DeleteProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProductInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProduct`](crate::operation::DeleteProduct)>
     #[allow(unused_mut)]
@@ -4735,12 +4635,6 @@ pub mod delete_provisioned_product_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProvisionedProductPlanInputOperationOutputAlias =
-    crate::operation::DeleteProvisionedProductPlan;
-#[doc(hidden)]
-pub type DeleteProvisionedProductPlanInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProvisionedProductPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProvisionedProductPlan`](crate::operation::DeleteProvisionedProductPlan)>
     #[allow(unused_mut)]
@@ -4925,11 +4819,6 @@ pub mod delete_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::DeleteProvisioningArtifact;
-#[doc(hidden)]
-pub type DeleteProvisioningArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProvisioningArtifact`](crate::operation::DeleteProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -5100,10 +4989,6 @@ pub mod delete_service_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteServiceActionInputOperationOutputAlias = crate::operation::DeleteServiceAction;
-#[doc(hidden)]
-pub type DeleteServiceActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceAction`](crate::operation::DeleteServiceAction)>
     #[allow(unused_mut)]
@@ -5245,10 +5130,6 @@ pub mod delete_tag_option_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagOptionInputOperationOutputAlias = crate::operation::DeleteTagOption;
-#[doc(hidden)]
-pub type DeleteTagOptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagOptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTagOption`](crate::operation::DeleteTagOption)>
     #[allow(unused_mut)]
@@ -5417,10 +5298,6 @@ pub mod describe_constraint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConstraintInputOperationOutputAlias = crate::operation::DescribeConstraint;
-#[doc(hidden)]
-pub type DescribeConstraintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConstraintInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConstraint`](crate::operation::DescribeConstraint)>
     #[allow(unused_mut)]
@@ -5594,11 +5471,6 @@ pub mod describe_copy_product_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCopyProductStatusInputOperationOutputAlias =
-    crate::operation::DescribeCopyProductStatus;
-#[doc(hidden)]
-pub type DescribeCopyProductStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCopyProductStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCopyProductStatus`](crate::operation::DescribeCopyProductStatus)>
     #[allow(unused_mut)]
@@ -5769,10 +5641,6 @@ pub mod describe_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePortfolioInputOperationOutputAlias = crate::operation::DescribePortfolio;
-#[doc(hidden)]
-pub type DescribePortfolioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePortfolioInput {
     /// Consumes the builder and constructs an Operation<[`DescribePortfolio`](crate::operation::DescribePortfolio)>
     #[allow(unused_mut)]
@@ -5965,11 +5833,6 @@ pub mod describe_portfolio_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePortfolioSharesInputOperationOutputAlias =
-    crate::operation::DescribePortfolioShares;
-#[doc(hidden)]
-pub type DescribePortfolioSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePortfolioSharesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePortfolioShares`](crate::operation::DescribePortfolioShares)>
     #[allow(unused_mut)]
@@ -6120,12 +5983,6 @@ pub mod describe_portfolio_share_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePortfolioShareStatusInputOperationOutputAlias =
-    crate::operation::DescribePortfolioShareStatus;
-#[doc(hidden)]
-pub type DescribePortfolioShareStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePortfolioShareStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribePortfolioShareStatus`](crate::operation::DescribePortfolioShareStatus)>
     #[allow(unused_mut)]
@@ -6305,10 +6162,6 @@ pub mod describe_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProductInputOperationOutputAlias = crate::operation::DescribeProduct;
-#[doc(hidden)]
-pub type DescribeProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProductInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProduct`](crate::operation::DescribeProduct)>
     #[allow(unused_mut)]
@@ -6506,10 +6359,6 @@ pub mod describe_product_as_admin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProductAsAdminInputOperationOutputAlias = crate::operation::DescribeProductAsAdmin;
-#[doc(hidden)]
-pub type DescribeProductAsAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProductAsAdminInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProductAsAdmin`](crate::operation::DescribeProductAsAdmin)>
     #[allow(unused_mut)]
@@ -6680,10 +6529,6 @@ pub mod describe_product_view_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProductViewInputOperationOutputAlias = crate::operation::DescribeProductView;
-#[doc(hidden)]
-pub type DescribeProductViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProductViewInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProductView`](crate::operation::DescribeProductView)>
     #[allow(unused_mut)]
@@ -6870,11 +6715,6 @@ pub mod describe_provisioned_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProvisionedProductInputOperationOutputAlias =
-    crate::operation::DescribeProvisionedProduct;
-#[doc(hidden)]
-pub type DescribeProvisionedProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProvisionedProductInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProvisionedProduct`](crate::operation::DescribeProvisionedProduct)>
     #[allow(unused_mut)]
@@ -7071,12 +6911,6 @@ pub mod describe_provisioned_product_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProvisionedProductPlanInputOperationOutputAlias =
-    crate::operation::DescribeProvisionedProductPlan;
-#[doc(hidden)]
-pub type DescribeProvisionedProductPlanInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProvisionedProductPlanInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProvisionedProductPlan`](crate::operation::DescribeProvisionedProductPlan)>
     #[allow(unused_mut)]
@@ -7300,12 +7134,6 @@ pub mod describe_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::DescribeProvisioningArtifact;
-#[doc(hidden)]
-pub type DescribeProvisioningArtifactInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProvisioningArtifact`](crate::operation::DescribeProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -7541,12 +7369,6 @@ pub mod describe_provisioning_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProvisioningParametersInputOperationOutputAlias =
-    crate::operation::DescribeProvisioningParameters;
-#[doc(hidden)]
-pub type DescribeProvisioningParametersInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProvisioningParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProvisioningParameters`](crate::operation::DescribeProvisioningParameters)>
     #[allow(unused_mut)]
@@ -7738,10 +7560,6 @@ pub mod describe_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRecordInputOperationOutputAlias = crate::operation::DescribeRecord;
-#[doc(hidden)]
-pub type DescribeRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecordInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecord`](crate::operation::DescribeRecord)>
     #[allow(unused_mut)]
@@ -7910,10 +7728,6 @@ pub mod describe_service_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServiceActionInputOperationOutputAlias = crate::operation::DescribeServiceAction;
-#[doc(hidden)]
-pub type DescribeServiceActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceActionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceAction`](crate::operation::DescribeServiceAction)>
     #[allow(unused_mut)]
@@ -8106,12 +7920,6 @@ pub mod describe_service_action_execution_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServiceActionExecutionParametersInputOperationOutputAlias =
-    crate::operation::DescribeServiceActionExecutionParameters;
-#[doc(hidden)]
-pub type DescribeServiceActionExecutionParametersInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceActionExecutionParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceActionExecutionParameters`](crate::operation::DescribeServiceActionExecutionParameters)>
     #[allow(unused_mut)]
@@ -8252,10 +8060,6 @@ pub mod describe_tag_option_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagOptionInputOperationOutputAlias = crate::operation::DescribeTagOption;
-#[doc(hidden)]
-pub type DescribeTagOptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagOptionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTagOption`](crate::operation::DescribeTagOption)>
     #[allow(unused_mut)]
@@ -8387,12 +8191,6 @@ pub mod disable_aws_organizations_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableAwsOrganizationsAccessInputOperationOutputAlias =
-    crate::operation::DisableAWSOrganizationsAccess;
-#[doc(hidden)]
-pub type DisableAwsOrganizationsAccessInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableAwsOrganizationsAccessInput {
     /// Consumes the builder and constructs an Operation<[`DisableAWSOrganizationsAccess`](crate::operation::DisableAWSOrganizationsAccess)>
     #[allow(unused_mut)]
@@ -8542,12 +8340,6 @@ pub mod disassociate_budget_from_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateBudgetFromResourceInputOperationOutputAlias =
-    crate::operation::DisassociateBudgetFromResource;
-#[doc(hidden)]
-pub type DisassociateBudgetFromResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateBudgetFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateBudgetFromResource`](crate::operation::DisassociateBudgetFromResource)>
     #[allow(unused_mut)]
@@ -8732,12 +8524,6 @@ pub mod disassociate_principal_from_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociatePrincipalFromPortfolioInputOperationOutputAlias =
-    crate::operation::DisassociatePrincipalFromPortfolio;
-#[doc(hidden)]
-pub type DisassociatePrincipalFromPortfolioInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociatePrincipalFromPortfolioInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePrincipalFromPortfolio`](crate::operation::DisassociatePrincipalFromPortfolio)>
     #[allow(unused_mut)]
@@ -8919,12 +8705,6 @@ pub mod disassociate_product_from_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateProductFromPortfolioInputOperationOutputAlias =
-    crate::operation::DisassociateProductFromPortfolio;
-#[doc(hidden)]
-pub type DisassociateProductFromPortfolioInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateProductFromPortfolioInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateProductFromPortfolio`](crate::operation::DisassociateProductFromPortfolio)>
     #[allow(unused_mut)]
@@ -9126,12 +8906,6 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateServiceActionFromProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::DisassociateServiceActionFromProvisioningArtifact;
-#[doc(hidden)]
-pub type DisassociateServiceActionFromProvisioningArtifactInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateServiceActionFromProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateServiceActionFromProvisioningArtifact`](crate::operation::DisassociateServiceActionFromProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -9293,12 +9067,6 @@ pub mod disassociate_tag_option_from_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateTagOptionFromResourceInputOperationOutputAlias =
-    crate::operation::DisassociateTagOptionFromResource;
-#[doc(hidden)]
-pub type DisassociateTagOptionFromResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTagOptionFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTagOptionFromResource`](crate::operation::DisassociateTagOptionFromResource)>
     #[allow(unused_mut)]
@@ -9429,12 +9197,6 @@ pub mod enable_aws_organizations_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableAwsOrganizationsAccessInputOperationOutputAlias =
-    crate::operation::EnableAWSOrganizationsAccess;
-#[doc(hidden)]
-pub type EnableAwsOrganizationsAccessInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableAwsOrganizationsAccessInput {
     /// Consumes the builder and constructs an Operation<[`EnableAWSOrganizationsAccess`](crate::operation::EnableAWSOrganizationsAccess)>
     #[allow(unused_mut)]
@@ -9612,12 +9374,6 @@ pub mod execute_provisioned_product_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteProvisionedProductPlanInputOperationOutputAlias =
-    crate::operation::ExecuteProvisionedProductPlan;
-#[doc(hidden)]
-pub type ExecuteProvisionedProductPlanInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteProvisionedProductPlanInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteProvisionedProductPlan`](crate::operation::ExecuteProvisionedProductPlan)>
     #[allow(unused_mut)]
@@ -9852,12 +9608,6 @@ pub mod execute_provisioned_product_service_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteProvisionedProductServiceActionInputOperationOutputAlias =
-    crate::operation::ExecuteProvisionedProductServiceAction;
-#[doc(hidden)]
-pub type ExecuteProvisionedProductServiceActionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteProvisionedProductServiceActionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteProvisionedProductServiceAction`](crate::operation::ExecuteProvisionedProductServiceAction)>
     #[allow(unused_mut)]
@@ -9991,12 +9741,6 @@ pub mod get_aws_organizations_access_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAwsOrganizationsAccessStatusInputOperationOutputAlias =
-    crate::operation::GetAWSOrganizationsAccessStatus;
-#[doc(hidden)]
-pub type GetAwsOrganizationsAccessStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAwsOrganizationsAccessStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetAWSOrganizationsAccessStatus`](crate::operation::GetAWSOrganizationsAccessStatus)>
     #[allow(unused_mut)]
@@ -10222,12 +9966,6 @@ pub mod get_provisioned_product_outputs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetProvisionedProductOutputsInputOperationOutputAlias =
-    crate::operation::GetProvisionedProductOutputs;
-#[doc(hidden)]
-pub type GetProvisionedProductOutputsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetProvisionedProductOutputsInput {
     /// Consumes the builder and constructs an Operation<[`GetProvisionedProductOutputs`](crate::operation::GetProvisionedProductOutputs)>
     #[allow(unused_mut)]
@@ -10454,11 +10192,6 @@ pub mod import_as_provisioned_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportAsProvisionedProductInputOperationOutputAlias =
-    crate::operation::ImportAsProvisionedProduct;
-#[doc(hidden)]
-pub type ImportAsProvisionedProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportAsProvisionedProductInput {
     /// Consumes the builder and constructs an Operation<[`ImportAsProvisionedProduct`](crate::operation::ImportAsProvisionedProduct)>
     #[allow(unused_mut)]
@@ -10668,11 +10401,6 @@ pub mod list_accepted_portfolio_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAcceptedPortfolioSharesInputOperationOutputAlias =
-    crate::operation::ListAcceptedPortfolioShares;
-#[doc(hidden)]
-pub type ListAcceptedPortfolioSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAcceptedPortfolioSharesInput {
     /// Consumes the builder and constructs an Operation<[`ListAcceptedPortfolioShares`](crate::operation::ListAcceptedPortfolioShares)>
     #[allow(unused_mut)]
@@ -10864,10 +10592,6 @@ pub mod list_budgets_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBudgetsForResourceInputOperationOutputAlias = crate::operation::ListBudgetsForResource;
-#[doc(hidden)]
-pub type ListBudgetsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBudgetsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListBudgetsForResource`](crate::operation::ListBudgetsForResource)>
     #[allow(unused_mut)]
@@ -11076,11 +10800,6 @@ pub mod list_constraints_for_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConstraintsForPortfolioInputOperationOutputAlias =
-    crate::operation::ListConstraintsForPortfolio;
-#[doc(hidden)]
-pub type ListConstraintsForPortfolioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConstraintsForPortfolioInput {
     /// Consumes the builder and constructs an Operation<[`ListConstraintsForPortfolio`](crate::operation::ListConstraintsForPortfolio)>
     #[allow(unused_mut)]
@@ -11272,10 +10991,6 @@ pub mod list_launch_paths_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLaunchPathsInputOperationOutputAlias = crate::operation::ListLaunchPaths;
-#[doc(hidden)]
-pub type ListLaunchPathsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLaunchPathsInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchPaths`](crate::operation::ListLaunchPaths)>
     #[allow(unused_mut)]
@@ -11495,12 +11210,6 @@ pub mod list_organization_portfolio_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOrganizationPortfolioAccessInputOperationOutputAlias =
-    crate::operation::ListOrganizationPortfolioAccess;
-#[doc(hidden)]
-pub type ListOrganizationPortfolioAccessInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationPortfolioAccessInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationPortfolioAccess`](crate::operation::ListOrganizationPortfolioAccess)>
     #[allow(unused_mut)]
@@ -11707,10 +11416,6 @@ pub mod list_portfolio_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPortfolioAccessInputOperationOutputAlias = crate::operation::ListPortfolioAccess;
-#[doc(hidden)]
-pub type ListPortfolioAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPortfolioAccessInput {
     /// Consumes the builder and constructs an Operation<[`ListPortfolioAccess`](crate::operation::ListPortfolioAccess)>
     #[allow(unused_mut)]
@@ -11891,10 +11596,6 @@ pub mod list_portfolios_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPortfoliosInputOperationOutputAlias = crate::operation::ListPortfolios;
-#[doc(hidden)]
-pub type ListPortfoliosInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPortfoliosInput {
     /// Consumes the builder and constructs an Operation<[`ListPortfolios`](crate::operation::ListPortfolios)>
     #[allow(unused_mut)]
@@ -12089,11 +11790,6 @@ pub mod list_portfolios_for_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPortfoliosForProductInputOperationOutputAlias =
-    crate::operation::ListPortfoliosForProduct;
-#[doc(hidden)]
-pub type ListPortfoliosForProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPortfoliosForProductInput {
     /// Consumes the builder and constructs an Operation<[`ListPortfoliosForProduct`](crate::operation::ListPortfoliosForProduct)>
     #[allow(unused_mut)]
@@ -12290,11 +11986,6 @@ pub mod list_principals_for_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPrincipalsForPortfolioInputOperationOutputAlias =
-    crate::operation::ListPrincipalsForPortfolio;
-#[doc(hidden)]
-pub type ListPrincipalsForPortfolioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrincipalsForPortfolioInput {
     /// Consumes the builder and constructs an Operation<[`ListPrincipalsForPortfolio`](crate::operation::ListPrincipalsForPortfolio)>
     #[allow(unused_mut)]
@@ -12506,11 +12197,6 @@ pub mod list_provisioned_product_plans_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProvisionedProductPlansInputOperationOutputAlias =
-    crate::operation::ListProvisionedProductPlans;
-#[doc(hidden)]
-pub type ListProvisionedProductPlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisionedProductPlansInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisionedProductPlans`](crate::operation::ListProvisionedProductPlans)>
     #[allow(unused_mut)]
@@ -12680,11 +12366,6 @@ pub mod list_provisioning_artifacts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProvisioningArtifactsInputOperationOutputAlias =
-    crate::operation::ListProvisioningArtifacts;
-#[doc(hidden)]
-pub type ListProvisioningArtifactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisioningArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisioningArtifacts`](crate::operation::ListProvisioningArtifacts)>
     #[allow(unused_mut)]
@@ -12886,12 +12567,6 @@ pub mod list_provisioning_artifacts_for_service_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProvisioningArtifactsForServiceActionInputOperationOutputAlias =
-    crate::operation::ListProvisioningArtifactsForServiceAction;
-#[doc(hidden)]
-pub type ListProvisioningArtifactsForServiceActionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisioningArtifactsForServiceActionInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisioningArtifactsForServiceAction`](crate::operation::ListProvisioningArtifactsForServiceAction)>
     #[allow(unused_mut)]
@@ -13102,10 +12777,6 @@ pub mod list_record_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecordHistoryInputOperationOutputAlias = crate::operation::ListRecordHistory;
-#[doc(hidden)]
-pub type ListRecordHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecordHistoryInput {
     /// Consumes the builder and constructs an Operation<[`ListRecordHistory`](crate::operation::ListRecordHistory)>
     #[allow(unused_mut)]
@@ -13301,11 +12972,6 @@ pub mod list_resources_for_tag_option_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourcesForTagOptionInputOperationOutputAlias =
-    crate::operation::ListResourcesForTagOption;
-#[doc(hidden)]
-pub type ListResourcesForTagOptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesForTagOptionInput {
     /// Consumes the builder and constructs an Operation<[`ListResourcesForTagOption`](crate::operation::ListResourcesForTagOption)>
     #[allow(unused_mut)]
@@ -13485,10 +13151,6 @@ pub mod list_service_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServiceActionsInputOperationOutputAlias = crate::operation::ListServiceActions;
-#[doc(hidden)]
-pub type ListServiceActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceActionsInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceActions`](crate::operation::ListServiceActions)>
     #[allow(unused_mut)]
@@ -13700,12 +13362,6 @@ pub mod list_service_actions_for_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServiceActionsForProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::ListServiceActionsForProvisioningArtifact;
-#[doc(hidden)]
-pub type ListServiceActionsForProvisioningArtifactInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceActionsForProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceActionsForProvisioningArtifact`](crate::operation::ListServiceActionsForProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -13903,12 +13559,6 @@ pub mod list_stack_instances_for_provisioned_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStackInstancesForProvisionedProductInputOperationOutputAlias =
-    crate::operation::ListStackInstancesForProvisionedProduct;
-#[doc(hidden)]
-pub type ListStackInstancesForProvisionedProductInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListStackInstancesForProvisionedProductInput {
     /// Consumes the builder and constructs an Operation<[`ListStackInstancesForProvisionedProduct`](crate::operation::ListStackInstancesForProvisionedProduct)>
     #[allow(unused_mut)]
@@ -14078,10 +13728,6 @@ pub mod list_tag_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagOptionsInputOperationOutputAlias = crate::operation::ListTagOptions;
-#[doc(hidden)]
-pub type ListTagOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagOptionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTagOptions`](crate::operation::ListTagOptions)>
     #[allow(unused_mut)]
@@ -14432,10 +14078,6 @@ pub mod provision_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ProvisionProductInputOperationOutputAlias = crate::operation::ProvisionProduct;
-#[doc(hidden)]
-pub type ProvisionProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvisionProductInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionProduct`](crate::operation::ProvisionProduct)>
     #[allow(unused_mut)]
@@ -14634,10 +14276,6 @@ pub mod reject_portfolio_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectPortfolioShareInputOperationOutputAlias = crate::operation::RejectPortfolioShare;
-#[doc(hidden)]
-pub type RejectPortfolioShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectPortfolioShareInput {
     /// Consumes the builder and constructs an Operation<[`RejectPortfolioShare`](crate::operation::RejectPortfolioShare)>
     #[allow(unused_mut)]
@@ -14837,11 +14475,6 @@ pub mod scan_provisioned_products_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ScanProvisionedProductsInputOperationOutputAlias =
-    crate::operation::ScanProvisionedProducts;
-#[doc(hidden)]
-pub type ScanProvisionedProductsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ScanProvisionedProductsInput {
     /// Consumes the builder and constructs an Operation<[`ScanProvisionedProducts`](crate::operation::ScanProvisionedProducts)>
     #[allow(unused_mut)]
@@ -15089,10 +14722,6 @@ pub mod search_products_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchProductsInputOperationOutputAlias = crate::operation::SearchProducts;
-#[doc(hidden)]
-pub type SearchProductsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchProductsInput {
     /// Consumes the builder and constructs an Operation<[`SearchProducts`](crate::operation::SearchProducts)>
     #[allow(unused_mut)]
@@ -15365,10 +14994,6 @@ pub mod search_products_as_admin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchProductsAsAdminInputOperationOutputAlias = crate::operation::SearchProductsAsAdmin;
-#[doc(hidden)]
-pub type SearchProductsAsAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchProductsAsAdminInput {
     /// Consumes the builder and constructs an Operation<[`SearchProductsAsAdmin`](crate::operation::SearchProductsAsAdmin)>
     #[allow(unused_mut)]
@@ -15634,11 +15259,6 @@ pub mod search_provisioned_products_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchProvisionedProductsInputOperationOutputAlias =
-    crate::operation::SearchProvisionedProducts;
-#[doc(hidden)]
-pub type SearchProvisionedProductsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchProvisionedProductsInput {
     /// Consumes the builder and constructs an Operation<[`SearchProvisionedProducts`](crate::operation::SearchProvisionedProducts)>
     #[allow(unused_mut)]
@@ -15868,11 +15488,6 @@ pub mod terminate_provisioned_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TerminateProvisionedProductInputOperationOutputAlias =
-    crate::operation::TerminateProvisionedProduct;
-#[doc(hidden)]
-pub type TerminateProvisionedProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateProvisionedProductInput {
     /// Consumes the builder and constructs an Operation<[`TerminateProvisionedProduct`](crate::operation::TerminateProvisionedProduct)>
     #[allow(unused_mut)]
@@ -16163,10 +15778,6 @@ pub mod update_constraint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConstraintInputOperationOutputAlias = crate::operation::UpdateConstraint;
-#[doc(hidden)]
-pub type UpdateConstraintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConstraintInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConstraint`](crate::operation::UpdateConstraint)>
     #[allow(unused_mut)]
@@ -16416,10 +16027,6 @@ pub mod update_portfolio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePortfolioInputOperationOutputAlias = crate::operation::UpdatePortfolio;
-#[doc(hidden)]
-pub type UpdatePortfolioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePortfolioInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePortfolio`](crate::operation::UpdatePortfolio)>
     #[allow(unused_mut)]
@@ -16627,10 +16234,6 @@ pub mod update_portfolio_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePortfolioShareInputOperationOutputAlias = crate::operation::UpdatePortfolioShare;
-#[doc(hidden)]
-pub type UpdatePortfolioShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePortfolioShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePortfolioShare`](crate::operation::UpdatePortfolioShare)>
     #[allow(unused_mut)]
@@ -16933,10 +16536,6 @@ pub mod update_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProductInputOperationOutputAlias = crate::operation::UpdateProduct;
-#[doc(hidden)]
-pub type UpdateProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProductInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProduct`](crate::operation::UpdateProduct)>
     #[allow(unused_mut)]
@@ -17280,11 +16879,6 @@ pub mod update_provisioned_product_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProvisionedProductInputOperationOutputAlias =
-    crate::operation::UpdateProvisionedProduct;
-#[doc(hidden)]
-pub type UpdateProvisionedProductInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProvisionedProductInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProvisionedProduct`](crate::operation::UpdateProvisionedProduct)>
     #[allow(unused_mut)]
@@ -17515,12 +17109,6 @@ pub mod update_provisioned_product_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProvisionedProductPropertiesInputOperationOutputAlias =
-    crate::operation::UpdateProvisionedProductProperties;
-#[doc(hidden)]
-pub type UpdateProvisionedProductPropertiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProvisionedProductPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProvisionedProductProperties`](crate::operation::UpdateProvisionedProductProperties)>
     #[allow(unused_mut)]
@@ -17765,11 +17353,6 @@ pub mod update_provisioning_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProvisioningArtifactInputOperationOutputAlias =
-    crate::operation::UpdateProvisioningArtifact;
-#[doc(hidden)]
-pub type UpdateProvisioningArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProvisioningArtifactInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProvisioningArtifact`](crate::operation::UpdateProvisioningArtifact)>
     #[allow(unused_mut)]
@@ -17999,10 +17582,6 @@ pub mod update_service_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServiceActionInputOperationOutputAlias = crate::operation::UpdateServiceAction;
-#[doc(hidden)]
-pub type UpdateServiceActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceActionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceAction`](crate::operation::UpdateServiceAction)>
     #[allow(unused_mut)]
@@ -18170,10 +17749,6 @@ pub mod update_tag_option_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTagOptionInputOperationOutputAlias = crate::operation::UpdateTagOption;
-#[doc(hidden)]
-pub type UpdateTagOptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTagOptionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTagOption`](crate::operation::UpdateTagOption)>
     #[allow(unused_mut)]

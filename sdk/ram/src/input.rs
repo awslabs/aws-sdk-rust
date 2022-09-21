@@ -53,12 +53,6 @@ pub mod accept_resource_share_invitation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptResourceShareInvitationInputOperationOutputAlias =
-    crate::operation::AcceptResourceShareInvitation;
-#[doc(hidden)]
-pub type AcceptResourceShareInvitationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptResourceShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptResourceShareInvitation`](crate::operation::AcceptResourceShareInvitation)>
     #[allow(unused_mut)]
@@ -278,10 +272,6 @@ pub mod associate_resource_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResourceShareInputOperationOutputAlias = crate::operation::AssociateResourceShare;
-#[doc(hidden)]
-pub type AssociateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResourceShare`](crate::operation::AssociateResourceShare)>
     #[allow(unused_mut)]
@@ -484,12 +474,6 @@ pub mod associate_resource_share_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResourceSharePermissionInputOperationOutputAlias =
-    crate::operation::AssociateResourceSharePermission;
-#[doc(hidden)]
-pub type AssociateResourceSharePermissionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceSharePermissionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResourceSharePermission`](crate::operation::AssociateResourceSharePermission)>
     #[allow(unused_mut)]
@@ -758,10 +742,6 @@ pub mod create_resource_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResourceShareInputOperationOutputAlias = crate::operation::CreateResourceShare;
-#[doc(hidden)]
-pub type CreateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceShare`](crate::operation::CreateResourceShare)>
     #[allow(unused_mut)]
@@ -917,10 +897,6 @@ pub mod delete_resource_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourceShareInputOperationOutputAlias = crate::operation::DeleteResourceShare;
-#[doc(hidden)]
-pub type DeleteResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceShare`](crate::operation::DeleteResourceShare)>
     #[allow(unused_mut)]
@@ -1143,11 +1119,6 @@ pub mod disassociate_resource_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResourceShareInputOperationOutputAlias =
-    crate::operation::DisassociateResourceShare;
-#[doc(hidden)]
-pub type DisassociateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResourceShare`](crate::operation::DisassociateResourceShare)>
     #[allow(unused_mut)]
@@ -1322,12 +1293,6 @@ pub mod disassociate_resource_share_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResourceSharePermissionInputOperationOutputAlias =
-    crate::operation::DisassociateResourceSharePermission;
-#[doc(hidden)]
-pub type DisassociateResourceSharePermissionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceSharePermissionInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResourceSharePermission`](crate::operation::DisassociateResourceSharePermission)>
     #[allow(unused_mut)]
@@ -1454,12 +1419,6 @@ pub mod enable_sharing_with_aws_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableSharingWithAwsOrganizationInputOperationOutputAlias =
-    crate::operation::EnableSharingWithAwsOrganization;
-#[doc(hidden)]
-pub type EnableSharingWithAwsOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableSharingWithAwsOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`EnableSharingWithAwsOrganization`](crate::operation::EnableSharingWithAwsOrganization)>
     #[allow(unused_mut)]
@@ -1600,10 +1559,6 @@ pub mod get_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPermissionInputOperationOutputAlias = crate::operation::GetPermission;
-#[doc(hidden)]
-pub type GetPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPermissionInput {
     /// Consumes the builder and constructs an Operation<[`GetPermission`](crate::operation::GetPermission)>
     #[allow(unused_mut)]
@@ -1787,10 +1742,6 @@ pub mod get_resource_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourcePoliciesInputOperationOutputAlias = crate::operation::GetResourcePolicies;
-#[doc(hidden)]
-pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
     #[allow(unused_mut)]
@@ -2038,12 +1989,6 @@ pub mod get_resource_share_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceShareAssociationsInputOperationOutputAlias =
-    crate::operation::GetResourceShareAssociations;
-#[doc(hidden)]
-pub type GetResourceShareAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceShareAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShareAssociations`](crate::operation::GetResourceShareAssociations)>
     #[allow(unused_mut)]
@@ -2241,11 +2186,6 @@ pub mod get_resource_share_invitations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceShareInvitationsInputOperationOutputAlias =
-    crate::operation::GetResourceShareInvitations;
-#[doc(hidden)]
-pub type GetResourceShareInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceShareInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShareInvitations`](crate::operation::GetResourceShareInvitations)>
     #[allow(unused_mut)]
@@ -2502,10 +2442,6 @@ pub mod get_resource_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceSharesInputOperationOutputAlias = crate::operation::GetResourceShares;
-#[doc(hidden)]
-pub type GetResourceSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceSharesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShares`](crate::operation::GetResourceShares)>
     #[allow(unused_mut)]
@@ -2707,12 +2643,6 @@ pub mod list_pending_invitation_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPendingInvitationResourcesInputOperationOutputAlias =
-    crate::operation::ListPendingInvitationResources;
-#[doc(hidden)]
-pub type ListPendingInvitationResourcesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPendingInvitationResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListPendingInvitationResources`](crate::operation::ListPendingInvitationResources)>
     #[allow(unused_mut)]
@@ -2878,10 +2808,6 @@ pub mod list_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionsInputOperationOutputAlias = crate::operation::ListPermissions;
-#[doc(hidden)]
-pub type ListPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissions`](crate::operation::ListPermissions)>
     #[allow(unused_mut)]
@@ -3047,10 +2973,6 @@ pub mod list_permission_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionVersionsInputOperationOutputAlias = crate::operation::ListPermissionVersions;
-#[doc(hidden)]
-pub type ListPermissionVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionVersions`](crate::operation::ListPermissionVersions)>
     #[allow(unused_mut)]
@@ -3317,10 +3239,6 @@ pub mod list_principals_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPrincipalsInputOperationOutputAlias = crate::operation::ListPrincipals;
-#[doc(hidden)]
-pub type ListPrincipalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrincipalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPrincipals`](crate::operation::ListPrincipals)>
     #[allow(unused_mut)]
@@ -3596,10 +3514,6 @@ pub mod list_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourcesInputOperationOutputAlias = crate::operation::ListResources;
-#[doc(hidden)]
-pub type ListResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(unused_mut)]
@@ -3767,12 +3681,6 @@ pub mod list_resource_share_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourceSharePermissionsInputOperationOutputAlias =
-    crate::operation::ListResourceSharePermissions;
-#[doc(hidden)]
-pub type ListResourceSharePermissionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceSharePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceSharePermissions`](crate::operation::ListResourceSharePermissions)>
     #[allow(unused_mut)]
@@ -3953,10 +3861,6 @@ pub mod list_resource_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourceTypesInputOperationOutputAlias = crate::operation::ListResourceTypes;
-#[doc(hidden)]
-pub type ListResourceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceTypes`](crate::operation::ListResourceTypes)>
     #[allow(unused_mut)]
@@ -4100,12 +4004,6 @@ pub mod promote_resource_share_created_from_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PromoteResourceShareCreatedFromPolicyInputOperationOutputAlias =
-    crate::operation::PromoteResourceShareCreatedFromPolicy;
-#[doc(hidden)]
-pub type PromoteResourceShareCreatedFromPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PromoteResourceShareCreatedFromPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PromoteResourceShareCreatedFromPolicy`](crate::operation::PromoteResourceShareCreatedFromPolicy)>
     #[allow(unused_mut)]
@@ -4267,12 +4165,6 @@ pub mod reject_resource_share_invitation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectResourceShareInvitationInputOperationOutputAlias =
-    crate::operation::RejectResourceShareInvitation;
-#[doc(hidden)]
-pub type RejectResourceShareInvitationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectResourceShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RejectResourceShareInvitation`](crate::operation::RejectResourceShareInvitation)>
     #[allow(unused_mut)]
@@ -4435,10 +4327,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4601,10 +4489,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4784,10 +4668,6 @@ pub mod update_resource_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResourceShareInputOperationOutputAlias = crate::operation::UpdateResourceShare;
-#[doc(hidden)]
-pub type UpdateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceShare`](crate::operation::UpdateResourceShare)>
     #[allow(unused_mut)]

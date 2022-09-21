@@ -254,10 +254,6 @@ pub mod describe_dimension_keys_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDimensionKeysInputOperationOutputAlias = crate::operation::DescribeDimensionKeys;
-#[doc(hidden)]
-pub type DescribeDimensionKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDimensionKeysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDimensionKeys`](crate::operation::DescribeDimensionKeys)>
     #[allow(unused_mut)]
@@ -490,10 +486,6 @@ pub mod get_dimension_key_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDimensionKeyDetailsInputOperationOutputAlias = crate::operation::GetDimensionKeyDetails;
-#[doc(hidden)]
-pub type GetDimensionKeyDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDimensionKeyDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetDimensionKeyDetails`](crate::operation::GetDimensionKeyDetails)>
     #[allow(unused_mut)]
@@ -654,10 +646,6 @@ pub mod get_resource_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceMetadataInputOperationOutputAlias = crate::operation::GetResourceMetadata;
-#[doc(hidden)]
-pub type GetResourceMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceMetadata`](crate::operation::GetResourceMetadata)>
     #[allow(unused_mut)]
@@ -933,10 +921,6 @@ pub mod get_resource_metrics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceMetricsInputOperationOutputAlias = crate::operation::GetResourceMetrics;
-#[doc(hidden)]
-pub type GetResourceMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceMetrics`](crate::operation::GetResourceMetrics)>
     #[allow(unused_mut)]
@@ -1142,12 +1126,6 @@ pub mod list_available_resource_dimensions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAvailableResourceDimensionsInputOperationOutputAlias =
-    crate::operation::ListAvailableResourceDimensions;
-#[doc(hidden)]
-pub type ListAvailableResourceDimensionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableResourceDimensionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableResourceDimensions`](crate::operation::ListAvailableResourceDimensions)>
     #[allow(unused_mut)]
@@ -1364,12 +1342,6 @@ pub mod list_available_resource_metrics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAvailableResourceMetricsInputOperationOutputAlias =
-    crate::operation::ListAvailableResourceMetrics;
-#[doc(hidden)]
-pub type ListAvailableResourceMetricsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableResourceMetricsInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableResourceMetrics`](crate::operation::ListAvailableResourceMetrics)>
     #[allow(unused_mut)]

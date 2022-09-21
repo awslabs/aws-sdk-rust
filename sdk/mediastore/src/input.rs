@@ -55,10 +55,6 @@ pub mod create_container_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateContainerInputOperationOutputAlias = crate::operation::CreateContainer;
-#[doc(hidden)]
-pub type CreateContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContainerInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainer`](crate::operation::CreateContainer)>
     #[allow(unused_mut)]
@@ -205,10 +201,6 @@ pub mod delete_container_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteContainerInputOperationOutputAlias = crate::operation::DeleteContainer;
-#[doc(hidden)]
-pub type DeleteContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainer`](crate::operation::DeleteContainer)>
     #[allow(unused_mut)]
@@ -355,10 +347,6 @@ pub mod delete_container_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteContainerPolicyInputOperationOutputAlias = crate::operation::DeleteContainerPolicy;
-#[doc(hidden)]
-pub type DeleteContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerPolicy`](crate::operation::DeleteContainerPolicy)>
     #[allow(unused_mut)]
@@ -507,10 +495,6 @@ pub mod delete_cors_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCorsPolicyInputOperationOutputAlias = crate::operation::DeleteCorsPolicy;
-#[doc(hidden)]
-pub type DeleteCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCorsPolicy`](crate::operation::DeleteCorsPolicy)>
     #[allow(unused_mut)]
@@ -657,10 +641,6 @@ pub mod delete_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
-#[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -809,10 +789,6 @@ pub mod delete_metric_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMetricPolicyInputOperationOutputAlias = crate::operation::DeleteMetricPolicy;
-#[doc(hidden)]
-pub type DeleteMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMetricPolicy`](crate::operation::DeleteMetricPolicy)>
     #[allow(unused_mut)]
@@ -959,10 +935,6 @@ pub mod describe_container_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeContainerInputOperationOutputAlias = crate::operation::DescribeContainer;
-#[doc(hidden)]
-pub type DescribeContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContainerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContainer`](crate::operation::DescribeContainer)>
     #[allow(unused_mut)]
@@ -1109,10 +1081,6 @@ pub mod get_container_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContainerPolicyInputOperationOutputAlias = crate::operation::GetContainerPolicy;
-#[doc(hidden)]
-pub type GetContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerPolicy`](crate::operation::GetContainerPolicy)>
     #[allow(unused_mut)]
@@ -1259,10 +1227,6 @@ pub mod get_cors_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCorsPolicyInputOperationOutputAlias = crate::operation::GetCorsPolicy;
-#[doc(hidden)]
-pub type GetCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCorsPolicy`](crate::operation::GetCorsPolicy)>
     #[allow(unused_mut)]
@@ -1409,10 +1373,6 @@ pub mod get_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
-#[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -1559,10 +1519,6 @@ pub mod get_metric_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMetricPolicyInputOperationOutputAlias = crate::operation::GetMetricPolicy;
-#[doc(hidden)]
-pub type GetMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricPolicy`](crate::operation::GetMetricPolicy)>
     #[allow(unused_mut)]
@@ -1718,10 +1674,6 @@ pub mod list_containers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContainersInputOperationOutputAlias = crate::operation::ListContainers;
-#[doc(hidden)]
-pub type ListContainersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContainersInput {
     /// Consumes the builder and constructs an Operation<[`ListContainers`](crate::operation::ListContainers)>
     #[allow(unused_mut)]
@@ -1865,10 +1817,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2037,10 +1985,6 @@ pub mod put_container_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutContainerPolicyInputOperationOutputAlias = crate::operation::PutContainerPolicy;
-#[doc(hidden)]
-pub type PutContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerPolicy`](crate::operation::PutContainerPolicy)>
     #[allow(unused_mut)]
@@ -2208,10 +2152,6 @@ pub mod put_cors_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutCorsPolicyInputOperationOutputAlias = crate::operation::PutCorsPolicy;
-#[doc(hidden)]
-pub type PutCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutCorsPolicy`](crate::operation::PutCorsPolicy)>
     #[allow(unused_mut)]
@@ -2373,10 +2313,6 @@ pub mod put_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLifecyclePolicyInputOperationOutputAlias = crate::operation::PutLifecyclePolicy;
-#[doc(hidden)]
-pub type PutLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutLifecyclePolicy`](crate::operation::PutLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -2546,10 +2482,6 @@ pub mod put_metric_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutMetricPolicyInputOperationOutputAlias = crate::operation::PutMetricPolicy;
-#[doc(hidden)]
-pub type PutMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricPolicy`](crate::operation::PutMetricPolicy)>
     #[allow(unused_mut)]
@@ -2696,10 +2628,6 @@ pub mod start_access_logging_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartAccessLoggingInputOperationOutputAlias = crate::operation::StartAccessLogging;
-#[doc(hidden)]
-pub type StartAccessLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAccessLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StartAccessLogging`](crate::operation::StartAccessLogging)>
     #[allow(unused_mut)]
@@ -2846,10 +2774,6 @@ pub mod stop_access_logging_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopAccessLoggingInputOperationOutputAlias = crate::operation::StopAccessLogging;
-#[doc(hidden)]
-pub type StopAccessLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAccessLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StopAccessLogging`](crate::operation::StopAccessLogging)>
     #[allow(unused_mut)]
@@ -3014,10 +2938,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3182,10 +3102,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

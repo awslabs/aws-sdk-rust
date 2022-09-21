@@ -34,10 +34,6 @@ pub mod bulk_publish_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BulkPublishInputOperationOutputAlias = crate::operation::BulkPublish;
-#[doc(hidden)]
-pub type BulkPublishInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BulkPublishInput {
     /// Consumes the builder and constructs an Operation<[`BulkPublish`](crate::operation::BulkPublish)>
     #[allow(unused_mut)]
@@ -208,10 +204,6 @@ pub mod delete_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
@@ -405,10 +397,6 @@ pub mod describe_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(unused_mut)]
@@ -580,11 +568,6 @@ pub mod describe_identity_pool_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIdentityPoolUsageInputOperationOutputAlias =
-    crate::operation::DescribeIdentityPoolUsage;
-#[doc(hidden)]
-pub type DescribeIdentityPoolUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityPoolUsage`](crate::operation::DescribeIdentityPoolUsage)>
     #[allow(unused_mut)]
@@ -743,10 +726,6 @@ pub mod describe_identity_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIdentityUsageInputOperationOutputAlias = crate::operation::DescribeIdentityUsage;
-#[doc(hidden)]
-pub type DescribeIdentityUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityUsage`](crate::operation::DescribeIdentityUsage)>
     #[allow(unused_mut)]
@@ -908,10 +887,6 @@ pub mod get_bulk_publish_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBulkPublishDetailsInputOperationOutputAlias = crate::operation::GetBulkPublishDetails;
-#[doc(hidden)]
-pub type GetBulkPublishDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBulkPublishDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetBulkPublishDetails`](crate::operation::GetBulkPublishDetails)>
     #[allow(unused_mut)]
@@ -1058,10 +1033,6 @@ pub mod get_cognito_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCognitoEventsInputOperationOutputAlias = crate::operation::GetCognitoEvents;
-#[doc(hidden)]
-pub type GetCognitoEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`GetCognitoEvents`](crate::operation::GetCognitoEvents)>
     #[allow(unused_mut)]
@@ -1210,12 +1181,6 @@ pub mod get_identity_pool_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityPoolConfigurationInputOperationOutputAlias =
-    crate::operation::GetIdentityPoolConfiguration;
-#[doc(hidden)]
-pub type GetIdentityPoolConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPoolConfiguration`](crate::operation::GetIdentityPoolConfiguration)>
     #[allow(unused_mut)]
@@ -1398,10 +1363,6 @@ pub mod list_datasets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
-#[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(unused_mut)]
@@ -1589,10 +1550,6 @@ pub mod list_identity_pool_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentityPoolUsageInputOperationOutputAlias = crate::operation::ListIdentityPoolUsage;
-#[doc(hidden)]
-pub type ListIdentityPoolUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPoolUsage`](crate::operation::ListIdentityPoolUsage)>
     #[allow(unused_mut)]
@@ -1812,10 +1769,6 @@ pub mod list_records_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecordsInputOperationOutputAlias = crate::operation::ListRecords;
-#[doc(hidden)]
-pub type ListRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecordsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecords`](crate::operation::ListRecords)>
     #[allow(unused_mut)]
@@ -2050,10 +2003,6 @@ pub mod register_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterDeviceInputOperationOutputAlias = crate::operation::RegisterDevice;
-#[doc(hidden)]
-pub type RegisterDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDeviceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDevice`](crate::operation::RegisterDevice)>
     #[allow(unused_mut)]
@@ -2258,10 +2207,6 @@ pub mod set_cognito_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetCognitoEventsInputOperationOutputAlias = crate::operation::SetCognitoEvents;
-#[doc(hidden)]
-pub type SetCognitoEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`SetCognitoEvents`](crate::operation::SetCognitoEvents)>
     #[allow(unused_mut)]
@@ -2451,12 +2396,6 @@ pub mod set_identity_pool_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityPoolConfigurationInputOperationOutputAlias =
-    crate::operation::SetIdentityPoolConfiguration;
-#[doc(hidden)]
-pub type SetIdentityPoolConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityPoolConfiguration`](crate::operation::SetIdentityPoolConfiguration)>
     #[allow(unused_mut)]
@@ -2652,10 +2591,6 @@ pub mod subscribe_to_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SubscribeToDatasetInputOperationOutputAlias = crate::operation::SubscribeToDataset;
-#[doc(hidden)]
-pub type SubscribeToDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubscribeToDatasetInput {
     /// Consumes the builder and constructs an Operation<[`SubscribeToDataset`](crate::operation::SubscribeToDataset)>
     #[allow(unused_mut)]
@@ -2875,10 +2810,6 @@ pub mod unsubscribe_from_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnsubscribeFromDatasetInputOperationOutputAlias = crate::operation::UnsubscribeFromDataset;
-#[doc(hidden)]
-pub type UnsubscribeFromDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnsubscribeFromDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UnsubscribeFromDataset`](crate::operation::UnsubscribeFromDataset)>
     #[allow(unused_mut)]
@@ -3149,10 +3080,6 @@ pub mod update_records_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRecordsInputOperationOutputAlias = crate::operation::UpdateRecords;
-#[doc(hidden)]
-pub type UpdateRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecordsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecords`](crate::operation::UpdateRecords)>
     #[allow(unused_mut)]

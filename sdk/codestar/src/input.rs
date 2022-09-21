@@ -82,10 +82,6 @@ pub mod associate_team_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateTeamMemberInputOperationOutputAlias = crate::operation::AssociateTeamMember;
-#[doc(hidden)]
-pub type AssociateTeamMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTeamMemberInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTeamMember`](crate::operation::AssociateTeamMember)>
     #[allow(unused_mut)]
@@ -333,10 +329,6 @@ pub mod create_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
-#[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(unused_mut)]
@@ -522,10 +514,6 @@ pub mod create_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserProfileInputOperationOutputAlias = crate::operation::CreateUserProfile;
-#[doc(hidden)]
-pub type CreateUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserProfile`](crate::operation::CreateUserProfile)>
     #[allow(unused_mut)]
@@ -696,10 +684,6 @@ pub mod delete_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
-#[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(unused_mut)]
@@ -843,10 +827,6 @@ pub mod delete_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserProfileInputOperationOutputAlias = crate::operation::DeleteUserProfile;
-#[doc(hidden)]
-pub type DeleteUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserProfile`](crate::operation::DeleteUserProfile)>
     #[allow(unused_mut)]
@@ -988,10 +968,6 @@ pub mod describe_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
-#[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(unused_mut)]
@@ -1135,10 +1111,6 @@ pub mod describe_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserProfileInputOperationOutputAlias = crate::operation::DescribeUserProfile;
-#[doc(hidden)]
-pub type DescribeUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserProfile`](crate::operation::DescribeUserProfile)>
     #[allow(unused_mut)]
@@ -1294,10 +1266,6 @@ pub mod disassociate_team_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateTeamMemberInputOperationOutputAlias = crate::operation::DisassociateTeamMember;
-#[doc(hidden)]
-pub type DisassociateTeamMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTeamMemberInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTeamMember`](crate::operation::DisassociateTeamMember)>
     #[allow(unused_mut)]
@@ -1455,10 +1423,6 @@ pub mod list_projects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
-#[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(unused_mut)]
@@ -1626,10 +1590,6 @@ pub mod list_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourcesInputOperationOutputAlias = crate::operation::ListResources;
-#[doc(hidden)]
-pub type ListResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(unused_mut)]
@@ -1797,10 +1757,6 @@ pub mod list_tags_for_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForProjectInputOperationOutputAlias = crate::operation::ListTagsForProject;
-#[doc(hidden)]
-pub type ListTagsForProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForProjectInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForProject`](crate::operation::ListTagsForProject)>
     #[allow(unused_mut)]
@@ -1968,10 +1924,6 @@ pub mod list_team_members_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTeamMembersInputOperationOutputAlias = crate::operation::ListTeamMembers;
-#[doc(hidden)]
-pub type ListTeamMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTeamMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListTeamMembers`](crate::operation::ListTeamMembers)>
     #[allow(unused_mut)]
@@ -2127,10 +2079,6 @@ pub mod list_user_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUserProfilesInputOperationOutputAlias = crate::operation::ListUserProfiles;
-#[doc(hidden)]
-pub type ListUserProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListUserProfiles`](crate::operation::ListUserProfiles)>
     #[allow(unused_mut)]
@@ -2302,10 +2250,6 @@ pub mod tag_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagProjectInputOperationOutputAlias = crate::operation::TagProject;
-#[doc(hidden)]
-pub type TagProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagProjectInput {
     /// Consumes the builder and constructs an Operation<[`TagProject`](crate::operation::TagProject)>
     #[allow(unused_mut)]
@@ -2470,10 +2414,6 @@ pub mod untag_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagProjectInputOperationOutputAlias = crate::operation::UntagProject;
-#[doc(hidden)]
-pub type UntagProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagProjectInput {
     /// Consumes the builder and constructs an Operation<[`UntagProject`](crate::operation::UntagProject)>
     #[allow(unused_mut)]
@@ -2641,10 +2581,6 @@ pub mod update_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
-#[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(unused_mut)]
@@ -2824,10 +2760,6 @@ pub mod update_team_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTeamMemberInputOperationOutputAlias = crate::operation::UpdateTeamMember;
-#[doc(hidden)]
-pub type UpdateTeamMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTeamMemberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTeamMember`](crate::operation::UpdateTeamMember)>
     #[allow(unused_mut)]
@@ -3013,10 +2945,6 @@ pub mod update_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserProfileInputOperationOutputAlias = crate::operation::UpdateUserProfile;
-#[doc(hidden)]
-pub type UpdateUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserProfile`](crate::operation::UpdateUserProfile)>
     #[allow(unused_mut)]

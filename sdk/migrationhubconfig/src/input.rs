@@ -57,11 +57,6 @@ pub mod create_home_region_control_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHomeRegionControlInputOperationOutputAlias =
-    crate::operation::CreateHomeRegionControl;
-#[doc(hidden)]
-pub type CreateHomeRegionControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHomeRegionControlInput {
     /// Consumes the builder and constructs an Operation<[`CreateHomeRegionControl`](crate::operation::CreateHomeRegionControl)>
     #[allow(unused_mut)]
@@ -257,11 +252,6 @@ pub mod describe_home_region_controls_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeHomeRegionControlsInputOperationOutputAlias =
-    crate::operation::DescribeHomeRegionControls;
-#[doc(hidden)]
-pub type DescribeHomeRegionControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHomeRegionControlsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHomeRegionControls`](crate::operation::DescribeHomeRegionControls)>
     #[allow(unused_mut)]
@@ -390,10 +380,6 @@ pub mod get_home_region_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetHomeRegionInputOperationOutputAlias = crate::operation::GetHomeRegion;
-#[doc(hidden)]
-pub type GetHomeRegionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHomeRegionInput {
     /// Consumes the builder and constructs an Operation<[`GetHomeRegion`](crate::operation::GetHomeRegion)>
     #[allow(unused_mut)]

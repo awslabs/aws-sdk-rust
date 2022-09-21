@@ -108,10 +108,6 @@ pub mod create_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
-#[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(unused_mut)]
@@ -384,10 +380,6 @@ pub mod create_replication_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateReplicationJobInputOperationOutputAlias = crate::operation::CreateReplicationJob;
-#[doc(hidden)]
-pub type CreateReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationJob`](crate::operation::CreateReplicationJob)>
     #[allow(unused_mut)]
@@ -556,10 +548,6 @@ pub mod delete_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
-#[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(unused_mut)]
@@ -703,12 +691,6 @@ pub mod delete_app_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppLaunchConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteAppLaunchConfiguration;
-#[doc(hidden)]
-pub type DeleteAppLaunchConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppLaunchConfiguration`](crate::operation::DeleteAppLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -853,12 +835,6 @@ pub mod delete_app_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteAppReplicationConfiguration;
-#[doc(hidden)]
-pub type DeleteAppReplicationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppReplicationConfiguration`](crate::operation::DeleteAppReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -1003,12 +979,6 @@ pub mod delete_app_validation_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppValidationConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteAppValidationConfiguration;
-#[doc(hidden)]
-pub type DeleteAppValidationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppValidationConfiguration`](crate::operation::DeleteAppValidationConfiguration)>
     #[allow(unused_mut)]
@@ -1154,10 +1124,6 @@ pub mod delete_replication_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReplicationJobInputOperationOutputAlias = crate::operation::DeleteReplicationJob;
-#[doc(hidden)]
-pub type DeleteReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationJob`](crate::operation::DeleteReplicationJob)>
     #[allow(unused_mut)]
@@ -1289,10 +1255,6 @@ pub mod delete_server_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteServerCatalogInputOperationOutputAlias = crate::operation::DeleteServerCatalog;
-#[doc(hidden)]
-pub type DeleteServerCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServerCatalogInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServerCatalog`](crate::operation::DeleteServerCatalog)>
     #[allow(unused_mut)]
@@ -1429,10 +1391,6 @@ pub mod disassociate_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateConnectorInputOperationOutputAlias = crate::operation::DisassociateConnector;
-#[doc(hidden)]
-pub type DisassociateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnector`](crate::operation::DisassociateConnector)>
     #[allow(unused_mut)]
@@ -1593,10 +1551,6 @@ pub mod generate_change_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GenerateChangeSetInputOperationOutputAlias = crate::operation::GenerateChangeSet;
-#[doc(hidden)]
-pub type GenerateChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateChangeSet`](crate::operation::GenerateChangeSet)>
     #[allow(unused_mut)]
@@ -1755,10 +1709,6 @@ pub mod generate_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GenerateTemplateInputOperationOutputAlias = crate::operation::GenerateTemplate;
-#[doc(hidden)]
-pub type GenerateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GenerateTemplate`](crate::operation::GenerateTemplate)>
     #[allow(unused_mut)]
@@ -1901,10 +1851,6 @@ pub mod get_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppInputOperationOutputAlias = crate::operation::GetApp;
-#[doc(hidden)]
-pub type GetAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(unused_mut)]
@@ -2045,11 +1991,6 @@ pub mod get_app_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppLaunchConfigurationInputOperationOutputAlias =
-    crate::operation::GetAppLaunchConfiguration;
-#[doc(hidden)]
-pub type GetAppLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppLaunchConfiguration`](crate::operation::GetAppLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -2197,12 +2138,6 @@ pub mod get_app_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::GetAppReplicationConfiguration;
-#[doc(hidden)]
-pub type GetAppReplicationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppReplicationConfiguration`](crate::operation::GetAppReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -2347,12 +2282,6 @@ pub mod get_app_validation_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppValidationConfigurationInputOperationOutputAlias =
-    crate::operation::GetAppValidationConfiguration;
-#[doc(hidden)]
-pub type GetAppValidationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppValidationConfiguration`](crate::operation::GetAppValidationConfiguration)>
     #[allow(unused_mut)]
@@ -2495,10 +2424,6 @@ pub mod get_app_validation_output_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppValidationOutputInputOperationOutputAlias = crate::operation::GetAppValidationOutput;
-#[doc(hidden)]
-pub type GetAppValidationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppValidationOutputInput {
     /// Consumes the builder and constructs an Operation<[`GetAppValidationOutput`](crate::operation::GetAppValidationOutput)>
     #[allow(unused_mut)]
@@ -2656,10 +2581,6 @@ pub mod get_connectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectorsInputOperationOutputAlias = crate::operation::GetConnectors;
-#[doc(hidden)]
-pub type GetConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectors`](crate::operation::GetConnectors)>
     #[allow(unused_mut)]
@@ -2830,10 +2751,6 @@ pub mod get_replication_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReplicationJobsInputOperationOutputAlias = crate::operation::GetReplicationJobs;
-#[doc(hidden)]
-pub type GetReplicationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationJobs`](crate::operation::GetReplicationJobs)>
     #[allow(unused_mut)]
@@ -3004,10 +2921,6 @@ pub mod get_replication_runs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReplicationRunsInputOperationOutputAlias = crate::operation::GetReplicationRuns;
-#[doc(hidden)]
-pub type GetReplicationRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationRuns`](crate::operation::GetReplicationRuns)>
     #[allow(unused_mut)]
@@ -3184,10 +3097,6 @@ pub mod get_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServersInputOperationOutputAlias = crate::operation::GetServers;
-#[doc(hidden)]
-pub type GetServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServersInput {
     /// Consumes the builder and constructs an Operation<[`GetServers`](crate::operation::GetServers)>
     #[allow(unused_mut)]
@@ -3331,10 +3240,6 @@ pub mod import_app_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportAppCatalogInputOperationOutputAlias = crate::operation::ImportAppCatalog;
-#[doc(hidden)]
-pub type ImportAppCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportAppCatalogInput {
     /// Consumes the builder and constructs an Operation<[`ImportAppCatalog`](crate::operation::ImportAppCatalog)>
     #[allow(unused_mut)]
@@ -3464,10 +3369,6 @@ pub mod import_server_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportServerCatalogInputOperationOutputAlias = crate::operation::ImportServerCatalog;
-#[doc(hidden)]
-pub type ImportServerCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportServerCatalogInput {
     /// Consumes the builder and constructs an Operation<[`ImportServerCatalog`](crate::operation::ImportServerCatalog)>
     #[allow(unused_mut)]
@@ -3603,10 +3504,6 @@ pub mod launch_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type LaunchAppInputOperationOutputAlias = crate::operation::LaunchApp;
-#[doc(hidden)]
-pub type LaunchAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LaunchAppInput {
     /// Consumes the builder and constructs an Operation<[`LaunchApp`](crate::operation::LaunchApp)>
     #[allow(unused_mut)]
@@ -3780,10 +3677,6 @@ pub mod list_apps_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppsInputOperationOutputAlias = crate::operation::ListApps;
-#[doc(hidden)]
-pub type ListAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(unused_mut)]
@@ -3939,11 +3832,6 @@ pub mod notify_app_validation_output_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyAppValidationOutputInputOperationOutputAlias =
-    crate::operation::NotifyAppValidationOutput;
-#[doc(hidden)]
-pub type NotifyAppValidationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyAppValidationOutputInput {
     /// Consumes the builder and constructs an Operation<[`NotifyAppValidationOutput`](crate::operation::NotifyAppValidationOutput)>
     #[allow(unused_mut)]
@@ -4140,11 +4028,6 @@ pub mod put_app_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAppLaunchConfigurationInputOperationOutputAlias =
-    crate::operation::PutAppLaunchConfiguration;
-#[doc(hidden)]
-pub type PutAppLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppLaunchConfiguration`](crate::operation::PutAppLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -4322,12 +4205,6 @@ pub mod put_app_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAppReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::PutAppReplicationConfiguration;
-#[doc(hidden)]
-pub type PutAppReplicationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppReplicationConfiguration`](crate::operation::PutAppReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -4526,12 +4403,6 @@ pub mod put_app_validation_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAppValidationConfigurationInputOperationOutputAlias =
-    crate::operation::PutAppValidationConfiguration;
-#[doc(hidden)]
-pub type PutAppValidationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppValidationConfiguration`](crate::operation::PutAppValidationConfiguration)>
     #[allow(unused_mut)]
@@ -4674,10 +4545,6 @@ pub mod start_app_replication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartAppReplicationInputOperationOutputAlias = crate::operation::StartAppReplication;
-#[doc(hidden)]
-pub type StartAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartAppReplication`](crate::operation::StartAppReplication)>
     #[allow(unused_mut)]
@@ -4835,11 +4702,6 @@ pub mod start_on_demand_app_replication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartOnDemandAppReplicationInputOperationOutputAlias =
-    crate::operation::StartOnDemandAppReplication;
-#[doc(hidden)]
-pub type StartOnDemandAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandAppReplication`](crate::operation::StartOnDemandAppReplication)>
     #[allow(unused_mut)]
@@ -4999,11 +4861,6 @@ pub mod start_on_demand_replication_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartOnDemandReplicationRunInputOperationOutputAlias =
-    crate::operation::StartOnDemandReplicationRun;
-#[doc(hidden)]
-pub type StartOnDemandReplicationRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandReplicationRunInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandReplicationRun`](crate::operation::StartOnDemandReplicationRun)>
     #[allow(unused_mut)]
@@ -5146,10 +5003,6 @@ pub mod stop_app_replication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopAppReplicationInputOperationOutputAlias = crate::operation::StopAppReplication;
-#[doc(hidden)]
-pub type StopAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StopAppReplication`](crate::operation::StopAppReplication)>
     #[allow(unused_mut)]
@@ -5293,10 +5146,6 @@ pub mod terminate_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TerminateAppInputOperationOutputAlias = crate::operation::TerminateApp;
-#[doc(hidden)]
-pub type TerminateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateAppInput {
     /// Consumes the builder and constructs an Operation<[`TerminateApp`](crate::operation::TerminateApp)>
     #[allow(unused_mut)]
@@ -5517,10 +5366,6 @@ pub mod update_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
-#[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(unused_mut)]
@@ -5787,10 +5632,6 @@ pub mod update_replication_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateReplicationJobInputOperationOutputAlias = crate::operation::UpdateReplicationJob;
-#[doc(hidden)]
-pub type UpdateReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationJob`](crate::operation::UpdateReplicationJob)>
     #[allow(unused_mut)]

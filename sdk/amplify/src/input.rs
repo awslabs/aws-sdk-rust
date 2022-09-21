@@ -330,10 +330,6 @@ pub mod create_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
-#[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(unused_mut)]
@@ -514,11 +510,6 @@ pub mod create_backend_environment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackendEnvironmentInputOperationOutputAlias =
-    crate::operation::CreateBackendEnvironment;
-#[doc(hidden)]
-pub type CreateBackendEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendEnvironment`](crate::operation::CreateBackendEnvironment)>
     #[allow(unused_mut)]
@@ -926,10 +917,6 @@ pub mod create_branch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBranchInputOperationOutputAlias = crate::operation::CreateBranch;
-#[doc(hidden)]
-pub type CreateBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBranchInput {
     /// Consumes the builder and constructs an Operation<[`CreateBranch`](crate::operation::CreateBranch)>
     #[allow(unused_mut)]
@@ -1124,10 +1111,6 @@ pub mod create_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(unused_mut)]
@@ -1388,11 +1371,6 @@ pub mod create_domain_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDomainAssociationInputOperationOutputAlias =
-    crate::operation::CreateDomainAssociation;
-#[doc(hidden)]
-pub type CreateDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomainAssociation`](crate::operation::CreateDomainAssociation)>
     #[allow(unused_mut)]
@@ -1572,10 +1550,6 @@ pub mod create_webhook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWebhookInputOperationOutputAlias = crate::operation::CreateWebhook;
-#[doc(hidden)]
-pub type CreateWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebhook`](crate::operation::CreateWebhook)>
     #[allow(unused_mut)]
@@ -1728,10 +1702,6 @@ pub mod delete_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
-#[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(unused_mut)]
@@ -1885,11 +1855,6 @@ pub mod delete_backend_environment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackendEnvironmentInputOperationOutputAlias =
-    crate::operation::DeleteBackendEnvironment;
-#[doc(hidden)]
-pub type DeleteBackendEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendEnvironment`](crate::operation::DeleteBackendEnvironment)>
     #[allow(unused_mut)]
@@ -2060,10 +2025,6 @@ pub mod delete_branch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBranchInputOperationOutputAlias = crate::operation::DeleteBranch;
-#[doc(hidden)]
-pub type DeleteBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBranchInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBranch`](crate::operation::DeleteBranch)>
     #[allow(unused_mut)]
@@ -2236,11 +2197,6 @@ pub mod delete_domain_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDomainAssociationInputOperationOutputAlias =
-    crate::operation::DeleteDomainAssociation;
-#[doc(hidden)]
-pub type DeleteDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomainAssociation`](crate::operation::DeleteDomainAssociation)>
     #[allow(unused_mut)]
@@ -2422,10 +2378,6 @@ pub mod delete_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
-#[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(unused_mut)]
@@ -2597,10 +2549,6 @@ pub mod delete_webhook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWebhookInputOperationOutputAlias = crate::operation::DeleteWebhook;
-#[doc(hidden)]
-pub type DeleteWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWebhookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebhook`](crate::operation::DeleteWebhook)>
     #[allow(unused_mut)]
@@ -2782,10 +2730,6 @@ pub mod generate_access_logs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GenerateAccessLogsInputOperationOutputAlias = crate::operation::GenerateAccessLogs;
-#[doc(hidden)]
-pub type GenerateAccessLogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateAccessLogsInput {
     /// Consumes the builder and constructs an Operation<[`GenerateAccessLogs`](crate::operation::GenerateAccessLogs)>
     #[allow(unused_mut)]
@@ -2938,10 +2882,6 @@ pub mod get_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppInputOperationOutputAlias = crate::operation::GetApp;
-#[doc(hidden)]
-pub type GetAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(unused_mut)]
@@ -3077,10 +3017,6 @@ pub mod get_artifact_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetArtifactUrlInputOperationOutputAlias = crate::operation::GetArtifactUrl;
-#[doc(hidden)]
-pub type GetArtifactUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetArtifactUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetArtifactUrl`](crate::operation::GetArtifactUrl)>
     #[allow(unused_mut)]
@@ -3235,10 +3171,6 @@ pub mod get_backend_environment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendEnvironmentInputOperationOutputAlias = crate::operation::GetBackendEnvironment;
-#[doc(hidden)]
-pub type GetBackendEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendEnvironment`](crate::operation::GetBackendEnvironment)>
     #[allow(unused_mut)]
@@ -3408,10 +3340,6 @@ pub mod get_branch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBranchInputOperationOutputAlias = crate::operation::GetBranch;
-#[doc(hidden)]
-pub type GetBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBranchInput {
     /// Consumes the builder and constructs an Operation<[`GetBranch`](crate::operation::GetBranch)>
     #[allow(unused_mut)]
@@ -3580,10 +3508,6 @@ pub mod get_domain_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDomainAssociationInputOperationOutputAlias = crate::operation::GetDomainAssociation;
-#[doc(hidden)]
-pub type GetDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainAssociation`](crate::operation::GetDomainAssociation)>
     #[allow(unused_mut)]
@@ -3765,10 +3689,6 @@ pub mod get_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
-#[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(unused_mut)]
@@ -3938,10 +3858,6 @@ pub mod get_webhook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWebhookInputOperationOutputAlias = crate::operation::GetWebhook;
-#[doc(hidden)]
-pub type GetWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWebhookInput {
     /// Consumes the builder and constructs an Operation<[`GetWebhook`](crate::operation::GetWebhook)>
     #[allow(unused_mut)]
@@ -4092,10 +4008,6 @@ pub mod list_apps_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppsInputOperationOutputAlias = crate::operation::ListApps;
-#[doc(hidden)]
-pub type ListAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(unused_mut)]
@@ -4282,10 +4194,6 @@ pub mod list_artifacts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListArtifactsInputOperationOutputAlias = crate::operation::ListArtifacts;
-#[doc(hidden)]
-pub type ListArtifactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListArtifacts`](crate::operation::ListArtifacts)>
     #[allow(unused_mut)]
@@ -4517,11 +4425,6 @@ pub mod list_backend_environments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBackendEnvironmentsInputOperationOutputAlias =
-    crate::operation::ListBackendEnvironments;
-#[doc(hidden)]
-pub type ListBackendEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBackendEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackendEnvironments`](crate::operation::ListBackendEnvironments)>
     #[allow(unused_mut)]
@@ -4708,10 +4611,6 @@ pub mod list_branches_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBranchesInputOperationOutputAlias = crate::operation::ListBranches;
-#[doc(hidden)]
-pub type ListBranchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBranchesInput {
     /// Consumes the builder and constructs an Operation<[`ListBranches`](crate::operation::ListBranches)>
     #[allow(unused_mut)]
@@ -4892,10 +4791,6 @@ pub mod list_domain_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainAssociationsInputOperationOutputAlias = crate::operation::ListDomainAssociations;
-#[doc(hidden)]
-pub type ListDomainAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainAssociations`](crate::operation::ListDomainAssociations)>
     #[allow(unused_mut)]
@@ -5087,10 +4982,6 @@ pub mod list_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
-#[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(unused_mut)]
@@ -5263,10 +5154,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5430,10 +5317,6 @@ pub mod list_webhooks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWebhooksInputOperationOutputAlias = crate::operation::ListWebhooks;
-#[doc(hidden)]
-pub type ListWebhooksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebhooksInput {
     /// Consumes the builder and constructs an Operation<[`ListWebhooks`](crate::operation::ListWebhooks)>
     #[allow(unused_mut)]
@@ -5626,10 +5509,6 @@ pub mod start_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDeploymentInputOperationOutputAlias = crate::operation::StartDeployment;
-#[doc(hidden)]
-pub type StartDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartDeployment`](crate::operation::StartDeployment)>
     #[allow(unused_mut)]
@@ -5891,10 +5770,6 @@ pub mod start_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartJobInputOperationOutputAlias = crate::operation::StartJob;
-#[doc(hidden)]
-pub type StartJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobInput {
     /// Consumes the builder and constructs an Operation<[`StartJob`](crate::operation::StartJob)>
     #[allow(unused_mut)]
@@ -6087,10 +5962,6 @@ pub mod stop_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopJobInputOperationOutputAlias = crate::operation::StopJob;
-#[doc(hidden)]
-pub type StopJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopJobInput {
     /// Consumes the builder and constructs an Operation<[`StopJob`](crate::operation::StopJob)>
     #[allow(unused_mut)]
@@ -6290,10 +6161,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6468,10 +6335,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6908,10 +6771,6 @@ pub mod update_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
-#[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(unused_mut)]
@@ -7285,10 +7144,6 @@ pub mod update_branch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBranchInputOperationOutputAlias = crate::operation::UpdateBranch;
-#[doc(hidden)]
-pub type UpdateBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBranchInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBranch`](crate::operation::UpdateBranch)>
     #[allow(unused_mut)]
@@ -7549,11 +7404,6 @@ pub mod update_domain_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDomainAssociationInputOperationOutputAlias =
-    crate::operation::UpdateDomainAssociation;
-#[doc(hidden)]
-pub type UpdateDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainAssociation`](crate::operation::UpdateDomainAssociation)>
     #[allow(unused_mut)]
@@ -7752,10 +7602,6 @@ pub mod update_webhook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWebhookInputOperationOutputAlias = crate::operation::UpdateWebhook;
-#[doc(hidden)]
-pub type UpdateWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWebhook`](crate::operation::UpdateWebhook)>
     #[allow(unused_mut)]

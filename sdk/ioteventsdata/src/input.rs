@@ -44,10 +44,6 @@ pub mod batch_acknowledge_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchAcknowledgeAlarmInputOperationOutputAlias = crate::operation::BatchAcknowledgeAlarm;
-#[doc(hidden)]
-pub type BatchAcknowledgeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAcknowledgeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchAcknowledgeAlarm`](crate::operation::BatchAcknowledgeAlarm)>
     #[allow(unused_mut)]
@@ -198,10 +194,6 @@ pub mod batch_delete_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteDetectorInputOperationOutputAlias = crate::operation::BatchDeleteDetector;
-#[doc(hidden)]
-pub type BatchDeleteDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteDetector`](crate::operation::BatchDeleteDetector)>
     #[allow(unused_mut)]
@@ -353,10 +345,6 @@ pub mod batch_disable_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDisableAlarmInputOperationOutputAlias = crate::operation::BatchDisableAlarm;
-#[doc(hidden)]
-pub type BatchDisableAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisableAlarm`](crate::operation::BatchDisableAlarm)>
     #[allow(unused_mut)]
@@ -508,10 +496,6 @@ pub mod batch_enable_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchEnableAlarmInputOperationOutputAlias = crate::operation::BatchEnableAlarm;
-#[doc(hidden)]
-pub type BatchEnableAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEnableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchEnableAlarm`](crate::operation::BatchEnableAlarm)>
     #[allow(unused_mut)]
@@ -659,10 +643,6 @@ pub mod batch_put_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchPutMessageInputOperationOutputAlias = crate::operation::BatchPutMessage;
-#[doc(hidden)]
-pub type BatchPutMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
     #[allow(unused_mut)]
@@ -814,10 +794,6 @@ pub mod batch_reset_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchResetAlarmInputOperationOutputAlias = crate::operation::BatchResetAlarm;
-#[doc(hidden)]
-pub type BatchResetAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchResetAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchResetAlarm`](crate::operation::BatchResetAlarm)>
     #[allow(unused_mut)]
@@ -969,10 +945,6 @@ pub mod batch_snooze_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchSnoozeAlarmInputOperationOutputAlias = crate::operation::BatchSnoozeAlarm;
-#[doc(hidden)]
-pub type BatchSnoozeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchSnoozeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchSnoozeAlarm`](crate::operation::BatchSnoozeAlarm)>
     #[allow(unused_mut)]
@@ -1121,10 +1093,6 @@ pub mod batch_update_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdateDetectorInputOperationOutputAlias = crate::operation::BatchUpdateDetector;
-#[doc(hidden)]
-pub type BatchUpdateDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDetector`](crate::operation::BatchUpdateDetector)>
     #[allow(unused_mut)]
@@ -1278,10 +1246,6 @@ pub mod describe_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAlarmInputOperationOutputAlias = crate::operation::DescribeAlarm;
-#[doc(hidden)]
-pub type DescribeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarm`](crate::operation::DescribeAlarm)>
     #[allow(unused_mut)]
@@ -1451,10 +1415,6 @@ pub mod describe_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDetectorInputOperationOutputAlias = crate::operation::DescribeDetector;
-#[doc(hidden)]
-pub type DescribeDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
     #[allow(unused_mut)]
@@ -1635,10 +1595,6 @@ pub mod list_alarms_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAlarmsInputOperationOutputAlias = crate::operation::ListAlarms;
-#[doc(hidden)]
-pub type ListAlarmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlarms`](crate::operation::ListAlarms)>
     #[allow(unused_mut)]
@@ -1838,10 +1794,6 @@ pub mod list_detectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDetectorsInputOperationOutputAlias = crate::operation::ListDetectors;
-#[doc(hidden)]
-pub type ListDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectors`](crate::operation::ListDetectors)>
     #[allow(unused_mut)]

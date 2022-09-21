@@ -46,10 +46,6 @@ pub mod cancel_change_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelChangeSetInputOperationOutputAlias = crate::operation::CancelChangeSet;
-#[doc(hidden)]
-pub type CancelChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`CancelChangeSet`](crate::operation::CancelChangeSet)>
     #[allow(unused_mut)]
@@ -203,10 +199,6 @@ pub mod describe_change_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChangeSetInputOperationOutputAlias = crate::operation::DescribeChangeSet;
-#[doc(hidden)]
-pub type DescribeChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChangeSet`](crate::operation::DescribeChangeSet)>
     #[allow(unused_mut)]
@@ -357,10 +349,6 @@ pub mod describe_entity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEntityInputOperationOutputAlias = crate::operation::DescribeEntity;
-#[doc(hidden)]
-pub type DescribeEntityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntity`](crate::operation::DescribeEntity)>
     #[allow(unused_mut)]
@@ -556,10 +544,6 @@ pub mod list_change_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChangeSetsInputOperationOutputAlias = crate::operation::ListChangeSets;
-#[doc(hidden)]
-pub type ListChangeSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangeSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListChangeSets`](crate::operation::ListChangeSets)>
     #[allow(unused_mut)]
@@ -767,10 +751,6 @@ pub mod list_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntitiesInputOperationOutputAlias = crate::operation::ListEntities;
-#[doc(hidden)]
-pub type ListEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListEntities`](crate::operation::ListEntities)>
     #[allow(unused_mut)]
@@ -960,10 +940,6 @@ pub mod start_change_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartChangeSetInputOperationOutputAlias = crate::operation::StartChangeSet;
-#[doc(hidden)]
-pub type StartChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`StartChangeSet`](crate::operation::StartChangeSet)>
     #[allow(unused_mut)]

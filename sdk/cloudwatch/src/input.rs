@@ -40,10 +40,6 @@ pub mod delete_alarms_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAlarmsInputOperationOutputAlias = crate::operation::DeleteAlarms;
-#[doc(hidden)]
-pub type DeleteAlarmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlarms`](crate::operation::DeleteAlarms)>
     #[allow(unused_mut)]
@@ -309,10 +305,6 @@ pub mod delete_anomaly_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAnomalyDetectorInputOperationOutputAlias = crate::operation::DeleteAnomalyDetector;
-#[doc(hidden)]
-pub type DeleteAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalyDetector`](crate::operation::DeleteAnomalyDetector)>
     #[allow(unused_mut)]
@@ -462,10 +454,6 @@ pub mod delete_dashboards_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDashboardsInputOperationOutputAlias = crate::operation::DeleteDashboards;
-#[doc(hidden)]
-pub type DeleteDashboardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDashboards`](crate::operation::DeleteDashboards)>
     #[allow(unused_mut)]
@@ -613,10 +601,6 @@ pub mod delete_insight_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInsightRulesInputOperationOutputAlias = crate::operation::DeleteInsightRules;
-#[doc(hidden)]
-pub type DeleteInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInsightRules`](crate::operation::DeleteInsightRules)>
     #[allow(unused_mut)]
@@ -753,10 +737,6 @@ pub mod delete_metric_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMetricStreamInputOperationOutputAlias = crate::operation::DeleteMetricStream;
-#[doc(hidden)]
-pub type DeleteMetricStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMetricStream`](crate::operation::DeleteMetricStream)>
     #[allow(unused_mut)]
@@ -997,10 +977,6 @@ pub mod describe_alarm_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAlarmHistoryInputOperationOutputAlias = crate::operation::DescribeAlarmHistory;
-#[doc(hidden)]
-pub type DescribeAlarmHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlarmHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarmHistory`](crate::operation::DescribeAlarmHistory)>
     #[allow(unused_mut)]
@@ -1284,10 +1260,6 @@ pub mod describe_alarms_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAlarmsInputOperationOutputAlias = crate::operation::DescribeAlarms;
-#[doc(hidden)]
-pub type DescribeAlarmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarms`](crate::operation::DescribeAlarms)>
     #[allow(unused_mut)]
@@ -1515,11 +1487,6 @@ pub mod describe_alarms_for_metric_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAlarmsForMetricInputOperationOutputAlias =
-    crate::operation::DescribeAlarmsForMetric;
-#[doc(hidden)]
-pub type DescribeAlarmsForMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlarmsForMetricInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarmsForMetric`](crate::operation::DescribeAlarmsForMetric)>
     #[allow(unused_mut)]
@@ -1743,11 +1710,6 @@ pub mod describe_anomaly_detectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAnomalyDetectorsInputOperationOutputAlias =
-    crate::operation::DescribeAnomalyDetectors;
-#[doc(hidden)]
-pub type DescribeAnomalyDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAnomalyDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomalyDetectors`](crate::operation::DescribeAnomalyDetectors)>
     #[allow(unused_mut)]
@@ -1900,10 +1862,6 @@ pub mod describe_insight_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInsightRulesInputOperationOutputAlias = crate::operation::DescribeInsightRules;
-#[doc(hidden)]
-pub type DescribeInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInsightRules`](crate::operation::DescribeInsightRules)>
     #[allow(unused_mut)]
@@ -2053,10 +2011,6 @@ pub mod disable_alarm_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableAlarmActionsInputOperationOutputAlias = crate::operation::DisableAlarmActions;
-#[doc(hidden)]
-pub type DisableAlarmActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableAlarmActionsInput {
     /// Consumes the builder and constructs an Operation<[`DisableAlarmActions`](crate::operation::DisableAlarmActions)>
     #[allow(unused_mut)]
@@ -2204,10 +2158,6 @@ pub mod disable_insight_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableInsightRulesInputOperationOutputAlias = crate::operation::DisableInsightRules;
-#[doc(hidden)]
-pub type DisableInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DisableInsightRules`](crate::operation::DisableInsightRules)>
     #[allow(unused_mut)]
@@ -2355,10 +2305,6 @@ pub mod enable_alarm_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableAlarmActionsInputOperationOutputAlias = crate::operation::EnableAlarmActions;
-#[doc(hidden)]
-pub type EnableAlarmActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableAlarmActionsInput {
     /// Consumes the builder and constructs an Operation<[`EnableAlarmActions`](crate::operation::EnableAlarmActions)>
     #[allow(unused_mut)]
@@ -2506,10 +2452,6 @@ pub mod enable_insight_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableInsightRulesInputOperationOutputAlias = crate::operation::EnableInsightRules;
-#[doc(hidden)]
-pub type EnableInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`EnableInsightRules`](crate::operation::EnableInsightRules)>
     #[allow(unused_mut)]
@@ -2651,10 +2593,6 @@ pub mod get_dashboard_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDashboardInputOperationOutputAlias = crate::operation::GetDashboard;
-#[doc(hidden)]
-pub type GetDashboardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDashboardInput {
     /// Consumes the builder and constructs an Operation<[`GetDashboard`](crate::operation::GetDashboard)>
     #[allow(unused_mut)]
@@ -2898,10 +2836,6 @@ pub mod get_insight_rule_report_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInsightRuleReportInputOperationOutputAlias = crate::operation::GetInsightRuleReport;
-#[doc(hidden)]
-pub type GetInsightRuleReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightRuleReportInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightRuleReport`](crate::operation::GetInsightRuleReport)>
     #[allow(unused_mut)]
@@ -3155,10 +3089,6 @@ pub mod get_metric_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMetricDataInputOperationOutputAlias = crate::operation::GetMetricData;
-#[doc(hidden)]
-pub type GetMetricDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricData`](crate::operation::GetMetricData)>
     #[allow(unused_mut)]
@@ -3456,10 +3386,6 @@ pub mod get_metric_statistics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMetricStatisticsInputOperationOutputAlias = crate::operation::GetMetricStatistics;
-#[doc(hidden)]
-pub type GetMetricStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricStatistics`](crate::operation::GetMetricStatistics)>
     #[allow(unused_mut)]
@@ -3596,10 +3522,6 @@ pub mod get_metric_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMetricStreamInputOperationOutputAlias = crate::operation::GetMetricStream;
-#[doc(hidden)]
-pub type GetMetricStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricStream`](crate::operation::GetMetricStream)>
     #[allow(unused_mut)]
@@ -3802,10 +3724,6 @@ pub mod get_metric_widget_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMetricWidgetImageInputOperationOutputAlias = crate::operation::GetMetricWidgetImage;
-#[doc(hidden)]
-pub type GetMetricWidgetImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricWidgetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricWidgetImage`](crate::operation::GetMetricWidgetImage)>
     #[allow(unused_mut)]
@@ -3961,10 +3879,6 @@ pub mod list_dashboards_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDashboardsInputOperationOutputAlias = crate::operation::ListDashboards;
-#[doc(hidden)]
-pub type ListDashboardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`ListDashboards`](crate::operation::ListDashboards)>
     #[allow(unused_mut)]
@@ -4129,11 +4043,6 @@ pub mod list_managed_insight_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListManagedInsightRulesInputOperationOutputAlias =
-    crate::operation::ListManagedInsightRules;
-#[doc(hidden)]
-pub type ListManagedInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedInsightRules`](crate::operation::ListManagedInsightRules)>
     #[allow(unused_mut)]
@@ -4336,10 +4245,6 @@ pub mod list_metrics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMetricsInputOperationOutputAlias = crate::operation::ListMetrics;
-#[doc(hidden)]
-pub type ListMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMetricsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetrics`](crate::operation::ListMetrics)>
     #[allow(unused_mut)]
@@ -4490,10 +4395,6 @@ pub mod list_metric_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMetricStreamsInputOperationOutputAlias = crate::operation::ListMetricStreams;
-#[doc(hidden)]
-pub type ListMetricStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetricStreams`](crate::operation::ListMetricStreams)>
     #[allow(unused_mut)]
@@ -4638,10 +4539,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4926,10 +4823,6 @@ pub mod put_anomaly_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAnomalyDetectorInputOperationOutputAlias = crate::operation::PutAnomalyDetector;
-#[doc(hidden)]
-pub type PutAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`PutAnomalyDetector`](crate::operation::PutAnomalyDetector)>
     #[allow(unused_mut)]
@@ -5289,10 +5182,6 @@ pub mod put_composite_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutCompositeAlarmInputOperationOutputAlias = crate::operation::PutCompositeAlarm;
-#[doc(hidden)]
-pub type PutCompositeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutCompositeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`PutCompositeAlarm`](crate::operation::PutCompositeAlarm)>
     #[allow(unused_mut)]
@@ -5451,10 +5340,6 @@ pub mod put_dashboard_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDashboardInputOperationOutputAlias = crate::operation::PutDashboard;
-#[doc(hidden)]
-pub type PutDashboardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDashboardInput {
     /// Consumes the builder and constructs an Operation<[`PutDashboard`](crate::operation::PutDashboard)>
     #[allow(unused_mut)]
@@ -5647,10 +5532,6 @@ pub mod put_insight_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutInsightRuleInputOperationOutputAlias = crate::operation::PutInsightRule;
-#[doc(hidden)]
-pub type PutInsightRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutInsightRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutInsightRule`](crate::operation::PutInsightRule)>
     #[allow(unused_mut)]
@@ -5798,10 +5679,6 @@ pub mod put_managed_insight_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutManagedInsightRulesInputOperationOutputAlias = crate::operation::PutManagedInsightRules;
-#[doc(hidden)]
-pub type PutManagedInsightRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutManagedInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`PutManagedInsightRules`](crate::operation::PutManagedInsightRules)>
     #[allow(unused_mut)]
@@ -6327,10 +6204,6 @@ pub mod put_metric_alarm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutMetricAlarmInputOperationOutputAlias = crate::operation::PutMetricAlarm;
-#[doc(hidden)]
-pub type PutMetricAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetricAlarmInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricAlarm`](crate::operation::PutMetricAlarm)>
     #[allow(unused_mut)]
@@ -6492,10 +6365,6 @@ pub mod put_metric_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutMetricDataInputOperationOutputAlias = crate::operation::PutMetricData;
-#[doc(hidden)]
-pub type PutMetricDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricData`](crate::operation::PutMetricData)>
     #[allow(unused_mut)]
@@ -6787,10 +6656,6 @@ pub mod put_metric_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutMetricStreamInputOperationOutputAlias = crate::operation::PutMetricStream;
-#[doc(hidden)]
-pub type PutMetricStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricStream`](crate::operation::PutMetricStream)>
     #[allow(unused_mut)]
@@ -6973,10 +6838,6 @@ pub mod set_alarm_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetAlarmStateInputOperationOutputAlias = crate::operation::SetAlarmState;
-#[doc(hidden)]
-pub type SetAlarmStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetAlarmStateInput {
     /// Consumes the builder and constructs an Operation<[`SetAlarmState`](crate::operation::SetAlarmState)>
     #[allow(unused_mut)]
@@ -7124,10 +6985,6 @@ pub mod start_metric_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMetricStreamsInputOperationOutputAlias = crate::operation::StartMetricStreams;
-#[doc(hidden)]
-pub type StartMetricStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`StartMetricStreams`](crate::operation::StartMetricStreams)>
     #[allow(unused_mut)]
@@ -7275,10 +7132,6 @@ pub mod stop_metric_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopMetricStreamsInputOperationOutputAlias = crate::operation::StopMetricStreams;
-#[doc(hidden)]
-pub type StopMetricStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`StopMetricStreams`](crate::operation::StopMetricStreams)>
     #[allow(unused_mut)]
@@ -7444,10 +7297,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -7613,10 +7462,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

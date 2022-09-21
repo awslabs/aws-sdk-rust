@@ -38,10 +38,6 @@ pub mod batch_get_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetChannelInputOperationOutputAlias = crate::operation::BatchGetChannel;
-#[doc(hidden)]
-pub type BatchGetChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetChannelInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetChannel`](crate::operation::BatchGetChannel)>
     #[allow(unused_mut)]
@@ -187,10 +183,6 @@ pub mod batch_get_stream_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetStreamKeyInputOperationOutputAlias = crate::operation::BatchGetStreamKey;
-#[doc(hidden)]
-pub type BatchGetStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetStreamKey`](crate::operation::BatchGetStreamKey)>
     #[allow(unused_mut)]
@@ -423,10 +415,6 @@ pub mod create_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
-#[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(unused_mut)]
@@ -634,12 +622,6 @@ pub mod create_recording_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRecordingConfigurationInputOperationOutputAlias =
-    crate::operation::CreateRecordingConfiguration;
-#[doc(hidden)]
-pub type CreateRecordingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecordingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecordingConfiguration`](crate::operation::CreateRecordingConfiguration)>
     #[allow(unused_mut)]
@@ -806,10 +788,6 @@ pub mod create_stream_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamKeyInputOperationOutputAlias = crate::operation::CreateStreamKey;
-#[doc(hidden)]
-pub type CreateStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamKey`](crate::operation::CreateStreamKey)>
     #[allow(unused_mut)]
@@ -946,10 +924,6 @@ pub mod delete_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
-#[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(unused_mut)]
@@ -1086,10 +1060,6 @@ pub mod delete_playback_key_pair_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePlaybackKeyPairInputOperationOutputAlias = crate::operation::DeletePlaybackKeyPair;
-#[doc(hidden)]
-pub type DeletePlaybackKeyPairInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlaybackKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaybackKeyPair`](crate::operation::DeletePlaybackKeyPair)>
     #[allow(unused_mut)]
@@ -1230,12 +1200,6 @@ pub mod delete_recording_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRecordingConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteRecordingConfiguration;
-#[doc(hidden)]
-pub type DeleteRecordingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecordingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecordingConfiguration`](crate::operation::DeleteRecordingConfiguration)>
     #[allow(unused_mut)]
@@ -1371,10 +1335,6 @@ pub mod delete_stream_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStreamKeyInputOperationOutputAlias = crate::operation::DeleteStreamKey;
-#[doc(hidden)]
-pub type DeleteStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamKey`](crate::operation::DeleteStreamKey)>
     #[allow(unused_mut)]
@@ -1510,10 +1470,6 @@ pub mod get_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetChannelInputOperationOutputAlias = crate::operation::GetChannel;
-#[doc(hidden)]
-pub type GetChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetChannel`](crate::operation::GetChannel)>
     #[allow(unused_mut)]
@@ -1650,10 +1606,6 @@ pub mod get_playback_key_pair_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPlaybackKeyPairInputOperationOutputAlias = crate::operation::GetPlaybackKeyPair;
-#[doc(hidden)]
-pub type GetPlaybackKeyPairInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPlaybackKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`GetPlaybackKeyPair`](crate::operation::GetPlaybackKeyPair)>
     #[allow(unused_mut)]
@@ -1792,11 +1744,6 @@ pub mod get_recording_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecordingConfigurationInputOperationOutputAlias =
-    crate::operation::GetRecordingConfiguration;
-#[doc(hidden)]
-pub type GetRecordingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetRecordingConfiguration`](crate::operation::GetRecordingConfiguration)>
     #[allow(unused_mut)]
@@ -1936,10 +1883,6 @@ pub mod get_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStreamInputOperationOutputAlias = crate::operation::GetStream;
-#[doc(hidden)]
-pub type GetStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetStream`](crate::operation::GetStream)>
     #[allow(unused_mut)]
@@ -2074,10 +2017,6 @@ pub mod get_stream_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStreamKeyInputOperationOutputAlias = crate::operation::GetStreamKey;
-#[doc(hidden)]
-pub type GetStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamKey`](crate::operation::GetStreamKey)>
     #[allow(unused_mut)]
@@ -2228,10 +2167,6 @@ pub mod get_stream_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStreamSessionInputOperationOutputAlias = crate::operation::GetStreamSession;
-#[doc(hidden)]
-pub type GetStreamSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamSession`](crate::operation::GetStreamSession)>
     #[allow(unused_mut)]
@@ -2414,10 +2349,6 @@ pub mod import_playback_key_pair_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportPlaybackKeyPairInputOperationOutputAlias = crate::operation::ImportPlaybackKeyPair;
-#[doc(hidden)]
-pub type ImportPlaybackKeyPairInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportPlaybackKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`ImportPlaybackKeyPair`](crate::operation::ImportPlaybackKeyPair)>
     #[allow(unused_mut)]
@@ -2603,10 +2534,6 @@ pub mod list_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
-#[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(unused_mut)]
@@ -2757,10 +2684,6 @@ pub mod list_playback_key_pairs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPlaybackKeyPairsInputOperationOutputAlias = crate::operation::ListPlaybackKeyPairs;
-#[doc(hidden)]
-pub type ListPlaybackKeyPairsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlaybackKeyPairsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaybackKeyPairs`](crate::operation::ListPlaybackKeyPairs)>
     #[allow(unused_mut)]
@@ -2915,11 +2838,6 @@ pub mod list_recording_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecordingConfigurationsInputOperationOutputAlias =
-    crate::operation::ListRecordingConfigurations;
-#[doc(hidden)]
-pub type ListRecordingConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecordingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecordingConfigurations`](crate::operation::ListRecordingConfigurations)>
     #[allow(unused_mut)]
@@ -3081,10 +2999,6 @@ pub mod list_stream_keys_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamKeysInputOperationOutputAlias = crate::operation::ListStreamKeys;
-#[doc(hidden)]
-pub type ListStreamKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamKeys`](crate::operation::ListStreamKeys)>
     #[allow(unused_mut)]
@@ -3250,10 +3164,6 @@ pub mod list_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
-#[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(unused_mut)]
@@ -3416,10 +3326,6 @@ pub mod list_stream_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamSessionsInputOperationOutputAlias = crate::operation::ListStreamSessions;
-#[doc(hidden)]
-pub type ListStreamSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamSessionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamSessions`](crate::operation::ListStreamSessions)>
     #[allow(unused_mut)]
@@ -3558,10 +3464,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3713,10 +3615,6 @@ pub mod put_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutMetadataInputOperationOutputAlias = crate::operation::PutMetadata;
-#[doc(hidden)]
-pub type PutMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetadataInput {
     /// Consumes the builder and constructs an Operation<[`PutMetadata`](crate::operation::PutMetadata)>
     #[allow(unused_mut)]
@@ -3854,10 +3752,6 @@ pub mod stop_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopStreamInputOperationOutputAlias = crate::operation::StopStream;
-#[doc(hidden)]
-pub type StopStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamInput {
     /// Consumes the builder and constructs an Operation<[`StopStream`](crate::operation::StopStream)>
     #[allow(unused_mut)]
@@ -4025,10 +3919,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4203,10 +4093,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4436,10 +4322,6 @@ pub mod update_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
-#[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(unused_mut)]

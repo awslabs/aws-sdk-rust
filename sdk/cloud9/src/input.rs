@@ -201,10 +201,6 @@ pub mod create_environment_ec2_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEnvironmentEc2InputOperationOutputAlias = crate::operation::CreateEnvironmentEC2;
-#[doc(hidden)]
-pub type CreateEnvironmentEc2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentEc2Input {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironmentEC2`](crate::operation::CreateEnvironmentEC2)>
     #[allow(unused_mut)]
@@ -390,11 +386,6 @@ pub mod create_environment_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEnvironmentMembershipInputOperationOutputAlias =
-    crate::operation::CreateEnvironmentMembership;
-#[doc(hidden)]
-pub type CreateEnvironmentMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentMembershipInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironmentMembership`](crate::operation::CreateEnvironmentMembership)>
     #[allow(unused_mut)]
@@ -540,10 +531,6 @@ pub mod delete_environment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEnvironmentInputOperationOutputAlias = crate::operation::DeleteEnvironment;
-#[doc(hidden)]
-pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(unused_mut)]
@@ -704,11 +691,6 @@ pub mod delete_environment_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEnvironmentMembershipInputOperationOutputAlias =
-    crate::operation::DeleteEnvironmentMembership;
-#[doc(hidden)]
-pub type DeleteEnvironmentMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironmentMembership`](crate::operation::DeleteEnvironmentMembership)>
     #[allow(unused_mut)]
@@ -925,12 +907,6 @@ pub mod describe_environment_memberships_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEnvironmentMembershipsInputOperationOutputAlias =
-    crate::operation::DescribeEnvironmentMemberships;
-#[doc(hidden)]
-pub type DescribeEnvironmentMembershipsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentMembershipsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironmentMemberships`](crate::operation::DescribeEnvironmentMemberships)>
     #[allow(unused_mut)]
@@ -1082,10 +1058,6 @@ pub mod describe_environments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEnvironmentsInputOperationOutputAlias = crate::operation::DescribeEnvironments;
-#[doc(hidden)]
-pub type DescribeEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironments`](crate::operation::DescribeEnvironments)>
     #[allow(unused_mut)]
@@ -1234,11 +1206,6 @@ pub mod describe_environment_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEnvironmentStatusInputOperationOutputAlias =
-    crate::operation::DescribeEnvironmentStatus;
-#[doc(hidden)]
-pub type DescribeEnvironmentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEnvironmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEnvironmentStatus`](crate::operation::DescribeEnvironmentStatus)>
     #[allow(unused_mut)]
@@ -1396,10 +1363,6 @@ pub mod list_environments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEnvironmentsInputOperationOutputAlias = crate::operation::ListEnvironments;
-#[doc(hidden)]
-pub type ListEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(unused_mut)]
@@ -1543,10 +1506,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1713,10 +1672,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1881,10 +1836,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2086,10 +2037,6 @@ pub mod update_environment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEnvironmentInputOperationOutputAlias = crate::operation::UpdateEnvironment;
-#[doc(hidden)]
-pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(unused_mut)]
@@ -2273,11 +2220,6 @@ pub mod update_environment_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEnvironmentMembershipInputOperationOutputAlias =
-    crate::operation::UpdateEnvironmentMembership;
-#[doc(hidden)]
-pub type UpdateEnvironmentMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentMembershipInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironmentMembership`](crate::operation::UpdateEnvironmentMembership)>
     #[allow(unused_mut)]

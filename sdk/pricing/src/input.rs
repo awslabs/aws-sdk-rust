@@ -72,10 +72,6 @@ pub mod describe_services_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServicesInputOperationOutputAlias = crate::operation::DescribeServices;
-#[doc(hidden)]
-pub type DescribeServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServices`](crate::operation::DescribeServices)>
     #[allow(unused_mut)]
@@ -258,10 +254,6 @@ pub mod get_attribute_values_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAttributeValuesInputOperationOutputAlias = crate::operation::GetAttributeValues;
-#[doc(hidden)]
-pub type GetAttributeValuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttributeValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetAttributeValues`](crate::operation::GetAttributeValues)>
     #[allow(unused_mut)]
@@ -467,10 +459,6 @@ pub mod get_products_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetProductsInputOperationOutputAlias = crate::operation::GetProducts;
-#[doc(hidden)]
-pub type GetProductsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProductsInput {
     /// Consumes the builder and constructs an Operation<[`GetProducts`](crate::operation::GetProducts)>
     #[allow(unused_mut)]

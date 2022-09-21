@@ -46,10 +46,6 @@ pub mod cancel_image_creation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelImageCreationInputOperationOutputAlias = crate::operation::CancelImageCreation;
-#[doc(hidden)]
-pub type CancelImageCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelImageCreationInput {
     /// Consumes the builder and constructs an Operation<[`CancelImageCreation`](crate::operation::CancelImageCreation)>
     #[allow(unused_mut)]
@@ -375,10 +371,6 @@ pub mod create_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateComponentInputOperationOutputAlias = crate::operation::CreateComponent;
-#[doc(hidden)]
-pub type CreateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
     #[allow(unused_mut)]
@@ -787,10 +779,6 @@ pub mod create_container_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateContainerRecipeInputOperationOutputAlias = crate::operation::CreateContainerRecipe;
-#[doc(hidden)]
-pub type CreateContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainerRecipe`](crate::operation::CreateContainerRecipe)>
     #[allow(unused_mut)]
@@ -1010,12 +998,6 @@ pub mod create_distribution_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDistributionConfigurationInputOperationOutputAlias =
-    crate::operation::CreateDistributionConfiguration;
-#[doc(hidden)]
-pub type CreateDistributionConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionConfiguration`](crate::operation::CreateDistributionConfiguration)>
     #[allow(unused_mut)]
@@ -1286,10 +1268,6 @@ pub mod create_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateImageInputOperationOutputAlias = crate::operation::CreateImage;
-#[doc(hidden)]
-pub type CreateImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateImage`](crate::operation::CreateImage)>
     #[allow(unused_mut)]
@@ -1611,10 +1589,6 @@ pub mod create_image_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateImagePipelineInputOperationOutputAlias = crate::operation::CreateImagePipeline;
-#[doc(hidden)]
-pub type CreateImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateImagePipeline`](crate::operation::CreateImagePipeline)>
     #[allow(unused_mut)]
@@ -1947,10 +1921,6 @@ pub mod create_image_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateImageRecipeInputOperationOutputAlias = crate::operation::CreateImageRecipe;
-#[doc(hidden)]
-pub type CreateImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateImageRecipe`](crate::operation::CreateImageRecipe)>
     #[allow(unused_mut)]
@@ -2322,12 +2292,6 @@ pub mod create_infrastructure_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInfrastructureConfigurationInputOperationOutputAlias =
-    crate::operation::CreateInfrastructureConfiguration;
-#[doc(hidden)]
-pub type CreateInfrastructureConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInfrastructureConfiguration`](crate::operation::CreateInfrastructureConfiguration)>
     #[allow(unused_mut)]
@@ -2475,10 +2439,6 @@ pub mod delete_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
-#[doc(hidden)]
-pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(unused_mut)]
@@ -2620,10 +2580,6 @@ pub mod delete_container_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteContainerRecipeInputOperationOutputAlias = crate::operation::DeleteContainerRecipe;
-#[doc(hidden)]
-pub type DeleteContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerRecipe`](crate::operation::DeleteContainerRecipe)>
     #[allow(unused_mut)]
@@ -2770,12 +2726,6 @@ pub mod delete_distribution_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDistributionConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteDistributionConfiguration;
-#[doc(hidden)]
-pub type DeleteDistributionConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistributionConfiguration`](crate::operation::DeleteDistributionConfiguration)>
     #[allow(unused_mut)]
@@ -2918,10 +2868,6 @@ pub mod delete_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteImageInputOperationOutputAlias = crate::operation::DeleteImage;
-#[doc(hidden)]
-pub type DeleteImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImage`](crate::operation::DeleteImage)>
     #[allow(unused_mut)]
@@ -3063,10 +3009,6 @@ pub mod delete_image_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteImagePipelineInputOperationOutputAlias = crate::operation::DeleteImagePipeline;
-#[doc(hidden)]
-pub type DeleteImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImagePipeline`](crate::operation::DeleteImagePipeline)>
     #[allow(unused_mut)]
@@ -3208,10 +3150,6 @@ pub mod delete_image_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteImageRecipeInputOperationOutputAlias = crate::operation::DeleteImageRecipe;
-#[doc(hidden)]
-pub type DeleteImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImageRecipe`](crate::operation::DeleteImageRecipe)>
     #[allow(unused_mut)]
@@ -3358,12 +3296,6 @@ pub mod delete_infrastructure_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInfrastructureConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteInfrastructureConfiguration;
-#[doc(hidden)]
-pub type DeleteInfrastructureConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInfrastructureConfiguration`](crate::operation::DeleteInfrastructureConfiguration)>
     #[allow(unused_mut)]
@@ -3509,10 +3441,6 @@ pub mod get_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComponentInputOperationOutputAlias = crate::operation::GetComponent;
-#[doc(hidden)]
-pub type GetComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
     #[allow(unused_mut)]
@@ -3654,10 +3582,6 @@ pub mod get_component_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComponentPolicyInputOperationOutputAlias = crate::operation::GetComponentPolicy;
-#[doc(hidden)]
-pub type GetComponentPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetComponentPolicy`](crate::operation::GetComponentPolicy)>
     #[allow(unused_mut)]
@@ -3799,10 +3723,6 @@ pub mod get_container_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContainerRecipeInputOperationOutputAlias = crate::operation::GetContainerRecipe;
-#[doc(hidden)]
-pub type GetContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipe`](crate::operation::GetContainerRecipe)>
     #[allow(unused_mut)]
@@ -3946,11 +3866,6 @@ pub mod get_container_recipe_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContainerRecipePolicyInputOperationOutputAlias =
-    crate::operation::GetContainerRecipePolicy;
-#[doc(hidden)]
-pub type GetContainerRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipePolicy`](crate::operation::GetContainerRecipePolicy)>
     #[allow(unused_mut)]
@@ -4097,12 +4012,6 @@ pub mod get_distribution_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDistributionConfigurationInputOperationOutputAlias =
-    crate::operation::GetDistributionConfiguration;
-#[doc(hidden)]
-pub type GetDistributionConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfiguration`](crate::operation::GetDistributionConfiguration)>
     #[allow(unused_mut)]
@@ -4243,10 +4152,6 @@ pub mod get_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImageInputOperationOutputAlias = crate::operation::GetImage;
-#[doc(hidden)]
-pub type GetImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetImage`](crate::operation::GetImage)>
     #[allow(unused_mut)]
@@ -4386,10 +4291,6 @@ pub mod get_image_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImagePipelineInputOperationOutputAlias = crate::operation::GetImagePipeline;
-#[doc(hidden)]
-pub type GetImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePipeline`](crate::operation::GetImagePipeline)>
     #[allow(unused_mut)]
@@ -4528,10 +4429,6 @@ pub mod get_image_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImagePolicyInputOperationOutputAlias = crate::operation::GetImagePolicy;
-#[doc(hidden)]
-pub type GetImagePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePolicy`](crate::operation::GetImagePolicy)>
     #[allow(unused_mut)]
@@ -4670,10 +4567,6 @@ pub mod get_image_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImageRecipeInputOperationOutputAlias = crate::operation::GetImageRecipe;
-#[doc(hidden)]
-pub type GetImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipe`](crate::operation::GetImageRecipe)>
     #[allow(unused_mut)]
@@ -4815,10 +4708,6 @@ pub mod get_image_recipe_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImageRecipePolicyInputOperationOutputAlias = crate::operation::GetImageRecipePolicy;
-#[doc(hidden)]
-pub type GetImageRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipePolicy`](crate::operation::GetImageRecipePolicy)>
     #[allow(unused_mut)]
@@ -4965,12 +4854,6 @@ pub mod get_infrastructure_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInfrastructureConfigurationInputOperationOutputAlias =
-    crate::operation::GetInfrastructureConfiguration;
-#[doc(hidden)]
-pub type GetInfrastructureConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetInfrastructureConfiguration`](crate::operation::GetInfrastructureConfiguration)>
     #[allow(unused_mut)]
@@ -5296,10 +5179,6 @@ pub mod import_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportComponentInputOperationOutputAlias = crate::operation::ImportComponent;
-#[doc(hidden)]
-pub type ImportComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportComponentInput {
     /// Consumes the builder and constructs an Operation<[`ImportComponent`](crate::operation::ImportComponent)>
     #[allow(unused_mut)]
@@ -5578,10 +5457,6 @@ pub mod import_vm_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportVmImageInputOperationOutputAlias = crate::operation::ImportVmImage;
-#[doc(hidden)]
-pub type ImportVmImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportVmImageInput {
     /// Consumes the builder and constructs an Operation<[`ImportVmImage`](crate::operation::ImportVmImage)>
     #[allow(unused_mut)]
@@ -5752,11 +5627,6 @@ pub mod list_component_build_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListComponentBuildVersionsInputOperationOutputAlias =
-    crate::operation::ListComponentBuildVersions;
-#[doc(hidden)]
-pub type ListComponentBuildVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponentBuildVersions`](crate::operation::ListComponentBuildVersions)>
     #[allow(unused_mut)]
@@ -5967,10 +5837,6 @@ pub mod list_components_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
-#[doc(hidden)]
-pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(unused_mut)]
@@ -6166,10 +6032,6 @@ pub mod list_container_recipes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContainerRecipesInputOperationOutputAlias = crate::operation::ListContainerRecipes;
-#[doc(hidden)]
-pub type ListContainerRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContainerRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListContainerRecipes`](crate::operation::ListContainerRecipes)>
     #[allow(unused_mut)]
@@ -6345,12 +6207,6 @@ pub mod list_distribution_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDistributionConfigurationsInputOperationOutputAlias =
-    crate::operation::ListDistributionConfigurations;
-#[doc(hidden)]
-pub type ListDistributionConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionConfigurations`](crate::operation::ListDistributionConfigurations)>
     #[allow(unused_mut)]
@@ -6551,10 +6407,6 @@ pub mod list_image_build_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImageBuildVersionsInputOperationOutputAlias = crate::operation::ListImageBuildVersions;
-#[doc(hidden)]
-pub type ListImageBuildVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImageBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListImageBuildVersions`](crate::operation::ListImageBuildVersions)>
     #[allow(unused_mut)]
@@ -6722,10 +6574,6 @@ pub mod list_image_packages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImagePackagesInputOperationOutputAlias = crate::operation::ListImagePackages;
-#[doc(hidden)]
-pub type ListImagePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePackages`](crate::operation::ListImagePackages)>
     #[allow(unused_mut)]
@@ -6922,11 +6770,6 @@ pub mod list_image_pipeline_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImagePipelineImagesInputOperationOutputAlias =
-    crate::operation::ListImagePipelineImages;
-#[doc(hidden)]
-pub type ListImagePipelineImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePipelineImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelineImages`](crate::operation::ListImagePipelineImages)>
     #[allow(unused_mut)]
@@ -7116,10 +6959,6 @@ pub mod list_image_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImagePipelinesInputOperationOutputAlias = crate::operation::ListImagePipelines;
-#[doc(hidden)]
-pub type ListImagePipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelines`](crate::operation::ListImagePipelines)>
     #[allow(unused_mut)]
@@ -7313,10 +7152,6 @@ pub mod list_image_recipes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImageRecipesInputOperationOutputAlias = crate::operation::ListImageRecipes;
-#[doc(hidden)]
-pub type ListImageRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImageRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListImageRecipes`](crate::operation::ListImageRecipes)>
     #[allow(unused_mut)]
@@ -7537,10 +7372,6 @@ pub mod list_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImagesInputOperationOutputAlias = crate::operation::ListImages;
-#[doc(hidden)]
-pub type ListImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImages`](crate::operation::ListImages)>
     #[allow(unused_mut)]
@@ -7714,12 +7545,6 @@ pub mod list_infrastructure_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInfrastructureConfigurationsInputOperationOutputAlias =
-    crate::operation::ListInfrastructureConfigurations;
-#[doc(hidden)]
-pub type ListInfrastructureConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListInfrastructureConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInfrastructureConfigurations`](crate::operation::ListInfrastructureConfigurations)>
     #[allow(unused_mut)]
@@ -7858,10 +7683,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -8016,10 +7837,6 @@ pub mod put_component_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutComponentPolicyInputOperationOutputAlias = crate::operation::PutComponentPolicy;
-#[doc(hidden)]
-pub type PutComponentPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutComponentPolicy`](crate::operation::PutComponentPolicy)>
     #[allow(unused_mut)]
@@ -8175,11 +7992,6 @@ pub mod put_container_recipe_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutContainerRecipePolicyInputOperationOutputAlias =
-    crate::operation::PutContainerRecipePolicy;
-#[doc(hidden)]
-pub type PutContainerRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerRecipePolicy`](crate::operation::PutContainerRecipePolicy)>
     #[allow(unused_mut)]
@@ -8332,10 +8144,6 @@ pub mod put_image_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutImagePolicyInputOperationOutputAlias = crate::operation::PutImagePolicy;
-#[doc(hidden)]
-pub type PutImagePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImagePolicy`](crate::operation::PutImagePolicy)>
     #[allow(unused_mut)]
@@ -8489,10 +8297,6 @@ pub mod put_image_recipe_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutImageRecipePolicyInputOperationOutputAlias = crate::operation::PutImageRecipePolicy;
-#[doc(hidden)]
-pub type PutImageRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImageRecipePolicy`](crate::operation::PutImageRecipePolicy)>
     #[allow(unused_mut)]
@@ -8650,11 +8454,6 @@ pub mod start_image_pipeline_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartImagePipelineExecutionInputOperationOutputAlias =
-    crate::operation::StartImagePipelineExecution;
-#[doc(hidden)]
-pub type StartImagePipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImagePipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartImagePipelineExecution`](crate::operation::StartImagePipelineExecution)>
     #[allow(unused_mut)]
@@ -8824,10 +8623,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -9002,10 +8797,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -9211,12 +9002,6 @@ pub mod update_distribution_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDistributionConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateDistributionConfiguration;
-#[doc(hidden)]
-pub type UpdateDistributionConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistributionConfiguration`](crate::operation::UpdateDistributionConfiguration)>
     #[allow(unused_mut)]
@@ -9512,10 +9297,6 @@ pub mod update_image_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateImagePipelineInputOperationOutputAlias = crate::operation::UpdateImagePipeline;
-#[doc(hidden)]
-pub type UpdateImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateImagePipeline`](crate::operation::UpdateImagePipeline)>
     #[allow(unused_mut)]
@@ -9872,12 +9653,6 @@ pub mod update_infrastructure_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInfrastructureConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateInfrastructureConfiguration;
-#[doc(hidden)]
-pub type UpdateInfrastructureConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInfrastructureConfiguration`](crate::operation::UpdateInfrastructureConfiguration)>
     #[allow(unused_mut)]

@@ -92,10 +92,6 @@ pub mod create_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
-#[doc(hidden)]
-pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(unused_mut)]
@@ -246,10 +242,6 @@ pub mod delete_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
-#[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(unused_mut)]
@@ -400,10 +392,6 @@ pub mod list_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEndpointsInputOperationOutputAlias = crate::operation::ListEndpoints;
-#[doc(hidden)]
-pub type ListEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
     #[allow(unused_mut)]
@@ -569,10 +557,6 @@ pub mod list_shared_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSharedEndpointsInputOperationOutputAlias = crate::operation::ListSharedEndpoints;
-#[doc(hidden)]
-pub type ListSharedEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSharedEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListSharedEndpoints`](crate::operation::ListSharedEndpoints)>
     #[allow(unused_mut)]

@@ -109,10 +109,6 @@ pub mod associate_repository_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateRepositoryInputOperationOutputAlias = crate::operation::AssociateRepository;
-#[doc(hidden)]
-pub type AssociateRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`AssociateRepository`](crate::operation::AssociateRepository)>
     #[allow(unused_mut)]
@@ -301,10 +297,6 @@ pub mod create_code_review_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCodeReviewInputOperationOutputAlias = crate::operation::CreateCodeReview;
-#[doc(hidden)]
-pub type CreateCodeReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCodeReviewInput {
     /// Consumes the builder and constructs an Operation<[`CreateCodeReview`](crate::operation::CreateCodeReview)>
     #[allow(unused_mut)]
@@ -449,10 +441,6 @@ pub mod describe_code_review_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCodeReviewInputOperationOutputAlias = crate::operation::DescribeCodeReview;
-#[doc(hidden)]
-pub type DescribeCodeReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCodeReviewInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCodeReview`](crate::operation::DescribeCodeReview)>
     #[allow(unused_mut)]
@@ -630,12 +618,6 @@ pub mod describe_recommendation_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRecommendationFeedbackInputOperationOutputAlias =
-    crate::operation::DescribeRecommendationFeedback;
-#[doc(hidden)]
-pub type DescribeRecommendationFeedbackInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecommendationFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecommendationFeedback`](crate::operation::DescribeRecommendationFeedback)>
     #[allow(unused_mut)]
@@ -801,12 +783,6 @@ pub mod describe_repository_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRepositoryAssociationInputOperationOutputAlias =
-    crate::operation::DescribeRepositoryAssociation;
-#[doc(hidden)]
-pub type DescribeRepositoryAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRepositoryAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRepositoryAssociation`](crate::operation::DescribeRepositoryAssociation)>
     #[allow(unused_mut)]
@@ -953,10 +929,6 @@ pub mod disassociate_repository_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateRepositoryInputOperationOutputAlias = crate::operation::DisassociateRepository;
-#[doc(hidden)]
-pub type DisassociateRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateRepository`](crate::operation::DisassociateRepository)>
     #[allow(unused_mut)]
@@ -1201,10 +1173,6 @@ pub mod list_code_reviews_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCodeReviewsInputOperationOutputAlias = crate::operation::ListCodeReviews;
-#[doc(hidden)]
-pub type ListCodeReviewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCodeReviewsInput {
     /// Consumes the builder and constructs an Operation<[`ListCodeReviews`](crate::operation::ListCodeReviews)>
     #[allow(unused_mut)]
@@ -1443,11 +1411,6 @@ pub mod list_recommendation_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecommendationFeedbackInputOperationOutputAlias =
-    crate::operation::ListRecommendationFeedback;
-#[doc(hidden)]
-pub type ListRecommendationFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendationFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendationFeedback`](crate::operation::ListRecommendationFeedback)>
     #[allow(unused_mut)]
@@ -1648,10 +1611,6 @@ pub mod list_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecommendationsInputOperationOutputAlias = crate::operation::ListRecommendations;
-#[doc(hidden)]
-pub type ListRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendations`](crate::operation::ListRecommendations)>
     #[allow(unused_mut)]
@@ -1943,11 +1902,6 @@ pub mod list_repository_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRepositoryAssociationsInputOperationOutputAlias =
-    crate::operation::ListRepositoryAssociations;
-#[doc(hidden)]
-pub type ListRepositoryAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRepositoryAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRepositoryAssociations`](crate::operation::ListRepositoryAssociations)>
     #[allow(unused_mut)]
@@ -2112,10 +2066,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2296,11 +2246,6 @@ pub mod put_recommendation_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecommendationFeedbackInputOperationOutputAlias =
-    crate::operation::PutRecommendationFeedback;
-#[doc(hidden)]
-pub type PutRecommendationFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecommendationFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`PutRecommendationFeedback`](crate::operation::PutRecommendationFeedback)>
     #[allow(unused_mut)]
@@ -2478,10 +2423,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2656,10 +2597,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

@@ -52,10 +52,6 @@ pub mod associate_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateAccountsInputOperationOutputAlias = crate::operation::AssociateAccounts;
-#[doc(hidden)]
-pub type AssociateAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAccountsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAccounts`](crate::operation::AssociateAccounts)>
     #[allow(unused_mut)]
@@ -215,10 +211,6 @@ pub mod associate_pricing_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePricingRulesInputOperationOutputAlias = crate::operation::AssociatePricingRules;
-#[doc(hidden)]
-pub type AssociatePricingRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePricingRulesInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePricingRules`](crate::operation::AssociatePricingRules)>
     #[allow(unused_mut)]
@@ -401,12 +393,6 @@ pub mod batch_associate_resources_to_custom_line_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchAssociateResourcesToCustomLineItemInputOperationOutputAlias =
-    crate::operation::BatchAssociateResourcesToCustomLineItem;
-#[doc(hidden)]
-pub type BatchAssociateResourcesToCustomLineItemInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateResourcesToCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateResourcesToCustomLineItem`](crate::operation::BatchAssociateResourcesToCustomLineItem)>
     #[allow(unused_mut)]
@@ -589,12 +575,6 @@ pub mod batch_disassociate_resources_from_custom_line_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDisassociateResourcesFromCustomLineItemInputOperationOutputAlias =
-    crate::operation::BatchDisassociateResourcesFromCustomLineItem;
-#[doc(hidden)]
-pub type BatchDisassociateResourcesFromCustomLineItemInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateResourcesFromCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateResourcesFromCustomLineItem`](crate::operation::BatchDisassociateResourcesFromCustomLineItem)>
     #[allow(unused_mut)]
@@ -838,10 +818,6 @@ pub mod create_billing_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBillingGroupInputOperationOutputAlias = crate::operation::CreateBillingGroup;
-#[doc(hidden)]
-pub type CreateBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBillingGroup`](crate::operation::CreateBillingGroup)>
     #[allow(unused_mut)]
@@ -1086,10 +1062,6 @@ pub mod create_custom_line_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomLineItemInputOperationOutputAlias = crate::operation::CreateCustomLineItem;
-#[doc(hidden)]
-pub type CreateCustomLineItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomLineItem`](crate::operation::CreateCustomLineItem)>
     #[allow(unused_mut)]
@@ -1309,10 +1281,6 @@ pub mod create_pricing_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePricingPlanInputOperationOutputAlias = crate::operation::CreatePricingPlan;
-#[doc(hidden)]
-pub type CreatePricingPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreatePricingPlan`](crate::operation::CreatePricingPlan)>
     #[allow(unused_mut)]
@@ -1562,10 +1530,6 @@ pub mod create_pricing_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePricingRuleInputOperationOutputAlias = crate::operation::CreatePricingRule;
-#[doc(hidden)]
-pub type CreatePricingRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreatePricingRule`](crate::operation::CreatePricingRule)>
     #[allow(unused_mut)]
@@ -1706,10 +1670,6 @@ pub mod delete_billing_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBillingGroupInputOperationOutputAlias = crate::operation::DeleteBillingGroup;
-#[doc(hidden)]
-pub type DeleteBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBillingGroup`](crate::operation::DeleteBillingGroup)>
     #[allow(unused_mut)]
@@ -1867,10 +1827,6 @@ pub mod delete_custom_line_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomLineItemInputOperationOutputAlias = crate::operation::DeleteCustomLineItem;
-#[doc(hidden)]
-pub type DeleteCustomLineItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomLineItem`](crate::operation::DeleteCustomLineItem)>
     #[allow(unused_mut)]
@@ -2009,10 +1965,6 @@ pub mod delete_pricing_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePricingPlanInputOperationOutputAlias = crate::operation::DeletePricingPlan;
-#[doc(hidden)]
-pub type DeletePricingPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeletePricingPlan`](crate::operation::DeletePricingPlan)>
     #[allow(unused_mut)]
@@ -2149,10 +2101,6 @@ pub mod delete_pricing_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePricingRuleInputOperationOutputAlias = crate::operation::DeletePricingRule;
-#[doc(hidden)]
-pub type DeletePricingRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeletePricingRule`](crate::operation::DeletePricingRule)>
     #[allow(unused_mut)]
@@ -2312,10 +2260,6 @@ pub mod disassociate_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateAccountsInputOperationOutputAlias = crate::operation::DisassociateAccounts;
-#[doc(hidden)]
-pub type DisassociateAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAccountsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAccounts`](crate::operation::DisassociateAccounts)>
     #[allow(unused_mut)]
@@ -2477,11 +2421,6 @@ pub mod disassociate_pricing_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociatePricingRulesInputOperationOutputAlias =
-    crate::operation::DisassociatePricingRules;
-#[doc(hidden)]
-pub type DisassociatePricingRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociatePricingRulesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePricingRules`](crate::operation::DisassociatePricingRules)>
     #[allow(unused_mut)]
@@ -2660,11 +2599,6 @@ pub mod list_account_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountAssociationsInputOperationOutputAlias =
-    crate::operation::ListAccountAssociations;
-#[doc(hidden)]
-pub type ListAccountAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssociations`](crate::operation::ListAccountAssociations)>
     #[allow(unused_mut)]
@@ -2849,11 +2783,6 @@ pub mod list_billing_group_cost_reports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBillingGroupCostReportsInputOperationOutputAlias =
-    crate::operation::ListBillingGroupCostReports;
-#[doc(hidden)]
-pub type ListBillingGroupCostReportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBillingGroupCostReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListBillingGroupCostReports`](crate::operation::ListBillingGroupCostReports)>
     #[allow(unused_mut)]
@@ -3034,10 +2963,6 @@ pub mod list_billing_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBillingGroupsInputOperationOutputAlias = crate::operation::ListBillingGroups;
-#[doc(hidden)]
-pub type ListBillingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBillingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListBillingGroups`](crate::operation::ListBillingGroups)>
     #[allow(unused_mut)]
@@ -3218,10 +3143,6 @@ pub mod list_custom_line_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomLineItemsInputOperationOutputAlias = crate::operation::ListCustomLineItems;
-#[doc(hidden)]
-pub type ListCustomLineItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomLineItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomLineItems`](crate::operation::ListCustomLineItems)>
     #[allow(unused_mut)]
@@ -3404,10 +3325,6 @@ pub mod list_pricing_plans_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPricingPlansInputOperationOutputAlias = crate::operation::ListPricingPlans;
-#[doc(hidden)]
-pub type ListPricingPlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPricingPlansInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingPlans`](crate::operation::ListPricingPlans)>
     #[allow(unused_mut)]
@@ -3592,12 +3509,6 @@ pub mod list_pricing_plans_associated_with_pricing_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPricingPlansAssociatedWithPricingRuleInputOperationOutputAlias =
-    crate::operation::ListPricingPlansAssociatedWithPricingRule;
-#[doc(hidden)]
-pub type ListPricingPlansAssociatedWithPricingRuleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPricingPlansAssociatedWithPricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingPlansAssociatedWithPricingRule`](crate::operation::ListPricingPlansAssociatedWithPricingRule)>
     #[allow(unused_mut)]
@@ -3779,10 +3690,6 @@ pub mod list_pricing_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPricingRulesInputOperationOutputAlias = crate::operation::ListPricingRules;
-#[doc(hidden)]
-pub type ListPricingRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPricingRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingRules`](crate::operation::ListPricingRules)>
     #[allow(unused_mut)]
@@ -3965,12 +3872,6 @@ pub mod list_pricing_rules_associated_to_pricing_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPricingRulesAssociatedToPricingPlanInputOperationOutputAlias =
-    crate::operation::ListPricingRulesAssociatedToPricingPlan;
-#[doc(hidden)]
-pub type ListPricingRulesAssociatedToPricingPlanInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPricingRulesAssociatedToPricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingRulesAssociatedToPricingPlan`](crate::operation::ListPricingRulesAssociatedToPricingPlan)>
     #[allow(unused_mut)]
@@ -4169,12 +4070,6 @@ pub mod list_resources_associated_to_custom_line_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourcesAssociatedToCustomLineItemInputOperationOutputAlias =
-    crate::operation::ListResourcesAssociatedToCustomLineItem;
-#[doc(hidden)]
-pub type ListResourcesAssociatedToCustomLineItemInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesAssociatedToCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`ListResourcesAssociatedToCustomLineItem`](crate::operation::ListResourcesAssociatedToCustomLineItem)>
     #[allow(unused_mut)]
@@ -4313,10 +4208,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4485,10 +4376,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4663,10 +4550,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4876,10 +4759,6 @@ pub mod update_billing_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBillingGroupInputOperationOutputAlias = crate::operation::UpdateBillingGroup;
-#[doc(hidden)]
-pub type UpdateBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBillingGroup`](crate::operation::UpdateBillingGroup)>
     #[allow(unused_mut)]
@@ -5080,10 +4959,6 @@ pub mod update_custom_line_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCustomLineItemInputOperationOutputAlias = crate::operation::UpdateCustomLineItem;
-#[doc(hidden)]
-pub type UpdateCustomLineItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomLineItem`](crate::operation::UpdateCustomLineItem)>
     #[allow(unused_mut)]
@@ -5248,10 +5123,6 @@ pub mod update_pricing_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePricingPlanInputOperationOutputAlias = crate::operation::UpdatePricingPlan;
-#[doc(hidden)]
-pub type UpdatePricingPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePricingPlan`](crate::operation::UpdatePricingPlan)>
     #[allow(unused_mut)]
@@ -5441,10 +5312,6 @@ pub mod update_pricing_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePricingRuleInputOperationOutputAlias = crate::operation::UpdatePricingRule;
-#[doc(hidden)]
-pub type UpdatePricingRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePricingRule`](crate::operation::UpdatePricingRule)>
     #[allow(unused_mut)]

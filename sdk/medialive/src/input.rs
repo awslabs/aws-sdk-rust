@@ -36,11 +36,6 @@ pub mod accept_input_device_transfer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptInputDeviceTransferInputOperationOutputAlias =
-    crate::operation::AcceptInputDeviceTransfer;
-#[doc(hidden)]
-pub type AcceptInputDeviceTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInputDeviceTransferInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInputDeviceTransfer`](crate::operation::AcceptInputDeviceTransfer)>
     #[allow(unused_mut)]
@@ -257,10 +252,6 @@ pub mod batch_delete_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteInputOperationOutputAlias = crate::operation::BatchDelete;
-#[doc(hidden)]
-pub type BatchDeleteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteInput {
     /// Consumes the builder and constructs an Operation<[`BatchDelete`](crate::operation::BatchDelete)>
     #[allow(unused_mut)]
@@ -428,10 +419,6 @@ pub mod batch_start_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchStartInputOperationOutputAlias = crate::operation::BatchStart;
-#[doc(hidden)]
-pub type BatchStartInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchStartInput {
     /// Consumes the builder and constructs an Operation<[`BatchStart`](crate::operation::BatchStart)>
     #[allow(unused_mut)]
@@ -599,10 +586,6 @@ pub mod batch_stop_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchStopInputOperationOutputAlias = crate::operation::BatchStop;
-#[doc(hidden)]
-pub type BatchStopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchStopInput {
     /// Consumes the builder and constructs an Operation<[`BatchStop`](crate::operation::BatchStop)>
     #[allow(unused_mut)]
@@ -769,10 +752,6 @@ pub mod batch_update_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdateScheduleInputOperationOutputAlias = crate::operation::BatchUpdateSchedule;
-#[doc(hidden)]
-pub type BatchUpdateScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateSchedule`](crate::operation::BatchUpdateSchedule)>
     #[allow(unused_mut)]
@@ -935,11 +914,6 @@ pub mod cancel_input_device_transfer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelInputDeviceTransferInputOperationOutputAlias =
-    crate::operation::CancelInputDeviceTransfer;
-#[doc(hidden)]
-pub type CancelInputDeviceTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelInputDeviceTransferInput {
     /// Consumes the builder and constructs an Operation<[`CancelInputDeviceTransfer`](crate::operation::CancelInputDeviceTransfer)>
     #[allow(unused_mut)]
@@ -1081,10 +1055,6 @@ pub mod claim_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ClaimDeviceInputOperationOutputAlias = crate::operation::ClaimDevice;
-#[doc(hidden)]
-pub type ClaimDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClaimDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ClaimDevice`](crate::operation::ClaimDevice)>
     #[allow(unused_mut)]
@@ -1440,10 +1410,6 @@ pub mod create_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
-#[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(unused_mut)]
@@ -1773,10 +1739,6 @@ pub mod create_input_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInputInputOperationOutputAlias = crate::operation::CreateInput;
-#[doc(hidden)]
-pub type CreateInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInputInput {
     /// Consumes the builder and constructs an Operation<[`CreateInput`](crate::operation::CreateInput)>
     #[allow(unused_mut)]
@@ -1959,11 +1921,6 @@ pub mod create_input_security_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInputSecurityGroupInputOperationOutputAlias =
-    crate::operation::CreateInputSecurityGroup;
-#[doc(hidden)]
-pub type CreateInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateInputSecurityGroup`](crate::operation::CreateInputSecurityGroup)>
     #[allow(unused_mut)]
@@ -2181,10 +2138,6 @@ pub mod create_multiplex_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMultiplexInputOperationOutputAlias = crate::operation::CreateMultiplex;
-#[doc(hidden)]
-pub type CreateMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`CreateMultiplex`](crate::operation::CreateMultiplex)>
     #[allow(unused_mut)]
@@ -2369,10 +2322,6 @@ pub mod create_multiplex_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMultiplexProgramInputOperationOutputAlias = crate::operation::CreateMultiplexProgram;
-#[doc(hidden)]
-pub type CreateMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`CreateMultiplexProgram`](crate::operation::CreateMultiplexProgram)>
     #[allow(unused_mut)]
@@ -2576,10 +2525,6 @@ pub mod create_partner_input_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePartnerInputInputOperationOutputAlias = crate::operation::CreatePartnerInput;
-#[doc(hidden)]
-pub type CreatePartnerInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePartnerInputInput {
     /// Consumes the builder and constructs an Operation<[`CreatePartnerInput`](crate::operation::CreatePartnerInput)>
     #[allow(unused_mut)]
@@ -2768,10 +2713,6 @@ pub mod create_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
-#[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(unused_mut)]
@@ -2929,10 +2870,6 @@ pub mod delete_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
-#[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(unused_mut)]
@@ -3072,10 +3009,6 @@ pub mod delete_input_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInputInputOperationOutputAlias = crate::operation::DeleteInput;
-#[doc(hidden)]
-pub type DeleteInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInputInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInput`](crate::operation::DeleteInput)>
     #[allow(unused_mut)]
@@ -3220,11 +3153,6 @@ pub mod delete_input_security_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInputSecurityGroupInputOperationOutputAlias =
-    crate::operation::DeleteInputSecurityGroup;
-#[doc(hidden)]
-pub type DeleteInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInputSecurityGroup`](crate::operation::DeleteInputSecurityGroup)>
     #[allow(unused_mut)]
@@ -3368,10 +3296,6 @@ pub mod delete_multiplex_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMultiplexInputOperationOutputAlias = crate::operation::DeleteMultiplex;
-#[doc(hidden)]
-pub type DeleteMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMultiplex`](crate::operation::DeleteMultiplex)>
     #[allow(unused_mut)]
@@ -3527,10 +3451,6 @@ pub mod delete_multiplex_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMultiplexProgramInputOperationOutputAlias = crate::operation::DeleteMultiplexProgram;
-#[doc(hidden)]
-pub type DeleteMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMultiplexProgram`](crate::operation::DeleteMultiplexProgram)>
     #[allow(unused_mut)]
@@ -3692,10 +3612,6 @@ pub mod delete_reservation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReservationInputOperationOutputAlias = crate::operation::DeleteReservation;
-#[doc(hidden)]
-pub type DeleteReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReservationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReservation`](crate::operation::DeleteReservation)>
     #[allow(unused_mut)]
@@ -3839,10 +3755,6 @@ pub mod delete_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScheduleInputOperationOutputAlias = crate::operation::DeleteSchedule;
-#[doc(hidden)]
-pub type DeleteScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchedule`](crate::operation::DeleteSchedule)>
     #[allow(unused_mut)]
@@ -4006,10 +3918,6 @@ pub mod delete_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
-#[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(unused_mut)]
@@ -4166,10 +4074,6 @@ pub mod describe_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
-#[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(unused_mut)]
@@ -4309,10 +4213,6 @@ pub mod describe_input_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInputInputOperationOutputAlias = crate::operation::DescribeInput;
-#[doc(hidden)]
-pub type DescribeInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInput`](crate::operation::DescribeInput)>
     #[allow(unused_mut)]
@@ -4455,10 +4355,6 @@ pub mod describe_input_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInputDeviceInputOperationOutputAlias = crate::operation::DescribeInputDevice;
-#[doc(hidden)]
-pub type DescribeInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInputDevice`](crate::operation::DescribeInputDevice)>
     #[allow(unused_mut)]
@@ -4622,12 +4518,6 @@ pub mod describe_input_device_thumbnail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInputDeviceThumbnailInputOperationOutputAlias =
-    crate::operation::DescribeInputDeviceThumbnail;
-#[doc(hidden)]
-pub type DescribeInputDeviceThumbnailInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputDeviceThumbnailInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInputDeviceThumbnail`](crate::operation::DescribeInputDeviceThumbnail)>
     #[allow(unused_mut)]
@@ -4778,11 +4668,6 @@ pub mod describe_input_security_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInputSecurityGroupInputOperationOutputAlias =
-    crate::operation::DescribeInputSecurityGroup;
-#[doc(hidden)]
-pub type DescribeInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInputSecurityGroup`](crate::operation::DescribeInputSecurityGroup)>
     #[allow(unused_mut)]
@@ -4926,10 +4811,6 @@ pub mod describe_multiplex_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMultiplexInputOperationOutputAlias = crate::operation::DescribeMultiplex;
-#[doc(hidden)]
-pub type DescribeMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMultiplex`](crate::operation::DescribeMultiplex)>
     #[allow(unused_mut)]
@@ -5087,11 +4968,6 @@ pub mod describe_multiplex_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMultiplexProgramInputOperationOutputAlias =
-    crate::operation::DescribeMultiplexProgram;
-#[doc(hidden)]
-pub type DescribeMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMultiplexProgram`](crate::operation::DescribeMultiplexProgram)>
     #[allow(unused_mut)]
@@ -5250,10 +5126,6 @@ pub mod describe_offering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOfferingInputOperationOutputAlias = crate::operation::DescribeOffering;
-#[doc(hidden)]
-pub type DescribeOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOfferingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOffering`](crate::operation::DescribeOffering)>
     #[allow(unused_mut)]
@@ -5400,10 +5272,6 @@ pub mod describe_reservation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservationInputOperationOutputAlias = crate::operation::DescribeReservation;
-#[doc(hidden)]
-pub type DescribeReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservation`](crate::operation::DescribeReservation)>
     #[allow(unused_mut)]
@@ -5571,10 +5439,6 @@ pub mod describe_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScheduleInputOperationOutputAlias = crate::operation::DescribeSchedule;
-#[doc(hidden)]
-pub type DescribeScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchedule`](crate::operation::DescribeSchedule)>
     #[allow(unused_mut)]
@@ -5747,10 +5611,6 @@ pub mod list_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
-#[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(unused_mut)]
@@ -5904,10 +5764,6 @@ pub mod list_input_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInputDevicesInputOperationOutputAlias = crate::operation::ListInputDevices;
-#[doc(hidden)]
-pub type ListInputDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListInputDevices`](crate::operation::ListInputDevices)>
     #[allow(unused_mut)]
@@ -6078,11 +5934,6 @@ pub mod list_input_device_transfers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInputDeviceTransfersInputOperationOutputAlias =
-    crate::operation::ListInputDeviceTransfers;
-#[doc(hidden)]
-pub type ListInputDeviceTransfersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputDeviceTransfersInput {
     /// Consumes the builder and constructs an Operation<[`ListInputDeviceTransfers`](crate::operation::ListInputDeviceTransfers)>
     #[allow(unused_mut)]
@@ -6241,10 +6092,6 @@ pub mod list_inputs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInputsInputOperationOutputAlias = crate::operation::ListInputs;
-#[doc(hidden)]
-pub type ListInputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputsInput {
     /// Consumes the builder and constructs an Operation<[`ListInputs`](crate::operation::ListInputs)>
     #[allow(unused_mut)]
@@ -6400,11 +6247,6 @@ pub mod list_input_security_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInputSecurityGroupsInputOperationOutputAlias =
-    crate::operation::ListInputSecurityGroups;
-#[doc(hidden)]
-pub type ListInputSecurityGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListInputSecurityGroups`](crate::operation::ListInputSecurityGroups)>
     #[allow(unused_mut)]
@@ -6558,10 +6400,6 @@ pub mod list_multiplexes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMultiplexesInputOperationOutputAlias = crate::operation::ListMultiplexes;
-#[doc(hidden)]
-pub type ListMultiplexesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMultiplexesInput {
     /// Consumes the builder and constructs an Operation<[`ListMultiplexes`](crate::operation::ListMultiplexes)>
     #[allow(unused_mut)]
@@ -6727,10 +6565,6 @@ pub mod list_multiplex_programs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMultiplexProgramsInputOperationOutputAlias = crate::operation::ListMultiplexPrograms;
-#[doc(hidden)]
-pub type ListMultiplexProgramsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMultiplexProgramsInput {
     /// Consumes the builder and constructs an Operation<[`ListMultiplexPrograms`](crate::operation::ListMultiplexPrograms)>
     #[allow(unused_mut)]
@@ -7044,10 +6878,6 @@ pub mod list_offerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOfferingsInputOperationOutputAlias = crate::operation::ListOfferings;
-#[doc(hidden)]
-pub type ListOfferingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`ListOfferings`](crate::operation::ListOfferings)>
     #[allow(unused_mut)]
@@ -7366,10 +7196,6 @@ pub mod list_reservations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReservationsInputOperationOutputAlias = crate::operation::ListReservations;
-#[doc(hidden)]
-pub type ListReservationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReservationsInput {
     /// Consumes the builder and constructs an Operation<[`ListReservations`](crate::operation::ListReservations)>
     #[allow(unused_mut)]
@@ -7553,10 +7379,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7792,10 +7614,6 @@ pub mod purchase_offering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PurchaseOfferingInputOperationOutputAlias = crate::operation::PurchaseOffering;
-#[doc(hidden)]
-pub type PurchaseOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseOffering`](crate::operation::PurchaseOffering)>
     #[allow(unused_mut)]
@@ -7974,10 +7792,6 @@ pub mod reboot_input_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RebootInputDeviceInputOperationOutputAlias = crate::operation::RebootInputDevice;
-#[doc(hidden)]
-pub type RebootInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`RebootInputDevice`](crate::operation::RebootInputDevice)>
     #[allow(unused_mut)]
@@ -8140,11 +7954,6 @@ pub mod reject_input_device_transfer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectInputDeviceTransferInputOperationOutputAlias =
-    crate::operation::RejectInputDeviceTransfer;
-#[doc(hidden)]
-pub type RejectInputDeviceTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInputDeviceTransferInput {
     /// Consumes the builder and constructs an Operation<[`RejectInputDeviceTransfer`](crate::operation::RejectInputDeviceTransfer)>
     #[allow(unused_mut)]
@@ -8288,10 +8097,6 @@ pub mod start_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartChannelInputOperationOutputAlias = crate::operation::StartChannel;
-#[doc(hidden)]
-pub type StartChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartChannelInput {
     /// Consumes the builder and constructs an Operation<[`StartChannel`](crate::operation::StartChannel)>
     #[allow(unused_mut)]
@@ -8440,12 +8245,6 @@ pub mod start_input_device_maintenance_window_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartInputDeviceMaintenanceWindowInputOperationOutputAlias =
-    crate::operation::StartInputDeviceMaintenanceWindow;
-#[doc(hidden)]
-pub type StartInputDeviceMaintenanceWindowInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartInputDeviceMaintenanceWindowInput {
     /// Consumes the builder and constructs an Operation<[`StartInputDeviceMaintenanceWindow`](crate::operation::StartInputDeviceMaintenanceWindow)>
     #[allow(unused_mut)]
@@ -8589,10 +8388,6 @@ pub mod start_multiplex_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMultiplexInputOperationOutputAlias = crate::operation::StartMultiplex;
-#[doc(hidden)]
-pub type StartMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`StartMultiplex`](crate::operation::StartMultiplex)>
     #[allow(unused_mut)]
@@ -8736,10 +8531,6 @@ pub mod stop_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopChannelInputOperationOutputAlias = crate::operation::StopChannel;
-#[doc(hidden)]
-pub type StopChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopChannelInput {
     /// Consumes the builder and constructs an Operation<[`StopChannel`](crate::operation::StopChannel)>
     #[allow(unused_mut)]
@@ -8883,10 +8674,6 @@ pub mod stop_multiplex_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopMultiplexInputOperationOutputAlias = crate::operation::StopMultiplex;
-#[doc(hidden)]
-pub type StopMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`StopMultiplex`](crate::operation::StopMultiplex)>
     #[allow(unused_mut)]
@@ -9078,10 +8865,6 @@ pub mod transfer_input_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TransferInputDeviceInputOperationOutputAlias = crate::operation::TransferInputDevice;
-#[doc(hidden)]
-pub type TransferInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransferInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`TransferInputDevice`](crate::operation::TransferInputDevice)>
     #[allow(unused_mut)]
@@ -9383,10 +9166,6 @@ pub mod update_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
-#[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(unused_mut)]
@@ -9577,10 +9356,6 @@ pub mod update_channel_class_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelClassInputOperationOutputAlias = crate::operation::UpdateChannelClass;
-#[doc(hidden)]
-pub type UpdateChannelClassInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelClassInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelClass`](crate::operation::UpdateChannelClass)>
     #[allow(unused_mut)]
@@ -9870,10 +9645,6 @@ pub mod update_input_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInputInputOperationOutputAlias = crate::operation::UpdateInput;
-#[doc(hidden)]
-pub type UpdateInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInputInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInput`](crate::operation::UpdateInput)>
     #[allow(unused_mut)]
@@ -10080,10 +9851,6 @@ pub mod update_input_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInputDeviceInputOperationOutputAlias = crate::operation::UpdateInputDevice;
-#[doc(hidden)]
-pub type UpdateInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInputDevice`](crate::operation::UpdateInputDevice)>
     #[allow(unused_mut)]
@@ -10297,11 +10064,6 @@ pub mod update_input_security_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInputSecurityGroupInputOperationOutputAlias =
-    crate::operation::UpdateInputSecurityGroup;
-#[doc(hidden)]
-pub type UpdateInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInputSecurityGroup`](crate::operation::UpdateInputSecurityGroup)>
     #[allow(unused_mut)]
@@ -10488,10 +10250,6 @@ pub mod update_multiplex_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMultiplexInputOperationOutputAlias = crate::operation::UpdateMultiplex;
-#[doc(hidden)]
-pub type UpdateMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMultiplex`](crate::operation::UpdateMultiplex)>
     #[allow(unused_mut)]
@@ -10680,10 +10438,6 @@ pub mod update_multiplex_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMultiplexProgramInputOperationOutputAlias = crate::operation::UpdateMultiplexProgram;
-#[doc(hidden)]
-pub type UpdateMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMultiplexProgram`](crate::operation::UpdateMultiplexProgram)>
     #[allow(unused_mut)]
@@ -10888,10 +10642,6 @@ pub mod update_reservation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateReservationInputOperationOutputAlias = crate::operation::UpdateReservation;
-#[doc(hidden)]
-pub type UpdateReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReservationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReservation`](crate::operation::UpdateReservation)>
     #[allow(unused_mut)]

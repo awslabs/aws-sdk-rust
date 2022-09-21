@@ -75,10 +75,6 @@ pub mod put_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEventsInputOperationOutputAlias = crate::operation::PutEvents;
-#[doc(hidden)]
-pub type PutEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventsInput {
     /// Consumes the builder and constructs an Operation<[`PutEvents`](crate::operation::PutEvents)>
     #[allow(unused_mut)]
@@ -235,10 +231,6 @@ pub mod put_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutItemsInputOperationOutputAlias = crate::operation::PutItems;
-#[doc(hidden)]
-pub type PutItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutItemsInput {
     /// Consumes the builder and constructs an Operation<[`PutItems`](crate::operation::PutItems)>
     #[allow(unused_mut)]
@@ -395,10 +387,6 @@ pub mod put_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutUsersInputOperationOutputAlias = crate::operation::PutUsers;
-#[doc(hidden)]
-pub type PutUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutUsersInput {
     /// Consumes the builder and constructs an Operation<[`PutUsers`](crate::operation::PutUsers)>
     #[allow(unused_mut)]

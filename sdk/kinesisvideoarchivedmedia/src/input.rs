@@ -61,10 +61,6 @@ pub mod get_clip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetClipInputOperationOutputAlias = crate::operation::GetClip;
-#[doc(hidden)]
-pub type GetClipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetClipInput {
     /// Consumes the builder and constructs an Operation<[`GetClip`](crate::operation::GetClip)>
     #[allow(unused_mut)]
@@ -352,11 +348,6 @@ pub mod get_dash_streaming_session_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDashStreamingSessionUrlInputOperationOutputAlias =
-    crate::operation::GetDASHStreamingSessionURL;
-#[doc(hidden)]
-pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDashStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetDASHStreamingSessionURL`](crate::operation::GetDASHStreamingSessionURL)>
     #[allow(unused_mut)]
@@ -672,11 +663,6 @@ pub mod get_hls_streaming_session_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetHlsStreamingSessionUrlInputOperationOutputAlias =
-    crate::operation::GetHLSStreamingSessionURL;
-#[doc(hidden)]
-pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHlsStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetHLSStreamingSessionURL`](crate::operation::GetHLSStreamingSessionURL)>
     #[allow(unused_mut)]
@@ -979,10 +965,6 @@ pub mod get_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImagesInputOperationOutputAlias = crate::operation::GetImages;
-#[doc(hidden)]
-pub type GetImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagesInput {
     /// Consumes the builder and constructs an Operation<[`GetImages`](crate::operation::GetImages)>
     #[allow(unused_mut)]
@@ -1154,11 +1136,6 @@ pub mod get_media_for_fragment_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMediaForFragmentListInputOperationOutputAlias =
-    crate::operation::GetMediaForFragmentList;
-#[doc(hidden)]
-pub type GetMediaForFragmentListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaForFragmentListInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaForFragmentList`](crate::operation::GetMediaForFragmentList)>
     #[allow(unused_mut)]
@@ -1350,10 +1327,6 @@ pub mod list_fragments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFragmentsInputOperationOutputAlias = crate::operation::ListFragments;
-#[doc(hidden)]
-pub type ListFragmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFragmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListFragments`](crate::operation::ListFragments)>
     #[allow(unused_mut)]

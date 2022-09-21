@@ -36,12 +36,6 @@ pub mod get_application_component_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetApplicationComponentDetailsInputOperationOutputAlias =
-    crate::operation::GetApplicationComponentDetails;
-#[doc(hidden)]
-pub type GetApplicationComponentDetailsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationComponentDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationComponentDetails`](crate::operation::GetApplicationComponentDetails)>
     #[allow(unused_mut)]
@@ -190,12 +184,6 @@ pub mod get_application_component_strategies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetApplicationComponentStrategiesInputOperationOutputAlias =
-    crate::operation::GetApplicationComponentStrategies;
-#[doc(hidden)]
-pub type GetApplicationComponentStrategiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationComponentStrategiesInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationComponentStrategies`](crate::operation::GetApplicationComponentStrategies)>
     #[allow(unused_mut)]
@@ -337,10 +325,6 @@ pub mod get_assessment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssessmentInputOperationOutputAlias = crate::operation::GetAssessment;
-#[doc(hidden)]
-pub type GetAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAssessment`](crate::operation::GetAssessment)>
     #[allow(unused_mut)]
@@ -477,10 +461,6 @@ pub mod get_import_file_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetImportFileTaskInputOperationOutputAlias = crate::operation::GetImportFileTask;
-#[doc(hidden)]
-pub type GetImportFileTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImportFileTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetImportFileTask`](crate::operation::GetImportFileTask)>
     #[allow(unused_mut)]
@@ -608,11 +588,6 @@ pub mod get_portfolio_preferences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPortfolioPreferencesInputOperationOutputAlias =
-    crate::operation::GetPortfolioPreferences;
-#[doc(hidden)]
-pub type GetPortfolioPreferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortfolioPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetPortfolioPreferences`](crate::operation::GetPortfolioPreferences)>
     #[allow(unused_mut)]
@@ -723,10 +698,6 @@ pub mod get_portfolio_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPortfolioSummaryInputOperationOutputAlias = crate::operation::GetPortfolioSummary;
-#[doc(hidden)]
-pub type GetPortfolioSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortfolioSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetPortfolioSummary`](crate::operation::GetPortfolioSummary)>
     #[allow(unused_mut)]
@@ -851,12 +822,6 @@ pub mod get_recommendation_report_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecommendationReportDetailsInputOperationOutputAlias =
-    crate::operation::GetRecommendationReportDetails;
-#[doc(hidden)]
-pub type GetRecommendationReportDetailsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationReportDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationReportDetails`](crate::operation::GetRecommendationReportDetails)>
     #[allow(unused_mut)]
@@ -1020,10 +985,6 @@ pub mod get_server_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServerDetailsInputOperationOutputAlias = crate::operation::GetServerDetails;
-#[doc(hidden)]
-pub type GetServerDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServerDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetServerDetails`](crate::operation::GetServerDetails)>
     #[allow(unused_mut)]
@@ -1184,10 +1145,6 @@ pub mod get_server_strategies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServerStrategiesInputOperationOutputAlias = crate::operation::GetServerStrategies;
-#[doc(hidden)]
-pub type GetServerStrategiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServerStrategiesInput {
     /// Consumes the builder and constructs an Operation<[`GetServerStrategies`](crate::operation::GetServerStrategies)>
     #[allow(unused_mut)]
@@ -1409,11 +1366,6 @@ pub mod list_application_components_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationComponentsInputOperationOutputAlias =
-    crate::operation::ListApplicationComponents;
-#[doc(hidden)]
-pub type ListApplicationComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationComponents`](crate::operation::ListApplicationComponents)>
     #[allow(unused_mut)]
@@ -1566,10 +1518,6 @@ pub mod list_collectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCollectorsInputOperationOutputAlias = crate::operation::ListCollectors;
-#[doc(hidden)]
-pub type ListCollectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCollectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListCollectors`](crate::operation::ListCollectors)>
     #[allow(unused_mut)]
@@ -1723,10 +1671,6 @@ pub mod list_import_file_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImportFileTaskInputOperationOutputAlias = crate::operation::ListImportFileTask;
-#[doc(hidden)]
-pub type ListImportFileTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImportFileTaskInput {
     /// Consumes the builder and constructs an Operation<[`ListImportFileTask`](crate::operation::ListImportFileTask)>
     #[allow(unused_mut)]
@@ -1940,10 +1884,6 @@ pub mod list_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServersInputOperationOutputAlias = crate::operation::ListServers;
-#[doc(hidden)]
-pub type ListServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServersInput {
     /// Consumes the builder and constructs an Operation<[`ListServers`](crate::operation::ListServers)>
     #[allow(unused_mut)]
@@ -2125,11 +2065,6 @@ pub mod put_portfolio_preferences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPortfolioPreferencesInputOperationOutputAlias =
-    crate::operation::PutPortfolioPreferences;
-#[doc(hidden)]
-pub type PutPortfolioPreferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPortfolioPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutPortfolioPreferences`](crate::operation::PutPortfolioPreferences)>
     #[allow(unused_mut)]
@@ -2288,10 +2223,6 @@ pub mod start_assessment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartAssessmentInputOperationOutputAlias = crate::operation::StartAssessment;
-#[doc(hidden)]
-pub type StartAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StartAssessment`](crate::operation::StartAssessment)>
     #[allow(unused_mut)]
@@ -2505,10 +2436,6 @@ pub mod start_import_file_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartImportFileTaskInputOperationOutputAlias = crate::operation::StartImportFileTask;
-#[doc(hidden)]
-pub type StartImportFileTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImportFileTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartImportFileTask`](crate::operation::StartImportFileTask)>
     #[allow(unused_mut)]
@@ -2675,12 +2602,6 @@ pub mod start_recommendation_report_generation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartRecommendationReportGenerationInputOperationOutputAlias =
-    crate::operation::StartRecommendationReportGeneration;
-#[doc(hidden)]
-pub type StartRecommendationReportGenerationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartRecommendationReportGenerationInput {
     /// Consumes the builder and constructs an Operation<[`StartRecommendationReportGeneration`](crate::operation::StartRecommendationReportGeneration)>
     #[allow(unused_mut)]
@@ -2822,10 +2743,6 @@ pub mod stop_assessment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopAssessmentInputOperationOutputAlias = crate::operation::StopAssessment;
-#[doc(hidden)]
-pub type StopAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StopAssessment`](crate::operation::StopAssessment)>
     #[allow(unused_mut)]
@@ -3035,12 +2952,6 @@ pub mod update_application_component_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateApplicationComponentConfigInputOperationOutputAlias =
-    crate::operation::UpdateApplicationComponentConfig;
-#[doc(hidden)]
-pub type UpdateApplicationComponentConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationComponentConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplicationComponentConfig`](crate::operation::UpdateApplicationComponentConfig)>
     #[allow(unused_mut)]
@@ -3194,10 +3105,6 @@ pub mod update_server_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServerConfigInputOperationOutputAlias = crate::operation::UpdateServerConfig;
-#[doc(hidden)]
-pub type UpdateServerConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServerConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServerConfig`](crate::operation::UpdateServerConfig)>
     #[allow(unused_mut)]

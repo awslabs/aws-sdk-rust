@@ -60,10 +60,6 @@ pub mod add_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
-#[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(unused_mut)]
@@ -226,12 +222,6 @@ pub mod apply_security_groups_to_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ApplySecurityGroupsToLoadBalancerInputOperationOutputAlias =
-    crate::operation::ApplySecurityGroupsToLoadBalancer;
-#[doc(hidden)]
-pub type ApplySecurityGroupsToLoadBalancerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`ApplySecurityGroupsToLoadBalancer`](crate::operation::ApplySecurityGroupsToLoadBalancer)>
     #[allow(unused_mut)]
@@ -395,11 +385,6 @@ pub mod attach_load_balancer_to_subnets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachLoadBalancerToSubnetsInputOperationOutputAlias =
-    crate::operation::AttachLoadBalancerToSubnets;
-#[doc(hidden)]
-pub type AttachLoadBalancerToSubnetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachLoadBalancerToSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`AttachLoadBalancerToSubnets`](crate::operation::AttachLoadBalancerToSubnets)>
     #[allow(unused_mut)]
@@ -555,10 +540,6 @@ pub mod configure_health_check_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfigureHealthCheckInputOperationOutputAlias = crate::operation::ConfigureHealthCheck;
-#[doc(hidden)]
-pub type ConfigureHealthCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureHealthCheck`](crate::operation::ConfigureHealthCheck)>
     #[allow(unused_mut)]
@@ -728,12 +709,6 @@ pub mod create_app_cookie_stickiness_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppCookieStickinessPolicyInputOperationOutputAlias =
-    crate::operation::CreateAppCookieStickinessPolicy;
-#[doc(hidden)]
-pub type CreateAppCookieStickinessPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppCookieStickinessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppCookieStickinessPolicy`](crate::operation::CreateAppCookieStickinessPolicy)>
     #[allow(unused_mut)]
@@ -900,12 +875,6 @@ pub mod create_lb_cookie_stickiness_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLbCookieStickinessPolicyInputOperationOutputAlias =
-    crate::operation::CreateLBCookieStickinessPolicy;
-#[doc(hidden)]
-pub type CreateLbCookieStickinessPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLbCookieStickinessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLBCookieStickinessPolicy`](crate::operation::CreateLBCookieStickinessPolicy)>
     #[allow(unused_mut)]
@@ -1177,10 +1146,6 @@ pub mod create_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoadBalancerInputOperationOutputAlias = crate::operation::CreateLoadBalancer;
-#[doc(hidden)]
-pub type CreateLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancer`](crate::operation::CreateLoadBalancer)>
     #[allow(unused_mut)]
@@ -1345,11 +1310,6 @@ pub mod create_load_balancer_listeners_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoadBalancerListenersInputOperationOutputAlias =
-    crate::operation::CreateLoadBalancerListeners;
-#[doc(hidden)]
-pub type CreateLoadBalancerListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerListenersInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancerListeners`](crate::operation::CreateLoadBalancerListeners)>
     #[allow(unused_mut)]
@@ -1541,11 +1501,6 @@ pub mod create_load_balancer_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoadBalancerPolicyInputOperationOutputAlias =
-    crate::operation::CreateLoadBalancerPolicy;
-#[doc(hidden)]
-pub type CreateLoadBalancerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancerPolicy`](crate::operation::CreateLoadBalancerPolicy)>
     #[allow(unused_mut)]
@@ -1689,10 +1644,6 @@ pub mod delete_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoadBalancerInputOperationOutputAlias = crate::operation::DeleteLoadBalancer;
-#[doc(hidden)]
-pub type DeleteLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancer`](crate::operation::DeleteLoadBalancer)>
     #[allow(unused_mut)]
@@ -1857,11 +1808,6 @@ pub mod delete_load_balancer_listeners_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoadBalancerListenersInputOperationOutputAlias =
-    crate::operation::DeleteLoadBalancerListeners;
-#[doc(hidden)]
-pub type DeleteLoadBalancerListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerListenersInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancerListeners`](crate::operation::DeleteLoadBalancerListeners)>
     #[allow(unused_mut)]
@@ -2016,11 +1962,6 @@ pub mod delete_load_balancer_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoadBalancerPolicyInputOperationOutputAlias =
-    crate::operation::DeleteLoadBalancerPolicy;
-#[doc(hidden)]
-pub type DeleteLoadBalancerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancerPolicy`](crate::operation::DeleteLoadBalancerPolicy)>
     #[allow(unused_mut)]
@@ -2187,12 +2128,6 @@ pub mod deregister_instances_from_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterInstancesFromLoadBalancerInputOperationOutputAlias =
-    crate::operation::DeregisterInstancesFromLoadBalancer;
-#[doc(hidden)]
-pub type DeregisterInstancesFromLoadBalancerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterInstancesFromLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterInstancesFromLoadBalancer`](crate::operation::DeregisterInstancesFromLoadBalancer)>
     #[allow(unused_mut)]
@@ -2342,10 +2277,6 @@ pub mod describe_account_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationOutputAlias = crate::operation::DescribeAccountLimits;
-#[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
     #[allow(unused_mut)]
@@ -2510,10 +2441,6 @@ pub mod describe_instance_health_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInstanceHealthInputOperationOutputAlias = crate::operation::DescribeInstanceHealth;
-#[doc(hidden)]
-pub type DescribeInstanceHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstanceHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceHealth`](crate::operation::DescribeInstanceHealth)>
     #[allow(unused_mut)]
@@ -2659,12 +2586,6 @@ pub mod describe_load_balancer_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancerAttributesInputOperationOutputAlias =
-    crate::operation::DescribeLoadBalancerAttributes;
-#[doc(hidden)]
-pub type DescribeLoadBalancerAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerAttributes`](crate::operation::DescribeLoadBalancerAttributes)>
     #[allow(unused_mut)]
@@ -2828,12 +2749,6 @@ pub mod describe_load_balancer_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancerPoliciesInputOperationOutputAlias =
-    crate::operation::DescribeLoadBalancerPolicies;
-#[doc(hidden)]
-pub type DescribeLoadBalancerPoliciesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerPolicies`](crate::operation::DescribeLoadBalancerPolicies)>
     #[allow(unused_mut)]
@@ -2982,12 +2897,6 @@ pub mod describe_load_balancer_policy_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancerPolicyTypesInputOperationOutputAlias =
-    crate::operation::DescribeLoadBalancerPolicyTypes;
-#[doc(hidden)]
-pub type DescribeLoadBalancerPolicyTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerPolicyTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerPolicyTypes`](crate::operation::DescribeLoadBalancerPolicyTypes)>
     #[allow(unused_mut)]
@@ -3158,10 +3067,6 @@ pub mod describe_load_balancers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationOutputAlias = crate::operation::DescribeLoadBalancers;
-#[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
     #[allow(unused_mut)]
@@ -3311,10 +3216,6 @@ pub mod describe_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
-#[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
@@ -3479,12 +3380,6 @@ pub mod detach_load_balancer_from_subnets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachLoadBalancerFromSubnetsInputOperationOutputAlias =
-    crate::operation::DetachLoadBalancerFromSubnets;
-#[doc(hidden)]
-pub type DetachLoadBalancerFromSubnetsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DetachLoadBalancerFromSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`DetachLoadBalancerFromSubnets`](crate::operation::DetachLoadBalancerFromSubnets)>
     #[allow(unused_mut)]
@@ -3648,12 +3543,6 @@ pub mod disable_availability_zones_for_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableAvailabilityZonesForLoadBalancerInputOperationOutputAlias =
-    crate::operation::DisableAvailabilityZonesForLoadBalancer;
-#[doc(hidden)]
-pub type DisableAvailabilityZonesForLoadBalancerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableAvailabilityZonesForLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DisableAvailabilityZonesForLoadBalancer`](crate::operation::DisableAvailabilityZonesForLoadBalancer)>
     #[allow(unused_mut)]
@@ -3817,12 +3706,6 @@ pub mod enable_availability_zones_for_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableAvailabilityZonesForLoadBalancerInputOperationOutputAlias =
-    crate::operation::EnableAvailabilityZonesForLoadBalancer;
-#[doc(hidden)]
-pub type EnableAvailabilityZonesForLoadBalancerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`EnableAvailabilityZonesForLoadBalancer`](crate::operation::EnableAvailabilityZonesForLoadBalancer)>
     #[allow(unused_mut)]
@@ -3984,12 +3867,6 @@ pub mod modify_load_balancer_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyLoadBalancerAttributesInputOperationOutputAlias =
-    crate::operation::ModifyLoadBalancerAttributes;
-#[doc(hidden)]
-pub type ModifyLoadBalancerAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLoadBalancerAttributes`](crate::operation::ModifyLoadBalancerAttributes)>
     #[allow(unused_mut)]
@@ -4153,12 +4030,6 @@ pub mod register_instances_with_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterInstancesWithLoadBalancerInputOperationOutputAlias =
-    crate::operation::RegisterInstancesWithLoadBalancer;
-#[doc(hidden)]
-pub type RegisterInstancesWithLoadBalancerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterInstancesWithLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterInstancesWithLoadBalancer`](crate::operation::RegisterInstancesWithLoadBalancer)>
     #[allow(unused_mut)]
@@ -4325,10 +4196,6 @@ pub mod remove_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
-#[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(unused_mut)]
@@ -4499,12 +4366,6 @@ pub mod set_load_balancer_listener_ssl_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetLoadBalancerListenerSslCertificateInputOperationOutputAlias =
-    crate::operation::SetLoadBalancerListenerSSLCertificate;
-#[doc(hidden)]
-pub type SetLoadBalancerListenerSslCertificateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBalancerListenerSslCertificateInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerListenerSSLCertificate`](crate::operation::SetLoadBalancerListenerSSLCertificate)>
     #[allow(unused_mut)]
@@ -4680,12 +4541,6 @@ pub mod set_load_balancer_policies_for_backend_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetLoadBalancerPoliciesForBackendServerInputOperationOutputAlias =
-    crate::operation::SetLoadBalancerPoliciesForBackendServer;
-#[doc(hidden)]
-pub type SetLoadBalancerPoliciesForBackendServerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBalancerPoliciesForBackendServerInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerPoliciesForBackendServer`](crate::operation::SetLoadBalancerPoliciesForBackendServer)>
     #[allow(unused_mut)]
@@ -4861,12 +4716,6 @@ pub mod set_load_balancer_policies_of_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetLoadBalancerPoliciesOfListenerInputOperationOutputAlias =
-    crate::operation::SetLoadBalancerPoliciesOfListener;
-#[doc(hidden)]
-pub type SetLoadBalancerPoliciesOfListenerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBalancerPoliciesOfListenerInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerPoliciesOfListener`](crate::operation::SetLoadBalancerPoliciesOfListener)>
     #[allow(unused_mut)]

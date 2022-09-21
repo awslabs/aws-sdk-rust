@@ -41,10 +41,6 @@ pub mod batch_get_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetRecordInputOperationOutputAlias = crate::operation::BatchGetRecord;
-#[doc(hidden)]
-pub type BatchGetRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetRecordInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetRecord`](crate::operation::BatchGetRecord)>
     #[allow(unused_mut)]
@@ -216,10 +212,6 @@ pub mod delete_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRecordInputOperationOutputAlias = crate::operation::DeleteRecord;
-#[doc(hidden)]
-pub type DeleteRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecordInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecord`](crate::operation::DeleteRecord)>
     #[allow(unused_mut)]
@@ -421,10 +413,6 @@ pub mod get_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecordInputOperationOutputAlias = crate::operation::GetRecord;
-#[doc(hidden)]
-pub type GetRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordInput {
     /// Consumes the builder and constructs an Operation<[`GetRecord`](crate::operation::GetRecord)>
     #[allow(unused_mut)]
@@ -618,10 +606,6 @@ pub mod put_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecordInputOperationOutputAlias = crate::operation::PutRecord;
-#[doc(hidden)]
-pub type PutRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
     #[allow(unused_mut)]

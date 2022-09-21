@@ -110,10 +110,6 @@ pub mod create_connector_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectorProfileInputOperationOutputAlias = crate::operation::CreateConnectorProfile;
-#[doc(hidden)]
-pub type CreateConnectorProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectorProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectorProfile`](crate::operation::CreateConnectorProfile)>
     #[allow(unused_mut)]
@@ -382,10 +378,6 @@ pub mod create_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFlowInputOperationOutputAlias = crate::operation::CreateFlow;
-#[doc(hidden)]
-pub type CreateFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlow`](crate::operation::CreateFlow)>
     #[allow(unused_mut)]
@@ -539,10 +531,6 @@ pub mod delete_connector_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectorProfileInputOperationOutputAlias = crate::operation::DeleteConnectorProfile;
-#[doc(hidden)]
-pub type DeleteConnectorProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectorProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectorProfile`](crate::operation::DeleteConnectorProfile)>
     #[allow(unused_mut)]
@@ -694,10 +682,6 @@ pub mod delete_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFlowInputOperationOutputAlias = crate::operation::DeleteFlow;
-#[doc(hidden)]
-pub type DeleteFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlow`](crate::operation::DeleteFlow)>
     #[allow(unused_mut)]
@@ -854,10 +838,6 @@ pub mod describe_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectorInputOperationOutputAlias = crate::operation::DescribeConnector;
-#[doc(hidden)]
-pub type DescribeConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnector`](crate::operation::DescribeConnector)>
     #[allow(unused_mut)]
@@ -1043,11 +1023,6 @@ pub mod describe_connector_entity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectorEntityInputOperationOutputAlias =
-    crate::operation::DescribeConnectorEntity;
-#[doc(hidden)]
-pub type DescribeConnectorEntityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectorEntityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectorEntity`](crate::operation::DescribeConnectorEntity)>
     #[allow(unused_mut)]
@@ -1253,11 +1228,6 @@ pub mod describe_connector_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectorProfilesInputOperationOutputAlias =
-    crate::operation::DescribeConnectorProfiles;
-#[doc(hidden)]
-pub type DescribeConnectorProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectorProfilesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectorProfiles`](crate::operation::DescribeConnectorProfiles)>
     #[allow(unused_mut)]
@@ -1431,10 +1401,6 @@ pub mod describe_connectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectorsInputOperationOutputAlias = crate::operation::DescribeConnectors;
-#[doc(hidden)]
-pub type DescribeConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectors`](crate::operation::DescribeConnectors)>
     #[allow(unused_mut)]
@@ -1573,10 +1539,6 @@ pub mod describe_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFlowInputOperationOutputAlias = crate::operation::DescribeFlow;
-#[doc(hidden)]
-pub type DescribeFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlow`](crate::operation::DescribeFlow)>
     #[allow(unused_mut)]
@@ -1741,12 +1703,6 @@ pub mod describe_flow_execution_records_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFlowExecutionRecordsInputOperationOutputAlias =
-    crate::operation::DescribeFlowExecutionRecords;
-#[doc(hidden)]
-pub type DescribeFlowExecutionRecordsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFlowExecutionRecordsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlowExecutionRecords`](crate::operation::DescribeFlowExecutionRecords)>
     #[allow(unused_mut)]
@@ -1930,10 +1886,6 @@ pub mod list_connector_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConnectorEntitiesInputOperationOutputAlias = crate::operation::ListConnectorEntities;
-#[doc(hidden)]
-pub type ListConnectorEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectorEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectorEntities`](crate::operation::ListConnectorEntities)>
     #[allow(unused_mut)]
@@ -2086,10 +2038,6 @@ pub mod list_connectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConnectorsInputOperationOutputAlias = crate::operation::ListConnectors;
-#[doc(hidden)]
-pub type ListConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectors`](crate::operation::ListConnectors)>
     #[allow(unused_mut)]
@@ -2239,10 +2187,6 @@ pub mod list_flows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFlowsInputOperationOutputAlias = crate::operation::ListFlows;
-#[doc(hidden)]
-pub type ListFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListFlows`](crate::operation::ListFlows)>
     #[allow(unused_mut)]
@@ -2379,10 +2323,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2575,10 +2515,6 @@ pub mod register_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterConnectorInputOperationOutputAlias = crate::operation::RegisterConnector;
-#[doc(hidden)]
-pub type RegisterConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterConnectorInput {
     /// Consumes the builder and constructs an Operation<[`RegisterConnector`](crate::operation::RegisterConnector)>
     #[allow(unused_mut)]
@@ -2716,10 +2652,6 @@ pub mod start_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFlowInputOperationOutputAlias = crate::operation::StartFlow;
-#[doc(hidden)]
-pub type StartFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFlowInput {
     /// Consumes the builder and constructs an Operation<[`StartFlow`](crate::operation::StartFlow)>
     #[allow(unused_mut)]
@@ -2855,10 +2787,6 @@ pub mod stop_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopFlowInputOperationOutputAlias = crate::operation::StopFlow;
-#[doc(hidden)]
-pub type StopFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFlowInput {
     /// Consumes the builder and constructs an Operation<[`StopFlow`](crate::operation::StopFlow)>
     #[allow(unused_mut)]
@@ -3023,10 +2951,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3195,10 +3119,6 @@ pub mod unregister_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnregisterConnectorInputOperationOutputAlias = crate::operation::UnregisterConnector;
-#[doc(hidden)]
-pub type UnregisterConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnregisterConnectorInput {
     /// Consumes the builder and constructs an Operation<[`UnregisterConnector`](crate::operation::UnregisterConnector)>
     #[allow(unused_mut)]
@@ -3358,10 +3278,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3551,10 +3467,6 @@ pub mod update_connector_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectorProfileInputOperationOutputAlias = crate::operation::UpdateConnectorProfile;
-#[doc(hidden)]
-pub type UpdateConnectorProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectorProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectorProfile`](crate::operation::UpdateConnectorProfile)>
     #[allow(unused_mut)]
@@ -3782,10 +3694,6 @@ pub mod update_flow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFlowInputOperationOutputAlias = crate::operation::UpdateFlow;
-#[doc(hidden)]
-pub type UpdateFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlow`](crate::operation::UpdateFlow)>
     #[allow(unused_mut)]

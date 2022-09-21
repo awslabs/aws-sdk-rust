@@ -57,10 +57,6 @@ pub mod associate_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateWebAclInputOperationOutputAlias = crate::operation::AssociateWebACL;
-#[doc(hidden)]
-pub type AssociateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWebACL`](crate::operation::AssociateWebACL)>
     #[allow(unused_mut)]
@@ -235,10 +231,6 @@ pub mod check_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CheckCapacityInputOperationOutputAlias = crate::operation::CheckCapacity;
-#[doc(hidden)]
-pub type CheckCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckCapacityInput {
     /// Consumes the builder and constructs an Operation<[`CheckCapacity`](crate::operation::CheckCapacity)>
     #[allow(unused_mut)]
@@ -503,10 +495,6 @@ pub mod create_ip_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateIpSetInputOperationOutputAlias = crate::operation::CreateIPSet;
-#[doc(hidden)]
-pub type CreateIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIpSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateIPSet`](crate::operation::CreateIPSet)>
     #[allow(unused_mut)]
@@ -726,10 +714,6 @@ pub mod create_regex_pattern_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRegexPatternSetInputOperationOutputAlias = crate::operation::CreateRegexPatternSet;
-#[doc(hidden)]
-pub type CreateRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateRegexPatternSet`](crate::operation::CreateRegexPatternSet)>
     #[allow(unused_mut)]
@@ -1015,10 +999,6 @@ pub mod create_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRuleGroupInputOperationOutputAlias = crate::operation::CreateRuleGroup;
-#[doc(hidden)]
-pub type CreateRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleGroup`](crate::operation::CreateRuleGroup)>
     #[allow(unused_mut)]
@@ -1316,10 +1296,6 @@ pub mod create_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWebAclInputOperationOutputAlias = crate::operation::CreateWebACL;
-#[doc(hidden)]
-pub type CreateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebACL`](crate::operation::CreateWebACL)>
     #[allow(unused_mut)]
@@ -1480,12 +1456,6 @@ pub mod delete_firewall_manager_rule_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFirewallManagerRuleGroupsInputOperationOutputAlias =
-    crate::operation::DeleteFirewallManagerRuleGroups;
-#[doc(hidden)]
-pub type DeleteFirewallManagerRuleGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallManagerRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallManagerRuleGroups`](crate::operation::DeleteFirewallManagerRuleGroups)>
     #[allow(unused_mut)]
@@ -1674,10 +1644,6 @@ pub mod delete_ip_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIpSetInputOperationOutputAlias = crate::operation::DeleteIPSet;
-#[doc(hidden)]
-pub type DeleteIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIpSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIPSet`](crate::operation::DeleteIPSet)>
     #[allow(unused_mut)]
@@ -1823,11 +1789,6 @@ pub mod delete_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteLoggingConfiguration;
-#[doc(hidden)]
-pub type DeleteLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoggingConfiguration`](crate::operation::DeleteLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -1975,10 +1936,6 @@ pub mod delete_permission_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePermissionPolicyInputOperationOutputAlias = crate::operation::DeletePermissionPolicy;
-#[doc(hidden)]
-pub type DeletePermissionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePermissionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionPolicy`](crate::operation::DeletePermissionPolicy)>
     #[allow(unused_mut)]
@@ -2170,10 +2127,6 @@ pub mod delete_regex_pattern_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRegexPatternSetInputOperationOutputAlias = crate::operation::DeleteRegexPatternSet;
-#[doc(hidden)]
-pub type DeleteRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRegexPatternSet`](crate::operation::DeleteRegexPatternSet)>
     #[allow(unused_mut)]
@@ -2365,10 +2318,6 @@ pub mod delete_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRuleGroupInputOperationOutputAlias = crate::operation::DeleteRuleGroup;
-#[doc(hidden)]
-pub type DeleteRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleGroup`](crate::operation::DeleteRuleGroup)>
     #[allow(unused_mut)]
@@ -2558,10 +2507,6 @@ pub mod delete_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWebAclInputOperationOutputAlias = crate::operation::DeleteWebACL;
-#[doc(hidden)]
-pub type DeleteWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWebAclInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebACL`](crate::operation::DeleteWebACL)>
     #[allow(unused_mut)]
@@ -2753,11 +2698,6 @@ pub mod describe_managed_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeManagedRuleGroupInputOperationOutputAlias =
-    crate::operation::DescribeManagedRuleGroup;
-#[doc(hidden)]
-pub type DescribeManagedRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeManagedRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeManagedRuleGroup`](crate::operation::DescribeManagedRuleGroup)>
     #[allow(unused_mut)]
@@ -2917,10 +2857,6 @@ pub mod disassociate_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateWebAclInputOperationOutputAlias = crate::operation::DisassociateWebACL;
-#[doc(hidden)]
-pub type DisassociateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWebACL`](crate::operation::DisassociateWebACL)>
     #[allow(unused_mut)]
@@ -3081,11 +3017,6 @@ pub mod generate_mobile_sdk_release_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GenerateMobileSdkReleaseUrlInputOperationOutputAlias =
-    crate::operation::GenerateMobileSdkReleaseUrl;
-#[doc(hidden)]
-pub type GenerateMobileSdkReleaseUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateMobileSdkReleaseUrlInput {
     /// Consumes the builder and constructs an Operation<[`GenerateMobileSdkReleaseUrl`](crate::operation::GenerateMobileSdkReleaseUrl)>
     #[allow(unused_mut)]
@@ -3261,10 +3192,6 @@ pub mod get_ip_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIpSetInputOperationOutputAlias = crate::operation::GetIPSet;
-#[doc(hidden)]
-pub type GetIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIpSetInput {
     /// Consumes the builder and constructs an Operation<[`GetIPSet`](crate::operation::GetIPSet)>
     #[allow(unused_mut)]
@@ -3407,11 +3334,6 @@ pub mod get_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::GetLoggingConfiguration;
-#[doc(hidden)]
-pub type GetLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLoggingConfiguration`](crate::operation::GetLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -3593,10 +3515,6 @@ pub mod get_managed_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetManagedRuleSetInputOperationOutputAlias = crate::operation::GetManagedRuleSet;
-#[doc(hidden)]
-pub type GetManagedRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetManagedRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`GetManagedRuleSet`](crate::operation::GetManagedRuleSet)>
     #[allow(unused_mut)]
@@ -3755,10 +3673,6 @@ pub mod get_mobile_sdk_release_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMobileSdkReleaseInputOperationOutputAlias = crate::operation::GetMobileSdkRelease;
-#[doc(hidden)]
-pub type GetMobileSdkReleaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMobileSdkReleaseInput {
     /// Consumes the builder and constructs an Operation<[`GetMobileSdkRelease`](crate::operation::GetMobileSdkRelease)>
     #[allow(unused_mut)]
@@ -3904,10 +3818,6 @@ pub mod get_permission_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPermissionPolicyInputOperationOutputAlias = crate::operation::GetPermissionPolicy;
-#[doc(hidden)]
-pub type GetPermissionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPermissionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPermissionPolicy`](crate::operation::GetPermissionPolicy)>
     #[allow(unused_mut)]
@@ -4114,12 +4024,6 @@ pub mod get_rate_based_statement_managed_keys_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRateBasedStatementManagedKeysInputOperationOutputAlias =
-    crate::operation::GetRateBasedStatementManagedKeys;
-#[doc(hidden)]
-pub type GetRateBasedStatementManagedKeysInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRateBasedStatementManagedKeysInput {
     /// Consumes the builder and constructs an Operation<[`GetRateBasedStatementManagedKeys`](crate::operation::GetRateBasedStatementManagedKeys)>
     #[allow(unused_mut)]
@@ -4296,10 +4200,6 @@ pub mod get_regex_pattern_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRegexPatternSetInputOperationOutputAlias = crate::operation::GetRegexPatternSet;
-#[doc(hidden)]
-pub type GetRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`GetRegexPatternSet`](crate::operation::GetRegexPatternSet)>
     #[allow(unused_mut)]
@@ -4489,10 +4389,6 @@ pub mod get_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRuleGroupInputOperationOutputAlias = crate::operation::GetRuleGroup;
-#[doc(hidden)]
-pub type GetRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetRuleGroup`](crate::operation::GetRuleGroup)>
     #[allow(unused_mut)]
@@ -4700,10 +4596,6 @@ pub mod get_sampled_requests_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSampledRequestsInputOperationOutputAlias = crate::operation::GetSampledRequests;
-#[doc(hidden)]
-pub type GetSampledRequestsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSampledRequestsInput {
     /// Consumes the builder and constructs an Operation<[`GetSampledRequests`](crate::operation::GetSampledRequests)>
     #[allow(unused_mut)]
@@ -4880,10 +4772,6 @@ pub mod get_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWebAclInputOperationOutputAlias = crate::operation::GetWebACL;
-#[doc(hidden)]
-pub type GetWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWebAclInput {
     /// Consumes the builder and constructs an Operation<[`GetWebACL`](crate::operation::GetWebACL)>
     #[allow(unused_mut)]
@@ -5039,10 +4927,6 @@ pub mod get_web_acl_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWebAclForResourceInputOperationOutputAlias = crate::operation::GetWebACLForResource;
-#[doc(hidden)]
-pub type GetWebAclForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWebAclForResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetWebACLForResource`](crate::operation::GetWebACLForResource)>
     #[allow(unused_mut)]
@@ -5224,12 +5108,6 @@ pub mod list_available_managed_rule_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAvailableManagedRuleGroupsInputOperationOutputAlias =
-    crate::operation::ListAvailableManagedRuleGroups;
-#[doc(hidden)]
-pub type ListAvailableManagedRuleGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableManagedRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagedRuleGroups`](crate::operation::ListAvailableManagedRuleGroups)>
     #[allow(unused_mut)]
@@ -5432,12 +5310,6 @@ pub mod list_available_managed_rule_group_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAvailableManagedRuleGroupVersionsInputOperationOutputAlias =
-    crate::operation::ListAvailableManagedRuleGroupVersions;
-#[doc(hidden)]
-pub type ListAvailableManagedRuleGroupVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableManagedRuleGroupVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagedRuleGroupVersions`](crate::operation::ListAvailableManagedRuleGroupVersions)>
     #[allow(unused_mut)]
@@ -5613,10 +5485,6 @@ pub mod list_ip_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIpSetsInputOperationOutputAlias = crate::operation::ListIPSets;
-#[doc(hidden)]
-pub type ListIpSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIpSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListIPSets`](crate::operation::ListIPSets)>
     #[allow(unused_mut)]
@@ -5796,11 +5664,6 @@ pub mod list_logging_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLoggingConfigurationsInputOperationOutputAlias =
-    crate::operation::ListLoggingConfigurations;
-#[doc(hidden)]
-pub type ListLoggingConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLoggingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLoggingConfigurations`](crate::operation::ListLoggingConfigurations)>
     #[allow(unused_mut)]
@@ -5980,10 +5843,6 @@ pub mod list_managed_rule_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListManagedRuleSetsInputOperationOutputAlias = crate::operation::ListManagedRuleSets;
-#[doc(hidden)]
-pub type ListManagedRuleSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedRuleSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedRuleSets`](crate::operation::ListManagedRuleSets)>
     #[allow(unused_mut)]
@@ -6153,10 +6012,6 @@ pub mod list_mobile_sdk_releases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMobileSdkReleasesInputOperationOutputAlias = crate::operation::ListMobileSdkReleases;
-#[doc(hidden)]
-pub type ListMobileSdkReleasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMobileSdkReleasesInput {
     /// Consumes the builder and constructs an Operation<[`ListMobileSdkReleases`](crate::operation::ListMobileSdkReleases)>
     #[allow(unused_mut)]
@@ -6336,10 +6191,6 @@ pub mod list_regex_pattern_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRegexPatternSetsInputOperationOutputAlias = crate::operation::ListRegexPatternSets;
-#[doc(hidden)]
-pub type ListRegexPatternSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRegexPatternSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListRegexPatternSets`](crate::operation::ListRegexPatternSets)>
     #[allow(unused_mut)]
@@ -6500,10 +6351,6 @@ pub mod list_resources_for_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourcesForWebAclInputOperationOutputAlias = crate::operation::ListResourcesForWebACL;
-#[doc(hidden)]
-pub type ListResourcesForWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesForWebAclInput {
     /// Consumes the builder and constructs an Operation<[`ListResourcesForWebACL`](crate::operation::ListResourcesForWebACL)>
     #[allow(unused_mut)]
@@ -6683,10 +6530,6 @@ pub mod list_rule_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRuleGroupsInputOperationOutputAlias = crate::operation::ListRuleGroups;
-#[doc(hidden)]
-pub type ListRuleGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleGroups`](crate::operation::ListRuleGroups)>
     #[allow(unused_mut)]
@@ -6854,10 +6697,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7037,10 +6876,6 @@ pub mod list_web_ac_ls_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWebAcLsInputOperationOutputAlias = crate::operation::ListWebACLs;
-#[doc(hidden)]
-pub type ListWebAcLsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebAcLsInput {
     /// Consumes the builder and constructs an Operation<[`ListWebACLs`](crate::operation::ListWebACLs)>
     #[allow(unused_mut)]
@@ -7189,11 +7024,6 @@ pub mod put_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::PutLoggingConfiguration;
-#[doc(hidden)]
-pub type PutLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutLoggingConfiguration`](crate::operation::PutLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -7433,11 +7263,6 @@ pub mod put_managed_rule_set_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutManagedRuleSetVersionsInputOperationOutputAlias =
-    crate::operation::PutManagedRuleSetVersions;
-#[doc(hidden)]
-pub type PutManagedRuleSetVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutManagedRuleSetVersionsInput {
     /// Consumes the builder and constructs an Operation<[`PutManagedRuleSetVersions`](crate::operation::PutManagedRuleSetVersions)>
     #[allow(unused_mut)]
@@ -7610,10 +7435,6 @@ pub mod put_permission_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPermissionPolicyInputOperationOutputAlias = crate::operation::PutPermissionPolicy;
-#[doc(hidden)]
-pub type PutPermissionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPermissionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutPermissionPolicy`](crate::operation::PutPermissionPolicy)>
     #[allow(unused_mut)]
@@ -7778,10 +7599,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -7946,10 +7763,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -8202,10 +8015,6 @@ pub mod update_ip_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateIpSetInputOperationOutputAlias = crate::operation::UpdateIPSet;
-#[doc(hidden)]
-pub type UpdateIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIpSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIPSet`](crate::operation::UpdateIPSet)>
     #[allow(unused_mut)]
@@ -8431,12 +8240,6 @@ pub mod update_managed_rule_set_version_expiry_date_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateManagedRuleSetVersionExpiryDateInputOperationOutputAlias =
-    crate::operation::UpdateManagedRuleSetVersionExpiryDate;
-#[doc(hidden)]
-pub type UpdateManagedRuleSetVersionExpiryDateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateManagedRuleSetVersionExpiryDateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateManagedRuleSetVersionExpiryDate`](crate::operation::UpdateManagedRuleSetVersionExpiryDate)>
     #[allow(unused_mut)]
@@ -8658,10 +8461,6 @@ pub mod update_regex_pattern_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRegexPatternSetInputOperationOutputAlias = crate::operation::UpdateRegexPatternSet;
-#[doc(hidden)]
-pub type UpdateRegexPatternSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRegexPatternSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRegexPatternSet`](crate::operation::UpdateRegexPatternSet)>
     #[allow(unused_mut)]
@@ -8934,10 +8733,6 @@ pub mod update_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRuleGroupInputOperationOutputAlias = crate::operation::UpdateRuleGroup;
-#[doc(hidden)]
-pub type UpdateRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleGroup`](crate::operation::UpdateRuleGroup)>
     #[allow(unused_mut)]
@@ -9238,10 +9033,6 @@ pub mod update_web_acl_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWebAclInputOperationOutputAlias = crate::operation::UpdateWebACL;
-#[doc(hidden)]
-pub type UpdateWebAclInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWebAclInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWebACL`](crate::operation::UpdateWebACL)>
     #[allow(unused_mut)]

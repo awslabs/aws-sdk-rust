@@ -48,11 +48,6 @@ pub mod accept_qualification_request_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptQualificationRequestInputOperationOutputAlias =
-    crate::operation::AcceptQualificationRequest;
-#[doc(hidden)]
-pub type AcceptQualificationRequestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptQualificationRequestInput {
     /// Consumes the builder and constructs an Operation<[`AcceptQualificationRequest`](crate::operation::AcceptQualificationRequest)>
     #[allow(unused_mut)]
@@ -228,10 +223,6 @@ pub mod approve_assignment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ApproveAssignmentInputOperationOutputAlias = crate::operation::ApproveAssignment;
-#[doc(hidden)]
-pub type ApproveAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ApproveAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`ApproveAssignment`](crate::operation::ApproveAssignment)>
     #[allow(unused_mut)]
@@ -416,12 +407,6 @@ pub mod associate_qualification_with_worker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateQualificationWithWorkerInputOperationOutputAlias =
-    crate::operation::AssociateQualificationWithWorker;
-#[doc(hidden)]
-pub type AssociateQualificationWithWorkerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateQualificationWithWorkerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateQualificationWithWorker`](crate::operation::AssociateQualificationWithWorker)>
     #[allow(unused_mut)]
@@ -596,12 +581,6 @@ pub mod create_additional_assignments_for_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAdditionalAssignmentsForHitInputOperationOutputAlias =
-    crate::operation::CreateAdditionalAssignmentsForHIT;
-#[doc(hidden)]
-pub type CreateAdditionalAssignmentsForHitInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAdditionalAssignmentsForHitInput {
     /// Consumes the builder and constructs an Operation<[`CreateAdditionalAssignmentsForHIT`](crate::operation::CreateAdditionalAssignmentsForHIT)>
     #[allow(unused_mut)]
@@ -981,10 +960,6 @@ pub mod create_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHitInputOperationOutputAlias = crate::operation::CreateHIT;
-#[doc(hidden)]
-pub type CreateHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHitInput {
     /// Consumes the builder and constructs an Operation<[`CreateHIT`](crate::operation::CreateHIT)>
     #[allow(unused_mut)]
@@ -1217,10 +1192,6 @@ pub mod create_hit_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHitTypeInputOperationOutputAlias = crate::operation::CreateHITType;
-#[doc(hidden)]
-pub type CreateHitTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHitTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateHITType`](crate::operation::CreateHITType)>
     #[allow(unused_mut)]
@@ -1511,10 +1482,6 @@ pub mod create_hit_with_hit_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHitWithHitTypeInputOperationOutputAlias = crate::operation::CreateHITWithHITType;
-#[doc(hidden)]
-pub type CreateHitWithHitTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHitWithHitTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateHITWithHITType`](crate::operation::CreateHITWithHITType)>
     #[allow(unused_mut)]
@@ -1791,11 +1758,6 @@ pub mod create_qualification_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateQualificationTypeInputOperationOutputAlias =
-    crate::operation::CreateQualificationType;
-#[doc(hidden)]
-pub type CreateQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateQualificationType`](crate::operation::CreateQualificationType)>
     #[allow(unused_mut)]
@@ -1953,10 +1915,6 @@ pub mod create_worker_block_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkerBlockInputOperationOutputAlias = crate::operation::CreateWorkerBlock;
-#[doc(hidden)]
-pub type CreateWorkerBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkerBlockInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkerBlock`](crate::operation::CreateWorkerBlock)>
     #[allow(unused_mut)]
@@ -2099,10 +2057,6 @@ pub mod delete_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteHitInputOperationOutputAlias = crate::operation::DeleteHIT;
-#[doc(hidden)]
-pub type DeleteHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHitInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHIT`](crate::operation::DeleteHIT)>
     #[allow(unused_mut)]
@@ -2249,11 +2203,6 @@ pub mod delete_qualification_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteQualificationTypeInputOperationOutputAlias =
-    crate::operation::DeleteQualificationType;
-#[doc(hidden)]
-pub type DeleteQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQualificationType`](crate::operation::DeleteQualificationType)>
     #[allow(unused_mut)]
@@ -2411,10 +2360,6 @@ pub mod delete_worker_block_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkerBlockInputOperationOutputAlias = crate::operation::DeleteWorkerBlock;
-#[doc(hidden)]
-pub type DeleteWorkerBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkerBlockInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkerBlock`](crate::operation::DeleteWorkerBlock)>
     #[allow(unused_mut)]
@@ -2587,12 +2532,6 @@ pub mod disassociate_qualification_from_worker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateQualificationFromWorkerInputOperationOutputAlias =
-    crate::operation::DisassociateQualificationFromWorker;
-#[doc(hidden)]
-pub type DisassociateQualificationFromWorkerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateQualificationFromWorkerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateQualificationFromWorker`](crate::operation::DisassociateQualificationFromWorker)>
     #[allow(unused_mut)]
@@ -2721,10 +2660,6 @@ pub mod get_account_balance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountBalanceInputOperationOutputAlias = crate::operation::GetAccountBalance;
-#[doc(hidden)]
-pub type GetAccountBalanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountBalanceInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountBalance`](crate::operation::GetAccountBalance)>
     #[allow(unused_mut)]
@@ -2864,10 +2799,6 @@ pub mod get_assignment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssignmentInputOperationOutputAlias = crate::operation::GetAssignment;
-#[doc(hidden)]
-pub type GetAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAssignment`](crate::operation::GetAssignment)>
     #[allow(unused_mut)]
@@ -3029,10 +2960,6 @@ pub mod get_file_upload_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFileUploadUrlInputOperationOutputAlias = crate::operation::GetFileUploadURL;
-#[doc(hidden)]
-pub type GetFileUploadUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFileUploadUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetFileUploadURL`](crate::operation::GetFileUploadURL)>
     #[allow(unused_mut)]
@@ -3175,10 +3102,6 @@ pub mod get_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetHitInputOperationOutputAlias = crate::operation::GetHIT;
-#[doc(hidden)]
-pub type GetHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHitInput {
     /// Consumes the builder and constructs an Operation<[`GetHIT`](crate::operation::GetHIT)>
     #[allow(unused_mut)]
@@ -3332,10 +3255,6 @@ pub mod get_qualification_score_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQualificationScoreInputOperationOutputAlias = crate::operation::GetQualificationScore;
-#[doc(hidden)]
-pub type GetQualificationScoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQualificationScoreInput {
     /// Consumes the builder and constructs an Operation<[`GetQualificationScore`](crate::operation::GetQualificationScore)>
     #[allow(unused_mut)]
@@ -3484,10 +3403,6 @@ pub mod get_qualification_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQualificationTypeInputOperationOutputAlias = crate::operation::GetQualificationType;
-#[doc(hidden)]
-pub type GetQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetQualificationType`](crate::operation::GetQualificationType)>
     #[allow(unused_mut)]
@@ -3679,10 +3594,6 @@ pub mod list_assignments_for_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssignmentsForHitInputOperationOutputAlias = crate::operation::ListAssignmentsForHIT;
-#[doc(hidden)]
-pub type ListAssignmentsForHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssignmentsForHitInput {
     /// Consumes the builder and constructs an Operation<[`ListAssignmentsForHIT`](crate::operation::ListAssignmentsForHIT)>
     #[allow(unused_mut)]
@@ -3867,10 +3778,6 @@ pub mod list_bonus_payments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBonusPaymentsInputOperationOutputAlias = crate::operation::ListBonusPayments;
-#[doc(hidden)]
-pub type ListBonusPaymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBonusPaymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBonusPayments`](crate::operation::ListBonusPayments)>
     #[allow(unused_mut)]
@@ -4025,10 +3932,6 @@ pub mod list_hi_ts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListHiTsInputOperationOutputAlias = crate::operation::ListHITs;
-#[doc(hidden)]
-pub type ListHiTsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHiTsInput {
     /// Consumes the builder and constructs an Operation<[`ListHITs`](crate::operation::ListHITs)>
     #[allow(unused_mut)]
@@ -4198,12 +4101,6 @@ pub mod list_hi_ts_for_qualification_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListHiTsForQualificationTypeInputOperationOutputAlias =
-    crate::operation::ListHITsForQualificationType;
-#[doc(hidden)]
-pub type ListHiTsForQualificationTypeInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListHiTsForQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`ListHITsForQualificationType`](crate::operation::ListHITsForQualificationType)>
     #[allow(unused_mut)]
@@ -4375,11 +4272,6 @@ pub mod list_qualification_requests_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQualificationRequestsInputOperationOutputAlias =
-    crate::operation::ListQualificationRequests;
-#[doc(hidden)]
-pub type ListQualificationRequestsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQualificationRequestsInput {
     /// Consumes the builder and constructs an Operation<[`ListQualificationRequests`](crate::operation::ListQualificationRequests)>
     #[allow(unused_mut)]
@@ -4573,10 +4465,6 @@ pub mod list_qualification_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQualificationTypesInputOperationOutputAlias = crate::operation::ListQualificationTypes;
-#[doc(hidden)]
-pub type ListQualificationTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQualificationTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListQualificationTypes`](crate::operation::ListQualificationTypes)>
     #[allow(unused_mut)]
@@ -4761,10 +4649,6 @@ pub mod list_reviewable_hi_ts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReviewableHiTsInputOperationOutputAlias = crate::operation::ListReviewableHITs;
-#[doc(hidden)]
-pub type ListReviewableHiTsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReviewableHiTsInput {
     /// Consumes the builder and constructs an Operation<[`ListReviewableHITs`](crate::operation::ListReviewableHITs)>
     #[allow(unused_mut)]
@@ -4980,12 +4864,6 @@ pub mod list_review_policy_results_for_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReviewPolicyResultsForHitInputOperationOutputAlias =
-    crate::operation::ListReviewPolicyResultsForHIT;
-#[doc(hidden)]
-pub type ListReviewPolicyResultsForHitInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListReviewPolicyResultsForHitInput {
     /// Consumes the builder and constructs an Operation<[`ListReviewPolicyResultsForHIT`](crate::operation::ListReviewPolicyResultsForHIT)>
     #[allow(unused_mut)]
@@ -5140,10 +5018,6 @@ pub mod list_worker_blocks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkerBlocksInputOperationOutputAlias = crate::operation::ListWorkerBlocks;
-#[doc(hidden)]
-pub type ListWorkerBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkerBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkerBlocks`](crate::operation::ListWorkerBlocks)>
     #[allow(unused_mut)]
@@ -5331,12 +5205,6 @@ pub mod list_workers_with_qualification_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkersWithQualificationTypeInputOperationOutputAlias =
-    crate::operation::ListWorkersWithQualificationType;
-#[doc(hidden)]
-pub type ListWorkersWithQualificationTypeInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkersWithQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkersWithQualificationType`](crate::operation::ListWorkersWithQualificationType)>
     #[allow(unused_mut)]
@@ -5512,10 +5380,6 @@ pub mod notify_workers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyWorkersInputOperationOutputAlias = crate::operation::NotifyWorkers;
-#[doc(hidden)]
-pub type NotifyWorkersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyWorkersInput {
     /// Consumes the builder and constructs an Operation<[`NotifyWorkers`](crate::operation::NotifyWorkers)>
     #[allow(unused_mut)]
@@ -5677,10 +5541,6 @@ pub mod reject_assignment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectAssignmentInputOperationOutputAlias = crate::operation::RejectAssignment;
-#[doc(hidden)]
-pub type RejectAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`RejectAssignment`](crate::operation::RejectAssignment)>
     #[allow(unused_mut)]
@@ -5841,11 +5701,6 @@ pub mod reject_qualification_request_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectQualificationRequestInputOperationOutputAlias =
-    crate::operation::RejectQualificationRequest;
-#[doc(hidden)]
-pub type RejectQualificationRequestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectQualificationRequestInput {
     /// Consumes the builder and constructs an Operation<[`RejectQualificationRequest`](crate::operation::RejectQualificationRequest)>
     #[allow(unused_mut)]
@@ -6044,10 +5899,6 @@ pub mod send_bonus_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendBonusInputOperationOutputAlias = crate::operation::SendBonus;
-#[doc(hidden)]
-pub type SendBonusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendBonusInput {
     /// Consumes the builder and constructs an Operation<[`SendBonus`](crate::operation::SendBonus)>
     #[allow(unused_mut)]
@@ -6209,11 +6060,6 @@ pub mod send_test_event_notification_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendTestEventNotificationInputOperationOutputAlias =
-    crate::operation::SendTestEventNotification;
-#[doc(hidden)]
-pub type SendTestEventNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTestEventNotificationInput {
     /// Consumes the builder and constructs an Operation<[`SendTestEventNotification`](crate::operation::SendTestEventNotification)>
     #[allow(unused_mut)]
@@ -6374,10 +6220,6 @@ pub mod update_expiration_for_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateExpirationForHitInputOperationOutputAlias = crate::operation::UpdateExpirationForHIT;
-#[doc(hidden)]
-pub type UpdateExpirationForHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExpirationForHitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExpirationForHIT`](crate::operation::UpdateExpirationForHIT)>
     #[allow(unused_mut)]
@@ -6543,10 +6385,6 @@ pub mod update_hit_review_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateHitReviewStatusInputOperationOutputAlias = crate::operation::UpdateHITReviewStatus;
-#[doc(hidden)]
-pub type UpdateHitReviewStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHitReviewStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHITReviewStatus`](crate::operation::UpdateHITReviewStatus)>
     #[allow(unused_mut)]
@@ -6704,10 +6542,6 @@ pub mod update_hit_type_of_hit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateHitTypeOfHitInputOperationOutputAlias = crate::operation::UpdateHITTypeOfHIT;
-#[doc(hidden)]
-pub type UpdateHitTypeOfHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHitTypeOfHitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHITTypeOfHIT`](crate::operation::UpdateHITTypeOfHIT)>
     #[allow(unused_mut)]
@@ -6882,11 +6716,6 @@ pub mod update_notification_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNotificationSettingsInputOperationOutputAlias =
-    crate::operation::UpdateNotificationSettings;
-#[doc(hidden)]
-pub type UpdateNotificationSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotificationSettings`](crate::operation::UpdateNotificationSettings)>
     #[allow(unused_mut)]
@@ -7146,11 +6975,6 @@ pub mod update_qualification_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateQualificationTypeInputOperationOutputAlias =
-    crate::operation::UpdateQualificationType;
-#[doc(hidden)]
-pub type UpdateQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQualificationType`](crate::operation::UpdateQualificationType)>
     #[allow(unused_mut)]

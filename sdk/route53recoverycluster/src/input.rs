@@ -34,10 +34,6 @@ pub mod get_routing_control_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRoutingControlStateInputOperationOutputAlias = crate::operation::GetRoutingControlState;
-#[doc(hidden)]
-pub type GetRoutingControlStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`GetRoutingControlState`](crate::operation::GetRoutingControlState)>
     #[allow(unused_mut)]
@@ -210,10 +206,6 @@ pub mod list_routing_controls_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRoutingControlsInputOperationOutputAlias = crate::operation::ListRoutingControls;
-#[doc(hidden)]
-pub type ListRoutingControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoutingControlsInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutingControls`](crate::operation::ListRoutingControls)>
     #[allow(unused_mut)]
@@ -401,11 +393,6 @@ pub mod update_routing_control_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRoutingControlStateInputOperationOutputAlias =
-    crate::operation::UpdateRoutingControlState;
-#[doc(hidden)]
-pub type UpdateRoutingControlStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlState`](crate::operation::UpdateRoutingControlState)>
     #[allow(unused_mut)]
@@ -592,11 +579,6 @@ pub mod update_routing_control_states_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRoutingControlStatesInputOperationOutputAlias =
-    crate::operation::UpdateRoutingControlStates;
-#[doc(hidden)]
-pub type UpdateRoutingControlStatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoutingControlStatesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlStates`](crate::operation::UpdateRoutingControlStates)>
     #[allow(unused_mut)]

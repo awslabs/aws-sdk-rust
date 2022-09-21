@@ -62,10 +62,6 @@ pub mod batch_create_variable_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCreateVariableInputOperationOutputAlias = crate::operation::BatchCreateVariable;
-#[doc(hidden)]
-pub type BatchCreateVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateVariableInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateVariable`](crate::operation::BatchCreateVariable)>
     #[allow(unused_mut)]
@@ -216,10 +212,6 @@ pub mod batch_get_variable_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetVariableInputOperationOutputAlias = crate::operation::BatchGetVariable;
-#[doc(hidden)]
-pub type BatchGetVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetVariableInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetVariable`](crate::operation::BatchGetVariable)>
     #[allow(unused_mut)]
@@ -365,10 +357,6 @@ pub mod cancel_batch_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelBatchImportJobInputOperationOutputAlias = crate::operation::CancelBatchImportJob;
-#[doc(hidden)]
-pub type CancelBatchImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelBatchImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelBatchImportJob`](crate::operation::CancelBatchImportJob)>
     #[allow(unused_mut)]
@@ -516,11 +504,6 @@ pub mod cancel_batch_prediction_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelBatchPredictionJobInputOperationOutputAlias =
-    crate::operation::CancelBatchPredictionJob;
-#[doc(hidden)]
-pub type CancelBatchPredictionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelBatchPredictionJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelBatchPredictionJob`](crate::operation::CancelBatchPredictionJob)>
     #[allow(unused_mut)]
@@ -738,10 +721,6 @@ pub mod create_batch_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBatchImportJobInputOperationOutputAlias = crate::operation::CreateBatchImportJob;
-#[doc(hidden)]
-pub type CreateBatchImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBatchImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchImportJob`](crate::operation::CreateBatchImportJob)>
     #[allow(unused_mut)]
@@ -991,11 +970,6 @@ pub mod create_batch_prediction_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBatchPredictionJobInputOperationOutputAlias =
-    crate::operation::CreateBatchPredictionJob;
-#[doc(hidden)]
-pub type CreateBatchPredictionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBatchPredictionJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchPredictionJob`](crate::operation::CreateBatchPredictionJob)>
     #[allow(unused_mut)]
@@ -1261,10 +1235,6 @@ pub mod create_detector_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDetectorVersionInputOperationOutputAlias = crate::operation::CreateDetectorVersion;
-#[doc(hidden)]
-pub type CreateDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDetectorVersion`](crate::operation::CreateDetectorVersion)>
     #[allow(unused_mut)]
@@ -1473,10 +1443,6 @@ pub mod create_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateModelInputOperationOutputAlias = crate::operation::CreateModel;
-#[doc(hidden)]
-pub type CreateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
     #[allow(unused_mut)]
@@ -1716,10 +1682,6 @@ pub mod create_model_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateModelVersionInputOperationOutputAlias = crate::operation::CreateModelVersion;
-#[doc(hidden)]
-pub type CreateModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateModelVersion`](crate::operation::CreateModelVersion)>
     #[allow(unused_mut)]
@@ -1952,10 +1914,6 @@ pub mod create_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRuleInputOperationOutputAlias = crate::operation::CreateRule;
-#[doc(hidden)]
-pub type CreateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(unused_mut)]
@@ -2191,10 +2149,6 @@ pub mod create_variable_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVariableInputOperationOutputAlias = crate::operation::CreateVariable;
-#[doc(hidden)]
-pub type CreateVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVariableInput {
     /// Consumes the builder and constructs an Operation<[`CreateVariable`](crate::operation::CreateVariable)>
     #[allow(unused_mut)]
@@ -2338,10 +2292,6 @@ pub mod delete_batch_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBatchImportJobInputOperationOutputAlias = crate::operation::DeleteBatchImportJob;
-#[doc(hidden)]
-pub type DeleteBatchImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBatchImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBatchImportJob`](crate::operation::DeleteBatchImportJob)>
     #[allow(unused_mut)]
@@ -2489,11 +2439,6 @@ pub mod delete_batch_prediction_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBatchPredictionJobInputOperationOutputAlias =
-    crate::operation::DeleteBatchPredictionJob;
-#[doc(hidden)]
-pub type DeleteBatchPredictionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBatchPredictionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBatchPredictionJob`](crate::operation::DeleteBatchPredictionJob)>
     #[allow(unused_mut)]
@@ -2639,10 +2584,6 @@ pub mod delete_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDetectorInputOperationOutputAlias = crate::operation::DeleteDetector;
-#[doc(hidden)]
-pub type DeleteDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDetector`](crate::operation::DeleteDetector)>
     #[allow(unused_mut)]
@@ -2801,10 +2742,6 @@ pub mod delete_detector_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDetectorVersionInputOperationOutputAlias = crate::operation::DeleteDetectorVersion;
-#[doc(hidden)]
-pub type DeleteDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDetectorVersion`](crate::operation::DeleteDetectorVersion)>
     #[allow(unused_mut)]
@@ -2948,10 +2885,6 @@ pub mod delete_entity_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEntityTypeInputOperationOutputAlias = crate::operation::DeleteEntityType;
-#[doc(hidden)]
-pub type DeleteEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEntityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEntityType`](crate::operation::DeleteEntityType)>
     #[allow(unused_mut)]
@@ -3122,10 +3055,6 @@ pub mod delete_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventInputOperationOutputAlias = crate::operation::DeleteEvent;
-#[doc(hidden)]
-pub type DeleteEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEvent`](crate::operation::DeleteEvent)>
     #[allow(unused_mut)]
@@ -3274,11 +3203,6 @@ pub mod delete_events_by_event_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventsByEventTypeInputOperationOutputAlias =
-    crate::operation::DeleteEventsByEventType;
-#[doc(hidden)]
-pub type DeleteEventsByEventTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventsByEventTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventsByEventType`](crate::operation::DeleteEventsByEventType)>
     #[allow(unused_mut)]
@@ -3422,10 +3346,6 @@ pub mod delete_event_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventTypeInputOperationOutputAlias = crate::operation::DeleteEventType;
-#[doc(hidden)]
-pub type DeleteEventTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventType`](crate::operation::DeleteEventType)>
     #[allow(unused_mut)]
@@ -3572,10 +3492,6 @@ pub mod delete_external_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteExternalModelInputOperationOutputAlias = crate::operation::DeleteExternalModel;
-#[doc(hidden)]
-pub type DeleteExternalModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExternalModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExternalModel`](crate::operation::DeleteExternalModel)>
     #[allow(unused_mut)]
@@ -3717,10 +3633,6 @@ pub mod delete_label_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLabelInputOperationOutputAlias = crate::operation::DeleteLabel;
-#[doc(hidden)]
-pub type DeleteLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLabelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLabel`](crate::operation::DeleteLabel)>
     #[allow(unused_mut)]
@@ -3879,10 +3791,6 @@ pub mod delete_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteModelInputOperationOutputAlias = crate::operation::DeleteModel;
-#[doc(hidden)]
-pub type DeleteModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
     #[allow(unused_mut)]
@@ -4056,10 +3964,6 @@ pub mod delete_model_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteModelVersionInputOperationOutputAlias = crate::operation::DeleteModelVersion;
-#[doc(hidden)]
-pub type DeleteModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModelVersion`](crate::operation::DeleteModelVersion)>
     #[allow(unused_mut)]
@@ -4201,10 +4105,6 @@ pub mod delete_outcome_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteOutcomeInputOperationOutputAlias = crate::operation::DeleteOutcome;
-#[doc(hidden)]
-pub type DeleteOutcomeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOutcomeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOutcome`](crate::operation::DeleteOutcome)>
     #[allow(unused_mut)]
@@ -4345,10 +4245,6 @@ pub mod delete_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
-#[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(unused_mut)]
@@ -4490,10 +4386,6 @@ pub mod delete_variable_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVariableInputOperationOutputAlias = crate::operation::DeleteVariable;
-#[doc(hidden)]
-pub type DeleteVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVariableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVariable`](crate::operation::DeleteVariable)>
     #[allow(unused_mut)]
@@ -4661,10 +4553,6 @@ pub mod describe_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDetectorInputOperationOutputAlias = crate::operation::DescribeDetector;
-#[doc(hidden)]
-pub type DescribeDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
     #[allow(unused_mut)]
@@ -4862,10 +4750,6 @@ pub mod describe_model_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeModelVersionsInputOperationOutputAlias = crate::operation::DescribeModelVersions;
-#[doc(hidden)]
-pub type DescribeModelVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeModelVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeModelVersions`](crate::operation::DescribeModelVersions)>
     #[allow(unused_mut)]
@@ -5035,10 +4919,6 @@ pub mod get_batch_import_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBatchImportJobsInputOperationOutputAlias = crate::operation::GetBatchImportJobs;
-#[doc(hidden)]
-pub type GetBatchImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBatchImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetBatchImportJobs`](crate::operation::GetBatchImportJobs)>
     #[allow(unused_mut)]
@@ -5206,10 +5086,6 @@ pub mod get_batch_prediction_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBatchPredictionJobsInputOperationOutputAlias = crate::operation::GetBatchPredictionJobs;
-#[doc(hidden)]
-pub type GetBatchPredictionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBatchPredictionJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetBatchPredictionJobs`](crate::operation::GetBatchPredictionJobs)>
     #[allow(unused_mut)]
@@ -5360,12 +5236,6 @@ pub mod get_delete_events_by_event_type_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeleteEventsByEventTypeStatusInputOperationOutputAlias =
-    crate::operation::GetDeleteEventsByEventTypeStatus;
-#[doc(hidden)]
-pub type GetDeleteEventsByEventTypeStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeleteEventsByEventTypeStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetDeleteEventsByEventTypeStatus`](crate::operation::GetDeleteEventsByEventTypeStatus)>
     #[allow(unused_mut)]
@@ -5532,10 +5402,6 @@ pub mod get_detectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDetectorsInputOperationOutputAlias = crate::operation::GetDetectors;
-#[doc(hidden)]
-pub type GetDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetDetectors`](crate::operation::GetDetectors)>
     #[allow(unused_mut)]
@@ -5694,10 +5560,6 @@ pub mod get_detector_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDetectorVersionInputOperationOutputAlias = crate::operation::GetDetectorVersion;
-#[doc(hidden)]
-pub type GetDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetDetectorVersion`](crate::operation::GetDetectorVersion)>
     #[allow(unused_mut)]
@@ -5865,10 +5727,6 @@ pub mod get_entity_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEntityTypesInputOperationOutputAlias = crate::operation::GetEntityTypes;
-#[doc(hidden)]
-pub type GetEntityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEntityTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetEntityTypes`](crate::operation::GetEntityTypes)>
     #[allow(unused_mut)]
@@ -6026,10 +5884,6 @@ pub mod get_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventInputOperationOutputAlias = crate::operation::GetEvent;
-#[doc(hidden)]
-pub type GetEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventInput {
     /// Consumes the builder and constructs an Operation<[`GetEvent`](crate::operation::GetEvent)>
     #[allow(unused_mut)]
@@ -6321,10 +6175,6 @@ pub mod get_event_prediction_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventPredictionInputOperationOutputAlias = crate::operation::GetEventPrediction;
-#[doc(hidden)]
-pub type GetEventPredictionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventPredictionInput {
     /// Consumes the builder and constructs an Operation<[`GetEventPrediction`](crate::operation::GetEventPrediction)>
     #[allow(unused_mut)]
@@ -6529,11 +6379,6 @@ pub mod get_event_prediction_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventPredictionMetadataInputOperationOutputAlias =
-    crate::operation::GetEventPredictionMetadata;
-#[doc(hidden)]
-pub type GetEventPredictionMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventPredictionMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetEventPredictionMetadata`](crate::operation::GetEventPredictionMetadata)>
     #[allow(unused_mut)]
@@ -6700,10 +6545,6 @@ pub mod get_event_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventTypesInputOperationOutputAlias = crate::operation::GetEventTypes;
-#[doc(hidden)]
-pub type GetEventTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetEventTypes`](crate::operation::GetEventTypes)>
     #[allow(unused_mut)]
@@ -6874,10 +6715,6 @@ pub mod get_external_models_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExternalModelsInputOperationOutputAlias = crate::operation::GetExternalModels;
-#[doc(hidden)]
-pub type GetExternalModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExternalModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetExternalModels`](crate::operation::GetExternalModels)>
     #[allow(unused_mut)]
@@ -7007,10 +6844,6 @@ pub mod get_kms_encryption_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetKmsEncryptionKeyInputOperationOutputAlias = crate::operation::GetKMSEncryptionKey;
-#[doc(hidden)]
-pub type GetKmsEncryptionKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKmsEncryptionKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetKMSEncryptionKey`](crate::operation::GetKMSEncryptionKey)>
     #[allow(unused_mut)]
@@ -7172,10 +7005,6 @@ pub mod get_labels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLabelsInputOperationOutputAlias = crate::operation::GetLabels;
-#[doc(hidden)]
-pub type GetLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLabelsInput {
     /// Consumes the builder and constructs an Operation<[`GetLabels`](crate::operation::GetLabels)>
     #[allow(unused_mut)]
@@ -7355,10 +7184,6 @@ pub mod get_models_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetModelsInputOperationOutputAlias = crate::operation::GetModels;
-#[doc(hidden)]
-pub type GetModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetModels`](crate::operation::GetModels)>
     #[allow(unused_mut)]
@@ -7530,10 +7355,6 @@ pub mod get_model_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetModelVersionInputOperationOutputAlias = crate::operation::GetModelVersion;
-#[doc(hidden)]
-pub type GetModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetModelVersion`](crate::operation::GetModelVersion)>
     #[allow(unused_mut)]
@@ -7701,10 +7522,6 @@ pub mod get_outcomes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOutcomesInputOperationOutputAlias = crate::operation::GetOutcomes;
-#[doc(hidden)]
-pub type GetOutcomesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOutcomesInput {
     /// Consumes the builder and constructs an Operation<[`GetOutcomes`](crate::operation::GetOutcomes)>
     #[allow(unused_mut)]
@@ -7895,10 +7712,6 @@ pub mod get_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRulesInputOperationOutputAlias = crate::operation::GetRules;
-#[doc(hidden)]
-pub type GetRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRulesInput {
     /// Consumes the builder and constructs an Operation<[`GetRules`](crate::operation::GetRules)>
     #[allow(unused_mut)]
@@ -8064,10 +7877,6 @@ pub mod get_variables_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVariablesInputOperationOutputAlias = crate::operation::GetVariables;
-#[doc(hidden)]
-pub type GetVariablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVariablesInput {
     /// Consumes the builder and constructs an Operation<[`GetVariables`](crate::operation::GetVariables)>
     #[allow(unused_mut)]
@@ -8298,10 +8107,6 @@ pub mod list_event_predictions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventPredictionsInputOperationOutputAlias = crate::operation::ListEventPredictions;
-#[doc(hidden)]
-pub type ListEventPredictionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventPredictionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventPredictions`](crate::operation::ListEventPredictions)>
     #[allow(unused_mut)]
@@ -8471,10 +8276,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -8668,10 +8469,6 @@ pub mod put_detector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDetectorInputOperationOutputAlias = crate::operation::PutDetector;
-#[doc(hidden)]
-pub type PutDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDetectorInput {
     /// Consumes the builder and constructs an Operation<[`PutDetector`](crate::operation::PutDetector)>
     #[allow(unused_mut)]
@@ -8848,10 +8645,6 @@ pub mod put_entity_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEntityTypeInputOperationOutputAlias = crate::operation::PutEntityType;
-#[doc(hidden)]
-pub type PutEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEntityTypeInput {
     /// Consumes the builder and constructs an Operation<[`PutEntityType`](crate::operation::PutEntityType)>
     #[allow(unused_mut)]
@@ -9106,10 +8899,6 @@ pub mod put_event_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEventTypeInputOperationOutputAlias = crate::operation::PutEventType;
-#[doc(hidden)]
-pub type PutEventTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventTypeInput {
     /// Consumes the builder and constructs an Operation<[`PutEventType`](crate::operation::PutEventType)>
     #[allow(unused_mut)]
@@ -9359,10 +9148,6 @@ pub mod put_external_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutExternalModelInputOperationOutputAlias = crate::operation::PutExternalModel;
-#[doc(hidden)]
-pub type PutExternalModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutExternalModelInput {
     /// Consumes the builder and constructs an Operation<[`PutExternalModel`](crate::operation::PutExternalModel)>
     #[allow(unused_mut)]
@@ -9509,10 +9294,6 @@ pub mod put_kms_encryption_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutKmsEncryptionKeyInputOperationOutputAlias = crate::operation::PutKMSEncryptionKey;
-#[doc(hidden)]
-pub type PutKmsEncryptionKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutKmsEncryptionKeyInput {
     /// Consumes the builder and constructs an Operation<[`PutKMSEncryptionKey`](crate::operation::PutKMSEncryptionKey)>
     #[allow(unused_mut)]
@@ -9690,10 +9471,6 @@ pub mod put_label_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLabelInputOperationOutputAlias = crate::operation::PutLabel;
-#[doc(hidden)]
-pub type PutLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLabelInput {
     /// Consumes the builder and constructs an Operation<[`PutLabel`](crate::operation::PutLabel)>
     #[allow(unused_mut)]
@@ -9867,10 +9644,6 @@ pub mod put_outcome_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutOutcomeInputOperationOutputAlias = crate::operation::PutOutcome;
-#[doc(hidden)]
-pub type PutOutcomeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutOutcomeInput {
     /// Consumes the builder and constructs an Operation<[`PutOutcome`](crate::operation::PutOutcome)>
     #[allow(unused_mut)]
@@ -10123,10 +9896,6 @@ pub mod send_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendEventInputOperationOutputAlias = crate::operation::SendEvent;
-#[doc(hidden)]
-pub type SendEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEventInput {
     /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
     #[allow(unused_mut)]
@@ -10289,10 +10058,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -10457,10 +10222,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -10716,10 +10477,6 @@ pub mod update_detector_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDetectorVersionInputOperationOutputAlias = crate::operation::UpdateDetectorVersion;
-#[doc(hidden)]
-pub type UpdateDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetectorVersion`](crate::operation::UpdateDetectorVersion)>
     #[allow(unused_mut)]
@@ -10894,12 +10651,6 @@ pub mod update_detector_version_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDetectorVersionMetadataInputOperationOutputAlias =
-    crate::operation::UpdateDetectorVersionMetadata;
-#[doc(hidden)]
-pub type UpdateDetectorVersionMetadataInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorVersionMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetectorVersionMetadata`](crate::operation::UpdateDetectorVersionMetadata)>
     #[allow(unused_mut)]
@@ -11074,11 +10825,6 @@ pub mod update_detector_version_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDetectorVersionStatusInputOperationOutputAlias =
-    crate::operation::UpdateDetectorVersionStatus;
-#[doc(hidden)]
-pub type UpdateDetectorVersionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorVersionStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetectorVersionStatus`](crate::operation::UpdateDetectorVersionStatus)>
     #[allow(unused_mut)]
@@ -11266,10 +11012,6 @@ pub mod update_event_label_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEventLabelInputOperationOutputAlias = crate::operation::UpdateEventLabel;
-#[doc(hidden)]
-pub type UpdateEventLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventLabelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventLabel`](crate::operation::UpdateEventLabel)>
     #[allow(unused_mut)]
@@ -11440,10 +11182,6 @@ pub mod update_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateModelInputOperationOutputAlias = crate::operation::UpdateModel;
-#[doc(hidden)]
-pub type UpdateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModel`](crate::operation::UpdateModel)>
     #[allow(unused_mut)]
@@ -11668,10 +11406,6 @@ pub mod update_model_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateModelVersionInputOperationOutputAlias = crate::operation::UpdateModelVersion;
-#[doc(hidden)]
-pub type UpdateModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModelVersion`](crate::operation::UpdateModelVersion)>
     #[allow(unused_mut)]
@@ -11862,11 +11596,6 @@ pub mod update_model_version_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateModelVersionStatusInputOperationOutputAlias =
-    crate::operation::UpdateModelVersionStatus;
-#[doc(hidden)]
-pub type UpdateModelVersionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelVersionStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModelVersionStatus`](crate::operation::UpdateModelVersionStatus)>
     #[allow(unused_mut)]
@@ -12024,10 +11753,6 @@ pub mod update_rule_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRuleMetadataInputOperationOutputAlias = crate::operation::UpdateRuleMetadata;
-#[doc(hidden)]
-pub type UpdateRuleMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleMetadata`](crate::operation::UpdateRuleMetadata)>
     #[allow(unused_mut)]
@@ -12249,10 +11974,6 @@ pub mod update_rule_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRuleVersionInputOperationOutputAlias = crate::operation::UpdateRuleVersion;
-#[doc(hidden)]
-pub type UpdateRuleVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleVersion`](crate::operation::UpdateRuleVersion)>
     #[allow(unused_mut)]
@@ -12438,10 +12159,6 @@ pub mod update_variable_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVariableInputOperationOutputAlias = crate::operation::UpdateVariable;
-#[doc(hidden)]
-pub type UpdateVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVariableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVariable`](crate::operation::UpdateVariable)>
     #[allow(unused_mut)]

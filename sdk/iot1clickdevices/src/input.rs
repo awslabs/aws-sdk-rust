@@ -33,11 +33,6 @@ pub mod claim_devices_by_claim_code_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ClaimDevicesByClaimCodeInputOperationOutputAlias =
-    crate::operation::ClaimDevicesByClaimCode;
-#[doc(hidden)]
-pub type ClaimDevicesByClaimCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClaimDevicesByClaimCodeInput {
     /// Consumes the builder and constructs an Operation<[`ClaimDevicesByClaimCode`](crate::operation::ClaimDevicesByClaimCode)>
     #[allow(unused_mut)]
@@ -177,10 +172,6 @@ pub mod describe_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeviceInputOperationOutputAlias = crate::operation::DescribeDevice;
-#[doc(hidden)]
-pub type DescribeDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevice`](crate::operation::DescribeDevice)>
     #[allow(unused_mut)]
@@ -351,10 +342,6 @@ pub mod finalize_device_claim_input {
         }
     }
 }
-#[doc(hidden)]
-pub type FinalizeDeviceClaimInputOperationOutputAlias = crate::operation::FinalizeDeviceClaim;
-#[doc(hidden)]
-pub type FinalizeDeviceClaimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl FinalizeDeviceClaimInput {
     /// Consumes the builder and constructs an Operation<[`FinalizeDeviceClaim`](crate::operation::FinalizeDeviceClaim)>
     #[allow(unused_mut)]
@@ -512,10 +499,6 @@ pub mod get_device_methods_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceMethodsInputOperationOutputAlias = crate::operation::GetDeviceMethods;
-#[doc(hidden)]
-pub type GetDeviceMethodsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceMethodsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceMethods`](crate::operation::GetDeviceMethods)>
     #[allow(unused_mut)]
@@ -655,10 +638,6 @@ pub mod initiate_device_claim_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitiateDeviceClaimInputOperationOutputAlias = crate::operation::InitiateDeviceClaim;
-#[doc(hidden)]
-pub type InitiateDeviceClaimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateDeviceClaimInput {
     /// Consumes the builder and constructs an Operation<[`InitiateDeviceClaim`](crate::operation::InitiateDeviceClaim)>
     #[allow(unused_mut)]
@@ -832,10 +811,6 @@ pub mod invoke_device_method_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InvokeDeviceMethodInputOperationOutputAlias = crate::operation::InvokeDeviceMethod;
-#[doc(hidden)]
-pub type InvokeDeviceMethodInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeDeviceMethodInput {
     /// Consumes the builder and constructs an Operation<[`InvokeDeviceMethod`](crate::operation::InvokeDeviceMethod)>
     #[allow(unused_mut)]
@@ -1043,10 +1018,6 @@ pub mod list_device_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeviceEventsInputOperationOutputAlias = crate::operation::ListDeviceEvents;
-#[doc(hidden)]
-pub type ListDeviceEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceEvents`](crate::operation::ListDeviceEvents)>
     #[allow(unused_mut)]
@@ -1245,10 +1216,6 @@ pub mod list_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
-#[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(unused_mut)]
@@ -1393,10 +1360,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1567,10 +1530,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1724,10 +1683,6 @@ pub mod unclaim_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnclaimDeviceInputOperationOutputAlias = crate::operation::UnclaimDevice;
-#[doc(hidden)]
-pub type UnclaimDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnclaimDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UnclaimDevice`](crate::operation::UnclaimDevice)>
     #[allow(unused_mut)]
@@ -1888,10 +1843,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2056,10 +2007,6 @@ pub mod update_device_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDeviceStateInputOperationOutputAlias = crate::operation::UpdateDeviceState;
-#[doc(hidden)]
-pub type UpdateDeviceStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceState`](crate::operation::UpdateDeviceState)>
     #[allow(unused_mut)]

@@ -69,12 +69,6 @@ pub mod attach_customer_managed_policy_reference_to_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachCustomerManagedPolicyReferenceToPermissionSetInputOperationOutputAlias =
-    crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet;
-#[doc(hidden)]
-pub type AttachCustomerManagedPolicyReferenceToPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet)>
     #[allow(unused_mut)]
@@ -251,12 +245,6 @@ pub mod attach_managed_policy_to_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachManagedPolicyToPermissionSetInputOperationOutputAlias =
-    crate::operation::AttachManagedPolicyToPermissionSet;
-#[doc(hidden)]
-pub type AttachManagedPolicyToPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AttachManagedPolicyToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`AttachManagedPolicyToPermissionSet`](crate::operation::AttachManagedPolicyToPermissionSet)>
     #[allow(unused_mut)]
@@ -470,11 +458,6 @@ pub mod create_account_assignment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAccountAssignmentInputOperationOutputAlias =
-    crate::operation::CreateAccountAssignment;
-#[doc(hidden)]
-pub type CreateAccountAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccountAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccountAssignment`](crate::operation::CreateAccountAssignment)>
     #[allow(unused_mut)]
@@ -644,12 +627,6 @@ pub mod create_instance_access_control_attribute_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInstanceAccessControlAttributeConfigurationInputOperationOutputAlias =
-    crate::operation::CreateInstanceAccessControlAttributeConfiguration;
-#[doc(hidden)]
-pub type CreateInstanceAccessControlAttributeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInstanceAccessControlAttributeConfiguration`](crate::operation::CreateInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
@@ -866,10 +843,6 @@ pub mod create_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePermissionSetInputOperationOutputAlias = crate::operation::CreatePermissionSet;
-#[doc(hidden)]
-pub type CreatePermissionSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`CreatePermissionSet`](crate::operation::CreatePermissionSet)>
     #[allow(unused_mut)]
@@ -1084,11 +1057,6 @@ pub mod delete_account_assignment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAccountAssignmentInputOperationOutputAlias =
-    crate::operation::DeleteAccountAssignment;
-#[doc(hidden)]
-pub type DeleteAccountAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccountAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccountAssignment`](crate::operation::DeleteAccountAssignment)>
     #[allow(unused_mut)]
@@ -1251,12 +1219,6 @@ pub mod delete_inline_policy_from_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInlinePolicyFromPermissionSetInputOperationOutputAlias =
-    crate::operation::DeleteInlinePolicyFromPermissionSet;
-#[doc(hidden)]
-pub type DeleteInlinePolicyFromPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInlinePolicyFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInlinePolicyFromPermissionSet`](crate::operation::DeleteInlinePolicyFromPermissionSet)>
     #[allow(unused_mut)]
@@ -1403,12 +1365,6 @@ pub mod delete_instance_access_control_attribute_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInstanceAccessControlAttributeConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteInstanceAccessControlAttributeConfiguration;
-#[doc(hidden)]
-pub type DeleteInstanceAccessControlAttributeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInstanceAccessControlAttributeConfiguration`](crate::operation::DeleteInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
@@ -1572,12 +1528,6 @@ pub mod delete_permissions_boundary_from_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePermissionsBoundaryFromPermissionSetInputOperationOutputAlias =
-    crate::operation::DeletePermissionsBoundaryFromPermissionSet;
-#[doc(hidden)]
-pub type DeletePermissionsBoundaryFromPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePermissionsBoundaryFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionsBoundaryFromPermissionSet`](crate::operation::DeletePermissionsBoundaryFromPermissionSet)>
     #[allow(unused_mut)]
@@ -1736,10 +1686,6 @@ pub mod delete_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePermissionSetInputOperationOutputAlias = crate::operation::DeletePermissionSet;
-#[doc(hidden)]
-pub type DeletePermissionSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionSet`](crate::operation::DeletePermissionSet)>
     #[allow(unused_mut)]
@@ -1903,12 +1849,6 @@ pub mod describe_account_assignment_creation_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountAssignmentCreationStatusInputOperationOutputAlias =
-    crate::operation::DescribeAccountAssignmentCreationStatus;
-#[doc(hidden)]
-pub type DescribeAccountAssignmentCreationStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAssignmentCreationStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAssignmentCreationStatus`](crate::operation::DescribeAccountAssignmentCreationStatus)>
     #[allow(unused_mut)]
@@ -2071,12 +2011,6 @@ pub mod describe_account_assignment_deletion_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountAssignmentDeletionStatusInputOperationOutputAlias =
-    crate::operation::DescribeAccountAssignmentDeletionStatus;
-#[doc(hidden)]
-pub type DescribeAccountAssignmentDeletionStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAssignmentDeletionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAssignmentDeletionStatus`](crate::operation::DescribeAccountAssignmentDeletionStatus)>
     #[allow(unused_mut)]
@@ -2223,12 +2157,6 @@ pub mod describe_instance_access_control_attribute_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInstanceAccessControlAttributeConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeInstanceAccessControlAttributeConfiguration;
-#[doc(hidden)]
-pub type DescribeInstanceAccessControlAttributeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceAccessControlAttributeConfiguration`](crate::operation::DescribeInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
@@ -2387,10 +2315,6 @@ pub mod describe_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePermissionSetInputOperationOutputAlias = crate::operation::DescribePermissionSet;
-#[doc(hidden)]
-pub type DescribePermissionSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribePermissionSet`](crate::operation::DescribePermissionSet)>
     #[allow(unused_mut)]
@@ -2556,12 +2480,6 @@ pub mod describe_permission_set_provisioning_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePermissionSetProvisioningStatusInputOperationOutputAlias =
-    crate::operation::DescribePermissionSetProvisioningStatus;
-#[doc(hidden)]
-pub type DescribePermissionSetProvisioningStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePermissionSetProvisioningStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribePermissionSetProvisioningStatus`](crate::operation::DescribePermissionSetProvisioningStatus)>
     #[allow(unused_mut)]
@@ -2742,12 +2660,6 @@ pub mod detach_customer_managed_policy_reference_from_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachCustomerManagedPolicyReferenceFromPermissionSetInputOperationOutputAlias =
-    crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet;
-#[doc(hidden)]
-pub type DetachCustomerManagedPolicyReferenceFromPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DetachCustomerManagedPolicyReferenceFromPermissionSet`](crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet)>
     #[allow(unused_mut)]
@@ -2924,12 +2836,6 @@ pub mod detach_managed_policy_from_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachManagedPolicyFromPermissionSetInputOperationOutputAlias =
-    crate::operation::DetachManagedPolicyFromPermissionSet;
-#[doc(hidden)]
-pub type DetachManagedPolicyFromPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DetachManagedPolicyFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DetachManagedPolicyFromPermissionSet`](crate::operation::DetachManagedPolicyFromPermissionSet)>
     #[allow(unused_mut)]
@@ -3089,12 +2995,6 @@ pub mod get_inline_policy_for_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInlinePolicyForPermissionSetInputOperationOutputAlias =
-    crate::operation::GetInlinePolicyForPermissionSet;
-#[doc(hidden)]
-pub type GetInlinePolicyForPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetInlinePolicyForPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`GetInlinePolicyForPermissionSet`](crate::operation::GetInlinePolicyForPermissionSet)>
     #[allow(unused_mut)]
@@ -3254,12 +3154,6 @@ pub mod get_permissions_boundary_for_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPermissionsBoundaryForPermissionSetInputOperationOutputAlias =
-    crate::operation::GetPermissionsBoundaryForPermissionSet;
-#[doc(hidden)]
-pub type GetPermissionsBoundaryForPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetPermissionsBoundaryForPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`GetPermissionsBoundaryForPermissionSet`](crate::operation::GetPermissionsBoundaryForPermissionSet)>
     #[allow(unused_mut)]
@@ -3443,12 +3337,6 @@ pub mod list_account_assignment_creation_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountAssignmentCreationStatusInputOperationOutputAlias =
-    crate::operation::ListAccountAssignmentCreationStatus;
-#[doc(hidden)]
-pub type ListAccountAssignmentCreationStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountAssignmentCreationStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssignmentCreationStatus`](crate::operation::ListAccountAssignmentCreationStatus)>
     #[allow(unused_mut)]
@@ -3632,12 +3520,6 @@ pub mod list_account_assignment_deletion_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountAssignmentDeletionStatusInputOperationOutputAlias =
-    crate::operation::ListAccountAssignmentDeletionStatus;
-#[doc(hidden)]
-pub type ListAccountAssignmentDeletionStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountAssignmentDeletionStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssignmentDeletionStatus`](crate::operation::ListAccountAssignmentDeletionStatus)>
     #[allow(unused_mut)]
@@ -3831,10 +3713,6 @@ pub mod list_account_assignments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountAssignmentsInputOperationOutputAlias = crate::operation::ListAccountAssignments;
-#[doc(hidden)]
-pub type ListAccountAssignmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountAssignmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssignments`](crate::operation::ListAccountAssignments)>
     #[allow(unused_mut)]
@@ -4036,12 +3914,6 @@ pub mod list_accounts_for_provisioned_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountsForProvisionedPermissionSetInputOperationOutputAlias =
-    crate::operation::ListAccountsForProvisionedPermissionSet;
-#[doc(hidden)]
-pub type ListAccountsForProvisionedPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountsForProvisionedPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountsForProvisionedPermissionSet`](crate::operation::ListAccountsForProvisionedPermissionSet)>
     #[allow(unused_mut)]
@@ -4227,12 +4099,6 @@ pub mod list_customer_managed_policy_references_in_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomerManagedPolicyReferencesInPermissionSetInputOperationOutputAlias =
-    crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet;
-#[doc(hidden)]
-pub type ListCustomerManagedPolicyReferencesInPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomerManagedPolicyReferencesInPermissionSet`](crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet)>
     #[allow(unused_mut)]
@@ -4389,10 +4255,6 @@ pub mod list_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInstancesInputOperationOutputAlias = crate::operation::ListInstances;
-#[doc(hidden)]
-pub type ListInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstances`](crate::operation::ListInstances)>
     #[allow(unused_mut)]
@@ -4577,12 +4439,6 @@ pub mod list_managed_policies_in_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListManagedPoliciesInPermissionSetInputOperationOutputAlias =
-    crate::operation::ListManagedPoliciesInPermissionSet;
-#[doc(hidden)]
-pub type ListManagedPoliciesInPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedPoliciesInPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedPoliciesInPermissionSet`](crate::operation::ListManagedPoliciesInPermissionSet)>
     #[allow(unused_mut)]
@@ -4766,12 +4622,6 @@ pub mod list_permission_set_provisioning_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionSetProvisioningStatusInputOperationOutputAlias =
-    crate::operation::ListPermissionSetProvisioningStatus;
-#[doc(hidden)]
-pub type ListPermissionSetProvisioningStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionSetProvisioningStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionSetProvisioningStatus`](crate::operation::ListPermissionSetProvisioningStatus)>
     #[allow(unused_mut)]
@@ -4938,10 +4788,6 @@ pub mod list_permission_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionSetsInputOperationOutputAlias = crate::operation::ListPermissionSets;
-#[doc(hidden)]
-pub type ListPermissionSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionSets`](crate::operation::ListPermissionSets)>
     #[allow(unused_mut)]
@@ -5138,12 +4984,6 @@ pub mod list_permission_sets_provisioned_to_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionSetsProvisionedToAccountInputOperationOutputAlias =
-    crate::operation::ListPermissionSetsProvisionedToAccount;
-#[doc(hidden)]
-pub type ListPermissionSetsProvisionedToAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionSetsProvisionedToAccountInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionSetsProvisionedToAccount`](crate::operation::ListPermissionSetsProvisionedToAccount)>
     #[allow(unused_mut)]
@@ -5310,10 +5150,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5501,10 +5337,6 @@ pub mod provision_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ProvisionPermissionSetInputOperationOutputAlias = crate::operation::ProvisionPermissionSet;
-#[doc(hidden)]
-pub type ProvisionPermissionSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvisionPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionPermissionSet`](crate::operation::ProvisionPermissionSet)>
     #[allow(unused_mut)]
@@ -5682,12 +5514,6 @@ pub mod put_inline_policy_to_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutInlinePolicyToPermissionSetInputOperationOutputAlias =
-    crate::operation::PutInlinePolicyToPermissionSet;
-#[doc(hidden)]
-pub type PutInlinePolicyToPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutInlinePolicyToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`PutInlinePolicyToPermissionSet`](crate::operation::PutInlinePolicyToPermissionSet)>
     #[allow(unused_mut)]
@@ -5862,12 +5688,6 @@ pub mod put_permissions_boundary_to_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPermissionsBoundaryToPermissionSetInputOperationOutputAlias =
-    crate::operation::PutPermissionsBoundaryToPermissionSet;
-#[doc(hidden)]
-pub type PutPermissionsBoundaryToPermissionSetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutPermissionsBoundaryToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`PutPermissionsBoundaryToPermissionSet`](crate::operation::PutPermissionsBoundaryToPermissionSet)>
     #[allow(unused_mut)]
@@ -6043,10 +5863,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6223,10 +6039,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6394,12 +6206,6 @@ pub mod update_instance_access_control_attribute_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInstanceAccessControlAttributeConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateInstanceAccessControlAttributeConfiguration;
-#[doc(hidden)]
-pub type UpdateInstanceAccessControlAttributeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstanceAccessControlAttributeConfiguration`](crate::operation::UpdateInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
@@ -6598,10 +6404,6 @@ pub mod update_permission_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePermissionSetInputOperationOutputAlias = crate::operation::UpdatePermissionSet;
-#[doc(hidden)]
-pub type UpdatePermissionSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePermissionSet`](crate::operation::UpdatePermissionSet)>
     #[allow(unused_mut)]

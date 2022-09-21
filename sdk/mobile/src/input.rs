@@ -67,10 +67,6 @@ pub mod create_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
-#[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(unused_mut)]
@@ -226,10 +222,6 @@ pub mod delete_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
-#[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(unused_mut)]
@@ -369,10 +361,6 @@ pub mod describe_bundle_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBundleInputOperationOutputAlias = crate::operation::DescribeBundle;
-#[doc(hidden)]
-pub type DescribeBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBundleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBundle`](crate::operation::DescribeBundle)>
     #[allow(unused_mut)]
@@ -524,10 +512,6 @@ pub mod describe_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
-#[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(unused_mut)]
@@ -694,10 +678,6 @@ pub mod export_bundle_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportBundleInputOperationOutputAlias = crate::operation::ExportBundle;
-#[doc(hidden)]
-pub type ExportBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportBundleInput {
     /// Consumes the builder and constructs an Operation<[`ExportBundle`](crate::operation::ExportBundle)>
     #[allow(unused_mut)]
@@ -851,10 +831,6 @@ pub mod export_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportProjectInputOperationOutputAlias = crate::operation::ExportProject;
-#[doc(hidden)]
-pub type ExportProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportProjectInput {
     /// Consumes the builder and constructs an Operation<[`ExportProject`](crate::operation::ExportProject)>
     #[allow(unused_mut)]
@@ -1006,10 +982,6 @@ pub mod list_bundles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBundlesInputOperationOutputAlias = crate::operation::ListBundles;
-#[doc(hidden)]
-pub type ListBundlesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBundlesInput {
     /// Consumes the builder and constructs an Operation<[`ListBundles`](crate::operation::ListBundles)>
     #[allow(unused_mut)]
@@ -1163,10 +1135,6 @@ pub mod list_projects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
-#[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(unused_mut)]
@@ -1320,10 +1288,6 @@ pub mod update_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
-#[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(unused_mut)]

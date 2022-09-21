@@ -54,11 +54,6 @@ pub mod accept_reserved_node_exchange_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptReservedNodeExchangeInputOperationOutputAlias =
-    crate::operation::AcceptReservedNodeExchange;
-#[doc(hidden)]
-pub type AcceptReservedNodeExchangeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptReservedNodeExchangeInput {
     /// Consumes the builder and constructs an Operation<[`AcceptReservedNodeExchange`](crate::operation::AcceptReservedNodeExchange)>
     #[allow(unused_mut)]
@@ -237,10 +232,6 @@ pub mod add_partner_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddPartnerInputOperationOutputAlias = crate::operation::AddPartner;
-#[doc(hidden)]
-pub type AddPartnerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddPartnerInput {
     /// Consumes the builder and constructs an Operation<[`AddPartner`](crate::operation::AddPartner)>
     #[allow(unused_mut)]
@@ -423,11 +414,6 @@ pub mod associate_data_share_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateDataShareConsumerInputOperationOutputAlias =
-    crate::operation::AssociateDataShareConsumer;
-#[doc(hidden)]
-pub type AssociateDataShareConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDataShareConsumerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDataShareConsumer`](crate::operation::AssociateDataShareConsumer)>
     #[allow(unused_mut)]
@@ -620,12 +606,6 @@ pub mod authorize_cluster_security_group_ingress_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AuthorizeClusterSecurityGroupIngressInputOperationOutputAlias =
-    crate::operation::AuthorizeClusterSecurityGroupIngress;
-#[doc(hidden)]
-pub type AuthorizeClusterSecurityGroupIngressInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AuthorizeClusterSecurityGroupIngressInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeClusterSecurityGroupIngress`](crate::operation::AuthorizeClusterSecurityGroupIngress)>
     #[allow(unused_mut)]
@@ -781,10 +761,6 @@ pub mod authorize_data_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AuthorizeDataShareInputOperationOutputAlias = crate::operation::AuthorizeDataShare;
-#[doc(hidden)]
-pub type AuthorizeDataShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AuthorizeDataShareInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeDataShare`](crate::operation::AuthorizeDataShare)>
     #[allow(unused_mut)]
@@ -961,11 +937,6 @@ pub mod authorize_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AuthorizeEndpointAccessInputOperationOutputAlias =
-    crate::operation::AuthorizeEndpointAccess;
-#[doc(hidden)]
-pub type AuthorizeEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AuthorizeEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeEndpointAccess`](crate::operation::AuthorizeEndpointAccess)>
     #[allow(unused_mut)]
@@ -1161,11 +1132,6 @@ pub mod authorize_snapshot_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AuthorizeSnapshotAccessInputOperationOutputAlias =
-    crate::operation::AuthorizeSnapshotAccess;
-#[doc(hidden)]
-pub type AuthorizeSnapshotAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AuthorizeSnapshotAccessInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeSnapshotAccess`](crate::operation::AuthorizeSnapshotAccess)>
     #[allow(unused_mut)]
@@ -1318,11 +1284,6 @@ pub mod batch_delete_cluster_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteClusterSnapshotsInputOperationOutputAlias =
-    crate::operation::BatchDeleteClusterSnapshots;
-#[doc(hidden)]
-pub type BatchDeleteClusterSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteClusterSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteClusterSnapshots`](crate::operation::BatchDeleteClusterSnapshots)>
     #[allow(unused_mut)]
@@ -1503,11 +1464,6 @@ pub mod batch_modify_cluster_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchModifyClusterSnapshotsInputOperationOutputAlias =
-    crate::operation::BatchModifyClusterSnapshots;
-#[doc(hidden)]
-pub type BatchModifyClusterSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchModifyClusterSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`BatchModifyClusterSnapshots`](crate::operation::BatchModifyClusterSnapshots)>
     #[allow(unused_mut)]
@@ -1648,10 +1604,6 @@ pub mod cancel_resize_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelResizeInputOperationOutputAlias = crate::operation::CancelResize;
-#[doc(hidden)]
-pub type CancelResizeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelResizeInput {
     /// Consumes the builder and constructs an Operation<[`CancelResize`](crate::operation::CancelResize)>
     #[allow(unused_mut)]
@@ -1877,10 +1829,6 @@ pub mod copy_cluster_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CopyClusterSnapshotInputOperationOutputAlias = crate::operation::CopyClusterSnapshot;
-#[doc(hidden)]
-pub type CopyClusterSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CopyClusterSnapshot`](crate::operation::CopyClusterSnapshot)>
     #[allow(unused_mut)]
@@ -2045,11 +1993,6 @@ pub mod create_authentication_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAuthenticationProfileInputOperationOutputAlias =
-    crate::operation::CreateAuthenticationProfile;
-#[doc(hidden)]
-pub type CreateAuthenticationProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAuthenticationProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateAuthenticationProfile`](crate::operation::CreateAuthenticationProfile)>
     #[allow(unused_mut)]
@@ -2857,10 +2800,6 @@ pub mod create_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
-#[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(unused_mut)]
@@ -3072,11 +3011,6 @@ pub mod create_cluster_parameter_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterParameterGroupInputOperationOutputAlias =
-    crate::operation::CreateClusterParameterGroup;
-#[doc(hidden)]
-pub type CreateClusterParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateClusterParameterGroup`](crate::operation::CreateClusterParameterGroup)>
     #[allow(unused_mut)]
@@ -3269,11 +3203,6 @@ pub mod create_cluster_security_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterSecurityGroupInputOperationOutputAlias =
-    crate::operation::CreateClusterSecurityGroup;
-#[doc(hidden)]
-pub type CreateClusterSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateClusterSecurityGroup`](crate::operation::CreateClusterSecurityGroup)>
     #[allow(unused_mut)]
@@ -3485,10 +3414,6 @@ pub mod create_cluster_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterSnapshotInputOperationOutputAlias = crate::operation::CreateClusterSnapshot;
-#[doc(hidden)]
-pub type CreateClusterSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateClusterSnapshot`](crate::operation::CreateClusterSnapshot)>
     #[allow(unused_mut)]
@@ -3702,11 +3627,6 @@ pub mod create_cluster_subnet_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterSubnetGroupInputOperationOutputAlias =
-    crate::operation::CreateClusterSubnetGroup;
-#[doc(hidden)]
-pub type CreateClusterSubnetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateClusterSubnetGroup`](crate::operation::CreateClusterSubnetGroup)>
     #[allow(unused_mut)]
@@ -3918,10 +3838,6 @@ pub mod create_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEndpointAccessInputOperationOutputAlias = crate::operation::CreateEndpointAccess;
-#[doc(hidden)]
-pub type CreateEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpointAccess`](crate::operation::CreateEndpointAccess)>
     #[allow(unused_mut)]
@@ -4205,11 +4121,6 @@ pub mod create_event_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEventSubscriptionInputOperationOutputAlias =
-    crate::operation::CreateEventSubscription;
-#[doc(hidden)]
-pub type CreateEventSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventSubscription`](crate::operation::CreateEventSubscription)>
     #[allow(unused_mut)]
@@ -4379,11 +4290,6 @@ pub mod create_hsm_client_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHsmClientCertificateInputOperationOutputAlias =
-    crate::operation::CreateHsmClientCertificate;
-#[doc(hidden)]
-pub type CreateHsmClientCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHsmClientCertificateInput {
     /// Consumes the builder and constructs an Operation<[`CreateHsmClientCertificate`](crate::operation::CreateHsmClientCertificate)>
     #[allow(unused_mut)]
@@ -4623,10 +4529,6 @@ pub mod create_hsm_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHsmConfigurationInputOperationOutputAlias = crate::operation::CreateHsmConfiguration;
-#[doc(hidden)]
-pub type CreateHsmConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHsmConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateHsmConfiguration`](crate::operation::CreateHsmConfiguration)>
     #[allow(unused_mut)]
@@ -4869,10 +4771,6 @@ pub mod create_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateScheduledActionInputOperationOutputAlias = crate::operation::CreateScheduledAction;
-#[doc(hidden)]
-pub type CreateScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`CreateScheduledAction`](crate::operation::CreateScheduledAction)>
     #[allow(unused_mut)]
@@ -5067,11 +4965,6 @@ pub mod create_snapshot_copy_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSnapshotCopyGrantInputOperationOutputAlias =
-    crate::operation::CreateSnapshotCopyGrant;
-#[doc(hidden)]
-pub type CreateSnapshotCopyGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotCopyGrantInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshotCopyGrant`](crate::operation::CreateSnapshotCopyGrant)>
     #[allow(unused_mut)]
@@ -5296,10 +5189,6 @@ pub mod create_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSnapshotScheduleInputOperationOutputAlias = crate::operation::CreateSnapshotSchedule;
-#[doc(hidden)]
-pub type CreateSnapshotScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshotSchedule`](crate::operation::CreateSnapshotSchedule)>
     #[allow(unused_mut)]
@@ -5463,10 +5352,6 @@ pub mod create_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
-#[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(unused_mut)]
@@ -5701,10 +5586,6 @@ pub mod create_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUsageLimitInputOperationOutputAlias = crate::operation::CreateUsageLimit;
-#[doc(hidden)]
-pub type CreateUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`CreateUsageLimit`](crate::operation::CreateUsageLimit)>
     #[allow(unused_mut)]
@@ -5861,10 +5742,6 @@ pub mod deauthorize_data_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeauthorizeDataShareInputOperationOutputAlias = crate::operation::DeauthorizeDataShare;
-#[doc(hidden)]
-pub type DeauthorizeDataShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeauthorizeDataShareInput {
     /// Consumes the builder and constructs an Operation<[`DeauthorizeDataShare`](crate::operation::DeauthorizeDataShare)>
     #[allow(unused_mut)]
@@ -6013,11 +5890,6 @@ pub mod delete_authentication_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAuthenticationProfileInputOperationOutputAlias =
-    crate::operation::DeleteAuthenticationProfile;
-#[doc(hidden)]
-pub type DeleteAuthenticationProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAuthenticationProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAuthenticationProfile`](crate::operation::DeleteAuthenticationProfile)>
     #[allow(unused_mut)]
@@ -6240,10 +6112,6 @@ pub mod delete_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
-#[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(unused_mut)]
@@ -6397,11 +6265,6 @@ pub mod delete_cluster_parameter_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterParameterGroupInputOperationOutputAlias =
-    crate::operation::DeleteClusterParameterGroup;
-#[doc(hidden)]
-pub type DeleteClusterParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteClusterParameterGroup`](crate::operation::DeleteClusterParameterGroup)>
     #[allow(unused_mut)]
@@ -6547,11 +6410,6 @@ pub mod delete_cluster_security_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterSecurityGroupInputOperationOutputAlias =
-    crate::operation::DeleteClusterSecurityGroup;
-#[doc(hidden)]
-pub type DeleteClusterSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteClusterSecurityGroup`](crate::operation::DeleteClusterSecurityGroup)>
     #[allow(unused_mut)]
@@ -6714,10 +6572,6 @@ pub mod delete_cluster_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterSnapshotInputOperationOutputAlias = crate::operation::DeleteClusterSnapshot;
-#[doc(hidden)]
-pub type DeleteClusterSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteClusterSnapshot`](crate::operation::DeleteClusterSnapshot)>
     #[allow(unused_mut)]
@@ -6863,11 +6717,6 @@ pub mod delete_cluster_subnet_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterSubnetGroupInputOperationOutputAlias =
-    crate::operation::DeleteClusterSubnetGroup;
-#[doc(hidden)]
-pub type DeleteClusterSubnetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteClusterSubnetGroup`](crate::operation::DeleteClusterSubnetGroup)>
     #[allow(unused_mut)]
@@ -7011,10 +6860,6 @@ pub mod delete_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEndpointAccessInputOperationOutputAlias = crate::operation::DeleteEndpointAccess;
-#[doc(hidden)]
-pub type DeleteEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpointAccess`](crate::operation::DeleteEndpointAccess)>
     #[allow(unused_mut)]
@@ -7160,11 +7005,6 @@ pub mod delete_event_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventSubscriptionInputOperationOutputAlias =
-    crate::operation::DeleteEventSubscription;
-#[doc(hidden)]
-pub type DeleteEventSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventSubscription`](crate::operation::DeleteEventSubscription)>
     #[allow(unused_mut)]
@@ -7313,11 +7153,6 @@ pub mod delete_hsm_client_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteHsmClientCertificateInputOperationOutputAlias =
-    crate::operation::DeleteHsmClientCertificate;
-#[doc(hidden)]
-pub type DeleteHsmClientCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHsmClientCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHsmClientCertificate`](crate::operation::DeleteHsmClientCertificate)>
     #[allow(unused_mut)]
@@ -7461,10 +7296,6 @@ pub mod delete_hsm_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteHsmConfigurationInputOperationOutputAlias = crate::operation::DeleteHsmConfiguration;
-#[doc(hidden)]
-pub type DeleteHsmConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHsmConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHsmConfiguration`](crate::operation::DeleteHsmConfiguration)>
     #[allow(unused_mut)]
@@ -7647,10 +7478,6 @@ pub mod delete_partner_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePartnerInputOperationOutputAlias = crate::operation::DeletePartner;
-#[doc(hidden)]
-pub type DeletePartnerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePartnerInput {
     /// Consumes the builder and constructs an Operation<[`DeletePartner`](crate::operation::DeletePartner)>
     #[allow(unused_mut)]
@@ -7792,10 +7619,6 @@ pub mod delete_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScheduledActionInputOperationOutputAlias = crate::operation::DeleteScheduledAction;
-#[doc(hidden)]
-pub type DeleteScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScheduledAction`](crate::operation::DeleteScheduledAction)>
     #[allow(unused_mut)]
@@ -7941,11 +7764,6 @@ pub mod delete_snapshot_copy_grant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSnapshotCopyGrantInputOperationOutputAlias =
-    crate::operation::DeleteSnapshotCopyGrant;
-#[doc(hidden)]
-pub type DeleteSnapshotCopyGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSnapshotCopyGrantInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSnapshotCopyGrant`](crate::operation::DeleteSnapshotCopyGrant)>
     #[allow(unused_mut)]
@@ -8089,10 +7907,6 @@ pub mod delete_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSnapshotScheduleInputOperationOutputAlias = crate::operation::DeleteSnapshotSchedule;
-#[doc(hidden)]
-pub type DeleteSnapshotScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSnapshotSchedule`](crate::operation::DeleteSnapshotSchedule)>
     #[allow(unused_mut)]
@@ -8256,10 +8070,6 @@ pub mod delete_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
-#[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(unused_mut)]
@@ -8401,10 +8211,6 @@ pub mod delete_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUsageLimitInputOperationOutputAlias = crate::operation::DeleteUsageLimit;
-#[doc(hidden)]
-pub type DeleteUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUsageLimit`](crate::operation::DeleteUsageLimit)>
     #[allow(unused_mut)]
@@ -8554,11 +8360,6 @@ pub mod describe_account_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountAttributesInputOperationOutputAlias =
-    crate::operation::DescribeAccountAttributes;
-#[doc(hidden)]
-pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAttributes`](crate::operation::DescribeAccountAttributes)>
     #[allow(unused_mut)]
@@ -8707,12 +8508,6 @@ pub mod describe_authentication_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAuthenticationProfilesInputOperationOutputAlias =
-    crate::operation::DescribeAuthenticationProfiles;
-#[doc(hidden)]
-pub type DescribeAuthenticationProfilesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuthenticationProfilesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuthenticationProfiles`](crate::operation::DescribeAuthenticationProfiles)>
     #[allow(unused_mut)]
@@ -8885,11 +8680,6 @@ pub mod describe_cluster_db_revisions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterDbRevisionsInputOperationOutputAlias =
-    crate::operation::DescribeClusterDbRevisions;
-#[doc(hidden)]
-pub type DescribeClusterDbRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterDbRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterDbRevisions`](crate::operation::DescribeClusterDbRevisions)>
     #[allow(unused_mut)]
@@ -9102,12 +8892,6 @@ pub mod describe_cluster_parameter_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterParameterGroupsInputOperationOutputAlias =
-    crate::operation::DescribeClusterParameterGroups;
-#[doc(hidden)]
-pub type DescribeClusterParameterGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterParameterGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterParameterGroups`](crate::operation::DescribeClusterParameterGroups)>
     #[allow(unused_mut)]
@@ -9294,11 +9078,6 @@ pub mod describe_cluster_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterParametersInputOperationOutputAlias =
-    crate::operation::DescribeClusterParameters;
-#[doc(hidden)]
-pub type DescribeClusterParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterParameters`](crate::operation::DescribeClusterParameters)>
     #[allow(unused_mut)]
@@ -9516,10 +9295,6 @@ pub mod describe_clusters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClustersInputOperationOutputAlias = crate::operation::DescribeClusters;
-#[doc(hidden)]
-pub type DescribeClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusters`](crate::operation::DescribeClusters)>
     #[allow(unused_mut)]
@@ -9740,12 +9515,6 @@ pub mod describe_cluster_security_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterSecurityGroupsInputOperationOutputAlias =
-    crate::operation::DescribeClusterSecurityGroups;
-#[doc(hidden)]
-pub type DescribeClusterSecurityGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterSecurityGroups`](crate::operation::DescribeClusterSecurityGroups)>
     #[allow(unused_mut)]
@@ -10097,11 +9866,6 @@ pub mod describe_cluster_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterSnapshotsInputOperationOutputAlias =
-    crate::operation::DescribeClusterSnapshots;
-#[doc(hidden)]
-pub type DescribeClusterSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterSnapshots`](crate::operation::DescribeClusterSnapshots)>
     #[allow(unused_mut)]
@@ -10317,11 +10081,6 @@ pub mod describe_cluster_subnet_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterSubnetGroupsInputOperationOutputAlias =
-    crate::operation::DescribeClusterSubnetGroups;
-#[doc(hidden)]
-pub type DescribeClusterSubnetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterSubnetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterSubnetGroups`](crate::operation::DescribeClusterSubnetGroups)>
     #[allow(unused_mut)]
@@ -10486,10 +10245,6 @@ pub mod describe_cluster_tracks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterTracksInputOperationOutputAlias = crate::operation::DescribeClusterTracks;
-#[doc(hidden)]
-pub type DescribeClusterTracksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterTracksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterTracks`](crate::operation::DescribeClusterTracks)>
     #[allow(unused_mut)]
@@ -10695,11 +10450,6 @@ pub mod describe_cluster_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClusterVersionsInputOperationOutputAlias =
-    crate::operation::DescribeClusterVersions;
-#[doc(hidden)]
-pub type DescribeClusterVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusterVersions`](crate::operation::DescribeClusterVersions)>
     #[allow(unused_mut)]
@@ -10867,10 +10617,6 @@ pub mod describe_data_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDataSharesInputOperationOutputAlias = crate::operation::DescribeDataShares;
-#[doc(hidden)]
-pub type DescribeDataSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataSharesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataShares`](crate::operation::DescribeDataShares)>
     #[allow(unused_mut)]
@@ -11050,12 +10796,6 @@ pub mod describe_data_shares_for_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDataSharesForConsumerInputOperationOutputAlias =
-    crate::operation::DescribeDataSharesForConsumer;
-#[doc(hidden)]
-pub type DescribeDataSharesForConsumerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataSharesForConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataSharesForConsumer`](crate::operation::DescribeDataSharesForConsumer)>
     #[allow(unused_mut)]
@@ -11234,12 +10974,6 @@ pub mod describe_data_shares_for_producer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDataSharesForProducerInputOperationOutputAlias =
-    crate::operation::DescribeDataSharesForProducer;
-#[doc(hidden)]
-pub type DescribeDataSharesForProducerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataSharesForProducerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataSharesForProducer`](crate::operation::DescribeDataSharesForProducer)>
     #[allow(unused_mut)]
@@ -11410,12 +11144,6 @@ pub mod describe_default_cluster_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDefaultClusterParametersInputOperationOutputAlias =
-    crate::operation::DescribeDefaultClusterParameters;
-#[doc(hidden)]
-pub type DescribeDefaultClusterParametersInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDefaultClusterParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDefaultClusterParameters`](crate::operation::DescribeDefaultClusterParameters)>
     #[allow(unused_mut)]
@@ -11622,10 +11350,6 @@ pub mod describe_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEndpointAccessInputOperationOutputAlias = crate::operation::DescribeEndpointAccess;
-#[doc(hidden)]
-pub type DescribeEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointAccess`](crate::operation::DescribeEndpointAccess)>
     #[allow(unused_mut)]
@@ -11819,12 +11543,6 @@ pub mod describe_endpoint_authorization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEndpointAuthorizationInputOperationOutputAlias =
-    crate::operation::DescribeEndpointAuthorization;
-#[doc(hidden)]
-pub type DescribeEndpointAuthorizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointAuthorization`](crate::operation::DescribeEndpointAuthorization)>
     #[allow(unused_mut)]
@@ -11966,11 +11684,6 @@ pub mod describe_event_categories_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventCategoriesInputOperationOutputAlias =
-    crate::operation::DescribeEventCategories;
-#[doc(hidden)]
-pub type DescribeEventCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventCategories`](crate::operation::DescribeEventCategories)>
     #[allow(unused_mut)]
@@ -12237,10 +11950,6 @@ pub mod describe_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventsInputOperationOutputAlias = crate::operation::DescribeEvents;
-#[doc(hidden)]
-pub type DescribeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(unused_mut)]
@@ -12454,11 +12163,6 @@ pub mod describe_event_subscriptions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventSubscriptionsInputOperationOutputAlias =
-    crate::operation::DescribeEventSubscriptions;
-#[doc(hidden)]
-pub type DescribeEventSubscriptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventSubscriptions`](crate::operation::DescribeEventSubscriptions)>
     #[allow(unused_mut)]
@@ -12677,12 +12381,6 @@ pub mod describe_hsm_client_certificates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeHsmClientCertificatesInputOperationOutputAlias =
-    crate::operation::DescribeHsmClientCertificates;
-#[doc(hidden)]
-pub type DescribeHsmClientCertificatesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHsmClientCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHsmClientCertificates`](crate::operation::DescribeHsmClientCertificates)>
     #[allow(unused_mut)]
@@ -12898,11 +12596,6 @@ pub mod describe_hsm_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeHsmConfigurationsInputOperationOutputAlias =
-    crate::operation::DescribeHsmConfigurations;
-#[doc(hidden)]
-pub type DescribeHsmConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHsmConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHsmConfigurations`](crate::operation::DescribeHsmConfigurations)>
     #[allow(unused_mut)]
@@ -13048,10 +12741,6 @@ pub mod describe_logging_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoggingStatusInputOperationOutputAlias = crate::operation::DescribeLoggingStatus;
-#[doc(hidden)]
-pub type DescribeLoggingStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoggingStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingStatus`](crate::operation::DescribeLoggingStatus)>
     #[allow(unused_mut)]
@@ -13304,12 +12993,6 @@ pub mod describe_node_configuration_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNodeConfigurationOptionsInputOperationOutputAlias =
-    crate::operation::DescribeNodeConfigurationOptions;
-#[doc(hidden)]
-pub type DescribeNodeConfigurationOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNodeConfigurationOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNodeConfigurationOptions`](crate::operation::DescribeNodeConfigurationOptions)>
     #[allow(unused_mut)]
@@ -13496,12 +13179,6 @@ pub mod describe_orderable_cluster_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOrderableClusterOptionsInputOperationOutputAlias =
-    crate::operation::DescribeOrderableClusterOptions;
-#[doc(hidden)]
-pub type DescribeOrderableClusterOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrderableClusterOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrderableClusterOptions`](crate::operation::DescribeOrderableClusterOptions)>
     #[allow(unused_mut)]
@@ -13681,10 +13358,6 @@ pub mod describe_partners_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePartnersInputOperationOutputAlias = crate::operation::DescribePartners;
-#[doc(hidden)]
-pub type DescribePartnersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePartnersInput {
     /// Consumes the builder and constructs an Operation<[`DescribePartners`](crate::operation::DescribePartners)>
     #[allow(unused_mut)]
@@ -13870,12 +13543,6 @@ pub mod describe_reserved_node_exchange_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservedNodeExchangeStatusInputOperationOutputAlias =
-    crate::operation::DescribeReservedNodeExchangeStatus;
-#[doc(hidden)]
-pub type DescribeReservedNodeExchangeStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedNodeExchangeStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedNodeExchangeStatus`](crate::operation::DescribeReservedNodeExchangeStatus)>
     #[allow(unused_mut)]
@@ -14046,12 +13713,6 @@ pub mod describe_reserved_node_offerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservedNodeOfferingsInputOperationOutputAlias =
-    crate::operation::DescribeReservedNodeOfferings;
-#[doc(hidden)]
-pub type DescribeReservedNodeOfferingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedNodeOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedNodeOfferings`](crate::operation::DescribeReservedNodeOfferings)>
     #[allow(unused_mut)]
@@ -14220,10 +13881,6 @@ pub mod describe_reserved_nodes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservedNodesInputOperationOutputAlias = crate::operation::DescribeReservedNodes;
-#[doc(hidden)]
-pub type DescribeReservedNodesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedNodesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedNodes`](crate::operation::DescribeReservedNodes)>
     #[allow(unused_mut)]
@@ -14369,10 +14026,6 @@ pub mod describe_resize_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeResizeInputOperationOutputAlias = crate::operation::DescribeResize;
-#[doc(hidden)]
-pub type DescribeResizeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResizeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResize`](crate::operation::DescribeResize)>
     #[allow(unused_mut)]
@@ -14625,11 +14278,6 @@ pub mod describe_scheduled_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationOutputAlias =
-    crate::operation::DescribeScheduledActions;
-#[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduledActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScheduledActions`](crate::operation::DescribeScheduledActions)>
     #[allow(unused_mut)]
@@ -14847,11 +14495,6 @@ pub mod describe_snapshot_copy_grants_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSnapshotCopyGrantsInputOperationOutputAlias =
-    crate::operation::DescribeSnapshotCopyGrants;
-#[doc(hidden)]
-pub type DescribeSnapshotCopyGrantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSnapshotCopyGrantsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSnapshotCopyGrants`](crate::operation::DescribeSnapshotCopyGrants)>
     #[allow(unused_mut)]
@@ -15075,11 +14718,6 @@ pub mod describe_snapshot_schedules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSnapshotSchedulesInputOperationOutputAlias =
-    crate::operation::DescribeSnapshotSchedules;
-#[doc(hidden)]
-pub type DescribeSnapshotSchedulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSnapshotSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSnapshotSchedules`](crate::operation::DescribeSnapshotSchedules)>
     #[allow(unused_mut)]
@@ -15206,10 +14844,6 @@ pub mod describe_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStorageInputOperationOutputAlias = crate::operation::DescribeStorage;
-#[doc(hidden)]
-pub type DescribeStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStorageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStorage`](crate::operation::DescribeStorage)>
     #[allow(unused_mut)]
@@ -15385,11 +15019,6 @@ pub mod describe_table_restore_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTableRestoreStatusInputOperationOutputAlias =
-    crate::operation::DescribeTableRestoreStatus;
-#[doc(hidden)]
-pub type DescribeTableRestoreStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableRestoreStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableRestoreStatus`](crate::operation::DescribeTableRestoreStatus)>
     #[allow(unused_mut)]
@@ -15637,10 +15266,6 @@ pub mod describe_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
-#[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
@@ -15882,10 +15507,6 @@ pub mod describe_usage_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUsageLimitsInputOperationOutputAlias = crate::operation::DescribeUsageLimits;
-#[doc(hidden)]
-pub type DescribeUsageLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUsageLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUsageLimits`](crate::operation::DescribeUsageLimits)>
     #[allow(unused_mut)]
@@ -16029,10 +15650,6 @@ pub mod disable_logging_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableLoggingInputOperationOutputAlias = crate::operation::DisableLogging;
-#[doc(hidden)]
-pub type DisableLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableLoggingInput {
     /// Consumes the builder and constructs an Operation<[`DisableLogging`](crate::operation::DisableLogging)>
     #[allow(unused_mut)]
@@ -16176,10 +15793,6 @@ pub mod disable_snapshot_copy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableSnapshotCopyInputOperationOutputAlias = crate::operation::DisableSnapshotCopy;
-#[doc(hidden)]
-pub type DisableSnapshotCopyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableSnapshotCopyInput {
     /// Consumes the builder and constructs an Operation<[`DisableSnapshotCopy`](crate::operation::DisableSnapshotCopy)>
     #[allow(unused_mut)]
@@ -16362,12 +15975,6 @@ pub mod disassociate_data_share_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateDataShareConsumerInputOperationOutputAlias =
-    crate::operation::DisassociateDataShareConsumer;
-#[doc(hidden)]
-pub type DisassociateDataShareConsumerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDataShareConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDataShareConsumer`](crate::operation::DisassociateDataShareConsumer)>
     #[allow(unused_mut)]
@@ -16607,10 +16214,6 @@ pub mod enable_logging_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableLoggingInputOperationOutputAlias = crate::operation::EnableLogging;
-#[doc(hidden)]
-pub type EnableLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableLoggingInput {
     /// Consumes the builder and constructs an Operation<[`EnableLogging`](crate::operation::EnableLogging)>
     #[allow(unused_mut)]
@@ -16819,10 +16422,6 @@ pub mod enable_snapshot_copy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableSnapshotCopyInputOperationOutputAlias = crate::operation::EnableSnapshotCopy;
-#[doc(hidden)]
-pub type EnableSnapshotCopyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableSnapshotCopyInput {
     /// Consumes the builder and constructs an Operation<[`EnableSnapshotCopy`](crate::operation::EnableSnapshotCopy)>
     #[allow(unused_mut)]
@@ -17087,10 +16686,6 @@ pub mod get_cluster_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetClusterCredentialsInputOperationOutputAlias = crate::operation::GetClusterCredentials;
-#[doc(hidden)]
-pub type GetClusterCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetClusterCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetClusterCredentials`](crate::operation::GetClusterCredentials)>
     #[allow(unused_mut)]
@@ -17262,12 +16857,6 @@ pub mod get_cluster_credentials_with_iam_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetClusterCredentialsWithIamInputOperationOutputAlias =
-    crate::operation::GetClusterCredentialsWithIAM;
-#[doc(hidden)]
-pub type GetClusterCredentialsWithIamInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetClusterCredentialsWithIamInput {
     /// Consumes the builder and constructs an Operation<[`GetClusterCredentialsWithIAM`](crate::operation::GetClusterCredentialsWithIAM)>
     #[allow(unused_mut)]
@@ -17466,12 +17055,6 @@ pub mod get_reserved_node_exchange_configuration_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReservedNodeExchangeConfigurationOptionsInputOperationOutputAlias =
-    crate::operation::GetReservedNodeExchangeConfigurationOptions;
-#[doc(hidden)]
-pub type GetReservedNodeExchangeConfigurationOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservedNodeExchangeConfigurationOptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetReservedNodeExchangeConfigurationOptions`](crate::operation::GetReservedNodeExchangeConfigurationOptions)>
     #[allow(unused_mut)]
@@ -17639,12 +17222,6 @@ pub mod get_reserved_node_exchange_offerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReservedNodeExchangeOfferingsInputOperationOutputAlias =
-    crate::operation::GetReservedNodeExchangeOfferings;
-#[doc(hidden)]
-pub type GetReservedNodeExchangeOfferingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservedNodeExchangeOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`GetReservedNodeExchangeOfferings`](crate::operation::GetReservedNodeExchangeOfferings)>
     #[allow(unused_mut)]
@@ -17816,11 +17393,6 @@ pub mod modify_aqua_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyAquaConfigurationInputOperationOutputAlias =
-    crate::operation::ModifyAquaConfiguration;
-#[doc(hidden)]
-pub type ModifyAquaConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyAquaConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ModifyAquaConfiguration`](crate::operation::ModifyAquaConfiguration)>
     #[allow(unused_mut)]
@@ -17987,11 +17559,6 @@ pub mod modify_authentication_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyAuthenticationProfileInputOperationOutputAlias =
-    crate::operation::ModifyAuthenticationProfile;
-#[doc(hidden)]
-pub type ModifyAuthenticationProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyAuthenticationProfileInput {
     /// Consumes the builder and constructs an Operation<[`ModifyAuthenticationProfile`](crate::operation::ModifyAuthenticationProfile)>
     #[allow(unused_mut)]
@@ -18594,10 +18161,6 @@ pub mod modify_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterInputOperationOutputAlias = crate::operation::ModifyCluster;
-#[doc(hidden)]
-pub type ModifyClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterInput {
     /// Consumes the builder and constructs an Operation<[`ModifyCluster`](crate::operation::ModifyCluster)>
     #[allow(unused_mut)]
@@ -18758,11 +18321,6 @@ pub mod modify_cluster_db_revision_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterDbRevisionInputOperationOutputAlias =
-    crate::operation::ModifyClusterDbRevision;
-#[doc(hidden)]
-pub type ModifyClusterDbRevisionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterDbRevisionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterDbRevision`](crate::operation::ModifyClusterDbRevision)>
     #[allow(unused_mut)]
@@ -18963,10 +18521,6 @@ pub mod modify_cluster_iam_roles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterIamRolesInputOperationOutputAlias = crate::operation::ModifyClusterIamRoles;
-#[doc(hidden)]
-pub type ModifyClusterIamRolesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterIamRolesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterIamRoles`](crate::operation::ModifyClusterIamRoles)>
     #[allow(unused_mut)]
@@ -19184,11 +18738,6 @@ pub mod modify_cluster_maintenance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterMaintenanceInputOperationOutputAlias =
-    crate::operation::ModifyClusterMaintenance;
-#[doc(hidden)]
-pub type ModifyClusterMaintenanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterMaintenanceInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterMaintenance`](crate::operation::ModifyClusterMaintenance)>
     #[allow(unused_mut)]
@@ -19359,11 +18908,6 @@ pub mod modify_cluster_parameter_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterParameterGroupInputOperationOutputAlias =
-    crate::operation::ModifyClusterParameterGroup;
-#[doc(hidden)]
-pub type ModifyClusterParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterParameterGroup`](crate::operation::ModifyClusterParameterGroup)>
     #[allow(unused_mut)]
@@ -19535,10 +19079,6 @@ pub mod modify_cluster_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterSnapshotInputOperationOutputAlias = crate::operation::ModifyClusterSnapshot;
-#[doc(hidden)]
-pub type ModifyClusterSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterSnapshot`](crate::operation::ModifyClusterSnapshot)>
     #[allow(unused_mut)]
@@ -19711,12 +19251,6 @@ pub mod modify_cluster_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterSnapshotScheduleInputOperationOutputAlias =
-    crate::operation::ModifyClusterSnapshotSchedule;
-#[doc(hidden)]
-pub type ModifyClusterSnapshotScheduleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterSnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterSnapshotSchedule`](crate::operation::ModifyClusterSnapshotSchedule)>
     #[allow(unused_mut)]
@@ -19892,11 +19426,6 @@ pub mod modify_cluster_subnet_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterSubnetGroupInputOperationOutputAlias =
-    crate::operation::ModifyClusterSubnetGroup;
-#[doc(hidden)]
-pub type ModifyClusterSubnetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClusterSubnetGroup`](crate::operation::ModifyClusterSubnetGroup)>
     #[allow(unused_mut)]
@@ -20061,10 +19590,6 @@ pub mod modify_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyEndpointAccessInputOperationOutputAlias = crate::operation::ModifyEndpointAccess;
-#[doc(hidden)]
-pub type ModifyEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEndpointAccess`](crate::operation::ModifyEndpointAccess)>
     #[allow(unused_mut)]
@@ -20313,11 +19838,6 @@ pub mod modify_event_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyEventSubscriptionInputOperationOutputAlias =
-    crate::operation::ModifyEventSubscription;
-#[doc(hidden)]
-pub type ModifyEventSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEventSubscription`](crate::operation::ModifyEventSubscription)>
     #[allow(unused_mut)]
@@ -20560,10 +20080,6 @@ pub mod modify_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyScheduledActionInputOperationOutputAlias = crate::operation::ModifyScheduledAction;
-#[doc(hidden)]
-pub type ModifyScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyScheduledAction`](crate::operation::ModifyScheduledAction)>
     #[allow(unused_mut)]
@@ -20747,12 +20263,6 @@ pub mod modify_snapshot_copy_retention_period_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifySnapshotCopyRetentionPeriodInputOperationOutputAlias =
-    crate::operation::ModifySnapshotCopyRetentionPeriod;
-#[doc(hidden)]
-pub type ModifySnapshotCopyRetentionPeriodInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifySnapshotCopyRetentionPeriodInput {
     /// Consumes the builder and constructs an Operation<[`ModifySnapshotCopyRetentionPeriod`](crate::operation::ModifySnapshotCopyRetentionPeriod)>
     #[allow(unused_mut)]
@@ -20914,10 +20424,6 @@ pub mod modify_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifySnapshotScheduleInputOperationOutputAlias = crate::operation::ModifySnapshotSchedule;
-#[doc(hidden)]
-pub type ModifySnapshotScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifySnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`ModifySnapshotSchedule`](crate::operation::ModifySnapshotSchedule)>
     #[allow(unused_mut)]
@@ -21088,10 +20594,6 @@ pub mod modify_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyUsageLimitInputOperationOutputAlias = crate::operation::ModifyUsageLimit;
-#[doc(hidden)]
-pub type ModifyUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`ModifyUsageLimit`](crate::operation::ModifyUsageLimit)>
     #[allow(unused_mut)]
@@ -21233,10 +20735,6 @@ pub mod pause_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PauseClusterInputOperationOutputAlias = crate::operation::PauseCluster;
-#[doc(hidden)]
-pub type PauseClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PauseClusterInput {
     /// Consumes the builder and constructs an Operation<[`PauseCluster`](crate::operation::PauseCluster)>
     #[allow(unused_mut)]
@@ -21394,12 +20892,6 @@ pub mod purchase_reserved_node_offering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PurchaseReservedNodeOfferingInputOperationOutputAlias =
-    crate::operation::PurchaseReservedNodeOffering;
-#[doc(hidden)]
-pub type PurchaseReservedNodeOfferingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseReservedNodeOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseReservedNodeOffering`](crate::operation::PurchaseReservedNodeOffering)>
     #[allow(unused_mut)]
@@ -21540,10 +21032,6 @@ pub mod reboot_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RebootClusterInputOperationOutputAlias = crate::operation::RebootCluster;
-#[doc(hidden)]
-pub type RebootClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootClusterInput {
     /// Consumes the builder and constructs an Operation<[`RebootCluster`](crate::operation::RebootCluster)>
     #[allow(unused_mut)]
@@ -21685,10 +21173,6 @@ pub mod reject_data_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectDataShareInputOperationOutputAlias = crate::operation::RejectDataShare;
-#[doc(hidden)]
-pub type RejectDataShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectDataShareInput {
     /// Consumes the builder and constructs an Operation<[`RejectDataShare`](crate::operation::RejectDataShare)>
     #[allow(unused_mut)]
@@ -21869,11 +21353,6 @@ pub mod reset_cluster_parameter_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetClusterParameterGroupInputOperationOutputAlias =
-    crate::operation::ResetClusterParameterGroup;
-#[doc(hidden)]
-pub type ResetClusterParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`ResetClusterParameterGroup`](crate::operation::ResetClusterParameterGroup)>
     #[allow(unused_mut)]
@@ -22095,10 +21574,6 @@ pub mod resize_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResizeClusterInputOperationOutputAlias = crate::operation::ResizeCluster;
-#[doc(hidden)]
-pub type ResizeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResizeClusterInput {
     /// Consumes the builder and constructs an Operation<[`ResizeCluster`](crate::operation::ResizeCluster)>
     #[allow(unused_mut)]
@@ -22821,11 +22296,6 @@ pub mod restore_from_cluster_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreFromClusterSnapshotInputOperationOutputAlias =
-    crate::operation::RestoreFromClusterSnapshot;
-#[doc(hidden)]
-pub type RestoreFromClusterSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreFromClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`RestoreFromClusterSnapshot`](crate::operation::RestoreFromClusterSnapshot)>
     #[allow(unused_mut)]
@@ -23088,12 +22558,6 @@ pub mod restore_table_from_cluster_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreTableFromClusterSnapshotInputOperationOutputAlias =
-    crate::operation::RestoreTableFromClusterSnapshot;
-#[doc(hidden)]
-pub type RestoreTableFromClusterSnapshotInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableFromClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableFromClusterSnapshot`](crate::operation::RestoreTableFromClusterSnapshot)>
     #[allow(unused_mut)]
@@ -23234,10 +22698,6 @@ pub mod resume_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResumeClusterInputOperationOutputAlias = crate::operation::ResumeCluster;
-#[doc(hidden)]
-pub type ResumeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResumeClusterInput {
     /// Consumes the builder and constructs an Operation<[`ResumeCluster`](crate::operation::ResumeCluster)>
     #[allow(unused_mut)]
@@ -23431,12 +22891,6 @@ pub mod revoke_cluster_security_group_ingress_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeClusterSecurityGroupIngressInputOperationOutputAlias =
-    crate::operation::RevokeClusterSecurityGroupIngress;
-#[doc(hidden)]
-pub type RevokeClusterSecurityGroupIngressInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeClusterSecurityGroupIngressInput {
     /// Consumes the builder and constructs an Operation<[`RevokeClusterSecurityGroupIngress`](crate::operation::RevokeClusterSecurityGroupIngress)>
     #[allow(unused_mut)]
@@ -23622,10 +23076,6 @@ pub mod revoke_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeEndpointAccessInputOperationOutputAlias = crate::operation::RevokeEndpointAccess;
-#[doc(hidden)]
-pub type RevokeEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`RevokeEndpointAccess`](crate::operation::RevokeEndpointAccess)>
     #[allow(unused_mut)]
@@ -23817,10 +23267,6 @@ pub mod revoke_snapshot_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeSnapshotAccessInputOperationOutputAlias = crate::operation::RevokeSnapshotAccess;
-#[doc(hidden)]
-pub type RevokeSnapshotAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSnapshotAccessInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSnapshotAccess`](crate::operation::RevokeSnapshotAccess)>
     #[allow(unused_mut)]
@@ -23966,10 +23412,6 @@ pub mod rotate_encryption_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RotateEncryptionKeyInputOperationOutputAlias = crate::operation::RotateEncryptionKey;
-#[doc(hidden)]
-pub type RotateEncryptionKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RotateEncryptionKeyInput {
     /// Consumes the builder and constructs an Operation<[`RotateEncryptionKey`](crate::operation::RotateEncryptionKey)>
     #[allow(unused_mut)]
@@ -24180,10 +23622,6 @@ pub mod update_partner_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePartnerStatusInputOperationOutputAlias = crate::operation::UpdatePartnerStatus;
-#[doc(hidden)]
-pub type UpdatePartnerStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePartnerStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePartnerStatus`](crate::operation::UpdatePartnerStatus)>
     #[allow(unused_mut)]

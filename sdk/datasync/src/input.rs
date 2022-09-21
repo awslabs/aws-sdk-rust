@@ -34,10 +34,6 @@ pub mod cancel_task_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelTaskExecutionInputOperationOutputAlias = crate::operation::CancelTaskExecution;
-#[doc(hidden)]
-pub type CancelTaskExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`CancelTaskExecution`](crate::operation::CancelTaskExecution)>
     #[allow(unused_mut)]
@@ -284,10 +280,6 @@ pub mod create_agent_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAgentInputOperationOutputAlias = crate::operation::CreateAgent;
-#[doc(hidden)]
-pub type CreateAgentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAgentInput {
     /// Consumes the builder and constructs an Operation<[`CreateAgent`](crate::operation::CreateAgent)>
     #[allow(unused_mut)]
@@ -539,10 +531,6 @@ pub mod create_location_efs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationEfsInputOperationOutputAlias = crate::operation::CreateLocationEfs;
-#[doc(hidden)]
-pub type CreateLocationEfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationEfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationEfs`](crate::operation::CreateLocationEfs)>
     #[allow(unused_mut)]
@@ -745,11 +733,6 @@ pub mod create_location_fsx_lustre_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationFsxLustreInputOperationOutputAlias =
-    crate::operation::CreateLocationFsxLustre;
-#[doc(hidden)]
-pub type CreateLocationFsxLustreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationFsxLustreInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxLustre`](crate::operation::CreateLocationFsxLustre)>
     #[allow(unused_mut)]
@@ -986,10 +969,6 @@ pub mod create_location_fsx_ontap_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationFsxOntapInputOperationOutputAlias = crate::operation::CreateLocationFsxOntap;
-#[doc(hidden)]
-pub type CreateLocationFsxOntapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationFsxOntapInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxOntap`](crate::operation::CreateLocationFsxOntap)>
     #[allow(unused_mut)]
@@ -1209,11 +1188,6 @@ pub mod create_location_fsx_open_zfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationFsxOpenZfsInputOperationOutputAlias =
-    crate::operation::CreateLocationFsxOpenZfs;
-#[doc(hidden)]
-pub type CreateLocationFsxOpenZfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationFsxOpenZfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxOpenZfs`](crate::operation::CreateLocationFsxOpenZfs)>
     #[allow(unused_mut)]
@@ -1468,11 +1442,6 @@ pub mod create_location_fsx_windows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationFsxWindowsInputOperationOutputAlias =
-    crate::operation::CreateLocationFsxWindows;
-#[doc(hidden)]
-pub type CreateLocationFsxWindowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationFsxWindowsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationFsxWindows`](crate::operation::CreateLocationFsxWindows)>
     #[allow(unused_mut)]
@@ -1823,10 +1792,6 @@ pub mod create_location_hdfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationHdfsInputOperationOutputAlias = crate::operation::CreateLocationHdfs;
-#[doc(hidden)]
-pub type CreateLocationHdfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationHdfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationHdfs`](crate::operation::CreateLocationHdfs)>
     #[allow(unused_mut)]
@@ -2052,10 +2017,6 @@ pub mod create_location_nfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationNfsInputOperationOutputAlias = crate::operation::CreateLocationNfs;
-#[doc(hidden)]
-pub type CreateLocationNfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationNfs`](crate::operation::CreateLocationNfs)>
     #[allow(unused_mut)]
@@ -2321,11 +2282,6 @@ pub mod create_location_object_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationObjectStorageInputOperationOutputAlias =
-    crate::operation::CreateLocationObjectStorage;
-#[doc(hidden)]
-pub type CreateLocationObjectStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationObjectStorage`](crate::operation::CreateLocationObjectStorage)>
     #[allow(unused_mut)]
@@ -2556,10 +2512,6 @@ pub mod create_location_s3_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationS3InputOperationOutputAlias = crate::operation::CreateLocationS3;
-#[doc(hidden)]
-pub type CreateLocationS3InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationS3Input {
     /// Consumes the builder and constructs an Operation<[`CreateLocationS3`](crate::operation::CreateLocationS3)>
     #[allow(unused_mut)]
@@ -2823,10 +2775,6 @@ pub mod create_location_smb_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLocationSmbInputOperationOutputAlias = crate::operation::CreateLocationSmb;
-#[doc(hidden)]
-pub type CreateLocationSmbInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`CreateLocationSmb`](crate::operation::CreateLocationSmb)>
     #[allow(unused_mut)]
@@ -3108,10 +3056,6 @@ pub mod create_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTaskInputOperationOutputAlias = crate::operation::CreateTask;
-#[doc(hidden)]
-pub type CreateTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateTask`](crate::operation::CreateTask)>
     #[allow(unused_mut)]
@@ -3255,10 +3199,6 @@ pub mod delete_agent_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAgentInputOperationOutputAlias = crate::operation::DeleteAgent;
-#[doc(hidden)]
-pub type DeleteAgentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAgentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAgent`](crate::operation::DeleteAgent)>
     #[allow(unused_mut)]
@@ -3402,10 +3342,6 @@ pub mod delete_location_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLocationInputOperationOutputAlias = crate::operation::DeleteLocation;
-#[doc(hidden)]
-pub type DeleteLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLocationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLocation`](crate::operation::DeleteLocation)>
     #[allow(unused_mut)]
@@ -3548,10 +3484,6 @@ pub mod delete_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTaskInputOperationOutputAlias = crate::operation::DeleteTask;
-#[doc(hidden)]
-pub type DeleteTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTask`](crate::operation::DeleteTask)>
     #[allow(unused_mut)]
@@ -3695,10 +3627,6 @@ pub mod describe_agent_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAgentInputOperationOutputAlias = crate::operation::DescribeAgent;
-#[doc(hidden)]
-pub type DescribeAgentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAgentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgent`](crate::operation::DescribeAgent)>
     #[allow(unused_mut)]
@@ -3842,10 +3770,6 @@ pub mod describe_location_efs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationEfsInputOperationOutputAlias = crate::operation::DescribeLocationEfs;
-#[doc(hidden)]
-pub type DescribeLocationEfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationEfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationEfs`](crate::operation::DescribeLocationEfs)>
     #[allow(unused_mut)]
@@ -3991,11 +3915,6 @@ pub mod describe_location_fsx_lustre_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationFsxLustreInputOperationOutputAlias =
-    crate::operation::DescribeLocationFsxLustre;
-#[doc(hidden)]
-pub type DescribeLocationFsxLustreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationFsxLustreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxLustre`](crate::operation::DescribeLocationFsxLustre)>
     #[allow(unused_mut)]
@@ -4143,11 +4062,6 @@ pub mod describe_location_fsx_ontap_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationFsxOntapInputOperationOutputAlias =
-    crate::operation::DescribeLocationFsxOntap;
-#[doc(hidden)]
-pub type DescribeLocationFsxOntapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationFsxOntapInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxOntap`](crate::operation::DescribeLocationFsxOntap)>
     #[allow(unused_mut)]
@@ -4295,11 +4209,6 @@ pub mod describe_location_fsx_open_zfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationFsxOpenZfsInputOperationOutputAlias =
-    crate::operation::DescribeLocationFsxOpenZfs;
-#[doc(hidden)]
-pub type DescribeLocationFsxOpenZfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationFsxOpenZfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxOpenZfs`](crate::operation::DescribeLocationFsxOpenZfs)>
     #[allow(unused_mut)]
@@ -4444,11 +4353,6 @@ pub mod describe_location_fsx_windows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationFsxWindowsInputOperationOutputAlias =
-    crate::operation::DescribeLocationFsxWindows;
-#[doc(hidden)]
-pub type DescribeLocationFsxWindowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationFsxWindowsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationFsxWindows`](crate::operation::DescribeLocationFsxWindows)>
     #[allow(unused_mut)]
@@ -4591,10 +4495,6 @@ pub mod describe_location_hdfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationHdfsInputOperationOutputAlias = crate::operation::DescribeLocationHdfs;
-#[doc(hidden)]
-pub type DescribeLocationHdfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationHdfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationHdfs`](crate::operation::DescribeLocationHdfs)>
     #[allow(unused_mut)]
@@ -4740,10 +4640,6 @@ pub mod describe_location_nfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationNfsInputOperationOutputAlias = crate::operation::DescribeLocationNfs;
-#[doc(hidden)]
-pub type DescribeLocationNfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationNfs`](crate::operation::DescribeLocationNfs)>
     #[allow(unused_mut)]
@@ -4889,12 +4785,6 @@ pub mod describe_location_object_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationObjectStorageInputOperationOutputAlias =
-    crate::operation::DescribeLocationObjectStorage;
-#[doc(hidden)]
-pub type DescribeLocationObjectStorageInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationObjectStorage`](crate::operation::DescribeLocationObjectStorage)>
     #[allow(unused_mut)]
@@ -5037,10 +4927,6 @@ pub mod describe_location_s3_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationS3InputOperationOutputAlias = crate::operation::DescribeLocationS3;
-#[doc(hidden)]
-pub type DescribeLocationS3InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationS3Input {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationS3`](crate::operation::DescribeLocationS3)>
     #[allow(unused_mut)]
@@ -5184,10 +5070,6 @@ pub mod describe_location_smb_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationSmbInputOperationOutputAlias = crate::operation::DescribeLocationSmb;
-#[doc(hidden)]
-pub type DescribeLocationSmbInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocationSmb`](crate::operation::DescribeLocationSmb)>
     #[allow(unused_mut)]
@@ -5331,10 +5213,6 @@ pub mod describe_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTaskInputOperationOutputAlias = crate::operation::DescribeTask;
-#[doc(hidden)]
-pub type DescribeTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTask`](crate::operation::DescribeTask)>
     #[allow(unused_mut)]
@@ -5481,10 +5359,6 @@ pub mod describe_task_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTaskExecutionInputOperationOutputAlias = crate::operation::DescribeTaskExecution;
-#[doc(hidden)]
-pub type DescribeTaskExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTaskExecution`](crate::operation::DescribeTaskExecution)>
     #[allow(unused_mut)]
@@ -5641,10 +5515,6 @@ pub mod list_agents_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAgentsInputOperationOutputAlias = crate::operation::ListAgents;
-#[doc(hidden)]
-pub type ListAgentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAgentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAgents`](crate::operation::ListAgents)>
     #[allow(unused_mut)]
@@ -5821,10 +5691,6 @@ pub mod list_locations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLocationsInputOperationOutputAlias = crate::operation::ListLocations;
-#[doc(hidden)]
-pub type ListLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLocationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLocations`](crate::operation::ListLocations)>
     #[allow(unused_mut)]
@@ -5992,10 +5858,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -6165,10 +6027,6 @@ pub mod list_task_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTaskExecutionsInputOperationOutputAlias = crate::operation::ListTaskExecutions;
-#[doc(hidden)]
-pub type ListTaskExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTaskExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTaskExecutions`](crate::operation::ListTaskExecutions)>
     #[allow(unused_mut)]
@@ -6344,10 +6202,6 @@ pub mod list_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTasksInputOperationOutputAlias = crate::operation::ListTasks;
-#[doc(hidden)]
-pub type ListTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListTasks`](crate::operation::ListTasks)>
     #[allow(unused_mut)]
@@ -6550,10 +6404,6 @@ pub mod start_task_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTaskExecutionInputOperationOutputAlias = crate::operation::StartTaskExecution;
-#[doc(hidden)]
-pub type StartTaskExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartTaskExecution`](crate::operation::StartTaskExecution)>
     #[allow(unused_mut)]
@@ -6718,10 +6568,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6886,10 +6732,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -7045,10 +6887,6 @@ pub mod update_agent_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAgentInputOperationOutputAlias = crate::operation::UpdateAgent;
-#[doc(hidden)]
-pub type UpdateAgentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAgentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAgent`](crate::operation::UpdateAgent)>
     #[allow(unused_mut)]
@@ -7372,10 +7210,6 @@ pub mod update_location_hdfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLocationHdfsInputOperationOutputAlias = crate::operation::UpdateLocationHdfs;
-#[doc(hidden)]
-pub type UpdateLocationHdfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLocationHdfsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationHdfs`](crate::operation::UpdateLocationHdfs)>
     #[allow(unused_mut)]
@@ -7569,10 +7403,6 @@ pub mod update_location_nfs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLocationNfsInputOperationOutputAlias = crate::operation::UpdateLocationNfs;
-#[doc(hidden)]
-pub type UpdateLocationNfsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLocationNfsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationNfs`](crate::operation::UpdateLocationNfs)>
     #[allow(unused_mut)]
@@ -7802,11 +7632,6 @@ pub mod update_location_object_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLocationObjectStorageInputOperationOutputAlias =
-    crate::operation::UpdateLocationObjectStorage;
-#[doc(hidden)]
-pub type UpdateLocationObjectStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLocationObjectStorageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationObjectStorage`](crate::operation::UpdateLocationObjectStorage)>
     #[allow(unused_mut)]
@@ -8049,10 +7874,6 @@ pub mod update_location_smb_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLocationSmbInputOperationOutputAlias = crate::operation::UpdateLocationSmb;
-#[doc(hidden)]
-pub type UpdateLocationSmbInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLocationSmbInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLocationSmb`](crate::operation::UpdateLocationSmb)>
     #[allow(unused_mut)]
@@ -8295,10 +8116,6 @@ pub mod update_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTaskInputOperationOutputAlias = crate::operation::UpdateTask;
-#[doc(hidden)]
-pub type UpdateTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTaskInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTask`](crate::operation::UpdateTask)>
     #[allow(unused_mut)]
@@ -8459,10 +8276,6 @@ pub mod update_task_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTaskExecutionInputOperationOutputAlias = crate::operation::UpdateTaskExecution;
-#[doc(hidden)]
-pub type UpdateTaskExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTaskExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTaskExecution`](crate::operation::UpdateTaskExecution)>
     #[allow(unused_mut)]

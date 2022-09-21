@@ -69,11 +69,6 @@ pub mod batch_check_layer_availability_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCheckLayerAvailabilityInputOperationOutputAlias =
-    crate::operation::BatchCheckLayerAvailability;
-#[doc(hidden)]
-pub type BatchCheckLayerAvailabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCheckLayerAvailabilityInput {
     /// Consumes the builder and constructs an Operation<[`BatchCheckLayerAvailability`](crate::operation::BatchCheckLayerAvailability)>
     #[allow(unused_mut)]
@@ -252,10 +247,6 @@ pub mod batch_delete_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteImageInputOperationOutputAlias = crate::operation::BatchDeleteImage;
-#[doc(hidden)]
-pub type BatchDeleteImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteImage`](crate::operation::BatchDeleteImage)>
     #[allow(unused_mut)]
@@ -458,10 +449,6 @@ pub mod batch_get_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetImageInputOperationOutputAlias = crate::operation::BatchGetImage;
-#[doc(hidden)]
-pub type BatchGetImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetImageInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetImage`](crate::operation::BatchGetImage)>
     #[allow(unused_mut)]
@@ -616,12 +603,6 @@ pub mod batch_get_repository_scanning_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetRepositoryScanningConfigurationInputOperationOutputAlias =
-    crate::operation::BatchGetRepositoryScanningConfiguration;
-#[doc(hidden)]
-pub type BatchGetRepositoryScanningConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetRepositoryScanningConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetRepositoryScanningConfiguration`](crate::operation::BatchGetRepositoryScanningConfiguration)>
     #[allow(unused_mut)]
@@ -812,10 +793,6 @@ pub mod complete_layer_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompleteLayerUploadInputOperationOutputAlias = crate::operation::CompleteLayerUpload;
-#[doc(hidden)]
-pub type CompleteLayerUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteLayerUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteLayerUpload`](crate::operation::CompleteLayerUpload)>
     #[allow(unused_mut)]
@@ -991,11 +968,6 @@ pub mod create_pull_through_cache_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePullThroughCacheRuleInputOperationOutputAlias =
-    crate::operation::CreatePullThroughCacheRule;
-#[doc(hidden)]
-pub type CreatePullThroughCacheRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePullThroughCacheRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreatePullThroughCacheRule`](crate::operation::CreatePullThroughCacheRule)>
     #[allow(unused_mut)]
@@ -1227,10 +1199,6 @@ pub mod create_repository_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRepositoryInputOperationOutputAlias = crate::operation::CreateRepository;
-#[doc(hidden)]
-pub type CreateRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateRepository`](crate::operation::CreateRepository)>
     #[allow(unused_mut)]
@@ -1389,10 +1357,6 @@ pub mod delete_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
-#[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -1555,11 +1519,6 @@ pub mod delete_pull_through_cache_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePullThroughCacheRuleInputOperationOutputAlias =
-    crate::operation::DeletePullThroughCacheRule;
-#[doc(hidden)]
-pub type DeletePullThroughCacheRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePullThroughCacheRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeletePullThroughCacheRule`](crate::operation::DeletePullThroughCacheRule)>
     #[allow(unused_mut)]
@@ -1688,10 +1647,6 @@ pub mod delete_registry_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRegistryPolicyInputOperationOutputAlias = crate::operation::DeleteRegistryPolicy;
-#[doc(hidden)]
-pub type DeleteRegistryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRegistryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRegistryPolicy`](crate::operation::DeleteRegistryPolicy)>
     #[allow(unused_mut)]
@@ -1857,10 +1812,6 @@ pub mod delete_repository_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRepositoryInputOperationOutputAlias = crate::operation::DeleteRepository;
-#[doc(hidden)]
-pub type DeleteRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepository`](crate::operation::DeleteRepository)>
     #[allow(unused_mut)]
@@ -2019,10 +1970,6 @@ pub mod delete_repository_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRepositoryPolicyInputOperationOutputAlias = crate::operation::DeleteRepositoryPolicy;
-#[doc(hidden)]
-pub type DeleteRepositoryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRepositoryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepositoryPolicy`](crate::operation::DeleteRepositoryPolicy)>
     #[allow(unused_mut)]
@@ -2200,12 +2147,6 @@ pub mod describe_image_replication_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeImageReplicationStatusInputOperationOutputAlias =
-    crate::operation::DescribeImageReplicationStatus;
-#[doc(hidden)]
-pub type DescribeImageReplicationStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImageReplicationStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImageReplicationStatus`](crate::operation::DescribeImageReplicationStatus)>
     #[allow(unused_mut)]
@@ -2423,10 +2364,6 @@ pub mod describe_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeImagesInputOperationOutputAlias = crate::operation::DescribeImages;
-#[doc(hidden)]
-pub type DescribeImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImages`](crate::operation::DescribeImages)>
     #[allow(unused_mut)]
@@ -2626,11 +2563,6 @@ pub mod describe_image_scan_findings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeImageScanFindingsInputOperationOutputAlias =
-    crate::operation::DescribeImageScanFindings;
-#[doc(hidden)]
-pub type DescribeImageScanFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImageScanFindingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImageScanFindings`](crate::operation::DescribeImageScanFindings)>
     #[allow(unused_mut)]
@@ -2823,12 +2755,6 @@ pub mod describe_pull_through_cache_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePullThroughCacheRulesInputOperationOutputAlias =
-    crate::operation::DescribePullThroughCacheRules;
-#[doc(hidden)]
-pub type DescribePullThroughCacheRulesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePullThroughCacheRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePullThroughCacheRules`](crate::operation::DescribePullThroughCacheRules)>
     #[allow(unused_mut)]
@@ -2957,10 +2883,6 @@ pub mod describe_registry_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRegistryInputOperationOutputAlias = crate::operation::DescribeRegistry;
-#[doc(hidden)]
-pub type DescribeRegistryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRegistryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRegistry`](crate::operation::DescribeRegistry)>
     #[allow(unused_mut)]
@@ -3146,10 +3068,6 @@ pub mod describe_repositories_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRepositoriesInputOperationOutputAlias = crate::operation::DescribeRepositories;
-#[doc(hidden)]
-pub type DescribeRepositoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRepositoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRepositories`](crate::operation::DescribeRepositories)>
     #[allow(unused_mut)]
@@ -3308,10 +3226,6 @@ pub mod get_authorization_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAuthorizationTokenInputOperationOutputAlias = crate::operation::GetAuthorizationToken;
-#[doc(hidden)]
-pub type GetAuthorizationTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAuthorizationTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetAuthorizationToken`](crate::operation::GetAuthorizationToken)>
     #[allow(unused_mut)]
@@ -3484,10 +3398,6 @@ pub mod get_download_url_for_layer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDownloadUrlForLayerInputOperationOutputAlias = crate::operation::GetDownloadUrlForLayer;
-#[doc(hidden)]
-pub type GetDownloadUrlForLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDownloadUrlForLayerInput {
     /// Consumes the builder and constructs an Operation<[`GetDownloadUrlForLayer`](crate::operation::GetDownloadUrlForLayer)>
     #[allow(unused_mut)]
@@ -3648,10 +3558,6 @@ pub mod get_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
-#[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -3872,11 +3778,6 @@ pub mod get_lifecycle_policy_preview_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLifecyclePolicyPreviewInputOperationOutputAlias =
-    crate::operation::GetLifecyclePolicyPreview;
-#[doc(hidden)]
-pub type GetLifecyclePolicyPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyPreviewInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicyPreview`](crate::operation::GetLifecyclePolicyPreview)>
     #[allow(unused_mut)]
@@ -4008,10 +3909,6 @@ pub mod get_registry_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRegistryPolicyInputOperationOutputAlias = crate::operation::GetRegistryPolicy;
-#[doc(hidden)]
-pub type GetRegistryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegistryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetRegistryPolicy`](crate::operation::GetRegistryPolicy)>
     #[allow(unused_mut)]
@@ -4136,12 +4033,6 @@ pub mod get_registry_scanning_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRegistryScanningConfigurationInputOperationOutputAlias =
-    crate::operation::GetRegistryScanningConfiguration;
-#[doc(hidden)]
-pub type GetRegistryScanningConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegistryScanningConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetRegistryScanningConfiguration`](crate::operation::GetRegistryScanningConfiguration)>
     #[allow(unused_mut)]
@@ -4292,10 +4183,6 @@ pub mod get_repository_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRepositoryPolicyInputOperationOutputAlias = crate::operation::GetRepositoryPolicy;
-#[doc(hidden)]
-pub type GetRepositoryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRepositoryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetRepositoryPolicy`](crate::operation::GetRepositoryPolicy)>
     #[allow(unused_mut)]
@@ -4454,10 +4341,6 @@ pub mod initiate_layer_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitiateLayerUploadInputOperationOutputAlias = crate::operation::InitiateLayerUpload;
-#[doc(hidden)]
-pub type InitiateLayerUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateLayerUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateLayerUpload`](crate::operation::InitiateLayerUpload)>
     #[allow(unused_mut)]
@@ -4658,10 +4541,6 @@ pub mod list_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImagesInputOperationOutputAlias = crate::operation::ListImages;
-#[doc(hidden)]
-pub type ListImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImages`](crate::operation::ListImages)>
     #[allow(unused_mut)]
@@ -4805,10 +4684,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5022,10 +4897,6 @@ pub mod put_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutImageInputOperationOutputAlias = crate::operation::PutImage;
-#[doc(hidden)]
-pub type PutImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageInput {
     /// Consumes the builder and constructs an Operation<[`PutImage`](crate::operation::PutImage)>
     #[allow(unused_mut)]
@@ -5200,12 +5071,6 @@ pub mod put_image_scanning_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutImageScanningConfigurationInputOperationOutputAlias =
-    crate::operation::PutImageScanningConfiguration;
-#[doc(hidden)]
-pub type PutImageScanningConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageScanningConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutImageScanningConfiguration`](crate::operation::PutImageScanningConfiguration)>
     #[allow(unused_mut)]
@@ -5378,10 +5243,6 @@ pub mod put_image_tag_mutability_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutImageTagMutabilityInputOperationOutputAlias = crate::operation::PutImageTagMutability;
-#[doc(hidden)]
-pub type PutImageTagMutabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageTagMutabilityInput {
     /// Consumes the builder and constructs an Operation<[`PutImageTagMutability`](crate::operation::PutImageTagMutability)>
     #[allow(unused_mut)]
@@ -5557,10 +5418,6 @@ pub mod put_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLifecyclePolicyInputOperationOutputAlias = crate::operation::PutLifecyclePolicy;
-#[doc(hidden)]
-pub type PutLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutLifecyclePolicy`](crate::operation::PutLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -5704,10 +5561,6 @@ pub mod put_registry_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRegistryPolicyInputOperationOutputAlias = crate::operation::PutRegistryPolicy;
-#[doc(hidden)]
-pub type PutRegistryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRegistryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutRegistryPolicy`](crate::operation::PutRegistryPolicy)>
     #[allow(unused_mut)]
@@ -5878,12 +5731,6 @@ pub mod put_registry_scanning_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRegistryScanningConfigurationInputOperationOutputAlias =
-    crate::operation::PutRegistryScanningConfiguration;
-#[doc(hidden)]
-pub type PutRegistryScanningConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutRegistryScanningConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutRegistryScanningConfiguration`](crate::operation::PutRegistryScanningConfiguration)>
     #[allow(unused_mut)]
@@ -6035,11 +5882,6 @@ pub mod put_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::PutReplicationConfiguration;
-#[doc(hidden)]
-pub type PutReplicationConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutReplicationConfiguration`](crate::operation::PutReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -6221,10 +6063,6 @@ pub mod set_repository_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetRepositoryPolicyInputOperationOutputAlias = crate::operation::SetRepositoryPolicy;
-#[doc(hidden)]
-pub type SetRepositoryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetRepositoryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetRepositoryPolicy`](crate::operation::SetRepositoryPolicy)>
     #[allow(unused_mut)]
@@ -6398,10 +6236,6 @@ pub mod start_image_scan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartImageScanInputOperationOutputAlias = crate::operation::StartImageScan;
-#[doc(hidden)]
-pub type StartImageScanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImageScanInput {
     /// Consumes the builder and constructs an Operation<[`StartImageScan`](crate::operation::StartImageScan)>
     #[allow(unused_mut)]
@@ -6577,11 +6411,6 @@ pub mod start_lifecycle_policy_preview_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartLifecyclePolicyPreviewInputOperationOutputAlias =
-    crate::operation::StartLifecyclePolicyPreview;
-#[doc(hidden)]
-pub type StartLifecyclePolicyPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLifecyclePolicyPreviewInput {
     /// Consumes the builder and constructs an Operation<[`StartLifecyclePolicyPreview`](crate::operation::StartLifecyclePolicyPreview)>
     #[allow(unused_mut)]
@@ -6745,10 +6574,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6913,10 +6738,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -7126,10 +6947,6 @@ pub mod upload_layer_part_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UploadLayerPartInputOperationOutputAlias = crate::operation::UploadLayerPart;
-#[doc(hidden)]
-pub type UploadLayerPartInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadLayerPartInput {
     /// Consumes the builder and constructs an Operation<[`UploadLayerPart`](crate::operation::UploadLayerPart)>
     #[allow(unused_mut)]

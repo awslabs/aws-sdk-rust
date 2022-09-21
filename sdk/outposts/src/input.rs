@@ -31,10 +31,6 @@ pub mod cancel_order_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelOrderInputOperationOutputAlias = crate::operation::CancelOrder;
-#[doc(hidden)]
-pub type CancelOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelOrderInput {
     /// Consumes the builder and constructs an Operation<[`CancelOrder`](crate::operation::CancelOrder)>
     #[allow(unused_mut)]
@@ -228,10 +224,6 @@ pub mod create_order_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateOrderInputOperationOutputAlias = crate::operation::CreateOrder;
-#[doc(hidden)]
-pub type CreateOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOrderInput {
     /// Consumes the builder and constructs an Operation<[`CreateOrder`](crate::operation::CreateOrder)>
     #[allow(unused_mut)]
@@ -476,10 +468,6 @@ pub mod create_outpost_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateOutpostInputOperationOutputAlias = crate::operation::CreateOutpost;
-#[doc(hidden)]
-pub type CreateOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOutpostInput {
     /// Consumes the builder and constructs an Operation<[`CreateOutpost`](crate::operation::CreateOutpost)>
     #[allow(unused_mut)]
@@ -719,10 +707,6 @@ pub mod create_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSiteInputOperationOutputAlias = crate::operation::CreateSite;
-#[doc(hidden)]
-pub type CreateSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSiteInput {
     /// Consumes the builder and constructs an Operation<[`CreateSite`](crate::operation::CreateSite)>
     #[allow(unused_mut)]
@@ -865,10 +849,6 @@ pub mod delete_outpost_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteOutpostInputOperationOutputAlias = crate::operation::DeleteOutpost;
-#[doc(hidden)]
-pub type DeleteOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOutpostInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOutpost`](crate::operation::DeleteOutpost)>
     #[allow(unused_mut)]
@@ -1011,10 +991,6 @@ pub mod delete_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSiteInputOperationOutputAlias = crate::operation::DeleteSite;
-#[doc(hidden)]
-pub type DeleteSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSiteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSite`](crate::operation::DeleteSite)>
     #[allow(unused_mut)]
@@ -1157,10 +1133,6 @@ pub mod get_catalog_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCatalogItemInputOperationOutputAlias = crate::operation::GetCatalogItem;
-#[doc(hidden)]
-pub type GetCatalogItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCatalogItemInput {
     /// Consumes the builder and constructs an Operation<[`GetCatalogItem`](crate::operation::GetCatalogItem)>
     #[allow(unused_mut)]
@@ -1307,10 +1279,6 @@ pub mod get_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectionInputOperationOutputAlias = crate::operation::GetConnection;
-#[doc(hidden)]
-pub type GetConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectionInput {
     /// Consumes the builder and constructs an Operation<[`GetConnection`](crate::operation::GetConnection)>
     #[allow(unused_mut)]
@@ -1453,10 +1421,6 @@ pub mod get_order_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOrderInputOperationOutputAlias = crate::operation::GetOrder;
-#[doc(hidden)]
-pub type GetOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrderInput {
     /// Consumes the builder and constructs an Operation<[`GetOrder`](crate::operation::GetOrder)>
     #[allow(unused_mut)]
@@ -1596,10 +1560,6 @@ pub mod get_outpost_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOutpostInputOperationOutputAlias = crate::operation::GetOutpost;
-#[doc(hidden)]
-pub type GetOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOutpostInput {
     /// Consumes the builder and constructs an Operation<[`GetOutpost`](crate::operation::GetOutpost)>
     #[allow(unused_mut)]
@@ -1769,11 +1729,6 @@ pub mod get_outpost_instance_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOutpostInstanceTypesInputOperationOutputAlias =
-    crate::operation::GetOutpostInstanceTypes;
-#[doc(hidden)]
-pub type GetOutpostInstanceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOutpostInstanceTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetOutpostInstanceTypes`](crate::operation::GetOutpostInstanceTypes)>
     #[allow(unused_mut)]
@@ -1937,10 +1892,6 @@ pub mod get_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSiteInputOperationOutputAlias = crate::operation::GetSite;
-#[doc(hidden)]
-pub type GetSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSiteInput {
     /// Consumes the builder and constructs an Operation<[`GetSite`](crate::operation::GetSite)>
     #[allow(unused_mut)]
@@ -2096,10 +2047,6 @@ pub mod get_site_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSiteAddressInputOperationOutputAlias = crate::operation::GetSiteAddress;
-#[doc(hidden)]
-pub type GetSiteAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSiteAddressInput {
     /// Consumes the builder and constructs an Operation<[`GetSiteAddress`](crate::operation::GetSiteAddress)>
     #[allow(unused_mut)]
@@ -2302,10 +2249,6 @@ pub mod list_assets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssetsInputOperationOutputAlias = crate::operation::ListAssets;
-#[doc(hidden)]
-pub type ListAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssets`](crate::operation::ListAssets)>
     #[allow(unused_mut)]
@@ -2560,10 +2503,6 @@ pub mod list_catalog_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCatalogItemsInputOperationOutputAlias = crate::operation::ListCatalogItems;
-#[doc(hidden)]
-pub type ListCatalogItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCatalogItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListCatalogItems`](crate::operation::ListCatalogItems)>
     #[allow(unused_mut)]
@@ -2755,10 +2694,6 @@ pub mod list_orders_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOrdersInputOperationOutputAlias = crate::operation::ListOrders;
-#[doc(hidden)]
-pub type ListOrdersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrdersInput {
     /// Consumes the builder and constructs an Operation<[`ListOrders`](crate::operation::ListOrders)>
     #[allow(unused_mut)]
@@ -2993,10 +2928,6 @@ pub mod list_outposts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOutpostsInputOperationOutputAlias = crate::operation::ListOutposts;
-#[doc(hidden)]
-pub type ListOutpostsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOutpostsInput {
     /// Consumes the builder and constructs an Operation<[`ListOutposts`](crate::operation::ListOutposts)>
     #[allow(unused_mut)]
@@ -3259,10 +3190,6 @@ pub mod list_sites_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSitesInputOperationOutputAlias = crate::operation::ListSites;
-#[doc(hidden)]
-pub type ListSitesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSitesInput {
     /// Consumes the builder and constructs an Operation<[`ListSites`](crate::operation::ListSites)>
     #[allow(unused_mut)]
@@ -3426,10 +3353,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3616,10 +3539,6 @@ pub mod start_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartConnectionInputOperationOutputAlias = crate::operation::StartConnection;
-#[doc(hidden)]
-pub type StartConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConnectionInput {
     /// Consumes the builder and constructs an Operation<[`StartConnection`](crate::operation::StartConnection)>
     #[allow(unused_mut)]
@@ -3787,10 +3706,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3965,10 +3880,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4168,10 +4079,6 @@ pub mod update_outpost_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateOutpostInputOperationOutputAlias = crate::operation::UpdateOutpost;
-#[doc(hidden)]
-pub type UpdateOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOutpostInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOutpost`](crate::operation::UpdateOutpost)>
     #[allow(unused_mut)]
@@ -4364,10 +4271,6 @@ pub mod update_site_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSiteInputOperationOutputAlias = crate::operation::UpdateSite;
-#[doc(hidden)]
-pub type UpdateSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSite`](crate::operation::UpdateSite)>
     #[allow(unused_mut)]
@@ -4552,10 +4455,6 @@ pub mod update_site_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSiteAddressInputOperationOutputAlias = crate::operation::UpdateSiteAddress;
-#[doc(hidden)]
-pub type UpdateSiteAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteAddressInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSiteAddress`](crate::operation::UpdateSiteAddress)>
     #[allow(unused_mut)]
@@ -4926,12 +4825,6 @@ pub mod update_site_rack_physical_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSiteRackPhysicalPropertiesInputOperationOutputAlias =
-    crate::operation::UpdateSiteRackPhysicalProperties;
-#[doc(hidden)]
-pub type UpdateSiteRackPhysicalPropertiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteRackPhysicalPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSiteRackPhysicalProperties`](crate::operation::UpdateSiteRackPhysicalProperties)>
     #[allow(unused_mut)]

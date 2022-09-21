@@ -72,10 +72,6 @@ pub mod batch_put_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchPutMessageInputOperationOutputAlias = crate::operation::BatchPutMessage;
-#[doc(hidden)]
-pub type BatchPutMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
     #[allow(unused_mut)]
@@ -234,11 +230,6 @@ pub mod cancel_pipeline_reprocessing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelPipelineReprocessingInputOperationOutputAlias =
-    crate::operation::CancelPipelineReprocessing;
-#[doc(hidden)]
-pub type CancelPipelineReprocessingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelPipelineReprocessingInput {
     /// Consumes the builder and constructs an Operation<[`CancelPipelineReprocessing`](crate::operation::CancelPipelineReprocessing)>
     #[allow(unused_mut)]
@@ -448,10 +439,6 @@ pub mod create_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
-#[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(unused_mut)]
@@ -733,10 +720,6 @@ pub mod create_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
-#[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(unused_mut)]
@@ -887,10 +870,6 @@ pub mod create_dataset_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatasetContentInputOperationOutputAlias = crate::operation::CreateDatasetContent;
-#[doc(hidden)]
-pub type CreateDatasetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetContentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetContent`](crate::operation::CreateDatasetContent)>
     #[allow(unused_mut)]
@@ -1142,10 +1121,6 @@ pub mod create_datastore_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatastoreInputOperationOutputAlias = crate::operation::CreateDatastore;
-#[doc(hidden)]
-pub type CreateDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatastore`](crate::operation::CreateDatastore)>
     #[allow(unused_mut)]
@@ -1334,10 +1309,6 @@ pub mod create_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePipelineInputOperationOutputAlias = crate::operation::CreatePipeline;
-#[doc(hidden)]
-pub type CreatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreatePipeline`](crate::operation::CreatePipeline)>
     #[allow(unused_mut)]
@@ -1476,10 +1447,6 @@ pub mod delete_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
-#[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(unused_mut)]
@@ -1623,10 +1590,6 @@ pub mod delete_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
@@ -1782,10 +1745,6 @@ pub mod delete_dataset_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetContentInputOperationOutputAlias = crate::operation::DeleteDatasetContent;
-#[doc(hidden)]
-pub type DeleteDatasetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetContentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatasetContent`](crate::operation::DeleteDatasetContent)>
     #[allow(unused_mut)]
@@ -1943,10 +1902,6 @@ pub mod delete_datastore_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatastoreInputOperationOutputAlias = crate::operation::DeleteDatastore;
-#[doc(hidden)]
-pub type DeleteDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatastore`](crate::operation::DeleteDatastore)>
     #[allow(unused_mut)]
@@ -2093,10 +2048,6 @@ pub mod delete_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePipelineInputOperationOutputAlias = crate::operation::DeletePipeline;
-#[doc(hidden)]
-pub type DeletePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeletePipeline`](crate::operation::DeletePipeline)>
     #[allow(unused_mut)]
@@ -2252,10 +2203,6 @@ pub mod describe_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
-#[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(unused_mut)]
@@ -2414,10 +2361,6 @@ pub mod describe_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(unused_mut)]
@@ -2576,10 +2519,6 @@ pub mod describe_datastore_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDatastoreInputOperationOutputAlias = crate::operation::DescribeDatastore;
-#[doc(hidden)]
-pub type DescribeDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatastore`](crate::operation::DescribeDatastore)>
     #[allow(unused_mut)]
@@ -2724,10 +2663,6 @@ pub mod describe_logging_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoggingOptionsInputOperationOutputAlias = crate::operation::DescribeLoggingOptions;
-#[doc(hidden)]
-pub type DescribeLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingOptions`](crate::operation::DescribeLoggingOptions)>
     #[allow(unused_mut)]
@@ -2855,10 +2790,6 @@ pub mod describe_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePipelineInputOperationOutputAlias = crate::operation::DescribePipeline;
-#[doc(hidden)]
-pub type DescribePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DescribePipeline`](crate::operation::DescribePipeline)>
     #[allow(unused_mut)]
@@ -3014,10 +2945,6 @@ pub mod get_dataset_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDatasetContentInputOperationOutputAlias = crate::operation::GetDatasetContent;
-#[doc(hidden)]
-pub type GetDatasetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatasetContentInput {
     /// Consumes the builder and constructs an Operation<[`GetDatasetContent`](crate::operation::GetDatasetContent)>
     #[allow(unused_mut)]
@@ -3186,10 +3113,6 @@ pub mod list_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
-#[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(unused_mut)]
@@ -3385,10 +3308,6 @@ pub mod list_dataset_contents_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetContentsInputOperationOutputAlias = crate::operation::ListDatasetContents;
-#[doc(hidden)]
-pub type ListDatasetContentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetContentsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetContents`](crate::operation::ListDatasetContents)>
     #[allow(unused_mut)]
@@ -3581,10 +3500,6 @@ pub mod list_datasets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
-#[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(unused_mut)]
@@ -3740,10 +3655,6 @@ pub mod list_datastores_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatastoresInputOperationOutputAlias = crate::operation::ListDatastores;
-#[doc(hidden)]
-pub type ListDatastoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatastoresInput {
     /// Consumes the builder and constructs an Operation<[`ListDatastores`](crate::operation::ListDatastores)>
     #[allow(unused_mut)]
@@ -3899,10 +3810,6 @@ pub mod list_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPipelinesInputOperationOutputAlias = crate::operation::ListPipelines;
-#[doc(hidden)]
-pub type ListPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelines`](crate::operation::ListPipelines)>
     #[allow(unused_mut)]
@@ -4044,10 +3951,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4189,10 +4092,6 @@ pub mod put_logging_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLoggingOptionsInputOperationOutputAlias = crate::operation::PutLoggingOptions;
-#[doc(hidden)]
-pub type PutLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutLoggingOptions`](crate::operation::PutLoggingOptions)>
     #[allow(unused_mut)]
@@ -4355,10 +4254,6 @@ pub mod run_pipeline_activity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RunPipelineActivityInputOperationOutputAlias = crate::operation::RunPipelineActivity;
-#[doc(hidden)]
-pub type RunPipelineActivityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RunPipelineActivityInput {
     /// Consumes the builder and constructs an Operation<[`RunPipelineActivity`](crate::operation::RunPipelineActivity)>
     #[allow(unused_mut)]
@@ -4539,10 +4434,6 @@ pub mod sample_channel_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SampleChannelDataInputOperationOutputAlias = crate::operation::SampleChannelData;
-#[doc(hidden)]
-pub type SampleChannelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SampleChannelDataInput {
     /// Consumes the builder and constructs an Operation<[`SampleChannelData`](crate::operation::SampleChannelData)>
     #[allow(unused_mut)]
@@ -4774,11 +4665,6 @@ pub mod start_pipeline_reprocessing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartPipelineReprocessingInputOperationOutputAlias =
-    crate::operation::StartPipelineReprocessing;
-#[doc(hidden)]
-pub type StartPipelineReprocessingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPipelineReprocessingInput {
     /// Consumes the builder and constructs an Operation<[`StartPipelineReprocessing`](crate::operation::StartPipelineReprocessing)>
     #[allow(unused_mut)]
@@ -4959,10 +4845,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -5136,10 +5018,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -5313,10 +5191,6 @@ pub mod update_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
-#[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(unused_mut)]
@@ -5596,10 +5470,6 @@ pub mod update_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
-#[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(unused_mut)]
@@ -5813,10 +5683,6 @@ pub mod update_datastore_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDatastoreInputOperationOutputAlias = crate::operation::UpdateDatastore;
-#[doc(hidden)]
-pub type UpdateDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDatastore`](crate::operation::UpdateDatastore)>
     #[allow(unused_mut)]
@@ -6003,10 +5869,6 @@ pub mod update_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePipelineInputOperationOutputAlias = crate::operation::UpdatePipeline;
-#[doc(hidden)]
-pub type UpdatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePipeline`](crate::operation::UpdatePipeline)>
     #[allow(unused_mut)]

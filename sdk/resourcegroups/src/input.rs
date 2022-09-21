@@ -117,10 +117,6 @@ pub mod create_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
-#[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(unused_mut)]
@@ -273,10 +269,6 @@ pub mod delete_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
-#[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(unused_mut)]
@@ -428,10 +420,6 @@ pub mod get_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
-#[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(unused_mut)]
@@ -566,10 +554,6 @@ pub mod get_group_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupConfigurationInputOperationOutputAlias = crate::operation::GetGroupConfiguration;
-#[doc(hidden)]
-pub type GetGroupConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupConfiguration`](crate::operation::GetGroupConfiguration)>
     #[allow(unused_mut)]
@@ -724,10 +708,6 @@ pub mod get_group_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupQueryInputOperationOutputAlias = crate::operation::GetGroupQuery;
-#[doc(hidden)]
-pub type GetGroupQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupQuery`](crate::operation::GetGroupQuery)>
     #[allow(unused_mut)]
@@ -863,10 +843,6 @@ pub mod get_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTagsInputOperationOutputAlias = crate::operation::GetTags;
-#[doc(hidden)]
-pub type GetTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
     #[allow(unused_mut)]
@@ -1025,10 +1001,6 @@ pub mod group_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GroupResourcesInputOperationOutputAlias = crate::operation::GroupResources;
-#[doc(hidden)]
-pub type GroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GroupResources`](crate::operation::GroupResources)>
     #[allow(unused_mut)]
@@ -1242,10 +1214,6 @@ pub mod list_group_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupResourcesInputOperationOutputAlias = crate::operation::ListGroupResources;
-#[doc(hidden)]
-pub type ListGroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupResources`](crate::operation::ListGroupResources)>
     #[allow(unused_mut)]
@@ -1432,10 +1400,6 @@ pub mod list_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
-#[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(unused_mut)]
@@ -1619,10 +1583,6 @@ pub mod put_group_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutGroupConfigurationInputOperationOutputAlias = crate::operation::PutGroupConfiguration;
-#[doc(hidden)]
-pub type PutGroupConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutGroupConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutGroupConfiguration`](crate::operation::PutGroupConfiguration)>
     #[allow(unused_mut)]
@@ -1790,10 +1750,6 @@ pub mod search_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchResourcesInputOperationOutputAlias = crate::operation::SearchResources;
-#[doc(hidden)]
-pub type SearchResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchResourcesInput {
     /// Consumes the builder and constructs an Operation<[`SearchResources`](crate::operation::SearchResources)>
     #[allow(unused_mut)]
@@ -1960,10 +1916,6 @@ pub mod tag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagInputOperationOutputAlias = crate::operation::Tag;
-#[doc(hidden)]
-pub type TagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagInput {
     /// Consumes the builder and constructs an Operation<[`Tag`](crate::operation::Tag)>
     #[allow(unused_mut)]
@@ -2135,10 +2087,6 @@ pub mod ungroup_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UngroupResourcesInputOperationOutputAlias = crate::operation::UngroupResources;
-#[doc(hidden)]
-pub type UngroupResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UngroupResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UngroupResources`](crate::operation::UngroupResources)>
     #[allow(unused_mut)]
@@ -2297,10 +2245,6 @@ pub mod untag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagInputOperationOutputAlias = crate::operation::Untag;
-#[doc(hidden)]
-pub type UntagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagInput {
     /// Consumes the builder and constructs an Operation<[`Untag`](crate::operation::Untag)>
     #[allow(unused_mut)]
@@ -2478,10 +2422,6 @@ pub mod update_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGroupInputOperationOutputAlias = crate::operation::UpdateGroup;
-#[doc(hidden)]
-pub type UpdateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroup`](crate::operation::UpdateGroup)>
     #[allow(unused_mut)]
@@ -2653,10 +2593,6 @@ pub mod update_group_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGroupQueryInputOperationOutputAlias = crate::operation::UpdateGroupQuery;
-#[doc(hidden)]
-pub type UpdateGroupQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupQueryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroupQuery`](crate::operation::UpdateGroupQuery)>
     #[allow(unused_mut)]

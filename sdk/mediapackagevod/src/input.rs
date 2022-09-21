@@ -46,10 +46,6 @@ pub mod configure_logs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfigureLogsInputOperationOutputAlias = crate::operation::ConfigureLogs;
-#[doc(hidden)]
-pub type ConfigureLogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureLogsInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureLogs`](crate::operation::ConfigureLogs)>
     #[allow(unused_mut)]
@@ -286,10 +282,6 @@ pub mod create_asset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAssetInputOperationOutputAlias = crate::operation::CreateAsset;
-#[doc(hidden)]
-pub type CreateAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssetInput {
     /// Consumes the builder and constructs an Operation<[`CreateAsset`](crate::operation::CreateAsset)>
     #[allow(unused_mut)]
@@ -534,12 +526,6 @@ pub mod create_packaging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePackagingConfigurationInputOperationOutputAlias =
-    crate::operation::CreatePackagingConfiguration;
-#[doc(hidden)]
-pub type CreatePackagingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackagingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackagingConfiguration`](crate::operation::CreatePackagingConfiguration)>
     #[allow(unused_mut)]
@@ -736,10 +722,6 @@ pub mod create_packaging_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePackagingGroupInputOperationOutputAlias = crate::operation::CreatePackagingGroup;
-#[doc(hidden)]
-pub type CreatePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackagingGroup`](crate::operation::CreatePackagingGroup)>
     #[allow(unused_mut)]
@@ -878,10 +860,6 @@ pub mod delete_asset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAssetInputOperationOutputAlias = crate::operation::DeleteAsset;
-#[doc(hidden)]
-pub type DeleteAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAsset`](crate::operation::DeleteAsset)>
     #[allow(unused_mut)]
@@ -1020,12 +998,6 @@ pub mod delete_packaging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePackagingConfigurationInputOperationOutputAlias =
-    crate::operation::DeletePackagingConfiguration;
-#[doc(hidden)]
-pub type DeletePackagingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackagingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackagingConfiguration`](crate::operation::DeletePackagingConfiguration)>
     #[allow(unused_mut)]
@@ -1163,10 +1135,6 @@ pub mod delete_packaging_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePackagingGroupInputOperationOutputAlias = crate::operation::DeletePackagingGroup;
-#[doc(hidden)]
-pub type DeletePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackagingGroup`](crate::operation::DeletePackagingGroup)>
     #[allow(unused_mut)]
@@ -1304,10 +1272,6 @@ pub mod describe_asset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAssetInputOperationOutputAlias = crate::operation::DescribeAsset;
-#[doc(hidden)]
-pub type DescribeAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAsset`](crate::operation::DescribeAsset)>
     #[allow(unused_mut)]
@@ -1446,12 +1410,6 @@ pub mod describe_packaging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePackagingConfigurationInputOperationOutputAlias =
-    crate::operation::DescribePackagingConfiguration;
-#[doc(hidden)]
-pub type DescribePackagingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackagingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackagingConfiguration`](crate::operation::DescribePackagingConfiguration)>
     #[allow(unused_mut)]
@@ -1589,10 +1547,6 @@ pub mod describe_packaging_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePackagingGroupInputOperationOutputAlias = crate::operation::DescribePackagingGroup;
-#[doc(hidden)]
-pub type DescribePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackagingGroup`](crate::operation::DescribePackagingGroup)>
     #[allow(unused_mut)]
@@ -1758,10 +1712,6 @@ pub mod list_assets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssetsInputOperationOutputAlias = crate::operation::ListAssets;
-#[doc(hidden)]
-pub type ListAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssets`](crate::operation::ListAssets)>
     #[allow(unused_mut)]
@@ -1938,11 +1888,6 @@ pub mod list_packaging_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPackagingConfigurationsInputOperationOutputAlias =
-    crate::operation::ListPackagingConfigurations;
-#[doc(hidden)]
-pub type ListPackagingConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackagingConfigurations`](crate::operation::ListPackagingConfigurations)>
     #[allow(unused_mut)]
@@ -2102,10 +2047,6 @@ pub mod list_packaging_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPackagingGroupsInputOperationOutputAlias = crate::operation::ListPackagingGroups;
-#[doc(hidden)]
-pub type ListPackagingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackagingGroups`](crate::operation::ListPackagingGroups)>
     #[allow(unused_mut)]
@@ -2247,10 +2188,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2419,10 +2356,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2597,10 +2530,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2768,10 +2697,6 @@ pub mod update_packaging_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePackagingGroupInputOperationOutputAlias = crate::operation::UpdatePackagingGroup;
-#[doc(hidden)]
-pub type UpdatePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePackagingGroup`](crate::operation::UpdatePackagingGroup)>
     #[allow(unused_mut)]

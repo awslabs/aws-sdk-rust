@@ -46,10 +46,6 @@ pub mod cancel_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelJobRunInputOperationOutputAlias = crate::operation::CancelJobRun;
-#[doc(hidden)]
-pub type CancelJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelJobRun`](crate::operation::CancelJobRun)>
     #[allow(unused_mut)]
@@ -365,10 +361,6 @@ pub mod create_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
-#[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(unused_mut)]
@@ -513,10 +505,6 @@ pub mod delete_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
-#[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(unused_mut)]
@@ -663,10 +651,6 @@ pub mod get_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetApplicationInputOperationOutputAlias = crate::operation::GetApplication;
-#[doc(hidden)]
-pub type GetApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetApplication`](crate::operation::GetApplication)>
     #[allow(unused_mut)]
@@ -824,10 +808,6 @@ pub mod get_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobRunInputOperationOutputAlias = crate::operation::GetJobRun;
-#[doc(hidden)]
-pub type GetJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobRunInput {
     /// Consumes the builder and constructs an Operation<[`GetJobRun`](crate::operation::GetJobRun)>
     #[allow(unused_mut)]
@@ -1011,10 +991,6 @@ pub mod list_applications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
-#[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(unused_mut)]
@@ -1233,10 +1209,6 @@ pub mod list_job_runs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobRunsInputOperationOutputAlias = crate::operation::ListJobRuns;
-#[doc(hidden)]
-pub type ListJobRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(unused_mut)]
@@ -1420,10 +1392,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1566,10 +1534,6 @@ pub mod start_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartApplicationInputOperationOutputAlias = crate::operation::StartApplication;
-#[doc(hidden)]
-pub type StartApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartApplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartApplication`](crate::operation::StartApplication)>
     #[allow(unused_mut)]
@@ -1830,10 +1794,6 @@ pub mod start_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartJobRunInputOperationOutputAlias = crate::operation::StartJobRun;
-#[doc(hidden)]
-pub type StartJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(unused_mut)]
@@ -1997,10 +1957,6 @@ pub mod stop_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopApplicationInputOperationOutputAlias = crate::operation::StopApplication;
-#[doc(hidden)]
-pub type StopApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopApplicationInput {
     /// Consumes the builder and constructs an Operation<[`StopApplication`](crate::operation::StopApplication)>
     #[allow(unused_mut)]
@@ -2173,10 +2129,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2351,10 +2303,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2611,10 +2559,6 @@ pub mod update_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
-#[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(unused_mut)]

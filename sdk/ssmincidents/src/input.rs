@@ -60,10 +60,6 @@ pub mod create_replication_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateReplicationSetInputOperationOutputAlias = crate::operation::CreateReplicationSet;
-#[doc(hidden)]
-pub type CreateReplicationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationSet`](crate::operation::CreateReplicationSet)>
     #[allow(unused_mut)]
@@ -326,10 +322,6 @@ pub mod create_response_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResponsePlanInputOperationOutputAlias = crate::operation::CreateResponsePlan;
-#[doc(hidden)]
-pub type CreateResponsePlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateResponsePlan`](crate::operation::CreateResponsePlan)>
     #[allow(unused_mut)]
@@ -525,10 +517,6 @@ pub mod create_timeline_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTimelineEventInputOperationOutputAlias = crate::operation::CreateTimelineEvent;
-#[doc(hidden)]
-pub type CreateTimelineEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`CreateTimelineEvent`](crate::operation::CreateTimelineEvent)>
     #[allow(unused_mut)]
@@ -668,10 +656,6 @@ pub mod delete_incident_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIncidentRecordInputOperationOutputAlias = crate::operation::DeleteIncidentRecord;
-#[doc(hidden)]
-pub type DeleteIncidentRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIncidentRecordInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIncidentRecord`](crate::operation::DeleteIncidentRecord)>
     #[allow(unused_mut)]
@@ -810,10 +794,6 @@ pub mod delete_replication_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReplicationSetInputOperationOutputAlias = crate::operation::DeleteReplicationSet;
-#[doc(hidden)]
-pub type DeleteReplicationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationSet`](crate::operation::DeleteReplicationSet)>
     #[allow(unused_mut)]
@@ -961,10 +941,6 @@ pub mod delete_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(unused_mut)]
@@ -1103,10 +1079,6 @@ pub mod delete_response_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResponsePlanInputOperationOutputAlias = crate::operation::DeleteResponsePlan;
-#[doc(hidden)]
-pub type DeleteResponsePlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResponsePlan`](crate::operation::DeleteResponsePlan)>
     #[allow(unused_mut)]
@@ -1260,10 +1232,6 @@ pub mod delete_timeline_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTimelineEventInputOperationOutputAlias = crate::operation::DeleteTimelineEvent;
-#[doc(hidden)]
-pub type DeleteTimelineEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTimelineEvent`](crate::operation::DeleteTimelineEvent)>
     #[allow(unused_mut)]
@@ -1400,10 +1368,6 @@ pub mod get_incident_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIncidentRecordInputOperationOutputAlias = crate::operation::GetIncidentRecord;
-#[doc(hidden)]
-pub type GetIncidentRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIncidentRecordInput {
     /// Consumes the builder and constructs an Operation<[`GetIncidentRecord`](crate::operation::GetIncidentRecord)>
     #[allow(unused_mut)]
@@ -1537,10 +1501,6 @@ pub mod get_replication_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReplicationSetInputOperationOutputAlias = crate::operation::GetReplicationSet;
-#[doc(hidden)]
-pub type GetReplicationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationSet`](crate::operation::GetReplicationSet)>
     #[allow(unused_mut)]
@@ -1700,10 +1660,6 @@ pub mod get_resource_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourcePoliciesInputOperationOutputAlias = crate::operation::GetResourcePolicies;
-#[doc(hidden)]
-pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
     #[allow(unused_mut)]
@@ -1851,10 +1807,6 @@ pub mod get_response_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResponsePlanInputOperationOutputAlias = crate::operation::GetResponsePlan;
-#[doc(hidden)]
-pub type GetResponsePlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`GetResponsePlan`](crate::operation::GetResponsePlan)>
     #[allow(unused_mut)]
@@ -2005,10 +1957,6 @@ pub mod get_timeline_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTimelineEventInputOperationOutputAlias = crate::operation::GetTimelineEvent;
-#[doc(hidden)]
-pub type GetTimelineEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`GetTimelineEvent`](crate::operation::GetTimelineEvent)>
     #[allow(unused_mut)]
@@ -2207,10 +2155,6 @@ pub mod list_incident_records_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIncidentRecordsInputOperationOutputAlias = crate::operation::ListIncidentRecords;
-#[doc(hidden)]
-pub type ListIncidentRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIncidentRecordsInput {
     /// Consumes the builder and constructs an Operation<[`ListIncidentRecords`](crate::operation::ListIncidentRecords)>
     #[allow(unused_mut)]
@@ -2376,10 +2320,6 @@ pub mod list_related_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRelatedItemsInputOperationOutputAlias = crate::operation::ListRelatedItems;
-#[doc(hidden)]
-pub type ListRelatedItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRelatedItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListRelatedItems`](crate::operation::ListRelatedItems)>
     #[allow(unused_mut)]
@@ -2530,10 +2470,6 @@ pub mod list_replication_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListReplicationSetsInputOperationOutputAlias = crate::operation::ListReplicationSets;
-#[doc(hidden)]
-pub type ListReplicationSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReplicationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListReplicationSets`](crate::operation::ListReplicationSets)>
     #[allow(unused_mut)]
@@ -2684,10 +2620,6 @@ pub mod list_response_plans_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResponsePlansInputOperationOutputAlias = crate::operation::ListResponsePlans;
-#[doc(hidden)]
-pub type ListResponsePlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResponsePlansInput {
     /// Consumes the builder and constructs an Operation<[`ListResponsePlans`](crate::operation::ListResponsePlans)>
     #[allow(unused_mut)]
@@ -2826,10 +2758,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3067,10 +2995,6 @@ pub mod list_timeline_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTimelineEventsInputOperationOutputAlias = crate::operation::ListTimelineEvents;
-#[doc(hidden)]
-pub type ListTimelineEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTimelineEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListTimelineEvents`](crate::operation::ListTimelineEvents)>
     #[allow(unused_mut)]
@@ -3221,10 +3145,6 @@ pub mod put_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(unused_mut)]
@@ -3454,10 +3374,6 @@ pub mod start_incident_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartIncidentInputOperationOutputAlias = crate::operation::StartIncident;
-#[doc(hidden)]
-pub type StartIncidentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartIncidentInput {
     /// Consumes the builder and constructs an Operation<[`StartIncident`](crate::operation::StartIncident)>
     #[allow(unused_mut)]
@@ -3628,10 +3544,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3806,10 +3718,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3988,11 +3896,6 @@ pub mod update_deletion_protection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDeletionProtectionInputOperationOutputAlias =
-    crate::operation::UpdateDeletionProtection;
-#[doc(hidden)]
-pub type UpdateDeletionProtectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeletionProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeletionProtection`](crate::operation::UpdateDeletionProtection)>
     #[allow(unused_mut)]
@@ -4254,10 +4157,6 @@ pub mod update_incident_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateIncidentRecordInputOperationOutputAlias = crate::operation::UpdateIncidentRecord;
-#[doc(hidden)]
-pub type UpdateIncidentRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIncidentRecordInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIncidentRecord`](crate::operation::UpdateIncidentRecord)>
     #[allow(unused_mut)]
@@ -4431,10 +4330,6 @@ pub mod update_related_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRelatedItemsInputOperationOutputAlias = crate::operation::UpdateRelatedItems;
-#[doc(hidden)]
-pub type UpdateRelatedItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRelatedItemsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRelatedItems`](crate::operation::UpdateRelatedItems)>
     #[allow(unused_mut)]
@@ -4610,10 +4505,6 @@ pub mod update_replication_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateReplicationSetInputOperationOutputAlias = crate::operation::UpdateReplicationSet;
-#[doc(hidden)]
-pub type UpdateReplicationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReplicationSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationSet`](crate::operation::UpdateReplicationSet)>
     #[allow(unused_mut)]
@@ -4966,10 +4857,6 @@ pub mod update_response_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResponsePlanInputOperationOutputAlias = crate::operation::UpdateResponsePlan;
-#[doc(hidden)]
-pub type UpdateResponsePlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResponsePlanInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResponsePlan`](crate::operation::UpdateResponsePlan)>
     #[allow(unused_mut)]
@@ -5177,10 +5064,6 @@ pub mod update_timeline_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTimelineEventInputOperationOutputAlias = crate::operation::UpdateTimelineEvent;
-#[doc(hidden)]
-pub type UpdateTimelineEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTimelineEventInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTimelineEvent`](crate::operation::UpdateTimelineEvent)>
     #[allow(unused_mut)]

@@ -69,11 +69,6 @@ pub mod complete_attachment_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompleteAttachmentUploadInputOperationOutputAlias =
-    crate::operation::CompleteAttachmentUpload;
-#[doc(hidden)]
-pub type CompleteAttachmentUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteAttachmentUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteAttachmentUpload`](crate::operation::CompleteAttachmentUpload)>
     #[allow(unused_mut)]
@@ -260,11 +255,6 @@ pub mod create_participant_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateParticipantConnectionInputOperationOutputAlias =
-    crate::operation::CreateParticipantConnection;
-#[doc(hidden)]
-pub type CreateParticipantConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateParticipantConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateParticipantConnection`](crate::operation::CreateParticipantConnection)>
     #[allow(unused_mut)]
@@ -419,10 +409,6 @@ pub mod disconnect_participant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisconnectParticipantInputOperationOutputAlias = crate::operation::DisconnectParticipant;
-#[doc(hidden)]
-pub type DisconnectParticipantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisconnectParticipantInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectParticipant`](crate::operation::DisconnectParticipant)>
     #[allow(unused_mut)]
@@ -586,10 +572,6 @@ pub mod get_attachment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAttachmentInputOperationOutputAlias = crate::operation::GetAttachment;
-#[doc(hidden)]
-pub type GetAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAttachment`](crate::operation::GetAttachment)>
     #[allow(unused_mut)]
@@ -810,10 +792,6 @@ pub mod get_transcript_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTranscriptInputOperationOutputAlias = crate::operation::GetTranscript;
-#[doc(hidden)]
-pub type GetTranscriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTranscriptInput {
     /// Consumes the builder and constructs an Operation<[`GetTranscript`](crate::operation::GetTranscript)>
     #[allow(unused_mut)]
@@ -999,10 +977,6 @@ pub mod send_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendEventInputOperationOutputAlias = crate::operation::SendEvent;
-#[doc(hidden)]
-pub type SendEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEventInput {
     /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
     #[allow(unused_mut)]
@@ -1182,10 +1156,6 @@ pub mod send_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendMessageInputOperationOutputAlias = crate::operation::SendMessage;
-#[doc(hidden)]
-pub type SendMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendMessage`](crate::operation::SendMessage)>
     #[allow(unused_mut)]
@@ -1382,10 +1352,6 @@ pub mod start_attachment_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartAttachmentUploadInputOperationOutputAlias = crate::operation::StartAttachmentUpload;
-#[doc(hidden)]
-pub type StartAttachmentUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAttachmentUploadInput {
     /// Consumes the builder and constructs an Operation<[`StartAttachmentUpload`](crate::operation::StartAttachmentUpload)>
     #[allow(unused_mut)]

@@ -98,12 +98,6 @@ pub mod accept_direct_connect_gateway_association_proposal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptDirectConnectGatewayAssociationProposalInputOperationOutputAlias =
-    crate::operation::AcceptDirectConnectGatewayAssociationProposal;
-#[doc(hidden)]
-pub type AcceptDirectConnectGatewayAssociationProposalInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptDirectConnectGatewayAssociationProposalInput {
     /// Consumes the builder and constructs an Operation<[`AcceptDirectConnectGatewayAssociationProposal`](crate::operation::AcceptDirectConnectGatewayAssociationProposal)>
     #[allow(unused_mut)]
@@ -306,12 +300,6 @@ pub mod allocate_connection_on_interconnect_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AllocateConnectionOnInterconnectInputOperationOutputAlias =
-    crate::operation::AllocateConnectionOnInterconnect;
-#[doc(hidden)]
-pub type AllocateConnectionOnInterconnectInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocateConnectionOnInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`AllocateConnectionOnInterconnect`](crate::operation::AllocateConnectionOnInterconnect)>
     #[allow(unused_mut)]
@@ -534,11 +522,6 @@ pub mod allocate_hosted_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AllocateHostedConnectionInputOperationOutputAlias =
-    crate::operation::AllocateHostedConnection;
-#[doc(hidden)]
-pub type AllocateHostedConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AllocateHostedConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AllocateHostedConnection`](crate::operation::AllocateHostedConnection)>
     #[allow(unused_mut)]
@@ -724,12 +707,6 @@ pub mod allocate_private_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AllocatePrivateVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::AllocatePrivateVirtualInterface;
-#[doc(hidden)]
-pub type AllocatePrivateVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocatePrivateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AllocatePrivateVirtualInterface`](crate::operation::AllocatePrivateVirtualInterface)>
     #[allow(unused_mut)]
@@ -912,12 +889,6 @@ pub mod allocate_public_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AllocatePublicVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::AllocatePublicVirtualInterface;
-#[doc(hidden)]
-pub type AllocatePublicVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocatePublicVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AllocatePublicVirtualInterface`](crate::operation::AllocatePublicVirtualInterface)>
     #[allow(unused_mut)]
@@ -1100,12 +1071,6 @@ pub mod allocate_transit_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AllocateTransitVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::AllocateTransitVirtualInterface;
-#[doc(hidden)]
-pub type AllocateTransitVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AllocateTransitVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AllocateTransitVirtualInterface`](crate::operation::AllocateTransitVirtualInterface)>
     #[allow(unused_mut)]
@@ -1265,11 +1230,6 @@ pub mod associate_connection_with_lag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateConnectionWithLagInputOperationOutputAlias =
-    crate::operation::AssociateConnectionWithLag;
-#[doc(hidden)]
-pub type AssociateConnectionWithLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateConnectionWithLagInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConnectionWithLag`](crate::operation::AssociateConnectionWithLag)>
     #[allow(unused_mut)]
@@ -1432,11 +1392,6 @@ pub mod associate_hosted_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateHostedConnectionInputOperationOutputAlias =
-    crate::operation::AssociateHostedConnection;
-#[doc(hidden)]
-pub type AssociateHostedConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateHostedConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateHostedConnection`](crate::operation::AssociateHostedConnection)>
     #[allow(unused_mut)]
@@ -1639,10 +1594,6 @@ pub mod associate_mac_sec_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateMacSecKeyInputOperationOutputAlias = crate::operation::AssociateMacSecKey;
-#[doc(hidden)]
-pub type AssociateMacSecKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMacSecKeyInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMacSecKey`](crate::operation::AssociateMacSecKey)>
     #[allow(unused_mut)]
@@ -1806,11 +1757,6 @@ pub mod associate_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::AssociateVirtualInterface;
-#[doc(hidden)]
-pub type AssociateVirtualInterfaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateVirtualInterface`](crate::operation::AssociateVirtualInterface)>
     #[allow(unused_mut)]
@@ -1959,10 +1905,6 @@ pub mod confirm_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmConnectionInputOperationOutputAlias = crate::operation::ConfirmConnection;
-#[doc(hidden)]
-pub type ConfirmConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmConnectionInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmConnection`](crate::operation::ConfirmConnection)>
     #[allow(unused_mut)]
@@ -2111,11 +2053,6 @@ pub mod confirm_customer_agreement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmCustomerAgreementInputOperationOutputAlias =
-    crate::operation::ConfirmCustomerAgreement;
-#[doc(hidden)]
-pub type ConfirmCustomerAgreementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmCustomerAgreementInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmCustomerAgreement`](crate::operation::ConfirmCustomerAgreement)>
     #[allow(unused_mut)]
@@ -2296,12 +2233,6 @@ pub mod confirm_private_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmPrivateVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::ConfirmPrivateVirtualInterface;
-#[doc(hidden)]
-pub type ConfirmPrivateVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmPrivateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmPrivateVirtualInterface`](crate::operation::ConfirmPrivateVirtualInterface)>
     #[allow(unused_mut)]
@@ -2449,12 +2380,6 @@ pub mod confirm_public_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmPublicVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::ConfirmPublicVirtualInterface;
-#[doc(hidden)]
-pub type ConfirmPublicVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmPublicVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmPublicVirtualInterface`](crate::operation::ConfirmPublicVirtualInterface)>
     #[allow(unused_mut)]
@@ -2617,12 +2542,6 @@ pub mod confirm_transit_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmTransitVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::ConfirmTransitVirtualInterface;
-#[doc(hidden)]
-pub type ConfirmTransitVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmTransitVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmTransitVirtualInterface`](crate::operation::ConfirmTransitVirtualInterface)>
     #[allow(unused_mut)]
@@ -2783,10 +2702,6 @@ pub mod create_bgp_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBgpPeerInputOperationOutputAlias = crate::operation::CreateBGPPeer;
-#[doc(hidden)]
-pub type CreateBgpPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBgpPeerInput {
     /// Consumes the builder and constructs an Operation<[`CreateBGPPeer`](crate::operation::CreateBGPPeer)>
     #[allow(unused_mut)]
@@ -3019,10 +2934,6 @@ pub mod create_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectionInputOperationOutputAlias = crate::operation::CreateConnection;
-#[doc(hidden)]
-pub type CreateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnection`](crate::operation::CreateConnection)>
     #[allow(unused_mut)]
@@ -3186,11 +3097,6 @@ pub mod create_direct_connect_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDirectConnectGatewayInputOperationOutputAlias =
-    crate::operation::CreateDirectConnectGateway;
-#[doc(hidden)]
-pub type CreateDirectConnectGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectConnectGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectConnectGateway`](crate::operation::CreateDirectConnectGateway)>
     #[allow(unused_mut)]
@@ -3397,12 +3303,6 @@ pub mod create_direct_connect_gateway_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDirectConnectGatewayAssociationInputOperationOutputAlias =
-    crate::operation::CreateDirectConnectGatewayAssociation;
-#[doc(hidden)]
-pub type CreateDirectConnectGatewayAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectConnectGatewayAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectConnectGatewayAssociation`](crate::operation::CreateDirectConnectGatewayAssociation)>
     #[allow(unused_mut)]
@@ -3638,12 +3538,6 @@ pub mod create_direct_connect_gateway_association_proposal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDirectConnectGatewayAssociationProposalInputOperationOutputAlias =
-    crate::operation::CreateDirectConnectGatewayAssociationProposal;
-#[doc(hidden)]
-pub type CreateDirectConnectGatewayAssociationProposalInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectConnectGatewayAssociationProposalInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectConnectGatewayAssociationProposal`](crate::operation::CreateDirectConnectGatewayAssociationProposal)>
     #[allow(unused_mut)]
@@ -3862,10 +3756,6 @@ pub mod create_interconnect_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInterconnectInputOperationOutputAlias = crate::operation::CreateInterconnect;
-#[doc(hidden)]
-pub type CreateInterconnectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`CreateInterconnect`](crate::operation::CreateInterconnect)>
     #[allow(unused_mut)]
@@ -4135,10 +4025,6 @@ pub mod create_lag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLagInputOperationOutputAlias = crate::operation::CreateLag;
-#[doc(hidden)]
-pub type CreateLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLagInput {
     /// Consumes the builder and constructs an Operation<[`CreateLag`](crate::operation::CreateLag)>
     #[allow(unused_mut)]
@@ -4304,12 +4190,6 @@ pub mod create_private_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePrivateVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::CreatePrivateVirtualInterface;
-#[doc(hidden)]
-pub type CreatePrivateVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePrivateVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePrivateVirtualInterface`](crate::operation::CreatePrivateVirtualInterface)>
     #[allow(unused_mut)]
@@ -4476,12 +4356,6 @@ pub mod create_public_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePublicVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::CreatePublicVirtualInterface;
-#[doc(hidden)]
-pub type CreatePublicVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePublicVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublicVirtualInterface`](crate::operation::CreatePublicVirtualInterface)>
     #[allow(unused_mut)]
@@ -4648,12 +4522,6 @@ pub mod create_transit_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTransitVirtualInterfaceInputOperationOutputAlias =
-    crate::operation::CreateTransitVirtualInterface;
-#[doc(hidden)]
-pub type CreateTransitVirtualInterfaceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTransitVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateTransitVirtualInterface`](crate::operation::CreateTransitVirtualInterface)>
     #[allow(unused_mut)]
@@ -4838,10 +4706,6 @@ pub mod delete_bgp_peer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBgpPeerInputOperationOutputAlias = crate::operation::DeleteBGPPeer;
-#[doc(hidden)]
-pub type DeleteBgpPeerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBgpPeerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBGPPeer`](crate::operation::DeleteBGPPeer)>
     #[allow(unused_mut)]
@@ -4988,10 +4852,6 @@ pub mod delete_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
-#[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(unused_mut)]
@@ -5140,11 +5000,6 @@ pub mod delete_direct_connect_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDirectConnectGatewayInputOperationOutputAlias =
-    crate::operation::DeleteDirectConnectGateway;
-#[doc(hidden)]
-pub type DeleteDirectConnectGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectConnectGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectConnectGateway`](crate::operation::DeleteDirectConnectGateway)>
     #[allow(unused_mut)]
@@ -5322,12 +5177,6 @@ pub mod delete_direct_connect_gateway_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDirectConnectGatewayAssociationInputOperationOutputAlias =
-    crate::operation::DeleteDirectConnectGatewayAssociation;
-#[doc(hidden)]
-pub type DeleteDirectConnectGatewayAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectConnectGatewayAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectConnectGatewayAssociation`](crate::operation::DeleteDirectConnectGatewayAssociation)>
     #[allow(unused_mut)]
@@ -5474,12 +5323,6 @@ pub mod delete_direct_connect_gateway_association_proposal_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDirectConnectGatewayAssociationProposalInputOperationOutputAlias =
-    crate::operation::DeleteDirectConnectGatewayAssociationProposal;
-#[doc(hidden)]
-pub type DeleteDirectConnectGatewayAssociationProposalInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectConnectGatewayAssociationProposalInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectConnectGatewayAssociationProposal`](crate::operation::DeleteDirectConnectGatewayAssociationProposal)>
     #[allow(unused_mut)]
@@ -5626,10 +5469,6 @@ pub mod delete_interconnect_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInterconnectInputOperationOutputAlias = crate::operation::DeleteInterconnect;
-#[doc(hidden)]
-pub type DeleteInterconnectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInterconnect`](crate::operation::DeleteInterconnect)>
     #[allow(unused_mut)]
@@ -5772,10 +5611,6 @@ pub mod delete_lag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLagInputOperationOutputAlias = crate::operation::DeleteLag;
-#[doc(hidden)]
-pub type DeleteLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLagInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLag`](crate::operation::DeleteLag)>
     #[allow(unused_mut)]
@@ -5920,10 +5755,6 @@ pub mod delete_virtual_interface_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVirtualInterfaceInputOperationOutputAlias = crate::operation::DeleteVirtualInterface;
-#[doc(hidden)]
-pub type DeleteVirtualInterfaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualInterface`](crate::operation::DeleteVirtualInterface)>
     #[allow(unused_mut)]
@@ -6102,10 +5933,6 @@ pub mod describe_connection_loa_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectionLoaInputOperationOutputAlias = crate::operation::DescribeConnectionLoa;
-#[doc(hidden)]
-pub type DescribeConnectionLoaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionLoaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionLoa`](crate::operation::DescribeConnectionLoa)>
     #[allow(unused_mut)]
@@ -6254,10 +6081,6 @@ pub mod describe_connections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectionsInputOperationOutputAlias = crate::operation::DescribeConnections;
-#[doc(hidden)]
-pub type DescribeConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnections`](crate::operation::DescribeConnections)>
     #[allow(unused_mut)]
@@ -6406,12 +6229,6 @@ pub mod describe_connections_on_interconnect_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectionsOnInterconnectInputOperationOutputAlias =
-    crate::operation::DescribeConnectionsOnInterconnect;
-#[doc(hidden)]
-pub type DescribeConnectionsOnInterconnectInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionsOnInterconnectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionsOnInterconnect`](crate::operation::DescribeConnectionsOnInterconnect)>
     #[allow(unused_mut)]
@@ -6542,11 +6359,6 @@ pub mod describe_customer_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCustomerMetadataInputOperationOutputAlias =
-    crate::operation::DescribeCustomerMetadata;
-#[doc(hidden)]
-pub type DescribeCustomerMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomerMetadataInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomerMetadata`](crate::operation::DescribeCustomerMetadata)>
     #[allow(unused_mut)]
@@ -6745,12 +6557,6 @@ pub mod describe_direct_connect_gateway_association_proposals_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewayAssociationProposalsInputOperationOutputAlias =
-    crate::operation::DescribeDirectConnectGatewayAssociationProposals;
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewayAssociationProposalsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewayAssociationProposalsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGatewayAssociationProposals`](crate::operation::DescribeDirectConnectGatewayAssociationProposals)>
     #[allow(unused_mut)]
@@ -6973,12 +6779,6 @@ pub mod describe_direct_connect_gateway_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewayAssociationsInputOperationOutputAlias =
-    crate::operation::DescribeDirectConnectGatewayAssociations;
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewayAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewayAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGatewayAssociations`](crate::operation::DescribeDirectConnectGatewayAssociations)>
     #[allow(unused_mut)]
@@ -7167,12 +6967,6 @@ pub mod describe_direct_connect_gateway_attachments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewayAttachmentsInputOperationOutputAlias =
-    crate::operation::DescribeDirectConnectGatewayAttachments;
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewayAttachmentsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewayAttachmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGatewayAttachments`](crate::operation::DescribeDirectConnectGatewayAttachments)>
     #[allow(unused_mut)]
@@ -7346,12 +7140,6 @@ pub mod describe_direct_connect_gateways_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewaysInputOperationOutputAlias =
-    crate::operation::DescribeDirectConnectGateways;
-#[doc(hidden)]
-pub type DescribeDirectConnectGatewaysInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectConnectGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectConnectGateways`](crate::operation::DescribeDirectConnectGateways)>
     #[allow(unused_mut)]
@@ -7499,11 +7287,6 @@ pub mod describe_hosted_connections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeHostedConnectionsInputOperationOutputAlias =
-    crate::operation::DescribeHostedConnections;
-#[doc(hidden)]
-pub type DescribeHostedConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHostedConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHostedConnections`](crate::operation::DescribeHostedConnections)>
     #[allow(unused_mut)]
@@ -7684,11 +7467,6 @@ pub mod describe_interconnect_loa_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInterconnectLoaInputOperationOutputAlias =
-    crate::operation::DescribeInterconnectLoa;
-#[doc(hidden)]
-pub type DescribeInterconnectLoaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInterconnectLoaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInterconnectLoa`](crate::operation::DescribeInterconnectLoa)>
     #[allow(unused_mut)]
@@ -7837,10 +7615,6 @@ pub mod describe_interconnects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInterconnectsInputOperationOutputAlias = crate::operation::DescribeInterconnects;
-#[doc(hidden)]
-pub type DescribeInterconnectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInterconnectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInterconnects`](crate::operation::DescribeInterconnects)>
     #[allow(unused_mut)]
@@ -7986,10 +7760,6 @@ pub mod describe_lags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLagsInputOperationOutputAlias = crate::operation::DescribeLags;
-#[doc(hidden)]
-pub type DescribeLagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLags`](crate::operation::DescribeLags)>
     #[allow(unused_mut)]
@@ -8166,10 +7936,6 @@ pub mod describe_loa_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoaInputOperationOutputAlias = crate::operation::DescribeLoa;
-#[doc(hidden)]
-pub type DescribeLoaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoa`](crate::operation::DescribeLoa)>
     #[allow(unused_mut)]
@@ -8299,10 +8065,6 @@ pub mod describe_locations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLocationsInputOperationOutputAlias = crate::operation::DescribeLocations;
-#[doc(hidden)]
-pub type DescribeLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLocationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLocations`](crate::operation::DescribeLocations)>
     #[allow(unused_mut)]
@@ -8459,11 +8221,6 @@ pub mod describe_router_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRouterConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeRouterConfiguration;
-#[doc(hidden)]
-pub type DescribeRouterConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRouterConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRouterConfiguration`](crate::operation::DescribeRouterConfiguration)>
     #[allow(unused_mut)]
@@ -8615,10 +8372,6 @@ pub mod describe_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
-#[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
@@ -8750,11 +8503,6 @@ pub mod describe_virtual_gateways_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVirtualGatewaysInputOperationOutputAlias =
-    crate::operation::DescribeVirtualGateways;
-#[doc(hidden)]
-pub type DescribeVirtualGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualGateways`](crate::operation::DescribeVirtualGateways)>
     #[allow(unused_mut)]
@@ -8913,11 +8661,6 @@ pub mod describe_virtual_interfaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVirtualInterfacesInputOperationOutputAlias =
-    crate::operation::DescribeVirtualInterfaces;
-#[doc(hidden)]
-pub type DescribeVirtualInterfacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualInterfacesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualInterfaces`](crate::operation::DescribeVirtualInterfaces)>
     #[allow(unused_mut)]
@@ -9080,12 +8823,6 @@ pub mod disassociate_connection_from_lag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateConnectionFromLagInputOperationOutputAlias =
-    crate::operation::DisassociateConnectionFromLag;
-#[doc(hidden)]
-pub type DisassociateConnectionFromLagInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectionFromLagInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnectionFromLag`](crate::operation::DisassociateConnectionFromLag)>
     #[allow(unused_mut)]
@@ -9247,10 +8984,6 @@ pub mod disassociate_mac_sec_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateMacSecKeyInputOperationOutputAlias = crate::operation::DisassociateMacSecKey;
-#[doc(hidden)]
-pub type DisassociateMacSecKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMacSecKeyInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMacSecKey`](crate::operation::DisassociateMacSecKey)>
     #[allow(unused_mut)]
@@ -9472,12 +9205,6 @@ pub mod list_virtual_interface_test_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVirtualInterfaceTestHistoryInputOperationOutputAlias =
-    crate::operation::ListVirtualInterfaceTestHistory;
-#[doc(hidden)]
-pub type ListVirtualInterfaceTestHistoryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualInterfaceTestHistoryInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualInterfaceTestHistory`](crate::operation::ListVirtualInterfaceTestHistory)>
     #[allow(unused_mut)]
@@ -9660,10 +9387,6 @@ pub mod start_bgp_failover_test_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartBgpFailoverTestInputOperationOutputAlias = crate::operation::StartBgpFailoverTest;
-#[doc(hidden)]
-pub type StartBgpFailoverTestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartBgpFailoverTestInput {
     /// Consumes the builder and constructs an Operation<[`StartBgpFailoverTest`](crate::operation::StartBgpFailoverTest)>
     #[allow(unused_mut)]
@@ -9812,10 +9535,6 @@ pub mod stop_bgp_failover_test_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopBgpFailoverTestInputOperationOutputAlias = crate::operation::StopBgpFailoverTest;
-#[doc(hidden)]
-pub type StopBgpFailoverTestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopBgpFailoverTestInput {
     /// Consumes the builder and constructs an Operation<[`StopBgpFailoverTest`](crate::operation::StopBgpFailoverTest)>
     #[allow(unused_mut)]
@@ -9982,10 +9701,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -10150,10 +9865,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -10334,10 +10045,6 @@ pub mod update_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectionInputOperationOutputAlias = crate::operation::UpdateConnection;
-#[doc(hidden)]
-pub type UpdateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnection`](crate::operation::UpdateConnection)>
     #[allow(unused_mut)]
@@ -10504,11 +10211,6 @@ pub mod update_direct_connect_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDirectConnectGatewayInputOperationOutputAlias =
-    crate::operation::UpdateDirectConnectGateway;
-#[doc(hidden)]
-pub type UpdateDirectConnectGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDirectConnectGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDirectConnectGateway`](crate::operation::UpdateDirectConnectGateway)>
     #[allow(unused_mut)]
@@ -10712,12 +10414,6 @@ pub mod update_direct_connect_gateway_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDirectConnectGatewayAssociationInputOperationOutputAlias =
-    crate::operation::UpdateDirectConnectGatewayAssociation;
-#[doc(hidden)]
-pub type UpdateDirectConnectGatewayAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDirectConnectGatewayAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDirectConnectGatewayAssociation`](crate::operation::UpdateDirectConnectGatewayAssociation)>
     #[allow(unused_mut)]
@@ -10900,10 +10596,6 @@ pub mod update_lag_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLagInputOperationOutputAlias = crate::operation::UpdateLag;
-#[doc(hidden)]
-pub type UpdateLagInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLagInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLag`](crate::operation::UpdateLag)>
     #[allow(unused_mut)]
@@ -11089,12 +10781,6 @@ pub mod update_virtual_interface_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVirtualInterfaceAttributesInputOperationOutputAlias =
-    crate::operation::UpdateVirtualInterfaceAttributes;
-#[doc(hidden)]
-pub type UpdateVirtualInterfaceAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVirtualInterfaceAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVirtualInterfaceAttributes`](crate::operation::UpdateVirtualInterfaceAttributes)>
     #[allow(unused_mut)]

@@ -84,10 +84,6 @@ pub mod analyze_document_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AnalyzeDocumentInputOperationOutputAlias = crate::operation::AnalyzeDocument;
-#[doc(hidden)]
-pub type AnalyzeDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AnalyzeDocumentInput {
     /// Consumes the builder and constructs an Operation<[`AnalyzeDocument`](crate::operation::AnalyzeDocument)>
     #[allow(unused_mut)]
@@ -241,10 +237,6 @@ pub mod analyze_expense_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AnalyzeExpenseInputOperationOutputAlias = crate::operation::AnalyzeExpense;
-#[doc(hidden)]
-pub type AnalyzeExpenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AnalyzeExpenseInput {
     /// Consumes the builder and constructs an Operation<[`AnalyzeExpense`](crate::operation::AnalyzeExpense)>
     #[allow(unused_mut)]
@@ -396,10 +388,6 @@ pub mod analyze_id_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AnalyzeIdInputOperationOutputAlias = crate::operation::AnalyzeID;
-#[doc(hidden)]
-pub type AnalyzeIdInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AnalyzeIdInput {
     /// Consumes the builder and constructs an Operation<[`AnalyzeID`](crate::operation::AnalyzeID)>
     #[allow(unused_mut)]
@@ -543,10 +531,6 @@ pub mod detect_document_text_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectDocumentTextInputOperationOutputAlias = crate::operation::DetectDocumentText;
-#[doc(hidden)]
-pub type DetectDocumentTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectDocumentTextInput {
     /// Consumes the builder and constructs an Operation<[`DetectDocumentText`](crate::operation::DetectDocumentText)>
     #[allow(unused_mut)]
@@ -714,10 +698,6 @@ pub mod get_document_analysis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDocumentAnalysisInputOperationOutputAlias = crate::operation::GetDocumentAnalysis;
-#[doc(hidden)]
-pub type GetDocumentAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDocumentAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`GetDocumentAnalysis`](crate::operation::GetDocumentAnalysis)>
     #[allow(unused_mut)]
@@ -887,11 +867,6 @@ pub mod get_document_text_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDocumentTextDetectionInputOperationOutputAlias =
-    crate::operation::GetDocumentTextDetection;
-#[doc(hidden)]
-pub type GetDocumentTextDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDocumentTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetDocumentTextDetection`](crate::operation::GetDocumentTextDetection)>
     #[allow(unused_mut)]
@@ -1061,10 +1036,6 @@ pub mod get_expense_analysis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExpenseAnalysisInputOperationOutputAlias = crate::operation::GetExpenseAnalysis;
-#[doc(hidden)]
-pub type GetExpenseAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExpenseAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`GetExpenseAnalysis`](crate::operation::GetExpenseAnalysis)>
     #[allow(unused_mut)]
@@ -1316,10 +1287,6 @@ pub mod start_document_analysis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDocumentAnalysisInputOperationOutputAlias = crate::operation::StartDocumentAnalysis;
-#[doc(hidden)]
-pub type StartDocumentAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDocumentAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`StartDocumentAnalysis`](crate::operation::StartDocumentAnalysis)>
     #[allow(unused_mut)]
@@ -1539,11 +1506,6 @@ pub mod start_document_text_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDocumentTextDetectionInputOperationOutputAlias =
-    crate::operation::StartDocumentTextDetection;
-#[doc(hidden)]
-pub type StartDocumentTextDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDocumentTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartDocumentTextDetection`](crate::operation::StartDocumentTextDetection)>
     #[allow(unused_mut)]
@@ -1758,10 +1720,6 @@ pub mod start_expense_analysis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartExpenseAnalysisInputOperationOutputAlias = crate::operation::StartExpenseAnalysis;
-#[doc(hidden)]
-pub type StartExpenseAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartExpenseAnalysisInput {
     /// Consumes the builder and constructs an Operation<[`StartExpenseAnalysis`](crate::operation::StartExpenseAnalysis)>
     #[allow(unused_mut)]

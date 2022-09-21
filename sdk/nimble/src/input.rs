@@ -64,10 +64,6 @@ pub mod accept_eulas_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptEulasInputOperationOutputAlias = crate::operation::AcceptEulas;
-#[doc(hidden)]
-pub type AcceptEulasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptEulasInput {
     /// Consumes the builder and constructs an Operation<[`AcceptEulas`](crate::operation::AcceptEulas)>
     #[allow(unused_mut)]
@@ -380,10 +376,6 @@ pub mod create_launch_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLaunchProfileInputOperationOutputAlias = crate::operation::CreateLaunchProfile;
-#[doc(hidden)]
-pub type CreateLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateLaunchProfile`](crate::operation::CreateLaunchProfile)>
     #[allow(unused_mut)]
@@ -622,10 +614,6 @@ pub mod create_streaming_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamingImageInputOperationOutputAlias = crate::operation::CreateStreamingImage;
-#[doc(hidden)]
-pub type CreateStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingImage`](crate::operation::CreateStreamingImage)>
     #[allow(unused_mut)]
@@ -888,10 +876,6 @@ pub mod create_streaming_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamingSessionInputOperationOutputAlias = crate::operation::CreateStreamingSession;
-#[doc(hidden)]
-pub type CreateStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingSession`](crate::operation::CreateStreamingSession)>
     #[allow(unused_mut)]
@@ -1094,12 +1078,6 @@ pub mod create_streaming_session_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamingSessionStreamInputOperationOutputAlias =
-    crate::operation::CreateStreamingSessionStream;
-#[doc(hidden)]
-pub type CreateStreamingSessionStreamInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingSessionStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingSessionStream`](crate::operation::CreateStreamingSessionStream)>
     #[allow(unused_mut)]
@@ -1378,10 +1356,6 @@ pub mod create_studio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStudioInputOperationOutputAlias = crate::operation::CreateStudio;
-#[doc(hidden)]
-pub type CreateStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStudioInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudio`](crate::operation::CreateStudio)>
     #[allow(unused_mut)]
@@ -1737,10 +1711,6 @@ pub mod create_studio_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStudioComponentInputOperationOutputAlias = crate::operation::CreateStudioComponent;
-#[doc(hidden)]
-pub type CreateStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudioComponent`](crate::operation::CreateStudioComponent)>
     #[allow(unused_mut)]
@@ -1932,10 +1902,6 @@ pub mod delete_launch_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLaunchProfileInputOperationOutputAlias = crate::operation::DeleteLaunchProfile;
-#[doc(hidden)]
-pub type DeleteLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchProfile`](crate::operation::DeleteLaunchProfile)>
     #[allow(unused_mut)]
@@ -2139,11 +2105,6 @@ pub mod delete_launch_profile_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLaunchProfileMemberInputOperationOutputAlias =
-    crate::operation::DeleteLaunchProfileMember;
-#[doc(hidden)]
-pub type DeleteLaunchProfileMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchProfileMember`](crate::operation::DeleteLaunchProfileMember)>
     #[allow(unused_mut)]
@@ -2342,10 +2303,6 @@ pub mod delete_streaming_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStreamingImageInputOperationOutputAlias = crate::operation::DeleteStreamingImage;
-#[doc(hidden)]
-pub type DeleteStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingImage`](crate::operation::DeleteStreamingImage)>
     #[allow(unused_mut)]
@@ -2533,10 +2490,6 @@ pub mod delete_streaming_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStreamingSessionInputOperationOutputAlias = crate::operation::DeleteStreamingSession;
-#[doc(hidden)]
-pub type DeleteStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingSession`](crate::operation::DeleteStreamingSession)>
     #[allow(unused_mut)]
@@ -2712,10 +2665,6 @@ pub mod delete_studio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStudioInputOperationOutputAlias = crate::operation::DeleteStudio;
-#[doc(hidden)]
-pub type DeleteStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudio`](crate::operation::DeleteStudio)>
     #[allow(unused_mut)]
@@ -2890,10 +2839,6 @@ pub mod delete_studio_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStudioComponentInputOperationOutputAlias = crate::operation::DeleteStudioComponent;
-#[doc(hidden)]
-pub type DeleteStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioComponent`](crate::operation::DeleteStudioComponent)>
     #[allow(unused_mut)]
@@ -3081,10 +3026,6 @@ pub mod delete_studio_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStudioMemberInputOperationOutputAlias = crate::operation::DeleteStudioMember;
-#[doc(hidden)]
-pub type DeleteStudioMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioMember`](crate::operation::DeleteStudioMember)>
     #[allow(unused_mut)]
@@ -3246,10 +3187,6 @@ pub mod get_eula_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEulaInputOperationOutputAlias = crate::operation::GetEula;
-#[doc(hidden)]
-pub type GetEulaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEulaInput {
     /// Consumes the builder and constructs an Operation<[`GetEula`](crate::operation::GetEula)>
     #[allow(unused_mut)]
@@ -3401,10 +3338,6 @@ pub mod get_launch_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLaunchProfileInputOperationOutputAlias = crate::operation::GetLaunchProfile;
-#[doc(hidden)]
-pub type GetLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfile`](crate::operation::GetLaunchProfile)>
     #[allow(unused_mut)]
@@ -3580,11 +3513,6 @@ pub mod get_launch_profile_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLaunchProfileDetailsInputOperationOutputAlias =
-    crate::operation::GetLaunchProfileDetails;
-#[doc(hidden)]
-pub type GetLaunchProfileDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileDetails`](crate::operation::GetLaunchProfileDetails)>
     #[allow(unused_mut)]
@@ -3812,12 +3740,6 @@ pub mod get_launch_profile_initialization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLaunchProfileInitializationInputOperationOutputAlias =
-    crate::operation::GetLaunchProfileInitialization;
-#[doc(hidden)]
-pub type GetLaunchProfileInitializationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileInitializationInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileInitialization`](crate::operation::GetLaunchProfileInitialization)>
     #[allow(unused_mut)]
@@ -4028,10 +3950,6 @@ pub mod get_launch_profile_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLaunchProfileMemberInputOperationOutputAlias = crate::operation::GetLaunchProfileMember;
-#[doc(hidden)]
-pub type GetLaunchProfileMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileMember`](crate::operation::GetLaunchProfileMember)>
     #[allow(unused_mut)]
@@ -4213,10 +4131,6 @@ pub mod get_streaming_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStreamingImageInputOperationOutputAlias = crate::operation::GetStreamingImage;
-#[doc(hidden)]
-pub type GetStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingImage`](crate::operation::GetStreamingImage)>
     #[allow(unused_mut)]
@@ -4387,10 +4301,6 @@ pub mod get_streaming_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStreamingSessionInputOperationOutputAlias = crate::operation::GetStreamingSession;
-#[doc(hidden)]
-pub type GetStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingSession`](crate::operation::GetStreamingSession)>
     #[allow(unused_mut)]
@@ -4575,11 +4485,6 @@ pub mod get_streaming_session_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStreamingSessionStreamInputOperationOutputAlias =
-    crate::operation::GetStreamingSessionStream;
-#[doc(hidden)]
-pub type GetStreamingSessionStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingSessionStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingSessionStream`](crate::operation::GetStreamingSessionStream)>
     #[allow(unused_mut)]
@@ -4745,10 +4650,6 @@ pub mod get_studio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStudioInputOperationOutputAlias = crate::operation::GetStudio;
-#[doc(hidden)]
-pub type GetStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioInput {
     /// Consumes the builder and constructs an Operation<[`GetStudio`](crate::operation::GetStudio)>
     #[allow(unused_mut)]
@@ -4905,10 +4806,6 @@ pub mod get_studio_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStudioComponentInputOperationOutputAlias = crate::operation::GetStudioComponent;
-#[doc(hidden)]
-pub type GetStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioComponent`](crate::operation::GetStudioComponent)>
     #[allow(unused_mut)]
@@ -5079,10 +4976,6 @@ pub mod get_studio_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStudioMemberInputOperationOutputAlias = crate::operation::GetStudioMember;
-#[doc(hidden)]
-pub type GetStudioMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioMember`](crate::operation::GetStudioMember)>
     #[allow(unused_mut)]
@@ -5274,10 +5167,6 @@ pub mod list_eula_acceptances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEulaAcceptancesInputOperationOutputAlias = crate::operation::ListEulaAcceptances;
-#[doc(hidden)]
-pub type ListEulaAcceptancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEulaAcceptancesInput {
     /// Consumes the builder and constructs an Operation<[`ListEulaAcceptances`](crate::operation::ListEulaAcceptances)>
     #[allow(unused_mut)]
@@ -5457,10 +5346,6 @@ pub mod list_eulas_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEulasInputOperationOutputAlias = crate::operation::ListEulas;
-#[doc(hidden)]
-pub type ListEulasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEulasInput {
     /// Consumes the builder and constructs an Operation<[`ListEulas`](crate::operation::ListEulas)>
     #[allow(unused_mut)]
@@ -5640,11 +5525,6 @@ pub mod list_launch_profile_members_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLaunchProfileMembersInputOperationOutputAlias =
-    crate::operation::ListLaunchProfileMembers;
-#[doc(hidden)]
-pub type ListLaunchProfileMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLaunchProfileMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchProfileMembers`](crate::operation::ListLaunchProfileMembers)>
     #[allow(unused_mut)]
@@ -5877,10 +5757,6 @@ pub mod list_launch_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLaunchProfilesInputOperationOutputAlias = crate::operation::ListLaunchProfiles;
-#[doc(hidden)]
-pub type ListLaunchProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLaunchProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchProfiles`](crate::operation::ListLaunchProfiles)>
     #[allow(unused_mut)]
@@ -6076,10 +5952,6 @@ pub mod list_streaming_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamingImagesInputOperationOutputAlias = crate::operation::ListStreamingImages;
-#[doc(hidden)]
-pub type ListStreamingImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamingImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingImages`](crate::operation::ListStreamingImages)>
     #[allow(unused_mut)]
@@ -6285,10 +6157,6 @@ pub mod list_streaming_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamingSessionsInputOperationOutputAlias = crate::operation::ListStreamingSessions;
-#[doc(hidden)]
-pub type ListStreamingSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamingSessionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingSessions`](crate::operation::ListStreamingSessions)>
     #[allow(unused_mut)]
@@ -6518,10 +6386,6 @@ pub mod list_studio_components_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStudioComponentsInputOperationOutputAlias = crate::operation::ListStudioComponents;
-#[doc(hidden)]
-pub type ListStudioComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudioComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioComponents`](crate::operation::ListStudioComponents)>
     #[allow(unused_mut)]
@@ -6716,10 +6580,6 @@ pub mod list_studio_members_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStudioMembersInputOperationOutputAlias = crate::operation::ListStudioMembers;
-#[doc(hidden)]
-pub type ListStudioMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudioMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioMembers`](crate::operation::ListStudioMembers)>
     #[allow(unused_mut)]
@@ -6880,10 +6740,6 @@ pub mod list_studios_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStudiosInputOperationOutputAlias = crate::operation::ListStudios;
-#[doc(hidden)]
-pub type ListStudiosInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudiosInput {
     /// Consumes the builder and constructs an Operation<[`ListStudios`](crate::operation::ListStudios)>
     #[allow(unused_mut)]
@@ -7019,10 +6875,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7232,11 +7084,6 @@ pub mod put_launch_profile_members_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLaunchProfileMembersInputOperationOutputAlias =
-    crate::operation::PutLaunchProfileMembers;
-#[doc(hidden)]
-pub type PutLaunchProfileMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLaunchProfileMembersInput {
     /// Consumes the builder and constructs an Operation<[`PutLaunchProfileMembers`](crate::operation::PutLaunchProfileMembers)>
     #[allow(unused_mut)]
@@ -7464,10 +7311,6 @@ pub mod put_studio_members_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutStudioMembersInputOperationOutputAlias = crate::operation::PutStudioMembers;
-#[doc(hidden)]
-pub type PutStudioMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutStudioMembersInput {
     /// Consumes the builder and constructs an Operation<[`PutStudioMembers`](crate::operation::PutStudioMembers)>
     #[allow(unused_mut)]
@@ -7653,10 +7496,6 @@ pub mod start_streaming_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStreamingSessionInputOperationOutputAlias = crate::operation::StartStreamingSession;
-#[doc(hidden)]
-pub type StartStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamingSession`](crate::operation::StartStreamingSession)>
     #[allow(unused_mut)]
@@ -7834,12 +7673,6 @@ pub mod start_studio_sso_configuration_repair_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStudioSsoConfigurationRepairInputOperationOutputAlias =
-    crate::operation::StartStudioSSOConfigurationRepair;
-#[doc(hidden)]
-pub type StartStudioSsoConfigurationRepairInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartStudioSsoConfigurationRepairInput {
     /// Consumes the builder and constructs an Operation<[`StartStudioSSOConfigurationRepair`](crate::operation::StartStudioSSOConfigurationRepair)>
     #[allow(unused_mut)]
@@ -8013,10 +7846,6 @@ pub mod stop_streaming_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopStreamingSessionInputOperationOutputAlias = crate::operation::StopStreamingSession;
-#[doc(hidden)]
-pub type StopStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamingSession`](crate::operation::StopStreamingSession)>
     #[allow(unused_mut)]
@@ -8209,10 +8038,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -8391,10 +8216,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -8667,10 +8488,6 @@ pub mod update_launch_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLaunchProfileInputOperationOutputAlias = crate::operation::UpdateLaunchProfile;
-#[doc(hidden)]
-pub type UpdateLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchProfile`](crate::operation::UpdateLaunchProfile)>
     #[allow(unused_mut)]
@@ -8903,11 +8720,6 @@ pub mod update_launch_profile_member_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLaunchProfileMemberInputOperationOutputAlias =
-    crate::operation::UpdateLaunchProfileMember;
-#[doc(hidden)]
-pub type UpdateLaunchProfileMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchProfileMember`](crate::operation::UpdateLaunchProfileMember)>
     #[allow(unused_mut)]
@@ -9146,10 +8958,6 @@ pub mod update_streaming_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStreamingImageInputOperationOutputAlias = crate::operation::UpdateStreamingImage;
-#[doc(hidden)]
-pub type UpdateStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamingImage`](crate::operation::UpdateStreamingImage)>
     #[allow(unused_mut)]
@@ -9383,10 +9191,6 @@ pub mod update_studio_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStudioInputOperationOutputAlias = crate::operation::UpdateStudio;
-#[doc(hidden)]
-pub type UpdateStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStudioInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudio`](crate::operation::UpdateStudio)>
     #[allow(unused_mut)]
@@ -9747,10 +9551,6 @@ pub mod update_studio_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStudioComponentInputOperationOutputAlias = crate::operation::UpdateStudioComponent;
-#[doc(hidden)]
-pub type UpdateStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudioComponent`](crate::operation::UpdateStudioComponent)>
     #[allow(unused_mut)]

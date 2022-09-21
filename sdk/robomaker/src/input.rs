@@ -40,10 +40,6 @@ pub mod batch_delete_worlds_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteWorldsInputOperationOutputAlias = crate::operation::BatchDeleteWorlds;
-#[doc(hidden)]
-pub type BatchDeleteWorldsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteWorldsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteWorlds`](crate::operation::BatchDeleteWorlds)>
     #[allow(unused_mut)]
@@ -191,11 +187,6 @@ pub mod batch_describe_simulation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDescribeSimulationJobInputOperationOutputAlias =
-    crate::operation::BatchDescribeSimulationJob;
-#[doc(hidden)]
-pub type BatchDescribeSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDescribeSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`BatchDescribeSimulationJob`](crate::operation::BatchDescribeSimulationJob)>
     #[allow(unused_mut)]
@@ -331,10 +322,6 @@ pub mod cancel_deployment_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelDeploymentJobInputOperationOutputAlias = crate::operation::CancelDeploymentJob;
-#[doc(hidden)]
-pub type CancelDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelDeploymentJob`](crate::operation::CancelDeploymentJob)>
     #[allow(unused_mut)]
@@ -471,10 +458,6 @@ pub mod cancel_simulation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelSimulationJobInputOperationOutputAlias = crate::operation::CancelSimulationJob;
-#[doc(hidden)]
-pub type CancelSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelSimulationJob`](crate::operation::CancelSimulationJob)>
     #[allow(unused_mut)]
@@ -613,11 +596,6 @@ pub mod cancel_simulation_job_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelSimulationJobBatchInputOperationOutputAlias =
-    crate::operation::CancelSimulationJobBatch;
-#[doc(hidden)]
-pub type CancelSimulationJobBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`CancelSimulationJobBatch`](crate::operation::CancelSimulationJobBatch)>
     #[allow(unused_mut)]
@@ -756,10 +734,6 @@ pub mod cancel_world_export_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelWorldExportJobInputOperationOutputAlias = crate::operation::CancelWorldExportJob;
-#[doc(hidden)]
-pub type CancelWorldExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelWorldExportJob`](crate::operation::CancelWorldExportJob)>
     #[allow(unused_mut)]
@@ -900,11 +874,6 @@ pub mod cancel_world_generation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelWorldGenerationJobInputOperationOutputAlias =
-    crate::operation::CancelWorldGenerationJob;
-#[doc(hidden)]
-pub type CancelWorldGenerationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelWorldGenerationJob`](crate::operation::CancelWorldGenerationJob)>
     #[allow(unused_mut)]
@@ -1129,10 +1098,6 @@ pub mod create_deployment_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeploymentJobInputOperationOutputAlias = crate::operation::CreateDeploymentJob;
-#[doc(hidden)]
-pub type CreateDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeploymentJob`](crate::operation::CreateDeploymentJob)>
     #[allow(unused_mut)]
@@ -1303,10 +1268,6 @@ pub mod create_fleet_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFleetInputOperationOutputAlias = crate::operation::CreateFleet;
-#[doc(hidden)]
-pub type CreateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
     #[allow(unused_mut)]
@@ -1504,10 +1465,6 @@ pub mod create_robot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRobotInputOperationOutputAlias = crate::operation::CreateRobot;
-#[doc(hidden)]
-pub type CreateRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRobotInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobot`](crate::operation::CreateRobot)>
     #[allow(unused_mut)]
@@ -1726,10 +1683,6 @@ pub mod create_robot_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRobotApplicationInputOperationOutputAlias = crate::operation::CreateRobotApplication;
-#[doc(hidden)]
-pub type CreateRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobotApplication`](crate::operation::CreateRobotApplication)>
     #[allow(unused_mut)]
@@ -1920,12 +1873,6 @@ pub mod create_robot_application_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRobotApplicationVersionInputOperationOutputAlias =
-    crate::operation::CreateRobotApplicationVersion;
-#[doc(hidden)]
-pub type CreateRobotApplicationVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRobotApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobotApplicationVersion`](crate::operation::CreateRobotApplicationVersion)>
     #[allow(unused_mut)]
@@ -2180,11 +2127,6 @@ pub mod create_simulation_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSimulationApplicationInputOperationOutputAlias =
-    crate::operation::CreateSimulationApplication;
-#[doc(hidden)]
-pub type CreateSimulationApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationApplication`](crate::operation::CreateSimulationApplication)>
     #[allow(unused_mut)]
@@ -2372,12 +2314,6 @@ pub mod create_simulation_application_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSimulationApplicationVersionInputOperationOutputAlias =
-    crate::operation::CreateSimulationApplicationVersion;
-#[doc(hidden)]
-pub type CreateSimulationApplicationVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSimulationApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationApplicationVersion`](crate::operation::CreateSimulationApplicationVersion)>
     #[allow(unused_mut)]
@@ -2744,10 +2680,6 @@ pub mod create_simulation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSimulationJobInputOperationOutputAlias = crate::operation::CreateSimulationJob;
-#[doc(hidden)]
-pub type CreateSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationJob`](crate::operation::CreateSimulationJob)>
     #[allow(unused_mut)]
@@ -2969,10 +2901,6 @@ pub mod create_world_export_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorldExportJobInputOperationOutputAlias = crate::operation::CreateWorldExportJob;
-#[doc(hidden)]
-pub type CreateWorldExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldExportJob`](crate::operation::CreateWorldExportJob)>
     #[allow(unused_mut)]
@@ -3206,11 +3134,6 @@ pub mod create_world_generation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorldGenerationJobInputOperationOutputAlias =
-    crate::operation::CreateWorldGenerationJob;
-#[doc(hidden)]
-pub type CreateWorldGenerationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldGenerationJob`](crate::operation::CreateWorldGenerationJob)>
     #[allow(unused_mut)]
@@ -3428,10 +3351,6 @@ pub mod create_world_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorldTemplateInputOperationOutputAlias = crate::operation::CreateWorldTemplate;
-#[doc(hidden)]
-pub type CreateWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldTemplate`](crate::operation::CreateWorldTemplate)>
     #[allow(unused_mut)]
@@ -3568,10 +3487,6 @@ pub mod delete_fleet_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFleetInputOperationOutputAlias = crate::operation::DeleteFleet;
-#[doc(hidden)]
-pub type DeleteFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
     #[allow(unused_mut)]
@@ -3708,10 +3623,6 @@ pub mod delete_robot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRobotInputOperationOutputAlias = crate::operation::DeleteRobot;
-#[doc(hidden)]
-pub type DeleteRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRobotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRobot`](crate::operation::DeleteRobot)>
     #[allow(unused_mut)]
@@ -3865,10 +3776,6 @@ pub mod delete_robot_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRobotApplicationInputOperationOutputAlias = crate::operation::DeleteRobotApplication;
-#[doc(hidden)]
-pub type DeleteRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRobotApplication`](crate::operation::DeleteRobotApplication)>
     #[allow(unused_mut)]
@@ -4026,11 +3933,6 @@ pub mod delete_simulation_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSimulationApplicationInputOperationOutputAlias =
-    crate::operation::DeleteSimulationApplication;
-#[doc(hidden)]
-pub type DeleteSimulationApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSimulationApplication`](crate::operation::DeleteSimulationApplication)>
     #[allow(unused_mut)]
@@ -4168,10 +4070,6 @@ pub mod delete_world_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorldTemplateInputOperationOutputAlias = crate::operation::DeleteWorldTemplate;
-#[doc(hidden)]
-pub type DeleteWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorldTemplate`](crate::operation::DeleteWorldTemplate)>
     #[allow(unused_mut)]
@@ -4322,10 +4220,6 @@ pub mod deregister_robot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterRobotInputOperationOutputAlias = crate::operation::DeregisterRobot;
-#[doc(hidden)]
-pub type DeregisterRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterRobotInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterRobot`](crate::operation::DeregisterRobot)>
     #[allow(unused_mut)]
@@ -4462,10 +4356,6 @@ pub mod describe_deployment_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeploymentJobInputOperationOutputAlias = crate::operation::DescribeDeploymentJob;
-#[doc(hidden)]
-pub type DescribeDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeploymentJob`](crate::operation::DescribeDeploymentJob)>
     #[allow(unused_mut)]
@@ -4604,10 +4494,6 @@ pub mod describe_fleet_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetInputOperationOutputAlias = crate::operation::DescribeFleet;
-#[doc(hidden)]
-pub type DescribeFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleet`](crate::operation::DescribeFleet)>
     #[allow(unused_mut)]
@@ -4744,10 +4630,6 @@ pub mod describe_robot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRobotInputOperationOutputAlias = crate::operation::DescribeRobot;
-#[doc(hidden)]
-pub type DescribeRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRobotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRobot`](crate::operation::DescribeRobot)>
     #[allow(unused_mut)]
@@ -4903,11 +4785,6 @@ pub mod describe_robot_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRobotApplicationInputOperationOutputAlias =
-    crate::operation::DescribeRobotApplication;
-#[doc(hidden)]
-pub type DescribeRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRobotApplication`](crate::operation::DescribeRobotApplication)>
     #[allow(unused_mut)]
@@ -5065,12 +4942,6 @@ pub mod describe_simulation_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSimulationApplicationInputOperationOutputAlias =
-    crate::operation::DescribeSimulationApplication;
-#[doc(hidden)]
-pub type DescribeSimulationApplicationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationApplication`](crate::operation::DescribeSimulationApplication)>
     #[allow(unused_mut)]
@@ -5207,10 +5078,6 @@ pub mod describe_simulation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSimulationJobInputOperationOutputAlias = crate::operation::DescribeSimulationJob;
-#[doc(hidden)]
-pub type DescribeSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationJob`](crate::operation::DescribeSimulationJob)>
     #[allow(unused_mut)]
@@ -5351,11 +5218,6 @@ pub mod describe_simulation_job_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSimulationJobBatchInputOperationOutputAlias =
-    crate::operation::DescribeSimulationJobBatch;
-#[doc(hidden)]
-pub type DescribeSimulationJobBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationJobBatch`](crate::operation::DescribeSimulationJobBatch)>
     #[allow(unused_mut)]
@@ -5491,10 +5353,6 @@ pub mod describe_world_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorldInputOperationOutputAlias = crate::operation::DescribeWorld;
-#[doc(hidden)]
-pub type DescribeWorldInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorld`](crate::operation::DescribeWorld)>
     #[allow(unused_mut)]
@@ -5631,10 +5489,6 @@ pub mod describe_world_export_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorldExportJobInputOperationOutputAlias = crate::operation::DescribeWorldExportJob;
-#[doc(hidden)]
-pub type DescribeWorldExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldExportJob`](crate::operation::DescribeWorldExportJob)>
     #[allow(unused_mut)]
@@ -5775,11 +5629,6 @@ pub mod describe_world_generation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorldGenerationJobInputOperationOutputAlias =
-    crate::operation::DescribeWorldGenerationJob;
-#[doc(hidden)]
-pub type DescribeWorldGenerationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldGenerationJob`](crate::operation::DescribeWorldGenerationJob)>
     #[allow(unused_mut)]
@@ -5917,10 +5766,6 @@ pub mod describe_world_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorldTemplateInputOperationOutputAlias = crate::operation::DescribeWorldTemplate;
-#[doc(hidden)]
-pub type DescribeWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldTemplate`](crate::operation::DescribeWorldTemplate)>
     #[allow(unused_mut)]
@@ -6076,10 +5921,6 @@ pub mod get_world_template_body_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWorldTemplateBodyInputOperationOutputAlias = crate::operation::GetWorldTemplateBody;
-#[doc(hidden)]
-pub type GetWorldTemplateBodyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorldTemplateBodyInput {
     /// Consumes the builder and constructs an Operation<[`GetWorldTemplateBody`](crate::operation::GetWorldTemplateBody)>
     #[allow(unused_mut)]
@@ -6255,10 +6096,6 @@ pub mod list_deployment_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeploymentJobsInputOperationOutputAlias = crate::operation::ListDeploymentJobs;
-#[doc(hidden)]
-pub type ListDeploymentJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeploymentJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeploymentJobs`](crate::operation::ListDeploymentJobs)>
     #[allow(unused_mut)]
@@ -6435,10 +6272,6 @@ pub mod list_fleets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFleetsInputOperationOutputAlias = crate::operation::ListFleets;
-#[doc(hidden)]
-pub type ListFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleets`](crate::operation::ListFleets)>
     #[allow(unused_mut)]
@@ -6627,10 +6460,6 @@ pub mod list_robot_applications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRobotApplicationsInputOperationOutputAlias = crate::operation::ListRobotApplications;
-#[doc(hidden)]
-pub type ListRobotApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRobotApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRobotApplications`](crate::operation::ListRobotApplications)>
     #[allow(unused_mut)]
@@ -6805,10 +6634,6 @@ pub mod list_robots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRobotsInputOperationOutputAlias = crate::operation::ListRobots;
-#[doc(hidden)]
-pub type ListRobotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRobotsInput {
     /// Consumes the builder and constructs an Operation<[`ListRobots`](crate::operation::ListRobots)>
     #[allow(unused_mut)]
@@ -6999,11 +6824,6 @@ pub mod list_simulation_applications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSimulationApplicationsInputOperationOutputAlias =
-    crate::operation::ListSimulationApplications;
-#[doc(hidden)]
-pub type ListSimulationApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSimulationApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationApplications`](crate::operation::ListSimulationApplications)>
     #[allow(unused_mut)]
@@ -7179,11 +6999,6 @@ pub mod list_simulation_job_batches_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSimulationJobBatchesInputOperationOutputAlias =
-    crate::operation::ListSimulationJobBatches;
-#[doc(hidden)]
-pub type ListSimulationJobBatchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSimulationJobBatchesInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationJobBatches`](crate::operation::ListSimulationJobBatches)>
     #[allow(unused_mut)]
@@ -7359,10 +7174,6 @@ pub mod list_simulation_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSimulationJobsInputOperationOutputAlias = crate::operation::ListSimulationJobs;
-#[doc(hidden)]
-pub type ListSimulationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSimulationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationJobs`](crate::operation::ListSimulationJobs)>
     #[allow(unused_mut)]
@@ -7501,10 +7312,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7677,10 +7484,6 @@ pub mod list_world_export_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorldExportJobsInputOperationOutputAlias = crate::operation::ListWorldExportJobs;
-#[doc(hidden)]
-pub type ListWorldExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldExportJobs`](crate::operation::ListWorldExportJobs)>
     #[allow(unused_mut)]
@@ -7856,11 +7659,6 @@ pub mod list_world_generation_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorldGenerationJobsInputOperationOutputAlias =
-    crate::operation::ListWorldGenerationJobs;
-#[doc(hidden)]
-pub type ListWorldGenerationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldGenerationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldGenerationJobs`](crate::operation::ListWorldGenerationJobs)>
     #[allow(unused_mut)]
@@ -8033,10 +7831,6 @@ pub mod list_worlds_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorldsInputOperationOutputAlias = crate::operation::ListWorlds;
-#[doc(hidden)]
-pub type ListWorldsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorlds`](crate::operation::ListWorlds)>
     #[allow(unused_mut)]
@@ -8187,10 +7981,6 @@ pub mod list_world_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorldTemplatesInputOperationOutputAlias = crate::operation::ListWorldTemplates;
-#[doc(hidden)]
-pub type ListWorldTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldTemplates`](crate::operation::ListWorldTemplates)>
     #[allow(unused_mut)]
@@ -8341,10 +8131,6 @@ pub mod register_robot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterRobotInputOperationOutputAlias = crate::operation::RegisterRobot;
-#[doc(hidden)]
-pub type RegisterRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterRobotInput {
     /// Consumes the builder and constructs an Operation<[`RegisterRobot`](crate::operation::RegisterRobot)>
     #[allow(unused_mut)]
@@ -8481,10 +8267,6 @@ pub mod restart_simulation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestartSimulationJobInputOperationOutputAlias = crate::operation::RestartSimulationJob;
-#[doc(hidden)]
-pub type RestartSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestartSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`RestartSimulationJob`](crate::operation::RestartSimulationJob)>
     #[allow(unused_mut)]
@@ -8699,11 +8481,6 @@ pub mod start_simulation_job_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSimulationJobBatchInputOperationOutputAlias =
-    crate::operation::StartSimulationJobBatch;
-#[doc(hidden)]
-pub type StartSimulationJobBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`StartSimulationJobBatch`](crate::operation::StartSimulationJobBatch)>
     #[allow(unused_mut)]
@@ -8862,10 +8639,6 @@ pub mod sync_deployment_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SyncDeploymentJobInputOperationOutputAlias = crate::operation::SyncDeploymentJob;
-#[doc(hidden)]
-pub type SyncDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SyncDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`SyncDeploymentJob`](crate::operation::SyncDeploymentJob)>
     #[allow(unused_mut)]
@@ -9036,10 +8809,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -9214,10 +8983,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -9436,10 +9201,6 @@ pub mod update_robot_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRobotApplicationInputOperationOutputAlias = crate::operation::UpdateRobotApplication;
-#[doc(hidden)]
-pub type UpdateRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRobotApplication`](crate::operation::UpdateRobotApplication)>
     #[allow(unused_mut)]
@@ -9682,11 +9443,6 @@ pub mod update_simulation_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSimulationApplicationInputOperationOutputAlias =
-    crate::operation::UpdateSimulationApplication;
-#[doc(hidden)]
-pub type UpdateSimulationApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSimulationApplication`](crate::operation::UpdateSimulationApplication)>
     #[allow(unused_mut)]
@@ -9866,10 +9622,6 @@ pub mod update_world_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorldTemplateInputOperationOutputAlias = crate::operation::UpdateWorldTemplate;
-#[doc(hidden)]
-pub type UpdateWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorldTemplate`](crate::operation::UpdateWorldTemplate)>
     #[allow(unused_mut)]

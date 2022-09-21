@@ -40,10 +40,6 @@ pub mod batch_get_named_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetNamedQueryInputOperationOutputAlias = crate::operation::BatchGetNamedQuery;
-#[doc(hidden)]
-pub type BatchGetNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetNamedQuery`](crate::operation::BatchGetNamedQuery)>
     #[allow(unused_mut)]
@@ -211,11 +207,6 @@ pub mod batch_get_prepared_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetPreparedStatementInputOperationOutputAlias =
-    crate::operation::BatchGetPreparedStatement;
-#[doc(hidden)]
-pub type BatchGetPreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetPreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetPreparedStatement`](crate::operation::BatchGetPreparedStatement)>
     #[allow(unused_mut)]
@@ -370,10 +361,6 @@ pub mod batch_get_query_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetQueryExecutionInputOperationOutputAlias = crate::operation::BatchGetQueryExecution;
-#[doc(hidden)]
-pub type BatchGetQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetQueryExecution`](crate::operation::BatchGetQueryExecution)>
     #[allow(unused_mut)]
@@ -624,10 +611,6 @@ pub mod create_data_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDataCatalogInputOperationOutputAlias = crate::operation::CreateDataCatalog;
-#[doc(hidden)]
-pub type CreateDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataCatalog`](crate::operation::CreateDataCatalog)>
     #[allow(unused_mut)]
@@ -838,10 +821,6 @@ pub mod create_named_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNamedQueryInputOperationOutputAlias = crate::operation::CreateNamedQuery;
-#[doc(hidden)]
-pub type CreateNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`CreateNamedQuery`](crate::operation::CreateNamedQuery)>
     #[allow(unused_mut)]
@@ -1032,11 +1011,6 @@ pub mod create_prepared_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePreparedStatementInputOperationOutputAlias =
-    crate::operation::CreatePreparedStatement;
-#[doc(hidden)]
-pub type CreatePreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`CreatePreparedStatement`](crate::operation::CreatePreparedStatement)>
     #[allow(unused_mut)]
@@ -1230,10 +1204,6 @@ pub mod create_work_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkGroupInputOperationOutputAlias = crate::operation::CreateWorkGroup;
-#[doc(hidden)]
-pub type CreateWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkGroup`](crate::operation::CreateWorkGroup)>
     #[allow(unused_mut)]
@@ -1375,10 +1345,6 @@ pub mod delete_data_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDataCatalogInputOperationOutputAlias = crate::operation::DeleteDataCatalog;
-#[doc(hidden)]
-pub type DeleteDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataCatalog`](crate::operation::DeleteDataCatalog)>
     #[allow(unused_mut)]
@@ -1525,10 +1491,6 @@ pub mod delete_named_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNamedQueryInputOperationOutputAlias = crate::operation::DeleteNamedQuery;
-#[doc(hidden)]
-pub type DeleteNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNamedQuery`](crate::operation::DeleteNamedQuery)>
     #[allow(unused_mut)]
@@ -1692,11 +1654,6 @@ pub mod delete_prepared_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePreparedStatementInputOperationOutputAlias =
-    crate::operation::DeletePreparedStatement;
-#[doc(hidden)]
-pub type DeletePreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`DeletePreparedStatement`](crate::operation::DeletePreparedStatement)>
     #[allow(unused_mut)]
@@ -1854,10 +1811,6 @@ pub mod delete_work_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkGroupInputOperationOutputAlias = crate::operation::DeleteWorkGroup;
-#[doc(hidden)]
-pub type DeleteWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkGroup`](crate::operation::DeleteWorkGroup)>
     #[allow(unused_mut)]
@@ -2016,10 +1969,6 @@ pub mod get_database_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDatabaseInputOperationOutputAlias = crate::operation::GetDatabase;
-#[doc(hidden)]
-pub type GetDatabaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatabaseInput {
     /// Consumes the builder and constructs an Operation<[`GetDatabase`](crate::operation::GetDatabase)>
     #[allow(unused_mut)]
@@ -2161,10 +2110,6 @@ pub mod get_data_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDataCatalogInputOperationOutputAlias = crate::operation::GetDataCatalog;
-#[doc(hidden)]
-pub type GetDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`GetDataCatalog`](crate::operation::GetDataCatalog)>
     #[allow(unused_mut)]
@@ -2311,10 +2256,6 @@ pub mod get_named_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNamedQueryInputOperationOutputAlias = crate::operation::GetNamedQuery;
-#[doc(hidden)]
-pub type GetNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetNamedQuery`](crate::operation::GetNamedQuery)>
     #[allow(unused_mut)]
@@ -2473,10 +2414,6 @@ pub mod get_prepared_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPreparedStatementInputOperationOutputAlias = crate::operation::GetPreparedStatement;
-#[doc(hidden)]
-pub type GetPreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`GetPreparedStatement`](crate::operation::GetPreparedStatement)>
     #[allow(unused_mut)]
@@ -2625,10 +2562,6 @@ pub mod get_query_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueryExecutionInputOperationOutputAlias = crate::operation::GetQueryExecution;
-#[doc(hidden)]
-pub type GetQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryExecution`](crate::operation::GetQueryExecution)>
     #[allow(unused_mut)]
@@ -2799,10 +2732,6 @@ pub mod get_query_results_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueryResultsInputOperationOutputAlias = crate::operation::GetQueryResults;
-#[doc(hidden)]
-pub type GetQueryResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryResultsInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryResults`](crate::operation::GetQueryResults)>
     #[allow(unused_mut)]
@@ -2951,11 +2880,6 @@ pub mod get_query_runtime_statistics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueryRuntimeStatisticsInputOperationOutputAlias =
-    crate::operation::GetQueryRuntimeStatistics;
-#[doc(hidden)]
-pub type GetQueryRuntimeStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryRuntimeStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryRuntimeStatistics`](crate::operation::GetQueryRuntimeStatistics)>
     #[allow(unused_mut)]
@@ -3128,10 +3052,6 @@ pub mod get_table_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTableMetadataInputOperationOutputAlias = crate::operation::GetTableMetadata;
-#[doc(hidden)]
-pub type GetTableMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetTableMetadata`](crate::operation::GetTableMetadata)>
     #[allow(unused_mut)]
@@ -3275,10 +3195,6 @@ pub mod get_work_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWorkGroupInputOperationOutputAlias = crate::operation::GetWorkGroup;
-#[doc(hidden)]
-pub type GetWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkGroup`](crate::operation::GetWorkGroup)>
     #[allow(unused_mut)]
@@ -3446,10 +3362,6 @@ pub mod list_databases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatabasesInputOperationOutputAlias = crate::operation::ListDatabases;
-#[doc(hidden)]
-pub type ListDatabasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatabasesInput {
     /// Consumes the builder and constructs an Operation<[`ListDatabases`](crate::operation::ListDatabases)>
     #[allow(unused_mut)]
@@ -3605,10 +3517,6 @@ pub mod list_data_catalogs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataCatalogsInputOperationOutputAlias = crate::operation::ListDataCatalogs;
-#[doc(hidden)]
-pub type ListDataCatalogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataCatalogsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataCatalogs`](crate::operation::ListDataCatalogs)>
     #[allow(unused_mut)]
@@ -3764,10 +3672,6 @@ pub mod list_engine_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEngineVersionsInputOperationOutputAlias = crate::operation::ListEngineVersions;
-#[doc(hidden)]
-pub type ListEngineVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEngineVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEngineVersions`](crate::operation::ListEngineVersions)>
     #[allow(unused_mut)]
@@ -3935,10 +3839,6 @@ pub mod list_named_queries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNamedQueriesInputOperationOutputAlias = crate::operation::ListNamedQueries;
-#[doc(hidden)]
-pub type ListNamedQueriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNamedQueriesInput {
     /// Consumes the builder and constructs an Operation<[`ListNamedQueries`](crate::operation::ListNamedQueries)>
     #[allow(unused_mut)]
@@ -4106,10 +4006,6 @@ pub mod list_prepared_statements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPreparedStatementsInputOperationOutputAlias = crate::operation::ListPreparedStatements;
-#[doc(hidden)]
-pub type ListPreparedStatementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPreparedStatementsInput {
     /// Consumes the builder and constructs an Operation<[`ListPreparedStatements`](crate::operation::ListPreparedStatements)>
     #[allow(unused_mut)]
@@ -4279,10 +4175,6 @@ pub mod list_query_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQueryExecutionsInputOperationOutputAlias = crate::operation::ListQueryExecutions;
-#[doc(hidden)]
-pub type ListQueryExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueryExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListQueryExecutions`](crate::operation::ListQueryExecutions)>
     #[allow(unused_mut)]
@@ -4477,10 +4369,6 @@ pub mod list_table_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTableMetadataInputOperationOutputAlias = crate::operation::ListTableMetadata;
-#[doc(hidden)]
-pub type ListTableMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableMetadataInput {
     /// Consumes the builder and constructs an Operation<[`ListTableMetadata`](crate::operation::ListTableMetadata)>
     #[allow(unused_mut)]
@@ -4648,10 +4536,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4809,10 +4693,6 @@ pub mod list_work_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkGroupsInputOperationOutputAlias = crate::operation::ListWorkGroups;
-#[doc(hidden)]
-pub type ListWorkGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkGroups`](crate::operation::ListWorkGroups)>
     #[allow(unused_mut)]
@@ -5042,10 +4922,6 @@ pub mod start_query_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartQueryExecutionInputOperationOutputAlias = crate::operation::StartQueryExecution;
-#[doc(hidden)]
-pub type StartQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartQueryExecution`](crate::operation::StartQueryExecution)>
     #[allow(unused_mut)]
@@ -5195,10 +5071,6 @@ pub mod stop_query_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopQueryExecutionInputOperationOutputAlias = crate::operation::StopQueryExecution;
-#[doc(hidden)]
-pub type StopQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StopQueryExecution`](crate::operation::StopQueryExecution)>
     #[allow(unused_mut)]
@@ -5366,10 +5238,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -5534,10 +5402,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -5753,10 +5617,6 @@ pub mod update_data_catalog_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDataCatalogInputOperationOutputAlias = crate::operation::UpdateDataCatalog;
-#[doc(hidden)]
-pub type UpdateDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataCatalog`](crate::operation::UpdateDataCatalog)>
     #[allow(unused_mut)]
@@ -5939,10 +5799,6 @@ pub mod update_named_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNamedQueryInputOperationOutputAlias = crate::operation::UpdateNamedQuery;
-#[doc(hidden)]
-pub type UpdateNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNamedQuery`](crate::operation::UpdateNamedQuery)>
     #[allow(unused_mut)]
@@ -6130,11 +5986,6 @@ pub mod update_prepared_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePreparedStatementInputOperationOutputAlias =
-    crate::operation::UpdatePreparedStatement;
-#[doc(hidden)]
-pub type UpdatePreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePreparedStatement`](crate::operation::UpdatePreparedStatement)>
     #[allow(unused_mut)]
@@ -6326,10 +6177,6 @@ pub mod update_work_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkGroupInputOperationOutputAlias = crate::operation::UpdateWorkGroup;
-#[doc(hidden)]
-pub type UpdateWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkGroup`](crate::operation::UpdateWorkGroup)>
     #[allow(unused_mut)]

@@ -69,12 +69,6 @@ pub mod list_realtime_contact_analysis_segments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRealtimeContactAnalysisSegmentsInputOperationOutputAlias =
-    crate::operation::ListRealtimeContactAnalysisSegments;
-#[doc(hidden)]
-pub type ListRealtimeContactAnalysisSegmentsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListRealtimeContactAnalysisSegments`](crate::operation::ListRealtimeContactAnalysisSegments)>
     #[allow(unused_mut)]

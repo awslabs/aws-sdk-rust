@@ -55,10 +55,6 @@ pub mod delete_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSessionInputOperationOutputAlias = crate::operation::DeleteSession;
-#[doc(hidden)]
-pub type DeleteSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSession`](crate::operation::DeleteSession)>
     #[allow(unused_mut)]
@@ -272,10 +268,6 @@ pub mod get_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSessionInputOperationOutputAlias = crate::operation::GetSession;
-#[doc(hidden)]
-pub type GetSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
     #[allow(unused_mut)]
@@ -661,10 +653,6 @@ pub mod post_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PostContentInputOperationOutputAlias = crate::operation::PostContent;
-#[doc(hidden)]
-pub type PostContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PostContentInput {
     /// Consumes the builder and constructs an Operation<[`PostContent`](crate::operation::PostContent)>
     #[allow(unused_mut)]
@@ -994,10 +982,6 @@ pub mod post_text_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PostTextInputOperationOutputAlias = crate::operation::PostText;
-#[doc(hidden)]
-pub type PostTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PostTextInput {
     /// Consumes the builder and constructs an Operation<[`PostText`](crate::operation::PostText)>
     #[allow(unused_mut)]
@@ -1347,10 +1331,6 @@ pub mod put_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutSessionInputOperationOutputAlias = crate::operation::PutSession;
-#[doc(hidden)]
-pub type PutSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSessionInput {
     /// Consumes the builder and constructs an Operation<[`PutSession`](crate::operation::PutSession)>
     #[allow(unused_mut)]

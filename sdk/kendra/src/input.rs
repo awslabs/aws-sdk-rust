@@ -67,12 +67,6 @@ pub mod associate_entities_to_experience_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateEntitiesToExperienceInputOperationOutputAlias =
-    crate::operation::AssociateEntitiesToExperience;
-#[doc(hidden)]
-pub type AssociateEntitiesToExperienceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateEntitiesToExperienceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateEntitiesToExperience`](crate::operation::AssociateEntitiesToExperience)>
     #[allow(unused_mut)]
@@ -251,11 +245,6 @@ pub mod associate_personas_to_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePersonasToEntitiesInputOperationOutputAlias =
-    crate::operation::AssociatePersonasToEntities;
-#[doc(hidden)]
-pub type AssociatePersonasToEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePersonasToEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePersonasToEntities`](crate::operation::AssociatePersonasToEntities)>
     #[allow(unused_mut)]
@@ -438,10 +427,6 @@ pub mod batch_delete_document_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteDocumentInputOperationOutputAlias = crate::operation::BatchDeleteDocument;
-#[doc(hidden)]
-pub type BatchDeleteDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteDocumentInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteDocument`](crate::operation::BatchDeleteDocument)>
     #[allow(unused_mut)]
@@ -607,10 +592,6 @@ pub mod batch_get_document_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetDocumentStatusInputOperationOutputAlias = crate::operation::BatchGetDocumentStatus;
-#[doc(hidden)]
-pub type BatchGetDocumentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetDocumentStatusInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetDocumentStatus`](crate::operation::BatchGetDocumentStatus)>
     #[allow(unused_mut)]
@@ -825,10 +806,6 @@ pub mod batch_put_document_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchPutDocumentInputOperationOutputAlias = crate::operation::BatchPutDocument;
-#[doc(hidden)]
-pub type BatchPutDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutDocumentInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutDocument`](crate::operation::BatchPutDocument)>
     #[allow(unused_mut)]
@@ -972,10 +949,6 @@ pub mod clear_query_suggestions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ClearQuerySuggestionsInputOperationOutputAlias = crate::operation::ClearQuerySuggestions;
-#[doc(hidden)]
-pub type ClearQuerySuggestionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClearQuerySuggestionsInput {
     /// Consumes the builder and constructs an Operation<[`ClearQuerySuggestions`](crate::operation::ClearQuerySuggestions)>
     #[allow(unused_mut)]
@@ -1205,12 +1178,6 @@ pub mod create_access_control_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAccessControlConfigurationInputOperationOutputAlias =
-    crate::operation::CreateAccessControlConfiguration;
-#[doc(hidden)]
-pub type CreateAccessControlConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessControlConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessControlConfiguration`](crate::operation::CreateAccessControlConfiguration)>
     #[allow(unused_mut)]
@@ -1532,10 +1499,6 @@ pub mod create_data_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDataSourceInputOperationOutputAlias = crate::operation::CreateDataSource;
-#[doc(hidden)]
-pub type CreateDataSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataSource`](crate::operation::CreateDataSource)>
     #[allow(unused_mut)]
@@ -1745,10 +1708,6 @@ pub mod create_experience_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateExperienceInputOperationOutputAlias = crate::operation::CreateExperience;
-#[doc(hidden)]
-pub type CreateExperienceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExperienceInput {
     /// Consumes the builder and constructs an Operation<[`CreateExperience`](crate::operation::CreateExperience)>
     #[allow(unused_mut)]
@@ -2009,10 +1968,6 @@ pub mod create_faq_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFaqInputOperationOutputAlias = crate::operation::CreateFaq;
-#[doc(hidden)]
-pub type CreateFaqInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFaqInput {
     /// Consumes the builder and constructs an Operation<[`CreateFaq`](crate::operation::CreateFaq)>
     #[allow(unused_mut)]
@@ -2339,10 +2294,6 @@ pub mod create_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateIndexInputOperationOutputAlias = crate::operation::CreateIndex;
-#[doc(hidden)]
-pub type CreateIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIndexInput {
     /// Consumes the builder and constructs an Operation<[`CreateIndex`](crate::operation::CreateIndex)>
     #[allow(unused_mut)]
@@ -2585,12 +2536,6 @@ pub mod create_query_suggestions_block_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateQuerySuggestionsBlockListInputOperationOutputAlias =
-    crate::operation::CreateQuerySuggestionsBlockList;
-#[doc(hidden)]
-pub type CreateQuerySuggestionsBlockListInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQuerySuggestionsBlockListInput {
     /// Consumes the builder and constructs an Operation<[`CreateQuerySuggestionsBlockList`](crate::operation::CreateQuerySuggestionsBlockList)>
     #[allow(unused_mut)]
@@ -2820,10 +2765,6 @@ pub mod create_thesaurus_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateThesaurusInputOperationOutputAlias = crate::operation::CreateThesaurus;
-#[doc(hidden)]
-pub type CreateThesaurusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateThesaurusInput {
     /// Consumes the builder and constructs an Operation<[`CreateThesaurus`](crate::operation::CreateThesaurus)>
     #[allow(unused_mut)]
@@ -2984,12 +2925,6 @@ pub mod delete_access_control_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAccessControlConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteAccessControlConfiguration;
-#[doc(hidden)]
-pub type DeleteAccessControlConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessControlConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessControlConfiguration`](crate::operation::DeleteAccessControlConfiguration)>
     #[allow(unused_mut)]
@@ -3144,10 +3079,6 @@ pub mod delete_data_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDataSourceInputOperationOutputAlias = crate::operation::DeleteDataSource;
-#[doc(hidden)]
-pub type DeleteDataSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataSource`](crate::operation::DeleteDataSource)>
     #[allow(unused_mut)]
@@ -3303,10 +3234,6 @@ pub mod delete_experience_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteExperienceInputOperationOutputAlias = crate::operation::DeleteExperience;
-#[doc(hidden)]
-pub type DeleteExperienceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExperienceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExperience`](crate::operation::DeleteExperience)>
     #[allow(unused_mut)]
@@ -3461,10 +3388,6 @@ pub mod delete_faq_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFaqInputOperationOutputAlias = crate::operation::DeleteFaq;
-#[doc(hidden)]
-pub type DeleteFaqInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFaqInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFaq`](crate::operation::DeleteFaq)>
     #[allow(unused_mut)]
@@ -3604,10 +3527,6 @@ pub mod delete_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIndexInputOperationOutputAlias = crate::operation::DeleteIndex;
-#[doc(hidden)]
-pub type DeleteIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIndexInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIndex`](crate::operation::DeleteIndex)>
     #[allow(unused_mut)]
@@ -3796,10 +3715,6 @@ pub mod delete_principal_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePrincipalMappingInputOperationOutputAlias = crate::operation::DeletePrincipalMapping;
-#[doc(hidden)]
-pub type DeletePrincipalMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePrincipalMappingInput {
     /// Consumes the builder and constructs an Operation<[`DeletePrincipalMapping`](crate::operation::DeletePrincipalMapping)>
     #[allow(unused_mut)]
@@ -3959,12 +3874,6 @@ pub mod delete_query_suggestions_block_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteQuerySuggestionsBlockListInputOperationOutputAlias =
-    crate::operation::DeleteQuerySuggestionsBlockList;
-#[doc(hidden)]
-pub type DeleteQuerySuggestionsBlockListInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQuerySuggestionsBlockListInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQuerySuggestionsBlockList`](crate::operation::DeleteQuerySuggestionsBlockList)>
     #[allow(unused_mut)]
@@ -4119,10 +4028,6 @@ pub mod delete_thesaurus_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteThesaurusInputOperationOutputAlias = crate::operation::DeleteThesaurus;
-#[doc(hidden)]
-pub type DeleteThesaurusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThesaurusInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThesaurus`](crate::operation::DeleteThesaurus)>
     #[allow(unused_mut)]
@@ -4280,12 +4185,6 @@ pub mod describe_access_control_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccessControlConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeAccessControlConfiguration;
-#[doc(hidden)]
-pub type DescribeAccessControlConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccessControlConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccessControlConfiguration`](crate::operation::DescribeAccessControlConfiguration)>
     #[allow(unused_mut)]
@@ -4440,10 +4339,6 @@ pub mod describe_data_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDataSourceInputOperationOutputAlias = crate::operation::DescribeDataSource;
-#[doc(hidden)]
-pub type DescribeDataSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataSource`](crate::operation::DescribeDataSource)>
     #[allow(unused_mut)]
@@ -4599,10 +4494,6 @@ pub mod describe_experience_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeExperienceInputOperationOutputAlias = crate::operation::DescribeExperience;
-#[doc(hidden)]
-pub type DescribeExperienceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExperienceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExperience`](crate::operation::DescribeExperience)>
     #[allow(unused_mut)]
@@ -4758,10 +4649,6 @@ pub mod describe_faq_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFaqInputOperationOutputAlias = crate::operation::DescribeFaq;
-#[doc(hidden)]
-pub type DescribeFaqInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFaqInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFaq`](crate::operation::DescribeFaq)>
     #[allow(unused_mut)]
@@ -4903,10 +4790,6 @@ pub mod describe_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIndexInputOperationOutputAlias = crate::operation::DescribeIndex;
-#[doc(hidden)]
-pub type DescribeIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIndexInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIndex`](crate::operation::DescribeIndex)>
     #[allow(unused_mut)]
@@ -5079,11 +4962,6 @@ pub mod describe_principal_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePrincipalMappingInputOperationOutputAlias =
-    crate::operation::DescribePrincipalMapping;
-#[doc(hidden)]
-pub type DescribePrincipalMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePrincipalMappingInput {
     /// Consumes the builder and constructs an Operation<[`DescribePrincipalMapping`](crate::operation::DescribePrincipalMapping)>
     #[allow(unused_mut)]
@@ -5243,12 +5121,6 @@ pub mod describe_query_suggestions_block_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeQuerySuggestionsBlockListInputOperationOutputAlias =
-    crate::operation::DescribeQuerySuggestionsBlockList;
-#[doc(hidden)]
-pub type DescribeQuerySuggestionsBlockListInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeQuerySuggestionsBlockListInput {
     /// Consumes the builder and constructs an Operation<[`DescribeQuerySuggestionsBlockList`](crate::operation::DescribeQuerySuggestionsBlockList)>
     #[allow(unused_mut)]
@@ -5393,12 +5265,6 @@ pub mod describe_query_suggestions_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeQuerySuggestionsConfigInputOperationOutputAlias =
-    crate::operation::DescribeQuerySuggestionsConfig;
-#[doc(hidden)]
-pub type DescribeQuerySuggestionsConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeQuerySuggestionsConfigInput {
     /// Consumes the builder and constructs an Operation<[`DescribeQuerySuggestionsConfig`](crate::operation::DescribeQuerySuggestionsConfig)>
     #[allow(unused_mut)]
@@ -5553,10 +5419,6 @@ pub mod describe_thesaurus_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeThesaurusInputOperationOutputAlias = crate::operation::DescribeThesaurus;
-#[doc(hidden)]
-pub type DescribeThesaurusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeThesaurusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeThesaurus`](crate::operation::DescribeThesaurus)>
     #[allow(unused_mut)]
@@ -5736,12 +5598,6 @@ pub mod disassociate_entities_from_experience_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateEntitiesFromExperienceInputOperationOutputAlias =
-    crate::operation::DisassociateEntitiesFromExperience;
-#[doc(hidden)]
-pub type DisassociateEntitiesFromExperienceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateEntitiesFromExperienceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateEntitiesFromExperience`](crate::operation::DisassociateEntitiesFromExperience)>
     #[allow(unused_mut)]
@@ -5919,12 +5775,6 @@ pub mod disassociate_personas_from_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociatePersonasFromEntitiesInputOperationOutputAlias =
-    crate::operation::DisassociatePersonasFromEntities;
-#[doc(hidden)]
-pub type DisassociatePersonasFromEntitiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociatePersonasFromEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePersonasFromEntities`](crate::operation::DisassociatePersonasFromEntities)>
     #[allow(unused_mut)]
@@ -6095,10 +5945,6 @@ pub mod get_query_suggestions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQuerySuggestionsInputOperationOutputAlias = crate::operation::GetQuerySuggestions;
-#[doc(hidden)]
-pub type GetQuerySuggestionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQuerySuggestionsInput {
     /// Consumes the builder and constructs an Operation<[`GetQuerySuggestions`](crate::operation::GetQuerySuggestions)>
     #[allow(unused_mut)]
@@ -6311,10 +6157,6 @@ pub mod get_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSnapshotsInputOperationOutputAlias = crate::operation::GetSnapshots;
-#[doc(hidden)]
-pub type GetSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshots`](crate::operation::GetSnapshots)>
     #[allow(unused_mut)]
@@ -6484,12 +6326,6 @@ pub mod list_access_control_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccessControlConfigurationsInputOperationOutputAlias =
-    crate::operation::ListAccessControlConfigurations;
-#[doc(hidden)]
-pub type ListAccessControlConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessControlConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessControlConfigurations`](crate::operation::ListAccessControlConfigurations)>
     #[allow(unused_mut)]
@@ -6656,10 +6492,6 @@ pub mod list_data_sources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataSourcesInputOperationOutputAlias = crate::operation::ListDataSources;
-#[doc(hidden)]
-pub type ListDataSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataSourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDataSources`](crate::operation::ListDataSources)>
     #[allow(unused_mut)]
@@ -6869,10 +6701,6 @@ pub mod list_data_source_sync_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataSourceSyncJobsInputOperationOutputAlias = crate::operation::ListDataSourceSyncJobs;
-#[doc(hidden)]
-pub type ListDataSourceSyncJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataSourceSyncJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataSourceSyncJobs`](crate::operation::ListDataSourceSyncJobs)>
     #[allow(unused_mut)]
@@ -7054,10 +6882,6 @@ pub mod list_entity_personas_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntityPersonasInputOperationOutputAlias = crate::operation::ListEntityPersonas;
-#[doc(hidden)]
-pub type ListEntityPersonasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntityPersonasInput {
     /// Consumes the builder and constructs an Operation<[`ListEntityPersonas`](crate::operation::ListEntityPersonas)>
     #[allow(unused_mut)]
@@ -7225,10 +7049,6 @@ pub mod list_experience_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExperienceEntitiesInputOperationOutputAlias = crate::operation::ListExperienceEntities;
-#[doc(hidden)]
-pub type ListExperienceEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExperienceEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListExperienceEntities`](crate::operation::ListExperienceEntities)>
     #[allow(unused_mut)]
@@ -7398,10 +7218,6 @@ pub mod list_experiences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExperiencesInputOperationOutputAlias = crate::operation::ListExperiences;
-#[doc(hidden)]
-pub type ListExperiencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExperiencesInput {
     /// Consumes the builder and constructs an Operation<[`ListExperiences`](crate::operation::ListExperiences)>
     #[allow(unused_mut)]
@@ -7568,10 +7384,6 @@ pub mod list_faqs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFaqsInputOperationOutputAlias = crate::operation::ListFaqs;
-#[doc(hidden)]
-pub type ListFaqsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFaqsInput {
     /// Consumes the builder and constructs an Operation<[`ListFaqs`](crate::operation::ListFaqs)>
     #[allow(unused_mut)]
@@ -7765,12 +7577,6 @@ pub mod list_groups_older_than_ordering_id_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupsOlderThanOrderingIdInputOperationOutputAlias =
-    crate::operation::ListGroupsOlderThanOrderingId;
-#[doc(hidden)]
-pub type ListGroupsOlderThanOrderingIdInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsOlderThanOrderingIdInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupsOlderThanOrderingId`](crate::operation::ListGroupsOlderThanOrderingId)>
     #[allow(unused_mut)]
@@ -7925,10 +7731,6 @@ pub mod list_indices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIndicesInputOperationOutputAlias = crate::operation::ListIndices;
-#[doc(hidden)]
-pub type ListIndicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIndicesInput {
     /// Consumes the builder and constructs an Operation<[`ListIndices`](crate::operation::ListIndices)>
     #[allow(unused_mut)]
@@ -8100,12 +7902,6 @@ pub mod list_query_suggestions_block_lists_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQuerySuggestionsBlockListsInputOperationOutputAlias =
-    crate::operation::ListQuerySuggestionsBlockLists;
-#[doc(hidden)]
-pub type ListQuerySuggestionsBlockListsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListQuerySuggestionsBlockListsInput {
     /// Consumes the builder and constructs an Operation<[`ListQuerySuggestionsBlockLists`](crate::operation::ListQuerySuggestionsBlockLists)>
     #[allow(unused_mut)]
@@ -8248,10 +8044,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -8421,10 +8213,6 @@ pub mod list_thesauri_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListThesauriInputOperationOutputAlias = crate::operation::ListThesauri;
-#[doc(hidden)]
-pub type ListThesauriInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThesauriInput {
     /// Consumes the builder and constructs an Operation<[`ListThesauri`](crate::operation::ListThesauri)>
     #[allow(unused_mut)]
@@ -8646,10 +8434,6 @@ pub mod put_principal_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPrincipalMappingInputOperationOutputAlias = crate::operation::PutPrincipalMapping;
-#[doc(hidden)]
-pub type PutPrincipalMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPrincipalMappingInput {
     /// Consumes the builder and constructs an Operation<[`PutPrincipalMapping`](crate::operation::PutPrincipalMapping)>
     #[allow(unused_mut)]
@@ -9003,10 +8787,6 @@ pub mod query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryInputOperationOutputAlias = crate::operation::Query;
-#[doc(hidden)]
-pub type QueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryInput {
     /// Consumes the builder and constructs an Operation<[`Query`](crate::operation::Query)>
     #[allow(unused_mut)]
@@ -9157,10 +8937,6 @@ pub mod start_data_source_sync_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDataSourceSyncJobInputOperationOutputAlias = crate::operation::StartDataSourceSyncJob;
-#[doc(hidden)]
-pub type StartDataSourceSyncJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDataSourceSyncJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDataSourceSyncJob`](crate::operation::StartDataSourceSyncJob)>
     #[allow(unused_mut)]
@@ -9318,10 +9094,6 @@ pub mod stop_data_source_sync_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopDataSourceSyncJobInputOperationOutputAlias = crate::operation::StopDataSourceSyncJob;
-#[doc(hidden)]
-pub type StopDataSourceSyncJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopDataSourceSyncJobInput {
     /// Consumes the builder and constructs an Operation<[`StopDataSourceSyncJob`](crate::operation::StopDataSourceSyncJob)>
     #[allow(unused_mut)]
@@ -9523,10 +9295,6 @@ pub mod submit_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SubmitFeedbackInputOperationOutputAlias = crate::operation::SubmitFeedback;
-#[doc(hidden)]
-pub type SubmitFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubmitFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`SubmitFeedback`](crate::operation::SubmitFeedback)>
     #[allow(unused_mut)]
@@ -9691,10 +9459,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -9859,10 +9623,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -10090,12 +9850,6 @@ pub mod update_access_control_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAccessControlConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateAccessControlConfiguration;
-#[doc(hidden)]
-pub type UpdateAccessControlConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccessControlConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccessControlConfiguration`](crate::operation::UpdateAccessControlConfiguration)>
     #[allow(unused_mut)]
@@ -10368,10 +10122,6 @@ pub mod update_data_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDataSourceInputOperationOutputAlias = crate::operation::UpdateDataSource;
-#[doc(hidden)]
-pub type UpdateDataSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataSource`](crate::operation::UpdateDataSource)>
     #[allow(unused_mut)]
@@ -10578,10 +10328,6 @@ pub mod update_experience_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateExperienceInputOperationOutputAlias = crate::operation::UpdateExperience;
-#[doc(hidden)]
-pub type UpdateExperienceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExperienceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExperience`](crate::operation::UpdateExperience)>
     #[allow(unused_mut)]
@@ -10865,10 +10611,6 @@ pub mod update_index_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateIndexInputOperationOutputAlias = crate::operation::UpdateIndex;
-#[doc(hidden)]
-pub type UpdateIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIndexInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIndex`](crate::operation::UpdateIndex)>
     #[allow(unused_mut)]
@@ -11081,12 +10823,6 @@ pub mod update_query_suggestions_block_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateQuerySuggestionsBlockListInputOperationOutputAlias =
-    crate::operation::UpdateQuerySuggestionsBlockList;
-#[doc(hidden)]
-pub type UpdateQuerySuggestionsBlockListInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateQuerySuggestionsBlockListInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQuerySuggestionsBlockList`](crate::operation::UpdateQuerySuggestionsBlockList)>
     #[allow(unused_mut)]
@@ -11323,12 +11059,6 @@ pub mod update_query_suggestions_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateQuerySuggestionsConfigInputOperationOutputAlias =
-    crate::operation::UpdateQuerySuggestionsConfig;
-#[doc(hidden)]
-pub type UpdateQuerySuggestionsConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateQuerySuggestionsConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQuerySuggestionsConfig`](crate::operation::UpdateQuerySuggestionsConfig)>
     #[allow(unused_mut)]
@@ -11534,10 +11264,6 @@ pub mod update_thesaurus_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateThesaurusInputOperationOutputAlias = crate::operation::UpdateThesaurus;
-#[doc(hidden)]
-pub type UpdateThesaurusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThesaurusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThesaurus`](crate::operation::UpdateThesaurus)>
     #[allow(unused_mut)]

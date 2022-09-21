@@ -203,11 +203,6 @@ pub mod create_experiment_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateExperimentTemplateInputOperationOutputAlias =
-    crate::operation::CreateExperimentTemplate;
-#[doc(hidden)]
-pub type CreateExperimentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExperimentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateExperimentTemplate`](crate::operation::CreateExperimentTemplate)>
     #[allow(unused_mut)]
@@ -351,11 +346,6 @@ pub mod delete_experiment_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteExperimentTemplateInputOperationOutputAlias =
-    crate::operation::DeleteExperimentTemplate;
-#[doc(hidden)]
-pub type DeleteExperimentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExperimentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExperimentTemplate`](crate::operation::DeleteExperimentTemplate)>
     #[allow(unused_mut)]
@@ -492,10 +482,6 @@ pub mod get_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetActionInputOperationOutputAlias = crate::operation::GetAction;
-#[doc(hidden)]
-pub type GetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetActionInput {
     /// Consumes the builder and constructs an Operation<[`GetAction`](crate::operation::GetAction)>
     #[allow(unused_mut)]
@@ -630,10 +616,6 @@ pub mod get_experiment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExperimentInputOperationOutputAlias = crate::operation::GetExperiment;
-#[doc(hidden)]
-pub type GetExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExperimentInput {
     /// Consumes the builder and constructs an Operation<[`GetExperiment`](crate::operation::GetExperiment)>
     #[allow(unused_mut)]
@@ -770,10 +752,6 @@ pub mod get_experiment_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExperimentTemplateInputOperationOutputAlias = crate::operation::GetExperimentTemplate;
-#[doc(hidden)]
-pub type GetExperimentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExperimentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetExperimentTemplate`](crate::operation::GetExperimentTemplate)>
     #[allow(unused_mut)]
@@ -916,10 +894,6 @@ pub mod get_target_resource_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTargetResourceTypeInputOperationOutputAlias = crate::operation::GetTargetResourceType;
-#[doc(hidden)]
-pub type GetTargetResourceTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTargetResourceTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetTargetResourceType`](crate::operation::GetTargetResourceType)>
     #[allow(unused_mut)]
@@ -1075,10 +1049,6 @@ pub mod list_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListActionsInputOperationOutputAlias = crate::operation::ListActions;
-#[doc(hidden)]
-pub type ListActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActionsInput {
     /// Consumes the builder and constructs an Operation<[`ListActions`](crate::operation::ListActions)>
     #[allow(unused_mut)]
@@ -1232,10 +1202,6 @@ pub mod list_experiments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExperimentsInputOperationOutputAlias = crate::operation::ListExperiments;
-#[doc(hidden)]
-pub type ListExperimentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExperimentsInput {
     /// Consumes the builder and constructs an Operation<[`ListExperiments`](crate::operation::ListExperiments)>
     #[allow(unused_mut)]
@@ -1391,11 +1357,6 @@ pub mod list_experiment_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExperimentTemplatesInputOperationOutputAlias =
-    crate::operation::ListExperimentTemplates;
-#[doc(hidden)]
-pub type ListExperimentTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExperimentTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListExperimentTemplates`](crate::operation::ListExperimentTemplates)>
     #[allow(unused_mut)]
@@ -1537,10 +1498,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1694,11 +1651,6 @@ pub mod list_target_resource_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTargetResourceTypesInputOperationOutputAlias =
-    crate::operation::ListTargetResourceTypes;
-#[doc(hidden)]
-pub type ListTargetResourceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListTargetResourceTypes`](crate::operation::ListTargetResourceTypes)>
     #[allow(unused_mut)]
@@ -1884,10 +1836,6 @@ pub mod start_experiment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartExperimentInputOperationOutputAlias = crate::operation::StartExperiment;
-#[doc(hidden)]
-pub type StartExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartExperimentInput {
     /// Consumes the builder and constructs an Operation<[`StartExperiment`](crate::operation::StartExperiment)>
     #[allow(unused_mut)]
@@ -2027,10 +1975,6 @@ pub mod stop_experiment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopExperimentInputOperationOutputAlias = crate::operation::StopExperiment;
-#[doc(hidden)]
-pub type StopExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopExperimentInput {
     /// Consumes the builder and constructs an Operation<[`StopExperiment`](crate::operation::StopExperiment)>
     #[allow(unused_mut)]
@@ -2198,10 +2142,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2376,10 +2316,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2675,11 +2611,6 @@ pub mod update_experiment_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateExperimentTemplateInputOperationOutputAlias =
-    crate::operation::UpdateExperimentTemplate;
-#[doc(hidden)]
-pub type UpdateExperimentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExperimentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExperimentTemplate`](crate::operation::UpdateExperimentTemplate)>
     #[allow(unused_mut)]

@@ -33,12 +33,6 @@ pub mod associate_service_role_to_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateServiceRoleToAccountInputOperationOutputAlias =
-    crate::operation::AssociateServiceRoleToAccount;
-#[doc(hidden)]
-pub type AssociateServiceRoleToAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateServiceRoleToAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateServiceRoleToAccount`](crate::operation::AssociateServiceRoleToAccount)>
     #[allow(unused_mut)]
@@ -211,12 +205,6 @@ pub mod batch_associate_client_device_with_core_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchAssociateClientDeviceWithCoreDeviceInputOperationOutputAlias =
-    crate::operation::BatchAssociateClientDeviceWithCoreDevice;
-#[doc(hidden)]
-pub type BatchAssociateClientDeviceWithCoreDeviceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateClientDeviceWithCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateClientDeviceWithCoreDevice`](crate::operation::BatchAssociateClientDeviceWithCoreDevice)>
     #[allow(unused_mut)]
@@ -409,12 +397,6 @@ pub mod batch_disassociate_client_device_from_core_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDisassociateClientDeviceFromCoreDeviceInputOperationOutputAlias =
-    crate::operation::BatchDisassociateClientDeviceFromCoreDevice;
-#[doc(hidden)]
-pub type BatchDisassociateClientDeviceFromCoreDeviceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateClientDeviceFromCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateClientDeviceFromCoreDevice`](crate::operation::BatchDisassociateClientDeviceFromCoreDevice)>
     #[allow(unused_mut)]
@@ -575,10 +557,6 @@ pub mod cancel_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelDeploymentInputOperationOutputAlias = crate::operation::CancelDeployment;
-#[doc(hidden)]
-pub type CancelDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CancelDeployment`](crate::operation::CancelDeployment)>
     #[allow(unused_mut)]
@@ -785,10 +763,6 @@ pub mod create_component_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateComponentVersionInputOperationOutputAlias = crate::operation::CreateComponentVersion;
-#[doc(hidden)]
-pub type CreateComponentVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateComponentVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponentVersion`](crate::operation::CreateComponentVersion)>
     #[allow(unused_mut)]
@@ -1058,10 +1032,6 @@ pub mod create_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(unused_mut)]
@@ -1201,10 +1171,6 @@ pub mod delete_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
-#[doc(hidden)]
-pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(unused_mut)]
@@ -1347,10 +1313,6 @@ pub mod delete_core_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCoreDeviceInputOperationOutputAlias = crate::operation::DeleteCoreDevice;
-#[doc(hidden)]
-pub type DeleteCoreDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCoreDevice`](crate::operation::DeleteCoreDevice)>
     #[allow(unused_mut)]
@@ -1497,10 +1459,6 @@ pub mod delete_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeploymentInputOperationOutputAlias = crate::operation::DeleteDeployment;
-#[doc(hidden)]
-pub type DeleteDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeployment`](crate::operation::DeleteDeployment)>
     #[allow(unused_mut)]
@@ -1642,10 +1600,6 @@ pub mod describe_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeComponentInputOperationOutputAlias = crate::operation::DescribeComponent;
-#[doc(hidden)]
-pub type DescribeComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComponentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComponent`](crate::operation::DescribeComponent)>
     #[allow(unused_mut)]
@@ -1777,12 +1731,6 @@ pub mod disassociate_service_role_from_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateServiceRoleFromAccountInputOperationOutputAlias =
-    crate::operation::DisassociateServiceRoleFromAccount;
-#[doc(hidden)]
-pub type DisassociateServiceRoleFromAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateServiceRoleFromAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateServiceRoleFromAccount`](crate::operation::DisassociateServiceRoleFromAccount)>
     #[allow(unused_mut)]
@@ -1922,10 +1870,6 @@ pub mod get_component_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComponentInputOperationOutputAlias = crate::operation::GetComponent;
-#[doc(hidden)]
-pub type GetComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
     #[allow(unused_mut)]
@@ -2098,11 +2042,6 @@ pub mod get_component_version_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetComponentVersionArtifactInputOperationOutputAlias =
-    crate::operation::GetComponentVersionArtifact;
-#[doc(hidden)]
-pub type GetComponentVersionArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentVersionArtifactInput {
     /// Consumes the builder and constructs an Operation<[`GetComponentVersionArtifact`](crate::operation::GetComponentVersionArtifact)>
     #[allow(unused_mut)]
@@ -2261,10 +2200,6 @@ pub mod get_connectivity_info_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectivityInfoInputOperationOutputAlias = crate::operation::GetConnectivityInfo;
-#[doc(hidden)]
-pub type GetConnectivityInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectivityInfoInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectivityInfo`](crate::operation::GetConnectivityInfo)>
     #[allow(unused_mut)]
@@ -2411,10 +2346,6 @@ pub mod get_core_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreDeviceInputOperationOutputAlias = crate::operation::GetCoreDevice;
-#[doc(hidden)]
-pub type GetCoreDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreDevice`](crate::operation::GetCoreDevice)>
     #[allow(unused_mut)]
@@ -2561,10 +2492,6 @@ pub mod get_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeploymentInputOperationOutputAlias = crate::operation::GetDeployment;
-#[doc(hidden)]
-pub type GetDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployment`](crate::operation::GetDeployment)>
     #[allow(unused_mut)]
@@ -2696,11 +2623,6 @@ pub mod get_service_role_for_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceRoleForAccountInputOperationOutputAlias =
-    crate::operation::GetServiceRoleForAccount;
-#[doc(hidden)]
-pub type GetServiceRoleForAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceRoleForAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceRoleForAccount`](crate::operation::GetServiceRoleForAccount)>
     #[allow(unused_mut)]
@@ -2856,12 +2778,6 @@ pub mod list_client_devices_associated_with_core_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListClientDevicesAssociatedWithCoreDeviceInputOperationOutputAlias =
-    crate::operation::ListClientDevicesAssociatedWithCoreDevice;
-#[doc(hidden)]
-pub type ListClientDevicesAssociatedWithCoreDeviceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListClientDevicesAssociatedWithCoreDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ListClientDevicesAssociatedWithCoreDevice`](crate::operation::ListClientDevicesAssociatedWithCoreDevice)>
     #[allow(unused_mut)]
@@ -3052,10 +2968,6 @@ pub mod list_components_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
-#[doc(hidden)]
-pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(unused_mut)]
@@ -3224,10 +3136,6 @@ pub mod list_component_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListComponentVersionsInputOperationOutputAlias = crate::operation::ListComponentVersions;
-#[doc(hidden)]
-pub type ListComponentVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponentVersions`](crate::operation::ListComponentVersions)>
     #[allow(unused_mut)]
@@ -3438,10 +3346,6 @@ pub mod list_core_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCoreDevicesInputOperationOutputAlias = crate::operation::ListCoreDevices;
-#[doc(hidden)]
-pub type ListCoreDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoreDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListCoreDevices`](crate::operation::ListCoreDevices)>
     #[allow(unused_mut)]
@@ -3641,10 +3545,6 @@ pub mod list_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeploymentsInputOperationOutputAlias = crate::operation::ListDeployments;
-#[doc(hidden)]
-pub type ListDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeployments`](crate::operation::ListDeployments)>
     #[allow(unused_mut)]
@@ -3824,11 +3724,6 @@ pub mod list_effective_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEffectiveDeploymentsInputOperationOutputAlias =
-    crate::operation::ListEffectiveDeployments;
-#[doc(hidden)]
-pub type ListEffectiveDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEffectiveDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEffectiveDeployments`](crate::operation::ListEffectiveDeployments)>
     #[allow(unused_mut)]
@@ -4018,11 +3913,6 @@ pub mod list_installed_components_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInstalledComponentsInputOperationOutputAlias =
-    crate::operation::ListInstalledComponents;
-#[doc(hidden)]
-pub type ListInstalledComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstalledComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListInstalledComponents`](crate::operation::ListInstalledComponents)>
     #[allow(unused_mut)]
@@ -4183,10 +4073,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4353,11 +4239,6 @@ pub mod resolve_component_candidates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResolveComponentCandidatesInputOperationOutputAlias =
-    crate::operation::ResolveComponentCandidates;
-#[doc(hidden)]
-pub type ResolveComponentCandidatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveComponentCandidatesInput {
     /// Consumes the builder and constructs an Operation<[`ResolveComponentCandidates`](crate::operation::ResolveComponentCandidates)>
     #[allow(unused_mut)]
@@ -4528,10 +4409,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4706,10 +4583,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4884,10 +4757,6 @@ pub mod update_connectivity_info_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectivityInfoInputOperationOutputAlias = crate::operation::UpdateConnectivityInfo;
-#[doc(hidden)]
-pub type UpdateConnectivityInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectivityInfoInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectivityInfo`](crate::operation::UpdateConnectivityInfo)>
     #[allow(unused_mut)]

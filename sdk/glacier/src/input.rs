@@ -55,10 +55,6 @@ pub mod abort_multipart_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AbortMultipartUploadInputOperationOutputAlias = crate::operation::AbortMultipartUpload;
-#[doc(hidden)]
-pub type AbortMultipartUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AbortMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`AbortMultipartUpload`](crate::operation::AbortMultipartUpload)>
     #[allow(unused_mut)]
@@ -251,10 +247,6 @@ pub mod abort_vault_lock_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AbortVaultLockInputOperationOutputAlias = crate::operation::AbortVaultLock;
-#[doc(hidden)]
-pub type AbortVaultLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AbortVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`AbortVaultLock`](crate::operation::AbortVaultLock)>
     #[allow(unused_mut)]
@@ -461,10 +453,6 @@ pub mod add_tags_to_vault_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsToVaultInputOperationOutputAlias = crate::operation::AddTagsToVault;
-#[doc(hidden)]
-pub type AddTagsToVaultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToVaultInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToVault`](crate::operation::AddTagsToVault)>
     #[allow(unused_mut)]
@@ -703,11 +691,6 @@ pub mod complete_multipart_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompleteMultipartUploadInputOperationOutputAlias =
-    crate::operation::CompleteMultipartUpload;
-#[doc(hidden)]
-pub type CompleteMultipartUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteMultipartUpload`](crate::operation::CompleteMultipartUpload)>
     #[allow(unused_mut)]
@@ -914,10 +897,6 @@ pub mod complete_vault_lock_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompleteVaultLockInputOperationOutputAlias = crate::operation::CompleteVaultLock;
-#[doc(hidden)]
-pub type CompleteVaultLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`CompleteVaultLock`](crate::operation::CompleteVaultLock)>
     #[allow(unused_mut)]
@@ -1110,10 +1089,6 @@ pub mod create_vault_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVaultInputOperationOutputAlias = crate::operation::CreateVault;
-#[doc(hidden)]
-pub type CreateVaultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVaultInput {
     /// Consumes the builder and constructs an Operation<[`CreateVault`](crate::operation::CreateVault)>
     #[allow(unused_mut)]
@@ -1303,10 +1278,6 @@ pub mod delete_archive_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteArchiveInputOperationOutputAlias = crate::operation::DeleteArchive;
-#[doc(hidden)]
-pub type DeleteArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteArchiveInput {
     /// Consumes the builder and constructs an Operation<[`DeleteArchive`](crate::operation::DeleteArchive)>
     #[allow(unused_mut)]
@@ -1499,10 +1470,6 @@ pub mod delete_vault_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVaultInputOperationOutputAlias = crate::operation::DeleteVault;
-#[doc(hidden)]
-pub type DeleteVaultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVaultInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVault`](crate::operation::DeleteVault)>
     #[allow(unused_mut)]
@@ -1682,11 +1649,6 @@ pub mod delete_vault_access_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVaultAccessPolicyInputOperationOutputAlias =
-    crate::operation::DeleteVaultAccessPolicy;
-#[doc(hidden)]
-pub type DeleteVaultAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVaultAccessPolicy`](crate::operation::DeleteVaultAccessPolicy)>
     #[allow(unused_mut)]
@@ -1866,11 +1828,6 @@ pub mod delete_vault_notifications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVaultNotificationsInputOperationOutputAlias =
-    crate::operation::DeleteVaultNotifications;
-#[doc(hidden)]
-pub type DeleteVaultNotificationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVaultNotifications`](crate::operation::DeleteVaultNotifications)>
     #[allow(unused_mut)]
@@ -2060,10 +2017,6 @@ pub mod describe_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobInputOperationOutputAlias = crate::operation::DescribeJob;
-#[doc(hidden)]
-pub type DescribeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(unused_mut)]
@@ -2256,10 +2209,6 @@ pub mod describe_vault_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVaultInputOperationOutputAlias = crate::operation::DescribeVault;
-#[doc(hidden)]
-pub type DescribeVaultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVaultInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVault`](crate::operation::DescribeVault)>
     #[allow(unused_mut)]
@@ -2425,10 +2374,6 @@ pub mod get_data_retrieval_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDataRetrievalPolicyInputOperationOutputAlias = crate::operation::GetDataRetrievalPolicy;
-#[doc(hidden)]
-pub type GetDataRetrievalPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataRetrievalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetDataRetrievalPolicy`](crate::operation::GetDataRetrievalPolicy)>
     #[allow(unused_mut)]
@@ -2629,10 +2574,6 @@ pub mod get_job_output_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobOutputInputOperationOutputAlias = crate::operation::GetJobOutput;
-#[doc(hidden)]
-pub type GetJobOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobOutputInput {
     /// Consumes the builder and constructs an Operation<[`GetJobOutput`](crate::operation::GetJobOutput)>
     #[allow(unused_mut)]
@@ -2826,10 +2767,6 @@ pub mod get_vault_access_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVaultAccessPolicyInputOperationOutputAlias = crate::operation::GetVaultAccessPolicy;
-#[doc(hidden)]
-pub type GetVaultAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultAccessPolicy`](crate::operation::GetVaultAccessPolicy)>
     #[allow(unused_mut)]
@@ -3007,10 +2944,6 @@ pub mod get_vault_lock_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVaultLockInputOperationOutputAlias = crate::operation::GetVaultLock;
-#[doc(hidden)]
-pub type GetVaultLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultLock`](crate::operation::GetVaultLock)>
     #[allow(unused_mut)]
@@ -3188,10 +3121,6 @@ pub mod get_vault_notifications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVaultNotificationsInputOperationOutputAlias = crate::operation::GetVaultNotifications;
-#[doc(hidden)]
-pub type GetVaultNotificationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultNotifications`](crate::operation::GetVaultNotifications)>
     #[allow(unused_mut)]
@@ -3384,10 +3313,6 @@ pub mod initiate_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitiateJobInputOperationOutputAlias = crate::operation::InitiateJob;
-#[doc(hidden)]
-pub type InitiateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateJobInput {
     /// Consumes the builder and constructs an Operation<[`InitiateJob`](crate::operation::InitiateJob)>
     #[allow(unused_mut)]
@@ -3610,11 +3535,6 @@ pub mod initiate_multipart_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitiateMultipartUploadInputOperationOutputAlias =
-    crate::operation::InitiateMultipartUpload;
-#[doc(hidden)]
-pub type InitiateMultipartUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateMultipartUpload`](crate::operation::InitiateMultipartUpload)>
     #[allow(unused_mut)]
@@ -3809,10 +3729,6 @@ pub mod initiate_vault_lock_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitiateVaultLockInputOperationOutputAlias = crate::operation::InitiateVaultLock;
-#[doc(hidden)]
-pub type InitiateVaultLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`InitiateVaultLock`](crate::operation::InitiateVaultLock)>
     #[allow(unused_mut)]
@@ -4051,10 +3967,6 @@ pub mod list_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
-#[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(unused_mut)]
@@ -4276,10 +4188,6 @@ pub mod list_multipart_uploads_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMultipartUploadsInputOperationOutputAlias = crate::operation::ListMultipartUploads;
-#[doc(hidden)]
-pub type ListMultipartUploadsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMultipartUploadsInput {
     /// Consumes the builder and constructs an Operation<[`ListMultipartUploads`](crate::operation::ListMultipartUploads)>
     #[allow(unused_mut)]
@@ -4509,10 +4417,6 @@ pub mod list_parts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPartsInputOperationOutputAlias = crate::operation::ListParts;
-#[doc(hidden)]
-pub type ListPartsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPartsInput {
     /// Consumes the builder and constructs an Operation<[`ListParts`](crate::operation::ListParts)>
     #[allow(unused_mut)]
@@ -4710,11 +4614,6 @@ pub mod list_provisioned_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProvisionedCapacityInputOperationOutputAlias =
-    crate::operation::ListProvisionedCapacity;
-#[doc(hidden)]
-pub type ListProvisionedCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisionedCapacityInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisionedCapacity`](crate::operation::ListProvisionedCapacity)>
     #[allow(unused_mut)]
@@ -4877,10 +4776,6 @@ pub mod list_tags_for_vault_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForVaultInputOperationOutputAlias = crate::operation::ListTagsForVault;
-#[doc(hidden)]
-pub type ListTagsForVaultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForVaultInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForVault`](crate::operation::ListTagsForVault)>
     #[allow(unused_mut)]
@@ -5069,10 +4964,6 @@ pub mod list_vaults_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVaultsInputOperationOutputAlias = crate::operation::ListVaults;
-#[doc(hidden)]
-pub type ListVaultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVaultsInput {
     /// Consumes the builder and constructs an Operation<[`ListVaults`](crate::operation::ListVaults)>
     #[allow(unused_mut)]
@@ -5238,11 +5129,6 @@ pub mod purchase_provisioned_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PurchaseProvisionedCapacityInputOperationOutputAlias =
-    crate::operation::PurchaseProvisionedCapacity;
-#[doc(hidden)]
-pub type PurchaseProvisionedCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseProvisionedCapacityInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseProvisionedCapacity`](crate::operation::PurchaseProvisionedCapacity)>
     #[allow(unused_mut)]
@@ -5426,10 +5312,6 @@ pub mod remove_tags_from_vault_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsFromVaultInputOperationOutputAlias = crate::operation::RemoveTagsFromVault;
-#[doc(hidden)]
-pub type RemoveTagsFromVaultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromVaultInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromVault`](crate::operation::RemoveTagsFromVault)>
     #[allow(unused_mut)]
@@ -5635,10 +5517,6 @@ pub mod set_data_retrieval_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetDataRetrievalPolicyInputOperationOutputAlias = crate::operation::SetDataRetrievalPolicy;
-#[doc(hidden)]
-pub type SetDataRetrievalPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetDataRetrievalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetDataRetrievalPolicy`](crate::operation::SetDataRetrievalPolicy)>
     #[allow(unused_mut)]
@@ -5832,10 +5710,6 @@ pub mod set_vault_access_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetVaultAccessPolicyInputOperationOutputAlias = crate::operation::SetVaultAccessPolicy;
-#[doc(hidden)]
-pub type SetVaultAccessPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetVaultAccessPolicy`](crate::operation::SetVaultAccessPolicy)>
     #[allow(unused_mut)]
@@ -6046,10 +5920,6 @@ pub mod set_vault_notifications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetVaultNotificationsInputOperationOutputAlias = crate::operation::SetVaultNotifications;
-#[doc(hidden)]
-pub type SetVaultNotificationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`SetVaultNotifications`](crate::operation::SetVaultNotifications)>
     #[allow(unused_mut)]
@@ -6285,10 +6155,6 @@ pub mod upload_archive_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UploadArchiveInputOperationOutputAlias = crate::operation::UploadArchive;
-#[doc(hidden)]
-pub type UploadArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadArchiveInput {
     /// Consumes the builder and constructs an Operation<[`UploadArchive`](crate::operation::UploadArchive)>
     #[allow(unused_mut)]
@@ -6535,10 +6401,6 @@ pub mod upload_multipart_part_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UploadMultipartPartInputOperationOutputAlias = crate::operation::UploadMultipartPart;
-#[doc(hidden)]
-pub type UploadMultipartPartInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadMultipartPartInput {
     /// Consumes the builder and constructs an Operation<[`UploadMultipartPart`](crate::operation::UploadMultipartPart)>
     #[allow(unused_mut)]

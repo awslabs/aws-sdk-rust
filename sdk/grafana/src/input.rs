@@ -46,10 +46,6 @@ pub mod associate_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateLicenseInputOperationOutputAlias = crate::operation::AssociateLicense;
-#[doc(hidden)]
-pub type AssociateLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLicense`](crate::operation::AssociateLicense)>
     #[allow(unused_mut)]
@@ -447,10 +443,6 @@ pub mod create_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkspaceInputOperationOutputAlias = crate::operation::CreateWorkspace;
-#[doc(hidden)]
-pub type CreateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspace`](crate::operation::CreateWorkspace)>
     #[allow(unused_mut)]
@@ -630,10 +622,6 @@ pub mod create_workspace_api_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkspaceApiKeyInputOperationOutputAlias = crate::operation::CreateWorkspaceApiKey;
-#[doc(hidden)]
-pub type CreateWorkspaceApiKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceApiKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaceApiKey`](crate::operation::CreateWorkspaceApiKey)>
     #[allow(unused_mut)]
@@ -793,10 +781,6 @@ pub mod delete_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkspaceInputOperationOutputAlias = crate::operation::DeleteWorkspace;
-#[doc(hidden)]
-pub type DeleteWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspace`](crate::operation::DeleteWorkspace)>
     #[allow(unused_mut)]
@@ -952,10 +936,6 @@ pub mod delete_workspace_api_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkspaceApiKeyInputOperationOutputAlias = crate::operation::DeleteWorkspaceApiKey;
-#[doc(hidden)]
-pub type DeleteWorkspaceApiKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceApiKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceApiKey`](crate::operation::DeleteWorkspaceApiKey)>
     #[allow(unused_mut)]
@@ -1114,10 +1094,6 @@ pub mod describe_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceInputOperationOutputAlias = crate::operation::DescribeWorkspace;
-#[doc(hidden)]
-pub type DescribeWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspace`](crate::operation::DescribeWorkspace)>
     #[allow(unused_mut)]
@@ -1263,12 +1239,6 @@ pub mod describe_workspace_authentication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceAuthenticationInputOperationOutputAlias =
-    crate::operation::DescribeWorkspaceAuthentication;
-#[doc(hidden)]
-pub type DescribeWorkspaceAuthenticationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceAuthenticationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceAuthentication`](crate::operation::DescribeWorkspaceAuthentication)>
     #[allow(unused_mut)]
@@ -1427,10 +1397,6 @@ pub mod disassociate_license_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateLicenseInputOperationOutputAlias = crate::operation::DisassociateLicense;
-#[doc(hidden)]
-pub type DisassociateLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLicense`](crate::operation::DisassociateLicense)>
     #[allow(unused_mut)]
@@ -1649,10 +1615,6 @@ pub mod list_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionsInputOperationOutputAlias = crate::operation::ListPermissions;
-#[doc(hidden)]
-pub type ListPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissions`](crate::operation::ListPermissions)>
     #[allow(unused_mut)]
@@ -1822,10 +1784,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1977,10 +1935,6 @@ pub mod list_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkspacesInputOperationOutputAlias = crate::operation::ListWorkspaces;
-#[doc(hidden)]
-pub type ListWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkspaces`](crate::operation::ListWorkspaces)>
     #[allow(unused_mut)]
@@ -2151,10 +2105,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2329,10 +2279,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2507,10 +2453,6 @@ pub mod update_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePermissionsInputOperationOutputAlias = crate::operation::UpdatePermissions;
-#[doc(hidden)]
-pub type UpdatePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePermissions`](crate::operation::UpdatePermissions)>
     #[allow(unused_mut)]
@@ -2851,10 +2793,6 @@ pub mod update_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkspaceInputOperationOutputAlias = crate::operation::UpdateWorkspace;
-#[doc(hidden)]
-pub type UpdateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspace`](crate::operation::UpdateWorkspace)>
     #[allow(unused_mut)]
@@ -3054,12 +2992,6 @@ pub mod update_workspace_authentication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkspaceAuthenticationInputOperationOutputAlias =
-    crate::operation::UpdateWorkspaceAuthentication;
-#[doc(hidden)]
-pub type UpdateWorkspaceAuthenticationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceAuthenticationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceAuthentication`](crate::operation::UpdateWorkspaceAuthentication)>
     #[allow(unused_mut)]

@@ -67,10 +67,6 @@ pub mod accept_match_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptMatchInputOperationOutputAlias = crate::operation::AcceptMatch;
-#[doc(hidden)]
-pub type AcceptMatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptMatchInput {
     /// Consumes the builder and constructs an Operation<[`AcceptMatch`](crate::operation::AcceptMatch)>
     #[allow(unused_mut)]
@@ -247,10 +243,6 @@ pub mod claim_game_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ClaimGameServerInputOperationOutputAlias = crate::operation::ClaimGameServer;
-#[doc(hidden)]
-pub type ClaimGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClaimGameServerInput {
     /// Consumes the builder and constructs an Operation<[`ClaimGameServer`](crate::operation::ClaimGameServer)>
     #[allow(unused_mut)]
@@ -442,10 +434,6 @@ pub mod create_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAliasInputOperationOutputAlias = crate::operation::CreateAlias;
-#[doc(hidden)]
-pub type CreateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
     #[allow(unused_mut)]
@@ -654,10 +642,6 @@ pub mod create_build_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBuildInputOperationOutputAlias = crate::operation::CreateBuild;
-#[doc(hidden)]
-pub type CreateBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBuildInput {
     /// Consumes the builder and constructs an Operation<[`CreateBuild`](crate::operation::CreateBuild)>
     #[allow(unused_mut)]
@@ -1132,10 +1116,6 @@ pub mod create_fleet_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFleetInputOperationOutputAlias = crate::operation::CreateFleet;
-#[doc(hidden)]
-pub type CreateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
     #[allow(unused_mut)]
@@ -1301,10 +1281,6 @@ pub mod create_fleet_locations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFleetLocationsInputOperationOutputAlias = crate::operation::CreateFleetLocations;
-#[doc(hidden)]
-pub type CreateFleetLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetLocationsInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleetLocations`](crate::operation::CreateFleetLocations)>
     #[allow(unused_mut)]
@@ -1635,10 +1611,6 @@ pub mod create_game_server_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGameServerGroupInputOperationOutputAlias = crate::operation::CreateGameServerGroup;
-#[doc(hidden)]
-pub type CreateGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGameServerGroup`](crate::operation::CreateGameServerGroup)>
     #[allow(unused_mut)]
@@ -1924,10 +1896,6 @@ pub mod create_game_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGameSessionInputOperationOutputAlias = crate::operation::CreateGameSession;
-#[doc(hidden)]
-pub type CreateGameSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGameSession`](crate::operation::CreateGameSession)>
     #[allow(unused_mut)]
@@ -2211,10 +2179,6 @@ pub mod create_game_session_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGameSessionQueueInputOperationOutputAlias = crate::operation::CreateGameSessionQueue;
-#[doc(hidden)]
-pub type CreateGameSessionQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameSessionQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateGameSessionQueue`](crate::operation::CreateGameSessionQueue)>
     #[allow(unused_mut)]
@@ -2591,12 +2555,6 @@ pub mod create_matchmaking_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMatchmakingConfigurationInputOperationOutputAlias =
-    crate::operation::CreateMatchmakingConfiguration;
-#[doc(hidden)]
-pub type CreateMatchmakingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMatchmakingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateMatchmakingConfiguration`](crate::operation::CreateMatchmakingConfiguration)>
     #[allow(unused_mut)]
@@ -2777,11 +2735,6 @@ pub mod create_matchmaking_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMatchmakingRuleSetInputOperationOutputAlias =
-    crate::operation::CreateMatchmakingRuleSet;
-#[doc(hidden)]
-pub type CreateMatchmakingRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMatchmakingRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateMatchmakingRuleSet`](crate::operation::CreateMatchmakingRuleSet)>
     #[allow(unused_mut)]
@@ -2954,10 +2907,6 @@ pub mod create_player_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePlayerSessionInputOperationOutputAlias = crate::operation::CreatePlayerSession;
-#[doc(hidden)]
-pub type CreatePlayerSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlayerSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlayerSession`](crate::operation::CreatePlayerSession)>
     #[allow(unused_mut)]
@@ -3154,10 +3103,6 @@ pub mod create_player_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePlayerSessionsInputOperationOutputAlias = crate::operation::CreatePlayerSessions;
-#[doc(hidden)]
-pub type CreatePlayerSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlayerSessionsInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlayerSessions`](crate::operation::CreatePlayerSessions)>
     #[allow(unused_mut)]
@@ -3365,10 +3310,6 @@ pub mod create_script_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateScriptInputOperationOutputAlias = crate::operation::CreateScript;
-#[doc(hidden)]
-pub type CreateScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScriptInput {
     /// Consumes the builder and constructs an Operation<[`CreateScript`](crate::operation::CreateScript)>
     #[allow(unused_mut)]
@@ -3529,12 +3470,6 @@ pub mod create_vpc_peering_authorization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVpcPeeringAuthorizationInputOperationOutputAlias =
-    crate::operation::CreateVpcPeeringAuthorization;
-#[doc(hidden)]
-pub type CreateVpcPeeringAuthorizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVpcPeeringAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateVpcPeeringAuthorization`](crate::operation::CreateVpcPeeringAuthorization)>
     #[allow(unused_mut)]
@@ -3706,11 +3641,6 @@ pub mod create_vpc_peering_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVpcPeeringConnectionInputOperationOutputAlias =
-    crate::operation::CreateVpcPeeringConnection;
-#[doc(hidden)]
-pub type CreateVpcPeeringConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVpcPeeringConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateVpcPeeringConnection`](crate::operation::CreateVpcPeeringConnection)>
     #[allow(unused_mut)]
@@ -3853,10 +3783,6 @@ pub mod delete_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAliasInputOperationOutputAlias = crate::operation::DeleteAlias;
-#[doc(hidden)]
-pub type DeleteAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
     #[allow(unused_mut)]
@@ -4000,10 +3926,6 @@ pub mod delete_build_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBuildInputOperationOutputAlias = crate::operation::DeleteBuild;
-#[doc(hidden)]
-pub type DeleteBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBuildInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBuild`](crate::operation::DeleteBuild)>
     #[allow(unused_mut)]
@@ -4147,10 +4069,6 @@ pub mod delete_fleet_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFleetInputOperationOutputAlias = crate::operation::DeleteFleet;
-#[doc(hidden)]
-pub type DeleteFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
     #[allow(unused_mut)]
@@ -4315,10 +4233,6 @@ pub mod delete_fleet_locations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFleetLocationsInputOperationOutputAlias = crate::operation::DeleteFleetLocations;
-#[doc(hidden)]
-pub type DeleteFleetLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetLocationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleetLocations`](crate::operation::DeleteFleetLocations)>
     #[allow(unused_mut)]
@@ -4492,10 +4406,6 @@ pub mod delete_game_server_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGameServerGroupInputOperationOutputAlias = crate::operation::DeleteGameServerGroup;
-#[doc(hidden)]
-pub type DeleteGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGameServerGroup`](crate::operation::DeleteGameServerGroup)>
     #[allow(unused_mut)]
@@ -4639,10 +4549,6 @@ pub mod delete_game_session_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGameSessionQueueInputOperationOutputAlias = crate::operation::DeleteGameSessionQueue;
-#[doc(hidden)]
-pub type DeleteGameSessionQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGameSessionQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGameSessionQueue`](crate::operation::DeleteGameSessionQueue)>
     #[allow(unused_mut)]
@@ -4788,12 +4694,6 @@ pub mod delete_matchmaking_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMatchmakingConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteMatchmakingConfiguration;
-#[doc(hidden)]
-pub type DeleteMatchmakingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMatchmakingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMatchmakingConfiguration`](crate::operation::DeleteMatchmakingConfiguration)>
     #[allow(unused_mut)]
@@ -4936,11 +4836,6 @@ pub mod delete_matchmaking_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMatchmakingRuleSetInputOperationOutputAlias =
-    crate::operation::DeleteMatchmakingRuleSet;
-#[doc(hidden)]
-pub type DeleteMatchmakingRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMatchmakingRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMatchmakingRuleSet`](crate::operation::DeleteMatchmakingRuleSet)>
     #[allow(unused_mut)]
@@ -5098,10 +4993,6 @@ pub mod delete_scaling_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScalingPolicyInputOperationOutputAlias = crate::operation::DeleteScalingPolicy;
-#[doc(hidden)]
-pub type DeleteScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScalingPolicy`](crate::operation::DeleteScalingPolicy)>
     #[allow(unused_mut)]
@@ -5245,10 +5136,6 @@ pub mod delete_script_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScriptInputOperationOutputAlias = crate::operation::DeleteScript;
-#[doc(hidden)]
-pub type DeleteScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScriptInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScript`](crate::operation::DeleteScript)>
     #[allow(unused_mut)]
@@ -5409,12 +5296,6 @@ pub mod delete_vpc_peering_authorization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVpcPeeringAuthorizationInputOperationOutputAlias =
-    crate::operation::DeleteVpcPeeringAuthorization;
-#[doc(hidden)]
-pub type DeleteVpcPeeringAuthorizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVpcPeeringAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVpcPeeringAuthorization`](crate::operation::DeleteVpcPeeringAuthorization)>
     #[allow(unused_mut)]
@@ -5574,11 +5455,6 @@ pub mod delete_vpc_peering_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVpcPeeringConnectionInputOperationOutputAlias =
-    crate::operation::DeleteVpcPeeringConnection;
-#[doc(hidden)]
-pub type DeleteVpcPeeringConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVpcPeeringConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVpcPeeringConnection`](crate::operation::DeleteVpcPeeringConnection)>
     #[allow(unused_mut)]
@@ -5739,10 +5615,6 @@ pub mod deregister_game_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterGameServerInputOperationOutputAlias = crate::operation::DeregisterGameServer;
-#[doc(hidden)]
-pub type DeregisterGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterGameServerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterGameServer`](crate::operation::DeregisterGameServer)>
     #[allow(unused_mut)]
@@ -5888,10 +5760,6 @@ pub mod describe_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAliasInputOperationOutputAlias = crate::operation::DescribeAlias;
-#[doc(hidden)]
-pub type DescribeAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAliasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlias`](crate::operation::DescribeAlias)>
     #[allow(unused_mut)]
@@ -6035,10 +5903,6 @@ pub mod describe_build_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBuildInputOperationOutputAlias = crate::operation::DescribeBuild;
-#[doc(hidden)]
-pub type DescribeBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBuildInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBuild`](crate::operation::DescribeBuild)>
     #[allow(unused_mut)]
@@ -6199,11 +6063,6 @@ pub mod describe_ec2_instance_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEc2InstanceLimitsInputOperationOutputAlias =
-    crate::operation::DescribeEC2InstanceLimits;
-#[doc(hidden)]
-pub type DescribeEc2InstanceLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEc2InstanceLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEC2InstanceLimits`](crate::operation::DescribeEC2InstanceLimits)>
     #[allow(unused_mut)]
@@ -6384,11 +6243,6 @@ pub mod describe_fleet_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetAttributesInputOperationOutputAlias =
-    crate::operation::DescribeFleetAttributes;
-#[doc(hidden)]
-pub type DescribeFleetAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetAttributes`](crate::operation::DescribeFleetAttributes)>
     #[allow(unused_mut)]
@@ -6567,10 +6421,6 @@ pub mod describe_fleet_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetCapacityInputOperationOutputAlias = crate::operation::DescribeFleetCapacity;
-#[doc(hidden)]
-pub type DescribeFleetCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetCapacityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetCapacity`](crate::operation::DescribeFleetCapacity)>
     #[allow(unused_mut)]
@@ -6770,10 +6620,6 @@ pub mod describe_fleet_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetEventsInputOperationOutputAlias = crate::operation::DescribeFleetEvents;
-#[doc(hidden)]
-pub type DescribeFleetEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetEvents`](crate::operation::DescribeFleetEvents)>
     #[allow(unused_mut)]
@@ -6964,12 +6810,6 @@ pub mod describe_fleet_location_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetLocationAttributesInputOperationOutputAlias =
-    crate::operation::DescribeFleetLocationAttributes;
-#[doc(hidden)]
-pub type DescribeFleetLocationAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetLocationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetLocationAttributes`](crate::operation::DescribeFleetLocationAttributes)>
     #[allow(unused_mut)]
@@ -7126,12 +6966,6 @@ pub mod describe_fleet_location_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetLocationCapacityInputOperationOutputAlias =
-    crate::operation::DescribeFleetLocationCapacity;
-#[doc(hidden)]
-pub type DescribeFleetLocationCapacityInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetLocationCapacityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetLocationCapacity`](crate::operation::DescribeFleetLocationCapacity)>
     #[allow(unused_mut)]
@@ -7288,12 +7122,6 @@ pub mod describe_fleet_location_utilization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetLocationUtilizationInputOperationOutputAlias =
-    crate::operation::DescribeFleetLocationUtilization;
-#[doc(hidden)]
-pub type DescribeFleetLocationUtilizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetLocationUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetLocationUtilization`](crate::operation::DescribeFleetLocationUtilization)>
     #[allow(unused_mut)]
@@ -7450,11 +7278,6 @@ pub mod describe_fleet_port_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetPortSettingsInputOperationOutputAlias =
-    crate::operation::DescribeFleetPortSettings;
-#[doc(hidden)]
-pub type DescribeFleetPortSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetPortSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetPortSettings`](crate::operation::DescribeFleetPortSettings)>
     #[allow(unused_mut)]
@@ -7635,11 +7458,6 @@ pub mod describe_fleet_utilization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFleetUtilizationInputOperationOutputAlias =
-    crate::operation::DescribeFleetUtilization;
-#[doc(hidden)]
-pub type DescribeFleetUtilizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetUtilization`](crate::operation::DescribeFleetUtilization)>
     #[allow(unused_mut)]
@@ -7803,10 +7621,6 @@ pub mod describe_game_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameServerInputOperationOutputAlias = crate::operation::DescribeGameServer;
-#[doc(hidden)]
-pub type DescribeGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameServerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameServer`](crate::operation::DescribeGameServer)>
     #[allow(unused_mut)]
@@ -7955,11 +7769,6 @@ pub mod describe_game_server_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameServerGroupInputOperationOutputAlias =
-    crate::operation::DescribeGameServerGroup;
-#[doc(hidden)]
-pub type DescribeGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameServerGroup`](crate::operation::DescribeGameServerGroup)>
     #[allow(unused_mut)]
@@ -8155,11 +7964,6 @@ pub mod describe_game_server_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameServerInstancesInputOperationOutputAlias =
-    crate::operation::DescribeGameServerInstances;
-#[doc(hidden)]
-pub type DescribeGameServerInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameServerInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameServerInstances`](crate::operation::DescribeGameServerInstances)>
     #[allow(unused_mut)]
@@ -8382,11 +8186,6 @@ pub mod describe_game_session_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameSessionDetailsInputOperationOutputAlias =
-    crate::operation::DescribeGameSessionDetails;
-#[doc(hidden)]
-pub type DescribeGameSessionDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionDetailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessionDetails`](crate::operation::DescribeGameSessionDetails)>
     #[allow(unused_mut)]
@@ -8531,12 +8330,6 @@ pub mod describe_game_session_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameSessionPlacementInputOperationOutputAlias =
-    crate::operation::DescribeGameSessionPlacement;
-#[doc(hidden)]
-pub type DescribeGameSessionPlacementInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionPlacementInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessionPlacement`](crate::operation::DescribeGameSessionPlacement)>
     #[allow(unused_mut)]
@@ -8714,11 +8507,6 @@ pub mod describe_game_session_queues_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameSessionQueuesInputOperationOutputAlias =
-    crate::operation::DescribeGameSessionQueues;
-#[doc(hidden)]
-pub type DescribeGameSessionQueuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionQueuesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessionQueues`](crate::operation::DescribeGameSessionQueues)>
     #[allow(unused_mut)]
@@ -8942,10 +8730,6 @@ pub mod describe_game_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGameSessionsInputOperationOutputAlias = crate::operation::DescribeGameSessions;
-#[doc(hidden)]
-pub type DescribeGameSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGameSessionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGameSessions`](crate::operation::DescribeGameSessions)>
     #[allow(unused_mut)]
@@ -9139,10 +8923,6 @@ pub mod describe_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInstancesInputOperationOutputAlias = crate::operation::DescribeInstances;
-#[doc(hidden)]
-pub type DescribeInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstances`](crate::operation::DescribeInstances)>
     #[allow(unused_mut)]
@@ -9295,10 +9075,6 @@ pub mod describe_matchmaking_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMatchmakingInputOperationOutputAlias = crate::operation::DescribeMatchmaking;
-#[doc(hidden)]
-pub type DescribeMatchmakingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMatchmakingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMatchmaking`](crate::operation::DescribeMatchmaking)>
     #[allow(unused_mut)]
@@ -9492,12 +9268,6 @@ pub mod describe_matchmaking_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMatchmakingConfigurationsInputOperationOutputAlias =
-    crate::operation::DescribeMatchmakingConfigurations;
-#[doc(hidden)]
-pub type DescribeMatchmakingConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMatchmakingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMatchmakingConfigurations`](crate::operation::DescribeMatchmakingConfigurations)>
     #[allow(unused_mut)]
@@ -9675,11 +9445,6 @@ pub mod describe_matchmaking_rule_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMatchmakingRuleSetsInputOperationOutputAlias =
-    crate::operation::DescribeMatchmakingRuleSets;
-#[doc(hidden)]
-pub type DescribeMatchmakingRuleSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMatchmakingRuleSetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMatchmakingRuleSets`](crate::operation::DescribeMatchmakingRuleSets)>
     #[allow(unused_mut)]
@@ -9908,10 +9673,6 @@ pub mod describe_player_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePlayerSessionsInputOperationOutputAlias = crate::operation::DescribePlayerSessions;
-#[doc(hidden)]
-pub type DescribePlayerSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlayerSessionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlayerSessions`](crate::operation::DescribePlayerSessions)>
     #[allow(unused_mut)]
@@ -10059,12 +9820,6 @@ pub mod describe_runtime_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRuntimeConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeRuntimeConfiguration;
-#[doc(hidden)]
-pub type DescribeRuntimeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuntimeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuntimeConfiguration`](crate::operation::DescribeRuntimeConfiguration)>
     #[allow(unused_mut)]
@@ -10278,11 +10033,6 @@ pub mod describe_scaling_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingPoliciesInputOperationOutputAlias =
-    crate::operation::DescribeScalingPolicies;
-#[doc(hidden)]
-pub type DescribeScalingPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPolicies`](crate::operation::DescribeScalingPolicies)>
     #[allow(unused_mut)]
@@ -10428,10 +10178,6 @@ pub mod describe_script_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScriptInputOperationOutputAlias = crate::operation::DescribeScript;
-#[doc(hidden)]
-pub type DescribeScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScriptInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScript`](crate::operation::DescribeScript)>
     #[allow(unused_mut)]
@@ -10563,12 +10309,6 @@ pub mod describe_vpc_peering_authorizations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVpcPeeringAuthorizationsInputOperationOutputAlias =
-    crate::operation::DescribeVpcPeeringAuthorizations;
-#[doc(hidden)]
-pub type DescribeVpcPeeringAuthorizationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVpcPeeringAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVpcPeeringAuthorizations`](crate::operation::DescribeVpcPeeringAuthorizations)>
     #[allow(unused_mut)]
@@ -10706,12 +10446,6 @@ pub mod describe_vpc_peering_connections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVpcPeeringConnectionsInputOperationOutputAlias =
-    crate::operation::DescribeVpcPeeringConnections;
-#[doc(hidden)]
-pub type DescribeVpcPeeringConnectionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVpcPeeringConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVpcPeeringConnections`](crate::operation::DescribeVpcPeeringConnections)>
     #[allow(unused_mut)]
@@ -10857,10 +10591,6 @@ pub mod get_game_session_log_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGameSessionLogUrlInputOperationOutputAlias = crate::operation::GetGameSessionLogUrl;
-#[doc(hidden)]
-pub type GetGameSessionLogUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGameSessionLogUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetGameSessionLogUrl`](crate::operation::GetGameSessionLogUrl)>
     #[allow(unused_mut)]
@@ -11018,10 +10748,6 @@ pub mod get_instance_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInstanceAccessInputOperationOutputAlias = crate::operation::GetInstanceAccess;
-#[doc(hidden)]
-pub type GetInstanceAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInstanceAccessInput {
     /// Consumes the builder and constructs an Operation<[`GetInstanceAccess`](crate::operation::GetInstanceAccess)>
     #[allow(unused_mut)]
@@ -11214,10 +10940,6 @@ pub mod list_aliases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAliasesInputOperationOutputAlias = crate::operation::ListAliases;
-#[doc(hidden)]
-pub type ListAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
     #[allow(unused_mut)]
@@ -11396,10 +11118,6 @@ pub mod list_builds_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBuildsInputOperationOutputAlias = crate::operation::ListBuilds;
-#[doc(hidden)]
-pub type ListBuildsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBuildsInput {
     /// Consumes the builder and constructs an Operation<[`ListBuilds`](crate::operation::ListBuilds)>
     #[allow(unused_mut)]
@@ -11578,10 +11296,6 @@ pub mod list_fleets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFleetsInputOperationOutputAlias = crate::operation::ListFleets;
-#[doc(hidden)]
-pub type ListFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleets`](crate::operation::ListFleets)>
     #[allow(unused_mut)]
@@ -11737,10 +11451,6 @@ pub mod list_game_server_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGameServerGroupsInputOperationOutputAlias = crate::operation::ListGameServerGroups;
-#[doc(hidden)]
-pub type ListGameServerGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGameServerGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGameServerGroups`](crate::operation::ListGameServerGroups)>
     #[allow(unused_mut)]
@@ -11928,10 +11638,6 @@ pub mod list_game_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGameServersInputOperationOutputAlias = crate::operation::ListGameServers;
-#[doc(hidden)]
-pub type ListGameServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGameServersInput {
     /// Consumes the builder and constructs an Operation<[`ListGameServers`](crate::operation::ListGameServers)>
     #[allow(unused_mut)]
@@ -12087,10 +11793,6 @@ pub mod list_scripts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListScriptsInputOperationOutputAlias = crate::operation::ListScripts;
-#[doc(hidden)]
-pub type ListScriptsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListScriptsInput {
     /// Consumes the builder and constructs an Operation<[`ListScripts`](crate::operation::ListScripts)>
     #[allow(unused_mut)]
@@ -12234,10 +11936,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -12546,10 +12244,6 @@ pub mod put_scaling_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutScalingPolicyInputOperationOutputAlias = crate::operation::PutScalingPolicy;
-#[doc(hidden)]
-pub type PutScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutScalingPolicy`](crate::operation::PutScalingPolicy)>
     #[allow(unused_mut)]
@@ -12753,10 +12447,6 @@ pub mod register_game_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterGameServerInputOperationOutputAlias = crate::operation::RegisterGameServer;
-#[doc(hidden)]
-pub type RegisterGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterGameServerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterGameServer`](crate::operation::RegisterGameServer)>
     #[allow(unused_mut)]
@@ -12902,11 +12592,6 @@ pub mod request_upload_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RequestUploadCredentialsInputOperationOutputAlias =
-    crate::operation::RequestUploadCredentials;
-#[doc(hidden)]
-pub type RequestUploadCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RequestUploadCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`RequestUploadCredentials`](crate::operation::RequestUploadCredentials)>
     #[allow(unused_mut)]
@@ -13052,10 +12737,6 @@ pub mod resolve_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResolveAliasInputOperationOutputAlias = crate::operation::ResolveAlias;
-#[doc(hidden)]
-pub type ResolveAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveAliasInput {
     /// Consumes the builder and constructs an Operation<[`ResolveAlias`](crate::operation::ResolveAlias)>
     #[allow(unused_mut)]
@@ -13224,10 +12905,6 @@ pub mod resume_game_server_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResumeGameServerGroupInputOperationOutputAlias = crate::operation::ResumeGameServerGroup;
-#[doc(hidden)]
-pub type ResumeGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResumeGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`ResumeGameServerGroup`](crate::operation::ResumeGameServerGroup)>
     #[allow(unused_mut)]
@@ -13495,10 +13172,6 @@ pub mod search_game_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchGameSessionsInputOperationOutputAlias = crate::operation::SearchGameSessions;
-#[doc(hidden)]
-pub type SearchGameSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchGameSessionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchGameSessions`](crate::operation::SearchGameSessions)>
     #[allow(unused_mut)]
@@ -13675,10 +13348,6 @@ pub mod start_fleet_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFleetActionsInputOperationOutputAlias = crate::operation::StartFleetActions;
-#[doc(hidden)]
-pub type StartFleetActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFleetActionsInput {
     /// Consumes the builder and constructs an Operation<[`StartFleetActions`](crate::operation::StartFleetActions)>
     #[allow(unused_mut)]
@@ -13949,11 +13618,6 @@ pub mod start_game_session_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartGameSessionPlacementInputOperationOutputAlias =
-    crate::operation::StartGameSessionPlacement;
-#[doc(hidden)]
-pub type StartGameSessionPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartGameSessionPlacementInput {
     /// Consumes the builder and constructs an Operation<[`StartGameSessionPlacement`](crate::operation::StartGameSessionPlacement)>
     #[allow(unused_mut)]
@@ -14158,10 +13822,6 @@ pub mod start_match_backfill_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMatchBackfillInputOperationOutputAlias = crate::operation::StartMatchBackfill;
-#[doc(hidden)]
-pub type StartMatchBackfillInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMatchBackfillInput {
     /// Consumes the builder and constructs an Operation<[`StartMatchBackfill`](crate::operation::StartMatchBackfill)>
     #[allow(unused_mut)]
@@ -14341,10 +14001,6 @@ pub mod start_matchmaking_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMatchmakingInputOperationOutputAlias = crate::operation::StartMatchmaking;
-#[doc(hidden)]
-pub type StartMatchmakingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMatchmakingInput {
     /// Consumes the builder and constructs an Operation<[`StartMatchmaking`](crate::operation::StartMatchmaking)>
     #[allow(unused_mut)]
@@ -14521,10 +14177,6 @@ pub mod stop_fleet_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopFleetActionsInputOperationOutputAlias = crate::operation::StopFleetActions;
-#[doc(hidden)]
-pub type StopFleetActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFleetActionsInput {
     /// Consumes the builder and constructs an Operation<[`StopFleetActions`](crate::operation::StopFleetActions)>
     #[allow(unused_mut)]
@@ -14670,11 +14322,6 @@ pub mod stop_game_session_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopGameSessionPlacementInputOperationOutputAlias =
-    crate::operation::StopGameSessionPlacement;
-#[doc(hidden)]
-pub type StopGameSessionPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopGameSessionPlacementInput {
     /// Consumes the builder and constructs an Operation<[`StopGameSessionPlacement`](crate::operation::StopGameSessionPlacement)>
     #[allow(unused_mut)]
@@ -14820,10 +14467,6 @@ pub mod stop_matchmaking_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopMatchmakingInputOperationOutputAlias = crate::operation::StopMatchmaking;
-#[doc(hidden)]
-pub type StopMatchmakingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMatchmakingInput {
     /// Consumes the builder and constructs an Operation<[`StopMatchmaking`](crate::operation::StopMatchmaking)>
     #[allow(unused_mut)]
@@ -14992,10 +14635,6 @@ pub mod suspend_game_server_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SuspendGameServerGroupInputOperationOutputAlias = crate::operation::SuspendGameServerGroup;
-#[doc(hidden)]
-pub type SuspendGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SuspendGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`SuspendGameServerGroup`](crate::operation::SuspendGameServerGroup)>
     #[allow(unused_mut)]
@@ -15162,10 +14801,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -15330,10 +14965,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -15516,10 +15147,6 @@ pub mod update_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAliasInputOperationOutputAlias = crate::operation::UpdateAlias;
-#[doc(hidden)]
-pub type UpdateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAlias`](crate::operation::UpdateAlias)>
     #[allow(unused_mut)]
@@ -15687,10 +15314,6 @@ pub mod update_build_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBuildInputOperationOutputAlias = crate::operation::UpdateBuild;
-#[doc(hidden)]
-pub type UpdateBuildInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBuildInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBuild`](crate::operation::UpdateBuild)>
     #[allow(unused_mut)]
@@ -15925,10 +15548,6 @@ pub mod update_fleet_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFleetAttributesInputOperationOutputAlias = crate::operation::UpdateFleetAttributes;
-#[doc(hidden)]
-pub type UpdateFleetAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetAttributes`](crate::operation::UpdateFleetAttributes)>
     #[allow(unused_mut)]
@@ -16122,10 +15741,6 @@ pub mod update_fleet_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFleetCapacityInputOperationOutputAlias = crate::operation::UpdateFleetCapacity;
-#[doc(hidden)]
-pub type UpdateFleetCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetCapacityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetCapacity`](crate::operation::UpdateFleetCapacity)>
     #[allow(unused_mut)]
@@ -16318,11 +15933,6 @@ pub mod update_fleet_port_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFleetPortSettingsInputOperationOutputAlias =
-    crate::operation::UpdateFleetPortSettings;
-#[doc(hidden)]
-pub type UpdateFleetPortSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetPortSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetPortSettings`](crate::operation::UpdateFleetPortSettings)>
     #[allow(unused_mut)]
@@ -16535,10 +16145,6 @@ pub mod update_game_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGameServerInputOperationOutputAlias = crate::operation::UpdateGameServer;
-#[doc(hidden)]
-pub type UpdateGameServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameServerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameServer`](crate::operation::UpdateGameServer)>
     #[allow(unused_mut)]
@@ -16763,10 +16369,6 @@ pub mod update_game_server_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGameServerGroupInputOperationOutputAlias = crate::operation::UpdateGameServerGroup;
-#[doc(hidden)]
-pub type UpdateGameServerGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameServerGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameServerGroup`](crate::operation::UpdateGameServerGroup)>
     #[allow(unused_mut)]
@@ -16981,10 +16583,6 @@ pub mod update_game_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGameSessionInputOperationOutputAlias = crate::operation::UpdateGameSession;
-#[doc(hidden)]
-pub type UpdateGameSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameSessionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameSession`](crate::operation::UpdateGameSession)>
     #[allow(unused_mut)]
@@ -17247,10 +16845,6 @@ pub mod update_game_session_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGameSessionQueueInputOperationOutputAlias = crate::operation::UpdateGameSessionQueue;
-#[doc(hidden)]
-pub type UpdateGameSessionQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameSessionQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameSessionQueue`](crate::operation::UpdateGameSessionQueue)>
     #[allow(unused_mut)]
@@ -17606,12 +17200,6 @@ pub mod update_matchmaking_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMatchmakingConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateMatchmakingConfiguration;
-#[doc(hidden)]
-pub type UpdateMatchmakingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMatchmakingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMatchmakingConfiguration`](crate::operation::UpdateMatchmakingConfiguration)>
     #[allow(unused_mut)]
@@ -17771,11 +17359,6 @@ pub mod update_runtime_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRuntimeConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateRuntimeConfiguration;
-#[doc(hidden)]
-pub type UpdateRuntimeConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuntimeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuntimeConfiguration`](crate::operation::UpdateRuntimeConfiguration)>
     #[allow(unused_mut)]
@@ -17974,10 +17557,6 @@ pub mod update_script_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateScriptInputOperationOutputAlias = crate::operation::UpdateScript;
-#[doc(hidden)]
-pub type UpdateScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScriptInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScript`](crate::operation::UpdateScript)>
     #[allow(unused_mut)]
@@ -18126,11 +17705,6 @@ pub mod validate_matchmaking_rule_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ValidateMatchmakingRuleSetInputOperationOutputAlias =
-    crate::operation::ValidateMatchmakingRuleSet;
-#[doc(hidden)]
-pub type ValidateMatchmakingRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidateMatchmakingRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`ValidateMatchmakingRuleSet`](crate::operation::ValidateMatchmakingRuleSet)>
     #[allow(unused_mut)]

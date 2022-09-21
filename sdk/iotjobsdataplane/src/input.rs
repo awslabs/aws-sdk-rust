@@ -67,10 +67,6 @@ pub mod describe_job_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobExecutionInputOperationOutputAlias = crate::operation::DescribeJobExecution;
-#[doc(hidden)]
-pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobExecution`](crate::operation::DescribeJobExecution)>
     #[allow(unused_mut)]
@@ -251,11 +247,6 @@ pub mod get_pending_job_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPendingJobExecutionsInputOperationOutputAlias =
-    crate::operation::GetPendingJobExecutions;
-#[doc(hidden)]
-pub type GetPendingJobExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPendingJobExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`GetPendingJobExecutions`](crate::operation::GetPendingJobExecutions)>
     #[allow(unused_mut)]
@@ -438,12 +429,6 @@ pub mod start_next_pending_job_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartNextPendingJobExecutionInputOperationOutputAlias =
-    crate::operation::StartNextPendingJobExecution;
-#[doc(hidden)]
-pub type StartNextPendingJobExecutionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartNextPendingJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartNextPendingJobExecution`](crate::operation::StartNextPendingJobExecution)>
     #[allow(unused_mut)]
@@ -716,10 +701,6 @@ pub mod update_job_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateJobExecutionInputOperationOutputAlias = crate::operation::UpdateJobExecution;
-#[doc(hidden)]
-pub type UpdateJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobExecution`](crate::operation::UpdateJobExecution)>
     #[allow(unused_mut)]

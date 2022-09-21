@@ -138,10 +138,6 @@ pub mod get_personalized_ranking_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPersonalizedRankingInputOperationOutputAlias = crate::operation::GetPersonalizedRanking;
-#[doc(hidden)]
-pub type GetPersonalizedRankingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPersonalizedRankingInput {
     /// Consumes the builder and constructs an Operation<[`GetPersonalizedRanking`](crate::operation::GetPersonalizedRanking)>
     #[allow(unused_mut)]
@@ -434,10 +430,6 @@ pub mod get_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecommendationsInputOperationOutputAlias = crate::operation::GetRecommendations;
-#[doc(hidden)]
-pub type GetRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(unused_mut)]

@@ -141,10 +141,6 @@ pub mod send_command_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendCommandInputOperationOutputAlias = crate::operation::SendCommand;
-#[doc(hidden)]
-pub type SendCommandInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendCommandInput {
     /// Consumes the builder and constructs an Operation<[`SendCommand`](crate::operation::SendCommand)>
     #[allow(unused_mut)]

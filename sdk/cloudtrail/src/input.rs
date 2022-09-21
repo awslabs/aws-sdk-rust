@@ -53,10 +53,6 @@ pub mod add_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
-#[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(unused_mut)]
@@ -213,10 +209,6 @@ pub mod cancel_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelQueryInputOperationOutputAlias = crate::operation::CancelQuery;
-#[doc(hidden)]
-pub type CancelQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelQueryInput {
     /// Consumes the builder and constructs an Operation<[`CancelQuery`](crate::operation::CancelQuery)>
     #[allow(unused_mut)]
@@ -457,10 +449,6 @@ pub mod create_event_data_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEventDataStoreInputOperationOutputAlias = crate::operation::CreateEventDataStore;
-#[doc(hidden)]
-pub type CreateEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventDataStoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventDataStore`](crate::operation::CreateEventDataStore)>
     #[allow(unused_mut)]
@@ -802,10 +790,6 @@ pub mod create_trail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTrailInputOperationOutputAlias = crate::operation::CreateTrail;
-#[doc(hidden)]
-pub type CreateTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrailInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrail`](crate::operation::CreateTrail)>
     #[allow(unused_mut)]
@@ -952,10 +936,6 @@ pub mod delete_event_data_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventDataStoreInputOperationOutputAlias = crate::operation::DeleteEventDataStore;
-#[doc(hidden)]
-pub type DeleteEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventDataStoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventDataStore`](crate::operation::DeleteEventDataStore)>
     #[allow(unused_mut)]
@@ -1099,10 +1079,6 @@ pub mod delete_trail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTrailInputOperationOutputAlias = crate::operation::DeleteTrail;
-#[doc(hidden)]
-pub type DeleteTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrailInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrail`](crate::operation::DeleteTrail)>
     #[allow(unused_mut)]
@@ -1261,10 +1237,6 @@ pub mod describe_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeQueryInputOperationOutputAlias = crate::operation::DescribeQuery;
-#[doc(hidden)]
-pub type DescribeQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeQueryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeQuery`](crate::operation::DescribeQuery)>
     #[allow(unused_mut)]
@@ -1445,10 +1417,6 @@ pub mod describe_trails_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTrailsInputOperationOutputAlias = crate::operation::DescribeTrails;
-#[doc(hidden)]
-pub type DescribeTrailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrails`](crate::operation::DescribeTrails)>
     #[allow(unused_mut)]
@@ -1595,10 +1563,6 @@ pub mod get_event_data_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventDataStoreInputOperationOutputAlias = crate::operation::GetEventDataStore;
-#[doc(hidden)]
-pub type GetEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventDataStoreInput {
     /// Consumes the builder and constructs an Operation<[`GetEventDataStore`](crate::operation::GetEventDataStore)>
     #[allow(unused_mut)]
@@ -1760,10 +1724,6 @@ pub mod get_event_selectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventSelectorsInputOperationOutputAlias = crate::operation::GetEventSelectors;
-#[doc(hidden)]
-pub type GetEventSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetEventSelectors`](crate::operation::GetEventSelectors)>
     #[allow(unused_mut)]
@@ -1925,10 +1885,6 @@ pub mod get_insight_selectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInsightSelectorsInputOperationOutputAlias = crate::operation::GetInsightSelectors;
-#[doc(hidden)]
-pub type GetInsightSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightSelectors`](crate::operation::GetInsightSelectors)>
     #[allow(unused_mut)]
@@ -2111,10 +2067,6 @@ pub mod get_query_results_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueryResultsInputOperationOutputAlias = crate::operation::GetQueryResults;
-#[doc(hidden)]
-pub type GetQueryResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryResultsInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryResults`](crate::operation::GetQueryResults)>
     #[allow(unused_mut)]
@@ -2255,10 +2207,6 @@ pub mod get_trail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTrailInputOperationOutputAlias = crate::operation::GetTrail;
-#[doc(hidden)]
-pub type GetTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrailInput {
     /// Consumes the builder and constructs an Operation<[`GetTrail`](crate::operation::GetTrail)>
     #[allow(unused_mut)]
@@ -2400,10 +2348,6 @@ pub mod get_trail_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTrailStatusInputOperationOutputAlias = crate::operation::GetTrailStatus;
-#[doc(hidden)]
-pub type GetTrailStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrailStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetTrailStatus`](crate::operation::GetTrailStatus)>
     #[allow(unused_mut)]
@@ -2559,10 +2503,6 @@ pub mod list_event_data_stores_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventDataStoresInputOperationOutputAlias = crate::operation::ListEventDataStores;
-#[doc(hidden)]
-pub type ListEventDataStoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventDataStoresInput {
     /// Consumes the builder and constructs an Operation<[`ListEventDataStores`](crate::operation::ListEventDataStores)>
     #[allow(unused_mut)]
@@ -2738,10 +2678,6 @@ pub mod list_public_keys_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPublicKeysInputOperationOutputAlias = crate::operation::ListPublicKeys;
-#[doc(hidden)]
-pub type ListPublicKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublicKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListPublicKeys`](crate::operation::ListPublicKeys)>
     #[allow(unused_mut)]
@@ -2957,10 +2893,6 @@ pub mod list_queries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQueriesInputOperationOutputAlias = crate::operation::ListQueries;
-#[doc(hidden)]
-pub type ListQueriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueriesInput {
     /// Consumes the builder and constructs an Operation<[`ListQueries`](crate::operation::ListQueries)>
     #[allow(unused_mut)]
@@ -3124,10 +3056,6 @@ pub mod list_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
-#[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(unused_mut)]
@@ -3268,10 +3196,6 @@ pub mod list_trails_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTrailsInputOperationOutputAlias = crate::operation::ListTrails;
-#[doc(hidden)]
-pub type ListTrailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrailsInput {
     /// Consumes the builder and constructs an Operation<[`ListTrails`](crate::operation::ListTrails)>
     #[allow(unused_mut)]
@@ -3494,10 +3418,6 @@ pub mod lookup_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type LookupEventsInputOperationOutputAlias = crate::operation::LookupEvents;
-#[doc(hidden)]
-pub type LookupEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LookupEventsInput {
     /// Consumes the builder and constructs an Operation<[`LookupEvents`](crate::operation::LookupEvents)>
     #[allow(unused_mut)]
@@ -3705,10 +3625,6 @@ pub mod put_event_selectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEventSelectorsInputOperationOutputAlias = crate::operation::PutEventSelectors;
-#[doc(hidden)]
-pub type PutEventSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`PutEventSelectors`](crate::operation::PutEventSelectors)>
     #[allow(unused_mut)]
@@ -3874,10 +3790,6 @@ pub mod put_insight_selectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutInsightSelectorsInputOperationOutputAlias = crate::operation::PutInsightSelectors;
-#[doc(hidden)]
-pub type PutInsightSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutInsightSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`PutInsightSelectors`](crate::operation::PutInsightSelectors)>
     #[allow(unused_mut)]
@@ -4045,10 +3957,6 @@ pub mod remove_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
-#[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(unused_mut)]
@@ -4195,10 +4103,6 @@ pub mod restore_event_data_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreEventDataStoreInputOperationOutputAlias = crate::operation::RestoreEventDataStore;
-#[doc(hidden)]
-pub type RestoreEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreEventDataStoreInput {
     /// Consumes the builder and constructs an Operation<[`RestoreEventDataStore`](crate::operation::RestoreEventDataStore)>
     #[allow(unused_mut)]
@@ -4344,10 +4248,6 @@ pub mod start_logging_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartLoggingInputOperationOutputAlias = crate::operation::StartLogging;
-#[doc(hidden)]
-pub type StartLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StartLogging`](crate::operation::StartLogging)>
     #[allow(unused_mut)]
@@ -4493,10 +4393,6 @@ pub mod start_query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartQueryInputOperationOutputAlias = crate::operation::StartQuery;
-#[doc(hidden)]
-pub type StartQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartQueryInput {
     /// Consumes the builder and constructs an Operation<[`StartQuery`](crate::operation::StartQuery)>
     #[allow(unused_mut)]
@@ -4640,10 +4536,6 @@ pub mod stop_logging_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopLoggingInputOperationOutputAlias = crate::operation::StopLogging;
-#[doc(hidden)]
-pub type StopLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StopLogging`](crate::operation::StopLogging)>
     #[allow(unused_mut)]
@@ -4878,10 +4770,6 @@ pub mod update_event_data_store_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEventDataStoreInputOperationOutputAlias = crate::operation::UpdateEventDataStore;
-#[doc(hidden)]
-pub type UpdateEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventDataStoreInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventDataStore`](crate::operation::UpdateEventDataStore)>
     #[allow(unused_mut)]
@@ -5206,10 +5094,6 @@ pub mod update_trail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTrailInputOperationOutputAlias = crate::operation::UpdateTrail;
-#[doc(hidden)]
-pub type UpdateTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrailInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrail`](crate::operation::UpdateTrail)>
     #[allow(unused_mut)]

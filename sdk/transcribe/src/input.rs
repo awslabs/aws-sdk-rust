@@ -59,11 +59,6 @@ pub mod create_call_analytics_category_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCallAnalyticsCategoryInputOperationOutputAlias =
-    crate::operation::CreateCallAnalyticsCategory;
-#[doc(hidden)]
-pub type CreateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateCallAnalyticsCategory`](crate::operation::CreateCallAnalyticsCategory)>
     #[allow(unused_mut)]
@@ -284,10 +279,6 @@ pub mod create_language_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLanguageModelInputOperationOutputAlias = crate::operation::CreateLanguageModel;
-#[doc(hidden)]
-pub type CreateLanguageModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateLanguageModel`](crate::operation::CreateLanguageModel)>
     #[allow(unused_mut)]
@@ -493,11 +484,6 @@ pub mod create_medical_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMedicalVocabularyInputOperationOutputAlias =
-    crate::operation::CreateMedicalVocabulary;
-#[doc(hidden)]
-pub type CreateMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`CreateMedicalVocabulary`](crate::operation::CreateMedicalVocabulary)>
     #[allow(unused_mut)]
@@ -734,10 +720,6 @@ pub mod create_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVocabularyInputOperationOutputAlias = crate::operation::CreateVocabulary;
-#[doc(hidden)]
-pub type CreateVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`CreateVocabulary`](crate::operation::CreateVocabulary)>
     #[allow(unused_mut)]
@@ -972,10 +954,6 @@ pub mod create_vocabulary_filter_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVocabularyFilterInputOperationOutputAlias = crate::operation::CreateVocabularyFilter;
-#[doc(hidden)]
-pub type CreateVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVocabularyFilter`](crate::operation::CreateVocabularyFilter)>
     #[allow(unused_mut)]
@@ -1126,11 +1104,6 @@ pub mod delete_call_analytics_category_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCallAnalyticsCategoryInputOperationOutputAlias =
-    crate::operation::DeleteCallAnalyticsCategory;
-#[doc(hidden)]
-pub type DeleteCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCallAnalyticsCategory`](crate::operation::DeleteCallAnalyticsCategory)>
     #[allow(unused_mut)]
@@ -1276,10 +1249,6 @@ pub mod delete_call_analytics_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCallAnalyticsJobInputOperationOutputAlias = crate::operation::DeleteCallAnalyticsJob;
-#[doc(hidden)]
-pub type DeleteCallAnalyticsJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCallAnalyticsJob`](crate::operation::DeleteCallAnalyticsJob)>
     #[allow(unused_mut)]
@@ -1425,10 +1394,6 @@ pub mod delete_language_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLanguageModelInputOperationOutputAlias = crate::operation::DeleteLanguageModel;
-#[doc(hidden)]
-pub type DeleteLanguageModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLanguageModel`](crate::operation::DeleteLanguageModel)>
     #[allow(unused_mut)]
@@ -1580,12 +1545,6 @@ pub mod delete_medical_transcription_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMedicalTranscriptionJobInputOperationOutputAlias =
-    crate::operation::DeleteMedicalTranscriptionJob;
-#[doc(hidden)]
-pub type DeleteMedicalTranscriptionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMedicalTranscriptionJob`](crate::operation::DeleteMedicalTranscriptionJob)>
     #[allow(unused_mut)]
@@ -1733,11 +1692,6 @@ pub mod delete_medical_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMedicalVocabularyInputOperationOutputAlias =
-    crate::operation::DeleteMedicalVocabulary;
-#[doc(hidden)]
-pub type DeleteMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMedicalVocabulary`](crate::operation::DeleteMedicalVocabulary)>
     #[allow(unused_mut)]
@@ -1886,10 +1840,6 @@ pub mod delete_transcription_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTranscriptionJobInputOperationOutputAlias = crate::operation::DeleteTranscriptionJob;
-#[doc(hidden)]
-pub type DeleteTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTranscriptionJob`](crate::operation::DeleteTranscriptionJob)>
     #[allow(unused_mut)]
@@ -2038,10 +1988,6 @@ pub mod delete_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVocabularyInputOperationOutputAlias = crate::operation::DeleteVocabulary;
-#[doc(hidden)]
-pub type DeleteVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVocabulary`](crate::operation::DeleteVocabulary)>
     #[allow(unused_mut)]
@@ -2188,10 +2134,6 @@ pub mod delete_vocabulary_filter_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVocabularyFilterInputOperationOutputAlias = crate::operation::DeleteVocabularyFilter;
-#[doc(hidden)]
-pub type DeleteVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVocabularyFilter`](crate::operation::DeleteVocabularyFilter)>
     #[allow(unused_mut)]
@@ -2337,10 +2279,6 @@ pub mod describe_language_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLanguageModelInputOperationOutputAlias = crate::operation::DescribeLanguageModel;
-#[doc(hidden)]
-pub type DescribeLanguageModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLanguageModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLanguageModel`](crate::operation::DescribeLanguageModel)>
     #[allow(unused_mut)]
@@ -2491,11 +2429,6 @@ pub mod get_call_analytics_category_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCallAnalyticsCategoryInputOperationOutputAlias =
-    crate::operation::GetCallAnalyticsCategory;
-#[doc(hidden)]
-pub type GetCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`GetCallAnalyticsCategory`](crate::operation::GetCallAnalyticsCategory)>
     #[allow(unused_mut)]
@@ -2644,10 +2577,6 @@ pub mod get_call_analytics_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCallAnalyticsJobInputOperationOutputAlias = crate::operation::GetCallAnalyticsJob;
-#[doc(hidden)]
-pub type GetCallAnalyticsJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`GetCallAnalyticsJob`](crate::operation::GetCallAnalyticsJob)>
     #[allow(unused_mut)]
@@ -2801,11 +2730,6 @@ pub mod get_medical_transcription_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMedicalTranscriptionJobInputOperationOutputAlias =
-    crate::operation::GetMedicalTranscriptionJob;
-#[doc(hidden)]
-pub type GetMedicalTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetMedicalTranscriptionJob`](crate::operation::GetMedicalTranscriptionJob)>
     #[allow(unused_mut)]
@@ -2951,10 +2875,6 @@ pub mod get_medical_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMedicalVocabularyInputOperationOutputAlias = crate::operation::GetMedicalVocabulary;
-#[doc(hidden)]
-pub type GetMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`GetMedicalVocabulary`](crate::operation::GetMedicalVocabulary)>
     #[allow(unused_mut)]
@@ -3103,10 +3023,6 @@ pub mod get_transcription_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTranscriptionJobInputOperationOutputAlias = crate::operation::GetTranscriptionJob;
-#[doc(hidden)]
-pub type GetTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetTranscriptionJob`](crate::operation::GetTranscriptionJob)>
     #[allow(unused_mut)]
@@ -3253,10 +3169,6 @@ pub mod get_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVocabularyInputOperationOutputAlias = crate::operation::GetVocabulary;
-#[doc(hidden)]
-pub type GetVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`GetVocabulary`](crate::operation::GetVocabulary)>
     #[allow(unused_mut)]
@@ -3403,10 +3315,6 @@ pub mod get_vocabulary_filter_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVocabularyFilterInputOperationOutputAlias = crate::operation::GetVocabularyFilter;
-#[doc(hidden)]
-pub type GetVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`GetVocabularyFilter`](crate::operation::GetVocabularyFilter)>
     #[allow(unused_mut)]
@@ -3564,11 +3472,6 @@ pub mod list_call_analytics_categories_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCallAnalyticsCategoriesInputOperationOutputAlias =
-    crate::operation::ListCallAnalyticsCategories;
-#[doc(hidden)]
-pub type ListCallAnalyticsCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCallAnalyticsCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListCallAnalyticsCategories`](crate::operation::ListCallAnalyticsCategories)>
     #[allow(unused_mut)]
@@ -3770,10 +3673,6 @@ pub mod list_call_analytics_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCallAnalyticsJobsInputOperationOutputAlias = crate::operation::ListCallAnalyticsJobs;
-#[doc(hidden)]
-pub type ListCallAnalyticsJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCallAnalyticsJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListCallAnalyticsJobs`](crate::operation::ListCallAnalyticsJobs)>
     #[allow(unused_mut)]
@@ -3987,10 +3886,6 @@ pub mod list_language_models_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLanguageModelsInputOperationOutputAlias = crate::operation::ListLanguageModels;
-#[doc(hidden)]
-pub type ListLanguageModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLanguageModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListLanguageModels`](crate::operation::ListLanguageModels)>
     #[allow(unused_mut)]
@@ -4207,12 +4102,6 @@ pub mod list_medical_transcription_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMedicalTranscriptionJobsInputOperationOutputAlias =
-    crate::operation::ListMedicalTranscriptionJobs;
-#[doc(hidden)]
-pub type ListMedicalTranscriptionJobsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListMedicalTranscriptionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListMedicalTranscriptionJobs`](crate::operation::ListMedicalTranscriptionJobs)>
     #[allow(unused_mut)]
@@ -4425,11 +4314,6 @@ pub mod list_medical_vocabularies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMedicalVocabulariesInputOperationOutputAlias =
-    crate::operation::ListMedicalVocabularies;
-#[doc(hidden)]
-pub type ListMedicalVocabulariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMedicalVocabulariesInput {
     /// Consumes the builder and constructs an Operation<[`ListMedicalVocabularies`](crate::operation::ListMedicalVocabularies)>
     #[allow(unused_mut)]
@@ -4608,10 +4492,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4799,10 +4679,6 @@ pub mod list_transcription_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTranscriptionJobsInputOperationOutputAlias = crate::operation::ListTranscriptionJobs;
-#[doc(hidden)]
-pub type ListTranscriptionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTranscriptionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTranscriptionJobs`](crate::operation::ListTranscriptionJobs)>
     #[allow(unused_mut)]
@@ -5016,10 +4892,6 @@ pub mod list_vocabularies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVocabulariesInputOperationOutputAlias = crate::operation::ListVocabularies;
-#[doc(hidden)]
-pub type ListVocabulariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVocabulariesInput {
     /// Consumes the builder and constructs an Operation<[`ListVocabularies`](crate::operation::ListVocabularies)>
     #[allow(unused_mut)]
@@ -5219,10 +5091,6 @@ pub mod list_vocabulary_filters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVocabularyFiltersInputOperationOutputAlias = crate::operation::ListVocabularyFilters;
-#[doc(hidden)]
-pub type ListVocabularyFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVocabularyFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListVocabularyFilters`](crate::operation::ListVocabularyFilters)>
     #[allow(unused_mut)]
@@ -5543,10 +5411,6 @@ pub mod start_call_analytics_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartCallAnalyticsJobInputOperationOutputAlias = crate::operation::StartCallAnalyticsJob;
-#[doc(hidden)]
-pub type StartCallAnalyticsJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCallAnalyticsJobInput {
     /// Consumes the builder and constructs an Operation<[`StartCallAnalyticsJob`](crate::operation::StartCallAnalyticsJob)>
     #[allow(unused_mut)]
@@ -5972,12 +5836,6 @@ pub mod start_medical_transcription_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMedicalTranscriptionJobInputOperationOutputAlias =
-    crate::operation::StartMedicalTranscriptionJob;
-#[doc(hidden)]
-pub type StartMedicalTranscriptionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartMedicalTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartMedicalTranscriptionJob`](crate::operation::StartMedicalTranscriptionJob)>
     #[allow(unused_mut)]
@@ -6525,10 +6383,6 @@ pub mod start_transcription_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTranscriptionJobInputOperationOutputAlias = crate::operation::StartTranscriptionJob;
-#[doc(hidden)]
-pub type StartTranscriptionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTranscriptionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTranscriptionJob`](crate::operation::StartTranscriptionJob)>
     #[allow(unused_mut)]
@@ -6701,10 +6555,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6873,10 +6723,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -7046,11 +6892,6 @@ pub mod update_call_analytics_category_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCallAnalyticsCategoryInputOperationOutputAlias =
-    crate::operation::UpdateCallAnalyticsCategory;
-#[doc(hidden)]
-pub type UpdateCallAnalyticsCategoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCallAnalyticsCategoryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCallAnalyticsCategory`](crate::operation::UpdateCallAnalyticsCategory)>
     #[allow(unused_mut)]
@@ -7230,11 +7071,6 @@ pub mod update_medical_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMedicalVocabularyInputOperationOutputAlias =
-    crate::operation::UpdateMedicalVocabulary;
-#[doc(hidden)]
-pub type UpdateMedicalVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMedicalVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMedicalVocabulary`](crate::operation::UpdateMedicalVocabulary)>
     #[allow(unused_mut)]
@@ -7446,10 +7282,6 @@ pub mod update_vocabulary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVocabularyInputOperationOutputAlias = crate::operation::UpdateVocabulary;
-#[doc(hidden)]
-pub type UpdateVocabularyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVocabularyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVocabulary`](crate::operation::UpdateVocabulary)>
     #[allow(unused_mut)]
@@ -7640,10 +7472,6 @@ pub mod update_vocabulary_filter_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVocabularyFilterInputOperationOutputAlias = crate::operation::UpdateVocabularyFilter;
-#[doc(hidden)]
-pub type UpdateVocabularyFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVocabularyFilterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVocabularyFilter`](crate::operation::UpdateVocabularyFilter)>
     #[allow(unused_mut)]

@@ -67,10 +67,6 @@ pub mod get_ice_server_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIceServerConfigInputOperationOutputAlias = crate::operation::GetIceServerConfig;
-#[doc(hidden)]
-pub type GetIceServerConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIceServerConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetIceServerConfig`](crate::operation::GetIceServerConfig)>
     #[allow(unused_mut)]
@@ -239,10 +235,6 @@ pub mod send_alexa_offer_to_master_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendAlexaOfferToMasterInputOperationOutputAlias = crate::operation::SendAlexaOfferToMaster;
-#[doc(hidden)]
-pub type SendAlexaOfferToMasterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendAlexaOfferToMasterInput {
     /// Consumes the builder and constructs an Operation<[`SendAlexaOfferToMaster`](crate::operation::SendAlexaOfferToMaster)>
     #[allow(unused_mut)]

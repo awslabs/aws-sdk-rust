@@ -75,10 +75,6 @@ pub mod create_anomaly_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAnomalyMonitorInputOperationOutputAlias = crate::operation::CreateAnomalyMonitor;
-#[doc(hidden)]
-pub type CreateAnomalyMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnomalyMonitorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnomalyMonitor`](crate::operation::CreateAnomalyMonitor)>
     #[allow(unused_mut)]
@@ -270,11 +266,6 @@ pub mod create_anomaly_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAnomalySubscriptionInputOperationOutputAlias =
-    crate::operation::CreateAnomalySubscription;
-#[doc(hidden)]
-pub type CreateAnomalySubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnomalySubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnomalySubscription`](crate::operation::CreateAnomalySubscription)>
     #[allow(unused_mut)]
@@ -539,12 +530,6 @@ pub mod create_cost_category_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCostCategoryDefinitionInputOperationOutputAlias =
-    crate::operation::CreateCostCategoryDefinition;
-#[doc(hidden)]
-pub type CreateCostCategoryDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCostCategoryDefinition`](crate::operation::CreateCostCategoryDefinition)>
     #[allow(unused_mut)]
@@ -687,10 +672,6 @@ pub mod delete_anomaly_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAnomalyMonitorInputOperationOutputAlias = crate::operation::DeleteAnomalyMonitor;
-#[doc(hidden)]
-pub type DeleteAnomalyMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnomalyMonitorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalyMonitor`](crate::operation::DeleteAnomalyMonitor)>
     #[allow(unused_mut)]
@@ -841,11 +822,6 @@ pub mod delete_anomaly_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAnomalySubscriptionInputOperationOutputAlias =
-    crate::operation::DeleteAnomalySubscription;
-#[doc(hidden)]
-pub type DeleteAnomalySubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnomalySubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalySubscription`](crate::operation::DeleteAnomalySubscription)>
     #[allow(unused_mut)]
@@ -996,12 +972,6 @@ pub mod delete_cost_category_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCostCategoryDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteCostCategoryDefinition;
-#[doc(hidden)]
-pub type DeleteCostCategoryDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCostCategoryDefinition`](crate::operation::DeleteCostCategoryDefinition)>
     #[allow(unused_mut)]
@@ -1161,12 +1131,6 @@ pub mod describe_cost_category_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCostCategoryDefinitionInputOperationOutputAlias =
-    crate::operation::DescribeCostCategoryDefinition;
-#[doc(hidden)]
-pub type DescribeCostCategoryDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCostCategoryDefinition`](crate::operation::DescribeCostCategoryDefinition)>
     #[allow(unused_mut)]
@@ -1381,10 +1345,6 @@ pub mod get_anomalies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAnomaliesInputOperationOutputAlias = crate::operation::GetAnomalies;
-#[doc(hidden)]
-pub type GetAnomaliesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomaliesInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalies`](crate::operation::GetAnomalies)>
     #[allow(unused_mut)]
@@ -1564,10 +1524,6 @@ pub mod get_anomaly_monitors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAnomalyMonitorsInputOperationOutputAlias = crate::operation::GetAnomalyMonitors;
-#[doc(hidden)]
-pub type GetAnomalyMonitorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomalyMonitorsInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalyMonitors`](crate::operation::GetAnomalyMonitors)>
     #[allow(unused_mut)]
@@ -1761,11 +1717,6 @@ pub mod get_anomaly_subscriptions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAnomalySubscriptionsInputOperationOutputAlias =
-    crate::operation::GetAnomalySubscriptions;
-#[doc(hidden)]
-pub type GetAnomalySubscriptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomalySubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalySubscriptions`](crate::operation::GetAnomalySubscriptions)>
     #[allow(unused_mut)]
@@ -2014,10 +1965,6 @@ pub mod get_cost_and_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCostAndUsageInputOperationOutputAlias = crate::operation::GetCostAndUsage;
-#[doc(hidden)]
-pub type GetCostAndUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostAndUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetCostAndUsage`](crate::operation::GetCostAndUsage)>
     #[allow(unused_mut)]
@@ -2264,12 +2211,6 @@ pub mod get_cost_and_usage_with_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCostAndUsageWithResourcesInputOperationOutputAlias =
-    crate::operation::GetCostAndUsageWithResources;
-#[doc(hidden)]
-pub type GetCostAndUsageWithResourcesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostAndUsageWithResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetCostAndUsageWithResources`](crate::operation::GetCostAndUsageWithResources)>
     #[allow(unused_mut)]
@@ -2553,10 +2494,6 @@ pub mod get_cost_categories_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCostCategoriesInputOperationOutputAlias = crate::operation::GetCostCategories;
-#[doc(hidden)]
-pub type GetCostCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`GetCostCategories`](crate::operation::GetCostCategories)>
     #[allow(unused_mut)]
@@ -2822,10 +2759,6 @@ pub mod get_cost_forecast_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCostForecastInputOperationOutputAlias = crate::operation::GetCostForecast;
-#[doc(hidden)]
-pub type GetCostForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostForecastInput {
     /// Consumes the builder and constructs an Operation<[`GetCostForecast`](crate::operation::GetCostForecast)>
     #[allow(unused_mut)]
@@ -3216,10 +3149,6 @@ pub mod get_dimension_values_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDimensionValuesInputOperationOutputAlias = crate::operation::GetDimensionValues;
-#[doc(hidden)]
-pub type GetDimensionValuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDimensionValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetDimensionValues`](crate::operation::GetDimensionValues)>
     #[allow(unused_mut)]
@@ -3571,10 +3500,6 @@ pub mod get_reservation_coverage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReservationCoverageInputOperationOutputAlias = crate::operation::GetReservationCoverage;
-#[doc(hidden)]
-pub type GetReservationCoverageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservationCoverageInput {
     /// Consumes the builder and constructs an Operation<[`GetReservationCoverage`](crate::operation::GetReservationCoverage)>
     #[allow(unused_mut)]
@@ -3869,12 +3794,6 @@ pub mod get_reservation_purchase_recommendation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReservationPurchaseRecommendationInputOperationOutputAlias =
-    crate::operation::GetReservationPurchaseRecommendation;
-#[doc(hidden)]
-pub type GetReservationPurchaseRecommendationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservationPurchaseRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`GetReservationPurchaseRecommendation`](crate::operation::GetReservationPurchaseRecommendation)>
     #[allow(unused_mut)]
@@ -4184,11 +4103,6 @@ pub mod get_reservation_utilization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReservationUtilizationInputOperationOutputAlias =
-    crate::operation::GetReservationUtilization;
-#[doc(hidden)]
-pub type GetReservationUtilizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReservationUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`GetReservationUtilization`](crate::operation::GetReservationUtilization)>
     #[allow(unused_mut)]
@@ -4412,12 +4326,6 @@ pub mod get_rightsizing_recommendation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRightsizingRecommendationInputOperationOutputAlias =
-    crate::operation::GetRightsizingRecommendation;
-#[doc(hidden)]
-pub type GetRightsizingRecommendationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRightsizingRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`GetRightsizingRecommendation`](crate::operation::GetRightsizingRecommendation)>
     #[allow(unused_mut)]
@@ -4713,11 +4621,6 @@ pub mod get_savings_plans_coverage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSavingsPlansCoverageInputOperationOutputAlias =
-    crate::operation::GetSavingsPlansCoverage;
-#[doc(hidden)]
-pub type GetSavingsPlansCoverageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansCoverageInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansCoverage`](crate::operation::GetSavingsPlansCoverage)>
     #[allow(unused_mut)]
@@ -4975,12 +4878,6 @@ pub mod get_savings_plans_purchase_recommendation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSavingsPlansPurchaseRecommendationInputOperationOutputAlias =
-    crate::operation::GetSavingsPlansPurchaseRecommendation;
-#[doc(hidden)]
-pub type GetSavingsPlansPurchaseRecommendationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansPurchaseRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansPurchaseRecommendation`](crate::operation::GetSavingsPlansPurchaseRecommendation)>
     #[allow(unused_mut)]
@@ -5208,11 +5105,6 @@ pub mod get_savings_plans_utilization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSavingsPlansUtilizationInputOperationOutputAlias =
-    crate::operation::GetSavingsPlansUtilization;
-#[doc(hidden)]
-pub type GetSavingsPlansUtilizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansUtilizationInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansUtilization`](crate::operation::GetSavingsPlansUtilization)>
     #[allow(unused_mut)]
@@ -5471,12 +5363,6 @@ pub mod get_savings_plans_utilization_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSavingsPlansUtilizationDetailsInputOperationOutputAlias =
-    crate::operation::GetSavingsPlansUtilizationDetails;
-#[doc(hidden)]
-pub type GetSavingsPlansUtilizationDetailsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSavingsPlansUtilizationDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetSavingsPlansUtilizationDetails`](crate::operation::GetSavingsPlansUtilizationDetails)>
     #[allow(unused_mut)]
@@ -5752,10 +5638,6 @@ pub mod get_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTagsInputOperationOutputAlias = crate::operation::GetTags;
-#[doc(hidden)]
-pub type GetTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
     #[allow(unused_mut)]
@@ -6013,10 +5895,6 @@ pub mod get_usage_forecast_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUsageForecastInputOperationOutputAlias = crate::operation::GetUsageForecast;
-#[doc(hidden)]
-pub type GetUsageForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUsageForecastInput {
     /// Consumes the builder and constructs an Operation<[`GetUsageForecast`](crate::operation::GetUsageForecast)>
     #[allow(unused_mut)]
@@ -6223,10 +6101,6 @@ pub mod list_cost_allocation_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCostAllocationTagsInputOperationOutputAlias = crate::operation::ListCostAllocationTags;
-#[doc(hidden)]
-pub type ListCostAllocationTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCostAllocationTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListCostAllocationTags`](crate::operation::ListCostAllocationTags)>
     #[allow(unused_mut)]
@@ -6398,11 +6272,6 @@ pub mod list_cost_category_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCostCategoryDefinitionsInputOperationOutputAlias =
-    crate::operation::ListCostCategoryDefinitions;
-#[doc(hidden)]
-pub type ListCostCategoryDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCostCategoryDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCostCategoryDefinitions`](crate::operation::ListCostCategoryDefinitions)>
     #[allow(unused_mut)]
@@ -6545,10 +6414,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -6709,10 +6574,6 @@ pub mod provide_anomaly_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ProvideAnomalyFeedbackInputOperationOutputAlias = crate::operation::ProvideAnomalyFeedback;
-#[doc(hidden)]
-pub type ProvideAnomalyFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvideAnomalyFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`ProvideAnomalyFeedback`](crate::operation::ProvideAnomalyFeedback)>
     #[allow(unused_mut)]
@@ -6899,10 +6760,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -7067,10 +6924,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -7226,10 +7079,6 @@ pub mod update_anomaly_monitor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAnomalyMonitorInputOperationOutputAlias = crate::operation::UpdateAnomalyMonitor;
-#[doc(hidden)]
-pub type UpdateAnomalyMonitorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnomalyMonitorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnomalyMonitor`](crate::operation::UpdateAnomalyMonitor)>
     #[allow(unused_mut)]
@@ -7464,11 +7313,6 @@ pub mod update_anomaly_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAnomalySubscriptionInputOperationOutputAlias =
-    crate::operation::UpdateAnomalySubscription;
-#[doc(hidden)]
-pub type UpdateAnomalySubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnomalySubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnomalySubscription`](crate::operation::UpdateAnomalySubscription)>
     #[allow(unused_mut)]
@@ -7629,12 +7473,6 @@ pub mod update_cost_allocation_tags_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCostAllocationTagsStatusInputOperationOutputAlias =
-    crate::operation::UpdateCostAllocationTagsStatus;
-#[doc(hidden)]
-pub type UpdateCostAllocationTagsStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCostAllocationTagsStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCostAllocationTagsStatus`](crate::operation::UpdateCostAllocationTagsStatus)>
     #[allow(unused_mut)]
@@ -7858,12 +7696,6 @@ pub mod update_cost_category_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCostCategoryDefinitionInputOperationOutputAlias =
-    crate::operation::UpdateCostCategoryDefinition;
-#[doc(hidden)]
-pub type UpdateCostCategoryDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCostCategoryDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCostCategoryDefinition`](crate::operation::UpdateCostCategoryDefinition)>
     #[allow(unused_mut)]

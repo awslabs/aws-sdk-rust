@@ -47,12 +47,6 @@ pub mod accept_domain_transfer_from_another_aws_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptDomainTransferFromAnotherAwsAccountInputOperationOutputAlias =
-    crate::operation::AcceptDomainTransferFromAnotherAwsAccount;
-#[doc(hidden)]
-pub type AcceptDomainTransferFromAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptDomainTransferFromAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`AcceptDomainTransferFromAnotherAwsAccount`](crate::operation::AcceptDomainTransferFromAnotherAwsAccount)>
     #[allow(unused_mut)]
@@ -198,12 +192,6 @@ pub mod cancel_domain_transfer_to_another_aws_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelDomainTransferToAnotherAwsAccountInputOperationOutputAlias =
-    crate::operation::CancelDomainTransferToAnotherAwsAccount;
-#[doc(hidden)]
-pub type CancelDomainTransferToAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDomainTransferToAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`CancelDomainTransferToAnotherAwsAccount`](crate::operation::CancelDomainTransferToAnotherAwsAccount)>
     #[allow(unused_mut)]
@@ -379,11 +367,6 @@ pub mod check_domain_availability_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CheckDomainAvailabilityInputOperationOutputAlias =
-    crate::operation::CheckDomainAvailability;
-#[doc(hidden)]
-pub type CheckDomainAvailabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckDomainAvailabilityInput {
     /// Consumes the builder and constructs an Operation<[`CheckDomainAvailability`](crate::operation::CheckDomainAvailability)>
     #[allow(unused_mut)]
@@ -557,11 +540,6 @@ pub mod check_domain_transferability_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CheckDomainTransferabilityInputOperationOutputAlias =
-    crate::operation::CheckDomainTransferability;
-#[doc(hidden)]
-pub type CheckDomainTransferabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckDomainTransferabilityInput {
     /// Consumes the builder and constructs an Operation<[`CheckDomainTransferability`](crate::operation::CheckDomainTransferability)>
     #[allow(unused_mut)]
@@ -707,10 +685,6 @@ pub mod delete_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDomainInputOperationOutputAlias = crate::operation::DeleteDomain;
-#[doc(hidden)]
-pub type DeleteDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomain`](crate::operation::DeleteDomain)>
     #[allow(unused_mut)]
@@ -875,10 +849,6 @@ pub mod delete_tags_for_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagsForDomainInputOperationOutputAlias = crate::operation::DeleteTagsForDomain;
-#[doc(hidden)]
-pub type DeleteTagsForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsForDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTagsForDomain`](crate::operation::DeleteTagsForDomain)>
     #[allow(unused_mut)]
@@ -1024,10 +994,6 @@ pub mod disable_domain_auto_renew_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableDomainAutoRenewInputOperationOutputAlias = crate::operation::DisableDomainAutoRenew;
-#[doc(hidden)]
-pub type DisableDomainAutoRenewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableDomainAutoRenewInput {
     /// Consumes the builder and constructs an Operation<[`DisableDomainAutoRenew`](crate::operation::DisableDomainAutoRenew)>
     #[allow(unused_mut)]
@@ -1175,11 +1141,6 @@ pub mod disable_domain_transfer_lock_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableDomainTransferLockInputOperationOutputAlias =
-    crate::operation::DisableDomainTransferLock;
-#[doc(hidden)]
-pub type DisableDomainTransferLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableDomainTransferLockInput {
     /// Consumes the builder and constructs an Operation<[`DisableDomainTransferLock`](crate::operation::DisableDomainTransferLock)>
     #[allow(unused_mut)]
@@ -1325,10 +1286,6 @@ pub mod enable_domain_auto_renew_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableDomainAutoRenewInputOperationOutputAlias = crate::operation::EnableDomainAutoRenew;
-#[doc(hidden)]
-pub type EnableDomainAutoRenewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableDomainAutoRenewInput {
     /// Consumes the builder and constructs an Operation<[`EnableDomainAutoRenew`](crate::operation::EnableDomainAutoRenew)>
     #[allow(unused_mut)]
@@ -1476,11 +1433,6 @@ pub mod enable_domain_transfer_lock_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableDomainTransferLockInputOperationOutputAlias =
-    crate::operation::EnableDomainTransferLock;
-#[doc(hidden)]
-pub type EnableDomainTransferLockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableDomainTransferLockInput {
     /// Consumes the builder and constructs an Operation<[`EnableDomainTransferLock`](crate::operation::EnableDomainTransferLock)>
     #[allow(unused_mut)]
@@ -1628,12 +1580,6 @@ pub mod get_contact_reachability_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContactReachabilityStatusInputOperationOutputAlias =
-    crate::operation::GetContactReachabilityStatus;
-#[doc(hidden)]
-pub type GetContactReachabilityStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactReachabilityStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetContactReachabilityStatus`](crate::operation::GetContactReachabilityStatus)>
     #[allow(unused_mut)]
@@ -1776,10 +1722,6 @@ pub mod get_domain_detail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDomainDetailInputOperationOutputAlias = crate::operation::GetDomainDetail;
-#[doc(hidden)]
-pub type GetDomainDetailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainDetailInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainDetail`](crate::operation::GetDomainDetail)>
     #[allow(unused_mut)]
@@ -1963,10 +1905,6 @@ pub mod get_domain_suggestions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDomainSuggestionsInputOperationOutputAlias = crate::operation::GetDomainSuggestions;
-#[doc(hidden)]
-pub type GetDomainSuggestionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainSuggestionsInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainSuggestions`](crate::operation::GetDomainSuggestions)>
     #[allow(unused_mut)]
@@ -2112,10 +2050,6 @@ pub mod get_operation_detail_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOperationDetailInputOperationOutputAlias = crate::operation::GetOperationDetail;
-#[doc(hidden)]
-pub type GetOperationDetailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOperationDetailInput {
     /// Consumes the builder and constructs an Operation<[`GetOperationDetail`](crate::operation::GetOperationDetail)>
     #[allow(unused_mut)]
@@ -2312,10 +2246,6 @@ pub mod list_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
-#[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(unused_mut)]
@@ -2488,10 +2418,6 @@ pub mod list_operations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOperationsInputOperationOutputAlias = crate::operation::ListOperations;
-#[doc(hidden)]
-pub type ListOperationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListOperations`](crate::operation::ListOperations)>
     #[allow(unused_mut)]
@@ -2664,10 +2590,6 @@ pub mod list_prices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPricesInputOperationOutputAlias = crate::operation::ListPrices;
-#[doc(hidden)]
-pub type ListPricesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPricesInput {
     /// Consumes the builder and constructs an Operation<[`ListPrices`](crate::operation::ListPrices)>
     #[allow(unused_mut)]
@@ -2811,10 +2733,6 @@ pub mod list_tags_for_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForDomainInputOperationOutputAlias = crate::operation::ListTagsForDomain;
-#[doc(hidden)]
-pub type ListTagsForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForDomainInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForDomain`](crate::operation::ListTagsForDomain)>
     #[allow(unused_mut)]
@@ -3125,10 +3043,6 @@ pub mod register_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterDomainInputOperationOutputAlias = crate::operation::RegisterDomain;
-#[doc(hidden)]
-pub type RegisterDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDomain`](crate::operation::RegisterDomain)>
     #[allow(unused_mut)]
@@ -3276,12 +3190,6 @@ pub mod reject_domain_transfer_from_another_aws_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectDomainTransferFromAnotherAwsAccountInputOperationOutputAlias =
-    crate::operation::RejectDomainTransferFromAnotherAwsAccount;
-#[doc(hidden)]
-pub type RejectDomainTransferFromAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectDomainTransferFromAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`RejectDomainTransferFromAnotherAwsAccount`](crate::operation::RejectDomainTransferFromAnotherAwsAccount)>
     #[allow(unused_mut)]
@@ -3451,10 +3359,6 @@ pub mod renew_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RenewDomainInputOperationOutputAlias = crate::operation::RenewDomain;
-#[doc(hidden)]
-pub type RenewDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RenewDomainInput {
     /// Consumes the builder and constructs an Operation<[`RenewDomain`](crate::operation::RenewDomain)>
     #[allow(unused_mut)]
@@ -3600,12 +3504,6 @@ pub mod resend_contact_reachability_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResendContactReachabilityEmailInputOperationOutputAlias =
-    crate::operation::ResendContactReachabilityEmail;
-#[doc(hidden)]
-pub type ResendContactReachabilityEmailInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ResendContactReachabilityEmailInput {
     /// Consumes the builder and constructs an Operation<[`ResendContactReachabilityEmail`](crate::operation::ResendContactReachabilityEmail)>
     #[allow(unused_mut)]
@@ -3748,10 +3646,6 @@ pub mod retrieve_domain_auth_code_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RetrieveDomainAuthCodeInputOperationOutputAlias = crate::operation::RetrieveDomainAuthCode;
-#[doc(hidden)]
-pub type RetrieveDomainAuthCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetrieveDomainAuthCodeInput {
     /// Consumes the builder and constructs an Operation<[`RetrieveDomainAuthCode`](crate::operation::RetrieveDomainAuthCode)>
     #[allow(unused_mut)]
@@ -4095,10 +3989,6 @@ pub mod transfer_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TransferDomainInputOperationOutputAlias = crate::operation::TransferDomain;
-#[doc(hidden)]
-pub type TransferDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransferDomainInput {
     /// Consumes the builder and constructs an Operation<[`TransferDomain`](crate::operation::TransferDomain)>
     #[allow(unused_mut)]
@@ -4256,12 +4146,6 @@ pub mod transfer_domain_to_another_aws_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TransferDomainToAnotherAwsAccountInputOperationOutputAlias =
-    crate::operation::TransferDomainToAnotherAwsAccount;
-#[doc(hidden)]
-pub type TransferDomainToAnotherAwsAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl TransferDomainToAnotherAwsAccountInput {
     /// Consumes the builder and constructs an Operation<[`TransferDomainToAnotherAwsAccount`](crate::operation::TransferDomainToAnotherAwsAccount)>
     #[allow(unused_mut)]
@@ -4449,10 +4333,6 @@ pub mod update_domain_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDomainContactInputOperationOutputAlias = crate::operation::UpdateDomainContact;
-#[doc(hidden)]
-pub type UpdateDomainContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainContactInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainContact`](crate::operation::UpdateDomainContact)>
     #[allow(unused_mut)]
@@ -4646,11 +4526,6 @@ pub mod update_domain_contact_privacy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDomainContactPrivacyInputOperationOutputAlias =
-    crate::operation::UpdateDomainContactPrivacy;
-#[doc(hidden)]
-pub type UpdateDomainContactPrivacyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainContactPrivacyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainContactPrivacy`](crate::operation::UpdateDomainContactPrivacy)>
     #[allow(unused_mut)]
@@ -4830,11 +4705,6 @@ pub mod update_domain_nameservers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDomainNameserversInputOperationOutputAlias =
-    crate::operation::UpdateDomainNameservers;
-#[doc(hidden)]
-pub type UpdateDomainNameserversInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainNameserversInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainNameservers`](crate::operation::UpdateDomainNameservers)>
     #[allow(unused_mut)]
@@ -5001,10 +4871,6 @@ pub mod update_tags_for_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTagsForDomainInputOperationOutputAlias = crate::operation::UpdateTagsForDomain;
-#[doc(hidden)]
-pub type UpdateTagsForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTagsForDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTagsForDomain`](crate::operation::UpdateTagsForDomain)>
     #[allow(unused_mut)]
@@ -5190,10 +5056,6 @@ pub mod view_billing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ViewBillingInputOperationOutputAlias = crate::operation::ViewBilling;
-#[doc(hidden)]
-pub type ViewBillingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ViewBillingInput {
     /// Consumes the builder and constructs an Operation<[`ViewBilling`](crate::operation::ViewBilling)>
     #[allow(unused_mut)]

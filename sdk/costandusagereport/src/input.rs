@@ -31,10 +31,6 @@ pub mod delete_report_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReportDefinitionInputOperationOutputAlias = crate::operation::DeleteReportDefinition;
-#[doc(hidden)]
-pub type DeleteReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReportDefinition`](crate::operation::DeleteReportDefinition)>
     #[allow(unused_mut)]
@@ -194,11 +190,6 @@ pub mod describe_report_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReportDefinitionsInputOperationOutputAlias =
-    crate::operation::DescribeReportDefinitions;
-#[doc(hidden)]
-pub type DescribeReportDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReportDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReportDefinitions`](crate::operation::DescribeReportDefinitions)>
     #[allow(unused_mut)]
@@ -359,10 +350,6 @@ pub mod modify_report_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyReportDefinitionInputOperationOutputAlias = crate::operation::ModifyReportDefinition;
-#[doc(hidden)]
-pub type ModifyReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReportDefinition`](crate::operation::ModifyReportDefinition)>
     #[allow(unused_mut)]
@@ -511,10 +498,6 @@ pub mod put_report_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutReportDefinitionInputOperationOutputAlias = crate::operation::PutReportDefinition;
-#[doc(hidden)]
-pub type PutReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutReportDefinition`](crate::operation::PutReportDefinition)>
     #[allow(unused_mut)]

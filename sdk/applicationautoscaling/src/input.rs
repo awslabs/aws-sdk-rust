@@ -153,10 +153,6 @@ pub mod delete_scaling_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScalingPolicyInputOperationOutputAlias = crate::operation::DeleteScalingPolicy;
-#[doc(hidden)]
-pub type DeleteScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScalingPolicy`](crate::operation::DeleteScalingPolicy)>
     #[allow(unused_mut)]
@@ -425,10 +421,6 @@ pub mod delete_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScheduledActionInputOperationOutputAlias = crate::operation::DeleteScheduledAction;
-#[doc(hidden)]
-pub type DeleteScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScheduledAction`](crate::operation::DeleteScheduledAction)>
     #[allow(unused_mut)]
@@ -686,11 +678,6 @@ pub mod deregister_scalable_target_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterScalableTargetInputOperationOutputAlias =
-    crate::operation::DeregisterScalableTarget;
-#[doc(hidden)]
-pub type DeregisterScalableTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterScalableTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterScalableTarget`](crate::operation::DeregisterScalableTarget)>
     #[allow(unused_mut)]
@@ -983,11 +970,6 @@ pub mod describe_scalable_targets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalableTargetsInputOperationOutputAlias =
-    crate::operation::DescribeScalableTargets;
-#[doc(hidden)]
-pub type DescribeScalableTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalableTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalableTargets`](crate::operation::DescribeScalableTargets)>
     #[allow(unused_mut)]
@@ -1271,11 +1253,6 @@ pub mod describe_scaling_activities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingActivitiesInputOperationOutputAlias =
-    crate::operation::DescribeScalingActivities;
-#[doc(hidden)]
-pub type DescribeScalingActivitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingActivitiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingActivities`](crate::operation::DescribeScalingActivities)>
     #[allow(unused_mut)]
@@ -1580,11 +1557,6 @@ pub mod describe_scaling_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingPoliciesInputOperationOutputAlias =
-    crate::operation::DescribeScalingPolicies;
-#[doc(hidden)]
-pub type DescribeScalingPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPolicies`](crate::operation::DescribeScalingPolicies)>
     #[allow(unused_mut)]
@@ -1889,11 +1861,6 @@ pub mod describe_scheduled_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationOutputAlias =
-    crate::operation::DescribeScheduledActions;
-#[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduledActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScheduledActions`](crate::operation::DescribeScheduledActions)>
     #[allow(unused_mut)]
@@ -2227,10 +2194,6 @@ pub mod put_scaling_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutScalingPolicyInputOperationOutputAlias = crate::operation::PutScalingPolicy;
-#[doc(hidden)]
-pub type PutScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutScalingPolicy`](crate::operation::PutScalingPolicy)>
     #[allow(unused_mut)]
@@ -2590,10 +2553,6 @@ pub mod put_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutScheduledActionInputOperationOutputAlias = crate::operation::PutScheduledAction;
-#[doc(hidden)]
-pub type PutScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`PutScheduledAction`](crate::operation::PutScheduledAction)>
     #[allow(unused_mut)]
@@ -2918,10 +2877,6 @@ pub mod register_scalable_target_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterScalableTargetInputOperationOutputAlias = crate::operation::RegisterScalableTarget;
-#[doc(hidden)]
-pub type RegisterScalableTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterScalableTargetInput {
     /// Consumes the builder and constructs an Operation<[`RegisterScalableTarget`](crate::operation::RegisterScalableTarget)>
     #[allow(unused_mut)]

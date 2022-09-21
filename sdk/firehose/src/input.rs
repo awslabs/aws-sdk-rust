@@ -259,10 +259,6 @@ pub mod create_delivery_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeliveryStreamInputOperationOutputAlias = crate::operation::CreateDeliveryStream;
-#[doc(hidden)]
-pub type CreateDeliveryStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeliveryStream`](crate::operation::CreateDeliveryStream)>
     #[allow(unused_mut)]
@@ -425,10 +421,6 @@ pub mod delete_delivery_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeliveryStreamInputOperationOutputAlias = crate::operation::DeleteDeliveryStream;
-#[doc(hidden)]
-pub type DeleteDeliveryStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeliveryStream`](crate::operation::DeleteDeliveryStream)>
     #[allow(unused_mut)]
@@ -607,10 +599,6 @@ pub mod describe_delivery_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeliveryStreamInputOperationOutputAlias = crate::operation::DescribeDeliveryStream;
-#[doc(hidden)]
-pub type DescribeDeliveryStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeliveryStream`](crate::operation::DescribeDeliveryStream)>
     #[allow(unused_mut)]
@@ -799,10 +787,6 @@ pub mod list_delivery_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeliveryStreamsInputOperationOutputAlias = crate::operation::ListDeliveryStreams;
-#[doc(hidden)]
-pub type ListDeliveryStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeliveryStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeliveryStreams`](crate::operation::ListDeliveryStreams)>
     #[allow(unused_mut)]
@@ -978,11 +962,6 @@ pub mod list_tags_for_delivery_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForDeliveryStreamInputOperationOutputAlias =
-    crate::operation::ListTagsForDeliveryStream;
-#[doc(hidden)]
-pub type ListTagsForDeliveryStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForDeliveryStream`](crate::operation::ListTagsForDeliveryStream)>
     #[allow(unused_mut)]
@@ -1139,10 +1118,6 @@ pub mod put_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecordInputOperationOutputAlias = crate::operation::PutRecord;
-#[doc(hidden)]
-pub type PutRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
     #[allow(unused_mut)]
@@ -1308,10 +1283,6 @@ pub mod put_record_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecordBatchInputOperationOutputAlias = crate::operation::PutRecordBatch;
-#[doc(hidden)]
-pub type PutRecordBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecordBatchInput {
     /// Consumes the builder and constructs an Operation<[`PutRecordBatch`](crate::operation::PutRecordBatch)>
     #[allow(unused_mut)]
@@ -1480,12 +1451,6 @@ pub mod start_delivery_stream_encryption_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDeliveryStreamEncryptionInputOperationOutputAlias =
-    crate::operation::StartDeliveryStreamEncryption;
-#[doc(hidden)]
-pub type StartDeliveryStreamEncryptionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeliveryStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StartDeliveryStreamEncryption`](crate::operation::StartDeliveryStreamEncryption)>
     #[allow(unused_mut)]
@@ -1633,12 +1598,6 @@ pub mod stop_delivery_stream_encryption_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopDeliveryStreamEncryptionInputOperationOutputAlias =
-    crate::operation::StopDeliveryStreamEncryption;
-#[doc(hidden)]
-pub type StopDeliveryStreamEncryptionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StopDeliveryStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StopDeliveryStreamEncryption`](crate::operation::StopDeliveryStreamEncryption)>
     #[allow(unused_mut)]
@@ -1805,10 +1764,6 @@ pub mod tag_delivery_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagDeliveryStreamInputOperationOutputAlias = crate::operation::TagDeliveryStream;
-#[doc(hidden)]
-pub type TagDeliveryStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`TagDeliveryStream`](crate::operation::TagDeliveryStream)>
     #[allow(unused_mut)]
@@ -1976,10 +1931,6 @@ pub mod untag_delivery_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagDeliveryStreamInputOperationOutputAlias = crate::operation::UntagDeliveryStream;
-#[doc(hidden)]
-pub type UntagDeliveryStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagDeliveryStreamInput {
     /// Consumes the builder and constructs an Operation<[`UntagDeliveryStream`](crate::operation::UntagDeliveryStream)>
     #[allow(unused_mut)]
@@ -2291,10 +2242,6 @@ pub mod update_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDestinationInputOperationOutputAlias = crate::operation::UpdateDestination;
-#[doc(hidden)]
-pub type UpdateDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDestination`](crate::operation::UpdateDestination)>
     #[allow(unused_mut)]

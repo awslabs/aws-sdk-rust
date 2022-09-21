@@ -136,10 +136,6 @@ pub mod create_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTokenInputOperationOutputAlias = crate::operation::CreateToken;
-#[doc(hidden)]
-pub type CreateTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(unused_mut)]
@@ -312,10 +308,6 @@ pub mod register_client_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterClientInputOperationOutputAlias = crate::operation::RegisterClient;
-#[doc(hidden)]
-pub type RegisterClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterClientInput {
     /// Consumes the builder and constructs an Operation<[`RegisterClient`](crate::operation::RegisterClient)>
     #[allow(unused_mut)]
@@ -484,11 +476,6 @@ pub mod start_device_authorization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDeviceAuthorizationInputOperationOutputAlias =
-    crate::operation::StartDeviceAuthorization;
-#[doc(hidden)]
-pub type StartDeviceAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeviceAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`StartDeviceAuthorization`](crate::operation::StartDeviceAuthorization)>
     #[allow(unused_mut)]

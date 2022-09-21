@@ -46,10 +46,6 @@ pub mod delete_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteObjectInputOperationOutputAlias = crate::operation::DeleteObject;
-#[doc(hidden)]
-pub type DeleteObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteObjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteObject`](crate::operation::DeleteObject)>
     #[allow(unused_mut)]
@@ -222,10 +218,6 @@ pub mod get_chunk_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetChunkInputOperationOutputAlias = crate::operation::GetChunk;
-#[doc(hidden)]
-pub type GetChunkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChunkInput {
     /// Consumes the builder and constructs an Operation<[`GetChunk`](crate::operation::GetChunk)>
     #[allow(unused_mut)]
@@ -397,10 +389,6 @@ pub mod get_object_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetObjectMetadataInputOperationOutputAlias = crate::operation::GetObjectMetadata;
-#[doc(hidden)]
-pub type GetObjectMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetObjectMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetObjectMetadata`](crate::operation::GetObjectMetadata)>
     #[allow(unused_mut)]
@@ -597,10 +585,6 @@ pub mod list_chunks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChunksInputOperationOutputAlias = crate::operation::ListChunks;
-#[doc(hidden)]
-pub type ListChunksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChunksInput {
     /// Consumes the builder and constructs an Operation<[`ListChunks`](crate::operation::ListChunks)>
     #[allow(unused_mut)]
@@ -863,10 +847,6 @@ pub mod list_objects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListObjectsInputOperationOutputAlias = crate::operation::ListObjects;
-#[doc(hidden)]
-pub type ListObjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListObjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListObjects`](crate::operation::ListObjects)>
     #[allow(unused_mut)]
@@ -1182,10 +1162,6 @@ pub mod notify_object_complete_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyObjectCompleteInputOperationOutputAlias = crate::operation::NotifyObjectComplete;
-#[doc(hidden)]
-pub type NotifyObjectCompleteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyObjectCompleteInput {
     /// Consumes the builder and constructs an Operation<[`NotifyObjectComplete`](crate::operation::NotifyObjectComplete)>
     #[allow(unused_mut)]
@@ -1487,10 +1463,6 @@ pub mod put_chunk_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutChunkInputOperationOutputAlias = crate::operation::PutChunk;
-#[doc(hidden)]
-pub type PutChunkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutChunkInput {
     /// Consumes the builder and constructs an Operation<[`PutChunk`](crate::operation::PutChunk)>
     #[allow(unused_mut)]
@@ -1833,10 +1805,6 @@ pub mod put_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutObjectInputOperationOutputAlias = crate::operation::PutObject;
-#[doc(hidden)]
-pub type PutObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutObjectInput {
     /// Consumes the builder and constructs an Operation<[`PutObject`](crate::operation::PutObject)>
     #[allow(unused_mut)]
@@ -2088,10 +2056,6 @@ pub mod start_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartObjectInputOperationOutputAlias = crate::operation::StartObject;
-#[doc(hidden)]
-pub type StartObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartObjectInput {
     /// Consumes the builder and constructs an Operation<[`StartObject`](crate::operation::StartObject)>
     #[allow(unused_mut)]

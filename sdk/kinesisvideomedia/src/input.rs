@@ -57,10 +57,6 @@ pub mod get_media_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMediaInputOperationOutputAlias = crate::operation::GetMedia;
-#[doc(hidden)]
-pub type GetMediaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaInput {
     /// Consumes the builder and constructs an Operation<[`GetMedia`](crate::operation::GetMedia)>
     #[allow(unused_mut)]

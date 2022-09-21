@@ -53,12 +53,6 @@ pub mod configure_logs_for_playback_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfigureLogsForPlaybackConfigurationInputOperationOutputAlias =
-    crate::operation::ConfigureLogsForPlaybackConfiguration;
-#[doc(hidden)]
-pub type ConfigureLogsForPlaybackConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureLogsForPlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureLogsForPlaybackConfiguration`](crate::operation::ConfigureLogsForPlaybackConfiguration)>
     #[allow(unused_mut)]
@@ -293,10 +287,6 @@ pub mod create_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
-#[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(unused_mut)]
@@ -522,10 +512,6 @@ pub mod create_live_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLiveSourceInputOperationOutputAlias = crate::operation::CreateLiveSource;
-#[doc(hidden)]
-pub type CreateLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLiveSourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateLiveSource`](crate::operation::CreateLiveSource)>
     #[allow(unused_mut)]
@@ -758,10 +744,6 @@ pub mod create_prefetch_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePrefetchScheduleInputOperationOutputAlias = crate::operation::CreatePrefetchSchedule;
-#[doc(hidden)]
-pub type CreatePrefetchScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePrefetchScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreatePrefetchSchedule`](crate::operation::CreatePrefetchSchedule)>
     #[allow(unused_mut)]
@@ -1033,10 +1015,6 @@ pub mod create_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProgramInputOperationOutputAlias = crate::operation::CreateProgram;
-#[doc(hidden)]
-pub type CreateProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProgramInput {
     /// Consumes the builder and constructs an Operation<[`CreateProgram`](crate::operation::CreateProgram)>
     #[allow(unused_mut)]
@@ -1315,10 +1293,6 @@ pub mod create_source_location_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSourceLocationInputOperationOutputAlias = crate::operation::CreateSourceLocation;
-#[doc(hidden)]
-pub type CreateSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSourceLocation`](crate::operation::CreateSourceLocation)>
     #[allow(unused_mut)]
@@ -1550,10 +1524,6 @@ pub mod create_vod_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVodSourceInputOperationOutputAlias = crate::operation::CreateVodSource;
-#[doc(hidden)]
-pub type CreateVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateVodSource`](crate::operation::CreateVodSource)>
     #[allow(unused_mut)]
@@ -1726,10 +1696,6 @@ pub mod delete_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
-#[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(unused_mut)]
@@ -1869,10 +1835,6 @@ pub mod delete_channel_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelPolicyInputOperationOutputAlias = crate::operation::DeleteChannelPolicy;
-#[doc(hidden)]
-pub type DeleteChannelPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelPolicy`](crate::operation::DeleteChannelPolicy)>
     #[allow(unused_mut)]
@@ -2034,10 +1996,6 @@ pub mod delete_live_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLiveSourceInputOperationOutputAlias = crate::operation::DeleteLiveSource;
-#[doc(hidden)]
-pub type DeleteLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLiveSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLiveSource`](crate::operation::DeleteLiveSource)>
     #[allow(unused_mut)]
@@ -2196,11 +2154,6 @@ pub mod delete_playback_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePlaybackConfigurationInputOperationOutputAlias =
-    crate::operation::DeletePlaybackConfiguration;
-#[doc(hidden)]
-pub type DeletePlaybackConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaybackConfiguration`](crate::operation::DeletePlaybackConfiguration)>
     #[allow(unused_mut)]
@@ -2358,10 +2311,6 @@ pub mod delete_prefetch_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePrefetchScheduleInputOperationOutputAlias = crate::operation::DeletePrefetchSchedule;
-#[doc(hidden)]
-pub type DeletePrefetchScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePrefetchScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeletePrefetchSchedule`](crate::operation::DeletePrefetchSchedule)>
     #[allow(unused_mut)]
@@ -2533,10 +2482,6 @@ pub mod delete_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProgramInputOperationOutputAlias = crate::operation::DeleteProgram;
-#[doc(hidden)]
-pub type DeleteProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProgramInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProgram`](crate::operation::DeleteProgram)>
     #[allow(unused_mut)]
@@ -2698,10 +2643,6 @@ pub mod delete_source_location_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSourceLocationInputOperationOutputAlias = crate::operation::DeleteSourceLocation;
-#[doc(hidden)]
-pub type DeleteSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSourceLocation`](crate::operation::DeleteSourceLocation)>
     #[allow(unused_mut)]
@@ -2863,10 +2804,6 @@ pub mod delete_vod_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVodSourceInputOperationOutputAlias = crate::operation::DeleteVodSource;
-#[doc(hidden)]
-pub type DeleteVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVodSource`](crate::operation::DeleteVodSource)>
     #[allow(unused_mut)]
@@ -3025,10 +2962,6 @@ pub mod describe_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
-#[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(unused_mut)]
@@ -3186,10 +3119,6 @@ pub mod describe_live_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLiveSourceInputOperationOutputAlias = crate::operation::DescribeLiveSource;
-#[doc(hidden)]
-pub type DescribeLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLiveSourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLiveSource`](crate::operation::DescribeLiveSource)>
     #[allow(unused_mut)]
@@ -3360,10 +3289,6 @@ pub mod describe_program_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProgramInputOperationOutputAlias = crate::operation::DescribeProgram;
-#[doc(hidden)]
-pub type DescribeProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProgramInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProgram`](crate::operation::DescribeProgram)>
     #[allow(unused_mut)]
@@ -3525,10 +3450,6 @@ pub mod describe_source_location_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSourceLocationInputOperationOutputAlias = crate::operation::DescribeSourceLocation;
-#[doc(hidden)]
-pub type DescribeSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSourceLocation`](crate::operation::DescribeSourceLocation)>
     #[allow(unused_mut)]
@@ -3690,10 +3611,6 @@ pub mod describe_vod_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVodSourceInputOperationOutputAlias = crate::operation::DescribeVodSource;
-#[doc(hidden)]
-pub type DescribeVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVodSource`](crate::operation::DescribeVodSource)>
     #[allow(unused_mut)]
@@ -3852,10 +3769,6 @@ pub mod get_channel_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetChannelPolicyInputOperationOutputAlias = crate::operation::GetChannelPolicy;
-#[doc(hidden)]
-pub type GetChannelPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelPolicy`](crate::operation::GetChannelPolicy)>
     #[allow(unused_mut)]
@@ -4038,10 +3951,6 @@ pub mod get_channel_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetChannelScheduleInputOperationOutputAlias = crate::operation::GetChannelSchedule;
-#[doc(hidden)]
-pub type GetChannelScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelScheduleInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelSchedule`](crate::operation::GetChannelSchedule)>
     #[allow(unused_mut)]
@@ -4208,11 +4117,6 @@ pub mod get_playback_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPlaybackConfigurationInputOperationOutputAlias =
-    crate::operation::GetPlaybackConfiguration;
-#[doc(hidden)]
-pub type GetPlaybackConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetPlaybackConfiguration`](crate::operation::GetPlaybackConfiguration)>
     #[allow(unused_mut)]
@@ -4370,10 +4274,6 @@ pub mod get_prefetch_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPrefetchScheduleInputOperationOutputAlias = crate::operation::GetPrefetchSchedule;
-#[doc(hidden)]
-pub type GetPrefetchScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPrefetchScheduleInput {
     /// Consumes the builder and constructs an Operation<[`GetPrefetchSchedule`](crate::operation::GetPrefetchSchedule)>
     #[allow(unused_mut)]
@@ -4556,10 +4456,6 @@ pub mod list_alerts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAlertsInputOperationOutputAlias = crate::operation::ListAlerts;
-#[doc(hidden)]
-pub type ListAlertsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlertsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlerts`](crate::operation::ListAlerts)>
     #[allow(unused_mut)]
@@ -4719,10 +4615,6 @@ pub mod list_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
-#[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(unused_mut)]
@@ -4891,10 +4783,6 @@ pub mod list_live_sources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLiveSourcesInputOperationOutputAlias = crate::operation::ListLiveSources;
-#[doc(hidden)]
-pub type ListLiveSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLiveSourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListLiveSources`](crate::operation::ListLiveSources)>
     #[allow(unused_mut)]
@@ -5069,11 +4957,6 @@ pub mod list_playback_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPlaybackConfigurationsInputOperationOutputAlias =
-    crate::operation::ListPlaybackConfigurations;
-#[doc(hidden)]
-pub type ListPlaybackConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlaybackConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaybackConfigurations`](crate::operation::ListPlaybackConfigurations)>
     #[allow(unused_mut)]
@@ -5263,10 +5146,6 @@ pub mod list_prefetch_schedules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPrefetchSchedulesInputOperationOutputAlias = crate::operation::ListPrefetchSchedules;
-#[doc(hidden)]
-pub type ListPrefetchSchedulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrefetchSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`ListPrefetchSchedules`](crate::operation::ListPrefetchSchedules)>
     #[allow(unused_mut)]
@@ -5439,10 +5318,6 @@ pub mod list_source_locations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSourceLocationsInputOperationOutputAlias = crate::operation::ListSourceLocations;
-#[doc(hidden)]
-pub type ListSourceLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSourceLocationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSourceLocations`](crate::operation::ListSourceLocations)>
     #[allow(unused_mut)]
@@ -5584,10 +5459,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5754,10 +5625,6 @@ pub mod list_vod_sources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVodSourcesInputOperationOutputAlias = crate::operation::ListVodSources;
-#[doc(hidden)]
-pub type ListVodSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVodSourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListVodSources`](crate::operation::ListVodSources)>
     #[allow(unused_mut)]
@@ -5930,10 +5797,6 @@ pub mod put_channel_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutChannelPolicyInputOperationOutputAlias = crate::operation::PutChannelPolicy;
-#[doc(hidden)]
-pub type PutChannelPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutChannelPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutChannelPolicy`](crate::operation::PutChannelPolicy)>
     #[allow(unused_mut)]
@@ -6326,11 +6189,6 @@ pub mod put_playback_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPlaybackConfigurationInputOperationOutputAlias =
-    crate::operation::PutPlaybackConfiguration;
-#[doc(hidden)]
-pub type PutPlaybackConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutPlaybackConfiguration`](crate::operation::PutPlaybackConfiguration)>
     #[allow(unused_mut)]
@@ -6471,10 +6329,6 @@ pub mod start_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartChannelInputOperationOutputAlias = crate::operation::StartChannel;
-#[doc(hidden)]
-pub type StartChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartChannelInput {
     /// Consumes the builder and constructs an Operation<[`StartChannel`](crate::operation::StartChannel)>
     #[allow(unused_mut)]
@@ -6618,10 +6472,6 @@ pub mod stop_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopChannelInputOperationOutputAlias = crate::operation::StopChannel;
-#[doc(hidden)]
-pub type StopChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopChannelInput {
     /// Consumes the builder and constructs an Operation<[`StopChannel`](crate::operation::StopChannel)>
     #[allow(unused_mut)]
@@ -6794,10 +6644,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6972,10 +6818,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -7164,10 +7006,6 @@ pub mod update_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
-#[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(unused_mut)]
@@ -7364,10 +7202,6 @@ pub mod update_live_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLiveSourceInputOperationOutputAlias = crate::operation::UpdateLiveSource;
-#[doc(hidden)]
-pub type UpdateLiveSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLiveSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLiveSource`](crate::operation::UpdateLiveSource)>
     #[allow(unused_mut)]
@@ -7617,10 +7451,6 @@ pub mod update_source_location_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSourceLocationInputOperationOutputAlias = crate::operation::UpdateSourceLocation;
-#[doc(hidden)]
-pub type UpdateSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSourceLocation`](crate::operation::UpdateSourceLocation)>
     #[allow(unused_mut)]
@@ -7823,10 +7653,6 @@ pub mod update_vod_source_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVodSourceInputOperationOutputAlias = crate::operation::UpdateVodSource;
-#[doc(hidden)]
-pub type UpdateVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVodSource`](crate::operation::UpdateVodSource)>
     #[allow(unused_mut)]

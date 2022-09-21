@@ -130,11 +130,6 @@ pub mod associate_firewall_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateFirewallRuleGroupInputOperationOutputAlias =
-    crate::operation::AssociateFirewallRuleGroup;
-#[doc(hidden)]
-pub type AssociateFirewallRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateFirewallRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateFirewallRuleGroup`](crate::operation::AssociateFirewallRuleGroup)>
     #[allow(unused_mut)]
@@ -300,12 +295,6 @@ pub mod associate_resolver_endpoint_ip_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResolverEndpointIpAddressInputOperationOutputAlias =
-    crate::operation::AssociateResolverEndpointIpAddress;
-#[doc(hidden)]
-pub type AssociateResolverEndpointIpAddressInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResolverEndpointIpAddressInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResolverEndpointIpAddress`](crate::operation::AssociateResolverEndpointIpAddress)>
     #[allow(unused_mut)]
@@ -472,12 +461,6 @@ pub mod associate_resolver_query_log_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResolverQueryLogConfigInputOperationOutputAlias =
-    crate::operation::AssociateResolverQueryLogConfig;
-#[doc(hidden)]
-pub type AssociateResolverQueryLogConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResolverQueryLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResolverQueryLogConfig`](crate::operation::AssociateResolverQueryLogConfig)>
     #[allow(unused_mut)]
@@ -647,10 +630,6 @@ pub mod associate_resolver_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResolverRuleInputOperationOutputAlias = crate::operation::AssociateResolverRule;
-#[doc(hidden)]
-pub type AssociateResolverRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResolverRuleInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResolverRule`](crate::operation::AssociateResolverRule)>
     #[allow(unused_mut)]
@@ -834,11 +813,6 @@ pub mod create_firewall_domain_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFirewallDomainListInputOperationOutputAlias =
-    crate::operation::CreateFirewallDomainList;
-#[doc(hidden)]
-pub type CreateFirewallDomainListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFirewallDomainListInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewallDomainList`](crate::operation::CreateFirewallDomainList)>
     #[allow(unused_mut)]
@@ -1146,10 +1120,6 @@ pub mod create_firewall_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFirewallRuleInputOperationOutputAlias = crate::operation::CreateFirewallRule;
-#[doc(hidden)]
-pub type CreateFirewallRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFirewallRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewallRule`](crate::operation::CreateFirewallRule)>
     #[allow(unused_mut)]
@@ -1334,11 +1304,6 @@ pub mod create_firewall_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFirewallRuleGroupInputOperationOutputAlias =
-    crate::operation::CreateFirewallRuleGroup;
-#[doc(hidden)]
-pub type CreateFirewallRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFirewallRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewallRuleGroup`](crate::operation::CreateFirewallRuleGroup)>
     #[allow(unused_mut)]
@@ -1588,10 +1553,6 @@ pub mod create_resolver_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResolverEndpointInputOperationOutputAlias = crate::operation::CreateResolverEndpoint;
-#[doc(hidden)]
-pub type CreateResolverEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResolverEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateResolverEndpoint`](crate::operation::CreateResolverEndpoint)>
     #[allow(unused_mut)]
@@ -1800,12 +1761,6 @@ pub mod create_resolver_query_log_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResolverQueryLogConfigInputOperationOutputAlias =
-    crate::operation::CreateResolverQueryLogConfig;
-#[doc(hidden)]
-pub type CreateResolverQueryLogConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResolverQueryLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateResolverQueryLogConfig`](crate::operation::CreateResolverQueryLogConfig)>
     #[allow(unused_mut)]
@@ -2058,10 +2013,6 @@ pub mod create_resolver_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResolverRuleInputOperationOutputAlias = crate::operation::CreateResolverRule;
-#[doc(hidden)]
-pub type CreateResolverRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResolverRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateResolverRule`](crate::operation::CreateResolverRule)>
     #[allow(unused_mut)]
@@ -2210,11 +2161,6 @@ pub mod delete_firewall_domain_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFirewallDomainListInputOperationOutputAlias =
-    crate::operation::DeleteFirewallDomainList;
-#[doc(hidden)]
-pub type DeleteFirewallDomainListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallDomainListInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallDomainList`](crate::operation::DeleteFirewallDomainList)>
     #[allow(unused_mut)]
@@ -2378,10 +2324,6 @@ pub mod delete_firewall_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFirewallRuleInputOperationOutputAlias = crate::operation::DeleteFirewallRule;
-#[doc(hidden)]
-pub type DeleteFirewallRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallRule`](crate::operation::DeleteFirewallRule)>
     #[allow(unused_mut)]
@@ -2530,11 +2472,6 @@ pub mod delete_firewall_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFirewallRuleGroupInputOperationOutputAlias =
-    crate::operation::DeleteFirewallRuleGroup;
-#[doc(hidden)]
-pub type DeleteFirewallRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallRuleGroup`](crate::operation::DeleteFirewallRuleGroup)>
     #[allow(unused_mut)]
@@ -2683,10 +2620,6 @@ pub mod delete_resolver_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResolverEndpointInputOperationOutputAlias = crate::operation::DeleteResolverEndpoint;
-#[doc(hidden)]
-pub type DeleteResolverEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResolverEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResolverEndpoint`](crate::operation::DeleteResolverEndpoint)>
     #[allow(unused_mut)]
@@ -2840,12 +2773,6 @@ pub mod delete_resolver_query_log_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResolverQueryLogConfigInputOperationOutputAlias =
-    crate::operation::DeleteResolverQueryLogConfig;
-#[doc(hidden)]
-pub type DeleteResolverQueryLogConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResolverQueryLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResolverQueryLogConfig`](crate::operation::DeleteResolverQueryLogConfig)>
     #[allow(unused_mut)]
@@ -2991,10 +2918,6 @@ pub mod delete_resolver_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResolverRuleInputOperationOutputAlias = crate::operation::DeleteResolverRule;
-#[doc(hidden)]
-pub type DeleteResolverRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResolverRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResolverRule`](crate::operation::DeleteResolverRule)>
     #[allow(unused_mut)]
@@ -3146,12 +3069,6 @@ pub mod disassociate_firewall_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateFirewallRuleGroupInputOperationOutputAlias =
-    crate::operation::DisassociateFirewallRuleGroup;
-#[doc(hidden)]
-pub type DisassociateFirewallRuleGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFirewallRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFirewallRuleGroup`](crate::operation::DisassociateFirewallRuleGroup)>
     #[allow(unused_mut)]
@@ -3314,12 +3231,6 @@ pub mod disassociate_resolver_endpoint_ip_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResolverEndpointIpAddressInputOperationOutputAlias =
-    crate::operation::DisassociateResolverEndpointIpAddress;
-#[doc(hidden)]
-pub type DisassociateResolverEndpointIpAddressInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResolverEndpointIpAddressInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResolverEndpointIpAddress`](crate::operation::DisassociateResolverEndpointIpAddress)>
     #[allow(unused_mut)]
@@ -3482,12 +3393,6 @@ pub mod disassociate_resolver_query_log_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResolverQueryLogConfigInputOperationOutputAlias =
-    crate::operation::DisassociateResolverQueryLogConfig;
-#[doc(hidden)]
-pub type DisassociateResolverQueryLogConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResolverQueryLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResolverQueryLogConfig`](crate::operation::DisassociateResolverQueryLogConfig)>
     #[allow(unused_mut)]
@@ -3647,11 +3552,6 @@ pub mod disassociate_resolver_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResolverRuleInputOperationOutputAlias =
-    crate::operation::DisassociateResolverRule;
-#[doc(hidden)]
-pub type DisassociateResolverRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResolverRuleInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResolverRule`](crate::operation::DisassociateResolverRule)>
     #[allow(unused_mut)]
@@ -3797,10 +3697,6 @@ pub mod get_firewall_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFirewallConfigInputOperationOutputAlias = crate::operation::GetFirewallConfig;
-#[doc(hidden)]
-pub type GetFirewallConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFirewallConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFirewallConfig`](crate::operation::GetFirewallConfig)>
     #[allow(unused_mut)]
@@ -3947,10 +3843,6 @@ pub mod get_firewall_domain_list_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFirewallDomainListInputOperationOutputAlias = crate::operation::GetFirewallDomainList;
-#[doc(hidden)]
-pub type GetFirewallDomainListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFirewallDomainListInput {
     /// Consumes the builder and constructs an Operation<[`GetFirewallDomainList`](crate::operation::GetFirewallDomainList)>
     #[allow(unused_mut)]
@@ -4099,10 +3991,6 @@ pub mod get_firewall_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFirewallRuleGroupInputOperationOutputAlias = crate::operation::GetFirewallRuleGroup;
-#[doc(hidden)]
-pub type GetFirewallRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFirewallRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetFirewallRuleGroup`](crate::operation::GetFirewallRuleGroup)>
     #[allow(unused_mut)]
@@ -4256,12 +4144,6 @@ pub mod get_firewall_rule_group_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFirewallRuleGroupAssociationInputOperationOutputAlias =
-    crate::operation::GetFirewallRuleGroupAssociation;
-#[doc(hidden)]
-pub type GetFirewallRuleGroupAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFirewallRuleGroupAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetFirewallRuleGroupAssociation`](crate::operation::GetFirewallRuleGroupAssociation)>
     #[allow(unused_mut)]
@@ -4404,11 +4286,6 @@ pub mod get_firewall_rule_group_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFirewallRuleGroupPolicyInputOperationOutputAlias =
-    crate::operation::GetFirewallRuleGroupPolicy;
-#[doc(hidden)]
-pub type GetFirewallRuleGroupPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFirewallRuleGroupPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetFirewallRuleGroupPolicy`](crate::operation::GetFirewallRuleGroupPolicy)>
     #[allow(unused_mut)]
@@ -4551,10 +4428,6 @@ pub mod get_resolver_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverConfigInputOperationOutputAlias = crate::operation::GetResolverConfig;
-#[doc(hidden)]
-pub type GetResolverConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverConfig`](crate::operation::GetResolverConfig)>
     #[allow(unused_mut)]
@@ -4700,11 +4573,6 @@ pub mod get_resolver_dnssec_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverDnssecConfigInputOperationOutputAlias =
-    crate::operation::GetResolverDnssecConfig;
-#[doc(hidden)]
-pub type GetResolverDnssecConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverDnssecConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverDnssecConfig`](crate::operation::GetResolverDnssecConfig)>
     #[allow(unused_mut)]
@@ -4853,10 +4721,6 @@ pub mod get_resolver_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverEndpointInputOperationOutputAlias = crate::operation::GetResolverEndpoint;
-#[doc(hidden)]
-pub type GetResolverEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverEndpoint`](crate::operation::GetResolverEndpoint)>
     #[allow(unused_mut)]
@@ -5008,11 +4872,6 @@ pub mod get_resolver_query_log_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverQueryLogConfigInputOperationOutputAlias =
-    crate::operation::GetResolverQueryLogConfig;
-#[doc(hidden)]
-pub type GetResolverQueryLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverQueryLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverQueryLogConfig`](crate::operation::GetResolverQueryLogConfig)>
     #[allow(unused_mut)]
@@ -5165,12 +5024,6 @@ pub mod get_resolver_query_log_config_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverQueryLogConfigAssociationInputOperationOutputAlias =
-    crate::operation::GetResolverQueryLogConfigAssociation;
-#[doc(hidden)]
-pub type GetResolverQueryLogConfigAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverQueryLogConfigAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverQueryLogConfigAssociation`](crate::operation::GetResolverQueryLogConfigAssociation)>
     #[allow(unused_mut)]
@@ -5313,12 +5166,6 @@ pub mod get_resolver_query_log_config_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverQueryLogConfigPolicyInputOperationOutputAlias =
-    crate::operation::GetResolverQueryLogConfigPolicy;
-#[doc(hidden)]
-pub type GetResolverQueryLogConfigPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverQueryLogConfigPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverQueryLogConfigPolicy`](crate::operation::GetResolverQueryLogConfigPolicy)>
     #[allow(unused_mut)]
@@ -5464,10 +5311,6 @@ pub mod get_resolver_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverRuleInputOperationOutputAlias = crate::operation::GetResolverRule;
-#[doc(hidden)]
-pub type GetResolverRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverRule`](crate::operation::GetResolverRule)>
     #[allow(unused_mut)]
@@ -5619,11 +5462,6 @@ pub mod get_resolver_rule_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverRuleAssociationInputOperationOutputAlias =
-    crate::operation::GetResolverRuleAssociation;
-#[doc(hidden)]
-pub type GetResolverRuleAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverRuleAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverRuleAssociation`](crate::operation::GetResolverRuleAssociation)>
     #[allow(unused_mut)]
@@ -5764,10 +5602,6 @@ pub mod get_resolver_rule_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResolverRulePolicyInputOperationOutputAlias = crate::operation::GetResolverRulePolicy;
-#[doc(hidden)]
-pub type GetResolverRulePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResolverRulePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResolverRulePolicy`](crate::operation::GetResolverRulePolicy)>
     #[allow(unused_mut)]
@@ -5948,10 +5782,6 @@ pub mod import_firewall_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportFirewallDomainsInputOperationOutputAlias = crate::operation::ImportFirewallDomains;
-#[doc(hidden)]
-pub type ImportFirewallDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportFirewallDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ImportFirewallDomains`](crate::operation::ImportFirewallDomains)>
     #[allow(unused_mut)]
@@ -6113,10 +5943,6 @@ pub mod list_firewall_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallConfigsInputOperationOutputAlias = crate::operation::ListFirewallConfigs;
-#[doc(hidden)]
-pub type ListFirewallConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallConfigs`](crate::operation::ListFirewallConfigs)>
     #[allow(unused_mut)]
@@ -6278,11 +6104,6 @@ pub mod list_firewall_domain_lists_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallDomainListsInputOperationOutputAlias =
-    crate::operation::ListFirewallDomainLists;
-#[doc(hidden)]
-pub type ListFirewallDomainListsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallDomainListsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallDomainLists`](crate::operation::ListFirewallDomainLists)>
     #[allow(unused_mut)]
@@ -6459,10 +6280,6 @@ pub mod list_firewall_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallDomainsInputOperationOutputAlias = crate::operation::ListFirewallDomains;
-#[doc(hidden)]
-pub type ListFirewallDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallDomains`](crate::operation::ListFirewallDomains)>
     #[allow(unused_mut)]
@@ -6678,12 +6495,6 @@ pub mod list_firewall_rule_group_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallRuleGroupAssociationsInputOperationOutputAlias =
-    crate::operation::ListFirewallRuleGroupAssociations;
-#[doc(hidden)]
-pub type ListFirewallRuleGroupAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallRuleGroupAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallRuleGroupAssociations`](crate::operation::ListFirewallRuleGroupAssociations)>
     #[allow(unused_mut)]
@@ -6842,10 +6653,6 @@ pub mod list_firewall_rule_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallRuleGroupsInputOperationOutputAlias = crate::operation::ListFirewallRuleGroups;
-#[doc(hidden)]
-pub type ListFirewallRuleGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallRuleGroups`](crate::operation::ListFirewallRuleGroups)>
     #[allow(unused_mut)]
@@ -7060,10 +6867,6 @@ pub mod list_firewall_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallRulesInputOperationOutputAlias = crate::operation::ListFirewallRules;
-#[doc(hidden)]
-pub type ListFirewallRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallRules`](crate::operation::ListFirewallRules)>
     #[allow(unused_mut)]
@@ -7223,10 +7026,6 @@ pub mod list_resolver_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverConfigsInputOperationOutputAlias = crate::operation::ListResolverConfigs;
-#[doc(hidden)]
-pub type ListResolverConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverConfigs`](crate::operation::ListResolverConfigs)>
     #[allow(unused_mut)]
@@ -7409,11 +7208,6 @@ pub mod list_resolver_dnssec_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverDnssecConfigsInputOperationOutputAlias =
-    crate::operation::ListResolverDnssecConfigs;
-#[doc(hidden)]
-pub type ListResolverDnssecConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverDnssecConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverDnssecConfigs`](crate::operation::ListResolverDnssecConfigs)>
     #[allow(unused_mut)]
@@ -7590,12 +7384,6 @@ pub mod list_resolver_endpoint_ip_addresses_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverEndpointIpAddressesInputOperationOutputAlias =
-    crate::operation::ListResolverEndpointIpAddresses;
-#[doc(hidden)]
-pub type ListResolverEndpointIpAddressesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverEndpointIpAddressesInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverEndpointIpAddresses`](crate::operation::ListResolverEndpointIpAddresses)>
     #[allow(unused_mut)]
@@ -7777,10 +7565,6 @@ pub mod list_resolver_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverEndpointsInputOperationOutputAlias = crate::operation::ListResolverEndpoints;
-#[doc(hidden)]
-pub type ListResolverEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverEndpoints`](crate::operation::ListResolverEndpoints)>
     #[allow(unused_mut)]
@@ -8048,12 +7832,6 @@ pub mod list_resolver_query_log_config_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverQueryLogConfigAssociationsInputOperationOutputAlias =
-    crate::operation::ListResolverQueryLogConfigAssociations;
-#[doc(hidden)]
-pub type ListResolverQueryLogConfigAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverQueryLogConfigAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverQueryLogConfigAssociations`](crate::operation::ListResolverQueryLogConfigAssociations)>
     #[allow(unused_mut)]
@@ -8318,11 +8096,6 @@ pub mod list_resolver_query_log_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverQueryLogConfigsInputOperationOutputAlias =
-    crate::operation::ListResolverQueryLogConfigs;
-#[doc(hidden)]
-pub type ListResolverQueryLogConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverQueryLogConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverQueryLogConfigs`](crate::operation::ListResolverQueryLogConfigs)>
     #[allow(unused_mut)]
@@ -8506,12 +8279,6 @@ pub mod list_resolver_rule_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverRuleAssociationsInputOperationOutputAlias =
-    crate::operation::ListResolverRuleAssociations;
-#[doc(hidden)]
-pub type ListResolverRuleAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverRuleAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverRuleAssociations`](crate::operation::ListResolverRuleAssociations)>
     #[allow(unused_mut)]
@@ -8693,10 +8460,6 @@ pub mod list_resolver_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResolverRulesInputOperationOutputAlias = crate::operation::ListResolverRules;
-#[doc(hidden)]
-pub type ListResolverRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResolverRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListResolverRules`](crate::operation::ListResolverRules)>
     #[allow(unused_mut)]
@@ -8866,10 +8629,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -9032,11 +8791,6 @@ pub mod put_firewall_rule_group_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutFirewallRuleGroupPolicyInputOperationOutputAlias =
-    crate::operation::PutFirewallRuleGroupPolicy;
-#[doc(hidden)]
-pub type PutFirewallRuleGroupPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutFirewallRuleGroupPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutFirewallRuleGroupPolicy`](crate::operation::PutFirewallRuleGroupPolicy)>
     #[allow(unused_mut)]
@@ -9213,12 +8967,6 @@ pub mod put_resolver_query_log_config_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResolverQueryLogConfigPolicyInputOperationOutputAlias =
-    crate::operation::PutResolverQueryLogConfigPolicy;
-#[doc(hidden)]
-pub type PutResolverQueryLogConfigPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutResolverQueryLogConfigPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResolverQueryLogConfigPolicy`](crate::operation::PutResolverQueryLogConfigPolicy)>
     #[allow(unused_mut)]
@@ -9392,10 +9140,6 @@ pub mod put_resolver_rule_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResolverRulePolicyInputOperationOutputAlias = crate::operation::PutResolverRulePolicy;
-#[doc(hidden)]
-pub type PutResolverRulePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResolverRulePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResolverRulePolicy`](crate::operation::PutResolverRulePolicy)>
     #[allow(unused_mut)]
@@ -9578,10 +9322,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -9762,10 +9502,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -9934,10 +9670,6 @@ pub mod update_firewall_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallConfigInputOperationOutputAlias = crate::operation::UpdateFirewallConfig;
-#[doc(hidden)]
-pub type UpdateFirewallConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallConfig`](crate::operation::UpdateFirewallConfig)>
     #[allow(unused_mut)]
@@ -10144,10 +9876,6 @@ pub mod update_firewall_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallDomainsInputOperationOutputAlias = crate::operation::UpdateFirewallDomains;
-#[doc(hidden)]
-pub type UpdateFirewallDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallDomainsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallDomains`](crate::operation::UpdateFirewallDomains)>
     #[allow(unused_mut)]
@@ -10429,10 +10157,6 @@ pub mod update_firewall_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallRuleInputOperationOutputAlias = crate::operation::UpdateFirewallRule;
-#[doc(hidden)]
-pub type UpdateFirewallRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallRule`](crate::operation::UpdateFirewallRule)>
     #[allow(unused_mut)]
@@ -10628,12 +10352,6 @@ pub mod update_firewall_rule_group_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallRuleGroupAssociationInputOperationOutputAlias =
-    crate::operation::UpdateFirewallRuleGroupAssociation;
-#[doc(hidden)]
-pub type UpdateFirewallRuleGroupAssociationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallRuleGroupAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallRuleGroupAssociation`](crate::operation::UpdateFirewallRuleGroupAssociation)>
     #[allow(unused_mut)]
@@ -10801,10 +10519,6 @@ pub mod update_resolver_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResolverConfigInputOperationOutputAlias = crate::operation::UpdateResolverConfig;
-#[doc(hidden)]
-pub type UpdateResolverConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResolverConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResolverConfig`](crate::operation::UpdateResolverConfig)>
     #[allow(unused_mut)]
@@ -10967,11 +10681,6 @@ pub mod update_resolver_dnssec_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResolverDnssecConfigInputOperationOutputAlias =
-    crate::operation::UpdateResolverDnssecConfig;
-#[doc(hidden)]
-pub type UpdateResolverDnssecConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResolverDnssecConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResolverDnssecConfig`](crate::operation::UpdateResolverDnssecConfig)>
     #[allow(unused_mut)]
@@ -11129,10 +10838,6 @@ pub mod update_resolver_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResolverEndpointInputOperationOutputAlias = crate::operation::UpdateResolverEndpoint;
-#[doc(hidden)]
-pub type UpdateResolverEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResolverEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResolverEndpoint`](crate::operation::UpdateResolverEndpoint)>
     #[allow(unused_mut)]
@@ -11296,10 +11001,6 @@ pub mod update_resolver_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResolverRuleInputOperationOutputAlias = crate::operation::UpdateResolverRule;
-#[doc(hidden)]
-pub type UpdateResolverRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResolverRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResolverRule`](crate::operation::UpdateResolverRule)>
     #[allow(unused_mut)]

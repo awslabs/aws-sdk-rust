@@ -34,10 +34,6 @@ pub mod get_latest_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLatestConfigurationInputOperationOutputAlias = crate::operation::GetLatestConfiguration;
-#[doc(hidden)]
-pub type GetLatestConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLatestConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLatestConfiguration`](crate::operation::GetLatestConfiguration)>
     #[allow(unused_mut)]
@@ -230,11 +226,6 @@ pub mod start_configuration_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartConfigurationSessionInputOperationOutputAlias =
-    crate::operation::StartConfigurationSession;
-#[doc(hidden)]
-pub type StartConfigurationSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigurationSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigurationSession`](crate::operation::StartConfigurationSession)>
     #[allow(unused_mut)]

@@ -30,10 +30,6 @@ pub mod cancel_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
-#[doc(hidden)]
-pub type CancelJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(unused_mut)]
@@ -186,10 +182,6 @@ pub mod cancel_quantum_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelQuantumTaskInputOperationOutputAlias = crate::operation::CancelQuantumTask;
-#[doc(hidden)]
-pub type CancelQuantumTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelQuantumTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelQuantumTask`](crate::operation::CancelQuantumTask)>
     #[allow(unused_mut)]
@@ -547,10 +539,6 @@ pub mod create_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
-#[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(unused_mut)]
@@ -812,10 +800,6 @@ pub mod create_quantum_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateQuantumTaskInputOperationOutputAlias = crate::operation::CreateQuantumTask;
-#[doc(hidden)]
-pub type CreateQuantumTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQuantumTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateQuantumTask`](crate::operation::CreateQuantumTask)>
     #[allow(unused_mut)]
@@ -956,10 +940,6 @@ pub mod get_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceInputOperationOutputAlias = crate::operation::GetDevice;
-#[doc(hidden)]
-pub type GetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetDevice`](crate::operation::GetDevice)>
     #[allow(unused_mut)]
@@ -1096,10 +1076,6 @@ pub mod get_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
-#[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(unused_mut)]
@@ -1239,10 +1215,6 @@ pub mod get_quantum_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQuantumTaskInputOperationOutputAlias = crate::operation::GetQuantumTask;
-#[doc(hidden)]
-pub type GetQuantumTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQuantumTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetQuantumTask`](crate::operation::GetQuantumTask)>
     #[allow(unused_mut)]
@@ -1386,10 +1358,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1562,10 +1530,6 @@ pub mod search_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchDevicesInputOperationOutputAlias = crate::operation::SearchDevices;
-#[doc(hidden)]
-pub type SearchDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchDevicesInput {
     /// Consumes the builder and constructs an Operation<[`SearchDevices`](crate::operation::SearchDevices)>
     #[allow(unused_mut)]
@@ -1736,10 +1700,6 @@ pub mod search_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchJobsInputOperationOutputAlias = crate::operation::SearchJobs;
-#[doc(hidden)]
-pub type SearchJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchJobsInput {
     /// Consumes the builder and constructs an Operation<[`SearchJobs`](crate::operation::SearchJobs)>
     #[allow(unused_mut)]
@@ -1912,10 +1872,6 @@ pub mod search_quantum_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchQuantumTasksInputOperationOutputAlias = crate::operation::SearchQuantumTasks;
-#[doc(hidden)]
-pub type SearchQuantumTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchQuantumTasksInput {
     /// Consumes the builder and constructs an Operation<[`SearchQuantumTasks`](crate::operation::SearchQuantumTasks)>
     #[allow(unused_mut)]
@@ -2083,10 +2039,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2261,10 +2213,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

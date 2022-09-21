@@ -72,12 +72,6 @@ pub mod associate_aws_account_with_partner_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateAwsAccountWithPartnerAccountInputOperationOutputAlias =
-    crate::operation::AssociateAwsAccountWithPartnerAccount;
-#[doc(hidden)]
-pub type AssociateAwsAccountWithPartnerAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAwsAccountWithPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAwsAccountWithPartnerAccount`](crate::operation::AssociateAwsAccountWithPartnerAccount)>
     #[allow(unused_mut)]
@@ -235,12 +229,6 @@ pub mod associate_multicast_group_with_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateMulticastGroupWithFuotaTaskInputOperationOutputAlias =
-    crate::operation::AssociateMulticastGroupWithFuotaTask;
-#[doc(hidden)]
-pub type AssociateMulticastGroupWithFuotaTaskInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMulticastGroupWithFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMulticastGroupWithFuotaTask`](crate::operation::AssociateMulticastGroupWithFuotaTask)>
     #[allow(unused_mut)]
@@ -410,12 +398,6 @@ pub mod associate_wireless_device_with_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateWirelessDeviceWithFuotaTaskInputOperationOutputAlias =
-    crate::operation::AssociateWirelessDeviceWithFuotaTask;
-#[doc(hidden)]
-pub type AssociateWirelessDeviceWithFuotaTaskInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessDeviceWithFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithFuotaTask`](crate::operation::AssociateWirelessDeviceWithFuotaTask)>
     #[allow(unused_mut)]
@@ -587,12 +569,6 @@ pub mod associate_wireless_device_with_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias =
-    crate::operation::AssociateWirelessDeviceWithMulticastGroup;
-#[doc(hidden)]
-pub type AssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessDeviceWithMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithMulticastGroup`](crate::operation::AssociateWirelessDeviceWithMulticastGroup)>
     #[allow(unused_mut)]
@@ -760,12 +736,6 @@ pub mod associate_wireless_device_with_thing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateWirelessDeviceWithThingInputOperationOutputAlias =
-    crate::operation::AssociateWirelessDeviceWithThing;
-#[doc(hidden)]
-pub type AssociateWirelessDeviceWithThingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessDeviceWithThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithThing`](crate::operation::AssociateWirelessDeviceWithThing)>
     #[allow(unused_mut)]
@@ -935,12 +905,6 @@ pub mod associate_wireless_gateway_with_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateWirelessGatewayWithCertificateInputOperationOutputAlias =
-    crate::operation::AssociateWirelessGatewayWithCertificate;
-#[doc(hidden)]
-pub type AssociateWirelessGatewayWithCertificateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessGatewayWithCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessGatewayWithCertificate`](crate::operation::AssociateWirelessGatewayWithCertificate)>
     #[allow(unused_mut)]
@@ -1107,12 +1071,6 @@ pub mod associate_wireless_gateway_with_thing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateWirelessGatewayWithThingInputOperationOutputAlias =
-    crate::operation::AssociateWirelessGatewayWithThing;
-#[doc(hidden)]
-pub type AssociateWirelessGatewayWithThingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessGatewayWithThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessGatewayWithThing`](crate::operation::AssociateWirelessGatewayWithThing)>
     #[allow(unused_mut)]
@@ -1265,11 +1223,6 @@ pub mod cancel_multicast_group_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelMulticastGroupSessionInputOperationOutputAlias =
-    crate::operation::CancelMulticastGroupSession;
-#[doc(hidden)]
-pub type CancelMulticastGroupSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelMulticastGroupSessionInput {
     /// Consumes the builder and constructs an Operation<[`CancelMulticastGroupSession`](crate::operation::CancelMulticastGroupSession)>
     #[allow(unused_mut)]
@@ -1496,10 +1449,6 @@ pub mod create_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDestinationInputOperationOutputAlias = crate::operation::CreateDestination;
-#[doc(hidden)]
-pub type CreateDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDestination`](crate::operation::CreateDestination)>
     #[allow(unused_mut)]
@@ -1692,10 +1641,6 @@ pub mod create_device_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeviceProfileInputOperationOutputAlias = crate::operation::CreateDeviceProfile;
-#[doc(hidden)]
-pub type CreateDeviceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeviceProfile`](crate::operation::CreateDeviceProfile)>
     #[allow(unused_mut)]
@@ -1930,10 +1875,6 @@ pub mod create_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFuotaTaskInputOperationOutputAlias = crate::operation::CreateFuotaTask;
-#[doc(hidden)]
-pub type CreateFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateFuotaTask`](crate::operation::CreateFuotaTask)>
     #[allow(unused_mut)]
@@ -2138,10 +2079,6 @@ pub mod create_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMulticastGroupInputOperationOutputAlias = crate::operation::CreateMulticastGroup;
-#[doc(hidden)]
-pub type CreateMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateMulticastGroup`](crate::operation::CreateMulticastGroup)>
     #[allow(unused_mut)]
@@ -2392,12 +2329,6 @@ pub mod create_network_analyzer_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNetworkAnalyzerConfigurationInputOperationOutputAlias =
-    crate::operation::CreateNetworkAnalyzerConfiguration;
-#[doc(hidden)]
-pub type CreateNetworkAnalyzerConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNetworkAnalyzerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateNetworkAnalyzerConfiguration`](crate::operation::CreateNetworkAnalyzerConfiguration)>
     #[allow(unused_mut)]
@@ -2590,10 +2521,6 @@ pub mod create_service_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateServiceProfileInputOperationOutputAlias = crate::operation::CreateServiceProfile;
-#[doc(hidden)]
-pub type CreateServiceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateServiceProfile`](crate::operation::CreateServiceProfile)>
     #[allow(unused_mut)]
@@ -2830,10 +2757,6 @@ pub mod create_wireless_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWirelessDeviceInputOperationOutputAlias = crate::operation::CreateWirelessDevice;
-#[doc(hidden)]
-pub type CreateWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessDevice`](crate::operation::CreateWirelessDevice)>
     #[allow(unused_mut)]
@@ -3040,10 +2963,6 @@ pub mod create_wireless_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWirelessGatewayInputOperationOutputAlias = crate::operation::CreateWirelessGateway;
-#[doc(hidden)]
-pub type CreateWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGateway`](crate::operation::CreateWirelessGateway)>
     #[allow(unused_mut)]
@@ -3207,11 +3126,6 @@ pub mod create_wireless_gateway_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWirelessGatewayTaskInputOperationOutputAlias =
-    crate::operation::CreateWirelessGatewayTask;
-#[doc(hidden)]
-pub type CreateWirelessGatewayTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGatewayTask`](crate::operation::CreateWirelessGatewayTask)>
     #[allow(unused_mut)]
@@ -3432,12 +3346,6 @@ pub mod create_wireless_gateway_task_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWirelessGatewayTaskDefinitionInputOperationOutputAlias =
-    crate::operation::CreateWirelessGatewayTaskDefinition;
-#[doc(hidden)]
-pub type CreateWirelessGatewayTaskDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGatewayTaskDefinition`](crate::operation::CreateWirelessGatewayTaskDefinition)>
     #[allow(unused_mut)]
@@ -3577,10 +3485,6 @@ pub mod delete_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDestinationInputOperationOutputAlias = crate::operation::DeleteDestination;
-#[doc(hidden)]
-pub type DeleteDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDestination`](crate::operation::DeleteDestination)>
     #[allow(unused_mut)]
@@ -3718,10 +3622,6 @@ pub mod delete_device_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeviceProfileInputOperationOutputAlias = crate::operation::DeleteDeviceProfile;
-#[doc(hidden)]
-pub type DeleteDeviceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeviceProfile`](crate::operation::DeleteDeviceProfile)>
     #[allow(unused_mut)]
@@ -3859,10 +3759,6 @@ pub mod delete_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFuotaTaskInputOperationOutputAlias = crate::operation::DeleteFuotaTask;
-#[doc(hidden)]
-pub type DeleteFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFuotaTask`](crate::operation::DeleteFuotaTask)>
     #[allow(unused_mut)]
@@ -3999,10 +3895,6 @@ pub mod delete_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMulticastGroupInputOperationOutputAlias = crate::operation::DeleteMulticastGroup;
-#[doc(hidden)]
-pub type DeleteMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMulticastGroup`](crate::operation::DeleteMulticastGroup)>
     #[allow(unused_mut)]
@@ -4147,12 +4039,6 @@ pub mod delete_network_analyzer_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNetworkAnalyzerConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteNetworkAnalyzerConfiguration;
-#[doc(hidden)]
-pub type DeleteNetworkAnalyzerConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNetworkAnalyzerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNetworkAnalyzerConfiguration`](crate::operation::DeleteNetworkAnalyzerConfiguration)>
     #[allow(unused_mut)]
@@ -4323,10 +4209,6 @@ pub mod delete_queued_messages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteQueuedMessagesInputOperationOutputAlias = crate::operation::DeleteQueuedMessages;
-#[doc(hidden)]
-pub type DeleteQueuedMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQueuedMessagesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueuedMessages`](crate::operation::DeleteQueuedMessages)>
     #[allow(unused_mut)]
@@ -4481,10 +4363,6 @@ pub mod delete_service_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteServiceProfileInputOperationOutputAlias = crate::operation::DeleteServiceProfile;
-#[doc(hidden)]
-pub type DeleteServiceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceProfile`](crate::operation::DeleteServiceProfile)>
     #[allow(unused_mut)]
@@ -4622,10 +4500,6 @@ pub mod delete_wireless_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWirelessDeviceInputOperationOutputAlias = crate::operation::DeleteWirelessDevice;
-#[doc(hidden)]
-pub type DeleteWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessDevice`](crate::operation::DeleteWirelessDevice)>
     #[allow(unused_mut)]
@@ -4763,10 +4637,6 @@ pub mod delete_wireless_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWirelessGatewayInputOperationOutputAlias = crate::operation::DeleteWirelessGateway;
-#[doc(hidden)]
-pub type DeleteWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGateway`](crate::operation::DeleteWirelessGateway)>
     #[allow(unused_mut)]
@@ -4906,11 +4776,6 @@ pub mod delete_wireless_gateway_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWirelessGatewayTaskInputOperationOutputAlias =
-    crate::operation::DeleteWirelessGatewayTask;
-#[doc(hidden)]
-pub type DeleteWirelessGatewayTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGatewayTask`](crate::operation::DeleteWirelessGatewayTask)>
     #[allow(unused_mut)]
@@ -5050,12 +4915,6 @@ pub mod delete_wireless_gateway_task_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWirelessGatewayTaskDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteWirelessGatewayTaskDefinition;
-#[doc(hidden)]
-pub type DeleteWirelessGatewayTaskDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGatewayTaskDefinition`](crate::operation::DeleteWirelessGatewayTaskDefinition)>
     #[allow(unused_mut)]
@@ -5217,12 +5076,6 @@ pub mod disassociate_aws_account_from_partner_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateAwsAccountFromPartnerAccountInputOperationOutputAlias =
-    crate::operation::DisassociateAwsAccountFromPartnerAccount;
-#[doc(hidden)]
-pub type DisassociateAwsAccountFromPartnerAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAwsAccountFromPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAwsAccountFromPartnerAccount`](crate::operation::DisassociateAwsAccountFromPartnerAccount)>
     #[allow(unused_mut)]
@@ -5397,12 +5250,6 @@ pub mod disassociate_multicast_group_from_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateMulticastGroupFromFuotaTaskInputOperationOutputAlias =
-    crate::operation::DisassociateMulticastGroupFromFuotaTask;
-#[doc(hidden)]
-pub type DisassociateMulticastGroupFromFuotaTaskInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMulticastGroupFromFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMulticastGroupFromFuotaTask`](crate::operation::DisassociateMulticastGroupFromFuotaTask)>
     #[allow(unused_mut)]
@@ -5578,12 +5425,6 @@ pub mod disassociate_wireless_device_from_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateWirelessDeviceFromFuotaTaskInputOperationOutputAlias =
-    crate::operation::DisassociateWirelessDeviceFromFuotaTask;
-#[doc(hidden)]
-pub type DisassociateWirelessDeviceFromFuotaTaskInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessDeviceFromFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromFuotaTask`](crate::operation::DisassociateWirelessDeviceFromFuotaTask)>
     #[allow(unused_mut)]
@@ -5761,12 +5602,6 @@ pub mod disassociate_wireless_device_from_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias =
-    crate::operation::DisassociateWirelessDeviceFromMulticastGroup;
-#[doc(hidden)]
-pub type DisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessDeviceFromMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromMulticastGroup`](crate::operation::DisassociateWirelessDeviceFromMulticastGroup)>
     #[allow(unused_mut)]
@@ -5926,12 +5761,6 @@ pub mod disassociate_wireless_device_from_thing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateWirelessDeviceFromThingInputOperationOutputAlias =
-    crate::operation::DisassociateWirelessDeviceFromThing;
-#[doc(hidden)]
-pub type DisassociateWirelessDeviceFromThingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessDeviceFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromThing`](crate::operation::DisassociateWirelessDeviceFromThing)>
     #[allow(unused_mut)]
@@ -6071,12 +5900,6 @@ pub mod disassociate_wireless_gateway_from_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateWirelessGatewayFromCertificateInputOperationOutputAlias =
-    crate::operation::DisassociateWirelessGatewayFromCertificate;
-#[doc(hidden)]
-pub type DisassociateWirelessGatewayFromCertificateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessGatewayFromCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessGatewayFromCertificate`](crate::operation::DisassociateWirelessGatewayFromCertificate)>
     #[allow(unused_mut)]
@@ -6217,12 +6040,6 @@ pub mod disassociate_wireless_gateway_from_thing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateWirelessGatewayFromThingInputOperationOutputAlias =
-    crate::operation::DisassociateWirelessGatewayFromThing;
-#[doc(hidden)]
-pub type DisassociateWirelessGatewayFromThingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessGatewayFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessGatewayFromThing`](crate::operation::DisassociateWirelessGatewayFromThing)>
     #[allow(unused_mut)]
@@ -6360,10 +6177,6 @@ pub mod get_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDestinationInputOperationOutputAlias = crate::operation::GetDestination;
-#[doc(hidden)]
-pub type GetDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDestinationInput {
     /// Consumes the builder and constructs an Operation<[`GetDestination`](crate::operation::GetDestination)>
     #[allow(unused_mut)]
@@ -6501,10 +6314,6 @@ pub mod get_device_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceProfileInputOperationOutputAlias = crate::operation::GetDeviceProfile;
-#[doc(hidden)]
-pub type GetDeviceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceProfile`](crate::operation::GetDeviceProfile)>
     #[allow(unused_mut)]
@@ -6632,12 +6441,6 @@ pub mod get_event_configuration_by_resource_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventConfigurationByResourceTypesInputOperationOutputAlias =
-    crate::operation::GetEventConfigurationByResourceTypes;
-#[doc(hidden)]
-pub type GetEventConfigurationByResourceTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventConfigurationByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetEventConfigurationByResourceTypes`](crate::operation::GetEventConfigurationByResourceTypes)>
     #[allow(unused_mut)]
@@ -6761,10 +6564,6 @@ pub mod get_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFuotaTaskInputOperationOutputAlias = crate::operation::GetFuotaTask;
-#[doc(hidden)]
-pub type GetFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetFuotaTask`](crate::operation::GetFuotaTask)>
     #[allow(unused_mut)]
@@ -6891,11 +6690,6 @@ pub mod get_log_levels_by_resource_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLogLevelsByResourceTypesInputOperationOutputAlias =
-    crate::operation::GetLogLevelsByResourceTypes;
-#[doc(hidden)]
-pub type GetLogLevelsByResourceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLogLevelsByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetLogLevelsByResourceTypes`](crate::operation::GetLogLevelsByResourceTypes)>
     #[allow(unused_mut)]
@@ -7018,10 +6812,6 @@ pub mod get_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMulticastGroupInputOperationOutputAlias = crate::operation::GetMulticastGroup;
-#[doc(hidden)]
-pub type GetMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetMulticastGroup`](crate::operation::GetMulticastGroup)>
     #[allow(unused_mut)]
@@ -7161,11 +6951,6 @@ pub mod get_multicast_group_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMulticastGroupSessionInputOperationOutputAlias =
-    crate::operation::GetMulticastGroupSession;
-#[doc(hidden)]
-pub type GetMulticastGroupSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMulticastGroupSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetMulticastGroupSession`](crate::operation::GetMulticastGroupSession)>
     #[allow(unused_mut)]
@@ -7310,12 +7095,6 @@ pub mod get_network_analyzer_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNetworkAnalyzerConfigurationInputOperationOutputAlias =
-    crate::operation::GetNetworkAnalyzerConfiguration;
-#[doc(hidden)]
-pub type GetNetworkAnalyzerConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkAnalyzerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkAnalyzerConfiguration`](crate::operation::GetNetworkAnalyzerConfiguration)>
     #[allow(unused_mut)]
@@ -7477,10 +7256,6 @@ pub mod get_partner_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPartnerAccountInputOperationOutputAlias = crate::operation::GetPartnerAccount;
-#[doc(hidden)]
-pub type GetPartnerAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetPartnerAccount`](crate::operation::GetPartnerAccount)>
     #[allow(unused_mut)]
@@ -7656,10 +7431,6 @@ pub mod get_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPositionInputOperationOutputAlias = crate::operation::GetPosition;
-#[doc(hidden)]
-pub type GetPositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPositionInput {
     /// Consumes the builder and constructs an Operation<[`GetPosition`](crate::operation::GetPosition)>
     #[allow(unused_mut)]
@@ -7837,11 +7608,6 @@ pub mod get_position_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPositionConfigurationInputOperationOutputAlias =
-    crate::operation::GetPositionConfiguration;
-#[doc(hidden)]
-pub type GetPositionConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPositionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetPositionConfiguration`](crate::operation::GetPositionConfiguration)>
     #[allow(unused_mut)]
@@ -8031,12 +7797,6 @@ pub mod get_resource_event_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceEventConfigurationInputOperationOutputAlias =
-    crate::operation::GetResourceEventConfiguration;
-#[doc(hidden)]
-pub type GetResourceEventConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceEventConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceEventConfiguration`](crate::operation::GetResourceEventConfiguration)>
     #[allow(unused_mut)]
@@ -8218,10 +7978,6 @@ pub mod get_resource_log_level_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceLogLevelInputOperationOutputAlias = crate::operation::GetResourceLogLevel;
-#[doc(hidden)]
-pub type GetResourceLogLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceLogLevel`](crate::operation::GetResourceLogLevel)>
     #[allow(unused_mut)]
@@ -8382,10 +8138,6 @@ pub mod get_service_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceEndpointInputOperationOutputAlias = crate::operation::GetServiceEndpoint;
-#[doc(hidden)]
-pub type GetServiceEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceEndpoint`](crate::operation::GetServiceEndpoint)>
     #[allow(unused_mut)]
@@ -8522,10 +8274,6 @@ pub mod get_service_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceProfileInputOperationOutputAlias = crate::operation::GetServiceProfile;
-#[doc(hidden)]
-pub type GetServiceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceProfile`](crate::operation::GetServiceProfile)>
     #[allow(unused_mut)]
@@ -8680,10 +8428,6 @@ pub mod get_wireless_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessDeviceInputOperationOutputAlias = crate::operation::GetWirelessDevice;
-#[doc(hidden)]
-pub type GetWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessDevice`](crate::operation::GetWirelessDevice)>
     #[allow(unused_mut)]
@@ -8846,11 +8590,6 @@ pub mod get_wireless_device_statistics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessDeviceStatisticsInputOperationOutputAlias =
-    crate::operation::GetWirelessDeviceStatistics;
-#[doc(hidden)]
-pub type GetWirelessDeviceStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessDeviceStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessDeviceStatistics`](crate::operation::GetWirelessDeviceStatistics)>
     #[allow(unused_mut)]
@@ -9009,10 +8748,6 @@ pub mod get_wireless_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessGatewayInputOperationOutputAlias = crate::operation::GetWirelessGateway;
-#[doc(hidden)]
-pub type GetWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGateway`](crate::operation::GetWirelessGateway)>
     #[allow(unused_mut)]
@@ -9170,12 +8905,6 @@ pub mod get_wireless_gateway_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessGatewayCertificateInputOperationOutputAlias =
-    crate::operation::GetWirelessGatewayCertificate;
-#[doc(hidden)]
-pub type GetWirelessGatewayCertificateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayCertificate`](crate::operation::GetWirelessGatewayCertificate)>
     #[allow(unused_mut)]
@@ -9315,12 +9044,6 @@ pub mod get_wireless_gateway_firmware_information_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessGatewayFirmwareInformationInputOperationOutputAlias =
-    crate::operation::GetWirelessGatewayFirmwareInformation;
-#[doc(hidden)]
-pub type GetWirelessGatewayFirmwareInformationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayFirmwareInformationInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayFirmwareInformation`](crate::operation::GetWirelessGatewayFirmwareInformation)>
     #[allow(unused_mut)]
@@ -9469,12 +9192,6 @@ pub mod get_wireless_gateway_statistics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessGatewayStatisticsInputOperationOutputAlias =
-    crate::operation::GetWirelessGatewayStatistics;
-#[doc(hidden)]
-pub type GetWirelessGatewayStatisticsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayStatistics`](crate::operation::GetWirelessGatewayStatistics)>
     #[allow(unused_mut)]
@@ -9616,10 +9333,6 @@ pub mod get_wireless_gateway_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessGatewayTaskInputOperationOutputAlias = crate::operation::GetWirelessGatewayTask;
-#[doc(hidden)]
-pub type GetWirelessGatewayTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayTask`](crate::operation::GetWirelessGatewayTask)>
     #[allow(unused_mut)]
@@ -9759,12 +9472,6 @@ pub mod get_wireless_gateway_task_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWirelessGatewayTaskDefinitionInputOperationOutputAlias =
-    crate::operation::GetWirelessGatewayTaskDefinition;
-#[doc(hidden)]
-pub type GetWirelessGatewayTaskDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayTaskDefinition`](crate::operation::GetWirelessGatewayTaskDefinition)>
     #[allow(unused_mut)]
@@ -9916,10 +9623,6 @@ pub mod list_destinations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDestinationsInputOperationOutputAlias = crate::operation::ListDestinations;
-#[doc(hidden)]
-pub type ListDestinationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDestinations`](crate::operation::ListDestinations)>
     #[allow(unused_mut)]
@@ -10073,10 +9776,6 @@ pub mod list_device_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeviceProfilesInputOperationOutputAlias = crate::operation::ListDeviceProfiles;
-#[doc(hidden)]
-pub type ListDeviceProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceProfiles`](crate::operation::ListDeviceProfiles)>
     #[allow(unused_mut)]
@@ -10247,11 +9946,6 @@ pub mod list_event_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventConfigurationsInputOperationOutputAlias =
-    crate::operation::ListEventConfigurations;
-#[doc(hidden)]
-pub type ListEventConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventConfigurations`](crate::operation::ListEventConfigurations)>
     #[allow(unused_mut)]
@@ -10411,10 +10105,6 @@ pub mod list_fuota_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFuotaTasksInputOperationOutputAlias = crate::operation::ListFuotaTasks;
-#[doc(hidden)]
-pub type ListFuotaTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFuotaTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListFuotaTasks`](crate::operation::ListFuotaTasks)>
     #[allow(unused_mut)]
@@ -10568,10 +10258,6 @@ pub mod list_multicast_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMulticastGroupsInputOperationOutputAlias = crate::operation::ListMulticastGroups;
-#[doc(hidden)]
-pub type ListMulticastGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMulticastGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListMulticastGroups`](crate::operation::ListMulticastGroups)>
     #[allow(unused_mut)]
@@ -10739,12 +10425,6 @@ pub mod list_multicast_groups_by_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMulticastGroupsByFuotaTaskInputOperationOutputAlias =
-    crate::operation::ListMulticastGroupsByFuotaTask;
-#[doc(hidden)]
-pub type ListMulticastGroupsByFuotaTaskInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListMulticastGroupsByFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`ListMulticastGroupsByFuotaTask`](crate::operation::ListMulticastGroupsByFuotaTask)>
     #[allow(unused_mut)]
@@ -10915,12 +10595,6 @@ pub mod list_network_analyzer_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNetworkAnalyzerConfigurationsInputOperationOutputAlias =
-    crate::operation::ListNetworkAnalyzerConfigurations;
-#[doc(hidden)]
-pub type ListNetworkAnalyzerConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListNetworkAnalyzerConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListNetworkAnalyzerConfigurations`](crate::operation::ListNetworkAnalyzerConfigurations)>
     #[allow(unused_mut)]
@@ -11075,10 +10749,6 @@ pub mod list_partner_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPartnerAccountsInputOperationOutputAlias = crate::operation::ListPartnerAccounts;
-#[doc(hidden)]
-pub type ListPartnerAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPartnerAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListPartnerAccounts`](crate::operation::ListPartnerAccounts)>
     #[allow(unused_mut)]
@@ -11249,11 +10919,6 @@ pub mod list_position_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPositionConfigurationsInputOperationOutputAlias =
-    crate::operation::ListPositionConfigurations;
-#[doc(hidden)]
-pub type ListPositionConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPositionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPositionConfigurations`](crate::operation::ListPositionConfigurations)>
     #[allow(unused_mut)]
@@ -11440,10 +11105,6 @@ pub mod list_queued_messages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQueuedMessagesInputOperationOutputAlias = crate::operation::ListQueuedMessages;
-#[doc(hidden)]
-pub type ListQueuedMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueuedMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListQueuedMessages`](crate::operation::ListQueuedMessages)>
     #[allow(unused_mut)]
@@ -11618,10 +11279,6 @@ pub mod list_service_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServiceProfilesInputOperationOutputAlias = crate::operation::ListServiceProfiles;
-#[doc(hidden)]
-pub type ListServiceProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceProfiles`](crate::operation::ListServiceProfiles)>
     #[allow(unused_mut)]
@@ -11763,10 +11420,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -12007,10 +11660,6 @@ pub mod list_wireless_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWirelessDevicesInputOperationOutputAlias = crate::operation::ListWirelessDevices;
-#[doc(hidden)]
-pub type ListWirelessDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWirelessDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessDevices`](crate::operation::ListWirelessDevices)>
     #[allow(unused_mut)]
@@ -12200,10 +11849,6 @@ pub mod list_wireless_gateways_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWirelessGatewaysInputOperationOutputAlias = crate::operation::ListWirelessGateways;
-#[doc(hidden)]
-pub type ListWirelessGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWirelessGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessGateways`](crate::operation::ListWirelessGateways)>
     #[allow(unused_mut)]
@@ -12378,12 +12023,6 @@ pub mod list_wireless_gateway_task_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWirelessGatewayTaskDefinitionsInputOperationOutputAlias =
-    crate::operation::ListWirelessGatewayTaskDefinitions;
-#[doc(hidden)]
-pub type ListWirelessGatewayTaskDefinitionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListWirelessGatewayTaskDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessGatewayTaskDefinitions`](crate::operation::ListWirelessGatewayTaskDefinitions)>
     #[allow(unused_mut)]
@@ -12579,11 +12218,6 @@ pub mod put_position_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPositionConfigurationInputOperationOutputAlias =
-    crate::operation::PutPositionConfiguration;
-#[doc(hidden)]
-pub type PutPositionConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPositionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutPositionConfiguration`](crate::operation::PutPositionConfiguration)>
     #[allow(unused_mut)]
@@ -12787,10 +12421,6 @@ pub mod put_resource_log_level_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourceLogLevelInputOperationOutputAlias = crate::operation::PutResourceLogLevel;
-#[doc(hidden)]
-pub type PutResourceLogLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceLogLevel`](crate::operation::PutResourceLogLevel)>
     #[allow(unused_mut)]
@@ -12952,11 +12582,6 @@ pub mod reset_all_resource_log_levels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetAllResourceLogLevelsInputOperationOutputAlias =
-    crate::operation::ResetAllResourceLogLevels;
-#[doc(hidden)]
-pub type ResetAllResourceLogLevelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetAllResourceLogLevelsInput {
     /// Consumes the builder and constructs an Operation<[`ResetAllResourceLogLevels`](crate::operation::ResetAllResourceLogLevels)>
     #[allow(unused_mut)]
@@ -13099,10 +12724,6 @@ pub mod reset_resource_log_level_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetResourceLogLevelInputOperationOutputAlias = crate::operation::ResetResourceLogLevel;
-#[doc(hidden)]
-pub type ResetResourceLogLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`ResetResourceLogLevel`](crate::operation::ResetResourceLogLevel)>
     #[allow(unused_mut)]
@@ -13289,11 +12910,6 @@ pub mod send_data_to_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendDataToMulticastGroupInputOperationOutputAlias =
-    crate::operation::SendDataToMulticastGroup;
-#[doc(hidden)]
-pub type SendDataToMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendDataToMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`SendDataToMulticastGroup`](crate::operation::SendDataToMulticastGroup)>
     #[allow(unused_mut)]
@@ -13490,11 +13106,6 @@ pub mod send_data_to_wireless_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendDataToWirelessDeviceInputOperationOutputAlias =
-    crate::operation::SendDataToWirelessDevice;
-#[doc(hidden)]
-pub type SendDataToWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendDataToWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`SendDataToWirelessDevice`](crate::operation::SendDataToWirelessDevice)>
     #[allow(unused_mut)]
@@ -13687,12 +13298,6 @@ pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias =
-    crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup;
-#[doc(hidden)]
-pub type StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`StartBulkAssociateWirelessDeviceWithMulticastGroup`](crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup)>
     #[allow(unused_mut)]
@@ -13884,12 +13489,6 @@ pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias =
-    crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup;
-#[doc(hidden)]
-pub type StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`StartBulkDisassociateWirelessDeviceFromMulticastGroup`](crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup)>
     #[allow(unused_mut)]
@@ -14059,10 +13658,6 @@ pub mod start_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFuotaTaskInputOperationOutputAlias = crate::operation::StartFuotaTask;
-#[doc(hidden)]
-pub type StartFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartFuotaTask`](crate::operation::StartFuotaTask)>
     #[allow(unused_mut)]
@@ -14232,11 +13827,6 @@ pub mod start_multicast_group_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMulticastGroupSessionInputOperationOutputAlias =
-    crate::operation::StartMulticastGroupSession;
-#[doc(hidden)]
-pub type StartMulticastGroupSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMulticastGroupSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartMulticastGroupSession`](crate::operation::StartMulticastGroupSession)>
     #[allow(unused_mut)]
@@ -14410,10 +14000,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -14564,10 +14150,6 @@ pub mod test_wireless_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TestWirelessDeviceInputOperationOutputAlias = crate::operation::TestWirelessDevice;
-#[doc(hidden)]
-pub type TestWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`TestWirelessDevice`](crate::operation::TestWirelessDevice)>
     #[allow(unused_mut)]
@@ -14728,10 +14310,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -14926,10 +14504,6 @@ pub mod update_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDestinationInputOperationOutputAlias = crate::operation::UpdateDestination;
-#[doc(hidden)]
-pub type UpdateDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDestination`](crate::operation::UpdateDestination)>
     #[allow(unused_mut)]
@@ -15171,12 +14745,6 @@ pub mod update_event_configuration_by_resource_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEventConfigurationByResourceTypesInputOperationOutputAlias =
-    crate::operation::UpdateEventConfigurationByResourceTypes;
-#[doc(hidden)]
-pub type UpdateEventConfigurationByResourceTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventConfigurationByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventConfigurationByResourceTypes`](crate::operation::UpdateEventConfigurationByResourceTypes)>
     #[allow(unused_mut)]
@@ -15384,10 +14952,6 @@ pub mod update_fuota_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFuotaTaskInputOperationOutputAlias = crate::operation::UpdateFuotaTask;
-#[doc(hidden)]
-pub type UpdateFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFuotaTask`](crate::operation::UpdateFuotaTask)>
     #[allow(unused_mut)]
@@ -15595,12 +15159,6 @@ pub mod update_log_levels_by_resource_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLogLevelsByResourceTypesInputOperationOutputAlias =
-    crate::operation::UpdateLogLevelsByResourceTypes;
-#[doc(hidden)]
-pub type UpdateLogLevelsByResourceTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLogLevelsByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLogLevelsByResourceTypes`](crate::operation::UpdateLogLevelsByResourceTypes)>
     #[allow(unused_mut)]
@@ -15777,10 +15335,6 @@ pub mod update_multicast_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMulticastGroupInputOperationOutputAlias = crate::operation::UpdateMulticastGroup;
-#[doc(hidden)]
-pub type UpdateMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMulticastGroup`](crate::operation::UpdateMulticastGroup)>
     #[allow(unused_mut)]
@@ -16058,12 +15612,6 @@ pub mod update_network_analyzer_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNetworkAnalyzerConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateNetworkAnalyzerConfiguration;
-#[doc(hidden)]
-pub type UpdateNetworkAnalyzerConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNetworkAnalyzerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNetworkAnalyzerConfiguration`](crate::operation::UpdateNetworkAnalyzerConfiguration)>
     #[allow(unused_mut)]
@@ -16253,10 +15801,6 @@ pub mod update_partner_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePartnerAccountInputOperationOutputAlias = crate::operation::UpdatePartnerAccount;
-#[doc(hidden)]
-pub type UpdatePartnerAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePartnerAccount`](crate::operation::UpdatePartnerAccount)>
     #[allow(unused_mut)]
@@ -16466,10 +16010,6 @@ pub mod update_position_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePositionInputOperationOutputAlias = crate::operation::UpdatePosition;
-#[doc(hidden)]
-pub type UpdatePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePositionInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePosition`](crate::operation::UpdatePosition)>
     #[allow(unused_mut)]
@@ -16760,12 +16300,6 @@ pub mod update_resource_event_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResourceEventConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateResourceEventConfiguration;
-#[doc(hidden)]
-pub type UpdateResourceEventConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceEventConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceEventConfiguration`](crate::operation::UpdateResourceEventConfiguration)>
     #[allow(unused_mut)]
@@ -16996,10 +16530,6 @@ pub mod update_wireless_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWirelessDeviceInputOperationOutputAlias = crate::operation::UpdateWirelessDevice;
-#[doc(hidden)]
-pub type UpdateWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWirelessDevice`](crate::operation::UpdateWirelessDevice)>
     #[allow(unused_mut)]
@@ -17222,10 +16752,6 @@ pub mod update_wireless_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWirelessGatewayInputOperationOutputAlias = crate::operation::UpdateWirelessGateway;
-#[doc(hidden)]
-pub type UpdateWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWirelessGateway`](crate::operation::UpdateWirelessGateway)>
     #[allow(unused_mut)]

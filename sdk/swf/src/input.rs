@@ -147,12 +147,6 @@ pub mod count_closed_workflow_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CountClosedWorkflowExecutionsInputOperationOutputAlias =
-    crate::operation::CountClosedWorkflowExecutions;
-#[doc(hidden)]
-pub type CountClosedWorkflowExecutionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CountClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountClosedWorkflowExecutions`](crate::operation::CountClosedWorkflowExecutions)>
     #[allow(unused_mut)]
@@ -369,11 +363,6 @@ pub mod count_open_workflow_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CountOpenWorkflowExecutionsInputOperationOutputAlias =
-    crate::operation::CountOpenWorkflowExecutions;
-#[doc(hidden)]
-pub type CountOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountOpenWorkflowExecutions`](crate::operation::CountOpenWorkflowExecutions)>
     #[allow(unused_mut)]
@@ -530,11 +519,6 @@ pub mod count_pending_activity_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CountPendingActivityTasksInputOperationOutputAlias =
-    crate::operation::CountPendingActivityTasks;
-#[doc(hidden)]
-pub type CountPendingActivityTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountPendingActivityTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingActivityTasks`](crate::operation::CountPendingActivityTasks)>
     #[allow(unused_mut)]
@@ -694,11 +678,6 @@ pub mod count_pending_decision_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CountPendingDecisionTasksInputOperationOutputAlias =
-    crate::operation::CountPendingDecisionTasks;
-#[doc(hidden)]
-pub type CountPendingDecisionTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountPendingDecisionTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingDecisionTasks`](crate::operation::CountPendingDecisionTasks)>
     #[allow(unused_mut)]
@@ -859,10 +838,6 @@ pub mod deprecate_activity_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeprecateActivityTypeInputOperationOutputAlias = crate::operation::DeprecateActivityType;
-#[doc(hidden)]
-pub type DeprecateActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateActivityType`](crate::operation::DeprecateActivityType)>
     #[allow(unused_mut)]
@@ -1006,10 +981,6 @@ pub mod deprecate_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeprecateDomainInputOperationOutputAlias = crate::operation::DeprecateDomain;
-#[doc(hidden)]
-pub type DeprecateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateDomain`](crate::operation::DeprecateDomain)>
     #[allow(unused_mut)]
@@ -1168,10 +1139,6 @@ pub mod deprecate_workflow_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeprecateWorkflowTypeInputOperationOutputAlias = crate::operation::DeprecateWorkflowType;
-#[doc(hidden)]
-pub type DeprecateWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateWorkflowType`](crate::operation::DeprecateWorkflowType)>
     #[allow(unused_mut)]
@@ -1332,10 +1299,6 @@ pub mod describe_activity_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeActivityTypeInputOperationOutputAlias = crate::operation::DescribeActivityType;
-#[doc(hidden)]
-pub type DescribeActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActivityType`](crate::operation::DescribeActivityType)>
     #[allow(unused_mut)]
@@ -1479,10 +1442,6 @@ pub mod describe_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDomainInputOperationOutputAlias = crate::operation::DescribeDomain;
-#[doc(hidden)]
-pub type DescribeDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomain`](crate::operation::DescribeDomain)>
     #[allow(unused_mut)]
@@ -1643,11 +1602,6 @@ pub mod describe_workflow_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkflowExecutionInputOperationOutputAlias =
-    crate::operation::DescribeWorkflowExecution;
-#[doc(hidden)]
-pub type DescribeWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowExecution`](crate::operation::DescribeWorkflowExecution)>
     #[allow(unused_mut)]
@@ -1808,10 +1762,6 @@ pub mod describe_workflow_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkflowTypeInputOperationOutputAlias = crate::operation::DescribeWorkflowType;
-#[doc(hidden)]
-pub type DescribeWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowType`](crate::operation::DescribeWorkflowType)>
     #[allow(unused_mut)]
@@ -2015,11 +1965,6 @@ pub mod get_workflow_execution_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWorkflowExecutionHistoryInputOperationOutputAlias =
-    crate::operation::GetWorkflowExecutionHistory;
-#[doc(hidden)]
-pub type GetWorkflowExecutionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowExecutionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowExecutionHistory`](crate::operation::GetWorkflowExecutionHistory)>
     #[allow(unused_mut)]
@@ -2230,10 +2175,6 @@ pub mod list_activity_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListActivityTypesInputOperationOutputAlias = crate::operation::ListActivityTypes;
-#[doc(hidden)]
-pub type ListActivityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActivityTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListActivityTypes`](crate::operation::ListActivityTypes)>
     #[allow(unused_mut)]
@@ -2534,12 +2475,6 @@ pub mod list_closed_workflow_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListClosedWorkflowExecutionsInputOperationOutputAlias =
-    crate::operation::ListClosedWorkflowExecutions;
-#[doc(hidden)]
-pub type ListClosedWorkflowExecutionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListClosedWorkflowExecutions`](crate::operation::ListClosedWorkflowExecutions)>
     #[allow(unused_mut)]
@@ -2726,10 +2661,6 @@ pub mod list_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
-#[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(unused_mut)]
@@ -2988,11 +2919,6 @@ pub mod list_open_workflow_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOpenWorkflowExecutionsInputOperationOutputAlias =
-    crate::operation::ListOpenWorkflowExecutions;
-#[doc(hidden)]
-pub type ListOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListOpenWorkflowExecutions`](crate::operation::ListOpenWorkflowExecutions)>
     #[allow(unused_mut)]
@@ -3135,10 +3061,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3352,10 +3274,6 @@ pub mod list_workflow_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkflowTypesInputOperationOutputAlias = crate::operation::ListWorkflowTypes;
-#[doc(hidden)]
-pub type ListWorkflowTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkflowTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflowTypes`](crate::operation::ListWorkflowTypes)>
     #[allow(unused_mut)]
@@ -3525,10 +3443,6 @@ pub mod poll_for_activity_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PollForActivityTaskInputOperationOutputAlias = crate::operation::PollForActivityTask;
-#[doc(hidden)]
-pub type PollForActivityTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForActivityTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForActivityTask`](crate::operation::PollForActivityTask)>
     #[allow(unused_mut)]
@@ -3747,10 +3661,6 @@ pub mod poll_for_decision_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PollForDecisionTaskInputOperationOutputAlias = crate::operation::PollForDecisionTask;
-#[doc(hidden)]
-pub type PollForDecisionTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForDecisionTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForDecisionTask`](crate::operation::PollForDecisionTask)>
     #[allow(unused_mut)]
@@ -3914,11 +3824,6 @@ pub mod record_activity_task_heartbeat_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RecordActivityTaskHeartbeatInputOperationOutputAlias =
-    crate::operation::RecordActivityTaskHeartbeat;
-#[doc(hidden)]
-pub type RecordActivityTaskHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecordActivityTaskHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`RecordActivityTaskHeartbeat`](crate::operation::RecordActivityTaskHeartbeat)>
     #[allow(unused_mut)]
@@ -4217,10 +4122,6 @@ pub mod register_activity_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterActivityTypeInputOperationOutputAlias = crate::operation::RegisterActivityType;
-#[doc(hidden)]
-pub type RegisterActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterActivityType`](crate::operation::RegisterActivityType)>
     #[allow(unused_mut)]
@@ -4427,10 +4328,6 @@ pub mod register_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterDomainInputOperationOutputAlias = crate::operation::RegisterDomain;
-#[doc(hidden)]
-pub type RegisterDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDomain`](crate::operation::RegisterDomain)>
     #[allow(unused_mut)]
@@ -4738,10 +4635,6 @@ pub mod register_workflow_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterWorkflowTypeInputOperationOutputAlias = crate::operation::RegisterWorkflowType;
-#[doc(hidden)]
-pub type RegisterWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkflowType`](crate::operation::RegisterWorkflowType)>
     #[allow(unused_mut)]
@@ -4913,12 +4806,6 @@ pub mod request_cancel_workflow_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RequestCancelWorkflowExecutionInputOperationOutputAlias =
-    crate::operation::RequestCancelWorkflowExecution;
-#[doc(hidden)]
-pub type RequestCancelWorkflowExecutionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RequestCancelWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`RequestCancelWorkflowExecution`](crate::operation::RequestCancelWorkflowExecution)>
     #[allow(unused_mut)]
@@ -5079,11 +4966,6 @@ pub mod respond_activity_task_canceled_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RespondActivityTaskCanceledInputOperationOutputAlias =
-    crate::operation::RespondActivityTaskCanceled;
-#[doc(hidden)]
-pub type RespondActivityTaskCanceledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskCanceledInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCanceled`](crate::operation::RespondActivityTaskCanceled)>
     #[allow(unused_mut)]
@@ -5244,12 +5126,6 @@ pub mod respond_activity_task_completed_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RespondActivityTaskCompletedInputOperationOutputAlias =
-    crate::operation::RespondActivityTaskCompleted;
-#[doc(hidden)]
-pub type RespondActivityTaskCompletedInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCompleted`](crate::operation::RespondActivityTaskCompleted)>
     #[allow(unused_mut)]
@@ -5422,11 +5298,6 @@ pub mod respond_activity_task_failed_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RespondActivityTaskFailedInputOperationOutputAlias =
-    crate::operation::RespondActivityTaskFailed;
-#[doc(hidden)]
-pub type RespondActivityTaskFailedInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskFailedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskFailed`](crate::operation::RespondActivityTaskFailed)>
     #[allow(unused_mut)]
@@ -5614,12 +5485,6 @@ pub mod respond_decision_task_completed_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RespondDecisionTaskCompletedInputOperationOutputAlias =
-    crate::operation::RespondDecisionTaskCompleted;
-#[doc(hidden)]
-pub type RespondDecisionTaskCompletedInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RespondDecisionTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondDecisionTaskCompleted`](crate::operation::RespondDecisionTaskCompleted)>
     #[allow(unused_mut)]
@@ -5812,11 +5677,6 @@ pub mod signal_workflow_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SignalWorkflowExecutionInputOperationOutputAlias =
-    crate::operation::SignalWorkflowExecution;
-#[doc(hidden)]
-pub type SignalWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SignalWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`SignalWorkflowExecution`](crate::operation::SignalWorkflowExecution)>
     #[allow(unused_mut)]
@@ -6154,10 +6014,6 @@ pub mod start_workflow_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartWorkflowExecutionInputOperationOutputAlias = crate::operation::StartWorkflowExecution;
-#[doc(hidden)]
-pub type StartWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkflowExecution`](crate::operation::StartWorkflowExecution)>
     #[allow(unused_mut)]
@@ -6326,10 +6182,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6554,11 +6406,6 @@ pub mod terminate_workflow_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TerminateWorkflowExecutionInputOperationOutputAlias =
-    crate::operation::TerminateWorkflowExecution;
-#[doc(hidden)]
-pub type TerminateWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkflowExecution`](crate::operation::TerminateWorkflowExecution)>
     #[allow(unused_mut)]
@@ -6721,11 +6568,6 @@ pub mod undeprecate_activity_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UndeprecateActivityTypeInputOperationOutputAlias =
-    crate::operation::UndeprecateActivityType;
-#[doc(hidden)]
-pub type UndeprecateActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateActivityType`](crate::operation::UndeprecateActivityType)>
     #[allow(unused_mut)]
@@ -6869,10 +6711,6 @@ pub mod undeprecate_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UndeprecateDomainInputOperationOutputAlias = crate::operation::UndeprecateDomain;
-#[doc(hidden)]
-pub type UndeprecateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateDomain`](crate::operation::UndeprecateDomain)>
     #[allow(unused_mut)]
@@ -7033,11 +6871,6 @@ pub mod undeprecate_workflow_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UndeprecateWorkflowTypeInputOperationOutputAlias =
-    crate::operation::UndeprecateWorkflowType;
-#[doc(hidden)]
-pub type UndeprecateWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateWorkflowType`](crate::operation::UndeprecateWorkflowType)>
     #[allow(unused_mut)]
@@ -7204,10 +7037,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

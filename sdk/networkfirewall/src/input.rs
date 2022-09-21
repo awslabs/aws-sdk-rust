@@ -83,11 +83,6 @@ pub mod associate_firewall_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateFirewallPolicyInputOperationOutputAlias =
-    crate::operation::AssociateFirewallPolicy;
-#[doc(hidden)]
-pub type AssociateFirewallPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`AssociateFirewallPolicy`](crate::operation::AssociateFirewallPolicy)>
     #[allow(unused_mut)]
@@ -289,10 +284,6 @@ pub mod associate_subnets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateSubnetsInputOperationOutputAlias = crate::operation::AssociateSubnets;
-#[doc(hidden)]
-pub type AssociateSubnetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSubnets`](crate::operation::AssociateSubnets)>
     #[allow(unused_mut)]
@@ -582,10 +573,6 @@ pub mod create_firewall_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFirewallInputOperationOutputAlias = crate::operation::CreateFirewall;
-#[doc(hidden)]
-pub type CreateFirewallInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFirewallInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewall`](crate::operation::CreateFirewall)>
     #[allow(unused_mut)]
@@ -815,10 +802,6 @@ pub mod create_firewall_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFirewallPolicyInputOperationOutputAlias = crate::operation::CreateFirewallPolicy;
-#[doc(hidden)]
-pub type CreateFirewallPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewallPolicy`](crate::operation::CreateFirewallPolicy)>
     #[allow(unused_mut)]
@@ -1139,10 +1122,6 @@ pub mod create_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRuleGroupInputOperationOutputAlias = crate::operation::CreateRuleGroup;
-#[doc(hidden)]
-pub type CreateRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleGroup`](crate::operation::CreateRuleGroup)>
     #[allow(unused_mut)]
@@ -1305,10 +1284,6 @@ pub mod delete_firewall_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFirewallInputOperationOutputAlias = crate::operation::DeleteFirewall;
-#[doc(hidden)]
-pub type DeleteFirewallInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewall`](crate::operation::DeleteFirewall)>
     #[allow(unused_mut)]
@@ -1474,10 +1449,6 @@ pub mod delete_firewall_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFirewallPolicyInputOperationOutputAlias = crate::operation::DeleteFirewallPolicy;
-#[doc(hidden)]
-pub type DeleteFirewallPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallPolicy`](crate::operation::DeleteFirewallPolicy)>
     #[allow(unused_mut)]
@@ -1623,10 +1594,6 @@ pub mod delete_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(unused_mut)]
@@ -1810,10 +1777,6 @@ pub mod delete_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRuleGroupInputOperationOutputAlias = crate::operation::DeleteRuleGroup;
-#[doc(hidden)]
-pub type DeleteRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleGroup`](crate::operation::DeleteRuleGroup)>
     #[allow(unused_mut)]
@@ -1976,10 +1939,6 @@ pub mod describe_firewall_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFirewallInputOperationOutputAlias = crate::operation::DescribeFirewall;
-#[doc(hidden)]
-pub type DescribeFirewallInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFirewallInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFirewall`](crate::operation::DescribeFirewall)>
     #[allow(unused_mut)]
@@ -2145,10 +2104,6 @@ pub mod describe_firewall_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFirewallPolicyInputOperationOutputAlias = crate::operation::DescribeFirewallPolicy;
-#[doc(hidden)]
-pub type DescribeFirewallPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFirewallPolicy`](crate::operation::DescribeFirewallPolicy)>
     #[allow(unused_mut)]
@@ -2315,12 +2270,6 @@ pub mod describe_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeLoggingConfiguration;
-#[doc(hidden)]
-pub type DescribeLoggingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingConfiguration`](crate::operation::DescribeLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -2463,10 +2412,6 @@ pub mod describe_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeResourcePolicyInputOperationOutputAlias = crate::operation::DescribeResourcePolicy;
-#[doc(hidden)]
-pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourcePolicy`](crate::operation::DescribeResourcePolicy)>
     #[allow(unused_mut)]
@@ -2650,10 +2595,6 @@ pub mod describe_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRuleGroupInputOperationOutputAlias = crate::operation::DescribeRuleGroup;
-#[doc(hidden)]
-pub type DescribeRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleGroup`](crate::operation::DescribeRuleGroup)>
     #[allow(unused_mut)]
@@ -2837,11 +2778,6 @@ pub mod describe_rule_group_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRuleGroupMetadataInputOperationOutputAlias =
-    crate::operation::DescribeRuleGroupMetadata;
-#[doc(hidden)]
-pub type DescribeRuleGroupMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuleGroupMetadataInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleGroupMetadata`](crate::operation::DescribeRuleGroupMetadata)>
     #[allow(unused_mut)]
@@ -3043,10 +2979,6 @@ pub mod disassociate_subnets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateSubnetsInputOperationOutputAlias = crate::operation::DisassociateSubnets;
-#[doc(hidden)]
-pub type DisassociateSubnetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSubnets`](crate::operation::DisassociateSubnets)>
     #[allow(unused_mut)]
@@ -3202,10 +3134,6 @@ pub mod list_firewall_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallPoliciesInputOperationOutputAlias = crate::operation::ListFirewallPolicies;
-#[doc(hidden)]
-pub type ListFirewallPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallPolicies`](crate::operation::ListFirewallPolicies)>
     #[allow(unused_mut)]
@@ -3384,10 +3312,6 @@ pub mod list_firewalls_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFirewallsInputOperationOutputAlias = crate::operation::ListFirewalls;
-#[doc(hidden)]
-pub type ListFirewallsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFirewallsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewalls`](crate::operation::ListFirewalls)>
     #[allow(unused_mut)]
@@ -3585,10 +3509,6 @@ pub mod list_rule_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRuleGroupsInputOperationOutputAlias = crate::operation::ListRuleGroups;
-#[doc(hidden)]
-pub type ListRuleGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleGroups`](crate::operation::ListRuleGroups)>
     #[allow(unused_mut)]
@@ -3756,10 +3676,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3945,10 +3861,6 @@ pub mod put_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(unused_mut)]
@@ -4113,10 +4025,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4281,10 +4189,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4477,12 +4381,6 @@ pub mod update_firewall_delete_protection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallDeleteProtectionInputOperationOutputAlias =
-    crate::operation::UpdateFirewallDeleteProtection;
-#[doc(hidden)]
-pub type UpdateFirewallDeleteProtectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallDeleteProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallDeleteProtection`](crate::operation::UpdateFirewallDeleteProtection)>
     #[allow(unused_mut)]
@@ -4674,11 +4572,6 @@ pub mod update_firewall_description_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallDescriptionInputOperationOutputAlias =
-    crate::operation::UpdateFirewallDescription;
-#[doc(hidden)]
-pub type UpdateFirewallDescriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallDescriptionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallDescription`](crate::operation::UpdateFirewallDescription)>
     #[allow(unused_mut)]
@@ -4876,12 +4769,6 @@ pub mod update_firewall_encryption_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallEncryptionConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateFirewallEncryptionConfiguration;
-#[doc(hidden)]
-pub type UpdateFirewallEncryptionConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallEncryptionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallEncryptionConfiguration`](crate::operation::UpdateFirewallEncryptionConfiguration)>
     #[allow(unused_mut)]
@@ -5122,10 +5009,6 @@ pub mod update_firewall_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallPolicyInputOperationOutputAlias = crate::operation::UpdateFirewallPolicy;
-#[doc(hidden)]
-pub type UpdateFirewallPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallPolicy`](crate::operation::UpdateFirewallPolicy)>
     #[allow(unused_mut)]
@@ -5325,12 +5208,6 @@ pub mod update_firewall_policy_change_protection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFirewallPolicyChangeProtectionInputOperationOutputAlias =
-    crate::operation::UpdateFirewallPolicyChangeProtection;
-#[doc(hidden)]
-pub type UpdateFirewallPolicyChangeProtectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFirewallPolicyChangeProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallPolicyChangeProtection`](crate::operation::UpdateFirewallPolicyChangeProtection)>
     #[allow(unused_mut)]
@@ -5509,11 +5386,6 @@ pub mod update_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateLoggingConfiguration;
-#[doc(hidden)]
-pub type UpdateLoggingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLoggingConfiguration`](crate::operation::UpdateLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -5810,10 +5682,6 @@ pub mod update_rule_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRuleGroupInputOperationOutputAlias = crate::operation::UpdateRuleGroup;
-#[doc(hidden)]
-pub type UpdateRuleGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleGroup`](crate::operation::UpdateRuleGroup)>
     #[allow(unused_mut)]
@@ -6006,12 +5874,6 @@ pub mod update_subnet_change_protection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSubnetChangeProtectionInputOperationOutputAlias =
-    crate::operation::UpdateSubnetChangeProtection;
-#[doc(hidden)]
-pub type UpdateSubnetChangeProtectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSubnetChangeProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubnetChangeProtection`](crate::operation::UpdateSubnetChangeProtection)>
     #[allow(unused_mut)]

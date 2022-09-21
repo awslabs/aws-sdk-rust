@@ -67,10 +67,6 @@ pub mod copy_backup_to_region_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CopyBackupToRegionInputOperationOutputAlias = crate::operation::CopyBackupToRegion;
-#[doc(hidden)]
-pub type CopyBackupToRegionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyBackupToRegionInput {
     /// Consumes the builder and constructs an Operation<[`CopyBackupToRegion`](crate::operation::CopyBackupToRegion)>
     #[allow(unused_mut)]
@@ -298,10 +294,6 @@ pub mod create_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
-#[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(unused_mut)]
@@ -471,10 +463,6 @@ pub mod create_hsm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHsmInputOperationOutputAlias = crate::operation::CreateHsm;
-#[doc(hidden)]
-pub type CreateHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHsmInput {
     /// Consumes the builder and constructs an Operation<[`CreateHsm`](crate::operation::CreateHsm)>
     #[allow(unused_mut)]
@@ -616,10 +604,6 @@ pub mod delete_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
-#[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(unused_mut)]
@@ -763,10 +747,6 @@ pub mod delete_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
-#[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(unused_mut)]
@@ -945,10 +925,6 @@ pub mod delete_hsm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteHsmInputOperationOutputAlias = crate::operation::DeleteHsm;
-#[doc(hidden)]
-pub type DeleteHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHsmInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHsm`](crate::operation::DeleteHsm)>
     #[allow(unused_mut)]
@@ -1153,10 +1129,6 @@ pub mod describe_backups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBackupsInputOperationOutputAlias = crate::operation::DescribeBackups;
-#[doc(hidden)]
-pub type DescribeBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackups`](crate::operation::DescribeBackups)>
     #[allow(unused_mut)]
@@ -1347,10 +1319,6 @@ pub mod describe_clusters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClustersInputOperationOutputAlias = crate::operation::DescribeClusters;
-#[doc(hidden)]
-pub type DescribeClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusters`](crate::operation::DescribeClusters)>
     #[allow(unused_mut)]
@@ -1518,10 +1486,6 @@ pub mod initialize_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitializeClusterInputOperationOutputAlias = crate::operation::InitializeCluster;
-#[doc(hidden)]
-pub type InitializeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitializeClusterInput {
     /// Consumes the builder and constructs an Operation<[`InitializeCluster`](crate::operation::InitializeCluster)>
     #[allow(unused_mut)]
@@ -1688,10 +1652,6 @@ pub mod list_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
-#[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(unused_mut)]
@@ -1845,10 +1805,6 @@ pub mod modify_backup_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyBackupAttributesInputOperationOutputAlias = crate::operation::ModifyBackupAttributes;
-#[doc(hidden)]
-pub type ModifyBackupAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyBackupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyBackupAttributes`](crate::operation::ModifyBackupAttributes)>
     #[allow(unused_mut)]
@@ -2013,10 +1969,6 @@ pub mod modify_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClusterInputOperationOutputAlias = crate::operation::ModifyCluster;
-#[doc(hidden)]
-pub type ModifyClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterInput {
     /// Consumes the builder and constructs an Operation<[`ModifyCluster`](crate::operation::ModifyCluster)>
     #[allow(unused_mut)]
@@ -2160,10 +2112,6 @@ pub mod restore_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreBackupInputOperationOutputAlias = crate::operation::RestoreBackup;
-#[doc(hidden)]
-pub type RestoreBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreBackupInput {
     /// Consumes the builder and constructs an Operation<[`RestoreBackup`](crate::operation::RestoreBackup)>
     #[allow(unused_mut)]
@@ -2328,10 +2276,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2496,10 +2440,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

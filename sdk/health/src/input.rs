@@ -61,12 +61,6 @@ pub mod describe_affected_accounts_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAffectedAccountsForOrganizationInputOperationOutputAlias =
-    crate::operation::DescribeAffectedAccountsForOrganization;
-#[doc(hidden)]
-pub type DescribeAffectedAccountsForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAffectedAccountsForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAffectedAccountsForOrganization`](crate::operation::DescribeAffectedAccountsForOrganization)>
     #[allow(unused_mut)]
@@ -250,11 +244,6 @@ pub mod describe_affected_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAffectedEntitiesInputOperationOutputAlias =
-    crate::operation::DescribeAffectedEntities;
-#[doc(hidden)]
-pub type DescribeAffectedEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAffectedEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAffectedEntities`](crate::operation::DescribeAffectedEntities)>
     #[allow(unused_mut)]
@@ -451,12 +440,6 @@ pub mod describe_affected_entities_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAffectedEntitiesForOrganizationInputOperationOutputAlias =
-    crate::operation::DescribeAffectedEntitiesForOrganization;
-#[doc(hidden)]
-pub type DescribeAffectedEntitiesForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAffectedEntitiesForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAffectedEntitiesForOrganization`](crate::operation::DescribeAffectedEntitiesForOrganization)>
     #[allow(unused_mut)]
@@ -610,11 +593,6 @@ pub mod describe_entity_aggregates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEntityAggregatesInputOperationOutputAlias =
-    crate::operation::DescribeEntityAggregates;
-#[doc(hidden)]
-pub type DescribeEntityAggregatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntityAggregatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntityAggregates`](crate::operation::DescribeEntityAggregates)>
     #[allow(unused_mut)]
@@ -801,11 +779,6 @@ pub mod describe_event_aggregates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventAggregatesInputOperationOutputAlias =
-    crate::operation::DescribeEventAggregates;
-#[doc(hidden)]
-pub type DescribeEventAggregatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventAggregatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventAggregates`](crate::operation::DescribeEventAggregates)>
     #[allow(unused_mut)]
@@ -972,10 +945,6 @@ pub mod describe_event_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventDetailsInputOperationOutputAlias = crate::operation::DescribeEventDetails;
-#[doc(hidden)]
-pub type DescribeEventDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventDetailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventDetails`](crate::operation::DescribeEventDetails)>
     #[allow(unused_mut)]
@@ -1148,12 +1117,6 @@ pub mod describe_event_details_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventDetailsForOrganizationInputOperationOutputAlias =
-    crate::operation::DescribeEventDetailsForOrganization;
-#[doc(hidden)]
-pub type DescribeEventDetailsForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventDetailsForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventDetailsForOrganization`](crate::operation::DescribeEventDetailsForOrganization)>
     #[allow(unused_mut)]
@@ -1332,10 +1295,6 @@ pub mod describe_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventsInputOperationOutputAlias = crate::operation::DescribeEvents;
-#[doc(hidden)]
-pub type DescribeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(unused_mut)]
@@ -1520,12 +1479,6 @@ pub mod describe_events_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventsForOrganizationInputOperationOutputAlias =
-    crate::operation::DescribeEventsForOrganization;
-#[doc(hidden)]
-pub type DescribeEventsForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventsForOrganization`](crate::operation::DescribeEventsForOrganization)>
     #[allow(unused_mut)]
@@ -1707,10 +1660,6 @@ pub mod describe_event_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventTypesInputOperationOutputAlias = crate::operation::DescribeEventTypes;
-#[doc(hidden)]
-pub type DescribeEventTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventTypes`](crate::operation::DescribeEventTypes)>
     #[allow(unused_mut)]
@@ -1842,12 +1791,6 @@ pub mod describe_health_service_status_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeHealthServiceStatusForOrganizationInputOperationOutputAlias =
-    crate::operation::DescribeHealthServiceStatusForOrganization;
-#[doc(hidden)]
-pub type DescribeHealthServiceStatusForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHealthServiceStatusForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHealthServiceStatusForOrganization`](crate::operation::DescribeHealthServiceStatusForOrganization)>
     #[allow(unused_mut)]
@@ -1972,12 +1915,6 @@ pub mod disable_health_service_access_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableHealthServiceAccessForOrganizationInputOperationOutputAlias =
-    crate::operation::DisableHealthServiceAccessForOrganization;
-#[doc(hidden)]
-pub type DisableHealthServiceAccessForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableHealthServiceAccessForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DisableHealthServiceAccessForOrganization`](crate::operation::DisableHealthServiceAccessForOrganization)>
     #[allow(unused_mut)]
@@ -2102,12 +2039,6 @@ pub mod enable_health_service_access_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableHealthServiceAccessForOrganizationInputOperationOutputAlias =
-    crate::operation::EnableHealthServiceAccessForOrganization;
-#[doc(hidden)]
-pub type EnableHealthServiceAccessForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableHealthServiceAccessForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`EnableHealthServiceAccessForOrganization`](crate::operation::EnableHealthServiceAccessForOrganization)>
     #[allow(unused_mut)]

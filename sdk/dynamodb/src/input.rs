@@ -70,10 +70,6 @@ pub mod batch_execute_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchExecuteStatementInputOperationOutputAlias = crate::operation::BatchExecuteStatement;
-#[doc(hidden)]
-pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
     #[allow(unused_mut)]
@@ -313,10 +309,6 @@ pub mod batch_get_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchGetItemInputOperationOutputAlias = crate::operation::BatchGetItem;
-#[doc(hidden)]
-pub type BatchGetItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetItem`](crate::operation::BatchGetItem)>
     #[allow(unused_mut)]
@@ -551,10 +543,6 @@ pub mod batch_write_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchWriteItemInputOperationOutputAlias = crate::operation::BatchWriteItem;
-#[doc(hidden)]
-pub type BatchWriteItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchWriteItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchWriteItem`](crate::operation::BatchWriteItem)>
     #[allow(unused_mut)]
@@ -710,10 +698,6 @@ pub mod create_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackupInputOperationOutputAlias = crate::operation::CreateBackup;
-#[doc(hidden)]
-pub type CreateBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackup`](crate::operation::CreateBackup)>
     #[allow(unused_mut)]
@@ -881,10 +865,6 @@ pub mod create_global_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGlobalTableInputOperationOutputAlias = crate::operation::CreateGlobalTable;
-#[doc(hidden)]
-pub type CreateGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateGlobalTable`](crate::operation::CreateGlobalTable)>
     #[allow(unused_mut)]
@@ -1339,10 +1319,6 @@ pub mod create_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTableInputOperationOutputAlias = crate::operation::CreateTable;
-#[doc(hidden)]
-pub type CreateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateTable`](crate::operation::CreateTable)>
     #[allow(unused_mut)]
@@ -1486,10 +1462,6 @@ pub mod delete_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
-#[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(unused_mut)]
@@ -1928,10 +1900,6 @@ pub mod delete_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteItemInputOperationOutputAlias = crate::operation::DeleteItem;
-#[doc(hidden)]
-pub type DeleteItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteItemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteItem`](crate::operation::DeleteItem)>
     #[allow(unused_mut)]
@@ -2075,10 +2043,6 @@ pub mod delete_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTableInputOperationOutputAlias = crate::operation::DeleteTable;
-#[doc(hidden)]
-pub type DeleteTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTable`](crate::operation::DeleteTable)>
     #[allow(unused_mut)]
@@ -2222,10 +2186,6 @@ pub mod describe_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBackupInputOperationOutputAlias = crate::operation::DescribeBackup;
-#[doc(hidden)]
-pub type DescribeBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackup`](crate::operation::DescribeBackup)>
     #[allow(unused_mut)]
@@ -2371,11 +2331,6 @@ pub mod describe_continuous_backups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeContinuousBackupsInputOperationOutputAlias =
-    crate::operation::DescribeContinuousBackups;
-#[doc(hidden)]
-pub type DescribeContinuousBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContinuousBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContinuousBackups`](crate::operation::DescribeContinuousBackups)>
     #[allow(unused_mut)]
@@ -2535,11 +2490,6 @@ pub mod describe_contributor_insights_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeContributorInsightsInputOperationOutputAlias =
-    crate::operation::DescribeContributorInsights;
-#[doc(hidden)]
-pub type DescribeContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContributorInsights`](crate::operation::DescribeContributorInsights)>
     #[allow(unused_mut)]
@@ -2668,10 +2618,6 @@ pub mod describe_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEndpointsInputOperationOutputAlias = crate::operation::DescribeEndpoints;
-#[doc(hidden)]
-pub type DescribeEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(unused_mut)]
@@ -2808,10 +2754,6 @@ pub mod describe_export_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeExportInputOperationOutputAlias = crate::operation::DescribeExport;
-#[doc(hidden)]
-pub type DescribeExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExport`](crate::operation::DescribeExport)>
     #[allow(unused_mut)]
@@ -2958,10 +2900,6 @@ pub mod describe_global_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGlobalTableInputOperationOutputAlias = crate::operation::DescribeGlobalTable;
-#[doc(hidden)]
-pub type DescribeGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalTable`](crate::operation::DescribeGlobalTable)>
     #[allow(unused_mut)]
@@ -3110,11 +3048,6 @@ pub mod describe_global_table_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGlobalTableSettingsInputOperationOutputAlias =
-    crate::operation::DescribeGlobalTableSettings;
-#[doc(hidden)]
-pub type DescribeGlobalTableSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalTableSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalTableSettings`](crate::operation::DescribeGlobalTableSettings)>
     #[allow(unused_mut)]
@@ -3257,10 +3190,6 @@ pub mod describe_import_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeImportInputOperationOutputAlias = crate::operation::DescribeImport;
-#[doc(hidden)]
-pub type DescribeImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImport`](crate::operation::DescribeImport)>
     #[allow(unused_mut)]
@@ -3406,12 +3335,6 @@ pub mod describe_kinesis_streaming_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeKinesisStreamingDestinationInputOperationOutputAlias =
-    crate::operation::DescribeKinesisStreamingDestination;
-#[doc(hidden)]
-pub type DescribeKinesisStreamingDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKinesisStreamingDestination`](crate::operation::DescribeKinesisStreamingDestination)>
     #[allow(unused_mut)]
@@ -3540,10 +3463,6 @@ pub mod describe_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLimitsInputOperationOutputAlias = crate::operation::DescribeLimits;
-#[doc(hidden)]
-pub type DescribeLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLimits`](crate::operation::DescribeLimits)>
     #[allow(unused_mut)]
@@ -3680,10 +3599,6 @@ pub mod describe_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTableInputOperationOutputAlias = crate::operation::DescribeTable;
-#[doc(hidden)]
-pub type DescribeTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTable`](crate::operation::DescribeTable)>
     #[allow(unused_mut)]
@@ -3829,12 +3744,6 @@ pub mod describe_table_replica_auto_scaling_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTableReplicaAutoScalingInputOperationOutputAlias =
-    crate::operation::DescribeTableReplicaAutoScaling;
-#[doc(hidden)]
-pub type DescribeTableReplicaAutoScalingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableReplicaAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableReplicaAutoScaling`](crate::operation::DescribeTableReplicaAutoScaling)>
     #[allow(unused_mut)]
@@ -3977,10 +3886,6 @@ pub mod describe_time_to_live_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTimeToLiveInputOperationOutputAlias = crate::operation::DescribeTimeToLive;
-#[doc(hidden)]
-pub type DescribeTimeToLiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTimeToLiveInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTimeToLive`](crate::operation::DescribeTimeToLive)>
     #[allow(unused_mut)]
@@ -4138,12 +4043,6 @@ pub mod disable_kinesis_streaming_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableKinesisStreamingDestinationInputOperationOutputAlias =
-    crate::operation::DisableKinesisStreamingDestination;
-#[doc(hidden)]
-pub type DisableKinesisStreamingDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DisableKinesisStreamingDestination`](crate::operation::DisableKinesisStreamingDestination)>
     #[allow(unused_mut)]
@@ -4300,12 +4199,6 @@ pub mod enable_kinesis_streaming_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableKinesisStreamingDestinationInputOperationOutputAlias =
-    crate::operation::EnableKinesisStreamingDestination;
-#[doc(hidden)]
-pub type EnableKinesisStreamingDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`EnableKinesisStreamingDestination`](crate::operation::EnableKinesisStreamingDestination)>
     #[allow(unused_mut)]
@@ -4534,10 +4427,6 @@ pub mod execute_statement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteStatementInputOperationOutputAlias = crate::operation::ExecuteStatement;
-#[doc(hidden)]
-pub type ExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
     #[allow(unused_mut)]
@@ -4725,10 +4614,6 @@ pub mod execute_transaction_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteTransactionInputOperationOutputAlias = crate::operation::ExecuteTransaction;
-#[doc(hidden)]
-pub type ExecuteTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteTransactionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteTransaction`](crate::operation::ExecuteTransaction)>
     #[allow(unused_mut)]
@@ -5000,11 +4885,6 @@ pub mod export_table_to_point_in_time_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportTableToPointInTimeInputOperationOutputAlias =
-    crate::operation::ExportTableToPointInTime;
-#[doc(hidden)]
-pub type ExportTableToPointInTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportTableToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`ExportTableToPointInTime`](crate::operation::ExportTableToPointInTime)>
     #[allow(unused_mut)]
@@ -5330,10 +5210,6 @@ pub mod get_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetItemInputOperationOutputAlias = crate::operation::GetItem;
-#[doc(hidden)]
-pub type GetItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetItemInput {
     /// Consumes the builder and constructs an Operation<[`GetItem`](crate::operation::GetItem)>
     #[allow(unused_mut)]
@@ -5557,10 +5433,6 @@ pub mod import_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportTableInputOperationOutputAlias = crate::operation::ImportTable;
-#[doc(hidden)]
-pub type ImportTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportTableInput {
     /// Consumes the builder and constructs an Operation<[`ImportTable`](crate::operation::ImportTable)>
     #[allow(unused_mut)]
@@ -5791,10 +5663,6 @@ pub mod list_backups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBackupsInputOperationOutputAlias = crate::operation::ListBackups;
-#[doc(hidden)]
-pub type ListBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBackupsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackups`](crate::operation::ListBackups)>
     #[allow(unused_mut)]
@@ -5964,11 +5832,6 @@ pub mod list_contributor_insights_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContributorInsightsInputOperationOutputAlias =
-    crate::operation::ListContributorInsights;
-#[doc(hidden)]
-pub type ListContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`ListContributorInsights`](crate::operation::ListContributorInsights)>
     #[allow(unused_mut)]
@@ -6138,10 +6001,6 @@ pub mod list_exports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExportsInputOperationOutputAlias = crate::operation::ListExports;
-#[doc(hidden)]
-pub type ListExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListExports`](crate::operation::ListExports)>
     #[allow(unused_mut)]
@@ -6317,10 +6176,6 @@ pub mod list_global_tables_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGlobalTablesInputOperationOutputAlias = crate::operation::ListGlobalTables;
-#[doc(hidden)]
-pub type ListGlobalTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGlobalTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListGlobalTables`](crate::operation::ListGlobalTables)>
     #[allow(unused_mut)]
@@ -6488,10 +6343,6 @@ pub mod list_imports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListImportsInputOperationOutputAlias = crate::operation::ListImports;
-#[doc(hidden)]
-pub type ListImportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImportsInput {
     /// Consumes the builder and constructs an Operation<[`ListImports`](crate::operation::ListImports)>
     #[allow(unused_mut)]
@@ -6649,10 +6500,6 @@ pub mod list_tables_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTablesInputOperationOutputAlias = crate::operation::ListTables;
-#[doc(hidden)]
-pub type ListTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(unused_mut)]
@@ -6808,10 +6655,6 @@ pub mod list_tags_of_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsOfResourceInputOperationOutputAlias = crate::operation::ListTagsOfResource;
-#[doc(hidden)]
-pub type ListTagsOfResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsOfResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsOfResource`](crate::operation::ListTagsOfResource)>
     #[allow(unused_mut)]
@@ -7260,10 +7103,6 @@ pub mod put_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutItemInputOperationOutputAlias = crate::operation::PutItem;
-#[doc(hidden)]
-pub type PutItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutItemInput {
     /// Consumes the builder and constructs an Operation<[`PutItem`](crate::operation::PutItem)>
     #[allow(unused_mut)]
@@ -7864,10 +7703,6 @@ pub mod query_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryInputOperationOutputAlias = crate::operation::Query;
-#[doc(hidden)]
-pub type QueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryInput {
     /// Consumes the builder and constructs an Operation<[`Query`](crate::operation::Query)>
     #[allow(unused_mut)]
@@ -8122,10 +7957,6 @@ pub mod restore_table_from_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreTableFromBackupInputOperationOutputAlias = crate::operation::RestoreTableFromBackup;
-#[doc(hidden)]
-pub type RestoreTableFromBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableFromBackupInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableFromBackup`](crate::operation::RestoreTableFromBackup)>
     #[allow(unused_mut)]
@@ -8432,11 +8263,6 @@ pub mod restore_table_to_point_in_time_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreTableToPointInTimeInputOperationOutputAlias =
-    crate::operation::RestoreTableToPointInTime;
-#[doc(hidden)]
-pub type RestoreTableToPointInTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableToPointInTime`](crate::operation::RestoreTableToPointInTime)>
     #[allow(unused_mut)]
@@ -8971,10 +8797,6 @@ pub mod scan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ScanInputOperationOutputAlias = crate::operation::Scan;
-#[doc(hidden)]
-pub type ScanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ScanInput {
     /// Consumes the builder and constructs an Operation<[`Scan`](crate::operation::Scan)>
     #[allow(unused_mut)]
@@ -9135,10 +8957,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -9311,10 +9129,6 @@ pub mod transact_get_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TransactGetItemsInputOperationOutputAlias = crate::operation::TransactGetItems;
-#[doc(hidden)]
-pub type TransactGetItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransactGetItemsInput {
     /// Consumes the builder and constructs an Operation<[`TransactGetItems`](crate::operation::TransactGetItems)>
     #[allow(unused_mut)]
@@ -9537,10 +9351,6 @@ pub mod transact_write_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TransactWriteItemsInputOperationOutputAlias = crate::operation::TransactWriteItems;
-#[doc(hidden)]
-pub type TransactWriteItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransactWriteItemsInput {
     /// Consumes the builder and constructs an Operation<[`TransactWriteItems`](crate::operation::TransactWriteItems)>
     #[allow(unused_mut)]
@@ -9708,10 +9518,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -9876,11 +9682,6 @@ pub mod update_continuous_backups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateContinuousBackupsInputOperationOutputAlias =
-    crate::operation::UpdateContinuousBackups;
-#[doc(hidden)]
-pub type UpdateContinuousBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContinuousBackupsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContinuousBackups`](crate::operation::UpdateContinuousBackups)>
     #[allow(unused_mut)]
@@ -10059,11 +9860,6 @@ pub mod update_contributor_insights_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateContributorInsightsInputOperationOutputAlias =
-    crate::operation::UpdateContributorInsights;
-#[doc(hidden)]
-pub type UpdateContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContributorInsights`](crate::operation::UpdateContributorInsights)>
     #[allow(unused_mut)]
@@ -10233,10 +10029,6 @@ pub mod update_global_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGlobalTableInputOperationOutputAlias = crate::operation::UpdateGlobalTable;
-#[doc(hidden)]
-pub type UpdateGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalTable`](crate::operation::UpdateGlobalTable)>
     #[allow(unused_mut)]
@@ -10500,11 +10292,6 @@ pub mod update_global_table_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGlobalTableSettingsInputOperationOutputAlias =
-    crate::operation::UpdateGlobalTableSettings;
-#[doc(hidden)]
-pub type UpdateGlobalTableSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalTableSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalTableSettings`](crate::operation::UpdateGlobalTableSettings)>
     #[allow(unused_mut)]
@@ -11041,10 +10828,6 @@ pub mod update_item_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateItemInputOperationOutputAlias = crate::operation::UpdateItem;
-#[doc(hidden)]
-pub type UpdateItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateItemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateItem`](crate::operation::UpdateItem)>
     #[allow(unused_mut)]
@@ -11365,10 +11148,6 @@ pub mod update_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTableInputOperationOutputAlias = crate::operation::UpdateTable;
-#[doc(hidden)]
-pub type UpdateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTable`](crate::operation::UpdateTable)>
     #[allow(unused_mut)]
@@ -11583,12 +11362,6 @@ pub mod update_table_replica_auto_scaling_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTableReplicaAutoScalingInputOperationOutputAlias =
-    crate::operation::UpdateTableReplicaAutoScaling;
-#[doc(hidden)]
-pub type UpdateTableReplicaAutoScalingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableReplicaAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTableReplicaAutoScaling`](crate::operation::UpdateTableReplicaAutoScaling)>
     #[allow(unused_mut)]
@@ -11750,10 +11523,6 @@ pub mod update_time_to_live_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTimeToLiveInputOperationOutputAlias = crate::operation::UpdateTimeToLive;
-#[doc(hidden)]
-pub type UpdateTimeToLiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTimeToLiveInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTimeToLive`](crate::operation::UpdateTimeToLive)>
     #[allow(unused_mut)]

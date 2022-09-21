@@ -54,11 +54,6 @@ pub mod batch_delete_recipe_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteRecipeVersionInputOperationOutputAlias =
-    crate::operation::BatchDeleteRecipeVersion;
-#[doc(hidden)]
-pub type BatchDeleteRecipeVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteRecipeVersionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteRecipeVersion`](crate::operation::BatchDeleteRecipeVersion)>
     #[allow(unused_mut)]
@@ -301,10 +296,6 @@ pub mod create_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
-#[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(unused_mut)]
@@ -655,10 +646,6 @@ pub mod create_profile_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProfileJobInputOperationOutputAlias = crate::operation::CreateProfileJob;
-#[doc(hidden)]
-pub type CreateProfileJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfileJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfileJob`](crate::operation::CreateProfileJob)>
     #[allow(unused_mut)]
@@ -874,10 +861,6 @@ pub mod create_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
-#[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(unused_mut)]
@@ -1078,10 +1061,6 @@ pub mod create_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRecipeInputOperationOutputAlias = crate::operation::CreateRecipe;
-#[doc(hidden)]
-pub type CreateRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecipe`](crate::operation::CreateRecipe)>
     #[allow(unused_mut)]
@@ -1454,10 +1433,6 @@ pub mod create_recipe_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRecipeJobInputOperationOutputAlias = crate::operation::CreateRecipeJob;
-#[doc(hidden)]
-pub type CreateRecipeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecipeJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecipeJob`](crate::operation::CreateRecipeJob)>
     #[allow(unused_mut)]
@@ -1670,10 +1645,6 @@ pub mod create_ruleset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRulesetInputOperationOutputAlias = crate::operation::CreateRuleset;
-#[doc(hidden)]
-pub type CreateRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRulesetInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleset`](crate::operation::CreateRuleset)>
     #[allow(unused_mut)]
@@ -1877,10 +1848,6 @@ pub mod create_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateScheduleInputOperationOutputAlias = crate::operation::CreateSchedule;
-#[doc(hidden)]
-pub type CreateScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSchedule`](crate::operation::CreateSchedule)>
     #[allow(unused_mut)]
@@ -2017,10 +1984,6 @@ pub mod delete_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
@@ -2156,10 +2119,6 @@ pub mod delete_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
-#[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(unused_mut)]
@@ -2294,10 +2253,6 @@ pub mod delete_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
-#[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(unused_mut)]
@@ -2451,10 +2406,6 @@ pub mod delete_recipe_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRecipeVersionInputOperationOutputAlias = crate::operation::DeleteRecipeVersion;
-#[doc(hidden)]
-pub type DeleteRecipeVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecipeVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecipeVersion`](crate::operation::DeleteRecipeVersion)>
     #[allow(unused_mut)]
@@ -2611,10 +2562,6 @@ pub mod delete_ruleset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRulesetInputOperationOutputAlias = crate::operation::DeleteRuleset;
-#[doc(hidden)]
-pub type DeleteRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRulesetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleset`](crate::operation::DeleteRuleset)>
     #[allow(unused_mut)]
@@ -2751,10 +2698,6 @@ pub mod delete_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScheduleInputOperationOutputAlias = crate::operation::DeleteSchedule;
-#[doc(hidden)]
-pub type DeleteScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchedule`](crate::operation::DeleteSchedule)>
     #[allow(unused_mut)]
@@ -2892,10 +2835,6 @@ pub mod describe_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(unused_mut)]
@@ -3032,10 +2971,6 @@ pub mod describe_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobInputOperationOutputAlias = crate::operation::DescribeJob;
-#[doc(hidden)]
-pub type DescribeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(unused_mut)]
@@ -3186,10 +3121,6 @@ pub mod describe_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobRunInputOperationOutputAlias = crate::operation::DescribeJobRun;
-#[doc(hidden)]
-pub type DescribeJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobRun`](crate::operation::DescribeJobRun)>
     #[allow(unused_mut)]
@@ -3346,10 +3277,6 @@ pub mod describe_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
-#[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(unused_mut)]
@@ -3503,10 +3430,6 @@ pub mod describe_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRecipeInputOperationOutputAlias = crate::operation::DescribeRecipe;
-#[doc(hidden)]
-pub type DescribeRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecipe`](crate::operation::DescribeRecipe)>
     #[allow(unused_mut)]
@@ -3657,10 +3580,6 @@ pub mod describe_ruleset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRulesetInputOperationOutputAlias = crate::operation::DescribeRuleset;
-#[doc(hidden)]
-pub type DescribeRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRulesetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleset`](crate::operation::DescribeRuleset)>
     #[allow(unused_mut)]
@@ -3797,10 +3716,6 @@ pub mod describe_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScheduleInputOperationOutputAlias = crate::operation::DescribeSchedule;
-#[doc(hidden)]
-pub type DescribeScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchedule`](crate::operation::DescribeSchedule)>
     #[allow(unused_mut)]
@@ -3952,10 +3867,6 @@ pub mod list_datasets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
-#[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(unused_mut)]
@@ -4121,10 +4032,6 @@ pub mod list_job_runs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobRunsInputOperationOutputAlias = crate::operation::ListJobRuns;
-#[doc(hidden)]
-pub type ListJobRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(unused_mut)]
@@ -4316,10 +4223,6 @@ pub mod list_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
-#[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(unused_mut)]
@@ -4482,10 +4385,6 @@ pub mod list_projects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
-#[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(unused_mut)]
@@ -4656,10 +4555,6 @@ pub mod list_recipes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecipesInputOperationOutputAlias = crate::operation::ListRecipes;
-#[doc(hidden)]
-pub type ListRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipes`](crate::operation::ListRecipes)>
     #[allow(unused_mut)]
@@ -4831,10 +4726,6 @@ pub mod list_recipe_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecipeVersionsInputOperationOutputAlias = crate::operation::ListRecipeVersions;
-#[doc(hidden)]
-pub type ListRecipeVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecipeVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipeVersions`](crate::operation::ListRecipeVersions)>
     #[allow(unused_mut)]
@@ -5003,10 +4894,6 @@ pub mod list_rulesets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRulesetsInputOperationOutputAlias = crate::operation::ListRulesets;
-#[doc(hidden)]
-pub type ListRulesetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesetsInput {
     /// Consumes the builder and constructs an Operation<[`ListRulesets`](crate::operation::ListRulesets)>
     #[allow(unused_mut)]
@@ -5175,10 +5062,6 @@ pub mod list_schedules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSchedulesInputOperationOutputAlias = crate::operation::ListSchedules;
-#[doc(hidden)]
-pub type ListSchedulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`ListSchedules`](crate::operation::ListSchedules)>
     #[allow(unused_mut)]
@@ -5323,10 +5206,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5478,10 +5357,6 @@ pub mod publish_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PublishRecipeInputOperationOutputAlias = crate::operation::PublishRecipe;
-#[doc(hidden)]
-pub type PublishRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishRecipeInput {
     /// Consumes the builder and constructs an Operation<[`PublishRecipe`](crate::operation::PublishRecipe)>
     #[allow(unused_mut)]
@@ -5706,11 +5581,6 @@ pub mod send_project_session_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendProjectSessionActionInputOperationOutputAlias =
-    crate::operation::SendProjectSessionAction;
-#[doc(hidden)]
-pub type SendProjectSessionActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendProjectSessionActionInput {
     /// Consumes the builder and constructs an Operation<[`SendProjectSessionAction`](crate::operation::SendProjectSessionAction)>
     #[allow(unused_mut)]
@@ -5868,10 +5738,6 @@ pub mod start_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartJobRunInputOperationOutputAlias = crate::operation::StartJobRun;
-#[doc(hidden)]
-pub type StartJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(unused_mut)]
@@ -6023,10 +5889,6 @@ pub mod start_project_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartProjectSessionInputOperationOutputAlias = crate::operation::StartProjectSession;
-#[doc(hidden)]
-pub type StartProjectSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartProjectSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartProjectSession`](crate::operation::StartProjectSession)>
     #[allow(unused_mut)]
@@ -6191,10 +6053,6 @@ pub mod stop_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopJobRunInputOperationOutputAlias = crate::operation::StopJobRun;
-#[doc(hidden)]
-pub type StopJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StopJobRun`](crate::operation::StopJobRun)>
     #[allow(unused_mut)]
@@ -6382,10 +6240,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6560,10 +6414,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6770,10 +6620,6 @@ pub mod update_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
-#[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(unused_mut)]
@@ -7097,10 +6943,6 @@ pub mod update_profile_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProfileJobInputOperationOutputAlias = crate::operation::UpdateProfileJob;
-#[doc(hidden)]
-pub type UpdateProfileJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfileJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfileJob`](crate::operation::UpdateProfileJob)>
     #[allow(unused_mut)]
@@ -7278,10 +7120,6 @@ pub mod update_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
-#[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(unused_mut)]
@@ -7467,10 +7305,6 @@ pub mod update_recipe_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRecipeInputOperationOutputAlias = crate::operation::UpdateRecipe;
-#[doc(hidden)]
-pub type UpdateRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecipeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecipe`](crate::operation::UpdateRecipe)>
     #[allow(unused_mut)]
@@ -7789,10 +7623,6 @@ pub mod update_recipe_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRecipeJobInputOperationOutputAlias = crate::operation::UpdateRecipeJob;
-#[doc(hidden)]
-pub type UpdateRecipeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecipeJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecipeJob`](crate::operation::UpdateRecipeJob)>
     #[allow(unused_mut)]
@@ -7979,10 +7809,6 @@ pub mod update_ruleset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRulesetInputOperationOutputAlias = crate::operation::UpdateRuleset;
-#[doc(hidden)]
-pub type UpdateRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRulesetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleset`](crate::operation::UpdateRuleset)>
     #[allow(unused_mut)]
@@ -8171,10 +7997,6 @@ pub mod update_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateScheduleInputOperationOutputAlias = crate::operation::UpdateSchedule;
-#[doc(hidden)]
-pub type UpdateScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSchedule`](crate::operation::UpdateSchedule)>
     #[allow(unused_mut)]

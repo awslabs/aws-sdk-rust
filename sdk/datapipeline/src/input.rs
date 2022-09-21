@@ -68,10 +68,6 @@ pub mod activate_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ActivatePipelineInputOperationOutputAlias = crate::operation::ActivatePipeline;
-#[doc(hidden)]
-pub type ActivatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`ActivatePipeline`](crate::operation::ActivatePipeline)>
     #[allow(unused_mut)]
@@ -235,10 +231,6 @@ pub mod add_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
-#[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(unused_mut)]
@@ -425,10 +417,6 @@ pub mod create_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePipelineInputOperationOutputAlias = crate::operation::CreatePipeline;
-#[doc(hidden)]
-pub type CreatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreatePipeline`](crate::operation::CreatePipeline)>
     #[allow(unused_mut)]
@@ -584,10 +572,6 @@ pub mod deactivate_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeactivatePipelineInputOperationOutputAlias = crate::operation::DeactivatePipeline;
-#[doc(hidden)]
-pub type DeactivatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeactivatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeactivatePipeline`](crate::operation::DeactivatePipeline)>
     #[allow(unused_mut)]
@@ -731,10 +715,6 @@ pub mod delete_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePipelineInputOperationOutputAlias = crate::operation::DeletePipeline;
-#[doc(hidden)]
-pub type DeletePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeletePipeline`](crate::operation::DeletePipeline)>
     #[allow(unused_mut)]
@@ -923,10 +903,6 @@ pub mod describe_objects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeObjectsInputOperationOutputAlias = crate::operation::DescribeObjects;
-#[doc(hidden)]
-pub type DescribeObjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeObjectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeObjects`](crate::operation::DescribeObjects)>
     #[allow(unused_mut)]
@@ -1079,10 +1055,6 @@ pub mod describe_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePipelinesInputOperationOutputAlias = crate::operation::DescribePipelines;
-#[doc(hidden)]
-pub type DescribePipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePipelines`](crate::operation::DescribePipelines)>
     #[allow(unused_mut)]
@@ -1250,10 +1222,6 @@ pub mod evaluate_expression_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EvaluateExpressionInputOperationOutputAlias = crate::operation::EvaluateExpression;
-#[doc(hidden)]
-pub type EvaluateExpressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EvaluateExpressionInput {
     /// Consumes the builder and constructs an Operation<[`EvaluateExpression`](crate::operation::EvaluateExpression)>
     #[allow(unused_mut)]
@@ -1409,10 +1377,6 @@ pub mod get_pipeline_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPipelineDefinitionInputOperationOutputAlias = crate::operation::GetPipelineDefinition;
-#[doc(hidden)]
-pub type GetPipelineDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetPipelineDefinition`](crate::operation::GetPipelineDefinition)>
     #[allow(unused_mut)]
@@ -1558,10 +1522,6 @@ pub mod list_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPipelinesInputOperationOutputAlias = crate::operation::ListPipelines;
-#[doc(hidden)]
-pub type ListPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelines`](crate::operation::ListPipelines)>
     #[allow(unused_mut)]
@@ -1732,10 +1692,6 @@ pub mod poll_for_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PollForTaskInputOperationOutputAlias = crate::operation::PollForTask;
-#[doc(hidden)]
-pub type PollForTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForTask`](crate::operation::PollForTask)>
     #[allow(unused_mut)]
@@ -1945,10 +1901,6 @@ pub mod put_pipeline_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPipelineDefinitionInputOperationOutputAlias = crate::operation::PutPipelineDefinition;
-#[doc(hidden)]
-pub type PutPipelineDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPipelineDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutPipelineDefinition`](crate::operation::PutPipelineDefinition)>
     #[allow(unused_mut)]
@@ -2142,10 +2094,6 @@ pub mod query_objects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryObjectsInputOperationOutputAlias = crate::operation::QueryObjects;
-#[doc(hidden)]
-pub type QueryObjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryObjectsInput {
     /// Consumes the builder and constructs an Operation<[`QueryObjects`](crate::operation::QueryObjects)>
     #[allow(unused_mut)]
@@ -2309,10 +2257,6 @@ pub mod remove_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
-#[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(unused_mut)]
@@ -2477,10 +2421,6 @@ pub mod report_task_progress_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ReportTaskProgressInputOperationOutputAlias = crate::operation::ReportTaskProgress;
-#[doc(hidden)]
-pub type ReportTaskProgressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReportTaskProgressInput {
     /// Consumes the builder and constructs an Operation<[`ReportTaskProgress`](crate::operation::ReportTaskProgress)>
     #[allow(unused_mut)]
@@ -2653,11 +2593,6 @@ pub mod report_task_runner_heartbeat_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ReportTaskRunnerHeartbeatInputOperationOutputAlias =
-    crate::operation::ReportTaskRunnerHeartbeat;
-#[doc(hidden)]
-pub type ReportTaskRunnerHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReportTaskRunnerHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`ReportTaskRunnerHeartbeat`](crate::operation::ReportTaskRunnerHeartbeat)>
     #[allow(unused_mut)]
@@ -2835,10 +2770,6 @@ pub mod set_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetStatusInputOperationOutputAlias = crate::operation::SetStatus;
-#[doc(hidden)]
-pub type SetStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetStatusInput {
     /// Consumes the builder and constructs an Operation<[`SetStatus`](crate::operation::SetStatus)>
     #[allow(unused_mut)]
@@ -3037,10 +2968,6 @@ pub mod set_task_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetTaskStatusInputOperationOutputAlias = crate::operation::SetTaskStatus;
-#[doc(hidden)]
-pub type SetTaskStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetTaskStatusInput {
     /// Consumes the builder and constructs an Operation<[`SetTaskStatus`](crate::operation::SetTaskStatus)>
     #[allow(unused_mut)]
@@ -3252,11 +3179,6 @@ pub mod validate_pipeline_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ValidatePipelineDefinitionInputOperationOutputAlias =
-    crate::operation::ValidatePipelineDefinition;
-#[doc(hidden)]
-pub type ValidatePipelineDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidatePipelineDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`ValidatePipelineDefinition`](crate::operation::ValidatePipelineDefinition)>
     #[allow(unused_mut)]

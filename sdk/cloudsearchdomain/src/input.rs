@@ -292,10 +292,6 @@ pub mod search_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchInputOperationOutputAlias = crate::operation::Search;
-#[doc(hidden)]
-pub type SearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchInput {
     /// Consumes the builder and constructs an Operation<[`Search`](crate::operation::Search)>
     #[allow(unused_mut)]
@@ -502,10 +498,6 @@ pub mod suggest_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SuggestInputOperationOutputAlias = crate::operation::Suggest;
-#[doc(hidden)]
-pub type SuggestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SuggestInput {
     /// Consumes the builder and constructs an Operation<[`Suggest`](crate::operation::Suggest)>
     #[allow(unused_mut)]
@@ -676,10 +668,6 @@ pub mod upload_documents_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UploadDocumentsInputOperationOutputAlias = crate::operation::UploadDocuments;
-#[doc(hidden)]
-pub type UploadDocumentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadDocumentsInput {
     /// Consumes the builder and constructs an Operation<[`UploadDocuments`](crate::operation::UploadDocuments)>
     #[allow(unused_mut)]

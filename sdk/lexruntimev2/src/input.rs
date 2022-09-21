@@ -67,10 +67,6 @@ pub mod delete_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSessionInputOperationOutputAlias = crate::operation::DeleteSession;
-#[doc(hidden)]
-pub type DeleteSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSession`](crate::operation::DeleteSession)>
     #[allow(unused_mut)]
@@ -286,10 +282,6 @@ pub mod get_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSessionInputOperationOutputAlias = crate::operation::GetSession;
-#[doc(hidden)]
-pub type GetSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
     #[allow(unused_mut)]
@@ -593,10 +585,6 @@ pub mod put_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutSessionInputOperationOutputAlias = crate::operation::PutSession;
-#[doc(hidden)]
-pub type PutSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSessionInput {
     /// Consumes the builder and constructs an Operation<[`PutSession`](crate::operation::PutSession)>
     #[allow(unused_mut)]
@@ -886,10 +874,6 @@ pub mod recognize_text_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RecognizeTextInputOperationOutputAlias = crate::operation::RecognizeText;
-#[doc(hidden)]
-pub type RecognizeTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecognizeTextInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeText`](crate::operation::RecognizeText)>
     #[allow(unused_mut)]
@@ -1259,10 +1243,6 @@ pub mod recognize_utterance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RecognizeUtteranceInputOperationOutputAlias = crate::operation::RecognizeUtterance;
-#[doc(hidden)]
-pub type RecognizeUtteranceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecognizeUtteranceInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeUtterance`](crate::operation::RecognizeUtterance)>
     #[allow(unused_mut)]

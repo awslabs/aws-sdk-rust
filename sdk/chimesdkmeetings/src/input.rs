@@ -53,10 +53,6 @@ pub mod batch_create_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCreateAttendeeInputOperationOutputAlias = crate::operation::BatchCreateAttendee;
-#[doc(hidden)]
-pub type BatchCreateAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateAttendee`](crate::operation::BatchCreateAttendee)>
     #[allow(unused_mut)]
@@ -262,12 +258,6 @@ pub mod batch_update_attendee_capabilities_except_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdateAttendeeCapabilitiesExceptInputOperationOutputAlias =
-    crate::operation::BatchUpdateAttendeeCapabilitiesExcept;
-#[doc(hidden)]
-pub type BatchUpdateAttendeeCapabilitiesExceptInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateAttendeeCapabilitiesExceptInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateAttendeeCapabilitiesExcept`](crate::operation::BatchUpdateAttendeeCapabilitiesExcept)>
     #[allow(unused_mut)]
@@ -479,10 +469,6 @@ pub mod create_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAttendeeInputOperationOutputAlias = crate::operation::CreateAttendee;
-#[doc(hidden)]
-pub type CreateAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`CreateAttendee`](crate::operation::CreateAttendee)>
     #[allow(unused_mut)]
@@ -812,10 +798,6 @@ pub mod create_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMeetingInputOperationOutputAlias = crate::operation::CreateMeeting;
-#[doc(hidden)]
-pub type CreateMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeeting`](crate::operation::CreateMeeting)>
     #[allow(unused_mut)]
@@ -1125,11 +1107,6 @@ pub mod create_meeting_with_attendees_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMeetingWithAttendeesInputOperationOutputAlias =
-    crate::operation::CreateMeetingWithAttendees;
-#[doc(hidden)]
-pub type CreateMeetingWithAttendeesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingWithAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeetingWithAttendees`](crate::operation::CreateMeetingWithAttendees)>
     #[allow(unused_mut)]
@@ -1291,10 +1268,6 @@ pub mod delete_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAttendeeInputOperationOutputAlias = crate::operation::DeleteAttendee;
-#[doc(hidden)]
-pub type DeleteAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttendee`](crate::operation::DeleteAttendee)>
     #[allow(unused_mut)]
@@ -1453,10 +1426,6 @@ pub mod delete_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMeetingInputOperationOutputAlias = crate::operation::DeleteMeeting;
-#[doc(hidden)]
-pub type DeleteMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMeetingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMeeting`](crate::operation::DeleteMeeting)>
     #[allow(unused_mut)]
@@ -1608,10 +1577,6 @@ pub mod get_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAttendeeInputOperationOutputAlias = crate::operation::GetAttendee;
-#[doc(hidden)]
-pub type GetAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`GetAttendee`](crate::operation::GetAttendee)>
     #[allow(unused_mut)]
@@ -1769,10 +1734,6 @@ pub mod get_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMeetingInputOperationOutputAlias = crate::operation::GetMeeting;
-#[doc(hidden)]
-pub type GetMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMeetingInput {
     /// Consumes the builder and constructs an Operation<[`GetMeeting`](crate::operation::GetMeeting)>
     #[allow(unused_mut)]
@@ -1936,10 +1897,6 @@ pub mod list_attendees_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAttendeesInputOperationOutputAlias = crate::operation::ListAttendees;
-#[doc(hidden)]
-pub type ListAttendeesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttendees`](crate::operation::ListAttendees)>
     #[allow(unused_mut)]
@@ -2100,10 +2057,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2260,11 +2213,6 @@ pub mod start_meeting_transcription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMeetingTranscriptionInputOperationOutputAlias =
-    crate::operation::StartMeetingTranscription;
-#[doc(hidden)]
-pub type StartMeetingTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMeetingTranscription`](crate::operation::StartMeetingTranscription)>
     #[allow(unused_mut)]
@@ -2435,11 +2383,6 @@ pub mod stop_meeting_transcription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopMeetingTranscriptionInputOperationOutputAlias =
-    crate::operation::StopMeetingTranscription;
-#[doc(hidden)]
-pub type StopMeetingTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StopMeetingTranscription`](crate::operation::StopMeetingTranscription)>
     #[allow(unused_mut)]
@@ -2613,10 +2556,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2785,10 +2724,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2965,11 +2900,6 @@ pub mod update_attendee_capabilities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAttendeeCapabilitiesInputOperationOutputAlias =
-    crate::operation::UpdateAttendeeCapabilities;
-#[doc(hidden)]
-pub type UpdateAttendeeCapabilitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAttendeeCapabilitiesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAttendeeCapabilities`](crate::operation::UpdateAttendeeCapabilities)>
     #[allow(unused_mut)]

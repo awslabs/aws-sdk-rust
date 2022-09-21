@@ -63,11 +63,6 @@ pub mod add_custom_routing_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddCustomRoutingEndpointsInputOperationOutputAlias =
-    crate::operation::AddCustomRoutingEndpoints;
-#[doc(hidden)]
-pub type AddCustomRoutingEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCustomRoutingEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`AddCustomRoutingEndpoints`](crate::operation::AddCustomRoutingEndpoints)>
     #[allow(unused_mut)]
@@ -211,10 +206,6 @@ pub mod advertise_byoip_cidr_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdvertiseByoipCidrInputOperationOutputAlias = crate::operation::AdvertiseByoipCidr;
-#[doc(hidden)]
-pub type AdvertiseByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdvertiseByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`AdvertiseByoipCidr`](crate::operation::AdvertiseByoipCidr)>
     #[allow(unused_mut)]
@@ -440,11 +431,6 @@ pub mod allow_custom_routing_traffic_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AllowCustomRoutingTrafficInputOperationOutputAlias =
-    crate::operation::AllowCustomRoutingTraffic;
-#[doc(hidden)]
-pub type AllowCustomRoutingTrafficInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AllowCustomRoutingTrafficInput {
     /// Consumes the builder and constructs an Operation<[`AllowCustomRoutingTraffic`](crate::operation::AllowCustomRoutingTraffic)>
     #[allow(unused_mut)]
@@ -686,10 +672,6 @@ pub mod create_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAcceleratorInputOperationOutputAlias = crate::operation::CreateAccelerator;
-#[doc(hidden)]
-pub type CreateAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccelerator`](crate::operation::CreateAccelerator)>
     #[allow(unused_mut)]
@@ -934,12 +916,6 @@ pub mod create_custom_routing_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomRoutingAcceleratorInputOperationOutputAlias =
-    crate::operation::CreateCustomRoutingAccelerator;
-#[doc(hidden)]
-pub type CreateCustomRoutingAcceleratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomRoutingAccelerator`](crate::operation::CreateCustomRoutingAccelerator)>
     #[allow(unused_mut)]
@@ -1144,12 +1120,6 @@ pub mod create_custom_routing_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomRoutingEndpointGroupInputOperationOutputAlias =
-    crate::operation::CreateCustomRoutingEndpointGroup;
-#[doc(hidden)]
-pub type CreateCustomRoutingEndpointGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomRoutingEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomRoutingEndpointGroup`](crate::operation::CreateCustomRoutingEndpointGroup)>
     #[allow(unused_mut)]
@@ -1338,11 +1308,6 @@ pub mod create_custom_routing_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomRoutingListenerInputOperationOutputAlias =
-    crate::operation::CreateCustomRoutingListener;
-#[doc(hidden)]
-pub type CreateCustomRoutingListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomRoutingListener`](crate::operation::CreateCustomRoutingListener)>
     #[allow(unused_mut)]
@@ -1651,10 +1616,6 @@ pub mod create_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEndpointGroupInputOperationOutputAlias = crate::operation::CreateEndpointGroup;
-#[doc(hidden)]
-pub type CreateEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpointGroup`](crate::operation::CreateEndpointGroup)>
     #[allow(unused_mut)]
@@ -1873,10 +1834,6 @@ pub mod create_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateListenerInputOperationOutputAlias = crate::operation::CreateListener;
-#[doc(hidden)]
-pub type CreateListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateListener`](crate::operation::CreateListener)>
     #[allow(unused_mut)]
@@ -2026,10 +1983,6 @@ pub mod delete_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAcceleratorInputOperationOutputAlias = crate::operation::DeleteAccelerator;
-#[doc(hidden)]
-pub type DeleteAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccelerator`](crate::operation::DeleteAccelerator)>
     #[allow(unused_mut)]
@@ -2178,12 +2131,6 @@ pub mod delete_custom_routing_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomRoutingAcceleratorInputOperationOutputAlias =
-    crate::operation::DeleteCustomRoutingAccelerator;
-#[doc(hidden)]
-pub type DeleteCustomRoutingAcceleratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomRoutingAccelerator`](crate::operation::DeleteCustomRoutingAccelerator)>
     #[allow(unused_mut)]
@@ -2331,12 +2278,6 @@ pub mod delete_custom_routing_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomRoutingEndpointGroupInputOperationOutputAlias =
-    crate::operation::DeleteCustomRoutingEndpointGroup;
-#[doc(hidden)]
-pub type DeleteCustomRoutingEndpointGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomRoutingEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomRoutingEndpointGroup`](crate::operation::DeleteCustomRoutingEndpointGroup)>
     #[allow(unused_mut)]
@@ -2481,11 +2422,6 @@ pub mod delete_custom_routing_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomRoutingListenerInputOperationOutputAlias =
-    crate::operation::DeleteCustomRoutingListener;
-#[doc(hidden)]
-pub type DeleteCustomRoutingListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomRoutingListener`](crate::operation::DeleteCustomRoutingListener)>
     #[allow(unused_mut)]
@@ -2631,10 +2567,6 @@ pub mod delete_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEndpointGroupInputOperationOutputAlias = crate::operation::DeleteEndpointGroup;
-#[doc(hidden)]
-pub type DeleteEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpointGroup`](crate::operation::DeleteEndpointGroup)>
     #[allow(unused_mut)]
@@ -2778,10 +2710,6 @@ pub mod delete_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteListenerInputOperationOutputAlias = crate::operation::DeleteListener;
-#[doc(hidden)]
-pub type DeleteListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteListener`](crate::operation::DeleteListener)>
     #[allow(unused_mut)]
@@ -3005,11 +2933,6 @@ pub mod deny_custom_routing_traffic_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DenyCustomRoutingTrafficInputOperationOutputAlias =
-    crate::operation::DenyCustomRoutingTraffic;
-#[doc(hidden)]
-pub type DenyCustomRoutingTrafficInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DenyCustomRoutingTrafficInput {
     /// Consumes the builder and constructs an Operation<[`DenyCustomRoutingTraffic`](crate::operation::DenyCustomRoutingTraffic)>
     #[allow(unused_mut)]
@@ -3153,10 +3076,6 @@ pub mod deprovision_byoip_cidr_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeprovisionByoipCidrInputOperationOutputAlias = crate::operation::DeprovisionByoipCidr;
-#[doc(hidden)]
-pub type DeprovisionByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprovisionByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`DeprovisionByoipCidr`](crate::operation::DeprovisionByoipCidr)>
     #[allow(unused_mut)]
@@ -3305,10 +3224,6 @@ pub mod describe_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAcceleratorInputOperationOutputAlias = crate::operation::DescribeAccelerator;
-#[doc(hidden)]
-pub type DescribeAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccelerator`](crate::operation::DescribeAccelerator)>
     #[allow(unused_mut)]
@@ -3457,12 +3372,6 @@ pub mod describe_accelerator_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAcceleratorAttributesInputOperationOutputAlias =
-    crate::operation::DescribeAcceleratorAttributes;
-#[doc(hidden)]
-pub type DescribeAcceleratorAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAcceleratorAttributes`](crate::operation::DescribeAcceleratorAttributes)>
     #[allow(unused_mut)]
@@ -3610,12 +3519,6 @@ pub mod describe_custom_routing_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCustomRoutingAcceleratorInputOperationOutputAlias =
-    crate::operation::DescribeCustomRoutingAccelerator;
-#[doc(hidden)]
-pub type DescribeCustomRoutingAcceleratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingAccelerator`](crate::operation::DescribeCustomRoutingAccelerator)>
     #[allow(unused_mut)]
@@ -3765,12 +3668,6 @@ pub mod describe_custom_routing_accelerator_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCustomRoutingAcceleratorAttributesInputOperationOutputAlias =
-    crate::operation::DescribeCustomRoutingAcceleratorAttributes;
-#[doc(hidden)]
-pub type DescribeCustomRoutingAcceleratorAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingAcceleratorAttributes`](crate::operation::DescribeCustomRoutingAcceleratorAttributes)>
     #[allow(unused_mut)]
@@ -3919,12 +3816,6 @@ pub mod describe_custom_routing_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCustomRoutingEndpointGroupInputOperationOutputAlias =
-    crate::operation::DescribeCustomRoutingEndpointGroup;
-#[doc(hidden)]
-pub type DescribeCustomRoutingEndpointGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingEndpointGroup`](crate::operation::DescribeCustomRoutingEndpointGroup)>
     #[allow(unused_mut)]
@@ -4069,12 +3960,6 @@ pub mod describe_custom_routing_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCustomRoutingListenerInputOperationOutputAlias =
-    crate::operation::DescribeCustomRoutingListener;
-#[doc(hidden)]
-pub type DescribeCustomRoutingListenerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomRoutingListener`](crate::operation::DescribeCustomRoutingListener)>
     #[allow(unused_mut)]
@@ -4220,10 +4105,6 @@ pub mod describe_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEndpointGroupInputOperationOutputAlias = crate::operation::DescribeEndpointGroup;
-#[doc(hidden)]
-pub type DescribeEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointGroup`](crate::operation::DescribeEndpointGroup)>
     #[allow(unused_mut)]
@@ -4369,10 +4250,6 @@ pub mod describe_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeListenerInputOperationOutputAlias = crate::operation::DescribeListener;
-#[doc(hidden)]
-pub type DescribeListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeListenerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListener`](crate::operation::DescribeListener)>
     #[allow(unused_mut)]
@@ -4528,10 +4405,6 @@ pub mod list_accelerators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAcceleratorsInputOperationOutputAlias = crate::operation::ListAccelerators;
-#[doc(hidden)]
-pub type ListAcceleratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAcceleratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccelerators`](crate::operation::ListAccelerators)>
     #[allow(unused_mut)]
@@ -4687,10 +4560,6 @@ pub mod list_byoip_cidrs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListByoipCidrsInputOperationOutputAlias = crate::operation::ListByoipCidrs;
-#[doc(hidden)]
-pub type ListByoipCidrsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListByoipCidrsInput {
     /// Consumes the builder and constructs an Operation<[`ListByoipCidrs`](crate::operation::ListByoipCidrs)>
     #[allow(unused_mut)]
@@ -4848,12 +4717,6 @@ pub mod list_custom_routing_accelerators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomRoutingAcceleratorsInputOperationOutputAlias =
-    crate::operation::ListCustomRoutingAccelerators;
-#[doc(hidden)]
-pub type ListCustomRoutingAcceleratorsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingAcceleratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingAccelerators`](crate::operation::ListCustomRoutingAccelerators)>
     #[allow(unused_mut)]
@@ -5022,12 +4885,6 @@ pub mod list_custom_routing_endpoint_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomRoutingEndpointGroupsInputOperationOutputAlias =
-    crate::operation::ListCustomRoutingEndpointGroups;
-#[doc(hidden)]
-pub type ListCustomRoutingEndpointGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingEndpointGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingEndpointGroups`](crate::operation::ListCustomRoutingEndpointGroups)>
     #[allow(unused_mut)]
@@ -5199,11 +5056,6 @@ pub mod list_custom_routing_listeners_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomRoutingListenersInputOperationOutputAlias =
-    crate::operation::ListCustomRoutingListeners;
-#[doc(hidden)]
-pub type ListCustomRoutingListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingListenersInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingListeners`](crate::operation::ListCustomRoutingListeners)>
     #[allow(unused_mut)]
@@ -5390,12 +5242,6 @@ pub mod list_custom_routing_port_mappings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomRoutingPortMappingsInputOperationOutputAlias =
-    crate::operation::ListCustomRoutingPortMappings;
-#[doc(hidden)]
-pub type ListCustomRoutingPortMappingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingPortMappingsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingPortMappings`](crate::operation::ListCustomRoutingPortMappings)>
     #[allow(unused_mut)]
@@ -5581,12 +5427,6 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomRoutingPortMappingsByDestinationInputOperationOutputAlias =
-    crate::operation::ListCustomRoutingPortMappingsByDestination;
-#[doc(hidden)]
-pub type ListCustomRoutingPortMappingsByDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomRoutingPortMappingsByDestinationInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomRoutingPortMappingsByDestination`](crate::operation::ListCustomRoutingPortMappingsByDestination)>
     #[allow(unused_mut)]
@@ -5754,10 +5594,6 @@ pub mod list_endpoint_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEndpointGroupsInputOperationOutputAlias = crate::operation::ListEndpointGroups;
-#[doc(hidden)]
-pub type ListEndpointGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpointGroups`](crate::operation::ListEndpointGroups)>
     #[allow(unused_mut)]
@@ -5928,10 +5764,6 @@ pub mod list_listeners_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListListenersInputOperationOutputAlias = crate::operation::ListListeners;
-#[doc(hidden)]
-pub type ListListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListListenersInput {
     /// Consumes the builder and constructs an Operation<[`ListListeners`](crate::operation::ListListeners)>
     #[allow(unused_mut)]
@@ -6075,10 +5907,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -6243,10 +6071,6 @@ pub mod provision_byoip_cidr_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ProvisionByoipCidrInputOperationOutputAlias = crate::operation::ProvisionByoipCidr;
-#[doc(hidden)]
-pub type ProvisionByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvisionByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionByoipCidr`](crate::operation::ProvisionByoipCidr)>
     #[allow(unused_mut)]
@@ -6416,12 +6240,6 @@ pub mod remove_custom_routing_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveCustomRoutingEndpointsInputOperationOutputAlias =
-    crate::operation::RemoveCustomRoutingEndpoints;
-#[doc(hidden)]
-pub type RemoveCustomRoutingEndpointsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveCustomRoutingEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveCustomRoutingEndpoints`](crate::operation::RemoveCustomRoutingEndpoints)>
     #[allow(unused_mut)]
@@ -6585,10 +6403,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6753,10 +6567,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6944,10 +6754,6 @@ pub mod update_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAcceleratorInputOperationOutputAlias = crate::operation::UpdateAccelerator;
-#[doc(hidden)]
-pub type UpdateAcceleratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccelerator`](crate::operation::UpdateAccelerator)>
     #[allow(unused_mut)]
@@ -7144,11 +6950,6 @@ pub mod update_accelerator_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAcceleratorAttributesInputOperationOutputAlias =
-    crate::operation::UpdateAcceleratorAttributes;
-#[doc(hidden)]
-pub type UpdateAcceleratorAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAcceleratorAttributes`](crate::operation::UpdateAcceleratorAttributes)>
     #[allow(unused_mut)]
@@ -7337,12 +7138,6 @@ pub mod update_custom_routing_accelerator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCustomRoutingAcceleratorInputOperationOutputAlias =
-    crate::operation::UpdateCustomRoutingAccelerator;
-#[doc(hidden)]
-pub type UpdateCustomRoutingAcceleratorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomRoutingAcceleratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomRoutingAccelerator`](crate::operation::UpdateCustomRoutingAccelerator)>
     #[allow(unused_mut)]
@@ -7540,12 +7335,6 @@ pub mod update_custom_routing_accelerator_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCustomRoutingAcceleratorAttributesInputOperationOutputAlias =
-    crate::operation::UpdateCustomRoutingAcceleratorAttributes;
-#[doc(hidden)]
-pub type UpdateCustomRoutingAcceleratorAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomRoutingAcceleratorAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomRoutingAcceleratorAttributes`](crate::operation::UpdateCustomRoutingAcceleratorAttributes)>
     #[allow(unused_mut)]
@@ -7713,11 +7502,6 @@ pub mod update_custom_routing_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCustomRoutingListenerInputOperationOutputAlias =
-    crate::operation::UpdateCustomRoutingListener;
-#[doc(hidden)]
-pub type UpdateCustomRoutingListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomRoutingListenerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomRoutingListener`](crate::operation::UpdateCustomRoutingListener)>
     #[allow(unused_mut)]
@@ -7996,10 +7780,6 @@ pub mod update_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEndpointGroupInputOperationOutputAlias = crate::operation::UpdateEndpointGroup;
-#[doc(hidden)]
-pub type UpdateEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpointGroup`](crate::operation::UpdateEndpointGroup)>
     #[allow(unused_mut)]
@@ -8197,10 +7977,6 @@ pub mod update_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateListenerInputOperationOutputAlias = crate::operation::UpdateListener;
-#[doc(hidden)]
-pub type UpdateListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateListenerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateListener`](crate::operation::UpdateListener)>
     #[allow(unused_mut)]
@@ -8342,10 +8118,6 @@ pub mod withdraw_byoip_cidr_input {
         }
     }
 }
-#[doc(hidden)]
-pub type WithdrawByoipCidrInputOperationOutputAlias = crate::operation::WithdrawByoipCidr;
-#[doc(hidden)]
-pub type WithdrawByoipCidrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl WithdrawByoipCidrInput {
     /// Consumes the builder and constructs an Operation<[`WithdrawByoipCidr`](crate::operation::WithdrawByoipCidr)>
     #[allow(unused_mut)]

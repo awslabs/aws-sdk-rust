@@ -33,10 +33,6 @@ pub mod cancel_rotate_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelRotateSecretInputOperationOutputAlias = crate::operation::CancelRotateSecret;
-#[doc(hidden)]
-pub type CancelRotateSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelRotateSecretInput {
     /// Consumes the builder and constructs an Operation<[`CancelRotateSecret`](crate::operation::CancelRotateSecret)>
     #[allow(unused_mut)]
@@ -371,10 +367,6 @@ pub mod create_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSecretInputOperationOutputAlias = crate::operation::CreateSecret;
-#[doc(hidden)]
-pub type CreateSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSecretInput {
     /// Consumes the builder and constructs an Operation<[`CreateSecret`](crate::operation::CreateSecret)>
     #[allow(unused_mut)]
@@ -523,10 +515,6 @@ pub mod delete_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(unused_mut)]
@@ -707,10 +695,6 @@ pub mod delete_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSecretInputOperationOutputAlias = crate::operation::DeleteSecret;
-#[doc(hidden)]
-pub type DeleteSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSecretInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSecret`](crate::operation::DeleteSecret)>
     #[allow(unused_mut)]
@@ -856,10 +840,6 @@ pub mod describe_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSecretInputOperationOutputAlias = crate::operation::DescribeSecret;
-#[doc(hidden)]
-pub type DescribeSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSecretInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSecret`](crate::operation::DescribeSecret)>
     #[allow(unused_mut)]
@@ -1090,10 +1070,6 @@ pub mod get_random_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRandomPasswordInputOperationOutputAlias = crate::operation::GetRandomPassword;
-#[doc(hidden)]
-pub type GetRandomPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRandomPasswordInput {
     /// Consumes the builder and constructs an Operation<[`GetRandomPassword`](crate::operation::GetRandomPassword)>
     #[allow(unused_mut)]
@@ -1239,10 +1215,6 @@ pub mod get_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourcePolicyInputOperationOutputAlias = crate::operation::GetResourcePolicy;
-#[doc(hidden)]
-pub type GetResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicy`](crate::operation::GetResourcePolicy)>
     #[allow(unused_mut)]
@@ -1419,10 +1391,6 @@ pub mod get_secret_value_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSecretValueInputOperationOutputAlias = crate::operation::GetSecretValue;
-#[doc(hidden)]
-pub type GetSecretValueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSecretValueInput {
     /// Consumes the builder and constructs an Operation<[`GetSecretValue`](crate::operation::GetSecretValue)>
     #[allow(unused_mut)]
@@ -1616,10 +1584,6 @@ pub mod list_secrets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSecretsInputOperationOutputAlias = crate::operation::ListSecrets;
-#[doc(hidden)]
-pub type ListSecretsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSecretsInput {
     /// Consumes the builder and constructs an Operation<[`ListSecrets`](crate::operation::ListSecrets)>
     #[allow(unused_mut)]
@@ -1803,10 +1767,6 @@ pub mod list_secret_version_ids_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSecretVersionIdsInputOperationOutputAlias = crate::operation::ListSecretVersionIds;
-#[doc(hidden)]
-pub type ListSecretVersionIdsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSecretVersionIdsInput {
     /// Consumes the builder and constructs an Operation<[`ListSecretVersionIds`](crate::operation::ListSecretVersionIds)>
     #[allow(unused_mut)]
@@ -1981,10 +1941,6 @@ pub mod put_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(unused_mut)]
@@ -2228,10 +2184,6 @@ pub mod put_secret_value_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutSecretValueInputOperationOutputAlias = crate::operation::PutSecretValue;
-#[doc(hidden)]
-pub type PutSecretValueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSecretValueInput {
     /// Consumes the builder and constructs an Operation<[`PutSecretValue`](crate::operation::PutSecretValue)>
     #[allow(unused_mut)]
@@ -2401,12 +2353,6 @@ pub mod remove_regions_from_replication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveRegionsFromReplicationInputOperationOutputAlias =
-    crate::operation::RemoveRegionsFromReplication;
-#[doc(hidden)]
-pub type RemoveRegionsFromReplicationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveRegionsFromReplicationInput {
     /// Consumes the builder and constructs an Operation<[`RemoveRegionsFromReplication`](crate::operation::RemoveRegionsFromReplication)>
     #[allow(unused_mut)]
@@ -2590,11 +2536,6 @@ pub mod replicate_secret_to_regions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ReplicateSecretToRegionsInputOperationOutputAlias =
-    crate::operation::ReplicateSecretToRegions;
-#[doc(hidden)]
-pub type ReplicateSecretToRegionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReplicateSecretToRegionsInput {
     /// Consumes the builder and constructs an Operation<[`ReplicateSecretToRegions`](crate::operation::ReplicateSecretToRegions)>
     #[allow(unused_mut)]
@@ -2742,10 +2683,6 @@ pub mod restore_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreSecretInputOperationOutputAlias = crate::operation::RestoreSecret;
-#[doc(hidden)]
-pub type RestoreSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreSecretInput {
     /// Consumes the builder and constructs an Operation<[`RestoreSecret`](crate::operation::RestoreSecret)>
     #[allow(unused_mut)]
@@ -2956,10 +2893,6 @@ pub mod rotate_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RotateSecretInputOperationOutputAlias = crate::operation::RotateSecret;
-#[doc(hidden)]
-pub type RotateSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RotateSecretInput {
     /// Consumes the builder and constructs an Operation<[`RotateSecret`](crate::operation::RotateSecret)>
     #[allow(unused_mut)]
@@ -3108,11 +3041,6 @@ pub mod stop_replication_to_replica_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopReplicationToReplicaInputOperationOutputAlias =
-    crate::operation::StopReplicationToReplica;
-#[doc(hidden)]
-pub type StopReplicationToReplicaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopReplicationToReplicaInput {
     /// Consumes the builder and constructs an Operation<[`StopReplicationToReplica`](crate::operation::StopReplicationToReplica)>
     #[allow(unused_mut)]
@@ -3283,10 +3211,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3457,10 +3381,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3695,10 +3615,6 @@ pub mod update_secret_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSecretInputOperationOutputAlias = crate::operation::UpdateSecret;
-#[doc(hidden)]
-pub type UpdateSecretInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSecretInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSecret`](crate::operation::UpdateSecret)>
     #[allow(unused_mut)]
@@ -3896,11 +3812,6 @@ pub mod update_secret_version_stage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSecretVersionStageInputOperationOutputAlias =
-    crate::operation::UpdateSecretVersionStage;
-#[doc(hidden)]
-pub type UpdateSecretVersionStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSecretVersionStageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSecretVersionStage`](crate::operation::UpdateSecretVersionStage)>
     #[allow(unused_mut)]
@@ -4061,10 +3972,6 @@ pub mod validate_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ValidateResourcePolicyInputOperationOutputAlias = crate::operation::ValidateResourcePolicy;
-#[doc(hidden)]
-pub type ValidateResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidateResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`ValidateResourcePolicy`](crate::operation::ValidateResourcePolicy)>
     #[allow(unused_mut)]

@@ -209,10 +209,6 @@ pub mod create_identity_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateIdentityPoolInputOperationOutputAlias = crate::operation::CreateIdentityPool;
-#[doc(hidden)]
-pub type CreateIdentityPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateIdentityPool`](crate::operation::CreateIdentityPool)>
     #[allow(unused_mut)]
@@ -365,10 +361,6 @@ pub mod delete_identities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIdentitiesInputOperationOutputAlias = crate::operation::DeleteIdentities;
-#[doc(hidden)]
-pub type DeleteIdentitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentities`](crate::operation::DeleteIdentities)>
     #[allow(unused_mut)]
@@ -515,10 +507,6 @@ pub mod delete_identity_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIdentityPoolInputOperationOutputAlias = crate::operation::DeleteIdentityPool;
-#[doc(hidden)]
-pub type DeleteIdentityPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityPool`](crate::operation::DeleteIdentityPool)>
     #[allow(unused_mut)]
@@ -662,10 +650,6 @@ pub mod describe_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIdentityInputOperationOutputAlias = crate::operation::DescribeIdentity;
-#[doc(hidden)]
-pub type DescribeIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentity`](crate::operation::DescribeIdentity)>
     #[allow(unused_mut)]
@@ -812,10 +796,6 @@ pub mod describe_identity_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIdentityPoolInputOperationOutputAlias = crate::operation::DescribeIdentityPool;
-#[doc(hidden)]
-pub type DescribeIdentityPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityPool`](crate::operation::DescribeIdentityPool)>
     #[allow(unused_mut)]
@@ -1011,11 +991,6 @@ pub mod get_credentials_for_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCredentialsForIdentityInputOperationOutputAlias =
-    crate::operation::GetCredentialsForIdentity;
-#[doc(hidden)]
-pub type GetCredentialsForIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCredentialsForIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetCredentialsForIdentity`](crate::operation::GetCredentialsForIdentity)>
     #[allow(unused_mut)]
@@ -1229,10 +1204,6 @@ pub mod get_id_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdInputOperationOutputAlias = crate::operation::GetId;
-#[doc(hidden)]
-pub type GetIdInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdInput {
     /// Consumes the builder and constructs an Operation<[`GetId`](crate::operation::GetId)>
     #[allow(unused_mut)]
@@ -1378,10 +1349,6 @@ pub mod get_identity_pool_roles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityPoolRolesInputOperationOutputAlias = crate::operation::GetIdentityPoolRoles;
-#[doc(hidden)]
-pub type GetIdentityPoolRolesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityPoolRolesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPoolRoles`](crate::operation::GetIdentityPoolRoles)>
     #[allow(unused_mut)]
@@ -1556,10 +1523,6 @@ pub mod get_open_id_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOpenIdTokenInputOperationOutputAlias = crate::operation::GetOpenIdToken;
-#[doc(hidden)]
-pub type GetOpenIdTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOpenIdTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetOpenIdToken`](crate::operation::GetOpenIdToken)>
     #[allow(unused_mut)]
@@ -1795,12 +1758,6 @@ pub mod get_open_id_token_for_developer_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOpenIdTokenForDeveloperIdentityInputOperationOutputAlias =
-    crate::operation::GetOpenIdTokenForDeveloperIdentity;
-#[doc(hidden)]
-pub type GetOpenIdTokenForDeveloperIdentityInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOpenIdTokenForDeveloperIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetOpenIdTokenForDeveloperIdentity`](crate::operation::GetOpenIdTokenForDeveloperIdentity)>
     #[allow(unused_mut)]
@@ -1963,11 +1920,6 @@ pub mod get_principal_tag_attribute_map_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPrincipalTagAttributeMapInputOperationOutputAlias =
-    crate::operation::GetPrincipalTagAttributeMap;
-#[doc(hidden)]
-pub type GetPrincipalTagAttributeMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPrincipalTagAttributeMapInput {
     /// Consumes the builder and constructs an Operation<[`GetPrincipalTagAttributeMap`](crate::operation::GetPrincipalTagAttributeMap)>
     #[allow(unused_mut)]
@@ -2149,10 +2101,6 @@ pub mod list_identities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentitiesInputOperationOutputAlias = crate::operation::ListIdentities;
-#[doc(hidden)]
-pub type ListIdentitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentities`](crate::operation::ListIdentities)>
     #[allow(unused_mut)]
@@ -2308,10 +2256,6 @@ pub mod list_identity_pools_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentityPoolsInputOperationOutputAlias = crate::operation::ListIdentityPools;
-#[doc(hidden)]
-pub type ListIdentityPoolsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityPoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPools`](crate::operation::ListIdentityPools)>
     #[allow(unused_mut)]
@@ -2455,10 +2399,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2660,11 +2600,6 @@ pub mod lookup_developer_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type LookupDeveloperIdentityInputOperationOutputAlias =
-    crate::operation::LookupDeveloperIdentity;
-#[doc(hidden)]
-pub type LookupDeveloperIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LookupDeveloperIdentityInput {
     /// Consumes the builder and constructs an Operation<[`LookupDeveloperIdentity`](crate::operation::LookupDeveloperIdentity)>
     #[allow(unused_mut)]
@@ -2863,11 +2798,6 @@ pub mod merge_developer_identities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type MergeDeveloperIdentitiesInputOperationOutputAlias =
-    crate::operation::MergeDeveloperIdentities;
-#[doc(hidden)]
-pub type MergeDeveloperIdentitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MergeDeveloperIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`MergeDeveloperIdentities`](crate::operation::MergeDeveloperIdentities)>
     #[allow(unused_mut)]
@@ -3076,10 +3006,6 @@ pub mod set_identity_pool_roles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIdentityPoolRolesInputOperationOutputAlias = crate::operation::SetIdentityPoolRoles;
-#[doc(hidden)]
-pub type SetIdentityPoolRolesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityPoolRolesInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityPoolRoles`](crate::operation::SetIdentityPoolRoles)>
     #[allow(unused_mut)]
@@ -3286,11 +3212,6 @@ pub mod set_principal_tag_attribute_map_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetPrincipalTagAttributeMapInputOperationOutputAlias =
-    crate::operation::SetPrincipalTagAttributeMap;
-#[doc(hidden)]
-pub type SetPrincipalTagAttributeMapInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetPrincipalTagAttributeMapInput {
     /// Consumes the builder and constructs an Operation<[`SetPrincipalTagAttributeMap`](crate::operation::SetPrincipalTagAttributeMap)>
     #[allow(unused_mut)]
@@ -3462,10 +3383,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3656,11 +3573,6 @@ pub mod unlink_developer_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnlinkDeveloperIdentityInputOperationOutputAlias =
-    crate::operation::UnlinkDeveloperIdentity;
-#[doc(hidden)]
-pub type UnlinkDeveloperIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnlinkDeveloperIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UnlinkDeveloperIdentity`](crate::operation::UnlinkDeveloperIdentity)>
     #[allow(unused_mut)]
@@ -3856,10 +3768,6 @@ pub mod unlink_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnlinkIdentityInputOperationOutputAlias = crate::operation::UnlinkIdentity;
-#[doc(hidden)]
-pub type UnlinkIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnlinkIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UnlinkIdentity`](crate::operation::UnlinkIdentity)>
     #[allow(unused_mut)]
@@ -4025,10 +3933,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4363,10 +4267,6 @@ pub mod update_identity_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateIdentityPoolInputOperationOutputAlias = crate::operation::UpdateIdentityPool;
-#[doc(hidden)]
-pub type UpdateIdentityPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityPool`](crate::operation::UpdateIdentityPool)>
     #[allow(unused_mut)]

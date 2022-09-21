@@ -75,10 +75,6 @@ pub mod create_scaling_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateScalingPlanInputOperationOutputAlias = crate::operation::CreateScalingPlan;
-#[doc(hidden)]
-pub type CreateScalingPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScalingPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreateScalingPlan`](crate::operation::CreateScalingPlan)>
     #[allow(unused_mut)]
@@ -237,10 +233,6 @@ pub mod delete_scaling_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScalingPlanInputOperationOutputAlias = crate::operation::DeleteScalingPlan;
-#[doc(hidden)]
-pub type DeleteScalingPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScalingPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScalingPlan`](crate::operation::DeleteScalingPlan)>
     #[allow(unused_mut)]
@@ -425,12 +417,6 @@ pub mod describe_scaling_plan_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingPlanResourcesInputOperationOutputAlias =
-    crate::operation::DescribeScalingPlanResources;
-#[doc(hidden)]
-pub type DescribeScalingPlanResourcesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingPlanResourcesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPlanResources`](crate::operation::DescribeScalingPlanResources)>
     #[allow(unused_mut)]
@@ -644,10 +630,6 @@ pub mod describe_scaling_plans_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingPlansInputOperationOutputAlias = crate::operation::DescribeScalingPlans;
-#[doc(hidden)]
-pub type DescribeScalingPlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingPlansInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingPlans`](crate::operation::DescribeScalingPlans)>
     #[allow(unused_mut)]
@@ -911,12 +893,6 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetScalingPlanResourceForecastDataInputOperationOutputAlias =
-    crate::operation::GetScalingPlanResourceForecastData;
-#[doc(hidden)]
-pub type GetScalingPlanResourceForecastDataInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetScalingPlanResourceForecastDataInput {
     /// Consumes the builder and constructs an Operation<[`GetScalingPlanResourceForecastData`](crate::operation::GetScalingPlanResourceForecastData)>
     #[allow(unused_mut)]
@@ -1115,10 +1091,6 @@ pub mod update_scaling_plan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateScalingPlanInputOperationOutputAlias = crate::operation::UpdateScalingPlan;
-#[doc(hidden)]
-pub type UpdateScalingPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScalingPlanInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScalingPlan`](crate::operation::UpdateScalingPlan)>
     #[allow(unused_mut)]

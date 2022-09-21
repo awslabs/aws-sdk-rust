@@ -43,10 +43,6 @@ pub mod close_tunnel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CloseTunnelInputOperationOutputAlias = crate::operation::CloseTunnel;
-#[doc(hidden)]
-pub type CloseTunnelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloseTunnelInput {
     /// Consumes the builder and constructs an Operation<[`CloseTunnel`](crate::operation::CloseTunnel)>
     #[allow(unused_mut)]
@@ -204,10 +200,6 @@ pub mod describe_tunnel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTunnelInputOperationOutputAlias = crate::operation::DescribeTunnel;
-#[doc(hidden)]
-pub type DescribeTunnelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTunnelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTunnel`](crate::operation::DescribeTunnel)>
     #[allow(unused_mut)]
@@ -351,10 +343,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -535,10 +523,6 @@ pub mod list_tunnels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTunnelsInputOperationOutputAlias = crate::operation::ListTunnels;
-#[doc(hidden)]
-pub type ListTunnelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTunnelsInput {
     /// Consumes the builder and constructs an Operation<[`ListTunnels`](crate::operation::ListTunnels)>
     #[allow(unused_mut)]
@@ -752,10 +736,6 @@ pub mod open_tunnel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type OpenTunnelInputOperationOutputAlias = crate::operation::OpenTunnel;
-#[doc(hidden)]
-pub type OpenTunnelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl OpenTunnelInput {
     /// Consumes the builder and constructs an Operation<[`OpenTunnel`](crate::operation::OpenTunnel)>
     #[allow(unused_mut)]
@@ -931,11 +911,6 @@ pub mod rotate_tunnel_access_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RotateTunnelAccessTokenInputOperationOutputAlias =
-    crate::operation::RotateTunnelAccessToken;
-#[doc(hidden)]
-pub type RotateTunnelAccessTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RotateTunnelAccessTokenInput {
     /// Consumes the builder and constructs an Operation<[`RotateTunnelAccessToken`](crate::operation::RotateTunnelAccessToken)>
     #[allow(unused_mut)]
@@ -1102,10 +1077,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1270,10 +1241,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

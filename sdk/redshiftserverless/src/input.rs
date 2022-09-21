@@ -63,12 +63,6 @@ pub mod convert_recovery_point_to_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConvertRecoveryPointToSnapshotInputOperationOutputAlias =
-    crate::operation::ConvertRecoveryPointToSnapshot;
-#[doc(hidden)]
-pub type ConvertRecoveryPointToSnapshotInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ConvertRecoveryPointToSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`ConvertRecoveryPointToSnapshot`](crate::operation::ConvertRecoveryPointToSnapshot)>
     #[allow(unused_mut)]
@@ -271,10 +265,6 @@ pub mod create_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEndpointAccessInputOperationOutputAlias = crate::operation::CreateEndpointAccess;
-#[doc(hidden)]
-pub type CreateEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpointAccess`](crate::operation::CreateEndpointAccess)>
     #[allow(unused_mut)]
@@ -555,10 +545,6 @@ pub mod create_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNamespaceInputOperationOutputAlias = crate::operation::CreateNamespace;
-#[doc(hidden)]
-pub type CreateNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateNamespace`](crate::operation::CreateNamespace)>
     #[allow(unused_mut)]
@@ -732,10 +718,6 @@ pub mod create_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSnapshotInputOperationOutputAlias = crate::operation::CreateSnapshot;
-#[doc(hidden)]
-pub type CreateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshot`](crate::operation::CreateSnapshot)>
     #[allow(unused_mut)]
@@ -936,10 +918,6 @@ pub mod create_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUsageLimitInputOperationOutputAlias = crate::operation::CreateUsageLimit;
-#[doc(hidden)]
-pub type CreateUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`CreateUsageLimit`](crate::operation::CreateUsageLimit)>
     #[allow(unused_mut)]
@@ -1222,10 +1200,6 @@ pub mod create_workgroup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkgroupInputOperationOutputAlias = crate::operation::CreateWorkgroup;
-#[doc(hidden)]
-pub type CreateWorkgroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkgroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkgroup`](crate::operation::CreateWorkgroup)>
     #[allow(unused_mut)]
@@ -1372,10 +1346,6 @@ pub mod delete_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEndpointAccessInputOperationOutputAlias = crate::operation::DeleteEndpointAccess;
-#[doc(hidden)]
-pub type DeleteEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpointAccess`](crate::operation::DeleteEndpointAccess)>
     #[allow(unused_mut)]
@@ -1554,10 +1524,6 @@ pub mod delete_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNamespaceInputOperationOutputAlias = crate::operation::DeleteNamespace;
-#[doc(hidden)]
-pub type DeleteNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNamespace`](crate::operation::DeleteNamespace)>
     #[allow(unused_mut)]
@@ -1701,10 +1667,6 @@ pub mod delete_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(unused_mut)]
@@ -1853,10 +1815,6 @@ pub mod delete_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSnapshotInputOperationOutputAlias = crate::operation::DeleteSnapshot;
-#[doc(hidden)]
-pub type DeleteSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSnapshot`](crate::operation::DeleteSnapshot)>
     #[allow(unused_mut)]
@@ -2003,10 +1961,6 @@ pub mod delete_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUsageLimitInputOperationOutputAlias = crate::operation::DeleteUsageLimit;
-#[doc(hidden)]
-pub type DeleteUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUsageLimit`](crate::operation::DeleteUsageLimit)>
     #[allow(unused_mut)]
@@ -2153,10 +2107,6 @@ pub mod delete_workgroup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkgroupInputOperationOutputAlias = crate::operation::DeleteWorkgroup;
-#[doc(hidden)]
-pub type DeleteWorkgroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkgroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkgroup`](crate::operation::DeleteWorkgroup)>
     #[allow(unused_mut)]
@@ -2343,10 +2293,6 @@ pub mod get_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCredentialsInputOperationOutputAlias = crate::operation::GetCredentials;
-#[doc(hidden)]
-pub type GetCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetCredentials`](crate::operation::GetCredentials)>
     #[allow(unused_mut)]
@@ -2493,10 +2439,6 @@ pub mod get_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEndpointAccessInputOperationOutputAlias = crate::operation::GetEndpointAccess;
-#[doc(hidden)]
-pub type GetEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`GetEndpointAccess`](crate::operation::GetEndpointAccess)>
     #[allow(unused_mut)]
@@ -2643,10 +2585,6 @@ pub mod get_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNamespaceInputOperationOutputAlias = crate::operation::GetNamespace;
-#[doc(hidden)]
-pub type GetNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`GetNamespace`](crate::operation::GetNamespace)>
     #[allow(unused_mut)]
@@ -2793,10 +2731,6 @@ pub mod get_recovery_point_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecoveryPointInputOperationOutputAlias = crate::operation::GetRecoveryPoint;
-#[doc(hidden)]
-pub type GetRecoveryPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecoveryPointInput {
     /// Consumes the builder and constructs an Operation<[`GetRecoveryPoint`](crate::operation::GetRecoveryPoint)>
     #[allow(unused_mut)]
@@ -2940,10 +2874,6 @@ pub mod get_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourcePolicyInputOperationOutputAlias = crate::operation::GetResourcePolicy;
-#[doc(hidden)]
-pub type GetResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicy`](crate::operation::GetResourcePolicy)>
     #[allow(unused_mut)]
@@ -3117,10 +3047,6 @@ pub mod get_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSnapshotInputOperationOutputAlias = crate::operation::GetSnapshot;
-#[doc(hidden)]
-pub type GetSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshot`](crate::operation::GetSnapshot)>
     #[allow(unused_mut)]
@@ -3267,10 +3193,6 @@ pub mod get_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUsageLimitInputOperationOutputAlias = crate::operation::GetUsageLimit;
-#[doc(hidden)]
-pub type GetUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`GetUsageLimit`](crate::operation::GetUsageLimit)>
     #[allow(unused_mut)]
@@ -3417,10 +3339,6 @@ pub mod get_workgroup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWorkgroupInputOperationOutputAlias = crate::operation::GetWorkgroup;
-#[doc(hidden)]
-pub type GetWorkgroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkgroupInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkgroup`](crate::operation::GetWorkgroup)>
     #[allow(unused_mut)]
@@ -3603,10 +3521,6 @@ pub mod list_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEndpointAccessInputOperationOutputAlias = crate::operation::ListEndpointAccess;
-#[doc(hidden)]
-pub type ListEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpointAccess`](crate::operation::ListEndpointAccess)>
     #[allow(unused_mut)]
@@ -3762,10 +3676,6 @@ pub mod list_namespaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNamespacesInputOperationOutputAlias = crate::operation::ListNamespaces;
-#[doc(hidden)]
-pub type ListNamespacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNamespacesInput {
     /// Consumes the builder and constructs an Operation<[`ListNamespaces`](crate::operation::ListNamespaces)>
     #[allow(unused_mut)]
@@ -3966,10 +3876,6 @@ pub mod list_recovery_points_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecoveryPointsInputOperationOutputAlias = crate::operation::ListRecoveryPoints;
-#[doc(hidden)]
-pub type ListRecoveryPointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecoveryPointsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecoveryPoints`](crate::operation::ListRecoveryPoints)>
     #[allow(unused_mut)]
@@ -4200,10 +4106,6 @@ pub mod list_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSnapshotsInputOperationOutputAlias = crate::operation::ListSnapshots;
-#[doc(hidden)]
-pub type ListSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`ListSnapshots`](crate::operation::ListSnapshots)>
     #[allow(unused_mut)]
@@ -4347,10 +4249,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4535,10 +4433,6 @@ pub mod list_usage_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsageLimitsInputOperationOutputAlias = crate::operation::ListUsageLimits;
-#[doc(hidden)]
-pub type ListUsageLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsageLimitsInput {
     /// Consumes the builder and constructs an Operation<[`ListUsageLimits`](crate::operation::ListUsageLimits)>
     #[allow(unused_mut)]
@@ -4694,10 +4588,6 @@ pub mod list_workgroups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkgroupsInputOperationOutputAlias = crate::operation::ListWorkgroups;
-#[doc(hidden)]
-pub type ListWorkgroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkgroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkgroups`](crate::operation::ListWorkgroups)>
     #[allow(unused_mut)]
@@ -4855,10 +4745,6 @@ pub mod put_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(unused_mut)]
@@ -5037,11 +4923,6 @@ pub mod restore_from_recovery_point_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreFromRecoveryPointInputOperationOutputAlias =
-    crate::operation::RestoreFromRecoveryPoint;
-#[doc(hidden)]
-pub type RestoreFromRecoveryPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreFromRecoveryPointInput {
     /// Consumes the builder and constructs an Operation<[`RestoreFromRecoveryPoint`](crate::operation::RestoreFromRecoveryPoint)>
     #[allow(unused_mut)]
@@ -5247,10 +5128,6 @@ pub mod restore_from_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreFromSnapshotInputOperationOutputAlias = crate::operation::RestoreFromSnapshot;
-#[doc(hidden)]
-pub type RestoreFromSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreFromSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`RestoreFromSnapshot`](crate::operation::RestoreFromSnapshot)>
     #[allow(unused_mut)]
@@ -5415,10 +5292,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -5583,10 +5456,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -5754,10 +5623,6 @@ pub mod update_endpoint_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEndpointAccessInputOperationOutputAlias = crate::operation::UpdateEndpointAccess;
-#[doc(hidden)]
-pub type UpdateEndpointAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointAccessInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpointAccess`](crate::operation::UpdateEndpointAccess)>
     #[allow(unused_mut)]
@@ -6005,10 +5870,6 @@ pub mod update_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNamespaceInputOperationOutputAlias = crate::operation::UpdateNamespace;
-#[doc(hidden)]
-pub type UpdateNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNamespace`](crate::operation::UpdateNamespace)>
     #[allow(unused_mut)]
@@ -6167,10 +6028,6 @@ pub mod update_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSnapshotInputOperationOutputAlias = crate::operation::UpdateSnapshot;
-#[doc(hidden)]
-pub type UpdateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSnapshot`](crate::operation::UpdateSnapshot)>
     #[allow(unused_mut)]
@@ -6344,10 +6201,6 @@ pub mod update_usage_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUsageLimitInputOperationOutputAlias = crate::operation::UpdateUsageLimit;
-#[doc(hidden)]
-pub type UpdateUsageLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUsageLimitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUsageLimit`](crate::operation::UpdateUsageLimit)>
     #[allow(unused_mut)]
@@ -6594,10 +6447,6 @@ pub mod update_workgroup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkgroupInputOperationOutputAlias = crate::operation::UpdateWorkgroup;
-#[doc(hidden)]
-pub type UpdateWorkgroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkgroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkgroup`](crate::operation::UpdateWorkgroup)>
     #[allow(unused_mut)]

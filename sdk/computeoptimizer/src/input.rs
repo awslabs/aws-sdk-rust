@@ -83,12 +83,6 @@ pub mod delete_recommendation_preferences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRecommendationPreferencesInputOperationOutputAlias =
-    crate::operation::DeleteRecommendationPreferences;
-#[doc(hidden)]
-pub type DeleteRecommendationPreferencesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecommendationPreferences`](crate::operation::DeleteRecommendationPreferences)>
     #[allow(unused_mut)]
@@ -293,12 +287,6 @@ pub mod describe_recommendation_export_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRecommendationExportJobsInputOperationOutputAlias =
-    crate::operation::DescribeRecommendationExportJobs;
-#[doc(hidden)]
-pub type DescribeRecommendationExportJobsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecommendationExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecommendationExportJobs`](crate::operation::DescribeRecommendationExportJobs)>
     #[allow(unused_mut)]
@@ -581,12 +569,6 @@ pub mod export_auto_scaling_group_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportAutoScalingGroupRecommendationsInputOperationOutputAlias =
-    crate::operation::ExportAutoScalingGroupRecommendations;
-#[doc(hidden)]
-pub type ExportAutoScalingGroupRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportAutoScalingGroupRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportAutoScalingGroupRecommendations`](crate::operation::ExportAutoScalingGroupRecommendations)>
     #[allow(unused_mut)]
@@ -845,12 +827,6 @@ pub mod export_ebs_volume_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportEbsVolumeRecommendationsInputOperationOutputAlias =
-    crate::operation::ExportEBSVolumeRecommendations;
-#[doc(hidden)]
-pub type ExportEbsVolumeRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportEbsVolumeRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportEBSVolumeRecommendations`](crate::operation::ExportEBSVolumeRecommendations)>
     #[allow(unused_mut)]
@@ -1126,12 +1102,6 @@ pub mod export_ec2_instance_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportEc2InstanceRecommendationsInputOperationOutputAlias =
-    crate::operation::ExportEC2InstanceRecommendations;
-#[doc(hidden)]
-pub type ExportEc2InstanceRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportEc2InstanceRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportEC2InstanceRecommendations`](crate::operation::ExportEC2InstanceRecommendations)>
     #[allow(unused_mut)]
@@ -1396,12 +1366,6 @@ pub mod export_lambda_function_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportLambdaFunctionRecommendationsInputOperationOutputAlias =
-    crate::operation::ExportLambdaFunctionRecommendations;
-#[doc(hidden)]
-pub type ExportLambdaFunctionRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ExportLambdaFunctionRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportLambdaFunctionRecommendations`](crate::operation::ExportLambdaFunctionRecommendations)>
     #[allow(unused_mut)]
@@ -1646,12 +1610,6 @@ pub mod get_auto_scaling_group_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAutoScalingGroupRecommendationsInputOperationOutputAlias =
-    crate::operation::GetAutoScalingGroupRecommendations;
-#[doc(hidden)]
-pub type GetAutoScalingGroupRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAutoScalingGroupRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetAutoScalingGroupRecommendations`](crate::operation::GetAutoScalingGroupRecommendations)>
     #[allow(unused_mut)]
@@ -1877,11 +1835,6 @@ pub mod get_ebs_volume_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEbsVolumeRecommendationsInputOperationOutputAlias =
-    crate::operation::GetEBSVolumeRecommendations;
-#[doc(hidden)]
-pub type GetEbsVolumeRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEbsVolumeRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetEBSVolumeRecommendations`](crate::operation::GetEBSVolumeRecommendations)>
     #[allow(unused_mut)]
@@ -2126,12 +2079,6 @@ pub mod get_ec2_instance_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEc2InstanceRecommendationsInputOperationOutputAlias =
-    crate::operation::GetEC2InstanceRecommendations;
-#[doc(hidden)]
-pub type GetEc2InstanceRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEc2InstanceRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetEC2InstanceRecommendations`](crate::operation::GetEC2InstanceRecommendations)>
     #[allow(unused_mut)]
@@ -2352,12 +2299,6 @@ pub mod get_ec2_recommendation_projected_metrics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEc2RecommendationProjectedMetricsInputOperationOutputAlias =
-    crate::operation::GetEC2RecommendationProjectedMetrics;
-#[doc(hidden)]
-pub type GetEc2RecommendationProjectedMetricsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEc2RecommendationProjectedMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetEC2RecommendationProjectedMetrics`](crate::operation::GetEC2RecommendationProjectedMetrics)>
     #[allow(unused_mut)]
@@ -2502,12 +2443,6 @@ pub mod get_effective_recommendation_preferences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEffectiveRecommendationPreferencesInputOperationOutputAlias =
-    crate::operation::GetEffectiveRecommendationPreferences;
-#[doc(hidden)]
-pub type GetEffectiveRecommendationPreferencesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEffectiveRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetEffectiveRecommendationPreferences`](crate::operation::GetEffectiveRecommendationPreferences)>
     #[allow(unused_mut)]
@@ -2636,10 +2571,6 @@ pub mod get_enrollment_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEnrollmentStatusInputOperationOutputAlias = crate::operation::GetEnrollmentStatus;
-#[doc(hidden)]
-pub type GetEnrollmentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnrollmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetEnrollmentStatus`](crate::operation::GetEnrollmentStatus)>
     #[allow(unused_mut)]
@@ -2813,12 +2744,6 @@ pub mod get_enrollment_statuses_for_organization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEnrollmentStatusesForOrganizationInputOperationOutputAlias =
-    crate::operation::GetEnrollmentStatusesForOrganization;
-#[doc(hidden)]
-pub type GetEnrollmentStatusesForOrganizationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnrollmentStatusesForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`GetEnrollmentStatusesForOrganization`](crate::operation::GetEnrollmentStatusesForOrganization)>
     #[allow(unused_mut)]
@@ -3049,12 +2974,6 @@ pub mod get_lambda_function_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLambdaFunctionRecommendationsInputOperationOutputAlias =
-    crate::operation::GetLambdaFunctionRecommendations;
-#[doc(hidden)]
-pub type GetLambdaFunctionRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetLambdaFunctionRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetLambdaFunctionRecommendations`](crate::operation::GetLambdaFunctionRecommendations)>
     #[allow(unused_mut)]
@@ -3248,12 +3167,6 @@ pub mod get_recommendation_preferences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecommendationPreferencesInputOperationOutputAlias =
-    crate::operation::GetRecommendationPreferences;
-#[doc(hidden)]
-pub type GetRecommendationPreferencesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationPreferences`](crate::operation::GetRecommendationPreferences)>
     #[allow(unused_mut)]
@@ -3437,11 +3350,6 @@ pub mod get_recommendation_summaries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecommendationSummariesInputOperationOutputAlias =
-    crate::operation::GetRecommendationSummaries;
-#[doc(hidden)]
-pub type GetRecommendationSummariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationSummaries`](crate::operation::GetRecommendationSummaries)>
     #[allow(unused_mut)]
@@ -3666,12 +3574,6 @@ pub mod put_recommendation_preferences_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecommendationPreferencesInputOperationOutputAlias =
-    crate::operation::PutRecommendationPreferences;
-#[doc(hidden)]
-pub type PutRecommendationPreferencesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecommendationPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutRecommendationPreferences`](crate::operation::PutRecommendationPreferences)>
     #[allow(unused_mut)]
@@ -3840,10 +3742,6 @@ pub mod update_enrollment_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEnrollmentStatusInputOperationOutputAlias = crate::operation::UpdateEnrollmentStatus;
-#[doc(hidden)]
-pub type UpdateEnrollmentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnrollmentStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnrollmentStatus`](crate::operation::UpdateEnrollmentStatus)>
     #[allow(unused_mut)]

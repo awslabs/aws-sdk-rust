@@ -45,11 +45,6 @@ pub mod associate_connection_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateConnectionAliasInputOperationOutputAlias =
-    crate::operation::AssociateConnectionAlias;
-#[doc(hidden)]
-pub type AssociateConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConnectionAlias`](crate::operation::AssociateConnectionAlias)>
     #[allow(unused_mut)]
@@ -216,10 +211,6 @@ pub mod associate_ip_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateIpGroupsInputOperationOutputAlias = crate::operation::AssociateIpGroups;
-#[doc(hidden)]
-pub type AssociateIpGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateIpGroups`](crate::operation::AssociateIpGroups)>
     #[allow(unused_mut)]
@@ -384,10 +375,6 @@ pub mod authorize_ip_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AuthorizeIpRulesInputOperationOutputAlias = crate::operation::AuthorizeIpRules;
-#[doc(hidden)]
-pub type AuthorizeIpRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AuthorizeIpRulesInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeIpRules`](crate::operation::AuthorizeIpRules)>
     #[allow(unused_mut)]
@@ -594,10 +581,6 @@ pub mod copy_workspace_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CopyWorkspaceImageInputOperationOutputAlias = crate::operation::CopyWorkspaceImage;
-#[doc(hidden)]
-pub type CopyWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CopyWorkspaceImage`](crate::operation::CopyWorkspaceImage)>
     #[allow(unused_mut)]
@@ -767,11 +750,6 @@ pub mod create_connect_client_add_in_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectClientAddInInputOperationOutputAlias =
-    crate::operation::CreateConnectClientAddIn;
-#[doc(hidden)]
-pub type CreateConnectClientAddInInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectClientAddInInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectClientAddIn`](crate::operation::CreateConnectClientAddIn)>
     #[allow(unused_mut)]
@@ -945,10 +923,6 @@ pub mod create_connection_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectionAliasInputOperationOutputAlias = crate::operation::CreateConnectionAlias;
-#[doc(hidden)]
-pub type CreateConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectionAlias`](crate::operation::CreateConnectionAlias)>
     #[allow(unused_mut)]
@@ -1148,10 +1122,6 @@ pub mod create_ip_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateIpGroupInputOperationOutputAlias = crate::operation::CreateIpGroup;
-#[doc(hidden)]
-pub type CreateIpGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateIpGroup`](crate::operation::CreateIpGroup)>
     #[allow(unused_mut)]
@@ -1315,10 +1285,6 @@ pub mod create_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
-#[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(unused_mut)]
@@ -1516,11 +1482,6 @@ pub mod create_updated_workspace_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUpdatedWorkspaceImageInputOperationOutputAlias =
-    crate::operation::CreateUpdatedWorkspaceImage;
-#[doc(hidden)]
-pub type CreateUpdatedWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUpdatedWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateUpdatedWorkspaceImage`](crate::operation::CreateUpdatedWorkspaceImage)>
     #[allow(unused_mut)]
@@ -1760,10 +1721,6 @@ pub mod create_workspace_bundle_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkspaceBundleInputOperationOutputAlias = crate::operation::CreateWorkspaceBundle;
-#[doc(hidden)]
-pub type CreateWorkspaceBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaceBundle`](crate::operation::CreateWorkspaceBundle)>
     #[allow(unused_mut)]
@@ -1954,10 +1911,6 @@ pub mod create_workspace_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkspaceImageInputOperationOutputAlias = crate::operation::CreateWorkspaceImage;
-#[doc(hidden)]
-pub type CreateWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaceImage`](crate::operation::CreateWorkspaceImage)>
     #[allow(unused_mut)]
@@ -2112,10 +2065,6 @@ pub mod create_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkspacesInputOperationOutputAlias = crate::operation::CreateWorkspaces;
-#[doc(hidden)]
-pub type CreateWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaces`](crate::operation::CreateWorkspaces)>
     #[allow(unused_mut)]
@@ -2280,10 +2229,6 @@ pub mod delete_client_branding_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteClientBrandingInputOperationOutputAlias = crate::operation::DeleteClientBranding;
-#[doc(hidden)]
-pub type DeleteClientBrandingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClientBrandingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteClientBranding`](crate::operation::DeleteClientBranding)>
     #[allow(unused_mut)]
@@ -2443,11 +2388,6 @@ pub mod delete_connect_client_add_in_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectClientAddInInputOperationOutputAlias =
-    crate::operation::DeleteConnectClientAddIn;
-#[doc(hidden)]
-pub type DeleteConnectClientAddInInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectClientAddInInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectClientAddIn`](crate::operation::DeleteConnectClientAddIn)>
     #[allow(unused_mut)]
@@ -2593,10 +2533,6 @@ pub mod delete_connection_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectionAliasInputOperationOutputAlias = crate::operation::DeleteConnectionAlias;
-#[doc(hidden)]
-pub type DeleteConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectionAlias`](crate::operation::DeleteConnectionAlias)>
     #[allow(unused_mut)]
@@ -2742,10 +2678,6 @@ pub mod delete_ip_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIpGroupInputOperationOutputAlias = crate::operation::DeleteIpGroup;
-#[doc(hidden)]
-pub type DeleteIpGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIpGroup`](crate::operation::DeleteIpGroup)>
     #[allow(unused_mut)]
@@ -2909,10 +2841,6 @@ pub mod delete_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
-#[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(unused_mut)]
@@ -3056,10 +2984,6 @@ pub mod delete_workspace_bundle_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkspaceBundleInputOperationOutputAlias = crate::operation::DeleteWorkspaceBundle;
-#[doc(hidden)]
-pub type DeleteWorkspaceBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceBundle`](crate::operation::DeleteWorkspaceBundle)>
     #[allow(unused_mut)]
@@ -3205,10 +3129,6 @@ pub mod delete_workspace_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWorkspaceImageInputOperationOutputAlias = crate::operation::DeleteWorkspaceImage;
-#[doc(hidden)]
-pub type DeleteWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceImage`](crate::operation::DeleteWorkspaceImage)>
     #[allow(unused_mut)]
@@ -3356,12 +3276,6 @@ pub mod deregister_workspace_directory_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterWorkspaceDirectoryInputOperationOutputAlias =
-    crate::operation::DeregisterWorkspaceDirectory;
-#[doc(hidden)]
-pub type DeregisterWorkspaceDirectoryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterWorkspaceDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterWorkspaceDirectory`](crate::operation::DeregisterWorkspaceDirectory)>
     #[allow(unused_mut)]
@@ -3490,10 +3404,6 @@ pub mod describe_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountInputOperationOutputAlias = crate::operation::DescribeAccount;
-#[doc(hidden)]
-pub type DescribeAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccount`](crate::operation::DescribeAccount)>
     #[allow(unused_mut)]
@@ -3632,12 +3542,6 @@ pub mod describe_account_modifications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountModificationsInputOperationOutputAlias =
-    crate::operation::DescribeAccountModifications;
-#[doc(hidden)]
-pub type DescribeAccountModificationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountModificationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountModifications`](crate::operation::DescribeAccountModifications)>
     #[allow(unused_mut)]
@@ -3780,10 +3684,6 @@ pub mod describe_client_branding_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClientBrandingInputOperationOutputAlias = crate::operation::DescribeClientBranding;
-#[doc(hidden)]
-pub type DescribeClientBrandingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClientBrandingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClientBranding`](crate::operation::DescribeClientBranding)>
     #[allow(unused_mut)]
@@ -3940,11 +3840,6 @@ pub mod describe_client_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeClientPropertiesInputOperationOutputAlias =
-    crate::operation::DescribeClientProperties;
-#[doc(hidden)]
-pub type DescribeClientPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClientPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClientProperties`](crate::operation::DescribeClientProperties)>
     #[allow(unused_mut)]
@@ -4116,11 +4011,6 @@ pub mod describe_connect_client_add_ins_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectClientAddInsInputOperationOutputAlias =
-    crate::operation::DescribeConnectClientAddIns;
-#[doc(hidden)]
-pub type DescribeConnectClientAddInsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectClientAddInsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectClientAddIns`](crate::operation::DescribeConnectClientAddIns)>
     #[allow(unused_mut)]
@@ -4310,11 +4200,6 @@ pub mod describe_connection_aliases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectionAliasesInputOperationOutputAlias =
-    crate::operation::DescribeConnectionAliases;
-#[doc(hidden)]
-pub type DescribeConnectionAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionAliasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionAliases`](crate::operation::DescribeConnectionAliases)>
     #[allow(unused_mut)]
@@ -4486,12 +4371,6 @@ pub mod describe_connection_alias_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectionAliasPermissionsInputOperationOutputAlias =
-    crate::operation::DescribeConnectionAliasPermissions;
-#[doc(hidden)]
-pub type DescribeConnectionAliasPermissionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionAliasPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionAliasPermissions`](crate::operation::DescribeConnectionAliasPermissions)>
     #[allow(unused_mut)]
@@ -4667,10 +4546,6 @@ pub mod describe_ip_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIpGroupsInputOperationOutputAlias = crate::operation::DescribeIpGroups;
-#[doc(hidden)]
-pub type DescribeIpGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIpGroups`](crate::operation::DescribeIpGroups)>
     #[allow(unused_mut)]
@@ -4814,10 +4689,6 @@ pub mod describe_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
-#[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
@@ -4998,11 +4869,6 @@ pub mod describe_workspace_bundles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceBundlesInputOperationOutputAlias =
-    crate::operation::DescribeWorkspaceBundles;
-#[doc(hidden)]
-pub type DescribeWorkspaceBundlesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceBundlesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceBundles`](crate::operation::DescribeWorkspaceBundles)>
     #[allow(unused_mut)]
@@ -5183,12 +5049,6 @@ pub mod describe_workspace_directories_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceDirectoriesInputOperationOutputAlias =
-    crate::operation::DescribeWorkspaceDirectories;
-#[doc(hidden)]
-pub type DescribeWorkspaceDirectoriesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceDirectoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceDirectories`](crate::operation::DescribeWorkspaceDirectories)>
     #[allow(unused_mut)]
@@ -5357,12 +5217,6 @@ pub mod describe_workspace_image_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceImagePermissionsInputOperationOutputAlias =
-    crate::operation::DescribeWorkspaceImagePermissions;
-#[doc(hidden)]
-pub type DescribeWorkspaceImagePermissionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceImagePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceImagePermissions`](crate::operation::DescribeWorkspaceImagePermissions)>
     #[allow(unused_mut)]
@@ -5555,11 +5409,6 @@ pub mod describe_workspace_images_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceImagesInputOperationOutputAlias =
-    crate::operation::DescribeWorkspaceImages;
-#[doc(hidden)]
-pub type DescribeWorkspaceImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceImagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceImages`](crate::operation::DescribeWorkspaceImages)>
     #[allow(unused_mut)]
@@ -5776,10 +5625,6 @@ pub mod describe_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspacesInputOperationOutputAlias = crate::operation::DescribeWorkspaces;
-#[doc(hidden)]
-pub type DescribeWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaces`](crate::operation::DescribeWorkspaces)>
     #[allow(unused_mut)]
@@ -5946,12 +5791,6 @@ pub mod describe_workspaces_connection_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspacesConnectionStatusInputOperationOutputAlias =
-    crate::operation::DescribeWorkspacesConnectionStatus;
-#[doc(hidden)]
-pub type DescribeWorkspacesConnectionStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspacesConnectionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspacesConnectionStatus`](crate::operation::DescribeWorkspacesConnectionStatus)>
     #[allow(unused_mut)]
@@ -6096,11 +5935,6 @@ pub mod describe_workspace_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkspaceSnapshotsInputOperationOutputAlias =
-    crate::operation::DescribeWorkspaceSnapshots;
-#[doc(hidden)]
-pub type DescribeWorkspaceSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceSnapshots`](crate::operation::DescribeWorkspaceSnapshots)>
     #[allow(unused_mut)]
@@ -6248,11 +6082,6 @@ pub mod disassociate_connection_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateConnectionAliasInputOperationOutputAlias =
-    crate::operation::DisassociateConnectionAlias;
-#[doc(hidden)]
-pub type DisassociateConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnectionAlias`](crate::operation::DisassociateConnectionAlias)>
     #[allow(unused_mut)]
@@ -6416,10 +6245,6 @@ pub mod disassociate_ip_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateIpGroupsInputOperationOutputAlias = crate::operation::DisassociateIpGroups;
-#[doc(hidden)]
-pub type DisassociateIpGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateIpGroups`](crate::operation::DisassociateIpGroups)>
     #[allow(unused_mut)]
@@ -6679,10 +6504,6 @@ pub mod import_client_branding_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportClientBrandingInputOperationOutputAlias = crate::operation::ImportClientBranding;
-#[doc(hidden)]
-pub type ImportClientBrandingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportClientBrandingInput {
     /// Consumes the builder and constructs an Operation<[`ImportClientBranding`](crate::operation::ImportClientBranding)>
     #[allow(unused_mut)]
@@ -6922,10 +6743,6 @@ pub mod import_workspace_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportWorkspaceImageInputOperationOutputAlias = crate::operation::ImportWorkspaceImage;
-#[doc(hidden)]
-pub type ImportWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`ImportWorkspaceImage`](crate::operation::ImportWorkspaceImage)>
     #[allow(unused_mut)]
@@ -7103,12 +6920,6 @@ pub mod list_available_management_cidr_ranges_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAvailableManagementCidrRangesInputOperationOutputAlias =
-    crate::operation::ListAvailableManagementCidrRanges;
-#[doc(hidden)]
-pub type ListAvailableManagementCidrRangesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableManagementCidrRangesInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagementCidrRanges`](crate::operation::ListAvailableManagementCidrRanges)>
     #[allow(unused_mut)]
@@ -7266,10 +7077,6 @@ pub mod migrate_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type MigrateWorkspaceInputOperationOutputAlias = crate::operation::MigrateWorkspace;
-#[doc(hidden)]
-pub type MigrateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MigrateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`MigrateWorkspace`](crate::operation::MigrateWorkspace)>
     #[allow(unused_mut)]
@@ -7440,10 +7247,6 @@ pub mod modify_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyAccountInputOperationOutputAlias = crate::operation::ModifyAccount;
-#[doc(hidden)]
-pub type ModifyAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyAccountInput {
     /// Consumes the builder and constructs an Operation<[`ModifyAccount`](crate::operation::ModifyAccount)>
     #[allow(unused_mut)]
@@ -7602,10 +7405,6 @@ pub mod modify_client_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyClientPropertiesInputOperationOutputAlias = crate::operation::ModifyClientProperties;
-#[doc(hidden)]
-pub type ModifyClientPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClientPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClientProperties`](crate::operation::ModifyClientProperties)>
     #[allow(unused_mut)]
@@ -7798,10 +7597,6 @@ pub mod modify_saml_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifySamlPropertiesInputOperationOutputAlias = crate::operation::ModifySamlProperties;
-#[doc(hidden)]
-pub type ModifySamlPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifySamlPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifySamlProperties`](crate::operation::ModifySamlProperties)>
     #[allow(unused_mut)]
@@ -7968,12 +7763,6 @@ pub mod modify_selfservice_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifySelfservicePermissionsInputOperationOutputAlias =
-    crate::operation::ModifySelfservicePermissions;
-#[doc(hidden)]
-pub type ModifySelfservicePermissionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifySelfservicePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ModifySelfservicePermissions`](crate::operation::ModifySelfservicePermissions)>
     #[allow(unused_mut)]
@@ -8137,12 +7926,6 @@ pub mod modify_workspace_access_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyWorkspaceAccessPropertiesInputOperationOutputAlias =
-    crate::operation::ModifyWorkspaceAccessProperties;
-#[doc(hidden)]
-pub type ModifyWorkspaceAccessPropertiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspaceAccessPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceAccessProperties`](crate::operation::ModifyWorkspaceAccessProperties)>
     #[allow(unused_mut)]
@@ -8306,12 +8089,6 @@ pub mod modify_workspace_creation_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyWorkspaceCreationPropertiesInputOperationOutputAlias =
-    crate::operation::ModifyWorkspaceCreationProperties;
-#[doc(hidden)]
-pub type ModifyWorkspaceCreationPropertiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspaceCreationPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceCreationProperties`](crate::operation::ModifyWorkspaceCreationProperties)>
     #[allow(unused_mut)]
@@ -8471,11 +8248,6 @@ pub mod modify_workspace_properties_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyWorkspacePropertiesInputOperationOutputAlias =
-    crate::operation::ModifyWorkspaceProperties;
-#[doc(hidden)]
-pub type ModifyWorkspacePropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspacePropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceProperties`](crate::operation::ModifyWorkspaceProperties)>
     #[allow(unused_mut)]
@@ -8636,10 +8408,6 @@ pub mod modify_workspace_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyWorkspaceStateInputOperationOutputAlias = crate::operation::ModifyWorkspaceState;
-#[doc(hidden)]
-pub type ModifyWorkspaceStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspaceStateInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceState`](crate::operation::ModifyWorkspaceState)>
     #[allow(unused_mut)]
@@ -8795,10 +8563,6 @@ pub mod reboot_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RebootWorkspacesInputOperationOutputAlias = crate::operation::RebootWorkspaces;
-#[doc(hidden)]
-pub type RebootWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`RebootWorkspaces`](crate::operation::RebootWorkspaces)>
     #[allow(unused_mut)]
@@ -8952,10 +8716,6 @@ pub mod rebuild_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RebuildWorkspacesInputOperationOutputAlias = crate::operation::RebuildWorkspaces;
-#[doc(hidden)]
-pub type RebuildWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebuildWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`RebuildWorkspaces`](crate::operation::RebuildWorkspaces)>
     #[allow(unused_mut)]
@@ -9179,11 +8939,6 @@ pub mod register_workspace_directory_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterWorkspaceDirectoryInputOperationOutputAlias =
-    crate::operation::RegisterWorkspaceDirectory;
-#[doc(hidden)]
-pub type RegisterWorkspaceDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWorkspaceDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkspaceDirectory`](crate::operation::RegisterWorkspaceDirectory)>
     #[allow(unused_mut)]
@@ -9329,10 +9084,6 @@ pub mod restore_workspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreWorkspaceInputOperationOutputAlias = crate::operation::RestoreWorkspace;
-#[doc(hidden)]
-pub type RestoreWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`RestoreWorkspace`](crate::operation::RestoreWorkspace)>
     #[allow(unused_mut)]
@@ -9497,10 +9248,6 @@ pub mod revoke_ip_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeIpRulesInputOperationOutputAlias = crate::operation::RevokeIpRules;
-#[doc(hidden)]
-pub type RevokeIpRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeIpRulesInput {
     /// Consumes the builder and constructs an Operation<[`RevokeIpRules`](crate::operation::RevokeIpRules)>
     #[allow(unused_mut)]
@@ -9654,10 +9401,6 @@ pub mod start_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartWorkspacesInputOperationOutputAlias = crate::operation::StartWorkspaces;
-#[doc(hidden)]
-pub type StartWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkspaces`](crate::operation::StartWorkspaces)>
     #[allow(unused_mut)]
@@ -9811,10 +9554,6 @@ pub mod stop_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopWorkspacesInputOperationOutputAlias = crate::operation::StopWorkspaces;
-#[doc(hidden)]
-pub type StopWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`StopWorkspaces`](crate::operation::StopWorkspaces)>
     #[allow(unused_mut)]
@@ -9971,10 +9710,6 @@ pub mod terminate_workspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TerminateWorkspacesInputOperationOutputAlias = crate::operation::TerminateWorkspaces;
-#[doc(hidden)]
-pub type TerminateWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkspaces`](crate::operation::TerminateWorkspaces)>
     #[allow(unused_mut)]
@@ -10156,11 +9891,6 @@ pub mod update_connect_client_add_in_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectClientAddInInputOperationOutputAlias =
-    crate::operation::UpdateConnectClientAddIn;
-#[doc(hidden)]
-pub type UpdateConnectClientAddInInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectClientAddInInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectClientAddIn`](crate::operation::UpdateConnectClientAddIn)>
     #[allow(unused_mut)]
@@ -10327,12 +10057,6 @@ pub mod update_connection_alias_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectionAliasPermissionInputOperationOutputAlias =
-    crate::operation::UpdateConnectionAliasPermission;
-#[doc(hidden)]
-pub type UpdateConnectionAliasPermissionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionAliasPermissionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectionAliasPermission`](crate::operation::UpdateConnectionAliasPermission)>
     #[allow(unused_mut)]
@@ -10496,10 +10220,6 @@ pub mod update_rules_of_ip_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRulesOfIpGroupInputOperationOutputAlias = crate::operation::UpdateRulesOfIpGroup;
-#[doc(hidden)]
-pub type UpdateRulesOfIpGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRulesOfIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRulesOfIpGroup`](crate::operation::UpdateRulesOfIpGroup)>
     #[allow(unused_mut)]
@@ -10657,10 +10377,6 @@ pub mod update_workspace_bundle_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkspaceBundleInputOperationOutputAlias = crate::operation::UpdateWorkspaceBundle;
-#[doc(hidden)]
-pub type UpdateWorkspaceBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceBundle`](crate::operation::UpdateWorkspaceBundle)>
     #[allow(unused_mut)]
@@ -10839,12 +10555,6 @@ pub mod update_workspace_image_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateWorkspaceImagePermissionInputOperationOutputAlias =
-    crate::operation::UpdateWorkspaceImagePermission;
-#[doc(hidden)]
-pub type UpdateWorkspaceImagePermissionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceImagePermissionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceImagePermission`](crate::operation::UpdateWorkspaceImagePermission)>
     #[allow(unused_mut)]

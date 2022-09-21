@@ -78,11 +78,6 @@ pub mod associate_created_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateCreatedArtifactInputOperationOutputAlias =
-    crate::operation::AssociateCreatedArtifact;
-#[doc(hidden)]
-pub type AssociateCreatedArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateCreatedArtifactInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCreatedArtifact`](crate::operation::AssociateCreatedArtifact)>
     #[allow(unused_mut)]
@@ -275,11 +270,6 @@ pub mod associate_discovered_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateDiscoveredResourceInputOperationOutputAlias =
-    crate::operation::AssociateDiscoveredResource;
-#[doc(hidden)]
-pub type AssociateDiscoveredResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDiscoveredResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDiscoveredResource`](crate::operation::AssociateDiscoveredResource)>
     #[allow(unused_mut)]
@@ -442,11 +432,6 @@ pub mod create_progress_update_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProgressUpdateStreamInputOperationOutputAlias =
-    crate::operation::CreateProgressUpdateStream;
-#[doc(hidden)]
-pub type CreateProgressUpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProgressUpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateProgressUpdateStream`](crate::operation::CreateProgressUpdateStream)>
     #[allow(unused_mut)]
@@ -609,11 +594,6 @@ pub mod delete_progress_update_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProgressUpdateStreamInputOperationOutputAlias =
-    crate::operation::DeleteProgressUpdateStream;
-#[doc(hidden)]
-pub type DeleteProgressUpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProgressUpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProgressUpdateStream`](crate::operation::DeleteProgressUpdateStream)>
     #[allow(unused_mut)]
@@ -761,11 +741,6 @@ pub mod describe_application_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeApplicationStateInputOperationOutputAlias =
-    crate::operation::DescribeApplicationState;
-#[doc(hidden)]
-pub type DescribeApplicationStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationStateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationState`](crate::operation::DescribeApplicationState)>
     #[allow(unused_mut)]
@@ -929,10 +904,6 @@ pub mod describe_migration_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMigrationTaskInputOperationOutputAlias = crate::operation::DescribeMigrationTask;
-#[doc(hidden)]
-pub type DescribeMigrationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMigrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMigrationTask`](crate::operation::DescribeMigrationTask)>
     #[allow(unused_mut)]
@@ -1125,11 +1096,6 @@ pub mod disassociate_created_artifact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateCreatedArtifactInputOperationOutputAlias =
-    crate::operation::DisassociateCreatedArtifact;
-#[doc(hidden)]
-pub type DisassociateCreatedArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateCreatedArtifactInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCreatedArtifact`](crate::operation::DisassociateCreatedArtifact)>
     #[allow(unused_mut)]
@@ -1319,12 +1285,6 @@ pub mod disassociate_discovered_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateDiscoveredResourceInputOperationOutputAlias =
-    crate::operation::DisassociateDiscoveredResource;
-#[doc(hidden)]
-pub type DisassociateDiscoveredResourceInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDiscoveredResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDiscoveredResource`](crate::operation::DisassociateDiscoveredResource)>
     #[allow(unused_mut)]
@@ -1497,10 +1457,6 @@ pub mod import_migration_task_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportMigrationTaskInputOperationOutputAlias = crate::operation::ImportMigrationTask;
-#[doc(hidden)]
-pub type ImportMigrationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportMigrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`ImportMigrationTask`](crate::operation::ImportMigrationTask)>
     #[allow(unused_mut)]
@@ -1677,10 +1633,6 @@ pub mod list_application_states_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationStatesInputOperationOutputAlias = crate::operation::ListApplicationStates;
-#[doc(hidden)]
-pub type ListApplicationStatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationStatesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationStates`](crate::operation::ListApplicationStates)>
     #[allow(unused_mut)]
@@ -1868,10 +1820,6 @@ pub mod list_created_artifacts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCreatedArtifactsInputOperationOutputAlias = crate::operation::ListCreatedArtifacts;
-#[doc(hidden)]
-pub type ListCreatedArtifactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCreatedArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListCreatedArtifacts`](crate::operation::ListCreatedArtifacts)>
     #[allow(unused_mut)]
@@ -2061,11 +2009,6 @@ pub mod list_discovered_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDiscoveredResourcesInputOperationOutputAlias =
-    crate::operation::ListDiscoveredResources;
-#[doc(hidden)]
-pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDiscoveredResources`](crate::operation::ListDiscoveredResources)>
     #[allow(unused_mut)]
@@ -2238,10 +2181,6 @@ pub mod list_migration_tasks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMigrationTasksInputOperationOutputAlias = crate::operation::ListMigrationTasks;
-#[doc(hidden)]
-pub type ListMigrationTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMigrationTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListMigrationTasks`](crate::operation::ListMigrationTasks)>
     #[allow(unused_mut)]
@@ -2399,11 +2338,6 @@ pub mod list_progress_update_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProgressUpdateStreamsInputOperationOutputAlias =
-    crate::operation::ListProgressUpdateStreams;
-#[doc(hidden)]
-pub type ListProgressUpdateStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProgressUpdateStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListProgressUpdateStreams`](crate::operation::ListProgressUpdateStreams)>
     #[allow(unused_mut)]
@@ -2594,10 +2528,6 @@ pub mod notify_application_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyApplicationStateInputOperationOutputAlias = crate::operation::NotifyApplicationState;
-#[doc(hidden)]
-pub type NotifyApplicationStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyApplicationStateInput {
     /// Consumes the builder and constructs an Operation<[`NotifyApplicationState`](crate::operation::NotifyApplicationState)>
     #[allow(unused_mut)]
@@ -2814,11 +2744,6 @@ pub mod notify_migration_task_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyMigrationTaskStateInputOperationOutputAlias =
-    crate::operation::NotifyMigrationTaskState;
-#[doc(hidden)]
-pub type NotifyMigrationTaskStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyMigrationTaskStateInput {
     /// Consumes the builder and constructs an Operation<[`NotifyMigrationTaskState`](crate::operation::NotifyMigrationTaskState)>
     #[allow(unused_mut)]
@@ -3030,10 +2955,6 @@ pub mod put_resource_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourceAttributesInputOperationOutputAlias = crate::operation::PutResourceAttributes;
-#[doc(hidden)]
-pub type PutResourceAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourceAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceAttributes`](crate::operation::PutResourceAttributes)>
     #[allow(unused_mut)]

@@ -101,10 +101,6 @@ pub mod accept_page_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptPageInputOperationOutputAlias = crate::operation::AcceptPage;
-#[doc(hidden)]
-pub type AcceptPageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptPageInput {
     /// Consumes the builder and constructs an Operation<[`AcceptPage`](crate::operation::AcceptPage)>
     #[allow(unused_mut)]
@@ -266,10 +262,6 @@ pub mod activate_contact_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ActivateContactChannelInputOperationOutputAlias = crate::operation::ActivateContactChannel;
-#[doc(hidden)]
-pub type ActivateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`ActivateContactChannel`](crate::operation::ActivateContactChannel)>
     #[allow(unused_mut)]
@@ -487,10 +479,6 @@ pub mod create_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateContactInputOperationOutputAlias = crate::operation::CreateContact;
-#[doc(hidden)]
-pub type CreateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContactInput {
     /// Consumes the builder and constructs an Operation<[`CreateContact`](crate::operation::CreateContact)>
     #[allow(unused_mut)]
@@ -723,10 +711,6 @@ pub mod create_contact_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateContactChannelInputOperationOutputAlias = crate::operation::CreateContactChannel;
-#[doc(hidden)]
-pub type CreateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateContactChannel`](crate::operation::CreateContactChannel)>
     #[allow(unused_mut)]
@@ -880,11 +864,6 @@ pub mod deactivate_contact_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeactivateContactChannelInputOperationOutputAlias =
-    crate::operation::DeactivateContactChannel;
-#[doc(hidden)]
-pub type DeactivateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeactivateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeactivateContactChannel`](crate::operation::DeactivateContactChannel)>
     #[allow(unused_mut)]
@@ -1030,10 +1009,6 @@ pub mod delete_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteContactInputOperationOutputAlias = crate::operation::DeleteContact;
-#[doc(hidden)]
-pub type DeleteContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContact`](crate::operation::DeleteContact)>
     #[allow(unused_mut)]
@@ -1180,10 +1155,6 @@ pub mod delete_contact_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteContactChannelInputOperationOutputAlias = crate::operation::DeleteContactChannel;
-#[doc(hidden)]
-pub type DeleteContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContactChannel`](crate::operation::DeleteContactChannel)>
     #[allow(unused_mut)]
@@ -1332,10 +1303,6 @@ pub mod describe_engagement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEngagementInputOperationOutputAlias = crate::operation::DescribeEngagement;
-#[doc(hidden)]
-pub type DescribeEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEngagementInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEngagement`](crate::operation::DescribeEngagement)>
     #[allow(unused_mut)]
@@ -1479,10 +1446,6 @@ pub mod describe_page_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePageInputOperationOutputAlias = crate::operation::DescribePage;
-#[doc(hidden)]
-pub type DescribePageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePageInput {
     /// Consumes the builder and constructs an Operation<[`DescribePage`](crate::operation::DescribePage)>
     #[allow(unused_mut)]
@@ -1625,10 +1588,6 @@ pub mod get_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContactInputOperationOutputAlias = crate::operation::GetContact;
-#[doc(hidden)]
-pub type GetContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactInput {
     /// Consumes the builder and constructs an Operation<[`GetContact`](crate::operation::GetContact)>
     #[allow(unused_mut)]
@@ -1775,10 +1734,6 @@ pub mod get_contact_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContactChannelInputOperationOutputAlias = crate::operation::GetContactChannel;
-#[doc(hidden)]
-pub type GetContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetContactChannel`](crate::operation::GetContactChannel)>
     #[allow(unused_mut)]
@@ -1922,10 +1877,6 @@ pub mod get_contact_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContactPolicyInputOperationOutputAlias = crate::operation::GetContactPolicy;
-#[doc(hidden)]
-pub type GetContactPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContactPolicy`](crate::operation::GetContactPolicy)>
     #[allow(unused_mut)]
@@ -2093,10 +2044,6 @@ pub mod list_contact_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContactChannelsInputOperationOutputAlias = crate::operation::ListContactChannels;
-#[doc(hidden)]
-pub type ListContactChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContactChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListContactChannels`](crate::operation::ListContactChannels)>
     #[allow(unused_mut)]
@@ -2276,10 +2223,6 @@ pub mod list_contacts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContactsInputOperationOutputAlias = crate::operation::ListContacts;
-#[doc(hidden)]
-pub type ListContactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContactsInput {
     /// Consumes the builder and constructs an Operation<[`ListContacts`](crate::operation::ListContacts)>
     #[allow(unused_mut)]
@@ -2462,10 +2405,6 @@ pub mod list_engagements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEngagementsInputOperationOutputAlias = crate::operation::ListEngagements;
-#[doc(hidden)]
-pub type ListEngagementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEngagementsInput {
     /// Consumes the builder and constructs an Operation<[`ListEngagements`](crate::operation::ListEngagements)>
     #[allow(unused_mut)]
@@ -2633,10 +2572,6 @@ pub mod list_page_receipts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPageReceiptsInputOperationOutputAlias = crate::operation::ListPageReceipts;
-#[doc(hidden)]
-pub type ListPageReceiptsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPageReceiptsInput {
     /// Consumes the builder and constructs an Operation<[`ListPageReceipts`](crate::operation::ListPageReceipts)>
     #[allow(unused_mut)]
@@ -2804,10 +2739,6 @@ pub mod list_pages_by_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPagesByContactInputOperationOutputAlias = crate::operation::ListPagesByContact;
-#[doc(hidden)]
-pub type ListPagesByContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPagesByContactInput {
     /// Consumes the builder and constructs an Operation<[`ListPagesByContact`](crate::operation::ListPagesByContact)>
     #[allow(unused_mut)]
@@ -2978,10 +2909,6 @@ pub mod list_pages_by_engagement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPagesByEngagementInputOperationOutputAlias = crate::operation::ListPagesByEngagement;
-#[doc(hidden)]
-pub type ListPagesByEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPagesByEngagementInput {
     /// Consumes the builder and constructs an Operation<[`ListPagesByEngagement`](crate::operation::ListPagesByEngagement)>
     #[allow(unused_mut)]
@@ -3127,10 +3054,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3288,10 +3211,6 @@ pub mod put_contact_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutContactPolicyInputOperationOutputAlias = crate::operation::PutContactPolicy;
-#[doc(hidden)]
-pub type PutContactPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContactPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContactPolicy`](crate::operation::PutContactPolicy)>
     #[allow(unused_mut)]
@@ -3438,10 +3357,6 @@ pub mod send_activation_code_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendActivationCodeInputOperationOutputAlias = crate::operation::SendActivationCode;
-#[doc(hidden)]
-pub type SendActivationCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendActivationCodeInput {
     /// Consumes the builder and constructs an Operation<[`SendActivationCode`](crate::operation::SendActivationCode)>
     #[allow(unused_mut)]
@@ -3678,10 +3593,6 @@ pub mod start_engagement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartEngagementInputOperationOutputAlias = crate::operation::StartEngagement;
-#[doc(hidden)]
-pub type StartEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEngagementInput {
     /// Consumes the builder and constructs an Operation<[`StartEngagement`](crate::operation::StartEngagement)>
     #[allow(unused_mut)]
@@ -3843,10 +3754,6 @@ pub mod stop_engagement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopEngagementInputOperationOutputAlias = crate::operation::StopEngagement;
-#[doc(hidden)]
-pub type StopEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEngagementInput {
     /// Consumes the builder and constructs an Operation<[`StopEngagement`](crate::operation::StopEngagement)>
     #[allow(unused_mut)]
@@ -4011,10 +3918,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4179,10 +4082,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4350,10 +4249,6 @@ pub mod update_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateContactInputOperationOutputAlias = crate::operation::UpdateContact;
-#[doc(hidden)]
-pub type UpdateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContactInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContact`](crate::operation::UpdateContact)>
     #[allow(unused_mut)]
@@ -4527,10 +4422,6 @@ pub mod update_contact_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateContactChannelInputOperationOutputAlias = crate::operation::UpdateContactChannel;
-#[doc(hidden)]
-pub type UpdateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContactChannel`](crate::operation::UpdateContactChannel)>
     #[allow(unused_mut)]

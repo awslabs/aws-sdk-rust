@@ -108,11 +108,6 @@ pub mod add_layer_version_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddLayerVersionPermissionInputOperationOutputAlias =
-    crate::operation::AddLayerVersionPermission;
-#[doc(hidden)]
-pub type AddLayerVersionPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddLayerVersionPermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddLayerVersionPermission`](crate::operation::AddLayerVersionPermission)>
     #[allow(unused_mut)]
@@ -445,10 +440,6 @@ pub mod add_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddPermissionInputOperationOutputAlias = crate::operation::AddPermission;
-#[doc(hidden)]
-pub type AddPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddPermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddPermission`](crate::operation::AddPermission)>
     #[allow(unused_mut)]
@@ -688,10 +679,6 @@ pub mod create_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAliasInputOperationOutputAlias = crate::operation::CreateAlias;
-#[doc(hidden)]
-pub type CreateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
     #[allow(unused_mut)]
@@ -881,11 +868,6 @@ pub mod create_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::CreateCodeSigningConfig;
-#[doc(hidden)]
-pub type CreateCodeSigningConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateCodeSigningConfig`](crate::operation::CreateCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -1412,11 +1394,6 @@ pub mod create_event_source_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEventSourceMappingInputOperationOutputAlias =
-    crate::operation::CreateEventSourceMapping;
-#[doc(hidden)]
-pub type CreateEventSourceMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventSourceMappingInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventSourceMapping`](crate::operation::CreateEventSourceMapping)>
     #[allow(unused_mut)]
@@ -1896,10 +1873,6 @@ pub mod create_function_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFunctionInputOperationOutputAlias = crate::operation::CreateFunction;
-#[doc(hidden)]
-pub type CreateFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunction`](crate::operation::CreateFunction)>
     #[allow(unused_mut)]
@@ -2096,11 +2069,6 @@ pub mod create_function_url_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFunctionUrlConfigInputOperationOutputAlias =
-    crate::operation::CreateFunctionUrlConfig;
-#[doc(hidden)]
-pub type CreateFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFunctionUrlConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunctionUrlConfig`](crate::operation::CreateFunctionUrlConfig)>
     #[allow(unused_mut)]
@@ -2300,10 +2268,6 @@ pub mod delete_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAliasInputOperationOutputAlias = crate::operation::DeleteAlias;
-#[doc(hidden)]
-pub type DeleteAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
     #[allow(unused_mut)]
@@ -2467,11 +2431,6 @@ pub mod delete_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::DeleteCodeSigningConfig;
-#[doc(hidden)]
-pub type DeleteCodeSigningConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCodeSigningConfig`](crate::operation::DeleteCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -2615,11 +2574,6 @@ pub mod delete_event_source_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventSourceMappingInputOperationOutputAlias =
-    crate::operation::DeleteEventSourceMapping;
-#[doc(hidden)]
-pub type DeleteEventSourceMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventSourceMappingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventSourceMapping`](crate::operation::DeleteEventSourceMapping)>
     #[allow(unused_mut)]
@@ -2792,10 +2746,6 @@ pub mod delete_function_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFunctionInputOperationOutputAlias = crate::operation::DeleteFunction;
-#[doc(hidden)]
-pub type DeleteFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunction`](crate::operation::DeleteFunction)>
     #[allow(unused_mut)]
@@ -2969,12 +2919,6 @@ pub mod delete_function_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFunctionCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::DeleteFunctionCodeSigningConfig;
-#[doc(hidden)]
-pub type DeleteFunctionCodeSigningConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunctionCodeSigningConfig`](crate::operation::DeleteFunctionCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -3137,11 +3081,6 @@ pub mod delete_function_concurrency_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFunctionConcurrencyInputOperationOutputAlias =
-    crate::operation::DeleteFunctionConcurrency;
-#[doc(hidden)]
-pub type DeleteFunctionConcurrencyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionConcurrencyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunctionConcurrency`](crate::operation::DeleteFunctionConcurrency)>
     #[allow(unused_mut)]
@@ -3316,12 +3255,6 @@ pub mod delete_function_event_invoke_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFunctionEventInvokeConfigInputOperationOutputAlias =
-    crate::operation::DeleteFunctionEventInvokeConfig;
-#[doc(hidden)]
-pub type DeleteFunctionEventInvokeConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionEventInvokeConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunctionEventInvokeConfig`](crate::operation::DeleteFunctionEventInvokeConfig)>
     #[allow(unused_mut)]
@@ -3507,11 +3440,6 @@ pub mod delete_function_url_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFunctionUrlConfigInputOperationOutputAlias =
-    crate::operation::DeleteFunctionUrlConfig;
-#[doc(hidden)]
-pub type DeleteFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionUrlConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunctionUrlConfig`](crate::operation::DeleteFunctionUrlConfig)>
     #[allow(unused_mut)]
@@ -3678,10 +3606,6 @@ pub mod delete_layer_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLayerVersionInputOperationOutputAlias = crate::operation::DeleteLayerVersion;
-#[doc(hidden)]
-pub type DeleteLayerVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLayerVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLayerVersion`](crate::operation::DeleteLayerVersion)>
     #[allow(unused_mut)]
@@ -3867,12 +3791,6 @@ pub mod delete_provisioned_concurrency_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProvisionedConcurrencyConfigInputOperationOutputAlias =
-    crate::operation::DeleteProvisionedConcurrencyConfig;
-#[doc(hidden)]
-pub type DeleteProvisionedConcurrencyConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProvisionedConcurrencyConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProvisionedConcurrencyConfig`](crate::operation::DeleteProvisionedConcurrencyConfig)>
     #[allow(unused_mut)]
@@ -4013,10 +3931,6 @@ pub mod get_account_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountSettingsInputOperationOutputAlias = crate::operation::GetAccountSettings;
-#[doc(hidden)]
-pub type GetAccountSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountSettings`](crate::operation::GetAccountSettings)>
     #[allow(unused_mut)]
@@ -4169,10 +4083,6 @@ pub mod get_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAliasInputOperationOutputAlias = crate::operation::GetAlias;
-#[doc(hidden)]
-pub type GetAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAliasInput {
     /// Consumes the builder and constructs an Operation<[`GetAlias`](crate::operation::GetAlias)>
     #[allow(unused_mut)]
@@ -4331,10 +4241,6 @@ pub mod get_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCodeSigningConfigInputOperationOutputAlias = crate::operation::GetCodeSigningConfig;
-#[doc(hidden)]
-pub type GetCodeSigningConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCodeSigningConfig`](crate::operation::GetCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -4476,10 +4382,6 @@ pub mod get_event_source_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventSourceMappingInputOperationOutputAlias = crate::operation::GetEventSourceMapping;
-#[doc(hidden)]
-pub type GetEventSourceMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventSourceMappingInput {
     /// Consumes the builder and constructs an Operation<[`GetEventSourceMapping`](crate::operation::GetEventSourceMapping)>
     #[allow(unused_mut)]
@@ -4652,10 +4554,6 @@ pub mod get_function_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionInputOperationOutputAlias = crate::operation::GetFunction;
-#[doc(hidden)]
-pub type GetFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionInput {
     /// Consumes the builder and constructs an Operation<[`GetFunction`](crate::operation::GetFunction)>
     #[allow(unused_mut)]
@@ -4829,12 +4727,6 @@ pub mod get_function_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::GetFunctionCodeSigningConfig;
-#[doc(hidden)]
-pub type GetFunctionCodeSigningConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionCodeSigningConfig`](crate::operation::GetFunctionCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -4995,10 +4887,6 @@ pub mod get_function_concurrency_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionConcurrencyInputOperationOutputAlias = crate::operation::GetFunctionConcurrency;
-#[doc(hidden)]
-pub type GetFunctionConcurrencyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionConcurrencyInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionConcurrency`](crate::operation::GetFunctionConcurrency)>
     #[allow(unused_mut)]
@@ -5173,11 +5061,6 @@ pub mod get_function_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionConfigurationInputOperationOutputAlias =
-    crate::operation::GetFunctionConfiguration;
-#[doc(hidden)]
-pub type GetFunctionConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionConfiguration`](crate::operation::GetFunctionConfiguration)>
     #[allow(unused_mut)]
@@ -5363,12 +5246,6 @@ pub mod get_function_event_invoke_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionEventInvokeConfigInputOperationOutputAlias =
-    crate::operation::GetFunctionEventInvokeConfig;
-#[doc(hidden)]
-pub type GetFunctionEventInvokeConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionEventInvokeConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionEventInvokeConfig`](crate::operation::GetFunctionEventInvokeConfig)>
     #[allow(unused_mut)]
@@ -5552,10 +5429,6 @@ pub mod get_function_url_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionUrlConfigInputOperationOutputAlias = crate::operation::GetFunctionUrlConfig;
-#[doc(hidden)]
-pub type GetFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionUrlConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionUrlConfig`](crate::operation::GetFunctionUrlConfig)>
     #[allow(unused_mut)]
@@ -5722,10 +5595,6 @@ pub mod get_layer_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLayerVersionInputOperationOutputAlias = crate::operation::GetLayerVersion;
-#[doc(hidden)]
-pub type GetLayerVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLayerVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetLayerVersion`](crate::operation::GetLayerVersion)>
     #[allow(unused_mut)]
@@ -5878,10 +5747,6 @@ pub mod get_layer_version_by_arn_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLayerVersionByArnInputOperationOutputAlias = crate::operation::GetLayerVersionByArn;
-#[doc(hidden)]
-pub type GetLayerVersionByArnInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLayerVersionByArnInput {
     /// Consumes the builder and constructs an Operation<[`GetLayerVersionByArn`](crate::operation::GetLayerVersionByArn)>
     #[allow(unused_mut)]
@@ -6030,10 +5895,6 @@ pub mod get_layer_version_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLayerVersionPolicyInputOperationOutputAlias = crate::operation::GetLayerVersionPolicy;
-#[doc(hidden)]
-pub type GetLayerVersionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLayerVersionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLayerVersionPolicy`](crate::operation::GetLayerVersionPolicy)>
     #[allow(unused_mut)]
@@ -6216,10 +6077,6 @@ pub mod get_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
-#[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(unused_mut)]
@@ -6403,12 +6260,6 @@ pub mod get_provisioned_concurrency_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetProvisionedConcurrencyConfigInputOperationOutputAlias =
-    crate::operation::GetProvisionedConcurrencyConfig;
-#[doc(hidden)]
-pub type GetProvisionedConcurrencyConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetProvisionedConcurrencyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetProvisionedConcurrencyConfig`](crate::operation::GetProvisionedConcurrencyConfig)>
     #[allow(unused_mut)]
@@ -6657,10 +6508,6 @@ pub mod invoke_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InvokeInputOperationOutputAlias = crate::operation::Invoke;
-#[doc(hidden)]
-pub type InvokeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeInput {
     /// Consumes the builder and constructs an Operation<[`Invoke`](crate::operation::Invoke)>
     #[allow(unused_mut)]
@@ -6859,10 +6706,6 @@ pub mod invoke_async_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InvokeAsyncInputOperationOutputAlias = crate::operation::InvokeAsync;
-#[doc(hidden)]
-pub type InvokeAsyncInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeAsyncInput {
     /// Consumes the builder and constructs an Operation<[`InvokeAsync`](crate::operation::InvokeAsync)>
     #[allow(unused_mut)]
@@ -7077,10 +6920,6 @@ pub mod list_aliases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAliasesInputOperationOutputAlias = crate::operation::ListAliases;
-#[doc(hidden)]
-pub type ListAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
     #[allow(unused_mut)]
@@ -7259,10 +7098,6 @@ pub mod list_code_signing_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCodeSigningConfigsInputOperationOutputAlias = crate::operation::ListCodeSigningConfigs;
-#[doc(hidden)]
-pub type ListCodeSigningConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCodeSigningConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListCodeSigningConfigs`](crate::operation::ListCodeSigningConfigs)>
     #[allow(unused_mut)]
@@ -7477,11 +7312,6 @@ pub mod list_event_source_mappings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventSourceMappingsInputOperationOutputAlias =
-    crate::operation::ListEventSourceMappings;
-#[doc(hidden)]
-pub type ListEventSourceMappingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventSourceMappingsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventSourceMappings`](crate::operation::ListEventSourceMappings)>
     #[allow(unused_mut)]
@@ -7679,12 +7509,6 @@ pub mod list_function_event_invoke_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFunctionEventInvokeConfigsInputOperationOutputAlias =
-    crate::operation::ListFunctionEventInvokeConfigs;
-#[doc(hidden)]
-pub type ListFunctionEventInvokeConfigsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionEventInvokeConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctionEventInvokeConfigs`](crate::operation::ListFunctionEventInvokeConfigs)>
     #[allow(unused_mut)]
@@ -7887,10 +7711,6 @@ pub mod list_functions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFunctionsInputOperationOutputAlias = crate::operation::ListFunctions;
-#[doc(hidden)]
-pub type ListFunctionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctions`](crate::operation::ListFunctions)>
     #[allow(unused_mut)]
@@ -8073,12 +7893,6 @@ pub mod list_functions_by_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFunctionsByCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::ListFunctionsByCodeSigningConfig;
-#[doc(hidden)]
-pub type ListFunctionsByCodeSigningConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionsByCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctionsByCodeSigningConfig`](crate::operation::ListFunctionsByCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -8280,10 +8094,6 @@ pub mod list_function_url_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFunctionUrlConfigsInputOperationOutputAlias = crate::operation::ListFunctionUrlConfigs;
-#[doc(hidden)]
-pub type ListFunctionUrlConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionUrlConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctionUrlConfigs`](crate::operation::ListFunctionUrlConfigs)>
     #[allow(unused_mut)]
@@ -8485,10 +8295,6 @@ pub mod list_layers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLayersInputOperationOutputAlias = crate::operation::ListLayers;
-#[doc(hidden)]
-pub type ListLayersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLayersInput {
     /// Consumes the builder and constructs an Operation<[`ListLayers`](crate::operation::ListLayers)>
     #[allow(unused_mut)]
@@ -8696,10 +8502,6 @@ pub mod list_layer_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLayerVersionsInputOperationOutputAlias = crate::operation::ListLayerVersions;
-#[doc(hidden)]
-pub type ListLayerVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLayerVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLayerVersions`](crate::operation::ListLayerVersions)>
     #[allow(unused_mut)]
@@ -8915,12 +8717,6 @@ pub mod list_provisioned_concurrency_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProvisionedConcurrencyConfigsInputOperationOutputAlias =
-    crate::operation::ListProvisionedConcurrencyConfigs;
-#[doc(hidden)]
-pub type ListProvisionedConcurrencyConfigsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisionedConcurrencyConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisionedConcurrencyConfigs`](crate::operation::ListProvisionedConcurrencyConfigs)>
     #[allow(unused_mut)]
@@ -9081,10 +8877,6 @@ pub mod list_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
-#[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(unused_mut)]
@@ -9262,10 +9054,6 @@ pub mod list_versions_by_function_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVersionsByFunctionInputOperationOutputAlias = crate::operation::ListVersionsByFunction;
-#[doc(hidden)]
-pub type ListVersionsByFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVersionsByFunctionInput {
     /// Consumes the builder and constructs an Operation<[`ListVersionsByFunction`](crate::operation::ListVersionsByFunction)>
     #[allow(unused_mut)]
@@ -9518,10 +9306,6 @@ pub mod publish_layer_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PublishLayerVersionInputOperationOutputAlias = crate::operation::PublishLayerVersion;
-#[doc(hidden)]
-pub type PublishLayerVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishLayerVersionInput {
     /// Consumes the builder and constructs an Operation<[`PublishLayerVersion`](crate::operation::PublishLayerVersion)>
     #[allow(unused_mut)]
@@ -9732,10 +9516,6 @@ pub mod publish_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PublishVersionInputOperationOutputAlias = crate::operation::PublishVersion;
-#[doc(hidden)]
-pub type PublishVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishVersionInput {
     /// Consumes the builder and constructs an Operation<[`PublishVersion`](crate::operation::PublishVersion)>
     #[allow(unused_mut)]
@@ -9927,12 +9707,6 @@ pub mod put_function_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutFunctionCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::PutFunctionCodeSigningConfig;
-#[doc(hidden)]
-pub type PutFunctionCodeSigningConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutFunctionCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`PutFunctionCodeSigningConfig`](crate::operation::PutFunctionCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -10121,10 +9895,6 @@ pub mod put_function_concurrency_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutFunctionConcurrencyInputOperationOutputAlias = crate::operation::PutFunctionConcurrency;
-#[doc(hidden)]
-pub type PutFunctionConcurrencyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutFunctionConcurrencyInput {
     /// Consumes the builder and constructs an Operation<[`PutFunctionConcurrency`](crate::operation::PutFunctionConcurrency)>
     #[allow(unused_mut)]
@@ -10368,12 +10138,6 @@ pub mod put_function_event_invoke_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutFunctionEventInvokeConfigInputOperationOutputAlias =
-    crate::operation::PutFunctionEventInvokeConfig;
-#[doc(hidden)]
-pub type PutFunctionEventInvokeConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutFunctionEventInvokeConfigInput {
     /// Consumes the builder and constructs an Operation<[`PutFunctionEventInvokeConfig`](crate::operation::PutFunctionEventInvokeConfig)>
     #[allow(unused_mut)]
@@ -10587,12 +10351,6 @@ pub mod put_provisioned_concurrency_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutProvisionedConcurrencyConfigInputOperationOutputAlias =
-    crate::operation::PutProvisionedConcurrencyConfig;
-#[doc(hidden)]
-pub type PutProvisionedConcurrencyConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutProvisionedConcurrencyConfigInput {
     /// Consumes the builder and constructs an Operation<[`PutProvisionedConcurrencyConfig`](crate::operation::PutProvisionedConcurrencyConfig)>
     #[allow(unused_mut)]
@@ -10798,12 +10556,6 @@ pub mod remove_layer_version_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveLayerVersionPermissionInputOperationOutputAlias =
-    crate::operation::RemoveLayerVersionPermission;
-#[doc(hidden)]
-pub type RemoveLayerVersionPermissionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveLayerVersionPermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemoveLayerVersionPermission`](crate::operation::RemoveLayerVersionPermission)>
     #[allow(unused_mut)]
@@ -11040,10 +10792,6 @@ pub mod remove_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemovePermissionInputOperationOutputAlias = crate::operation::RemovePermission;
-#[doc(hidden)]
-pub type RemovePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(unused_mut)]
@@ -11248,10 +10996,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -11426,10 +11170,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -11665,10 +11405,6 @@ pub mod update_alias_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAliasInputOperationOutputAlias = crate::operation::UpdateAlias;
-#[doc(hidden)]
-pub type UpdateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAlias`](crate::operation::UpdateAlias)>
     #[allow(unused_mut)]
@@ -11888,11 +11624,6 @@ pub mod update_code_signing_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCodeSigningConfigInputOperationOutputAlias =
-    crate::operation::UpdateCodeSigningConfig;
-#[doc(hidden)]
-pub type UpdateCodeSigningConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCodeSigningConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCodeSigningConfig`](crate::operation::UpdateCodeSigningConfig)>
     #[allow(unused_mut)]
@@ -12292,11 +12023,6 @@ pub mod update_event_source_mapping_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEventSourceMappingInputOperationOutputAlias =
-    crate::operation::UpdateEventSourceMapping;
-#[doc(hidden)]
-pub type UpdateEventSourceMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventSourceMappingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventSourceMapping`](crate::operation::UpdateEventSourceMapping)>
     #[allow(unused_mut)]
@@ -12593,10 +12319,6 @@ pub mod update_function_code_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFunctionCodeInputOperationOutputAlias = crate::operation::UpdateFunctionCode;
-#[doc(hidden)]
-pub type UpdateFunctionCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionCodeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunctionCode`](crate::operation::UpdateFunctionCode)>
     #[allow(unused_mut)]
@@ -13002,11 +12724,6 @@ pub mod update_function_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFunctionConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateFunctionConfiguration;
-#[doc(hidden)]
-pub type UpdateFunctionConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunctionConfiguration`](crate::operation::UpdateFunctionConfiguration)>
     #[allow(unused_mut)]
@@ -13247,12 +12964,6 @@ pub mod update_function_event_invoke_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFunctionEventInvokeConfigInputOperationOutputAlias =
-    crate::operation::UpdateFunctionEventInvokeConfig;
-#[doc(hidden)]
-pub type UpdateFunctionEventInvokeConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionEventInvokeConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunctionEventInvokeConfig`](crate::operation::UpdateFunctionEventInvokeConfig)>
     #[allow(unused_mut)]
@@ -13478,11 +13189,6 @@ pub mod update_function_url_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFunctionUrlConfigInputOperationOutputAlias =
-    crate::operation::UpdateFunctionUrlConfig;
-#[doc(hidden)]
-pub type UpdateFunctionUrlConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionUrlConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunctionUrlConfig`](crate::operation::UpdateFunctionUrlConfig)>
     #[allow(unused_mut)]

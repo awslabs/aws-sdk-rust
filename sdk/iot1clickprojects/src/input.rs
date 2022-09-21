@@ -75,12 +75,6 @@ pub mod associate_device_with_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateDeviceWithPlacementInputOperationOutputAlias =
-    crate::operation::AssociateDeviceWithPlacement;
-#[doc(hidden)]
-pub type AssociateDeviceWithPlacementInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDeviceWithPlacementInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDeviceWithPlacement`](crate::operation::AssociateDeviceWithPlacement)>
     #[allow(unused_mut)]
@@ -304,10 +298,6 @@ pub mod create_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePlacementInputOperationOutputAlias = crate::operation::CreatePlacement;
-#[doc(hidden)]
-pub type CreatePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlacementInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlacement`](crate::operation::CreatePlacement)>
     #[allow(unused_mut)]
@@ -521,10 +511,6 @@ pub mod create_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
-#[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(unused_mut)]
@@ -678,10 +664,6 @@ pub mod delete_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePlacementInputOperationOutputAlias = crate::operation::DeletePlacement;
-#[doc(hidden)]
-pub type DeletePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlacementInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlacement`](crate::operation::DeletePlacement)>
     #[allow(unused_mut)]
@@ -840,10 +822,6 @@ pub mod delete_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
-#[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(unused_mut)]
@@ -1002,10 +980,6 @@ pub mod describe_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePlacementInputOperationOutputAlias = crate::operation::DescribePlacement;
-#[doc(hidden)]
-pub type DescribePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlacementInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlacement`](crate::operation::DescribePlacement)>
     #[allow(unused_mut)]
@@ -1164,10 +1138,6 @@ pub mod describe_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
-#[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(unused_mut)]
@@ -1343,12 +1313,6 @@ pub mod disassociate_device_from_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateDeviceFromPlacementInputOperationOutputAlias =
-    crate::operation::DisassociateDeviceFromPlacement;
-#[doc(hidden)]
-pub type DisassociateDeviceFromPlacementInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDeviceFromPlacementInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDeviceFromPlacement`](crate::operation::DisassociateDeviceFromPlacement)>
     #[allow(unused_mut)]
@@ -1530,10 +1494,6 @@ pub mod get_devices_in_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDevicesInPlacementInputOperationOutputAlias = crate::operation::GetDevicesInPlacement;
-#[doc(hidden)]
-pub type GetDevicesInPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicesInPlacementInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicesInPlacement`](crate::operation::GetDevicesInPlacement)>
     #[allow(unused_mut)]
@@ -1716,10 +1676,6 @@ pub mod list_placements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPlacementsInputOperationOutputAlias = crate::operation::ListPlacements;
-#[doc(hidden)]
-pub type ListPlacementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlacementsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlacements`](crate::operation::ListPlacements)>
     #[allow(unused_mut)]
@@ -1892,10 +1848,6 @@ pub mod list_projects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
-#[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(unused_mut)]
@@ -2037,10 +1989,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2209,10 +2157,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2387,10 +2331,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2587,10 +2527,6 @@ pub mod update_placement_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePlacementInputOperationOutputAlias = crate::operation::UpdatePlacement;
-#[doc(hidden)]
-pub type UpdatePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePlacementInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePlacement`](crate::operation::UpdatePlacement)>
     #[allow(unused_mut)]
@@ -2790,10 +2726,6 @@ pub mod update_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
-#[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(unused_mut)]

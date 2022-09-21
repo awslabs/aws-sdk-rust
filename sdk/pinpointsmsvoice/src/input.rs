@@ -34,10 +34,6 @@ pub mod create_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetInputOperationOutputAlias = crate::operation::CreateConfigurationSet;
-#[doc(hidden)]
-pub type CreateConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
     #[allow(unused_mut)]
@@ -217,12 +213,6 @@ pub mod create_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::CreateConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type CreateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetEventDestination`](crate::operation::CreateConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -382,10 +372,6 @@ pub mod delete_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationOutputAlias = crate::operation::DeleteConfigurationSet;
-#[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
     #[allow(unused_mut)]
@@ -549,12 +535,6 @@ pub mod delete_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::DeleteConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type DeleteConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetEventDestination`](crate::operation::DeleteConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -712,12 +692,6 @@ pub mod get_configuration_set_event_destinations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConfigurationSetEventDestinationsInputOperationOutputAlias =
-    crate::operation::GetConfigurationSetEventDestinations;
-#[doc(hidden)]
-pub type GetConfigurationSetEventDestinationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConfigurationSetEventDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationSetEventDestinations`](crate::operation::GetConfigurationSetEventDestinations)>
     #[allow(unused_mut)]
@@ -873,10 +847,6 @@ pub mod list_configuration_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConfigurationSetsInputOperationOutputAlias = crate::operation::ListConfigurationSets;
-#[doc(hidden)]
-pub type ListConfigurationSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationSets`](crate::operation::ListConfigurationSets)>
     #[allow(unused_mut)]
@@ -1076,10 +1046,6 @@ pub mod send_voice_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendVoiceMessageInputOperationOutputAlias = crate::operation::SendVoiceMessage;
-#[doc(hidden)]
-pub type SendVoiceMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendVoiceMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendVoiceMessage`](crate::operation::SendVoiceMessage)>
     #[allow(unused_mut)]
@@ -1256,12 +1222,6 @@ pub mod update_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::UpdateConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type UpdateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetEventDestination`](crate::operation::UpdateConfigurationSetEventDestination)>
     #[allow(unused_mut)]

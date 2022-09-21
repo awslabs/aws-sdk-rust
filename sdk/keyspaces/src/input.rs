@@ -57,10 +57,6 @@ pub mod create_keyspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateKeyspaceInputOperationOutputAlias = crate::operation::CreateKeyspace;
-#[doc(hidden)]
-pub type CreateKeyspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateKeyspaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeyspace`](crate::operation::CreateKeyspace)>
     #[allow(unused_mut)]
@@ -403,10 +399,6 @@ pub mod create_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTableInputOperationOutputAlias = crate::operation::CreateTable;
-#[doc(hidden)]
-pub type CreateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateTable`](crate::operation::CreateTable)>
     #[allow(unused_mut)]
@@ -553,10 +545,6 @@ pub mod delete_keyspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteKeyspaceInputOperationOutputAlias = crate::operation::DeleteKeyspace;
-#[doc(hidden)]
-pub type DeleteKeyspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteKeyspaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeyspace`](crate::operation::DeleteKeyspace)>
     #[allow(unused_mut)]
@@ -715,10 +703,6 @@ pub mod delete_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTableInputOperationOutputAlias = crate::operation::DeleteTable;
-#[doc(hidden)]
-pub type DeleteTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTable`](crate::operation::DeleteTable)>
     #[allow(unused_mut)]
@@ -865,10 +849,6 @@ pub mod get_keyspace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetKeyspaceInputOperationOutputAlias = crate::operation::GetKeyspace;
-#[doc(hidden)]
-pub type GetKeyspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKeyspaceInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyspace`](crate::operation::GetKeyspace)>
     #[allow(unused_mut)]
@@ -1026,10 +1006,6 @@ pub mod get_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTableInputOperationOutputAlias = crate::operation::GetTable;
-#[doc(hidden)]
-pub type GetTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableInput {
     /// Consumes the builder and constructs an Operation<[`GetTable`](crate::operation::GetTable)>
     #[allow(unused_mut)]
@@ -1183,10 +1159,6 @@ pub mod list_keyspaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListKeyspacesInputOperationOutputAlias = crate::operation::ListKeyspaces;
-#[doc(hidden)]
-pub type ListKeyspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKeyspacesInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyspaces`](crate::operation::ListKeyspaces)>
     #[allow(unused_mut)]
@@ -1356,10 +1328,6 @@ pub mod list_tables_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTablesInputOperationOutputAlias = crate::operation::ListTables;
-#[doc(hidden)]
-pub type ListTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(unused_mut)]
@@ -1527,10 +1495,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1843,10 +1807,6 @@ pub mod restore_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreTableInputOperationOutputAlias = crate::operation::RestoreTable;
-#[doc(hidden)]
-pub type RestoreTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTable`](crate::operation::RestoreTable)>
     #[allow(unused_mut)]
@@ -2011,10 +1971,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2179,10 +2135,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2476,10 +2428,6 @@ pub mod update_table_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateTableInputOperationOutputAlias = crate::operation::UpdateTable;
-#[doc(hidden)]
-pub type UpdateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTable`](crate::operation::UpdateTable)>
     #[allow(unused_mut)]

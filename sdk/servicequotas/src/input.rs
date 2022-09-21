@@ -19,12 +19,6 @@ pub mod associate_service_quota_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateServiceQuotaTemplateInputOperationOutputAlias =
-    crate::operation::AssociateServiceQuotaTemplate;
-#[doc(hidden)]
-pub type AssociateServiceQuotaTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateServiceQuotaTemplateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateServiceQuotaTemplate`](crate::operation::AssociateServiceQuotaTemplate)>
     #[allow(unused_mut)]
@@ -188,12 +182,6 @@ pub mod delete_service_quota_increase_request_from_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteServiceQuotaIncreaseRequestFromTemplateInputOperationOutputAlias =
-    crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate;
-#[doc(hidden)]
-pub type DeleteServiceQuotaIncreaseRequestFromTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceQuotaIncreaseRequestFromTemplate`](crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate)>
     #[allow(unused_mut)]
@@ -325,12 +313,6 @@ pub mod disassociate_service_quota_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateServiceQuotaTemplateInputOperationOutputAlias =
-    crate::operation::DisassociateServiceQuotaTemplate;
-#[doc(hidden)]
-pub type DisassociateServiceQuotaTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateServiceQuotaTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateServiceQuotaTemplate`](crate::operation::DisassociateServiceQuotaTemplate)>
     #[allow(unused_mut)]
@@ -454,12 +436,6 @@ pub mod get_association_for_service_quota_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssociationForServiceQuotaTemplateInputOperationOutputAlias =
-    crate::operation::GetAssociationForServiceQuotaTemplate;
-#[doc(hidden)]
-pub type GetAssociationForServiceQuotaTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssociationForServiceQuotaTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetAssociationForServiceQuotaTemplate`](crate::operation::GetAssociationForServiceQuotaTemplate)>
     #[allow(unused_mut)]
@@ -609,11 +585,6 @@ pub mod get_aws_default_service_quota_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAwsDefaultServiceQuotaInputOperationOutputAlias =
-    crate::operation::GetAWSDefaultServiceQuota;
-#[doc(hidden)]
-pub type GetAwsDefaultServiceQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAwsDefaultServiceQuotaInput {
     /// Consumes the builder and constructs an Operation<[`GetAWSDefaultServiceQuota`](crate::operation::GetAWSDefaultServiceQuota)>
     #[allow(unused_mut)]
@@ -758,12 +729,6 @@ pub mod get_requested_service_quota_change_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRequestedServiceQuotaChangeInputOperationOutputAlias =
-    crate::operation::GetRequestedServiceQuotaChange;
-#[doc(hidden)]
-pub type GetRequestedServiceQuotaChangeInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRequestedServiceQuotaChangeInput {
     /// Consumes the builder and constructs an Operation<[`GetRequestedServiceQuotaChange`](crate::operation::GetRequestedServiceQuotaChange)>
     #[allow(unused_mut)]
@@ -918,10 +883,6 @@ pub mod get_service_quota_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceQuotaInputOperationOutputAlias = crate::operation::GetServiceQuota;
-#[doc(hidden)]
-pub type GetServiceQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceQuotaInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceQuota`](crate::operation::GetServiceQuota)>
     #[allow(unused_mut)]
@@ -1093,12 +1054,6 @@ pub mod get_service_quota_increase_request_from_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceQuotaIncreaseRequestFromTemplateInputOperationOutputAlias =
-    crate::operation::GetServiceQuotaIncreaseRequestFromTemplate;
-#[doc(hidden)]
-pub type GetServiceQuotaIncreaseRequestFromTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceQuotaIncreaseRequestFromTemplate`](crate::operation::GetServiceQuotaIncreaseRequestFromTemplate)>
     #[allow(unused_mut)]
@@ -1268,11 +1223,6 @@ pub mod list_aws_default_service_quotas_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAwsDefaultServiceQuotasInputOperationOutputAlias =
-    crate::operation::ListAWSDefaultServiceQuotas;
-#[doc(hidden)]
-pub type ListAwsDefaultServiceQuotasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAwsDefaultServiceQuotasInput {
     /// Consumes the builder and constructs an Operation<[`ListAWSDefaultServiceQuotas`](crate::operation::ListAWSDefaultServiceQuotas)>
     #[allow(unused_mut)]
@@ -1456,12 +1406,6 @@ pub mod list_requested_service_quota_change_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRequestedServiceQuotaChangeHistoryInputOperationOutputAlias =
-    crate::operation::ListRequestedServiceQuotaChangeHistory;
-#[doc(hidden)]
-pub type ListRequestedServiceQuotaChangeHistoryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRequestedServiceQuotaChangeHistoryInput {
     /// Consumes the builder and constructs an Operation<[`ListRequestedServiceQuotaChangeHistory`](crate::operation::ListRequestedServiceQuotaChangeHistory)>
     #[allow(unused_mut)]
@@ -1659,12 +1603,6 @@ pub mod list_requested_service_quota_change_history_by_quota_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRequestedServiceQuotaChangeHistoryByQuotaInputOperationOutputAlias =
-    crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota;
-#[doc(hidden)]
-pub type ListRequestedServiceQuotaChangeHistoryByQuotaInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// Consumes the builder and constructs an Operation<[`ListRequestedServiceQuotaChangeHistoryByQuota`](crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota)>
     #[allow(unused_mut)]
@@ -1848,12 +1786,6 @@ pub mod list_service_quota_increase_requests_in_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServiceQuotaIncreaseRequestsInTemplateInputOperationOutputAlias =
-    crate::operation::ListServiceQuotaIncreaseRequestsInTemplate;
-#[doc(hidden)]
-pub type ListServiceQuotaIncreaseRequestsInTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceQuotaIncreaseRequestsInTemplate`](crate::operation::ListServiceQuotaIncreaseRequestsInTemplate)>
     #[allow(unused_mut)]
@@ -2021,10 +1953,6 @@ pub mod list_service_quotas_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServiceQuotasInputOperationOutputAlias = crate::operation::ListServiceQuotas;
-#[doc(hidden)]
-pub type ListServiceQuotasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceQuotasInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceQuotas`](crate::operation::ListServiceQuotas)>
     #[allow(unused_mut)]
@@ -2180,10 +2108,6 @@ pub mod list_services_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServicesInputOperationOutputAlias = crate::operation::ListServices;
-#[doc(hidden)]
-pub type ListServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListServices`](crate::operation::ListServices)>
     #[allow(unused_mut)]
@@ -2327,10 +2251,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2516,12 +2436,6 @@ pub mod put_service_quota_increase_request_into_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutServiceQuotaIncreaseRequestIntoTemplateInputOperationOutputAlias =
-    crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate;
-#[doc(hidden)]
-pub type PutServiceQuotaIncreaseRequestIntoTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// Consumes the builder and constructs an Operation<[`PutServiceQuotaIncreaseRequestIntoTemplate`](crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate)>
     #[allow(unused_mut)]
@@ -2691,11 +2605,6 @@ pub mod request_service_quota_increase_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RequestServiceQuotaIncreaseInputOperationOutputAlias =
-    crate::operation::RequestServiceQuotaIncrease;
-#[doc(hidden)]
-pub type RequestServiceQuotaIncreaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RequestServiceQuotaIncreaseInput {
     /// Consumes the builder and constructs an Operation<[`RequestServiceQuotaIncrease`](crate::operation::RequestServiceQuotaIncrease)>
     #[allow(unused_mut)]
@@ -2859,10 +2768,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3027,10 +2932,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

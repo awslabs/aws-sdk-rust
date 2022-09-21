@@ -60,10 +60,6 @@ pub mod add_tags_to_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsToStreamInputOperationOutputAlias = crate::operation::AddTagsToStream;
-#[doc(hidden)]
-pub type AddTagsToStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToStreamInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToStream`](crate::operation::AddTagsToStream)>
     #[allow(unused_mut)]
@@ -234,10 +230,6 @@ pub mod create_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamInputOperationOutputAlias = crate::operation::CreateStream;
-#[doc(hidden)]
-pub type CreateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStream`](crate::operation::CreateStream)>
     #[allow(unused_mut)]
@@ -395,12 +387,6 @@ pub mod decrease_stream_retention_period_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DecreaseStreamRetentionPeriodInputOperationOutputAlias =
-    crate::operation::DecreaseStreamRetentionPeriod;
-#[doc(hidden)]
-pub type DecreaseStreamRetentionPeriodInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DecreaseStreamRetentionPeriodInput {
     /// Consumes the builder and constructs an Operation<[`DecreaseStreamRetentionPeriod`](crate::operation::DecreaseStreamRetentionPeriod)>
     #[allow(unused_mut)]
@@ -555,10 +541,6 @@ pub mod delete_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStreamInputOperationOutputAlias = crate::operation::DeleteStream;
-#[doc(hidden)]
-pub type DeleteStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStream`](crate::operation::DeleteStream)>
     #[allow(unused_mut)]
@@ -731,11 +713,6 @@ pub mod deregister_stream_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterStreamConsumerInputOperationOutputAlias =
-    crate::operation::DeregisterStreamConsumer;
-#[doc(hidden)]
-pub type DeregisterStreamConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterStreamConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterStreamConsumer`](crate::operation::DeregisterStreamConsumer)>
     #[allow(unused_mut)]
@@ -867,10 +844,6 @@ pub mod describe_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLimitsInputOperationOutputAlias = crate::operation::DescribeLimits;
-#[doc(hidden)]
-pub type DescribeLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLimits`](crate::operation::DescribeLimits)>
     #[allow(unused_mut)]
@@ -1038,10 +1011,6 @@ pub mod describe_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
-#[doc(hidden)]
-pub type DescribeStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(unused_mut)]
@@ -1212,10 +1181,6 @@ pub mod describe_stream_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStreamConsumerInputOperationOutputAlias = crate::operation::DescribeStreamConsumer;
-#[doc(hidden)]
-pub type DescribeStreamConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamConsumer`](crate::operation::DescribeStreamConsumer)>
     #[allow(unused_mut)]
@@ -1361,10 +1326,6 @@ pub mod describe_stream_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStreamSummaryInputOperationOutputAlias = crate::operation::DescribeStreamSummary;
-#[doc(hidden)]
-pub type DescribeStreamSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamSummaryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamSummary`](crate::operation::DescribeStreamSummary)>
     #[allow(unused_mut)]
@@ -1558,11 +1519,6 @@ pub mod disable_enhanced_monitoring_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableEnhancedMonitoringInputOperationOutputAlias =
-    crate::operation::DisableEnhancedMonitoring;
-#[doc(hidden)]
-pub type DisableEnhancedMonitoringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableEnhancedMonitoringInput {
     /// Consumes the builder and constructs an Operation<[`DisableEnhancedMonitoring`](crate::operation::DisableEnhancedMonitoring)>
     #[allow(unused_mut)]
@@ -1756,11 +1712,6 @@ pub mod enable_enhanced_monitoring_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableEnhancedMonitoringInputOperationOutputAlias =
-    crate::operation::EnableEnhancedMonitoring;
-#[doc(hidden)]
-pub type EnableEnhancedMonitoringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableEnhancedMonitoringInput {
     /// Consumes the builder and constructs an Operation<[`EnableEnhancedMonitoring`](crate::operation::EnableEnhancedMonitoring)>
     #[allow(unused_mut)]
@@ -1920,10 +1871,6 @@ pub mod get_records_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecordsInputOperationOutputAlias = crate::operation::GetRecords;
-#[doc(hidden)]
-pub type GetRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecords`](crate::operation::GetRecords)>
     #[allow(unused_mut)]
@@ -2140,10 +2087,6 @@ pub mod get_shard_iterator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetShardIteratorInputOperationOutputAlias = crate::operation::GetShardIterator;
-#[doc(hidden)]
-pub type GetShardIteratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetShardIteratorInput {
     /// Consumes the builder and constructs an Operation<[`GetShardIterator`](crate::operation::GetShardIterator)>
     #[allow(unused_mut)]
@@ -2301,12 +2244,6 @@ pub mod increase_stream_retention_period_input {
         }
     }
 }
-#[doc(hidden)]
-pub type IncreaseStreamRetentionPeriodInputOperationOutputAlias =
-    crate::operation::IncreaseStreamRetentionPeriod;
-#[doc(hidden)]
-pub type IncreaseStreamRetentionPeriodInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl IncreaseStreamRetentionPeriodInput {
     /// Consumes the builder and constructs an Operation<[`IncreaseStreamRetentionPeriod`](crate::operation::IncreaseStreamRetentionPeriod)>
     #[allow(unused_mut)]
@@ -2541,10 +2478,6 @@ pub mod list_shards_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListShardsInputOperationOutputAlias = crate::operation::ListShards;
-#[doc(hidden)]
-pub type ListShardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListShardsInput {
     /// Consumes the builder and constructs an Operation<[`ListShards`](crate::operation::ListShards)>
     #[allow(unused_mut)]
@@ -2737,10 +2670,6 @@ pub mod list_stream_consumers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamConsumersInputOperationOutputAlias = crate::operation::ListStreamConsumers;
-#[doc(hidden)]
-pub type ListStreamConsumersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamConsumersInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamConsumers`](crate::operation::ListStreamConsumers)>
     #[allow(unused_mut)]
@@ -2902,10 +2831,6 @@ pub mod list_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
-#[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(unused_mut)]
@@ -3076,10 +3001,6 @@ pub mod list_tags_for_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForStreamInputOperationOutputAlias = crate::operation::ListTagsForStream;
-#[doc(hidden)]
-pub type ListTagsForStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForStreamInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForStream`](crate::operation::ListTagsForStream)>
     #[allow(unused_mut)]
@@ -3253,10 +3174,6 @@ pub mod merge_shards_input {
         }
     }
 }
-#[doc(hidden)]
-pub type MergeShardsInputOperationOutputAlias = crate::operation::MergeShards;
-#[doc(hidden)]
-pub type MergeShardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MergeShardsInput {
     /// Consumes the builder and constructs an Operation<[`MergeShards`](crate::operation::MergeShards)>
     #[allow(unused_mut)]
@@ -3459,10 +3376,6 @@ pub mod put_record_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecordInputOperationOutputAlias = crate::operation::PutRecord;
-#[doc(hidden)]
-pub type PutRecordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
     #[allow(unused_mut)]
@@ -3625,10 +3538,6 @@ pub mod put_records_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRecordsInputOperationOutputAlias = crate::operation::PutRecords;
-#[doc(hidden)]
-pub type PutRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRecordsInput {
     /// Consumes the builder and constructs an Operation<[`PutRecords`](crate::operation::PutRecords)>
     #[allow(unused_mut)]
@@ -3787,10 +3696,6 @@ pub mod register_stream_consumer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterStreamConsumerInputOperationOutputAlias = crate::operation::RegisterStreamConsumer;
-#[doc(hidden)]
-pub type RegisterStreamConsumerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterStreamConsumerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterStreamConsumer`](crate::operation::RegisterStreamConsumer)>
     #[allow(unused_mut)]
@@ -3957,10 +3862,6 @@ pub mod remove_tags_from_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsFromStreamInputOperationOutputAlias = crate::operation::RemoveTagsFromStream;
-#[doc(hidden)]
-pub type RemoveTagsFromStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromStreamInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromStream`](crate::operation::RemoveTagsFromStream)>
     #[allow(unused_mut)]
@@ -4135,10 +4036,6 @@ pub mod split_shard_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SplitShardInputOperationOutputAlias = crate::operation::SplitShard;
-#[doc(hidden)]
-pub type SplitShardInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SplitShardInput {
     /// Consumes the builder and constructs an Operation<[`SplitShard`](crate::operation::SplitShard)>
     #[allow(unused_mut)]
@@ -4323,10 +4220,6 @@ pub mod start_stream_encryption_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStreamEncryptionInputOperationOutputAlias = crate::operation::StartStreamEncryption;
-#[doc(hidden)]
-pub type StartStreamEncryptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamEncryption`](crate::operation::StartStreamEncryption)>
     #[allow(unused_mut)]
@@ -4513,10 +4406,6 @@ pub mod stop_stream_encryption_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopStreamEncryptionInputOperationOutputAlias = crate::operation::StopStreamEncryption;
-#[doc(hidden)]
-pub type StopStreamEncryptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamEncryption`](crate::operation::StopStreamEncryption)>
     #[allow(unused_mut)]
@@ -4701,10 +4590,6 @@ pub mod update_shard_count_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateShardCountInputOperationOutputAlias = crate::operation::UpdateShardCount;
-#[doc(hidden)]
-pub type UpdateShardCountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateShardCountInput {
     /// Consumes the builder and constructs an Operation<[`UpdateShardCount`](crate::operation::UpdateShardCount)>
     #[allow(unused_mut)]
@@ -4863,10 +4748,6 @@ pub mod update_stream_mode_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStreamModeInputOperationOutputAlias = crate::operation::UpdateStreamMode;
-#[doc(hidden)]
-pub type UpdateStreamModeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamModeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamMode`](crate::operation::UpdateStreamMode)>
     #[allow(unused_mut)]

@@ -109,10 +109,6 @@ pub mod create_chat_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChatTokenInputOperationOutputAlias = crate::operation::CreateChatToken;
-#[doc(hidden)]
-pub type CreateChatTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChatTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateChatToken`](crate::operation::CreateChatToken)>
     #[allow(unused_mut)]
@@ -323,10 +319,6 @@ pub mod create_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRoomInputOperationOutputAlias = crate::operation::CreateRoom;
-#[doc(hidden)]
-pub type CreateRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoomInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoom`](crate::operation::CreateRoom)>
     #[allow(unused_mut)]
@@ -492,10 +484,6 @@ pub mod delete_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMessageInputOperationOutputAlias = crate::operation::DeleteMessage;
-#[doc(hidden)]
-pub type DeleteMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMessageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMessage`](crate::operation::DeleteMessage)>
     #[allow(unused_mut)]
@@ -633,10 +621,6 @@ pub mod delete_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRoomInputOperationOutputAlias = crate::operation::DeleteRoom;
-#[doc(hidden)]
-pub type DeleteRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoomInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoom`](crate::operation::DeleteRoom)>
     #[allow(unused_mut)]
@@ -802,10 +786,6 @@ pub mod disconnect_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisconnectUserInputOperationOutputAlias = crate::operation::DisconnectUser;
-#[doc(hidden)]
-pub type DisconnectUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisconnectUserInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectUser`](crate::operation::DisconnectUser)>
     #[allow(unused_mut)]
@@ -943,10 +923,6 @@ pub mod get_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRoomInputOperationOutputAlias = crate::operation::GetRoom;
-#[doc(hidden)]
-pub type GetRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoomInput {
     /// Consumes the builder and constructs an Operation<[`GetRoom`](crate::operation::GetRoom)>
     #[allow(unused_mut)]
@@ -1120,10 +1096,6 @@ pub mod list_rooms_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRoomsInputOperationOutputAlias = crate::operation::ListRooms;
-#[doc(hidden)]
-pub type ListRoomsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoomsInput {
     /// Consumes the builder and constructs an Operation<[`ListRooms`](crate::operation::ListRooms)>
     #[allow(unused_mut)]
@@ -1260,10 +1232,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1446,10 +1414,6 @@ pub mod send_event_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendEventInputOperationOutputAlias = crate::operation::SendEvent;
-#[doc(hidden)]
-pub type SendEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEventInput {
     /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
     #[allow(unused_mut)]
@@ -1615,10 +1579,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1793,10 +1753,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2004,10 +1960,6 @@ pub mod update_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRoomInputOperationOutputAlias = crate::operation::UpdateRoom;
-#[doc(hidden)]
-pub type UpdateRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoomInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoom`](crate::operation::UpdateRoom)>
     #[allow(unused_mut)]

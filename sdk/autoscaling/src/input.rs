@@ -55,10 +55,6 @@ pub mod attach_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachInstancesInputOperationOutputAlias = crate::operation::AttachInstances;
-#[doc(hidden)]
-pub type AttachInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachInstancesInput {
     /// Consumes the builder and constructs an Operation<[`AttachInstances`](crate::operation::AttachInstances)>
     #[allow(unused_mut)]
@@ -221,10 +217,6 @@ pub mod attach_load_balancers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachLoadBalancersInputOperationOutputAlias = crate::operation::AttachLoadBalancers;
-#[doc(hidden)]
-pub type AttachLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`AttachLoadBalancers`](crate::operation::AttachLoadBalancers)>
     #[allow(unused_mut)]
@@ -389,12 +381,6 @@ pub mod attach_load_balancer_target_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachLoadBalancerTargetGroupsInputOperationOutputAlias =
-    crate::operation::AttachLoadBalancerTargetGroups;
-#[doc(hidden)]
-pub type AttachLoadBalancerTargetGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AttachLoadBalancerTargetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`AttachLoadBalancerTargetGroups`](crate::operation::AttachLoadBalancerTargetGroups)>
     #[allow(unused_mut)]
@@ -558,11 +544,6 @@ pub mod batch_delete_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteScheduledActionInputOperationOutputAlias =
-    crate::operation::BatchDeleteScheduledAction;
-#[doc(hidden)]
-pub type BatchDeleteScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteScheduledAction`](crate::operation::BatchDeleteScheduledAction)>
     #[allow(unused_mut)]
@@ -732,12 +713,6 @@ pub mod batch_put_scheduled_update_group_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchPutScheduledUpdateGroupActionInputOperationOutputAlias =
-    crate::operation::BatchPutScheduledUpdateGroupAction;
-#[doc(hidden)]
-pub type BatchPutScheduledUpdateGroupActionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutScheduledUpdateGroupActionInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutScheduledUpdateGroupAction`](crate::operation::BatchPutScheduledUpdateGroupAction)>
     #[allow(unused_mut)]
@@ -878,10 +853,6 @@ pub mod cancel_instance_refresh_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelInstanceRefreshInputOperationOutputAlias = crate::operation::CancelInstanceRefresh;
-#[doc(hidden)]
-pub type CancelInstanceRefreshInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelInstanceRefreshInput {
     /// Consumes the builder and constructs an Operation<[`CancelInstanceRefresh`](crate::operation::CancelInstanceRefresh)>
     #[allow(unused_mut)]
@@ -1084,11 +1055,6 @@ pub mod complete_lifecycle_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompleteLifecycleActionInputOperationOutputAlias =
-    crate::operation::CompleteLifecycleAction;
-#[doc(hidden)]
-pub type CompleteLifecycleActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteLifecycleActionInput {
     /// Consumes the builder and constructs an Operation<[`CompleteLifecycleAction`](crate::operation::CompleteLifecycleAction)>
     #[allow(unused_mut)]
@@ -1655,10 +1621,6 @@ pub mod create_auto_scaling_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAutoScalingGroupInputOperationOutputAlias = crate::operation::CreateAutoScalingGroup;
-#[doc(hidden)]
-pub type CreateAutoScalingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAutoScalingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateAutoScalingGroup`](crate::operation::CreateAutoScalingGroup)>
     #[allow(unused_mut)]
@@ -2114,11 +2076,6 @@ pub mod create_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLaunchConfigurationInputOperationOutputAlias =
-    crate::operation::CreateLaunchConfiguration;
-#[doc(hidden)]
-pub type CreateLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateLaunchConfiguration`](crate::operation::CreateLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -2266,10 +2223,6 @@ pub mod create_or_update_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateOrUpdateTagsInputOperationOutputAlias = crate::operation::CreateOrUpdateTags;
-#[doc(hidden)]
-pub type CreateOrUpdateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOrUpdateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateOrUpdateTags`](crate::operation::CreateOrUpdateTags)>
     #[allow(unused_mut)]
@@ -2423,10 +2376,6 @@ pub mod delete_auto_scaling_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAutoScalingGroupInputOperationOutputAlias = crate::operation::DeleteAutoScalingGroup;
-#[doc(hidden)]
-pub type DeleteAutoScalingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAutoScalingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAutoScalingGroup`](crate::operation::DeleteAutoScalingGroup)>
     #[allow(unused_mut)]
@@ -2572,11 +2521,6 @@ pub mod delete_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLaunchConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteLaunchConfiguration;
-#[doc(hidden)]
-pub type DeleteLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchConfiguration`](crate::operation::DeleteLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -2735,10 +2679,6 @@ pub mod delete_lifecycle_hook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLifecycleHookInputOperationOutputAlias = crate::operation::DeleteLifecycleHook;
-#[doc(hidden)]
-pub type DeleteLifecycleHookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecycleHookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecycleHook`](crate::operation::DeleteLifecycleHook)>
     #[allow(unused_mut)]
@@ -2894,12 +2834,6 @@ pub mod delete_notification_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNotificationConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteNotificationConfiguration;
-#[doc(hidden)]
-pub type DeleteNotificationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotificationConfiguration`](crate::operation::DeleteNotificationConfiguration)>
     #[allow(unused_mut)]
@@ -3052,10 +2986,6 @@ pub mod delete_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePolicyInputOperationOutputAlias = crate::operation::DeletePolicy;
-#[doc(hidden)]
-pub type DeletePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicy`](crate::operation::DeletePolicy)>
     #[allow(unused_mut)]
@@ -3212,10 +3142,6 @@ pub mod delete_scheduled_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteScheduledActionInputOperationOutputAlias = crate::operation::DeleteScheduledAction;
-#[doc(hidden)]
-pub type DeleteScheduledActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduledActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScheduledAction`](crate::operation::DeleteScheduledAction)>
     #[allow(unused_mut)]
@@ -3362,10 +3288,6 @@ pub mod delete_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
-#[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(unused_mut)]
@@ -3519,10 +3441,6 @@ pub mod delete_warm_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWarmPoolInputOperationOutputAlias = crate::operation::DeleteWarmPool;
-#[doc(hidden)]
-pub type DeleteWarmPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWarmPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWarmPool`](crate::operation::DeleteWarmPool)>
     #[allow(unused_mut)]
@@ -3647,10 +3565,6 @@ pub mod describe_account_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationOutputAlias = crate::operation::DescribeAccountLimits;
-#[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
     #[allow(unused_mut)]
@@ -3772,11 +3686,6 @@ pub mod describe_adjustment_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAdjustmentTypesInputOperationOutputAlias =
-    crate::operation::DescribeAdjustmentTypes;
-#[doc(hidden)]
-pub type DescribeAdjustmentTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAdjustmentTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAdjustmentTypes`](crate::operation::DescribeAdjustmentTypes)>
     #[allow(unused_mut)]
@@ -3969,11 +3878,6 @@ pub mod describe_auto_scaling_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAutoScalingGroupsInputOperationOutputAlias =
-    crate::operation::DescribeAutoScalingGroups;
-#[doc(hidden)]
-pub type DescribeAutoScalingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAutoScalingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAutoScalingGroups`](crate::operation::DescribeAutoScalingGroups)>
     #[allow(unused_mut)]
@@ -4151,12 +4055,6 @@ pub mod describe_auto_scaling_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAutoScalingInstancesInputOperationOutputAlias =
-    crate::operation::DescribeAutoScalingInstances;
-#[doc(hidden)]
-pub type DescribeAutoScalingInstancesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAutoScalingInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAutoScalingInstances`](crate::operation::DescribeAutoScalingInstances)>
     #[allow(unused_mut)]
@@ -4282,12 +4180,6 @@ pub mod describe_auto_scaling_notification_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAutoScalingNotificationTypesInputOperationOutputAlias =
-    crate::operation::DescribeAutoScalingNotificationTypes;
-#[doc(hidden)]
-pub type DescribeAutoScalingNotificationTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAutoScalingNotificationTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAutoScalingNotificationTypes`](crate::operation::DescribeAutoScalingNotificationTypes)>
     #[allow(unused_mut)]
@@ -4468,11 +4360,6 @@ pub mod describe_instance_refreshes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInstanceRefreshesInputOperationOutputAlias =
-    crate::operation::DescribeInstanceRefreshes;
-#[doc(hidden)]
-pub type DescribeInstanceRefreshesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstanceRefreshesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceRefreshes`](crate::operation::DescribeInstanceRefreshes)>
     #[allow(unused_mut)]
@@ -4651,12 +4538,6 @@ pub mod describe_launch_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLaunchConfigurationsInputOperationOutputAlias =
-    crate::operation::DescribeLaunchConfigurations;
-#[doc(hidden)]
-pub type DescribeLaunchConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLaunchConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLaunchConfigurations`](crate::operation::DescribeLaunchConfigurations)>
     #[allow(unused_mut)]
@@ -4818,10 +4699,6 @@ pub mod describe_lifecycle_hooks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLifecycleHooksInputOperationOutputAlias = crate::operation::DescribeLifecycleHooks;
-#[doc(hidden)]
-pub type DescribeLifecycleHooksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLifecycleHooksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLifecycleHooks`](crate::operation::DescribeLifecycleHooks)>
     #[allow(unused_mut)]
@@ -4950,11 +4827,6 @@ pub mod describe_lifecycle_hook_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLifecycleHookTypesInputOperationOutputAlias =
-    crate::operation::DescribeLifecycleHookTypes;
-#[doc(hidden)]
-pub type DescribeLifecycleHookTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLifecycleHookTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLifecycleHookTypes`](crate::operation::DescribeLifecycleHookTypes)>
     #[allow(unused_mut)]
@@ -5112,10 +4984,6 @@ pub mod describe_load_balancers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationOutputAlias = crate::operation::DescribeLoadBalancers;
-#[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
     #[allow(unused_mut)]
@@ -5285,12 +5153,6 @@ pub mod describe_load_balancer_target_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancerTargetGroupsInputOperationOutputAlias =
-    crate::operation::DescribeLoadBalancerTargetGroups;
-#[doc(hidden)]
-pub type DescribeLoadBalancerTargetGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerTargetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerTargetGroups`](crate::operation::DescribeLoadBalancerTargetGroups)>
     #[allow(unused_mut)]
@@ -5416,12 +5278,6 @@ pub mod describe_metric_collection_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMetricCollectionTypesInputOperationOutputAlias =
-    crate::operation::DescribeMetricCollectionTypes;
-#[doc(hidden)]
-pub type DescribeMetricCollectionTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMetricCollectionTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMetricCollectionTypes`](crate::operation::DescribeMetricCollectionTypes)>
     #[allow(unused_mut)]
@@ -5588,12 +5444,6 @@ pub mod describe_notification_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNotificationConfigurationsInputOperationOutputAlias =
-    crate::operation::DescribeNotificationConfigurations;
-#[doc(hidden)]
-pub type DescribeNotificationConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationConfigurations`](crate::operation::DescribeNotificationConfigurations)>
     #[allow(unused_mut)]
@@ -5802,10 +5652,6 @@ pub mod describe_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePoliciesInputOperationOutputAlias = crate::operation::DescribePolicies;
-#[doc(hidden)]
-pub type DescribePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePolicies`](crate::operation::DescribePolicies)>
     #[allow(unused_mut)]
@@ -6008,11 +5854,6 @@ pub mod describe_scaling_activities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingActivitiesInputOperationOutputAlias =
-    crate::operation::DescribeScalingActivities;
-#[doc(hidden)]
-pub type DescribeScalingActivitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingActivitiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingActivities`](crate::operation::DescribeScalingActivities)>
     #[allow(unused_mut)]
@@ -6141,11 +5982,6 @@ pub mod describe_scaling_process_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingProcessTypesInputOperationOutputAlias =
-    crate::operation::DescribeScalingProcessTypes;
-#[doc(hidden)]
-pub type DescribeScalingProcessTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingProcessTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingProcessTypes`](crate::operation::DescribeScalingProcessTypes)>
     #[allow(unused_mut)]
@@ -6358,11 +6194,6 @@ pub mod describe_scheduled_actions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationOutputAlias =
-    crate::operation::DescribeScheduledActions;
-#[doc(hidden)]
-pub type DescribeScheduledActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduledActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScheduledActions`](crate::operation::DescribeScheduledActions)>
     #[allow(unused_mut)]
@@ -6536,10 +6367,6 @@ pub mod describe_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
-#[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
@@ -6666,12 +6493,6 @@ pub mod describe_termination_policy_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTerminationPolicyTypesInputOperationOutputAlias =
-    crate::operation::DescribeTerminationPolicyTypes;
-#[doc(hidden)]
-pub type DescribeTerminationPolicyTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTerminationPolicyTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTerminationPolicyTypes`](crate::operation::DescribeTerminationPolicyTypes)>
     #[allow(unused_mut)]
@@ -6829,10 +6650,6 @@ pub mod describe_warm_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWarmPoolInputOperationOutputAlias = crate::operation::DescribeWarmPool;
-#[doc(hidden)]
-pub type DescribeWarmPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWarmPoolInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWarmPool`](crate::operation::DescribeWarmPool)>
     #[allow(unused_mut)]
@@ -7010,10 +6827,6 @@ pub mod detach_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachInstancesInputOperationOutputAlias = crate::operation::DetachInstances;
-#[doc(hidden)]
-pub type DetachInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DetachInstances`](crate::operation::DetachInstances)>
     #[allow(unused_mut)]
@@ -7176,10 +6989,6 @@ pub mod detach_load_balancers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachLoadBalancersInputOperationOutputAlias = crate::operation::DetachLoadBalancers;
-#[doc(hidden)]
-pub type DetachLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DetachLoadBalancers`](crate::operation::DetachLoadBalancers)>
     #[allow(unused_mut)]
@@ -7344,12 +7153,6 @@ pub mod detach_load_balancer_target_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachLoadBalancerTargetGroupsInputOperationOutputAlias =
-    crate::operation::DetachLoadBalancerTargetGroups;
-#[doc(hidden)]
-pub type DetachLoadBalancerTargetGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DetachLoadBalancerTargetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DetachLoadBalancerTargetGroups`](crate::operation::DetachLoadBalancerTargetGroups)>
     #[allow(unused_mut)]
@@ -7563,11 +7366,6 @@ pub mod disable_metrics_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableMetricsCollectionInputOperationOutputAlias =
-    crate::operation::DisableMetricsCollection;
-#[doc(hidden)]
-pub type DisableMetricsCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableMetricsCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DisableMetricsCollection`](crate::operation::DisableMetricsCollection)>
     #[allow(unused_mut)]
@@ -7796,11 +7594,6 @@ pub mod enable_metrics_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableMetricsCollectionInputOperationOutputAlias =
-    crate::operation::EnableMetricsCollection;
-#[doc(hidden)]
-pub type EnableMetricsCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableMetricsCollectionInput {
     /// Consumes the builder and constructs an Operation<[`EnableMetricsCollection`](crate::operation::EnableMetricsCollection)>
     #[allow(unused_mut)]
@@ -7980,10 +7773,6 @@ pub mod enter_standby_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnterStandbyInputOperationOutputAlias = crate::operation::EnterStandby;
-#[doc(hidden)]
-pub type EnterStandbyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnterStandbyInput {
     /// Consumes the builder and constructs an Operation<[`EnterStandby`](crate::operation::EnterStandby)>
     #[allow(unused_mut)]
@@ -8181,10 +7970,6 @@ pub mod execute_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecutePolicyInputOperationOutputAlias = crate::operation::ExecutePolicy;
-#[doc(hidden)]
-pub type ExecutePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecutePolicyInput {
     /// Consumes the builder and constructs an Operation<[`ExecutePolicy`](crate::operation::ExecutePolicy)>
     #[allow(unused_mut)]
@@ -8347,10 +8132,6 @@ pub mod exit_standby_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExitStandbyInputOperationOutputAlias = crate::operation::ExitStandby;
-#[doc(hidden)]
-pub type ExitStandbyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExitStandbyInput {
     /// Consumes the builder and constructs an Operation<[`ExitStandby`](crate::operation::ExitStandby)>
     #[allow(unused_mut)]
@@ -8538,12 +8319,6 @@ pub mod get_predictive_scaling_forecast_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPredictiveScalingForecastInputOperationOutputAlias =
-    crate::operation::GetPredictiveScalingForecast;
-#[doc(hidden)]
-pub type GetPredictiveScalingForecastInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetPredictiveScalingForecastInput {
     /// Consumes the builder and constructs an Operation<[`GetPredictiveScalingForecast`](crate::operation::GetPredictiveScalingForecast)>
     #[allow(unused_mut)]
@@ -8803,10 +8578,6 @@ pub mod put_lifecycle_hook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutLifecycleHookInputOperationOutputAlias = crate::operation::PutLifecycleHook;
-#[doc(hidden)]
-pub type PutLifecycleHookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLifecycleHookInput {
     /// Consumes the builder and constructs an Operation<[`PutLifecycleHook`](crate::operation::PutLifecycleHook)>
     #[allow(unused_mut)]
@@ -8983,12 +8754,6 @@ pub mod put_notification_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutNotificationConfigurationInputOperationOutputAlias =
-    crate::operation::PutNotificationConfiguration;
-#[doc(hidden)]
-pub type PutNotificationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutNotificationConfiguration`](crate::operation::PutNotificationConfiguration)>
     #[allow(unused_mut)]
@@ -9379,10 +9144,6 @@ pub mod put_scaling_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutScalingPolicyInputOperationOutputAlias = crate::operation::PutScalingPolicy;
-#[doc(hidden)]
-pub type PutScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutScalingPolicy`](crate::operation::PutScalingPolicy)>
     #[allow(unused_mut)]
@@ -9655,12 +9416,6 @@ pub mod put_scheduled_update_group_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutScheduledUpdateGroupActionInputOperationOutputAlias =
-    crate::operation::PutScheduledUpdateGroupAction;
-#[doc(hidden)]
-pub type PutScheduledUpdateGroupActionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutScheduledUpdateGroupActionInput {
     /// Consumes the builder and constructs an Operation<[`PutScheduledUpdateGroupAction`](crate::operation::PutScheduledUpdateGroupAction)>
     #[allow(unused_mut)]
@@ -9863,10 +9618,6 @@ pub mod put_warm_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutWarmPoolInputOperationOutputAlias = crate::operation::PutWarmPool;
-#[doc(hidden)]
-pub type PutWarmPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutWarmPoolInput {
     /// Consumes the builder and constructs an Operation<[`PutWarmPool`](crate::operation::PutWarmPool)>
     #[allow(unused_mut)]
@@ -10052,12 +9803,6 @@ pub mod record_lifecycle_action_heartbeat_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RecordLifecycleActionHeartbeatInputOperationOutputAlias =
-    crate::operation::RecordLifecycleActionHeartbeat;
-#[doc(hidden)]
-pub type RecordLifecycleActionHeartbeatInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RecordLifecycleActionHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`RecordLifecycleActionHeartbeat`](crate::operation::RecordLifecycleActionHeartbeat)>
     #[allow(unused_mut)]
@@ -10243,10 +9988,6 @@ pub mod resume_processes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResumeProcessesInputOperationOutputAlias = crate::operation::ResumeProcesses;
-#[doc(hidden)]
-pub type ResumeProcessesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResumeProcessesInput {
     /// Consumes the builder and constructs an Operation<[`ResumeProcesses`](crate::operation::ResumeProcesses)>
     #[allow(unused_mut)]
@@ -10412,10 +10153,6 @@ pub mod set_desired_capacity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetDesiredCapacityInputOperationOutputAlias = crate::operation::SetDesiredCapacity;
-#[doc(hidden)]
-pub type SetDesiredCapacityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetDesiredCapacityInput {
     /// Consumes the builder and constructs an Operation<[`SetDesiredCapacity`](crate::operation::SetDesiredCapacity)>
     #[allow(unused_mut)]
@@ -10583,10 +10320,6 @@ pub mod set_instance_health_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetInstanceHealthInputOperationOutputAlias = crate::operation::SetInstanceHealth;
-#[doc(hidden)]
-pub type SetInstanceHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetInstanceHealthInput {
     /// Consumes the builder and constructs an Operation<[`SetInstanceHealth`](crate::operation::SetInstanceHealth)>
     #[allow(unused_mut)]
@@ -10761,10 +10494,6 @@ pub mod set_instance_protection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetInstanceProtectionInputOperationOutputAlias = crate::operation::SetInstanceProtection;
-#[doc(hidden)]
-pub type SetInstanceProtectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetInstanceProtectionInput {
     /// Consumes the builder and constructs an Operation<[`SetInstanceProtection`](crate::operation::SetInstanceProtection)>
     #[allow(unused_mut)]
@@ -10961,10 +10690,6 @@ pub mod start_instance_refresh_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartInstanceRefreshInputOperationOutputAlias = crate::operation::StartInstanceRefresh;
-#[doc(hidden)]
-pub type StartInstanceRefreshInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartInstanceRefreshInput {
     /// Consumes the builder and constructs an Operation<[`StartInstanceRefresh`](crate::operation::StartInstanceRefresh)>
     #[allow(unused_mut)]
@@ -11153,10 +10878,6 @@ pub mod suspend_processes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SuspendProcessesInputOperationOutputAlias = crate::operation::SuspendProcesses;
-#[doc(hidden)]
-pub type SuspendProcessesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SuspendProcessesInput {
     /// Consumes the builder and constructs an Operation<[`SuspendProcesses`](crate::operation::SuspendProcesses)>
     #[allow(unused_mut)]
@@ -11312,12 +11033,6 @@ pub mod terminate_instance_in_auto_scaling_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TerminateInstanceInAutoScalingGroupInputOperationOutputAlias =
-    crate::operation::TerminateInstanceInAutoScalingGroup;
-#[doc(hidden)]
-pub type TerminateInstanceInAutoScalingGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateInstanceInAutoScalingGroupInput {
     /// Consumes the builder and constructs an Operation<[`TerminateInstanceInAutoScalingGroup`](crate::operation::TerminateInstanceInAutoScalingGroup)>
     #[allow(unused_mut)]
@@ -11765,10 +11480,6 @@ pub mod update_auto_scaling_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAutoScalingGroupInputOperationOutputAlias = crate::operation::UpdateAutoScalingGroup;
-#[doc(hidden)]
-pub type UpdateAutoScalingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAutoScalingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAutoScalingGroup`](crate::operation::UpdateAutoScalingGroup)>
     #[allow(unused_mut)]

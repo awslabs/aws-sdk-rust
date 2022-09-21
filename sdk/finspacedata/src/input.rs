@@ -60,12 +60,6 @@ pub mod associate_user_to_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateUserToPermissionGroupInputOperationOutputAlias =
-    crate::operation::AssociateUserToPermissionGroup;
-#[doc(hidden)]
-pub type AssociateUserToPermissionGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateUserToPermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateUserToPermissionGroup`](crate::operation::AssociateUserToPermissionGroup)>
     #[allow(unused_mut)]
@@ -367,10 +361,6 @@ pub mod create_changeset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChangesetInputOperationOutputAlias = crate::operation::CreateChangeset;
-#[doc(hidden)]
-pub type CreateChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`CreateChangeset`](crate::operation::CreateChangeset)>
     #[allow(unused_mut)]
@@ -642,10 +632,6 @@ pub mod create_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
-#[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(unused_mut)]
@@ -884,10 +870,6 @@ pub mod create_data_view_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDataViewInputOperationOutputAlias = crate::operation::CreateDataView;
-#[doc(hidden)]
-pub type CreateDataViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataViewInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataView`](crate::operation::CreateDataView)>
     #[allow(unused_mut)]
@@ -1119,10 +1101,6 @@ pub mod create_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePermissionGroupInputOperationOutputAlias = crate::operation::CreatePermissionGroup;
-#[doc(hidden)]
-pub type CreatePermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreatePermissionGroup`](crate::operation::CreatePermissionGroup)>
     #[allow(unused_mut)]
@@ -1362,10 +1340,6 @@ pub mod create_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
-#[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(unused_mut)]
@@ -1519,10 +1493,6 @@ pub mod delete_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
@@ -1691,10 +1661,6 @@ pub mod delete_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePermissionGroupInputOperationOutputAlias = crate::operation::DeletePermissionGroup;
-#[doc(hidden)]
-pub type DeletePermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionGroup`](crate::operation::DeletePermissionGroup)>
     #[allow(unused_mut)]
@@ -1864,10 +1830,6 @@ pub mod disable_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableUserInputOperationOutputAlias = crate::operation::DisableUser;
-#[doc(hidden)]
-pub type DisableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableUserInput {
     /// Consumes the builder and constructs an Operation<[`DisableUser`](crate::operation::DisableUser)>
     #[allow(unused_mut)]
@@ -2053,12 +2015,6 @@ pub mod disassociate_user_from_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateUserFromPermissionGroupInputOperationOutputAlias =
-    crate::operation::DisassociateUserFromPermissionGroup;
-#[doc(hidden)]
-pub type DisassociateUserFromPermissionGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateUserFromPermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateUserFromPermissionGroup`](crate::operation::DisassociateUserFromPermissionGroup)>
     #[allow(unused_mut)]
@@ -2245,10 +2201,6 @@ pub mod enable_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableUserInputOperationOutputAlias = crate::operation::EnableUser;
-#[doc(hidden)]
-pub type EnableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableUserInput {
     /// Consumes the builder and constructs an Operation<[`EnableUser`](crate::operation::EnableUser)>
     #[allow(unused_mut)]
@@ -2417,10 +2369,6 @@ pub mod get_changeset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetChangesetInputOperationOutputAlias = crate::operation::GetChangeset;
-#[doc(hidden)]
-pub type GetChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChangesetInput {
     /// Consumes the builder and constructs an Operation<[`GetChangeset`](crate::operation::GetChangeset)>
     #[allow(unused_mut)]
@@ -2578,10 +2526,6 @@ pub mod get_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDatasetInputOperationOutputAlias = crate::operation::GetDataset;
-#[doc(hidden)]
-pub type GetDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatasetInput {
     /// Consumes the builder and constructs an Operation<[`GetDataset`](crate::operation::GetDataset)>
     #[allow(unused_mut)]
@@ -2733,10 +2677,6 @@ pub mod get_data_view_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDataViewInputOperationOutputAlias = crate::operation::GetDataView;
-#[doc(hidden)]
-pub type GetDataViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataViewInput {
     /// Consumes the builder and constructs an Operation<[`GetDataView`](crate::operation::GetDataView)>
     #[allow(unused_mut)]
@@ -2909,12 +2849,6 @@ pub mod get_external_data_view_access_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExternalDataViewAccessDetailsInputOperationOutputAlias =
-    crate::operation::GetExternalDataViewAccessDetails;
-#[doc(hidden)]
-pub type GetExternalDataViewAccessDetailsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetExternalDataViewAccessDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetExternalDataViewAccessDetails`](crate::operation::GetExternalDataViewAccessDetails)>
     #[allow(unused_mut)]
@@ -3076,10 +3010,6 @@ pub mod get_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPermissionGroupInputOperationOutputAlias = crate::operation::GetPermissionGroup;
-#[doc(hidden)]
-pub type GetPermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetPermissionGroup`](crate::operation::GetPermissionGroup)>
     #[allow(unused_mut)]
@@ -3240,12 +3170,6 @@ pub mod get_programmatic_access_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetProgrammaticAccessCredentialsInputOperationOutputAlias =
-    crate::operation::GetProgrammaticAccessCredentials;
-#[doc(hidden)]
-pub type GetProgrammaticAccessCredentialsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetProgrammaticAccessCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetProgrammaticAccessCredentials`](crate::operation::GetProgrammaticAccessCredentials)>
     #[allow(unused_mut)]
@@ -3390,10 +3314,6 @@ pub mod get_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserInputOperationOutputAlias = crate::operation::GetUser;
-#[doc(hidden)]
-pub type GetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserInput {
     /// Consumes the builder and constructs an Operation<[`GetUser`](crate::operation::GetUser)>
     #[allow(unused_mut)]
@@ -3542,10 +3462,6 @@ pub mod get_working_location_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetWorkingLocationInputOperationOutputAlias = crate::operation::GetWorkingLocation;
-#[doc(hidden)]
-pub type GetWorkingLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkingLocationInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkingLocation`](crate::operation::GetWorkingLocation)>
     #[allow(unused_mut)]
@@ -3708,10 +3624,6 @@ pub mod list_changesets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChangesetsInputOperationOutputAlias = crate::operation::ListChangesets;
-#[doc(hidden)]
-pub type ListChangesetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangesetsInput {
     /// Consumes the builder and constructs an Operation<[`ListChangesets`](crate::operation::ListChangesets)>
     #[allow(unused_mut)]
@@ -3884,10 +3796,6 @@ pub mod list_datasets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
-#[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(unused_mut)]
@@ -4053,10 +3961,6 @@ pub mod list_data_views_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataViewsInputOperationOutputAlias = crate::operation::ListDataViews;
-#[doc(hidden)]
-pub type ListDataViewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataViewsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataViews`](crate::operation::ListDataViews)>
     #[allow(unused_mut)]
@@ -4229,10 +4133,6 @@ pub mod list_permission_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionGroupsInputOperationOutputAlias = crate::operation::ListPermissionGroups;
-#[doc(hidden)]
-pub type ListPermissionGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionGroups`](crate::operation::ListPermissionGroups)>
     #[allow(unused_mut)]
@@ -4400,11 +4300,6 @@ pub mod list_permission_groups_by_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPermissionGroupsByUserInputOperationOutputAlias =
-    crate::operation::ListPermissionGroupsByUser;
-#[doc(hidden)]
-pub type ListPermissionGroupsByUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionGroupsByUserInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionGroupsByUser`](crate::operation::ListPermissionGroupsByUser)>
     #[allow(unused_mut)]
@@ -4572,10 +4467,6 @@ pub mod list_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
-#[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(unused_mut)]
@@ -4744,11 +4635,6 @@ pub mod list_users_by_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersByPermissionGroupInputOperationOutputAlias =
-    crate::operation::ListUsersByPermissionGroup;
-#[doc(hidden)]
-pub type ListUsersByPermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersByPermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListUsersByPermissionGroup`](crate::operation::ListUsersByPermissionGroup)>
     #[allow(unused_mut)]
@@ -4921,10 +4807,6 @@ pub mod reset_user_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetUserPasswordInputOperationOutputAlias = crate::operation::ResetUserPassword;
-#[doc(hidden)]
-pub type ResetUserPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetUserPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ResetUserPassword`](crate::operation::ResetUserPassword)>
     #[allow(unused_mut)]
@@ -5195,10 +5077,6 @@ pub mod update_changeset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChangesetInputOperationOutputAlias = crate::operation::UpdateChangeset;
-#[doc(hidden)]
-pub type UpdateChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChangeset`](crate::operation::UpdateChangeset)>
     #[allow(unused_mut)]
@@ -5463,10 +5341,6 @@ pub mod update_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
-#[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(unused_mut)]
@@ -5709,10 +5583,6 @@ pub mod update_permission_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePermissionGroupInputOperationOutputAlias = crate::operation::UpdatePermissionGroup;
-#[doc(hidden)]
-pub type UpdatePermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePermissionGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePermissionGroup`](crate::operation::UpdatePermissionGroup)>
     #[allow(unused_mut)]
@@ -5968,10 +5838,6 @@ pub mod update_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserInputOperationOutputAlias = crate::operation::UpdateUser;
-#[doc(hidden)]
-pub type UpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUser`](crate::operation::UpdateUser)>
     #[allow(unused_mut)]

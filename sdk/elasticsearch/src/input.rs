@@ -41,12 +41,6 @@ pub mod accept_inbound_cross_cluster_search_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcceptInboundCrossClusterSearchConnectionInputOperationOutputAlias =
-    crate::operation::AcceptInboundCrossClusterSearchConnection;
-#[doc(hidden)]
-pub type AcceptInboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInboundCrossClusterSearchConnection`](crate::operation::AcceptInboundCrossClusterSearchConnection)>
     #[allow(unused_mut)]
@@ -212,10 +206,6 @@ pub mod add_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
-#[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(unused_mut)]
@@ -364,10 +354,6 @@ pub mod associate_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePackageInputOperationOutputAlias = crate::operation::AssociatePackage;
-#[doc(hidden)]
-pub type AssociatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePackageInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePackage`](crate::operation::AssociatePackage)>
     #[allow(unused_mut)]
@@ -530,12 +516,6 @@ pub mod cancel_elasticsearch_service_software_update_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelElasticsearchServiceSoftwareUpdateInputOperationOutputAlias =
-    crate::operation::CancelElasticsearchServiceSoftwareUpdate;
-#[doc(hidden)]
-pub type CancelElasticsearchServiceSoftwareUpdateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelElasticsearchServiceSoftwareUpdateInput {
     /// Consumes the builder and constructs an Operation<[`CancelElasticsearchServiceSoftwareUpdate`](crate::operation::CancelElasticsearchServiceSoftwareUpdate)>
     #[allow(unused_mut)]
@@ -955,11 +935,6 @@ pub mod create_elasticsearch_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateElasticsearchDomainInputOperationOutputAlias =
-    crate::operation::CreateElasticsearchDomain;
-#[doc(hidden)]
-pub type CreateElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateElasticsearchDomain`](crate::operation::CreateElasticsearchDomain)>
     #[allow(unused_mut)]
@@ -1137,12 +1112,6 @@ pub mod create_outbound_cross_cluster_search_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateOutboundCrossClusterSearchConnectionInputOperationOutputAlias =
-    crate::operation::CreateOutboundCrossClusterSearchConnection;
-#[doc(hidden)]
-pub type CreateOutboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOutboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateOutboundCrossClusterSearchConnection`](crate::operation::CreateOutboundCrossClusterSearchConnection)>
     #[allow(unused_mut)]
@@ -1327,10 +1296,6 @@ pub mod create_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePackageInputOperationOutputAlias = crate::operation::CreatePackage;
-#[doc(hidden)]
-pub type CreatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackageInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackage`](crate::operation::CreatePackage)>
     #[allow(unused_mut)]
@@ -1471,11 +1436,6 @@ pub mod delete_elasticsearch_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteElasticsearchDomainInputOperationOutputAlias =
-    crate::operation::DeleteElasticsearchDomain;
-#[doc(hidden)]
-pub type DeleteElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteElasticsearchDomain`](crate::operation::DeleteElasticsearchDomain)>
     #[allow(unused_mut)]
@@ -1607,12 +1567,6 @@ pub mod delete_elasticsearch_service_role_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteElasticsearchServiceRoleInputOperationOutputAlias =
-    crate::operation::DeleteElasticsearchServiceRole;
-#[doc(hidden)]
-pub type DeleteElasticsearchServiceRoleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteElasticsearchServiceRoleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteElasticsearchServiceRole`](crate::operation::DeleteElasticsearchServiceRole)>
     #[allow(unused_mut)]
@@ -1747,12 +1701,6 @@ pub mod delete_inbound_cross_cluster_search_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInboundCrossClusterSearchConnectionInputOperationOutputAlias =
-    crate::operation::DeleteInboundCrossClusterSearchConnection;
-#[doc(hidden)]
-pub type DeleteInboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInboundCrossClusterSearchConnection`](crate::operation::DeleteInboundCrossClusterSearchConnection)>
     #[allow(unused_mut)]
@@ -1908,12 +1856,6 @@ pub mod delete_outbound_cross_cluster_search_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteOutboundCrossClusterSearchConnectionInputOperationOutputAlias =
-    crate::operation::DeleteOutboundCrossClusterSearchConnection;
-#[doc(hidden)]
-pub type DeleteOutboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOutboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOutboundCrossClusterSearchConnection`](crate::operation::DeleteOutboundCrossClusterSearchConnection)>
     #[allow(unused_mut)]
@@ -2059,10 +2001,6 @@ pub mod delete_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePackageInputOperationOutputAlias = crate::operation::DeletePackage;
-#[doc(hidden)]
-pub type DeletePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackageInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackage`](crate::operation::DeletePackage)>
     #[allow(unused_mut)]
@@ -2232,11 +2170,6 @@ pub mod describe_domain_auto_tunes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDomainAutoTunesInputOperationOutputAlias =
-    crate::operation::DescribeDomainAutoTunes;
-#[doc(hidden)]
-pub type DescribeDomainAutoTunesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainAutoTunesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomainAutoTunes`](crate::operation::DescribeDomainAutoTunes)>
     #[allow(unused_mut)]
@@ -2410,12 +2343,6 @@ pub mod describe_domain_change_progress_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDomainChangeProgressInputOperationOutputAlias =
-    crate::operation::DescribeDomainChangeProgress;
-#[doc(hidden)]
-pub type DescribeDomainChangeProgressInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainChangeProgressInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomainChangeProgress`](crate::operation::DescribeDomainChangeProgress)>
     #[allow(unused_mut)]
@@ -2572,11 +2499,6 @@ pub mod describe_elasticsearch_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeElasticsearchDomainInputOperationOutputAlias =
-    crate::operation::DescribeElasticsearchDomain;
-#[doc(hidden)]
-pub type DescribeElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchDomain`](crate::operation::DescribeElasticsearchDomain)>
     #[allow(unused_mut)]
@@ -2722,12 +2644,6 @@ pub mod describe_elasticsearch_domain_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeElasticsearchDomainConfigInputOperationOutputAlias =
-    crate::operation::DescribeElasticsearchDomainConfig;
-#[doc(hidden)]
-pub type DescribeElasticsearchDomainConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchDomainConfigInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchDomainConfig`](crate::operation::DescribeElasticsearchDomainConfig)>
     #[allow(unused_mut)]
@@ -2882,12 +2798,6 @@ pub mod describe_elasticsearch_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeElasticsearchDomainsInputOperationOutputAlias =
-    crate::operation::DescribeElasticsearchDomains;
-#[doc(hidden)]
-pub type DescribeElasticsearchDomainsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchDomainsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchDomains`](crate::operation::DescribeElasticsearchDomains)>
     #[allow(unused_mut)]
@@ -3057,12 +2967,6 @@ pub mod describe_elasticsearch_instance_type_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeElasticsearchInstanceTypeLimitsInputOperationOutputAlias =
-    crate::operation::DescribeElasticsearchInstanceTypeLimits;
-#[doc(hidden)]
-pub type DescribeElasticsearchInstanceTypeLimitsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticsearchInstanceTypeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticsearchInstanceTypeLimits`](crate::operation::DescribeElasticsearchInstanceTypeLimits)>
     #[allow(unused_mut)]
@@ -3285,12 +3189,6 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInboundCrossClusterSearchConnectionsInputOperationOutputAlias =
-    crate::operation::DescribeInboundCrossClusterSearchConnections;
-#[doc(hidden)]
-pub type DescribeInboundCrossClusterSearchConnectionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInboundCrossClusterSearchConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInboundCrossClusterSearchConnections`](crate::operation::DescribeInboundCrossClusterSearchConnections)>
     #[allow(unused_mut)]
@@ -3483,12 +3381,6 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOutboundCrossClusterSearchConnectionsInputOperationOutputAlias =
-    crate::operation::DescribeOutboundCrossClusterSearchConnections;
-#[doc(hidden)]
-pub type DescribeOutboundCrossClusterSearchConnectionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOutboundCrossClusterSearchConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOutboundCrossClusterSearchConnections`](crate::operation::DescribeOutboundCrossClusterSearchConnections)>
     #[allow(unused_mut)]
@@ -3662,10 +3554,6 @@ pub mod describe_packages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePackagesInputOperationOutputAlias = crate::operation::DescribePackages;
-#[doc(hidden)]
-pub type DescribePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackages`](crate::operation::DescribePackages)>
     #[allow(unused_mut)]
@@ -3840,12 +3728,6 @@ pub mod describe_reserved_elasticsearch_instance_offerings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservedElasticsearchInstanceOfferingsInputOperationOutputAlias =
-    crate::operation::DescribeReservedElasticsearchInstanceOfferings;
-#[doc(hidden)]
-pub type DescribeReservedElasticsearchInstanceOfferingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedElasticsearchInstanceOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedElasticsearchInstanceOfferings`](crate::operation::DescribeReservedElasticsearchInstanceOfferings)>
     #[allow(unused_mut)]
@@ -4024,12 +3906,6 @@ pub mod describe_reserved_elasticsearch_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReservedElasticsearchInstancesInputOperationOutputAlias =
-    crate::operation::DescribeReservedElasticsearchInstances;
-#[doc(hidden)]
-pub type DescribeReservedElasticsearchInstancesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservedElasticsearchInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservedElasticsearchInstances`](crate::operation::DescribeReservedElasticsearchInstances)>
     #[allow(unused_mut)]
@@ -4190,10 +4066,6 @@ pub mod dissociate_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DissociatePackageInputOperationOutputAlias = crate::operation::DissociatePackage;
-#[doc(hidden)]
-pub type DissociatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DissociatePackageInput {
     /// Consumes the builder and constructs an Operation<[`DissociatePackage`](crate::operation::DissociatePackage)>
     #[allow(unused_mut)]
@@ -4354,12 +4226,6 @@ pub mod get_compatible_elasticsearch_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCompatibleElasticsearchVersionsInputOperationOutputAlias =
-    crate::operation::GetCompatibleElasticsearchVersions;
-#[doc(hidden)]
-pub type GetCompatibleElasticsearchVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCompatibleElasticsearchVersionsInput {
     /// Consumes the builder and constructs an Operation<[`GetCompatibleElasticsearchVersions`](crate::operation::GetCompatibleElasticsearchVersions)>
     #[allow(unused_mut)]
@@ -4522,11 +4388,6 @@ pub mod get_package_version_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPackageVersionHistoryInputOperationOutputAlias =
-    crate::operation::GetPackageVersionHistory;
-#[doc(hidden)]
-pub type GetPackageVersionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPackageVersionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetPackageVersionHistory`](crate::operation::GetPackageVersionHistory)>
     #[allow(unused_mut)]
@@ -4711,10 +4572,6 @@ pub mod get_upgrade_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUpgradeHistoryInputOperationOutputAlias = crate::operation::GetUpgradeHistory;
-#[doc(hidden)]
-pub type GetUpgradeHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUpgradeHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetUpgradeHistory`](crate::operation::GetUpgradeHistory)>
     #[allow(unused_mut)]
@@ -4875,10 +4732,6 @@ pub mod get_upgrade_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUpgradeStatusInputOperationOutputAlias = crate::operation::GetUpgradeStatus;
-#[doc(hidden)]
-pub type GetUpgradeStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUpgradeStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetUpgradeStatus`](crate::operation::GetUpgradeStatus)>
     #[allow(unused_mut)]
@@ -5025,10 +4878,6 @@ pub mod list_domain_names_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainNamesInputOperationOutputAlias = crate::operation::ListDomainNames;
-#[doc(hidden)]
-pub type ListDomainNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainNamesInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainNames`](crate::operation::ListDomainNames)>
     #[allow(unused_mut)]
@@ -5188,10 +5037,6 @@ pub mod list_domains_for_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainsForPackageInputOperationOutputAlias = crate::operation::ListDomainsForPackage;
-#[doc(hidden)]
-pub type ListDomainsForPackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsForPackageInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainsForPackage`](crate::operation::ListDomainsForPackage)>
     #[allow(unused_mut)]
@@ -5393,12 +5238,6 @@ pub mod list_elasticsearch_instance_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListElasticsearchInstanceTypesInputOperationOutputAlias =
-    crate::operation::ListElasticsearchInstanceTypes;
-#[doc(hidden)]
-pub type ListElasticsearchInstanceTypesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListElasticsearchInstanceTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListElasticsearchInstanceTypes`](crate::operation::ListElasticsearchInstanceTypes)>
     #[allow(unused_mut)]
@@ -5576,11 +5415,6 @@ pub mod list_elasticsearch_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListElasticsearchVersionsInputOperationOutputAlias =
-    crate::operation::ListElasticsearchVersions;
-#[doc(hidden)]
-pub type ListElasticsearchVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListElasticsearchVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListElasticsearchVersions`](crate::operation::ListElasticsearchVersions)>
     #[allow(unused_mut)]
@@ -5746,10 +5580,6 @@ pub mod list_packages_for_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPackagesForDomainInputOperationOutputAlias = crate::operation::ListPackagesForDomain;
-#[doc(hidden)]
-pub type ListPackagesForDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagesForDomainInput {
     /// Consumes the builder and constructs an Operation<[`ListPackagesForDomain`](crate::operation::ListPackagesForDomain)>
     #[allow(unused_mut)]
@@ -5907,10 +5737,6 @@ pub mod list_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
-#[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(unused_mut)]
@@ -6083,12 +5909,6 @@ pub mod purchase_reserved_elasticsearch_instance_offering_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PurchaseReservedElasticsearchInstanceOfferingInputOperationOutputAlias =
-    crate::operation::PurchaseReservedElasticsearchInstanceOffering;
-#[doc(hidden)]
-pub type PurchaseReservedElasticsearchInstanceOfferingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseReservedElasticsearchInstanceOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseReservedElasticsearchInstanceOffering`](crate::operation::PurchaseReservedElasticsearchInstanceOffering)>
     #[allow(unused_mut)]
@@ -6238,12 +6058,6 @@ pub mod reject_inbound_cross_cluster_search_connection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RejectInboundCrossClusterSearchConnectionInputOperationOutputAlias =
-    crate::operation::RejectInboundCrossClusterSearchConnection;
-#[doc(hidden)]
-pub type RejectInboundCrossClusterSearchConnectionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInboundCrossClusterSearchConnectionInput {
     /// Consumes the builder and constructs an Operation<[`RejectInboundCrossClusterSearchConnection`](crate::operation::RejectInboundCrossClusterSearchConnection)>
     #[allow(unused_mut)]
@@ -6409,10 +6223,6 @@ pub mod remove_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
-#[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(unused_mut)]
@@ -6553,12 +6363,6 @@ pub mod start_elasticsearch_service_software_update_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartElasticsearchServiceSoftwareUpdateInputOperationOutputAlias =
-    crate::operation::StartElasticsearchServiceSoftwareUpdate;
-#[doc(hidden)]
-pub type StartElasticsearchServiceSoftwareUpdateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartElasticsearchServiceSoftwareUpdateInput {
     /// Consumes the builder and constructs an Operation<[`StartElasticsearchServiceSoftwareUpdate`](crate::operation::StartElasticsearchServiceSoftwareUpdate)>
     #[allow(unused_mut)]
@@ -6954,12 +6758,6 @@ pub mod update_elasticsearch_domain_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateElasticsearchDomainConfigInputOperationOutputAlias =
-    crate::operation::UpdateElasticsearchDomainConfig;
-#[doc(hidden)]
-pub type UpdateElasticsearchDomainConfigInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateElasticsearchDomainConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateElasticsearchDomainConfig`](crate::operation::UpdateElasticsearchDomainConfig)>
     #[allow(unused_mut)]
@@ -7161,10 +6959,6 @@ pub mod update_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePackageInputOperationOutputAlias = crate::operation::UpdatePackage;
-#[doc(hidden)]
-pub type UpdatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePackageInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePackage`](crate::operation::UpdatePackage)>
     #[allow(unused_mut)]
@@ -7332,11 +7126,6 @@ pub mod upgrade_elasticsearch_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpgradeElasticsearchDomainInputOperationOutputAlias =
-    crate::operation::UpgradeElasticsearchDomain;
-#[doc(hidden)]
-pub type UpgradeElasticsearchDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpgradeElasticsearchDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpgradeElasticsearchDomain`](crate::operation::UpgradeElasticsearchDomain)>
     #[allow(unused_mut)]

@@ -62,12 +62,6 @@ pub mod send_serial_console_ssh_public_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendSerialConsoleSshPublicKeyInputOperationOutputAlias =
-    crate::operation::SendSerialConsoleSSHPublicKey;
-#[doc(hidden)]
-pub type SendSerialConsoleSshPublicKeyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl SendSerialConsoleSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSerialConsoleSSHPublicKey`](crate::operation::SendSerialConsoleSSHPublicKey)>
     #[allow(unused_mut)]
@@ -255,10 +249,6 @@ pub mod send_ssh_public_key_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendSshPublicKeyInputOperationOutputAlias = crate::operation::SendSSHPublicKey;
-#[doc(hidden)]
-pub type SendSshPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSSHPublicKey`](crate::operation::SendSSHPublicKey)>
     #[allow(unused_mut)]

@@ -115,10 +115,6 @@ pub mod create_assistant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAssistantInputOperationOutputAlias = crate::operation::CreateAssistant;
-#[doc(hidden)]
-pub type CreateAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssistantInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssistant`](crate::operation::CreateAssistant)>
     #[allow(unused_mut)]
@@ -333,11 +329,6 @@ pub mod create_assistant_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAssistantAssociationInputOperationOutputAlias =
-    crate::operation::CreateAssistantAssociation;
-#[doc(hidden)]
-pub type CreateAssistantAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssistantAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssistantAssociation`](crate::operation::CreateAssistantAssociation)>
     #[allow(unused_mut)]
@@ -624,10 +615,6 @@ pub mod create_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateContentInputOperationOutputAlias = crate::operation::CreateContent;
-#[doc(hidden)]
-pub type CreateContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContentInput {
     /// Consumes the builder and constructs an Operation<[`CreateContent`](crate::operation::CreateContent)>
     #[allow(unused_mut)]
@@ -909,10 +896,6 @@ pub mod create_knowledge_base_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateKnowledgeBaseInputOperationOutputAlias = crate::operation::CreateKnowledgeBase;
-#[doc(hidden)]
-pub type CreateKnowledgeBaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateKnowledgeBaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateKnowledgeBase`](crate::operation::CreateKnowledgeBase)>
     #[allow(unused_mut)]
@@ -1119,10 +1102,6 @@ pub mod create_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSessionInputOperationOutputAlias = crate::operation::CreateSession;
-#[doc(hidden)]
-pub type CreateSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSession`](crate::operation::CreateSession)>
     #[allow(unused_mut)]
@@ -1283,10 +1262,6 @@ pub mod delete_assistant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAssistantInputOperationOutputAlias = crate::operation::DeleteAssistant;
-#[doc(hidden)]
-pub type DeleteAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssistantInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssistant`](crate::operation::DeleteAssistant)>
     #[allow(unused_mut)]
@@ -1447,11 +1422,6 @@ pub mod delete_assistant_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAssistantAssociationInputOperationOutputAlias =
-    crate::operation::DeleteAssistantAssociation;
-#[doc(hidden)]
-pub type DeleteAssistantAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssistantAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssistantAssociation`](crate::operation::DeleteAssistantAssociation)>
     #[allow(unused_mut)]
@@ -1625,10 +1595,6 @@ pub mod delete_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteContentInputOperationOutputAlias = crate::operation::DeleteContent;
-#[doc(hidden)]
-pub type DeleteContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContent`](crate::operation::DeleteContent)>
     #[allow(unused_mut)]
@@ -1790,10 +1756,6 @@ pub mod delete_knowledge_base_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteKnowledgeBaseInputOperationOutputAlias = crate::operation::DeleteKnowledgeBase;
-#[doc(hidden)]
-pub type DeleteKnowledgeBaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteKnowledgeBaseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKnowledgeBase`](crate::operation::DeleteKnowledgeBase)>
     #[allow(unused_mut)]
@@ -1937,10 +1899,6 @@ pub mod get_assistant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssistantInputOperationOutputAlias = crate::operation::GetAssistant;
-#[doc(hidden)]
-pub type GetAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssistantInput {
     /// Consumes the builder and constructs an Operation<[`GetAssistant`](crate::operation::GetAssistant)>
     #[allow(unused_mut)]
@@ -2101,11 +2059,6 @@ pub mod get_assistant_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssistantAssociationInputOperationOutputAlias =
-    crate::operation::GetAssistantAssociation;
-#[doc(hidden)]
-pub type GetAssistantAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssistantAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetAssistantAssociation`](crate::operation::GetAssistantAssociation)>
     #[allow(unused_mut)]
@@ -2278,10 +2231,6 @@ pub mod get_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContentInputOperationOutputAlias = crate::operation::GetContent;
-#[doc(hidden)]
-pub type GetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContentInput {
     /// Consumes the builder and constructs an Operation<[`GetContent`](crate::operation::GetContent)>
     #[allow(unused_mut)]
@@ -2455,10 +2404,6 @@ pub mod get_content_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContentSummaryInputOperationOutputAlias = crate::operation::GetContentSummary;
-#[doc(hidden)]
-pub type GetContentSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContentSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetContentSummary`](crate::operation::GetContentSummary)>
     #[allow(unused_mut)]
@@ -2620,10 +2565,6 @@ pub mod get_knowledge_base_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetKnowledgeBaseInputOperationOutputAlias = crate::operation::GetKnowledgeBase;
-#[doc(hidden)]
-pub type GetKnowledgeBaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKnowledgeBaseInput {
     /// Consumes the builder and constructs an Operation<[`GetKnowledgeBase`](crate::operation::GetKnowledgeBase)>
     #[allow(unused_mut)]
@@ -2803,10 +2744,6 @@ pub mod get_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRecommendationsInputOperationOutputAlias = crate::operation::GetRecommendations;
-#[doc(hidden)]
-pub type GetRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(unused_mut)]
@@ -2997,10 +2934,6 @@ pub mod get_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSessionInputOperationOutputAlias = crate::operation::GetSession;
-#[doc(hidden)]
-pub type GetSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
     #[allow(unused_mut)]
@@ -3185,11 +3118,6 @@ pub mod list_assistant_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssistantAssociationsInputOperationOutputAlias =
-    crate::operation::ListAssistantAssociations;
-#[doc(hidden)]
-pub type ListAssistantAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssistantAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssistantAssociations`](crate::operation::ListAssistantAssociations)>
     #[allow(unused_mut)]
@@ -3362,10 +3290,6 @@ pub mod list_assistants_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssistantsInputOperationOutputAlias = crate::operation::ListAssistants;
-#[doc(hidden)]
-pub type ListAssistantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssistantsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssistants`](crate::operation::ListAssistants)>
     #[allow(unused_mut)]
@@ -3534,10 +3458,6 @@ pub mod list_contents_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContentsInputOperationOutputAlias = crate::operation::ListContents;
-#[doc(hidden)]
-pub type ListContentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContentsInput {
     /// Consumes the builder and constructs an Operation<[`ListContents`](crate::operation::ListContents)>
     #[allow(unused_mut)]
@@ -3710,10 +3630,6 @@ pub mod list_knowledge_bases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListKnowledgeBasesInputOperationOutputAlias = crate::operation::ListKnowledgeBases;
-#[doc(hidden)]
-pub type ListKnowledgeBasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKnowledgeBasesInput {
     /// Consumes the builder and constructs an Operation<[`ListKnowledgeBases`](crate::operation::ListKnowledgeBases)>
     #[allow(unused_mut)]
@@ -3855,10 +3771,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4033,12 +3945,6 @@ pub mod notify_recommendations_received_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyRecommendationsReceivedInputOperationOutputAlias =
-    crate::operation::NotifyRecommendationsReceived;
-#[doc(hidden)]
-pub type NotifyRecommendationsReceivedInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyRecommendationsReceivedInput {
     /// Consumes the builder and constructs an Operation<[`NotifyRecommendationsReceived`](crate::operation::NotifyRecommendationsReceived)>
     #[allow(unused_mut)]
@@ -4252,10 +4158,6 @@ pub mod put_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutFeedbackInputOperationOutputAlias = crate::operation::PutFeedback;
-#[doc(hidden)]
-pub type PutFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`PutFeedback`](crate::operation::PutFeedback)>
     #[allow(unused_mut)]
@@ -4449,10 +4351,6 @@ pub mod query_assistant_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryAssistantInputOperationOutputAlias = crate::operation::QueryAssistant;
-#[doc(hidden)]
-pub type QueryAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryAssistantInput {
     /// Consumes the builder and constructs an Operation<[`QueryAssistant`](crate::operation::QueryAssistant)>
     #[allow(unused_mut)]
@@ -4615,12 +4513,6 @@ pub mod remove_knowledge_base_template_uri_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveKnowledgeBaseTemplateUriInputOperationOutputAlias =
-    crate::operation::RemoveKnowledgeBaseTemplateUri;
-#[doc(hidden)]
-pub type RemoveKnowledgeBaseTemplateUriInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveKnowledgeBaseTemplateUriInput {
     /// Consumes the builder and constructs an Operation<[`RemoveKnowledgeBaseTemplateUri`](crate::operation::RemoveKnowledgeBaseTemplateUri)>
     #[allow(unused_mut)]
@@ -4806,10 +4698,6 @@ pub mod search_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchContentInputOperationOutputAlias = crate::operation::SearchContent;
-#[doc(hidden)]
-pub type SearchContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchContentInput {
     /// Consumes the builder and constructs an Operation<[`SearchContent`](crate::operation::SearchContent)>
     #[allow(unused_mut)]
@@ -5023,10 +4911,6 @@ pub mod search_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchSessionsInputOperationOutputAlias = crate::operation::SearchSessions;
-#[doc(hidden)]
-pub type SearchSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSessionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchSessions`](crate::operation::SearchSessions)>
     #[allow(unused_mut)]
@@ -5216,10 +5100,6 @@ pub mod start_content_upload_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartContentUploadInputOperationOutputAlias = crate::operation::StartContentUpload;
-#[doc(hidden)]
-pub type StartContentUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartContentUploadInput {
     /// Consumes the builder and constructs an Operation<[`StartContentUpload`](crate::operation::StartContentUpload)>
     #[allow(unused_mut)]
@@ -5406,10 +5286,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -5584,10 +5460,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -5850,10 +5722,6 @@ pub mod update_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateContentInputOperationOutputAlias = crate::operation::UpdateContent;
-#[doc(hidden)]
-pub type UpdateContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContent`](crate::operation::UpdateContent)>
     #[allow(unused_mut)]
@@ -6043,12 +5911,6 @@ pub mod update_knowledge_base_template_uri_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateKnowledgeBaseTemplateUriInputOperationOutputAlias =
-    crate::operation::UpdateKnowledgeBaseTemplateUri;
-#[doc(hidden)]
-pub type UpdateKnowledgeBaseTemplateUriInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateKnowledgeBaseTemplateUriInput {
     /// Consumes the builder and constructs an Operation<[`UpdateKnowledgeBaseTemplateUri`](crate::operation::UpdateKnowledgeBaseTemplateUri)>
     #[allow(unused_mut)]

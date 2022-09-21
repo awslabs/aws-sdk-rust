@@ -68,10 +68,6 @@ pub mod create_budget_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBudgetInputOperationOutputAlias = crate::operation::CreateBudget;
-#[doc(hidden)]
-pub type CreateBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBudgetInput {
     /// Consumes the builder and constructs an Operation<[`CreateBudget`](crate::operation::CreateBudget)>
     #[allow(unused_mut)]
@@ -338,10 +334,6 @@ pub mod create_budget_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBudgetActionInputOperationOutputAlias = crate::operation::CreateBudgetAction;
-#[doc(hidden)]
-pub type CreateBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`CreateBudgetAction`](crate::operation::CreateBudgetAction)>
     #[allow(unused_mut)]
@@ -533,10 +525,6 @@ pub mod create_notification_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNotificationInputOperationOutputAlias = crate::operation::CreateNotification;
-#[doc(hidden)]
-pub type CreateNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNotificationInput {
     /// Consumes the builder and constructs an Operation<[`CreateNotification`](crate::operation::CreateNotification)>
     #[allow(unused_mut)]
@@ -722,10 +710,6 @@ pub mod create_subscriber_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSubscriberInputOperationOutputAlias = crate::operation::CreateSubscriber;
-#[doc(hidden)]
-pub type CreateSubscriberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`CreateSubscriber`](crate::operation::CreateSubscriber)>
     #[allow(unused_mut)]
@@ -881,10 +865,6 @@ pub mod delete_budget_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBudgetInputOperationOutputAlias = crate::operation::DeleteBudget;
-#[doc(hidden)]
-pub type DeleteBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBudget`](crate::operation::DeleteBudget)>
     #[allow(unused_mut)]
@@ -1052,10 +1032,6 @@ pub mod delete_budget_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBudgetActionInputOperationOutputAlias = crate::operation::DeleteBudgetAction;
-#[doc(hidden)]
-pub type DeleteBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBudgetAction`](crate::operation::DeleteBudgetAction)>
     #[allow(unused_mut)]
@@ -1226,10 +1202,6 @@ pub mod delete_notification_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNotificationInputOperationOutputAlias = crate::operation::DeleteNotification;
-#[doc(hidden)]
-pub type DeleteNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotification`](crate::operation::DeleteNotification)>
     #[allow(unused_mut)]
@@ -1415,10 +1387,6 @@ pub mod delete_subscriber_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSubscriberInputOperationOutputAlias = crate::operation::DeleteSubscriber;
-#[doc(hidden)]
-pub type DeleteSubscriberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSubscriber`](crate::operation::DeleteSubscriber)>
     #[allow(unused_mut)]
@@ -1574,10 +1542,6 @@ pub mod describe_budget_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetInputOperationOutputAlias = crate::operation::DescribeBudget;
-#[doc(hidden)]
-pub type DescribeBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudget`](crate::operation::DescribeBudget)>
     #[allow(unused_mut)]
@@ -1745,10 +1709,6 @@ pub mod describe_budget_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetActionInputOperationOutputAlias = crate::operation::DescribeBudgetAction;
-#[doc(hidden)]
-pub type DescribeBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetAction`](crate::operation::DescribeBudgetAction)>
     #[allow(unused_mut)]
@@ -1959,12 +1919,6 @@ pub mod describe_budget_action_histories_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetActionHistoriesInputOperationOutputAlias =
-    crate::operation::DescribeBudgetActionHistories;
-#[doc(hidden)]
-pub type DescribeBudgetActionHistoriesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionHistoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionHistories`](crate::operation::DescribeBudgetActionHistories)>
     #[allow(unused_mut)]
@@ -2133,12 +2087,6 @@ pub mod describe_budget_actions_for_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetActionsForAccountInputOperationOutputAlias =
-    crate::operation::DescribeBudgetActionsForAccount;
-#[doc(hidden)]
-pub type DescribeBudgetActionsForAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionsForAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionsForAccount`](crate::operation::DescribeBudgetActionsForAccount)>
     #[allow(unused_mut)]
@@ -2319,12 +2267,6 @@ pub mod describe_budget_actions_for_budget_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetActionsForBudgetInputOperationOutputAlias =
-    crate::operation::DescribeBudgetActionsForBudget;
-#[doc(hidden)]
-pub type DescribeBudgetActionsForBudgetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionsForBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionsForBudget`](crate::operation::DescribeBudgetActionsForBudget)>
     #[allow(unused_mut)]
@@ -2493,12 +2435,6 @@ pub mod describe_budget_notifications_for_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetNotificationsForAccountInputOperationOutputAlias =
-    crate::operation::DescribeBudgetNotificationsForAccount;
-#[doc(hidden)]
-pub type DescribeBudgetNotificationsForAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetNotificationsForAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetNotificationsForAccount`](crate::operation::DescribeBudgetNotificationsForAccount)>
     #[allow(unused_mut)]
@@ -2694,12 +2630,6 @@ pub mod describe_budget_performance_history_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetPerformanceHistoryInputOperationOutputAlias =
-    crate::operation::DescribeBudgetPerformanceHistory;
-#[doc(hidden)]
-pub type DescribeBudgetPerformanceHistoryInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetPerformanceHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetPerformanceHistory`](crate::operation::DescribeBudgetPerformanceHistory)>
     #[allow(unused_mut)]
@@ -2866,10 +2796,6 @@ pub mod describe_budgets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBudgetsInputOperationOutputAlias = crate::operation::DescribeBudgets;
-#[doc(hidden)]
-pub type DescribeBudgetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgets`](crate::operation::DescribeBudgets)>
     #[allow(unused_mut)]
@@ -3051,12 +2977,6 @@ pub mod describe_notifications_for_budget_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNotificationsForBudgetInputOperationOutputAlias =
-    crate::operation::DescribeNotificationsForBudget;
-#[doc(hidden)]
-pub type DescribeNotificationsForBudgetInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationsForBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationsForBudget`](crate::operation::DescribeNotificationsForBudget)>
     #[allow(unused_mut)]
@@ -3252,12 +3172,6 @@ pub mod describe_subscribers_for_notification_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSubscribersForNotificationInputOperationOutputAlias =
-    crate::operation::DescribeSubscribersForNotification;
-#[doc(hidden)]
-pub type DescribeSubscribersForNotificationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSubscribersForNotificationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSubscribersForNotification`](crate::operation::DescribeSubscribersForNotification)>
     #[allow(unused_mut)]
@@ -3439,10 +3353,6 @@ pub mod execute_budget_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExecuteBudgetActionInputOperationOutputAlias = crate::operation::ExecuteBudgetAction;
-#[doc(hidden)]
-pub type ExecuteBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteBudgetAction`](crate::operation::ExecuteBudgetAction)>
     #[allow(unused_mut)]
@@ -3598,10 +3508,6 @@ pub mod update_budget_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBudgetInputOperationOutputAlias = crate::operation::UpdateBudget;
-#[doc(hidden)]
-pub type UpdateBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBudgetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBudget`](crate::operation::UpdateBudget)>
     #[allow(unused_mut)]
@@ -3865,10 +3771,6 @@ pub mod update_budget_action_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBudgetActionInputOperationOutputAlias = crate::operation::UpdateBudgetAction;
-#[doc(hidden)]
-pub type UpdateBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBudgetAction`](crate::operation::UpdateBudgetAction)>
     #[allow(unused_mut)]
@@ -4054,10 +3956,6 @@ pub mod update_notification_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNotificationInputOperationOutputAlias = crate::operation::UpdateNotification;
-#[doc(hidden)]
-pub type UpdateNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotification`](crate::operation::UpdateNotification)>
     #[allow(unused_mut)]
@@ -4258,10 +4156,6 @@ pub mod update_subscriber_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSubscriberInputOperationOutputAlias = crate::operation::UpdateSubscriber;
-#[doc(hidden)]
-pub type UpdateSubscriberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubscriber`](crate::operation::UpdateSubscriber)>
     #[allow(unused_mut)]

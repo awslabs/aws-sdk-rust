@@ -46,10 +46,6 @@ pub mod cancel_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelJobRunInputOperationOutputAlias = crate::operation::CancelJobRun;
-#[doc(hidden)]
-pub type CancelJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelJobRun`](crate::operation::CancelJobRun)>
     #[allow(unused_mut)]
@@ -346,10 +342,6 @@ pub mod create_managed_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateManagedEndpointInputOperationOutputAlias = crate::operation::CreateManagedEndpoint;
-#[doc(hidden)]
-pub type CreateManagedEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateManagedEndpoint`](crate::operation::CreateManagedEndpoint)>
     #[allow(unused_mut)]
@@ -568,10 +560,6 @@ pub mod create_virtual_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVirtualClusterInputOperationOutputAlias = crate::operation::CreateVirtualCluster;
-#[doc(hidden)]
-pub type CreateVirtualClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualCluster`](crate::operation::CreateVirtualCluster)>
     #[allow(unused_mut)]
@@ -730,10 +718,6 @@ pub mod delete_managed_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteManagedEndpointInputOperationOutputAlias = crate::operation::DeleteManagedEndpoint;
-#[doc(hidden)]
-pub type DeleteManagedEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteManagedEndpoint`](crate::operation::DeleteManagedEndpoint)>
     #[allow(unused_mut)]
@@ -890,10 +874,6 @@ pub mod delete_virtual_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVirtualClusterInputOperationOutputAlias = crate::operation::DeleteVirtualCluster;
-#[doc(hidden)]
-pub type DeleteVirtualClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualCluster`](crate::operation::DeleteVirtualCluster)>
     #[allow(unused_mut)]
@@ -1048,10 +1028,6 @@ pub mod describe_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobRunInputOperationOutputAlias = crate::operation::DescribeJobRun;
-#[doc(hidden)]
-pub type DescribeJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobRun`](crate::operation::DescribeJobRun)>
     #[allow(unused_mut)]
@@ -1227,11 +1203,6 @@ pub mod describe_managed_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeManagedEndpointInputOperationOutputAlias =
-    crate::operation::DescribeManagedEndpoint;
-#[doc(hidden)]
-pub type DescribeManagedEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeManagedEndpoint`](crate::operation::DescribeManagedEndpoint)>
     #[allow(unused_mut)]
@@ -1388,10 +1359,6 @@ pub mod describe_virtual_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVirtualClusterInputOperationOutputAlias = crate::operation::DescribeVirtualCluster;
-#[doc(hidden)]
-pub type DescribeVirtualClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualCluster`](crate::operation::DescribeVirtualCluster)>
     #[allow(unused_mut)]
@@ -1621,10 +1588,6 @@ pub mod list_job_runs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobRunsInputOperationOutputAlias = crate::operation::ListJobRuns;
-#[doc(hidden)]
-pub type ListJobRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(unused_mut)]
@@ -1910,10 +1873,6 @@ pub mod list_managed_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListManagedEndpointsInputOperationOutputAlias = crate::operation::ListManagedEndpoints;
-#[doc(hidden)]
-pub type ListManagedEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedEndpoints`](crate::operation::ListManagedEndpoints)>
     #[allow(unused_mut)]
@@ -2102,10 +2061,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2342,10 +2297,6 @@ pub mod list_virtual_clusters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVirtualClustersInputOperationOutputAlias = crate::operation::ListVirtualClusters;
-#[doc(hidden)]
-pub type ListVirtualClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualClusters`](crate::operation::ListVirtualClusters)>
     #[allow(unused_mut)]
@@ -2642,10 +2593,6 @@ pub mod start_job_run_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartJobRunInputOperationOutputAlias = crate::operation::StartJobRun;
-#[doc(hidden)]
-pub type StartJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(unused_mut)]
@@ -2835,10 +2782,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3013,10 +2956,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

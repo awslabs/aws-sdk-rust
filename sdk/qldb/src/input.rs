@@ -45,11 +45,6 @@ pub mod cancel_journal_kinesis_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelJournalKinesisStreamInputOperationOutputAlias =
-    crate::operation::CancelJournalKinesisStream;
-#[doc(hidden)]
-pub type CancelJournalKinesisStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJournalKinesisStreamInput {
     /// Consumes the builder and constructs an Operation<[`CancelJournalKinesisStream`](crate::operation::CancelJournalKinesisStream)>
     #[allow(unused_mut)]
@@ -328,10 +323,6 @@ pub mod create_ledger_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLedgerInputOperationOutputAlias = crate::operation::CreateLedger;
-#[doc(hidden)]
-pub type CreateLedgerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLedgerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLedger`](crate::operation::CreateLedger)>
     #[allow(unused_mut)]
@@ -468,10 +459,6 @@ pub mod delete_ledger_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLedgerInputOperationOutputAlias = crate::operation::DeleteLedger;
-#[doc(hidden)]
-pub type DeleteLedgerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLedgerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLedger`](crate::operation::DeleteLedger)>
     #[allow(unused_mut)]
@@ -624,12 +611,6 @@ pub mod describe_journal_kinesis_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJournalKinesisStreamInputOperationOutputAlias =
-    crate::operation::DescribeJournalKinesisStream;
-#[doc(hidden)]
-pub type DescribeJournalKinesisStreamInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJournalKinesisStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJournalKinesisStream`](crate::operation::DescribeJournalKinesisStream)>
     #[allow(unused_mut)]
@@ -802,11 +783,6 @@ pub mod describe_journal_s3_export_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJournalS3ExportInputOperationOutputAlias =
-    crate::operation::DescribeJournalS3Export;
-#[doc(hidden)]
-pub type DescribeJournalS3ExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJournalS3ExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJournalS3Export`](crate::operation::DescribeJournalS3Export)>
     #[allow(unused_mut)]
@@ -963,10 +939,6 @@ pub mod describe_ledger_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLedgerInputOperationOutputAlias = crate::operation::DescribeLedger;
-#[doc(hidden)]
-pub type DescribeLedgerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLedgerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLedger`](crate::operation::DescribeLedger)>
     #[allow(unused_mut)]
@@ -1201,10 +1173,6 @@ pub mod export_journal_to_s3_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportJournalToS3InputOperationOutputAlias = crate::operation::ExportJournalToS3;
-#[doc(hidden)]
-pub type ExportJournalToS3InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportJournalToS3Input {
     /// Consumes the builder and constructs an Operation<[`ExportJournalToS3`](crate::operation::ExportJournalToS3)>
     #[allow(unused_mut)]
@@ -1391,10 +1359,6 @@ pub mod get_block_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBlockInputOperationOutputAlias = crate::operation::GetBlock;
-#[doc(hidden)]
-pub type GetBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetBlock`](crate::operation::GetBlock)>
     #[allow(unused_mut)]
@@ -1542,10 +1506,6 @@ pub mod get_digest_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDigestInputOperationOutputAlias = crate::operation::GetDigest;
-#[doc(hidden)]
-pub type GetDigestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDigestInput {
     /// Consumes the builder and constructs an Operation<[`GetDigest`](crate::operation::GetDigest)>
     #[allow(unused_mut)]
@@ -1729,10 +1689,6 @@ pub mod get_revision_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRevisionInputOperationOutputAlias = crate::operation::GetRevision;
-#[doc(hidden)]
-pub type GetRevisionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRevisionInput {
     /// Consumes the builder and constructs an Operation<[`GetRevision`](crate::operation::GetRevision)>
     #[allow(unused_mut)]
@@ -1912,12 +1868,6 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJournalKinesisStreamsForLedgerInputOperationOutputAlias =
-    crate::operation::ListJournalKinesisStreamsForLedger;
-#[doc(hidden)]
-pub type ListJournalKinesisStreamsForLedgerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListJournalKinesisStreamsForLedgerInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalKinesisStreamsForLedger`](crate::operation::ListJournalKinesisStreamsForLedger)>
     #[allow(unused_mut)]
@@ -2090,10 +2040,6 @@ pub mod list_journal_s3_exports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJournalS3ExportsInputOperationOutputAlias = crate::operation::ListJournalS3Exports;
-#[doc(hidden)]
-pub type ListJournalS3ExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJournalS3ExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalS3Exports`](crate::operation::ListJournalS3Exports)>
     #[allow(unused_mut)]
@@ -2261,12 +2207,6 @@ pub mod list_journal_s3_exports_for_ledger_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJournalS3ExportsForLedgerInputOperationOutputAlias =
-    crate::operation::ListJournalS3ExportsForLedger;
-#[doc(hidden)]
-pub type ListJournalS3ExportsForLedgerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListJournalS3ExportsForLedgerInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalS3ExportsForLedger`](crate::operation::ListJournalS3ExportsForLedger)>
     #[allow(unused_mut)]
@@ -2435,10 +2375,6 @@ pub mod list_ledgers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLedgersInputOperationOutputAlias = crate::operation::ListLedgers;
-#[doc(hidden)]
-pub type ListLedgersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLedgersInput {
     /// Consumes the builder and constructs an Operation<[`ListLedgers`](crate::operation::ListLedgers)>
     #[allow(unused_mut)]
@@ -2582,10 +2518,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2839,10 +2771,6 @@ pub mod stream_journal_to_kinesis_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StreamJournalToKinesisInputOperationOutputAlias = crate::operation::StreamJournalToKinesis;
-#[doc(hidden)]
-pub type StreamJournalToKinesisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StreamJournalToKinesisInput {
     /// Consumes the builder and constructs an Operation<[`StreamJournalToKinesis`](crate::operation::StreamJournalToKinesis)>
     #[allow(unused_mut)]
@@ -3039,10 +2967,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3219,10 +3143,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3431,10 +3351,6 @@ pub mod update_ledger_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLedgerInputOperationOutputAlias = crate::operation::UpdateLedger;
-#[doc(hidden)]
-pub type UpdateLedgerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLedgerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLedger`](crate::operation::UpdateLedger)>
     #[allow(unused_mut)]
@@ -3616,11 +3532,6 @@ pub mod update_ledger_permissions_mode_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLedgerPermissionsModeInputOperationOutputAlias =
-    crate::operation::UpdateLedgerPermissionsMode;
-#[doc(hidden)]
-pub type UpdateLedgerPermissionsModeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLedgerPermissionsModeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLedgerPermissionsMode`](crate::operation::UpdateLedgerPermissionsMode)>
     #[allow(unused_mut)]

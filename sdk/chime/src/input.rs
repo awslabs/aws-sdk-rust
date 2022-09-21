@@ -69,12 +69,6 @@ pub mod associate_phone_numbers_with_voice_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePhoneNumbersWithVoiceConnectorInputOperationOutputAlias =
-    crate::operation::AssociatePhoneNumbersWithVoiceConnector;
-#[doc(hidden)]
-pub type AssociatePhoneNumbersWithVoiceConnectorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePhoneNumbersWithVoiceConnectorInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePhoneNumbersWithVoiceConnector`](crate::operation::AssociatePhoneNumbersWithVoiceConnector)>
     #[allow(unused_mut)]
@@ -280,12 +274,6 @@ pub mod associate_phone_numbers_with_voice_connector_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePhoneNumbersWithVoiceConnectorGroupInputOperationOutputAlias =
-    crate::operation::AssociatePhoneNumbersWithVoiceConnectorGroup;
-#[doc(hidden)]
-pub type AssociatePhoneNumbersWithVoiceConnectorGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePhoneNumbersWithVoiceConnectorGroup`](crate::operation::AssociatePhoneNumbersWithVoiceConnectorGroup)>
     #[allow(unused_mut)]
@@ -481,12 +469,6 @@ pub mod associate_phone_number_with_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociatePhoneNumberWithUserInputOperationOutputAlias =
-    crate::operation::AssociatePhoneNumberWithUser;
-#[doc(hidden)]
-pub type AssociatePhoneNumberWithUserInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociatePhoneNumberWithUserInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePhoneNumberWithUser`](crate::operation::AssociatePhoneNumberWithUser)>
     #[allow(unused_mut)]
@@ -693,12 +675,6 @@ pub mod associate_signin_delegate_groups_with_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateSigninDelegateGroupsWithAccountInputOperationOutputAlias =
-    crate::operation::AssociateSigninDelegateGroupsWithAccount;
-#[doc(hidden)]
-pub type AssociateSigninDelegateGroupsWithAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSigninDelegateGroupsWithAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSigninDelegateGroupsWithAccount`](crate::operation::AssociateSigninDelegateGroupsWithAccount)>
     #[allow(unused_mut)]
@@ -882,10 +858,6 @@ pub mod batch_create_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCreateAttendeeInputOperationOutputAlias = crate::operation::BatchCreateAttendee;
-#[doc(hidden)]
-pub type BatchCreateAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateAttendee`](crate::operation::BatchCreateAttendee)>
     #[allow(unused_mut)]
@@ -1102,12 +1074,6 @@ pub mod batch_create_channel_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCreateChannelMembershipInputOperationOutputAlias =
-    crate::operation::BatchCreateChannelMembership;
-#[doc(hidden)]
-pub type BatchCreateChannelMembershipInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateChannelMembership`](crate::operation::BatchCreateChannelMembership)>
     #[allow(unused_mut)]
@@ -1313,11 +1279,6 @@ pub mod batch_create_room_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCreateRoomMembershipInputOperationOutputAlias =
-    crate::operation::BatchCreateRoomMembership;
-#[doc(hidden)]
-pub type BatchCreateRoomMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateRoomMembershipInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateRoomMembership`](crate::operation::BatchCreateRoomMembership)>
     #[allow(unused_mut)]
@@ -1510,10 +1471,6 @@ pub mod batch_delete_phone_number_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeletePhoneNumberInputOperationOutputAlias = crate::operation::BatchDeletePhoneNumber;
-#[doc(hidden)]
-pub type BatchDeletePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeletePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeletePhoneNumber`](crate::operation::BatchDeletePhoneNumber)>
     #[allow(unused_mut)]
@@ -1684,10 +1641,6 @@ pub mod batch_suspend_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchSuspendUserInputOperationOutputAlias = crate::operation::BatchSuspendUser;
-#[doc(hidden)]
-pub type BatchSuspendUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchSuspendUserInput {
     /// Consumes the builder and constructs an Operation<[`BatchSuspendUser`](crate::operation::BatchSuspendUser)>
     #[allow(unused_mut)]
@@ -1875,10 +1828,6 @@ pub mod batch_unsuspend_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUnsuspendUserInputOperationOutputAlias = crate::operation::BatchUnsuspendUser;
-#[doc(hidden)]
-pub type BatchUnsuspendUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUnsuspendUserInput {
     /// Consumes the builder and constructs an Operation<[`BatchUnsuspendUser`](crate::operation::BatchUnsuspendUser)>
     #[allow(unused_mut)]
@@ -2058,10 +2007,6 @@ pub mod batch_update_phone_number_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdatePhoneNumberInputOperationOutputAlias = crate::operation::BatchUpdatePhoneNumber;
-#[doc(hidden)]
-pub type BatchUpdatePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdatePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdatePhoneNumber`](crate::operation::BatchUpdatePhoneNumber)>
     #[allow(unused_mut)]
@@ -2236,10 +2181,6 @@ pub mod batch_update_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdateUserInputOperationOutputAlias = crate::operation::BatchUpdateUser;
-#[doc(hidden)]
-pub type BatchUpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateUserInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateUser`](crate::operation::BatchUpdateUser)>
     #[allow(unused_mut)]
@@ -2395,10 +2336,6 @@ pub mod create_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAccountInputOperationOutputAlias = crate::operation::CreateAccount;
-#[doc(hidden)]
-pub type CreateAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccountInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccount`](crate::operation::CreateAccount)>
     #[allow(unused_mut)]
@@ -2585,10 +2522,6 @@ pub mod create_app_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInstanceInputOperationOutputAlias = crate::operation::CreateAppInstance;
-#[doc(hidden)]
-pub type CreateAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstance`](crate::operation::CreateAppInstance)>
     #[allow(unused_mut)]
@@ -2750,10 +2683,6 @@ pub mod create_app_instance_admin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInstanceAdminInputOperationOutputAlias = crate::operation::CreateAppInstanceAdmin;
-#[doc(hidden)]
-pub type CreateAppInstanceAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstanceAdmin`](crate::operation::CreateAppInstanceAdmin)>
     #[allow(unused_mut)]
@@ -2993,10 +2922,6 @@ pub mod create_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInstanceUserInputOperationOutputAlias = crate::operation::CreateAppInstanceUser;
-#[doc(hidden)]
-pub type CreateAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstanceUser`](crate::operation::CreateAppInstanceUser)>
     #[allow(unused_mut)]
@@ -3178,10 +3103,6 @@ pub mod create_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAttendeeInputOperationOutputAlias = crate::operation::CreateAttendee;
-#[doc(hidden)]
-pub type CreateAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`CreateAttendee`](crate::operation::CreateAttendee)>
     #[allow(unused_mut)]
@@ -3362,10 +3283,6 @@ pub mod create_bot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBotInputOperationOutputAlias = crate::operation::CreateBot;
-#[doc(hidden)]
-pub type CreateBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotInput {
     /// Consumes the builder and constructs an Operation<[`CreateBot`](crate::operation::CreateBot)>
     #[allow(unused_mut)]
@@ -3619,10 +3536,6 @@ pub mod create_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
-#[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(unused_mut)]
@@ -3791,10 +3704,6 @@ pub mod create_channel_ban_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelBanInputOperationOutputAlias = crate::operation::CreateChannelBan;
-#[doc(hidden)]
-pub type CreateChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelBan`](crate::operation::CreateChannelBan)>
     #[allow(unused_mut)]
@@ -3996,11 +3905,6 @@ pub mod create_channel_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelMembershipInputOperationOutputAlias =
-    crate::operation::CreateChannelMembership;
-#[doc(hidden)]
-pub type CreateChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelMembership`](crate::operation::CreateChannelMembership)>
     #[allow(unused_mut)]
@@ -4191,10 +4095,6 @@ pub mod create_channel_moderator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateChannelModeratorInputOperationOutputAlias = crate::operation::CreateChannelModerator;
-#[doc(hidden)]
-pub type CreateChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelModerator`](crate::operation::CreateChannelModerator)>
     #[allow(unused_mut)]
@@ -4436,11 +4336,6 @@ pub mod create_media_capture_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMediaCapturePipelineInputOperationOutputAlias =
-    crate::operation::CreateMediaCapturePipeline;
-#[doc(hidden)]
-pub type CreateMediaCapturePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateMediaCapturePipeline`](crate::operation::CreateMediaCapturePipeline)>
     #[allow(unused_mut)]
@@ -4668,10 +4563,6 @@ pub mod create_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMeetingInputOperationOutputAlias = crate::operation::CreateMeeting;
-#[doc(hidden)]
-pub type CreateMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeeting`](crate::operation::CreateMeeting)>
     #[allow(unused_mut)]
@@ -4855,10 +4746,6 @@ pub mod create_meeting_dial_out_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMeetingDialOutInputOperationOutputAlias = crate::operation::CreateMeetingDialOut;
-#[doc(hidden)]
-pub type CreateMeetingDialOutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingDialOutInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeetingDialOut`](crate::operation::CreateMeetingDialOut)>
     #[allow(unused_mut)]
@@ -5129,11 +5016,6 @@ pub mod create_meeting_with_attendees_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMeetingWithAttendeesInputOperationOutputAlias =
-    crate::operation::CreateMeetingWithAttendees;
-#[doc(hidden)]
-pub type CreateMeetingWithAttendeesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeetingWithAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`CreateMeetingWithAttendees`](crate::operation::CreateMeetingWithAttendees)>
     #[allow(unused_mut)]
@@ -5307,10 +5189,6 @@ pub mod create_phone_number_order_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePhoneNumberOrderInputOperationOutputAlias = crate::operation::CreatePhoneNumberOrder;
-#[doc(hidden)]
-pub type CreatePhoneNumberOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePhoneNumberOrderInput {
     /// Consumes the builder and constructs an Operation<[`CreatePhoneNumberOrder`](crate::operation::CreatePhoneNumberOrder)>
     #[allow(unused_mut)]
@@ -5570,10 +5448,6 @@ pub mod create_proxy_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProxySessionInputOperationOutputAlias = crate::operation::CreateProxySession;
-#[doc(hidden)]
-pub type CreateProxySessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProxySessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateProxySession`](crate::operation::CreateProxySession)>
     #[allow(unused_mut)]
@@ -5757,10 +5631,6 @@ pub mod create_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRoomInputOperationOutputAlias = crate::operation::CreateRoom;
-#[doc(hidden)]
-pub type CreateRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoomInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoom`](crate::operation::CreateRoom)>
     #[allow(unused_mut)]
@@ -5960,10 +5830,6 @@ pub mod create_room_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRoomMembershipInputOperationOutputAlias = crate::operation::CreateRoomMembership;
-#[doc(hidden)]
-pub type CreateRoomMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoomMembershipInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoomMembership`](crate::operation::CreateRoomMembership)>
     #[allow(unused_mut)]
@@ -6174,11 +6040,6 @@ pub mod create_sip_media_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSipMediaApplicationInputOperationOutputAlias =
-    crate::operation::CreateSipMediaApplication;
-#[doc(hidden)]
-pub type CreateSipMediaApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSipMediaApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSipMediaApplication`](crate::operation::CreateSipMediaApplication)>
     #[allow(unused_mut)]
@@ -6383,12 +6244,6 @@ pub mod create_sip_media_application_call_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSipMediaApplicationCallInputOperationOutputAlias =
-    crate::operation::CreateSipMediaApplicationCall;
-#[doc(hidden)]
-pub type CreateSipMediaApplicationCallInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSipMediaApplicationCallInput {
     /// Consumes the builder and constructs an Operation<[`CreateSipMediaApplicationCall`](crate::operation::CreateSipMediaApplicationCall)>
     #[allow(unused_mut)]
@@ -6612,10 +6467,6 @@ pub mod create_sip_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSipRuleInputOperationOutputAlias = crate::operation::CreateSipRule;
-#[doc(hidden)]
-pub type CreateSipRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSipRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSipRule`](crate::operation::CreateSipRule)>
     #[allow(unused_mut)]
@@ -6789,10 +6640,6 @@ pub mod create_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
-#[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(unused_mut)]
@@ -6986,10 +6833,6 @@ pub mod create_voice_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVoiceConnectorInputOperationOutputAlias = crate::operation::CreateVoiceConnector;
-#[doc(hidden)]
-pub type CreateVoiceConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVoiceConnectorInput {
     /// Consumes the builder and constructs an Operation<[`CreateVoiceConnector`](crate::operation::CreateVoiceConnector)>
     #[allow(unused_mut)]
@@ -7154,11 +6997,6 @@ pub mod create_voice_connector_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateVoiceConnectorGroupInputOperationOutputAlias =
-    crate::operation::CreateVoiceConnectorGroup;
-#[doc(hidden)]
-pub type CreateVoiceConnectorGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVoiceConnectorGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateVoiceConnectorGroup`](crate::operation::CreateVoiceConnectorGroup)>
     #[allow(unused_mut)]
@@ -7299,10 +7137,6 @@ pub mod delete_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAccountInputOperationOutputAlias = crate::operation::DeleteAccount;
-#[doc(hidden)]
-pub type DeleteAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccountInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccount`](crate::operation::DeleteAccount)>
     #[allow(unused_mut)]
@@ -7445,10 +7279,6 @@ pub mod delete_app_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInstanceInputOperationOutputAlias = crate::operation::DeleteAppInstance;
-#[doc(hidden)]
-pub type DeleteAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstance`](crate::operation::DeleteAppInstance)>
     #[allow(unused_mut)]
@@ -7612,10 +7442,6 @@ pub mod delete_app_instance_admin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInstanceAdminInputOperationOutputAlias = crate::operation::DeleteAppInstanceAdmin;
-#[doc(hidden)]
-pub type DeleteAppInstanceAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceAdmin`](crate::operation::DeleteAppInstanceAdmin)>
     #[allow(unused_mut)]
@@ -7783,12 +7609,6 @@ pub mod delete_app_instance_streaming_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInstanceStreamingConfigurationsInputOperationOutputAlias =
-    crate::operation::DeleteAppInstanceStreamingConfigurations;
-#[doc(hidden)]
-pub type DeleteAppInstanceStreamingConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceStreamingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceStreamingConfigurations`](crate::operation::DeleteAppInstanceStreamingConfigurations)>
     #[allow(unused_mut)]
@@ -7935,10 +7755,6 @@ pub mod delete_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInstanceUserInputOperationOutputAlias = crate::operation::DeleteAppInstanceUser;
-#[doc(hidden)]
-pub type DeleteAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceUser`](crate::operation::DeleteAppInstanceUser)>
     #[allow(unused_mut)]
@@ -8096,10 +7912,6 @@ pub mod delete_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAttendeeInputOperationOutputAlias = crate::operation::DeleteAttendee;
-#[doc(hidden)]
-pub type DeleteAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttendee`](crate::operation::DeleteAttendee)>
     #[allow(unused_mut)]
@@ -8270,10 +8082,6 @@ pub mod delete_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
-#[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(unused_mut)]
@@ -8440,10 +8248,6 @@ pub mod delete_channel_ban_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelBanInputOperationOutputAlias = crate::operation::DeleteChannelBan;
-#[doc(hidden)]
-pub type DeleteChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelBan`](crate::operation::DeleteChannelBan)>
     #[allow(unused_mut)]
@@ -8631,11 +8435,6 @@ pub mod delete_channel_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelMembershipInputOperationOutputAlias =
-    crate::operation::DeleteChannelMembership;
-#[doc(hidden)]
-pub type DeleteChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelMembership`](crate::operation::DeleteChannelMembership)>
     #[allow(unused_mut)]
@@ -8822,10 +8621,6 @@ pub mod delete_channel_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelMessageInputOperationOutputAlias = crate::operation::DeleteChannelMessage;
-#[doc(hidden)]
-pub type DeleteChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelMessage`](crate::operation::DeleteChannelMessage)>
     #[allow(unused_mut)]
@@ -9015,10 +8810,6 @@ pub mod delete_channel_moderator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChannelModeratorInputOperationOutputAlias = crate::operation::DeleteChannelModerator;
-#[doc(hidden)]
-pub type DeleteChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelModerator`](crate::operation::DeleteChannelModerator)>
     #[allow(unused_mut)]
@@ -9195,11 +8986,6 @@ pub mod delete_events_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEventsConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteEventsConfiguration;
-#[doc(hidden)]
-pub type DeleteEventsConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventsConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventsConfiguration`](crate::operation::DeleteEventsConfiguration)>
     #[allow(unused_mut)]
@@ -9363,11 +9149,6 @@ pub mod delete_media_capture_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMediaCapturePipelineInputOperationOutputAlias =
-    crate::operation::DeleteMediaCapturePipeline;
-#[doc(hidden)]
-pub type DeleteMediaCapturePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMediaCapturePipeline`](crate::operation::DeleteMediaCapturePipeline)>
     #[allow(unused_mut)]
@@ -9511,10 +9292,6 @@ pub mod delete_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMeetingInputOperationOutputAlias = crate::operation::DeleteMeeting;
-#[doc(hidden)]
-pub type DeleteMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMeetingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMeeting`](crate::operation::DeleteMeeting)>
     #[allow(unused_mut)]
@@ -9657,10 +9434,6 @@ pub mod delete_phone_number_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePhoneNumberInputOperationOutputAlias = crate::operation::DeletePhoneNumber;
-#[doc(hidden)]
-pub type DeletePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`DeletePhoneNumber`](crate::operation::DeletePhoneNumber)>
     #[allow(unused_mut)]
@@ -9822,10 +9595,6 @@ pub mod delete_proxy_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProxySessionInputOperationOutputAlias = crate::operation::DeleteProxySession;
-#[doc(hidden)]
-pub type DeleteProxySessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProxySessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProxySession`](crate::operation::DeleteProxySession)>
     #[allow(unused_mut)]
@@ -9995,10 +9764,6 @@ pub mod delete_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRoomInputOperationOutputAlias = crate::operation::DeleteRoom;
-#[doc(hidden)]
-pub type DeleteRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoomInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoom`](crate::operation::DeleteRoom)>
     #[allow(unused_mut)]
@@ -10181,10 +9946,6 @@ pub mod delete_room_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRoomMembershipInputOperationOutputAlias = crate::operation::DeleteRoomMembership;
-#[doc(hidden)]
-pub type DeleteRoomMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoomMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoomMembership`](crate::operation::DeleteRoomMembership)>
     #[allow(unused_mut)]
@@ -10363,11 +10124,6 @@ pub mod delete_sip_media_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSipMediaApplicationInputOperationOutputAlias =
-    crate::operation::DeleteSipMediaApplication;
-#[doc(hidden)]
-pub type DeleteSipMediaApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSipMediaApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSipMediaApplication`](crate::operation::DeleteSipMediaApplication)>
     #[allow(unused_mut)]
@@ -10511,10 +10267,6 @@ pub mod delete_sip_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSipRuleInputOperationOutputAlias = crate::operation::DeleteSipRule;
-#[doc(hidden)]
-pub type DeleteSipRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSipRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSipRule`](crate::operation::DeleteSipRule)>
     #[allow(unused_mut)]
@@ -10657,10 +10409,6 @@ pub mod delete_voice_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorInputOperationOutputAlias = crate::operation::DeleteVoiceConnector;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnector`](crate::operation::DeleteVoiceConnector)>
     #[allow(unused_mut)]
@@ -10811,12 +10559,6 @@ pub mod delete_voice_connector_emergency_calling_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorEmergencyCallingConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorEmergencyCallingConfiguration;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorEmergencyCallingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorEmergencyCallingConfiguration`](crate::operation::DeleteVoiceConnectorEmergencyCallingConfiguration)>
     #[allow(unused_mut)]
@@ -10967,11 +10709,6 @@ pub mod delete_voice_connector_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorGroupInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorGroup;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorGroup`](crate::operation::DeleteVoiceConnectorGroup)>
     #[allow(unused_mut)]
@@ -11120,12 +10857,6 @@ pub mod delete_voice_connector_origination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorOriginationInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorOrigination;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorOriginationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorOriginationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorOrigination`](crate::operation::DeleteVoiceConnectorOrigination)>
     #[allow(unused_mut)]
@@ -11274,11 +11005,6 @@ pub mod delete_voice_connector_proxy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorProxyInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorProxy;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorProxyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorProxyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorProxy`](crate::operation::DeleteVoiceConnectorProxy)>
     #[allow(unused_mut)]
@@ -11429,12 +11155,6 @@ pub mod delete_voice_connector_streaming_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorStreamingConfigurationInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorStreamingConfiguration;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorStreamingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorStreamingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorStreamingConfiguration`](crate::operation::DeleteVoiceConnectorStreamingConfiguration)>
     #[allow(unused_mut)]
@@ -11584,12 +11304,6 @@ pub mod delete_voice_connector_termination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorTerminationInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorTermination;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorTerminationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorTerminationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorTermination`](crate::operation::DeleteVoiceConnectorTermination)>
     #[allow(unused_mut)]
@@ -11761,12 +11475,6 @@ pub mod delete_voice_connector_termination_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVoiceConnectorTerminationCredentialsInputOperationOutputAlias =
-    crate::operation::DeleteVoiceConnectorTerminationCredentials;
-#[doc(hidden)]
-pub type DeleteVoiceConnectorTerminationCredentialsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceConnectorTerminationCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceConnectorTerminationCredentials`](crate::operation::DeleteVoiceConnectorTerminationCredentials)>
     #[allow(unused_mut)]
@@ -11936,10 +11644,6 @@ pub mod describe_app_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppInstanceInputOperationOutputAlias = crate::operation::DescribeAppInstance;
-#[doc(hidden)]
-pub type DescribeAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstance`](crate::operation::DescribeAppInstance)>
     #[allow(unused_mut)]
@@ -12105,11 +11809,6 @@ pub mod describe_app_instance_admin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppInstanceAdminInputOperationOutputAlias =
-    crate::operation::DescribeAppInstanceAdmin;
-#[doc(hidden)]
-pub type DescribeAppInstanceAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceAdmin`](crate::operation::DescribeAppInstanceAdmin)>
     #[allow(unused_mut)]
@@ -12275,11 +11974,6 @@ pub mod describe_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppInstanceUserInputOperationOutputAlias =
-    crate::operation::DescribeAppInstanceUser;
-#[doc(hidden)]
-pub type DescribeAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceUser`](crate::operation::DescribeAppInstanceUser)>
     #[allow(unused_mut)]
@@ -12437,10 +12131,6 @@ pub mod describe_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
-#[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(unused_mut)]
@@ -12607,10 +12297,6 @@ pub mod describe_channel_ban_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelBanInputOperationOutputAlias = crate::operation::DescribeChannelBan;
-#[doc(hidden)]
-pub type DescribeChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelBan`](crate::operation::DescribeChannelBan)>
     #[allow(unused_mut)]
@@ -12798,11 +12484,6 @@ pub mod describe_channel_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelMembershipInputOperationOutputAlias =
-    crate::operation::DescribeChannelMembership;
-#[doc(hidden)]
-pub type DescribeChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelMembership`](crate::operation::DescribeChannelMembership)>
     #[allow(unused_mut)]
@@ -12996,12 +12677,6 @@ pub mod describe_channel_membership_for_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelMembershipForAppInstanceUserInputOperationOutputAlias =
-    crate::operation::DescribeChannelMembershipForAppInstanceUser;
-#[doc(hidden)]
-pub type DescribeChannelMembershipForAppInstanceUserInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelMembershipForAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelMembershipForAppInstanceUser`](crate::operation::DescribeChannelMembershipForAppInstanceUser)>
     #[allow(unused_mut)]
@@ -13191,12 +12866,6 @@ pub mod describe_channel_moderated_by_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelModeratedByAppInstanceUserInputOperationOutputAlias =
-    crate::operation::DescribeChannelModeratedByAppInstanceUser;
-#[doc(hidden)]
-pub type DescribeChannelModeratedByAppInstanceUserInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelModeratedByAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelModeratedByAppInstanceUser`](crate::operation::DescribeChannelModeratedByAppInstanceUser)>
     #[allow(unused_mut)]
@@ -13387,11 +13056,6 @@ pub mod describe_channel_moderator_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChannelModeratorInputOperationOutputAlias =
-    crate::operation::DescribeChannelModerator;
-#[doc(hidden)]
-pub type DescribeChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelModerator`](crate::operation::DescribeChannelModerator)>
     #[allow(unused_mut)]
@@ -13568,12 +13232,6 @@ pub mod disassociate_phone_number_from_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociatePhoneNumberFromUserInputOperationOutputAlias =
-    crate::operation::DisassociatePhoneNumberFromUser;
-#[doc(hidden)]
-pub type DisassociatePhoneNumberFromUserInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociatePhoneNumberFromUserInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePhoneNumberFromUser`](crate::operation::DisassociatePhoneNumberFromUser)>
     #[allow(unused_mut)]
@@ -13769,12 +13427,6 @@ pub mod disassociate_phone_numbers_from_voice_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociatePhoneNumbersFromVoiceConnectorInputOperationOutputAlias =
-    crate::operation::DisassociatePhoneNumbersFromVoiceConnector;
-#[doc(hidden)]
-pub type DisassociatePhoneNumbersFromVoiceConnectorInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePhoneNumbersFromVoiceConnector`](crate::operation::DisassociatePhoneNumbersFromVoiceConnector)>
     #[allow(unused_mut)]
@@ -13969,12 +13621,6 @@ pub mod disassociate_phone_numbers_from_voice_connector_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociatePhoneNumbersFromVoiceConnectorGroupInputOperationOutputAlias =
-    crate::operation::DisassociatePhoneNumbersFromVoiceConnectorGroup;
-#[doc(hidden)]
-pub type DisassociatePhoneNumbersFromVoiceConnectorGroupInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePhoneNumbersFromVoiceConnectorGroup`](crate::operation::DisassociatePhoneNumbersFromVoiceConnectorGroup)>
     #[allow(unused_mut)]
@@ -14167,12 +13813,6 @@ pub mod disassociate_signin_delegate_groups_from_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateSigninDelegateGroupsFromAccountInputOperationOutputAlias =
-    crate::operation::DisassociateSigninDelegateGroupsFromAccount;
-#[doc(hidden)]
-pub type DisassociateSigninDelegateGroupsFromAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateSigninDelegateGroupsFromAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSigninDelegateGroupsFromAccount`](crate::operation::DisassociateSigninDelegateGroupsFromAccount)>
     #[allow(unused_mut)]
@@ -14334,10 +13974,6 @@ pub mod get_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountInputOperationOutputAlias = crate::operation::GetAccount;
-#[doc(hidden)]
-pub type GetAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetAccount`](crate::operation::GetAccount)>
     #[allow(unused_mut)]
@@ -14477,10 +14113,6 @@ pub mod get_account_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountSettingsInputOperationOutputAlias = crate::operation::GetAccountSettings;
-#[doc(hidden)]
-pub type GetAccountSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountSettings`](crate::operation::GetAccountSettings)>
     #[allow(unused_mut)]
@@ -14629,12 +14261,6 @@ pub mod get_app_instance_retention_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppInstanceRetentionSettingsInputOperationOutputAlias =
-    crate::operation::GetAppInstanceRetentionSettings;
-#[doc(hidden)]
-pub type GetAppInstanceRetentionSettingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInstanceRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetAppInstanceRetentionSettings`](crate::operation::GetAppInstanceRetentionSettings)>
     #[allow(unused_mut)]
@@ -14785,12 +14411,6 @@ pub mod get_app_instance_streaming_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAppInstanceStreamingConfigurationsInputOperationOutputAlias =
-    crate::operation::GetAppInstanceStreamingConfigurations;
-#[doc(hidden)]
-pub type GetAppInstanceStreamingConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInstanceStreamingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`GetAppInstanceStreamingConfigurations`](crate::operation::GetAppInstanceStreamingConfigurations)>
     #[allow(unused_mut)]
@@ -14946,10 +14566,6 @@ pub mod get_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAttendeeInputOperationOutputAlias = crate::operation::GetAttendee;
-#[doc(hidden)]
-pub type GetAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`GetAttendee`](crate::operation::GetAttendee)>
     #[allow(unused_mut)]
@@ -15119,10 +14735,6 @@ pub mod get_bot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBotInputOperationOutputAlias = crate::operation::GetBot;
-#[doc(hidden)]
-pub type GetBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBotInput {
     /// Consumes the builder and constructs an Operation<[`GetBot`](crate::operation::GetBot)>
     #[allow(unused_mut)]
@@ -15300,10 +14912,6 @@ pub mod get_channel_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetChannelMessageInputOperationOutputAlias = crate::operation::GetChannelMessage;
-#[doc(hidden)]
-pub type GetChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMessage`](crate::operation::GetChannelMessage)>
     #[allow(unused_mut)]
@@ -15477,10 +15085,6 @@ pub mod get_events_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEventsConfigurationInputOperationOutputAlias = crate::operation::GetEventsConfiguration;
-#[doc(hidden)]
-pub type GetEventsConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventsConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetEventsConfiguration`](crate::operation::GetEventsConfiguration)>
     #[allow(unused_mut)]
@@ -15625,10 +15229,6 @@ pub mod get_global_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGlobalSettingsInputOperationOutputAlias = crate::operation::GetGlobalSettings;
-#[doc(hidden)]
-pub type GetGlobalSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGlobalSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetGlobalSettings`](crate::operation::GetGlobalSettings)>
     #[allow(unused_mut)]
@@ -15758,11 +15358,6 @@ pub mod get_media_capture_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMediaCapturePipelineInputOperationOutputAlias =
-    crate::operation::GetMediaCapturePipeline;
-#[doc(hidden)]
-pub type GetMediaCapturePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaCapturePipeline`](crate::operation::GetMediaCapturePipeline)>
     #[allow(unused_mut)]
@@ -15905,10 +15500,6 @@ pub mod get_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMeetingInputOperationOutputAlias = crate::operation::GetMeeting;
-#[doc(hidden)]
-pub type GetMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMeetingInput {
     /// Consumes the builder and constructs an Operation<[`GetMeeting`](crate::operation::GetMeeting)>
     #[allow(unused_mut)]
@@ -16036,11 +15627,6 @@ pub mod get_messaging_session_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMessagingSessionEndpointInputOperationOutputAlias =
-    crate::operation::GetMessagingSessionEndpoint;
-#[doc(hidden)]
-pub type GetMessagingSessionEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMessagingSessionEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetMessagingSessionEndpoint`](crate::operation::GetMessagingSessionEndpoint)>
     #[allow(unused_mut)]
@@ -16170,10 +15756,6 @@ pub mod get_phone_number_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPhoneNumberInputOperationOutputAlias = crate::operation::GetPhoneNumber;
-#[doc(hidden)]
-pub type GetPhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`GetPhoneNumber`](crate::operation::GetPhoneNumber)>
     #[allow(unused_mut)]
@@ -16320,10 +15902,6 @@ pub mod get_phone_number_order_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPhoneNumberOrderInputOperationOutputAlias = crate::operation::GetPhoneNumberOrder;
-#[doc(hidden)]
-pub type GetPhoneNumberOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPhoneNumberOrderInput {
     /// Consumes the builder and constructs an Operation<[`GetPhoneNumberOrder`](crate::operation::GetPhoneNumberOrder)>
     #[allow(unused_mut)]
@@ -16453,10 +16031,6 @@ pub mod get_phone_number_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPhoneNumberSettingsInputOperationOutputAlias = crate::operation::GetPhoneNumberSettings;
-#[doc(hidden)]
-pub type GetPhoneNumberSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPhoneNumberSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetPhoneNumberSettings`](crate::operation::GetPhoneNumberSettings)>
     #[allow(unused_mut)]
@@ -16599,10 +16173,6 @@ pub mod get_proxy_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetProxySessionInputOperationOutputAlias = crate::operation::GetProxySession;
-#[doc(hidden)]
-pub type GetProxySessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProxySessionInput {
     /// Consumes the builder and constructs an Operation<[`GetProxySession`](crate::operation::GetProxySession)>
     #[allow(unused_mut)]
@@ -16761,10 +16331,6 @@ pub mod get_retention_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRetentionSettingsInputOperationOutputAlias = crate::operation::GetRetentionSettings;
-#[doc(hidden)]
-pub type GetRetentionSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetRetentionSettings`](crate::operation::GetRetentionSettings)>
     #[allow(unused_mut)]
@@ -16919,10 +16485,6 @@ pub mod get_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRoomInputOperationOutputAlias = crate::operation::GetRoom;
-#[doc(hidden)]
-pub type GetRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoomInput {
     /// Consumes the builder and constructs an Operation<[`GetRoom`](crate::operation::GetRoom)>
     #[allow(unused_mut)]
@@ -17081,10 +16643,6 @@ pub mod get_sip_media_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSipMediaApplicationInputOperationOutputAlias = crate::operation::GetSipMediaApplication;
-#[doc(hidden)]
-pub type GetSipMediaApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSipMediaApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetSipMediaApplication`](crate::operation::GetSipMediaApplication)>
     #[allow(unused_mut)]
@@ -17235,12 +16793,6 @@ pub mod get_sip_media_application_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSipMediaApplicationLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::GetSipMediaApplicationLoggingConfiguration;
-#[doc(hidden)]
-pub type GetSipMediaApplicationLoggingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSipMediaApplicationLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetSipMediaApplicationLoggingConfiguration`](crate::operation::GetSipMediaApplicationLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -17384,10 +16936,6 @@ pub mod get_sip_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSipRuleInputOperationOutputAlias = crate::operation::GetSipRule;
-#[doc(hidden)]
-pub type GetSipRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSipRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetSipRule`](crate::operation::GetSipRule)>
     #[allow(unused_mut)]
@@ -17538,10 +17086,6 @@ pub mod get_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserInputOperationOutputAlias = crate::operation::GetUser;
-#[doc(hidden)]
-pub type GetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserInput {
     /// Consumes the builder and constructs an Operation<[`GetUser`](crate::operation::GetUser)>
     #[allow(unused_mut)]
@@ -17709,10 +17253,6 @@ pub mod get_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserSettingsInputOperationOutputAlias = crate::operation::GetUserSettings;
-#[doc(hidden)]
-pub type GetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetUserSettings`](crate::operation::GetUserSettings)>
     #[allow(unused_mut)]
@@ -17874,10 +17414,6 @@ pub mod get_voice_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorInputOperationOutputAlias = crate::operation::GetVoiceConnector;
-#[doc(hidden)]
-pub type GetVoiceConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnector`](crate::operation::GetVoiceConnector)>
     #[allow(unused_mut)]
@@ -18028,12 +17564,6 @@ pub mod get_voice_connector_emergency_calling_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorEmergencyCallingConfigurationInputOperationOutputAlias =
-    crate::operation::GetVoiceConnectorEmergencyCallingConfiguration;
-#[doc(hidden)]
-pub type GetVoiceConnectorEmergencyCallingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorEmergencyCallingConfiguration`](crate::operation::GetVoiceConnectorEmergencyCallingConfiguration)>
     #[allow(unused_mut)]
@@ -18181,10 +17711,6 @@ pub mod get_voice_connector_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorGroupInputOperationOutputAlias = crate::operation::GetVoiceConnectorGroup;
-#[doc(hidden)]
-pub type GetVoiceConnectorGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorGroup`](crate::operation::GetVoiceConnectorGroup)>
     #[allow(unused_mut)]
@@ -18333,12 +17859,6 @@ pub mod get_voice_connector_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::GetVoiceConnectorLoggingConfiguration;
-#[doc(hidden)]
-pub type GetVoiceConnectorLoggingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorLoggingConfiguration`](crate::operation::GetVoiceConnectorLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -18487,12 +18007,6 @@ pub mod get_voice_connector_origination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorOriginationInputOperationOutputAlias =
-    crate::operation::GetVoiceConnectorOrigination;
-#[doc(hidden)]
-pub type GetVoiceConnectorOriginationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorOriginationInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorOrigination`](crate::operation::GetVoiceConnectorOrigination)>
     #[allow(unused_mut)]
@@ -18639,10 +18153,6 @@ pub mod get_voice_connector_proxy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorProxyInputOperationOutputAlias = crate::operation::GetVoiceConnectorProxy;
-#[doc(hidden)]
-pub type GetVoiceConnectorProxyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorProxyInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorProxy`](crate::operation::GetVoiceConnectorProxy)>
     #[allow(unused_mut)]
@@ -18791,12 +18301,6 @@ pub mod get_voice_connector_streaming_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorStreamingConfigurationInputOperationOutputAlias =
-    crate::operation::GetVoiceConnectorStreamingConfiguration;
-#[doc(hidden)]
-pub type GetVoiceConnectorStreamingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorStreamingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorStreamingConfiguration`](crate::operation::GetVoiceConnectorStreamingConfiguration)>
     #[allow(unused_mut)]
@@ -18945,12 +18449,6 @@ pub mod get_voice_connector_termination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorTerminationInputOperationOutputAlias =
-    crate::operation::GetVoiceConnectorTermination;
-#[doc(hidden)]
-pub type GetVoiceConnectorTerminationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorTerminationInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorTermination`](crate::operation::GetVoiceConnectorTermination)>
     #[allow(unused_mut)]
@@ -19099,12 +18597,6 @@ pub mod get_voice_connector_termination_health_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetVoiceConnectorTerminationHealthInputOperationOutputAlias =
-    crate::operation::GetVoiceConnectorTerminationHealth;
-#[doc(hidden)]
-pub type GetVoiceConnectorTerminationHealthInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceConnectorTerminationHealthInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceConnectorTerminationHealth`](crate::operation::GetVoiceConnectorTerminationHealth)>
     #[allow(unused_mut)]
@@ -19281,10 +18773,6 @@ pub mod invite_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InviteUsersInputOperationOutputAlias = crate::operation::InviteUsers;
-#[doc(hidden)]
-pub type InviteUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InviteUsersInput {
     /// Consumes the builder and constructs an Operation<[`InviteUsers`](crate::operation::InviteUsers)>
     #[allow(unused_mut)]
@@ -19487,10 +18975,6 @@ pub mod list_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountsInputOperationOutputAlias = crate::operation::ListAccounts;
-#[doc(hidden)]
-pub type ListAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccounts`](crate::operation::ListAccounts)>
     #[allow(unused_mut)]
@@ -19671,10 +19155,6 @@ pub mod list_app_instance_admins_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppInstanceAdminsInputOperationOutputAlias = crate::operation::ListAppInstanceAdmins;
-#[doc(hidden)]
-pub type ListAppInstanceAdminsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstanceAdminsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceAdmins`](crate::operation::ListAppInstanceAdmins)>
     #[allow(unused_mut)]
@@ -19852,10 +19332,6 @@ pub mod list_app_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppInstancesInputOperationOutputAlias = crate::operation::ListAppInstances;
-#[doc(hidden)]
-pub type ListAppInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstances`](crate::operation::ListAppInstances)>
     #[allow(unused_mut)]
@@ -20029,10 +19505,6 @@ pub mod list_app_instance_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppInstanceUsersInputOperationOutputAlias = crate::operation::ListAppInstanceUsers;
-#[doc(hidden)]
-pub type ListAppInstanceUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstanceUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceUsers`](crate::operation::ListAppInstanceUsers)>
     #[allow(unused_mut)]
@@ -20209,10 +19681,6 @@ pub mod list_attendees_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAttendeesInputOperationOutputAlias = crate::operation::ListAttendees;
-#[doc(hidden)]
-pub type ListAttendeesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttendeesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttendees`](crate::operation::ListAttendees)>
     #[allow(unused_mut)]
@@ -20388,10 +19856,6 @@ pub mod list_attendee_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAttendeeTagsInputOperationOutputAlias = crate::operation::ListAttendeeTags;
-#[doc(hidden)]
-pub type ListAttendeeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttendeeTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListAttendeeTags`](crate::operation::ListAttendeeTags)>
     #[allow(unused_mut)]
@@ -20573,10 +20037,6 @@ pub mod list_bots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBotsInputOperationOutputAlias = crate::operation::ListBots;
-#[doc(hidden)]
-pub type ListBotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotsInput {
     /// Consumes the builder and constructs an Operation<[`ListBots`](crate::operation::ListBots)>
     #[allow(unused_mut)]
@@ -20769,10 +20229,6 @@ pub mod list_channel_bans_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelBansInputOperationOutputAlias = crate::operation::ListChannelBans;
-#[doc(hidden)]
-pub type ListChannelBansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelBansInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelBans`](crate::operation::ListChannelBans)>
     #[allow(unused_mut)]
@@ -20990,10 +20446,6 @@ pub mod list_channel_memberships_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelMembershipsInputOperationOutputAlias = crate::operation::ListChannelMemberships;
-#[doc(hidden)]
-pub type ListChannelMembershipsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMembershipsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMemberships`](crate::operation::ListChannelMemberships)>
     #[allow(unused_mut)]
@@ -21207,12 +20659,6 @@ pub mod list_channel_memberships_for_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelMembershipsForAppInstanceUserInputOperationOutputAlias =
-    crate::operation::ListChannelMembershipsForAppInstanceUser;
-#[doc(hidden)]
-pub type ListChannelMembershipsForAppInstanceUserInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMembershipsForAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMembershipsForAppInstanceUser`](crate::operation::ListChannelMembershipsForAppInstanceUser)>
     #[allow(unused_mut)]
@@ -21452,10 +20898,6 @@ pub mod list_channel_messages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelMessagesInputOperationOutputAlias = crate::operation::ListChannelMessages;
-#[doc(hidden)]
-pub type ListChannelMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMessages`](crate::operation::ListChannelMessages)>
     #[allow(unused_mut)]
@@ -21682,10 +21124,6 @@ pub mod list_channel_moderators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelModeratorsInputOperationOutputAlias = crate::operation::ListChannelModerators;
-#[doc(hidden)]
-pub type ListChannelModeratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelModeratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelModerators`](crate::operation::ListChannelModerators)>
     #[allow(unused_mut)]
@@ -21907,10 +21345,6 @@ pub mod list_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
-#[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(unused_mut)]
@@ -22108,12 +21542,6 @@ pub mod list_channels_moderated_by_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListChannelsModeratedByAppInstanceUserInputOperationOutputAlias =
-    crate::operation::ListChannelsModeratedByAppInstanceUser;
-#[doc(hidden)]
-pub type ListChannelsModeratedByAppInstanceUserInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsModeratedByAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelsModeratedByAppInstanceUser`](crate::operation::ListChannelsModeratedByAppInstanceUser)>
     #[allow(unused_mut)]
@@ -22285,11 +21713,6 @@ pub mod list_media_capture_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMediaCapturePipelinesInputOperationOutputAlias =
-    crate::operation::ListMediaCapturePipelines;
-#[doc(hidden)]
-pub type ListMediaCapturePipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMediaCapturePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListMediaCapturePipelines`](crate::operation::ListMediaCapturePipelines)>
     #[allow(unused_mut)]
@@ -22446,10 +21869,6 @@ pub mod list_meetings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMeetingsInputOperationOutputAlias = crate::operation::ListMeetings;
-#[doc(hidden)]
-pub type ListMeetingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMeetingsInput {
     /// Consumes the builder and constructs an Operation<[`ListMeetings`](crate::operation::ListMeetings)>
     #[allow(unused_mut)]
@@ -22594,10 +22013,6 @@ pub mod list_meeting_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMeetingTagsInputOperationOutputAlias = crate::operation::ListMeetingTags;
-#[doc(hidden)]
-pub type ListMeetingTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMeetingTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListMeetingTags`](crate::operation::ListMeetingTags)>
     #[allow(unused_mut)]
@@ -22749,10 +22164,6 @@ pub mod list_phone_number_orders_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPhoneNumberOrdersInputOperationOutputAlias = crate::operation::ListPhoneNumberOrders;
-#[doc(hidden)]
-pub type ListPhoneNumberOrdersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPhoneNumberOrdersInput {
     /// Consumes the builder and constructs an Operation<[`ListPhoneNumberOrders`](crate::operation::ListPhoneNumberOrders)>
     #[allow(unused_mut)]
@@ -22966,10 +22377,6 @@ pub mod list_phone_numbers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPhoneNumbersInputOperationOutputAlias = crate::operation::ListPhoneNumbers;
-#[doc(hidden)]
-pub type ListPhoneNumbersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPhoneNumbersInput {
     /// Consumes the builder and constructs an Operation<[`ListPhoneNumbers`](crate::operation::ListPhoneNumbers)>
     #[allow(unused_mut)]
@@ -23177,10 +22584,6 @@ pub mod list_proxy_sessions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProxySessionsInputOperationOutputAlias = crate::operation::ListProxySessions;
-#[doc(hidden)]
-pub type ListProxySessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProxySessionsInput {
     /// Consumes the builder and constructs an Operation<[`ListProxySessions`](crate::operation::ListProxySessions)>
     #[allow(unused_mut)]
@@ -23383,10 +22786,6 @@ pub mod list_room_memberships_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRoomMembershipsInputOperationOutputAlias = crate::operation::ListRoomMemberships;
-#[doc(hidden)]
-pub type ListRoomMembershipsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoomMembershipsInput {
     /// Consumes the builder and constructs an Operation<[`ListRoomMemberships`](crate::operation::ListRoomMemberships)>
     #[allow(unused_mut)]
@@ -23600,10 +22999,6 @@ pub mod list_rooms_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRoomsInputOperationOutputAlias = crate::operation::ListRooms;
-#[doc(hidden)]
-pub type ListRoomsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoomsInput {
     /// Consumes the builder and constructs an Operation<[`ListRooms`](crate::operation::ListRooms)>
     #[allow(unused_mut)]
@@ -23782,11 +23177,6 @@ pub mod list_sip_media_applications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSipMediaApplicationsInputOperationOutputAlias =
-    crate::operation::ListSipMediaApplications;
-#[doc(hidden)]
-pub type ListSipMediaApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSipMediaApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSipMediaApplications`](crate::operation::ListSipMediaApplications)>
     #[allow(unused_mut)]
@@ -23958,10 +23348,6 @@ pub mod list_sip_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSipRulesInputOperationOutputAlias = crate::operation::ListSipRules;
-#[doc(hidden)]
-pub type ListSipRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSipRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListSipRules`](crate::operation::ListSipRules)>
     #[allow(unused_mut)]
@@ -24117,12 +23503,6 @@ pub mod list_supported_phone_number_countries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSupportedPhoneNumberCountriesInputOperationOutputAlias =
-    crate::operation::ListSupportedPhoneNumberCountries;
-#[doc(hidden)]
-pub type ListSupportedPhoneNumberCountriesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSupportedPhoneNumberCountriesInput {
     /// Consumes the builder and constructs an Operation<[`ListSupportedPhoneNumberCountries`](crate::operation::ListSupportedPhoneNumberCountries)>
     #[allow(unused_mut)]
@@ -24261,10 +23641,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -24447,10 +23823,6 @@ pub mod list_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
-#[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(unused_mut)]
@@ -24635,11 +24007,6 @@ pub mod list_voice_connector_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVoiceConnectorGroupsInputOperationOutputAlias =
-    crate::operation::ListVoiceConnectorGroups;
-#[doc(hidden)]
-pub type ListVoiceConnectorGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVoiceConnectorGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListVoiceConnectorGroups`](crate::operation::ListVoiceConnectorGroups)>
     #[allow(unused_mut)]
@@ -24796,10 +24163,6 @@ pub mod list_voice_connectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVoiceConnectorsInputOperationOutputAlias = crate::operation::ListVoiceConnectors;
-#[doc(hidden)]
-pub type ListVoiceConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVoiceConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListVoiceConnectors`](crate::operation::ListVoiceConnectors)>
     #[allow(unused_mut)]
@@ -24951,12 +24314,6 @@ pub mod list_voice_connector_termination_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVoiceConnectorTerminationCredentialsInputOperationOutputAlias =
-    crate::operation::ListVoiceConnectorTerminationCredentials;
-#[doc(hidden)]
-pub type ListVoiceConnectorTerminationCredentialsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListVoiceConnectorTerminationCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`ListVoiceConnectorTerminationCredentials`](crate::operation::ListVoiceConnectorTerminationCredentials)>
     #[allow(unused_mut)]
@@ -25111,10 +24468,6 @@ pub mod logout_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type LogoutUserInputOperationOutputAlias = crate::operation::LogoutUser;
-#[doc(hidden)]
-pub type LogoutUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LogoutUserInput {
     /// Consumes the builder and constructs an Operation<[`LogoutUser`](crate::operation::LogoutUser)>
     #[allow(unused_mut)]
@@ -25306,12 +24659,6 @@ pub mod put_app_instance_retention_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAppInstanceRetentionSettingsInputOperationOutputAlias =
-    crate::operation::PutAppInstanceRetentionSettings;
-#[doc(hidden)]
-pub type PutAppInstanceRetentionSettingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppInstanceRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutAppInstanceRetentionSettings`](crate::operation::PutAppInstanceRetentionSettings)>
     #[allow(unused_mut)]
@@ -25504,12 +24851,6 @@ pub mod put_app_instance_streaming_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAppInstanceStreamingConfigurationsInputOperationOutputAlias =
-    crate::operation::PutAppInstanceStreamingConfigurations;
-#[doc(hidden)]
-pub type PutAppInstanceStreamingConfigurationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppInstanceStreamingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`PutAppInstanceStreamingConfigurations`](crate::operation::PutAppInstanceStreamingConfigurations)>
     #[allow(unused_mut)]
@@ -25711,10 +25052,6 @@ pub mod put_events_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEventsConfigurationInputOperationOutputAlias = crate::operation::PutEventsConfiguration;
-#[doc(hidden)]
-pub type PutEventsConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventsConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutEventsConfiguration`](crate::operation::PutEventsConfiguration)>
     #[allow(unused_mut)]
@@ -25904,10 +25241,6 @@ pub mod put_retention_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRetentionSettingsInputOperationOutputAlias = crate::operation::PutRetentionSettings;
-#[doc(hidden)]
-pub type PutRetentionSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutRetentionSettings`](crate::operation::PutRetentionSettings)>
     #[allow(unused_mut)]
@@ -26094,12 +25427,6 @@ pub mod put_sip_media_application_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutSipMediaApplicationLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::PutSipMediaApplicationLoggingConfiguration;
-#[doc(hidden)]
-pub type PutSipMediaApplicationLoggingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutSipMediaApplicationLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutSipMediaApplicationLoggingConfiguration`](crate::operation::PutSipMediaApplicationLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -26283,12 +25610,6 @@ pub mod put_voice_connector_emergency_calling_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorEmergencyCallingConfigurationInputOperationOutputAlias =
-    crate::operation::PutVoiceConnectorEmergencyCallingConfiguration;
-#[doc(hidden)]
-pub type PutVoiceConnectorEmergencyCallingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorEmergencyCallingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorEmergencyCallingConfiguration`](crate::operation::PutVoiceConnectorEmergencyCallingConfiguration)>
     #[allow(unused_mut)]
@@ -26466,12 +25787,6 @@ pub mod put_voice_connector_logging_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorLoggingConfigurationInputOperationOutputAlias =
-    crate::operation::PutVoiceConnectorLoggingConfiguration;
-#[doc(hidden)]
-pub type PutVoiceConnectorLoggingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorLoggingConfiguration`](crate::operation::PutVoiceConnectorLoggingConfiguration)>
     #[allow(unused_mut)]
@@ -26648,12 +25963,6 @@ pub mod put_voice_connector_origination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorOriginationInputOperationOutputAlias =
-    crate::operation::PutVoiceConnectorOrigination;
-#[doc(hidden)]
-pub type PutVoiceConnectorOriginationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorOriginationInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorOrigination`](crate::operation::PutVoiceConnectorOrigination)>
     #[allow(unused_mut)]
@@ -26880,10 +26189,6 @@ pub mod put_voice_connector_proxy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorProxyInputOperationOutputAlias = crate::operation::PutVoiceConnectorProxy;
-#[doc(hidden)]
-pub type PutVoiceConnectorProxyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorProxyInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorProxy`](crate::operation::PutVoiceConnectorProxy)>
     #[allow(unused_mut)]
@@ -27067,12 +26372,6 @@ pub mod put_voice_connector_streaming_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorStreamingConfigurationInputOperationOutputAlias =
-    crate::operation::PutVoiceConnectorStreamingConfiguration;
-#[doc(hidden)]
-pub type PutVoiceConnectorStreamingConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorStreamingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorStreamingConfiguration`](crate::operation::PutVoiceConnectorStreamingConfiguration)>
     #[allow(unused_mut)]
@@ -27249,12 +26548,6 @@ pub mod put_voice_connector_termination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorTerminationInputOperationOutputAlias =
-    crate::operation::PutVoiceConnectorTermination;
-#[doc(hidden)]
-pub type PutVoiceConnectorTerminationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorTerminationInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorTermination`](crate::operation::PutVoiceConnectorTermination)>
     #[allow(unused_mut)]
@@ -27437,12 +26730,6 @@ pub mod put_voice_connector_termination_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutVoiceConnectorTerminationCredentialsInputOperationOutputAlias =
-    crate::operation::PutVoiceConnectorTerminationCredentials;
-#[doc(hidden)]
-pub type PutVoiceConnectorTerminationCredentialsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVoiceConnectorTerminationCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`PutVoiceConnectorTerminationCredentials`](crate::operation::PutVoiceConnectorTerminationCredentials)>
     #[allow(unused_mut)]
@@ -27632,10 +26919,6 @@ pub mod redact_channel_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RedactChannelMessageInputOperationOutputAlias = crate::operation::RedactChannelMessage;
-#[doc(hidden)]
-pub type RedactChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RedactChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`RedactChannelMessage`](crate::operation::RedactChannelMessage)>
     #[allow(unused_mut)]
@@ -27836,11 +27119,6 @@ pub mod redact_conversation_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RedactConversationMessageInputOperationOutputAlias =
-    crate::operation::RedactConversationMessage;
-#[doc(hidden)]
-pub type RedactConversationMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RedactConversationMessageInput {
     /// Consumes the builder and constructs an Operation<[`RedactConversationMessage`](crate::operation::RedactConversationMessage)>
     #[allow(unused_mut)]
@@ -28047,10 +27325,6 @@ pub mod redact_room_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RedactRoomMessageInputOperationOutputAlias = crate::operation::RedactRoomMessage;
-#[doc(hidden)]
-pub type RedactRoomMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RedactRoomMessageInput {
     /// Consumes the builder and constructs an Operation<[`RedactRoomMessage`](crate::operation::RedactRoomMessage)>
     #[allow(unused_mut)]
@@ -28247,11 +27521,6 @@ pub mod regenerate_security_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegenerateSecurityTokenInputOperationOutputAlias =
-    crate::operation::RegenerateSecurityToken;
-#[doc(hidden)]
-pub type RegenerateSecurityTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegenerateSecurityTokenInput {
     /// Consumes the builder and constructs an Operation<[`RegenerateSecurityToken`](crate::operation::RegenerateSecurityToken)>
     #[allow(unused_mut)]
@@ -28431,10 +27700,6 @@ pub mod reset_personal_pin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetPersonalPinInputOperationOutputAlias = crate::operation::ResetPersonalPIN;
-#[doc(hidden)]
-pub type ResetPersonalPinInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetPersonalPinInput {
     /// Consumes the builder and constructs an Operation<[`ResetPersonalPIN`](crate::operation::ResetPersonalPIN)>
     #[allow(unused_mut)]
@@ -28605,10 +27870,6 @@ pub mod restore_phone_number_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestorePhoneNumberInputOperationOutputAlias = crate::operation::RestorePhoneNumber;
-#[doc(hidden)]
-pub type RestorePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestorePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`RestorePhoneNumber`](crate::operation::RestorePhoneNumber)>
     #[allow(unused_mut)]
@@ -28853,11 +28114,6 @@ pub mod search_available_phone_numbers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchAvailablePhoneNumbersInputOperationOutputAlias =
-    crate::operation::SearchAvailablePhoneNumbers;
-#[doc(hidden)]
-pub type SearchAvailablePhoneNumbersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchAvailablePhoneNumbersInput {
     /// Consumes the builder and constructs an Operation<[`SearchAvailablePhoneNumbers`](crate::operation::SearchAvailablePhoneNumbers)>
     #[allow(unused_mut)]
@@ -29108,10 +28364,6 @@ pub mod send_channel_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendChannelMessageInputOperationOutputAlias = crate::operation::SendChannelMessage;
-#[doc(hidden)]
-pub type SendChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendChannelMessage`](crate::operation::SendChannelMessage)>
     #[allow(unused_mut)]
@@ -29296,11 +28548,6 @@ pub mod start_meeting_transcription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMeetingTranscriptionInputOperationOutputAlias =
-    crate::operation::StartMeetingTranscription;
-#[doc(hidden)]
-pub type StartMeetingTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMeetingTranscription`](crate::operation::StartMeetingTranscription)>
     #[allow(unused_mut)]
@@ -29471,11 +28718,6 @@ pub mod stop_meeting_transcription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopMeetingTranscriptionInputOperationOutputAlias =
-    crate::operation::StopMeetingTranscription;
-#[doc(hidden)]
-pub type StopMeetingTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMeetingTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StopMeetingTranscription`](crate::operation::StopMeetingTranscription)>
     #[allow(unused_mut)]
@@ -29661,10 +28903,6 @@ pub mod tag_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagAttendeeInputOperationOutputAlias = crate::operation::TagAttendee;
-#[doc(hidden)]
-pub type TagAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`TagAttendee`](crate::operation::TagAttendee)>
     #[allow(unused_mut)]
@@ -29866,10 +29104,6 @@ pub mod tag_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagMeetingInputOperationOutputAlias = crate::operation::TagMeeting;
-#[doc(hidden)]
-pub type TagMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagMeetingInput {
     /// Consumes the builder and constructs an Operation<[`TagMeeting`](crate::operation::TagMeeting)>
     #[allow(unused_mut)]
@@ -30053,10 +29287,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -30237,10 +29467,6 @@ pub mod untag_attendee_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagAttendeeInputOperationOutputAlias = crate::operation::UntagAttendee;
-#[doc(hidden)]
-pub type UntagAttendeeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagAttendeeInput {
     /// Consumes the builder and constructs an Operation<[`UntagAttendee`](crate::operation::UntagAttendee)>
     #[allow(unused_mut)]
@@ -30443,10 +29669,6 @@ pub mod untag_meeting_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagMeetingInputOperationOutputAlias = crate::operation::UntagMeeting;
-#[doc(hidden)]
-pub type UntagMeetingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagMeetingInput {
     /// Consumes the builder and constructs an Operation<[`UntagMeeting`](crate::operation::UntagMeeting)>
     #[allow(unused_mut)]
@@ -30630,10 +29852,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -30808,10 +30026,6 @@ pub mod update_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAccountInputOperationOutputAlias = crate::operation::UpdateAccount;
-#[doc(hidden)]
-pub type UpdateAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccountInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccount`](crate::operation::UpdateAccount)>
     #[allow(unused_mut)]
@@ -30980,10 +30194,6 @@ pub mod update_account_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAccountSettingsInputOperationOutputAlias = crate::operation::UpdateAccountSettings;
-#[doc(hidden)]
-pub type UpdateAccountSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccountSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccountSettings`](crate::operation::UpdateAccountSettings)>
     #[allow(unused_mut)]
@@ -31170,10 +30380,6 @@ pub mod update_app_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppInstanceInputOperationOutputAlias = crate::operation::UpdateAppInstance;
-#[doc(hidden)]
-pub type UpdateAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstance`](crate::operation::UpdateAppInstance)>
     #[allow(unused_mut)]
@@ -31360,10 +30566,6 @@ pub mod update_app_instance_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppInstanceUserInputOperationOutputAlias = crate::operation::UpdateAppInstanceUser;
-#[doc(hidden)]
-pub type UpdateAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstanceUser`](crate::operation::UpdateAppInstanceUser)>
     #[allow(unused_mut)]
@@ -31548,10 +30750,6 @@ pub mod update_bot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBotInputOperationOutputAlias = crate::operation::UpdateBot;
-#[doc(hidden)]
-pub type UpdateBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBot`](crate::operation::UpdateBot)>
     #[allow(unused_mut)]
@@ -31770,10 +30968,6 @@ pub mod update_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
-#[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(unused_mut)]
@@ -31978,10 +31172,6 @@ pub mod update_channel_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelMessageInputOperationOutputAlias = crate::operation::UpdateChannelMessage;
-#[doc(hidden)]
-pub type UpdateChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelMessage`](crate::operation::UpdateChannelMessage)>
     #[allow(unused_mut)]
@@ -32174,11 +31364,6 @@ pub mod update_channel_read_marker_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChannelReadMarkerInputOperationOutputAlias =
-    crate::operation::UpdateChannelReadMarker;
-#[doc(hidden)]
-pub type UpdateChannelReadMarkerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelReadMarkerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelReadMarker`](crate::operation::UpdateChannelReadMarker)>
     #[allow(unused_mut)]
@@ -32344,10 +31529,6 @@ pub mod update_global_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGlobalSettingsInputOperationOutputAlias = crate::operation::UpdateGlobalSettings;
-#[doc(hidden)]
-pub type UpdateGlobalSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalSettings`](crate::operation::UpdateGlobalSettings)>
     #[allow(unused_mut)]
@@ -32518,10 +31699,6 @@ pub mod update_phone_number_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePhoneNumberInputOperationOutputAlias = crate::operation::UpdatePhoneNumber;
-#[doc(hidden)]
-pub type UpdatePhoneNumberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePhoneNumber`](crate::operation::UpdatePhoneNumber)>
     #[allow(unused_mut)]
@@ -32681,11 +31858,6 @@ pub mod update_phone_number_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePhoneNumberSettingsInputOperationOutputAlias =
-    crate::operation::UpdatePhoneNumberSettings;
-#[doc(hidden)]
-pub type UpdatePhoneNumberSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePhoneNumberSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePhoneNumberSettings`](crate::operation::UpdatePhoneNumberSettings)>
     #[allow(unused_mut)]
@@ -32877,10 +32049,6 @@ pub mod update_proxy_session_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateProxySessionInputOperationOutputAlias = crate::operation::UpdateProxySession;
-#[doc(hidden)]
-pub type UpdateProxySessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProxySessionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProxySession`](crate::operation::UpdateProxySession)>
     #[allow(unused_mut)]
@@ -33076,10 +32244,6 @@ pub mod update_room_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRoomInputOperationOutputAlias = crate::operation::UpdateRoom;
-#[doc(hidden)]
-pub type UpdateRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoomInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoom`](crate::operation::UpdateRoom)>
     #[allow(unused_mut)]
@@ -33291,10 +32455,6 @@ pub mod update_room_membership_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRoomMembershipInputOperationOutputAlias = crate::operation::UpdateRoomMembership;
-#[doc(hidden)]
-pub type UpdateRoomMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoomMembershipInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoomMembership`](crate::operation::UpdateRoomMembership)>
     #[allow(unused_mut)]
@@ -33523,11 +32683,6 @@ pub mod update_sip_media_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSipMediaApplicationInputOperationOutputAlias =
-    crate::operation::UpdateSipMediaApplication;
-#[doc(hidden)]
-pub type UpdateSipMediaApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSipMediaApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSipMediaApplication`](crate::operation::UpdateSipMediaApplication)>
     #[allow(unused_mut)]
@@ -33736,12 +32891,6 @@ pub mod update_sip_media_application_call_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSipMediaApplicationCallInputOperationOutputAlias =
-    crate::operation::UpdateSipMediaApplicationCall;
-#[doc(hidden)]
-pub type UpdateSipMediaApplicationCallInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSipMediaApplicationCallInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSipMediaApplicationCall`](crate::operation::UpdateSipMediaApplicationCall)>
     #[allow(unused_mut)]
@@ -33962,10 +33111,6 @@ pub mod update_sip_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSipRuleInputOperationOutputAlias = crate::operation::UpdateSipRule;
-#[doc(hidden)]
-pub type UpdateSipRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSipRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSipRule`](crate::operation::UpdateSipRule)>
     #[allow(unused_mut)]
@@ -34176,10 +33321,6 @@ pub mod update_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserInputOperationOutputAlias = crate::operation::UpdateUser;
-#[doc(hidden)]
-pub type UpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUser`](crate::operation::UpdateUser)>
     #[allow(unused_mut)]
@@ -34379,10 +33520,6 @@ pub mod update_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserSettingsInputOperationOutputAlias = crate::operation::UpdateUserSettings;
-#[doc(hidden)]
-pub type UpdateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserSettings`](crate::operation::UpdateUserSettings)>
     #[allow(unused_mut)]
@@ -34582,10 +33719,6 @@ pub mod update_voice_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVoiceConnectorInputOperationOutputAlias = crate::operation::UpdateVoiceConnector;
-#[doc(hidden)]
-pub type UpdateVoiceConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVoiceConnectorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVoiceConnector`](crate::operation::UpdateVoiceConnector)>
     #[allow(unused_mut)]
@@ -34784,11 +33917,6 @@ pub mod update_voice_connector_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVoiceConnectorGroupInputOperationOutputAlias =
-    crate::operation::UpdateVoiceConnectorGroup;
-#[doc(hidden)]
-pub type UpdateVoiceConnectorGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVoiceConnectorGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVoiceConnectorGroup`](crate::operation::UpdateVoiceConnectorGroup)>
     #[allow(unused_mut)]
@@ -35026,10 +34154,6 @@ pub mod validate_e911_address_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ValidateE911AddressInputOperationOutputAlias = crate::operation::ValidateE911Address;
-#[doc(hidden)]
-pub type ValidateE911AddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidateE911AddressInput {
     /// Consumes the builder and constructs an Operation<[`ValidateE911Address`](crate::operation::ValidateE911Address)>
     #[allow(unused_mut)]

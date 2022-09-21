@@ -86,10 +86,6 @@ pub mod create_signaling_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSignalingChannelInputOperationOutputAlias = crate::operation::CreateSignalingChannel;
-#[doc(hidden)]
-pub type CreateSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateSignalingChannel`](crate::operation::CreateSignalingChannel)>
     #[allow(unused_mut)]
@@ -325,10 +321,6 @@ pub mod create_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamInputOperationOutputAlias = crate::operation::CreateStream;
-#[doc(hidden)]
-pub type CreateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStream`](crate::operation::CreateStream)>
     #[allow(unused_mut)]
@@ -482,10 +474,6 @@ pub mod delete_signaling_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSignalingChannelInputOperationOutputAlias = crate::operation::DeleteSignalingChannel;
-#[doc(hidden)]
-pub type DeleteSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSignalingChannel`](crate::operation::DeleteSignalingChannel)>
     #[allow(unused_mut)]
@@ -645,10 +633,6 @@ pub mod delete_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStreamInputOperationOutputAlias = crate::operation::DeleteStream;
-#[doc(hidden)]
-pub type DeleteStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStream`](crate::operation::DeleteStream)>
     #[allow(unused_mut)]
@@ -801,12 +785,6 @@ pub mod describe_image_generation_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeImageGenerationConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeImageGenerationConfiguration;
-#[doc(hidden)]
-pub type DescribeImageGenerationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImageGenerationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImageGenerationConfiguration`](crate::operation::DescribeImageGenerationConfiguration)>
     #[allow(unused_mut)]
@@ -959,12 +937,6 @@ pub mod describe_notification_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNotificationConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeNotificationConfiguration;
-#[doc(hidden)]
-pub type DescribeNotificationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationConfiguration`](crate::operation::DescribeNotificationConfiguration)>
     #[allow(unused_mut)]
@@ -1117,11 +1089,6 @@ pub mod describe_signaling_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSignalingChannelInputOperationOutputAlias =
-    crate::operation::DescribeSignalingChannel;
-#[doc(hidden)]
-pub type DescribeSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSignalingChannel`](crate::operation::DescribeSignalingChannel)>
     #[allow(unused_mut)]
@@ -1274,10 +1241,6 @@ pub mod describe_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
-#[doc(hidden)]
-pub type DescribeStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(unused_mut)]
@@ -1440,10 +1403,6 @@ pub mod get_data_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDataEndpointInputOperationOutputAlias = crate::operation::GetDataEndpoint;
-#[doc(hidden)]
-pub type GetDataEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetDataEndpoint`](crate::operation::GetDataEndpoint)>
     #[allow(unused_mut)]
@@ -1604,11 +1563,6 @@ pub mod get_signaling_channel_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSignalingChannelEndpointInputOperationOutputAlias =
-    crate::operation::GetSignalingChannelEndpoint;
-#[doc(hidden)]
-pub type GetSignalingChannelEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSignalingChannelEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetSignalingChannelEndpoint`](crate::operation::GetSignalingChannelEndpoint)>
     #[allow(unused_mut)]
@@ -1773,10 +1727,6 @@ pub mod list_signaling_channels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSignalingChannelsInputOperationOutputAlias = crate::operation::ListSignalingChannels;
-#[doc(hidden)]
-pub type ListSignalingChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSignalingChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListSignalingChannels`](crate::operation::ListSignalingChannels)>
     #[allow(unused_mut)]
@@ -1944,10 +1894,6 @@ pub mod list_streams_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
-#[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(unused_mut)]
@@ -2098,10 +2044,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2266,10 +2208,6 @@ pub mod list_tags_for_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForStreamInputOperationOutputAlias = crate::operation::ListTagsForStream;
-#[doc(hidden)]
-pub type ListTagsForStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForStreamInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForStream`](crate::operation::ListTagsForStream)>
     #[allow(unused_mut)]
@@ -2429,10 +2367,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2611,10 +2545,6 @@ pub mod tag_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagStreamInputOperationOutputAlias = crate::operation::TagStream;
-#[doc(hidden)]
-pub type TagStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagStreamInput {
     /// Consumes the builder and constructs an Operation<[`TagStream`](crate::operation::TagStream)>
     #[allow(unused_mut)]
@@ -2772,10 +2702,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2947,10 +2873,6 @@ pub mod untag_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagStreamInputOperationOutputAlias = crate::operation::UntagStream;
-#[doc(hidden)]
-pub type UntagStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagStreamInput {
     /// Consumes the builder and constructs an Operation<[`UntagStream`](crate::operation::UntagStream)>
     #[allow(unused_mut)]
@@ -3146,10 +3068,6 @@ pub mod update_data_retention_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDataRetentionInputOperationOutputAlias = crate::operation::UpdateDataRetention;
-#[doc(hidden)]
-pub type UpdateDataRetentionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataRetentionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataRetention`](crate::operation::UpdateDataRetention)>
     #[allow(unused_mut)]
@@ -3321,12 +3239,6 @@ pub mod update_image_generation_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateImageGenerationConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateImageGenerationConfiguration;
-#[doc(hidden)]
-pub type UpdateImageGenerationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateImageGenerationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateImageGenerationConfiguration`](crate::operation::UpdateImageGenerationConfiguration)>
     #[allow(unused_mut)]
@@ -3498,12 +3410,6 @@ pub mod update_notification_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNotificationConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateNotificationConfiguration;
-#[doc(hidden)]
-pub type UpdateNotificationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotificationConfiguration`](crate::operation::UpdateNotificationConfiguration)>
     #[allow(unused_mut)]
@@ -3676,10 +3582,6 @@ pub mod update_signaling_channel_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSignalingChannelInputOperationOutputAlias = crate::operation::UpdateSignalingChannel;
-#[doc(hidden)]
-pub type UpdateSignalingChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSignalingChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSignalingChannel`](crate::operation::UpdateSignalingChannel)>
     #[allow(unused_mut)]
@@ -3879,10 +3781,6 @@ pub mod update_stream_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStreamInputOperationOutputAlias = crate::operation::UpdateStream;
-#[doc(hidden)]
-pub type UpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStream`](crate::operation::UpdateStream)>
     #[allow(unused_mut)]

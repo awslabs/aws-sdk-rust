@@ -41,10 +41,6 @@ pub mod delete_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteObjectInputOperationOutputAlias = crate::operation::DeleteObject;
-#[doc(hidden)]
-pub type DeleteObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteObjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteObject`](crate::operation::DeleteObject)>
     #[allow(unused_mut)]
@@ -193,10 +189,6 @@ pub mod describe_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeObjectInputOperationOutputAlias = crate::operation::DescribeObject;
-#[doc(hidden)]
-pub type DescribeObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeObjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeObject`](crate::operation::DescribeObject)>
     #[allow(unused_mut)]
@@ -370,10 +362,6 @@ pub mod get_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetObjectInputOperationOutputAlias = crate::operation::GetObject;
-#[doc(hidden)]
-pub type GetObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetObjectInput {
     /// Consumes the builder and constructs an Operation<[`GetObject`](crate::operation::GetObject)>
     #[allow(unused_mut)]
@@ -550,10 +538,6 @@ pub mod list_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListItemsInputOperationOutputAlias = crate::operation::ListItems;
-#[doc(hidden)]
-pub type ListItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListItems`](crate::operation::ListItems)>
     #[allow(unused_mut)]
@@ -795,10 +779,6 @@ pub mod put_object_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutObjectInputOperationOutputAlias = crate::operation::PutObject;
-#[doc(hidden)]
-pub type PutObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutObjectInput {
     /// Consumes the builder and constructs an Operation<[`PutObject`](crate::operation::PutObject)>
     #[allow(unused_mut)]

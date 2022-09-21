@@ -90,10 +90,6 @@ pub mod get_entitlements_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEntitlementsInputOperationOutputAlias = crate::operation::GetEntitlements;
-#[doc(hidden)]
-pub type GetEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`GetEntitlements`](crate::operation::GetEntitlements)>
     #[allow(unused_mut)]

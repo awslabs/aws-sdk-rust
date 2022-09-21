@@ -52,10 +52,6 @@ pub mod batch_meter_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchMeterUsageInputOperationOutputAlias = crate::operation::BatchMeterUsage;
-#[doc(hidden)]
-pub type BatchMeterUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchMeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`BatchMeterUsage`](crate::operation::BatchMeterUsage)>
     #[allow(unused_mut)]
@@ -276,10 +272,6 @@ pub mod meter_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type MeterUsageInputOperationOutputAlias = crate::operation::MeterUsage;
-#[doc(hidden)]
-pub type MeterUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`MeterUsage`](crate::operation::MeterUsage)>
     #[allow(unused_mut)]
@@ -447,10 +439,6 @@ pub mod register_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterUsageInputOperationOutputAlias = crate::operation::RegisterUsage;
-#[doc(hidden)]
-pub type RegisterUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterUsageInput {
     /// Consumes the builder and constructs an Operation<[`RegisterUsage`](crate::operation::RegisterUsage)>
     #[allow(unused_mut)]
@@ -597,10 +585,6 @@ pub mod resolve_customer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResolveCustomerInputOperationOutputAlias = crate::operation::ResolveCustomer;
-#[doc(hidden)]
-pub type ResolveCustomerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveCustomerInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCustomer`](crate::operation::ResolveCustomer)>
     #[allow(unused_mut)]

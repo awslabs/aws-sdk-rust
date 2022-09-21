@@ -100,10 +100,6 @@ pub mod query_forecast_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryForecastInputOperationOutputAlias = crate::operation::QueryForecast;
-#[doc(hidden)]
-pub type QueryForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryForecastInput {
     /// Consumes the builder and constructs an Operation<[`QueryForecast`](crate::operation::QueryForecast)>
     #[allow(unused_mut)]
@@ -319,10 +315,6 @@ pub mod query_what_if_forecast_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryWhatIfForecastInputOperationOutputAlias = crate::operation::QueryWhatIfForecast;
-#[doc(hidden)]
-pub type QueryWhatIfForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryWhatIfForecastInput {
     /// Consumes the builder and constructs an Operation<[`QueryWhatIfForecast`](crate::operation::QueryWhatIfForecast)>
     #[allow(unused_mut)]

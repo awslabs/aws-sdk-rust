@@ -53,10 +53,6 @@ pub mod add_custom_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddCustomAttributesInputOperationOutputAlias = crate::operation::AddCustomAttributes;
-#[doc(hidden)]
-pub type AddCustomAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCustomAttributesInput {
     /// Consumes the builder and constructs an Operation<[`AddCustomAttributes`](crate::operation::AddCustomAttributes)>
     #[allow(unused_mut)]
@@ -224,10 +220,6 @@ pub mod admin_add_user_to_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminAddUserToGroupInputOperationOutputAlias = crate::operation::AdminAddUserToGroup;
-#[doc(hidden)]
-pub type AdminAddUserToGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminAddUserToGroupInput {
     /// Consumes the builder and constructs an Operation<[`AdminAddUserToGroup`](crate::operation::AdminAddUserToGroup)>
     #[allow(unused_mut)]
@@ -432,10 +424,6 @@ pub mod admin_confirm_sign_up_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminConfirmSignUpInputOperationOutputAlias = crate::operation::AdminConfirmSignUp;
-#[doc(hidden)]
-pub type AdminConfirmSignUpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminConfirmSignUpInput {
     /// Consumes the builder and constructs an Operation<[`AdminConfirmSignUp`](crate::operation::AdminConfirmSignUp)>
     #[allow(unused_mut)]
@@ -772,10 +760,6 @@ pub mod admin_create_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminCreateUserInputOperationOutputAlias = crate::operation::AdminCreateUser;
-#[doc(hidden)]
-pub type AdminCreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminCreateUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminCreateUser`](crate::operation::AdminCreateUser)>
     #[allow(unused_mut)]
@@ -931,10 +915,6 @@ pub mod admin_delete_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminDeleteUserInputOperationOutputAlias = crate::operation::AdminDeleteUser;
-#[doc(hidden)]
-pub type AdminDeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminDeleteUser`](crate::operation::AdminDeleteUser)>
     #[allow(unused_mut)]
@@ -1115,11 +1095,6 @@ pub mod admin_delete_user_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminDeleteUserAttributesInputOperationOutputAlias =
-    crate::operation::AdminDeleteUserAttributes;
-#[doc(hidden)]
-pub type AdminDeleteUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDeleteUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`AdminDeleteUserAttributes`](crate::operation::AdminDeleteUserAttributes)>
     #[allow(unused_mut)]
@@ -1282,11 +1257,6 @@ pub mod admin_disable_provider_for_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminDisableProviderForUserInputOperationOutputAlias =
-    crate::operation::AdminDisableProviderForUser;
-#[doc(hidden)]
-pub type AdminDisableProviderForUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDisableProviderForUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminDisableProviderForUser`](crate::operation::AdminDisableProviderForUser)>
     #[allow(unused_mut)]
@@ -1441,10 +1411,6 @@ pub mod admin_disable_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminDisableUserInputOperationOutputAlias = crate::operation::AdminDisableUser;
-#[doc(hidden)]
-pub type AdminDisableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDisableUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminDisableUser`](crate::operation::AdminDisableUser)>
     #[allow(unused_mut)]
@@ -1600,10 +1566,6 @@ pub mod admin_enable_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminEnableUserInputOperationOutputAlias = crate::operation::AdminEnableUser;
-#[doc(hidden)]
-pub type AdminEnableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminEnableUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminEnableUser`](crate::operation::AdminEnableUser)>
     #[allow(unused_mut)]
@@ -1771,10 +1733,6 @@ pub mod admin_forget_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminForgetDeviceInputOperationOutputAlias = crate::operation::AdminForgetDevice;
-#[doc(hidden)]
-pub type AdminForgetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminForgetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`AdminForgetDevice`](crate::operation::AdminForgetDevice)>
     #[allow(unused_mut)]
@@ -1942,10 +1900,6 @@ pub mod admin_get_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminGetDeviceInputOperationOutputAlias = crate::operation::AdminGetDevice;
-#[doc(hidden)]
-pub type AdminGetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminGetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`AdminGetDevice`](crate::operation::AdminGetDevice)>
     #[allow(unused_mut)]
@@ -2101,10 +2055,6 @@ pub mod admin_get_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminGetUserInputOperationOutputAlias = crate::operation::AdminGetUser;
-#[doc(hidden)]
-pub type AdminGetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminGetUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminGetUser`](crate::operation::AdminGetUser)>
     #[allow(unused_mut)]
@@ -2449,10 +2399,6 @@ pub mod admin_initiate_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminInitiateAuthInputOperationOutputAlias = crate::operation::AdminInitiateAuth;
-#[doc(hidden)]
-pub type AdminInitiateAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminInitiateAuthInput {
     /// Consumes the builder and constructs an Operation<[`AdminInitiateAuth`](crate::operation::AdminInitiateAuth)>
     #[allow(unused_mut)]
@@ -2644,11 +2590,6 @@ pub mod admin_link_provider_for_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminLinkProviderForUserInputOperationOutputAlias =
-    crate::operation::AdminLinkProviderForUser;
-#[doc(hidden)]
-pub type AdminLinkProviderForUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminLinkProviderForUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminLinkProviderForUser`](crate::operation::AdminLinkProviderForUser)>
     #[allow(unused_mut)]
@@ -2833,10 +2774,6 @@ pub mod admin_list_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminListDevicesInputOperationOutputAlias = crate::operation::AdminListDevices;
-#[doc(hidden)]
-pub type AdminListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`AdminListDevices`](crate::operation::AdminListDevices)>
     #[allow(unused_mut)]
@@ -3016,10 +2953,6 @@ pub mod admin_list_groups_for_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminListGroupsForUserInputOperationOutputAlias = crate::operation::AdminListGroupsForUser;
-#[doc(hidden)]
-pub type AdminListGroupsForUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminListGroupsForUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminListGroupsForUser`](crate::operation::AdminListGroupsForUser)>
     #[allow(unused_mut)]
@@ -3203,11 +3136,6 @@ pub mod admin_list_user_auth_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminListUserAuthEventsInputOperationOutputAlias =
-    crate::operation::AdminListUserAuthEvents;
-#[doc(hidden)]
-pub type AdminListUserAuthEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminListUserAuthEventsInput {
     /// Consumes the builder and constructs an Operation<[`AdminListUserAuthEvents`](crate::operation::AdminListUserAuthEvents)>
     #[allow(unused_mut)]
@@ -3379,11 +3307,6 @@ pub mod admin_remove_user_from_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminRemoveUserFromGroupInputOperationOutputAlias =
-    crate::operation::AdminRemoveUserFromGroup;
-#[doc(hidden)]
-pub type AdminRemoveUserFromGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminRemoveUserFromGroupInput {
     /// Consumes the builder and constructs an Operation<[`AdminRemoveUserFromGroup`](crate::operation::AdminRemoveUserFromGroup)>
     #[allow(unused_mut)]
@@ -3588,10 +3511,6 @@ pub mod admin_reset_user_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminResetUserPasswordInputOperationOutputAlias = crate::operation::AdminResetUserPassword;
-#[doc(hidden)]
-pub type AdminResetUserPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminResetUserPasswordInput {
     /// Consumes the builder and constructs an Operation<[`AdminResetUserPassword`](crate::operation::AdminResetUserPassword)>
     #[allow(unused_mut)]
@@ -3930,11 +3849,6 @@ pub mod admin_respond_to_auth_challenge_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminRespondToAuthChallengeInputOperationOutputAlias =
-    crate::operation::AdminRespondToAuthChallenge;
-#[doc(hidden)]
-pub type AdminRespondToAuthChallengeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminRespondToAuthChallengeInput {
     /// Consumes the builder and constructs an Operation<[`AdminRespondToAuthChallenge`](crate::operation::AdminRespondToAuthChallenge)>
     #[allow(unused_mut)]
@@ -4125,11 +4039,6 @@ pub mod admin_set_user_mfa_preference_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminSetUserMfaPreferenceInputOperationOutputAlias =
-    crate::operation::AdminSetUserMFAPreference;
-#[doc(hidden)]
-pub type AdminSetUserMfaPreferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminSetUserMfaPreferenceInput {
     /// Consumes the builder and constructs an Operation<[`AdminSetUserMFAPreference`](crate::operation::AdminSetUserMFAPreference)>
     #[allow(unused_mut)]
@@ -4308,10 +4217,6 @@ pub mod admin_set_user_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminSetUserPasswordInputOperationOutputAlias = crate::operation::AdminSetUserPassword;
-#[doc(hidden)]
-pub type AdminSetUserPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminSetUserPasswordInput {
     /// Consumes the builder and constructs an Operation<[`AdminSetUserPassword`](crate::operation::AdminSetUserPassword)>
     #[allow(unused_mut)]
@@ -4490,10 +4395,6 @@ pub mod admin_set_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminSetUserSettingsInputOperationOutputAlias = crate::operation::AdminSetUserSettings;
-#[doc(hidden)]
-pub type AdminSetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminSetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AdminSetUserSettings`](crate::operation::AdminSetUserSettings)>
     #[allow(unused_mut)]
@@ -4680,12 +4581,6 @@ pub mod admin_update_auth_event_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminUpdateAuthEventFeedbackInputOperationOutputAlias =
-    crate::operation::AdminUpdateAuthEventFeedback;
-#[doc(hidden)]
-pub type AdminUpdateAuthEventFeedbackInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUpdateAuthEventFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`AdminUpdateAuthEventFeedback`](crate::operation::AdminUpdateAuthEventFeedback)>
     #[allow(unused_mut)]
@@ -4873,11 +4768,6 @@ pub mod admin_update_device_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminUpdateDeviceStatusInputOperationOutputAlias =
-    crate::operation::AdminUpdateDeviceStatus;
-#[doc(hidden)]
-pub type AdminUpdateDeviceStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUpdateDeviceStatusInput {
     /// Consumes the builder and constructs an Operation<[`AdminUpdateDeviceStatus`](crate::operation::AdminUpdateDeviceStatus)>
     #[allow(unused_mut)]
@@ -5111,11 +5001,6 @@ pub mod admin_update_user_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminUpdateUserAttributesInputOperationOutputAlias =
-    crate::operation::AdminUpdateUserAttributes;
-#[doc(hidden)]
-pub type AdminUpdateUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUpdateUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`AdminUpdateUserAttributes`](crate::operation::AdminUpdateUserAttributes)>
     #[allow(unused_mut)]
@@ -5273,10 +5158,6 @@ pub mod admin_user_global_sign_out_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AdminUserGlobalSignOutInputOperationOutputAlias = crate::operation::AdminUserGlobalSignOut;
-#[doc(hidden)]
-pub type AdminUserGlobalSignOutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUserGlobalSignOutInput {
     /// Consumes the builder and constructs an Operation<[`AdminUserGlobalSignOut`](crate::operation::AdminUserGlobalSignOut)>
     #[allow(unused_mut)]
@@ -5434,10 +5315,6 @@ pub mod associate_software_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateSoftwareTokenInputOperationOutputAlias = crate::operation::AssociateSoftwareToken;
-#[doc(hidden)]
-pub type AssociateSoftwareTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSoftwareTokenInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSoftwareToken`](crate::operation::AssociateSoftwareToken)>
     #[allow(unused_mut)]
@@ -5613,10 +5490,6 @@ pub mod change_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ChangePasswordInputOperationOutputAlias = crate::operation::ChangePassword;
-#[doc(hidden)]
-pub type ChangePasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ChangePasswordInput {
     /// Consumes the builder and constructs an Operation<[`ChangePassword`](crate::operation::ChangePassword)>
     #[allow(unused_mut)]
@@ -5804,10 +5677,6 @@ pub mod confirm_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmDeviceInputOperationOutputAlias = crate::operation::ConfirmDevice;
-#[doc(hidden)]
-pub type ConfirmDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmDevice`](crate::operation::ConfirmDevice)>
     #[allow(unused_mut)]
@@ -6079,10 +5948,6 @@ pub mod confirm_forgot_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmForgotPasswordInputOperationOutputAlias = crate::operation::ConfirmForgotPassword;
-#[doc(hidden)]
-pub type ConfirmForgotPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmForgotPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmForgotPassword`](crate::operation::ConfirmForgotPassword)>
     #[allow(unused_mut)]
@@ -6357,10 +6222,6 @@ pub mod confirm_sign_up_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ConfirmSignUpInputOperationOutputAlias = crate::operation::ConfirmSignUp;
-#[doc(hidden)]
-pub type ConfirmSignUpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmSignUpInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmSignUp`](crate::operation::ConfirmSignUp)>
     #[allow(unused_mut)]
@@ -6557,10 +6418,6 @@ pub mod create_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
-#[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(unused_mut)]
@@ -6907,10 +6764,6 @@ pub mod create_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateIdentityProviderInputOperationOutputAlias = crate::operation::CreateIdentityProvider;
-#[doc(hidden)]
-pub type CreateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`CreateIdentityProvider`](crate::operation::CreateIdentityProvider)>
     #[allow(unused_mut)]
@@ -7102,10 +6955,6 @@ pub mod create_resource_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResourceServerInputOperationOutputAlias = crate::operation::CreateResourceServer;
-#[doc(hidden)]
-pub type CreateResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceServer`](crate::operation::CreateResourceServer)>
     #[allow(unused_mut)]
@@ -7278,10 +7127,6 @@ pub mod create_user_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserImportJobInputOperationOutputAlias = crate::operation::CreateUserImportJob;
-#[doc(hidden)]
-pub type CreateUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserImportJob`](crate::operation::CreateUserImportJob)>
     #[allow(unused_mut)]
@@ -7823,10 +7668,6 @@ pub mod create_user_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserPoolInputOperationOutputAlias = crate::operation::CreateUserPool;
-#[doc(hidden)]
-pub type CreateUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserPool`](crate::operation::CreateUserPool)>
     #[allow(unused_mut)]
@@ -8495,10 +8336,6 @@ pub mod create_user_pool_client_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserPoolClientInputOperationOutputAlias = crate::operation::CreateUserPoolClient;
-#[doc(hidden)]
-pub type CreateUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserPoolClient`](crate::operation::CreateUserPoolClient)>
     #[allow(unused_mut)]
@@ -8675,10 +8512,6 @@ pub mod create_user_pool_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserPoolDomainInputOperationOutputAlias = crate::operation::CreateUserPoolDomain;
-#[doc(hidden)]
-pub type CreateUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserPoolDomain`](crate::operation::CreateUserPoolDomain)>
     #[allow(unused_mut)]
@@ -8836,10 +8669,6 @@ pub mod delete_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
-#[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(unused_mut)]
@@ -8998,10 +8827,6 @@ pub mod delete_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIdentityProviderInputOperationOutputAlias = crate::operation::DeleteIdentityProvider;
-#[doc(hidden)]
-pub type DeleteIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityProvider`](crate::operation::DeleteIdentityProvider)>
     #[allow(unused_mut)]
@@ -9159,10 +8984,6 @@ pub mod delete_resource_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourceServerInputOperationOutputAlias = crate::operation::DeleteResourceServer;
-#[doc(hidden)]
-pub type DeleteResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceServer`](crate::operation::DeleteResourceServer)>
     #[allow(unused_mut)]
@@ -9307,10 +9128,6 @@ pub mod delete_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
-#[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(unused_mut)]
@@ -9478,10 +9295,6 @@ pub mod delete_user_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserAttributesInputOperationOutputAlias = crate::operation::DeleteUserAttributes;
-#[doc(hidden)]
-pub type DeleteUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserAttributes`](crate::operation::DeleteUserAttributes)>
     #[allow(unused_mut)]
@@ -9628,10 +9441,6 @@ pub mod delete_user_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserPoolInputOperationOutputAlias = crate::operation::DeleteUserPool;
-#[doc(hidden)]
-pub type DeleteUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserPool`](crate::operation::DeleteUserPool)>
     #[allow(unused_mut)]
@@ -9787,10 +9596,6 @@ pub mod delete_user_pool_client_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserPoolClientInputOperationOutputAlias = crate::operation::DeleteUserPoolClient;
-#[doc(hidden)]
-pub type DeleteUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserPoolClient`](crate::operation::DeleteUserPoolClient)>
     #[allow(unused_mut)]
@@ -9948,10 +9753,6 @@ pub mod delete_user_pool_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserPoolDomainInputOperationOutputAlias = crate::operation::DeleteUserPoolDomain;
-#[doc(hidden)]
-pub type DeleteUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserPoolDomain`](crate::operation::DeleteUserPoolDomain)>
     #[allow(unused_mut)]
@@ -10114,11 +9915,6 @@ pub mod describe_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIdentityProviderInputOperationOutputAlias =
-    crate::operation::DescribeIdentityProvider;
-#[doc(hidden)]
-pub type DescribeIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityProvider`](crate::operation::DescribeIdentityProvider)>
     #[allow(unused_mut)]
@@ -10276,10 +10072,6 @@ pub mod describe_resource_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeResourceServerInputOperationOutputAlias = crate::operation::DescribeResourceServer;
-#[doc(hidden)]
-pub type DescribeResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourceServer`](crate::operation::DescribeResourceServer)>
     #[allow(unused_mut)]
@@ -10439,11 +10231,6 @@ pub mod describe_risk_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRiskConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeRiskConfiguration;
-#[doc(hidden)]
-pub type DescribeRiskConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRiskConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRiskConfiguration`](crate::operation::DescribeRiskConfiguration)>
     #[allow(unused_mut)]
@@ -10601,10 +10388,6 @@ pub mod describe_user_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserImportJobInputOperationOutputAlias = crate::operation::DescribeUserImportJob;
-#[doc(hidden)]
-pub type DescribeUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserImportJob`](crate::operation::DescribeUserImportJob)>
     #[allow(unused_mut)]
@@ -10750,10 +10533,6 @@ pub mod describe_user_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserPoolInputOperationOutputAlias = crate::operation::DescribeUserPool;
-#[doc(hidden)]
-pub type DescribeUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserPool`](crate::operation::DescribeUserPool)>
     #[allow(unused_mut)]
@@ -10909,10 +10688,6 @@ pub mod describe_user_pool_client_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserPoolClientInputOperationOutputAlias = crate::operation::DescribeUserPoolClient;
-#[doc(hidden)]
-pub type DescribeUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserPoolClient`](crate::operation::DescribeUserPoolClient)>
     #[allow(unused_mut)]
@@ -11058,10 +10833,6 @@ pub mod describe_user_pool_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserPoolDomainInputOperationOutputAlias = crate::operation::DescribeUserPoolDomain;
-#[doc(hidden)]
-pub type DescribeUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserPoolDomain`](crate::operation::DescribeUserPoolDomain)>
     #[allow(unused_mut)]
@@ -11219,10 +10990,6 @@ pub mod forget_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ForgetDeviceInputOperationOutputAlias = crate::operation::ForgetDevice;
-#[doc(hidden)]
-pub type ForgetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ForgetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ForgetDevice`](crate::operation::ForgetDevice)>
     #[allow(unused_mut)]
@@ -11467,10 +11234,6 @@ pub mod forgot_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ForgotPasswordInputOperationOutputAlias = crate::operation::ForgotPassword;
-#[doc(hidden)]
-pub type ForgotPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ForgotPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ForgotPassword`](crate::operation::ForgotPassword)>
     #[allow(unused_mut)]
@@ -11615,10 +11378,6 @@ pub mod get_csv_header_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCsvHeaderInputOperationOutputAlias = crate::operation::GetCSVHeader;
-#[doc(hidden)]
-pub type GetCsvHeaderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCsvHeaderInput {
     /// Consumes the builder and constructs an Operation<[`GetCSVHeader`](crate::operation::GetCSVHeader)>
     #[allow(unused_mut)]
@@ -11773,10 +11532,6 @@ pub mod get_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceInputOperationOutputAlias = crate::operation::GetDevice;
-#[doc(hidden)]
-pub type GetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetDevice`](crate::operation::GetDevice)>
     #[allow(unused_mut)]
@@ -11929,10 +11684,6 @@ pub mod get_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
-#[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(unused_mut)]
@@ -12091,12 +11842,6 @@ pub mod get_identity_provider_by_identifier_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetIdentityProviderByIdentifierInputOperationOutputAlias =
-    crate::operation::GetIdentityProviderByIdentifier;
-#[doc(hidden)]
-pub type GetIdentityProviderByIdentifierInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityProviderByIdentifierInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityProviderByIdentifier`](crate::operation::GetIdentityProviderByIdentifier)>
     #[allow(unused_mut)]
@@ -12239,10 +11984,6 @@ pub mod get_signing_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSigningCertificateInputOperationOutputAlias = crate::operation::GetSigningCertificate;
-#[doc(hidden)]
-pub type GetSigningCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningCertificate`](crate::operation::GetSigningCertificate)>
     #[allow(unused_mut)]
@@ -12400,10 +12141,6 @@ pub mod get_ui_customization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUiCustomizationInputOperationOutputAlias = crate::operation::GetUICustomization;
-#[doc(hidden)]
-pub type GetUiCustomizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUiCustomizationInput {
     /// Consumes the builder and constructs an Operation<[`GetUICustomization`](crate::operation::GetUICustomization)>
     #[allow(unused_mut)]
@@ -12546,10 +12283,6 @@ pub mod get_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserInputOperationOutputAlias = crate::operation::GetUser;
-#[doc(hidden)]
-pub type GetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserInput {
     /// Consumes the builder and constructs an Operation<[`GetUser`](crate::operation::GetUser)>
     #[allow(unused_mut)]
@@ -12756,12 +12489,6 @@ pub mod get_user_attribute_verification_code_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserAttributeVerificationCodeInputOperationOutputAlias =
-    crate::operation::GetUserAttributeVerificationCode;
-#[doc(hidden)]
-pub type GetUserAttributeVerificationCodeInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserAttributeVerificationCodeInput {
     /// Consumes the builder and constructs an Operation<[`GetUserAttributeVerificationCode`](crate::operation::GetUserAttributeVerificationCode)>
     #[allow(unused_mut)]
@@ -12905,10 +12632,6 @@ pub mod get_user_pool_mfa_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetUserPoolMfaConfigInputOperationOutputAlias = crate::operation::GetUserPoolMfaConfig;
-#[doc(hidden)]
-pub type GetUserPoolMfaConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserPoolMfaConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetUserPoolMfaConfig`](crate::operation::GetUserPoolMfaConfig)>
     #[allow(unused_mut)]
@@ -13054,10 +12777,6 @@ pub mod global_sign_out_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GlobalSignOutInputOperationOutputAlias = crate::operation::GlobalSignOut;
-#[doc(hidden)]
-pub type GlobalSignOutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GlobalSignOutInput {
     /// Consumes the builder and constructs an Operation<[`GlobalSignOut`](crate::operation::GlobalSignOut)>
     #[allow(unused_mut)]
@@ -13388,10 +13107,6 @@ pub mod initiate_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitiateAuthInputOperationOutputAlias = crate::operation::InitiateAuth;
-#[doc(hidden)]
-pub type InitiateAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateAuthInput {
     /// Consumes the builder and constructs an Operation<[`InitiateAuth`](crate::operation::InitiateAuth)>
     #[allow(unused_mut)]
@@ -13563,10 +13278,6 @@ pub mod list_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
-#[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(unused_mut)]
@@ -13733,10 +13444,6 @@ pub mod list_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
-#[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(unused_mut)]
@@ -13904,10 +13611,6 @@ pub mod list_identity_providers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentityProvidersInputOperationOutputAlias = crate::operation::ListIdentityProviders;
-#[doc(hidden)]
-pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityProviders`](crate::operation::ListIdentityProviders)>
     #[allow(unused_mut)]
@@ -14077,10 +13780,6 @@ pub mod list_resource_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourceServersInputOperationOutputAlias = crate::operation::ListResourceServers;
-#[doc(hidden)]
-pub type ListResourceServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceServersInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceServers`](crate::operation::ListResourceServers)>
     #[allow(unused_mut)]
@@ -14224,10 +13923,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -14400,10 +14095,6 @@ pub mod list_user_import_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUserImportJobsInputOperationOutputAlias = crate::operation::ListUserImportJobs;
-#[doc(hidden)]
-pub type ListUserImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserImportJobs`](crate::operation::ListUserImportJobs)>
     #[allow(unused_mut)]
@@ -14571,10 +14262,6 @@ pub mod list_user_pool_clients_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUserPoolClientsInputOperationOutputAlias = crate::operation::ListUserPoolClients;
-#[doc(hidden)]
-pub type ListUserPoolClientsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserPoolClientsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserPoolClients`](crate::operation::ListUserPoolClients)>
     #[allow(unused_mut)]
@@ -14732,10 +14419,6 @@ pub mod list_user_pools_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUserPoolsInputOperationOutputAlias = crate::operation::ListUserPools;
-#[doc(hidden)]
-pub type ListUserPoolsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserPoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserPools`](crate::operation::ListUserPools)>
     #[allow(unused_mut)]
@@ -14986,10 +14669,6 @@ pub mod list_users_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
-#[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(unused_mut)]
@@ -15167,10 +14846,6 @@ pub mod list_users_in_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUsersInGroupInputOperationOutputAlias = crate::operation::ListUsersInGroup;
-#[doc(hidden)]
-pub type ListUsersInGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListUsersInGroup`](crate::operation::ListUsersInGroup)>
     #[allow(unused_mut)]
@@ -15415,10 +15090,6 @@ pub mod resend_confirmation_code_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResendConfirmationCodeInputOperationOutputAlias = crate::operation::ResendConfirmationCode;
-#[doc(hidden)]
-pub type ResendConfirmationCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResendConfirmationCodeInput {
     /// Consumes the builder and constructs an Operation<[`ResendConfirmationCode`](crate::operation::ResendConfirmationCode)>
     #[allow(unused_mut)]
@@ -15730,10 +15401,6 @@ pub mod respond_to_auth_challenge_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RespondToAuthChallengeInputOperationOutputAlias = crate::operation::RespondToAuthChallenge;
-#[doc(hidden)]
-pub type RespondToAuthChallengeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondToAuthChallengeInput {
     /// Consumes the builder and constructs an Operation<[`RespondToAuthChallenge`](crate::operation::RespondToAuthChallenge)>
     #[allow(unused_mut)]
@@ -15907,10 +15574,6 @@ pub mod revoke_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeTokenInputOperationOutputAlias = crate::operation::RevokeToken;
-#[doc(hidden)]
-pub type RevokeTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeTokenInput {
     /// Consumes the builder and constructs an Operation<[`RevokeToken`](crate::operation::RevokeToken)>
     #[allow(unused_mut)]
@@ -16126,10 +15789,6 @@ pub mod set_risk_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetRiskConfigurationInputOperationOutputAlias = crate::operation::SetRiskConfiguration;
-#[doc(hidden)]
-pub type SetRiskConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetRiskConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`SetRiskConfiguration`](crate::operation::SetRiskConfiguration)>
     #[allow(unused_mut)]
@@ -16314,10 +15973,6 @@ pub mod set_ui_customization_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetUiCustomizationInputOperationOutputAlias = crate::operation::SetUICustomization;
-#[doc(hidden)]
-pub type SetUiCustomizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUiCustomizationInput {
     /// Consumes the builder and constructs an Operation<[`SetUICustomization`](crate::operation::SetUICustomization)>
     #[allow(unused_mut)]
@@ -16495,10 +16150,6 @@ pub mod set_user_mfa_preference_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetUserMfaPreferenceInputOperationOutputAlias = crate::operation::SetUserMFAPreference;
-#[doc(hidden)]
-pub type SetUserMfaPreferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUserMfaPreferenceInput {
     /// Consumes the builder and constructs an Operation<[`SetUserMFAPreference`](crate::operation::SetUserMFAPreference)>
     #[allow(unused_mut)]
@@ -16703,10 +16354,6 @@ pub mod set_user_pool_mfa_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetUserPoolMfaConfigInputOperationOutputAlias = crate::operation::SetUserPoolMfaConfig;
-#[doc(hidden)]
-pub type SetUserPoolMfaConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUserPoolMfaConfigInput {
     /// Consumes the builder and constructs an Operation<[`SetUserPoolMfaConfig`](crate::operation::SetUserPoolMfaConfig)>
     #[allow(unused_mut)]
@@ -16873,10 +16520,6 @@ pub mod set_user_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetUserSettingsInputOperationOutputAlias = crate::operation::SetUserSettings;
-#[doc(hidden)]
-pub type SetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`SetUserSettings`](crate::operation::SetUserSettings)>
     #[allow(unused_mut)]
@@ -17177,10 +16820,6 @@ pub mod sign_up_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SignUpInputOperationOutputAlias = crate::operation::SignUp;
-#[doc(hidden)]
-pub type SignUpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SignUpInput {
     /// Consumes the builder and constructs an Operation<[`SignUp`](crate::operation::SignUp)>
     #[allow(unused_mut)]
@@ -17335,10 +16974,6 @@ pub mod start_user_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartUserImportJobInputOperationOutputAlias = crate::operation::StartUserImportJob;
-#[doc(hidden)]
-pub type StartUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartUserImportJob`](crate::operation::StartUserImportJob)>
     #[allow(unused_mut)]
@@ -17494,10 +17129,6 @@ pub mod stop_user_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopUserImportJobInputOperationOutputAlias = crate::operation::StopUserImportJob;
-#[doc(hidden)]
-pub type StopUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StopUserImportJob`](crate::operation::StopUserImportJob)>
     #[allow(unused_mut)]
@@ -17670,10 +17301,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -17838,10 +17465,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -18041,11 +17664,6 @@ pub mod update_auth_event_feedback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAuthEventFeedbackInputOperationOutputAlias =
-    crate::operation::UpdateAuthEventFeedback;
-#[doc(hidden)]
-pub type UpdateAuthEventFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAuthEventFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAuthEventFeedback`](crate::operation::UpdateAuthEventFeedback)>
     #[allow(unused_mut)]
@@ -18222,10 +17840,6 @@ pub mod update_device_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDeviceStatusInputOperationOutputAlias = crate::operation::UpdateDeviceStatus;
-#[doc(hidden)]
-pub type UpdateDeviceStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceStatus`](crate::operation::UpdateDeviceStatus)>
     #[allow(unused_mut)]
@@ -18417,10 +18031,6 @@ pub mod update_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGroupInputOperationOutputAlias = crate::operation::UpdateGroup;
-#[doc(hidden)]
-pub type UpdateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroup`](crate::operation::UpdateGroup)>
     #[allow(unused_mut)]
@@ -18658,10 +18268,6 @@ pub mod update_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateIdentityProviderInputOperationOutputAlias = crate::operation::UpdateIdentityProvider;
-#[doc(hidden)]
-pub type UpdateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityProvider`](crate::operation::UpdateIdentityProvider)>
     #[allow(unused_mut)]
@@ -18853,10 +18459,6 @@ pub mod update_resource_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResourceServerInputOperationOutputAlias = crate::operation::UpdateResourceServer;
-#[doc(hidden)]
-pub type UpdateResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceServer`](crate::operation::UpdateResourceServer)>
     #[allow(unused_mut)]
@@ -19074,10 +18676,6 @@ pub mod update_user_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserAttributesInputOperationOutputAlias = crate::operation::UpdateUserAttributes;
-#[doc(hidden)]
-pub type UpdateUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserAttributes`](crate::operation::UpdateUserAttributes)>
     #[allow(unused_mut)]
@@ -19536,10 +19134,6 @@ pub mod update_user_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserPoolInputOperationOutputAlias = crate::operation::UpdateUserPool;
-#[doc(hidden)]
-pub type UpdateUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPool`](crate::operation::UpdateUserPool)>
     #[allow(unused_mut)]
@@ -20148,10 +19742,6 @@ pub mod update_user_pool_client_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserPoolClientInputOperationOutputAlias = crate::operation::UpdateUserPoolClient;
-#[doc(hidden)]
-pub type UpdateUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPoolClient`](crate::operation::UpdateUserPoolClient)>
     #[allow(unused_mut)]
@@ -20326,10 +19916,6 @@ pub mod update_user_pool_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserPoolDomainInputOperationOutputAlias = crate::operation::UpdateUserPoolDomain;
-#[doc(hidden)]
-pub type UpdateUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPoolDomain`](crate::operation::UpdateUserPoolDomain)>
     #[allow(unused_mut)]
@@ -20514,10 +20100,6 @@ pub mod verify_software_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type VerifySoftwareTokenInputOperationOutputAlias = crate::operation::VerifySoftwareToken;
-#[doc(hidden)]
-pub type VerifySoftwareTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifySoftwareTokenInput {
     /// Consumes the builder and constructs an Operation<[`VerifySoftwareToken`](crate::operation::VerifySoftwareToken)>
     #[allow(unused_mut)]
@@ -20688,10 +20270,6 @@ pub mod verify_user_attribute_input {
         }
     }
 }
-#[doc(hidden)]
-pub type VerifyUserAttributeInputOperationOutputAlias = crate::operation::VerifyUserAttribute;
-#[doc(hidden)]
-pub type VerifyUserAttributeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyUserAttributeInput {
     /// Consumes the builder and constructs an Operation<[`VerifyUserAttribute`](crate::operation::VerifyUserAttribute)>
     #[allow(unused_mut)]

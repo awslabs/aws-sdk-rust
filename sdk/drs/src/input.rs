@@ -65,11 +65,6 @@ pub mod create_extended_source_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateExtendedSourceServerInputOperationOutputAlias =
-    crate::operation::CreateExtendedSourceServer;
-#[doc(hidden)]
-pub type CreateExtendedSourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExtendedSourceServerInput {
     /// Consumes the builder and constructs an Operation<[`CreateExtendedSourceServer`](crate::operation::CreateExtendedSourceServer)>
     #[allow(unused_mut)]
@@ -465,12 +460,6 @@ pub mod create_replication_configuration_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateReplicationConfigurationTemplateInputOperationOutputAlias =
-    crate::operation::CreateReplicationConfigurationTemplate;
-#[doc(hidden)]
-pub type CreateReplicationConfigurationTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationConfigurationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationConfigurationTemplate`](crate::operation::CreateReplicationConfigurationTemplate)>
     #[allow(unused_mut)]
@@ -608,10 +597,6 @@ pub mod delete_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
-#[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(unused_mut)]
@@ -751,10 +736,6 @@ pub mod delete_recovery_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRecoveryInstanceInputOperationOutputAlias = crate::operation::DeleteRecoveryInstance;
-#[doc(hidden)]
-pub type DeleteRecoveryInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecoveryInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecoveryInstance`](crate::operation::DeleteRecoveryInstance)>
     #[allow(unused_mut)]
@@ -903,12 +884,6 @@ pub mod delete_replication_configuration_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteReplicationConfigurationTemplateInputOperationOutputAlias =
-    crate::operation::DeleteReplicationConfigurationTemplate;
-#[doc(hidden)]
-pub type DeleteReplicationConfigurationTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationConfigurationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationConfigurationTemplate`](crate::operation::DeleteReplicationConfigurationTemplate)>
     #[allow(unused_mut)]
@@ -1050,10 +1025,6 @@ pub mod delete_source_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSourceServerInputOperationOutputAlias = crate::operation::DeleteSourceServer;
-#[doc(hidden)]
-pub type DeleteSourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSourceServerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSourceServer`](crate::operation::DeleteSourceServer)>
     #[allow(unused_mut)]
@@ -1216,10 +1187,6 @@ pub mod describe_job_log_items_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobLogItemsInputOperationOutputAlias = crate::operation::DescribeJobLogItems;
-#[doc(hidden)]
-pub type DescribeJobLogItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobLogItemsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobLogItems`](crate::operation::DescribeJobLogItems)>
     #[allow(unused_mut)]
@@ -1387,10 +1354,6 @@ pub mod describe_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeJobsInputOperationOutputAlias = crate::operation::DescribeJobs;
-#[doc(hidden)]
-pub type DescribeJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobs`](crate::operation::DescribeJobs)>
     #[allow(unused_mut)]
@@ -1562,11 +1525,6 @@ pub mod describe_recovery_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRecoveryInstancesInputOperationOutputAlias =
-    crate::operation::DescribeRecoveryInstances;
-#[doc(hidden)]
-pub type DescribeRecoveryInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecoveryInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecoveryInstances`](crate::operation::DescribeRecoveryInstances)>
     #[allow(unused_mut)]
@@ -1770,11 +1728,6 @@ pub mod describe_recovery_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRecoverySnapshotsInputOperationOutputAlias =
-    crate::operation::DescribeRecoverySnapshots;
-#[doc(hidden)]
-pub type DescribeRecoverySnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecoverySnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecoverySnapshots`](crate::operation::DescribeRecoverySnapshots)>
     #[allow(unused_mut)]
@@ -1959,12 +1912,6 @@ pub mod describe_replication_configuration_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeReplicationConfigurationTemplatesInputOperationOutputAlias =
-    crate::operation::DescribeReplicationConfigurationTemplates;
-#[doc(hidden)]
-pub type DescribeReplicationConfigurationTemplatesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationConfigurationTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationConfigurationTemplates`](crate::operation::DescribeReplicationConfigurationTemplates)>
     #[allow(unused_mut)]
@@ -2130,10 +2077,6 @@ pub mod describe_source_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSourceServersInputOperationOutputAlias = crate::operation::DescribeSourceServers;
-#[doc(hidden)]
-pub type DescribeSourceServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSourceServersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSourceServers`](crate::operation::DescribeSourceServers)>
     #[allow(unused_mut)]
@@ -2279,11 +2222,6 @@ pub mod disconnect_recovery_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisconnectRecoveryInstanceInputOperationOutputAlias =
-    crate::operation::DisconnectRecoveryInstance;
-#[doc(hidden)]
-pub type DisconnectRecoveryInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisconnectRecoveryInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectRecoveryInstance`](crate::operation::DisconnectRecoveryInstance)>
     #[allow(unused_mut)]
@@ -2427,10 +2365,6 @@ pub mod disconnect_source_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisconnectSourceServerInputOperationOutputAlias = crate::operation::DisconnectSourceServer;
-#[doc(hidden)]
-pub type DisconnectSourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisconnectSourceServerInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectSourceServer`](crate::operation::DisconnectSourceServer)>
     #[allow(unused_mut)]
@@ -2576,12 +2510,6 @@ pub mod get_failback_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFailbackReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::GetFailbackReplicationConfiguration;
-#[doc(hidden)]
-pub type GetFailbackReplicationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFailbackReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetFailbackReplicationConfiguration`](crate::operation::GetFailbackReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -2723,10 +2651,6 @@ pub mod get_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLaunchConfigurationInputOperationOutputAlias = crate::operation::GetLaunchConfiguration;
-#[doc(hidden)]
-pub type GetLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchConfiguration`](crate::operation::GetLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -2872,11 +2796,6 @@ pub mod get_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::GetReplicationConfiguration;
-#[doc(hidden)]
-pub type GetReplicationConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationConfiguration`](crate::operation::GetReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -3000,10 +2919,6 @@ pub mod initialize_service_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InitializeServiceInputOperationOutputAlias = crate::operation::InitializeService;
-#[doc(hidden)]
-pub type InitializeServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitializeServiceInput {
     /// Consumes the builder and constructs an Operation<[`InitializeService`](crate::operation::InitializeService)>
     #[allow(unused_mut)]
@@ -3157,11 +3072,6 @@ pub mod list_extensible_source_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExtensibleSourceServersInputOperationOutputAlias =
-    crate::operation::ListExtensibleSourceServers;
-#[doc(hidden)]
-pub type ListExtensibleSourceServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExtensibleSourceServersInput {
     /// Consumes the builder and constructs an Operation<[`ListExtensibleSourceServers`](crate::operation::ListExtensibleSourceServers)>
     #[allow(unused_mut)]
@@ -3311,10 +3221,6 @@ pub mod list_staging_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStagingAccountsInputOperationOutputAlias = crate::operation::ListStagingAccounts;
-#[doc(hidden)]
-pub type ListStagingAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStagingAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListStagingAccounts`](crate::operation::ListStagingAccounts)>
     #[allow(unused_mut)]
@@ -3456,10 +3362,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3602,10 +3504,6 @@ pub mod retry_data_replication_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RetryDataReplicationInputOperationOutputAlias = crate::operation::RetryDataReplication;
-#[doc(hidden)]
-pub type RetryDataReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetryDataReplicationInput {
     /// Consumes the builder and constructs an Operation<[`RetryDataReplication`](crate::operation::RetryDataReplication)>
     #[allow(unused_mut)]
@@ -3784,10 +3682,6 @@ pub mod start_failback_launch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFailbackLaunchInputOperationOutputAlias = crate::operation::StartFailbackLaunch;
-#[doc(hidden)]
-pub type StartFailbackLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFailbackLaunchInput {
     /// Consumes the builder and constructs an Operation<[`StartFailbackLaunch`](crate::operation::StartFailbackLaunch)>
     #[allow(unused_mut)]
@@ -3982,10 +3876,6 @@ pub mod start_recovery_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartRecoveryInputOperationOutputAlias = crate::operation::StartRecovery;
-#[doc(hidden)]
-pub type StartRecoveryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRecoveryInput {
     /// Consumes the builder and constructs an Operation<[`StartRecovery`](crate::operation::StartRecovery)>
     #[allow(unused_mut)]
@@ -4127,10 +4017,6 @@ pub mod stop_failback_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopFailbackInputOperationOutputAlias = crate::operation::StopFailback;
-#[doc(hidden)]
-pub type StopFailbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFailbackInput {
     /// Consumes the builder and constructs an Operation<[`StopFailback`](crate::operation::StopFailback)>
     #[allow(unused_mut)]
@@ -4298,10 +4184,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4466,11 +4348,6 @@ pub mod terminate_recovery_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TerminateRecoveryInstancesInputOperationOutputAlias =
-    crate::operation::TerminateRecoveryInstances;
-#[doc(hidden)]
-pub type TerminateRecoveryInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateRecoveryInstancesInput {
     /// Consumes the builder and constructs an Operation<[`TerminateRecoveryInstances`](crate::operation::TerminateRecoveryInstances)>
     #[allow(unused_mut)]
@@ -4632,10 +4509,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4829,12 +4702,6 @@ pub mod update_failback_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFailbackReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateFailbackReplicationConfiguration;
-#[doc(hidden)]
-pub type UpdateFailbackReplicationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFailbackReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFailbackReplicationConfiguration`](crate::operation::UpdateFailbackReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -5064,11 +4931,6 @@ pub mod update_launch_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLaunchConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateLaunchConfiguration;
-#[doc(hidden)]
-pub type UpdateLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchConfiguration`](crate::operation::UpdateLaunchConfiguration)>
     #[allow(unused_mut)]
@@ -5493,12 +5355,6 @@ pub mod update_replication_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateReplicationConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateReplicationConfiguration;
-#[doc(hidden)]
-pub type UpdateReplicationConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationConfiguration`](crate::operation::UpdateReplicationConfiguration)>
     #[allow(unused_mut)]
@@ -5896,12 +5752,6 @@ pub mod update_replication_configuration_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateReplicationConfigurationTemplateInputOperationOutputAlias =
-    crate::operation::UpdateReplicationConfigurationTemplate;
-#[doc(hidden)]
-pub type UpdateReplicationConfigurationTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReplicationConfigurationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationConfigurationTemplate`](crate::operation::UpdateReplicationConfigurationTemplate)>
     #[allow(unused_mut)]

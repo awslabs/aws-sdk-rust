@@ -83,10 +83,6 @@ pub mod create_game_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGameInputOperationOutputAlias = crate::operation::CreateGame;
-#[doc(hidden)]
-pub type CreateGameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGameInput {
     /// Consumes the builder and constructs an Operation<[`CreateGame`](crate::operation::CreateGame)>
     #[allow(unused_mut)]
@@ -237,10 +233,6 @@ pub mod create_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSnapshotInputOperationOutputAlias = crate::operation::CreateSnapshot;
-#[doc(hidden)]
-pub type CreateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshot`](crate::operation::CreateSnapshot)>
     #[allow(unused_mut)]
@@ -471,10 +463,6 @@ pub mod create_stage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStageInputOperationOutputAlias = crate::operation::CreateStage;
-#[doc(hidden)]
-pub type CreateStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStageInput {
     /// Consumes the builder and constructs an Operation<[`CreateStage`](crate::operation::CreateStage)>
     #[allow(unused_mut)]
@@ -627,10 +615,6 @@ pub mod delete_game_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGameInputOperationOutputAlias = crate::operation::DeleteGame;
-#[doc(hidden)]
-pub type DeleteGameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGameInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGame`](crate::operation::DeleteGame)>
     #[allow(unused_mut)]
@@ -782,10 +766,6 @@ pub mod delete_stage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStageInputOperationOutputAlias = crate::operation::DeleteStage;
-#[doc(hidden)]
-pub type DeleteStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStage`](crate::operation::DeleteStage)>
     #[allow(unused_mut)]
@@ -968,10 +948,6 @@ pub mod disconnect_player_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisconnectPlayerInputOperationOutputAlias = crate::operation::DisconnectPlayer;
-#[doc(hidden)]
-pub type DisconnectPlayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisconnectPlayerInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectPlayer`](crate::operation::DisconnectPlayer)>
     #[allow(unused_mut)]
@@ -1157,10 +1133,6 @@ pub mod export_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportSnapshotInputOperationOutputAlias = crate::operation::ExportSnapshot;
-#[doc(hidden)]
-pub type ExportSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`ExportSnapshot`](crate::operation::ExportSnapshot)>
     #[allow(unused_mut)]
@@ -1331,10 +1303,6 @@ pub mod get_extension_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExtensionInputOperationOutputAlias = crate::operation::GetExtension;
-#[doc(hidden)]
-pub type GetExtensionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExtensionInput {
     /// Consumes the builder and constructs an Operation<[`GetExtension`](crate::operation::GetExtension)>
     #[allow(unused_mut)]
@@ -1520,10 +1488,6 @@ pub mod get_extension_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetExtensionVersionInputOperationOutputAlias = crate::operation::GetExtensionVersion;
-#[doc(hidden)]
-pub type GetExtensionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExtensionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetExtensionVersion`](crate::operation::GetExtensionVersion)>
     #[allow(unused_mut)]
@@ -1696,10 +1660,6 @@ pub mod get_game_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGameInputOperationOutputAlias = crate::operation::GetGame;
-#[doc(hidden)]
-pub type GetGameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGameInput {
     /// Consumes the builder and constructs an Operation<[`GetGame`](crate::operation::GetGame)>
     #[allow(unused_mut)]
@@ -1858,10 +1818,6 @@ pub mod get_game_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGameConfigurationInputOperationOutputAlias = crate::operation::GetGameConfiguration;
-#[doc(hidden)]
-pub type GetGameConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGameConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetGameConfiguration`](crate::operation::GetGameConfiguration)>
     #[allow(unused_mut)]
@@ -2042,10 +1998,6 @@ pub mod get_generated_code_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGeneratedCodeJobInputOperationOutputAlias = crate::operation::GetGeneratedCodeJob;
-#[doc(hidden)]
-pub type GetGeneratedCodeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGeneratedCodeJobInput {
     /// Consumes the builder and constructs an Operation<[`GetGeneratedCodeJob`](crate::operation::GetGeneratedCodeJob)>
     #[allow(unused_mut)]
@@ -2245,11 +2197,6 @@ pub mod get_player_connection_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPlayerConnectionStatusInputOperationOutputAlias =
-    crate::operation::GetPlayerConnectionStatus;
-#[doc(hidden)]
-pub type GetPlayerConnectionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPlayerConnectionStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetPlayerConnectionStatus`](crate::operation::GetPlayerConnectionStatus)>
     #[allow(unused_mut)]
@@ -2456,10 +2403,6 @@ pub mod get_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSnapshotInputOperationOutputAlias = crate::operation::GetSnapshot;
-#[doc(hidden)]
-pub type GetSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshot`](crate::operation::GetSnapshot)>
     #[allow(unused_mut)]
@@ -2642,10 +2585,6 @@ pub mod get_stage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStageInputOperationOutputAlias = crate::operation::GetStage;
-#[doc(hidden)]
-pub type GetStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStageInput {
     /// Consumes the builder and constructs an Operation<[`GetStage`](crate::operation::GetStage)>
     #[allow(unused_mut)]
@@ -2829,10 +2768,6 @@ pub mod get_stage_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetStageDeploymentInputOperationOutputAlias = crate::operation::GetStageDeployment;
-#[doc(hidden)]
-pub type GetStageDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStageDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`GetStageDeployment`](crate::operation::GetStageDeployment)>
     #[allow(unused_mut)]
@@ -3022,11 +2957,6 @@ pub mod import_game_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportGameConfigurationInputOperationOutputAlias =
-    crate::operation::ImportGameConfiguration;
-#[doc(hidden)]
-pub type ImportGameConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportGameConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ImportGameConfiguration`](crate::operation::ImportGameConfiguration)>
     #[allow(unused_mut)]
@@ -3202,10 +3132,6 @@ pub mod list_extensions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExtensionsInputOperationOutputAlias = crate::operation::ListExtensions;
-#[doc(hidden)]
-pub type ListExtensionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExtensionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExtensions`](crate::operation::ListExtensions)>
     #[allow(unused_mut)]
@@ -3387,10 +3313,6 @@ pub mod list_extension_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListExtensionVersionsInputOperationOutputAlias = crate::operation::ListExtensionVersions;
-#[doc(hidden)]
-pub type ListExtensionVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExtensionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExtensionVersions`](crate::operation::ListExtensionVersions)>
     #[allow(unused_mut)]
@@ -3581,10 +3503,6 @@ pub mod list_games_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGamesInputOperationOutputAlias = crate::operation::ListGames;
-#[doc(hidden)]
-pub type ListGamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGamesInput {
     /// Consumes the builder and constructs an Operation<[`ListGames`](crate::operation::ListGames)>
     #[allow(unused_mut)]
@@ -3764,10 +3682,6 @@ pub mod list_generated_code_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGeneratedCodeJobsInputOperationOutputAlias = crate::operation::ListGeneratedCodeJobs;
-#[doc(hidden)]
-pub type ListGeneratedCodeJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGeneratedCodeJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListGeneratedCodeJobs`](crate::operation::ListGeneratedCodeJobs)>
     #[allow(unused_mut)]
@@ -3971,10 +3885,6 @@ pub mod list_snapshots_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSnapshotsInputOperationOutputAlias = crate::operation::ListSnapshots;
-#[doc(hidden)]
-pub type ListSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`ListSnapshots`](crate::operation::ListSnapshots)>
     #[allow(unused_mut)]
@@ -4171,10 +4081,6 @@ pub mod list_stage_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStageDeploymentsInputOperationOutputAlias = crate::operation::ListStageDeployments;
-#[doc(hidden)]
-pub type ListStageDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStageDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListStageDeployments`](crate::operation::ListStageDeployments)>
     #[allow(unused_mut)]
@@ -4377,10 +4283,6 @@ pub mod list_stages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStagesInputOperationOutputAlias = crate::operation::ListStages;
-#[doc(hidden)]
-pub type ListStagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStagesInput {
     /// Consumes the builder and constructs an Operation<[`ListStages`](crate::operation::ListStages)>
     #[allow(unused_mut)]
@@ -4537,10 +4439,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4707,10 +4605,6 @@ pub mod start_generated_code_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartGeneratedCodeJobInputOperationOutputAlias = crate::operation::StartGeneratedCodeJob;
-#[doc(hidden)]
-pub type StartGeneratedCodeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartGeneratedCodeJobInput {
     /// Consumes the builder and constructs an Operation<[`StartGeneratedCodeJob`](crate::operation::StartGeneratedCodeJob)>
     #[allow(unused_mut)]
@@ -4921,10 +4815,6 @@ pub mod start_stage_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStageDeploymentInputOperationOutputAlias = crate::operation::StartStageDeployment;
-#[doc(hidden)]
-pub type StartStageDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStageDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartStageDeployment`](crate::operation::StartStageDeployment)>
     #[allow(unused_mut)]
@@ -5128,10 +5018,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -5306,10 +5192,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -5473,10 +5355,6 @@ pub mod update_game_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGameInputOperationOutputAlias = crate::operation::UpdateGame;
-#[doc(hidden)]
-pub type UpdateGameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGame`](crate::operation::UpdateGame)>
     #[allow(unused_mut)]
@@ -5654,11 +5532,6 @@ pub mod update_game_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGameConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateGameConfiguration;
-#[doc(hidden)]
-pub type UpdateGameConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGameConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGameConfiguration`](crate::operation::UpdateGameConfiguration)>
     #[allow(unused_mut)]
@@ -5842,10 +5715,6 @@ pub mod update_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSnapshotInputOperationOutputAlias = crate::operation::UpdateSnapshot;
-#[doc(hidden)]
-pub type UpdateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSnapshot`](crate::operation::UpdateSnapshot)>
     #[allow(unused_mut)]
@@ -6054,10 +5923,6 @@ pub mod update_stage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStageInputOperationOutputAlias = crate::operation::UpdateStage;
-#[doc(hidden)]
-pub type UpdateStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStage`](crate::operation::UpdateStage)>
     #[allow(unused_mut)]

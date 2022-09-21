@@ -130,11 +130,6 @@ pub mod create_media_capture_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMediaCapturePipelineInputOperationOutputAlias =
-    crate::operation::CreateMediaCapturePipeline;
-#[doc(hidden)]
-pub type CreateMediaCapturePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateMediaCapturePipeline`](crate::operation::CreateMediaCapturePipeline)>
     #[allow(unused_mut)]
@@ -343,12 +338,6 @@ pub mod create_media_concatenation_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMediaConcatenationPipelineInputOperationOutputAlias =
-    crate::operation::CreateMediaConcatenationPipeline;
-#[doc(hidden)]
-pub type CreateMediaConcatenationPipelineInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMediaConcatenationPipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateMediaConcatenationPipeline`](crate::operation::CreateMediaConcatenationPipeline)>
     #[allow(unused_mut)]
@@ -562,12 +551,6 @@ pub mod create_media_live_connector_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMediaLiveConnectorPipelineInputOperationOutputAlias =
-    crate::operation::CreateMediaLiveConnectorPipeline;
-#[doc(hidden)]
-pub type CreateMediaLiveConnectorPipelineInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMediaLiveConnectorPipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateMediaLiveConnectorPipeline`](crate::operation::CreateMediaLiveConnectorPipeline)>
     #[allow(unused_mut)]
@@ -714,11 +697,6 @@ pub mod delete_media_capture_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMediaCapturePipelineInputOperationOutputAlias =
-    crate::operation::DeleteMediaCapturePipeline;
-#[doc(hidden)]
-pub type DeleteMediaCapturePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMediaCapturePipeline`](crate::operation::DeleteMediaCapturePipeline)>
     #[allow(unused_mut)]
@@ -865,10 +843,6 @@ pub mod delete_media_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMediaPipelineInputOperationOutputAlias = crate::operation::DeleteMediaPipeline;
-#[doc(hidden)]
-pub type DeleteMediaPipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMediaPipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMediaPipeline`](crate::operation::DeleteMediaPipeline)>
     #[allow(unused_mut)]
@@ -1017,11 +991,6 @@ pub mod get_media_capture_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMediaCapturePipelineInputOperationOutputAlias =
-    crate::operation::GetMediaCapturePipeline;
-#[doc(hidden)]
-pub type GetMediaCapturePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaCapturePipeline`](crate::operation::GetMediaCapturePipeline)>
     #[allow(unused_mut)]
@@ -1168,10 +1137,6 @@ pub mod get_media_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMediaPipelineInputOperationOutputAlias = crate::operation::GetMediaPipeline;
-#[doc(hidden)]
-pub type GetMediaPipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaPipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaPipeline`](crate::operation::GetMediaPipeline)>
     #[allow(unused_mut)]
@@ -1329,11 +1294,6 @@ pub mod list_media_capture_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMediaCapturePipelinesInputOperationOutputAlias =
-    crate::operation::ListMediaCapturePipelines;
-#[doc(hidden)]
-pub type ListMediaCapturePipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMediaCapturePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListMediaCapturePipelines`](crate::operation::ListMediaCapturePipelines)>
     #[allow(unused_mut)]
@@ -1487,10 +1447,6 @@ pub mod list_media_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMediaPipelinesInputOperationOutputAlias = crate::operation::ListMediaPipelines;
-#[doc(hidden)]
-pub type ListMediaPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMediaPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListMediaPipelines`](crate::operation::ListMediaPipelines)>
     #[allow(unused_mut)]
@@ -1632,10 +1588,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1792,10 +1744,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1964,10 +1912,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

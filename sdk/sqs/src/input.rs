@@ -91,10 +91,6 @@ pub mod add_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddPermissionInputOperationOutputAlias = crate::operation::AddPermission;
-#[doc(hidden)]
-pub type AddPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddPermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddPermission`](crate::operation::AddPermission)>
     #[allow(unused_mut)]
@@ -264,11 +260,6 @@ pub mod change_message_visibility_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ChangeMessageVisibilityInputOperationOutputAlias =
-    crate::operation::ChangeMessageVisibility;
-#[doc(hidden)]
-pub type ChangeMessageVisibilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ChangeMessageVisibilityInput {
     /// Consumes the builder and constructs an Operation<[`ChangeMessageVisibility`](crate::operation::ChangeMessageVisibility)>
     #[allow(unused_mut)]
@@ -441,12 +432,6 @@ pub mod change_message_visibility_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ChangeMessageVisibilityBatchInputOperationOutputAlias =
-    crate::operation::ChangeMessageVisibilityBatch;
-#[doc(hidden)]
-pub type ChangeMessageVisibilityBatchInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ChangeMessageVisibilityBatchInput {
     /// Consumes the builder and constructs an Operation<[`ChangeMessageVisibilityBatch`](crate::operation::ChangeMessageVisibilityBatch)>
     #[allow(unused_mut)]
@@ -776,10 +761,6 @@ pub mod create_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateQueueInputOperationOutputAlias = crate::operation::CreateQueue;
-#[doc(hidden)]
-pub type CreateQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateQueue`](crate::operation::CreateQueue)>
     #[allow(unused_mut)]
@@ -935,10 +916,6 @@ pub mod delete_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMessageInputOperationOutputAlias = crate::operation::DeleteMessage;
-#[doc(hidden)]
-pub type DeleteMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMessageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMessage`](crate::operation::DeleteMessage)>
     #[allow(unused_mut)]
@@ -1101,10 +1078,6 @@ pub mod delete_message_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMessageBatchInputOperationOutputAlias = crate::operation::DeleteMessageBatch;
-#[doc(hidden)]
-pub type DeleteMessageBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMessageBatchInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMessageBatch`](crate::operation::DeleteMessageBatch)>
     #[allow(unused_mut)]
@@ -1245,10 +1218,6 @@ pub mod delete_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteQueueInputOperationOutputAlias = crate::operation::DeleteQueue;
-#[doc(hidden)]
-pub type DeleteQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueue`](crate::operation::DeleteQueue)>
     #[allow(unused_mut)]
@@ -1513,10 +1482,6 @@ pub mod get_queue_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueueAttributesInputOperationOutputAlias = crate::operation::GetQueueAttributes;
-#[doc(hidden)]
-pub type GetQueueAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueueAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetQueueAttributes`](crate::operation::GetQueueAttributes)>
     #[allow(unused_mut)]
@@ -1672,10 +1637,6 @@ pub mod get_queue_url_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueueUrlInputOperationOutputAlias = crate::operation::GetQueueUrl;
-#[doc(hidden)]
-pub type GetQueueUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueueUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetQueueUrl`](crate::operation::GetQueueUrl)>
     #[allow(unused_mut)]
@@ -1842,11 +1803,6 @@ pub mod list_dead_letter_source_queues_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeadLetterSourceQueuesInputOperationOutputAlias =
-    crate::operation::ListDeadLetterSourceQueues;
-#[doc(hidden)]
-pub type ListDeadLetterSourceQueuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeadLetterSourceQueuesInput {
     /// Consumes the builder and constructs an Operation<[`ListDeadLetterSourceQueues`](crate::operation::ListDeadLetterSourceQueues)>
     #[allow(unused_mut)]
@@ -2012,10 +1968,6 @@ pub mod list_queues_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQueuesInputOperationOutputAlias = crate::operation::ListQueues;
-#[doc(hidden)]
-pub type ListQueuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueuesInput {
     /// Consumes the builder and constructs an Operation<[`ListQueues`](crate::operation::ListQueues)>
     #[allow(unused_mut)]
@@ -2154,10 +2106,6 @@ pub mod list_queue_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQueueTagsInputOperationOutputAlias = crate::operation::ListQueueTags;
-#[doc(hidden)]
-pub type ListQueueTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueueTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListQueueTags`](crate::operation::ListQueueTags)>
     #[allow(unused_mut)]
@@ -2297,10 +2245,6 @@ pub mod purge_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PurgeQueueInputOperationOutputAlias = crate::operation::PurgeQueue;
-#[doc(hidden)]
-pub type PurgeQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PurgeQueueInput {
     /// Consumes the builder and constructs an Operation<[`PurgeQueue`](crate::operation::PurgeQueue)>
     #[allow(unused_mut)]
@@ -2617,10 +2561,6 @@ pub mod receive_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ReceiveMessageInputOperationOutputAlias = crate::operation::ReceiveMessage;
-#[doc(hidden)]
-pub type ReceiveMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReceiveMessageInput {
     /// Consumes the builder and constructs an Operation<[`ReceiveMessage`](crate::operation::ReceiveMessage)>
     #[allow(unused_mut)]
@@ -2773,10 +2713,6 @@ pub mod remove_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemovePermissionInputOperationOutputAlias = crate::operation::RemovePermission;
-#[doc(hidden)]
-pub type RemovePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(unused_mut)]
@@ -3111,10 +3047,6 @@ pub mod send_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendMessageInputOperationOutputAlias = crate::operation::SendMessage;
-#[doc(hidden)]
-pub type SendMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendMessage`](crate::operation::SendMessage)>
     #[allow(unused_mut)]
@@ -3277,10 +3209,6 @@ pub mod send_message_batch_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendMessageBatchInputOperationOutputAlias = crate::operation::SendMessageBatch;
-#[doc(hidden)]
-pub type SendMessageBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendMessageBatchInput {
     /// Consumes the builder and constructs an Operation<[`SendMessageBatch`](crate::operation::SendMessageBatch)>
     #[allow(unused_mut)]
@@ -3548,10 +3476,6 @@ pub mod set_queue_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetQueueAttributesInputOperationOutputAlias = crate::operation::SetQueueAttributes;
-#[doc(hidden)]
-pub type SetQueueAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetQueueAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetQueueAttributes`](crate::operation::SetQueueAttributes)>
     #[allow(unused_mut)]
@@ -3718,10 +3642,6 @@ pub mod tag_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagQueueInputOperationOutputAlias = crate::operation::TagQueue;
-#[doc(hidden)]
-pub type TagQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagQueueInput {
     /// Consumes the builder and constructs an Operation<[`TagQueue`](crate::operation::TagQueue)>
     #[allow(unused_mut)]
@@ -3875,10 +3795,6 @@ pub mod untag_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagQueueInputOperationOutputAlias = crate::operation::UntagQueue;
-#[doc(hidden)]
-pub type UntagQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagQueueInput {
     /// Consumes the builder and constructs an Operation<[`UntagQueue`](crate::operation::UntagQueue)>
     #[allow(unused_mut)]

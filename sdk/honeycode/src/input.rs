@@ -87,10 +87,6 @@ pub mod batch_create_table_rows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchCreateTableRowsInputOperationOutputAlias = crate::operation::BatchCreateTableRows;
-#[doc(hidden)]
-pub type BatchCreateTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateTableRows`](crate::operation::BatchCreateTableRows)>
     #[allow(unused_mut)]
@@ -321,10 +317,6 @@ pub mod batch_delete_table_rows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDeleteTableRowsInputOperationOutputAlias = crate::operation::BatchDeleteTableRows;
-#[doc(hidden)]
-pub type BatchDeleteTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteTableRows`](crate::operation::BatchDeleteTableRows)>
     #[allow(unused_mut)]
@@ -555,10 +547,6 @@ pub mod batch_update_table_rows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpdateTableRowsInputOperationOutputAlias = crate::operation::BatchUpdateTableRows;
-#[doc(hidden)]
-pub type BatchUpdateTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateTableRows`](crate::operation::BatchUpdateTableRows)>
     #[allow(unused_mut)]
@@ -789,10 +777,6 @@ pub mod batch_upsert_table_rows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchUpsertTableRowsInputOperationOutputAlias = crate::operation::BatchUpsertTableRows;
-#[doc(hidden)]
-pub type BatchUpsertTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpsertTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpsertTableRows`](crate::operation::BatchUpsertTableRows)>
     #[allow(unused_mut)]
@@ -999,11 +983,6 @@ pub mod describe_table_data_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTableDataImportJobInputOperationOutputAlias =
-    crate::operation::DescribeTableDataImportJob;
-#[doc(hidden)]
-pub type DescribeTableDataImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableDataImportJob`](crate::operation::DescribeTableDataImportJob)>
     #[allow(unused_mut)]
@@ -1258,10 +1237,6 @@ pub mod get_screen_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetScreenDataInputOperationOutputAlias = crate::operation::GetScreenData;
-#[doc(hidden)]
-pub type GetScreenDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetScreenDataInput {
     /// Consumes the builder and constructs an Operation<[`GetScreenData`](crate::operation::GetScreenData)>
     #[allow(unused_mut)]
@@ -1497,10 +1472,6 @@ pub mod invoke_screen_automation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InvokeScreenAutomationInputOperationOutputAlias = crate::operation::InvokeScreenAutomation;
-#[doc(hidden)]
-pub type InvokeScreenAutomationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeScreenAutomationInput {
     /// Consumes the builder and constructs an Operation<[`InvokeScreenAutomation`](crate::operation::InvokeScreenAutomation)>
     #[allow(unused_mut)]
@@ -1727,10 +1698,6 @@ pub mod list_table_columns_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTableColumnsInputOperationOutputAlias = crate::operation::ListTableColumns;
-#[doc(hidden)]
-pub type ListTableColumnsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableColumnsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableColumns`](crate::operation::ListTableColumns)>
     #[allow(unused_mut)]
@@ -1963,10 +1930,6 @@ pub mod list_table_rows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTableRowsInputOperationOutputAlias = crate::operation::ListTableRows;
-#[doc(hidden)]
-pub type ListTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableRows`](crate::operation::ListTableRows)>
     #[allow(unused_mut)]
@@ -2166,10 +2129,6 @@ pub mod list_tables_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTablesInputOperationOutputAlias = crate::operation::ListTables;
-#[doc(hidden)]
-pub type ListTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(unused_mut)]
@@ -2330,10 +2289,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2530,10 +2485,6 @@ pub mod query_table_rows_input {
         }
     }
 }
-#[doc(hidden)]
-pub type QueryTableRowsInputOperationOutputAlias = crate::operation::QueryTableRows;
-#[doc(hidden)]
-pub type QueryTableRowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`QueryTableRows`](crate::operation::QueryTableRows)>
     #[allow(unused_mut)]
@@ -2789,11 +2740,6 @@ pub mod start_table_data_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTableDataImportJobInputOperationOutputAlias =
-    crate::operation::StartTableDataImportJob;
-#[doc(hidden)]
-pub type StartTableDataImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTableDataImportJob`](crate::operation::StartTableDataImportJob)>
     #[allow(unused_mut)]
@@ -2997,10 +2943,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3175,10 +3117,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

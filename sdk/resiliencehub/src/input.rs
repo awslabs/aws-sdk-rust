@@ -55,12 +55,6 @@ pub mod add_draft_app_version_resource_mappings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddDraftAppVersionResourceMappingsInputOperationOutputAlias =
-    crate::operation::AddDraftAppVersionResourceMappings;
-#[doc(hidden)]
-pub type AddDraftAppVersionResourceMappingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AddDraftAppVersionResourceMappingsInput {
     /// Consumes the builder and constructs an Operation<[`AddDraftAppVersionResourceMappings`](crate::operation::AddDraftAppVersionResourceMappings)>
     #[allow(unused_mut)]
@@ -282,10 +276,6 @@ pub mod create_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
-#[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(unused_mut)]
@@ -624,12 +614,6 @@ pub mod create_recommendation_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRecommendationTemplateInputOperationOutputAlias =
-    crate::operation::CreateRecommendationTemplate;
-#[doc(hidden)]
-pub type CreateRecommendationTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecommendationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecommendationTemplate`](crate::operation::CreateRecommendationTemplate)>
     #[allow(unused_mut)]
@@ -893,10 +877,6 @@ pub mod create_resiliency_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResiliencyPolicyInputOperationOutputAlias = crate::operation::CreateResiliencyPolicy;
-#[doc(hidden)]
-pub type CreateResiliencyPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResiliencyPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateResiliencyPolicy`](crate::operation::CreateResiliencyPolicy)>
     #[allow(unused_mut)]
@@ -1063,10 +1043,6 @@ pub mod delete_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
-#[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(unused_mut)]
@@ -1221,10 +1197,6 @@ pub mod delete_app_assessment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppAssessmentInputOperationOutputAlias = crate::operation::DeleteAppAssessment;
-#[doc(hidden)]
-pub type DeleteAppAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppAssessment`](crate::operation::DeleteAppAssessment)>
     #[allow(unused_mut)]
@@ -1386,12 +1358,6 @@ pub mod delete_recommendation_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRecommendationTemplateInputOperationOutputAlias =
-    crate::operation::DeleteRecommendationTemplate;
-#[doc(hidden)]
-pub type DeleteRecommendationTemplateInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecommendationTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecommendationTemplate`](crate::operation::DeleteRecommendationTemplate)>
     #[allow(unused_mut)]
@@ -1545,10 +1511,6 @@ pub mod delete_resiliency_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResiliencyPolicyInputOperationOutputAlias = crate::operation::DeleteResiliencyPolicy;
-#[doc(hidden)]
-pub type DeleteResiliencyPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResiliencyPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResiliencyPolicy`](crate::operation::DeleteResiliencyPolicy)>
     #[allow(unused_mut)]
@@ -1692,10 +1654,6 @@ pub mod describe_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppInputOperationOutputAlias = crate::operation::DescribeApp;
-#[doc(hidden)]
-pub type DescribeAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApp`](crate::operation::DescribeApp)>
     #[allow(unused_mut)]
@@ -1837,10 +1795,6 @@ pub mod describe_app_assessment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppAssessmentInputOperationOutputAlias = crate::operation::DescribeAppAssessment;
-#[doc(hidden)]
-pub type DescribeAppAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppAssessment`](crate::operation::DescribeAppAssessment)>
     #[allow(unused_mut)]
@@ -2012,12 +1966,6 @@ pub mod describe_app_version_resources_resolution_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppVersionResourcesResolutionStatusInputOperationOutputAlias =
-    crate::operation::DescribeAppVersionResourcesResolutionStatus;
-#[doc(hidden)]
-pub type DescribeAppVersionResourcesResolutionStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppVersionResourcesResolutionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppVersionResourcesResolutionStatus`](crate::operation::DescribeAppVersionResourcesResolutionStatus)>
     #[allow(unused_mut)]
@@ -2171,11 +2119,6 @@ pub mod describe_app_version_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppVersionTemplateInputOperationOutputAlias =
-    crate::operation::DescribeAppVersionTemplate;
-#[doc(hidden)]
-pub type DescribeAppVersionTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppVersionTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppVersionTemplate`](crate::operation::DescribeAppVersionTemplate)>
     #[allow(unused_mut)]
@@ -2318,12 +2261,6 @@ pub mod describe_draft_app_version_resources_import_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDraftAppVersionResourcesImportStatusInputOperationOutputAlias =
-    crate::operation::DescribeDraftAppVersionResourcesImportStatus;
-#[doc(hidden)]
-pub type DescribeDraftAppVersionResourcesImportStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDraftAppVersionResourcesImportStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDraftAppVersionResourcesImportStatus`](crate::operation::DescribeDraftAppVersionResourcesImportStatus)>
     #[allow(unused_mut)]
@@ -2468,11 +2405,6 @@ pub mod describe_resiliency_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeResiliencyPolicyInputOperationOutputAlias =
-    crate::operation::DescribeResiliencyPolicy;
-#[doc(hidden)]
-pub type DescribeResiliencyPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResiliencyPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResiliencyPolicy`](crate::operation::DescribeResiliencyPolicy)>
     #[allow(unused_mut)]
@@ -2658,12 +2590,6 @@ pub mod import_resources_to_draft_app_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportResourcesToDraftAppVersionInputOperationOutputAlias =
-    crate::operation::ImportResourcesToDraftAppVersion;
-#[doc(hidden)]
-pub type ImportResourcesToDraftAppVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ImportResourcesToDraftAppVersionInput {
     /// Consumes the builder and constructs an Operation<[`ImportResourcesToDraftAppVersion`](crate::operation::ImportResourcesToDraftAppVersion)>
     #[allow(unused_mut)]
@@ -2831,11 +2757,6 @@ pub mod list_alarm_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAlarmRecommendationsInputOperationOutputAlias =
-    crate::operation::ListAlarmRecommendations;
-#[doc(hidden)]
-pub type ListAlarmRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlarmRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlarmRecommendations`](crate::operation::ListAlarmRecommendations)>
     #[allow(unused_mut)]
@@ -3079,10 +3000,6 @@ pub mod list_app_assessments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppAssessmentsInputOperationOutputAlias = crate::operation::ListAppAssessments;
-#[doc(hidden)]
-pub type ListAppAssessmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppAssessmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppAssessments`](crate::operation::ListAppAssessments)>
     #[allow(unused_mut)]
@@ -3285,11 +3202,6 @@ pub mod list_app_component_compliances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppComponentCompliancesInputOperationOutputAlias =
-    crate::operation::ListAppComponentCompliances;
-#[doc(hidden)]
-pub type ListAppComponentCompliancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppComponentCompliancesInput {
     /// Consumes the builder and constructs an Operation<[`ListAppComponentCompliances`](crate::operation::ListAppComponentCompliances)>
     #[allow(unused_mut)]
@@ -3457,12 +3369,6 @@ pub mod list_app_component_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppComponentRecommendationsInputOperationOutputAlias =
-    crate::operation::ListAppComponentRecommendations;
-#[doc(hidden)]
-pub type ListAppComponentRecommendationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppComponentRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppComponentRecommendations`](crate::operation::ListAppComponentRecommendations)>
     #[allow(unused_mut)]
@@ -3636,10 +3542,6 @@ pub mod list_apps_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppsInputOperationOutputAlias = crate::operation::ListApps;
-#[doc(hidden)]
-pub type ListAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(unused_mut)]
@@ -3823,12 +3725,6 @@ pub mod list_app_version_resource_mappings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppVersionResourceMappingsInputOperationOutputAlias =
-    crate::operation::ListAppVersionResourceMappings;
-#[doc(hidden)]
-pub type ListAppVersionResourceMappingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppVersionResourceMappingsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppVersionResourceMappings`](crate::operation::ListAppVersionResourceMappings)>
     #[allow(unused_mut)]
@@ -4020,11 +3916,6 @@ pub mod list_app_version_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppVersionResourcesInputOperationOutputAlias =
-    crate::operation::ListAppVersionResources;
-#[doc(hidden)]
-pub type ListAppVersionResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppVersionResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAppVersionResources`](crate::operation::ListAppVersionResources)>
     #[allow(unused_mut)]
@@ -4189,10 +4080,6 @@ pub mod list_app_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAppVersionsInputOperationOutputAlias = crate::operation::ListAppVersions;
-#[doc(hidden)]
-pub type ListAppVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppVersions`](crate::operation::ListAppVersions)>
     #[allow(unused_mut)]
@@ -4424,11 +4311,6 @@ pub mod list_recommendation_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRecommendationTemplatesInputOperationOutputAlias =
-    crate::operation::ListRecommendationTemplates;
-#[doc(hidden)]
-pub type ListRecommendationTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendationTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendationTemplates`](crate::operation::ListRecommendationTemplates)>
     #[allow(unused_mut)]
@@ -4621,10 +4503,6 @@ pub mod list_resiliency_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResiliencyPoliciesInputOperationOutputAlias = crate::operation::ListResiliencyPolicies;
-#[doc(hidden)]
-pub type ListResiliencyPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResiliencyPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListResiliencyPolicies`](crate::operation::ListResiliencyPolicies)>
     #[allow(unused_mut)]
@@ -4796,10 +4674,6 @@ pub mod list_sop_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSopRecommendationsInputOperationOutputAlias = crate::operation::ListSopRecommendations;
-#[doc(hidden)]
-pub type ListSopRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSopRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSopRecommendations`](crate::operation::ListSopRecommendations)>
     #[allow(unused_mut)]
@@ -4954,12 +4828,6 @@ pub mod list_suggested_resiliency_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSuggestedResiliencyPoliciesInputOperationOutputAlias =
-    crate::operation::ListSuggestedResiliencyPolicies;
-#[doc(hidden)]
-pub type ListSuggestedResiliencyPoliciesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSuggestedResiliencyPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListSuggestedResiliencyPolicies`](crate::operation::ListSuggestedResiliencyPolicies)>
     #[allow(unused_mut)]
@@ -5102,10 +4970,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -5274,11 +5138,6 @@ pub mod list_test_recommendations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTestRecommendationsInputOperationOutputAlias =
-    crate::operation::ListTestRecommendations;
-#[doc(hidden)]
-pub type ListTestRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTestRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListTestRecommendations`](crate::operation::ListTestRecommendations)>
     #[allow(unused_mut)]
@@ -5472,12 +5331,6 @@ pub mod list_unsupported_app_version_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUnsupportedAppVersionResourcesInputOperationOutputAlias =
-    crate::operation::ListUnsupportedAppVersionResources;
-#[doc(hidden)]
-pub type ListUnsupportedAppVersionResourcesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListUnsupportedAppVersionResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListUnsupportedAppVersionResources`](crate::operation::ListUnsupportedAppVersionResources)>
     #[allow(unused_mut)]
@@ -5616,10 +5469,6 @@ pub mod publish_app_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PublishAppVersionInputOperationOutputAlias = crate::operation::PublishAppVersion;
-#[doc(hidden)]
-pub type PublishAppVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishAppVersionInput {
     /// Consumes the builder and constructs an Operation<[`PublishAppVersion`](crate::operation::PublishAppVersion)>
     #[allow(unused_mut)]
@@ -5775,11 +5624,6 @@ pub mod put_draft_app_version_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDraftAppVersionTemplateInputOperationOutputAlias =
-    crate::operation::PutDraftAppVersionTemplate;
-#[doc(hidden)]
-pub type PutDraftAppVersionTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDraftAppVersionTemplateInput {
     /// Consumes the builder and constructs an Operation<[`PutDraftAppVersionTemplate`](crate::operation::PutDraftAppVersionTemplate)>
     #[allow(unused_mut)]
@@ -6025,12 +5869,6 @@ pub mod remove_draft_app_version_resource_mappings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveDraftAppVersionResourceMappingsInputOperationOutputAlias =
-    crate::operation::RemoveDraftAppVersionResourceMappings;
-#[doc(hidden)]
-pub type RemoveDraftAppVersionResourceMappingsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveDraftAppVersionResourceMappingsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveDraftAppVersionResourceMappings`](crate::operation::RemoveDraftAppVersionResourceMappings)>
     #[allow(unused_mut)]
@@ -6183,11 +6021,6 @@ pub mod resolve_app_version_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResolveAppVersionResourcesInputOperationOutputAlias =
-    crate::operation::ResolveAppVersionResources;
-#[doc(hidden)]
-pub type ResolveAppVersionResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveAppVersionResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ResolveAppVersionResources`](crate::operation::ResolveAppVersionResources)>
     #[allow(unused_mut)]
@@ -6394,10 +6227,6 @@ pub mod start_app_assessment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartAppAssessmentInputOperationOutputAlias = crate::operation::StartAppAssessment;
-#[doc(hidden)]
-pub type StartAppAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAppAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StartAppAssessment`](crate::operation::StartAppAssessment)>
     #[allow(unused_mut)]
@@ -6568,10 +6397,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6746,10 +6571,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6956,10 +6777,6 @@ pub mod update_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
-#[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(unused_mut)]
@@ -7189,10 +7006,6 @@ pub mod update_resiliency_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResiliencyPolicyInputOperationOutputAlias = crate::operation::UpdateResiliencyPolicy;
-#[doc(hidden)]
-pub type UpdateResiliencyPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResiliencyPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResiliencyPolicy`](crate::operation::UpdateResiliencyPolicy)>
     #[allow(unused_mut)]

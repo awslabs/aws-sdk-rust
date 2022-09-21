@@ -105,10 +105,6 @@ pub mod create_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLifecyclePolicyInputOperationOutputAlias = crate::operation::CreateLifecyclePolicy;
-#[doc(hidden)]
-pub type CreateLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLifecyclePolicy`](crate::operation::CreateLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -249,10 +245,6 @@ pub mod delete_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
-#[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -486,10 +478,6 @@ pub mod get_lifecycle_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLifecyclePoliciesInputOperationOutputAlias = crate::operation::GetLifecyclePolicies;
-#[doc(hidden)]
-pub type GetLifecyclePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicies`](crate::operation::GetLifecyclePolicies)>
     #[allow(unused_mut)]
@@ -648,10 +636,6 @@ pub mod get_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
-#[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(unused_mut)]
@@ -791,10 +775,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -963,10 +943,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -1141,10 +1117,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -1354,10 +1326,6 @@ pub mod update_lifecycle_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLifecyclePolicyInputOperationOutputAlias = crate::operation::UpdateLifecyclePolicy;
-#[doc(hidden)]
-pub type UpdateLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLifecyclePolicy`](crate::operation::UpdateLifecyclePolicy)>
     #[allow(unused_mut)]

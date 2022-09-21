@@ -43,10 +43,6 @@ pub mod acknowledge_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcknowledgeJobInputOperationOutputAlias = crate::operation::AcknowledgeJob;
-#[doc(hidden)]
-pub type AcknowledgeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcknowledgeJobInput {
     /// Consumes the builder and constructs an Operation<[`AcknowledgeJob`](crate::operation::AcknowledgeJob)>
     #[allow(unused_mut)]
@@ -216,11 +212,6 @@ pub mod acknowledge_third_party_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AcknowledgeThirdPartyJobInputOperationOutputAlias =
-    crate::operation::AcknowledgeThirdPartyJob;
-#[doc(hidden)]
-pub type AcknowledgeThirdPartyJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcknowledgeThirdPartyJobInput {
     /// Consumes the builder and constructs an Operation<[`AcknowledgeThirdPartyJob`](crate::operation::AcknowledgeThirdPartyJob)>
     #[allow(unused_mut)]
@@ -488,10 +479,6 @@ pub mod create_custom_action_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomActionTypeInputOperationOutputAlias = crate::operation::CreateCustomActionType;
-#[doc(hidden)]
-pub type CreateCustomActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomActionType`](crate::operation::CreateCustomActionType)>
     #[allow(unused_mut)]
@@ -661,10 +648,6 @@ pub mod create_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePipelineInputOperationOutputAlias = crate::operation::CreatePipeline;
-#[doc(hidden)]
-pub type CreatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreatePipeline`](crate::operation::CreatePipeline)>
     #[allow(unused_mut)]
@@ -835,10 +818,6 @@ pub mod delete_custom_action_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomActionTypeInputOperationOutputAlias = crate::operation::DeleteCustomActionType;
-#[doc(hidden)]
-pub type DeleteCustomActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomActionType`](crate::operation::DeleteCustomActionType)>
     #[allow(unused_mut)]
@@ -982,10 +961,6 @@ pub mod delete_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePipelineInputOperationOutputAlias = crate::operation::DeletePipeline;
-#[doc(hidden)]
-pub type DeletePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeletePipeline`](crate::operation::DeletePipeline)>
     #[allow(unused_mut)]
@@ -1127,10 +1102,6 @@ pub mod delete_webhook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteWebhookInputOperationOutputAlias = crate::operation::DeleteWebhook;
-#[doc(hidden)]
-pub type DeleteWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWebhookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebhook`](crate::operation::DeleteWebhook)>
     #[allow(unused_mut)]
@@ -1276,12 +1247,6 @@ pub mod deregister_webhook_with_third_party_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterWebhookWithThirdPartyInputOperationOutputAlias =
-    crate::operation::DeregisterWebhookWithThirdParty;
-#[doc(hidden)]
-pub type DeregisterWebhookWithThirdPartyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterWebhookWithThirdPartyInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterWebhookWithThirdParty`](crate::operation::DeregisterWebhookWithThirdParty)>
     #[allow(unused_mut)]
@@ -1466,10 +1431,6 @@ pub mod disable_stage_transition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableStageTransitionInputOperationOutputAlias = crate::operation::DisableStageTransition;
-#[doc(hidden)]
-pub type DisableStageTransitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableStageTransitionInput {
     /// Consumes the builder and constructs an Operation<[`DisableStageTransition`](crate::operation::DisableStageTransition)>
     #[allow(unused_mut)]
@@ -1645,10 +1606,6 @@ pub mod enable_stage_transition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type EnableStageTransitionInputOperationOutputAlias = crate::operation::EnableStageTransition;
-#[doc(hidden)]
-pub type EnableStageTransitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableStageTransitionInput {
     /// Consumes the builder and constructs an Operation<[`EnableStageTransition`](crate::operation::EnableStageTransition)>
     #[allow(unused_mut)]
@@ -1849,10 +1806,6 @@ pub mod get_action_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetActionTypeInputOperationOutputAlias = crate::operation::GetActionType;
-#[doc(hidden)]
-pub type GetActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetActionType`](crate::operation::GetActionType)>
     #[allow(unused_mut)]
@@ -1996,10 +1949,6 @@ pub mod get_job_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobDetailsInputOperationOutputAlias = crate::operation::GetJobDetails;
-#[doc(hidden)]
-pub type GetJobDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetJobDetails`](crate::operation::GetJobDetails)>
     #[allow(unused_mut)]
@@ -2155,10 +2104,6 @@ pub mod get_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPipelineInputOperationOutputAlias = crate::operation::GetPipeline;
-#[doc(hidden)]
-pub type GetPipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetPipeline`](crate::operation::GetPipeline)>
     #[allow(unused_mut)]
@@ -2320,10 +2265,6 @@ pub mod get_pipeline_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPipelineExecutionInputOperationOutputAlias = crate::operation::GetPipelineExecution;
-#[doc(hidden)]
-pub type GetPipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`GetPipelineExecution`](crate::operation::GetPipelineExecution)>
     #[allow(unused_mut)]
@@ -2467,10 +2408,6 @@ pub mod get_pipeline_state_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPipelineStateInputOperationOutputAlias = crate::operation::GetPipelineState;
-#[doc(hidden)]
-pub type GetPipelineStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineStateInput {
     /// Consumes the builder and constructs an Operation<[`GetPipelineState`](crate::operation::GetPipelineState)>
     #[allow(unused_mut)]
@@ -2628,11 +2565,6 @@ pub mod get_third_party_job_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetThirdPartyJobDetailsInputOperationOutputAlias =
-    crate::operation::GetThirdPartyJobDetails;
-#[doc(hidden)]
-pub type GetThirdPartyJobDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetThirdPartyJobDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetThirdPartyJobDetails`](crate::operation::GetThirdPartyJobDetails)>
     #[allow(unused_mut)]
@@ -2824,10 +2756,6 @@ pub mod list_action_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListActionExecutionsInputOperationOutputAlias = crate::operation::ListActionExecutions;
-#[doc(hidden)]
-pub type ListActionExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActionExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListActionExecutions`](crate::operation::ListActionExecutions)>
     #[allow(unused_mut)]
@@ -3003,10 +2931,6 @@ pub mod list_action_types_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListActionTypesInputOperationOutputAlias = crate::operation::ListActionTypes;
-#[doc(hidden)]
-pub type ListActionTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActionTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListActionTypes`](crate::operation::ListActionTypes)>
     #[allow(unused_mut)]
@@ -3177,10 +3101,6 @@ pub mod list_pipeline_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPipelineExecutionsInputOperationOutputAlias = crate::operation::ListPipelineExecutions;
-#[doc(hidden)]
-pub type ListPipelineExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelineExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelineExecutions`](crate::operation::ListPipelineExecutions)>
     #[allow(unused_mut)]
@@ -3338,10 +3258,6 @@ pub mod list_pipelines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPipelinesInputOperationOutputAlias = crate::operation::ListPipelines;
-#[doc(hidden)]
-pub type ListPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelines`](crate::operation::ListPipelines)>
     #[allow(unused_mut)]
@@ -3509,10 +3425,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3670,10 +3582,6 @@ pub mod list_webhooks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWebhooksInputOperationOutputAlias = crate::operation::ListWebhooks;
-#[doc(hidden)]
-pub type ListWebhooksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebhooksInput {
     /// Consumes the builder and constructs an Operation<[`ListWebhooks`](crate::operation::ListWebhooks)>
     #[allow(unused_mut)]
@@ -3861,10 +3769,6 @@ pub mod poll_for_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PollForJobsInputOperationOutputAlias = crate::operation::PollForJobs;
-#[doc(hidden)]
-pub type PollForJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForJobsInput {
     /// Consumes the builder and constructs an Operation<[`PollForJobs`](crate::operation::PollForJobs)>
     #[allow(unused_mut)]
@@ -4023,10 +3927,6 @@ pub mod poll_for_third_party_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PollForThirdPartyJobsInputOperationOutputAlias = crate::operation::PollForThirdPartyJobs;
-#[doc(hidden)]
-pub type PollForThirdPartyJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForThirdPartyJobsInput {
     /// Consumes the builder and constructs an Operation<[`PollForThirdPartyJobs`](crate::operation::PollForThirdPartyJobs)>
     #[allow(unused_mut)]
@@ -4214,10 +4114,6 @@ pub mod put_action_revision_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutActionRevisionInputOperationOutputAlias = crate::operation::PutActionRevision;
-#[doc(hidden)]
-pub type PutActionRevisionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutActionRevisionInput {
     /// Consumes the builder and constructs an Operation<[`PutActionRevision`](crate::operation::PutActionRevision)>
     #[allow(unused_mut)]
@@ -4415,10 +4311,6 @@ pub mod put_approval_result_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutApprovalResultInputOperationOutputAlias = crate::operation::PutApprovalResult;
-#[doc(hidden)]
-pub type PutApprovalResultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutApprovalResultInput {
     /// Consumes the builder and constructs an Operation<[`PutApprovalResult`](crate::operation::PutApprovalResult)>
     #[allow(unused_mut)]
@@ -4577,10 +4469,6 @@ pub mod put_job_failure_result_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutJobFailureResultInputOperationOutputAlias = crate::operation::PutJobFailureResult;
-#[doc(hidden)]
-pub type PutJobFailureResultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutJobFailureResultInput {
     /// Consumes the builder and constructs an Operation<[`PutJobFailureResult`](crate::operation::PutJobFailureResult)>
     #[allow(unused_mut)]
@@ -4800,10 +4688,6 @@ pub mod put_job_success_result_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutJobSuccessResultInputOperationOutputAlias = crate::operation::PutJobSuccessResult;
-#[doc(hidden)]
-pub type PutJobSuccessResultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutJobSuccessResultInput {
     /// Consumes the builder and constructs an Operation<[`PutJobSuccessResult`](crate::operation::PutJobSuccessResult)>
     #[allow(unused_mut)]
@@ -4978,12 +4862,6 @@ pub mod put_third_party_job_failure_result_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutThirdPartyJobFailureResultInputOperationOutputAlias =
-    crate::operation::PutThirdPartyJobFailureResult;
-#[doc(hidden)]
-pub type PutThirdPartyJobFailureResultInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutThirdPartyJobFailureResultInput {
     /// Consumes the builder and constructs an Operation<[`PutThirdPartyJobFailureResult`](crate::operation::PutThirdPartyJobFailureResult)>
     #[allow(unused_mut)]
@@ -5185,12 +5063,6 @@ pub mod put_third_party_job_success_result_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutThirdPartyJobSuccessResultInputOperationOutputAlias =
-    crate::operation::PutThirdPartyJobSuccessResult;
-#[doc(hidden)]
-pub type PutThirdPartyJobSuccessResultInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutThirdPartyJobSuccessResultInput {
     /// Consumes the builder and constructs an Operation<[`PutThirdPartyJobSuccessResult`](crate::operation::PutThirdPartyJobSuccessResult)>
     #[allow(unused_mut)]
@@ -5356,10 +5228,6 @@ pub mod put_webhook_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutWebhookInputOperationOutputAlias = crate::operation::PutWebhook;
-#[doc(hidden)]
-pub type PutWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutWebhookInput {
     /// Consumes the builder and constructs an Operation<[`PutWebhook`](crate::operation::PutWebhook)>
     #[allow(unused_mut)]
@@ -5505,12 +5373,6 @@ pub mod register_webhook_with_third_party_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterWebhookWithThirdPartyInputOperationOutputAlias =
-    crate::operation::RegisterWebhookWithThirdParty;
-#[doc(hidden)]
-pub type RegisterWebhookWithThirdPartyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWebhookWithThirdPartyInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWebhookWithThirdParty`](crate::operation::RegisterWebhookWithThirdParty)>
     #[allow(unused_mut)]
@@ -5698,10 +5560,6 @@ pub mod retry_stage_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RetryStageExecutionInputOperationOutputAlias = crate::operation::RetryStageExecution;
-#[doc(hidden)]
-pub type RetryStageExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetryStageExecutionInput {
     /// Consumes the builder and constructs an Operation<[`RetryStageExecution`](crate::operation::RetryStageExecution)>
     #[allow(unused_mut)]
@@ -5860,10 +5718,6 @@ pub mod start_pipeline_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartPipelineExecutionInputOperationOutputAlias = crate::operation::StartPipelineExecution;
-#[doc(hidden)]
-pub type StartPipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartPipelineExecution`](crate::operation::StartPipelineExecution)>
     #[allow(unused_mut)]
@@ -6058,10 +5912,6 @@ pub mod stop_pipeline_execution_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopPipelineExecutionInputOperationOutputAlias = crate::operation::StopPipelineExecution;
-#[doc(hidden)]
-pub type StopPipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StopPipelineExecution`](crate::operation::StopPipelineExecution)>
     #[allow(unused_mut)]
@@ -6228,10 +6078,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6396,10 +6242,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -6546,10 +6388,6 @@ pub mod update_action_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateActionTypeInputOperationOutputAlias = crate::operation::UpdateActionType;
-#[doc(hidden)]
-pub type UpdateActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateActionType`](crate::operation::UpdateActionType)>
     #[allow(unused_mut)]
@@ -6696,10 +6534,6 @@ pub mod update_pipeline_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePipelineInputOperationOutputAlias = crate::operation::UpdatePipeline;
-#[doc(hidden)]
-pub type UpdatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePipeline`](crate::operation::UpdatePipeline)>
     #[allow(unused_mut)]

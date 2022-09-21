@@ -31,10 +31,6 @@ pub mod build_suggesters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BuildSuggestersInputOperationOutputAlias = crate::operation::BuildSuggesters;
-#[doc(hidden)]
-pub type BuildSuggestersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BuildSuggestersInput {
     /// Consumes the builder and constructs an Operation<[`BuildSuggesters`](crate::operation::BuildSuggesters)>
     #[allow(unused_mut)]
@@ -173,10 +169,6 @@ pub mod create_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDomainInputOperationOutputAlias = crate::operation::CreateDomain;
-#[doc(hidden)]
-pub type CreateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomain`](crate::operation::CreateDomain)>
     #[allow(unused_mut)]
@@ -330,10 +322,6 @@ pub mod define_analysis_scheme_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DefineAnalysisSchemeInputOperationOutputAlias = crate::operation::DefineAnalysisScheme;
-#[doc(hidden)]
-pub type DefineAnalysisSchemeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineAnalysisSchemeInput {
     /// Consumes the builder and constructs an Operation<[`DefineAnalysisScheme`](crate::operation::DefineAnalysisScheme)>
     #[allow(unused_mut)]
@@ -489,10 +477,6 @@ pub mod define_expression_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DefineExpressionInputOperationOutputAlias = crate::operation::DefineExpression;
-#[doc(hidden)]
-pub type DefineExpressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineExpressionInput {
     /// Consumes the builder and constructs an Operation<[`DefineExpression`](crate::operation::DefineExpression)>
     #[allow(unused_mut)]
@@ -646,10 +630,6 @@ pub mod define_index_field_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DefineIndexFieldInputOperationOutputAlias = crate::operation::DefineIndexField;
-#[doc(hidden)]
-pub type DefineIndexFieldInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineIndexFieldInput {
     /// Consumes the builder and constructs an Operation<[`DefineIndexField`](crate::operation::DefineIndexField)>
     #[allow(unused_mut)]
@@ -803,10 +783,6 @@ pub mod define_suggester_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DefineSuggesterInputOperationOutputAlias = crate::operation::DefineSuggester;
-#[doc(hidden)]
-pub type DefineSuggesterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineSuggesterInput {
     /// Consumes the builder and constructs an Operation<[`DefineSuggester`](crate::operation::DefineSuggester)>
     #[allow(unused_mut)]
@@ -960,10 +936,6 @@ pub mod delete_analysis_scheme_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAnalysisSchemeInputOperationOutputAlias = crate::operation::DeleteAnalysisScheme;
-#[doc(hidden)]
-pub type DeleteAnalysisSchemeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnalysisSchemeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnalysisScheme`](crate::operation::DeleteAnalysisScheme)>
     #[allow(unused_mut)]
@@ -1104,10 +1076,6 @@ pub mod delete_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDomainInputOperationOutputAlias = crate::operation::DeleteDomain;
-#[doc(hidden)]
-pub type DeleteDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomain`](crate::operation::DeleteDomain)>
     #[allow(unused_mut)]
@@ -1261,10 +1229,6 @@ pub mod delete_expression_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteExpressionInputOperationOutputAlias = crate::operation::DeleteExpression;
-#[doc(hidden)]
-pub type DeleteExpressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExpressionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExpression`](crate::operation::DeleteExpression)>
     #[allow(unused_mut)]
@@ -1418,10 +1382,6 @@ pub mod delete_index_field_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteIndexFieldInputOperationOutputAlias = crate::operation::DeleteIndexField;
-#[doc(hidden)]
-pub type DeleteIndexFieldInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIndexFieldInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIndexField`](crate::operation::DeleteIndexField)>
     #[allow(unused_mut)]
@@ -1575,10 +1535,6 @@ pub mod delete_suggester_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSuggesterInputOperationOutputAlias = crate::operation::DeleteSuggester;
-#[doc(hidden)]
-pub type DeleteSuggesterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSuggesterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSuggester`](crate::operation::DeleteSuggester)>
     #[allow(unused_mut)]
@@ -1752,11 +1708,6 @@ pub mod describe_analysis_schemes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAnalysisSchemesInputOperationOutputAlias =
-    crate::operation::DescribeAnalysisSchemes;
-#[doc(hidden)]
-pub type DescribeAnalysisSchemesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAnalysisSchemesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnalysisSchemes`](crate::operation::DescribeAnalysisSchemes)>
     #[allow(unused_mut)]
@@ -1911,11 +1862,6 @@ pub mod describe_availability_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAvailabilityOptionsInputOperationOutputAlias =
-    crate::operation::DescribeAvailabilityOptions;
-#[doc(hidden)]
-pub type DescribeAvailabilityOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAvailabilityOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAvailabilityOptions`](crate::operation::DescribeAvailabilityOptions)>
     #[allow(unused_mut)]
@@ -2067,12 +2013,6 @@ pub mod describe_domain_endpoint_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDomainEndpointOptionsInputOperationOutputAlias =
-    crate::operation::DescribeDomainEndpointOptions;
-#[doc(hidden)]
-pub type DescribeDomainEndpointOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainEndpointOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomainEndpointOptions`](crate::operation::DescribeDomainEndpointOptions)>
     #[allow(unused_mut)]
@@ -2219,10 +2159,6 @@ pub mod describe_domains_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDomainsInputOperationOutputAlias = crate::operation::DescribeDomains;
-#[doc(hidden)]
-pub type DescribeDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomains`](crate::operation::DescribeDomains)>
     #[allow(unused_mut)]
@@ -2394,10 +2330,6 @@ pub mod describe_expressions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeExpressionsInputOperationOutputAlias = crate::operation::DescribeExpressions;
-#[doc(hidden)]
-pub type DescribeExpressionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExpressionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExpressions`](crate::operation::DescribeExpressions)>
     #[allow(unused_mut)]
@@ -2569,10 +2501,6 @@ pub mod describe_index_fields_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIndexFieldsInputOperationOutputAlias = crate::operation::DescribeIndexFields;
-#[doc(hidden)]
-pub type DescribeIndexFieldsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIndexFieldsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIndexFields`](crate::operation::DescribeIndexFields)>
     #[allow(unused_mut)]
@@ -2713,11 +2641,6 @@ pub mod describe_scaling_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeScalingParametersInputOperationOutputAlias =
-    crate::operation::DescribeScalingParameters;
-#[doc(hidden)]
-pub type DescribeScalingParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingParameters`](crate::operation::DescribeScalingParameters)>
     #[allow(unused_mut)]
@@ -2872,12 +2795,6 @@ pub mod describe_service_access_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServiceAccessPoliciesInputOperationOutputAlias =
-    crate::operation::DescribeServiceAccessPolicies;
-#[doc(hidden)]
-pub type DescribeServiceAccessPoliciesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceAccessPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceAccessPolicies`](crate::operation::DescribeServiceAccessPolicies)>
     #[allow(unused_mut)]
@@ -3048,10 +2965,6 @@ pub mod describe_suggesters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSuggestersInputOperationOutputAlias = crate::operation::DescribeSuggesters;
-#[doc(hidden)]
-pub type DescribeSuggestersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSuggestersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSuggesters`](crate::operation::DescribeSuggesters)>
     #[allow(unused_mut)]
@@ -3190,10 +3103,6 @@ pub mod index_documents_input {
         }
     }
 }
-#[doc(hidden)]
-pub type IndexDocumentsInputOperationOutputAlias = crate::operation::IndexDocuments;
-#[doc(hidden)]
-pub type IndexDocumentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl IndexDocumentsInput {
     /// Consumes the builder and constructs an Operation<[`IndexDocuments`](crate::operation::IndexDocuments)>
     #[allow(unused_mut)]
@@ -3318,10 +3227,6 @@ pub mod list_domain_names_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainNamesInputOperationOutputAlias = crate::operation::ListDomainNames;
-#[doc(hidden)]
-pub type ListDomainNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainNamesInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainNames`](crate::operation::ListDomainNames)>
     #[allow(unused_mut)]
@@ -3467,11 +3372,6 @@ pub mod update_availability_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAvailabilityOptionsInputOperationOutputAlias =
-    crate::operation::UpdateAvailabilityOptions;
-#[doc(hidden)]
-pub type UpdateAvailabilityOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAvailabilityOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAvailabilityOptions`](crate::operation::UpdateAvailabilityOptions)>
     #[allow(unused_mut)]
@@ -3633,11 +3533,6 @@ pub mod update_domain_endpoint_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDomainEndpointOptionsInputOperationOutputAlias =
-    crate::operation::UpdateDomainEndpointOptions;
-#[doc(hidden)]
-pub type UpdateDomainEndpointOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainEndpointOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainEndpointOptions`](crate::operation::UpdateDomainEndpointOptions)>
     #[allow(unused_mut)]
@@ -3792,11 +3687,6 @@ pub mod update_scaling_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateScalingParametersInputOperationOutputAlias =
-    crate::operation::UpdateScalingParameters;
-#[doc(hidden)]
-pub type UpdateScalingParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScalingParametersInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScalingParameters`](crate::operation::UpdateScalingParameters)>
     #[allow(unused_mut)]
@@ -3954,11 +3844,6 @@ pub mod update_service_access_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServiceAccessPoliciesInputOperationOutputAlias =
-    crate::operation::UpdateServiceAccessPolicies;
-#[doc(hidden)]
-pub type UpdateServiceAccessPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceAccessPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceAccessPolicies`](crate::operation::UpdateServiceAccessPolicies)>
     #[allow(unused_mut)]

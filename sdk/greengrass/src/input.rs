@@ -43,10 +43,6 @@ pub mod associate_role_to_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateRoleToGroupInputOperationOutputAlias = crate::operation::AssociateRoleToGroup;
-#[doc(hidden)]
-pub type AssociateRoleToGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateRoleToGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateRoleToGroup`](crate::operation::AssociateRoleToGroup)>
     #[allow(unused_mut)]
@@ -208,12 +204,6 @@ pub mod associate_service_role_to_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateServiceRoleToAccountInputOperationOutputAlias =
-    crate::operation::AssociateServiceRoleToAccount;
-#[doc(hidden)]
-pub type AssociateServiceRoleToAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateServiceRoleToAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateServiceRoleToAccount`](crate::operation::AssociateServiceRoleToAccount)>
     #[allow(unused_mut)]
@@ -412,11 +402,6 @@ pub mod create_connector_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectorDefinitionInputOperationOutputAlias =
-    crate::operation::CreateConnectorDefinition;
-#[doc(hidden)]
-pub type CreateConnectorDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectorDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectorDefinition`](crate::operation::CreateConnectorDefinition)>
     #[allow(unused_mut)]
@@ -601,12 +586,6 @@ pub mod create_connector_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectorDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateConnectorDefinitionVersion;
-#[doc(hidden)]
-pub type CreateConnectorDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectorDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectorDefinitionVersion`](crate::operation::CreateConnectorDefinitionVersion)>
     #[allow(unused_mut)]
@@ -825,10 +804,6 @@ pub mod create_core_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCoreDefinitionInputOperationOutputAlias = crate::operation::CreateCoreDefinition;
-#[doc(hidden)]
-pub type CreateCoreDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCoreDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCoreDefinition`](crate::operation::CreateCoreDefinition)>
     #[allow(unused_mut)]
@@ -1012,11 +987,6 @@ pub mod create_core_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCoreDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateCoreDefinitionVersion;
-#[doc(hidden)]
-pub type CreateCoreDefinitionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCoreDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCoreDefinitionVersion`](crate::operation::CreateCoreDefinitionVersion)>
     #[allow(unused_mut)]
@@ -1235,10 +1205,6 @@ pub mod create_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(unused_mut)]
@@ -1456,10 +1422,6 @@ pub mod create_device_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeviceDefinitionInputOperationOutputAlias = crate::operation::CreateDeviceDefinition;
-#[doc(hidden)]
-pub type CreateDeviceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeviceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeviceDefinition`](crate::operation::CreateDeviceDefinition)>
     #[allow(unused_mut)]
@@ -1644,12 +1606,6 @@ pub mod create_device_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeviceDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateDeviceDefinitionVersion;
-#[doc(hidden)]
-pub type CreateDeviceDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeviceDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeviceDefinitionVersion`](crate::operation::CreateDeviceDefinitionVersion)>
     #[allow(unused_mut)]
@@ -1870,11 +1826,6 @@ pub mod create_function_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFunctionDefinitionInputOperationOutputAlias =
-    crate::operation::CreateFunctionDefinition;
-#[doc(hidden)]
-pub type CreateFunctionDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFunctionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunctionDefinition`](crate::operation::CreateFunctionDefinition)>
     #[allow(unused_mut)]
@@ -2074,12 +2025,6 @@ pub mod create_function_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateFunctionDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateFunctionDefinitionVersion;
-#[doc(hidden)]
-pub type CreateFunctionDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFunctionDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunctionDefinitionVersion`](crate::operation::CreateFunctionDefinitionVersion)>
     #[allow(unused_mut)]
@@ -2298,10 +2243,6 @@ pub mod create_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
-#[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(unused_mut)]
@@ -2458,12 +2399,6 @@ pub mod create_group_certificate_authority_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGroupCertificateAuthorityInputOperationOutputAlias =
-    crate::operation::CreateGroupCertificateAuthority;
-#[doc(hidden)]
-pub type CreateGroupCertificateAuthorityInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupCertificateAuthorityInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroupCertificateAuthority`](crate::operation::CreateGroupCertificateAuthority)>
     #[allow(unused_mut)]
@@ -2751,10 +2686,6 @@ pub mod create_group_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGroupVersionInputOperationOutputAlias = crate::operation::CreateGroupVersion;
-#[doc(hidden)]
-pub type CreateGroupVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroupVersion`](crate::operation::CreateGroupVersion)>
     #[allow(unused_mut)]
@@ -2972,10 +2903,6 @@ pub mod create_logger_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoggerDefinitionInputOperationOutputAlias = crate::operation::CreateLoggerDefinition;
-#[doc(hidden)]
-pub type CreateLoggerDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoggerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoggerDefinition`](crate::operation::CreateLoggerDefinition)>
     #[allow(unused_mut)]
@@ -3160,12 +3087,6 @@ pub mod create_logger_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoggerDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateLoggerDefinitionVersion;
-#[doc(hidden)]
-pub type CreateLoggerDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoggerDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoggerDefinitionVersion`](crate::operation::CreateLoggerDefinitionVersion)>
     #[allow(unused_mut)]
@@ -3386,11 +3307,6 @@ pub mod create_resource_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResourceDefinitionInputOperationOutputAlias =
-    crate::operation::CreateResourceDefinition;
-#[doc(hidden)]
-pub type CreateResourceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceDefinition`](crate::operation::CreateResourceDefinition)>
     #[allow(unused_mut)]
@@ -3575,12 +3491,6 @@ pub mod create_resource_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateResourceDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateResourceDefinitionVersion;
-#[doc(hidden)]
-pub type CreateResourceDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceDefinitionVersion`](crate::operation::CreateResourceDefinitionVersion)>
     #[allow(unused_mut)]
@@ -3849,11 +3759,6 @@ pub mod create_software_update_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSoftwareUpdateJobInputOperationOutputAlias =
-    crate::operation::CreateSoftwareUpdateJob;
-#[doc(hidden)]
-pub type CreateSoftwareUpdateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSoftwareUpdateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateSoftwareUpdateJob`](crate::operation::CreateSoftwareUpdateJob)>
     #[allow(unused_mut)]
@@ -4061,12 +3966,6 @@ pub mod create_subscription_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSubscriptionDefinitionInputOperationOutputAlias =
-    crate::operation::CreateSubscriptionDefinition;
-#[doc(hidden)]
-pub type CreateSubscriptionDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSubscriptionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSubscriptionDefinition`](crate::operation::CreateSubscriptionDefinition)>
     #[allow(unused_mut)]
@@ -4248,12 +4147,6 @@ pub mod create_subscription_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSubscriptionDefinitionVersionInputOperationOutputAlias =
-    crate::operation::CreateSubscriptionDefinitionVersion;
-#[doc(hidden)]
-pub type CreateSubscriptionDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSubscriptionDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSubscriptionDefinitionVersion`](crate::operation::CreateSubscriptionDefinitionVersion)>
     #[allow(unused_mut)]
@@ -4420,11 +4313,6 @@ pub mod delete_connector_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectorDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteConnectorDefinition;
-#[doc(hidden)]
-pub type DeleteConnectorDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectorDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectorDefinition`](crate::operation::DeleteConnectorDefinition)>
     #[allow(unused_mut)]
@@ -4571,10 +4459,6 @@ pub mod delete_core_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCoreDefinitionInputOperationOutputAlias = crate::operation::DeleteCoreDefinition;
-#[doc(hidden)]
-pub type DeleteCoreDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCoreDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCoreDefinition`](crate::operation::DeleteCoreDefinition)>
     #[allow(unused_mut)]
@@ -4721,10 +4605,6 @@ pub mod delete_device_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeviceDefinitionInputOperationOutputAlias = crate::operation::DeleteDeviceDefinition;
-#[doc(hidden)]
-pub type DeleteDeviceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeviceDefinition`](crate::operation::DeleteDeviceDefinition)>
     #[allow(unused_mut)]
@@ -4873,11 +4753,6 @@ pub mod delete_function_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFunctionDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteFunctionDefinition;
-#[doc(hidden)]
-pub type DeleteFunctionDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunctionDefinition`](crate::operation::DeleteFunctionDefinition)>
     #[allow(unused_mut)]
@@ -5021,10 +4896,6 @@ pub mod delete_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
-#[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(unused_mut)]
@@ -5167,10 +5038,6 @@ pub mod delete_logger_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoggerDefinitionInputOperationOutputAlias = crate::operation::DeleteLoggerDefinition;
-#[doc(hidden)]
-pub type DeleteLoggerDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoggerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoggerDefinition`](crate::operation::DeleteLoggerDefinition)>
     #[allow(unused_mut)]
@@ -5319,11 +5186,6 @@ pub mod delete_resource_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourceDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteResourceDefinition;
-#[doc(hidden)]
-pub type DeleteResourceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceDefinition`](crate::operation::DeleteResourceDefinition)>
     #[allow(unused_mut)]
@@ -5472,12 +5334,6 @@ pub mod delete_subscription_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSubscriptionDefinitionInputOperationOutputAlias =
-    crate::operation::DeleteSubscriptionDefinition;
-#[doc(hidden)]
-pub type DeleteSubscriptionDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSubscriptionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSubscriptionDefinition`](crate::operation::DeleteSubscriptionDefinition)>
     #[allow(unused_mut)]
@@ -5624,11 +5480,6 @@ pub mod disassociate_role_from_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateRoleFromGroupInputOperationOutputAlias =
-    crate::operation::DisassociateRoleFromGroup;
-#[doc(hidden)]
-pub type DisassociateRoleFromGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateRoleFromGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateRoleFromGroup`](crate::operation::DisassociateRoleFromGroup)>
     #[allow(unused_mut)]
@@ -5760,12 +5611,6 @@ pub mod disassociate_service_role_from_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateServiceRoleFromAccountInputOperationOutputAlias =
-    crate::operation::DisassociateServiceRoleFromAccount;
-#[doc(hidden)]
-pub type DisassociateServiceRoleFromAccountInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateServiceRoleFromAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateServiceRoleFromAccount`](crate::operation::DisassociateServiceRoleFromAccount)>
     #[allow(unused_mut)]
@@ -5890,10 +5735,6 @@ pub mod get_associated_role_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssociatedRoleInputOperationOutputAlias = crate::operation::GetAssociatedRole;
-#[doc(hidden)]
-pub type GetAssociatedRoleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssociatedRoleInput {
     /// Consumes the builder and constructs an Operation<[`GetAssociatedRole`](crate::operation::GetAssociatedRole)>
     #[allow(unused_mut)]
@@ -6042,11 +5883,6 @@ pub mod get_bulk_deployment_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBulkDeploymentStatusInputOperationOutputAlias =
-    crate::operation::GetBulkDeploymentStatus;
-#[doc(hidden)]
-pub type GetBulkDeploymentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBulkDeploymentStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetBulkDeploymentStatus`](crate::operation::GetBulkDeploymentStatus)>
     #[allow(unused_mut)]
@@ -6190,10 +6026,6 @@ pub mod get_connectivity_info_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectivityInfoInputOperationOutputAlias = crate::operation::GetConnectivityInfo;
-#[doc(hidden)]
-pub type GetConnectivityInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectivityInfoInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectivityInfo`](crate::operation::GetConnectivityInfo)>
     #[allow(unused_mut)]
@@ -6340,10 +6172,6 @@ pub mod get_connector_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectorDefinitionInputOperationOutputAlias = crate::operation::GetConnectorDefinition;
-#[doc(hidden)]
-pub type GetConnectorDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectorDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectorDefinition`](crate::operation::GetConnectorDefinition)>
     #[allow(unused_mut)]
@@ -6522,12 +6350,6 @@ pub mod get_connector_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConnectorDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetConnectorDefinitionVersion;
-#[doc(hidden)]
-pub type GetConnectorDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectorDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectorDefinitionVersion`](crate::operation::GetConnectorDefinitionVersion)>
     #[allow(unused_mut)]
@@ -6695,10 +6517,6 @@ pub mod get_core_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreDefinitionInputOperationOutputAlias = crate::operation::GetCoreDefinition;
-#[doc(hidden)]
-pub type GetCoreDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreDefinition`](crate::operation::GetCoreDefinition)>
     #[allow(unused_mut)]
@@ -6862,11 +6680,6 @@ pub mod get_core_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCoreDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetCoreDefinitionVersion;
-#[doc(hidden)]
-pub type GetCoreDefinitionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCoreDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetCoreDefinitionVersion`](crate::operation::GetCoreDefinitionVersion)>
     #[allow(unused_mut)]
@@ -7035,10 +6848,6 @@ pub mod get_deployment_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeploymentStatusInputOperationOutputAlias = crate::operation::GetDeploymentStatus;
-#[doc(hidden)]
-pub type GetDeploymentStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeploymentStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetDeploymentStatus`](crate::operation::GetDeploymentStatus)>
     #[allow(unused_mut)]
@@ -7200,10 +7009,6 @@ pub mod get_device_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceDefinitionInputOperationOutputAlias = crate::operation::GetDeviceDefinition;
-#[doc(hidden)]
-pub type GetDeviceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceDefinition`](crate::operation::GetDeviceDefinition)>
     #[allow(unused_mut)]
@@ -7382,11 +7187,6 @@ pub mod get_device_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetDeviceDefinitionVersion;
-#[doc(hidden)]
-pub type GetDeviceDefinitionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceDefinitionVersion`](crate::operation::GetDeviceDefinitionVersion)>
     #[allow(unused_mut)]
@@ -7554,10 +7354,6 @@ pub mod get_function_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionDefinitionInputOperationOutputAlias = crate::operation::GetFunctionDefinition;
-#[doc(hidden)]
-pub type GetFunctionDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionDefinition`](crate::operation::GetFunctionDefinition)>
     #[allow(unused_mut)]
@@ -7736,12 +7532,6 @@ pub mod get_function_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFunctionDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetFunctionDefinitionVersion;
-#[doc(hidden)]
-pub type GetFunctionDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetFunctionDefinitionVersion`](crate::operation::GetFunctionDefinitionVersion)>
     #[allow(unused_mut)]
@@ -7905,10 +7695,6 @@ pub mod get_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
-#[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(unused_mut)]
@@ -8063,12 +7849,6 @@ pub mod get_group_certificate_authority_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupCertificateAuthorityInputOperationOutputAlias =
-    crate::operation::GetGroupCertificateAuthority;
-#[doc(hidden)]
-pub type GetGroupCertificateAuthorityInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupCertificateAuthorityInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupCertificateAuthority`](crate::operation::GetGroupCertificateAuthority)>
     #[allow(unused_mut)]
@@ -8229,12 +8009,6 @@ pub mod get_group_certificate_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupCertificateConfigurationInputOperationOutputAlias =
-    crate::operation::GetGroupCertificateConfiguration;
-#[doc(hidden)]
-pub type GetGroupCertificateConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupCertificateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupCertificateConfiguration`](crate::operation::GetGroupCertificateConfiguration)>
     #[allow(unused_mut)]
@@ -8393,10 +8167,6 @@ pub mod get_group_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGroupVersionInputOperationOutputAlias = crate::operation::GetGroupVersion;
-#[doc(hidden)]
-pub type GetGroupVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetGroupVersion`](crate::operation::GetGroupVersion)>
     #[allow(unused_mut)]
@@ -8558,10 +8328,6 @@ pub mod get_logger_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLoggerDefinitionInputOperationOutputAlias = crate::operation::GetLoggerDefinition;
-#[doc(hidden)]
-pub type GetLoggerDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLoggerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetLoggerDefinition`](crate::operation::GetLoggerDefinition)>
     #[allow(unused_mut)]
@@ -8740,11 +8506,6 @@ pub mod get_logger_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLoggerDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetLoggerDefinitionVersion;
-#[doc(hidden)]
-pub type GetLoggerDefinitionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLoggerDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetLoggerDefinitionVersion`](crate::operation::GetLoggerDefinitionVersion)>
     #[allow(unused_mut)]
@@ -8912,10 +8673,6 @@ pub mod get_resource_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceDefinitionInputOperationOutputAlias = crate::operation::GetResourceDefinition;
-#[doc(hidden)]
-pub type GetResourceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceDefinition`](crate::operation::GetResourceDefinition)>
     #[allow(unused_mut)]
@@ -9082,12 +8839,6 @@ pub mod get_resource_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetResourceDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetResourceDefinitionVersion;
-#[doc(hidden)]
-pub type GetResourceDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceDefinitionVersion`](crate::operation::GetResourceDefinitionVersion)>
     #[allow(unused_mut)]
@@ -9229,11 +8980,6 @@ pub mod get_service_role_for_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceRoleForAccountInputOperationOutputAlias =
-    crate::operation::GetServiceRoleForAccount;
-#[doc(hidden)]
-pub type GetServiceRoleForAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceRoleForAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceRoleForAccount`](crate::operation::GetServiceRoleForAccount)>
     #[allow(unused_mut)]
@@ -9363,11 +9109,6 @@ pub mod get_subscription_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSubscriptionDefinitionInputOperationOutputAlias =
-    crate::operation::GetSubscriptionDefinition;
-#[doc(hidden)]
-pub type GetSubscriptionDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSubscriptionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetSubscriptionDefinition`](crate::operation::GetSubscriptionDefinition)>
     #[allow(unused_mut)]
@@ -9547,12 +9288,6 @@ pub mod get_subscription_definition_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSubscriptionDefinitionVersionInputOperationOutputAlias =
-    crate::operation::GetSubscriptionDefinitionVersion;
-#[doc(hidden)]
-pub type GetSubscriptionDefinitionVersionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSubscriptionDefinitionVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetSubscriptionDefinitionVersion`](crate::operation::GetSubscriptionDefinitionVersion)>
     #[allow(unused_mut)]
@@ -9720,12 +9455,6 @@ pub mod get_thing_runtime_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetThingRuntimeConfigurationInputOperationOutputAlias =
-    crate::operation::GetThingRuntimeConfiguration;
-#[doc(hidden)]
-pub type GetThingRuntimeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetThingRuntimeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetThingRuntimeConfiguration`](crate::operation::GetThingRuntimeConfiguration)>
     #[allow(unused_mut)]
@@ -9898,12 +9627,6 @@ pub mod list_bulk_deployment_detailed_reports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBulkDeploymentDetailedReportsInputOperationOutputAlias =
-    crate::operation::ListBulkDeploymentDetailedReports;
-#[doc(hidden)]
-pub type ListBulkDeploymentDetailedReportsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListBulkDeploymentDetailedReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListBulkDeploymentDetailedReports`](crate::operation::ListBulkDeploymentDetailedReports)>
     #[allow(unused_mut)]
@@ -10073,10 +9796,6 @@ pub mod list_bulk_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBulkDeploymentsInputOperationOutputAlias = crate::operation::ListBulkDeployments;
-#[doc(hidden)]
-pub type ListBulkDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBulkDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBulkDeployments`](crate::operation::ListBulkDeployments)>
     #[allow(unused_mut)]
@@ -10229,11 +9948,6 @@ pub mod list_connector_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConnectorDefinitionsInputOperationOutputAlias =
-    crate::operation::ListConnectorDefinitions;
-#[doc(hidden)]
-pub type ListConnectorDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectorDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectorDefinitions`](crate::operation::ListConnectorDefinitions)>
     #[allow(unused_mut)]
@@ -10402,12 +10116,6 @@ pub mod list_connector_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConnectorDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListConnectorDefinitionVersions;
-#[doc(hidden)]
-pub type ListConnectorDefinitionVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectorDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectorDefinitionVersions`](crate::operation::ListConnectorDefinitionVersions)>
     #[allow(unused_mut)]
@@ -10577,10 +10285,6 @@ pub mod list_core_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCoreDefinitionsInputOperationOutputAlias = crate::operation::ListCoreDefinitions;
-#[doc(hidden)]
-pub type ListCoreDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoreDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCoreDefinitions`](crate::operation::ListCoreDefinitions)>
     #[allow(unused_mut)]
@@ -10748,11 +10452,6 @@ pub mod list_core_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCoreDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListCoreDefinitionVersions;
-#[doc(hidden)]
-pub type ListCoreDefinitionVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoreDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCoreDefinitionVersions`](crate::operation::ListCoreDefinitionVersions)>
     #[allow(unused_mut)]
@@ -10934,10 +10633,6 @@ pub mod list_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeploymentsInputOperationOutputAlias = crate::operation::ListDeployments;
-#[doc(hidden)]
-pub type ListDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeployments`](crate::operation::ListDeployments)>
     #[allow(unused_mut)]
@@ -11107,10 +10802,6 @@ pub mod list_device_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeviceDefinitionsInputOperationOutputAlias = crate::operation::ListDeviceDefinitions;
-#[doc(hidden)]
-pub type ListDeviceDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceDefinitions`](crate::operation::ListDeviceDefinitions)>
     #[allow(unused_mut)]
@@ -11279,12 +10970,6 @@ pub mod list_device_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeviceDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListDeviceDefinitionVersions;
-#[doc(hidden)]
-pub type ListDeviceDefinitionVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceDefinitionVersions`](crate::operation::ListDeviceDefinitionVersions)>
     #[allow(unused_mut)]
@@ -11456,11 +11141,6 @@ pub mod list_function_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFunctionDefinitionsInputOperationOutputAlias =
-    crate::operation::ListFunctionDefinitions;
-#[doc(hidden)]
-pub type ListFunctionDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctionDefinitions`](crate::operation::ListFunctionDefinitions)>
     #[allow(unused_mut)]
@@ -11629,12 +11309,6 @@ pub mod list_function_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFunctionDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListFunctionDefinitionVersions;
-#[doc(hidden)]
-pub type ListFunctionDefinitionVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctionDefinitionVersions`](crate::operation::ListFunctionDefinitionVersions)>
     #[allow(unused_mut)]
@@ -11794,12 +11468,6 @@ pub mod list_group_certificate_authorities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupCertificateAuthoritiesInputOperationOutputAlias =
-    crate::operation::ListGroupCertificateAuthorities;
-#[doc(hidden)]
-pub type ListGroupCertificateAuthoritiesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupCertificateAuthoritiesInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupCertificateAuthorities`](crate::operation::ListGroupCertificateAuthorities)>
     #[allow(unused_mut)]
@@ -11954,10 +11622,6 @@ pub mod list_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
-#[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(unused_mut)]
@@ -12120,10 +11784,6 @@ pub mod list_group_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroupVersionsInputOperationOutputAlias = crate::operation::ListGroupVersions;
-#[doc(hidden)]
-pub type ListGroupVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupVersions`](crate::operation::ListGroupVersions)>
     #[allow(unused_mut)]
@@ -12293,10 +11953,6 @@ pub mod list_logger_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLoggerDefinitionsInputOperationOutputAlias = crate::operation::ListLoggerDefinitions;
-#[doc(hidden)]
-pub type ListLoggerDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLoggerDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLoggerDefinitions`](crate::operation::ListLoggerDefinitions)>
     #[allow(unused_mut)]
@@ -12465,12 +12121,6 @@ pub mod list_logger_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLoggerDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListLoggerDefinitionVersions;
-#[doc(hidden)]
-pub type ListLoggerDefinitionVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListLoggerDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLoggerDefinitionVersions`](crate::operation::ListLoggerDefinitionVersions)>
     #[allow(unused_mut)]
@@ -12642,11 +12292,6 @@ pub mod list_resource_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourceDefinitionsInputOperationOutputAlias =
-    crate::operation::ListResourceDefinitions;
-#[doc(hidden)]
-pub type ListResourceDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceDefinitions`](crate::operation::ListResourceDefinitions)>
     #[allow(unused_mut)]
@@ -12815,12 +12460,6 @@ pub mod list_resource_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListResourceDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListResourceDefinitionVersions;
-#[doc(hidden)]
-pub type ListResourceDefinitionVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceDefinitionVersions`](crate::operation::ListResourceDefinitionVersions)>
     #[allow(unused_mut)]
@@ -12995,11 +12634,6 @@ pub mod list_subscription_definitions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSubscriptionDefinitionsInputOperationOutputAlias =
-    crate::operation::ListSubscriptionDefinitions;
-#[doc(hidden)]
-pub type ListSubscriptionDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSubscriptionDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSubscriptionDefinitions`](crate::operation::ListSubscriptionDefinitions)>
     #[allow(unused_mut)]
@@ -13171,12 +12805,6 @@ pub mod list_subscription_definition_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSubscriptionDefinitionVersionsInputOperationOutputAlias =
-    crate::operation::ListSubscriptionDefinitionVersions;
-#[doc(hidden)]
-pub type ListSubscriptionDefinitionVersionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSubscriptionDefinitionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSubscriptionDefinitionVersions`](crate::operation::ListSubscriptionDefinitionVersions)>
     #[allow(unused_mut)]
@@ -13338,10 +12966,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -13508,10 +13132,6 @@ pub mod reset_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetDeploymentsInputOperationOutputAlias = crate::operation::ResetDeployments;
-#[doc(hidden)]
-pub type ResetDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`ResetDeployments`](crate::operation::ResetDeployments)>
     #[allow(unused_mut)]
@@ -13732,10 +13352,6 @@ pub mod start_bulk_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartBulkDeploymentInputOperationOutputAlias = crate::operation::StartBulkDeployment;
-#[doc(hidden)]
-pub type StartBulkDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartBulkDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartBulkDeployment`](crate::operation::StartBulkDeployment)>
     #[allow(unused_mut)]
@@ -13878,10 +13494,6 @@ pub mod stop_bulk_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopBulkDeploymentInputOperationOutputAlias = crate::operation::StopBulkDeployment;
-#[doc(hidden)]
-pub type StopBulkDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopBulkDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StopBulkDeployment`](crate::operation::StopBulkDeployment)>
     #[allow(unused_mut)]
@@ -14054,10 +13666,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -14232,10 +13840,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -14410,10 +14014,6 @@ pub mod update_connectivity_info_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectivityInfoInputOperationOutputAlias = crate::operation::UpdateConnectivityInfo;
-#[doc(hidden)]
-pub type UpdateConnectivityInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectivityInfoInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectivityInfo`](crate::operation::UpdateConnectivityInfo)>
     #[allow(unused_mut)]
@@ -14590,11 +14190,6 @@ pub mod update_connector_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectorDefinitionInputOperationOutputAlias =
-    crate::operation::UpdateConnectorDefinition;
-#[doc(hidden)]
-pub type UpdateConnectorDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectorDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectorDefinition`](crate::operation::UpdateConnectorDefinition)>
     #[allow(unused_mut)]
@@ -14769,10 +14364,6 @@ pub mod update_core_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateCoreDefinitionInputOperationOutputAlias = crate::operation::UpdateCoreDefinition;
-#[doc(hidden)]
-pub type UpdateCoreDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCoreDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCoreDefinition`](crate::operation::UpdateCoreDefinition)>
     #[allow(unused_mut)]
@@ -14947,10 +14538,6 @@ pub mod update_device_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDeviceDefinitionInputOperationOutputAlias = crate::operation::UpdateDeviceDefinition;
-#[doc(hidden)]
-pub type UpdateDeviceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceDefinition`](crate::operation::UpdateDeviceDefinition)>
     #[allow(unused_mut)]
@@ -15127,11 +14714,6 @@ pub mod update_function_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFunctionDefinitionInputOperationOutputAlias =
-    crate::operation::UpdateFunctionDefinition;
-#[doc(hidden)]
-pub type UpdateFunctionDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunctionDefinition`](crate::operation::UpdateFunctionDefinition)>
     #[allow(unused_mut)]
@@ -15303,10 +14885,6 @@ pub mod update_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGroupInputOperationOutputAlias = crate::operation::UpdateGroup;
-#[doc(hidden)]
-pub type UpdateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroup`](crate::operation::UpdateGroup)>
     #[allow(unused_mut)]
@@ -15480,12 +15058,6 @@ pub mod update_group_certificate_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGroupCertificateConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateGroupCertificateConfiguration;
-#[doc(hidden)]
-pub type UpdateGroupCertificateConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupCertificateConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroupCertificateConfiguration`](crate::operation::UpdateGroupCertificateConfiguration)>
     #[allow(unused_mut)]
@@ -15657,10 +15229,6 @@ pub mod update_logger_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLoggerDefinitionInputOperationOutputAlias = crate::operation::UpdateLoggerDefinition;
-#[doc(hidden)]
-pub type UpdateLoggerDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLoggerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLoggerDefinition`](crate::operation::UpdateLoggerDefinition)>
     #[allow(unused_mut)]
@@ -15837,11 +15405,6 @@ pub mod update_resource_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateResourceDefinitionInputOperationOutputAlias =
-    crate::operation::UpdateResourceDefinition;
-#[doc(hidden)]
-pub type UpdateResourceDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceDefinition`](crate::operation::UpdateResourceDefinition)>
     #[allow(unused_mut)]
@@ -16018,12 +15581,6 @@ pub mod update_subscription_definition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSubscriptionDefinitionInputOperationOutputAlias =
-    crate::operation::UpdateSubscriptionDefinition;
-#[doc(hidden)]
-pub type UpdateSubscriptionDefinitionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSubscriptionDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubscriptionDefinition`](crate::operation::UpdateSubscriptionDefinition)>
     #[allow(unused_mut)]
@@ -16202,12 +15759,6 @@ pub mod update_thing_runtime_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateThingRuntimeConfigurationInputOperationOutputAlias =
-    crate::operation::UpdateThingRuntimeConfiguration;
-#[doc(hidden)]
-pub type UpdateThingRuntimeConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThingRuntimeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThingRuntimeConfiguration`](crate::operation::UpdateThingRuntimeConfiguration)>
     #[allow(unused_mut)]

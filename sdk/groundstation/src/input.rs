@@ -31,10 +31,6 @@ pub mod cancel_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelContactInputOperationOutputAlias = crate::operation::CancelContact;
-#[doc(hidden)]
-pub type CancelContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelContactInput {
     /// Consumes the builder and constructs an Operation<[`CancelContact`](crate::operation::CancelContact)>
     #[allow(unused_mut)]
@@ -218,10 +214,6 @@ pub mod create_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigInputOperationOutputAlias = crate::operation::CreateConfig;
-#[doc(hidden)]
-pub type CreateConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfig`](crate::operation::CreateConfig)>
     #[allow(unused_mut)]
@@ -401,11 +393,6 @@ pub mod create_dataflow_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDataflowEndpointGroupInputOperationOutputAlias =
-    crate::operation::CreateDataflowEndpointGroup;
-#[doc(hidden)]
-pub type CreateDataflowEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataflowEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataflowEndpointGroup`](crate::operation::CreateDataflowEndpointGroup)>
     #[allow(unused_mut)]
@@ -655,10 +642,6 @@ pub mod create_mission_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateMissionProfileInputOperationOutputAlias = crate::operation::CreateMissionProfile;
-#[doc(hidden)]
-pub type CreateMissionProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMissionProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateMissionProfile`](crate::operation::CreateMissionProfile)>
     #[allow(unused_mut)]
@@ -814,10 +797,6 @@ pub mod delete_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigInputOperationOutputAlias = crate::operation::DeleteConfig;
-#[doc(hidden)]
-pub type DeleteConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfig`](crate::operation::DeleteConfig)>
     #[allow(unused_mut)]
@@ -981,11 +960,6 @@ pub mod delete_dataflow_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDataflowEndpointGroupInputOperationOutputAlias =
-    crate::operation::DeleteDataflowEndpointGroup;
-#[doc(hidden)]
-pub type DeleteDataflowEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataflowEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataflowEndpointGroup`](crate::operation::DeleteDataflowEndpointGroup)>
     #[allow(unused_mut)]
@@ -1132,10 +1106,6 @@ pub mod delete_mission_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteMissionProfileInputOperationOutputAlias = crate::operation::DeleteMissionProfile;
-#[doc(hidden)]
-pub type DeleteMissionProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMissionProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMissionProfile`](crate::operation::DeleteMissionProfile)>
     #[allow(unused_mut)]
@@ -1279,10 +1249,6 @@ pub mod describe_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeContactInputOperationOutputAlias = crate::operation::DescribeContact;
-#[doc(hidden)]
-pub type DescribeContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContactInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContact`](crate::operation::DescribeContact)>
     #[allow(unused_mut)]
@@ -1436,10 +1402,6 @@ pub mod get_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConfigInputOperationOutputAlias = crate::operation::GetConfig;
-#[doc(hidden)]
-pub type GetConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetConfig`](crate::operation::GetConfig)>
     #[allow(unused_mut)]
@@ -1601,11 +1563,6 @@ pub mod get_dataflow_endpoint_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDataflowEndpointGroupInputOperationOutputAlias =
-    crate::operation::GetDataflowEndpointGroup;
-#[doc(hidden)]
-pub type GetDataflowEndpointGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataflowEndpointGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetDataflowEndpointGroup`](crate::operation::GetDataflowEndpointGroup)>
     #[allow(unused_mut)]
@@ -1761,10 +1718,6 @@ pub mod get_minute_usage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMinuteUsageInputOperationOutputAlias = crate::operation::GetMinuteUsage;
-#[doc(hidden)]
-pub type GetMinuteUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMinuteUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetMinuteUsage`](crate::operation::GetMinuteUsage)>
     #[allow(unused_mut)]
@@ -1906,10 +1859,6 @@ pub mod get_mission_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetMissionProfileInputOperationOutputAlias = crate::operation::GetMissionProfile;
-#[doc(hidden)]
-pub type GetMissionProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMissionProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetMissionProfile`](crate::operation::GetMissionProfile)>
     #[allow(unused_mut)]
@@ -2053,10 +2002,6 @@ pub mod get_satellite_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSatelliteInputOperationOutputAlias = crate::operation::GetSatellite;
-#[doc(hidden)]
-pub type GetSatelliteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSatelliteInput {
     /// Consumes the builder and constructs an Operation<[`GetSatellite`](crate::operation::GetSatellite)>
     #[allow(unused_mut)]
@@ -2212,10 +2157,6 @@ pub mod list_configs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConfigsInputOperationOutputAlias = crate::operation::ListConfigs;
-#[doc(hidden)]
-pub type ListConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigs`](crate::operation::ListConfigs)>
     #[allow(unused_mut)]
@@ -2465,10 +2406,6 @@ pub mod list_contacts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListContactsInputOperationOutputAlias = crate::operation::ListContacts;
-#[doc(hidden)]
-pub type ListContactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContactsInput {
     /// Consumes the builder and constructs an Operation<[`ListContacts`](crate::operation::ListContacts)>
     #[allow(unused_mut)]
@@ -2621,11 +2558,6 @@ pub mod list_dataflow_endpoint_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataflowEndpointGroupsInputOperationOutputAlias =
-    crate::operation::ListDataflowEndpointGroups;
-#[doc(hidden)]
-pub type ListDataflowEndpointGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataflowEndpointGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataflowEndpointGroups`](crate::operation::ListDataflowEndpointGroups)>
     #[allow(unused_mut)]
@@ -2791,10 +2723,6 @@ pub mod list_ground_stations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGroundStationsInputOperationOutputAlias = crate::operation::ListGroundStations;
-#[doc(hidden)]
-pub type ListGroundStationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroundStationsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroundStations`](crate::operation::ListGroundStations)>
     #[allow(unused_mut)]
@@ -2954,10 +2882,6 @@ pub mod list_mission_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListMissionProfilesInputOperationOutputAlias = crate::operation::ListMissionProfiles;
-#[doc(hidden)]
-pub type ListMissionProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMissionProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListMissionProfiles`](crate::operation::ListMissionProfiles)>
     #[allow(unused_mut)]
@@ -3111,10 +3035,6 @@ pub mod list_satellites_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSatellitesInputOperationOutputAlias = crate::operation::ListSatellites;
-#[doc(hidden)]
-pub type ListSatellitesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSatellitesInput {
     /// Consumes the builder and constructs an Operation<[`ListSatellites`](crate::operation::ListSatellites)>
     #[allow(unused_mut)]
@@ -3256,10 +3176,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3491,10 +3407,6 @@ pub mod reserve_contact_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ReserveContactInputOperationOutputAlias = crate::operation::ReserveContact;
-#[doc(hidden)]
-pub type ReserveContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReserveContactInput {
     /// Consumes the builder and constructs an Operation<[`ReserveContact`](crate::operation::ReserveContact)>
     #[allow(unused_mut)]
@@ -3662,10 +3574,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3840,10 +3748,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4038,10 +3942,6 @@ pub mod update_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigInputOperationOutputAlias = crate::operation::UpdateConfig;
-#[doc(hidden)]
-pub type UpdateConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfig`](crate::operation::UpdateConfig)>
     #[allow(unused_mut)]
@@ -4312,10 +4212,6 @@ pub mod update_mission_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMissionProfileInputOperationOutputAlias = crate::operation::UpdateMissionProfile;
-#[doc(hidden)]
-pub type UpdateMissionProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMissionProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMissionProfile`](crate::operation::UpdateMissionProfile)>
     #[allow(unused_mut)]

@@ -54,11 +54,6 @@ pub mod add_listener_certificates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddListenerCertificatesInputOperationOutputAlias =
-    crate::operation::AddListenerCertificates;
-#[doc(hidden)]
-pub type AddListenerCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`AddListenerCertificates`](crate::operation::AddListenerCertificates)>
     #[allow(unused_mut)]
@@ -228,10 +223,6 @@ pub mod add_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
-#[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(unused_mut)]
@@ -512,10 +503,6 @@ pub mod create_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateListenerInputOperationOutputAlias = crate::operation::CreateListener;
-#[doc(hidden)]
-pub type CreateListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateListener`](crate::operation::CreateListener)>
     #[allow(unused_mut)]
@@ -826,10 +813,6 @@ pub mod create_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLoadBalancerInputOperationOutputAlias = crate::operation::CreateLoadBalancer;
-#[doc(hidden)]
-pub type CreateLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancer`](crate::operation::CreateLoadBalancer)>
     #[allow(unused_mut)]
@@ -1042,10 +1025,6 @@ pub mod create_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateRuleInputOperationOutputAlias = crate::operation::CreateRule;
-#[doc(hidden)]
-pub type CreateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(unused_mut)]
@@ -1430,10 +1409,6 @@ pub mod create_target_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTargetGroupInputOperationOutputAlias = crate::operation::CreateTargetGroup;
-#[doc(hidden)]
-pub type CreateTargetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateTargetGroup`](crate::operation::CreateTargetGroup)>
     #[allow(unused_mut)]
@@ -1572,10 +1547,6 @@ pub mod delete_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteListenerInputOperationOutputAlias = crate::operation::DeleteListener;
-#[doc(hidden)]
-pub type DeleteListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteListener`](crate::operation::DeleteListener)>
     #[allow(unused_mut)]
@@ -1717,10 +1688,6 @@ pub mod delete_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLoadBalancerInputOperationOutputAlias = crate::operation::DeleteLoadBalancer;
-#[doc(hidden)]
-pub type DeleteLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancer`](crate::operation::DeleteLoadBalancer)>
     #[allow(unused_mut)]
@@ -1858,10 +1825,6 @@ pub mod delete_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
-#[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(unused_mut)]
@@ -2003,10 +1966,6 @@ pub mod delete_target_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTargetGroupInputOperationOutputAlias = crate::operation::DeleteTargetGroup;
-#[doc(hidden)]
-pub type DeleteTargetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTargetGroup`](crate::operation::DeleteTargetGroup)>
     #[allow(unused_mut)]
@@ -2169,10 +2128,6 @@ pub mod deregister_targets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterTargetsInputOperationOutputAlias = crate::operation::DeregisterTargets;
-#[doc(hidden)]
-pub type DeregisterTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterTargets`](crate::operation::DeregisterTargets)>
     #[allow(unused_mut)]
@@ -2323,10 +2278,6 @@ pub mod describe_account_limits_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationOutputAlias = crate::operation::DescribeAccountLimits;
-#[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
     #[allow(unused_mut)]
@@ -2493,12 +2444,6 @@ pub mod describe_listener_certificates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeListenerCertificatesInputOperationOutputAlias =
-    crate::operation::DescribeListenerCertificates;
-#[doc(hidden)]
-pub type DescribeListenerCertificatesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListenerCertificates`](crate::operation::DescribeListenerCertificates)>
     #[allow(unused_mut)]
@@ -2684,10 +2629,6 @@ pub mod describe_listeners_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeListenersInputOperationOutputAlias = crate::operation::DescribeListeners;
-#[doc(hidden)]
-pub type DescribeListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeListenersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListeners`](crate::operation::DescribeListeners)>
     #[allow(unused_mut)]
@@ -2831,12 +2772,6 @@ pub mod describe_load_balancer_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancerAttributesInputOperationOutputAlias =
-    crate::operation::DescribeLoadBalancerAttributes;
-#[doc(hidden)]
-pub type DescribeLoadBalancerAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerAttributes`](crate::operation::DescribeLoadBalancerAttributes)>
     #[allow(unused_mut)]
@@ -3028,10 +2963,6 @@ pub mod describe_load_balancers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationOutputAlias = crate::operation::DescribeLoadBalancers;
-#[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
     #[allow(unused_mut)]
@@ -3217,10 +3148,6 @@ pub mod describe_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRulesInputOperationOutputAlias = crate::operation::DescribeRules;
-#[doc(hidden)]
-pub type DescribeRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRules`](crate::operation::DescribeRules)>
     #[allow(unused_mut)]
@@ -3407,10 +3334,6 @@ pub mod describe_ssl_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSslPoliciesInputOperationOutputAlias = crate::operation::DescribeSSLPolicies;
-#[doc(hidden)]
-pub type DescribeSslPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSslPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSSLPolicies`](crate::operation::DescribeSSLPolicies)>
     #[allow(unused_mut)]
@@ -3558,10 +3481,6 @@ pub mod describe_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
-#[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
@@ -3705,12 +3624,6 @@ pub mod describe_target_group_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTargetGroupAttributesInputOperationOutputAlias =
-    crate::operation::DescribeTargetGroupAttributes;
-#[doc(hidden)]
-pub type DescribeTargetGroupAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetGroupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetGroupAttributes`](crate::operation::DescribeTargetGroupAttributes)>
     #[allow(unused_mut)]
@@ -3917,10 +3830,6 @@ pub mod describe_target_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTargetGroupsInputOperationOutputAlias = crate::operation::DescribeTargetGroups;
-#[doc(hidden)]
-pub type DescribeTargetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetGroups`](crate::operation::DescribeTargetGroups)>
     #[allow(unused_mut)]
@@ -4085,10 +3994,6 @@ pub mod describe_target_health_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTargetHealthInputOperationOutputAlias = crate::operation::DescribeTargetHealth;
-#[doc(hidden)]
-pub type DescribeTargetHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetHealth`](crate::operation::DescribeTargetHealth)>
     #[allow(unused_mut)]
@@ -4349,10 +4254,6 @@ pub mod modify_listener_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyListenerInputOperationOutputAlias = crate::operation::ModifyListener;
-#[doc(hidden)]
-pub type ModifyListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyListenerInput {
     /// Consumes the builder and constructs an Operation<[`ModifyListener`](crate::operation::ModifyListener)>
     #[allow(unused_mut)]
@@ -4518,12 +4419,6 @@ pub mod modify_load_balancer_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyLoadBalancerAttributesInputOperationOutputAlias =
-    crate::operation::ModifyLoadBalancerAttributes;
-#[doc(hidden)]
-pub type ModifyLoadBalancerAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLoadBalancerAttributes`](crate::operation::ModifyLoadBalancerAttributes)>
     #[allow(unused_mut)]
@@ -4702,10 +4597,6 @@ pub mod modify_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyRuleInputOperationOutputAlias = crate::operation::ModifyRule;
-#[doc(hidden)]
-pub type ModifyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyRuleInput {
     /// Consumes the builder and constructs an Operation<[`ModifyRule`](crate::operation::ModifyRule)>
     #[allow(unused_mut)]
@@ -4971,10 +4862,6 @@ pub mod modify_target_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyTargetGroupInputOperationOutputAlias = crate::operation::ModifyTargetGroup;
-#[doc(hidden)]
-pub type ModifyTargetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyTargetGroup`](crate::operation::ModifyTargetGroup)>
     #[allow(unused_mut)]
@@ -5140,11 +5027,6 @@ pub mod modify_target_group_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ModifyTargetGroupAttributesInputOperationOutputAlias =
-    crate::operation::ModifyTargetGroupAttributes;
-#[doc(hidden)]
-pub type ModifyTargetGroupAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyTargetGroupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyTargetGroupAttributes`](crate::operation::ModifyTargetGroupAttributes)>
     #[allow(unused_mut)]
@@ -5306,10 +5188,6 @@ pub mod register_targets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterTargetsInputOperationOutputAlias = crate::operation::RegisterTargets;
-#[doc(hidden)]
-pub type RegisterTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterTargetsInput {
     /// Consumes the builder and constructs an Operation<[`RegisterTargets`](crate::operation::RegisterTargets)>
     #[allow(unused_mut)]
@@ -5471,11 +5349,6 @@ pub mod remove_listener_certificates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveListenerCertificatesInputOperationOutputAlias =
-    crate::operation::RemoveListenerCertificates;
-#[doc(hidden)]
-pub type RemoveListenerCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`RemoveListenerCertificates`](crate::operation::RemoveListenerCertificates)>
     #[allow(unused_mut)]
@@ -5645,10 +5518,6 @@ pub mod remove_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
-#[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(unused_mut)]
@@ -5805,10 +5674,6 @@ pub mod set_ip_address_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetIpAddressTypeInputOperationOutputAlias = crate::operation::SetIpAddressType;
-#[doc(hidden)]
-pub type SetIpAddressTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIpAddressTypeInput {
     /// Consumes the builder and constructs an Operation<[`SetIpAddressType`](crate::operation::SetIpAddressType)>
     #[allow(unused_mut)]
@@ -5957,10 +5822,6 @@ pub mod set_rule_priorities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetRulePrioritiesInputOperationOutputAlias = crate::operation::SetRulePriorities;
-#[doc(hidden)]
-pub type SetRulePrioritiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetRulePrioritiesInput {
     /// Consumes the builder and constructs an Operation<[`SetRulePriorities`](crate::operation::SetRulePriorities)>
     #[allow(unused_mut)]
@@ -6123,10 +5984,6 @@ pub mod set_security_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetSecurityGroupsInputOperationOutputAlias = crate::operation::SetSecurityGroups;
-#[doc(hidden)]
-pub type SetSecurityGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`SetSecurityGroups`](crate::operation::SetSecurityGroups)>
     #[allow(unused_mut)]
@@ -6340,10 +6197,6 @@ pub mod set_subnets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetSubnetsInputOperationOutputAlias = crate::operation::SetSubnets;
-#[doc(hidden)]
-pub type SetSubnetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`SetSubnets`](crate::operation::SetSubnets)>
     #[allow(unused_mut)]

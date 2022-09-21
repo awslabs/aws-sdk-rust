@@ -85,10 +85,6 @@ pub mod create_parallel_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateParallelDataInputOperationOutputAlias = crate::operation::CreateParallelData;
-#[doc(hidden)]
-pub type CreateParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`CreateParallelData`](crate::operation::CreateParallelData)>
     #[allow(unused_mut)]
@@ -233,10 +229,6 @@ pub mod delete_parallel_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteParallelDataInputOperationOutputAlias = crate::operation::DeleteParallelData;
-#[doc(hidden)]
-pub type DeleteParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteParallelData`](crate::operation::DeleteParallelData)>
     #[allow(unused_mut)]
@@ -378,10 +370,6 @@ pub mod delete_terminology_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTerminologyInputOperationOutputAlias = crate::operation::DeleteTerminology;
-#[doc(hidden)]
-pub type DeleteTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTerminology`](crate::operation::DeleteTerminology)>
     #[allow(unused_mut)]
@@ -527,11 +515,6 @@ pub mod describe_text_translation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTextTranslationJobInputOperationOutputAlias =
-    crate::operation::DescribeTextTranslationJob;
-#[doc(hidden)]
-pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTextTranslationJob`](crate::operation::DescribeTextTranslationJob)>
     #[allow(unused_mut)]
@@ -672,10 +655,6 @@ pub mod get_parallel_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetParallelDataInputOperationOutputAlias = crate::operation::GetParallelData;
-#[doc(hidden)]
-pub type GetParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`GetParallelData`](crate::operation::GetParallelData)>
     #[allow(unused_mut)]
@@ -842,10 +821,6 @@ pub mod get_terminology_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTerminologyInputOperationOutputAlias = crate::operation::GetTerminology;
-#[doc(hidden)]
-pub type GetTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`GetTerminology`](crate::operation::GetTerminology)>
     #[allow(unused_mut)]
@@ -1046,10 +1021,6 @@ pub mod import_terminology_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportTerminologyInputOperationOutputAlias = crate::operation::ImportTerminology;
-#[doc(hidden)]
-pub type ImportTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`ImportTerminology`](crate::operation::ImportTerminology)>
     #[allow(unused_mut)]
@@ -1220,10 +1191,6 @@ pub mod list_languages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLanguagesInputOperationOutputAlias = crate::operation::ListLanguages;
-#[doc(hidden)]
-pub type ListLanguagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLanguagesInput {
     /// Consumes the builder and constructs an Operation<[`ListLanguages`](crate::operation::ListLanguages)>
     #[allow(unused_mut)]
@@ -1379,10 +1346,6 @@ pub mod list_parallel_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListParallelDataInputOperationOutputAlias = crate::operation::ListParallelData;
-#[doc(hidden)]
-pub type ListParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`ListParallelData`](crate::operation::ListParallelData)>
     #[allow(unused_mut)]
@@ -1538,10 +1501,6 @@ pub mod list_terminologies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTerminologiesInputOperationOutputAlias = crate::operation::ListTerminologies;
-#[doc(hidden)]
-pub type ListTerminologiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTerminologiesInput {
     /// Consumes the builder and constructs an Operation<[`ListTerminologies`](crate::operation::ListTerminologies)>
     #[allow(unused_mut)]
@@ -1714,11 +1673,6 @@ pub mod list_text_translation_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTextTranslationJobsInputOperationOutputAlias =
-    crate::operation::ListTextTranslationJobs;
-#[doc(hidden)]
-pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTextTranslationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTextTranslationJobs`](crate::operation::ListTextTranslationJobs)>
     #[allow(unused_mut)]
@@ -2034,11 +1988,6 @@ pub mod start_text_translation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTextTranslationJobInputOperationOutputAlias =
-    crate::operation::StartTextTranslationJob;
-#[doc(hidden)]
-pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTextTranslationJob`](crate::operation::StartTextTranslationJob)>
     #[allow(unused_mut)]
@@ -2187,10 +2136,6 @@ pub mod stop_text_translation_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopTextTranslationJobInputOperationOutputAlias = crate::operation::StopTextTranslationJob;
-#[doc(hidden)]
-pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StopTextTranslationJob`](crate::operation::StopTextTranslationJob)>
     #[allow(unused_mut)]
@@ -2408,10 +2353,6 @@ pub mod translate_text_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TranslateTextInputOperationOutputAlias = crate::operation::TranslateText;
-#[doc(hidden)]
-pub type TranslateTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TranslateTextInput {
     /// Consumes the builder and constructs an Operation<[`TranslateText`](crate::operation::TranslateText)>
     #[allow(unused_mut)]
@@ -2594,10 +2535,6 @@ pub mod update_parallel_data_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateParallelDataInputOperationOutputAlias = crate::operation::UpdateParallelData;
-#[doc(hidden)]
-pub type UpdateParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateParallelData`](crate::operation::UpdateParallelData)>
     #[allow(unused_mut)]

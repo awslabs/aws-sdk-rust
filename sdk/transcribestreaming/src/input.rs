@@ -229,12 +229,6 @@ pub mod start_medical_stream_transcription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMedicalStreamTranscriptionInputOperationOutputAlias =
-    crate::operation::StartMedicalStreamTranscription;
-#[doc(hidden)]
-pub type StartMedicalStreamTranscriptionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartMedicalStreamTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMedicalStreamTranscription`](crate::operation::StartMedicalStreamTranscription)>
     #[allow(unused_mut)]
@@ -776,11 +770,6 @@ pub mod start_stream_transcription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStreamTranscriptionInputOperationOutputAlias =
-    crate::operation::StartStreamTranscription;
-#[doc(hidden)]
-pub type StartStreamTranscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamTranscription`](crate::operation::StartStreamTranscription)>
     #[allow(unused_mut)]

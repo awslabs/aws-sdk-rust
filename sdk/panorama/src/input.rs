@@ -159,11 +159,6 @@ pub mod create_application_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateApplicationInstanceInputOperationOutputAlias =
-    crate::operation::CreateApplicationInstance;
-#[doc(hidden)]
-pub type CreateApplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplicationInstance`](crate::operation::CreateApplicationInstance)>
     #[allow(unused_mut)]
@@ -340,10 +335,6 @@ pub mod create_job_for_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateJobForDevicesInputOperationOutputAlias = crate::operation::CreateJobForDevices;
-#[doc(hidden)]
-pub type CreateJobForDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobForDevicesInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobForDevices`](crate::operation::CreateJobForDevices)>
     #[allow(unused_mut)]
@@ -596,11 +587,6 @@ pub mod create_node_from_template_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNodeFromTemplateJobInputOperationOutputAlias =
-    crate::operation::CreateNodeFromTemplateJob;
-#[doc(hidden)]
-pub type CreateNodeFromTemplateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNodeFromTemplateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateNodeFromTemplateJob`](crate::operation::CreateNodeFromTemplateJob)>
     #[allow(unused_mut)]
@@ -767,10 +753,6 @@ pub mod create_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePackageInputOperationOutputAlias = crate::operation::CreatePackage;
-#[doc(hidden)]
-pub type CreatePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackageInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackage`](crate::operation::CreatePackage)>
     #[allow(unused_mut)]
@@ -975,10 +957,6 @@ pub mod create_package_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePackageImportJobInputOperationOutputAlias = crate::operation::CreatePackageImportJob;
-#[doc(hidden)]
-pub type CreatePackageImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackageImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackageImportJob`](crate::operation::CreatePackageImportJob)>
     #[allow(unused_mut)]
@@ -1119,10 +1097,6 @@ pub mod delete_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDeviceInputOperationOutputAlias = crate::operation::DeleteDevice;
-#[doc(hidden)]
-pub type DeleteDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDevice`](crate::operation::DeleteDevice)>
     #[allow(unused_mut)]
@@ -1274,10 +1248,6 @@ pub mod delete_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePackageInputOperationOutputAlias = crate::operation::DeletePackage;
-#[doc(hidden)]
-pub type DeletePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackageInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackage`](crate::operation::DeletePackage)>
     #[allow(unused_mut)]
@@ -1496,11 +1466,6 @@ pub mod deregister_package_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterPackageVersionInputOperationOutputAlias =
-    crate::operation::DeregisterPackageVersion;
-#[doc(hidden)]
-pub type DeregisterPackageVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterPackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterPackageVersion`](crate::operation::DeregisterPackageVersion)>
     #[allow(unused_mut)]
@@ -1699,11 +1664,6 @@ pub mod describe_application_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeApplicationInstanceInputOperationOutputAlias =
-    crate::operation::DescribeApplicationInstance;
-#[doc(hidden)]
-pub type DescribeApplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationInstance`](crate::operation::DescribeApplicationInstance)>
     #[allow(unused_mut)]
@@ -1852,12 +1812,6 @@ pub mod describe_application_instance_details_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeApplicationInstanceDetailsInputOperationOutputAlias =
-    crate::operation::DescribeApplicationInstanceDetails;
-#[doc(hidden)]
-pub type DescribeApplicationInstanceDetailsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationInstanceDetailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationInstanceDetails`](crate::operation::DescribeApplicationInstanceDetails)>
     #[allow(unused_mut)]
@@ -2001,10 +1955,6 @@ pub mod describe_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeviceInputOperationOutputAlias = crate::operation::DescribeDevice;
-#[doc(hidden)]
-pub type DescribeDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevice`](crate::operation::DescribeDevice)>
     #[allow(unused_mut)]
@@ -2144,10 +2094,6 @@ pub mod describe_device_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeviceJobInputOperationOutputAlias = crate::operation::DescribeDeviceJob;
-#[doc(hidden)]
-pub type DescribeDeviceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeviceJob`](crate::operation::DescribeDeviceJob)>
     #[allow(unused_mut)]
@@ -2301,10 +2247,6 @@ pub mod describe_node_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNodeInputOperationOutputAlias = crate::operation::DescribeNode;
-#[doc(hidden)]
-pub type DescribeNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNodeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNode`](crate::operation::DescribeNode)>
     #[allow(unused_mut)]
@@ -2460,11 +2402,6 @@ pub mod describe_node_from_template_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNodeFromTemplateJobInputOperationOutputAlias =
-    crate::operation::DescribeNodeFromTemplateJob;
-#[doc(hidden)]
-pub type DescribeNodeFromTemplateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNodeFromTemplateJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNodeFromTemplateJob`](crate::operation::DescribeNodeFromTemplateJob)>
     #[allow(unused_mut)]
@@ -2604,10 +2541,6 @@ pub mod describe_package_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePackageInputOperationOutputAlias = crate::operation::DescribePackage;
-#[doc(hidden)]
-pub type DescribePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackageInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackage`](crate::operation::DescribePackage)>
     #[allow(unused_mut)]
@@ -2753,11 +2686,6 @@ pub mod describe_package_import_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePackageImportJobInputOperationOutputAlias =
-    crate::operation::DescribePackageImportJob;
-#[doc(hidden)]
-pub type DescribePackageImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackageImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackageImportJob`](crate::operation::DescribePackageImportJob)>
     #[allow(unused_mut)]
@@ -2942,10 +2870,6 @@ pub mod describe_package_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePackageVersionInputOperationOutputAlias = crate::operation::DescribePackageVersion;
-#[doc(hidden)]
-pub type DescribePackageVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackageVersion`](crate::operation::DescribePackageVersion)>
     #[allow(unused_mut)]
@@ -3153,12 +3077,6 @@ pub mod list_application_instance_dependencies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationInstanceDependenciesInputOperationOutputAlias =
-    crate::operation::ListApplicationInstanceDependencies;
-#[doc(hidden)]
-pub type ListApplicationInstanceDependenciesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationInstanceDependenciesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationInstanceDependencies`](crate::operation::ListApplicationInstanceDependencies)>
     #[allow(unused_mut)]
@@ -3348,12 +3266,6 @@ pub mod list_application_instance_node_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationInstanceNodeInstancesInputOperationOutputAlias =
-    crate::operation::ListApplicationInstanceNodeInstances;
-#[doc(hidden)]
-pub type ListApplicationInstanceNodeInstancesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationInstanceNodeInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationInstanceNodeInstances`](crate::operation::ListApplicationInstanceNodeInstances)>
     #[allow(unused_mut)]
@@ -3555,11 +3467,6 @@ pub mod list_application_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationInstancesInputOperationOutputAlias =
-    crate::operation::ListApplicationInstances;
-#[doc(hidden)]
-pub type ListApplicationInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationInstances`](crate::operation::ListApplicationInstances)>
     #[allow(unused_mut)]
@@ -3722,10 +3629,6 @@ pub mod list_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
-#[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(unused_mut)]
@@ -3891,10 +3794,6 @@ pub mod list_devices_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDevicesJobsInputOperationOutputAlias = crate::operation::ListDevicesJobs;
-#[doc(hidden)]
-pub type ListDevicesJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevicesJobs`](crate::operation::ListDevicesJobs)>
     #[allow(unused_mut)]
@@ -4053,11 +3952,6 @@ pub mod list_node_from_template_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNodeFromTemplateJobsInputOperationOutputAlias =
-    crate::operation::ListNodeFromTemplateJobs;
-#[doc(hidden)]
-pub type ListNodeFromTemplateJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNodeFromTemplateJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListNodeFromTemplateJobs`](crate::operation::ListNodeFromTemplateJobs)>
     #[allow(unused_mut)]
@@ -4282,10 +4176,6 @@ pub mod list_nodes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNodesInputOperationOutputAlias = crate::operation::ListNodes;
-#[doc(hidden)]
-pub type ListNodesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNodesInput {
     /// Consumes the builder and constructs an Operation<[`ListNodes`](crate::operation::ListNodes)>
     #[allow(unused_mut)]
@@ -4464,10 +4354,6 @@ pub mod list_package_import_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPackageImportJobsInputOperationOutputAlias = crate::operation::ListPackageImportJobs;
-#[doc(hidden)]
-pub type ListPackageImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackageImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackageImportJobs`](crate::operation::ListPackageImportJobs)>
     #[allow(unused_mut)]
@@ -4621,10 +4507,6 @@ pub mod list_packages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPackagesInputOperationOutputAlias = crate::operation::ListPackages;
-#[doc(hidden)]
-pub type ListPackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListPackages`](crate::operation::ListPackages)>
     #[allow(unused_mut)]
@@ -4766,10 +4648,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4965,10 +4843,6 @@ pub mod provision_device_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ProvisionDeviceInputOperationOutputAlias = crate::operation::ProvisionDevice;
-#[doc(hidden)]
-pub type ProvisionDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ProvisionDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionDevice`](crate::operation::ProvisionDevice)>
     #[allow(unused_mut)]
@@ -5164,10 +5038,6 @@ pub mod register_package_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterPackageVersionInputOperationOutputAlias = crate::operation::RegisterPackageVersion;
-#[doc(hidden)]
-pub type RegisterPackageVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterPackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`RegisterPackageVersion`](crate::operation::RegisterPackageVersion)>
     #[allow(unused_mut)]
@@ -5362,11 +5232,6 @@ pub mod remove_application_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveApplicationInstanceInputOperationOutputAlias =
-    crate::operation::RemoveApplicationInstance;
-#[doc(hidden)]
-pub type RemoveApplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveApplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveApplicationInstance`](crate::operation::RemoveApplicationInstance)>
     #[allow(unused_mut)]
@@ -5539,10 +5404,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -5717,10 +5578,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -5885,10 +5742,6 @@ pub mod update_device_metadata_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDeviceMetadataInputOperationOutputAlias = crate::operation::UpdateDeviceMetadata;
-#[doc(hidden)]
-pub type UpdateDeviceMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceMetadata`](crate::operation::UpdateDeviceMetadata)>
     #[allow(unused_mut)]

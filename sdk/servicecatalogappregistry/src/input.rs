@@ -48,11 +48,6 @@ pub mod associate_attribute_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateAttributeGroupInputOperationOutputAlias =
-    crate::operation::AssociateAttributeGroup;
-#[doc(hidden)]
-pub type AssociateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAttributeGroup`](crate::operation::AssociateAttributeGroup)>
     #[allow(unused_mut)]
@@ -238,10 +233,6 @@ pub mod associate_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateResourceInputOperationOutputAlias = crate::operation::AssociateResource;
-#[doc(hidden)]
-pub type AssociateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResource`](crate::operation::AssociateResource)>
     #[allow(unused_mut)]
@@ -468,10 +459,6 @@ pub mod create_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
-#[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(unused_mut)]
@@ -678,10 +665,6 @@ pub mod create_attribute_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAttributeGroupInputOperationOutputAlias = crate::operation::CreateAttributeGroup;
-#[doc(hidden)]
-pub type CreateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateAttributeGroup`](crate::operation::CreateAttributeGroup)>
     #[allow(unused_mut)]
@@ -825,10 +808,6 @@ pub mod delete_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
-#[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(unused_mut)]
@@ -975,10 +954,6 @@ pub mod delete_attribute_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAttributeGroupInputOperationOutputAlias = crate::operation::DeleteAttributeGroup;
-#[doc(hidden)]
-pub type DeleteAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAttributeGroup`](crate::operation::DeleteAttributeGroup)>
     #[allow(unused_mut)]
@@ -1139,11 +1114,6 @@ pub mod disassociate_attribute_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateAttributeGroupInputOperationOutputAlias =
-    crate::operation::DisassociateAttributeGroup;
-#[doc(hidden)]
-pub type DisassociateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAttributeGroup`](crate::operation::DisassociateAttributeGroup)>
     #[allow(unused_mut)]
@@ -1329,10 +1299,6 @@ pub mod disassociate_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateResourceInputOperationOutputAlias = crate::operation::DisassociateResource;
-#[doc(hidden)]
-pub type DisassociateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResource`](crate::operation::DisassociateResource)>
     #[allow(unused_mut)]
@@ -1506,10 +1472,6 @@ pub mod get_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetApplicationInputOperationOutputAlias = crate::operation::GetApplication;
-#[doc(hidden)]
-pub type GetApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetApplication`](crate::operation::GetApplication)>
     #[allow(unused_mut)]
@@ -1680,10 +1642,6 @@ pub mod get_associated_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAssociatedResourceInputOperationOutputAlias = crate::operation::GetAssociatedResource;
-#[doc(hidden)]
-pub type GetAssociatedResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssociatedResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetAssociatedResource`](crate::operation::GetAssociatedResource)>
     #[allow(unused_mut)]
@@ -1860,10 +1818,6 @@ pub mod get_attribute_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAttributeGroupInputOperationOutputAlias = crate::operation::GetAttributeGroup;
-#[doc(hidden)]
-pub type GetAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetAttributeGroup`](crate::operation::GetAttributeGroup)>
     #[allow(unused_mut)]
@@ -2019,10 +1973,6 @@ pub mod list_applications_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
-#[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(unused_mut)]
@@ -2190,12 +2140,6 @@ pub mod list_associated_attribute_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssociatedAttributeGroupsInputOperationOutputAlias =
-    crate::operation::ListAssociatedAttributeGroups;
-#[doc(hidden)]
-pub type ListAssociatedAttributeGroupsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedAttributeGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedAttributeGroups`](crate::operation::ListAssociatedAttributeGroups)>
     #[allow(unused_mut)]
@@ -2382,11 +2326,6 @@ pub mod list_associated_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAssociatedResourcesInputOperationOutputAlias =
-    crate::operation::ListAssociatedResources;
-#[doc(hidden)]
-pub type ListAssociatedResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedResources`](crate::operation::ListAssociatedResources)>
     #[allow(unused_mut)]
@@ -2559,10 +2498,6 @@ pub mod list_attribute_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAttributeGroupsInputOperationOutputAlias = crate::operation::ListAttributeGroups;
-#[doc(hidden)]
-pub type ListAttributeGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttributeGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListAttributeGroups`](crate::operation::ListAttributeGroups)>
     #[allow(unused_mut)]
@@ -2730,12 +2665,6 @@ pub mod list_attribute_groups_for_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAttributeGroupsForApplicationInputOperationOutputAlias =
-    crate::operation::ListAttributeGroupsForApplication;
-#[doc(hidden)]
-pub type ListAttributeGroupsForApplicationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttributeGroupsForApplicationInput {
     /// Consumes the builder and constructs an Operation<[`ListAttributeGroupsForApplication`](crate::operation::ListAttributeGroupsForApplication)>
     #[allow(unused_mut)]
@@ -2896,10 +2825,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3054,10 +2979,6 @@ pub mod sync_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SyncResourceInputOperationOutputAlias = crate::operation::SyncResource;
-#[doc(hidden)]
-pub type SyncResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SyncResourceInput {
     /// Consumes the builder and constructs an Operation<[`SyncResource`](crate::operation::SyncResource)>
     #[allow(unused_mut)]
@@ -3245,10 +3166,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3423,10 +3340,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3605,10 +3518,6 @@ pub mod update_application_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
-#[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(unused_mut)]
@@ -3807,10 +3716,6 @@ pub mod update_attribute_group_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAttributeGroupInputOperationOutputAlias = crate::operation::UpdateAttributeGroup;
-#[doc(hidden)]
-pub type UpdateAttributeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAttributeGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAttributeGroup`](crate::operation::UpdateAttributeGroup)>
     #[allow(unused_mut)]

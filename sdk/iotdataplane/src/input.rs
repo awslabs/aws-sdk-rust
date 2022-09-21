@@ -43,10 +43,6 @@ pub mod delete_thing_shadow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteThingShadowInputOperationOutputAlias = crate::operation::DeleteThingShadow;
-#[doc(hidden)]
-pub type DeleteThingShadowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThingShadow`](crate::operation::DeleteThingShadow)>
     #[allow(unused_mut)]
@@ -195,10 +191,6 @@ pub mod get_retained_message_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRetainedMessageInputOperationOutputAlias = crate::operation::GetRetainedMessage;
-#[doc(hidden)]
-pub type GetRetainedMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRetainedMessageInput {
     /// Consumes the builder and constructs an Operation<[`GetRetainedMessage`](crate::operation::GetRetainedMessage)>
     #[allow(unused_mut)]
@@ -350,10 +342,6 @@ pub mod get_thing_shadow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetThingShadowInputOperationOutputAlias = crate::operation::GetThingShadow;
-#[doc(hidden)]
-pub type GetThingShadowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`GetThingShadow`](crate::operation::GetThingShadow)>
     #[allow(unused_mut)]
@@ -530,11 +518,6 @@ pub mod list_named_shadows_for_thing_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNamedShadowsForThingInputOperationOutputAlias =
-    crate::operation::ListNamedShadowsForThing;
-#[doc(hidden)]
-pub type ListNamedShadowsForThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNamedShadowsForThingInput {
     /// Consumes the builder and constructs an Operation<[`ListNamedShadowsForThing`](crate::operation::ListNamedShadowsForThing)>
     #[allow(unused_mut)]
@@ -707,10 +690,6 @@ pub mod list_retained_messages_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRetainedMessagesInputOperationOutputAlias = crate::operation::ListRetainedMessages;
-#[doc(hidden)]
-pub type ListRetainedMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRetainedMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListRetainedMessages`](crate::operation::ListRetainedMessages)>
     #[allow(unused_mut)]
@@ -895,10 +874,6 @@ pub mod publish_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PublishInputOperationOutputAlias = crate::operation::Publish;
-#[doc(hidden)]
-pub type PublishInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishInput {
     /// Consumes the builder and constructs an Operation<[`Publish`](crate::operation::Publish)>
     #[allow(unused_mut)]
@@ -1094,10 +1069,6 @@ pub mod update_thing_shadow_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateThingShadowInputOperationOutputAlias = crate::operation::UpdateThingShadow;
-#[doc(hidden)]
-pub type UpdateThingShadowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThingShadow`](crate::operation::UpdateThingShadow)>
     #[allow(unused_mut)]

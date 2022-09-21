@@ -79,10 +79,6 @@ pub mod create_http_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateHttpNamespaceInputOperationOutputAlias = crate::operation::CreateHttpNamespace;
-#[doc(hidden)]
-pub type CreateHttpNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHttpNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateHttpNamespace`](crate::operation::CreateHttpNamespace)>
     #[allow(unused_mut)]
@@ -306,11 +302,6 @@ pub mod create_private_dns_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePrivateDnsNamespaceInputOperationOutputAlias =
-    crate::operation::CreatePrivateDnsNamespace;
-#[doc(hidden)]
-pub type CreatePrivateDnsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePrivateDnsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePrivateDnsNamespace`](crate::operation::CreatePrivateDnsNamespace)>
     #[allow(unused_mut)]
@@ -524,11 +515,6 @@ pub mod create_public_dns_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePublicDnsNamespaceInputOperationOutputAlias =
-    crate::operation::CreatePublicDnsNamespace;
-#[doc(hidden)]
-pub type CreatePublicDnsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePublicDnsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublicDnsNamespace`](crate::operation::CreatePublicDnsNamespace)>
     #[allow(unused_mut)]
@@ -831,10 +817,6 @@ pub mod create_service_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateServiceInputOperationOutputAlias = crate::operation::CreateService;
-#[doc(hidden)]
-pub type CreateServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceInput {
     /// Consumes the builder and constructs an Operation<[`CreateService`](crate::operation::CreateService)>
     #[allow(unused_mut)]
@@ -979,10 +961,6 @@ pub mod delete_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteNamespaceInputOperationOutputAlias = crate::operation::DeleteNamespace;
-#[doc(hidden)]
-pub type DeleteNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNamespace`](crate::operation::DeleteNamespace)>
     #[allow(unused_mut)]
@@ -1124,10 +1102,6 @@ pub mod delete_service_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteServiceInputOperationOutputAlias = crate::operation::DeleteService;
-#[doc(hidden)]
-pub type DeleteServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteService`](crate::operation::DeleteService)>
     #[allow(unused_mut)]
@@ -1283,10 +1257,6 @@ pub mod deregister_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterInstanceInputOperationOutputAlias = crate::operation::DeregisterInstance;
-#[doc(hidden)]
-pub type DeregisterInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterInstance`](crate::operation::DeregisterInstance)>
     #[allow(unused_mut)]
@@ -1582,10 +1552,6 @@ pub mod discover_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DiscoverInstancesInputOperationOutputAlias = crate::operation::DiscoverInstances;
-#[doc(hidden)]
-pub type DiscoverInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DiscoverInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DiscoverInstances`](crate::operation::DiscoverInstances)>
     #[allow(unused_mut)]
@@ -1743,10 +1709,6 @@ pub mod get_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInstanceInputOperationOutputAlias = crate::operation::GetInstance;
-#[doc(hidden)]
-pub type GetInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInstanceInput {
     /// Consumes the builder and constructs an Operation<[`GetInstance`](crate::operation::GetInstance)>
     #[allow(unused_mut)]
@@ -1945,11 +1907,6 @@ pub mod get_instances_health_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetInstancesHealthStatusInputOperationOutputAlias =
-    crate::operation::GetInstancesHealthStatus;
-#[doc(hidden)]
-pub type GetInstancesHealthStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInstancesHealthStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetInstancesHealthStatus`](crate::operation::GetInstancesHealthStatus)>
     #[allow(unused_mut)]
@@ -2093,10 +2050,6 @@ pub mod get_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetNamespaceInputOperationOutputAlias = crate::operation::GetNamespace;
-#[doc(hidden)]
-pub type GetNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`GetNamespace`](crate::operation::GetNamespace)>
     #[allow(unused_mut)]
@@ -2240,10 +2193,6 @@ pub mod get_operation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetOperationInputOperationOutputAlias = crate::operation::GetOperation;
-#[doc(hidden)]
-pub type GetOperationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOperationInput {
     /// Consumes the builder and constructs an Operation<[`GetOperation`](crate::operation::GetOperation)>
     #[allow(unused_mut)]
@@ -2384,10 +2333,6 @@ pub mod get_service_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetServiceInputOperationOutputAlias = crate::operation::GetService;
-#[doc(hidden)]
-pub type GetServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceInput {
     /// Consumes the builder and constructs an Operation<[`GetService`](crate::operation::GetService)>
     #[allow(unused_mut)]
@@ -2557,10 +2502,6 @@ pub mod list_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInstancesInputOperationOutputAlias = crate::operation::ListInstances;
-#[doc(hidden)]
-pub type ListInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstances`](crate::operation::ListInstances)>
     #[allow(unused_mut)]
@@ -2745,10 +2686,6 @@ pub mod list_namespaces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListNamespacesInputOperationOutputAlias = crate::operation::ListNamespaces;
-#[doc(hidden)]
-pub type ListNamespacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNamespacesInput {
     /// Consumes the builder and constructs an Operation<[`ListNamespaces`](crate::operation::ListNamespaces)>
     #[allow(unused_mut)]
@@ -2933,10 +2870,6 @@ pub mod list_operations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListOperationsInputOperationOutputAlias = crate::operation::ListOperations;
-#[doc(hidden)]
-pub type ListOperationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListOperations`](crate::operation::ListOperations)>
     #[allow(unused_mut)]
@@ -3121,10 +3054,6 @@ pub mod list_services_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListServicesInputOperationOutputAlias = crate::operation::ListServices;
-#[doc(hidden)]
-pub type ListServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListServices`](crate::operation::ListServices)>
     #[allow(unused_mut)]
@@ -3268,10 +3197,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3625,10 +3550,6 @@ pub mod register_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterInstanceInputOperationOutputAlias = crate::operation::RegisterInstance;
-#[doc(hidden)]
-pub type RegisterInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterInstance`](crate::operation::RegisterInstance)>
     #[allow(unused_mut)]
@@ -3796,10 +3717,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3964,10 +3881,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4141,10 +4054,6 @@ pub mod update_http_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateHttpNamespaceInputOperationOutputAlias = crate::operation::UpdateHttpNamespace;
-#[doc(hidden)]
-pub type UpdateHttpNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHttpNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHttpNamespace`](crate::operation::UpdateHttpNamespace)>
     #[allow(unused_mut)]
@@ -4320,12 +4229,6 @@ pub mod update_instance_custom_health_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInstanceCustomHealthStatusInputOperationOutputAlias =
-    crate::operation::UpdateInstanceCustomHealthStatus;
-#[doc(hidden)]
-pub type UpdateInstanceCustomHealthStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInstanceCustomHealthStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstanceCustomHealthStatus`](crate::operation::UpdateInstanceCustomHealthStatus)>
     #[allow(unused_mut)]
@@ -4500,11 +4403,6 @@ pub mod update_private_dns_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePrivateDnsNamespaceInputOperationOutputAlias =
-    crate::operation::UpdatePrivateDnsNamespace;
-#[doc(hidden)]
-pub type UpdatePrivateDnsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePrivateDnsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePrivateDnsNamespace`](crate::operation::UpdatePrivateDnsNamespace)>
     #[allow(unused_mut)]
@@ -4685,11 +4583,6 @@ pub mod update_public_dns_namespace_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePublicDnsNamespaceInputOperationOutputAlias =
-    crate::operation::UpdatePublicDnsNamespace;
-#[doc(hidden)]
-pub type UpdatePublicDnsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePublicDnsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePublicDnsNamespace`](crate::operation::UpdatePublicDnsNamespace)>
     #[allow(unused_mut)]
@@ -4853,10 +4746,6 @@ pub mod update_service_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServiceInputOperationOutputAlias = crate::operation::UpdateService;
-#[doc(hidden)]
-pub type UpdateServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateService`](crate::operation::UpdateService)>
     #[allow(unused_mut)]

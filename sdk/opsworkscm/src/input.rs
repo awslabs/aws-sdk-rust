@@ -83,10 +83,6 @@ pub mod associate_node_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateNodeInputOperationOutputAlias = crate::operation::AssociateNode;
-#[doc(hidden)]
-pub type AssociateNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateNodeInput {
     /// Consumes the builder and constructs an Operation<[`AssociateNode`](crate::operation::AssociateNode)>
     #[allow(unused_mut)]
@@ -277,10 +273,6 @@ pub mod create_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackupInputOperationOutputAlias = crate::operation::CreateBackup;
-#[doc(hidden)]
-pub type CreateBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackup`](crate::operation::CreateBackup)>
     #[allow(unused_mut)]
@@ -805,10 +797,6 @@ pub mod create_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateServerInputOperationOutputAlias = crate::operation::CreateServer;
-#[doc(hidden)]
-pub type CreateServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServerInput {
     /// Consumes the builder and constructs an Operation<[`CreateServer`](crate::operation::CreateServer)>
     #[allow(unused_mut)]
@@ -952,10 +940,6 @@ pub mod delete_backup_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
-#[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(unused_mut)]
@@ -1099,10 +1083,6 @@ pub mod delete_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteServerInputOperationOutputAlias = crate::operation::DeleteServer;
-#[doc(hidden)]
-pub type DeleteServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServer`](crate::operation::DeleteServer)>
     #[allow(unused_mut)]
@@ -1234,11 +1214,6 @@ pub mod describe_account_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAccountAttributesInputOperationOutputAlias =
-    crate::operation::DescribeAccountAttributes;
-#[doc(hidden)]
-pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAttributes`](crate::operation::DescribeAccountAttributes)>
     #[allow(unused_mut)]
@@ -1413,10 +1388,6 @@ pub mod describe_backups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBackupsInputOperationOutputAlias = crate::operation::DescribeBackups;
-#[doc(hidden)]
-pub type DescribeBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackups`](crate::operation::DescribeBackups)>
     #[allow(unused_mut)]
@@ -1584,10 +1555,6 @@ pub mod describe_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventsInputOperationOutputAlias = crate::operation::DescribeEvents;
-#[doc(hidden)]
-pub type DescribeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(unused_mut)]
@@ -1751,12 +1718,6 @@ pub mod describe_node_association_status_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNodeAssociationStatusInputOperationOutputAlias =
-    crate::operation::DescribeNodeAssociationStatus;
-#[doc(hidden)]
-pub type DescribeNodeAssociationStatusInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNodeAssociationStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNodeAssociationStatus`](crate::operation::DescribeNodeAssociationStatus)>
     #[allow(unused_mut)]
@@ -1923,10 +1884,6 @@ pub mod describe_servers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServersInputOperationOutputAlias = crate::operation::DescribeServers;
-#[doc(hidden)]
-pub type DescribeServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServers`](crate::operation::DescribeServers)>
     #[allow(unused_mut)]
@@ -2112,10 +2069,6 @@ pub mod disassociate_node_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateNodeInputOperationOutputAlias = crate::operation::DisassociateNode;
-#[doc(hidden)]
-pub type DisassociateNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateNodeInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateNode`](crate::operation::DisassociateNode)>
     #[allow(unused_mut)]
@@ -2310,11 +2263,6 @@ pub mod export_server_engine_attribute_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ExportServerEngineAttributeInputOperationOutputAlias =
-    crate::operation::ExportServerEngineAttribute;
-#[doc(hidden)]
-pub type ExportServerEngineAttributeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportServerEngineAttributeInput {
     /// Consumes the builder and constructs an Operation<[`ExportServerEngineAttribute`](crate::operation::ExportServerEngineAttribute)>
     #[allow(unused_mut)]
@@ -2481,10 +2429,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2669,10 +2613,6 @@ pub mod restore_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RestoreServerInputOperationOutputAlias = crate::operation::RestoreServer;
-#[doc(hidden)]
-pub type RestoreServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreServerInput {
     /// Consumes the builder and constructs an Operation<[`RestoreServer`](crate::operation::RestoreServer)>
     #[allow(unused_mut)]
@@ -2846,10 +2786,6 @@ pub mod start_maintenance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartMaintenanceInputOperationOutputAlias = crate::operation::StartMaintenance;
-#[doc(hidden)]
-pub type StartMaintenanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMaintenanceInput {
     /// Consumes the builder and constructs an Operation<[`StartMaintenance`](crate::operation::StartMaintenance)>
     #[allow(unused_mut)]
@@ -3028,10 +2964,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3196,10 +3128,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -3404,10 +3332,6 @@ pub mod update_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServerInputOperationOutputAlias = crate::operation::UpdateServer;
-#[doc(hidden)]
-pub type UpdateServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServer`](crate::operation::UpdateServer)>
     #[allow(unused_mut)]
@@ -3583,12 +3507,6 @@ pub mod update_server_engine_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateServerEngineAttributesInputOperationOutputAlias =
-    crate::operation::UpdateServerEngineAttributes;
-#[doc(hidden)]
-pub type UpdateServerEngineAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServerEngineAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServerEngineAttributes`](crate::operation::UpdateServerEngineAttributes)>
     #[allow(unused_mut)]

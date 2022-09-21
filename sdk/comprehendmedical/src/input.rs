@@ -33,12 +33,6 @@ pub mod describe_entities_detection_v2_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEntitiesDetectionV2JobInputOperationOutputAlias =
-    crate::operation::DescribeEntitiesDetectionV2Job;
-#[doc(hidden)]
-pub type DescribeEntitiesDetectionV2JobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntitiesDetectionV2Job`](crate::operation::DescribeEntitiesDetectionV2Job)>
     #[allow(unused_mut)]
@@ -183,11 +177,6 @@ pub mod describe_icd10_cm_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeIcd10CmInferenceJobInputOperationOutputAlias =
-    crate::operation::DescribeICD10CMInferenceJob;
-#[doc(hidden)]
-pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeICD10CMInferenceJob`](crate::operation::DescribeICD10CMInferenceJob)>
     #[allow(unused_mut)]
@@ -332,11 +321,6 @@ pub mod describe_phi_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePhiDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribePHIDetectionJob;
-#[doc(hidden)]
-pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePHIDetectionJob`](crate::operation::DescribePHIDetectionJob)>
     #[allow(unused_mut)]
@@ -484,11 +468,6 @@ pub mod describe_rx_norm_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRxNormInferenceJobInputOperationOutputAlias =
-    crate::operation::DescribeRxNormInferenceJob;
-#[doc(hidden)]
-pub type DescribeRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRxNormInferenceJob`](crate::operation::DescribeRxNormInferenceJob)>
     #[allow(unused_mut)]
@@ -633,12 +612,6 @@ pub mod describe_snomedct_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSnomedctInferenceJobInputOperationOutputAlias =
-    crate::operation::DescribeSNOMEDCTInferenceJob;
-#[doc(hidden)]
-pub type DescribeSnomedctInferenceJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSnomedctInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSNOMEDCTInferenceJob`](crate::operation::DescribeSNOMEDCTInferenceJob)>
     #[allow(unused_mut)]
@@ -779,10 +752,6 @@ pub mod detect_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectEntitiesInputOperationOutputAlias = crate::operation::DetectEntities;
-#[doc(hidden)]
-pub type DetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectEntities`](crate::operation::DetectEntities)>
     #[allow(unused_mut)]
@@ -924,10 +893,6 @@ pub mod detect_entities_v2_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectEntitiesV2InputOperationOutputAlias = crate::operation::DetectEntitiesV2;
-#[doc(hidden)]
-pub type DetectEntitiesV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesV2Input {
     /// Consumes the builder and constructs an Operation<[`DetectEntitiesV2`](crate::operation::DetectEntitiesV2)>
     #[allow(unused_mut)]
@@ -1068,10 +1033,6 @@ pub mod detect_phi_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectPhiInputOperationOutputAlias = crate::operation::DetectPHI;
-#[doc(hidden)]
-pub type DetectPhiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectPhiInput {
     /// Consumes the builder and constructs an Operation<[`DetectPHI`](crate::operation::DetectPHI)>
     #[allow(unused_mut)]
@@ -1211,10 +1172,6 @@ pub mod infer_icd10_cm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InferIcd10CmInputOperationOutputAlias = crate::operation::InferICD10CM;
-#[doc(hidden)]
-pub type InferIcd10CmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferIcd10CmInput {
     /// Consumes the builder and constructs an Operation<[`InferICD10CM`](crate::operation::InferICD10CM)>
     #[allow(unused_mut)]
@@ -1356,10 +1313,6 @@ pub mod infer_rx_norm_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InferRxNormInputOperationOutputAlias = crate::operation::InferRxNorm;
-#[doc(hidden)]
-pub type InferRxNormInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferRxNormInput {
     /// Consumes the builder and constructs an Operation<[`InferRxNorm`](crate::operation::InferRxNorm)>
     #[allow(unused_mut)]
@@ -1501,10 +1454,6 @@ pub mod infer_snomedct_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InferSnomedctInputOperationOutputAlias = crate::operation::InferSNOMEDCT;
-#[doc(hidden)]
-pub type InferSnomedctInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferSnomedctInput {
     /// Consumes the builder and constructs an Operation<[`InferSNOMEDCT`](crate::operation::InferSNOMEDCT)>
     #[allow(unused_mut)]
@@ -1677,11 +1626,6 @@ pub mod list_entities_detection_v2_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntitiesDetectionV2JobsInputOperationOutputAlias =
-    crate::operation::ListEntitiesDetectionV2Jobs;
-#[doc(hidden)]
-pub type ListEntitiesDetectionV2JobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesDetectionV2JobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitiesDetectionV2Jobs`](crate::operation::ListEntitiesDetectionV2Jobs)>
     #[allow(unused_mut)]
@@ -1853,11 +1797,6 @@ pub mod list_icd10_cm_inference_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIcd10CmInferenceJobsInputOperationOutputAlias =
-    crate::operation::ListICD10CMInferenceJobs;
-#[doc(hidden)]
-pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIcd10CmInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListICD10CMInferenceJobs`](crate::operation::ListICD10CMInferenceJobs)>
     #[allow(unused_mut)]
@@ -2030,10 +1969,6 @@ pub mod list_phi_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPhiDetectionJobsInputOperationOutputAlias = crate::operation::ListPHIDetectionJobs;
-#[doc(hidden)]
-pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPhiDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPHIDetectionJobs`](crate::operation::ListPHIDetectionJobs)>
     #[allow(unused_mut)]
@@ -2208,11 +2143,6 @@ pub mod list_rx_norm_inference_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListRxNormInferenceJobsInputOperationOutputAlias =
-    crate::operation::ListRxNormInferenceJobs;
-#[doc(hidden)]
-pub type ListRxNormInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRxNormInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListRxNormInferenceJobs`](crate::operation::ListRxNormInferenceJobs)>
     #[allow(unused_mut)]
@@ -2387,11 +2317,6 @@ pub mod list_snomedct_inference_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSnomedctInferenceJobsInputOperationOutputAlias =
-    crate::operation::ListSNOMEDCTInferenceJobs;
-#[doc(hidden)]
-pub type ListSnomedctInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSnomedctInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSNOMEDCTInferenceJobs`](crate::operation::ListSNOMEDCTInferenceJobs)>
     #[allow(unused_mut)]
@@ -2626,11 +2551,6 @@ pub mod start_entities_detection_v2_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartEntitiesDetectionV2JobInputOperationOutputAlias =
-    crate::operation::StartEntitiesDetectionV2Job;
-#[doc(hidden)]
-pub type StartEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StartEntitiesDetectionV2Job`](crate::operation::StartEntitiesDetectionV2Job)>
     #[allow(unused_mut)]
@@ -2865,11 +2785,6 @@ pub mod start_icd10_cm_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartIcd10CmInferenceJobInputOperationOutputAlias =
-    crate::operation::StartICD10CMInferenceJob;
-#[doc(hidden)]
-pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartICD10CMInferenceJob`](crate::operation::StartICD10CMInferenceJob)>
     #[allow(unused_mut)]
@@ -3105,10 +3020,6 @@ pub mod start_phi_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartPhiDetectionJobInputOperationOutputAlias = crate::operation::StartPHIDetectionJob;
-#[doc(hidden)]
-pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPHIDetectionJob`](crate::operation::StartPHIDetectionJob)>
     #[allow(unused_mut)]
@@ -3346,11 +3257,6 @@ pub mod start_rx_norm_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartRxNormInferenceJobInputOperationOutputAlias =
-    crate::operation::StartRxNormInferenceJob;
-#[doc(hidden)]
-pub type StartRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartRxNormInferenceJob`](crate::operation::StartRxNormInferenceJob)>
     #[allow(unused_mut)]
@@ -3588,11 +3494,6 @@ pub mod start_snomedct_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSnomedctInferenceJobInputOperationOutputAlias =
-    crate::operation::StartSNOMEDCTInferenceJob;
-#[doc(hidden)]
-pub type StartSnomedctInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSnomedctInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartSNOMEDCTInferenceJob`](crate::operation::StartSNOMEDCTInferenceJob)>
     #[allow(unused_mut)]
@@ -3743,11 +3644,6 @@ pub mod stop_entities_detection_v2_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopEntitiesDetectionV2JobInputOperationOutputAlias =
-    crate::operation::StopEntitiesDetectionV2Job;
-#[doc(hidden)]
-pub type StopEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StopEntitiesDetectionV2Job`](crate::operation::StopEntitiesDetectionV2Job)>
     #[allow(unused_mut)]
@@ -3892,11 +3788,6 @@ pub mod stop_icd10_cm_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopIcd10CmInferenceJobInputOperationOutputAlias =
-    crate::operation::StopICD10CMInferenceJob;
-#[doc(hidden)]
-pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopICD10CMInferenceJob`](crate::operation::StopICD10CMInferenceJob)>
     #[allow(unused_mut)]
@@ -4042,10 +3933,6 @@ pub mod stop_phi_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopPhiDetectionJobInputOperationOutputAlias = crate::operation::StopPHIDetectionJob;
-#[doc(hidden)]
-pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPHIDetectionJob`](crate::operation::StopPHIDetectionJob)>
     #[allow(unused_mut)]
@@ -4191,10 +4078,6 @@ pub mod stop_rx_norm_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopRxNormInferenceJobInputOperationOutputAlias = crate::operation::StopRxNormInferenceJob;
-#[doc(hidden)]
-pub type StopRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopRxNormInferenceJob`](crate::operation::StopRxNormInferenceJob)>
     #[allow(unused_mut)]
@@ -4342,11 +4225,6 @@ pub mod stop_snomedct_inference_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopSnomedctInferenceJobInputOperationOutputAlias =
-    crate::operation::StopSNOMEDCTInferenceJob;
-#[doc(hidden)]
-pub type StopSnomedctInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopSnomedctInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopSNOMEDCTInferenceJob`](crate::operation::StopSNOMEDCTInferenceJob)>
     #[allow(unused_mut)]

@@ -147,10 +147,6 @@ pub mod invoke_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InvokeEndpointInputOperationOutputAlias = crate::operation::InvokeEndpoint;
-#[doc(hidden)]
-pub type InvokeEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`InvokeEndpoint`](crate::operation::InvokeEndpoint)>
     #[allow(unused_mut)]
@@ -394,10 +390,6 @@ pub mod invoke_endpoint_async_input {
         }
     }
 }
-#[doc(hidden)]
-pub type InvokeEndpointAsyncInputOperationOutputAlias = crate::operation::InvokeEndpointAsync;
-#[doc(hidden)]
-pub type InvokeEndpointAsyncInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeEndpointAsyncInput {
     /// Consumes the builder and constructs an Operation<[`InvokeEndpointAsync`](crate::operation::InvokeEndpointAsync)>
     #[allow(unused_mut)]

@@ -76,10 +76,6 @@ pub mod compare_faces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CompareFacesInputOperationOutputAlias = crate::operation::CompareFaces;
-#[doc(hidden)]
-pub type CompareFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompareFacesInput {
     /// Consumes the builder and constructs an Operation<[`CompareFaces`](crate::operation::CompareFaces)>
     #[allow(unused_mut)]
@@ -340,10 +336,6 @@ pub mod copy_project_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CopyProjectVersionInputOperationOutputAlias = crate::operation::CopyProjectVersion;
-#[doc(hidden)]
-pub type CopyProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`CopyProjectVersion`](crate::operation::CopyProjectVersion)>
     #[allow(unused_mut)]
@@ -519,10 +511,6 @@ pub mod create_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCollectionInputOperationOutputAlias = crate::operation::CreateCollection;
-#[doc(hidden)]
-pub type CreateCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCollectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCollection`](crate::operation::CreateCollection)>
     #[allow(unused_mut)]
@@ -696,10 +684,6 @@ pub mod create_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
-#[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(unused_mut)]
@@ -843,10 +827,6 @@ pub mod create_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
-#[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(unused_mut)]
@@ -1104,10 +1084,6 @@ pub mod create_project_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateProjectVersionInputOperationOutputAlias = crate::operation::CreateProjectVersion;
-#[doc(hidden)]
-pub type CreateProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateProjectVersion`](crate::operation::CreateProjectVersion)>
     #[allow(unused_mut)]
@@ -1417,10 +1393,6 @@ pub mod create_stream_processor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStreamProcessorInputOperationOutputAlias = crate::operation::CreateStreamProcessor;
-#[doc(hidden)]
-pub type CreateStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamProcessor`](crate::operation::CreateStreamProcessor)>
     #[allow(unused_mut)]
@@ -1569,10 +1541,6 @@ pub mod delete_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCollectionInputOperationOutputAlias = crate::operation::DeleteCollection;
-#[doc(hidden)]
-pub type DeleteCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCollection`](crate::operation::DeleteCollection)>
     #[allow(unused_mut)]
@@ -1716,10 +1684,6 @@ pub mod delete_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
@@ -1887,10 +1851,6 @@ pub mod delete_faces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFacesInputOperationOutputAlias = crate::operation::DeleteFaces;
-#[doc(hidden)]
-pub type DeleteFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFacesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFaces`](crate::operation::DeleteFaces)>
     #[allow(unused_mut)]
@@ -2034,10 +1994,6 @@ pub mod delete_project_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
-#[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(unused_mut)]
@@ -2208,10 +2164,6 @@ pub mod delete_project_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectPolicyInputOperationOutputAlias = crate::operation::DeleteProjectPolicy;
-#[doc(hidden)]
-pub type DeleteProjectPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProjectPolicy`](crate::operation::DeleteProjectPolicy)>
     #[allow(unused_mut)]
@@ -2358,10 +2310,6 @@ pub mod delete_project_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteProjectVersionInputOperationOutputAlias = crate::operation::DeleteProjectVersion;
-#[doc(hidden)]
-pub type DeleteProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProjectVersion`](crate::operation::DeleteProjectVersion)>
     #[allow(unused_mut)]
@@ -2505,10 +2453,6 @@ pub mod delete_stream_processor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStreamProcessorInputOperationOutputAlias = crate::operation::DeleteStreamProcessor;
-#[doc(hidden)]
-pub type DeleteStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamProcessor`](crate::operation::DeleteStreamProcessor)>
     #[allow(unused_mut)]
@@ -2657,10 +2601,6 @@ pub mod describe_collection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCollectionInputOperationOutputAlias = crate::operation::DescribeCollection;
-#[doc(hidden)]
-pub type DescribeCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCollection`](crate::operation::DescribeCollection)>
     #[allow(unused_mut)]
@@ -2804,10 +2744,6 @@ pub mod describe_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(unused_mut)]
@@ -2984,10 +2920,6 @@ pub mod describe_projects_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProjectsInputOperationOutputAlias = crate::operation::DescribeProjects;
-#[doc(hidden)]
-pub type DescribeProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProjects`](crate::operation::DescribeProjects)>
     #[allow(unused_mut)]
@@ -3178,11 +3110,6 @@ pub mod describe_project_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeProjectVersionsInputOperationOutputAlias =
-    crate::operation::DescribeProjectVersions;
-#[doc(hidden)]
-pub type DescribeProjectVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProjectVersions`](crate::operation::DescribeProjectVersions)>
     #[allow(unused_mut)]
@@ -3328,11 +3255,6 @@ pub mod describe_stream_processor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStreamProcessorInputOperationOutputAlias =
-    crate::operation::DescribeStreamProcessor;
-#[doc(hidden)]
-pub type DescribeStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamProcessor`](crate::operation::DescribeStreamProcessor)>
     #[allow(unused_mut)]
@@ -3529,10 +3451,6 @@ pub mod detect_custom_labels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectCustomLabelsInputOperationOutputAlias = crate::operation::DetectCustomLabels;
-#[doc(hidden)]
-pub type DetectCustomLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectCustomLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectCustomLabels`](crate::operation::DetectCustomLabels)>
     #[allow(unused_mut)]
@@ -3701,10 +3619,6 @@ pub mod detect_faces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectFacesInputOperationOutputAlias = crate::operation::DetectFaces;
-#[doc(hidden)]
-pub type DetectFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectFacesInput {
     /// Consumes the builder and constructs an Operation<[`DetectFaces`](crate::operation::DetectFaces)>
     #[allow(unused_mut)]
@@ -3876,10 +3790,6 @@ pub mod detect_labels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectLabelsInputOperationOutputAlias = crate::operation::DetectLabels;
-#[doc(hidden)]
-pub type DetectLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectLabels`](crate::operation::DetectLabels)>
     #[allow(unused_mut)]
@@ -4054,10 +3964,6 @@ pub mod detect_moderation_labels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectModerationLabelsInputOperationOutputAlias = crate::operation::DetectModerationLabels;
-#[doc(hidden)]
-pub type DetectModerationLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectModerationLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectModerationLabels`](crate::operation::DetectModerationLabels)>
     #[allow(unused_mut)]
@@ -4224,11 +4130,6 @@ pub mod detect_protective_equipment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectProtectiveEquipmentInputOperationOutputAlias =
-    crate::operation::DetectProtectiveEquipment;
-#[doc(hidden)]
-pub type DetectProtectiveEquipmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectProtectiveEquipmentInput {
     /// Consumes the builder and constructs an Operation<[`DetectProtectiveEquipment`](crate::operation::DetectProtectiveEquipment)>
     #[allow(unused_mut)]
@@ -4390,10 +4291,6 @@ pub mod detect_text_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectTextInputOperationOutputAlias = crate::operation::DetectText;
-#[doc(hidden)]
-pub type DetectTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectTextInput {
     /// Consumes the builder and constructs an Operation<[`DetectText`](crate::operation::DetectText)>
     #[allow(unused_mut)]
@@ -4548,11 +4445,6 @@ pub mod distribute_dataset_entries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DistributeDatasetEntriesInputOperationOutputAlias =
-    crate::operation::DistributeDatasetEntries;
-#[doc(hidden)]
-pub type DistributeDatasetEntriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DistributeDatasetEntriesInput {
     /// Consumes the builder and constructs an Operation<[`DistributeDatasetEntries`](crate::operation::DistributeDatasetEntries)>
     #[allow(unused_mut)]
@@ -4696,10 +4588,6 @@ pub mod get_celebrity_info_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCelebrityInfoInputOperationOutputAlias = crate::operation::GetCelebrityInfo;
-#[doc(hidden)]
-pub type GetCelebrityInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCelebrityInfoInput {
     /// Consumes the builder and constructs an Operation<[`GetCelebrityInfo`](crate::operation::GetCelebrityInfo)>
     #[allow(unused_mut)]
@@ -4884,11 +4772,6 @@ pub mod get_celebrity_recognition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetCelebrityRecognitionInputOperationOutputAlias =
-    crate::operation::GetCelebrityRecognition;
-#[doc(hidden)]
-pub type GetCelebrityRecognitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCelebrityRecognitionInput {
     /// Consumes the builder and constructs an Operation<[`GetCelebrityRecognition`](crate::operation::GetCelebrityRecognition)>
     #[allow(unused_mut)]
@@ -5073,10 +4956,6 @@ pub mod get_content_moderation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetContentModerationInputOperationOutputAlias = crate::operation::GetContentModeration;
-#[doc(hidden)]
-pub type GetContentModerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContentModerationInput {
     /// Consumes the builder and constructs an Operation<[`GetContentModeration`](crate::operation::GetContentModeration)>
     #[allow(unused_mut)]
@@ -5246,10 +5125,6 @@ pub mod get_face_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFaceDetectionInputOperationOutputAlias = crate::operation::GetFaceDetection;
-#[doc(hidden)]
-pub type GetFaceDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFaceDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetFaceDetection`](crate::operation::GetFaceDetection)>
     #[allow(unused_mut)]
@@ -5432,10 +5307,6 @@ pub mod get_face_search_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFaceSearchInputOperationOutputAlias = crate::operation::GetFaceSearch;
-#[doc(hidden)]
-pub type GetFaceSearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFaceSearchInput {
     /// Consumes the builder and constructs an Operation<[`GetFaceSearch`](crate::operation::GetFaceSearch)>
     #[allow(unused_mut)]
@@ -5618,10 +5489,6 @@ pub mod get_label_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetLabelDetectionInputOperationOutputAlias = crate::operation::GetLabelDetection;
-#[doc(hidden)]
-pub type GetLabelDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLabelDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetLabelDetection`](crate::operation::GetLabelDetection)>
     #[allow(unused_mut)]
@@ -5804,10 +5671,6 @@ pub mod get_person_tracking_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPersonTrackingInputOperationOutputAlias = crate::operation::GetPersonTracking;
-#[doc(hidden)]
-pub type GetPersonTrackingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPersonTrackingInput {
     /// Consumes the builder and constructs an Operation<[`GetPersonTracking`](crate::operation::GetPersonTracking)>
     #[allow(unused_mut)]
@@ -5975,10 +5838,6 @@ pub mod get_segment_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSegmentDetectionInputOperationOutputAlias = crate::operation::GetSegmentDetection;
-#[doc(hidden)]
-pub type GetSegmentDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentDetection`](crate::operation::GetSegmentDetection)>
     #[allow(unused_mut)]
@@ -6146,10 +6005,6 @@ pub mod get_text_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTextDetectionInputOperationOutputAlias = crate::operation::GetTextDetection;
-#[doc(hidden)]
-pub type GetTextDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetTextDetection`](crate::operation::GetTextDetection)>
     #[allow(unused_mut)]
@@ -6383,10 +6238,6 @@ pub mod index_faces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type IndexFacesInputOperationOutputAlias = crate::operation::IndexFaces;
-#[doc(hidden)]
-pub type IndexFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl IndexFacesInput {
     /// Consumes the builder and constructs an Operation<[`IndexFaces`](crate::operation::IndexFaces)>
     #[allow(unused_mut)]
@@ -6542,10 +6393,6 @@ pub mod list_collections_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCollectionsInputOperationOutputAlias = crate::operation::ListCollections;
-#[doc(hidden)]
-pub type ListCollectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCollectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCollections`](crate::operation::ListCollections)>
     #[allow(unused_mut)]
@@ -6773,10 +6620,6 @@ pub mod list_dataset_entries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetEntriesInputOperationOutputAlias = crate::operation::ListDatasetEntries;
-#[doc(hidden)]
-pub type ListDatasetEntriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetEntriesInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetEntries`](crate::operation::ListDatasetEntries)>
     #[allow(unused_mut)]
@@ -6944,10 +6787,6 @@ pub mod list_dataset_labels_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetLabelsInputOperationOutputAlias = crate::operation::ListDatasetLabels;
-#[doc(hidden)]
-pub type ListDatasetLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetLabelsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetLabels`](crate::operation::ListDatasetLabels)>
     #[allow(unused_mut)]
@@ -7117,10 +6956,6 @@ pub mod list_faces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFacesInputOperationOutputAlias = crate::operation::ListFaces;
-#[doc(hidden)]
-pub type ListFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFacesInput {
     /// Consumes the builder and constructs an Operation<[`ListFaces`](crate::operation::ListFaces)>
     #[allow(unused_mut)]
@@ -7286,10 +7121,6 @@ pub mod list_project_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProjectPoliciesInputOperationOutputAlias = crate::operation::ListProjectPolicies;
-#[doc(hidden)]
-pub type ListProjectPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListProjectPolicies`](crate::operation::ListProjectPolicies)>
     #[allow(unused_mut)]
@@ -7445,10 +7276,6 @@ pub mod list_stream_processors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListStreamProcessorsInputOperationOutputAlias = crate::operation::ListStreamProcessors;
-#[doc(hidden)]
-pub type ListStreamProcessorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamProcessorsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamProcessors`](crate::operation::ListStreamProcessors)>
     #[allow(unused_mut)]
@@ -7594,10 +7421,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -7785,10 +7608,6 @@ pub mod put_project_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutProjectPolicyInputOperationOutputAlias = crate::operation::PutProjectPolicy;
-#[doc(hidden)]
-pub type PutProjectPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutProjectPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutProjectPolicy`](crate::operation::PutProjectPolicy)>
     #[allow(unused_mut)]
@@ -7932,10 +7751,6 @@ pub mod recognize_celebrities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RecognizeCelebritiesInputOperationOutputAlias = crate::operation::RecognizeCelebrities;
-#[doc(hidden)]
-pub type RecognizeCelebritiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecognizeCelebritiesInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeCelebrities`](crate::operation::RecognizeCelebrities)>
     #[allow(unused_mut)]
@@ -8118,10 +7933,6 @@ pub mod search_faces_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchFacesInputOperationOutputAlias = crate::operation::SearchFaces;
-#[doc(hidden)]
-pub type SearchFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFacesInput {
     /// Consumes the builder and constructs an Operation<[`SearchFaces`](crate::operation::SearchFaces)>
     #[allow(unused_mut)]
@@ -8323,10 +8134,6 @@ pub mod search_faces_by_image_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SearchFacesByImageInputOperationOutputAlias = crate::operation::SearchFacesByImage;
-#[doc(hidden)]
-pub type SearchFacesByImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFacesByImageInput {
     /// Consumes the builder and constructs an Operation<[`SearchFacesByImage`](crate::operation::SearchFacesByImage)>
     #[allow(unused_mut)]
@@ -8514,11 +8321,6 @@ pub mod start_celebrity_recognition_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartCelebrityRecognitionInputOperationOutputAlias =
-    crate::operation::StartCelebrityRecognition;
-#[doc(hidden)]
-pub type StartCelebrityRecognitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCelebrityRecognitionInput {
     /// Consumes the builder and constructs an Operation<[`StartCelebrityRecognition`](crate::operation::StartCelebrityRecognition)>
     #[allow(unused_mut)]
@@ -8718,10 +8520,6 @@ pub mod start_content_moderation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartContentModerationInputOperationOutputAlias = crate::operation::StartContentModeration;
-#[doc(hidden)]
-pub type StartContentModerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartContentModerationInput {
     /// Consumes the builder and constructs an Operation<[`StartContentModeration`](crate::operation::StartContentModeration)>
     #[allow(unused_mut)]
@@ -8928,10 +8726,6 @@ pub mod start_face_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFaceDetectionInputOperationOutputAlias = crate::operation::StartFaceDetection;
-#[doc(hidden)]
-pub type StartFaceDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFaceDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartFaceDetection`](crate::operation::StartFaceDetection)>
     #[allow(unused_mut)]
@@ -9144,10 +8938,6 @@ pub mod start_face_search_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartFaceSearchInputOperationOutputAlias = crate::operation::StartFaceSearch;
-#[doc(hidden)]
-pub type StartFaceSearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFaceSearchInput {
     /// Consumes the builder and constructs an Operation<[`StartFaceSearch`](crate::operation::StartFaceSearch)>
     #[allow(unused_mut)]
@@ -9347,10 +9137,6 @@ pub mod start_label_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartLabelDetectionInputOperationOutputAlias = crate::operation::StartLabelDetection;
-#[doc(hidden)]
-pub type StartLabelDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLabelDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartLabelDetection`](crate::operation::StartLabelDetection)>
     #[allow(unused_mut)]
@@ -9536,10 +9322,6 @@ pub mod start_person_tracking_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartPersonTrackingInputOperationOutputAlias = crate::operation::StartPersonTracking;
-#[doc(hidden)]
-pub type StartPersonTrackingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPersonTrackingInput {
     /// Consumes the builder and constructs an Operation<[`StartPersonTracking`](crate::operation::StartPersonTracking)>
     #[allow(unused_mut)]
@@ -9714,10 +9496,6 @@ pub mod start_project_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartProjectVersionInputOperationOutputAlias = crate::operation::StartProjectVersion;
-#[doc(hidden)]
-pub type StartProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`StartProjectVersion`](crate::operation::StartProjectVersion)>
     #[allow(unused_mut)]
@@ -9939,10 +9717,6 @@ pub mod start_segment_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSegmentDetectionInputOperationOutputAlias = crate::operation::StartSegmentDetection;
-#[doc(hidden)]
-pub type StartSegmentDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSegmentDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartSegmentDetection`](crate::operation::StartSegmentDetection)>
     #[allow(unused_mut)]
@@ -10125,10 +9899,6 @@ pub mod start_stream_processor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStreamProcessorInputOperationOutputAlias = crate::operation::StartStreamProcessor;
-#[doc(hidden)]
-pub type StartStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamProcessor`](crate::operation::StartStreamProcessor)>
     #[allow(unused_mut)]
@@ -10331,10 +10101,6 @@ pub mod start_text_detection_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTextDetectionInputOperationOutputAlias = crate::operation::StartTextDetection;
-#[doc(hidden)]
-pub type StartTextDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartTextDetection`](crate::operation::StartTextDetection)>
     #[allow(unused_mut)]
@@ -10483,10 +10249,6 @@ pub mod stop_project_version_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopProjectVersionInputOperationOutputAlias = crate::operation::StopProjectVersion;
-#[doc(hidden)]
-pub type StopProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`StopProjectVersion`](crate::operation::StopProjectVersion)>
     #[allow(unused_mut)]
@@ -10628,10 +10390,6 @@ pub mod stop_stream_processor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopStreamProcessorInputOperationOutputAlias = crate::operation::StopStreamProcessor;
-#[doc(hidden)]
-pub type StopStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamProcessor`](crate::operation::StopStreamProcessor)>
     #[allow(unused_mut)]
@@ -10804,10 +10562,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -10972,10 +10726,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -11134,10 +10884,6 @@ pub mod update_dataset_entries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateDatasetEntriesInputOperationOutputAlias = crate::operation::UpdateDatasetEntries;
-#[doc(hidden)]
-pub type UpdateDatasetEntriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetEntriesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDatasetEntries`](crate::operation::UpdateDatasetEntries)>
     #[allow(unused_mut)]
@@ -11373,10 +11119,6 @@ pub mod update_stream_processor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStreamProcessorInputOperationOutputAlias = crate::operation::UpdateStreamProcessor;
-#[doc(hidden)]
-pub type UpdateStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamProcessor`](crate::operation::UpdateStreamProcessor)>
     #[allow(unused_mut)]

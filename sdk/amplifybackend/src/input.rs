@@ -61,10 +61,6 @@ pub mod clone_backend_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CloneBackendInputOperationOutputAlias = crate::operation::CloneBackend;
-#[doc(hidden)]
-pub type CloneBackendInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloneBackendInput {
     /// Consumes the builder and constructs an Operation<[`CloneBackend`](crate::operation::CloneBackend)>
     #[allow(unused_mut)]
@@ -294,10 +290,6 @@ pub mod create_backend_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackendInputOperationOutputAlias = crate::operation::CreateBackend;
-#[doc(hidden)]
-pub type CreateBackendInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackend`](crate::operation::CreateBackend)>
     #[allow(unused_mut)]
@@ -481,10 +473,6 @@ pub mod create_backend_api_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackendApiInputOperationOutputAlias = crate::operation::CreateBackendAPI;
-#[doc(hidden)]
-pub type CreateBackendApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendAPI`](crate::operation::CreateBackendAPI)>
     #[allow(unused_mut)]
@@ -687,10 +675,6 @@ pub mod create_backend_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackendAuthInputOperationOutputAlias = crate::operation::CreateBackendAuth;
-#[doc(hidden)]
-pub type CreateBackendAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendAuth`](crate::operation::CreateBackendAuth)>
     #[allow(unused_mut)]
@@ -859,10 +843,6 @@ pub mod create_backend_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackendConfigInputOperationOutputAlias = crate::operation::CreateBackendConfig;
-#[doc(hidden)]
-pub type CreateBackendConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendConfig`](crate::operation::CreateBackendConfig)>
     #[allow(unused_mut)]
@@ -1065,10 +1045,6 @@ pub mod create_backend_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateBackendStorageInputOperationOutputAlias = crate::operation::CreateBackendStorage;
-#[doc(hidden)]
-pub type CreateBackendStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendStorageInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendStorage`](crate::operation::CreateBackendStorage)>
     #[allow(unused_mut)]
@@ -1224,10 +1200,6 @@ pub mod create_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTokenInputOperationOutputAlias = crate::operation::CreateToken;
-#[doc(hidden)]
-pub type CreateTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(unused_mut)]
@@ -1382,10 +1354,6 @@ pub mod delete_backend_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackendInputOperationOutputAlias = crate::operation::DeleteBackend;
-#[doc(hidden)]
-pub type DeleteBackendInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackendInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackend`](crate::operation::DeleteBackend)>
     #[allow(unused_mut)]
@@ -1589,10 +1557,6 @@ pub mod delete_backend_api_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackendApiInputOperationOutputAlias = crate::operation::DeleteBackendAPI;
-#[doc(hidden)]
-pub type DeleteBackendApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendAPI`](crate::operation::DeleteBackendAPI)>
     #[allow(unused_mut)]
@@ -1795,10 +1759,6 @@ pub mod delete_backend_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackendAuthInputOperationOutputAlias = crate::operation::DeleteBackendAuth;
-#[doc(hidden)]
-pub type DeleteBackendAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendAuth`](crate::operation::DeleteBackendAuth)>
     #[allow(unused_mut)]
@@ -2016,10 +1976,6 @@ pub mod delete_backend_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBackendStorageInputOperationOutputAlias = crate::operation::DeleteBackendStorage;
-#[doc(hidden)]
-pub type DeleteBackendStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackendStorageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendStorage`](crate::operation::DeleteBackendStorage)>
     #[allow(unused_mut)]
@@ -2206,10 +2162,6 @@ pub mod delete_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTokenInputOperationOutputAlias = crate::operation::DeleteToken;
-#[doc(hidden)]
-pub type DeleteTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTokenInput {
     /// Consumes the builder and constructs an Operation<[`DeleteToken`](crate::operation::DeleteToken)>
     #[allow(unused_mut)]
@@ -2400,11 +2352,6 @@ pub mod generate_backend_api_models_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GenerateBackendApiModelsInputOperationOutputAlias =
-    crate::operation::GenerateBackendAPIModels;
-#[doc(hidden)]
-pub type GenerateBackendApiModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateBackendApiModelsInput {
     /// Consumes the builder and constructs an Operation<[`GenerateBackendAPIModels`](crate::operation::GenerateBackendAPIModels)>
     #[allow(unused_mut)]
@@ -2593,10 +2540,6 @@ pub mod get_backend_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendInputOperationOutputAlias = crate::operation::GetBackend;
-#[doc(hidden)]
-pub type GetBackendInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendInput {
     /// Consumes the builder and constructs an Operation<[`GetBackend`](crate::operation::GetBackend)>
     #[allow(unused_mut)]
@@ -2795,10 +2738,6 @@ pub mod get_backend_api_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendApiInputOperationOutputAlias = crate::operation::GetBackendAPI;
-#[doc(hidden)]
-pub type GetBackendApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendAPI`](crate::operation::GetBackendAPI)>
     #[allow(unused_mut)]
@@ -3001,10 +2940,6 @@ pub mod get_backend_api_models_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendApiModelsInputOperationOutputAlias = crate::operation::GetBackendAPIModels;
-#[doc(hidden)]
-pub type GetBackendApiModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendApiModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendAPIModels`](crate::operation::GetBackendAPIModels)>
     #[allow(unused_mut)]
@@ -3209,10 +3144,6 @@ pub mod get_backend_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendAuthInputOperationOutputAlias = crate::operation::GetBackendAuth;
-#[doc(hidden)]
-pub type GetBackendAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendAuth`](crate::operation::GetBackendAuth)>
     #[allow(unused_mut)]
@@ -3412,10 +3343,6 @@ pub mod get_backend_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendJobInputOperationOutputAlias = crate::operation::GetBackendJob;
-#[doc(hidden)]
-pub type GetBackendJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendJobInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendJob`](crate::operation::GetBackendJob)>
     #[allow(unused_mut)]
@@ -3619,10 +3546,6 @@ pub mod get_backend_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBackendStorageInputOperationOutputAlias = crate::operation::GetBackendStorage;
-#[doc(hidden)]
-pub type GetBackendStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendStorageInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendStorage`](crate::operation::GetBackendStorage)>
     #[allow(unused_mut)]
@@ -3806,10 +3729,6 @@ pub mod get_token_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetTokenInputOperationOutputAlias = crate::operation::GetToken;
-#[doc(hidden)]
-pub type GetTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetToken`](crate::operation::GetToken)>
     #[allow(unused_mut)]
@@ -4038,10 +3957,6 @@ pub mod import_backend_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportBackendAuthInputOperationOutputAlias = crate::operation::ImportBackendAuth;
-#[doc(hidden)]
-pub type ImportBackendAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`ImportBackendAuth`](crate::operation::ImportBackendAuth)>
     #[allow(unused_mut)]
@@ -4256,10 +4171,6 @@ pub mod import_backend_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportBackendStorageInputOperationOutputAlias = crate::operation::ImportBackendStorage;
-#[doc(hidden)]
-pub type ImportBackendStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportBackendStorageInput {
     /// Consumes the builder and constructs an Operation<[`ImportBackendStorage`](crate::operation::ImportBackendStorage)>
     #[allow(unused_mut)]
@@ -4509,10 +4420,6 @@ pub mod list_backend_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListBackendJobsInputOperationOutputAlias = crate::operation::ListBackendJobs;
-#[doc(hidden)]
-pub type ListBackendJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBackendJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackendJobs`](crate::operation::ListBackendJobs)>
     #[allow(unused_mut)]
@@ -4685,10 +4592,6 @@ pub mod list_s3_buckets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListS3BucketsInputOperationOutputAlias = crate::operation::ListS3Buckets;
-#[doc(hidden)]
-pub type ListS3BucketsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListS3BucketsInput {
     /// Consumes the builder and constructs an Operation<[`ListS3Buckets`](crate::operation::ListS3Buckets)>
     #[allow(unused_mut)]
@@ -4839,10 +4742,6 @@ pub mod remove_all_backends_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveAllBackendsInputOperationOutputAlias = crate::operation::RemoveAllBackends;
-#[doc(hidden)]
-pub type RemoveAllBackendsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAllBackendsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAllBackends`](crate::operation::RemoveAllBackends)>
     #[allow(unused_mut)]
@@ -4996,10 +4895,6 @@ pub mod remove_backend_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveBackendConfigInputOperationOutputAlias = crate::operation::RemoveBackendConfig;
-#[doc(hidden)]
-pub type RemoveBackendConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveBackendConfigInput {
     /// Consumes the builder and constructs an Operation<[`RemoveBackendConfig`](crate::operation::RemoveBackendConfig)>
     #[allow(unused_mut)]
@@ -5184,10 +5079,6 @@ pub mod update_backend_api_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBackendApiInputOperationOutputAlias = crate::operation::UpdateBackendAPI;
-#[doc(hidden)]
-pub type UpdateBackendApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBackendApiInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendAPI`](crate::operation::UpdateBackendAPI)>
     #[allow(unused_mut)]
@@ -5409,10 +5300,6 @@ pub mod update_backend_auth_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBackendAuthInputOperationOutputAlias = crate::operation::UpdateBackendAuth;
-#[doc(hidden)]
-pub type UpdateBackendAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBackendAuthInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendAuth`](crate::operation::UpdateBackendAuth)>
     #[allow(unused_mut)]
@@ -5600,10 +5487,6 @@ pub mod update_backend_config_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBackendConfigInputOperationOutputAlias = crate::operation::UpdateBackendConfig;
-#[doc(hidden)]
-pub type UpdateBackendConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBackendConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendConfig`](crate::operation::UpdateBackendConfig)>
     #[allow(unused_mut)]
@@ -5808,10 +5691,6 @@ pub mod update_backend_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBackendJobInputOperationOutputAlias = crate::operation::UpdateBackendJob;
-#[doc(hidden)]
-pub type UpdateBackendJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBackendJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendJob`](crate::operation::UpdateBackendJob)>
     #[allow(unused_mut)]
@@ -6048,10 +5927,6 @@ pub mod update_backend_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBackendStorageInputOperationOutputAlias = crate::operation::UpdateBackendStorage;
-#[doc(hidden)]
-pub type UpdateBackendStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBackendStorageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBackendStorage`](crate::operation::UpdateBackendStorage)>
     #[allow(unused_mut)]

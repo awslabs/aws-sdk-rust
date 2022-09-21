@@ -224,10 +224,6 @@ pub mod create_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConnectorInputOperationOutputAlias = crate::operation::CreateConnector;
-#[doc(hidden)]
-pub type CreateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnector`](crate::operation::CreateConnector)>
     #[allow(unused_mut)]
@@ -408,10 +404,6 @@ pub mod create_custom_plugin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCustomPluginInputOperationOutputAlias = crate::operation::CreateCustomPlugin;
-#[doc(hidden)]
-pub type CreateCustomPluginInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomPluginInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomPlugin`](crate::operation::CreateCustomPlugin)>
     #[allow(unused_mut)]
@@ -579,11 +571,6 @@ pub mod create_worker_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateWorkerConfigurationInputOperationOutputAlias =
-    crate::operation::CreateWorkerConfiguration;
-#[doc(hidden)]
-pub type CreateWorkerConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkerConfiguration`](crate::operation::CreateWorkerConfiguration)>
     #[allow(unused_mut)]
@@ -742,10 +729,6 @@ pub mod delete_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConnectorInputOperationOutputAlias = crate::operation::DeleteConnector;
-#[doc(hidden)]
-pub type DeleteConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnector`](crate::operation::DeleteConnector)>
     #[allow(unused_mut)]
@@ -906,10 +889,6 @@ pub mod delete_custom_plugin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteCustomPluginInputOperationOutputAlias = crate::operation::DeleteCustomPlugin;
-#[doc(hidden)]
-pub type DeleteCustomPluginInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomPluginInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomPlugin`](crate::operation::DeleteCustomPlugin)>
     #[allow(unused_mut)]
@@ -1056,10 +1035,6 @@ pub mod describe_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeConnectorInputOperationOutputAlias = crate::operation::DescribeConnector;
-#[doc(hidden)]
-pub type DescribeConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnector`](crate::operation::DescribeConnector)>
     #[allow(unused_mut)]
@@ -1206,10 +1181,6 @@ pub mod describe_custom_plugin_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCustomPluginInputOperationOutputAlias = crate::operation::DescribeCustomPlugin;
-#[doc(hidden)]
-pub type DescribeCustomPluginInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomPluginInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomPlugin`](crate::operation::DescribeCustomPlugin)>
     #[allow(unused_mut)]
@@ -1358,11 +1329,6 @@ pub mod describe_worker_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkerConfigurationInputOperationOutputAlias =
-    crate::operation::DescribeWorkerConfiguration;
-#[doc(hidden)]
-pub type DescribeWorkerConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkerConfiguration`](crate::operation::DescribeWorkerConfiguration)>
     #[allow(unused_mut)]
@@ -1533,10 +1499,6 @@ pub mod list_connectors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConnectorsInputOperationOutputAlias = crate::operation::ListConnectors;
-#[doc(hidden)]
-pub type ListConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectors`](crate::operation::ListConnectors)>
     #[allow(unused_mut)]
@@ -1696,10 +1658,6 @@ pub mod list_custom_plugins_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListCustomPluginsInputOperationOutputAlias = crate::operation::ListCustomPlugins;
-#[doc(hidden)]
-pub type ListCustomPluginsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomPluginsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomPlugins`](crate::operation::ListCustomPlugins)>
     #[allow(unused_mut)]
@@ -1855,11 +1813,6 @@ pub mod list_worker_configurations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListWorkerConfigurationsInputOperationOutputAlias =
-    crate::operation::ListWorkerConfigurations;
-#[doc(hidden)]
-pub type ListWorkerConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkerConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkerConfigurations`](crate::operation::ListWorkerConfigurations)>
     #[allow(unused_mut)]
@@ -2034,10 +1987,6 @@ pub mod update_connector_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConnectorInputOperationOutputAlias = crate::operation::UpdateConnector;
-#[doc(hidden)]
-pub type UpdateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnector`](crate::operation::UpdateConnector)>
     #[allow(unused_mut)]

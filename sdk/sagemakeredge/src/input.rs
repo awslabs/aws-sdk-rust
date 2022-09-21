@@ -46,10 +46,6 @@ pub mod get_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeploymentsInputOperationOutputAlias = crate::operation::GetDeployments;
-#[doc(hidden)]
-pub type GetDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployments`](crate::operation::GetDeployments)>
     #[allow(unused_mut)]
@@ -203,10 +199,6 @@ pub mod get_device_registration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeviceRegistrationInputOperationOutputAlias = crate::operation::GetDeviceRegistration;
-#[doc(hidden)]
-pub type GetDeviceRegistrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceRegistrationInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceRegistration`](crate::operation::GetDeviceRegistration)>
     #[allow(unused_mut)]
@@ -434,10 +426,6 @@ pub mod send_heartbeat_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendHeartbeatInputOperationOutputAlias = crate::operation::SendHeartbeat;
-#[doc(hidden)]
-pub type SendHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`SendHeartbeat`](crate::operation::SendHeartbeat)>
     #[allow(unused_mut)]

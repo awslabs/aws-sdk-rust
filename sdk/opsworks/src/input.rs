@@ -52,10 +52,6 @@ pub mod assign_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssignInstanceInputOperationOutputAlias = crate::operation::AssignInstance;
-#[doc(hidden)]
-pub type AssignInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssignInstanceInput {
     /// Consumes the builder and constructs an Operation<[`AssignInstance`](crate::operation::AssignInstance)>
     #[allow(unused_mut)]
@@ -211,10 +207,6 @@ pub mod assign_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssignVolumeInputOperationOutputAlias = crate::operation::AssignVolume;
-#[doc(hidden)]
-pub type AssignVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssignVolumeInput {
     /// Consumes the builder and constructs an Operation<[`AssignVolume`](crate::operation::AssignVolume)>
     #[allow(unused_mut)]
@@ -370,10 +362,6 @@ pub mod associate_elastic_ip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateElasticIpInputOperationOutputAlias = crate::operation::AssociateElasticIp;
-#[doc(hidden)]
-pub type AssociateElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`AssociateElasticIp`](crate::operation::AssociateElasticIp)>
     #[allow(unused_mut)]
@@ -534,11 +522,6 @@ pub mod attach_elastic_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachElasticLoadBalancerInputOperationOutputAlias =
-    crate::operation::AttachElasticLoadBalancer;
-#[doc(hidden)]
-pub type AttachElasticLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachElasticLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`AttachElasticLoadBalancer`](crate::operation::AttachElasticLoadBalancer)>
     #[allow(unused_mut)]
@@ -1113,10 +1096,6 @@ pub mod clone_stack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CloneStackInputOperationOutputAlias = crate::operation::CloneStack;
-#[doc(hidden)]
-pub type CloneStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloneStackInput {
     /// Consumes the builder and constructs an Operation<[`CloneStack`](crate::operation::CloneStack)>
     #[allow(unused_mut)]
@@ -1445,10 +1424,6 @@ pub mod create_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
-#[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(unused_mut)]
@@ -1687,10 +1662,6 @@ pub mod create_deployment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
-#[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(unused_mut)]
@@ -2116,10 +2087,6 @@ pub mod create_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInstanceInputOperationOutputAlias = crate::operation::CreateInstance;
-#[doc(hidden)]
-pub type CreateInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateInstance`](crate::operation::CreateInstance)>
     #[allow(unused_mut)]
@@ -2544,10 +2511,6 @@ pub mod create_layer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateLayerInputOperationOutputAlias = crate::operation::CreateLayer;
-#[doc(hidden)]
-pub type CreateLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLayerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLayer`](crate::operation::CreateLayer)>
     #[allow(unused_mut)]
@@ -3069,10 +3032,6 @@ pub mod create_stack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStackInputOperationOutputAlias = crate::operation::CreateStack;
-#[doc(hidden)]
-pub type CreateStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStackInput {
     /// Consumes the builder and constructs an Operation<[`CreateStack`](crate::operation::CreateStack)>
     #[allow(unused_mut)]
@@ -3255,10 +3214,6 @@ pub mod create_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateUserProfileInputOperationOutputAlias = crate::operation::CreateUserProfile;
-#[doc(hidden)]
-pub type CreateUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserProfile`](crate::operation::CreateUserProfile)>
     #[allow(unused_mut)]
@@ -3401,10 +3356,6 @@ pub mod delete_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
-#[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(unused_mut)]
@@ -3570,10 +3521,6 @@ pub mod delete_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInstanceInputOperationOutputAlias = crate::operation::DeleteInstance;
-#[doc(hidden)]
-pub type DeleteInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInstance`](crate::operation::DeleteInstance)>
     #[allow(unused_mut)]
@@ -3717,10 +3664,6 @@ pub mod delete_layer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteLayerInputOperationOutputAlias = crate::operation::DeleteLayer;
-#[doc(hidden)]
-pub type DeleteLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLayerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLayer`](crate::operation::DeleteLayer)>
     #[allow(unused_mut)]
@@ -3864,10 +3807,6 @@ pub mod delete_stack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteStackInputOperationOutputAlias = crate::operation::DeleteStack;
-#[doc(hidden)]
-pub type DeleteStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStack`](crate::operation::DeleteStack)>
     #[allow(unused_mut)]
@@ -4011,10 +3950,6 @@ pub mod delete_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteUserProfileInputOperationOutputAlias = crate::operation::DeleteUserProfile;
-#[doc(hidden)]
-pub type DeleteUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserProfile`](crate::operation::DeleteUserProfile)>
     #[allow(unused_mut)]
@@ -4161,10 +4096,6 @@ pub mod deregister_ecs_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterEcsClusterInputOperationOutputAlias = crate::operation::DeregisterEcsCluster;
-#[doc(hidden)]
-pub type DeregisterEcsClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterEcsClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterEcsCluster`](crate::operation::DeregisterEcsCluster)>
     #[allow(unused_mut)]
@@ -4310,10 +4241,6 @@ pub mod deregister_elastic_ip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterElasticIpInputOperationOutputAlias = crate::operation::DeregisterElasticIp;
-#[doc(hidden)]
-pub type DeregisterElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterElasticIp`](crate::operation::DeregisterElasticIp)>
     #[allow(unused_mut)]
@@ -4457,10 +4384,6 @@ pub mod deregister_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterInstanceInputOperationOutputAlias = crate::operation::DeregisterInstance;
-#[doc(hidden)]
-pub type DeregisterInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterInstance`](crate::operation::DeregisterInstance)>
     #[allow(unused_mut)]
@@ -4609,11 +4532,6 @@ pub mod deregister_rds_db_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterRdsDbInstanceInputOperationOutputAlias =
-    crate::operation::DeregisterRdsDbInstance;
-#[doc(hidden)]
-pub type DeregisterRdsDbInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterRdsDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterRdsDbInstance`](crate::operation::DeregisterRdsDbInstance)>
     #[allow(unused_mut)]
@@ -4759,10 +4677,6 @@ pub mod deregister_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterVolumeInputOperationOutputAlias = crate::operation::DeregisterVolume;
-#[doc(hidden)]
-pub type DeregisterVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterVolumeInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterVolume`](crate::operation::DeregisterVolume)>
     #[allow(unused_mut)]
@@ -4925,10 +4839,6 @@ pub mod describe_agent_versions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAgentVersionsInputOperationOutputAlias = crate::operation::DescribeAgentVersions;
-#[doc(hidden)]
-pub type DescribeAgentVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAgentVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgentVersions`](crate::operation::DescribeAgentVersions)>
     #[allow(unused_mut)]
@@ -5095,10 +5005,6 @@ pub mod describe_apps_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAppsInputOperationOutputAlias = crate::operation::DescribeApps;
-#[doc(hidden)]
-pub type DescribeAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApps`](crate::operation::DescribeApps)>
     #[allow(unused_mut)]
@@ -5278,10 +5184,6 @@ pub mod describe_commands_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCommandsInputOperationOutputAlias = crate::operation::DescribeCommands;
-#[doc(hidden)]
-pub type DescribeCommandsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCommandsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCommands`](crate::operation::DescribeCommands)>
     #[allow(unused_mut)]
@@ -5458,10 +5360,6 @@ pub mod describe_deployments_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDeploymentsInputOperationOutputAlias = crate::operation::DescribeDeployments;
-#[doc(hidden)]
-pub type DescribeDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeployments`](crate::operation::DescribeDeployments)>
     #[allow(unused_mut)]
@@ -5650,10 +5548,6 @@ pub mod describe_ecs_clusters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEcsClustersInputOperationOutputAlias = crate::operation::DescribeEcsClusters;
-#[doc(hidden)]
-pub type DescribeEcsClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEcsClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEcsClusters`](crate::operation::DescribeEcsClusters)>
     #[allow(unused_mut)]
@@ -5830,10 +5724,6 @@ pub mod describe_elastic_ips_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeElasticIpsInputOperationOutputAlias = crate::operation::DescribeElasticIps;
-#[doc(hidden)]
-pub type DescribeElasticIpsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticIpsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticIps`](crate::operation::DescribeElasticIps)>
     #[allow(unused_mut)]
@@ -6000,12 +5890,6 @@ pub mod describe_elastic_load_balancers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeElasticLoadBalancersInputOperationOutputAlias =
-    crate::operation::DescribeElasticLoadBalancers;
-#[doc(hidden)]
-pub type DescribeElasticLoadBalancersInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticLoadBalancers`](crate::operation::DescribeElasticLoadBalancers)>
     #[allow(unused_mut)]
@@ -6181,10 +6065,6 @@ pub mod describe_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInstancesInputOperationOutputAlias = crate::operation::DescribeInstances;
-#[doc(hidden)]
-pub type DescribeInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstances`](crate::operation::DescribeInstances)>
     #[allow(unused_mut)]
@@ -6349,10 +6229,6 @@ pub mod describe_layers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLayersInputOperationOutputAlias = crate::operation::DescribeLayers;
-#[doc(hidden)]
-pub type DescribeLayersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLayersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLayers`](crate::operation::DescribeLayers)>
     #[allow(unused_mut)]
@@ -6507,12 +6383,6 @@ pub mod describe_load_based_auto_scaling_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeLoadBasedAutoScalingInputOperationOutputAlias =
-    crate::operation::DescribeLoadBasedAutoScaling;
-#[doc(hidden)]
-pub type DescribeLoadBasedAutoScalingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBasedAutoScaling`](crate::operation::DescribeLoadBasedAutoScaling)>
     #[allow(unused_mut)]
@@ -6641,10 +6511,6 @@ pub mod describe_my_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMyUserProfileInputOperationOutputAlias = crate::operation::DescribeMyUserProfile;
-#[doc(hidden)]
-pub type DescribeMyUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMyUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMyUserProfile`](crate::operation::DescribeMyUserProfile)>
     #[allow(unused_mut)]
@@ -6771,11 +6637,6 @@ pub mod describe_operating_systems_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeOperatingSystemsInputOperationOutputAlias =
-    crate::operation::DescribeOperatingSystems;
-#[doc(hidden)]
-pub type DescribeOperatingSystemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOperatingSystemsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOperatingSystems`](crate::operation::DescribeOperatingSystems)>
     #[allow(unused_mut)]
@@ -6926,10 +6787,6 @@ pub mod describe_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePermissionsInputOperationOutputAlias = crate::operation::DescribePermissions;
-#[doc(hidden)]
-pub type DescribePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePermissions`](crate::operation::DescribePermissions)>
     #[allow(unused_mut)]
@@ -7106,10 +6963,6 @@ pub mod describe_raid_arrays_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRaidArraysInputOperationOutputAlias = crate::operation::DescribeRaidArrays;
-#[doc(hidden)]
-pub type DescribeRaidArraysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRaidArraysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRaidArrays`](crate::operation::DescribeRaidArrays)>
     #[allow(unused_mut)]
@@ -7274,10 +7127,6 @@ pub mod describe_rds_db_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeRdsDbInstancesInputOperationOutputAlias = crate::operation::DescribeRdsDbInstances;
-#[doc(hidden)]
-pub type DescribeRdsDbInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRdsDbInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRdsDbInstances`](crate::operation::DescribeRdsDbInstances)>
     #[allow(unused_mut)]
@@ -7456,10 +7305,6 @@ pub mod describe_service_errors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeServiceErrorsInputOperationOutputAlias = crate::operation::DescribeServiceErrors;
-#[doc(hidden)]
-pub type DescribeServiceErrorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceErrorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceErrors`](crate::operation::DescribeServiceErrors)>
     #[allow(unused_mut)]
@@ -7607,12 +7452,6 @@ pub mod describe_stack_provisioning_parameters_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStackProvisioningParametersInputOperationOutputAlias =
-    crate::operation::DescribeStackProvisioningParameters;
-#[doc(hidden)]
-pub type DescribeStackProvisioningParametersInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStackProvisioningParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStackProvisioningParameters`](crate::operation::DescribeStackProvisioningParameters)>
     #[allow(unused_mut)]
@@ -7764,10 +7603,6 @@ pub mod describe_stacks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStacksInputOperationOutputAlias = crate::operation::DescribeStacks;
-#[doc(hidden)]
-pub type DescribeStacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStacks`](crate::operation::DescribeStacks)>
     #[allow(unused_mut)]
@@ -7911,10 +7746,6 @@ pub mod describe_stack_summary_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStackSummaryInputOperationOutputAlias = crate::operation::DescribeStackSummary;
-#[doc(hidden)]
-pub type DescribeStackSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStackSummaryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStackSummary`](crate::operation::DescribeStackSummary)>
     #[allow(unused_mut)]
@@ -8071,12 +7902,6 @@ pub mod describe_time_based_auto_scaling_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTimeBasedAutoScalingInputOperationOutputAlias =
-    crate::operation::DescribeTimeBasedAutoScaling;
-#[doc(hidden)]
-pub type DescribeTimeBasedAutoScalingInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTimeBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTimeBasedAutoScaling`](crate::operation::DescribeTimeBasedAutoScaling)>
     #[allow(unused_mut)]
@@ -8228,10 +8053,6 @@ pub mod describe_user_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUserProfilesInputOperationOutputAlias = crate::operation::DescribeUserProfiles;
-#[doc(hidden)]
-pub type DescribeUserProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserProfilesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserProfiles`](crate::operation::DescribeUserProfiles)>
     #[allow(unused_mut)]
@@ -8425,10 +8246,6 @@ pub mod describe_volumes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVolumesInputOperationOutputAlias = crate::operation::DescribeVolumes;
-#[doc(hidden)]
-pub type DescribeVolumesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVolumesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVolumes`](crate::operation::DescribeVolumes)>
     #[allow(unused_mut)]
@@ -8589,11 +8406,6 @@ pub mod detach_elastic_load_balancer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachElasticLoadBalancerInputOperationOutputAlias =
-    crate::operation::DetachElasticLoadBalancer;
-#[doc(hidden)]
-pub type DetachElasticLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachElasticLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DetachElasticLoadBalancer`](crate::operation::DetachElasticLoadBalancer)>
     #[allow(unused_mut)]
@@ -8739,10 +8551,6 @@ pub mod disassociate_elastic_ip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateElasticIpInputOperationOutputAlias = crate::operation::DisassociateElasticIp;
-#[doc(hidden)]
-pub type DisassociateElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateElasticIp`](crate::operation::DisassociateElasticIp)>
     #[allow(unused_mut)]
@@ -8888,10 +8696,6 @@ pub mod get_hostname_suggestion_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetHostnameSuggestionInputOperationOutputAlias = crate::operation::GetHostnameSuggestion;
-#[doc(hidden)]
-pub type GetHostnameSuggestionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHostnameSuggestionInput {
     /// Consumes the builder and constructs an Operation<[`GetHostnameSuggestion`](crate::operation::GetHostnameSuggestion)>
     #[allow(unused_mut)]
@@ -9049,10 +8853,6 @@ pub mod grant_access_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GrantAccessInputOperationOutputAlias = crate::operation::GrantAccess;
-#[doc(hidden)]
-pub type GrantAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GrantAccessInput {
     /// Consumes the builder and constructs an Operation<[`GrantAccess`](crate::operation::GrantAccess)>
     #[allow(unused_mut)]
@@ -9219,10 +9019,6 @@ pub mod list_tags_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
-#[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(unused_mut)]
@@ -9363,10 +9159,6 @@ pub mod reboot_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RebootInstanceInputOperationOutputAlias = crate::operation::RebootInstance;
-#[doc(hidden)]
-pub type RebootInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RebootInstance`](crate::operation::RebootInstance)>
     #[allow(unused_mut)]
@@ -9525,10 +9317,6 @@ pub mod register_ecs_cluster_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterEcsClusterInputOperationOutputAlias = crate::operation::RegisterEcsCluster;
-#[doc(hidden)]
-pub type RegisterEcsClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterEcsClusterInput {
     /// Consumes the builder and constructs an Operation<[`RegisterEcsCluster`](crate::operation::RegisterEcsCluster)>
     #[allow(unused_mut)]
@@ -9684,10 +9472,6 @@ pub mod register_elastic_ip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterElasticIpInputOperationOutputAlias = crate::operation::RegisterElasticIp;
-#[doc(hidden)]
-pub type RegisterElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`RegisterElasticIp`](crate::operation::RegisterElasticIp)>
     #[allow(unused_mut)]
@@ -9912,10 +9696,6 @@ pub mod register_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterInstanceInputOperationOutputAlias = crate::operation::RegisterInstance;
-#[doc(hidden)]
-pub type RegisterInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterInstance`](crate::operation::RegisterInstance)>
     #[allow(unused_mut)]
@@ -10098,10 +9878,6 @@ pub mod register_rds_db_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterRdsDbInstanceInputOperationOutputAlias = crate::operation::RegisterRdsDbInstance;
-#[doc(hidden)]
-pub type RegisterRdsDbInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterRdsDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterRdsDbInstance`](crate::operation::RegisterRdsDbInstance)>
     #[allow(unused_mut)]
@@ -10262,10 +10038,6 @@ pub mod register_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterVolumeInputOperationOutputAlias = crate::operation::RegisterVolume;
-#[doc(hidden)]
-pub type RegisterVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterVolumeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterVolume`](crate::operation::RegisterVolume)>
     #[allow(unused_mut)]
@@ -10453,11 +10225,6 @@ pub mod set_load_based_auto_scaling_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetLoadBasedAutoScalingInputOperationOutputAlias =
-    crate::operation::SetLoadBasedAutoScaling;
-#[doc(hidden)]
-pub type SetLoadBasedAutoScalingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBasedAutoScaling`](crate::operation::SetLoadBasedAutoScaling)>
     #[allow(unused_mut)]
@@ -10667,10 +10434,6 @@ pub mod set_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetPermissionInputOperationOutputAlias = crate::operation::SetPermission;
-#[doc(hidden)]
-pub type SetPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetPermissionInput {
     /// Consumes the builder and constructs an Operation<[`SetPermission`](crate::operation::SetPermission)>
     #[allow(unused_mut)]
@@ -10835,11 +10598,6 @@ pub mod set_time_based_auto_scaling_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetTimeBasedAutoScalingInputOperationOutputAlias =
-    crate::operation::SetTimeBasedAutoScaling;
-#[doc(hidden)]
-pub type SetTimeBasedAutoScalingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetTimeBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`SetTimeBasedAutoScaling`](crate::operation::SetTimeBasedAutoScaling)>
     #[allow(unused_mut)]
@@ -10985,10 +10743,6 @@ pub mod start_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartInstanceInputOperationOutputAlias = crate::operation::StartInstance;
-#[doc(hidden)]
-pub type StartInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartInstanceInput {
     /// Consumes the builder and constructs an Operation<[`StartInstance`](crate::operation::StartInstance)>
     #[allow(unused_mut)]
@@ -11131,10 +10885,6 @@ pub mod start_stack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartStackInputOperationOutputAlias = crate::operation::StartStack;
-#[doc(hidden)]
-pub type StartStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStackInput {
     /// Consumes the builder and constructs an Operation<[`StartStack`](crate::operation::StartStack)>
     #[allow(unused_mut)]
@@ -11290,10 +11040,6 @@ pub mod stop_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopInstanceInputOperationOutputAlias = crate::operation::StopInstance;
-#[doc(hidden)]
-pub type StopInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopInstanceInput {
     /// Consumes the builder and constructs an Operation<[`StopInstance`](crate::operation::StopInstance)>
     #[allow(unused_mut)]
@@ -11436,10 +11182,6 @@ pub mod stop_stack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopStackInputOperationOutputAlias = crate::operation::StopStack;
-#[doc(hidden)]
-pub type StopStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStackInput {
     /// Consumes the builder and constructs an Operation<[`StopStack`](crate::operation::StopStack)>
     #[allow(unused_mut)]
@@ -11624,10 +11366,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -11771,10 +11509,6 @@ pub mod unassign_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnassignInstanceInputOperationOutputAlias = crate::operation::UnassignInstance;
-#[doc(hidden)]
-pub type UnassignInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnassignInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UnassignInstance`](crate::operation::UnassignInstance)>
     #[allow(unused_mut)]
@@ -11918,10 +11652,6 @@ pub mod unassign_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UnassignVolumeInputOperationOutputAlias = crate::operation::UnassignVolume;
-#[doc(hidden)]
-pub type UnassignVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnassignVolumeInput {
     /// Consumes the builder and constructs an Operation<[`UnassignVolume`](crate::operation::UnassignVolume)>
     #[allow(unused_mut)]
@@ -12086,10 +11816,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -12406,10 +12132,6 @@ pub mod update_app_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
-#[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(unused_mut)]
@@ -12563,10 +12285,6 @@ pub mod update_elastic_ip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateElasticIpInputOperationOutputAlias = crate::operation::UpdateElasticIp;
-#[doc(hidden)]
-pub type UpdateElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`UpdateElasticIp`](crate::operation::UpdateElasticIp)>
     #[allow(unused_mut)]
@@ -12901,10 +12619,6 @@ pub mod update_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInstanceInputOperationOutputAlias = crate::operation::UpdateInstance;
-#[doc(hidden)]
-pub type UpdateInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstance`](crate::operation::UpdateInstance)>
     #[allow(unused_mut)]
@@ -13315,10 +13029,6 @@ pub mod update_layer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateLayerInputOperationOutputAlias = crate::operation::UpdateLayer;
-#[doc(hidden)]
-pub type UpdateLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLayerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLayer`](crate::operation::UpdateLayer)>
     #[allow(unused_mut)]
@@ -13465,10 +13175,6 @@ pub mod update_my_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMyUserProfileInputOperationOutputAlias = crate::operation::UpdateMyUserProfile;
-#[doc(hidden)]
-pub type UpdateMyUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMyUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMyUserProfile`](crate::operation::UpdateMyUserProfile)>
     #[allow(unused_mut)]
@@ -13641,10 +13347,6 @@ pub mod update_rds_db_instance_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateRdsDbInstanceInputOperationOutputAlias = crate::operation::UpdateRdsDbInstance;
-#[doc(hidden)]
-pub type UpdateRdsDbInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRdsDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRdsDbInstance`](crate::operation::UpdateRdsDbInstance)>
     #[allow(unused_mut)]
@@ -14130,10 +13832,6 @@ pub mod update_stack_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateStackInputOperationOutputAlias = crate::operation::UpdateStack;
-#[doc(hidden)]
-pub type UpdateStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStackInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStack`](crate::operation::UpdateStack)>
     #[allow(unused_mut)]
@@ -14316,10 +14014,6 @@ pub mod update_user_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateUserProfileInputOperationOutputAlias = crate::operation::UpdateUserProfile;
-#[doc(hidden)]
-pub type UpdateUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserProfile`](crate::operation::UpdateUserProfile)>
     #[allow(unused_mut)]
@@ -14487,10 +14181,6 @@ pub mod update_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVolumeInputOperationOutputAlias = crate::operation::UpdateVolume;
-#[doc(hidden)]
-pub type UpdateVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVolumeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVolume`](crate::operation::UpdateVolume)>
     #[allow(unused_mut)]

@@ -70,10 +70,6 @@ pub mod associate_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateUserInputOperationOutputAlias = crate::operation::AssociateUser;
-#[doc(hidden)]
-pub type AssociateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateUserInput {
     /// Consumes the builder and constructs an Operation<[`AssociateUser`](crate::operation::AssociateUser)>
     #[allow(unused_mut)]
@@ -229,11 +225,6 @@ pub mod deregister_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeregisterIdentityProviderInputOperationOutputAlias =
-    crate::operation::DeregisterIdentityProvider;
-#[doc(hidden)]
-pub type DeregisterIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterIdentityProvider`](crate::operation::DeregisterIdentityProvider)>
     #[allow(unused_mut)]
@@ -414,10 +405,6 @@ pub mod disassociate_user_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateUserInputOperationOutputAlias = crate::operation::DisassociateUser;
-#[doc(hidden)]
-pub type DisassociateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateUserInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateUser`](crate::operation::DisassociateUser)>
     #[allow(unused_mut)]
@@ -568,10 +555,6 @@ pub mod list_identity_providers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListIdentityProvidersInputOperationOutputAlias = crate::operation::ListIdentityProviders;
-#[doc(hidden)]
-pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityProviders`](crate::operation::ListIdentityProviders)>
     #[allow(unused_mut)]
@@ -746,10 +729,6 @@ pub mod list_instances_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInstancesInputOperationOutputAlias = crate::operation::ListInstances;
-#[doc(hidden)]
-pub type ListInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstances`](crate::operation::ListInstances)>
     #[allow(unused_mut)]
@@ -950,11 +929,6 @@ pub mod list_product_subscriptions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProductSubscriptionsInputOperationOutputAlias =
-    crate::operation::ListProductSubscriptions;
-#[doc(hidden)]
-pub type ListProductSubscriptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProductSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`ListProductSubscriptions`](crate::operation::ListProductSubscriptions)>
     #[allow(unused_mut)]
@@ -1156,10 +1130,6 @@ pub mod list_user_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListUserAssociationsInputOperationOutputAlias = crate::operation::ListUserAssociations;
-#[doc(hidden)]
-pub type ListUserAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserAssociations`](crate::operation::ListUserAssociations)>
     #[allow(unused_mut)]
@@ -1317,11 +1287,6 @@ pub mod register_identity_provider_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RegisterIdentityProviderInputOperationOutputAlias =
-    crate::operation::RegisterIdentityProvider;
-#[doc(hidden)]
-pub type RegisterIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`RegisterIdentityProvider`](crate::operation::RegisterIdentityProvider)>
     #[allow(unused_mut)]
@@ -1504,11 +1469,6 @@ pub mod start_product_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartProductSubscriptionInputOperationOutputAlias =
-    crate::operation::StartProductSubscription;
-#[doc(hidden)]
-pub type StartProductSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartProductSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartProductSubscription`](crate::operation::StartProductSubscription)>
     #[allow(unused_mut)]
@@ -1691,11 +1651,6 @@ pub mod stop_product_subscription_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopProductSubscriptionInputOperationOutputAlias =
-    crate::operation::StopProductSubscription;
-#[doc(hidden)]
-pub type StopProductSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopProductSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StopProductSubscription`](crate::operation::StopProductSubscription)>
     #[allow(unused_mut)]

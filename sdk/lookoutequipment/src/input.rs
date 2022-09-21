@@ -94,10 +94,6 @@ pub mod create_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
-#[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(unused_mut)]
@@ -386,11 +382,6 @@ pub mod create_inference_scheduler_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateInferenceSchedulerInputOperationOutputAlias =
-    crate::operation::CreateInferenceScheduler;
-#[doc(hidden)]
-pub type CreateInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`CreateInferenceScheduler`](crate::operation::CreateInferenceScheduler)>
     #[allow(unused_mut)]
@@ -741,10 +732,6 @@ pub mod create_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateModelInputOperationOutputAlias = crate::operation::CreateModel;
-#[doc(hidden)]
-pub type CreateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
     #[allow(unused_mut)]
@@ -891,10 +878,6 @@ pub mod delete_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
-#[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
@@ -1043,11 +1026,6 @@ pub mod delete_inference_scheduler_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteInferenceSchedulerInputOperationOutputAlias =
-    crate::operation::DeleteInferenceScheduler;
-#[doc(hidden)]
-pub type DeleteInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInferenceScheduler`](crate::operation::DeleteInferenceScheduler)>
     #[allow(unused_mut)]
@@ -1193,10 +1171,6 @@ pub mod delete_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteModelInputOperationOutputAlias = crate::operation::DeleteModel;
-#[doc(hidden)]
-pub type DeleteModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
     #[allow(unused_mut)]
@@ -1342,11 +1316,6 @@ pub mod describe_data_ingestion_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDataIngestionJobInputOperationOutputAlias =
-    crate::operation::DescribeDataIngestionJob;
-#[doc(hidden)]
-pub type DescribeDataIngestionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataIngestionJob`](crate::operation::DescribeDataIngestionJob)>
     #[allow(unused_mut)]
@@ -1492,10 +1461,6 @@ pub mod describe_dataset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
-#[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(unused_mut)]
@@ -1644,11 +1609,6 @@ pub mod describe_inference_scheduler_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeInferenceSchedulerInputOperationOutputAlias =
-    crate::operation::DescribeInferenceScheduler;
-#[doc(hidden)]
-pub type DescribeInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInferenceScheduler`](crate::operation::DescribeInferenceScheduler)>
     #[allow(unused_mut)]
@@ -1794,10 +1754,6 @@ pub mod describe_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeModelInputOperationOutputAlias = crate::operation::DescribeModel;
-#[doc(hidden)]
-pub type DescribeModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeModel`](crate::operation::DescribeModel)>
     #[allow(unused_mut)]
@@ -1980,10 +1936,6 @@ pub mod list_data_ingestion_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDataIngestionJobsInputOperationOutputAlias = crate::operation::ListDataIngestionJobs;
-#[doc(hidden)]
-pub type ListDataIngestionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataIngestionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataIngestionJobs`](crate::operation::ListDataIngestionJobs)>
     #[allow(unused_mut)]
@@ -2156,10 +2108,6 @@ pub mod list_datasets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
-#[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(unused_mut)]
@@ -2360,10 +2308,6 @@ pub mod list_inference_events_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInferenceEventsInputOperationOutputAlias = crate::operation::ListInferenceEvents;
-#[doc(hidden)]
-pub type ListInferenceEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInferenceEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceEvents`](crate::operation::ListInferenceEvents)>
     #[allow(unused_mut)]
@@ -2581,11 +2525,6 @@ pub mod list_inference_executions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInferenceExecutionsInputOperationOutputAlias =
-    crate::operation::ListInferenceExecutions;
-#[doc(hidden)]
-pub type ListInferenceExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInferenceExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceExecutions`](crate::operation::ListInferenceExecutions)>
     #[allow(unused_mut)]
@@ -2775,11 +2714,6 @@ pub mod list_inference_schedulers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListInferenceSchedulersInputOperationOutputAlias =
-    crate::operation::ListInferenceSchedulers;
-#[doc(hidden)]
-pub type ListInferenceSchedulersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInferenceSchedulersInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceSchedulers`](crate::operation::ListInferenceSchedulers)>
     #[allow(unused_mut)]
@@ -2978,10 +2912,6 @@ pub mod list_models_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListModelsInputOperationOutputAlias = crate::operation::ListModels;
-#[doc(hidden)]
-pub type ListModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListModels`](crate::operation::ListModels)>
     #[allow(unused_mut)]
@@ -3164,10 +3094,6 @@ pub mod list_sensor_statistics_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSensorStatisticsInputOperationOutputAlias = crate::operation::ListSensorStatistics;
-#[doc(hidden)]
-pub type ListSensorStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSensorStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`ListSensorStatistics`](crate::operation::ListSensorStatistics)>
     #[allow(unused_mut)]
@@ -3313,10 +3239,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3505,10 +3427,6 @@ pub mod start_data_ingestion_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDataIngestionJobInputOperationOutputAlias = crate::operation::StartDataIngestionJob;
-#[doc(hidden)]
-pub type StartDataIngestionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDataIngestionJob`](crate::operation::StartDataIngestionJob)>
     #[allow(unused_mut)]
@@ -3662,11 +3580,6 @@ pub mod start_inference_scheduler_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartInferenceSchedulerInputOperationOutputAlias =
-    crate::operation::StartInferenceScheduler;
-#[doc(hidden)]
-pub type StartInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StartInferenceScheduler`](crate::operation::StartInferenceScheduler)>
     #[allow(unused_mut)]
@@ -3815,10 +3728,6 @@ pub mod stop_inference_scheduler_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopInferenceSchedulerInputOperationOutputAlias = crate::operation::StopInferenceScheduler;
-#[doc(hidden)]
-pub type StopInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StopInferenceScheduler`](crate::operation::StopInferenceScheduler)>
     #[allow(unused_mut)]
@@ -3985,10 +3894,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4153,10 +4058,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4382,11 +4283,6 @@ pub mod update_inference_scheduler_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateInferenceSchedulerInputOperationOutputAlias =
-    crate::operation::UpdateInferenceScheduler;
-#[doc(hidden)]
-pub type UpdateInferenceSchedulerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInferenceScheduler`](crate::operation::UpdateInferenceScheduler)>
     #[allow(unused_mut)]

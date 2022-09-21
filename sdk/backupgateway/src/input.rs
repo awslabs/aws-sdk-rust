@@ -45,11 +45,6 @@ pub mod associate_gateway_to_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateGatewayToServerInputOperationOutputAlias =
-    crate::operation::AssociateGatewayToServer;
-#[doc(hidden)]
-pub type AssociateGatewayToServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateGatewayToServerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateGatewayToServer`](crate::operation::AssociateGatewayToServer)>
     #[allow(unused_mut)]
@@ -249,10 +244,6 @@ pub mod create_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateGatewayInputOperationOutputAlias = crate::operation::CreateGateway;
-#[doc(hidden)]
-pub type CreateGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateGateway`](crate::operation::CreateGateway)>
     #[allow(unused_mut)]
@@ -396,10 +387,6 @@ pub mod delete_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGatewayInputOperationOutputAlias = crate::operation::DeleteGateway;
-#[doc(hidden)]
-pub type DeleteGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGateway`](crate::operation::DeleteGateway)>
     #[allow(unused_mut)]
@@ -546,10 +533,6 @@ pub mod delete_hypervisor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteHypervisorInputOperationOutputAlias = crate::operation::DeleteHypervisor;
-#[doc(hidden)]
-pub type DeleteHypervisorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHypervisorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHypervisor`](crate::operation::DeleteHypervisor)>
     #[allow(unused_mut)]
@@ -695,12 +678,6 @@ pub mod disassociate_gateway_from_server_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateGatewayFromServerInputOperationOutputAlias =
-    crate::operation::DisassociateGatewayFromServer;
-#[doc(hidden)]
-pub type DisassociateGatewayFromServerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateGatewayFromServerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateGatewayFromServer`](crate::operation::DisassociateGatewayFromServer)>
     #[allow(unused_mut)]
@@ -842,10 +819,6 @@ pub mod get_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGatewayInputOperationOutputAlias = crate::operation::GetGateway;
-#[doc(hidden)]
-pub type GetGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGatewayInput {
     /// Consumes the builder and constructs an Operation<[`GetGateway`](crate::operation::GetGateway)>
     #[allow(unused_mut)]
@@ -1060,12 +1033,6 @@ pub mod import_hypervisor_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportHypervisorConfigurationInputOperationOutputAlias =
-    crate::operation::ImportHypervisorConfiguration;
-#[doc(hidden)]
-pub type ImportHypervisorConfigurationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ImportHypervisorConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ImportHypervisorConfiguration`](crate::operation::ImportHypervisorConfiguration)>
     #[allow(unused_mut)]
@@ -1220,10 +1187,6 @@ pub mod list_gateways_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGatewaysInputOperationOutputAlias = crate::operation::ListGateways;
-#[doc(hidden)]
-pub type ListGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListGateways`](crate::operation::ListGateways)>
     #[allow(unused_mut)]
@@ -1379,10 +1342,6 @@ pub mod list_hypervisors_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListHypervisorsInputOperationOutputAlias = crate::operation::ListHypervisors;
-#[doc(hidden)]
-pub type ListHypervisorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHypervisorsInput {
     /// Consumes the builder and constructs an Operation<[`ListHypervisors`](crate::operation::ListHypervisors)>
     #[allow(unused_mut)]
@@ -1526,10 +1485,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -1687,10 +1642,6 @@ pub mod list_virtual_machines_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVirtualMachinesInputOperationOutputAlias = crate::operation::ListVirtualMachines;
-#[doc(hidden)]
-pub type ListVirtualMachinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualMachinesInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualMachines`](crate::operation::ListVirtualMachines)>
     #[allow(unused_mut)]
@@ -1886,11 +1837,6 @@ pub mod put_maintenance_start_time_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutMaintenanceStartTimeInputOperationOutputAlias =
-    crate::operation::PutMaintenanceStartTime;
-#[doc(hidden)]
-pub type PutMaintenanceStartTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMaintenanceStartTimeInput {
     /// Consumes the builder and constructs an Operation<[`PutMaintenanceStartTime`](crate::operation::PutMaintenanceStartTime)>
     #[allow(unused_mut)]
@@ -2057,10 +2003,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -2242,11 +2184,6 @@ pub mod test_hypervisor_configuration_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TestHypervisorConfigurationInputOperationOutputAlias =
-    crate::operation::TestHypervisorConfiguration;
-#[doc(hidden)]
-pub type TestHypervisorConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestHypervisorConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`TestHypervisorConfiguration`](crate::operation::TestHypervisorConfiguration)>
     #[allow(unused_mut)]
@@ -2410,10 +2347,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -2574,11 +2507,6 @@ pub mod update_gateway_information_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGatewayInformationInputOperationOutputAlias =
-    crate::operation::UpdateGatewayInformation;
-#[doc(hidden)]
-pub type UpdateGatewayInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayInformationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewayInformation`](crate::operation::UpdateGatewayInformation)>
     #[allow(unused_mut)]
@@ -2726,11 +2654,6 @@ pub mod update_gateway_software_now_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGatewaySoftwareNowInputOperationOutputAlias =
-    crate::operation::UpdateGatewaySoftwareNow;
-#[doc(hidden)]
-pub type UpdateGatewaySoftwareNowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewaySoftwareNowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewaySoftwareNow`](crate::operation::UpdateGatewaySoftwareNow)>
     #[allow(unused_mut)]
@@ -2927,10 +2850,6 @@ pub mod update_hypervisor_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateHypervisorInputOperationOutputAlias = crate::operation::UpdateHypervisor;
-#[doc(hidden)]
-pub type UpdateHypervisorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHypervisorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHypervisor`](crate::operation::UpdateHypervisor)>
     #[allow(unused_mut)]

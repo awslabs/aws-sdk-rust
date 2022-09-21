@@ -42,11 +42,6 @@ pub mod batch_detect_dominant_language_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDetectDominantLanguageInputOperationOutputAlias =
-    crate::operation::BatchDetectDominantLanguage;
-#[doc(hidden)]
-pub type BatchDetectDominantLanguageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectDominantLanguageInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectDominantLanguage`](crate::operation::BatchDetectDominantLanguage)>
     #[allow(unused_mut)]
@@ -213,10 +208,6 @@ pub mod batch_detect_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDetectEntitiesInputOperationOutputAlias = crate::operation::BatchDetectEntities;
-#[doc(hidden)]
-pub type BatchDetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectEntities`](crate::operation::BatchDetectEntities)>
     #[allow(unused_mut)]
@@ -384,10 +375,6 @@ pub mod batch_detect_key_phrases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDetectKeyPhrasesInputOperationOutputAlias = crate::operation::BatchDetectKeyPhrases;
-#[doc(hidden)]
-pub type BatchDetectKeyPhrasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectKeyPhrasesInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectKeyPhrases`](crate::operation::BatchDetectKeyPhrases)>
     #[allow(unused_mut)]
@@ -557,10 +544,6 @@ pub mod batch_detect_sentiment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDetectSentimentInputOperationOutputAlias = crate::operation::BatchDetectSentiment;
-#[doc(hidden)]
-pub type BatchDetectSentimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectSentimentInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectSentiment`](crate::operation::BatchDetectSentiment)>
     #[allow(unused_mut)]
@@ -730,10 +713,6 @@ pub mod batch_detect_syntax_input {
         }
     }
 }
-#[doc(hidden)]
-pub type BatchDetectSyntaxInputOperationOutputAlias = crate::operation::BatchDetectSyntax;
-#[doc(hidden)]
-pub type BatchDetectSyntaxInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDetectSyntaxInput {
     /// Consumes the builder and constructs an Operation<[`BatchDetectSyntax`](crate::operation::BatchDetectSyntax)>
     #[allow(unused_mut)]
@@ -889,10 +868,6 @@ pub mod classify_document_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ClassifyDocumentInputOperationOutputAlias = crate::operation::ClassifyDocument;
-#[doc(hidden)]
-pub type ClassifyDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClassifyDocumentInput {
     /// Consumes the builder and constructs an Operation<[`ClassifyDocument`](crate::operation::ClassifyDocument)>
     #[allow(unused_mut)]
@@ -1051,10 +1026,6 @@ pub mod contains_pii_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ContainsPiiEntitiesInputOperationOutputAlias = crate::operation::ContainsPiiEntities;
-#[doc(hidden)]
-pub type ContainsPiiEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ContainsPiiEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ContainsPiiEntities`](crate::operation::ContainsPiiEntities)>
     #[allow(unused_mut)]
@@ -1415,11 +1386,6 @@ pub mod create_document_classifier_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDocumentClassifierInputOperationOutputAlias =
-    crate::operation::CreateDocumentClassifier;
-#[doc(hidden)]
-pub type CreateDocumentClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`CreateDocumentClassifier`](crate::operation::CreateDocumentClassifier)>
     #[allow(unused_mut)]
@@ -1646,10 +1612,6 @@ pub mod create_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
-#[doc(hidden)]
-pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(unused_mut)]
@@ -1977,10 +1939,6 @@ pub mod create_entity_recognizer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEntityRecognizerInputOperationOutputAlias = crate::operation::CreateEntityRecognizer;
-#[doc(hidden)]
-pub type CreateEntityRecognizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`CreateEntityRecognizer`](crate::operation::CreateEntityRecognizer)>
     #[allow(unused_mut)]
@@ -2134,11 +2092,6 @@ pub mod delete_document_classifier_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDocumentClassifierInputOperationOutputAlias =
-    crate::operation::DeleteDocumentClassifier;
-#[doc(hidden)]
-pub type DeleteDocumentClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDocumentClassifier`](crate::operation::DeleteDocumentClassifier)>
     #[allow(unused_mut)]
@@ -2284,10 +2237,6 @@ pub mod delete_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
-#[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(unused_mut)]
@@ -2434,10 +2383,6 @@ pub mod delete_entity_recognizer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEntityRecognizerInputOperationOutputAlias = crate::operation::DeleteEntityRecognizer;
-#[doc(hidden)]
-pub type DeleteEntityRecognizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEntityRecognizer`](crate::operation::DeleteEntityRecognizer)>
     #[allow(unused_mut)]
@@ -2598,10 +2543,6 @@ pub mod delete_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
-#[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(unused_mut)]
@@ -2749,12 +2690,6 @@ pub mod describe_document_classification_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDocumentClassificationJobInputOperationOutputAlias =
-    crate::operation::DescribeDocumentClassificationJob;
-#[doc(hidden)]
-pub type DescribeDocumentClassificationJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDocumentClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDocumentClassificationJob`](crate::operation::DescribeDocumentClassificationJob)>
     #[allow(unused_mut)]
@@ -2902,11 +2837,6 @@ pub mod describe_document_classifier_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDocumentClassifierInputOperationOutputAlias =
-    crate::operation::DescribeDocumentClassifier;
-#[doc(hidden)]
-pub type DescribeDocumentClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDocumentClassifier`](crate::operation::DescribeDocumentClassifier)>
     #[allow(unused_mut)]
@@ -3054,12 +2984,6 @@ pub mod describe_dominant_language_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeDominantLanguageDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeDominantLanguageDetectionJob;
-#[doc(hidden)]
-pub type DescribeDominantLanguageDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDominantLanguageDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDominantLanguageDetectionJob`](crate::operation::DescribeDominantLanguageDetectionJob)>
     #[allow(unused_mut)]
@@ -3202,10 +3126,6 @@ pub mod describe_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEndpointInputOperationOutputAlias = crate::operation::DescribeEndpoint;
-#[doc(hidden)]
-pub type DescribeEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoint`](crate::operation::DescribeEndpoint)>
     #[allow(unused_mut)]
@@ -3351,12 +3271,6 @@ pub mod describe_entities_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEntitiesDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeEntitiesDetectionJob;
-#[doc(hidden)]
-pub type DescribeEntitiesDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntitiesDetectionJob`](crate::operation::DescribeEntitiesDetectionJob)>
     #[allow(unused_mut)]
@@ -3504,11 +3418,6 @@ pub mod describe_entity_recognizer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEntityRecognizerInputOperationOutputAlias =
-    crate::operation::DescribeEntityRecognizer;
-#[doc(hidden)]
-pub type DescribeEntityRecognizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntityRecognizer`](crate::operation::DescribeEntityRecognizer)>
     #[allow(unused_mut)]
@@ -3656,11 +3565,6 @@ pub mod describe_events_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEventsDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeEventsDetectionJob;
-#[doc(hidden)]
-pub type DescribeEventsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventsDetectionJob`](crate::operation::DescribeEventsDetectionJob)>
     #[allow(unused_mut)]
@@ -3805,12 +3709,6 @@ pub mod describe_key_phrases_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeKeyPhrasesDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeKeyPhrasesDetectionJob;
-#[doc(hidden)]
-pub type DescribeKeyPhrasesDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeKeyPhrasesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKeyPhrasesDetectionJob`](crate::operation::DescribeKeyPhrasesDetectionJob)>
     #[allow(unused_mut)]
@@ -3955,12 +3853,6 @@ pub mod describe_pii_entities_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribePiiEntitiesDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribePiiEntitiesDetectionJob;
-#[doc(hidden)]
-pub type DescribePiiEntitiesDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePiiEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePiiEntitiesDetectionJob`](crate::operation::DescribePiiEntitiesDetectionJob)>
     #[allow(unused_mut)]
@@ -4103,10 +3995,6 @@ pub mod describe_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeResourcePolicyInputOperationOutputAlias = crate::operation::DescribeResourcePolicy;
-#[doc(hidden)]
-pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourcePolicy`](crate::operation::DescribeResourcePolicy)>
     #[allow(unused_mut)]
@@ -4254,12 +4142,6 @@ pub mod describe_sentiment_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSentimentDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeSentimentDetectionJob;
-#[doc(hidden)]
-pub type DescribeSentimentDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSentimentDetectionJob`](crate::operation::DescribeSentimentDetectionJob)>
     #[allow(unused_mut)]
@@ -4404,12 +4286,6 @@ pub mod describe_targeted_sentiment_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTargetedSentimentDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeTargetedSentimentDetectionJob;
-#[doc(hidden)]
-pub type DescribeTargetedSentimentDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetedSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetedSentimentDetectionJob`](crate::operation::DescribeTargetedSentimentDetectionJob)>
     #[allow(unused_mut)]
@@ -4554,11 +4430,6 @@ pub mod describe_topics_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTopicsDetectionJobInputOperationOutputAlias =
-    crate::operation::DescribeTopicsDetectionJob;
-#[doc(hidden)]
-pub type DescribeTopicsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTopicsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTopicsDetectionJob`](crate::operation::DescribeTopicsDetectionJob)>
     #[allow(unused_mut)]
@@ -4699,10 +4570,6 @@ pub mod detect_dominant_language_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectDominantLanguageInputOperationOutputAlias = crate::operation::DetectDominantLanguage;
-#[doc(hidden)]
-pub type DetectDominantLanguageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectDominantLanguageInput {
     /// Consumes the builder and constructs an Operation<[`DetectDominantLanguage`](crate::operation::DetectDominantLanguage)>
     #[allow(unused_mut)]
@@ -4881,10 +4748,6 @@ pub mod detect_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectEntitiesInputOperationOutputAlias = crate::operation::DetectEntities;
-#[doc(hidden)]
-pub type DetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectEntities`](crate::operation::DetectEntities)>
     #[allow(unused_mut)]
@@ -5043,10 +4906,6 @@ pub mod detect_key_phrases_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectKeyPhrasesInputOperationOutputAlias = crate::operation::DetectKeyPhrases;
-#[doc(hidden)]
-pub type DetectKeyPhrasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectKeyPhrasesInput {
     /// Consumes the builder and constructs an Operation<[`DetectKeyPhrases`](crate::operation::DetectKeyPhrases)>
     #[allow(unused_mut)]
@@ -5205,10 +5064,6 @@ pub mod detect_pii_entities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectPiiEntitiesInputOperationOutputAlias = crate::operation::DetectPiiEntities;
-#[doc(hidden)]
-pub type DetectPiiEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectPiiEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectPiiEntities`](crate::operation::DetectPiiEntities)>
     #[allow(unused_mut)]
@@ -5367,10 +5222,6 @@ pub mod detect_sentiment_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectSentimentInputOperationOutputAlias = crate::operation::DetectSentiment;
-#[doc(hidden)]
-pub type DetectSentimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectSentimentInput {
     /// Consumes the builder and constructs an Operation<[`DetectSentiment`](crate::operation::DetectSentiment)>
     #[allow(unused_mut)]
@@ -5529,10 +5380,6 @@ pub mod detect_syntax_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetectSyntaxInputOperationOutputAlias = crate::operation::DetectSyntax;
-#[doc(hidden)]
-pub type DetectSyntaxInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectSyntaxInput {
     /// Consumes the builder and constructs an Operation<[`DetectSyntax`](crate::operation::DetectSyntax)>
     #[allow(unused_mut)]
@@ -5762,10 +5609,6 @@ pub mod import_model_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ImportModelInputOperationOutputAlias = crate::operation::ImportModel;
-#[doc(hidden)]
-pub type ImportModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportModelInput {
     /// Consumes the builder and constructs an Operation<[`ImportModel`](crate::operation::ImportModel)>
     #[allow(unused_mut)]
@@ -5938,12 +5781,6 @@ pub mod list_document_classification_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDocumentClassificationJobsInputOperationOutputAlias =
-    crate::operation::ListDocumentClassificationJobs;
-#[doc(hidden)]
-pub type ListDocumentClassificationJobsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDocumentClassificationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDocumentClassificationJobs`](crate::operation::ListDocumentClassificationJobs)>
     #[allow(unused_mut)]
@@ -6115,11 +5952,6 @@ pub mod list_document_classifiers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDocumentClassifiersInputOperationOutputAlias =
-    crate::operation::ListDocumentClassifiers;
-#[doc(hidden)]
-pub type ListDocumentClassifiersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDocumentClassifiersInput {
     /// Consumes the builder and constructs an Operation<[`ListDocumentClassifiers`](crate::operation::ListDocumentClassifiers)>
     #[allow(unused_mut)]
@@ -6279,12 +6111,6 @@ pub mod list_document_classifier_summaries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDocumentClassifierSummariesInputOperationOutputAlias =
-    crate::operation::ListDocumentClassifierSummaries;
-#[doc(hidden)]
-pub type ListDocumentClassifierSummariesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDocumentClassifierSummariesInput {
     /// Consumes the builder and constructs an Operation<[`ListDocumentClassifierSummaries`](crate::operation::ListDocumentClassifierSummaries)>
     #[allow(unused_mut)]
@@ -6456,12 +6282,6 @@ pub mod list_dominant_language_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDominantLanguageDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListDominantLanguageDetectionJobs;
-#[doc(hidden)]
-pub type ListDominantLanguageDetectionJobsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDominantLanguageDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDominantLanguageDetectionJobs`](crate::operation::ListDominantLanguageDetectionJobs)>
     #[allow(unused_mut)]
@@ -6631,10 +6451,6 @@ pub mod list_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEndpointsInputOperationOutputAlias = crate::operation::ListEndpoints;
-#[doc(hidden)]
-pub type ListEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
     #[allow(unused_mut)]
@@ -6807,11 +6623,6 @@ pub mod list_entities_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntitiesDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListEntitiesDetectionJobs;
-#[doc(hidden)]
-pub type ListEntitiesDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitiesDetectionJobs`](crate::operation::ListEntitiesDetectionJobs)>
     #[allow(unused_mut)]
@@ -6984,10 +6795,6 @@ pub mod list_entity_recognizers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntityRecognizersInputOperationOutputAlias = crate::operation::ListEntityRecognizers;
-#[doc(hidden)]
-pub type ListEntityRecognizersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntityRecognizersInput {
     /// Consumes the builder and constructs an Operation<[`ListEntityRecognizers`](crate::operation::ListEntityRecognizers)>
     #[allow(unused_mut)]
@@ -7147,12 +6954,6 @@ pub mod list_entity_recognizer_summaries_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEntityRecognizerSummariesInputOperationOutputAlias =
-    crate::operation::ListEntityRecognizerSummaries;
-#[doc(hidden)]
-pub type ListEntityRecognizerSummariesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntityRecognizerSummariesInput {
     /// Consumes the builder and constructs an Operation<[`ListEntityRecognizerSummaries`](crate::operation::ListEntityRecognizerSummaries)>
     #[allow(unused_mut)]
@@ -7324,11 +7125,6 @@ pub mod list_events_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEventsDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListEventsDetectionJobs;
-#[doc(hidden)]
-pub type ListEventsDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventsDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventsDetectionJobs`](crate::operation::ListEventsDetectionJobs)>
     #[allow(unused_mut)]
@@ -7503,11 +7299,6 @@ pub mod list_key_phrases_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListKeyPhrasesDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListKeyPhrasesDetectionJobs;
-#[doc(hidden)]
-pub type ListKeyPhrasesDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKeyPhrasesDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyPhrasesDetectionJobs`](crate::operation::ListKeyPhrasesDetectionJobs)>
     #[allow(unused_mut)]
@@ -7679,12 +7470,6 @@ pub mod list_pii_entities_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPiiEntitiesDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListPiiEntitiesDetectionJobs;
-#[doc(hidden)]
-pub type ListPiiEntitiesDetectionJobsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPiiEntitiesDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPiiEntitiesDetectionJobs`](crate::operation::ListPiiEntitiesDetectionJobs)>
     #[allow(unused_mut)]
@@ -7856,11 +7641,6 @@ pub mod list_sentiment_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSentimentDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListSentimentDetectionJobs;
-#[doc(hidden)]
-pub type ListSentimentDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSentimentDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSentimentDetectionJobs`](crate::operation::ListSentimentDetectionJobs)>
     #[allow(unused_mut)]
@@ -8003,10 +7783,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -8181,12 +7957,6 @@ pub mod list_targeted_sentiment_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTargetedSentimentDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListTargetedSentimentDetectionJobs;
-#[doc(hidden)]
-pub type ListTargetedSentimentDetectionJobsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetedSentimentDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTargetedSentimentDetectionJobs`](crate::operation::ListTargetedSentimentDetectionJobs)>
     #[allow(unused_mut)]
@@ -8358,11 +8128,6 @@ pub mod list_topics_detection_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTopicsDetectionJobsInputOperationOutputAlias =
-    crate::operation::ListTopicsDetectionJobs;
-#[doc(hidden)]
-pub type ListTopicsDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTopicsDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTopicsDetectionJobs`](crate::operation::ListTopicsDetectionJobs)>
     #[allow(unused_mut)]
@@ -8544,10 +8309,6 @@ pub mod put_resource_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
-#[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(unused_mut)]
@@ -8827,12 +8588,6 @@ pub mod start_document_classification_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDocumentClassificationJobInputOperationOutputAlias =
-    crate::operation::StartDocumentClassificationJob;
-#[doc(hidden)]
-pub type StartDocumentClassificationJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDocumentClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDocumentClassificationJob`](crate::operation::StartDocumentClassificationJob)>
     #[allow(unused_mut)]
@@ -9099,12 +8854,6 @@ pub mod start_dominant_language_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartDominantLanguageDetectionJobInputOperationOutputAlias =
-    crate::operation::StartDominantLanguageDetectionJob;
-#[doc(hidden)]
-pub type StartDominantLanguageDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDominantLanguageDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDominantLanguageDetectionJob`](crate::operation::StartDominantLanguageDetectionJob)>
     #[allow(unused_mut)]
@@ -9401,11 +9150,6 @@ pub mod start_entities_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartEntitiesDetectionJobInputOperationOutputAlias =
-    crate::operation::StartEntitiesDetectionJob;
-#[doc(hidden)]
-pub type StartEntitiesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartEntitiesDetectionJob`](crate::operation::StartEntitiesDetectionJob)>
     #[allow(unused_mut)]
@@ -9673,11 +9417,6 @@ pub mod start_events_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartEventsDetectionJobInputOperationOutputAlias =
-    crate::operation::StartEventsDetectionJob;
-#[doc(hidden)]
-pub type StartEventsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEventsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartEventsDetectionJob`](crate::operation::StartEventsDetectionJob)>
     #[allow(unused_mut)]
@@ -9962,11 +9701,6 @@ pub mod start_key_phrases_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartKeyPhrasesDetectionJobInputOperationOutputAlias =
-    crate::operation::StartKeyPhrasesDetectionJob;
-#[doc(hidden)]
-pub type StartKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartKeyPhrasesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartKeyPhrasesDetectionJob`](crate::operation::StartKeyPhrasesDetectionJob)>
     #[allow(unused_mut)]
@@ -10242,12 +9976,6 @@ pub mod start_pii_entities_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartPiiEntitiesDetectionJobInputOperationOutputAlias =
-    crate::operation::StartPiiEntitiesDetectionJob;
-#[doc(hidden)]
-pub type StartPiiEntitiesDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartPiiEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPiiEntitiesDetectionJob`](crate::operation::StartPiiEntitiesDetectionJob)>
     #[allow(unused_mut)]
@@ -10529,11 +10257,6 @@ pub mod start_sentiment_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSentimentDetectionJobInputOperationOutputAlias =
-    crate::operation::StartSentimentDetectionJob;
-#[doc(hidden)]
-pub type StartSentimentDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartSentimentDetectionJob`](crate::operation::StartSentimentDetectionJob)>
     #[allow(unused_mut)]
@@ -10815,12 +10538,6 @@ pub mod start_targeted_sentiment_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTargetedSentimentDetectionJobInputOperationOutputAlias =
-    crate::operation::StartTargetedSentimentDetectionJob;
-#[doc(hidden)]
-pub type StartTargetedSentimentDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartTargetedSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTargetedSentimentDetectionJob`](crate::operation::StartTargetedSentimentDetectionJob)>
     #[allow(unused_mut)]
@@ -11099,11 +10816,6 @@ pub mod start_topics_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartTopicsDetectionJobInputOperationOutputAlias =
-    crate::operation::StartTopicsDetectionJob;
-#[doc(hidden)]
-pub type StartTopicsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTopicsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTopicsDetectionJob`](crate::operation::StartTopicsDetectionJob)>
     #[allow(unused_mut)]
@@ -11254,12 +10966,6 @@ pub mod stop_dominant_language_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopDominantLanguageDetectionJobInputOperationOutputAlias =
-    crate::operation::StopDominantLanguageDetectionJob;
-#[doc(hidden)]
-pub type StopDominantLanguageDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StopDominantLanguageDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopDominantLanguageDetectionJob`](crate::operation::StopDominantLanguageDetectionJob)>
     #[allow(unused_mut)]
@@ -11404,11 +11110,6 @@ pub mod stop_entities_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopEntitiesDetectionJobInputOperationOutputAlias =
-    crate::operation::StopEntitiesDetectionJob;
-#[doc(hidden)]
-pub type StopEntitiesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopEntitiesDetectionJob`](crate::operation::StopEntitiesDetectionJob)>
     #[allow(unused_mut)]
@@ -11554,10 +11255,6 @@ pub mod stop_events_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopEventsDetectionJobInputOperationOutputAlias = crate::operation::StopEventsDetectionJob;
-#[doc(hidden)]
-pub type StopEventsDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEventsDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopEventsDetectionJob`](crate::operation::StopEventsDetectionJob)>
     #[allow(unused_mut)]
@@ -11705,11 +11402,6 @@ pub mod stop_key_phrases_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopKeyPhrasesDetectionJobInputOperationOutputAlias =
-    crate::operation::StopKeyPhrasesDetectionJob;
-#[doc(hidden)]
-pub type StopKeyPhrasesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopKeyPhrasesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopKeyPhrasesDetectionJob`](crate::operation::StopKeyPhrasesDetectionJob)>
     #[allow(unused_mut)]
@@ -11854,11 +11546,6 @@ pub mod stop_pii_entities_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopPiiEntitiesDetectionJobInputOperationOutputAlias =
-    crate::operation::StopPiiEntitiesDetectionJob;
-#[doc(hidden)]
-pub type StopPiiEntitiesDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPiiEntitiesDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPiiEntitiesDetectionJob`](crate::operation::StopPiiEntitiesDetectionJob)>
     #[allow(unused_mut)]
@@ -12003,11 +11690,6 @@ pub mod stop_sentiment_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopSentimentDetectionJobInputOperationOutputAlias =
-    crate::operation::StopSentimentDetectionJob;
-#[doc(hidden)]
-pub type StopSentimentDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopSentimentDetectionJob`](crate::operation::StopSentimentDetectionJob)>
     #[allow(unused_mut)]
@@ -12155,12 +11837,6 @@ pub mod stop_targeted_sentiment_detection_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopTargetedSentimentDetectionJobInputOperationOutputAlias =
-    crate::operation::StopTargetedSentimentDetectionJob;
-#[doc(hidden)]
-pub type StopTargetedSentimentDetectionJobInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StopTargetedSentimentDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopTargetedSentimentDetectionJob`](crate::operation::StopTargetedSentimentDetectionJob)>
     #[allow(unused_mut)]
@@ -12308,12 +11984,6 @@ pub mod stop_training_document_classifier_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopTrainingDocumentClassifierInputOperationOutputAlias =
-    crate::operation::StopTrainingDocumentClassifier;
-#[doc(hidden)]
-pub type StopTrainingDocumentClassifierInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StopTrainingDocumentClassifierInput {
     /// Consumes the builder and constructs an Operation<[`StopTrainingDocumentClassifier`](crate::operation::StopTrainingDocumentClassifier)>
     #[allow(unused_mut)]
@@ -12461,12 +12131,6 @@ pub mod stop_training_entity_recognizer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StopTrainingEntityRecognizerInputOperationOutputAlias =
-    crate::operation::StopTrainingEntityRecognizer;
-#[doc(hidden)]
-pub type StopTrainingEntityRecognizerInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StopTrainingEntityRecognizerInput {
     /// Consumes the builder and constructs an Operation<[`StopTrainingEntityRecognizer`](crate::operation::StopTrainingEntityRecognizer)>
     #[allow(unused_mut)]
@@ -12630,10 +12294,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -12798,10 +12458,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -12990,10 +12646,6 @@ pub mod update_endpoint_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateEndpointInputOperationOutputAlias = crate::operation::UpdateEndpoint;
-#[doc(hidden)]
-pub type UpdateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpoint`](crate::operation::UpdateEndpoint)>
     #[allow(unused_mut)]

@@ -31,10 +31,6 @@ pub mod get_raw_message_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRawMessageContentInputOperationOutputAlias = crate::operation::GetRawMessageContent;
-#[doc(hidden)]
-pub type GetRawMessageContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRawMessageContentInput {
     /// Consumes the builder and constructs an Operation<[`GetRawMessageContent`](crate::operation::GetRawMessageContent)>
     #[allow(unused_mut)]
@@ -189,10 +185,6 @@ pub mod put_raw_message_content_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutRawMessageContentInputOperationOutputAlias = crate::operation::PutRawMessageContent;
-#[doc(hidden)]
-pub type PutRawMessageContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRawMessageContentInput {
     /// Consumes the builder and constructs an Operation<[`PutRawMessageContent`](crate::operation::PutRawMessageContent)>
     #[allow(unused_mut)]

@@ -55,10 +55,6 @@ pub mod apply_archive_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ApplyArchiveRuleInputOperationOutputAlias = crate::operation::ApplyArchiveRule;
-#[doc(hidden)]
-pub type ApplyArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ApplyArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`ApplyArchiveRule`](crate::operation::ApplyArchiveRule)>
     #[allow(unused_mut)]
@@ -200,10 +196,6 @@ pub mod cancel_policy_generation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelPolicyGenerationInputOperationOutputAlias = crate::operation::CancelPolicyGeneration;
-#[doc(hidden)]
-pub type CancelPolicyGenerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelPolicyGenerationInput {
     /// Consumes the builder and constructs an Operation<[`CancelPolicyGeneration`](crate::operation::CancelPolicyGeneration)>
     #[allow(unused_mut)]
@@ -384,10 +376,6 @@ pub mod create_access_preview_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAccessPreviewInputOperationOutputAlias = crate::operation::CreateAccessPreview;
-#[doc(hidden)]
-pub type CreateAccessPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessPreviewInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessPreview`](crate::operation::CreateAccessPreview)>
     #[allow(unused_mut)]
@@ -607,10 +595,6 @@ pub mod create_analyzer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateAnalyzerInputOperationOutputAlias = crate::operation::CreateAnalyzer;
-#[doc(hidden)]
-pub type CreateAnalyzerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnalyzerInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnalyzer`](crate::operation::CreateAnalyzer)>
     #[allow(unused_mut)]
@@ -808,10 +792,6 @@ pub mod create_archive_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateArchiveRuleInputOperationOutputAlias = crate::operation::CreateArchiveRule;
-#[doc(hidden)]
-pub type CreateArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateArchiveRule`](crate::operation::CreateArchiveRule)>
     #[allow(unused_mut)]
@@ -987,10 +967,6 @@ pub mod delete_analyzer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAnalyzerInputOperationOutputAlias = crate::operation::DeleteAnalyzer;
-#[doc(hidden)]
-pub type DeleteAnalyzerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnalyzerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnalyzer`](crate::operation::DeleteAnalyzer)>
     #[allow(unused_mut)]
@@ -1175,10 +1151,6 @@ pub mod delete_archive_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteArchiveRuleInputOperationOutputAlias = crate::operation::DeleteArchiveRule;
-#[doc(hidden)]
-pub type DeleteArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteArchiveRule`](crate::operation::DeleteArchiveRule)>
     #[allow(unused_mut)]
@@ -1366,10 +1338,6 @@ pub mod get_access_preview_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccessPreviewInputOperationOutputAlias = crate::operation::GetAccessPreview;
-#[doc(hidden)]
-pub type GetAccessPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPreviewInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPreview`](crate::operation::GetAccessPreview)>
     #[allow(unused_mut)]
@@ -1536,10 +1504,6 @@ pub mod get_analyzed_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAnalyzedResourceInputOperationOutputAlias = crate::operation::GetAnalyzedResource;
-#[doc(hidden)]
-pub type GetAnalyzedResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnalyzedResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetAnalyzedResource`](crate::operation::GetAnalyzedResource)>
     #[allow(unused_mut)]
@@ -1687,10 +1651,6 @@ pub mod get_analyzer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAnalyzerInputOperationOutputAlias = crate::operation::GetAnalyzer;
-#[doc(hidden)]
-pub type GetAnalyzerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnalyzerInput {
     /// Consumes the builder and constructs an Operation<[`GetAnalyzer`](crate::operation::GetAnalyzer)>
     #[allow(unused_mut)]
@@ -1849,10 +1809,6 @@ pub mod get_archive_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetArchiveRuleInputOperationOutputAlias = crate::operation::GetArchiveRule;
-#[doc(hidden)]
-pub type GetArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetArchiveRule`](crate::operation::GetArchiveRule)>
     #[allow(unused_mut)]
@@ -2022,10 +1978,6 @@ pub mod get_finding_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetFindingInputOperationOutputAlias = crate::operation::GetFinding;
-#[doc(hidden)]
-pub type GetFindingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingInput {
     /// Consumes the builder and constructs an Operation<[`GetFinding`](crate::operation::GetFinding)>
     #[allow(unused_mut)]
@@ -2212,10 +2164,6 @@ pub mod get_generated_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetGeneratedPolicyInputOperationOutputAlias = crate::operation::GetGeneratedPolicy;
-#[doc(hidden)]
-pub type GetGeneratedPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGeneratedPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetGeneratedPolicy`](crate::operation::GetGeneratedPolicy)>
     #[allow(unused_mut)]
@@ -2445,11 +2393,6 @@ pub mod list_access_preview_findings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccessPreviewFindingsInputOperationOutputAlias =
-    crate::operation::ListAccessPreviewFindings;
-#[doc(hidden)]
-pub type ListAccessPreviewFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPreviewFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPreviewFindings`](crate::operation::ListAccessPreviewFindings)>
     #[allow(unused_mut)]
@@ -2633,10 +2576,6 @@ pub mod list_access_previews_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccessPreviewsInputOperationOutputAlias = crate::operation::ListAccessPreviews;
-#[doc(hidden)]
-pub type ListAccessPreviewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPreviewsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPreviews`](crate::operation::ListAccessPreviews)>
     #[allow(unused_mut)]
@@ -2823,10 +2762,6 @@ pub mod list_analyzed_resources_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAnalyzedResourcesInputOperationOutputAlias = crate::operation::ListAnalyzedResources;
-#[doc(hidden)]
-pub type ListAnalyzedResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnalyzedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAnalyzedResources`](crate::operation::ListAnalyzedResources)>
     #[allow(unused_mut)]
@@ -2991,10 +2926,6 @@ pub mod list_analyzers_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAnalyzersInputOperationOutputAlias = crate::operation::ListAnalyzers;
-#[doc(hidden)]
-pub type ListAnalyzersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnalyzersInput {
     /// Consumes the builder and constructs an Operation<[`ListAnalyzers`](crate::operation::ListAnalyzers)>
     #[allow(unused_mut)]
@@ -3166,10 +3097,6 @@ pub mod list_archive_rules_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListArchiveRulesInputOperationOutputAlias = crate::operation::ListArchiveRules;
-#[doc(hidden)]
-pub type ListArchiveRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListArchiveRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListArchiveRules`](crate::operation::ListArchiveRules)>
     #[allow(unused_mut)]
@@ -3395,10 +3322,6 @@ pub mod list_findings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFindingsInputOperationOutputAlias = crate::operation::ListFindings;
-#[doc(hidden)]
-pub type ListFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
     #[allow(unused_mut)]
@@ -3564,10 +3487,6 @@ pub mod list_policy_generations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPolicyGenerationsInputOperationOutputAlias = crate::operation::ListPolicyGenerations;
-#[doc(hidden)]
-pub type ListPolicyGenerationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPolicyGenerationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicyGenerations`](crate::operation::ListPolicyGenerations)>
     #[allow(unused_mut)]
@@ -3715,10 +3634,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3894,10 +3809,6 @@ pub mod start_policy_generation_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartPolicyGenerationInputOperationOutputAlias = crate::operation::StartPolicyGeneration;
-#[doc(hidden)]
-pub type StartPolicyGenerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPolicyGenerationInput {
     /// Consumes the builder and constructs an Operation<[`StartPolicyGeneration`](crate::operation::StartPolicyGeneration)>
     #[allow(unused_mut)]
@@ -4053,10 +3964,6 @@ pub mod start_resource_scan_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartResourceScanInputOperationOutputAlias = crate::operation::StartResourceScan;
-#[doc(hidden)]
-pub type StartResourceScanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartResourceScanInput {
     /// Consumes the builder and constructs an Operation<[`StartResourceScan`](crate::operation::StartResourceScan)>
     #[allow(unused_mut)]
@@ -4224,10 +4131,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4402,10 +4305,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4614,10 +4513,6 @@ pub mod update_archive_rule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateArchiveRuleInputOperationOutputAlias = crate::operation::UpdateArchiveRule;
-#[doc(hidden)]
-pub type UpdateArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateArchiveRule`](crate::operation::UpdateArchiveRule)>
     #[allow(unused_mut)]
@@ -4853,10 +4748,6 @@ pub mod update_findings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFindingsInputOperationOutputAlias = crate::operation::UpdateFindings;
-#[doc(hidden)]
-pub type UpdateFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFindingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFindings`](crate::operation::UpdateFindings)>
     #[allow(unused_mut)]
@@ -5075,10 +4966,6 @@ pub mod validate_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ValidatePolicyInputOperationOutputAlias = crate::operation::ValidatePolicy;
-#[doc(hidden)]
-pub type ValidatePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidatePolicyInput {
     /// Consumes the builder and constructs an Operation<[`ValidatePolicy`](crate::operation::ValidatePolicy)>
     #[allow(unused_mut)]

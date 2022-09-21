@@ -94,10 +94,6 @@ pub mod add_profile_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddProfilePermissionInputOperationOutputAlias = crate::operation::AddProfilePermission;
-#[doc(hidden)]
-pub type AddProfilePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddProfilePermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddProfilePermission`](crate::operation::AddProfilePermission)>
     #[allow(unused_mut)]
@@ -257,10 +253,6 @@ pub mod cancel_signing_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelSigningProfileInputOperationOutputAlias = crate::operation::CancelSigningProfile;
-#[doc(hidden)]
-pub type CancelSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`CancelSigningProfile`](crate::operation::CancelSigningProfile)>
     #[allow(unused_mut)]
@@ -404,10 +396,6 @@ pub mod describe_signing_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSigningJobInputOperationOutputAlias = crate::operation::DescribeSigningJob;
-#[doc(hidden)]
-pub type DescribeSigningJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSigningJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSigningJob`](crate::operation::DescribeSigningJob)>
     #[allow(unused_mut)]
@@ -547,10 +535,6 @@ pub mod get_signing_platform_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSigningPlatformInputOperationOutputAlias = crate::operation::GetSigningPlatform;
-#[doc(hidden)]
-pub type GetSigningPlatformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningPlatformInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningPlatform`](crate::operation::GetSigningPlatform)>
     #[allow(unused_mut)]
@@ -709,10 +693,6 @@ pub mod get_signing_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetSigningProfileInputOperationOutputAlias = crate::operation::GetSigningProfile;
-#[doc(hidden)]
-pub type GetSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningProfile`](crate::operation::GetSigningProfile)>
     #[allow(unused_mut)]
@@ -882,10 +862,6 @@ pub mod list_profile_permissions_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListProfilePermissionsInputOperationOutputAlias = crate::operation::ListProfilePermissions;
-#[doc(hidden)]
-pub type ListProfilePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfilePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilePermissions`](crate::operation::ListProfilePermissions)>
     #[allow(unused_mut)]
@@ -1145,10 +1121,6 @@ pub mod list_signing_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSigningJobsInputOperationOutputAlias = crate::operation::ListSigningJobs;
-#[doc(hidden)]
-pub type ListSigningJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningJobs`](crate::operation::ListSigningJobs)>
     #[allow(unused_mut)]
@@ -1377,10 +1349,6 @@ pub mod list_signing_platforms_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSigningPlatformsInputOperationOutputAlias = crate::operation::ListSigningPlatforms;
-#[doc(hidden)]
-pub type ListSigningPlatformsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningPlatformsInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningPlatforms`](crate::operation::ListSigningPlatforms)>
     #[allow(unused_mut)]
@@ -1588,10 +1556,6 @@ pub mod list_signing_profiles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListSigningProfilesInputOperationOutputAlias = crate::operation::ListSigningProfiles;
-#[doc(hidden)]
-pub type ListSigningProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningProfiles`](crate::operation::ListSigningProfiles)>
     #[allow(unused_mut)]
@@ -1748,10 +1712,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -2010,10 +1970,6 @@ pub mod put_signing_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutSigningProfileInputOperationOutputAlias = crate::operation::PutSigningProfile;
-#[doc(hidden)]
-pub type PutSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`PutSigningProfile`](crate::operation::PutSigningProfile)>
     #[allow(unused_mut)]
@@ -2197,11 +2153,6 @@ pub mod remove_profile_permission_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveProfilePermissionInputOperationOutputAlias =
-    crate::operation::RemoveProfilePermission;
-#[doc(hidden)]
-pub type RemoveProfilePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveProfilePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemoveProfilePermission`](crate::operation::RemoveProfilePermission)>
     #[allow(unused_mut)]
@@ -2395,10 +2346,6 @@ pub mod revoke_signature_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeSignatureInputOperationOutputAlias = crate::operation::RevokeSignature;
-#[doc(hidden)]
-pub type RevokeSignatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSignatureInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSignature`](crate::operation::RevokeSignature)>
     #[allow(unused_mut)]
@@ -2594,10 +2541,6 @@ pub mod revoke_signing_profile_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RevokeSigningProfileInputOperationOutputAlias = crate::operation::RevokeSigningProfile;
-#[doc(hidden)]
-pub type RevokeSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSigningProfile`](crate::operation::RevokeSigningProfile)>
     #[allow(unused_mut)]
@@ -2814,10 +2757,6 @@ pub mod start_signing_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSigningJobInputOperationOutputAlias = crate::operation::StartSigningJob;
-#[doc(hidden)]
-pub type StartSigningJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSigningJobInput {
     /// Consumes the builder and constructs an Operation<[`StartSigningJob`](crate::operation::StartSigningJob)>
     #[allow(unused_mut)]
@@ -2988,10 +2927,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -3166,10 +3101,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]

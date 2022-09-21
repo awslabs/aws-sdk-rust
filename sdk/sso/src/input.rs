@@ -55,10 +55,6 @@ pub mod get_role_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetRoleCredentialsInputOperationOutputAlias = crate::operation::GetRoleCredentials;
-#[doc(hidden)]
-pub type GetRoleCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoleCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetRoleCredentials`](crate::operation::GetRoleCredentials)>
     #[allow(unused_mut)]
@@ -235,10 +231,6 @@ pub mod list_account_roles_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountRolesInputOperationOutputAlias = crate::operation::ListAccountRoles;
-#[doc(hidden)]
-pub type ListAccountRolesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountRolesInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountRoles`](crate::operation::ListAccountRoles)>
     #[allow(unused_mut)]
@@ -409,10 +401,6 @@ pub mod list_accounts_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAccountsInputOperationOutputAlias = crate::operation::ListAccounts;
-#[doc(hidden)]
-pub type ListAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccounts`](crate::operation::ListAccounts)>
     #[allow(unused_mut)]
@@ -555,10 +543,6 @@ pub mod logout_input {
         }
     }
 }
-#[doc(hidden)]
-pub type LogoutInputOperationOutputAlias = crate::operation::Logout;
-#[doc(hidden)]
-pub type LogoutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LogoutInput {
     /// Consumes the builder and constructs an Operation<[`Logout`](crate::operation::Logout)>
     #[allow(unused_mut)]

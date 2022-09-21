@@ -29,10 +29,6 @@ pub mod associate_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateCertificateInputOperationOutputAlias = crate::operation::AssociateCertificate;
-#[doc(hidden)]
-pub type AssociateCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCertificate`](crate::operation::AssociateCertificate)>
     #[allow(unused_mut)]
@@ -168,10 +164,6 @@ pub mod cancel_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
-#[doc(hidden)]
-pub type CancelJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(unused_mut)]
@@ -518,10 +510,6 @@ pub mod create_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
-#[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(unused_mut)]
@@ -805,10 +793,6 @@ pub mod create_job_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateJobTemplateInputOperationOutputAlias = crate::operation::CreateJobTemplate;
-#[doc(hidden)]
-pub type CreateJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobTemplate`](crate::operation::CreateJobTemplate)>
     #[allow(unused_mut)]
@@ -1015,10 +999,6 @@ pub mod create_preset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreatePresetInputOperationOutputAlias = crate::operation::CreatePreset;
-#[doc(hidden)]
-pub type CreatePresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePresetInput {
     /// Consumes the builder and constructs an Operation<[`CreatePreset`](crate::operation::CreatePreset)>
     #[allow(unused_mut)]
@@ -1244,10 +1224,6 @@ pub mod create_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateQueueInputOperationOutputAlias = crate::operation::CreateQueue;
-#[doc(hidden)]
-pub type CreateQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateQueue`](crate::operation::CreateQueue)>
     #[allow(unused_mut)]
@@ -1384,10 +1360,6 @@ pub mod delete_job_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteJobTemplateInputOperationOutputAlias = crate::operation::DeleteJobTemplate;
-#[doc(hidden)]
-pub type DeleteJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobTemplate`](crate::operation::DeleteJobTemplate)>
     #[allow(unused_mut)]
@@ -1513,10 +1485,6 @@ pub mod delete_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePolicyInputOperationOutputAlias = crate::operation::DeletePolicy;
-#[doc(hidden)]
-pub type DeletePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicy`](crate::operation::DeletePolicy)>
     #[allow(unused_mut)]
@@ -1639,10 +1607,6 @@ pub mod delete_preset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeletePresetInputOperationOutputAlias = crate::operation::DeletePreset;
-#[doc(hidden)]
-pub type DeletePresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePresetInput {
     /// Consumes the builder and constructs an Operation<[`DeletePreset`](crate::operation::DeletePreset)>
     #[allow(unused_mut)]
@@ -1780,10 +1744,6 @@ pub mod delete_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteQueueInputOperationOutputAlias = crate::operation::DeleteQueue;
-#[doc(hidden)]
-pub type DeleteQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueue`](crate::operation::DeleteQueue)>
     #[allow(unused_mut)]
@@ -1950,10 +1910,6 @@ pub mod describe_endpoints_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeEndpointsInputOperationOutputAlias = crate::operation::DescribeEndpoints;
-#[doc(hidden)]
-pub type DescribeEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(unused_mut)]
@@ -2092,11 +2048,6 @@ pub mod disassociate_certificate_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateCertificateInputOperationOutputAlias =
-    crate::operation::DisassociateCertificate;
-#[doc(hidden)]
-pub type DisassociateCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCertificate`](crate::operation::DisassociateCertificate)>
     #[allow(unused_mut)]
@@ -2233,10 +2184,6 @@ pub mod get_job_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
-#[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(unused_mut)]
@@ -2372,10 +2319,6 @@ pub mod get_job_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetJobTemplateInputOperationOutputAlias = crate::operation::GetJobTemplate;
-#[doc(hidden)]
-pub type GetJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetJobTemplate`](crate::operation::GetJobTemplate)>
     #[allow(unused_mut)]
@@ -2500,10 +2443,6 @@ pub mod get_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
-#[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(unused_mut)]
@@ -2623,10 +2562,6 @@ pub mod get_preset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetPresetInputOperationOutputAlias = crate::operation::GetPreset;
-#[doc(hidden)]
-pub type GetPresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPresetInput {
     /// Consumes the builder and constructs an Operation<[`GetPreset`](crate::operation::GetPreset)>
     #[allow(unused_mut)]
@@ -2761,10 +2696,6 @@ pub mod get_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetQueueInputOperationOutputAlias = crate::operation::GetQueue;
-#[doc(hidden)]
-pub type GetQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueueInput {
     /// Consumes the builder and constructs an Operation<[`GetQueue`](crate::operation::GetQueue)>
     #[allow(unused_mut)]
@@ -2949,10 +2880,6 @@ pub mod list_jobs_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
-#[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(unused_mut)]
@@ -3152,10 +3079,6 @@ pub mod list_job_templates_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListJobTemplatesInputOperationOutputAlias = crate::operation::ListJobTemplates;
-#[doc(hidden)]
-pub type ListJobTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListJobTemplates`](crate::operation::ListJobTemplates)>
     #[allow(unused_mut)]
@@ -3357,10 +3280,6 @@ pub mod list_presets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListPresetsInputOperationOutputAlias = crate::operation::ListPresets;
-#[doc(hidden)]
-pub type ListPresetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPresetsInput {
     /// Consumes the builder and constructs an Operation<[`ListPresets`](crate::operation::ListPresets)>
     #[allow(unused_mut)]
@@ -3549,10 +3468,6 @@ pub mod list_queues_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListQueuesInputOperationOutputAlias = crate::operation::ListQueues;
-#[doc(hidden)]
-pub type ListQueuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueuesInput {
     /// Consumes the builder and constructs an Operation<[`ListQueues`](crate::operation::ListQueues)>
     #[allow(unused_mut)]
@@ -3698,10 +3613,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -3840,10 +3751,6 @@ pub mod put_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutPolicyInputOperationOutputAlias = crate::operation::PutPolicy;
-#[doc(hidden)]
-pub type PutPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutPolicy`](crate::operation::PutPolicy)>
     #[allow(unused_mut)]
@@ -4009,10 +3916,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -4172,10 +4075,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -4444,10 +4343,6 @@ pub mod update_job_template_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateJobTemplateInputOperationOutputAlias = crate::operation::UpdateJobTemplate;
-#[doc(hidden)]
-pub type UpdateJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobTemplate`](crate::operation::UpdateJobTemplate)>
     #[allow(unused_mut)]
@@ -4640,10 +4535,6 @@ pub mod update_preset_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdatePresetInputOperationOutputAlias = crate::operation::UpdatePreset;
-#[doc(hidden)]
-pub type UpdatePresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePresetInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePreset`](crate::operation::UpdatePreset)>
     #[allow(unused_mut)]
@@ -4840,10 +4731,6 @@ pub mod update_queue_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateQueueInputOperationOutputAlias = crate::operation::UpdateQueue;
-#[doc(hidden)]
-pub type UpdateQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueue`](crate::operation::UpdateQueue)>
     #[allow(unused_mut)]

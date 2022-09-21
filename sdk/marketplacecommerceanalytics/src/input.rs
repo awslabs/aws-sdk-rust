@@ -196,10 +196,6 @@ pub mod generate_data_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GenerateDataSetInputOperationOutputAlias = crate::operation::GenerateDataSet;
-#[doc(hidden)]
-pub type GenerateDataSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateDataSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataSet`](crate::operation::GenerateDataSet)>
     #[allow(unused_mut)]
@@ -462,10 +458,6 @@ pub mod start_support_data_export_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartSupportDataExportInputOperationOutputAlias = crate::operation::StartSupportDataExport;
-#[doc(hidden)]
-pub type StartSupportDataExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSupportDataExportInput {
     /// Consumes the builder and constructs an Operation<[`StartSupportDataExport`](crate::operation::StartSupportDataExport)>
     #[allow(unused_mut)]

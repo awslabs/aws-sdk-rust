@@ -153,10 +153,6 @@ pub mod activate_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ActivateGatewayInputOperationOutputAlias = crate::operation::ActivateGateway;
-#[doc(hidden)]
-pub type ActivateGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivateGatewayInput {
     /// Consumes the builder and constructs an Operation<[`ActivateGateway`](crate::operation::ActivateGateway)>
     #[allow(unused_mut)]
@@ -320,10 +316,6 @@ pub mod add_cache_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddCacheInputOperationOutputAlias = crate::operation::AddCache;
-#[doc(hidden)]
-pub type AddCacheInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCacheInput {
     /// Consumes the builder and constructs an Operation<[`AddCache`](crate::operation::AddCache)>
     #[allow(unused_mut)]
@@ -490,10 +482,6 @@ pub mod add_tags_to_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddTagsToResourceInputOperationOutputAlias = crate::operation::AddTagsToResource;
-#[doc(hidden)]
-pub type AddTagsToResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToResource`](crate::operation::AddTagsToResource)>
     #[allow(unused_mut)]
@@ -658,10 +646,6 @@ pub mod add_upload_buffer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddUploadBufferInputOperationOutputAlias = crate::operation::AddUploadBuffer;
-#[doc(hidden)]
-pub type AddUploadBufferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddUploadBufferInput {
     /// Consumes the builder and constructs an Operation<[`AddUploadBuffer`](crate::operation::AddUploadBuffer)>
     #[allow(unused_mut)]
@@ -826,10 +810,6 @@ pub mod add_working_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AddWorkingStorageInputOperationOutputAlias = crate::operation::AddWorkingStorage;
-#[doc(hidden)]
-pub type AddWorkingStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddWorkingStorageInput {
     /// Consumes the builder and constructs an Operation<[`AddWorkingStorage`](crate::operation::AddWorkingStorage)>
     #[allow(unused_mut)]
@@ -999,10 +979,6 @@ pub mod assign_tape_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssignTapePoolInputOperationOutputAlias = crate::operation::AssignTapePool;
-#[doc(hidden)]
-pub type AssignTapePoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssignTapePoolInput {
     /// Consumes the builder and constructs an Operation<[`AssignTapePool`](crate::operation::AssignTapePool)>
     #[allow(unused_mut)]
@@ -1268,10 +1244,6 @@ pub mod associate_file_system_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AssociateFileSystemInputOperationOutputAlias = crate::operation::AssociateFileSystem;
-#[doc(hidden)]
-pub type AssociateFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`AssociateFileSystem`](crate::operation::AssociateFileSystem)>
     #[allow(unused_mut)]
@@ -1470,10 +1442,6 @@ pub mod attach_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type AttachVolumeInputOperationOutputAlias = crate::operation::AttachVolume;
-#[doc(hidden)]
-pub type AttachVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachVolumeInput {
     /// Consumes the builder and constructs an Operation<[`AttachVolume`](crate::operation::AttachVolume)>
     #[allow(unused_mut)]
@@ -1629,10 +1597,6 @@ pub mod cancel_archival_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelArchivalInputOperationOutputAlias = crate::operation::CancelArchival;
-#[doc(hidden)]
-pub type CancelArchivalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelArchivalInput {
     /// Consumes the builder and constructs an Operation<[`CancelArchival`](crate::operation::CancelArchival)>
     #[allow(unused_mut)]
@@ -1788,10 +1752,6 @@ pub mod cancel_retrieval_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CancelRetrievalInputOperationOutputAlias = crate::operation::CancelRetrieval;
-#[doc(hidden)]
-pub type CancelRetrievalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelRetrievalInput {
     /// Consumes the builder and constructs an Operation<[`CancelRetrieval`](crate::operation::CancelRetrieval)>
     #[allow(unused_mut)]
@@ -2070,11 +2030,6 @@ pub mod create_cachedi_scsi_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateCachediScsiVolumeInputOperationOutputAlias =
-    crate::operation::CreateCachediSCSIVolume;
-#[doc(hidden)]
-pub type CreateCachediScsiVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCachediScsiVolumeInput {
     /// Consumes the builder and constructs an Operation<[`CreateCachediSCSIVolume`](crate::operation::CreateCachediSCSIVolume)>
     #[allow(unused_mut)]
@@ -2580,10 +2535,6 @@ pub mod create_nfs_file_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateNfsFileShareInputOperationOutputAlias = crate::operation::CreateNFSFileShare;
-#[doc(hidden)]
-pub type CreateNfsFileShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNfsFileShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateNFSFileShare`](crate::operation::CreateNFSFileShare)>
     #[allow(unused_mut)]
@@ -3169,10 +3120,6 @@ pub mod create_smb_file_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSmbFileShareInputOperationOutputAlias = crate::operation::CreateSMBFileShare;
-#[doc(hidden)]
-pub type CreateSmbFileShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSmbFileShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateSMBFileShare`](crate::operation::CreateSMBFileShare)>
     #[allow(unused_mut)]
@@ -3356,10 +3303,6 @@ pub mod create_snapshot_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSnapshotInputOperationOutputAlias = crate::operation::CreateSnapshot;
-#[doc(hidden)]
-pub type CreateSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshot`](crate::operation::CreateSnapshot)>
     #[allow(unused_mut)]
@@ -3545,12 +3488,6 @@ pub mod create_snapshot_from_volume_recovery_point_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateSnapshotFromVolumeRecoveryPointInputOperationOutputAlias =
-    crate::operation::CreateSnapshotFromVolumeRecoveryPoint;
-#[doc(hidden)]
-pub type CreateSnapshotFromVolumeRecoveryPointInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSnapshotFromVolumeRecoveryPointInput {
     /// Consumes the builder and constructs an Operation<[`CreateSnapshotFromVolumeRecoveryPoint`](crate::operation::CreateSnapshotFromVolumeRecoveryPoint)>
     #[allow(unused_mut)]
@@ -3815,11 +3752,6 @@ pub mod create_storedi_scsi_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateStorediScsiVolumeInputOperationOutputAlias =
-    crate::operation::CreateStorediSCSIVolume;
-#[doc(hidden)]
-pub type CreateStorediScsiVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStorediScsiVolumeInput {
     /// Consumes the builder and constructs an Operation<[`CreateStorediSCSIVolume`](crate::operation::CreateStorediSCSIVolume)>
     #[allow(unused_mut)]
@@ -4032,10 +3964,6 @@ pub mod create_tape_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTapePoolInputOperationOutputAlias = crate::operation::CreateTapePool;
-#[doc(hidden)]
-pub type CreateTapePoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTapePoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateTapePool`](crate::operation::CreateTapePool)>
     #[allow(unused_mut)]
@@ -4317,10 +4245,6 @@ pub mod create_tapes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTapesInputOperationOutputAlias = crate::operation::CreateTapes;
-#[doc(hidden)]
-pub type CreateTapesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTapesInput {
     /// Consumes the builder and constructs an Operation<[`CreateTapes`](crate::operation::CreateTapes)>
     #[allow(unused_mut)]
@@ -4571,10 +4495,6 @@ pub mod create_tape_with_barcode_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateTapeWithBarcodeInputOperationOutputAlias = crate::operation::CreateTapeWithBarcode;
-#[doc(hidden)]
-pub type CreateTapeWithBarcodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTapeWithBarcodeInput {
     /// Consumes the builder and constructs an Operation<[`CreateTapeWithBarcode`](crate::operation::CreateTapeWithBarcode)>
     #[allow(unused_mut)]
@@ -4722,12 +4642,6 @@ pub mod delete_automatic_tape_creation_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteAutomaticTapeCreationPolicyInputOperationOutputAlias =
-    crate::operation::DeleteAutomaticTapeCreationPolicy;
-#[doc(hidden)]
-pub type DeleteAutomaticTapeCreationPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAutomaticTapeCreationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAutomaticTapeCreationPolicy`](crate::operation::DeleteAutomaticTapeCreationPolicy)>
     #[allow(unused_mut)]
@@ -4889,11 +4803,6 @@ pub mod delete_bandwidth_rate_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteBandwidthRateLimitInputOperationOutputAlias =
-    crate::operation::DeleteBandwidthRateLimit;
-#[doc(hidden)]
-pub type DeleteBandwidthRateLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBandwidthRateLimitInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBandwidthRateLimit`](crate::operation::DeleteBandwidthRateLimit)>
     #[allow(unused_mut)]
@@ -5054,10 +4963,6 @@ pub mod delete_chap_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteChapCredentialsInputOperationOutputAlias = crate::operation::DeleteChapCredentials;
-#[doc(hidden)]
-pub type DeleteChapCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChapCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChapCredentials`](crate::operation::DeleteChapCredentials)>
     #[allow(unused_mut)]
@@ -5220,10 +5125,6 @@ pub mod delete_file_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteFileShareInputOperationOutputAlias = crate::operation::DeleteFileShare;
-#[doc(hidden)]
-pub type DeleteFileShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFileShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFileShare`](crate::operation::DeleteFileShare)>
     #[allow(unused_mut)]
@@ -5367,10 +5268,6 @@ pub mod delete_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteGatewayInputOperationOutputAlias = crate::operation::DeleteGateway;
-#[doc(hidden)]
-pub type DeleteGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGateway`](crate::operation::DeleteGateway)>
     #[allow(unused_mut)]
@@ -5514,10 +5411,6 @@ pub mod delete_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteSnapshotScheduleInputOperationOutputAlias = crate::operation::DeleteSnapshotSchedule;
-#[doc(hidden)]
-pub type DeleteSnapshotScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSnapshotSchedule`](crate::operation::DeleteSnapshotSchedule)>
     #[allow(unused_mut)]
@@ -5686,10 +5579,6 @@ pub mod delete_tape_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTapeInputOperationOutputAlias = crate::operation::DeleteTape;
-#[doc(hidden)]
-pub type DeleteTapeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTapeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTape`](crate::operation::DeleteTape)>
     #[allow(unused_mut)]
@@ -5845,10 +5734,6 @@ pub mod delete_tape_archive_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTapeArchiveInputOperationOutputAlias = crate::operation::DeleteTapeArchive;
-#[doc(hidden)]
-pub type DeleteTapeArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTapeArchiveInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTapeArchive`](crate::operation::DeleteTapeArchive)>
     #[allow(unused_mut)]
@@ -5992,10 +5877,6 @@ pub mod delete_tape_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteTapePoolInputOperationOutputAlias = crate::operation::DeleteTapePool;
-#[doc(hidden)]
-pub type DeleteTapePoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTapePoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTapePool`](crate::operation::DeleteTapePool)>
     #[allow(unused_mut)]
@@ -6139,10 +6020,6 @@ pub mod delete_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteVolumeInputOperationOutputAlias = crate::operation::DeleteVolume;
-#[doc(hidden)]
-pub type DeleteVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVolumeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVolume`](crate::operation::DeleteVolume)>
     #[allow(unused_mut)]
@@ -6288,12 +6165,6 @@ pub mod describe_availability_monitor_test_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeAvailabilityMonitorTestInputOperationOutputAlias =
-    crate::operation::DescribeAvailabilityMonitorTest;
-#[doc(hidden)]
-pub type DescribeAvailabilityMonitorTestInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAvailabilityMonitorTestInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAvailabilityMonitorTest`](crate::operation::DescribeAvailabilityMonitorTest)>
     #[allow(unused_mut)]
@@ -6438,11 +6309,6 @@ pub mod describe_bandwidth_rate_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBandwidthRateLimitInputOperationOutputAlias =
-    crate::operation::DescribeBandwidthRateLimit;
-#[doc(hidden)]
-pub type DescribeBandwidthRateLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBandwidthRateLimitInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBandwidthRateLimit`](crate::operation::DescribeBandwidthRateLimit)>
     #[allow(unused_mut)]
@@ -6587,12 +6453,6 @@ pub mod describe_bandwidth_rate_limit_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeBandwidthRateLimitScheduleInputOperationOutputAlias =
-    crate::operation::DescribeBandwidthRateLimitSchedule;
-#[doc(hidden)]
-pub type DescribeBandwidthRateLimitScheduleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBandwidthRateLimitScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBandwidthRateLimitSchedule`](crate::operation::DescribeBandwidthRateLimitSchedule)>
     #[allow(unused_mut)]
@@ -6735,10 +6595,6 @@ pub mod describe_cache_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCacheInputOperationOutputAlias = crate::operation::DescribeCache;
-#[doc(hidden)]
-pub type DescribeCacheInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCacheInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCache`](crate::operation::DescribeCache)>
     #[allow(unused_mut)]
@@ -6893,11 +6749,6 @@ pub mod describe_cachedi_scsi_volumes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeCachediScsiVolumesInputOperationOutputAlias =
-    crate::operation::DescribeCachediSCSIVolumes;
-#[doc(hidden)]
-pub type DescribeCachediScsiVolumesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCachediScsiVolumesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCachediSCSIVolumes`](crate::operation::DescribeCachediSCSIVolumes)>
     #[allow(unused_mut)]
@@ -7042,11 +6893,6 @@ pub mod describe_chap_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeChapCredentialsInputOperationOutputAlias =
-    crate::operation::DescribeChapCredentials;
-#[doc(hidden)]
-pub type DescribeChapCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChapCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChapCredentials`](crate::operation::DescribeChapCredentials)>
     #[allow(unused_mut)]
@@ -7207,12 +7053,6 @@ pub mod describe_file_system_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeFileSystemAssociationsInputOperationOutputAlias =
-    crate::operation::DescribeFileSystemAssociations;
-#[doc(hidden)]
-pub type DescribeFileSystemAssociationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFileSystemAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFileSystemAssociations`](crate::operation::DescribeFileSystemAssociations)>
     #[allow(unused_mut)]
@@ -7357,11 +7197,6 @@ pub mod describe_gateway_information_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeGatewayInformationInputOperationOutputAlias =
-    crate::operation::DescribeGatewayInformation;
-#[doc(hidden)]
-pub type DescribeGatewayInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGatewayInformationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGatewayInformation`](crate::operation::DescribeGatewayInformation)>
     #[allow(unused_mut)]
@@ -7509,12 +7344,6 @@ pub mod describe_maintenance_start_time_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeMaintenanceStartTimeInputOperationOutputAlias =
-    crate::operation::DescribeMaintenanceStartTime;
-#[doc(hidden)]
-pub type DescribeMaintenanceStartTimeInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMaintenanceStartTimeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMaintenanceStartTime`](crate::operation::DescribeMaintenanceStartTime)>
     #[allow(unused_mut)]
@@ -7666,10 +7495,6 @@ pub mod describe_nfs_file_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeNfsFileSharesInputOperationOutputAlias = crate::operation::DescribeNFSFileShares;
-#[doc(hidden)]
-pub type DescribeNfsFileSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNfsFileSharesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNFSFileShares`](crate::operation::DescribeNFSFileShares)>
     #[allow(unused_mut)]
@@ -7824,10 +7649,6 @@ pub mod describe_smb_file_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSmbFileSharesInputOperationOutputAlias = crate::operation::DescribeSMBFileShares;
-#[doc(hidden)]
-pub type DescribeSmbFileSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSmbFileSharesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSMBFileShares`](crate::operation::DescribeSMBFileShares)>
     #[allow(unused_mut)]
@@ -7973,10 +7794,6 @@ pub mod describe_smb_settings_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSmbSettingsInputOperationOutputAlias = crate::operation::DescribeSMBSettings;
-#[doc(hidden)]
-pub type DescribeSmbSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSmbSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSMBSettings`](crate::operation::DescribeSMBSettings)>
     #[allow(unused_mut)]
@@ -8122,11 +7939,6 @@ pub mod describe_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeSnapshotScheduleInputOperationOutputAlias =
-    crate::operation::DescribeSnapshotSchedule;
-#[doc(hidden)]
-pub type DescribeSnapshotScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSnapshotSchedule`](crate::operation::DescribeSnapshotSchedule)>
     #[allow(unused_mut)]
@@ -8283,11 +8095,6 @@ pub mod describe_storedi_scsi_volumes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeStorediScsiVolumesInputOperationOutputAlias =
-    crate::operation::DescribeStorediSCSIVolumes;
-#[doc(hidden)]
-pub type DescribeStorediScsiVolumesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStorediScsiVolumesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStorediSCSIVolumes`](crate::operation::DescribeStorediSCSIVolumes)>
     #[allow(unused_mut)]
@@ -8463,10 +8270,6 @@ pub mod describe_tape_archives_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTapeArchivesInputOperationOutputAlias = crate::operation::DescribeTapeArchives;
-#[doc(hidden)]
-pub type DescribeTapeArchivesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTapeArchivesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTapeArchives`](crate::operation::DescribeTapeArchives)>
     #[allow(unused_mut)]
@@ -8638,11 +8441,6 @@ pub mod describe_tape_recovery_points_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTapeRecoveryPointsInputOperationOutputAlias =
-    crate::operation::DescribeTapeRecoveryPoints;
-#[doc(hidden)]
-pub type DescribeTapeRecoveryPointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTapeRecoveryPointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTapeRecoveryPoints`](crate::operation::DescribeTapeRecoveryPoints)>
     #[allow(unused_mut)]
@@ -8836,10 +8634,6 @@ pub mod describe_tapes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeTapesInputOperationOutputAlias = crate::operation::DescribeTapes;
-#[doc(hidden)]
-pub type DescribeTapesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTapesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTapes`](crate::operation::DescribeTapes)>
     #[allow(unused_mut)]
@@ -8983,10 +8777,6 @@ pub mod describe_upload_buffer_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeUploadBufferInputOperationOutputAlias = crate::operation::DescribeUploadBuffer;
-#[doc(hidden)]
-pub type DescribeUploadBufferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUploadBufferInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUploadBuffer`](crate::operation::DescribeUploadBuffer)>
     #[allow(unused_mut)]
@@ -9181,10 +8971,6 @@ pub mod describe_vtl_devices_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeVtlDevicesInputOperationOutputAlias = crate::operation::DescribeVTLDevices;
-#[doc(hidden)]
-pub type DescribeVtlDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVtlDevicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVTLDevices`](crate::operation::DescribeVTLDevices)>
     #[allow(unused_mut)]
@@ -9328,10 +9114,6 @@ pub mod describe_working_storage_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DescribeWorkingStorageInputOperationOutputAlias = crate::operation::DescribeWorkingStorage;
-#[doc(hidden)]
-pub type DescribeWorkingStorageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkingStorageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkingStorage`](crate::operation::DescribeWorkingStorage)>
     #[allow(unused_mut)]
@@ -9491,10 +9273,6 @@ pub mod detach_volume_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DetachVolumeInputOperationOutputAlias = crate::operation::DetachVolume;
-#[doc(hidden)]
-pub type DetachVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachVolumeInput {
     /// Consumes the builder and constructs an Operation<[`DetachVolume`](crate::operation::DetachVolume)>
     #[allow(unused_mut)]
@@ -9638,10 +9416,6 @@ pub mod disable_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisableGatewayInputOperationOutputAlias = crate::operation::DisableGateway;
-#[doc(hidden)]
-pub type DisableGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DisableGateway`](crate::operation::DisableGateway)>
     #[allow(unused_mut)]
@@ -9803,10 +9577,6 @@ pub mod disassociate_file_system_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DisassociateFileSystemInputOperationOutputAlias = crate::operation::DisassociateFileSystem;
-#[doc(hidden)]
-pub type DisassociateFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFileSystem`](crate::operation::DisassociateFileSystem)>
     #[allow(unused_mut)]
@@ -10035,10 +9805,6 @@ pub mod join_domain_input {
         }
     }
 }
-#[doc(hidden)]
-pub type JoinDomainInputOperationOutputAlias = crate::operation::JoinDomain;
-#[doc(hidden)]
-pub type JoinDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl JoinDomainInput {
     /// Consumes the builder and constructs an Operation<[`JoinDomain`](crate::operation::JoinDomain)>
     #[allow(unused_mut)]
@@ -10184,12 +9950,6 @@ pub mod list_automatic_tape_creation_policies_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListAutomaticTapeCreationPoliciesInputOperationOutputAlias =
-    crate::operation::ListAutomaticTapeCreationPolicies;
-#[doc(hidden)]
-pub type ListAutomaticTapeCreationPoliciesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAutomaticTapeCreationPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListAutomaticTapeCreationPolicies`](crate::operation::ListAutomaticTapeCreationPolicies)>
     #[allow(unused_mut)]
@@ -10356,10 +10116,6 @@ pub mod list_file_shares_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFileSharesInputOperationOutputAlias = crate::operation::ListFileShares;
-#[doc(hidden)]
-pub type ListFileSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFileSharesInput {
     /// Consumes the builder and constructs an Operation<[`ListFileShares`](crate::operation::ListFileShares)>
     #[allow(unused_mut)]
@@ -10529,11 +10285,6 @@ pub mod list_file_system_associations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListFileSystemAssociationsInputOperationOutputAlias =
-    crate::operation::ListFileSystemAssociations;
-#[doc(hidden)]
-pub type ListFileSystemAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFileSystemAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListFileSystemAssociations`](crate::operation::ListFileSystemAssociations)>
     #[allow(unused_mut)]
@@ -10688,10 +10439,6 @@ pub mod list_gateways_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListGatewaysInputOperationOutputAlias = crate::operation::ListGateways;
-#[doc(hidden)]
-pub type ListGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListGateways`](crate::operation::ListGateways)>
     #[allow(unused_mut)]
@@ -10835,10 +10582,6 @@ pub mod list_local_disks_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListLocalDisksInputOperationOutputAlias = crate::operation::ListLocalDisks;
-#[doc(hidden)]
-pub type ListLocalDisksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLocalDisksInput {
     /// Consumes the builder and constructs an Operation<[`ListLocalDisks`](crate::operation::ListLocalDisks)>
     #[allow(unused_mut)]
@@ -11006,10 +10749,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -11188,10 +10927,6 @@ pub mod list_tape_pools_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTapePoolsInputOperationOutputAlias = crate::operation::ListTapePools;
-#[doc(hidden)]
-pub type ListTapePoolsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTapePoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListTapePools`](crate::operation::ListTapePools)>
     #[allow(unused_mut)]
@@ -11367,10 +11102,6 @@ pub mod list_tapes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTapesInputOperationOutputAlias = crate::operation::ListTapes;
-#[doc(hidden)]
-pub type ListTapesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTapesInput {
     /// Consumes the builder and constructs an Operation<[`ListTapes`](crate::operation::ListTapes)>
     #[allow(unused_mut)]
@@ -11512,10 +11243,6 @@ pub mod list_volume_initiators_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVolumeInitiatorsInputOperationOutputAlias = crate::operation::ListVolumeInitiators;
-#[doc(hidden)]
-pub type ListVolumeInitiatorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVolumeInitiatorsInput {
     /// Consumes the builder and constructs an Operation<[`ListVolumeInitiators`](crate::operation::ListVolumeInitiators)>
     #[allow(unused_mut)]
@@ -11663,11 +11390,6 @@ pub mod list_volume_recovery_points_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVolumeRecoveryPointsInputOperationOutputAlias =
-    crate::operation::ListVolumeRecoveryPoints;
-#[doc(hidden)]
-pub type ListVolumeRecoveryPointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVolumeRecoveryPointsInput {
     /// Consumes the builder and constructs an Operation<[`ListVolumeRecoveryPoints`](crate::operation::ListVolumeRecoveryPoints)>
     #[allow(unused_mut)]
@@ -11837,10 +11559,6 @@ pub mod list_volumes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListVolumesInputOperationOutputAlias = crate::operation::ListVolumes;
-#[doc(hidden)]
-pub type ListVolumesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVolumesInput {
     /// Consumes the builder and constructs an Operation<[`ListVolumes`](crate::operation::ListVolumes)>
     #[allow(unused_mut)]
@@ -11987,10 +11705,6 @@ pub mod notify_when_uploaded_input {
         }
     }
 }
-#[doc(hidden)]
-pub type NotifyWhenUploadedInputOperationOutputAlias = crate::operation::NotifyWhenUploaded;
-#[doc(hidden)]
-pub type NotifyWhenUploadedInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyWhenUploadedInput {
     /// Consumes the builder and constructs an Operation<[`NotifyWhenUploaded`](crate::operation::NotifyWhenUploaded)>
     #[allow(unused_mut)]
@@ -12172,10 +11886,6 @@ pub mod refresh_cache_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RefreshCacheInputOperationOutputAlias = crate::operation::RefreshCache;
-#[doc(hidden)]
-pub type RefreshCacheInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RefreshCacheInput {
     /// Consumes the builder and constructs an Operation<[`RefreshCache`](crate::operation::RefreshCache)>
     #[allow(unused_mut)]
@@ -12340,10 +12050,6 @@ pub mod remove_tags_from_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RemoveTagsFromResourceInputOperationOutputAlias = crate::operation::RemoveTagsFromResource;
-#[doc(hidden)]
-pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromResource`](crate::operation::RemoveTagsFromResource)>
     #[allow(unused_mut)]
@@ -12488,10 +12194,6 @@ pub mod reset_cache_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ResetCacheInputOperationOutputAlias = crate::operation::ResetCache;
-#[doc(hidden)]
-pub type ResetCacheInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetCacheInput {
     /// Consumes the builder and constructs an Operation<[`ResetCache`](crate::operation::ResetCache)>
     #[allow(unused_mut)]
@@ -12649,10 +12351,6 @@ pub mod retrieve_tape_archive_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RetrieveTapeArchiveInputOperationOutputAlias = crate::operation::RetrieveTapeArchive;
-#[doc(hidden)]
-pub type RetrieveTapeArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetrieveTapeArchiveInput {
     /// Consumes the builder and constructs an Operation<[`RetrieveTapeArchive`](crate::operation::RetrieveTapeArchive)>
     #[allow(unused_mut)]
@@ -12810,11 +12508,6 @@ pub mod retrieve_tape_recovery_point_input {
         }
     }
 }
-#[doc(hidden)]
-pub type RetrieveTapeRecoveryPointInputOperationOutputAlias =
-    crate::operation::RetrieveTapeRecoveryPoint;
-#[doc(hidden)]
-pub type RetrieveTapeRecoveryPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetrieveTapeRecoveryPointInput {
     /// Consumes the builder and constructs an Operation<[`RetrieveTapeRecoveryPoint`](crate::operation::RetrieveTapeRecoveryPoint)>
     #[allow(unused_mut)]
@@ -12977,11 +12670,6 @@ pub mod set_local_console_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetLocalConsolePasswordInputOperationOutputAlias =
-    crate::operation::SetLocalConsolePassword;
-#[doc(hidden)]
-pub type SetLocalConsolePasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetLocalConsolePasswordInput {
     /// Consumes the builder and constructs an Operation<[`SetLocalConsolePassword`](crate::operation::SetLocalConsolePassword)>
     #[allow(unused_mut)]
@@ -13139,10 +12827,6 @@ pub mod set_smb_guest_password_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SetSmbGuestPasswordInputOperationOutputAlias = crate::operation::SetSMBGuestPassword;
-#[doc(hidden)]
-pub type SetSmbGuestPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetSmbGuestPasswordInput {
     /// Consumes the builder and constructs an Operation<[`SetSMBGuestPassword`](crate::operation::SetSMBGuestPassword)>
     #[allow(unused_mut)]
@@ -13288,10 +12972,6 @@ pub mod shutdown_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ShutdownGatewayInputOperationOutputAlias = crate::operation::ShutdownGateway;
-#[doc(hidden)]
-pub type ShutdownGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ShutdownGatewayInput {
     /// Consumes the builder and constructs an Operation<[`ShutdownGateway`](crate::operation::ShutdownGateway)>
     #[allow(unused_mut)]
@@ -13437,12 +13117,6 @@ pub mod start_availability_monitor_test_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartAvailabilityMonitorTestInputOperationOutputAlias =
-    crate::operation::StartAvailabilityMonitorTest;
-#[doc(hidden)]
-pub type StartAvailabilityMonitorTestInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl StartAvailabilityMonitorTestInput {
     /// Consumes the builder and constructs an Operation<[`StartAvailabilityMonitorTest`](crate::operation::StartAvailabilityMonitorTest)>
     #[allow(unused_mut)]
@@ -13585,10 +13259,6 @@ pub mod start_gateway_input {
         }
     }
 }
-#[doc(hidden)]
-pub type StartGatewayInputOperationOutputAlias = crate::operation::StartGateway;
-#[doc(hidden)]
-pub type StartGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartGatewayInput {
     /// Consumes the builder and constructs an Operation<[`StartGateway`](crate::operation::StartGateway)>
     #[allow(unused_mut)]
@@ -13759,12 +13429,6 @@ pub mod update_automatic_tape_creation_policy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateAutomaticTapeCreationPolicyInputOperationOutputAlias =
-    crate::operation::UpdateAutomaticTapeCreationPolicy;
-#[doc(hidden)]
-pub type UpdateAutomaticTapeCreationPolicyInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAutomaticTapeCreationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAutomaticTapeCreationPolicy`](crate::operation::UpdateAutomaticTapeCreationPolicy)>
     #[allow(unused_mut)]
@@ -13941,11 +13605,6 @@ pub mod update_bandwidth_rate_limit_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBandwidthRateLimitInputOperationOutputAlias =
-    crate::operation::UpdateBandwidthRateLimit;
-#[doc(hidden)]
-pub type UpdateBandwidthRateLimitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBandwidthRateLimitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBandwidthRateLimit`](crate::operation::UpdateBandwidthRateLimit)>
     #[allow(unused_mut)]
@@ -14118,12 +13777,6 @@ pub mod update_bandwidth_rate_limit_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateBandwidthRateLimitScheduleInputOperationOutputAlias =
-    crate::operation::UpdateBandwidthRateLimitSchedule;
-#[doc(hidden)]
-pub type UpdateBandwidthRateLimitScheduleInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBandwidthRateLimitScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBandwidthRateLimitSchedule`](crate::operation::UpdateBandwidthRateLimitSchedule)>
     #[allow(unused_mut)]
@@ -14327,10 +13980,6 @@ pub mod update_chap_credentials_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateChapCredentialsInputOperationOutputAlias = crate::operation::UpdateChapCredentials;
-#[doc(hidden)]
-pub type UpdateChapCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChapCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChapCredentials`](crate::operation::UpdateChapCredentials)>
     #[allow(unused_mut)]
@@ -14538,11 +14187,6 @@ pub mod update_file_system_association_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateFileSystemAssociationInputOperationOutputAlias =
-    crate::operation::UpdateFileSystemAssociation;
-#[doc(hidden)]
-pub type UpdateFileSystemAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFileSystemAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFileSystemAssociation`](crate::operation::UpdateFileSystemAssociation)>
     #[allow(unused_mut)]
@@ -14746,11 +14390,6 @@ pub mod update_gateway_information_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGatewayInformationInputOperationOutputAlias =
-    crate::operation::UpdateGatewayInformation;
-#[doc(hidden)]
-pub type UpdateGatewayInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayInformationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewayInformation`](crate::operation::UpdateGatewayInformation)>
     #[allow(unused_mut)]
@@ -14898,11 +14537,6 @@ pub mod update_gateway_software_now_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateGatewaySoftwareNowInputOperationOutputAlias =
-    crate::operation::UpdateGatewaySoftwareNow;
-#[doc(hidden)]
-pub type UpdateGatewaySoftwareNowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewaySoftwareNowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewaySoftwareNow`](crate::operation::UpdateGatewaySoftwareNow)>
     #[allow(unused_mut)]
@@ -15098,11 +14732,6 @@ pub mod update_maintenance_start_time_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateMaintenanceStartTimeInputOperationOutputAlias =
-    crate::operation::UpdateMaintenanceStartTime;
-#[doc(hidden)]
-pub type UpdateMaintenanceStartTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMaintenanceStartTimeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMaintenanceStartTime`](crate::operation::UpdateMaintenanceStartTime)>
     #[allow(unused_mut)]
@@ -15491,10 +15120,6 @@ pub mod update_nfs_file_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateNfsFileShareInputOperationOutputAlias = crate::operation::UpdateNFSFileShare;
-#[doc(hidden)]
-pub type UpdateNfsFileShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNfsFileShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNFSFileShare`](crate::operation::UpdateNFSFileShare)>
     #[allow(unused_mut)]
@@ -15945,10 +15570,6 @@ pub mod update_smb_file_share_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSmbFileShareInputOperationOutputAlias = crate::operation::UpdateSMBFileShare;
-#[doc(hidden)]
-pub type UpdateSmbFileShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSmbFileShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSMBFileShare`](crate::operation::UpdateSMBFileShare)>
     #[allow(unused_mut)]
@@ -16106,12 +15727,6 @@ pub mod update_smb_file_share_visibility_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSmbFileShareVisibilityInputOperationOutputAlias =
-    crate::operation::UpdateSMBFileShareVisibility;
-#[doc(hidden)]
-pub type UpdateSmbFileShareVisibilityInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSmbFileShareVisibilityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSMBFileShareVisibility`](crate::operation::UpdateSMBFileShareVisibility)>
     #[allow(unused_mut)]
@@ -16269,10 +15884,6 @@ pub mod update_smb_local_groups_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSmbLocalGroupsInputOperationOutputAlias = crate::operation::UpdateSMBLocalGroups;
-#[doc(hidden)]
-pub type UpdateSmbLocalGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSmbLocalGroupsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSMBLocalGroups`](crate::operation::UpdateSMBLocalGroups)>
     #[allow(unused_mut)]
@@ -16441,11 +16052,6 @@ pub mod update_smb_security_strategy_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSmbSecurityStrategyInputOperationOutputAlias =
-    crate::operation::UpdateSMBSecurityStrategy;
-#[doc(hidden)]
-pub type UpdateSmbSecurityStrategyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSmbSecurityStrategyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSMBSecurityStrategy`](crate::operation::UpdateSMBSecurityStrategy)>
     #[allow(unused_mut)]
@@ -16652,10 +16258,6 @@ pub mod update_snapshot_schedule_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateSnapshotScheduleInputOperationOutputAlias = crate::operation::UpdateSnapshotSchedule;
-#[doc(hidden)]
-pub type UpdateSnapshotScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSnapshotScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSnapshotSchedule`](crate::operation::UpdateSnapshotSchedule)>
     #[allow(unused_mut)]
@@ -16818,10 +16420,6 @@ pub mod update_vtl_device_type_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateVtlDeviceTypeInputOperationOutputAlias = crate::operation::UpdateVTLDeviceType;
-#[doc(hidden)]
-pub type UpdateVtlDeviceTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVtlDeviceTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVTLDeviceType`](crate::operation::UpdateVTLDeviceType)>
     #[allow(unused_mut)]

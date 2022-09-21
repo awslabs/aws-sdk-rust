@@ -115,10 +115,6 @@ pub mod create_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetInputOperationOutputAlias = crate::operation::CreateConfigurationSet;
-#[doc(hidden)]
-pub type CreateConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
     #[allow(unused_mut)]
@@ -297,12 +293,6 @@ pub mod create_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::CreateConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type CreateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetEventDestination`](crate::operation::CreateConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -480,10 +470,6 @@ pub mod create_dedicated_ip_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDedicatedIpPoolInputOperationOutputAlias = crate::operation::CreateDedicatedIpPool;
-#[doc(hidden)]
-pub type CreateDedicatedIpPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDedicatedIpPoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateDedicatedIpPool`](crate::operation::CreateDedicatedIpPool)>
     #[allow(unused_mut)]
@@ -677,12 +663,6 @@ pub mod create_deliverability_test_report_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateDeliverabilityTestReportInputOperationOutputAlias =
-    crate::operation::CreateDeliverabilityTestReport;
-#[doc(hidden)]
-pub type CreateDeliverabilityTestReportInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeliverabilityTestReportInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeliverabilityTestReport`](crate::operation::CreateDeliverabilityTestReport)>
     #[allow(unused_mut)]
@@ -845,10 +825,6 @@ pub mod create_email_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type CreateEmailIdentityInputOperationOutputAlias = crate::operation::CreateEmailIdentity;
-#[doc(hidden)]
-pub type CreateEmailIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`CreateEmailIdentity`](crate::operation::CreateEmailIdentity)>
     #[allow(unused_mut)]
@@ -990,10 +966,6 @@ pub mod delete_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationOutputAlias = crate::operation::DeleteConfigurationSet;
-#[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
     #[allow(unused_mut)]
@@ -1157,12 +1129,6 @@ pub mod delete_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::DeleteConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type DeleteConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetEventDestination`](crate::operation::DeleteConfigurationSetEventDestination)>
     #[allow(unused_mut)]
@@ -1315,10 +1281,6 @@ pub mod delete_dedicated_ip_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteDedicatedIpPoolInputOperationOutputAlias = crate::operation::DeleteDedicatedIpPool;
-#[doc(hidden)]
-pub type DeleteDedicatedIpPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDedicatedIpPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDedicatedIpPool`](crate::operation::DeleteDedicatedIpPool)>
     #[allow(unused_mut)]
@@ -1465,10 +1427,6 @@ pub mod delete_email_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type DeleteEmailIdentityInputOperationOutputAlias = crate::operation::DeleteEmailIdentity;
-#[doc(hidden)]
-pub type DeleteEmailIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEmailIdentity`](crate::operation::DeleteEmailIdentity)>
     #[allow(unused_mut)]
@@ -1597,10 +1555,6 @@ pub mod get_account_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetAccountInputOperationOutputAlias = crate::operation::GetAccount;
-#[doc(hidden)]
-pub type GetAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetAccount`](crate::operation::GetAccount)>
     #[allow(unused_mut)]
@@ -1734,10 +1688,6 @@ pub mod get_blacklist_reports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetBlacklistReportsInputOperationOutputAlias = crate::operation::GetBlacklistReports;
-#[doc(hidden)]
-pub type GetBlacklistReportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBlacklistReportsInput {
     /// Consumes the builder and constructs an Operation<[`GetBlacklistReports`](crate::operation::GetBlacklistReports)>
     #[allow(unused_mut)]
@@ -1885,10 +1835,6 @@ pub mod get_configuration_set_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConfigurationSetInputOperationOutputAlias = crate::operation::GetConfigurationSet;
-#[doc(hidden)]
-pub type GetConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationSet`](crate::operation::GetConfigurationSet)>
     #[allow(unused_mut)]
@@ -2037,12 +1983,6 @@ pub mod get_configuration_set_event_destinations_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetConfigurationSetEventDestinationsInputOperationOutputAlias =
-    crate::operation::GetConfigurationSetEventDestinations;
-#[doc(hidden)]
-pub type GetConfigurationSetEventDestinationsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConfigurationSetEventDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationSetEventDestinations`](crate::operation::GetConfigurationSetEventDestinations)>
     #[allow(unused_mut)]
@@ -2184,10 +2124,6 @@ pub mod get_dedicated_ip_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDedicatedIpInputOperationOutputAlias = crate::operation::GetDedicatedIp;
-#[doc(hidden)]
-pub type GetDedicatedIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDedicatedIpInput {
     /// Consumes the builder and constructs an Operation<[`GetDedicatedIp`](crate::operation::GetDedicatedIp)>
     #[allow(unused_mut)]
@@ -2351,10 +2287,6 @@ pub mod get_dedicated_ips_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDedicatedIpsInputOperationOutputAlias = crate::operation::GetDedicatedIps;
-#[doc(hidden)]
-pub type GetDedicatedIpsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDedicatedIpsInput {
     /// Consumes the builder and constructs an Operation<[`GetDedicatedIps`](crate::operation::GetDedicatedIps)>
     #[allow(unused_mut)]
@@ -2487,12 +2419,6 @@ pub mod get_deliverability_dashboard_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeliverabilityDashboardOptionsInputOperationOutputAlias =
-    crate::operation::GetDeliverabilityDashboardOptions;
-#[doc(hidden)]
-pub type GetDeliverabilityDashboardOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeliverabilityDashboardOptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeliverabilityDashboardOptions`](crate::operation::GetDeliverabilityDashboardOptions)>
     #[allow(unused_mut)]
@@ -2620,11 +2546,6 @@ pub mod get_deliverability_test_report_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDeliverabilityTestReportInputOperationOutputAlias =
-    crate::operation::GetDeliverabilityTestReport;
-#[doc(hidden)]
-pub type GetDeliverabilityTestReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeliverabilityTestReportInput {
     /// Consumes the builder and constructs an Operation<[`GetDeliverabilityTestReport`](crate::operation::GetDeliverabilityTestReport)>
     #[allow(unused_mut)]
@@ -2770,12 +2691,6 @@ pub mod get_domain_deliverability_campaign_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDomainDeliverabilityCampaignInputOperationOutputAlias =
-    crate::operation::GetDomainDeliverabilityCampaign;
-#[doc(hidden)]
-pub type GetDomainDeliverabilityCampaignInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainDeliverabilityCampaignInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainDeliverabilityCampaign`](crate::operation::GetDomainDeliverabilityCampaign)>
     #[allow(unused_mut)]
@@ -2951,11 +2866,6 @@ pub mod get_domain_statistics_report_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetDomainStatisticsReportInputOperationOutputAlias =
-    crate::operation::GetDomainStatisticsReport;
-#[doc(hidden)]
-pub type GetDomainStatisticsReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainStatisticsReportInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainStatisticsReport`](crate::operation::GetDomainStatisticsReport)>
     #[allow(unused_mut)]
@@ -3128,10 +3038,6 @@ pub mod get_email_identity_input {
         }
     }
 }
-#[doc(hidden)]
-pub type GetEmailIdentityInputOperationOutputAlias = crate::operation::GetEmailIdentity;
-#[doc(hidden)]
-pub type GetEmailIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetEmailIdentity`](crate::operation::GetEmailIdentity)>
     #[allow(unused_mut)]
@@ -3287,10 +3193,6 @@ pub mod list_configuration_sets_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListConfigurationSetsInputOperationOutputAlias = crate::operation::ListConfigurationSets;
-#[doc(hidden)]
-pub type ListConfigurationSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationSets`](crate::operation::ListConfigurationSets)>
     #[allow(unused_mut)]
@@ -3444,10 +3346,6 @@ pub mod list_dedicated_ip_pools_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDedicatedIpPoolsInputOperationOutputAlias = crate::operation::ListDedicatedIpPools;
-#[doc(hidden)]
-pub type ListDedicatedIpPoolsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDedicatedIpPoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListDedicatedIpPools`](crate::operation::ListDedicatedIpPools)>
     #[allow(unused_mut)]
@@ -3605,12 +3503,6 @@ pub mod list_deliverability_test_reports_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDeliverabilityTestReportsInputOperationOutputAlias =
-    crate::operation::ListDeliverabilityTestReports;
-#[doc(hidden)]
-pub type ListDeliverabilityTestReportsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeliverabilityTestReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeliverabilityTestReports`](crate::operation::ListDeliverabilityTestReports)>
     #[allow(unused_mut)]
@@ -3812,12 +3704,6 @@ pub mod list_domain_deliverability_campaigns_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListDomainDeliverabilityCampaignsInputOperationOutputAlias =
-    crate::operation::ListDomainDeliverabilityCampaigns;
-#[doc(hidden)]
-pub type ListDomainDeliverabilityCampaignsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainDeliverabilityCampaignsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainDeliverabilityCampaigns`](crate::operation::ListDomainDeliverabilityCampaigns)>
     #[allow(unused_mut)]
@@ -4010,10 +3896,6 @@ pub mod list_email_identities_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListEmailIdentitiesInputOperationOutputAlias = crate::operation::ListEmailIdentities;
-#[doc(hidden)]
-pub type ListEmailIdentitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEmailIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListEmailIdentities`](crate::operation::ListEmailIdentities)>
     #[allow(unused_mut)]
@@ -4155,10 +4037,6 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
-#[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
@@ -4299,12 +4177,6 @@ pub mod put_account_dedicated_ip_warmup_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAccountDedicatedIpWarmupAttributesInputOperationOutputAlias =
-    crate::operation::PutAccountDedicatedIpWarmupAttributes;
-#[doc(hidden)]
-pub type PutAccountDedicatedIpWarmupAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccountDedicatedIpWarmupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountDedicatedIpWarmupAttributes`](crate::operation::PutAccountDedicatedIpWarmupAttributes)>
     #[allow(unused_mut)]
@@ -4449,11 +4321,6 @@ pub mod put_account_sending_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutAccountSendingAttributesInputOperationOutputAlias =
-    crate::operation::PutAccountSendingAttributes;
-#[doc(hidden)]
-pub type PutAccountSendingAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccountSendingAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountSendingAttributes`](crate::operation::PutAccountSendingAttributes)>
     #[allow(unused_mut)]
@@ -4626,12 +4493,6 @@ pub mod put_configuration_set_delivery_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationSetDeliveryOptionsInputOperationOutputAlias =
-    crate::operation::PutConfigurationSetDeliveryOptions;
-#[doc(hidden)]
-pub type PutConfigurationSetDeliveryOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationSetDeliveryOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetDeliveryOptions`](crate::operation::PutConfigurationSetDeliveryOptions)>
     #[allow(unused_mut)]
@@ -4805,12 +4666,6 @@ pub mod put_configuration_set_reputation_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationSetReputationOptionsInputOperationOutputAlias =
-    crate::operation::PutConfigurationSetReputationOptions;
-#[doc(hidden)]
-pub type PutConfigurationSetReputationOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationSetReputationOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetReputationOptions`](crate::operation::PutConfigurationSetReputationOptions)>
     #[allow(unused_mut)]
@@ -4984,12 +4839,6 @@ pub mod put_configuration_set_sending_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationSetSendingOptionsInputOperationOutputAlias =
-    crate::operation::PutConfigurationSetSendingOptions;
-#[doc(hidden)]
-pub type PutConfigurationSetSendingOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationSetSendingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetSendingOptions`](crate::operation::PutConfigurationSetSendingOptions)>
     #[allow(unused_mut)]
@@ -5166,12 +5015,6 @@ pub mod put_configuration_set_tracking_options_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutConfigurationSetTrackingOptionsInputOperationOutputAlias =
-    crate::operation::PutConfigurationSetTrackingOptions;
-#[doc(hidden)]
-pub type PutConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetTrackingOptions`](crate::operation::PutConfigurationSetTrackingOptions)>
     #[allow(unused_mut)]
@@ -5343,10 +5186,6 @@ pub mod put_dedicated_ip_in_pool_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDedicatedIpInPoolInputOperationOutputAlias = crate::operation::PutDedicatedIpInPool;
-#[doc(hidden)]
-pub type PutDedicatedIpInPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDedicatedIpInPoolInput {
     /// Consumes the builder and constructs an Operation<[`PutDedicatedIpInPool`](crate::operation::PutDedicatedIpInPool)>
     #[allow(unused_mut)]
@@ -5516,12 +5355,6 @@ pub mod put_dedicated_ip_warmup_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDedicatedIpWarmupAttributesInputOperationOutputAlias =
-    crate::operation::PutDedicatedIpWarmupAttributes;
-#[doc(hidden)]
-pub type PutDedicatedIpWarmupAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutDedicatedIpWarmupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutDedicatedIpWarmupAttributes`](crate::operation::PutDedicatedIpWarmupAttributes)>
     #[allow(unused_mut)]
@@ -5703,12 +5536,6 @@ pub mod put_deliverability_dashboard_option_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutDeliverabilityDashboardOptionInputOperationOutputAlias =
-    crate::operation::PutDeliverabilityDashboardOption;
-#[doc(hidden)]
-pub type PutDeliverabilityDashboardOptionInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutDeliverabilityDashboardOptionInput {
     /// Consumes the builder and constructs an Operation<[`PutDeliverabilityDashboardOption`](crate::operation::PutDeliverabilityDashboardOption)>
     #[allow(unused_mut)]
@@ -5866,12 +5693,6 @@ pub mod put_email_identity_dkim_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEmailIdentityDkimAttributesInputOperationOutputAlias =
-    crate::operation::PutEmailIdentityDkimAttributes;
-#[doc(hidden)]
-pub type PutEmailIdentityDkimAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutEmailIdentityDkimAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutEmailIdentityDkimAttributes`](crate::operation::PutEmailIdentityDkimAttributes)>
     #[allow(unused_mut)]
@@ -6049,12 +5870,6 @@ pub mod put_email_identity_feedback_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEmailIdentityFeedbackAttributesInputOperationOutputAlias =
-    crate::operation::PutEmailIdentityFeedbackAttributes;
-#[doc(hidden)]
-pub type PutEmailIdentityFeedbackAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutEmailIdentityFeedbackAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutEmailIdentityFeedbackAttributes`](crate::operation::PutEmailIdentityFeedbackAttributes)>
     #[allow(unused_mut)]
@@ -6258,12 +6073,6 @@ pub mod put_email_identity_mail_from_attributes_input {
         }
     }
 }
-#[doc(hidden)]
-pub type PutEmailIdentityMailFromAttributesInputOperationOutputAlias =
-    crate::operation::PutEmailIdentityMailFromAttributes;
-#[doc(hidden)]
-pub type PutEmailIdentityMailFromAttributesInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl PutEmailIdentityMailFromAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutEmailIdentityMailFromAttributes`](crate::operation::PutEmailIdentityMailFromAttributes)>
     #[allow(unused_mut)]
@@ -6527,10 +6336,6 @@ pub mod send_email_input {
         }
     }
 }
-#[doc(hidden)]
-pub type SendEmailInputOperationOutputAlias = crate::operation::SendEmail;
-#[doc(hidden)]
-pub type SendEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendEmail`](crate::operation::SendEmail)>
     #[allow(unused_mut)]
@@ -6688,10 +6493,6 @@ pub mod tag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
-#[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
@@ -6853,10 +6654,6 @@ pub mod untag_resource_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
-#[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
@@ -7038,12 +6835,6 @@ pub mod update_configuration_set_event_destination_input {
         }
     }
 }
-#[doc(hidden)]
-pub type UpdateConfigurationSetEventDestinationInputOperationOutputAlias =
-    crate::operation::UpdateConfigurationSetEventDestination;
-#[doc(hidden)]
-pub type UpdateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetEventDestination`](crate::operation::UpdateConfigurationSetEventDestination)>
     #[allow(unused_mut)]
