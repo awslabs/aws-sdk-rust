@@ -53,7 +53,7 @@ impl ImdsRegionProvider {
         let client = self.client.client().await.ok()?;
         match client.get(REGION_PATH).await {
             Ok(region) => {
-                tracing::info!(region = % region, "loaded region from IMDS");
+                tracing::debug!(region = % region, "loaded region from IMDS");
                 Some(Region::new(region))
             }
             Err(err) => {
