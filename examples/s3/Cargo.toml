@@ -12,6 +12,18 @@ publish = false
 [lib]
 name = "s3_service"
 path = "src/s3-service-lib.rs"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "2.1"
+
+[dependencies]
+tokio-stream = "0.1.8"
+md-5 = "0.10.1"
+bytes = "0.4.12"
+http-body = "0.4.5"
+rand = "0.5.0"
+
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 version = "0.49.0"
@@ -33,9 +45,18 @@ version = "0.3"
 default-features = false
 
 [dependencies.tracing-subscriber]
-version = "0.3.15"
+version = "0.3.5"
 features = ["env-filter"]
 
 [dependencies.uuid]
 version = "0.8"
 features = ["serde", "v4"]
+
+[dependencies.aws-smithy-http]
+features = ["rt-tokio"]
+path = "../../sdk/aws-smithy-http"
+version = "0.49.0"
+
+[dependencies.futures-util]
+version = "0.3.21"
+features = ["alloc"]
